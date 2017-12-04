@@ -17,6 +17,7 @@
 
 <http://bioentity.io/vocab/BioentityWithGoTerms> a owl:Class ;
     rdfs:label "bioentity with go terms" ;
+    obo:IAO_0000115 "this serves as exemplar for the time being, corresponding to the bioentity document type in amigo, which has a single entry per bioentity, with associated GO information" ;
     rdfs:subClassOf <http://bioentity.io/vocab/MolecularEntity> .
 
 <http://bioentity.io/vocab/ChemicalSubstance> a owl:Class ;

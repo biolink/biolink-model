@@ -1214,7 +1214,7 @@ class MolecularEvent(object):
 
 class BioentityWithGoTerms(MolecularEntity):
     """
-    None
+    this serves as exemplar for the time being, corresponding to the bioentity document type in amigo, which has a single entry per bioentity, with associated GO information
     """
     def __init__(self,
                  in_family=None,
