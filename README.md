@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/biolink/biolink-model.svg?branch=master)](https://travis-ci.org/biolink/biolink-model)
+
 # biolink-models
 
 A high level datamodel of biological entities (genes, diseases,
