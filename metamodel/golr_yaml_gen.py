@@ -45,9 +45,7 @@ def tr_class(c, schema):
         'weight': 20
         }
     fields = []
-    slots = c.slots
-    if not slots:
-        slots = []
+    slots = get_slots_inf(c, schema)
     for sn in slots:
         s = get_slot(sn, schema)
         field = {}

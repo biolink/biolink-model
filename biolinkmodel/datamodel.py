@@ -648,9 +648,11 @@ class GeneToPhenotypicFeatureAssociation(Association):
 
 class GeneToExpressionSiteAssociation(Association):
     """
-    An association between a gene and an expression site, possibly qualified by stage/timing info
+    An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?
     """
     def __init__(self,
+                 stage=None,
+                 quantifier=None,
                  id=None,
                  type=None,
                  subject=None,
@@ -665,6 +667,8 @@ class GeneToExpressionSiteAssociation(Association):
                  evidence_graph=None,
                  evidence_type=None,
                  evidence=None):
+        self.stage=stage
+        self.quantifier=quantifier
         self.id=id
         self.type=type
         self.subject=subject
@@ -681,7 +685,7 @@ class GeneToExpressionSiteAssociation(Association):
         self.evidence=evidence
 
     def __str__(self):
-        return "id={} type={} subject={} negated={} relation={} object={} qualifiers={} subject_extension={} object_extension={} publications={} provided_by={} evidence_graph={} evidence_type={} evidence={} ".format(self.id,self.type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extension,self.object_extension,self.publications,self.provided_by,self.evidence_graph,self.evidence_type,self.evidence)
+        return "stage={} quantifier={} id={} type={} subject={} negated={} relation={} object={} qualifiers={} subject_extension={} object_extension={} publications={} provided_by={} evidence_graph={} evidence_type={} evidence={} ".format(self.stage,self.quantifier,self.id,self.type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extension,self.object_extension,self.publications,self.provided_by,self.evidence_graph,self.evidence_type,self.evidence)
     def __repr__(self):
         return self.__str__()
 

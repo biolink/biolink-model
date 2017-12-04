@@ -102,7 +102,7 @@ And also by the [gene-anatomy cypher query](https://github.com/monarch-initiativ
 
 in the biolink model this is explicitly represented using the `gene to expression site association` class definition [in the model](biolink-model.yaml)
 
-```[yaml]
+```yaml
   - name: gene to expression site association
     is_a: association
     description: >-
@@ -135,3 +135,4 @@ in the biolink model this is explicitly represented using the `gene to expressio
 
 This is used to generate for example [this golr view definition](golr-views/gene_to_expression_site_association-config.yaml)
 (which is itself later compiled to solr xml using the bbop-golr framework)
+

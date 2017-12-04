@@ -2,22 +2,67 @@ description: An association that includes flattened inlined objects, such as sub
 display_name: denormalized association
 document_category: denormalized association
 fields:
-- description: null
-  display_name: subject taxon
+- display_name: subject_taxon
   id: subject_taxon
   property: []
-- description: null
-  display_name: subject taxon label
+- display_name: subject_taxon_label
   id: subject_taxon_label
   property: []
-- description: The taxon class or ancestor class for the subject
-  display_name: subject taxon closure
+- display_name: subject_taxon_closure
   id: subject_taxon_closure
   property: []
-- cardinality: multi
-  description: The label for the taxon class or ancestor class for the subject
-  display_name: subject taxon closure label
+- display_name: subject_taxon_closure_label
   id: subject_taxon_closure_label
+  property: []
+- description: null
+  display_name: id
+  id: id
+  property: []
+- display_name: type
+  id: type
+  property: []
+- description: connects an association to the subject
+  display_name: subject
+  id: subject
+  property: []
+- description: if set then the association is negated
+  display_name: negated
+  id: negated
+  property: []
+- description: the relationship type by which a subject is connected to an object
+    in an association
+  display_name: relation
+  id: relation
+  property: []
+- description: connects an association to the object
+  display_name: object
+  id: object
+  property: []
+- cardinality: multi
+  description: qualifiers
+  display_name: qualifiers
+  id: qualifiers
+  property: []
+- display_name: subject_extension
+  id: subject_extension
+  property: []
+- display_name: object_extension
+  id: object_extension
+  property: []
+- display_name: publications
+  id: publications
+  property: []
+- display_name: provided_by
+  id: provided_by
+  property: []
+- display_name: evidence_graph
+  id: evidence_graph
+  property: []
+- display_name: evidence_type
+  id: evidence_type
+  property: []
+- display_name: evidence
+  id: evidence
   property: []
 id: denormalized association
 schema_generating: true

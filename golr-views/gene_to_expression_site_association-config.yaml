@@ -1,8 +1,65 @@
-description: An association between a gene and an expression site, possibly qualified
-  by stage/timing info
+description: 'An association between a gene and an expression site, possibly qualified
+  by stage/timing info. TBD: introduce subclasses for distinction between wild-type
+  and experimental conditions?'
 display_name: gene to expression site association
 document_category: gene to expression site association
-fields: []
+fields:
+- display_name: stage
+  id: stage
+  property: []
+- display_name: quantifier
+  id: quantifier
+  property: []
+- description: null
+  display_name: id
+  id: id
+  property: []
+- display_name: type
+  id: type
+  property: []
+- description: connects an association to the subject
+  display_name: subject
+  id: subject
+  property: []
+- description: if set then the association is negated
+  display_name: negated
+  id: negated
+  property: []
+- description: the relationship type by which a subject is connected to an object
+    in an association
+  display_name: relation
+  id: relation
+  property: []
+- description: connects an association to the object
+  display_name: object
+  id: object
+  property: []
+- cardinality: multi
+  description: qualifiers
+  display_name: qualifiers
+  id: qualifiers
+  property: []
+- display_name: subject_extension
+  id: subject_extension
+  property: []
+- display_name: object_extension
+  id: object_extension
+  property: []
+- display_name: publications
+  id: publications
+  property: []
+- display_name: provided_by
+  id: provided_by
+  property: []
+- display_name: evidence_graph
+  id: evidence_graph
+  property: []
+- display_name: evidence_type
+  id: evidence_type
+  property: []
+- display_name: evidence
+  id: evidence
+  property: []
 id: gene to expression site association
 schema_generating: true
 weight: 20

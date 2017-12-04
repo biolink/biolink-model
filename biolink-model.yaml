@@ -389,8 +389,12 @@ classes:
   - name: gene to expression site association
     is_a: association
     description: >-
-      An association between a gene and an expression site, possibly qualified by stage/timing info
+      An association between a gene and an expression site, possibly qualified by stage/timing info.
+      TBD: introduce subclasses for distinction between wild-type and experimental conditions?
     see_also: "https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee"
+    slots:
+      - stage
+      - quantifier
     slot_usage:
       - slot: subject
         type: gene or gene product
