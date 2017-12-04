@@ -1,3 +1,13 @@
+"""
+Generate GOlr YAML schema definitions.
+
+These can be converted to solr schema-xml, and used in amigo-bbop tools
+
+See the golr-views directory in this repo for examples
+
+TODO: link to golr docs
+"""
+
 from .schemautils import *
 import yaml
 import logging

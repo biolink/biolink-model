@@ -13,6 +13,11 @@ slots:
       When generating golr-views, abstract classes are ignored
     range: boolean
     
+  - name: inlined
+    description: >-
+      if true then the value of this slot is inlined (i.e. a nested object) rather linked by key
+    range: boolean
+    
   - name: mixin
     description: >-
       Similar to abstract

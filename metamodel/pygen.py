@@ -1,3 +1,12 @@
+"""Generate python OO-class definitions
+
+These can be automatically serialized and de-serialized using
+marshmallow, given accompanying schema defs.
+
+For examples, see the biolinkmodel directory in this repo.
+
+"""
+
 from .schemautils import *
 
 def write_python_module(schema):

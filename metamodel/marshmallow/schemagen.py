@@ -1,3 +1,11 @@
+"""
+Generate marshmallow schema defs
+
+See: marshmallow.readthedocs.io
+
+Status: incomplete
+"""
+
 from ..schemautils import *
 
 def write_schema(schema):
@@ -15,6 +23,8 @@ def write_schema(schema):
             parent = get_schema_class_name(parent)
         print('class {}({}):'.format(get_schema_class_name(cn), parent))
 
+        # Marshmallow supports inheritance directly so we don't need
+        # to unfold inferred superclass slots
         slots = c.slots
         if not slots:
             slots = []
@@ -28,7 +38,13 @@ def write_schema(schema):
             else:
                 slotname = f.name
             pyslotname = get_slot_name(slotname)
-            print('    {n} = fields.{type}()'.format(n=pyslotname, type='Str'))
+
+            # TODO: support other types
+            stype = 'Str'
+            print('    {n} = fields.{type}()'.format(n=pyslotname, type=stype))
+
+        # generate post-load annotations that vivify objects from json
+        # or equivalent dict representations
         print('')
         print('    @post_load')
         print('    def make_object(self, data):')
