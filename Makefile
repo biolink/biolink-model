@@ -3,7 +3,7 @@
 # ----------------------------------------
 all: build test 
 test: metatest pytests
-build: biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views
+build: biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views ontology/biolink.owl
 
 # ----------------------------------------
 # BUILD/COMPILATION
@@ -15,6 +15,19 @@ gen-golr-views:
 
 biolinkmodel/datamodel.py: biolink-model.yaml
 	./bin/gen-py-classes.py $< > $@
+
+ontology/biolink.owl: biolink-model.yaml
+	./bin/gen-rdf.py -o $@ $< 
+
+ontology/%.json: ontology/%.owl
+	owltools $< -o -f json $@
+
+ontology/%.tree: ontology/%.json
+	ogr --showdefs -t tree -r $< % > $@
+
+ontology/%.png: ontology/%.json
+	ogr-tree -t png -o $@ -c subClassOf subPropertyOf -r $< % 
+
 
 #biolinkmodel/schema.py: biolink-model.yaml
 #	./bin/gen-mm-schema.py $< > $@

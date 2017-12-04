@@ -96,7 +96,7 @@ class PopulationOfIndividualOrganisms(NamedThing):
         return self.__str__()
 
 
-class ConditionOrPhenotypicCondition(OntologyClass):
+class Cohort(PopulationOfIndividualOrganisms):
     """
     None
     """
@@ -112,7 +112,7 @@ class ConditionOrPhenotypicCondition(OntologyClass):
         return self.__str__()
 
 
-class Disease(ConditionOrPhenotypicCondition):
+class ConditionOrPhenotypicFeature(OntologyClass):
     """
     None
     """
@@ -128,7 +128,23 @@ class Disease(ConditionOrPhenotypicCondition):
         return self.__str__()
 
 
-class PhenotypicFeature(ConditionOrPhenotypicCondition):
+class Disease(ConditionOrPhenotypicFeature):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class PhenotypicFeature(ConditionOrPhenotypicFeature):
     """
     None
     """
@@ -224,9 +240,9 @@ class MolecularEntity(NamedThing):
         return self.__str__()
 
 
-class GeneOrGeneProduct(MolecularEntity):
+class ChemicalSubstance(MolecularEntity):
     """
-    a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
+    may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
     """
     def __init__(self,
                  id=None,
@@ -236,6 +252,74 @@ class GeneOrGeneProduct(MolecularEntity):
 
     def __str__(self):
         return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class AnatomicalEntity(NamedThing):
+    """
+    A subcellular location, cell type or gross anatomical part
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class DevelopmentalStage(NamedThing):
+    """
+    A stage of development or growth of an organism, including post-natal adult stages
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class GenomicEntity(MolecularEntity):
+    """
+    an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class GeneOrGeneProduct(GenomicEntity):
+    """
+    a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
+    """
+    def __init__(self,
+                 full_name=None,
+                 systematic_synonym=None,
+                 id=None,
+                 label=None):
+        self.full_name=full_name
+        self.systematic_synonym=systematic_synonym
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "full_name={} systematic_synonym={} id={} label={} ".format(self.full_name,self.systematic_synonym,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -245,13 +329,17 @@ class Gene(GeneOrGeneProduct):
     None
     """
     def __init__(self,
+                 full_name=None,
+                 systematic_synonym=None,
                  id=None,
                  label=None):
+        self.full_name=full_name
+        self.systematic_synonym=systematic_synonym
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "full_name={} systematic_synonym={} id={} label={} ".format(self.full_name,self.systematic_synonym,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -261,13 +349,17 @@ class GeneProduct(GeneOrGeneProduct):
     None
     """
     def __init__(self,
+                 full_name=None,
+                 systematic_synonym=None,
                  id=None,
                  label=None):
+        self.full_name=full_name
+        self.systematic_synonym=systematic_synonym
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "full_name={} systematic_synonym={} id={} label={} ".format(self.full_name,self.systematic_synonym,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -277,18 +369,42 @@ class Protein(GeneProduct):
     None
     """
     def __init__(self,
+                 full_name=None,
+                 systematic_synonym=None,
                  id=None,
                  label=None):
+        self.full_name=full_name
+        self.systematic_synonym=systematic_synonym
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "full_name={} systematic_synonym={} id={} label={} ".format(self.full_name,self.systematic_synonym,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
 
 class RnaProduct(GeneProduct):
+    """
+    None
+    """
+    def __init__(self,
+                 full_name=None,
+                 systematic_synonym=None,
+                 id=None,
+                 label=None):
+        self.full_name=full_name
+        self.systematic_synonym=systematic_synonym
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "full_name={} systematic_synonym={} id={} label={} ".format(self.full_name,self.systematic_synonym,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class MacromolecularComplex(MolecularEntity):
     """
     None
     """
@@ -304,9 +420,41 @@ class RnaProduct(GeneProduct):
         return self.__str__()
 
 
-class MacromolecularComplex(MolecularEntity):
+class GeneFamily(MolecularEntity):
+    """
+    a grouping of multiple genes or gene products related by common descent
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Genotype(GenomicEntity):
     """
     None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class SequenceVariant(GenomicEntity):
+    """
+    A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.
     """
     def __init__(self,
                  id=None,
@@ -443,6 +591,126 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
 class GeneOrProteinInteraction(GeneToGeneAssociation):
     """
     An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+    """
+    def __init__(self,
+                 id=None,
+                 type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extension=None,
+                 object_extension=None,
+                 publications=None,
+                 provided_by=None,
+                 evidence_graph=None,
+                 evidence_type=None,
+                 evidence=None):
+        self.id=id
+        self.type=type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extension=subject_extension
+        self.object_extension=object_extension
+        self.publications=publications
+        self.provided_by=provided_by
+        self.evidence_graph=evidence_graph
+        self.evidence_type=evidence_type
+        self.evidence=evidence
+
+    def __str__(self):
+        return "id={} type={} subject={} negated={} relation={} object={} qualifiers={} subject_extension={} object_extension={} publications={} provided_by={} evidence_graph={} evidence_type={} evidence={} ".format(self.id,self.type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extension,self.object_extension,self.publications,self.provided_by,self.evidence_graph,self.evidence_type,self.evidence)
+    def __repr__(self):
+        return self.__str__()
+
+
+class ChemicalToThingAssociation(Association):
+    """
+    An interaction between a chemical entity and another entity
+    """
+    def __init__(self,
+                 id=None,
+                 type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extension=None,
+                 object_extension=None,
+                 publications=None,
+                 provided_by=None,
+                 evidence_graph=None,
+                 evidence_type=None,
+                 evidence=None):
+        self.id=id
+        self.type=type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extension=subject_extension
+        self.object_extension=object_extension
+        self.publications=publications
+        self.provided_by=provided_by
+        self.evidence_graph=evidence_graph
+        self.evidence_type=evidence_type
+        self.evidence=evidence
+
+    def __str__(self):
+        return "id={} type={} subject={} negated={} relation={} object={} qualifiers={} subject_extension={} object_extension={} publications={} provided_by={} evidence_graph={} evidence_type={} evidence={} ".format(self.id,self.type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extension,self.object_extension,self.publications,self.provided_by,self.evidence_graph,self.evidence_type,self.evidence)
+    def __repr__(self):
+        return self.__str__()
+
+
+class ChemicalToGeneAssociation(Association):
+    """
+    An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug.
+    """
+    def __init__(self,
+                 id=None,
+                 type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extension=None,
+                 object_extension=None,
+                 publications=None,
+                 provided_by=None,
+                 evidence_graph=None,
+                 evidence_type=None,
+                 evidence=None):
+        self.id=id
+        self.type=type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extension=subject_extension
+        self.object_extension=object_extension
+        self.publications=publications
+        self.provided_by=provided_by
+        self.evidence_graph=evidence_graph
+        self.evidence_type=evidence_type
+        self.evidence=evidence
+
+    def __str__(self):
+        return "id={} type={} subject={} negated={} relation={} object={} qualifiers={} subject_extension={} object_extension={} publications={} provided_by={} evidence_graph={} evidence_type={} evidence={} ".format(self.id,self.type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extension,self.object_extension,self.publications,self.provided_by,self.evidence_graph,self.evidence_type,self.evidence)
+    def __repr__(self):
+        return self.__str__()
+
+
+class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
+    """
+    An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
     """
     def __init__(self,
                  id=None,
@@ -832,6 +1100,96 @@ class AssociationSet(object):
         return self.__str__()
 
 
+class GenomicSequenceLocalization(Association):
+    """
+    A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
+    """
+    def __init__(self,
+                 start_interbase_coordinate=None,
+                 end_interbase_coordinate=None,
+                 genome_build=None,
+                 phase=None,
+                 id=None,
+                 type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extension=None,
+                 object_extension=None,
+                 publications=None,
+                 provided_by=None,
+                 evidence_graph=None,
+                 evidence_type=None,
+                 evidence=None):
+        self.start_interbase_coordinate=start_interbase_coordinate
+        self.end_interbase_coordinate=end_interbase_coordinate
+        self.genome_build=genome_build
+        self.phase=phase
+        self.id=id
+        self.type=type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extension=subject_extension
+        self.object_extension=object_extension
+        self.publications=publications
+        self.provided_by=provided_by
+        self.evidence_graph=evidence_graph
+        self.evidence_type=evidence_type
+        self.evidence=evidence
+
+    def __str__(self):
+        return "start_interbase_coordinate={} end_interbase_coordinate={} genome_build={} phase={} id={} type={} subject={} negated={} relation={} object={} qualifiers={} subject_extension={} object_extension={} publications={} provided_by={} evidence_graph={} evidence_type={} evidence={} ".format(self.start_interbase_coordinate,self.end_interbase_coordinate,self.genome_build,self.phase,self.id,self.type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extension,self.object_extension,self.publications,self.provided_by,self.evidence_graph,self.evidence_type,self.evidence)
+    def __repr__(self):
+        return self.__str__()
+
+
+class SequenceFeatureRelationship(Association):
+    """
+    For example, a particular exon is part of a particular transcript or gene
+    """
+    def __init__(self,
+                 rank=None,
+                 id=None,
+                 type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extension=None,
+                 object_extension=None,
+                 publications=None,
+                 provided_by=None,
+                 evidence_graph=None,
+                 evidence_type=None,
+                 evidence=None):
+        self.rank=rank
+        self.id=id
+        self.type=type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extension=subject_extension
+        self.object_extension=object_extension
+        self.publications=publications
+        self.provided_by=provided_by
+        self.evidence_graph=evidence_graph
+        self.evidence_type=evidence_type
+        self.evidence=evidence
+
+    def __str__(self):
+        return "rank={} id={} type={} subject={} negated={} relation={} object={} qualifiers={} subject_extension={} object_extension={} publications={} provided_by={} evidence_graph={} evidence_type={} evidence={} ".format(self.rank,self.id,self.type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extension,self.object_extension,self.publications,self.provided_by,self.evidence_graph,self.evidence_type,self.evidence)
+    def __repr__(self):
+        return self.__str__()
+
+
 class MolecularEvent(object):
     """
     None
@@ -850,6 +1208,28 @@ class MolecularEvent(object):
 
     def __str__(self):
         return "enabled_by={} part_of={} occurs_in={} upstream_causal_relationship={} downstream_causal_relationship={} ".format(self.enabled_by,self.part_of,self.occurs_in,self.upstream_causal_relationship,self.downstream_causal_relationship)
+    def __repr__(self):
+        return self.__str__()
+
+
+class BioentityWithGoTerms(MolecularEntity):
+    """
+    None
+    """
+    def __init__(self,
+                 in_family=None,
+                 isa_partof_closure=None,
+                 regulates_closure=None,
+                 id=None,
+                 label=None):
+        self.in_family=in_family
+        self.isa_partof_closure=isa_partof_closure
+        self.regulates_closure=regulates_closure
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "in_family={} isa_partof_closure={} regulates_closure={} id={} label={} ".format(self.in_family,self.isa_partof_closure,self.regulates_closure,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 

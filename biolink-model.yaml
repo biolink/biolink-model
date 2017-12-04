@@ -9,6 +9,9 @@ types:
   - name: label type
     typeof: string
 
+  - name: symbol type
+    typeof: string
+
 slots:
   
   - name: id
@@ -22,6 +25,16 @@ slots:
     range: label type
     mappings:
       - "rdfs:label"
+  
+  - name: full name
+    domain: named thing
+    range: label type
+  
+  - name: systematic synonym
+    domain: named thing
+    range: label type
+    description: >-
+      more commonly used for gene symbols in yeast
   
   - name: in taxon
     domain: thing with taxon
@@ -91,6 +104,10 @@ slots:
 
   - name: subject taxon label
     path: subject/taxon/label
+
+  ## ------
+  ## CLOSURES
+  ## ------
     
   - name: closure concept slot
     abstract: true
@@ -147,6 +164,10 @@ slots:
     
 classes:
 
+  ## ------
+  ## THINGS
+  ## ------
+  
   - name: named thing
     description: "a databased entity or concept/class"
     slots:
@@ -171,23 +192,35 @@ classes:
       - ncbitaxon
       
   - name: individual organism
+    mixins:
+      - thing with taxon
     is_a: named thing
       
   - name: population of individual organisms
+    mixins:
+      - thing with taxon
     is_a: named thing
       
-  - name: condition or phenotypic condition
+  - name: cohort
+    is_a: population of individual organisms
+      
+  - name: condition or phenotypic feature
     is_a: ontology class
+    mixins:
+      - thing with taxon
+    union_of:
+      - disease
+      - phenotypic feature
       
   - name: disease
     aliases: ['condition', 'disorder']
-    is_a: condition or phenotypic condition
+    is_a: condition or phenotypic feature
     mappings:
       - "MONDO:0000001"
       
   - name: phenotypic feature
     aliases: ['sign', 'symptom', 'phenotype', 'trait']
-    is_a: condition or phenotypic condition
+    is_a: condition or phenotypic feature
       
   - name: environmental feature
     aliases: ['environment', 'exposure', 'experimental condition']
@@ -225,18 +258,57 @@ classes:
       
   - name: molecular entity
     is_a: named thing
+    mixins:
+      - thing with taxon
     aliases: ['bioentity']
     description: "A gene, gene product, small molecule or macromolecule (including protein complex)"
 
-  - name: gene or gene product
+  - name: chemical substance
     is_a: molecular entity
+    description: >-
+      may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex
+      material with multiple chemical entities as part
+
+  - name: anatomical entity
+    is_a: named thing
+    mixins:
+      - thing with taxon
+    subclass_of: UBERON:0001062
+    description: >-
+      A subcellular location, cell type or gross anatomical part
+
+  - name: developmental stage
+    is_a: named thing
+    mixins:
+      - thing with taxon
+    subclass_of: UBERON:0000105
+    description: >-
+      A stage of development or growth of an organism, including post-natal adult stages
+
+  - name: genomic entity
+    is_a: molecular entity
+    aliases: ['sequence feature']
+    description: >-
+      an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+      
+  - name: gene or gene product
+    is_a: genomic entity
     union_of:
       - gene
       - gene product
     description: >-
       a union of genes or gene products.
       Frequently an identifier for one will be used as proxy for another
-    
+    slots:
+      - full name
+      - systematic synonym
+    slot_usage:
+      - name: label
+        type: symbol type
+        description: >-
+          genes are typically designated by a short symbol and a full name. We map the symbol to the default display label
+          and use an additional slot for full name
+      
   - name: gene
     is_a: gene or gene product
     aliases: ['locus']
@@ -263,7 +335,28 @@ classes:
     is_a: molecular entity
     mappings:
       - "GO:0032991"
-  
+
+  - name: gene family
+    is_a: molecular entity
+    description: >-
+      a grouping of multiple genes or gene products related by common descent
+
+  - name: genotype
+    is_a: genomic entity
+
+  - name: sequence variant
+    aliases: ['allele']
+    is_a: genomic entity
+    description: >-
+      A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.
+    mappings:
+      - "GENO:0000512"
+    
+        
+  ## ------
+  ## ASSOCIATIONS
+  ## ------
+      
   - name: association
     abstract: true
     description: "Any kind of association between two entities"
@@ -337,6 +430,40 @@ classes:
       - slot: object
         type: gene product
         description: "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary"
+
+  - name: chemical to thing association
+    is_a: association
+    abstract: true
+    description: >-
+      An interaction between a chemical entity and another entity
+    slot_usage:
+      - slot: subject
+        type: chemical substance
+        description: "the chemical substance or entity that is an interactor"
+
+  - name: chemical to gene association
+    is_a: association
+    mixins:
+      - chemical to thing association
+    description: >-
+      An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may
+      be a drug with the gene being a target of the drug.
+    slot_usage:
+      - slot: object
+        type: gene product
+        description: "the gene or gene product with which the chemical interacts"
+
+  - name: chemical to disease or phenotypic feature association
+    is_a: association
+    mixins:
+      - chemical to thing association
+    description: >-
+      An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to
+      or exacerbates the phenotype
+    slot_usage:
+      - slot: object
+        type: disease or phenotypic feature
+        description: "the disease or phenotype that is affected by the chemical"
         
   - name: entity to phenotypic feature association
     abstract: true
@@ -460,6 +587,44 @@ classes:
     slots:
       - associations
 
+  ## ------
+  ## SEQUENCE FEATURES
+  ## ------
+
+  - name: genomic sequence localization
+    is_a: association
+    description: >-
+      A relationship between a sequence feature and an entity it is localized to. The reference entity may be
+      a chromosome, chromosome region or information entity such as a contig
+    slot_usage:
+      - name: subject
+        aliases: ['sequence feature']
+        domain: genomic entity  ## todo protein
+      - name: object
+        aliases: ['reference']
+        domain: genomic entity ## typically a chromosomel use monochrom
+    slots:
+      - start interbase coordinate
+      - end interbase coordinate
+      - genome build
+      - phase
+
+  - name: sequence feature relationship
+    is_a: association
+    description: >-
+      For example, a particular exon is part of a particular transcript or gene
+    slot_usage:
+      - name: subject
+        domain: genomic entity  ## todo protein
+      - name: object
+        domain: genomic entity ## typically a chromosome
+    slots:
+      - rank
+
+  ## ------
+  ## GOCAM
+  ## ------
+      
   - name: molecular event
     schema: gocam
     slots:
@@ -468,3 +633,20 @@ classes:
       - occurs in
       - upstream causal relationship
       - downstream causal relationship
+
+
+  ## ------
+  ## DENORMALIZED
+  ## ------
+
+  - name: bioentity with go terms
+    schema: amigo
+    is_a: molecular entity
+    description: >-
+      this serves as exemplar for the time being, corresponding to the bioentity document type in amigo, which has a single
+      entry per bioentity, with associated GO information
+    slots:
+      - in family
+      - isa_partof_closure
+      - regulates_closure
+  

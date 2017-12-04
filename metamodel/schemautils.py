@@ -1,3 +1,5 @@
+import logging
+
 def get_slots_inf(c, schema):
     slots = c.slots
     if not slots:
@@ -22,7 +24,10 @@ def get_slot_name_from_obj(f):
 def get_parents_refl(c, schema):
     ps = [c]
     if c.is_a:
-        ps += get_parents_refl(get_cls(c.is_a, schema), schema)
+        pcls = get_cls(c.is_a, schema)
+        if not pcls:
+            logging.error("No parent class: {} for {}".format(c.is_a, c.name))
+        ps += get_parents_refl(pcls, schema)
     return ps
 
 def get_cls(cn, schema):
