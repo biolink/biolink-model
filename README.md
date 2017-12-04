@@ -16,7 +16,7 @@ provides:
 
 Minimally this can be used for purposes like schema and datamodel
 mapping. For example a CSV or Solr schema could map columns in a
-column header (or fields in a document) to slots.
+column header (or fields in a document) to slots. 
 
 An additional goal is to provide a means to automatically generate and
 automatically map to code and schemas in a variety of languages and
@@ -88,4 +88,50 @@ an object model.
 Currently as far as we know there is no existing reference datamodel
 that is flexible enough to be used here.
 
+## Usage in monarch project
 
+Case study: gene expression
+
+Currently this is documented in the [ingest
+artefacts](https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources)
+repo, using non-computable cmap images:
+
+![bgee model](https://raw.githubusercontent.com/monarch-initiative/ingest-artifacts/master/sources/BGee/Bgee_20170112.jpg)
+
+And also by the [gene-anatomy cypher query](https://github.com/monarch-initiative/monarch-cypher-queries/blob/master/src/main/cypher/golr-loader/gene-anatomy.yaml)
+
+in the biolink model this is explicitly represented using the `gene to expression site association` class definition [in the model](biolink-model.yaml)
+
+```[yaml]
+  - name: gene to expression site association
+    is_a: association
+    description: >-
+      An association between a gene and an expression site, possibly qualified by stage/timing info
+    see_also: "https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee"
+    slot_usage:
+      - slot: subject
+        type: gene or gene product
+        description: "gene in which variation is correlated with the phenotypic feature"
+      - slot: object
+        type: anatomical entity
+        description: "location in which the gene is expressed"
+        subclass_of: UBERON:0001062
+        examples:
+          - value: UBERON:0002037
+            description: cerebellum
+      - slot: relation
+        description: "expression relationship"
+        subproperty_of: "RO:0002206"
+      - slot: stage
+        type: developmental stage
+        description: "stage at which the gene is expressed in the site"
+        examples:
+          - value: UBERON:0000069
+            description: larval stage
+      - slot: quantifier
+        description: >-
+          can be used to indicate magnitude, or also ranking
+```
+
+This is used to generate for example [this golr view definition](golr-views/gene_to_expression_site_association-config.yaml)
+(which is itself later compiled to solr xml using the bbop-golr framework)

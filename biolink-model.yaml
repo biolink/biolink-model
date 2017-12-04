@@ -386,6 +386,35 @@ classes:
         type: gene or gene product
         description: "gene in which variation is correlated with the phenotypic feature"
         
+  - name: gene to expression site association
+    is_a: association
+    description: >-
+      An association between a gene and an expression site, possibly qualified by stage/timing info
+    see_also: "https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee"
+    slot_usage:
+      - slot: subject
+        type: gene or gene product
+        description: "gene in which variation is correlated with the phenotypic feature"
+      - slot: object
+        type: anatomical entity
+        description: "location in which the gene is expressed"
+        subclass_of: UBERON:0001062
+        examples:
+          - value: UBERON:0002037
+            description: cerebellum
+      - slot: relation
+        description: "expression relationship"
+        subproperty_of: "RO:0002206"
+      - slot: stage
+        type: developmental stage
+        description: "stage at which the gene is expressed in the site"
+        examples:
+          - value: UBERON:0000069
+            description: larval stage
+      - slot: quantifier
+        description: >-
+          can be used to indicate magnitude, or also ranking
+        
   - name: go association
     aliases: ['functional association']
     is_a: association

@@ -646,6 +646,46 @@ class GeneToPhenotypicFeatureAssociation(Association):
         return self.__str__()
 
 
+class GeneToExpressionSiteAssociation(Association):
+    """
+    An association between a gene and an expression site, possibly qualified by stage/timing info
+    """
+    def __init__(self,
+                 id=None,
+                 type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extension=None,
+                 object_extension=None,
+                 publications=None,
+                 provided_by=None,
+                 evidence_graph=None,
+                 evidence_type=None,
+                 evidence=None):
+        self.id=id
+        self.type=type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extension=subject_extension
+        self.object_extension=object_extension
+        self.publications=publications
+        self.provided_by=provided_by
+        self.evidence_graph=evidence_graph
+        self.evidence_type=evidence_type
+        self.evidence=evidence
+
+    def __str__(self):
+        return "id={} type={} subject={} negated={} relation={} object={} qualifiers={} subject_extension={} object_extension={} publications={} provided_by={} evidence_graph={} evidence_type={} evidence={} ".format(self.id,self.type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extension,self.object_extension,self.publications,self.provided_by,self.evidence_graph,self.evidence_type,self.evidence)
+    def __repr__(self):
+        return self.__str__()
+
+
 class GoAssociation(Association):
     """
     None
