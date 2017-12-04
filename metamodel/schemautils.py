@@ -50,3 +50,8 @@ def get_slot(sn, schema):
     for s in schema.slots:
         if s.name == sn:
             return s
+
+def get_slot_range(sn, schema):
+    s = get_slot(sn, schema)
+    if s:
+        return s.range

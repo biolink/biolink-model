@@ -22,6 +22,9 @@ ontology/biolink.owl: biolink-model.yaml
 ontology/%.json: ontology/%.owl
 	owltools $< -o -f json $@
 
+ontology/%.obo: ontology/%.owl
+	owltools $< -o -f obo --no-check $@
+
 ontology/%.tree: ontology/%.json
 	ogr --showdefs -t tree -r $< % > $@
 

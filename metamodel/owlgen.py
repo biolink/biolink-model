@@ -70,6 +70,14 @@ class OwlSchemaGenerator(object):
         g.add((ci, RDFS.label, Literal(c.name)))
         if c.is_a:
             g.add((ci, RDFS.subClassOf, self.class_uri(c.is_a)))
+        if c.slots:
+            for sn in c.slots:
+                srange = get_slot_range(sn, self.schema)
+                if srange:
+                    restr = BNode()
+                    g.add((ci, RDFS.subClassOf, restr))
+                    g.add((restr, OWL.onProperty, self.property_uri(sn)))
+                    g.add((restr, OWL.someValuesFrom, self.class_uri(sn)))
         
     def tr_slot(self, s):
         g = self.graph

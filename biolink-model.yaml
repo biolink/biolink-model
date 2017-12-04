@@ -81,6 +81,12 @@ slots:
     description: >-
       connects an association to a piece of supporting evidence
 
+  - name: stage qualifier
+    is_a: association slot
+    range: developmental stage
+    description: >-
+      stage at which expression takes place
+
   - name: qualifiers
     singular_name: qualifier
     description: >-
@@ -520,7 +526,7 @@ classes:
       TBD: introduce subclasses for distinction between wild-type and experimental conditions?
     see_also: "https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee"
     slots:
-      - stage
+      - stage qualifier
       - quantifier
     slot_usage:
       - slot: subject
@@ -536,7 +542,7 @@ classes:
       - slot: relation
         description: "expression relationship"
         subproperty_of: "RO:0002206"
-      - slot: stage
+      - slot: stage qualifier
         type: developmental stage
         description: "stage at which the gene is expressed in the site"
         examples:
