@@ -1,0 +1,15 @@
+slots:
+
+  - name: name
+    domain: element
+    
+  - name: abstract
+    range: boolean
+
+classes:
+
+  - name: definition
+    description: "base class"
+    abstract: true
+    class_slots:
+      - name

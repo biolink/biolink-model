@@ -1,0 +1,24 @@
+description: An association that includes flattened inlined objects, such as subject_taxon_closure
+display_name: denormalized association
+document_category: denormalized association
+fields:
+- description: null
+  display_name: subject taxon
+  id: subject_taxon
+  property: []
+- description: null
+  display_name: subject taxon label
+  id: subject_taxon_label
+  property: []
+- description: The taxon class or ancestor class for the subject
+  display_name: subject taxon closure
+  id: subject_taxon_closure
+  property: []
+- cardinality: multi
+  description: The label for the taxon class or ancestor class for the subject
+  display_name: subject taxon closure label
+  id: subject_taxon_closure_label
+  property: []
+id: denormalized association
+schema_generating: true
+weight: 20

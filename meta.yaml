@@ -1,0 +1,118 @@
+slots:
+
+  - name: name
+    domain: element
+    primary_key: true
+    description: >-
+      a unique key that identifies a slot or class in a schema
+    
+  - name: abstract
+    description: >-
+      An abstract class is a high level class that is typically used to group common slots together and is generally
+      not instantiated.
+      When generating golr-views, abstract classes are ignored
+    range: boolean
+    
+  - name: mixin
+    description: >-
+      Similar to abstract
+    range: boolean
+
+  - name: slots
+    multivalued: true
+    domain: class
+    range: slot definition
+    inlined: false
+    description: >-
+      list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins.
+    
+  - name: slot_usage
+    multivalued: true
+    domain: class definition
+    range: slot usage definition
+    description: >-
+      Additional info on how a slot is used in the context of a class.
+      Many slots may be re-used across different classes, but the meaning of the slot may be refined by context.
+      For example, a generic association model may use slots subject/predicate/object with generic semantics and
+      minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may
+      specify both local naming (e.g. subject=disease) and local constraints
+    
+  - name: is_a
+    multivalued: false
+    domain: class definition
+    range: class definition
+    description: >-
+      specifies single-inheritance between classes.
+      While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing.
+      The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI
+      framework (e.g. java classes, python classes) then is_a is used.
+      When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins
+      are recursively unfolded
+
+  - name: mixins
+    multivalued: true
+    domain: class definition
+    range: class definition
+    description: >-
+      see is_a
+    
+
+classes:
+
+  - name: definition
+    description: "base class"
+    abstract: true
+    slots:
+      - name
+      - singular name
+      - is_a
+      - description
+      - abstract
+      - mappings
+
+  - name: slot definition
+    description: "A property or slot"
+    is_a: definition
+    slots:
+      - identifier
+      - domain
+      - range
+      - multivalued
+      - path
+
+  - name: slot usage definition
+    description: "A usage of slot in the context of a class"
+    is_a: slot definition
+    slots:
+      - identifier
+      - domain
+      - range
+      - multivalued
+      - path
+      
+  - name: class definition
+    description: "A class or interface"
+    is_a: definition
+    slots:
+      - abstract
+      - mixin
+      - mixins
+      - slots
+      - slot_usage
+    
+  - name: type definition
+    description: "A type definition"
+    is_a: definition
+    slots:
+      - mixins
+    
+  - name: schema definition
+    description: "A collection of definitions"
+    is_a: definition
+    slots:
+      - slots
+      - classes
+      - types
+
+
+    
