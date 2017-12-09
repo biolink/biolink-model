@@ -22,6 +22,11 @@ slots:
     description: >-
       Similar to abstract
     range: boolean
+    
+  - name: path
+    description: >-
+      For any denormalized slot, this represents the tree or graph path used to generate the denormalized form
+    range: string
 
   - name: slots
     multivalued: true

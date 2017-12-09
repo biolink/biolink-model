@@ -12,13 +12,30 @@
     obo:IAO_0000115 "A subcellular location, cell type or gross anatomical part" ;
     rdfs:subClassOf <http://bioentity.io/vocab/NamedThing> .
 
-<http://bioentity.io/vocab/AssociationSet> a owl:Class ;
-    rdfs:label "association set" .
+<http://bioentity.io/vocab/AssociationResultSet> a owl:Class ;
+    rdfs:label "association result set" ;
+    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/associations> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Associations> ] .
 
 <http://bioentity.io/vocab/BioentityWithGoTerms> a owl:Class ;
     rdfs:label "bioentity with go terms" ;
     obo:IAO_0000115 "this serves as exemplar for the time being, corresponding to the bioentity document type in amigo, which has a single entry per bioentity, with associated GO information" ;
     rdfs:subClassOf <http://bioentity.io/vocab/MolecularEntity> .
+
+<http://bioentity.io/vocab/Case> a owl:Class ;
+    rdfs:label "case" ;
+    obo:IAO_0000115 "An individual organism that has a patient role in some clinical context." ;
+    rdfs:subClassOf <http://bioentity.io/vocab/IndividualOrganism> .
+
+<http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation> a owl:Class ;
+    rdfs:label "case to phenotypic feature association" ;
+    obo:IAO_0000115 "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Association> .
+
+<http://bioentity.io/vocab/CaseToThingAssociation> a owl:Class ;
+    rdfs:label "case to thing association" ;
+    obo:IAO_0000115 "An abstract association for use where the case is the subject" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Association> .
 
 <http://bioentity.io/vocab/ChemicalSubstance> a owl:Class ;
     rdfs:label "chemical substance" ;
@@ -47,31 +64,33 @@
 <http://bioentity.io/vocab/DenormalizedAssociation> a owl:Class ;
     rdfs:label "denormalized association" ;
     obo:IAO_0000115 "An association that includes flattened inlined objects, such as subject_taxon_closure" ;
-    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/subject_taxon> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/SubjectTaxon> ],
+    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/subject_taxon_label> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SubjectTaxonLabel> ],
         [ owl:onProperty <http://bioentity.io/vocab/subject_taxon_closure> ;
             owl:someValuesFrom <http://bioentity.io/vocab/SubjectTaxonClosure> ],
+        [ owl:onProperty <http://bioentity.io/vocab/subject_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SubjectTaxon> ],
         <http://bioentity.io/vocab/Association> .
-
-<http://bioentity.io/vocab/DevelopmentalStage> a owl:Class ;
-    rdfs:label "developmental stage" ;
-    obo:IAO_0000115 "A stage of development or growth of an organism, including post-natal adult stages" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/NamedThing> .
 
 <http://bioentity.io/vocab/Disease> a owl:Class ;
     rdfs:label "disease" ;
     rdfs:subClassOf <http://bioentity.io/vocab/ConditionOrPhenotypicFeature> .
 
-<http://bioentity.io/vocab/DiseaseToEntityAssociation> a owl:Class ;
-    rdfs:label "disease to entity association" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/Association> .
-
 <http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation> a owl:Class ;
     rdfs:label "disease to phenotypic feature denormalized association" ;
     rdfs:subClassOf <http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation> .
 
+<http://bioentity.io/vocab/DiseaseToThingAssociation> a owl:Class ;
+    rdfs:label "disease to thing association" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Association> .
+
 <http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation> a owl:Class ;
     rdfs:label "entity to phenotypic feature association" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Association> .
+
+<http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation> a owl:Class ;
+    rdfs:label "environment to phenotypic feature association" ;
+    obo:IAO_0000115 "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype" ;
     rdfs:subClassOf <http://bioentity.io/vocab/Association> .
 
 <http://bioentity.io/vocab/EnvironmentalFeature> a owl:Class ;
@@ -79,29 +98,25 @@
     obo:IAO_0000115 "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes" ;
     rdfs:subClassOf <http://bioentity.io/vocab/NamedThing> .
 
-<http://bioentity.io/vocab/EvidenceType> a owl:Class ;
-    rdfs:label "evidence type" ;
-    obo:IAO_0000115 "Evidence that supports an association" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/InformationContentEntity> .
-
 <http://bioentity.io/vocab/Gene> a owl:Class ;
     rdfs:label "gene" ;
     rdfs:subClassOf <http://bioentity.io/vocab/GeneOrGeneProduct> .
 
 <http://bioentity.io/vocab/GeneFamily> a owl:Class ;
     rdfs:label "gene family" ;
-    obo:IAO_0000115 "a grouping of multiple genes or gene products related by common descent" ;
+    obo:IAO_0000115 "any grouping of multiple genes or gene products related by common descent" ;
     rdfs:subClassOf <http://bioentity.io/vocab/MolecularEntity> .
 
-<http://bioentity.io/vocab/GeneOrProteinInteraction> a owl:Class ;
-    rdfs:label "gene or protein interaction" ;
-    obo:IAO_0000115 "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/GeneToGeneAssociation> .
+<http://bioentity.io/vocab/GeneGrouping> a owl:Class ;
+    rdfs:label "gene grouping" ;
+    obo:IAO_0000115 "any grouping of multiple genes or gene products" .
 
 <http://bioentity.io/vocab/GeneToExpressionSiteAssociation> a owl:Class ;
     rdfs:label "gene to expression site association" ;
     obo:IAO_0000115 "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/Association> .
+    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/stage_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/StageQualifier> ],
+        <http://bioentity.io/vocab/Association> .
 
 <http://bioentity.io/vocab/GeneToGeneHomologyAssociation> a owl:Class ;
     rdfs:label "gene to gene homology association" ;
@@ -119,15 +134,31 @@
 
 <http://bioentity.io/vocab/Genotype> a owl:Class ;
     rdfs:label "genotype" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/GenomicEntity> .
+    obo:IAO_0000115 "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background" ;
+    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/has_zygosity> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/HasZygosity> ],
+        <http://bioentity.io/vocab/GenomicEntity> .
+
+<http://bioentity.io/vocab/GenotypeToGenotypePartAssociation> a owl:Class ;
+    rdfs:label "genotype to genotype part association" ;
+    obo:IAO_0000115 "Any association between one genotype and a genotypic entity that is a sub-component of it" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Association> .
+
+<http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation> a owl:Class ;
+    rdfs:label "genotype to phenotypic feature association" ;
+    obo:IAO_0000115 "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Association> .
 
 <http://bioentity.io/vocab/GoAssociation> a owl:Class ;
     rdfs:label "go association" ;
     rdfs:subClassOf <http://bioentity.io/vocab/Association> .
 
-<http://bioentity.io/vocab/IndividualOrganism> a owl:Class ;
-    rdfs:label "individual organism" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/NamedThing> .
+<http://bioentity.io/vocab/HasGenomicName> a owl:Class ;
+    rdfs:label "has genomic name" ;
+    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/full_name> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/FullName> ],
+        [ owl:onProperty <http://bioentity.io/vocab/systematic_synonym> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SystematicSynonym> ] .
 
 <http://bioentity.io/vocab/MacromolecularComplex> a owl:Class ;
     rdfs:label "macromolecular complex" ;
@@ -136,6 +167,11 @@
 <http://bioentity.io/vocab/MolecularEvent> a owl:Class ;
     rdfs:label "molecular event" .
 
+<http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation> a owl:Class ;
+    rdfs:label "pairwise gene or protein interaction association" ;
+    obo:IAO_0000115 "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/GeneToGeneAssociation> .
+
 <http://bioentity.io/vocab/PhenotypicFeature> a owl:Class ;
     rdfs:label "phenotypic feature" ;
     rdfs:subClassOf <http://bioentity.io/vocab/ConditionOrPhenotypicFeature> .
@@ -143,11 +179,6 @@
 <http://bioentity.io/vocab/Protein> a owl:Class ;
     rdfs:label "protein" ;
     rdfs:subClassOf <http://bioentity.io/vocab/GeneProduct> .
-
-<http://bioentity.io/vocab/Publication> a owl:Class ;
-    rdfs:label "publication" ;
-    obo:IAO_0000115 "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals." ;
-    rdfs:subClassOf <http://bioentity.io/vocab/InformationContentEntity> .
 
 <http://bioentity.io/vocab/RnaProduct> a owl:Class ;
     rdfs:label "RNA product" ;
@@ -163,14 +194,26 @@
     obo:IAO_0000115 "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus." ;
     rdfs:subClassOf <http://bioentity.io/vocab/GenomicEntity> .
 
-<http://bioentity.io/vocab/has_evidence> a owl:ObjectProperty ;
-    rdfs:label "has evidence" ;
-    obo:IAO_0000115 "connects an association to a piece of supporting evidence" ;
-    rdfs:domain <http://bioentity.io/vocab/EvidenceInstance> ;
+<http://bioentity.io/vocab/creation_date> a owl:ObjectProperty ;
+    rdfs:label "creation date" ;
+    obo:IAO_0000115 "date on which thing was created" ;
+    rdfs:domain <http://bioentity.io/vocab/Date> .
+
+<http://bioentity.io/vocab/evidence_object_closure> a owl:ObjectProperty ;
+    rdfs:label "evidence object closure" ;
+    obo:IAO_0000115 "ancestor of type of evidence object" ;
+    rdfs:domain <http://bioentity.io/vocab/EvidenceType> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/closure_concept_slot> .
+
+<http://bioentity.io/vocab/has_evidence_object> a owl:ObjectProperty ;
+    rdfs:label "has evidence object" ;
+    obo:IAO_0000115 "connects an association to an supporting entity. May be a gene/product (if evidence is homology or protein interaction). Same as WITH/FROM column in GO/GAFs" ;
+    rdfs:domain <http://bioentity.io/vocab/NamedThing> ;
     owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
 
 <http://bioentity.io/vocab/isa_partof_closure> a owl:ObjectProperty ;
     rdfs:label "isa partof closure" ;
+    obo:IAO_0000115 "Ancestors (reflexive) of the object field following is_a (subClassOf) and part-of links. This is typically used as a query constraint and for faceting. The combination of is_a and part of is a common pattern, and can be used in gene expression queries (finding genes that are expressed in a structure, a subtype, or a part of that structure) or in GO queries (in any of the three branches of GO)" ;
     rdfs:domain <http://bioentity.io/vocab/Class> ;
     owl:subObjectPropertyOf <http://bioentity.io/vocab/closure_concept_slot> .
 
@@ -181,59 +224,71 @@
 
 <http://bioentity.io/vocab/object> a owl:ObjectProperty ;
     rdfs:label "object" ;
-    obo:IAO_0000115 "connects an association to the object" ;
+    obo:IAO_0000115 "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
     owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
 
 <http://bioentity.io/vocab/object_taxon> a owl:ObjectProperty ;
     rdfs:label "object taxon" ;
-    rdfs:domain <http://bioentity.io/vocab/Class> .
+    obo:IAO_0000115 "the taxonomic class of the entity in the object slot" ;
+    rdfs:domain <http://bioentity.io/vocab/OrganismTaxon> .
 
 <http://bioentity.io/vocab/object_taxon_closure> a owl:ObjectProperty ;
     rdfs:label "object taxon closure" ;
     obo:IAO_0000115 "The taxon class or ancestor class for the object" ;
     rdfs:domain <http://bioentity.io/vocab/Class> ;
-    owl:subObjectPropertyOf <http://bioentity.io/vocab/closure_concept_slot> .
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/taxon_closure_slot> .
 
 <http://bioentity.io/vocab/object_taxon_closure_label> a owl:ObjectProperty ;
     rdfs:label "object taxon closure label" ;
     obo:IAO_0000115 "The label for the taxon class or ancestor class for the object" ;
     rdfs:domain <http://bioentity.io/vocab/Class> ;
-    owl:subObjectPropertyOf <http://bioentity.io/vocab/closure_label_slot> .
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/taxon_closure_label_slot> .
 
 <http://bioentity.io/vocab/object_taxon_label> a owl:ObjectProperty ;
     rdfs:label "object taxon label" ;
-    rdfs:domain <http://bioentity.io/vocab/Class> .
-
-<http://bioentity.io/vocab/relation> a owl:ObjectProperty ;
-    rdfs:label "relation" ;
-    obo:IAO_0000115 "the relationship type by which a subject is connected to an object in an association" ;
-    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+    rdfs:domain <http://bioentity.io/vocab/Label> .
 
 <http://bioentity.io/vocab/subject> a owl:ObjectProperty ;
     rdfs:label "subject" ;
-    obo:IAO_0000115 "connects an association to the subject" ;
+    obo:IAO_0000115 "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
     owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/subject_extensions> a owl:ObjectProperty ;
+    rdfs:label "subject extensions" ;
+    obo:IAO_0000115 "Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state" ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/extensions_context_slot> .
 
 <http://bioentity.io/vocab/subject_taxon_closure_label> a owl:ObjectProperty ;
     rdfs:label "subject taxon closure label" ;
     obo:IAO_0000115 "The label for the taxon class or ancestor class for the subject" ;
-    owl:subObjectPropertyOf <http://bioentity.io/vocab/closure_label_slot> .
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/taxon_closure_label_slot> .
 
-<http://bioentity.io/vocab/subject_taxon_label> a owl:ObjectProperty ;
-    rdfs:label "subject taxon label" .
+<http://bioentity.io/vocab/DevelopmentalStage> a owl:Class ;
+    rdfs:label "developmental stage" ;
+    obo:IAO_0000115 "A stage of development or growth of an organism, including post-natal adult stages" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/NamedThing> .
 
 <http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation> a owl:Class ;
     rdfs:label "disease to phenotypic feature association" ;
     obo:IAO_0000115 "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way" ;
     rdfs:subClassOf <http://bioentity.io/vocab/Association> .
 
-<http://bioentity.io/vocab/OrganismType> a owl:Class ;
-    rdfs:label "organism type" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/OntologyClass> .
+<http://bioentity.io/vocab/IndividualOrganism> a owl:Class ;
+    rdfs:label "individual organism" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/NamedThing> .
 
 <http://bioentity.io/vocab/PopulationOfIndividualOrganisms> a owl:Class ;
     rdfs:label "population of individual organisms" ;
     rdfs:subClassOf <http://bioentity.io/vocab/NamedThing> .
+
+<http://bioentity.io/vocab/Provider> a owl:Class ;
+    rdfs:label "provider" ;
+    obo:IAO_0000115 "person, group, organization or project that provides a piece of information" .
+
+<http://bioentity.io/vocab/Publication> a owl:Class ;
+    rdfs:label "publication" ;
+    obo:IAO_0000115 "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals." ;
+    rdfs:subClassOf <http://bioentity.io/vocab/InformationContentEntity> .
 
 <http://bioentity.io/vocab/ThingWithTaxon> a owl:Class ;
     rdfs:label "thing with taxon" ;
@@ -241,42 +296,103 @@
     rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
             owl:someValuesFrom <http://bioentity.io/vocab/InTaxon> ] .
 
+<http://bioentity.io/vocab/Zygosity> a owl:Class ;
+    rdfs:label "zygosity" .
+
+<http://bioentity.io/vocab/associations> a owl:ObjectProperty ;
+    rdfs:label "associations" ;
+    rdfs:domain <http://bioentity.io/vocab/Association> .
+
 <http://bioentity.io/vocab/full_name> a owl:ObjectProperty ;
     rdfs:label "full name" ;
+    obo:IAO_0000115 "a long-form human readable name for a thing" ;
     rdfs:domain <http://bioentity.io/vocab/LabelType>,
+        <http://bioentity.io/vocab/NamedThing> .
+
+<http://bioentity.io/vocab/has_evidence> a owl:ObjectProperty ;
+    rdfs:label "has evidence" ;
+    obo:IAO_0000115 "connects an association to an instance of supporting evidence" ;
+    rdfs:domain <http://bioentity.io/vocab/EvidenceInstance> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/has_evidence_type> a owl:ObjectProperty ;
+    rdfs:label "has evidence type" ;
+    obo:IAO_0000115 "connects an association to the class of evidence used" ;
+    rdfs:domain <http://bioentity.io/vocab/EvidenceType> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/has_zygosity> a owl:ObjectProperty ;
+    rdfs:label "has zygosity" ;
+    rdfs:domain <http://bioentity.io/vocab/SingleLocusFeatureComplement>,
+        <http://bioentity.io/vocab/Zygosity> .
+
+<http://bioentity.io/vocab/id> a owl:ObjectProperty ;
+    rdfs:label "id" ;
+    rdfs:domain <http://bioentity.io/vocab/IdentifierType>,
         <http://bioentity.io/vocab/NamedThing> .
 
 <http://bioentity.io/vocab/in_taxon> a owl:ObjectProperty ;
     rdfs:label "in taxon" ;
-    rdfs:domain <http://bioentity.io/vocab/OrganismType>,
+    obo:IAO_0000115 "connects a thing to a class representing a taxon" ;
+    rdfs:domain <http://bioentity.io/vocab/OrganismTaxon>,
         <http://bioentity.io/vocab/ThingWithTaxon> .
 
 <http://bioentity.io/vocab/label> a owl:ObjectProperty ;
     rdfs:label "label" ;
+    obo:IAO_0000115 "A human-readable name for a thing" ;
     rdfs:domain <http://bioentity.io/vocab/LabelType>,
         <http://bioentity.io/vocab/NamedThing> .
 
 <http://bioentity.io/vocab/negated> a owl:ObjectProperty ;
     rdfs:label "negated" ;
-    obo:IAO_0000115 "if set then the association is negated" ;
+    obo:IAO_0000115 "if set to true, then the association is negated i.e. is not true" ;
     rdfs:domain <http://bioentity.io/vocab/Boolean> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/object_extensions> a owl:ObjectProperty ;
+    rdfs:label "object extensions" ;
+    obo:IAO_0000115 "Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links" ;
+    rdfs:domain <http://bioentity.io/vocab/PropertyValuePair> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/extensions_context_slot> .
+
+<http://bioentity.io/vocab/provided_by> a owl:ObjectProperty ;
+    rdfs:label "provided by" ;
+    obo:IAO_0000115 "connects an association to the agent (person, organization or group) that provided it" ;
+    rdfs:domain <http://bioentity.io/vocab/Provider> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/publications> a owl:ObjectProperty ;
+    rdfs:label "publications" ;
+    obo:IAO_0000115 "connects an association to publications supporting the association" ;
+    rdfs:domain <http://bioentity.io/vocab/Publication> ;
     owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
 
 <http://bioentity.io/vocab/qualifiers> a owl:ObjectProperty ;
     rdfs:label "qualifiers" ;
-    obo:IAO_0000115 "qualifiers" ;
+    obo:IAO_0000115 "connects an association to qualifiers that modify or qualify the meaning of that association" ;
     rdfs:domain <http://bioentity.io/vocab/Class> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/stage_qualifier> a owl:ObjectProperty ;
+    rdfs:label "stage qualifier" ;
+    obo:IAO_0000115 "stage at which expression takes place" ;
+    rdfs:domain <http://bioentity.io/vocab/DevelopmentalStage> ;
     owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
 
 <http://bioentity.io/vocab/subject_taxon> a owl:ObjectProperty ;
     rdfs:label "subject taxon" ;
-    rdfs:domain <http://bioentity.io/vocab/Class> .
+    obo:IAO_0000115 "the taxonomic class of the entity in the object slot" ;
+    rdfs:domain <http://bioentity.io/vocab/OrganismTaxon> .
 
 <http://bioentity.io/vocab/subject_taxon_closure> a owl:ObjectProperty ;
     rdfs:label "subject taxon closure" ;
     obo:IAO_0000115 "The taxon class or ancestor class for the subject" ;
     rdfs:domain <http://bioentity.io/vocab/Class> ;
-    owl:subObjectPropertyOf <http://bioentity.io/vocab/closure_concept_slot> .
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/taxon_closure_slot> .
+
+<http://bioentity.io/vocab/subject_taxon_label> a owl:ObjectProperty ;
+    rdfs:label "subject taxon label" ;
+    rdfs:domain <http://bioentity.io/vocab/Label> .
 
 <http://bioentity.io/vocab/systematic_synonym> a owl:ObjectProperty ;
     rdfs:label "systematic synonym" ;
@@ -288,14 +404,15 @@
     rdfs:label "condition or phenotypic feature" ;
     rdfs:subClassOf <http://bioentity.io/vocab/OntologyClass> .
 
+<http://bioentity.io/vocab/EvidenceType> a owl:Class ;
+    rdfs:label "evidence type" ;
+    obo:IAO_0000115 "Class of evidence that supports an association" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/InformationContentEntity> .
+
 <http://bioentity.io/vocab/GeneOrGeneProduct> a owl:Class ;
     rdfs:label "gene or gene product" ;
     obo:IAO_0000115 "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another" ;
-    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/systematic_synonym> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/SystematicSynonym> ],
-        [ owl:onProperty <http://bioentity.io/vocab/full_name> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/FullName> ],
-        <http://bioentity.io/vocab/GenomicEntity> .
+    rdfs:subClassOf <http://bioentity.io/vocab/GenomicEntity> .
 
 <http://bioentity.io/vocab/GeneProduct> a owl:Class ;
     rdfs:label "gene product" ;
@@ -303,38 +420,66 @@
 
 <http://bioentity.io/vocab/GeneToGeneAssociation> a owl:Class ;
     rdfs:label "gene to gene association" ;
-    obo:IAO_0000115 "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction" ;
+    obo:IAO_0000115 "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction." ;
     rdfs:subClassOf <http://bioentity.io/vocab/Association> .
-
-<http://bioentity.io/vocab/InformationContentEntity> a owl:Class ;
-    rdfs:label "information content entity" ;
-    obo:IAO_0000115 "a piece of information that typically describes some piece of biology or is used as support." ;
-    rdfs:subClassOf <http://bioentity.io/vocab/NamedThing> .
 
 <http://bioentity.io/vocab/OntologyClass> a owl:Class ;
     rdfs:label "ontology class" ;
     obo:IAO_0000115 "a concept or class in an ontology, vocabulary or thesaurus" ;
     rdfs:subClassOf <http://bioentity.io/vocab/NamedThing> .
 
-<http://bioentity.io/vocab/id> a owl:ObjectProperty ;
-    rdfs:label "id" ;
-    rdfs:domain <http://bioentity.io/vocab/IdentifierType>,
-        <http://bioentity.io/vocab/NamedThing> .
+<http://bioentity.io/vocab/PropertyValuePair> a owl:Class ;
+    rdfs:label "property value pair" ;
+    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Relation> ] .
+
+<http://bioentity.io/vocab/closure_label_slot> a owl:ObjectProperty ;
+    rdfs:label "closure label slot" ;
+    obo:IAO_0000115 "parent field for fields used for storing the label of the closure concept. See also: closure concept field" ;
+    rdfs:domain <http://bioentity.io/vocab/Label> .
+
+<http://bioentity.io/vocab/extensions_context_slot> a owl:ObjectProperty ;
+    rdfs:label "extensions context slot" ;
+    obo:IAO_0000115 "A parent slot for subject and object extension. Extensions are a way to provide additional context or subtyping (aka post-composition or post-coordination) on a class" ;
+    rdfs:domain <http://bioentity.io/vocab/PropertyValuePair> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/relation> a owl:ObjectProperty ;
+    rdfs:label "relation" ;
+    obo:IAO_0000115 "the relationship type by which a subject is connected to an object in an association" ;
+    rdfs:domain <http://bioentity.io/vocab/RelationshipType> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/taxon_closure_label_slot> a owl:ObjectProperty ;
+    rdfs:label "taxon closure label slot" ;
+    obo:IAO_0000115 "label for taxon closure slot" ;
+    rdfs:domain <http://bioentity.io/vocab/Label> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/closure_label_slot> .
+
+<http://bioentity.io/vocab/taxon_closure_slot> a owl:ObjectProperty ;
+    rdfs:label "taxon closure slot" ;
+    obo:IAO_0000115 "a closure slot that includes a taxon and all ancestral taxa" ;
+    rdfs:domain <http://bioentity.io/vocab/OrganismTaxon> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/closure_concept_slot> .
 
 <http://bioentity.io/vocab/GenomicEntity> a owl:Class ;
     rdfs:label "genomic entity" ;
     obo:IAO_0000115 "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)" ;
     rdfs:subClassOf <http://bioentity.io/vocab/MolecularEntity> .
 
+<http://bioentity.io/vocab/InformationContentEntity> a owl:Class ;
+    rdfs:label "information content entity" ;
+    obo:IAO_0000115 "a piece of information that typically describes some piece of biology or is used as support." ;
+    rdfs:subClassOf <http://bioentity.io/vocab/NamedThing> .
+
 <http://bioentity.io/vocab/closure_concept_slot> a owl:ObjectProperty ;
     rdfs:label "closure concept slot" ;
     obo:IAO_0000115 "parent field for fields used for storing inferred relationships to a class or relation" ;
     rdfs:domain <http://bioentity.io/vocab/Class> .
 
-<http://bioentity.io/vocab/closure_label_slot> a owl:ObjectProperty ;
-    rdfs:label "closure label slot" ;
-    obo:IAO_0000115 "parent field for fields used for storing the label of the closure concept. See also: closure concept field" ;
-    rdfs:domain <http://bioentity.io/vocab/Label> .
+<http://bioentity.io/vocab/OrganismTaxon> a owl:Class ;
+    rdfs:label "organism taxon" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/OntologyClass> .
 
 <http://bioentity.io/vocab/MolecularEntity> a owl:Class ;
     rdfs:label "molecular entity" ;
@@ -343,6 +488,7 @@
 
 <http://bioentity.io/vocab/association_slot> a owl:ObjectProperty ;
     rdfs:label "association slot" ;
+    obo:IAO_0000115 "any slot that relates an association to another entity" ;
     rdfs:domain <http://bioentity.io/vocab/Association> .
 
 <http://bioentity.io/vocab/NamedThing> a owl:Class ;
@@ -355,11 +501,22 @@
 
 <http://bioentity.io/vocab/Association> a owl:Class ;
     rdfs:label "association" ;
-    obo:IAO_0000115 "Any kind of association between two entities" ;
-    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/negated> ;
+    obo:IAO_0000115 "A typed association between two entities, supported by evidence" ;
+    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/has_evidence_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/HasEvidenceType> ],
+        [ owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publications> ],
+        [ owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Relation> ],
+        [ owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/ProvidedBy> ],
+        [ owl:onProperty <http://bioentity.io/vocab/has_evidence> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/HasEvidence> ],
+        [ owl:onProperty <http://bioentity.io/vocab/negated> ;
             owl:someValuesFrom <http://bioentity.io/vocab/Negated> ],
         [ owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
             owl:someValuesFrom <http://bioentity.io/vocab/Qualifiers> ],
-        [ owl:onProperty <http://bioentity.io/vocab/id> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/Id> ] .
+        [ owl:onProperty <http://bioentity.io/vocab/object_extensions> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/ObjectExtensions> ],
+        <http://bioentity.io/vocab/InformationContentEntity> .
 

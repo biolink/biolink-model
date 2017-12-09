@@ -55,19 +55,20 @@ def tr_class(c, schema):
         'weight': 20
         }
     fields = []
-    slots = get_slots_inf(c, schema)
+    slots = get_slot_names_inf(c, schema, use_mixins=True)
     for sn in slots:
+        slot_id = get_slot_name_from_obj(sn)
         s = get_slot(sn, schema)
         field = {}
         if not s:
             logging.error("No slot info for: {}".format(sn))
             field = {
-                'id': sn,
+                'id': slot_id,
                 'display_name': sn
             }
         else:
             field = {
-                'id': get_slot_name(s.name),
+                'id': slot_id,
                 'description': s.description,
                 'display_name': s.name,
             }

@@ -4,7 +4,7 @@ description: this serves as exemplar for the time being, corresponding to the bi
 display_name: bioentity with go terms
 document_category: bioentity with go terms
 fields:
-- display_name: in_family
+- display_name: in family
   id: in_family
   property: []
 - display_name: isa_partof_closure
@@ -17,9 +17,15 @@ fields:
   display_name: id
   id: id
   property: []
-- description: null
+- description: A human-readable name for a thing
   display_name: label
   id: label
+  property: []
+- display_name: full_name
+  id: full_name
+  property: []
+- display_name: systematic_synonym
+  id: systematic_synonym
   property: []
 id: bioentity with go terms
 schema_generating: true

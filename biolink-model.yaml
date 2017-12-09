@@ -5,9 +5,14 @@ types:
 
   - name: identifier type
     typeof: string
+    description: >-
+      A string that is intended to uniquely identify a thing
+      May be URI in full or compact (CURIE) form
 
   - name: label type
     typeof: string
+    description: >-
+      A string that provides a human-readable name for a thing
 
   - name: symbol type
     typeof: string
@@ -23,12 +28,16 @@ slots:
   - name: label
     domain: named thing
     range: label type
+    description: >-
+      A human-readable name for a thing
     mappings:
       - "rdfs:label"
   
   - name: full name
     domain: named thing
     range: label type
+    description: >-
+      a long-form human readable name for a thing
   
   - name: systematic synonym
     domain: named thing
@@ -38,17 +47,23 @@ slots:
   
   - name: in taxon
     domain: thing with taxon
-    range: organism type
+    range: organism taxon
+    description: >-
+      connects a thing to a class representing a taxon
     mappings:
       - "RO:0002162"
     
   - name: association slot
     abstract: true
     domain: association
+    description: >-
+      any slot that relates an association to another entity
     
   - name: subject
     is_a: association slot
-    description: connects an association to the subject
+    description: >-
+      connects an association to the subject of the association.
+      For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     mappings:
       - rdf:subject
       - owl:annotatedSource
@@ -56,7 +71,9 @@ slots:
       
   - name: object
     is_a: association slot
-    description: connects an association to the object
+    description: >-
+      connects an association to the object of the association.
+      For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     mappings:
       - rdf:object
       - owl:annotatedTarget
@@ -64,7 +81,9 @@ slots:
 
   - name: relation
     is_a: association slot
-    description: the relationship type by which a subject is connected to an object in an association
+    description: >-
+      the relationship type by which a subject is connected to an object in an association
+    range: relationship type
     mappings:
       - "rdf:predicate"
       - "owl:annotatedProperty"
@@ -73,13 +92,66 @@ slots:
   - name: negated
     is_a: association slot
     range: boolean
-    description: if set then the association is negated
+    description: >-
+      if set to true, then the association is negated i.e. is not true
+
+  - name: extensions context slot
+    is_a: association slot
+    abstract: true
+    range: property value pair
+    description: >-
+      A parent slot for subject and object extension. Extensions are a way to provide additional context
+      or subtyping (aka post-composition or post-coordination) on a class
+      
+  - name: subject extensions
+    is_a: extensions context slot
+    description: >-
+      Additional relationships that are true of the subject in the context of the association.
+      For example, if the subject is a gene product in a functional association,
+      the subject extensions may represent  an isoform or a specific post-translational state
+      
+  - name: object extensions
+    is_a: extensions context slot
+    range: property value pair
+    description: >-
+      Additional relationships that are true of the object in the context of the association.
+      For example, if the object is an anatomical term in an expression association,
+      the object extensions may include part-of links
 
   - name: has evidence
     is_a: association slot
     range: evidence instance
     description: >-
-      connects an association to a piece of supporting evidence
+      connects an association to an instance of supporting evidence
+
+  - name: has evidence object
+    is_a: association slot
+    range: named thing
+    description: >-
+      connects an association to an supporting entity. May be a gene/product (if evidence is homology or protein interaction).
+      Same as WITH/FROM column in GO/GAFs
+
+  - name: has evidence type
+    is_a: association slot
+    range: evidence type
+    path: evidence/type
+    description: >-
+      connects an association to the class of evidence used
+
+  - name: provided by
+    is_a: association slot
+    range: provider
+    description: >-
+      connects an association to the agent (person, organization or group) that provided it
+    mappings:
+      - prov:providedBy
+
+  - name: creation date
+    range: date
+    description: >-
+      date on which thing was created
+    mappings:
+      - dc:created
 
   - name: stage qualifier
     is_a: association slot
@@ -90,26 +162,42 @@ slots:
   - name: qualifiers
     singular_name: qualifier
     description: >-
-      connects an association to qualifiers that modify or qualify the meaning
+      connects an association to qualifiers that modify or qualify the meaning of that association
     is_a: association slot
     multivalued: true
-    description: qualifiers
     range: class
+
+  - name: publications
+    singular_name: publication
+    description: >-
+      connects an association to publications supporting the association
+    is_a: association slot
+    multivalued: true
+    range: publication
 
   - name: object taxon
-    range: class
-    path: object/taxon
+    range: organism taxon
+    path: object/in_taxon
+    description: >-
+      the taxonomic class of the entity in the object slot
 
   - name: object taxon label
-    range: class
-    path: object/taxon/label
+    range: label
+    path: object/in_taxon/label
 
   - name: subject taxon
-    range: class
-    path: subject/taxon
+    range: organism taxon
+    path: subject/in_taxon
+    description: >-
+      the taxonomic class of the entity in the object slot
 
   - name: subject taxon label
-    path: subject/taxon/label
+    path: subject/in_taxon/label
+    range: label
+
+  - name: has zygosity
+    domain: single locus feature complement
+    range: zygosity
 
   ## ------
   ## CLOSURES
@@ -130,44 +218,77 @@ slots:
       See also: closure concept field
     range: label
     
-  - name: subject taxon closure
+  - name: taxon closure slot
     is_a: closure concept slot
+    description: >-
+      a closure slot that includes a taxon and all ancestral taxa
+    range: organism taxon
+    
+  - name: taxon closure label slot
+    is_a: closure label slot
+    description: >-
+      label for taxon closure slot
+    range: label
+    
+  - name: subject taxon closure
+    is_a: taxon closure slot
     description: >-
       The taxon class or ancestor class for the subject
     range: class
-    path: subject/taxon*
+    path: subject/in_taxon*
     
   - name: subject taxon closure label
-    is_a: closure label slot
+    is_a: taxon closure label slot
     description: >-
       The label for the taxon class or ancestor class for the subject
     multivalued: true
-    path: subject/taxon*/label
+    path: subject/in_taxon*/label
     
   - name: object taxon closure
-    is_a: closure concept slot
+    is_a: taxon closure slot
     description: >-
       The taxon class or ancestor class for the object
     range: class
-    path: object/taxon*
+    path: object/in_taxon*
     
   - name: object taxon closure label
-    is_a: closure label slot
+    is_a: taxon closure label slot
     description: >-
       The label for the taxon class or ancestor class for the object
     range: class
-    path: object/taxon*/label
+    path: object/in_taxon*/label
     
   - name: isa partof closure
     is_a: closure concept slot
     range: class
-    path: "subject/{rdfs:subClassOf|BFO:0000050}"
+    description: >-
+      Ancestors (reflexive) of the object field following is_a (subClassOf) and part-of links.
+      This is typically used as a query constraint and for faceting.
+      The combination of is_a and part of is a common pattern, and can be used in gene expression
+      queries (finding genes that are expressed in a structure, a subtype, or a part of that structure)
+      or in GO queries (in any of the three branches of GO)
+    path: "object/{rdfs:subClassOf|BFO:0000050}*"
     
   - name: isa partof closure label
     is_a: closure label slot
     range: class
-    path: "subject/{rdfs:subClassOf|BFO:0000050}"
+    path: "object/{rdfs:subClassOf|BFO:0000050}*/label"
+
+  - name: evidence object closure
+    is_a: closure concept slot
+    range: evidence type
+    description: >-
+      ancestor of type of evidence object
+    path: "evidence object/rdfs:subClassOf*"
     
+  ## ------
+  ## OTHER
+  ## ------
+
+  - name: associations
+    multivalued: true
+    range: association
+  
 classes:
 
   ## ------
@@ -192,7 +313,7 @@ classes:
     slots:
       - in taxon
       
-  - name: organism type
+  - name: organism taxon
     is_a: ontology class
     values_from:
       - ncbitaxon
@@ -201,7 +322,13 @@ classes:
     mixins:
       - thing with taxon
     is_a: named thing
-      
+
+  - name: case
+    aliases: ['patient', 'proband']
+    is_a: individual organism
+    description: >-
+      An individual organism that has a patient role in some clinical context.
+    
   - name: population of individual organisms
     mixins:
       - thing with taxon
@@ -248,7 +375,9 @@ classes:
     is_a: information content entity
     aliases: ['evidence code']
     description: >-
-      Evidence that supports an association
+      Class of evidence that supports an association
+    values_from:
+      - eco
     mappings:
       - "ECO:0000000"
       
@@ -261,6 +390,11 @@ classes:
       The scope is intended to be general and include information published on the web as well as journals.
     mappings:
       - "IAO:0000311"
+      
+  - name: provider
+    aliases: ['agent', 'group']
+    description: >-
+      person, group, organization or project that provides a piece of information
       
   - name: molecular entity
     is_a: named thing
@@ -291,6 +425,13 @@ classes:
     description: >-
       A stage of development or growth of an organism, including post-natal adult stages
 
+  - name: has genomic name
+    abstract: true
+    mixin: true
+    slots:
+      - full name
+      - systematic synonym
+      
   - name: genomic entity
     is_a: molecular entity
     aliases: ['sequence feature']
@@ -305,12 +446,9 @@ classes:
     description: >-
       a union of genes or gene products.
       Frequently an identifier for one will be used as proxy for another
-    slots:
-      - full name
-      - systematic synonym
     slot_usage:
       - name: label
-        type: symbol type
+        range: symbol type
         description: >-
           genes are typically designated by a short symbol and a full name. We map the symbol to the default display label
           and use an additional slot for full name
@@ -342,13 +480,31 @@ classes:
     mappings:
       - "GO:0032991"
 
+  - name: gene grouping
+    abstract: true
+    mixin: true
+    description: >-
+      any grouping of multiple genes or gene products
+
   - name: gene family
     is_a: molecular entity
+    mixins:
+      - gene family
     description: >-
-      a grouping of multiple genes or gene products related by common descent
+      any grouping of multiple genes or gene products related by common descent
+
+  - name: zygosity
+    mappings:
+      - "GENO:0000133"
 
   - name: genotype
     is_a: genomic entity
+    description: >-
+      An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
+    slots:
+      - has zygosity
+    mapping:
+      - "GENO:0000536"
 
   - name: sequence variant
     aliases: ['allele']
@@ -357,7 +513,8 @@ classes:
       A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.
     mappings:
       - "GENO:0000512"
-    
+
+  
         
   ## ------
   ## ASSOCIATIONS
@@ -365,27 +522,46 @@ classes:
       
   - name: association
     abstract: true
-    description: "Any kind of association between two entities"
+    is_a: information content entity
+    description: >-
+      A typed association between two entities, supported by evidence
+    comment: This is roughly the model used by biolink and ontobio at the moment
     slots:
-      - id
       - type
       - subject
       - negated
       - relation
       - object
       - qualifiers
-      - subject extension
-      - object extension
+      - subject extensions
+      - object extensions
       - publications
       - provided by
-      - evidence graph
-      - evidence type
-      - evidence
+      - has evidence graph
+      - has evidence type
+      - has evidence
     mappings:
       - "OBAN:association"
       - "rdf:Statement"
       - "owl:Axiom"
-      
+
+  - name: genotype to genotype part association
+    is_a: association
+    description: >-
+      Any association between one genotype and a genotypic entity that is a sub-component of it
+    slot_usage:
+      - name: id
+        description: identifier of the association
+      - name: relation
+        subproperty_of: "GENO:0000382"
+      - name: subject
+        range: genotype
+        description: >-
+          parent genotype
+      - name: object
+        range: genotype
+        description: >-
+          child genotype
 
   - name: gene to gene association
     aliases: ['molecular or genetic interaction']
@@ -393,49 +569,53 @@ classes:
     is_a: association
     description: >-
       abstract parent class for different kinds of gene-gene or gene product to gene product relationships.
-      Includes homology and interaction
+      Includes homology and interaction.
     slot_usage:
-      - slot: subject
-        type: gene product
-        description: "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary"
-      - slot: object
-        type: gene product
-        description: "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary"
+      - name: subject
+        range: gene or gene product
+        description: >-
+          the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary.
+          We allow a gene product to stand as proxy for the gene or vice versa
+      - name: object
+        range: gene or gene product
+        description: >-
+          the object gene in the association. If the relation is symmetric, subject vs object is arbitrary.
+          We allow a gene product to stand as proxy for the gene or vice versa
+
 
   - name: gene to gene homology association
     is_a: gene to gene association
     mixins:
-      - generic homology association
+      - generic homology association  ## TODO
     description: >-
       A homology association between two genes. May be orthology (in which case the species of subject and object
       should differ) or paralogy (in which case the species may be the same)
     symmetric: true
     slot_usage:
-      - slot: subject
-        type: gene product
-        description: "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary"
-      - slot: object
-        type: gene product
-        description: "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary"
-      - slot: relation
-        type: homology relation
+      - name: relation
+        range: homology relation
+        subproperty_of: "RO:HOM0000001"
         values_from:
           - ro
         description: "homology relationship type"
 
-  - name: gene or protein interaction
+  - name: pairwise gene or protein interaction association
     is_a: gene to gene association
+    mixins:
+      - interaction relationship
     description: >-
       An interaction between two genes or two gene products.
       May be physical (e.g. protein binding) or genetic (between genes).
       May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+    symmetric: true
     slot_usage:
-      - slot: subject
-        type: gene product
-        description: "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary"
-      - slot: object
-        type: gene product
-        description: "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary"
+      - name: relation
+        range: homology relation
+        subproperty_of: "RO:0002436"
+        values_from:
+          - ro
+          - mi
+        description: "interaction relationship type"
 
   - name: chemical to thing association
     is_a: association
@@ -443,9 +623,19 @@ classes:
     description: >-
       An interaction between a chemical entity and another entity
     slot_usage:
-      - slot: subject
-        type: chemical substance
+      - name: subject
+        range: chemical substance
         description: "the chemical substance or entity that is an interactor"
+
+  - name: case to thing association
+    is_a: association
+    abstract: true
+    description: >-
+      An abstract association for use where the case is the subject
+    slot_usage:
+      - name: subject
+        range: case
+        description: "the case (e.g. patient) that has the property"
 
   - name: chemical to gene association
     is_a: association
@@ -455,8 +645,8 @@ classes:
       An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may
       be a drug with the gene being a target of the drug.
     slot_usage:
-      - slot: object
-        type: gene product
+      - name: object
+        range: gene product
         description: "the gene or gene product with which the chemical interacts"
 
   - name: chemical to disease or phenotypic feature association
@@ -467,16 +657,16 @@ classes:
       An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to
       or exacerbates the phenotype
     slot_usage:
-      - slot: object
-        type: disease or phenotypic feature
+      - name: object
+        range: disease or phenotypic feature
         description: "the disease or phenotype that is affected by the chemical"
         
   - name: entity to phenotypic feature association
     abstract: true
     is_a: association
     slot_usage:
-      - slot: object
-        type: phenotypic feature
+      - name: object
+        range: phenotypic feature
         description: "phenotypic class"
         values_from: ['upheno', 'hp', 'mp', 'wbphenotypic feature']
         subclass_of: UPHENO:0000001
@@ -490,33 +680,77 @@ classes:
       - severity
       - onset
 
-  - name: disease to entity association
+  - name: disease to thing association
     abstract: true
     is_a: association
     slot_usage:
-      - slot: subject
-        type: disease
+      - name: subject
+        range: disease
         description: "disease class"
         values_from: ['mondo', 'omim', 'orphanet', 'ncit', 'doid']
         subclass_of: MONDO:0000001
         examples:
           - value: MONDO:0017314
             description: "Ehlers-Danlos syndrome, vascular type"
-      
+
+
+  - name: genotype to phenotypic feature association
+    is_a: association
+    description: >-
+      Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype,
+      either in isolation or through environment
+    mixins:
+      - entity to phenotypic feature association
+    slot_usage:
+      - name: relation
+        subproperty_of: "GENO:0000382"
+      - name: subject
+        range: genotype
+        description: >-
+          genotype that is associated with the phenotypic feature
+
+  - name: environment to phenotypic feature association
+    is_a: association
+    description: >-
+      Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+    mixins:
+      - entity to phenotypic feature association
+    slot_usage:
+      - name: subject
+        range: environment
+          
   - name: disease to phenotypic feature association
     is_a: association
     description: "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
     mixins:
       - entity to phenotypic feature association
-      - disease to entity association
+      - disease to thing association
+      
+  - name: case to phenotypic feature association
+    is_a: association
+    description: "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
+    mixins:
+      - entity to phenotypic feature association
+      - case to thing association
       
   - name: gene to phenotypic feature association
     is_a: association
     mixins:
       - entity to phenotypic feature association
+      - gene to thing association
     slot_usage:
-      - slot: subject
-        type: gene or gene product
+      - name: subject
+        range: gene or gene product
+        description: "gene in which variation is correlated with the phenotypic feature"
+      
+  - name: genotype to phenotypic feature association
+    is_a: association
+    mixins:
+      - entity to phenotypic feature association
+      - genotype to thing association
+    slot_usage:
+      - name: subject
+        range: gene or gene product
         description: "gene in which variation is correlated with the phenotypic feature"
         
   - name: gene to expression site association
@@ -529,26 +763,26 @@ classes:
       - stage qualifier
       - quantifier
     slot_usage:
-      - slot: subject
-        type: gene or gene product
+      - name: subject
+        range: gene or gene product
         description: "gene in which variation is correlated with the phenotypic feature"
-      - slot: object
-        type: anatomical entity
+      - name: object
+        range: anatomical entity
         description: "location in which the gene is expressed"
         subclass_of: UBERON:0001062
         examples:
           - value: UBERON:0002037
             description: cerebellum
-      - slot: relation
+      - name: relation
         description: "expression relationship"
         subproperty_of: "RO:0002206"
-      - slot: stage qualifier
-        type: developmental stage
+      - name: stage qualifier
+        range: developmental stage
         description: "stage at which the gene is expressed in the site"
         examples:
           - value: UBERON:0000069
             description: larval stage
-      - slot: quantifier
+      - name: quantifier
         description: >-
           can be used to indicate magnitude, or also ranking
         
@@ -556,8 +790,8 @@ classes:
     aliases: ['functional association']
     is_a: association
     slot_usage:
-      - slot: subject
-        type: molecular entity
+      - name: subject
+        range: molecular entity
         aliases:
           - name: bioentity
             schema: amigo
@@ -565,8 +799,8 @@ classes:
         examples:
           - value: ZFIN:ZDB-GENE-050417-357
             description: twist1b
-      - slot: object
-        type: gene ontology term
+      - name: object
+        range: gene ontology term
         aliases:
           - name: class
             schema: amigo
@@ -589,10 +823,26 @@ classes:
   - name: disease to phenotypic feature denormalized association
     is_a: disease to phenotypic feature association
     
-  - name: association set
+  - name: association result set
     slots:
       - associations
 
+#  - name: "% result set"
+#    template: true
+#    parameters:
+#      - name: type
+#    slots:
+#      - results
+
+  ## ------
+  ## GENERIC
+  ## ------
+
+  - name: property value pair
+    slots:
+      - relation
+      - value
+  
   ## ------
   ## SEQUENCE FEATURES
   ## ------
@@ -648,6 +898,8 @@ classes:
   - name: bioentity with go terms
     schema: amigo
     is_a: molecular entity
+    mixins:
+      - has genomic name
     description: >-
       this serves as exemplar for the time being, corresponding to the bioentity document type in amigo, which has a single
       entry per bioentity, with associated GO information

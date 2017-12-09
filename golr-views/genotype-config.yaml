@@ -1,12 +1,18 @@
-description: null
+description: An information content entity that describes a genome by specifying the
+  total variation in genomic sequence and/or gene expression, relative to some extablished
+  background
 display_name: genotype
 document_category: genotype
 fields:
 - description: null
+  display_name: has zygosity
+  id: has_zygosity
+  property: []
+- description: null
   display_name: id
   id: id
   property: []
-- description: null
+- description: A human-readable name for a thing
   display_name: label
   id: label
   property: []
