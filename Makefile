@@ -37,6 +37,10 @@ ontology/%.png: ontology/%.json
 gv: biolink-model.yaml 
 	./bin/gen-graphviz.py -d graphviz $<
 
+graphviz/%.png: biolink-model.yaml 
+	./bin/gen-graphviz.py  -c $* $< -o graphviz/$*
+
+
 #biolinkmodel/schema.py: biolink-model.yaml
 #	./bin/gen-mm-schema.py $< > $@
 
@@ -75,8 +79,11 @@ metamodel/jsonschema/metamodel.json: meta.yaml
 	bin/gen-json-schema.py $< > $@
 
 MM = metamodel/metamodel.py
+#MMS = metamodel/metaschema.py
 regen-mm:
 	./bin/gen-py-classes.py meta.yaml  > $(MM)-tmp.py && python $(MM)-tmp.py && cp $(MM) $(MM)-PREV && mv $(MM)-tmp.py $(MM)
+#regen-mms:
+#	./bin/gen-mm-schema.py meta.yaml  > $(MM)-tmp.py && python $(MM)-tmp.py && cp $(MM) $(MM)-PREV && mv $(MM)-tmp.py $(MM)
 
 # ----------------------------------------
 # UTILS

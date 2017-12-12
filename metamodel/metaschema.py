@@ -4,6 +4,7 @@ from marshmallow import Schema, fields, pprint, post_load
 from metamodel.metamodel import *
 
 class DefinitionSchema(Schema):
+    id = fields.Str()
     name = fields.Str()
     singular_name = fields.Str()
     is_a = fields.Str()
@@ -21,6 +22,7 @@ class SlotDefinitionSchema(DefinitionSchema):
     range = fields.Str()
     multivalued = fields.Boolean()
     path = fields.Str()
+    subproperty_of = fields.Str()
 
     @post_load
     def make_object(self, data):

@@ -38,6 +38,7 @@ class SlotDefinition(Definition):
                  range=None,
                  multivalued=None,
                  path=None,
+                 subproperty_of=None,
                  name=None,
                  singular_name=None,
                  is_a=None,
@@ -51,6 +52,7 @@ class SlotDefinition(Definition):
         self.range=range
         self.multivalued=multivalued
         self.path=path
+        self.subproperty_of=subproperty_of
         self.name=name
         self.singular_name=singular_name
         self.is_a=is_a
@@ -59,7 +61,7 @@ class SlotDefinition(Definition):
         self.mappings=mappings
 
     def __str__(self):
-        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} path={} name={} singular_name={} is_a={} description={} abstract={} mappings={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.path,self.name,self.singular_name,self.is_a,self.description,self.abstract,self.mappings)
+        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} path={} subproperty_of={} name={} singular_name={} is_a={} description={} abstract={} mappings={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.path,self.subproperty_of,self.name,self.singular_name,self.is_a,self.description,self.abstract,self.mappings)
     def __repr__(self):
         return self.__str__()
 
@@ -76,6 +78,7 @@ class SlotUsageDefinition(SlotDefinition):
                  range=None,
                  multivalued=None,
                  path=None,
+                 subproperty_of=None,
                  name=None,
                  singular_name=None,
                  is_a=None,
@@ -89,6 +92,7 @@ class SlotUsageDefinition(SlotDefinition):
         self.range=range
         self.multivalued=multivalued
         self.path=path
+        self.subproperty_of=subproperty_of
         self.name=name
         self.singular_name=singular_name
         self.is_a=is_a
@@ -97,7 +101,7 @@ class SlotUsageDefinition(SlotDefinition):
         self.mappings=mappings
 
     def __str__(self):
-        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} path={} name={} singular_name={} is_a={} description={} abstract={} mappings={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.path,self.name,self.singular_name,self.is_a,self.description,self.abstract,self.mappings)
+        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} path={} subproperty_of={} name={} singular_name={} is_a={} description={} abstract={} mappings={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.path,self.subproperty_of,self.name,self.singular_name,self.is_a,self.description,self.abstract,self.mappings)
     def __repr__(self):
         return self.__str__()
 

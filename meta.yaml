@@ -29,6 +29,17 @@ slots:
       Similar to abstract
     range: boolean
     
+  - name: subproperty_of
+    description: >-
+      Ontolgy property which this is a subproperty of
+    range: string
+    
+  - name: subclass_of
+    description: >-
+      Ontolgy property which this is a subclass of.
+      Not to be confused with is_a which links datamodel classes
+    range: string
+    
   - name: path
     description: >-
       For any denormalized slot, this represents the tree or graph path used to generate the denormalized form
@@ -97,6 +108,7 @@ classes:
       - range
       - multivalued
       - path
+      - subproperty_of
 
   - name: slot usage definition
     description: "A usage of slot in the context of a class"

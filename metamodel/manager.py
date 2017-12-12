@@ -151,30 +151,7 @@ class Manager(object):
 
         Arguments can be either names or instances of SlotDefinition/ClassDefinition classes
         """
-        classdef = self.classdef(c)
-        s = self.slotdef(s)
-
-        # class-specific usage takes priority
-        if classdef is not None and classdef.slot_usage is not None:
-            for su in classdef.slot_usage:
-                if su.name == s.name and su.range:
-                    return su.range
-
-        # general range for slot
-        if s.range:
-            return s.range
-
-        if c.mixins:
-            for m in c.mixins:
-                r = self.class_slot_range(c, s)
-                if r is not None:
-                    return r
-        if c.is_a:
-            r = self.class_slot_range(self, c.is_a, s)
-            if r is not None:
-                return r
-        
-        return None
+        return self.class_slot_getattr(c, s, 'range', defaultval=None)
     
     def class_slot_multivalued(self, c, s):
         """
