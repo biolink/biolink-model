@@ -19,23 +19,17 @@ def write_all_to_directory(schema, dirname):
         write_markdown(schema, "{}/{}".format(dirname, cn), c.name)
     
 class MarkdownGenerator(Generator):
-    
-    def __init__(self):
-        self.schema = None
 
-    def serialize(self, destination=None, format='png', view=False, **args):
-        markdown = self.markdown
-        markdown.format = format
-        markdown.render(destination, view=view) 
+    def serialize(self, destination=None, **args):
+        self.lines = []
+        pass
     
     def tr(self, schema, classname=None):
         self.schema = schema
-        markdown = Digraph(comment=schema.name)
-        self.markdown = markdown
-
+        lines = self.lines
+        lines += "## {}\n\n".format(schema.label)
         for c in schema.classes:
-            if classname == None or c.name == classname:
-                self.tr_class(c)
+            self.tr_class(c)
         for s in schema.slots:
             self.tr_slot(s)
         

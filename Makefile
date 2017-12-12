@@ -3,7 +3,7 @@
 # ----------------------------------------
 all: build test 
 test: metatest pytests
-build: biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views ontology/biolink.owl json-schema/biolink-model.json java
+build: biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views ontology/biolink.ttl json-schema/biolink-model.json java
 
 # ----------------------------------------
 # BUILD/COMPILATION
@@ -16,14 +16,17 @@ gen-golr-views:
 biolinkmodel/datamodel.py: biolink-model.yaml
 	./bin/gen-py-classes.py $< > $@
 
-ontology/biolink.owl: biolink-model.yaml
+ontology/biolink.ttl: biolink-model.yaml
 	./bin/gen-rdf.py -o $@ $< 
 
-ontology/%.json: ontology/%.owl
+ontology/%.json: ontology/%.ttl
 	owltools $< -o -f json $@
 
-ontology/%.obo: ontology/%.owl
+ontology/%.obo: ontology/%.ttl
 	owltools $< -o -f obo --no-check $@
+
+ontology/%.omn: ontology/%.ttl
+	owltools $< -o -f omn --prefix '' http://bioentity.io/vocab/ --prefix def http://purl.obolibrary.org/obo/IAO_0000115 $@
 
 ontology/%.tree: ontology/%.json
 	ogr --showdefs -t tree -r $< % > $@
