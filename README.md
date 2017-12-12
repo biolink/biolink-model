@@ -120,7 +120,7 @@ This is used to generate various artefacts such as
 
 Auto-generated image:
 
-![img](GeneToExpressionSiteAssociation.png)
+![img](graphviz/GeneToExpressionSiteAssociation.png)
 
 
 ## FAQ
