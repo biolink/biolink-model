@@ -3,15 +3,16 @@
 import click
 
 import logging
+from metamodel.marshmallow.schemagen import write_schema
 from metamodel.loader import load_schema
-from metamodel.jsonschemagen import JsonSchemaGenerator
+from marshmallow_jsonschema import JSONSchema
 
 @click.command()
 @click.argument("file", type=click.File('r'))
 def cli(file):
     schema = load_schema(file)
-    g = JsonSchemaGenerator(schema=schema)
-    print(g.serialize())
+    json_schema = JSONSchema()
+    json_schema.dump(schema).data
 
 
 

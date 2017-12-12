@@ -99,6 +99,7 @@ slots:
     is_a: association slot
     abstract: true
     range: property value pair
+    multivalued: true
     description: >-
       A parent slot for subject and object extension. Extensions are a way to provide additional context
       or subtyping (aka post-composition or post-coordination) on a class
@@ -138,6 +139,13 @@ slots:
     description: >-
       connects an association to the class of evidence used
 
+  - name: has evidence graph
+    is_a: association slot
+    range: evidence graph
+    path: evidence/type
+    description: >-
+      connects an association to a graph object including a path from subject to object
+
   - name: provided by
     is_a: association slot
     range: provider
@@ -145,6 +153,14 @@ slots:
       connects an association to the agent (person, organization or group) that provided it
     mappings:
       - prov:providedBy
+
+  - name: association type
+    is_a: association slot
+    range: string
+    description: >-
+      connects an association to the type of association (e.g. gene to phenotype)
+    mappings:
+      - rdf:type
 
   - name: creation date
     range: date
@@ -155,9 +171,15 @@ slots:
 
   - name: stage qualifier
     is_a: association slot
-    range: developmental stage
+    range: life stage
     description: >-
       stage at which expression takes place
+
+  - name: quantifier qualifier
+    is_a: association slot
+    range: quantifier
+    description: >-
+      A measurable quantity for the object of the association
 
   - name: qualifiers
     singular_name: qualifier
@@ -166,6 +188,24 @@ slots:
     is_a: association slot
     multivalued: true
     range: class
+
+  - name: frequency qualifier
+    description: >-
+      a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+    is_a: association slot
+    range: frequency value
+
+  - name: severity qualifier
+    description: >-
+      a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+    is_a: association slot
+    range: severity value
+
+  - name: onset qualifier
+    description: >-
+      a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+    is_a: association slot
+    range: life stage
 
   - name: publications
     singular_name: publication
@@ -195,9 +235,17 @@ slots:
     path: subject/in_taxon/label
     range: label
 
+    ## genotypes
+    
   - name: has zygosity
     domain: single locus feature complement
     range: zygosity
+
+    ## gocam
+    
+  - name: enabled by
+    domain: molecular activity
+    range: gene or gene product
 
   ## ------
   ## CLOSURES
@@ -269,6 +317,16 @@ slots:
       or in GO queries (in any of the three branches of GO)
     path: "object/{rdfs:subClassOf|BFO:0000050}*"
     
+  - name: regulates closure
+    is_a: closure concept slot
+    range: class
+    description: >-
+      Ancestors (reflexive) of the object field following is_a (subClassOf), part-of and
+      regulates (including positive and negative) relationships.
+      This is typically used as a query constraint and for faceting where the range is
+      a biological process
+    path: "object/{rdfs:subClassOf|BFO:0000050}*"
+    
   - name: isa partof closure label
     is_a: closure label slot
     range: class
@@ -280,6 +338,29 @@ slots:
     description: >-
       ancestor of type of evidence object
     path: "evidence object/rdfs:subClassOf*"
+
+  - name: filler
+    range: named thing
+    description: >-
+      The value in a property-value tuple
+
+  - name: phase
+    description: >-
+      TODO
+
+  - name: genome build
+    description: >-
+      TODO
+
+  - name: interbase coordinate
+    description: >-
+      TODO
+
+  - name: start interbase coordinate
+    is_a: interbase coordinate
+
+  - name: end interbase coordinate
+    is_a: interbase coordinate
     
   ## ------
   ## OTHER
@@ -336,6 +417,12 @@ classes:
       
   - name: cohort
     is_a: population of individual organisms
+      
+  - name: biosample
+    aliases: ['biospecimen', 'sample']
+    mixins:
+      - thing with taxon
+    is_a: named thing
       
   - name: condition or phenotypic feature
     is_a: ontology class
@@ -417,7 +504,7 @@ classes:
     description: >-
       A subcellular location, cell type or gross anatomical part
 
-  - name: developmental stage
+  - name: life stage
     is_a: named thing
     mixins:
       - thing with taxon
@@ -489,7 +576,7 @@ classes:
   - name: gene family
     is_a: molecular entity
     mixins:
-      - gene family
+      - gene grouping
     description: >-
       any grouping of multiple genes or gene products related by common descent
 
@@ -527,7 +614,7 @@ classes:
       A typed association between two entities, supported by evidence
     comment: This is roughly the model used by biolink and ontobio at the moment
     slots:
-      - type
+      - association type
       - subject
       - negated
       - relation
@@ -585,8 +672,6 @@ classes:
 
   - name: gene to gene homology association
     is_a: gene to gene association
-    mixins:
-      - generic homology association  ## TODO
     description: >-
       A homology association between two genes. May be orthology (in which case the species of subject and object
       should differ) or paralogy (in which case the species may be the same)
@@ -601,8 +686,8 @@ classes:
 
   - name: pairwise gene or protein interaction association
     is_a: gene to gene association
-    mixins:
-      - interaction relationship
+#    mixins:
+#      - interaction relationship
     description: >-
       An interaction between two genes or two gene products.
       May be physical (e.g. protein binding) or genetic (between genes).
@@ -653,6 +738,7 @@ classes:
     is_a: association
     mixins:
       - chemical to thing association
+      - thing to disease or phenotypic feature association
     description: >-
       An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to
       or exacerbates the phenotype
@@ -660,6 +746,24 @@ classes:
       - name: object
         range: disease or phenotypic feature
         description: "the disease or phenotype that is affected by the chemical"
+        
+  - name: biosample to thing association
+    is_a: association
+    abstract: true
+    description: >-
+      An association between a biosample and something
+    slot_usage:
+      - name: subject
+        range: biosample
+        description: "the biosample being described"
+        
+  - name: biosample to disease or phenotypic feature association
+    is_a: association
+    mixins:
+      - biosample to thing association
+      - thing to disease or phenotypic feature association
+    description: >-
+      An association between a biosample and a disease or phenotype
         
   - name: entity to phenotypic feature association
     abstract: true
@@ -676,9 +780,22 @@ classes:
           - value: MP:0001569
             description: abnormal circulating bilirubin level
     slots:
-      - frequency
-      - severity
-      - onset
+      - frequency qualifier
+      - severity qualifier
+      - onset qualifier
+
+  - name: thing to disease or phenotypic feature association
+    abstract: true
+    is_a: association
+    slot_usage:
+      - name: object
+        range: disease or phenotypic feature
+        description: "disease or phenotype"
+        examples:
+          - value: MONDO:0017314
+            description: "Ehlers-Danlos syndrome, vascular type"
+          - value: MP:0013229
+            description: "abnormal brain ventricle size"
 
   - name: disease to thing association
     abstract: true
@@ -733,6 +850,14 @@ classes:
       - entity to phenotypic feature association
       - case to thing association
       
+  - name: gene to thing association
+    is_a: association
+    abstract: true
+    slot_usage:
+      - name: subject
+        range: gene or gene product
+        description: "gene that is the subject of the association"
+      
   - name: gene to phenotypic feature association
     is_a: association
     mixins:
@@ -742,7 +867,15 @@ classes:
       - name: subject
         range: gene or gene product
         description: "gene in which variation is correlated with the phenotypic feature"
-      
+
+  - name: genotype to thing association
+    is_a: association
+    abstract: true
+    slot_usage:
+      - name: subject
+        range: genotype
+        description: "genotype that is the subject of the association"
+        
   - name: genotype to phenotypic feature association
     is_a: association
     mixins:
@@ -761,7 +894,7 @@ classes:
     see_also: "https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee"
     slots:
       - stage qualifier
-      - quantifier
+      - quantifier qualifier
     slot_usage:
       - name: subject
         range: gene or gene product
@@ -777,7 +910,7 @@ classes:
         description: "expression relationship"
         subproperty_of: "RO:0002206"
       - name: stage qualifier
-        range: developmental stage
+        range: life stage
         description: "stage at which the gene is expressed in the site"
         examples:
           - value: UBERON:0000069
@@ -841,7 +974,7 @@ classes:
   - name: property value pair
     slots:
       - relation
-      - value
+      - filler
   
   ## ------
   ## SEQUENCE FEATURES
@@ -874,8 +1007,6 @@ classes:
         domain: genomic entity  ## todo protein
       - name: object
         domain: genomic entity ## typically a chromosome
-    slots:
-      - rank
 
   ## ------
   ## GOCAM
@@ -883,12 +1014,12 @@ classes:
       
   - name: molecular event
     schema: gocam
-    slots:
-      - enabled by
-      - part of
-      - occurs in
-      - upstream causal relationship
-      - downstream causal relationship
+    #slots:
+      #- enabled by
+      #- part of
+      #- occurs in
+      #- upstream causal relationship
+      #- downstream causal relationship
 
 
   ## ------
@@ -904,7 +1035,7 @@ classes:
       this serves as exemplar for the time being, corresponding to the bioentity document type in amigo, which has a single
       entry per bioentity, with associated GO information
     slots:
-      - in family
-      - isa_partof_closure
-      - regulates_closure
+      #- in family
+      - isa partof closure
+      - regulates closure
   

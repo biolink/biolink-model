@@ -4,11 +4,11 @@ Base class for generators
 
 import logging
 
-from .manager import *
+from .manager import Manager
     
 class Generator(object):
     
-    def __init__(self):
+    def __init__(self, schema=None, manager=None):
         """
         Create a new instance
 
@@ -16,4 +16,7 @@ class Generator(object):
         ---------
         - schema : SchemaDefinition
         """
-        self.schema = None
+        self.schema = schema
+        if manager is None:
+            manager = Manager(schema)
+        self.manager = manager
