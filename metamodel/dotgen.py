@@ -3,6 +3,7 @@
 """
 
 import logging
+import os
 
 from .schemautils import *
 from graphviz import Digraph
@@ -16,7 +17,10 @@ def write_dot(schema, fn, classname=None):
 def write_all_to_directory(schema, dirname):
     for c in schema.classes:
         cn = get_class_name(c.name)
-        write_dot(schema, "{}/{}".format(dirname, cn), c.name)
+        basepath = "{}/{}".format(dirname, cn)
+        write_dot(schema, basepath, c.name)
+        # graphviz will generate basepath.png, tidy up remaining dot file
+        os.remove(basepath)
     
 class DotGenerator(object):
     

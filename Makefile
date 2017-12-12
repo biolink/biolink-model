@@ -3,7 +3,7 @@
 # ----------------------------------------
 all: build test 
 test: metatest pytests
-build: biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views ontology/biolink.ttl json-schema/biolink-model.json java
+build: biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views ontology/biolink.ttl json-schema/biolink-model.json java gv
 
 # ----------------------------------------
 # BUILD/COMPILATION
@@ -34,6 +34,8 @@ ontology/%.tree: ontology/%.json
 ontology/%.png: ontology/%.json
 	ogr-tree -t png -o $@ -c subClassOf subPropertyOf -r $< % 
 
+gv: biolink-model.yaml 
+	./bin/gen-graphviz.py -d graphviz $<
 
 #biolinkmodel/schema.py: biolink-model.yaml
 #	./bin/gen-mm-schema.py $< > $@
