@@ -117,11 +117,104 @@ This is used to generate various artefacts such as
  - [golr view definition](golr-views/gene_to_expression_site_association-config.yaml)
     - (which is itself later compiled to solr xml using the bbop-golr framework)
  - [java class](java-gen/GeneToExpressionSiteAssociation.java)
+    - generated from json-schema, so inheritance is unfolded
+    - in future we may generate directly
 
 Auto-generated image:
 
 ![img](graphviz/GeneToExpressionSiteAssociation.png)
 
+snippet of [generated json-schema](json-schema)
+
+```json
+        "GeneToExpressionSiteAssociation": {
+            "description": "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?",
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "has_evidence": {
+                    "description": "connects an association to an instance of supporting evidence",
+                    "type": "string"
+                },
+                "has_evidence_graph": {
+                    "description": "connects an association to a graph object including a path from subject to object",
+                    "type": "string"
+                },
+                "has_evidence_type": {
+                    "description": "connects an association to the class of evidence used",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "object_extensions": {
+                    "description": "Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "quantifier_qualifier": {
+                    "description": "A measurable quantity for the object of the association",
+                    "type": "string"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "stage_qualifier": {
+                    "description": "stage at which expression takes place",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "subject_extensions": {
+                    "description": "Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [],
+            "title": "GeneToExpressionSiteAssociation",
+            "type": "object"
+        },
+```
 
 ## FAQ
 
