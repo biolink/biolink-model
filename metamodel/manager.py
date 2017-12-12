@@ -108,6 +108,8 @@ class Manager(object):
         """
         # ensure an object
         cls = self.classdef(c)
+        if cls is None:
+            raise ValueError("No cls for {}".format(c))
         return self.get_name(cls.name, style)
 
     def ancestors(self, obj, use_mixins=False, reflexive=True, is_slot=False, use_isa=True, visited=[]):
@@ -176,46 +178,21 @@ class Manager(object):
     
     def class_slot_multivalued(self, c, s):
         """
-        Find the multivalued of a slot when that slot is used in the context of a given class.
-
-        Arguments can be either names or instances of SlotDefinition/ClassDefinition classes
+        Find if a slot is multivalued
         """
-        classdef = self.classdef(c)
-        s = self.slotdef(s)
+        return self.class_slot_getattr(c, s, 'multivalued', defaultval=False)
 
-        # class-specific usage takes priority
-        if classdef is not None and classdef.slot_usage is not None:
-            for su in classdef.slot_usage:
-                if su.name == s.name and su.multivalued:
-                    return su.multivalued
-
-        # general multivalued for slot
-        if s.multivalued:
-            return s.multivalued
-
-        if c.mixins:
-            for m in c.mixins:
-                r = self.class_slot_multivalued(c, s)
-                if r is not None:
-                    return r
-        if c.is_a:
-            r = self.class_slot_multivalued(self, c.is_a, s)
-            if r is not None:
-                return r
-        
-        return False
-
-    def class_slot_getattr(self, c, s, attr, default=None):
+    def class_slot_getattr(self, c, s, attr, defaultval=None):
         """
         Lookup an object attribute of a slot using inheritance
         """
-        classdef = self.classdef(c)
+        c = self.classdef(c)
         s = self.slotdef(s)
 
         # class-specific usage takes priority
-        if classdef is not None and classdef.slot_usage is not None:
-            for su in classdef.slot_usage:
-                if su.name == s.name and su.__getattribute__(attr) is not None
+        if c is not None and c.slot_usage is not None:
+            for su in c.slot_usage:
+                if su.name == s.name and su.__getattribute__(attr) is not None:
                     return su.__getattribute__(attr)
 
         # general multivalued for slot
@@ -224,27 +201,27 @@ class Manager(object):
 
         # inheritance up class hierarchy
         if c.is_a:
-            v = self.class_slot_getattr(self, c.is_a, s, attr, default=default)
+            v = self.class_slot_getattr(c.is_a, s, attr, defaultval=defaultval)
             if v is not None:
                 return v
         
         # inheritance up slot hierarchy
         if s.is_a:
-            v = self.class_slot_getattr(self, c, s.is_a, attr, default=default)
+            v = self.class_slot_getattr(c, s.is_a, attr, defaultval=defaultval)
             if v is not None:
                 return v
             
         # inheritance up class mixins
         if c.mixins:
             for m in c.mixins:
-                v = self.class_slot_getattr(self, m, s, attr, default=default)
+                v = self.class_slot_getattr(m, s, attr, defaultval=defaultval)
                 if v is not None:
                     return v
         
         # inheritance up slot mixins
         if s.mixins:
             for m in s.mixins:
-                v = self.class_slot_getattr(self, c, m, attr, default=default)
+                v = self.class_slot_getattr(c, m, attr, defaultval=defaultval)
                 if v is not None:
                     return v
         

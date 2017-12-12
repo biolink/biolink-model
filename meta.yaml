@@ -1,5 +1,11 @@
 slots:
 
+  - name: id
+    domain: schema definition
+    primary_key: true
+    description: >-
+      a globally unique id or url for the schema
+
   - name: name
     domain: element
     primary_key: true
@@ -84,6 +90,8 @@ classes:
     description: "A property or slot"
     is_a: definition
     slots:
+      - mixin
+      - mixins
       - identifier
       - domain
       - range
@@ -93,18 +101,12 @@ classes:
   - name: slot usage definition
     description: "A usage of slot in the context of a class"
     is_a: slot definition
-    slots:
-      - identifier
-      - domain
-      - range
-      - multivalued
-      - path
+    slots: []      
       
   - name: class definition
     description: "A class or interface"
     is_a: definition
     slots:
-      - abstract
       - mixin
       - mixins
       - slots
@@ -120,6 +122,7 @@ classes:
     description: "A collection of definitions"
     is_a: definition
     slots:
+      - id
       - slots
       - classes
       - types

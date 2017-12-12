@@ -1,3 +1,4 @@
+id: "http://bioentity.io/json-schema/biolink.json"
 name: biolink model
 description: description of the biolink datamodel
 
@@ -102,7 +103,7 @@ slots:
     multivalued: true
     description: >-
       A parent slot for subject and object extension. Extensions are a way to provide additional context
-      or subtyping (aka post-composition or post-coordination) on a class
+      or subtyping (aka post-composition or post-coordination) on a class.
       
   - name: subject extensions
     is_a: extensions context slot

@@ -22,19 +22,28 @@ class JsonSchemaGenerator(Generator):
     def tr(self, schema, classname=None):
         self.schema = schema
 
-        defdict = {}
-        self.defdict = defdict
+        self.defdict = {}
+        self.properties = {}
         schemaobj = {
-            "$schema": schema.name,
-            "title": schema.description,
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "$id": schema.id,
+            "title": schema.name,
             "type": "object",
-            "definitions": defdict
+            "properties": self.properties,
+            "definitions": self.defdict
         }
         for c in schema.classes:
             self.tr_class(c)
         for s in schema.slots:
             self.tr_slot(s)
         self.jsonobj = schemaobj
+
+
+    def type_or_ref(self, c):
+        # TODO jref
+        return {
+            "type": "string"
+        }
     
     def tr_class(self, c):
         mgr = self.manager
@@ -68,11 +77,15 @@ class JsonSchemaGenerator(Generator):
                 }
             else:
                 if mgr.class_slot_multivalued(c, s):
+                    typedict = self.type_or_ref(c)
+                    #r = mgr.class_slot_range(c, s)
+                    #if r is None:
+                    #    r = 'string'
+                    #else:
+                    #    r = self.jref(mgr.class_name(r))
                     prop = {
                         "type": "array",
-                        "items": {
-                            "$ref": "#/definitions/{}".format(sn)
-                        }
+                        "items": typedict
                     }
                 else:
                     prop = {
@@ -83,7 +96,7 @@ class JsonSchemaGenerator(Generator):
                 prop['description'] = s.description
             props[sn] = prop
 
-        self.defdict[cn] = obj
+        self.properties[cn] = obj
         return obj
     
     def tr_slot(self, s):
@@ -95,18 +108,16 @@ class JsonSchemaGenerator(Generator):
         
         obj = None
         range = s.range
+
+        typedict = self.type_or_ref(range)
         # TODO: allow inlining
         if s.multivalued:
             obj = {
                 "type" : "array",
-                "items" : {
-                    "$ref": self.jref(range)
-                }
+                "items" : typedict
             }
         else:
-            obj = {
-                "$ref" : self.jref(range)
-            }
+            obj = typedict
         
         self.defdict[sn] = obj
         return obj

@@ -36,6 +36,16 @@ ontology/%.png: ontology/%.json
 #	./bin/gen-mm-schema.py $< > $@
 
 # ----------------------------------------
+# JSONSCHEMA
+# ----------------------------------------
+jsonschema/biolink.json: biolink-model.yaml
+	bin/gen-json-schema.py $< > $@
+
+JSONSCHEMA2POJO = $(HOME)/src/jsonschema2pojo/bin/jsonschema2pojo
+java: jsonschema/biolink.json
+	$(JSONSCHEMA2POJO) --source jsonschema/ -T JSONSCHEMA -t java-gen
+
+# ----------------------------------------
 # TESTS
 # ----------------------------------------
 
@@ -48,9 +58,20 @@ test-gen-%: test-pygen-% test-mmgen-%
 	echo done
 
 test-pygen-%: %.yaml
-	./bin/gen-py-classes.py $<
+	./bin/gen-py-classes.py $< > $@ && python $@
 test-mmgen-%: %.yaml
 	./bin/gen-mm-schema.py $<
+
+# ----------------------------------------
+# METAMODEL
+# ----------------------------------------
+
+metamodel/jsonschema/metamodel.json: meta.yaml
+	bin/gen-json-schema.py $< > $@
+
+MM = metamodel/metamodel.py
+regen-mm:
+	./bin/gen-py-classes.py meta.yaml  > $(MM)-tmp.py && python $(MM)-tmp.py && cp $(MM) $(MM)-PREV && mv $(MM)-tmp.py $(MM)
 
 # ----------------------------------------
 # UTILS
