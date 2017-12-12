@@ -4,20 +4,25 @@ description: A relationship between a sequence feature and an entity it is local
 display_name: genomic sequence localization
 document_category: genomic sequence localization
 fields:
-- display_name: start interbase coordinate
+- description: null
+  display_name: start interbase coordinate
   id: start_interbase_coordinate
   property: []
-- display_name: end interbase coordinate
+- description: null
+  display_name: end interbase coordinate
   id: end_interbase_coordinate
   property: []
-- display_name: genome build
+- description: TODO
+  display_name: genome build
   id: genome_build
   property: []
-- display_name: phase
+- description: TODO
+  display_name: phase
   id: phase
   property: []
-- display_name: type
-  id: type
+- description: connects an association to the type of association (e.g. gene to phenotype)
+  display_name: association type
+  id: association_type
   property: []
 - description: connects an association to the subject of the association. For example,
     in a gene-to-phenotype association, the gene is subject and phenotype is object.
@@ -67,7 +72,9 @@ fields:
   display_name: provided by
   id: provided_by
   property: []
-- display_name: has evidence graph
+- description: connects an association to a graph object including a path from subject
+    to object
+  display_name: has evidence graph
   id: has_evidence_graph
   property: []
 - description: connects an association to the class of evidence used

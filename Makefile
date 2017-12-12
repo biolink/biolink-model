@@ -3,7 +3,7 @@
 # ----------------------------------------
 all: build test 
 test: metatest pytests
-build: biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views ontology/biolink.owl
+build: biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views ontology/biolink.owl json-schema/biolink-model.json java
 
 # ----------------------------------------
 # BUILD/COMPILATION
@@ -38,12 +38,12 @@ ontology/%.png: ontology/%.json
 # ----------------------------------------
 # JSONSCHEMA
 # ----------------------------------------
-jsonschema/biolink.json: biolink-model.yaml
+json-schema/%.json: %.yaml
 	bin/gen-json-schema.py $< > $@
 
 JSONSCHEMA2POJO = $(HOME)/src/jsonschema2pojo/bin/jsonschema2pojo
-java: jsonschema/biolink.json
-	$(JSONSCHEMA2POJO) --source jsonschema/ -T JSONSCHEMA -t java-gen
+java: json-schema/biolink-model.json
+	$(JSONSCHEMA2POJO) --source $< -T JSONSCHEMA -t java-gen
 
 # ----------------------------------------
 # TESTS

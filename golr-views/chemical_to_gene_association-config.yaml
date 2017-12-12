@@ -4,8 +4,9 @@ description: An interaction between a chemical entity or substance and a gene or
 display_name: chemical to gene association
 document_category: chemical to gene association
 fields:
-- display_name: type
-  id: type
+- description: connects an association to the type of association (e.g. gene to phenotype)
+  display_name: association type
+  id: association_type
   property: []
 - description: connects an association to the subject of the association. For example,
     in a gene-to-phenotype association, the gene is subject and phenotype is object.
@@ -55,7 +56,9 @@ fields:
   display_name: provided by
   id: provided_by
   property: []
-- display_name: has evidence graph
+- description: connects an association to a graph object including a path from subject
+    to object
+  display_name: has evidence graph
   id: has_evidence_graph
   property: []
 - description: connects an association to the class of evidence used
@@ -74,8 +77,8 @@ fields:
   display_name: label
   id: label
   property: []
-- display_name: type
-  id: type
+- display_name: association_type
+  id: association_type
   property: []
 - description: connects an association to the subject of the association. For example,
     in a gene-to-phenotype association, the gene is subject and phenotype is object.

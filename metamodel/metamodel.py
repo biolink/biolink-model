@@ -165,6 +165,7 @@ class SchemaDefinition(Definition):
     A collection of definitions
     """
     def __init__(self,
+                 id=None,
                  slots=None,
                  classes=None,
                  types=None,
@@ -174,6 +175,7 @@ class SchemaDefinition(Definition):
                  description=None,
                  abstract=None,
                  mappings=None):
+        self.id=id
         self.slots=slots
         self.classes=classes
         self.types=types
@@ -185,7 +187,7 @@ class SchemaDefinition(Definition):
         self.mappings=mappings
 
     def __str__(self):
-        return "slots={} classes={} types={} name={} singular_name={} is_a={} description={} abstract={} mappings={} ".format(self.slots,self.classes,self.types,self.name,self.singular_name,self.is_a,self.description,self.abstract,self.mappings)
+        return "id={} slots={} classes={} types={} name={} singular_name={} is_a={} description={} abstract={} mappings={} ".format(self.id,self.slots,self.classes,self.types,self.name,self.singular_name,self.is_a,self.description,self.abstract,self.mappings)
     def __repr__(self):
         return self.__str__()
 

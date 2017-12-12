@@ -26,12 +26,14 @@ class JsonSchemaGenerator(Generator):
         self.properties = {}
         schemaobj = {
             "$schema": "http://json-schema.org/draft-04/schema#",
-            "$id": schema.id,
             "title": schema.name,
             "type": "object",
             "properties": self.properties,
             "definitions": self.defdict
         }
+        if schema.id:
+            schema["$id"] = schema.id
+
         for c in schema.classes:
             self.tr_class(c)
         for s in schema.slots:
@@ -50,6 +52,10 @@ class JsonSchemaGenerator(Generator):
         schema = self.schema
 
         c = mgr.classdef(c)
+
+        if c.abstract:
+            return
+        
         cn = mgr.class_name(c)
         
         props = {}

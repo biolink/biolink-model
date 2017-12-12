@@ -4,13 +4,20 @@ description: this serves as exemplar for the time being, corresponding to the bi
 display_name: bioentity with go terms
 document_category: bioentity with go terms
 fields:
-- display_name: in family
-  id: in_family
-  property: []
-- display_name: isa_partof_closure
+- description: Ancestors (reflexive) of the object field following is_a (subClassOf)
+    and part-of links. This is typically used as a query constraint and for faceting.
+    The combination of is_a and part of is a common pattern, and can be used in gene
+    expression queries (finding genes that are expressed in a structure, a subtype,
+    or a part of that structure) or in GO queries (in any of the three branches of
+    GO)
+  display_name: isa partof closure
   id: isa_partof_closure
   property: []
-- display_name: regulates_closure
+- description: Ancestors (reflexive) of the object field following is_a (subClassOf),
+    part-of and regulates (including positive and negative) relationships. This is
+    typically used as a query constraint and for faceting where the range is a biological
+    process
+  display_name: regulates closure
   id: regulates_closure
   property: []
 - description: null

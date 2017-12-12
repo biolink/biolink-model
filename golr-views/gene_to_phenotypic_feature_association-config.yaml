@@ -2,8 +2,9 @@ description: null
 display_name: gene to phenotypic feature association
 document_category: gene to phenotypic feature association
 fields:
-- display_name: type
-  id: type
+- description: connects an association to the type of association (e.g. gene to phenotype)
+  display_name: association type
+  id: association_type
   property: []
 - description: connects an association to the subject of the association. For example,
     in a gene-to-phenotype association, the gene is subject and phenotype is object.
@@ -53,7 +54,9 @@ fields:
   display_name: provided by
   id: provided_by
   property: []
-- display_name: has evidence graph
+- description: connects an association to a graph object including a path from subject
+    to object
+  display_name: has evidence graph
   id: has_evidence_graph
   property: []
 - description: connects an association to the class of evidence used
@@ -72,17 +75,76 @@ fields:
   display_name: label
   id: label
   property: []
-- display_name: frequency
-  id: frequency
+- display_name: frequency_qualifier
+  id: frequency_qualifier
   property: []
-- display_name: severity
-  id: severity
+- display_name: severity_qualifier
+  id: severity_qualifier
   property: []
-- display_name: onset
-  id: onset
+- display_name: onset_qualifier
+  id: onset_qualifier
   property: []
-- display_name: type
-  id: type
+- display_name: association_type
+  id: association_type
+  property: []
+- description: connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: subject
+  id: subject
+  property: []
+- description: if set to true, then the association is negated i.e. is not true
+  display_name: negated
+  id: negated
+  property: []
+- description: the relationship type by which a subject is connected to an object
+    in an association
+  display_name: relation
+  id: relation
+  property: []
+- description: connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: object
+  id: object
+  property: []
+- cardinality: multi
+  description: connects an association to qualifiers that modify or qualify the meaning
+    of that association
+  display_name: qualifiers
+  id: qualifiers
+  property: []
+- display_name: subject_extensions
+  id: subject_extensions
+  property: []
+- display_name: object_extensions
+  id: object_extensions
+  property: []
+- cardinality: multi
+  description: connects an association to publications supporting the association
+  display_name: publications
+  id: publications
+  property: []
+- display_name: provided_by
+  id: provided_by
+  property: []
+- display_name: has_evidence_graph
+  id: has_evidence_graph
+  property: []
+- display_name: has_evidence_type
+  id: has_evidence_type
+  property: []
+- display_name: has_evidence
+  id: has_evidence
+  property: []
+- description: null
+  display_name: id
+  id: id
+  property: []
+- description: A human-readable name for a thing
+  display_name: label
+  id: label
+  property: []
+- display_name: association_type
+  id: association_type
   property: []
 - description: connects an association to the subject of the association. For example,
     in a gene-to-phenotype association, the gene is subject and phenotype is object.
