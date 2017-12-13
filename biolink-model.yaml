@@ -18,6 +18,9 @@ types:
   - name: symbol type
     typeof: string
 
+  - name: biological sequence
+    typeof: string
+
 slots:
   
   - name: id
@@ -65,6 +68,7 @@ slots:
     description: >-
       connects an association to the subject of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+    required: true
     mappings:
       - rdf:subject
       - owl:annotatedSource
@@ -75,6 +79,7 @@ slots:
     description: >-
       connects an association to the object of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+    required: true
     mappings:
       - rdf:object
       - owl:annotatedTarget
@@ -85,6 +90,7 @@ slots:
     description: >-
       the relationship type by which a subject is connected to an object in an association
     range: relationship type
+    required: true
     mappings:
       - "rdf:predicate"
       - "owl:annotatedProperty"
@@ -382,6 +388,9 @@ classes:
     slots:
       - id
       - label
+    slot_usage:
+      - name: id
+        required: true
       
   - name: ontology class
     description: "a concept or class in an ontology, vocabulary or thesaurus"
@@ -520,6 +529,7 @@ classes:
       - full name
       - systematic synonym
       
+      
   - name: genomic entity
     is_a: molecular entity
     aliases: ['sequence feature']
@@ -638,8 +648,6 @@ classes:
     description: >-
       Any association between one genotype and a genotypic entity that is a sub-component of it
     slot_usage:
-      - name: id
-        description: identifier of the association
       - name: relation
         subproperty_of: "GENO:0000382"
       - name: subject
@@ -650,6 +658,41 @@ classes:
         range: genotype
         description: >-
           child genotype
+
+  - name: genotype to gene association
+    is_a: association
+    description: >-
+      Any association between a genotype and a gene.
+      The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
+    slot_usage:
+      - name: relation
+        description: >-
+          the relationship type used to connect genotype to gene
+      - name: subject
+        range: genotype
+        description: >-
+          parent genotype
+      - name: object
+        range: gene
+        description: >-
+          gene implicated in genotype
+
+  - name: genotype to variant association
+    is_a: association
+    description: >-
+      Any association between a genotype and a sequence variant.
+    slot_usage:
+      - name: relation
+        description: >-
+          the relationship type used to connect genotype to gene
+      - name: subject
+        range: genotype
+        description: >-
+          parent genotype
+      - name: object
+        range: sequence variant
+        description: >-
+          gene implicated in genotype
 
   - name: gene to gene association
     aliases: ['molecular or genetic interaction']
@@ -1009,6 +1052,31 @@ classes:
       - name: object
         domain: genomic entity ## typically a chromosome
 
+  - name: sequence feature to sequence relationship
+    is_a: association
+    description: >-
+      Relates a sequence feature such as a gene to its sequence
+    slot_usage:
+      - name: subject
+        domain: genomic entity  ## todo protein
+      - name: object
+        domain: biological sequence
+
+  - name: gene regulatory relationship
+    is_a: association
+    description: >-
+      A regulatory relationship between two genes
+    slot_usage:
+      - name: relation
+        description: >-
+          the direction is always from regulator to regulated
+      - name: subject
+        domain: gene or gene product
+        role: regulatory gene
+      - name: object
+        domain: gene or gene product
+        role: regulated gene
+        
   ## ------
   ## GOCAM
   ## ------

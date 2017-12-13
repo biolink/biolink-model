@@ -32,7 +32,7 @@ class JsonSchemaGenerator(Generator):
             "definitions": self.defdict
         }
         if schema.id:
-            schema["$id"] = schema.id
+            schemaobj["$id"] = schema.id
 
         for c in schema.classes:
             self.tr_class(c)

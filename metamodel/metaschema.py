@@ -21,6 +21,7 @@ class SlotDefinitionSchema(DefinitionSchema):
     domain = fields.Str()
     range = fields.Str()
     multivalued = fields.Boolean()
+    required = fields.Boolean()
     path = fields.Str()
     subproperty_of = fields.Str()
 

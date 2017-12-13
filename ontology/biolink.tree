@@ -1,52 +1,510 @@
-. http://bioentity.io/vocab/Association ! association *  "Any kind of association between two entities"
- % http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
- % http://bioentity.io/vocab/GeneToGeneAssociation ! gene to gene association *  "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction"
-  % http://bioentity.io/vocab/GeneOrProteinInteraction ! gene or protein interaction *  "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)"
-  % http://bioentity.io/vocab/GeneToGeneHomologyAssociation ! gene to gene homology association *  "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)"
- % http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
- % http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
- % http://bioentity.io/vocab/DiseaseToEntityAssociation ! disease to entity association * 
- % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation ! disease to phenotypic feature association *  "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
-  % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation ! disease to phenotypic feature denormalized association * 
- % http://bioentity.io/vocab/GoAssociation ! go association * 
- % http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation ! gene to phenotypic feature association * 
+. http://bioentity.io/vocab/IsaPartofClosure
+ http://bioentity.io/vocab/isa_partof_closure http://bioentity.io/vocab/BioentityWithGoTerms ! bioentity with go terms *  "this serves as exemplar for the time being, corresponding to the bioentity document type in amigo, which has a single entry per bioentity, with associated GO information"
 
-. http://bioentity.io/vocab/association_slot ! association slot * 
- % http://bioentity.io/vocab/object ! object *  "connects an association to the object"
- % http://bioentity.io/vocab/qualifiers ! qualifiers *  "qualifiers"
- % http://bioentity.io/vocab/negated ! negated *  "if set then the association is negated"
+. http://bioentity.io/vocab/Negated
+ http://bioentity.io/vocab/negated http://bioentity.io/vocab/Association ! association *  "A typed association between two entities, supported by evidence"
+  % http://bioentity.io/vocab/BiosampleToThingAssociation ! biosample to thing association *  "An association between a biosample and something"
+  % http://bioentity.io/vocab/GenotypeToGenotypePartAssociation ! genotype to genotype part association *  "Any association between one genotype and a genotypic entity that is a sub-component of it"
+  % http://bioentity.io/vocab/GeneToThingAssociation ! gene to thing association * 
+  % http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation ! biosample to disease or phenotypic feature association *  "An association between a biosample and a disease or phenotype
+  "
+  % http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation ! case to phenotypic feature association *  "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
+  % http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+  % http://bioentity.io/vocab/GeneToGeneAssociation ! gene to gene association *  "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction."
+   % http://bioentity.io/vocab/GeneToGeneHomologyAssociation ! gene to gene homology association *  "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)"
+   % http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation ! pairwise gene or protein interaction association *  "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)"
+  % http://bioentity.io/vocab/GenomicSequenceLocalization ! genomic sequence localization *  "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig"
+  % http://bioentity.io/vocab/DiseaseToThingAssociation ! disease to thing association * 
+  % http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+  % http://bioentity.io/vocab/GenotypeToThingAssociation ! genotype to thing association * 
+  % http://bioentity.io/vocab/ChemicalToThingAssociation ! chemical to thing association *  "An interaction between a chemical entity and another entity"
+  % http://bioentity.io/vocab/SequenceFeatureRelationship ! sequence feature relationship *  "For example, a particular exon is part of a particular transcript or gene"
+  % http://bioentity.io/vocab/ChemicalToGeneAssociation ! chemical to gene association *  "An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug."
+  % http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+  % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation ! disease to phenotypic feature association *  "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
+   % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation ! disease to phenotypic feature denormalized association * 
+  % http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation ! environment to phenotypic feature association *  "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype"
+  % http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation ! chemical to disease or phenotypic feature association *  "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype"
+  % http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation ! thing to disease or phenotypic feature association * 
+  % http://bioentity.io/vocab/CaseToThingAssociation ! case to thing association *  "An abstract association for use where the case is the subject"
+  % http://bioentity.io/vocab/GoAssociation ! go association * 
+  % http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation ! genotype to phenotypic feature association *  "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment"
+  % http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation ! gene to phenotypic feature association * 
+
+. http://bioentity.io/vocab/SystematicSynonym
+ http://bioentity.io/vocab/systematic_synonym http://bioentity.io/vocab/HasGenomicName ! has genomic name * 
+
+. http://bioentity.io/vocab/SubjectTaxonClosure
+ http://bioentity.io/vocab/subject_taxon_closure http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+
+. http://bioentity.io/vocab/OnsetQualifier
+ http://bioentity.io/vocab/onset_qualifier http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+
+. http://bioentity.io/vocab/HasEvidenceType
+ http://bioentity.io/vocab/has_evidence_type http://bioentity.io/vocab/Association ! association *  "A typed association between two entities, supported by evidence"
+  % http://bioentity.io/vocab/BiosampleToThingAssociation ! biosample to thing association *  "An association between a biosample and something"
+  % http://bioentity.io/vocab/GenotypeToGenotypePartAssociation ! genotype to genotype part association *  "Any association between one genotype and a genotypic entity that is a sub-component of it"
+  % http://bioentity.io/vocab/GeneToThingAssociation ! gene to thing association * 
+  % http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation ! biosample to disease or phenotypic feature association *  "An association between a biosample and a disease or phenotype
+  "
+  % http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation ! case to phenotypic feature association *  "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
+  % http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+  % http://bioentity.io/vocab/GeneToGeneAssociation ! gene to gene association *  "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction."
+   % http://bioentity.io/vocab/GeneToGeneHomologyAssociation ! gene to gene homology association *  "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)"
+   % http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation ! pairwise gene or protein interaction association *  "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)"
+  % http://bioentity.io/vocab/GenomicSequenceLocalization ! genomic sequence localization *  "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig"
+  % http://bioentity.io/vocab/DiseaseToThingAssociation ! disease to thing association * 
+  % http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+  % http://bioentity.io/vocab/GenotypeToThingAssociation ! genotype to thing association * 
+  % http://bioentity.io/vocab/ChemicalToThingAssociation ! chemical to thing association *  "An interaction between a chemical entity and another entity"
+  % http://bioentity.io/vocab/SequenceFeatureRelationship ! sequence feature relationship *  "For example, a particular exon is part of a particular transcript or gene"
+  % http://bioentity.io/vocab/ChemicalToGeneAssociation ! chemical to gene association *  "An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug."
+  % http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+  % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation ! disease to phenotypic feature association *  "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
+   % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation ! disease to phenotypic feature denormalized association * 
+  % http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation ! environment to phenotypic feature association *  "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype"
+  % http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation ! chemical to disease or phenotypic feature association *  "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype"
+  % http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation ! thing to disease or phenotypic feature association * 
+  % http://bioentity.io/vocab/CaseToThingAssociation ! case to thing association *  "An abstract association for use where the case is the subject"
+  % http://bioentity.io/vocab/GoAssociation ! go association * 
+  % http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation ! genotype to phenotypic feature association *  "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment"
+  % http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation ! gene to phenotypic feature association * 
+
+. http://bioentity.io/vocab/interbase_coordinate ! interbase coordinate *  "TODO"
+ % http://bioentity.io/vocab/start_interbase_coordinate ! start interbase coordinate * 
+ % http://bioentity.io/vocab/end_interbase_coordinate ! end interbase coordinate * 
+
+. http://bioentity.io/vocab/InTaxon
+ http://bioentity.io/vocab/in_taxon http://bioentity.io/vocab/ThingWithTaxon ! thing with taxon *  "A mixin that can be used on any entity with a taxon"
+
+. http://bioentity.io/vocab/SubjectTaxon
+ http://bioentity.io/vocab/subject_taxon http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+
+. http://bioentity.io/vocab/AssociationType
+ http://bioentity.io/vocab/association_type http://bioentity.io/vocab/Association ! association *  "A typed association between two entities, supported by evidence"
+  % http://bioentity.io/vocab/BiosampleToThingAssociation ! biosample to thing association *  "An association between a biosample and something"
+  % http://bioentity.io/vocab/GenotypeToGenotypePartAssociation ! genotype to genotype part association *  "Any association between one genotype and a genotypic entity that is a sub-component of it"
+  % http://bioentity.io/vocab/GeneToThingAssociation ! gene to thing association * 
+  % http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation ! biosample to disease or phenotypic feature association *  "An association between a biosample and a disease or phenotype
+  "
+  % http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation ! case to phenotypic feature association *  "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
+  % http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+  % http://bioentity.io/vocab/GeneToGeneAssociation ! gene to gene association *  "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction."
+   % http://bioentity.io/vocab/GeneToGeneHomologyAssociation ! gene to gene homology association *  "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)"
+   % http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation ! pairwise gene or protein interaction association *  "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)"
+  % http://bioentity.io/vocab/GenomicSequenceLocalization ! genomic sequence localization *  "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig"
+  % http://bioentity.io/vocab/DiseaseToThingAssociation ! disease to thing association * 
+  % http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+  % http://bioentity.io/vocab/GenotypeToThingAssociation ! genotype to thing association * 
+  % http://bioentity.io/vocab/ChemicalToThingAssociation ! chemical to thing association *  "An interaction between a chemical entity and another entity"
+  % http://bioentity.io/vocab/SequenceFeatureRelationship ! sequence feature relationship *  "For example, a particular exon is part of a particular transcript or gene"
+  % http://bioentity.io/vocab/ChemicalToGeneAssociation ! chemical to gene association *  "An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug."
+  % http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+  % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation ! disease to phenotypic feature association *  "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
+   % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation ! disease to phenotypic feature denormalized association * 
+  % http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation ! environment to phenotypic feature association *  "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype"
+  % http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation ! chemical to disease or phenotypic feature association *  "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype"
+  % http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation ! thing to disease or phenotypic feature association * 
+  % http://bioentity.io/vocab/CaseToThingAssociation ! case to thing association *  "An abstract association for use where the case is the subject"
+  % http://bioentity.io/vocab/GoAssociation ! go association * 
+  % http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation ! genotype to phenotypic feature association *  "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment"
+  % http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation ! gene to phenotypic feature association * 
+
+. http://bioentity.io/vocab/association_slot ! association slot *  "any slot that relates an association to another entity"
+ % http://bioentity.io/vocab/frequency_qualifier ! frequency qualifier *  "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject"
+ % http://bioentity.io/vocab/object ! object *  "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
+ % http://bioentity.io/vocab/has_evidence_graph ! has evidence graph *  "connects an association to a graph object including a path from subject to object"
+ % http://bioentity.io/vocab/publications ! publications *  "connects an association to publications supporting the association"
+ % http://bioentity.io/vocab/onset_qualifier ! onset qualifier *  "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject"
  % http://bioentity.io/vocab/relation ! relation *  "the relationship type by which a subject is connected to an object in an association"
- % http://bioentity.io/vocab/has_evidence ! has evidence *  "connects an association to a piece of supporting evidence"
- % http://bioentity.io/vocab/subject ! subject *  "connects an association to the subject"
+ % http://bioentity.io/vocab/provided_by ! provided by *  "connects an association to the agent (person, organization or group) that provided it"
+ % http://bioentity.io/vocab/quantifier_qualifier ! quantifier qualifier *  "A measurable quantity for the object of the association"
+ % http://bioentity.io/vocab/has_evidence_type ! has evidence type *  "connects an association to the class of evidence used"
+ % http://bioentity.io/vocab/subject ! subject *  "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object."
+ % http://bioentity.io/vocab/qualifiers ! qualifiers *  "connects an association to qualifiers that modify or qualify the meaning of that association"
+ % http://bioentity.io/vocab/has_evidence_object ! has evidence object *  "connects an association to an supporting entity. May be a gene/product (if evidence is homology or protein interaction). Same as WITH/FROM column in GO/GAFs"
+ % http://bioentity.io/vocab/negated ! negated *  "if set to true, then the association is negated i.e. is not true"
+ % http://bioentity.io/vocab/stage_qualifier ! stage qualifier *  "stage at which expression takes place"
+ % http://bioentity.io/vocab/association_type ! association type *  "connects an association to the type of association (e.g. gene to phenotype)"
+ % http://bioentity.io/vocab/has_evidence ! has evidence *  "connects an association to an instance of supporting evidence"
+ % http://bioentity.io/vocab/severity_qualifier ! severity qualifier *  "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject"
+ % http://bioentity.io/vocab/extensions_context_slot ! extensions context slot *  "A parent slot for subject and object extension. Extensions are a way to provide additional context or subtyping (aka post-composition or post-coordination) on a class."
+  % http://bioentity.io/vocab/subject_extensions ! subject extensions *  "Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state"
+  % http://bioentity.io/vocab/object_extensions ! object extensions *  "Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links"
+
+. http://bioentity.io/vocab/Qualifiers
+ http://bioentity.io/vocab/qualifiers http://bioentity.io/vocab/Association ! association *  "A typed association between two entities, supported by evidence"
+  % http://bioentity.io/vocab/BiosampleToThingAssociation ! biosample to thing association *  "An association between a biosample and something"
+  % http://bioentity.io/vocab/GenotypeToGenotypePartAssociation ! genotype to genotype part association *  "Any association between one genotype and a genotypic entity that is a sub-component of it"
+  % http://bioentity.io/vocab/GeneToThingAssociation ! gene to thing association * 
+  % http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation ! biosample to disease or phenotypic feature association *  "An association between a biosample and a disease or phenotype
+  "
+  % http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation ! case to phenotypic feature association *  "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
+  % http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+  % http://bioentity.io/vocab/GeneToGeneAssociation ! gene to gene association *  "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction."
+   % http://bioentity.io/vocab/GeneToGeneHomologyAssociation ! gene to gene homology association *  "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)"
+   % http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation ! pairwise gene or protein interaction association *  "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)"
+  % http://bioentity.io/vocab/GenomicSequenceLocalization ! genomic sequence localization *  "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig"
+  % http://bioentity.io/vocab/DiseaseToThingAssociation ! disease to thing association * 
+  % http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+  % http://bioentity.io/vocab/GenotypeToThingAssociation ! genotype to thing association * 
+  % http://bioentity.io/vocab/ChemicalToThingAssociation ! chemical to thing association *  "An interaction between a chemical entity and another entity"
+  % http://bioentity.io/vocab/SequenceFeatureRelationship ! sequence feature relationship *  "For example, a particular exon is part of a particular transcript or gene"
+  % http://bioentity.io/vocab/ChemicalToGeneAssociation ! chemical to gene association *  "An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug."
+  % http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+  % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation ! disease to phenotypic feature association *  "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
+   % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation ! disease to phenotypic feature denormalized association * 
+  % http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation ! environment to phenotypic feature association *  "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype"
+  % http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation ! chemical to disease or phenotypic feature association *  "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype"
+  % http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation ! thing to disease or phenotypic feature association * 
+  % http://bioentity.io/vocab/CaseToThingAssociation ! case to thing association *  "An abstract association for use where the case is the subject"
+  % http://bioentity.io/vocab/GoAssociation ! go association * 
+  % http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation ! genotype to phenotypic feature association *  "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment"
+  % http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation ! gene to phenotypic feature association * 
+
+. http://bioentity.io/vocab/Id
+ http://bioentity.io/vocab/id http://bioentity.io/vocab/NamedThing ! named thing *  "a databased entity or concept/class"
+  % http://bioentity.io/vocab/Biosample ! biosample * 
+  % http://bioentity.io/vocab/PopulationOfIndividualOrganisms ! population of individual organisms * 
+   % http://bioentity.io/vocab/Cohort ! cohort * 
+  % http://bioentity.io/vocab/MolecularEntity ! molecular entity *  "A gene, gene product, small molecule or macromolecule (including protein complex)"
+   % http://bioentity.io/vocab/ChemicalSubstance ! chemical substance *  "may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part"
+   % http://bioentity.io/vocab/GenomicEntity ! genomic entity *  "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)"
+    % http://bioentity.io/vocab/Genotype ! genotype *  "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background"
+    % http://bioentity.io/vocab/SequenceVariant ! sequence variant *  "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus."
+    % http://bioentity.io/vocab/GeneOrGeneProduct ! gene or gene product *  "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another"
+     % http://bioentity.io/vocab/Gene ! gene * 
+     % http://bioentity.io/vocab/GeneProduct ! gene product * 
+      % http://bioentity.io/vocab/Protein ! protein * 
+      % http://bioentity.io/vocab/RnaProduct ! RNA product * 
+   % http://bioentity.io/vocab/BioentityWithGoTerms ! bioentity with go terms *  "this serves as exemplar for the time being, corresponding to the bioentity document type in amigo, which has a single entry per bioentity, with associated GO information"
+   % http://bioentity.io/vocab/MacromolecularComplex ! macromolecular complex * 
+   % http://bioentity.io/vocab/GeneFamily ! gene family *  "any grouping of multiple genes or gene products related by common descent"
+  % http://bioentity.io/vocab/AnatomicalEntity ! anatomical entity *  "A subcellular location, cell type or gross anatomical part"
+  % http://bioentity.io/vocab/InformationContentEntity ! information content entity *  "a piece of information that typically describes some piece of biology or is used as support."
+   % http://bioentity.io/vocab/Publication ! publication *  "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals."
+   % http://bioentity.io/vocab/EvidenceType ! evidence type *  "Class of evidence that supports an association"
+   % http://bioentity.io/vocab/Association ! association *  "A typed association between two entities, supported by evidence"
+    % http://bioentity.io/vocab/BiosampleToThingAssociation ! biosample to thing association *  "An association between a biosample and something"
+    % http://bioentity.io/vocab/GenotypeToGenotypePartAssociation ! genotype to genotype part association *  "Any association between one genotype and a genotypic entity that is a sub-component of it"
+    % http://bioentity.io/vocab/GeneToThingAssociation ! gene to thing association * 
+    % http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation ! biosample to disease or phenotypic feature association *  "An association between a biosample and a disease or phenotype
+  "
+    % http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation ! case to phenotypic feature association *  "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
+    % http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+    % http://bioentity.io/vocab/GeneToGeneAssociation ! gene to gene association *  "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction."
+     % http://bioentity.io/vocab/GeneToGeneHomologyAssociation ! gene to gene homology association *  "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)"
+     % http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation ! pairwise gene or protein interaction association *  "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)"
+    % http://bioentity.io/vocab/GenomicSequenceLocalization ! genomic sequence localization *  "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig"
+    % http://bioentity.io/vocab/DiseaseToThingAssociation ! disease to thing association * 
+    % http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+    % http://bioentity.io/vocab/GenotypeToThingAssociation ! genotype to thing association * 
+    % http://bioentity.io/vocab/ChemicalToThingAssociation ! chemical to thing association *  "An interaction between a chemical entity and another entity"
+    % http://bioentity.io/vocab/SequenceFeatureRelationship ! sequence feature relationship *  "For example, a particular exon is part of a particular transcript or gene"
+    % http://bioentity.io/vocab/ChemicalToGeneAssociation ! chemical to gene association *  "An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug."
+    % http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+    % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation ! disease to phenotypic feature association *  "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
+     % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation ! disease to phenotypic feature denormalized association * 
+    % http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation ! environment to phenotypic feature association *  "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype"
+    % http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation ! chemical to disease or phenotypic feature association *  "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype"
+    % http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation ! thing to disease or phenotypic feature association * 
+    % http://bioentity.io/vocab/CaseToThingAssociation ! case to thing association *  "An abstract association for use where the case is the subject"
+    % http://bioentity.io/vocab/GoAssociation ! go association * 
+    % http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation ! genotype to phenotypic feature association *  "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment"
+    % http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation ! gene to phenotypic feature association * 
+  % http://bioentity.io/vocab/IndividualOrganism ! individual organism * 
+   % http://bioentity.io/vocab/Case ! case *  "An individual organism that has a patient role in some clinical context."
+  % http://bioentity.io/vocab/EnvironmentalFeature ! environmental feature *  "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes"
+  % http://bioentity.io/vocab/LifeStage ! life stage *  "A stage of development or growth of an organism, including post-natal adult stages"
+  % http://bioentity.io/vocab/OntologyClass ! ontology class *  "a concept or class in an ontology, vocabulary or thesaurus"
+   % http://bioentity.io/vocab/ConditionOrPhenotypicFeature ! condition or phenotypic feature * 
+    % http://bioentity.io/vocab/Disease ! disease * 
+    % http://bioentity.io/vocab/PhenotypicFeature ! phenotypic feature * 
+   % http://bioentity.io/vocab/OrganismTaxon ! organism taxon * 
+
+. http://bioentity.io/vocab/StageQualifier
+ http://bioentity.io/vocab/stage_qualifier http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+
+. http://bioentity.io/vocab/HasEvidenceGraph
+ http://bioentity.io/vocab/has_evidence_graph http://bioentity.io/vocab/Association ! association *  "A typed association between two entities, supported by evidence"
+  % http://bioentity.io/vocab/BiosampleToThingAssociation ! biosample to thing association *  "An association between a biosample and something"
+  % http://bioentity.io/vocab/GenotypeToGenotypePartAssociation ! genotype to genotype part association *  "Any association between one genotype and a genotypic entity that is a sub-component of it"
+  % http://bioentity.io/vocab/GeneToThingAssociation ! gene to thing association * 
+  % http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation ! biosample to disease or phenotypic feature association *  "An association between a biosample and a disease or phenotype
+  "
+  % http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation ! case to phenotypic feature association *  "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
+  % http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+  % http://bioentity.io/vocab/GeneToGeneAssociation ! gene to gene association *  "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction."
+   % http://bioentity.io/vocab/GeneToGeneHomologyAssociation ! gene to gene homology association *  "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)"
+   % http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation ! pairwise gene or protein interaction association *  "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)"
+  % http://bioentity.io/vocab/GenomicSequenceLocalization ! genomic sequence localization *  "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig"
+  % http://bioentity.io/vocab/DiseaseToThingAssociation ! disease to thing association * 
+  % http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+  % http://bioentity.io/vocab/GenotypeToThingAssociation ! genotype to thing association * 
+  % http://bioentity.io/vocab/ChemicalToThingAssociation ! chemical to thing association *  "An interaction between a chemical entity and another entity"
+  % http://bioentity.io/vocab/SequenceFeatureRelationship ! sequence feature relationship *  "For example, a particular exon is part of a particular transcript or gene"
+  % http://bioentity.io/vocab/ChemicalToGeneAssociation ! chemical to gene association *  "An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug."
+  % http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+  % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation ! disease to phenotypic feature association *  "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
+   % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation ! disease to phenotypic feature denormalized association * 
+  % http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation ! environment to phenotypic feature association *  "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype"
+  % http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation ! chemical to disease or phenotypic feature association *  "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype"
+  % http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation ! thing to disease or phenotypic feature association * 
+  % http://bioentity.io/vocab/CaseToThingAssociation ! case to thing association *  "An abstract association for use where the case is the subject"
+  % http://bioentity.io/vocab/GoAssociation ! go association * 
+  % http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation ! genotype to phenotypic feature association *  "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment"
+  % http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation ! gene to phenotypic feature association * 
+
+. http://bioentity.io/vocab/FrequencyQualifier
+ http://bioentity.io/vocab/frequency_qualifier http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+
+. http://bioentity.io/vocab/QuantifierQualifier
+ http://bioentity.io/vocab/quantifier_qualifier http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+
+. http://bioentity.io/vocab/Publications
+ http://bioentity.io/vocab/publications http://bioentity.io/vocab/Association ! association *  "A typed association between two entities, supported by evidence"
+  % http://bioentity.io/vocab/BiosampleToThingAssociation ! biosample to thing association *  "An association between a biosample and something"
+  % http://bioentity.io/vocab/GenotypeToGenotypePartAssociation ! genotype to genotype part association *  "Any association between one genotype and a genotypic entity that is a sub-component of it"
+  % http://bioentity.io/vocab/GeneToThingAssociation ! gene to thing association * 
+  % http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation ! biosample to disease or phenotypic feature association *  "An association between a biosample and a disease or phenotype
+  "
+  % http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation ! case to phenotypic feature association *  "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
+  % http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+  % http://bioentity.io/vocab/GeneToGeneAssociation ! gene to gene association *  "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction."
+   % http://bioentity.io/vocab/GeneToGeneHomologyAssociation ! gene to gene homology association *  "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)"
+   % http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation ! pairwise gene or protein interaction association *  "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)"
+  % http://bioentity.io/vocab/GenomicSequenceLocalization ! genomic sequence localization *  "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig"
+  % http://bioentity.io/vocab/DiseaseToThingAssociation ! disease to thing association * 
+  % http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+  % http://bioentity.io/vocab/GenotypeToThingAssociation ! genotype to thing association * 
+  % http://bioentity.io/vocab/ChemicalToThingAssociation ! chemical to thing association *  "An interaction between a chemical entity and another entity"
+  % http://bioentity.io/vocab/SequenceFeatureRelationship ! sequence feature relationship *  "For example, a particular exon is part of a particular transcript or gene"
+  % http://bioentity.io/vocab/ChemicalToGeneAssociation ! chemical to gene association *  "An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug."
+  % http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+  % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation ! disease to phenotypic feature association *  "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
+   % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation ! disease to phenotypic feature denormalized association * 
+  % http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation ! environment to phenotypic feature association *  "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype"
+  % http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation ! chemical to disease or phenotypic feature association *  "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype"
+  % http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation ! thing to disease or phenotypic feature association * 
+  % http://bioentity.io/vocab/CaseToThingAssociation ! case to thing association *  "An abstract association for use where the case is the subject"
+  % http://bioentity.io/vocab/GoAssociation ! go association * 
+  % http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation ! genotype to phenotypic feature association *  "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment"
+  % http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation ! gene to phenotypic feature association * 
+
+. http://bioentity.io/vocab/HasZygosity
+ http://bioentity.io/vocab/has_zygosity http://bioentity.io/vocab/Genotype ! genotype *  "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background"
+
+. http://bioentity.io/vocab/HasEvidence
+ http://bioentity.io/vocab/has_evidence http://bioentity.io/vocab/Association ! association *  "A typed association between two entities, supported by evidence"
+  % http://bioentity.io/vocab/BiosampleToThingAssociation ! biosample to thing association *  "An association between a biosample and something"
+  % http://bioentity.io/vocab/GenotypeToGenotypePartAssociation ! genotype to genotype part association *  "Any association between one genotype and a genotypic entity that is a sub-component of it"
+  % http://bioentity.io/vocab/GeneToThingAssociation ! gene to thing association * 
+  % http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation ! biosample to disease or phenotypic feature association *  "An association between a biosample and a disease or phenotype
+  "
+  % http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation ! case to phenotypic feature association *  "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
+  % http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+  % http://bioentity.io/vocab/GeneToGeneAssociation ! gene to gene association *  "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction."
+   % http://bioentity.io/vocab/GeneToGeneHomologyAssociation ! gene to gene homology association *  "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)"
+   % http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation ! pairwise gene or protein interaction association *  "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)"
+  % http://bioentity.io/vocab/GenomicSequenceLocalization ! genomic sequence localization *  "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig"
+  % http://bioentity.io/vocab/DiseaseToThingAssociation ! disease to thing association * 
+  % http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+  % http://bioentity.io/vocab/GenotypeToThingAssociation ! genotype to thing association * 
+  % http://bioentity.io/vocab/ChemicalToThingAssociation ! chemical to thing association *  "An interaction between a chemical entity and another entity"
+  % http://bioentity.io/vocab/SequenceFeatureRelationship ! sequence feature relationship *  "For example, a particular exon is part of a particular transcript or gene"
+  % http://bioentity.io/vocab/ChemicalToGeneAssociation ! chemical to gene association *  "An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug."
+  % http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+  % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation ! disease to phenotypic feature association *  "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
+   % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation ! disease to phenotypic feature denormalized association * 
+  % http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation ! environment to phenotypic feature association *  "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype"
+  % http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation ! chemical to disease or phenotypic feature association *  "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype"
+  % http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation ! thing to disease or phenotypic feature association * 
+  % http://bioentity.io/vocab/CaseToThingAssociation ! case to thing association *  "An abstract association for use where the case is the subject"
+  % http://bioentity.io/vocab/GoAssociation ! go association * 
+  % http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation ! genotype to phenotypic feature association *  "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment"
+  % http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation ! gene to phenotypic feature association * 
 
 . http://bioentity.io/vocab/closure_concept_slot ! closure concept slot *  "parent field for fields used for storing inferred relationships to a class or relation"
- % http://bioentity.io/vocab/subject_taxon_closure ! subject taxon closure *  "The taxon class or ancestor class for the subject"
- % http://bioentity.io/vocab/isa_partof_closure ! isa partof closure * 
- % http://bioentity.io/vocab/object_taxon_closure ! object taxon closure *  "The taxon class or ancestor class for the object"
+ % http://bioentity.io/vocab/evidence_object_closure ! evidence object closure *  "ancestor of type of evidence object"
+ % http://bioentity.io/vocab/taxon_closure_slot ! taxon closure slot *  "a closure slot that includes a taxon and all ancestral taxa"
+  % http://bioentity.io/vocab/object_taxon_closure ! object taxon closure *  "The taxon class or ancestor class for the object"
+  % http://bioentity.io/vocab/subject_taxon_closure ! subject taxon closure *  "The taxon class or ancestor class for the subject"
+ % http://bioentity.io/vocab/isa_partof_closure ! isa partof closure *  "Ancestors (reflexive) of the object field following is_a (subClassOf) and part-of links. This is typically used as a query constraint and for faceting. The combination of is_a and part of is a common pattern, and can be used in gene expression queries (finding genes that are expressed in a structure, a subtype, or a part of that structure) or in GO queries (in any of the three branches of GO)"
+ % http://bioentity.io/vocab/regulates_closure ! regulates closure *  "Ancestors (reflexive) of the object field following is_a (subClassOf), part-of and regulates (including positive and negative) relationships. This is typically used as a query constraint and for faceting where the range is a biological process"
+
+. http://bioentity.io/vocab/RegulatesClosure
+ http://bioentity.io/vocab/regulates_closure http://bioentity.io/vocab/BioentityWithGoTerms ! bioentity with go terms *  "this serves as exemplar for the time being, corresponding to the bioentity document type in amigo, which has a single entry per bioentity, with associated GO information"
+
+. http://bioentity.io/vocab/ProvidedBy
+ http://bioentity.io/vocab/provided_by http://bioentity.io/vocab/Association ! association *  "A typed association between two entities, supported by evidence"
+  % http://bioentity.io/vocab/BiosampleToThingAssociation ! biosample to thing association *  "An association between a biosample and something"
+  % http://bioentity.io/vocab/GenotypeToGenotypePartAssociation ! genotype to genotype part association *  "Any association between one genotype and a genotypic entity that is a sub-component of it"
+  % http://bioentity.io/vocab/GeneToThingAssociation ! gene to thing association * 
+  % http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation ! biosample to disease or phenotypic feature association *  "An association between a biosample and a disease or phenotype
+  "
+  % http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation ! case to phenotypic feature association *  "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
+  % http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+  % http://bioentity.io/vocab/GeneToGeneAssociation ! gene to gene association *  "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction."
+   % http://bioentity.io/vocab/GeneToGeneHomologyAssociation ! gene to gene homology association *  "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)"
+   % http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation ! pairwise gene or protein interaction association *  "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)"
+  % http://bioentity.io/vocab/GenomicSequenceLocalization ! genomic sequence localization *  "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig"
+  % http://bioentity.io/vocab/DiseaseToThingAssociation ! disease to thing association * 
+  % http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+  % http://bioentity.io/vocab/GenotypeToThingAssociation ! genotype to thing association * 
+  % http://bioentity.io/vocab/ChemicalToThingAssociation ! chemical to thing association *  "An interaction between a chemical entity and another entity"
+  % http://bioentity.io/vocab/SequenceFeatureRelationship ! sequence feature relationship *  "For example, a particular exon is part of a particular transcript or gene"
+  % http://bioentity.io/vocab/ChemicalToGeneAssociation ! chemical to gene association *  "An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug."
+  % http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+  % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation ! disease to phenotypic feature association *  "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
+   % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation ! disease to phenotypic feature denormalized association * 
+  % http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation ! environment to phenotypic feature association *  "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype"
+  % http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation ! chemical to disease or phenotypic feature association *  "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype"
+  % http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation ! thing to disease or phenotypic feature association * 
+  % http://bioentity.io/vocab/CaseToThingAssociation ! case to thing association *  "An abstract association for use where the case is the subject"
+  % http://bioentity.io/vocab/GoAssociation ! go association * 
+  % http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation ! genotype to phenotypic feature association *  "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment"
+  % http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation ! gene to phenotypic feature association * 
 
 . http://bioentity.io/vocab/closure_label_slot ! closure label slot *  "parent field for fields used for storing the label of the closure concept. See also: closure concept field"
- % http://bioentity.io/vocab/object_taxon_closure_label ! object taxon closure label *  "The label for the taxon class or ancestor class for the object"
- % http://bioentity.io/vocab/subject_taxon_closure_label ! subject taxon closure label *  "The label for the taxon class or ancestor class for the subject"
  % http://bioentity.io/vocab/isa_partof_closure_label ! isa partof closure label * 
+ % http://bioentity.io/vocab/taxon_closure_label_slot ! taxon closure label slot *  "label for taxon closure slot"
+  % http://bioentity.io/vocab/object_taxon_closure_label ! object taxon closure label *  "The label for the taxon class or ancestor class for the object"
+  % http://bioentity.io/vocab/subject_taxon_closure_label ! subject taxon closure label *  "The label for the taxon class or ancestor class for the subject"
 
-. http://bioentity.io/vocab/NamedThing ! named thing *  "a databased entity or concept/class"
- % http://bioentity.io/vocab/InformationContentEntity ! information content entity *  "a piece of information that typically describes some piece of biology or is used as support."
-  % http://bioentity.io/vocab/EvidenceType ! evidence type *  "Evidence that supports an association"
-  % http://bioentity.io/vocab/Publication ! publication *  "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals."
- % http://bioentity.io/vocab/IndividualOrganism ! individual organism * 
- % http://bioentity.io/vocab/PopulationOfIndividualOrganisms ! population of individual organisms * 
- % http://bioentity.io/vocab/EnvironmentalFeature ! environmental feature *  "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes"
- % http://bioentity.io/vocab/MolecularEntity ! molecular entity *  "A gene, gene product, small molecule or macromolecule (including protein complex)"
-  % http://bioentity.io/vocab/GeneOrGeneProduct ! gene or gene product *  "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another"
-   % http://bioentity.io/vocab/GeneProduct ! gene product * 
-    % http://bioentity.io/vocab/Protein ! protein * 
-    % http://bioentity.io/vocab/RnaProduct ! RNA product * 
-   % http://bioentity.io/vocab/Gene ! gene * 
-  % http://bioentity.io/vocab/MacromolecularComplex ! macromolecular complex * 
- % http://bioentity.io/vocab/OntologyClass ! ontology class *  "a concept or class in an ontology, vocabulary or thesaurus"
-  % http://bioentity.io/vocab/ConditionOrPhenotypicCondition ! condition or phenotypic condition * 
-   % http://bioentity.io/vocab/PhenotypicFeature ! phenotypic feature * 
-   % http://bioentity.io/vocab/Disease ! disease * 
-  % http://bioentity.io/vocab/OrganismType ! organism type * 
+. http://bioentity.io/vocab/Filler
+ http://bioentity.io/vocab/filler http://bioentity.io/vocab/PropertyValuePair ! property value pair * 
+
+. http://bioentity.io/vocab/FullName
+ http://bioentity.io/vocab/full_name http://bioentity.io/vocab/HasGenomicName ! has genomic name * 
+
+. http://bioentity.io/vocab/Associations
+ http://bioentity.io/vocab/associations http://bioentity.io/vocab/AssociationResultSet ! association result set * 
+
+. http://bioentity.io/vocab/SubjectTaxonLabel
+ http://bioentity.io/vocab/subject_taxon_label http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+
+. http://bioentity.io/vocab/Relation
+ http://bioentity.io/vocab/relation http://bioentity.io/vocab/Association ! association *  "A typed association between two entities, supported by evidence"
+  % http://bioentity.io/vocab/BiosampleToThingAssociation ! biosample to thing association *  "An association between a biosample and something"
+  % http://bioentity.io/vocab/GenotypeToGenotypePartAssociation ! genotype to genotype part association *  "Any association between one genotype and a genotypic entity that is a sub-component of it"
+  % http://bioentity.io/vocab/GeneToThingAssociation ! gene to thing association * 
+  % http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation ! biosample to disease or phenotypic feature association *  "An association between a biosample and a disease or phenotype
+  "
+  % http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation ! case to phenotypic feature association *  "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
+  % http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+  % http://bioentity.io/vocab/GeneToGeneAssociation ! gene to gene association *  "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction."
+   % http://bioentity.io/vocab/GeneToGeneHomologyAssociation ! gene to gene homology association *  "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)"
+   % http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation ! pairwise gene or protein interaction association *  "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)"
+  % http://bioentity.io/vocab/GenomicSequenceLocalization ! genomic sequence localization *  "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig"
+  % http://bioentity.io/vocab/DiseaseToThingAssociation ! disease to thing association * 
+  % http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+  % http://bioentity.io/vocab/GenotypeToThingAssociation ! genotype to thing association * 
+  % http://bioentity.io/vocab/ChemicalToThingAssociation ! chemical to thing association *  "An interaction between a chemical entity and another entity"
+  % http://bioentity.io/vocab/SequenceFeatureRelationship ! sequence feature relationship *  "For example, a particular exon is part of a particular transcript or gene"
+  % http://bioentity.io/vocab/ChemicalToGeneAssociation ! chemical to gene association *  "An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug."
+  % http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+  % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation ! disease to phenotypic feature association *  "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
+   % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation ! disease to phenotypic feature denormalized association * 
+  % http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation ! environment to phenotypic feature association *  "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype"
+  % http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation ! chemical to disease or phenotypic feature association *  "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype"
+  % http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation ! thing to disease or phenotypic feature association * 
+  % http://bioentity.io/vocab/CaseToThingAssociation ! case to thing association *  "An abstract association for use where the case is the subject"
+  % http://bioentity.io/vocab/GoAssociation ! go association * 
+  % http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation ! genotype to phenotypic feature association *  "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment"
+  % http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation ! gene to phenotypic feature association * 
+ http://bioentity.io/vocab/relation http://bioentity.io/vocab/PropertyValuePair ! property value pair * 
+
+. http://bioentity.io/vocab/ObjectExtensions
+ http://bioentity.io/vocab/object_extensions http://bioentity.io/vocab/Association ! association *  "A typed association between two entities, supported by evidence"
+  % http://bioentity.io/vocab/BiosampleToThingAssociation ! biosample to thing association *  "An association between a biosample and something"
+  % http://bioentity.io/vocab/GenotypeToGenotypePartAssociation ! genotype to genotype part association *  "Any association between one genotype and a genotypic entity that is a sub-component of it"
+  % http://bioentity.io/vocab/GeneToThingAssociation ! gene to thing association * 
+  % http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation ! biosample to disease or phenotypic feature association *  "An association between a biosample and a disease or phenotype
+  "
+  % http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation ! case to phenotypic feature association *  "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
+  % http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+  % http://bioentity.io/vocab/GeneToGeneAssociation ! gene to gene association *  "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction."
+   % http://bioentity.io/vocab/GeneToGeneHomologyAssociation ! gene to gene homology association *  "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)"
+   % http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation ! pairwise gene or protein interaction association *  "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)"
+  % http://bioentity.io/vocab/GenomicSequenceLocalization ! genomic sequence localization *  "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig"
+  % http://bioentity.io/vocab/DiseaseToThingAssociation ! disease to thing association * 
+  % http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+  % http://bioentity.io/vocab/GenotypeToThingAssociation ! genotype to thing association * 
+  % http://bioentity.io/vocab/ChemicalToThingAssociation ! chemical to thing association *  "An interaction between a chemical entity and another entity"
+  % http://bioentity.io/vocab/SequenceFeatureRelationship ! sequence feature relationship *  "For example, a particular exon is part of a particular transcript or gene"
+  % http://bioentity.io/vocab/ChemicalToGeneAssociation ! chemical to gene association *  "An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug."
+  % http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+  % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation ! disease to phenotypic feature association *  "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
+   % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation ! disease to phenotypic feature denormalized association * 
+  % http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation ! environment to phenotypic feature association *  "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype"
+  % http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation ! chemical to disease or phenotypic feature association *  "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype"
+  % http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation ! thing to disease or phenotypic feature association * 
+  % http://bioentity.io/vocab/CaseToThingAssociation ! case to thing association *  "An abstract association for use where the case is the subject"
+  % http://bioentity.io/vocab/GoAssociation ! go association * 
+  % http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation ! genotype to phenotypic feature association *  "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment"
+  % http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation ! gene to phenotypic feature association * 
+
+. http://bioentity.io/vocab/Label
+ http://bioentity.io/vocab/label http://bioentity.io/vocab/NamedThing ! named thing *  "a databased entity or concept/class"
+  % http://bioentity.io/vocab/Biosample ! biosample * 
+  % http://bioentity.io/vocab/PopulationOfIndividualOrganisms ! population of individual organisms * 
+   % http://bioentity.io/vocab/Cohort ! cohort * 
+  % http://bioentity.io/vocab/MolecularEntity ! molecular entity *  "A gene, gene product, small molecule or macromolecule (including protein complex)"
+   % http://bioentity.io/vocab/ChemicalSubstance ! chemical substance *  "may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part"
+   % http://bioentity.io/vocab/GenomicEntity ! genomic entity *  "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)"
+    % http://bioentity.io/vocab/Genotype ! genotype *  "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background"
+    % http://bioentity.io/vocab/SequenceVariant ! sequence variant *  "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus."
+    % http://bioentity.io/vocab/GeneOrGeneProduct ! gene or gene product *  "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another"
+     % http://bioentity.io/vocab/Gene ! gene * 
+     % http://bioentity.io/vocab/GeneProduct ! gene product * 
+      % http://bioentity.io/vocab/Protein ! protein * 
+      % http://bioentity.io/vocab/RnaProduct ! RNA product * 
+   % http://bioentity.io/vocab/BioentityWithGoTerms ! bioentity with go terms *  "this serves as exemplar for the time being, corresponding to the bioentity document type in amigo, which has a single entry per bioentity, with associated GO information"
+   % http://bioentity.io/vocab/MacromolecularComplex ! macromolecular complex * 
+   % http://bioentity.io/vocab/GeneFamily ! gene family *  "any grouping of multiple genes or gene products related by common descent"
+  % http://bioentity.io/vocab/AnatomicalEntity ! anatomical entity *  "A subcellular location, cell type or gross anatomical part"
+  % http://bioentity.io/vocab/InformationContentEntity ! information content entity *  "a piece of information that typically describes some piece of biology or is used as support."
+   % http://bioentity.io/vocab/Publication ! publication *  "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals."
+   % http://bioentity.io/vocab/EvidenceType ! evidence type *  "Class of evidence that supports an association"
+   % http://bioentity.io/vocab/Association ! association *  "A typed association between two entities, supported by evidence"
+    % http://bioentity.io/vocab/BiosampleToThingAssociation ! biosample to thing association *  "An association between a biosample and something"
+    % http://bioentity.io/vocab/GenotypeToGenotypePartAssociation ! genotype to genotype part association *  "Any association between one genotype and a genotypic entity that is a sub-component of it"
+    % http://bioentity.io/vocab/GeneToThingAssociation ! gene to thing association * 
+    % http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation ! biosample to disease or phenotypic feature association *  "An association between a biosample and a disease or phenotype
+  "
+    % http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation ! case to phenotypic feature association *  "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
+    % http://bioentity.io/vocab/GeneToExpressionSiteAssociation ! gene to expression site association *  "An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?"
+    % http://bioentity.io/vocab/GeneToGeneAssociation ! gene to gene association *  "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction."
+     % http://bioentity.io/vocab/GeneToGeneHomologyAssociation ! gene to gene homology association *  "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)"
+     % http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation ! pairwise gene or protein interaction association *  "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)"
+    % http://bioentity.io/vocab/GenomicSequenceLocalization ! genomic sequence localization *  "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig"
+    % http://bioentity.io/vocab/DiseaseToThingAssociation ! disease to thing association * 
+    % http://bioentity.io/vocab/DenormalizedAssociation ! denormalized association *  "An association that includes flattened inlined objects, such as subject_taxon_closure"
+    % http://bioentity.io/vocab/GenotypeToThingAssociation ! genotype to thing association * 
+    % http://bioentity.io/vocab/ChemicalToThingAssociation ! chemical to thing association *  "An interaction between a chemical entity and another entity"
+    % http://bioentity.io/vocab/SequenceFeatureRelationship ! sequence feature relationship *  "For example, a particular exon is part of a particular transcript or gene"
+    % http://bioentity.io/vocab/ChemicalToGeneAssociation ! chemical to gene association *  "An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug."
+    % http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
+    % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation ! disease to phenotypic feature association *  "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
+     % http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation ! disease to phenotypic feature denormalized association * 
+    % http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation ! environment to phenotypic feature association *  "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype"
+    % http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation ! chemical to disease or phenotypic feature association *  "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype"
+    % http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation ! thing to disease or phenotypic feature association * 
+    % http://bioentity.io/vocab/CaseToThingAssociation ! case to thing association *  "An abstract association for use where the case is the subject"
+    % http://bioentity.io/vocab/GoAssociation ! go association * 
+    % http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation ! genotype to phenotypic feature association *  "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment"
+    % http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation ! gene to phenotypic feature association * 
+  % http://bioentity.io/vocab/IndividualOrganism ! individual organism * 
+   % http://bioentity.io/vocab/Case ! case *  "An individual organism that has a patient role in some clinical context."
+  % http://bioentity.io/vocab/EnvironmentalFeature ! environmental feature *  "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes"
+  % http://bioentity.io/vocab/LifeStage ! life stage *  "A stage of development or growth of an organism, including post-natal adult stages"
+  % http://bioentity.io/vocab/OntologyClass ! ontology class *  "a concept or class in an ontology, vocabulary or thesaurus"
+   % http://bioentity.io/vocab/ConditionOrPhenotypicFeature ! condition or phenotypic feature * 
+    % http://bioentity.io/vocab/Disease ! disease * 
+    % http://bioentity.io/vocab/PhenotypicFeature ! phenotypic feature * 
+   % http://bioentity.io/vocab/OrganismTaxon ! organism taxon * 
+
+. http://bioentity.io/vocab/SeverityQualifier
+ http://bioentity.io/vocab/severity_qualifier http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation ! entity to phenotypic feature association * 
 
 

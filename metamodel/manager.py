@@ -21,6 +21,7 @@ class NameStyle(Enum):
     CAMELCASE = 1
     UNDERSCORE = 2
     NATURAL = 3
+    LCAMELCASE = 4
 
 class Manager(object):
     """
@@ -41,6 +42,9 @@ class Manager(object):
             return n.replace(" ","_")
         if style == NameStyle.CAMELCASE:
             return n.title().replace(" ","")
+        if style == NameStyle.LCAMELCASE:
+            s = n.title().replace(" ","")
+            return s[0].lower() + s[1:]
         return n
 
         

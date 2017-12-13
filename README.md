@@ -124,6 +124,28 @@ Auto-generated image:
 
 ![img](graphviz/GeneToExpressionSiteAssociation.png)
 
+```graphql
+type GeneToExpressionSiteAssociation {
+  qualifiers: [String]
+  stageQualifier: LifeStage
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: AnatomicalEntity!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: GeneOrGeneProduct!
+  id: String!
+  quantifierQualifier: String
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+```
+
 snippet of [generated json-schema](json-schema)
 
 ```json

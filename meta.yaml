@@ -45,6 +45,18 @@ slots:
       For any denormalized slot, this represents the tree or graph path used to generate the denormalized form
     range: string
 
+  - name: multivalued
+    description: >-
+      If true slot can have many values
+    domain: slot definition
+    range: boolean
+
+  - name: required
+    description: >-
+      If true slot must have at least one value
+    domain: slot definition
+    range: boolean
+    
   - name: slots
     multivalued: true
     domain: class
@@ -107,6 +119,7 @@ classes:
       - domain
       - range
       - multivalued
+      - required
       - path
       - subproperty_of
 

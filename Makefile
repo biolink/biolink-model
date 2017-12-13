@@ -40,6 +40,8 @@ gv: biolink-model.yaml
 graphviz/%.png: biolink-model.yaml 
 	./bin/gen-graphviz.py  -c $* $< -o graphviz/$*
 
+graphql/biolink-model.graphql: biolink-model.yaml 
+	./bin/gen-graphql.py $< > $@
 
 #biolinkmodel/schema.py: biolink-model.yaml
 #	./bin/gen-mm-schema.py $< > $@
@@ -48,7 +50,7 @@ graphviz/%.png: biolink-model.yaml
 # JSONSCHEMA
 # ----------------------------------------
 json-schema/%.json: %.yaml
-	bin/gen-json-schema.py $< > $@
+	bin/gen-json-schema.py $< > $@.tmp && mv $@.tmp $@
 
 JSONSCHEMA2POJO = $(HOME)/src/jsonschema2pojo/bin/jsonschema2pojo
 java: json-schema/biolink-model.json

@@ -1,0 +1,818 @@
+type NamedThing {
+  id: String!
+  label: String
+}
+
+type OntologyClass {
+  id: String!
+  label: String
+}
+
+type ThingWithTaxon {
+  inTaxon: OrganismTaxon
+}
+
+type OrganismTaxon {
+  id: String!
+  label: String
+}
+
+type IndividualOrganism implements ThingWithTaxon {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type Case {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type PopulationOfIndividualOrganisms implements ThingWithTaxon {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type Cohort {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type Biosample implements ThingWithTaxon {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type ConditionOrPhenotypicFeature implements ThingWithTaxon {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type Disease {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type PhenotypicFeature {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type EnvironmentalFeature {
+  id: String!
+  label: String
+}
+
+type InformationContentEntity {
+  id: String!
+  label: String
+}
+
+type EvidenceType {
+  id: String!
+  label: String
+}
+
+type Publication {
+  id: String!
+  label: String
+}
+
+type Provider {
+}
+
+type MolecularEntity implements ThingWithTaxon {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type ChemicalSubstance {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type AnatomicalEntity implements ThingWithTaxon {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type LifeStage implements ThingWithTaxon {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type HasGenomicName {
+  fullName: String
+  systematicSynonym: String
+}
+
+type GenomicEntity {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type GeneOrGeneProduct {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type Gene {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type GeneProduct {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type Protein {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type RnaProduct {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type MacromolecularComplex {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type GeneGrouping {
+}
+
+type GeneFamily implements GeneGrouping {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type Zygosity {
+}
+
+type Genotype {
+  hasZygosity: Zygosity
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type SequenceVariant {
+  id: String!
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type Association {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: String!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type GenotypeToGenotypePartAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: Genotype!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: Genotype!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type GenotypeToGeneAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: Gene!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: Genotype!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type GenotypeToVariantAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: SequenceVariant!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: Genotype!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type GeneToGeneAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: GeneOrGeneProduct!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: GeneOrGeneProduct!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type GeneToGeneHomologyAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: GeneOrGeneProduct!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: GeneOrGeneProduct!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type PairwiseGeneOrProteinInteractionAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: GeneOrGeneProduct!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: GeneOrGeneProduct!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type ChemicalToThingAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: ChemicalSubstance!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type CaseToThingAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: Case!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type ChemicalToGeneAssociation implements ChemicalToThingAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: GeneProduct!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: String!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: String!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type BiosampleToThingAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: Biosample!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type BiosampleToDiseaseOrPhenotypicFeatureAssociation implements BiosampleToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: String!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type EntityToPhenotypicFeatureAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: PhenotypicFeature!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  frequencyQualifier: String
+  relation: String!
+  negated: String
+  subject: String!
+  onsetQualifier: LifeStage
+  severityQualifier: String
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type ThingToDiseaseOrPhenotypicFeatureAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: String!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type DiseaseToThingAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: Disease!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  frequencyQualifier: String
+  relation: String!
+  negated: String
+  subject: Genotype!
+  onsetQualifier: LifeStage
+  severityQualifier: String
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type EnvironmentToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  frequencyQualifier: String
+  relation: String!
+  negated: String
+  subject: String!
+  onsetQualifier: LifeStage
+  severityQualifier: String
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, DiseaseToThingAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  frequencyQualifier: String
+  relation: String!
+  negated: String
+  subject: String!
+  onsetQualifier: LifeStage
+  severityQualifier: String
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, CaseToThingAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  frequencyQualifier: String
+  relation: String!
+  negated: String
+  subject: String!
+  onsetQualifier: LifeStage
+  severityQualifier: String
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type GeneToThingAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: GeneOrGeneProduct!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, GeneToThingAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  frequencyQualifier: String
+  relation: String!
+  negated: String
+  subject: GeneOrGeneProduct!
+  onsetQualifier: LifeStage
+  severityQualifier: String
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type GenotypeToThingAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: Genotype!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, GenotypeToThingAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  frequencyQualifier: String
+  relation: String!
+  negated: String
+  subject: GeneOrGeneProduct!
+  onsetQualifier: LifeStage
+  severityQualifier: String
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type GeneToExpressionSiteAssociation {
+  qualifiers: [String]
+  stageQualifier: LifeStage
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: AnatomicalEntity!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: GeneOrGeneProduct!
+  id: String!
+  quantifierQualifier: String
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type GoAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: MolecularEntity!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type DenormalizedAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  subjectTaxonLabel: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  subjectTaxonClosureLabel: [String]
+  label: String
+  subjectTaxonClosure: [String]
+  relation: String!
+  negated: String
+  subject: String!
+  subjectTaxon: OrganismTaxon
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type DiseaseToPhenotypicFeatureDenormalizedAssociation {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  frequencyQualifier: String
+  relation: String!
+  negated: String
+  subject: String!
+  onsetQualifier: LifeStage
+  severityQualifier: String
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type AssociationResultSet {
+  associations: [Association]
+}
+
+type PropertyValuePair {
+  relation: String!
+  filler: NamedThing
+}
+
+type GenomicSequenceLocalization {
+  qualifiers: [String]
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: String!
+  endInterbaseCoordinate: String
+  genomeBuild: String
+  phase: String
+  startInterbaseCoordinate: String
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type SequenceFeatureRelationship {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: String!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type SequenceFeatureToSequenceRelationship {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: String!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type GeneRegulatoryRelationship {
+  qualifiers: [String]
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  publications: [Publication]
+  object: String!
+  hasEvidenceType: EvidenceType
+  hasEvidenceGraph: String
+  providedBy: Provider
+  label: String
+  relation: String!
+  negated: String
+  subject: String!
+  id: String!
+  associationType: String
+  subjectExtensions: [PropertyValuePair]
+}
+
+type MolecularEvent {
+}
+
+type BioentityWithGoTerms implements HasGenomicName {
+  isaPartofClosure: [String]
+  systematicSynonym: String
+  inTaxon: OrganismTaxon
+  label: String
+  fullName: String
+  id: String!
+  regulatesClosure: [String]
+}
+

@@ -3,16 +3,15 @@
 import click
 
 import logging
-from metamodel.marshmallow.schemagen import write_schema
 from metamodel.loader import load_schema
-from marshmallow_jsonschema import JSONSchema
+from metamodel.graphqlgen import GraphqlGenerator
 
 @click.command()
 @click.argument("file", type=click.File('r'))
 def cli(file):
     schema = load_schema(file)
-    json_schema = JSONSchema()
-    json_schema.dump(schema).data
+    g = GraphqlGenerator(schema=schema)
+    print(g.serialize())
 
 
 

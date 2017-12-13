@@ -20,10 +20,10 @@
 <http://bioentity.io/vocab/BioentityWithGoTerms> a owl:Class ;
     rdfs:label "bioentity with go terms" ;
     obo:IAO_0000115 "this serves as exemplar for the time being, corresponding to the bioentity document type in amigo, which has a single entry per bioentity, with associated GO information" ;
-    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/regulates_closure> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/RegulatesClosure> ],
-        [ owl:onProperty <http://bioentity.io/vocab/isa_partof_closure> ;
+    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/isa_partof_closure> ;
             owl:someValuesFrom <http://bioentity.io/vocab/IsaPartofClosure> ],
+        [ owl:onProperty <http://bioentity.io/vocab/regulates_closure> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RegulatesClosure> ],
         <http://bioentity.io/vocab/MolecularEntity> .
 
 <http://bioentity.io/vocab/Biosample> a owl:Class ;
@@ -83,12 +83,12 @@
 <http://bioentity.io/vocab/DenormalizedAssociation> a owl:Class ;
     rdfs:label "denormalized association" ;
     obo:IAO_0000115 "An association that includes flattened inlined objects, such as subject_taxon_closure" ;
-    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/subject_taxon_label> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/SubjectTaxonLabel> ],
-        [ owl:onProperty <http://bioentity.io/vocab/subject_taxon_closure> ;
+    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/subject_taxon_closure> ;
             owl:someValuesFrom <http://bioentity.io/vocab/SubjectTaxonClosure> ],
         [ owl:onProperty <http://bioentity.io/vocab/subject_taxon> ;
             owl:someValuesFrom <http://bioentity.io/vocab/SubjectTaxon> ],
+        [ owl:onProperty <http://bioentity.io/vocab/subject_taxon_label> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SubjectTaxonLabel> ],
         <http://bioentity.io/vocab/Association> .
 
 <http://bioentity.io/vocab/Disease> a owl:Class ;
@@ -105,12 +105,12 @@
 
 <http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation> a owl:Class ;
     rdfs:label "entity to phenotypic feature association" ;
-    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/severity_qualifier> ;
+    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/onset_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OnsetQualifier> ],
+        [ owl:onProperty <http://bioentity.io/vocab/severity_qualifier> ;
             owl:someValuesFrom <http://bioentity.io/vocab/SeverityQualifier> ],
         [ owl:onProperty <http://bioentity.io/vocab/frequency_qualifier> ;
             owl:someValuesFrom <http://bioentity.io/vocab/FrequencyQualifier> ],
-        [ owl:onProperty <http://bioentity.io/vocab/onset_qualifier> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/OnsetQualifier> ],
         <http://bioentity.io/vocab/Association> .
 
 <http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation> a owl:Class ;
@@ -135,6 +135,11 @@
 <http://bioentity.io/vocab/GeneGrouping> a owl:Class ;
     rdfs:label "gene grouping" ;
     obo:IAO_0000115 "any grouping of multiple genes or gene products" .
+
+<http://bioentity.io/vocab/GeneRegulatoryRelationship> a owl:Class ;
+    rdfs:label "gene regulatory relationship" ;
+    obo:IAO_0000115 "A regulatory relationship between two genes" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Association> .
 
 <http://bioentity.io/vocab/GeneToExpressionSiteAssociation> a owl:Class ;
     rdfs:label "gene to expression site association" ;
@@ -170,6 +175,11 @@
             owl:someValuesFrom <http://bioentity.io/vocab/HasZygosity> ],
         <http://bioentity.io/vocab/GenomicEntity> .
 
+<http://bioentity.io/vocab/GenotypeToGeneAssociation> a owl:Class ;
+    rdfs:label "genotype to gene association" ;
+    obo:IAO_0000115 "Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Association> .
+
 <http://bioentity.io/vocab/GenotypeToGenotypePartAssociation> a owl:Class ;
     rdfs:label "genotype to genotype part association" ;
     obo:IAO_0000115 "Any association between one genotype and a genotypic entity that is a sub-component of it" ;
@@ -184,16 +194,21 @@
     rdfs:label "genotype to thing association" ;
     rdfs:subClassOf <http://bioentity.io/vocab/Association> .
 
+<http://bioentity.io/vocab/GenotypeToVariantAssociation> a owl:Class ;
+    rdfs:label "genotype to variant association" ;
+    obo:IAO_0000115 "Any association between a genotype and a sequence variant." ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Association> .
+
 <http://bioentity.io/vocab/GoAssociation> a owl:Class ;
     rdfs:label "go association" ;
     rdfs:subClassOf <http://bioentity.io/vocab/Association> .
 
 <http://bioentity.io/vocab/HasGenomicName> a owl:Class ;
     rdfs:label "has genomic name" ;
-    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/full_name> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/FullName> ],
-        [ owl:onProperty <http://bioentity.io/vocab/systematic_synonym> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/SystematicSynonym> ] .
+    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/systematic_synonym> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SystematicSynonym> ],
+        [ owl:onProperty <http://bioentity.io/vocab/full_name> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/FullName> ] .
 
 <http://bioentity.io/vocab/MacromolecularComplex> a owl:Class ;
     rdfs:label "macromolecular complex" ;
@@ -222,6 +237,11 @@
 <http://bioentity.io/vocab/SequenceFeatureRelationship> a owl:Class ;
     rdfs:label "sequence feature relationship" ;
     obo:IAO_0000115 "For example, a particular exon is part of a particular transcript or gene" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Association> .
+
+<http://bioentity.io/vocab/SequenceFeatureToSequenceRelationship> a owl:Class ;
+    rdfs:label "sequence feature to sequence relationship" ;
+    obo:IAO_0000115 "Relates a sequence feature such as a gene to its sequence" ;
     rdfs:subClassOf <http://bioentity.io/vocab/Association> .
 
 <http://bioentity.io/vocab/SequenceVariant> a owl:Class ;
@@ -532,10 +552,10 @@
 
 <http://bioentity.io/vocab/PropertyValuePair> a owl:Class ;
     rdfs:label "property value pair" ;
-    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/filler> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/Filler> ],
-        [ owl:onProperty <http://bioentity.io/vocab/relation> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/Relation> ] .
+    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Relation> ],
+        [ owl:onProperty <http://bioentity.io/vocab/filler> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Filler> ] .
 
 <http://bioentity.io/vocab/closure_label_slot> a owl:ObjectProperty ;
     rdfs:label "closure label slot" ;
@@ -615,25 +635,25 @@
 <http://bioentity.io/vocab/Association> a owl:Class ;
     rdfs:label "association" ;
     obo:IAO_0000115 "A typed association between two entities, supported by evidence" ;
-    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/negated> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/Negated> ],
-        [ owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+    rdfs:subClassOf [ owl:onProperty <http://bioentity.io/vocab/provided_by> ;
             owl:someValuesFrom <http://bioentity.io/vocab/ProvidedBy> ],
-        [ owl:onProperty <http://bioentity.io/vocab/association_type> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/AssociationType> ],
         [ owl:onProperty <http://bioentity.io/vocab/has_evidence_graph> ;
             owl:someValuesFrom <http://bioentity.io/vocab/HasEvidenceGraph> ],
+        [ owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Qualifiers> ],
+        [ owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Relation> ],
+        [ owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Negated> ],
+        [ owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publications> ],
+        [ owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/AssociationType> ],
         [ owl:onProperty <http://bioentity.io/vocab/has_evidence_type> ;
             owl:someValuesFrom <http://bioentity.io/vocab/HasEvidenceType> ],
         [ owl:onProperty <http://bioentity.io/vocab/object_extensions> ;
             owl:someValuesFrom <http://bioentity.io/vocab/ObjectExtensions> ],
-        [ owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/Qualifiers> ],
-        [ owl:onProperty <http://bioentity.io/vocab/publications> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/Publications> ],
         [ owl:onProperty <http://bioentity.io/vocab/has_evidence> ;
             owl:someValuesFrom <http://bioentity.io/vocab/HasEvidence> ],
-        [ owl:onProperty <http://bioentity.io/vocab/relation> ;
-            owl:someValuesFrom <http://bioentity.io/vocab/Relation> ],
         <http://bioentity.io/vocab/InformationContentEntity> .
 
