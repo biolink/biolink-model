@@ -70,6 +70,9 @@ class OwlSchemaGenerator(object):
         g.add((ci, RDFS.label, Literal(c.name)))
         if c.is_a:
             g.add((ci, RDFS.subClassOf, self.class_uri(c.is_a)))
+        if c.mixins:
+            for m in c.mixins:
+                g.add((ci, RDFS.subClassOf, self.class_uri(m)))
         if c.slots:
             for sn in c.slots:
                 srange = get_slot_range(sn, self.schema)
