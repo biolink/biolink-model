@@ -3,7 +3,7 @@
 import click
 
 import logging
-from metamodel.owlgen import write_owl
+from metamodel.ontolgen import write_owl
 from metamodel.loader import load_schema
 
 @click.command()

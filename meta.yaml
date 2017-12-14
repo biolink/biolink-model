@@ -56,6 +56,14 @@ slots:
       If true slot must have at least one value
     domain: slot definition
     range: boolean
+
+  - name: mappings
+    multivalued: true
+    domain: definition
+    range: string
+    inlined: false
+    description: >-
+      list of equivalent or skos exact mappings to an ontology class
     
   - name: slots
     multivalued: true
@@ -132,6 +140,7 @@ classes:
     description: "A class or interface"
     is_a: definition
     slots:
+      - subclass_of
       - mixin
       - mixins
       - slots

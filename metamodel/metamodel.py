@@ -115,6 +115,7 @@ class ClassDefinition(Definition):
     A class or interface
     """
     def __init__(self,
+                 subclass_of=None,
                  mixin=None,
                  mixins=None,
                  slots=None,
@@ -125,6 +126,7 @@ class ClassDefinition(Definition):
                  description=None,
                  abstract=None,
                  mappings=None):
+        self.subclass_of=subclass_of
         self.mixin=mixin
         self.mixins=mixins
         self.slots=slots
@@ -137,7 +139,7 @@ class ClassDefinition(Definition):
         self.mappings=mappings
 
     def __str__(self):
-        return "mixin={} mixins={} slots={} slot_usage={} name={} singular_name={} is_a={} description={} abstract={} mappings={} ".format(self.mixin,self.mixins,self.slots,self.slot_usage,self.name,self.singular_name,self.is_a,self.description,self.abstract,self.mappings)
+        return "subclass_of={} mixin={} mixins={} slots={} slot_usage={} name={} singular_name={} is_a={} description={} abstract={} mappings={} ".format(self.subclass_of,self.mixin,self.mixins,self.slots,self.slot_usage,self.name,self.singular_name,self.is_a,self.description,self.abstract,self.mappings)
     def __repr__(self):
         return self.__str__()
 

@@ -179,6 +179,7 @@ slots:
   - name: stage qualifier
     is_a: association slot
     range: life stage
+    path: "object/during"
     description: >-
       stage at which expression takes place
 
@@ -451,6 +452,8 @@ classes:
   - name: phenotypic feature
     aliases: ['sign', 'symptom', 'phenotype', 'trait']
     is_a: condition or phenotypic feature
+    mappings:
+      - "UPHENO:0000001"
       
   - name: environmental feature
     aliases: ['environment', 'exposure', 'experimental condition']
@@ -505,6 +508,7 @@ classes:
     description: >-
       may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex
       material with multiple chemical entities as part
+    subclass_of: "CHEBI:24431"
 
   - name: anatomical entity
     is_a: named thing
@@ -535,6 +539,18 @@ classes:
     aliases: ['sequence feature']
     description: >-
       an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+
+  - name: transcript
+    is_a: genomic entity
+    mappings: ['SO:0000673']
+
+  - name: exon
+    is_a: genomic entity
+    mappings: ['SO:0000147']
+
+  - name: coding sequence
+    is_a: genomic entity
+    mappings: ['SO:0000316']
       
   - name: gene or gene product
     is_a: genomic entity
@@ -645,6 +661,9 @@ classes:
 
   - name: genotype to genotype part association
     is_a: association
+    defining_slots:
+      - subject
+      - object
     description: >-
       Any association between one genotype and a genotypic entity that is a sub-component of it
     slot_usage:
@@ -654,13 +673,18 @@ classes:
         range: genotype
         description: >-
           parent genotype
+        definitional: true
       - name: object
         range: genotype
         description: >-
           child genotype
+        definitional: true
 
   - name: genotype to gene association
     is_a: association
+    defining_slots:
+      - subject
+      - object
     description: >-
       Any association between a genotype and a gene.
       The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
@@ -672,13 +696,18 @@ classes:
         range: genotype
         description: >-
           parent genotype
+        definitional: true
       - name: object
         range: gene
         description: >-
           gene implicated in genotype
+        definitional: true
 
   - name: genotype to variant association
     is_a: association
+    defining_slots:
+      - subject
+      - object
     description: >-
       Any association between a genotype and a sequence variant.
     slot_usage:
@@ -689,10 +718,12 @@ classes:
         range: genotype
         description: >-
           parent genotype
+        definitional: true
       - name: object
         range: sequence variant
         description: >-
           gene implicated in genotype
+        definitional: true
 
   - name: gene to gene association
     aliases: ['molecular or genetic interaction']
@@ -707,15 +738,21 @@ classes:
         description: >-
           the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary.
           We allow a gene product to stand as proxy for the gene or vice versa
+        definitional: true
       - name: object
         range: gene or gene product
         description: >-
           the object gene in the association. If the relation is symmetric, subject vs object is arbitrary.
           We allow a gene product to stand as proxy for the gene or vice versa
+        definitional: true
 
 
   - name: gene to gene homology association
     is_a: gene to gene association
+    defining_slots:
+      - subject
+      - object
+      - relation
     description: >-
       A homology association between two genes. May be orthology (in which case the species of subject and object
       should differ) or paralogy (in which case the species may be the same)
@@ -726,10 +763,16 @@ classes:
         subproperty_of: "RO:HOM0000001"
         values_from:
           - ro
-        description: "homology relationship type"
+        description: >-
+          homology relationship type
+        definitional: true
 
   - name: pairwise gene or protein interaction association
     is_a: gene to gene association
+    defining_slots:
+      - subject
+      - object
+      - relation
 #    mixins:
 #      - interaction relationship
     description: >-
@@ -745,9 +788,12 @@ classes:
           - ro
           - mi
         description: "interaction relationship type"
+        definitional: true
 
   - name: chemical to thing association
     is_a: association
+    defining_slots:
+      - subject
     abstract: true
     description: >-
       An interaction between a chemical entity and another entity
@@ -755,9 +801,12 @@ classes:
       - name: subject
         range: chemical substance
         description: "the chemical substance or entity that is an interactor"
+        definitional: true
 
   - name: case to thing association
     is_a: association
+    defining_slots:
+      - subject
     abstract: true
     description: >-
       An abstract association for use where the case is the subject
@@ -765,9 +814,13 @@ classes:
       - name: subject
         range: case
         description: "the case (e.g. patient) that has the property"
+        definitional: true
 
   - name: chemical to gene association
     is_a: association
+    defining_slots:
+      - subject
+      - object
     mixins:
       - chemical to thing association
     description: >-
@@ -777,9 +830,13 @@ classes:
       - name: object
         range: gene product
         description: "the gene or gene product with which the chemical interacts"
+        definitional: true
 
   - name: chemical to disease or phenotypic feature association
     is_a: association
+    defining_slots:
+      - subject
+      - object
     mixins:
       - chemical to thing association
       - thing to disease or phenotypic feature association
@@ -790,32 +847,44 @@ classes:
       - name: object
         range: disease or phenotypic feature
         description: "the disease or phenotype that is affected by the chemical"
+        definitional: true
         
   - name: biosample to thing association
     is_a: association
+    defining_slots:
+      - subject
     abstract: true
     description: >-
       An association between a biosample and something
     slot_usage:
       - name: subject
         range: biosample
-        description: "the biosample being described"
+        description: >-
+          the biosample being described
+        definitional: true
         
   - name: biosample to disease or phenotypic feature association
     is_a: association
+    defining_slots:
+      - subject
+      - object
     mixins:
       - biosample to thing association
       - thing to disease or phenotypic feature association
     description: >-
       An association between a biosample and a disease or phenotype
+        definitional: true
         
   - name: entity to phenotypic feature association
     abstract: true
+    defining_slots:
+      - object
     is_a: association
     slot_usage:
       - name: object
         range: phenotypic feature
         description: "phenotypic class"
+        definitional: true
         values_from: ['upheno', 'hp', 'mp', 'wbphenotypic feature']
         subclass_of: UPHENO:0000001
         examples:
@@ -831,10 +900,13 @@ classes:
   - name: thing to disease or phenotypic feature association
     abstract: true
     is_a: association
+    defining_slots:
+      - object
     slot_usage:
       - name: object
         range: disease or phenotypic feature
         description: "disease or phenotype"
+        definitional: true
         examples:
           - value: MONDO:0017314
             description: "Ehlers-Danlos syndrome, vascular type"
@@ -844,10 +916,13 @@ classes:
   - name: disease to thing association
     abstract: true
     is_a: association
+    defining_slots:
+      - subject
     slot_usage:
       - name: subject
         range: disease
         description: "disease class"
+        definitional: true
         values_from: ['mondo', 'omim', 'orphanet', 'ncit', 'doid']
         subclass_of: MONDO:0000001
         examples:
@@ -857,6 +932,9 @@ classes:
 
   - name: genotype to phenotypic feature association
     is_a: association
+    defining_slots:
+      - subject
+      - object
     description: >-
       Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype,
       either in isolation or through environment
@@ -872,6 +950,9 @@ classes:
 
   - name: environment to phenotypic feature association
     is_a: association
+    defining_slots:
+      - subject
+      - object
     description: >-
       Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
     mixins:
@@ -879,9 +960,13 @@ classes:
     slot_usage:
       - name: subject
         range: environment
+        definitional: true
           
   - name: disease to phenotypic feature association
     is_a: association
+    defining_slots:
+      - subject
+      - object
     description: "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way"
     mixins:
       - entity to phenotypic feature association
@@ -896,6 +981,8 @@ classes:
       
   - name: gene to thing association
     is_a: association
+    defining_slots:
+      - subject
     abstract: true
     slot_usage:
       - name: subject
@@ -904,6 +991,9 @@ classes:
       
   - name: gene to phenotypic feature association
     is_a: association
+    defining_slots:
+      - subject
+      - object
     mixins:
       - entity to phenotypic feature association
       - gene to thing association
@@ -914,6 +1004,8 @@ classes:
 
   - name: genotype to thing association
     is_a: association
+    defining_slots:
+      - subject
     abstract: true
     slot_usage:
       - name: subject
@@ -922,6 +1014,9 @@ classes:
         
   - name: genotype to phenotypic feature association
     is_a: association
+    defining_slots:
+      - subject
+      - object
     mixins:
       - entity to phenotypic feature association
       - genotype to thing association
@@ -932,6 +1027,10 @@ classes:
         
   - name: gene to expression site association
     is_a: association
+    defining_slots:
+      - subject
+      - object
+      - relation
     description: >-
       An association between a gene and an expression site, possibly qualified by stage/timing info.
       TBD: introduce subclasses for distinction between wild-type and experimental conditions?
@@ -966,6 +1065,9 @@ classes:
   - name: go association
     aliases: ['functional association']
     is_a: association
+    defining_slots:
+      - subject
+      - object
     slot_usage:
       - name: subject
         range: molecular entity
@@ -1051,6 +1153,38 @@ classes:
         domain: genomic entity  ## todo protein
       - name: object
         domain: genomic entity ## typically a chromosome
+
+  - name: transcript to gene relationship
+    is_a: sequence feature relationship
+    description: >-
+      A gene is a collection of transcripts
+    slot_usage:
+      - name: subject
+        domain: transcript
+      - name: object
+        domain: gene
+
+  - name: gene to gene product relationship
+    is_a: sequence feature relationship
+    description: >-
+      A gene is transcribed and potentially translated to a gene product
+    slot_usage:
+      - name: subject
+        domain: gene
+      - name: object
+        domain: gene product
+      - name: relation
+        subproperty_of: RO:0002205
+
+  - name: exon to transcript relationship
+    is_a: sequence feature relationship
+    description: >-
+      A transcript is formed from multiple exons
+    slot_usage:
+      - name: subject
+        domain: exon
+      - name: object
+        domain: transcript
 
   - name: sequence feature to sequence relationship
     is_a: association

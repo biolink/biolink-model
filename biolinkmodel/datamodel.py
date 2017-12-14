@@ -365,6 +365,54 @@ class GenomicEntity(MolecularEntity):
         return self.__str__()
 
 
+class Transcript(GenomicEntity):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Exon(GenomicEntity):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class CodingSequence(GenomicEntity):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
 class GeneOrGeneProduct(GenomicEntity):
     """
     a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
@@ -1044,6 +1092,7 @@ class BiosampleToThingAssociation(Association):
 class BiosampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     An association between a biosample and a disease or phenotype
+  definitional: true
   
     """
     def __init__(self,
@@ -1815,6 +1864,132 @@ class GenomicSequenceLocalization(Association):
 class SequenceFeatureRelationship(Association):
     """
     For example, a particular exon is part of a particular transcript or gene
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class TranscriptToGeneRelationship(SequenceFeatureRelationship):
+    """
+    A gene is a collection of transcripts
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class GeneToGeneProductRelationship(SequenceFeatureRelationship):
+    """
+    A gene is transcribed and potentially translated to a gene product
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class ExonToTranscriptRelationship(SequenceFeatureRelationship):
+    """
+    A transcript is formed from multiple exons
     """
     def __init__(self,
                  association_type=None,

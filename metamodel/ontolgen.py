@@ -3,8 +3,6 @@
 
 """
 
-#from prefixcommons import curie_util
-#from prefixcommons.curie_util import contract_uri, expand_uri, get_prefixes
 from rdflib import Namespace
 from rdflib import BNode
 from rdflib import Literal
@@ -12,9 +10,12 @@ from rdflib import URIRef
 from rdflib.namespace import RDF
 from rdflib.namespace import RDFS
 from rdflib.namespace import OWL
+from rdflib.namespace import SKOS
 import rdflib
 import logging
 import uuid
+
+from .generator import Generator
 
 #prefix_context = {key: value for context in curie_util.default_curie_maps + [curie_util.read_biocontext("minerva_context")] for key, value in context.items()}
 
@@ -23,21 +24,18 @@ OBO = Namespace("http://purl.obolibrary.org/obo/")
 from .schemautils import *
 
 def write_owl(schema, fn):
-    gen = OwlSchemaGenerator()
-    gen.tr(schema)
+    gen = OwlSchemaGenerator(schema=schema)
+    gen.tr()
     gen.serialize(fn)
 
-class OwlSchemaGenerator(object):
-    
-    def __init__(self):
-        pass
+class OwlSchemaGenerator(Generator):
 
     def serialize(self, destination=None, format='ttl', **args):
         #self.graph.add((self.base, RDFS.label, Literal(str(destination.name))))
         self.graph.serialize(destination, format, **args)
     
-    def tr(self, schema):
-        self.schema = schema
+    def tr(self):
+        schema = self.schema
         self.base = URIRef("http://bioentity.io/schema/{}".format(get_class_name(schema.name)))
         self.graph = rdflib.Graph(identifier=self.base)
         self.graph.bind("owl", OWL)
@@ -59,9 +57,9 @@ class OwlSchemaGenerator(object):
     def property_uri(self, pn):
         pn = underscore_style(pn)
         return self.uri(pn)
-        
     
     def tr_class(self, c):
+        mgr = self.manager
         g = self.graph
 
         ci = self.class_uri(c.name)
@@ -73,14 +71,27 @@ class OwlSchemaGenerator(object):
         if c.mixins:
             for m in c.mixins:
                 g.add((ci, RDFS.subClassOf, self.class_uri(m)))
-        if c.slots:
-            for sn in c.slots:
-                srange = get_slot_range(sn, self.schema)
-                if srange:
-                    restr = BNode()
-                    g.add((ci, RDFS.subClassOf, restr))
-                    g.add((restr, OWL.onProperty, self.property_uri(sn)))
-                    g.add((restr, OWL.someValuesFrom, self.class_uri(sn)))
+        slots = mgr.class_slotdefs(c, True, True)
+        mappings = c.mappings
+        if mappings is None:
+            if c.subclass_of:
+                mappings = [c.subclass_of]
+        if mappings:
+            for m in mappings:
+                uri = self.class_uri(m)
+                if ':' in m:
+                    frag = m.replace(':','_')
+                    uri = URIRef('http://purl.obolibrary.org/obo/'+frag)
+                g.add((ci, SKOS.exactMatch, uri))
+        for sn in slots:
+            s = mgr.slotdef(sn)
+            srange = mgr.class_slot_range(c, s)
+            if srange:
+                # represent as existential restrictions
+                restr = BNode()
+                g.add((ci, RDFS.subClassOf, restr))
+                g.add((restr, OWL.onProperty, self.property_uri(sn)))
+                g.add((restr, OWL.someValuesFrom, self.class_uri(srange)))
         
     def tr_slot(self, s):
         g = self.graph

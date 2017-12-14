@@ -32,7 +32,7 @@ ontology/%.tree: ontology/%.json
 	ogr --showdefs -t tree -r $< % > $@
 
 ontology/%.png: ontology/%.json
-	ogr-tree -t png -o $@ -c subClassOf subPropertyOf -r $< % 
+	ogr-tree -t png -o $@ -r $< % 
 
 gv: biolink-model.yaml 
 	./bin/gen-graphviz.py -d graphviz $<
