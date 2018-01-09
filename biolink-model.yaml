@@ -1,6 +1,8 @@
 id: "http://bioentity.io/json-schema/biolink.json"
 name: biolink model
 description: description of the biolink datamodel
+prefixes:
+  OBAN: http://purl.org/oban/
 
 types:
 
@@ -95,7 +97,7 @@ slots:
       - "rdf:predicate"
       - "owl:annotatedProperty"
       - "oban:association_has_predicate"
-
+      
   - name: negated
     is_a: association slot
     range: boolean
@@ -195,7 +197,7 @@ slots:
       connects an association to qualifiers that modify or qualify the meaning of that association
     is_a: association slot
     multivalued: true
-    range: class
+    range: ontology class
 
   - name: frequency qualifier
     description: >-
@@ -254,6 +256,7 @@ slots:
   - name: enabled by
     domain: molecular activity
     range: gene or gene product
+    
 
   ## ------
   ## CLOSURES
@@ -264,7 +267,7 @@ slots:
     multivalued: true
     description: >-
       parent field for fields used for storing inferred relationships to a class or relation
-    range: class
+    range: ontology class
     
   - name: closure label slot
     abstract: true
@@ -290,7 +293,7 @@ slots:
     is_a: taxon closure slot
     description: >-
       The taxon class or ancestor class for the subject
-    range: class
+    range: ontology class
     path: subject/in_taxon*
     
   - name: subject taxon closure label
@@ -304,19 +307,19 @@ slots:
     is_a: taxon closure slot
     description: >-
       The taxon class or ancestor class for the object
-    range: class
+    range: ontology class
     path: object/in_taxon*
     
   - name: object taxon closure label
     is_a: taxon closure label slot
     description: >-
       The label for the taxon class or ancestor class for the object
-    range: class
+    range: ontology class
     path: object/in_taxon*/label
     
   - name: isa partof closure
     is_a: closure concept slot
-    range: class
+    range: ontology class
     description: >-
       Ancestors (reflexive) of the object field following is_a (subClassOf) and part-of links.
       This is typically used as a query constraint and for faceting.
@@ -327,7 +330,7 @@ slots:
     
   - name: regulates closure
     is_a: closure concept slot
-    range: class
+    range: relationship type
     description: >-
       Ancestors (reflexive) of the object field following is_a (subClassOf), part-of and
       regulates (including positive and negative) relationships.
@@ -337,7 +340,7 @@ slots:
     
   - name: isa partof closure label
     is_a: closure label slot
-    range: class
+    range: ontology class
     path: "object/{rdfs:subClassOf|BFO:0000050}*/label"
 
   - name: evidence object closure
@@ -381,8 +384,31 @@ slots:
 classes:
 
   ## ------
+  ## RELATIONSHIP TYPES
+  ## ------
+
+  - name: relationship type
+    description: >-
+      An OWL property used as an edge label
+
+  - name: homology relationship type
+    is_a: relationship type
+    description: >-
+      A relation used for homology
+      
+  - name: interaction relationship type
+    is_a: relationship type
+    description: >-
+      A relation used for interaction relationships
+  
+  ## ------
   ## THINGS
   ## ------
+
+  - name: severity value
+    description: >-
+      describes the severity of a phenotypic feature or disease
+    is_a: ontology class
   
   - name: named thing
     description: "a databased entity or concept/class"
@@ -396,6 +422,11 @@ classes:
   - name: ontology class
     description: "a concept or class in an ontology, vocabulary or thesaurus"
     is_a: named thing
+      
+  - name: gene ontology class
+    description: >-
+      an ontology class that describes a functional aspect of a gene, gene prodoct or complex
+    is_a: ontology class
       
   - name: thing with taxon
     abstract: true
@@ -435,7 +466,7 @@ classes:
       - thing with taxon
     is_a: named thing
       
-  - name: condition or phenotypic feature
+  - name: disease or phenotypic feature
     is_a: ontology class
     mixins:
       - thing with taxon
@@ -445,17 +476,17 @@ classes:
       
   - name: disease
     aliases: ['condition', 'disorder']
-    is_a: condition or phenotypic feature
+    is_a: disease or phenotypic feature
     mappings:
       - "MONDO:0000001"
       
   - name: phenotypic feature
     aliases: ['sign', 'symptom', 'phenotype', 'trait']
-    is_a: condition or phenotypic feature
+    is_a: disease or phenotypic feature
     mappings:
       - "UPHENO:0000001"
       
-  - name: environmental feature
+  - name: environment
     aliases: ['environment', 'exposure', 'experimental condition']
     is_a: named thing
     description: >-
@@ -570,6 +601,12 @@ classes:
   - name: gene
     is_a: gene or gene product
     aliases: ['locus']
+    id_prefixes:
+      - NCBIGene
+      - ENSEMBL
+      - HGNC
+      - MGI
+      - ZFIN
     mappings:
       - "SO:0000704"
     
@@ -583,17 +620,25 @@ classes:
     is_a: gene product
     mappings:
       - "PR:000000001"
+    id_prefixes:
+      - UniProtKB
+      - PR
+      - ENSEMBL
     
   - name: RNA product
     is_a: gene product
     mappings:
       - "CHEBI:33697"
+    id_prefixes:
+      - RNAcentral
     
   - name: macromolecular complex
     is_a: molecular entity
     mappings:
       - "GO:0032991"
-
+    id_prefixes:
+      - IntAct
+      
   - name: gene grouping
     abstract: true
     mixin: true
@@ -602,10 +647,14 @@ classes:
 
   - name: gene family
     is_a: molecular entity
+    mappings:
+      - " NCIT:C20130"
     mixins:
       - gene grouping
     description: >-
       any grouping of multiple genes or gene products related by common descent
+    id_prefixes:
+      - PANTHER
 
   - name: zygosity
     mappings:
@@ -628,8 +677,40 @@ classes:
     mappings:
       - "GENO:0000512"
 
-  
-        
+  - name: drug exposure
+    aliases: ['drug intake', 'drug dose']
+    is_a: environment
+    description: >-
+      A drug exposure is an intake of a particular chemical substance
+    slots:
+      - drug
+    slot_usage:
+      - name: drug
+        range: chemical entity
+        required: true
+        multivalued: true
+    mappings:
+      - "ECTO:0000509"
+
+  - name: treatment
+    aliases: ['medical action']
+    is_a: environment
+    description: >-
+      A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
+    slots:
+      - treats
+      - has exposure parts
+    slot_usage:
+      - name: treats
+        range: disease or phenotypic feature
+        required: true
+      - name: has exposure parts
+        multivalued: true
+        range: drug exposure
+        required: true
+    mappings:
+      - "OGMS:0000090"
+
   ## ------
   ## ASSOCIATIONS
   ## ------
@@ -729,6 +810,9 @@ classes:
     aliases: ['molecular or genetic interaction']
     abstract: true
     is_a: association
+    defining_slots:
+      - subject
+      - object
     description: >-
       abstract parent class for different kinds of gene-gene or gene product to gene product relationships.
       Includes homology and interaction.
@@ -759,7 +843,7 @@ classes:
     symmetric: true
     slot_usage:
       - name: relation
-        range: homology relation
+        range: homology relationship type
         subproperty_of: "RO:HOM0000001"
         values_from:
           - ro
@@ -767,14 +851,36 @@ classes:
           homology relationship type
         definitional: true
 
+  - name: molecular interaction
+    is_a: association
+    mixin: true
+    abstract: true
+    description: >-
+      An interaction at the molecular level between two physical entities
+    slot_usage:
+      - name: relation
+        range: interaction relationship type
+        subproperty_of: "RO:0002436"
+        values_from:
+          - ro
+          - mi
+        description: "interaction relationship type"
+        definitional: true
+      - slot: interacting molecules category
+        range: class
+        subclass_of: "MI:1046"
+        examples:
+          - value: MI:1048
+            description: smallmolecule-protein
+        
   - name: pairwise gene or protein interaction association
     is_a: gene to gene association
     defining_slots:
       - subject
       - object
       - relation
-#    mixins:
-#      - interaction relationship
+    mixins:
+      - molecular interaction
     description: >-
       An interaction between two genes or two gene products.
       May be physical (e.g. protein binding) or genetic (between genes).
@@ -782,7 +888,7 @@ classes:
     symmetric: true
     slot_usage:
       - name: relation
-        range: homology relation
+        range: interaction relationship type
         subproperty_of: "RO:0002436"
         values_from:
           - ro
@@ -940,6 +1046,7 @@ classes:
       either in isolation or through environment
     mixins:
       - entity to phenotypic feature association
+      - genotype to thing association
     slot_usage:
       - name: relation
         subproperty_of: "GENO:0000382"
@@ -948,6 +1055,7 @@ classes:
         description: >-
           genotype that is associated with the phenotypic feature
 
+          
   - name: environment to phenotypic feature association
     is_a: association
     defining_slots:
@@ -974,6 +1082,9 @@ classes:
       
   - name: case to phenotypic feature association
     is_a: association
+    defining_slots:
+      - subject
+      - object
     description: "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype"
     mixins:
       - entity to phenotypic feature association
@@ -1012,18 +1123,6 @@ classes:
         range: genotype
         description: "genotype that is the subject of the association"
         
-  - name: genotype to phenotypic feature association
-    is_a: association
-    defining_slots:
-      - subject
-      - object
-    mixins:
-      - entity to phenotypic feature association
-      - genotype to thing association
-    slot_usage:
-      - name: subject
-        range: gene or gene product
-        description: "gene in which variation is correlated with the phenotypic feature"
         
   - name: gene to expression site association
     is_a: association
@@ -1061,7 +1160,22 @@ classes:
       - name: quantifier
         description: >-
           can be used to indicate magnitude, or also ranking
+
+  - name: sequence variant modulates treatment association
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    abstract: true
+    slot_usage:
+      - name: subject
+        range: sequence variant
+        description: "variant that modulates the treatment of some disease"
+      - name: object
+        range: treatment
+        description: "treatment whose efficacy is modulated by the subject variant"
         
+          
   - name: go association
     aliases: ['functional association']
     is_a: association
@@ -1079,7 +1193,7 @@ classes:
           - value: ZFIN:ZDB-GENE-050417-357
             description: twist1b
       - name: object
-        range: gene ontology term
+        range: gene ontology class
         aliases:
           - name: class
             schema: amigo
@@ -1134,10 +1248,10 @@ classes:
     slot_usage:
       - name: subject
         aliases: ['sequence feature']
-        domain: genomic entity  ## todo protein
+        range: genomic entity  ## todo protein
       - name: object
         aliases: ['reference']
-        domain: genomic entity ## typically a chromosomel use monochrom
+        range: genomic entity ## typically a chromosomel use monochrom
     slots:
       - start interbase coordinate
       - end interbase coordinate
@@ -1146,45 +1260,57 @@ classes:
 
   - name: sequence feature relationship
     is_a: association
+    defining_slots:
+      - subject
+      - object
     description: >-
       For example, a particular exon is part of a particular transcript or gene
     slot_usage:
       - name: subject
-        domain: genomic entity  ## todo protein
+        range: genomic entity  ## todo protein
       - name: object
-        domain: genomic entity ## typically a chromosome
+        range: genomic entity ## typically a chromosome
 
   - name: transcript to gene relationship
     is_a: sequence feature relationship
+    defining_slots:
+      - subject
+      - object
     description: >-
       A gene is a collection of transcripts
     slot_usage:
       - name: subject
-        domain: transcript
+        range: transcript
       - name: object
-        domain: gene
+        range: gene
 
   - name: gene to gene product relationship
     is_a: sequence feature relationship
+    defining_slots:
+      - subject
+      - object
     description: >-
       A gene is transcribed and potentially translated to a gene product
     slot_usage:
       - name: subject
-        domain: gene
+        range: gene
       - name: object
-        domain: gene product
+        range: gene product
       - name: relation
         subproperty_of: RO:0002205
 
   - name: exon to transcript relationship
     is_a: sequence feature relationship
+    defining_slots:
+      - subject
+      - object
     description: >-
       A transcript is formed from multiple exons
     slot_usage:
       - name: subject
-        domain: exon
+        range: exon
       - name: object
-        domain: transcript
+        range: transcript
 
   - name: sequence feature to sequence relationship
     is_a: association
@@ -1192,9 +1318,9 @@ classes:
       Relates a sequence feature such as a gene to its sequence
     slot_usage:
       - name: subject
-        domain: genomic entity  ## todo protein
+        range: genomic entity  ## todo protein
       - name: object
-        domain: biological sequence
+        range: biological sequence
 
   - name: gene regulatory relationship
     is_a: association
@@ -1205,16 +1331,18 @@ classes:
         description: >-
           the direction is always from regulator to regulated
       - name: subject
-        domain: gene or gene product
+        range: gene or gene product
         role: regulatory gene
       - name: object
-        domain: gene or gene product
+        range: gene or gene product
         role: regulated gene
         
   ## ------
   ## GOCAM
   ## ------
-      
+
+  ## entity-centric
+  
   - name: molecular event
     schema: gocam
     #slots:
@@ -1223,7 +1351,125 @@ classes:
       #- occurs in
       #- upstream causal relationship
       #- downstream causal relationship
+  
+  - name: molecular activity to gene product association
+    schema: gocam
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      - name: subject
+        range: molecular activity
+      - name: object
+        range: gene or gene product
+  
+  - name: molecular activity to location association
+    schema: gocam
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      - name: subject
+        range: molecular activity
+      - name: object
+        range: cellular component
+  
+  - name: molecular activity to biological process association
+    schema: gocam
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      - name: subject
+        range: molecular activity
+      - name: object
+        range: biological process
+  
+  - name: molecular activity to downstream molecular activity association
+    schema: gocam
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    slot_usage:
+      - name: subject
+        range: molecular activity
+      - name: object
+        range: molecular activity
+      - name: relation
+        subproperty_of: RO:0002418
+  
+  - name: anatomical entity to anatomical entity association
+    schema: gocam
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      - name: subject
+        range: anatomical entity
+      - name: object
+        range: anatomical entity
+  
+  - name: anatomical entity part of anatomical entity association
+    schema: gocam
+    is_a: anatomical entity to anatomical entity association
+    defining_slots:
+      - relation
+    slot_usage:
+      - name: subject
+        range: anatomical entity
+        description: >-
+          the part
+      - name: object
+        range: anatomical entity
+        description: >-
+          the whole
+      - name: relation
+        range: anatomical entity
+        description: >-
+          the whole
 
+  - name: occurrent
+    description: >-
+      A processual entity
+    mappings:
+      - "BFO:0000003"
+
+  - name: molecular activity
+    is_a: occurrent
+    description: >-
+      An execution of a molecular function
+    mappings:
+      - "GO:0003674"
+
+  - name: biological process
+    is_a: occurrent
+    description: >-
+      One or more causally connected executions of molecular functions
+    mappings:
+      - "GO:0008150"
+      
+  - name: cellular component
+    is_a: anatomical entity
+    description: >-
+      A location in or around a cell
+    mappings:
+      - "GO:0005575"
+      
+  - name: cell
+    is_a: anatomical entity
+    mappings:
+      - "GO:0005623"
+      
+  - name: gross anatomical structure
+    aliases: ['tissue', 'organ']
+    is_a: anatomical entity
+      
 
   ## ------
   ## DENORMALIZED
