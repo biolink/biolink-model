@@ -71,7 +71,7 @@ class DotGenerator(Generator):
         stmt_obj = None
         stmt_pred = None
         for s in slots:
-            s = mgr.slotdef(s)
+            s = mgr.slotdef(s, c)
 
             # todo: handle reification generically
             if s.name == 'subject':

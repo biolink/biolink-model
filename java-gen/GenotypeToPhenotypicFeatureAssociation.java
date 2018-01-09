@@ -12,7 +12,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * GenotypeToPhenotypicFeatureAssociation
  * <p>
- * null
+ * Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

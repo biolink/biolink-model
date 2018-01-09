@@ -119,16 +119,6 @@
       "type" : "PROPERTY",
       "lbl" : "object taxon closure"
     }, {
-      "id" : "http://bioentity.io/vocab/EnvironmentalFeature",
-      "meta" : {
-        "definition" : {
-          "val" : "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes",
-          "xrefs" : [ ]
-        }
-      },
-      "type" : "CLASS",
-      "lbl" : "environmental feature"
-    }, {
       "id" : "http://bioentity.io/vocab/subject",
       "meta" : {
         "definition" : {
@@ -138,6 +128,16 @@
       },
       "type" : "PROPERTY",
       "lbl" : "subject"
+    }, {
+      "id" : "http://bioentity.io/vocab/InteractionRelationshipType",
+      "meta" : {
+        "definition" : {
+          "val" : "A relation used for interaction relationships",
+          "xrefs" : [ ]
+        }
+      },
+      "type" : "CLASS",
+      "lbl" : "interaction relationship type"
     }, {
       "id" : "http://bioentity.io/vocab/GeneToGeneAssociation",
       "meta" : {
@@ -205,6 +205,16 @@
       "type" : "CLASS",
       "lbl" : "entity to phenotypic feature association"
     }, {
+      "id" : "http://bioentity.io/vocab/RelationshipType",
+      "meta" : {
+        "definition" : {
+          "val" : "An OWL property used as an edge label",
+          "xrefs" : [ ]
+        }
+      },
+      "type" : "CLASS",
+      "lbl" : "relationship type"
+    }, {
       "id" : "http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation",
       "meta" : {
         "definition" : {
@@ -234,10 +244,6 @@
       },
       "type" : "CLASS",
       "lbl" : "biosample to thing association"
-    }, {
-      "id" : "http://bioentity.io/vocab/ConditionOrPhenotypicFeature",
-      "type" : "CLASS",
-      "lbl" : "condition or phenotypic feature"
     }, {
       "id" : "http://bioentity.io/vocab/has_evidence_graph",
       "meta" : {
@@ -398,6 +404,16 @@
       },
       "type" : "PROPERTY",
       "lbl" : "severity qualifier"
+    }, {
+      "id" : "http://bioentity.io/vocab/GeneOntologyClass",
+      "meta" : {
+        "definition" : {
+          "val" : "an ontology class that describes a functional aspect of a gene, gene prodoct or complex",
+          "xrefs" : [ ]
+        }
+      },
+      "type" : "CLASS",
+      "lbl" : "gene ontology class"
     }, {
       "id" : "http://bioentity.io/vocab/GeneRegulatoryRelationship",
       "meta" : {
@@ -813,6 +829,16 @@
       "type" : "PROPERTY",
       "lbl" : "evidence object closure"
     }, {
+      "id" : "http://bioentity.io/vocab/SeverityValue",
+      "meta" : {
+        "definition" : {
+          "val" : "describes the severity of a phenotypic feature or disease",
+          "xrefs" : [ ]
+        }
+      },
+      "type" : "CLASS",
+      "lbl" : "severity value"
+    }, {
       "id" : "http://bioentity.io/vocab/has_evidence_type",
       "meta" : {
         "definition" : {
@@ -922,6 +948,16 @@
       },
       "type" : "PROPERTY",
       "lbl" : "provided by"
+    }, {
+      "id" : "http://bioentity.io/vocab/Environment",
+      "meta" : {
+        "definition" : {
+          "val" : "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes",
+          "xrefs" : [ ]
+        }
+      },
+      "type" : "CLASS",
+      "lbl" : "environment"
     }, {
       "id" : "http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation",
       "meta" : {
@@ -1063,6 +1099,20 @@
       "type" : "CLASS",
       "lbl" : "information content entity"
     }, {
+      "id" : "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+      "type" : "CLASS",
+      "lbl" : "disease or phenotypic feature"
+    }, {
+      "id" : "http://bioentity.io/vocab/HomologyRelationshipType",
+      "meta" : {
+        "definition" : {
+          "val" : "A relation used for homology",
+          "xrefs" : [ ]
+        }
+      },
+      "type" : "CLASS",
+      "lbl" : "homology relationship type"
+    }, {
       "id" : "http://bioentity.io/vocab/quantifier_qualifier",
       "meta" : {
         "definition" : {
@@ -1154,6 +1204,10 @@
       "pred" : "subPropertyOf",
       "obj" : "http://bioentity.io/vocab/association_slot"
     }, {
+      "sub" : "http://bioentity.io/vocab/CaseToThingAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/negated",
       "obj" : "http://bioentity.io/vocab/Boolean"
@@ -1161,6 +1215,10 @@
       "sub" : "http://bioentity.io/vocab/ChemicalToGeneAssociation",
       "pred" : "http://bioentity.io/vocab/object",
       "obj" : "http://bioentity.io/vocab/GeneProduct"
+    }, {
+      "sub" : "http://bioentity.io/vocab/DenormalizedAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/Case",
       "pred" : "http://bioentity.io/vocab/label",
@@ -1210,6 +1268,10 @@
       "pred" : "http://bioentity.io/vocab/has_evidence",
       "obj" : "http://bioentity.io/vocab/EvidenceInstance"
     }, {
+      "sub" : "http://bioentity.io/vocab/GeneToExpressionSiteAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/Biosample",
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
@@ -1234,6 +1296,10 @@
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/MolecularEntity"
     }, {
+      "sub" : "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+      "pred" : "http://bioentity.io/vocab/label",
+      "obj" : "http://bioentity.io/vocab/LabelType"
+    }, {
       "sub" : "http://bioentity.io/vocab/GeneToExpressionSiteAssociation",
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
@@ -1241,6 +1307,10 @@
       "sub" : "http://bioentity.io/vocab/CaseToThingAssociation",
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation",
       "pred" : "is_a",
@@ -1254,17 +1324,21 @@
       "pred" : "http://bioentity.io/vocab/negated",
       "obj" : "http://bioentity.io/vocab/Boolean"
     }, {
+      "sub" : "http://bioentity.io/vocab/ExonToTranscriptRelationship",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/evidence_object_closure",
       "pred" : "subPropertyOf",
       "obj" : "http://bioentity.io/vocab/closure_concept_slot"
     }, {
-      "sub" : "http://bioentity.io/vocab/ChemicalToThingAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/Transcript",
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/object",
+      "obj" : "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature"
     }, {
       "sub" : "http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence_type",
@@ -1362,17 +1436,9 @@
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
     }, {
-      "sub" : "http://bioentity.io/vocab/GenotypeToVariantAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/ChemicalToGeneAssociation",
       "pred" : "http://bioentity.io/vocab/subject_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
-    }, {
-      "sub" : "http://bioentity.io/vocab/DiseaseToThingAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
     }, {
       "sub" : "http://bioentity.io/vocab/PhenotypicFeature",
       "pred" : "http://bioentity.io/vocab/label",
@@ -1390,13 +1456,13 @@
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
     }, {
+      "sub" : "http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/object",
+      "obj" : "http://bioentity.io/vocab/PhenotypicFeature"
+    }, {
       "sub" : "http://bioentity.io/vocab/Exon",
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
-    }, {
-      "sub" : "http://bioentity.io/vocab/BioentityWithGoTerms",
-      "pred" : "http://bioentity.io/vocab/isa_partof_closure",
-      "obj" : "http://bioentity.io/vocab/Class"
     }, {
       "sub" : "http://bioentity.io/vocab/ChemicalToGeneAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence",
@@ -1434,10 +1500,6 @@
       "pred" : "http://bioentity.io/vocab/in_taxon",
       "obj" : "http://bioentity.io/vocab/OrganismTaxon"
     }, {
-      "sub" : "http://bioentity.io/vocab/GenomicSequenceLocalization",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence_graph",
       "obj" : "http://bioentity.io/vocab/EvidenceGraph"
@@ -1445,6 +1507,10 @@
       "sub" : "http://bioentity.io/vocab/ExonToTranscriptRelationship",
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
+    }, {
+      "sub" : "http://bioentity.io/vocab/Association",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/GeneToExpressionSiteAssociation",
       "pred" : "is_a",
@@ -1454,17 +1520,21 @@
       "pred" : "http://bioentity.io/vocab/relation",
       "obj" : "http://bioentity.io/vocab/RelationshipType"
     }, {
+      "sub" : "http://bioentity.io/vocab/SeverityValue",
+      "pred" : "http://bioentity.io/vocab/id",
+      "obj" : "http://bioentity.io/vocab/IdentifierType"
+    }, {
       "sub" : "http://bioentity.io/vocab/GeneToGeneAssociation",
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/Association"
     }, {
-      "sub" : "http://bioentity.io/vocab/DiseaseToThingAssociation",
-      "pred" : "http://bioentity.io/vocab/has_evidence",
-      "obj" : "http://bioentity.io/vocab/EvidenceInstance"
-    }, {
       "sub" : "http://bioentity.io/vocab/PropertyValuePair",
       "pred" : "http://bioentity.io/vocab/relation",
       "obj" : "http://bioentity.io/vocab/RelationshipType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/DiseaseToThingAssociation",
+      "pred" : "http://bioentity.io/vocab/has_evidence",
+      "obj" : "http://bioentity.io/vocab/EvidenceInstance"
     }, {
       "sub" : "http://bioentity.io/vocab/DiseaseToThingAssociation",
       "pred" : "http://bioentity.io/vocab/association_type",
@@ -1501,6 +1571,10 @@
       "sub" : "http://bioentity.io/vocab/Genotype",
       "pred" : "http://bioentity.io/vocab/has_zygosity",
       "obj" : "http://bioentity.io/vocab/Zygosity"
+    }, {
+      "sub" : "http://bioentity.io/vocab/GeneToGeneHomologyAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/GenomicSequenceLocalization",
       "pred" : "http://bioentity.io/vocab/has_evidence",
@@ -1546,6 +1620,10 @@
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
     }, {
+      "sub" : "http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/object",
+      "obj" : "http://bioentity.io/vocab/PhenotypicFeature"
+    }, {
       "sub" : "http://bioentity.io/vocab/GenotypeToGenotypePartAssociation",
       "pred" : "http://bioentity.io/vocab/negated",
       "obj" : "http://bioentity.io/vocab/Boolean"
@@ -1570,13 +1648,13 @@
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/Association"
     }, {
-      "sub" : "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/subject",
-      "obj" : "http://bioentity.io/vocab/Environment"
-    }, {
       "sub" : "http://bioentity.io/vocab/Association",
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
+    }, {
+      "sub" : "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/subject",
+      "obj" : "http://bioentity.io/vocab/Environment"
     }, {
       "sub" : "http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/object_extensions",
@@ -1589,6 +1667,10 @@
       "sub" : "http://bioentity.io/vocab/ChemicalToThingAssociation",
       "pred" : "http://bioentity.io/vocab/provided_by",
       "obj" : "http://bioentity.io/vocab/Provider"
+    }, {
+      "sub" : "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+      "pred" : "http://bioentity.io/vocab/in_taxon",
+      "obj" : "http://bioentity.io/vocab/OrganismTaxon"
     }, {
       "sub" : "http://bioentity.io/vocab/GenotypeToVariantAssociation",
       "pred" : "is_a",
@@ -1650,6 +1732,10 @@
       "pred" : "http://bioentity.io/vocab/has_evidence_type",
       "obj" : "http://bioentity.io/vocab/EvidenceType"
     }, {
+      "sub" : "http://bioentity.io/vocab/GeneToGeneProductRelationship",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/severity_qualifier",
       "obj" : "http://bioentity.io/vocab/SeverityValue"
@@ -1661,10 +1747,6 @@
       "sub" : "http://bioentity.io/vocab/MolecularEntity",
       "pred" : "http://bioentity.io/vocab/in_taxon",
       "obj" : "http://bioentity.io/vocab/OrganismTaxon"
-    }, {
-      "sub" : "http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
     }, {
       "sub" : "http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/label",
@@ -1734,13 +1816,17 @@
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
     }, {
+      "sub" : "http://bioentity.io/vocab/ChemicalToGeneAssociation",
+      "pred" : "http://bioentity.io/vocab/has_evidence_type",
+      "obj" : "http://bioentity.io/vocab/EvidenceType"
+    }, {
       "sub" : "http://bioentity.io/vocab/GeneRegulatoryRelationship",
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
     }, {
-      "sub" : "http://bioentity.io/vocab/ChemicalToGeneAssociation",
-      "pred" : "http://bioentity.io/vocab/has_evidence_type",
-      "obj" : "http://bioentity.io/vocab/EvidenceType"
+      "sub" : "http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/object",
+      "obj" : "http://bioentity.io/vocab/PhenotypicFeature"
     }, {
       "sub" : "http://bioentity.io/vocab/Publication",
       "pred" : "is_a",
@@ -1770,6 +1856,10 @@
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/GeneToGeneAssociation"
     }, {
+      "sub" : "http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/subject",
+      "obj" : "http://bioentity.io/vocab/ChemicalSubstance"
+    }, {
       "sub" : "http://bioentity.io/vocab/GeneToThingAssociation",
       "pred" : "http://bioentity.io/vocab/relation",
       "obj" : "http://bioentity.io/vocab/RelationshipType"
@@ -1781,6 +1871,10 @@
       "sub" : "http://bioentity.io/vocab/TranscriptToGeneRelationship",
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/GoAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/GenomicSequenceLocalization",
       "pred" : "http://bioentity.io/vocab/association_type",
@@ -1829,6 +1923,10 @@
       "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation",
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
+    }, {
+      "sub" : "http://bioentity.io/vocab/SequenceFeatureToSequenceRelationship",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/GeneProduct",
       "pred" : "http://bioentity.io/vocab/id",
@@ -1898,10 +1996,6 @@
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
     }, {
-      "sub" : "http://bioentity.io/vocab/DenormalizedAssociation",
-      "pred" : "http://bioentity.io/vocab/subject_taxon_closure",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/ExonToTranscriptRelationship",
       "pred" : "http://bioentity.io/vocab/relation",
       "obj" : "http://bioentity.io/vocab/RelationshipType"
@@ -1909,6 +2003,10 @@
       "sub" : "http://bioentity.io/vocab/BioentityWithGoTerms",
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/MolecularEntity"
+    }, {
+      "sub" : "http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/onset_qualifier",
@@ -1918,6 +2016,10 @@
       "pred" : "http://bioentity.io/vocab/has_evidence_type",
       "obj" : "http://bioentity.io/vocab/EvidenceType"
     }, {
+      "sub" : "http://bioentity.io/vocab/GenotypeToGeneAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/GeneRegulatoryRelationship",
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
@@ -1926,9 +2028,9 @@
       "pred" : "http://bioentity.io/vocab/object_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
     }, {
-      "sub" : "http://bioentity.io/vocab/CaseToThingAssociation",
+      "sub" : "http://bioentity.io/vocab/TranscriptToGeneRelationship",
       "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/DenormalizedAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence_graph",
@@ -1962,9 +2064,21 @@
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
     }, {
+      "sub" : "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
+      "sub" : "http://bioentity.io/vocab/GenomicSequenceLocalization",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation",
       "pred" : "http://bioentity.io/vocab/subject",
       "obj" : "http://bioentity.io/vocab/GeneOrGeneProduct"
+    }, {
+      "sub" : "http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation",
+      "pred" : "http://bioentity.io/vocab/relation",
+      "obj" : "http://bioentity.io/vocab/InteractionRelationshipType"
     }, {
       "sub" : "http://bioentity.io/vocab/SequenceFeatureRelationship",
       "pred" : "http://bioentity.io/vocab/publications",
@@ -1978,9 +2092,17 @@
       "pred" : "http://bioentity.io/vocab/subject_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
     }, {
+      "sub" : "http://bioentity.io/vocab/DiseaseToThingAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/GoAssociation",
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
+    }, {
+      "sub" : "http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/subject",
+      "obj" : "http://bioentity.io/vocab/Case"
     }, {
       "sub" : "http://bioentity.io/vocab/BioentityWithGoTerms",
       "pred" : "is_a",
@@ -2017,6 +2139,10 @@
       "sub" : "http://bioentity.io/vocab/SequenceVariant",
       "pred" : "http://bioentity.io/vocab/in_taxon",
       "obj" : "http://bioentity.io/vocab/OrganismTaxon"
+    }, {
+      "sub" : "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+      "pred" : "http://bioentity.io/vocab/id",
+      "obj" : "http://bioentity.io/vocab/IdentifierType"
     }, {
       "sub" : "http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/association_type",
@@ -2062,9 +2188,9 @@
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
     }, {
-      "sub" : "http://bioentity.io/vocab/GenotypeToThingAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
+      "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/object",
+      "obj" : "http://bioentity.io/vocab/PhenotypicFeature"
     }, {
       "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation",
       "pred" : "http://bioentity.io/vocab/label",
@@ -2074,25 +2200,17 @@
       "pred" : "http://bioentity.io/vocab/relation",
       "obj" : "http://bioentity.io/vocab/RelationshipType"
     }, {
-      "sub" : "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/association_type",
-      "obj" : "http://bioentity.io/vocab/String"
-    }, {
       "sub" : "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence_type",
       "obj" : "http://bioentity.io/vocab/EvidenceType"
     }, {
-      "sub" : "http://bioentity.io/vocab/PhenotypicFeature",
-      "pred" : "is_a",
-      "obj" : "http://bioentity.io/vocab/ConditionOrPhenotypicFeature"
+      "sub" : "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/association_type",
+      "obj" : "http://bioentity.io/vocab/String"
     }, {
       "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation",
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation"
-    }, {
-      "sub" : "http://bioentity.io/vocab/EnvironmentalFeature",
-      "pred" : "http://bioentity.io/vocab/id",
-      "obj" : "http://bioentity.io/vocab/IdentifierType"
     }, {
       "sub" : "http://bioentity.io/vocab/GenotypeToGenotypePartAssociation",
       "pred" : "http://bioentity.io/vocab/object_extensions",
@@ -2101,6 +2219,10 @@
       "sub" : "http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/subject_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
+    }, {
+      "sub" : "http://bioentity.io/vocab/ChemicalToGeneAssociation",
+      "pred" : "http://bioentity.io/vocab/subject",
+      "obj" : "http://bioentity.io/vocab/ChemicalSubstance"
     }, {
       "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/label",
@@ -2126,10 +2248,6 @@
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
     }, {
-      "sub" : "http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/provided_by",
       "obj" : "http://bioentity.io/vocab/Provider"
@@ -2146,21 +2264,21 @@
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
     }, {
-      "sub" : "http://bioentity.io/vocab/Association",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
+      "sub" : "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+      "pred" : "is_a",
+      "obj" : "http://bioentity.io/vocab/ThingWithTaxon"
     }, {
       "sub" : "http://bioentity.io/vocab/SequenceVariant",
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/GenomicEntity"
     }, {
-      "sub" : "http://bioentity.io/vocab/SequenceFeatureToSequenceRelationship",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/CaseToThingAssociation",
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/Environment",
+      "pred" : "is_a",
+      "obj" : "http://bioentity.io/vocab/NamedThing"
     }, {
       "sub" : "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
       "pred" : "is_a",
@@ -2181,10 +2299,6 @@
       "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/object_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
-    }, {
-      "sub" : "http://bioentity.io/vocab/BioentityWithGoTerms",
-      "pred" : "http://bioentity.io/vocab/regulates_closure",
-      "obj" : "http://bioentity.io/vocab/Class"
     }, {
       "sub" : "http://bioentity.io/vocab/CodingSequence",
       "pred" : "http://bioentity.io/vocab/id",
@@ -2226,13 +2340,13 @@
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation"
     }, {
-      "sub" : "http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/frequency_qualifier",
-      "obj" : "http://bioentity.io/vocab/FrequencyValue"
-    }, {
       "sub" : "http://bioentity.io/vocab/GenotypeToGeneAssociation",
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/Association"
+    }, {
+      "sub" : "http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/frequency_qualifier",
+      "obj" : "http://bioentity.io/vocab/FrequencyValue"
     }, {
       "sub" : "http://bioentity.io/vocab/EvidenceType",
       "pred" : "http://bioentity.io/vocab/label",
@@ -2270,10 +2384,6 @@
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
     }, {
-      "sub" : "http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/BiosampleToThingAssociation",
       "pred" : "http://bioentity.io/vocab/relation",
       "obj" : "http://bioentity.io/vocab/RelationshipType"
@@ -2281,10 +2391,6 @@
       "sub" : "http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/onset_qualifier",
       "obj" : "http://bioentity.io/vocab/LifeStage"
-    }, {
-      "sub" : "http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
     }, {
       "sub" : "http://bioentity.io/vocab/SequenceFeatureToSequenceRelationship",
       "pred" : "http://bioentity.io/vocab/label",
@@ -2326,6 +2432,10 @@
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation"
     }, {
+      "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/negated",
       "obj" : "http://bioentity.io/vocab/Boolean"
@@ -2338,13 +2448,13 @@
       "pred" : "http://bioentity.io/vocab/relation",
       "obj" : "http://bioentity.io/vocab/RelationshipType"
     }, {
-      "sub" : "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/id",
-      "obj" : "http://bioentity.io/vocab/IdentifierType"
-    }, {
       "sub" : "http://bioentity.io/vocab/CaseToThingAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence",
       "obj" : "http://bioentity.io/vocab/EvidenceInstance"
+    }, {
+      "sub" : "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/id",
+      "obj" : "http://bioentity.io/vocab/IdentifierType"
     }, {
       "sub" : "http://bioentity.io/vocab/Association",
       "pred" : "is_a",
@@ -2361,6 +2471,10 @@
       "sub" : "http://bioentity.io/vocab/GeneToGeneProductRelationship",
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/ChemicalToThingAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/GenotypeToVariantAssociation",
       "pred" : "http://bioentity.io/vocab/relation",
@@ -2382,10 +2496,6 @@
       "pred" : "http://bioentity.io/vocab/provided_by",
       "obj" : "http://bioentity.io/vocab/Provider"
     }, {
-      "sub" : "http://bioentity.io/vocab/GeneToGeneHomologyAssociation",
-      "pred" : "http://bioentity.io/vocab/relation",
-      "obj" : "http://bioentity.io/vocab/HomologyRelation"
-    }, {
       "sub" : "http://bioentity.io/vocab/CaseToThingAssociation",
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
@@ -2398,10 +2508,6 @@
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
     }, {
-      "sub" : "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/GeneToGeneHomologyAssociation",
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
@@ -2409,10 +2515,6 @@
       "sub" : "http://bioentity.io/vocab/association_type",
       "pred" : "subPropertyOf",
       "obj" : "http://bioentity.io/vocab/association_slot"
-    }, {
-      "sub" : "http://bioentity.io/vocab/GeneToGeneHomologyAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
     }, {
       "sub" : "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
       "pred" : "is_a",
@@ -2433,6 +2535,10 @@
       "sub" : "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation"
+    }, {
+      "sub" : "http://bioentity.io/vocab/GeneRegulatoryRelationship",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence",
@@ -2474,6 +2580,10 @@
       "pred" : "http://bioentity.io/vocab/provided_by",
       "obj" : "http://bioentity.io/vocab/Provider"
     }, {
+      "sub" : "http://bioentity.io/vocab/GenotypeToThingAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/GeneOrGeneProduct",
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/GenomicEntity"
@@ -2493,10 +2603,6 @@
       "sub" : "http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/subject_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
-    }, {
-      "sub" : "http://bioentity.io/vocab/GeneToGeneProductRelationship",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
     }, {
       "sub" : "http://bioentity.io/vocab/GeneToGeneHomologyAssociation",
       "pred" : "http://bioentity.io/vocab/id",
@@ -2562,6 +2668,10 @@
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/NamedThing"
     }, {
+      "sub" : "http://bioentity.io/vocab/GeneToGeneAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/taxon_closure_label_slot",
       "pred" : "subPropertyOf",
       "obj" : "http://bioentity.io/vocab/closure_label_slot"
@@ -2586,10 +2696,6 @@
       "pred" : "http://bioentity.io/vocab/in_taxon",
       "obj" : "http://bioentity.io/vocab/OrganismTaxon"
     }, {
-      "sub" : "http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/Protein",
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
@@ -2613,10 +2719,6 @@
       "sub" : "http://bioentity.io/vocab/GenotypeToGenotypePartAssociation",
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
-    }, {
-      "sub" : "http://bioentity.io/vocab/EnvironmentalFeature",
-      "pred" : "http://bioentity.io/vocab/label",
-      "obj" : "http://bioentity.io/vocab/LabelType"
     }, {
       "sub" : "http://bioentity.io/vocab/Association",
       "pred" : "http://bioentity.io/vocab/provided_by",
@@ -2650,6 +2752,10 @@
       "pred" : "http://bioentity.io/vocab/has_evidence_type",
       "obj" : "http://bioentity.io/vocab/EvidenceType"
     }, {
+      "sub" : "http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/Disease",
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
@@ -2657,6 +2763,10 @@
       "sub" : "http://bioentity.io/vocab/GenomicSequenceLocalization",
       "pred" : "http://bioentity.io/vocab/negated",
       "obj" : "http://bioentity.io/vocab/Boolean"
+    }, {
+      "sub" : "http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/GeneToGeneHomologyAssociation",
       "pred" : "http://bioentity.io/vocab/object_extensions",
@@ -2678,14 +2788,6 @@
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/Association"
     }, {
-      "sub" : "http://bioentity.io/vocab/GeneRegulatoryRelationship",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
-      "sub" : "http://bioentity.io/vocab/GoAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/GeneToThingAssociation",
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/Association"
@@ -2697,10 +2799,6 @@
       "sub" : "http://bioentity.io/vocab/SequenceFeatureRelationship",
       "pred" : "http://bioentity.io/vocab/subject_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
-    }, {
-      "sub" : "http://bioentity.io/vocab/ConditionOrPhenotypicFeature",
-      "pred" : "http://bioentity.io/vocab/in_taxon",
-      "obj" : "http://bioentity.io/vocab/OrganismTaxon"
     }, {
       "sub" : "http://bioentity.io/vocab/ChemicalToGeneAssociation",
       "pred" : "http://bioentity.io/vocab/id",
@@ -2714,41 +2812,37 @@
       "pred" : "subPropertyOf",
       "obj" : "http://bioentity.io/vocab/association_slot"
     }, {
-      "sub" : "http://bioentity.io/vocab/Transcript",
-      "pred" : "is_a",
-      "obj" : "http://bioentity.io/vocab/GenomicEntity"
-    }, {
       "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/frequency_qualifier",
       "obj" : "http://bioentity.io/vocab/FrequencyValue"
+    }, {
+      "sub" : "http://bioentity.io/vocab/Transcript",
+      "pred" : "is_a",
+      "obj" : "http://bioentity.io/vocab/GenomicEntity"
     }, {
       "sub" : "http://bioentity.io/vocab/GeneToExpressionSiteAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence_type",
       "obj" : "http://bioentity.io/vocab/EvidenceType"
     }, {
-      "sub" : "http://bioentity.io/vocab/ConditionOrPhenotypicFeature",
-      "pred" : "is_a",
-      "obj" : "http://bioentity.io/vocab/OntologyClass"
+      "sub" : "http://bioentity.io/vocab/CaseToThingAssociation",
+      "pred" : "http://bioentity.io/vocab/has_evidence_type",
+      "obj" : "http://bioentity.io/vocab/EvidenceType"
     }, {
       "sub" : "http://bioentity.io/vocab/GenotypeToGenotypePartAssociation",
       "pred" : "http://bioentity.io/vocab/publications",
       "obj" : "http://bioentity.io/vocab/Publication"
     }, {
-      "sub" : "http://bioentity.io/vocab/CaseToThingAssociation",
-      "pred" : "http://bioentity.io/vocab/has_evidence_type",
-      "obj" : "http://bioentity.io/vocab/EvidenceType"
-    }, {
       "sub" : "http://bioentity.io/vocab/BiosampleToThingAssociation",
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
     }, {
-      "sub" : "http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation",
-      "pred" : "http://bioentity.io/vocab/relation",
-      "obj" : "http://bioentity.io/vocab/HomologyRelation"
-    }, {
       "sub" : "http://bioentity.io/vocab/OrganismTaxon",
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/subject",
+      "obj" : "http://bioentity.io/vocab/Biosample"
     }, {
       "sub" : "http://bioentity.io/vocab/Gene",
       "pred" : "http://bioentity.io/vocab/label",
@@ -2810,10 +2904,6 @@
       "pred" : "http://bioentity.io/vocab/has_evidence",
       "obj" : "http://bioentity.io/vocab/EvidenceInstance"
     }, {
-      "sub" : "http://bioentity.io/vocab/ConditionOrPhenotypicFeature",
-      "pred" : "http://bioentity.io/vocab/label",
-      "obj" : "http://bioentity.io/vocab/LabelType"
-    }, {
       "sub" : "http://bioentity.io/vocab/Exon",
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/GenomicEntity"
@@ -2837,6 +2927,10 @@
       "sub" : "http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation",
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/subject",
+      "obj" : "http://bioentity.io/vocab/Disease"
     }, {
       "sub" : "http://bioentity.io/vocab/GenotypeToGeneAssociation",
       "pred" : "http://bioentity.io/vocab/subject_extensions",
@@ -2906,14 +3000,6 @@
       "pred" : "subPropertyOf",
       "obj" : "http://bioentity.io/vocab/association_slot"
     }, {
-      "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
-      "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/ExonToTranscriptRelationship",
       "pred" : "http://bioentity.io/vocab/object_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
@@ -2922,9 +3008,9 @@
       "pred" : "http://bioentity.io/vocab/object_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
     }, {
-      "sub" : "http://bioentity.io/vocab/GenotypeToGeneAssociation",
+      "sub" : "http://bioentity.io/vocab/BiosampleToThingAssociation",
       "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence_graph",
@@ -3002,6 +3088,14 @@
       "pred" : "http://bioentity.io/vocab/provided_by",
       "obj" : "http://bioentity.io/vocab/Provider"
     }, {
+      "sub" : "http://bioentity.io/vocab/HomologyRelationshipType",
+      "pred" : "is_a",
+      "obj" : "http://bioentity.io/vocab/RelationshipType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/BioentityWithGoTerms",
+      "pred" : "http://bioentity.io/vocab/regulates_closure",
+      "obj" : "http://bioentity.io/vocab/RelationshipType"
+    }, {
       "sub" : "http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation",
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation"
@@ -3034,6 +3128,14 @@
       "pred" : "subPropertyOf",
       "obj" : "http://bioentity.io/vocab/association_slot"
     }, {
+      "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation",
+      "pred" : "http://bioentity.io/vocab/subject",
+      "obj" : "http://bioentity.io/vocab/Disease"
+    }, {
+      "sub" : "http://bioentity.io/vocab/GeneOntologyClass",
+      "pred" : "is_a",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/GeneRegulatoryRelationship",
       "pred" : "http://bioentity.io/vocab/provided_by",
       "obj" : "http://bioentity.io/vocab/Provider"
@@ -3049,6 +3151,10 @@
       "sub" : "http://bioentity.io/vocab/GenotypeToThingAssociation",
       "pred" : "http://bioentity.io/vocab/subject_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
+    }, {
+      "sub" : "http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/GenomicEntity",
       "pred" : "http://bioentity.io/vocab/in_taxon",
@@ -3081,10 +3187,6 @@
       "sub" : "http://bioentity.io/vocab/GenotypeToThingAssociation",
       "pred" : "http://bioentity.io/vocab/object_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
-    }, {
-      "sub" : "http://bioentity.io/vocab/GeneToGeneAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
     }, {
       "sub" : "http://bioentity.io/vocab/GeneToGeneAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence",
@@ -3126,6 +3228,10 @@
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
     }, {
+      "sub" : "http://bioentity.io/vocab/GeneToThingAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/GenomicSequenceLocalization",
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
@@ -3158,10 +3264,6 @@
       "pred" : "http://bioentity.io/vocab/subject_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
     }, {
-      "sub" : "http://bioentity.io/vocab/TranscriptToGeneRelationship",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/Protein",
       "pred" : "http://bioentity.io/vocab/in_taxon",
       "obj" : "http://bioentity.io/vocab/OrganismTaxon"
@@ -3174,21 +3276,17 @@
       "pred" : "http://bioentity.io/vocab/object_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
     }, {
+      "sub" : "http://bioentity.io/vocab/GeneToGeneHomologyAssociation",
+      "pred" : "http://bioentity.io/vocab/relation",
+      "obj" : "http://bioentity.io/vocab/HomologyRelationshipType"
+    }, {
       "sub" : "http://bioentity.io/vocab/GenotypeToGenotypePartAssociation",
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
     }, {
-      "sub" : "http://bioentity.io/vocab/Disease",
-      "pred" : "is_a",
-      "obj" : "http://bioentity.io/vocab/ConditionOrPhenotypicFeature"
-    }, {
       "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation",
       "pred" : "http://bioentity.io/vocab/frequency_qualifier",
       "obj" : "http://bioentity.io/vocab/FrequencyValue"
-    }, {
-      "sub" : "http://bioentity.io/vocab/ExonToTranscriptRelationship",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
     }, {
       "sub" : "http://bioentity.io/vocab/ChemicalToGeneAssociation",
       "pred" : "http://bioentity.io/vocab/association_type",
@@ -3202,13 +3300,13 @@
       "pred" : "http://bioentity.io/vocab/has_evidence_type",
       "obj" : "http://bioentity.io/vocab/EvidenceType"
     }, {
+      "sub" : "http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation",
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation"
-    }, {
-      "sub" : "http://bioentity.io/vocab/ConditionOrPhenotypicFeature",
-      "pred" : "http://bioentity.io/vocab/id",
-      "obj" : "http://bioentity.io/vocab/IdentifierType"
     }, {
       "sub" : "http://bioentity.io/vocab/PopulationOfIndividualOrganisms",
       "pred" : "http://bioentity.io/vocab/in_taxon",
@@ -3221,10 +3319,6 @@
       "sub" : "http://bioentity.io/vocab/CaseToThingAssociation",
       "pred" : "http://bioentity.io/vocab/relation",
       "obj" : "http://bioentity.io/vocab/RelationshipType"
-    }, {
-      "sub" : "http://bioentity.io/vocab/DenormalizedAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
     }, {
       "sub" : "http://bioentity.io/vocab/GenomicEntity",
       "pred" : "http://bioentity.io/vocab/label",
@@ -3242,10 +3336,6 @@
       "pred" : "http://bioentity.io/vocab/provided_by",
       "obj" : "http://bioentity.io/vocab/Provider"
     }, {
-      "sub" : "http://bioentity.io/vocab/GenotypeToGenotypePartAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/GenotypeToThingAssociation",
       "pred" : "http://bioentity.io/vocab/provided_by",
       "obj" : "http://bioentity.io/vocab/Provider"
@@ -3254,17 +3344,17 @@
       "pred" : "http://bioentity.io/vocab/has_evidence",
       "obj" : "http://bioentity.io/vocab/EvidenceInstance"
     }, {
-      "sub" : "http://bioentity.io/vocab/GeneToExpressionSiteAssociation",
-      "pred" : "http://bioentity.io/vocab/object_extensions",
-      "obj" : "http://bioentity.io/vocab/PropertyValuePair"
+      "sub" : "http://bioentity.io/vocab/PopulationOfIndividualOrganisms",
+      "pred" : "is_a",
+      "obj" : "http://bioentity.io/vocab/NamedThing"
     }, {
       "sub" : "http://bioentity.io/vocab/GenomicSequenceLocalization",
       "pred" : "http://bioentity.io/vocab/has_evidence_type",
       "obj" : "http://bioentity.io/vocab/EvidenceType"
     }, {
-      "sub" : "http://bioentity.io/vocab/PopulationOfIndividualOrganisms",
-      "pred" : "is_a",
-      "obj" : "http://bioentity.io/vocab/NamedThing"
+      "sub" : "http://bioentity.io/vocab/GeneToExpressionSiteAssociation",
+      "pred" : "http://bioentity.io/vocab/object_extensions",
+      "obj" : "http://bioentity.io/vocab/PropertyValuePair"
     }, {
       "sub" : "http://bioentity.io/vocab/isa_partof_closure_label",
       "pred" : "subPropertyOf",
@@ -3282,25 +3372,25 @@
       "pred" : "http://bioentity.io/vocab/has_evidence",
       "obj" : "http://bioentity.io/vocab/EvidenceInstance"
     }, {
-      "sub" : "http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/negated",
-      "obj" : "http://bioentity.io/vocab/Boolean"
-    }, {
       "sub" : "http://bioentity.io/vocab/OrganismTaxon",
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/negated",
+      "obj" : "http://bioentity.io/vocab/Boolean"
     }, {
       "sub" : "http://bioentity.io/vocab/subject",
       "pred" : "subPropertyOf",
       "obj" : "http://bioentity.io/vocab/association_slot"
     }, {
-      "sub" : "http://bioentity.io/vocab/SequenceFeatureRelationship",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/DiseaseToThingAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence_graph",
       "obj" : "http://bioentity.io/vocab/EvidenceGraph"
+    }, {
+      "sub" : "http://bioentity.io/vocab/DenormalizedAssociation",
+      "pred" : "http://bioentity.io/vocab/subject_taxon_closure",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/ExonToTranscriptRelationship",
       "pred" : "http://bioentity.io/vocab/has_evidence",
@@ -3354,17 +3444,25 @@
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/GeneGrouping"
     }, {
+      "sub" : "http://bioentity.io/vocab/Disease",
+      "pred" : "is_a",
+      "obj" : "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature"
+    }, {
       "sub" : "http://bioentity.io/vocab/ExonToTranscriptRelationship",
       "pred" : "http://bioentity.io/vocab/has_evidence_graph",
       "obj" : "http://bioentity.io/vocab/EvidenceGraph"
     }, {
-      "sub" : "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
+      "sub" : "http://bioentity.io/vocab/GenotypeToVariantAssociation",
       "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/Genotype",
       "pred" : "http://bioentity.io/vocab/in_taxon",
       "obj" : "http://bioentity.io/vocab/OrganismTaxon"
+    }, {
+      "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/ExonToTranscriptRelationship",
       "pred" : "http://bioentity.io/vocab/negated",
@@ -3394,6 +3492,10 @@
       "pred" : "http://bioentity.io/vocab/object_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
     }, {
+      "sub" : "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/object",
+      "obj" : "http://bioentity.io/vocab/PhenotypicFeature"
+    }, {
       "sub" : "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/subject_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
@@ -3410,6 +3512,14 @@
       "pred" : "http://bioentity.io/vocab/publications",
       "obj" : "http://bioentity.io/vocab/Publication"
     }, {
+      "sub" : "http://bioentity.io/vocab/BioentityWithGoTerms",
+      "pred" : "http://bioentity.io/vocab/isa_partof_closure",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
+      "sub" : "http://bioentity.io/vocab/SeverityValue",
+      "pred" : "is_a",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/ChemicalToThingAssociation",
       "pred" : "http://bioentity.io/vocab/subject",
       "obj" : "http://bioentity.io/vocab/ChemicalSubstance"
@@ -3421,10 +3531,6 @@
       "sub" : "http://bioentity.io/vocab/GeneRegulatoryRelationship",
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
-    }, {
-      "sub" : "http://bioentity.io/vocab/ConditionOrPhenotypicFeature",
-      "pred" : "is_a",
-      "obj" : "http://bioentity.io/vocab/ThingWithTaxon"
     }, {
       "sub" : "http://bioentity.io/vocab/GenomicEntity",
       "pred" : "http://bioentity.io/vocab/id",
@@ -3446,17 +3552,25 @@
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/NamedThing"
     }, {
-      "sub" : "http://bioentity.io/vocab/SequenceFeatureRelationship",
-      "pred" : "is_a",
-      "obj" : "http://bioentity.io/vocab/Association"
-    }, {
       "sub" : "http://bioentity.io/vocab/SequenceFeatureToSequenceRelationship",
       "pred" : "http://bioentity.io/vocab/relation",
       "obj" : "http://bioentity.io/vocab/RelationshipType"
     }, {
+      "sub" : "http://bioentity.io/vocab/SequenceFeatureRelationship",
+      "pred" : "is_a",
+      "obj" : "http://bioentity.io/vocab/Association"
+    }, {
       "sub" : "http://bioentity.io/vocab/SequenceVariant",
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/GeneOntologyClass",
+      "pred" : "http://bioentity.io/vocab/id",
+      "obj" : "http://bioentity.io/vocab/IdentifierType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/InteractionRelationshipType",
+      "pred" : "is_a",
+      "obj" : "http://bioentity.io/vocab/RelationshipType"
     }, {
       "sub" : "http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation",
       "pred" : "http://bioentity.io/vocab/negated",
@@ -3482,41 +3596,41 @@
       "pred" : "http://bioentity.io/vocab/subject_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
     }, {
-      "sub" : "http://bioentity.io/vocab/DenormalizedAssociation",
-      "pred" : "http://bioentity.io/vocab/subject_taxon_label",
-      "obj" : "http://bioentity.io/vocab/Label"
-    }, {
       "sub" : "http://bioentity.io/vocab/GeneToGeneProductRelationship",
       "pred" : "http://bioentity.io/vocab/publications",
       "obj" : "http://bioentity.io/vocab/Publication"
+    }, {
+      "sub" : "http://bioentity.io/vocab/DenormalizedAssociation",
+      "pred" : "http://bioentity.io/vocab/subject_taxon_label",
+      "obj" : "http://bioentity.io/vocab/Label"
     }, {
       "sub" : "http://bioentity.io/vocab/CaseToThingAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence_graph",
       "obj" : "http://bioentity.io/vocab/EvidenceGraph"
     }, {
-      "sub" : "http://bioentity.io/vocab/GeneToExpressionSiteAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/ChemicalSubstance",
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
+      "sub" : "http://bioentity.io/vocab/GoAssociation",
+      "pred" : "http://bioentity.io/vocab/object",
+      "obj" : "http://bioentity.io/vocab/GeneOntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/relation",
       "obj" : "http://bioentity.io/vocab/RelationshipType"
     }, {
-      "sub" : "http://bioentity.io/vocab/BiosampleToThingAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
-      "sub" : "http://bioentity.io/vocab/GoAssociation",
-      "pred" : "http://bioentity.io/vocab/object",
-      "obj" : "http://bioentity.io/vocab/GeneOntologyTerm"
-    }, {
       "sub" : "http://bioentity.io/vocab/GeneToGeneAssociation",
       "pred" : "http://bioentity.io/vocab/object",
       "obj" : "http://bioentity.io/vocab/GeneOrGeneProduct"
+    }, {
+      "sub" : "http://bioentity.io/vocab/SeverityValue",
+      "pred" : "http://bioentity.io/vocab/label",
+      "obj" : "http://bioentity.io/vocab/LabelType"
     }, {
       "sub" : "http://bioentity.io/vocab/GeneProduct",
       "pred" : "http://bioentity.io/vocab/in_taxon",
@@ -3542,13 +3656,13 @@
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/CaseToThingAssociation"
     }, {
-      "sub" : "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/provided_by",
-      "obj" : "http://bioentity.io/vocab/Provider"
-    }, {
       "sub" : "http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence",
       "obj" : "http://bioentity.io/vocab/EvidenceInstance"
+    }, {
+      "sub" : "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/provided_by",
+      "obj" : "http://bioentity.io/vocab/Provider"
     }, {
       "sub" : "http://bioentity.io/vocab/OntologyClass",
       "pred" : "http://bioentity.io/vocab/id",
@@ -3566,10 +3680,6 @@
       "pred" : "subPropertyOf",
       "obj" : "http://bioentity.io/vocab/extensions_context_slot"
     }, {
-      "sub" : "http://bioentity.io/vocab/GeneToThingAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/Exon",
       "pred" : "http://bioentity.io/vocab/label",
       "obj" : "http://bioentity.io/vocab/LabelType"
@@ -3586,13 +3696,13 @@
       "pred" : "http://bioentity.io/vocab/publications",
       "obj" : "http://bioentity.io/vocab/Publication"
     }, {
-      "sub" : "http://bioentity.io/vocab/GeneToExpressionSiteAssociation",
-      "pred" : "http://bioentity.io/vocab/object",
-      "obj" : "http://bioentity.io/vocab/AnatomicalEntity"
-    }, {
       "sub" : "http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/publications",
       "obj" : "http://bioentity.io/vocab/Publication"
+    }, {
+      "sub" : "http://bioentity.io/vocab/GeneToExpressionSiteAssociation",
+      "pred" : "http://bioentity.io/vocab/object",
+      "obj" : "http://bioentity.io/vocab/AnatomicalEntity"
     }, {
       "sub" : "http://bioentity.io/vocab/DenormalizedAssociation",
       "pred" : "http://bioentity.io/vocab/relation",
@@ -3602,9 +3712,17 @@
       "pred" : "subPropertyOf",
       "obj" : "http://bioentity.io/vocab/association_slot"
     }, {
+      "sub" : "http://bioentity.io/vocab/SequenceFeatureRelationship",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/GeneRegulatoryRelationship",
       "pred" : "http://bioentity.io/vocab/publications",
       "obj" : "http://bioentity.io/vocab/Publication"
+    }, {
+      "sub" : "http://bioentity.io/vocab/Environment",
+      "pred" : "http://bioentity.io/vocab/id",
+      "obj" : "http://bioentity.io/vocab/IdentifierType"
     }, {
       "sub" : "http://bioentity.io/vocab/GeneToExpressionSiteAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence",
@@ -3626,13 +3744,13 @@
       "pred" : "http://bioentity.io/vocab/association_type",
       "obj" : "http://bioentity.io/vocab/String"
     }, {
-      "sub" : "http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence_graph",
       "obj" : "http://bioentity.io/vocab/EvidenceGraph"
+    }, {
+      "sub" : "http://bioentity.io/vocab/Environment",
+      "pred" : "http://bioentity.io/vocab/label",
+      "obj" : "http://bioentity.io/vocab/LabelType"
     }, {
       "sub" : "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/object_extensions",
@@ -3658,6 +3776,10 @@
       "pred" : "http://bioentity.io/vocab/has_evidence_type",
       "obj" : "http://bioentity.io/vocab/EvidenceType"
     }, {
+      "sub" : "http://bioentity.io/vocab/PhenotypicFeature",
+      "pred" : "is_a",
+      "obj" : "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature"
+    }, {
       "sub" : "http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/provided_by",
       "obj" : "http://bioentity.io/vocab/Provider"
@@ -3669,6 +3791,10 @@
       "sub" : "http://bioentity.io/vocab/BiosampleToThingAssociation",
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureDenormalizedAssociation",
+      "pred" : "http://bioentity.io/vocab/object",
+      "obj" : "http://bioentity.io/vocab/PhenotypicFeature"
     }, {
       "sub" : "http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation",
       "pred" : "http://bioentity.io/vocab/subject_extensions",
@@ -3774,10 +3900,6 @@
       "pred" : "http://bioentity.io/vocab/relation",
       "obj" : "http://bioentity.io/vocab/RelationshipType"
     }, {
-      "sub" : "http://bioentity.io/vocab/ChemicalToGeneAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
-    }, {
       "sub" : "http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/has_evidence_type",
       "obj" : "http://bioentity.io/vocab/EvidenceType"
@@ -3802,6 +3924,10 @@
       "pred" : "http://bioentity.io/vocab/publications",
       "obj" : "http://bioentity.io/vocab/Publication"
     }, {
+      "sub" : "http://bioentity.io/vocab/ChemicalToGeneAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
+    }, {
       "sub" : "http://bioentity.io/vocab/GenotypeToThingAssociation",
       "pred" : "http://bioentity.io/vocab/publications",
       "obj" : "http://bioentity.io/vocab/Publication"
@@ -3821,6 +3947,10 @@
       "sub" : "http://bioentity.io/vocab/CaseToThingAssociation",
       "pred" : "http://bioentity.io/vocab/provided_by",
       "obj" : "http://bioentity.io/vocab/Provider"
+    }, {
+      "sub" : "http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/GenomicSequenceLocalization",
       "pred" : "http://bioentity.io/vocab/publications",
@@ -3869,6 +3999,10 @@
       "sub" : "http://bioentity.io/vocab/Cohort",
       "pred" : "http://bioentity.io/vocab/id",
       "obj" : "http://bioentity.io/vocab/IdentifierType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/GenotypeToGenotypePartAssociation",
+      "pred" : "http://bioentity.io/vocab/qualifiers",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/publications",
@@ -3998,17 +4132,9 @@
       "pred" : "is_a",
       "obj" : "http://bioentity.io/vocab/MolecularEntity"
     }, {
-      "sub" : "http://bioentity.io/vocab/EnvironmentalFeature",
-      "pred" : "is_a",
-      "obj" : "http://bioentity.io/vocab/NamedThing"
-    }, {
       "sub" : "http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation",
       "pred" : "http://bioentity.io/vocab/object",
       "obj" : "http://bioentity.io/vocab/GeneOrGeneProduct"
-    }, {
-      "sub" : "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
-      "pred" : "http://bioentity.io/vocab/qualifiers",
-      "obj" : "http://bioentity.io/vocab/Class"
     }, {
       "sub" : "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
       "pred" : "http://bioentity.io/vocab/label",
@@ -4029,6 +4155,14 @@
       "sub" : "http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation",
       "pred" : "http://bioentity.io/vocab/object_extensions",
       "obj" : "http://bioentity.io/vocab/PropertyValuePair"
+    }, {
+      "sub" : "http://bioentity.io/vocab/GeneOntologyClass",
+      "pred" : "http://bioentity.io/vocab/label",
+      "obj" : "http://bioentity.io/vocab/LabelType"
+    }, {
+      "sub" : "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+      "pred" : "is_a",
+      "obj" : "http://bioentity.io/vocab/OntologyClass"
     }, {
       "sub" : "http://bioentity.io/vocab/GeneToThingAssociation",
       "pred" : "http://bioentity.io/vocab/association_type",
@@ -4053,16 +4187,16 @@
       "domainClassIds" : [ "http://bioentity.io/vocab/EvidenceInstance" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/closure_concept_slot",
-      "domainClassIds" : [ "http://bioentity.io/vocab/Class" ]
+      "domainClassIds" : [ "http://bioentity.io/vocab/OntologyClass" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/object_taxon_closure_label",
-      "domainClassIds" : [ "http://bioentity.io/vocab/Class" ]
+      "domainClassIds" : [ "http://bioentity.io/vocab/OntologyClass" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/extensions_context_slot",
       "domainClassIds" : [ "http://bioentity.io/vocab/PropertyValuePair" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/subject_taxon_closure",
-      "domainClassIds" : [ "http://bioentity.io/vocab/Class" ]
+      "domainClassIds" : [ "http://bioentity.io/vocab/OntologyClass" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/systematic_synonym",
       "domainClassIds" : [ "http://bioentity.io/vocab/NamedThing", "http://bioentity.io/vocab/LabelType" ]
@@ -4082,11 +4216,11 @@
       "predicateId" : "http://bioentity.io/vocab/taxon_closure_label_slot",
       "domainClassIds" : [ "http://bioentity.io/vocab/Label" ]
     }, {
+      "predicateId" : "http://bioentity.io/vocab/isa_partof_closure_label",
+      "domainClassIds" : [ "http://bioentity.io/vocab/OntologyClass" ]
+    }, {
       "predicateId" : "http://bioentity.io/vocab/subject_taxon",
       "domainClassIds" : [ "http://bioentity.io/vocab/OrganismTaxon" ]
-    }, {
-      "predicateId" : "http://bioentity.io/vocab/isa_partof_closure_label",
-      "domainClassIds" : [ "http://bioentity.io/vocab/Class" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/associations",
       "domainClassIds" : [ "http://bioentity.io/vocab/Association" ]
@@ -4101,7 +4235,7 @@
       "domainClassIds" : [ "http://bioentity.io/vocab/Provider" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/object_taxon_closure",
-      "domainClassIds" : [ "http://bioentity.io/vocab/Class" ]
+      "domainClassIds" : [ "http://bioentity.io/vocab/OntologyClass" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/object_extensions",
       "domainClassIds" : [ "http://bioentity.io/vocab/PropertyValuePair" ]
@@ -4125,13 +4259,13 @@
       "domainClassIds" : [ "http://bioentity.io/vocab/NamedThing", "http://bioentity.io/vocab/LabelType" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/qualifiers",
-      "domainClassIds" : [ "http://bioentity.io/vocab/Class" ]
+      "domainClassIds" : [ "http://bioentity.io/vocab/OntologyClass" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/id",
       "domainClassIds" : [ "http://bioentity.io/vocab/NamedThing", "http://bioentity.io/vocab/IdentifierType" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/regulates_closure",
-      "domainClassIds" : [ "http://bioentity.io/vocab/Class" ]
+      "domainClassIds" : [ "http://bioentity.io/vocab/RelationshipType" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/association_slot",
       "domainClassIds" : [ "http://bioentity.io/vocab/Association" ]
@@ -4155,7 +4289,7 @@
       "domainClassIds" : [ "http://bioentity.io/vocab/NamedThing" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/isa_partof_closure",
-      "domainClassIds" : [ "http://bioentity.io/vocab/Class" ]
+      "domainClassIds" : [ "http://bioentity.io/vocab/OntologyClass" ]
     }, {
       "predicateId" : "http://bioentity.io/vocab/onset_qualifier",
       "domainClassIds" : [ "http://bioentity.io/vocab/LifeStage" ]

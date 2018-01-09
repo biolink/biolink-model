@@ -48,7 +48,7 @@ class Manager(object):
         return n
 
         
-    def slotdef(self, sn):
+    def slotdef(self, sn, c=None):
         """
         lookup a slot in the schema by name
 
@@ -62,7 +62,14 @@ class Manager(object):
         for s in self.schema.slots:
             if s.name == sn:
                 return s
-        logging.warning("No such slot: {}".format(sn))
+
+        # if not found, can use local definition
+        if c is not None and c.slot_usage is not None:
+            for s in c.slot_usage:
+                if s.name == sn:
+                    return s
+
+        logging.warning("No such slot: {} from class {}".format(sn, c))
 
     def slot_name(self, s, style=NameStyle.UNDERSCORE):
         """
@@ -168,7 +175,7 @@ class Manager(object):
         Lookup an object attribute of a slot using inheritance
         """
         c = self.classdef(c)
-        s = self.slotdef(s)
+        s = self.slotdef(s, c)
 
         # class-specific usage takes priority
         if c is not None and c.slot_usage is not None:
@@ -180,18 +187,6 @@ class Manager(object):
         if s.__getattribute__(attr):
             return s.__getattribute__(attr)
 
-        # inheritance up class hierarchy
-        if c.is_a:
-            v = self.class_slot_getattr(c.is_a, s, attr, defaultval=defaultval)
-            if v is not None:
-                return v
-        
-        # inheritance up slot hierarchy
-        if s.is_a:
-            v = self.class_slot_getattr(c, s.is_a, attr, defaultval=defaultval)
-            if v is not None:
-                return v
-            
         # inheritance up class mixins
         if c.mixins:
             for m in c.mixins:
@@ -205,6 +200,18 @@ class Manager(object):
                 v = self.class_slot_getattr(c, m, attr, defaultval=defaultval)
                 if v is not None:
                     return v
+                
+        # inheritance up class hierarchy
+        if c.is_a:
+            v = self.class_slot_getattr(c.is_a, s, attr, defaultval=defaultval)
+            if v is not None:
+                return v
         
-        return False
+        # inheritance up slot hierarchy
+        if s.is_a:
+            v = self.class_slot_getattr(c, s.is_a, attr, defaultval=defaultval)
+            if v is not None:
+                return v
+        
+        return None
     

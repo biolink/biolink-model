@@ -2,6 +2,45 @@
 
 ## CLASSES
 
+class RelationshipType(object):
+    """
+    An OWL property used as an edge label
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class HomologyRelationshipType(RelationshipType):
+    """
+    A relation used for homology
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class InteractionRelationshipType(RelationshipType):
+    """
+    A relation used for interaction relationships
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
 class NamedThing(object):
     """
     a databased entity or concept/class
@@ -21,6 +60,38 @@ class NamedThing(object):
 class OntologyClass(NamedThing):
     """
     a concept or class in an ontology, vocabulary or thesaurus
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class SeverityValue(OntologyClass):
+    """
+    describes the severity of a phenotypic feature or disease
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class GeneOntologyClass(OntologyClass):
+    """
+    an ontology class that describes a functional aspect of a gene, gene prodoct or complex
     """
     def __init__(self,
                  id=None,
@@ -144,7 +215,7 @@ class Biosample(NamedThing):
         return self.__str__()
 
 
-class ConditionOrPhenotypicFeature(OntologyClass):
+class DiseaseOrPhenotypicFeature(OntologyClass):
     """
     None
     """
@@ -160,7 +231,7 @@ class ConditionOrPhenotypicFeature(OntologyClass):
         return self.__str__()
 
 
-class Disease(ConditionOrPhenotypicFeature):
+class Disease(DiseaseOrPhenotypicFeature):
     """
     None
     """
@@ -176,7 +247,7 @@ class Disease(ConditionOrPhenotypicFeature):
         return self.__str__()
 
 
-class PhenotypicFeature(ConditionOrPhenotypicFeature):
+class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     """
     None
     """
@@ -192,7 +263,7 @@ class PhenotypicFeature(ConditionOrPhenotypicFeature):
         return self.__str__()
 
 
-class EnvironmentalFeature(NamedThing):
+class Environment(NamedThing):
     """
     A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
     """
@@ -581,6 +652,44 @@ class SequenceVariant(GenomicEntity):
 
     def __str__(self):
         return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class DrugExposure(Environment):
+    """
+    A drug exposure is an intake of a particular chemical substance
+    """
+    def __init__(self,
+                 drug=None,
+                 id=None,
+                 label=None):
+        self.drug=drug
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "drug={} id={} label={} ".format(self.drug,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Treatment(Environment):
+    """
+    A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
+    """
+    def __init__(self,
+                 treats=None,
+                 has_exposure_parts=None,
+                 id=None,
+                 label=None):
+        self.treats=treats
+        self.has_exposure_parts=has_exposure_parts
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "treats={} has_exposure_parts={} id={} label={} ".format(self.treats,self.has_exposure_parts,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1559,48 +1668,6 @@ class GenotypeToThingAssociation(Association):
         return self.__str__()
 
 
-class GenotypeToPhenotypicFeatureAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 publications=None,
-                 provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 id=None,
-                 label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.publications=publications
-        self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
 class GeneToExpressionSiteAssociation(Association):
     """
     An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?
@@ -1643,6 +1710,48 @@ class GeneToExpressionSiteAssociation(Association):
 
     def __str__(self):
         return "stage_qualifier={} quantifier_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.stage_qualifier,self.quantifier_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class SequenceVariantModulatesTreatmentAssociation(Association):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2122,6 +2231,345 @@ class MolecularEvent(object):
 
     def __str__(self):
         return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class MolecularActivityToGeneProductAssociation(Association):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class MolecularActivityToLocationAssociation(Association):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class MolecularActivityToBiologicalProcessAssociation(Association):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class MolecularActivityToDownstreamMolecularActivityAssociation(Association):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class AnatomicalEntityToAnatomicalEntityAssociation(Association):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class AnatomicalEntityPartOfAnatomicalEntityAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Occurrent(object):
+    """
+    A processual entity
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class MolecularActivity(Occurrent):
+    """
+    An execution of a molecular function
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class BiologicalProcess(Occurrent):
+    """
+    One or more causally connected executions of molecular functions
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class CellularComponent(AnatomicalEntity):
+    """
+    A location in or around a cell
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Cell(AnatomicalEntity):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class GrossAnatomicalStructure(AnatomicalEntity):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
     def __repr__(self):
         return self.__str__()
 

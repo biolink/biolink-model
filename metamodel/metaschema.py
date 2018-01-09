@@ -43,6 +43,7 @@ class ClassDefinitionSchema(DefinitionSchema):
     subclass_of = fields.Str()
     mixins = fields.List(fields.Str())
     slots = fields.List(fields.Str)
+    defining_slots = fields.List(fields.Str)
     slot_usage = fields.List(fields.Nested(SlotUsageDefinitionSchema))
 
     @post_load

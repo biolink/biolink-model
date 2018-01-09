@@ -53,7 +53,7 @@ class GraphqlGenerator(Generator):
         # so we duplicate slots from inherited parents and mixins
         slots = mgr.class_slotdefs(c, True, True)
         for s in slots:
-            s = mgr.slotdef(s)
+            s = mgr.slotdef(s, c)
             sn = self.slot_name(s)
 
             r = mgr.class_slot_range(c, s)

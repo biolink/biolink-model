@@ -7,14 +7,28 @@ For examples, see the biolinkmodel directory in this repo.
 
 """
 
+import logging
 from .schemautils import *
 
 def write_python_module(schema):
     print('')
     print('')
     print('## CLASSES')
-    print('')    
-    for c in schema.classes:
+    print('')
+
+    # copy
+    clist = [c.name for c in schema.classes]
+    
+    while len(clist) > 0:
+        cn = clist[0]
+        c = get_cls(cn, schema)
+        #logging.error("SELECTED: {}".format(c.name))
+        while c.is_a and c.is_a in clist:
+            #logging.error("REP {} -> {}".format(c.name, c.is_a))
+            c = get_cls(c.is_a, schema)
+        #logging.error("REMOVING: {}".format(c.name))
+        clist.remove(c.name)
+        
         cn = c.name
         parent = c.is_a
         if parent is None:

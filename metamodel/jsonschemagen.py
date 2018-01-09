@@ -72,7 +72,7 @@ class JsonSchemaGenerator(Generator):
         # so we duplicate slots from inherited parents and mixins
         slots = mgr.class_slotdefs(c, True, True)
         for s in slots:
-            s = mgr.slotdef(s)
+            s = mgr.slotdef(s, c)
             sn = mgr.slot_name(s)
 
             if self.inline:
