@@ -1150,6 +1150,8 @@ classes:
       
   - name: gene to phenotypic feature association
     is_a: association
+    mappings:
+      - "http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association"
     defining_slots:
       - subject
       - object
@@ -1227,6 +1229,8 @@ classes:
   - name: go association
     aliases: ['functional association']
     is_a: association
+    mappings:
+      - "http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association"
     defining_slots:
       - subject
       - object
