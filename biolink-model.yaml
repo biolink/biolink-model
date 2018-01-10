@@ -532,7 +532,8 @@ classes:
     mixins:
       - thing with taxon
     aliases: ['bioentity']
-    description: "A gene, gene product, small molecule or macromolecule (including protein complex)"
+    description: >-
+      A gene, gene product, small molecule or macromolecule (including protein complex)
 
   - name: chemical substance
     is_a: molecular entity
@@ -548,6 +549,32 @@ classes:
     subclass_of: UBERON:0001062
     description: >-
       A subcellular location, cell type or gross anatomical part
+      
+  - name: measurement
+    is_a: attribute
+    mappings: ['NCIT:C25209','EFO:0001444']
+    subclass_of: 'IAO:0000109'
+    description: >-
+      A measurement datum is an information content entity that is a recording of the output of a measurement such as produced by a device.
+      
+  - name: location or time measurement
+    is_a: measurement
+    mappings: ['','']
+    subclass_of: 'measurement'
+    description: >-
+      Abstact grouping class to hold a measurement data about location or time.
+
+  - name: location measurement
+    is_a: location or time measurement
+    subclass_of: ''
+    description: >-
+      Measurement datum of location (eg. in lat/long)
+      
+  - name: time measurement
+    is_a: location or time measurement
+    mappings: ['OBI:0001620','OBI:0001621']
+    description: >-
+      Measurement datum of time (eg. in ISO date format) 
 
   - name: life stage
     is_a: named thing
