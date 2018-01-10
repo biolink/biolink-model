@@ -631,7 +631,14 @@ classes:
       - "CHEBI:33697"
     id_prefixes:
       - RNAcentral
-    
+      
+  - name: microRNA
+    is_a: RNA product
+    mappings:
+      - "SO:0000276"
+    id_prefixes:
+      - MIR
+        
   - name: macromolecular complex
     is_a: molecular entity
     mappings:
