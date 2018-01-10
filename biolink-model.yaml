@@ -3,6 +3,7 @@ name: biolink model
 description: description of the biolink datamodel
 prefixes:
   OBAN: http://purl.org/oban/
+  SIO: http://semanticscience.org/resource/SIO_
   wgs: http://www.w3.org/2003/01/geo/wgs84_pos
 
 types:
@@ -988,6 +989,8 @@ classes:
 
   - name: chemical to disease or phenotypic feature association
     is_a: association
+    mappings:
+      - SIO:000993
     defining_slots:
       - subject
       - object
