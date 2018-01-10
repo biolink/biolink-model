@@ -89,6 +89,12 @@
         "label": {
             "type": "string"
         },
+        "latitude": {
+            "type": "string"
+        },
+        "longitude": {
+            "type": "string"
+        },
         "negated": {
             "type": "string"
         },
@@ -177,6 +183,9 @@
             "type": "string"
         },
         "taxon_closure_slot": {
+            "type": "string"
+        },
+        "timepoint": {
             "type": "string"
         }
     },
@@ -370,6 +379,13 @@
             },
             "required": [],
             "title": "AssociationResultSet",
+            "type": "object"
+        },
+        "Attribute": {
+            "description": "A property or characteristic of an entity",
+            "properties": {},
+            "required": [],
+            "title": "Attribute",
             "type": "object"
         },
         "BioentityWithGoTerms": {
@@ -2407,6 +2423,42 @@
             },
             "required": [],
             "title": "GenotypeToVariantAssociation",
+            "type": "object"
+        },
+        "GeographicLocation": {
+            "description": "a location that can be described in lat/long coordinates",
+            "properties": {
+                "latitude": {
+                    "description": "latitude",
+                    "type": "string"
+                },
+                "longitude": {
+                    "description": "longitude",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "GeographicLocation",
+            "type": "object"
+        },
+        "GeographicLocationAtTime": {
+            "description": "a location that can be described in lat/long coordinates, for a particular time",
+            "properties": {
+                "latitude": {
+                    "description": "latitude",
+                    "type": "string"
+                },
+                "longitude": {
+                    "description": "longitude",
+                    "type": "string"
+                },
+                "timepoint": {
+                    "description": "a point in time",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "GeographicLocationAtTime",
             "type": "object"
         },
         "GoAssociation": {
