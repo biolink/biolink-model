@@ -541,6 +541,11 @@ classes:
       material with multiple chemical entities as part
     subclass_of: "CHEBI:24431"
 
+  - name: attribute
+    subclass_of: PATO:0000001
+    description: >-
+      A property or characteristic of an entity
+    
   - name: anatomical entity
     is_a: named thing
     mixins:
@@ -657,6 +662,7 @@ classes:
       - PANTHER
 
   - name: zygosity
+    is_a: attribute
     mappings:
       - "GENO:0000133"
 
@@ -1157,7 +1163,7 @@ classes:
         examples:
           - value: UBERON:0000069
             description: larval stage
-      - name: quantifier
+      - name: quantifier qualifier
         description: >-
           can be used to indicate magnitude, or also ranking
 
