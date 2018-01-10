@@ -372,6 +372,19 @@ class ChemicalSubstance(MolecularEntity):
         return self.__str__()
 
 
+class Attribute(object):
+    """
+    A property or characteristic of an entity
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
 class AnatomicalEntity(NamedThing):
     """
     A subcellular location, cell type or gross anatomical part
@@ -609,7 +622,7 @@ class GeneFamily(MolecularEntity):
         return self.__str__()
 
 
-class Zygosity(object):
+class Zygosity(Attribute):
     """
     None
     """
@@ -690,6 +703,40 @@ class Treatment(Environment):
 
     def __str__(self):
         return "treats={} has_exposure_parts={} id={} label={} ".format(self.treats,self.has_exposure_parts,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class GeographicLocation(object):
+    """
+    a location that can be described in lat/long coordinates
+    """
+    def __init__(self,
+                 latitude=None,
+                 longitude=None):
+        self.latitude=latitude
+        self.longitude=longitude
+
+    def __str__(self):
+        return "latitude={} longitude={} ".format(self.latitude,self.longitude)
+    def __repr__(self):
+        return self.__str__()
+
+
+class GeographicLocationAtTime(object):
+    """
+    a location that can be described in lat/long coordinates, for a particular time
+    """
+    def __init__(self,
+                 latitude=None,
+                 longitude=None,
+                 timepoint=None):
+        self.latitude=latitude
+        self.longitude=longitude
+        self.timepoint=timepoint
+
+    def __str__(self):
+        return "latitude={} longitude={} timepoint={} ".format(self.latitude,self.longitude,self.timepoint)
     def __repr__(self):
         return self.__str__()
 
@@ -907,6 +954,48 @@ class GeneToGeneAssociation(Association):
 class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     """
     A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class MolecularInteraction(Association):
+    """
+    An interaction at the molecular level between two physical entities
     """
     def __init__(self,
                  association_type=None,

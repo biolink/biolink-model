@@ -3,6 +3,7 @@ name: biolink model
 description: description of the biolink datamodel
 prefixes:
   OBAN: http://purl.org/oban/
+  wgs: http://www.w3.org/2003/01/geo/wgs84_pos
 
 types:
 
@@ -177,6 +178,25 @@ slots:
       date on which thing was created
     mappings:
       - dc:created
+
+  - name: latitude
+    range: float
+    description: >-
+      latitude
+    mappings:
+      - wgs:lat
+
+  - name: longitude
+    range: float
+    description: >-
+      longitude
+    mappings:
+      - wgs:long
+
+  - name: timepoint
+    range: xsd:time
+    description: >-
+      a point in time
 
   - name: stage qualifier
     is_a: association slot
@@ -541,6 +561,11 @@ classes:
       material with multiple chemical entities as part
     subclass_of: "CHEBI:24431"
 
+  - name: attribute
+    subclass_of: PATO:0000001
+    description: >-
+      A property or characteristic of an entity
+    
   - name: anatomical entity
     is_a: named thing
     mixins:
@@ -655,7 +680,7 @@ classes:
   - name: gene family
     is_a: molecular entity
     mappings:
-      - " NCIT:C20130"
+      - "NCIT:C20130"
     mixins:
       - gene grouping
     description: >-
@@ -664,6 +689,7 @@ classes:
       - PANTHER
 
   - name: zygosity
+    is_a: attribute
     mappings:
       - "GENO:0000133"
 
@@ -718,6 +744,21 @@ classes:
     mappings:
       - "OGMS:0000090"
 
+  - name: geographic location
+    description: >-
+      a location that can be described in lat/long coordinates
+    slots:
+      - latitude
+      - longitude
+      
+  - name: geographic location at time
+    description: >-
+      a location that can be described in lat/long coordinates, for a particular time
+    slots:
+      - latitude
+      - longitude
+      - timepoint
+      
   ## ------
   ## ASSOCIATIONS
   ## ------
@@ -1164,7 +1205,7 @@ classes:
         examples:
           - value: UBERON:0000069
             description: larval stage
-      - name: quantifier
+      - name: quantifier qualifier
         description: >-
           can be used to indicate magnitude, or also ranking
 

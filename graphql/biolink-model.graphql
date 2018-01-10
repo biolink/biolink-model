@@ -8,23 +8,23 @@ type InteractionRelationshipType {
 }
 
 type SeverityValue {
-  id: String!
   label: String
+  id: String!
 }
 
 type NamedThing {
-  id: String!
   label: String
+  id: String!
 }
 
 type OntologyClass {
-  id: String!
   label: String
+  id: String!
 }
 
 type GeneOntologyClass {
-  id: String!
   label: String
+  id: String!
 }
 
 type ThingWithTaxon {
@@ -32,737 +32,769 @@ type ThingWithTaxon {
 }
 
 type OrganismTaxon {
-  id: String!
   label: String
+  id: String!
 }
 
 type IndividualOrganism implements ThingWithTaxon {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type Case {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type PopulationOfIndividualOrganisms implements ThingWithTaxon {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type Cohort {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type Biosample implements ThingWithTaxon {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type DiseaseOrPhenotypicFeature implements ThingWithTaxon {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type Disease {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type PhenotypicFeature {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type Environment {
-  id: String!
   label: String
+  id: String!
 }
 
 type InformationContentEntity {
-  id: String!
   label: String
+  id: String!
 }
 
 type EvidenceType {
-  id: String!
   label: String
+  id: String!
 }
 
 type Publication {
-  id: String!
   label: String
+  id: String!
 }
 
 type Provider {
 }
 
 type MolecularEntity implements ThingWithTaxon {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type ChemicalSubstance {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
+}
+
+type Attribute {
 }
 
 type AnatomicalEntity implements ThingWithTaxon {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type LifeStage implements ThingWithTaxon {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type HasGenomicName {
-  fullName: String
   systematicSynonym: String
+  fullName: String
 }
 
 type GenomicEntity {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type Transcript {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type Exon {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type CodingSequence {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type GeneOrGeneProduct {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type Gene {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type GeneProduct {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type Protein {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type RnaProduct {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type MacromolecularComplex {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type GeneGrouping {
 }
 
 type GeneFamily implements GeneGrouping {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type Zygosity {
 }
 
 type Genotype {
-  hasZygosity: Zygosity
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  hasZygosity: Zygosity
+  id: String!
 }
 
 type SequenceVariant {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type DrugExposure {
-  id: String!
   label: String
+  id: String!
   drug: [String]!
 }
 
 type Treatment {
-  treats: DiseaseOrPhenotypicFeature!
   label: String
+  treats: DiseaseOrPhenotypicFeature!
   id: String!
   hasExposureParts: [DrugExposure]!
 }
 
+type GeographicLocation {
+  longitude: String
+  latitude: String
+}
+
+type GeographicLocationAtTime {
+  timepoint: String
+  longitude: String
+  latitude: String
+}
+
 type Association {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: String!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: String!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: String!
+  object: String!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type GenotypeToGenotypePartAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: Genotype!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: Genotype!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Genotype!
+  object: Genotype!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type GenotypeToGeneAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: Gene!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: Genotype!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Genotype!
+  object: Gene!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type GenotypeToVariantAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: SequenceVariant!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: Genotype!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Genotype!
+  object: SequenceVariant!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type GeneToGeneAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: GeneOrGeneProduct!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: GeneOrGeneProduct!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: GeneOrGeneProduct!
+  object: GeneOrGeneProduct!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type GeneToGeneHomologyAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: GeneOrGeneProduct!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: GeneOrGeneProduct!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: HomologyRelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: GeneOrGeneProduct!
+  object: GeneOrGeneProduct!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: HomologyRelationshipType!
 }
 
-type PairwiseGeneOrProteinInteractionAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: GeneOrGeneProduct!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: GeneOrGeneProduct!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: InteractionRelationshipType!
+type MolecularInteraction {
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: String!
+  object: String!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: InteractionRelationshipType!
+}
+
+type PairwiseGeneOrProteinInteractionAssociation implements MolecularInteraction {
+  hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: GeneOrGeneProduct!
+  object: GeneOrGeneProduct!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  qualifiers: [OntologyClass]
+  relation: InteractionRelationshipType!
 }
 
 type ChemicalToThingAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: String!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: ChemicalSubstance!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: ChemicalSubstance!
+  object: String!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type CaseToThingAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: String!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: Case!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Case!
+  object: String!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type ChemicalToGeneAssociation implements ChemicalToThingAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: GeneProduct!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: ChemicalSubstance!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: ChemicalSubstance!
+  object: GeneProduct!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: DiseaseOrPhenotypicFeature!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: ChemicalSubstance!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: ChemicalSubstance!
+  object: DiseaseOrPhenotypicFeature!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type BiosampleToThingAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: String!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: Biosample!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Biosample!
+  object: String!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type BiosampleToDiseaseOrPhenotypicFeatureAssociation implements BiosampleToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: DiseaseOrPhenotypicFeature!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: Biosample!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Biosample!
+  object: DiseaseOrPhenotypicFeature!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type EntityToPhenotypicFeatureAssociation {
-  hasEvidenceGraph: String
-  onsetQualifier: LifeStage
-  hasEvidence: String
-  publications: [Publication]
-  object: PhenotypicFeature!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  providedBy: Provider
-  severityQualifier: SeverityValue
-  associationType: String
-  subject: String!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  frequencyQualifier: String
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  onsetQualifier: LifeStage
+  severityQualifier: SeverityValue
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: String!
+  object: PhenotypicFeature!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  relation: RelationshipType!
   qualifiers: [OntologyClass]
+  frequencyQualifier: String
 }
 
 type ThingToDiseaseOrPhenotypicFeatureAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: DiseaseOrPhenotypicFeature!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: String!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: String!
+  object: DiseaseOrPhenotypicFeature!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type DiseaseToThingAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: String!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: Disease!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Disease!
+  object: String!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, GenotypeToThingAssociation {
-  hasEvidenceGraph: String
-  onsetQualifier: LifeStage
-  hasEvidence: String
-  publications: [Publication]
-  object: PhenotypicFeature!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  providedBy: Provider
-  severityQualifier: SeverityValue
-  associationType: String
-  subject: Genotype!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  frequencyQualifier: String
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  onsetQualifier: LifeStage
+  severityQualifier: SeverityValue
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Genotype!
+  object: PhenotypicFeature!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  relation: RelationshipType!
   qualifiers: [OntologyClass]
+  frequencyQualifier: String
 }
 
 type EnvironmentToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation {
-  hasEvidenceGraph: String
-  onsetQualifier: LifeStage
-  hasEvidence: String
-  publications: [Publication]
-  object: PhenotypicFeature!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  providedBy: Provider
-  severityQualifier: SeverityValue
-  associationType: String
-  subject: Environment!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  frequencyQualifier: String
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  onsetQualifier: LifeStage
+  severityQualifier: SeverityValue
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Environment!
+  object: PhenotypicFeature!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  relation: RelationshipType!
   qualifiers: [OntologyClass]
+  frequencyQualifier: String
 }
 
 type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, DiseaseToThingAssociation {
-  hasEvidenceGraph: String
-  onsetQualifier: LifeStage
-  hasEvidence: String
-  publications: [Publication]
-  object: PhenotypicFeature!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  providedBy: Provider
-  severityQualifier: SeverityValue
-  associationType: String
-  subject: Disease!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  frequencyQualifier: String
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  onsetQualifier: LifeStage
+  severityQualifier: SeverityValue
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Disease!
+  object: PhenotypicFeature!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  relation: RelationshipType!
   qualifiers: [OntologyClass]
+  frequencyQualifier: String
 }
 
 type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, CaseToThingAssociation {
-  hasEvidenceGraph: String
-  onsetQualifier: LifeStage
-  hasEvidence: String
-  publications: [Publication]
-  object: PhenotypicFeature!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  providedBy: Provider
-  severityQualifier: SeverityValue
-  associationType: String
-  subject: Case!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  frequencyQualifier: String
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  onsetQualifier: LifeStage
+  severityQualifier: SeverityValue
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Case!
+  object: PhenotypicFeature!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  relation: RelationshipType!
   qualifiers: [OntologyClass]
+  frequencyQualifier: String
 }
 
 type GeneToThingAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: String!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: GeneOrGeneProduct!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: GeneOrGeneProduct!
+  object: String!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, GeneToThingAssociation {
-  hasEvidenceGraph: String
-  onsetQualifier: LifeStage
-  hasEvidence: String
-  publications: [Publication]
-  object: PhenotypicFeature!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  providedBy: Provider
-  severityQualifier: SeverityValue
-  associationType: String
-  subject: GeneOrGeneProduct!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  frequencyQualifier: String
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  onsetQualifier: LifeStage
+  severityQualifier: SeverityValue
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: GeneOrGeneProduct!
+  object: PhenotypicFeature!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  relation: RelationshipType!
   qualifiers: [OntologyClass]
+  frequencyQualifier: String
 }
 
 type GenotypeToThingAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: String!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: Genotype!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Genotype!
+  object: String!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type GeneToExpressionSiteAssociation {
-  hasEvidenceGraph: String
-  stageQualifier: LifeStage
-  hasEvidence: String
-  publications: [Publication]
-  object: AnatomicalEntity!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  quantifierQualifier: String
-  associationType: String
-  subject: GeneOrGeneProduct!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: GeneOrGeneProduct!
+  object: AnatomicalEntity!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  stageQualifier: LifeStage
+  quantifierQualifier: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type SequenceVariantModulatesTreatmentAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: Treatment!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: SequenceVariant!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: SequenceVariant!
+  object: Treatment!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type GoAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: GeneOntologyClass!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: MolecularEntity!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: MolecularEntity!
+  object: GeneOntologyClass!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type DenormalizedAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: String!
-  objectExtensions: [PropertyValuePair]
-  subjectTaxon: OrganismTaxon
-  id: String!
-  label: String
-  subjectExtensions: [PropertyValuePair]
-  subjectTaxonClosure: [OntologyClass]
-  associationType: String
-  subjectTaxonClosureLabel: [String]
-  subject: String!
-  negated: String
-  subjectTaxonLabel: String
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: String!
+  subjectTaxonLabel: String
+  subjectTaxonClosure: [OntologyClass]
+  object: String!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  subjectTaxon: OrganismTaxon
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  subjectTaxonClosureLabel: [String]
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type DiseaseToPhenotypicFeatureDenormalizedAssociation {
-  hasEvidenceGraph: String
-  onsetQualifier: LifeStage
-  hasEvidence: String
-  publications: [Publication]
-  object: PhenotypicFeature!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  providedBy: Provider
-  severityQualifier: SeverityValue
-  associationType: String
-  subject: Disease!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  frequencyQualifier: String
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  onsetQualifier: LifeStage
+  severityQualifier: SeverityValue
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Disease!
+  object: PhenotypicFeature!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  relation: RelationshipType!
   qualifiers: [OntologyClass]
+  frequencyQualifier: String
 }
 
 type AssociationResultSet {
@@ -775,244 +807,244 @@ type PropertyValuePair {
 }
 
 type GenomicSequenceLocalization {
-  startInterbaseCoordinate: String
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  genomeBuild: String
-  object: GenomicEntity!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  phase: String
-  endInterbaseCoordinate: String
-  associationType: String
-  subject: GenomicEntity!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: GenomicEntity!
+  object: GenomicEntity!
+  endInterbaseCoordinate: String
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  startInterbaseCoordinate: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
+  genomeBuild: String
+  phase: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type SequenceFeatureRelationship {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: GenomicEntity!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: GenomicEntity!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: GenomicEntity!
+  object: GenomicEntity!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type TranscriptToGeneRelationship {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: Gene!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: Transcript!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Transcript!
+  object: Gene!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type GeneToGeneProductRelationship {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: GeneProduct!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: Gene!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Gene!
+  object: GeneProduct!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type ExonToTranscriptRelationship {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: Transcript!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: Exon!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: Exon!
+  object: Transcript!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type SequenceFeatureToSequenceRelationship {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: String!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: GenomicEntity!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: GenomicEntity!
+  object: String!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type GeneRegulatoryRelationship {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: GeneOrGeneProduct!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: GeneOrGeneProduct!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: GeneOrGeneProduct!
+  object: GeneOrGeneProduct!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type MolecularEvent {
 }
 
 type MolecularActivityToGeneProductAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: GeneOrGeneProduct!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: MolecularActivity!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: MolecularActivity!
+  object: GeneOrGeneProduct!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type MolecularActivityToLocationAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: CellularComponent!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: MolecularActivity!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: MolecularActivity!
+  object: CellularComponent!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type MolecularActivityToBiologicalProcessAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: BiologicalProcess!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: MolecularActivity!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: MolecularActivity!
+  object: BiologicalProcess!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type MolecularActivityToDownstreamMolecularActivityAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: MolecularActivity!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: MolecularActivity!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: MolecularActivity!
+  object: MolecularActivity!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type AnatomicalEntityToAnatomicalEntityAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: AnatomicalEntity!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: AnatomicalEntity!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: RelationshipType!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: AnatomicalEntity!
+  object: AnatomicalEntity!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: RelationshipType!
 }
 
 type AnatomicalEntityPartOfAnatomicalEntityAssociation {
-  hasEvidenceGraph: String
-  hasEvidence: String
-  publications: [Publication]
-  object: AnatomicalEntity!
-  objectExtensions: [PropertyValuePair]
-  id: String!
-  label: String
-  associationType: String
-  subject: AnatomicalEntity!
-  negated: String
-  subjectExtensions: [PropertyValuePair]
-  providedBy: Provider
-  relation: AnatomicalEntity!
   hasEvidenceType: EvidenceType
+  providedBy: Provider
+  subjectExtensions: [PropertyValuePair]
+  subject: AnatomicalEntity!
+  object: AnatomicalEntity!
+  publications: [Publication]
+  associationType: String
+  hasEvidenceGraph: String
+  negated: String
+  label: String
+  id: String!
+  objectExtensions: [PropertyValuePair]
+  hasEvidence: String
   qualifiers: [OntologyClass]
+  relation: AnatomicalEntity!
 }
 
 type Occurrent {
@@ -1025,30 +1057,30 @@ type BiologicalProcess {
 }
 
 type CellularComponent {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type Cell {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type GrossAnatomicalStructure {
-  id: String!
   label: String
   inTaxon: OrganismTaxon
+  id: String!
 }
 
 type BioentityWithGoTerms implements HasGenomicName {
-  regulatesClosure: [RelationshipType]
   systematicSynonym: String
-  id: String!
-  label: String
-  inTaxon: OrganismTaxon
   fullName: String
+  regulatesClosure: [RelationshipType]
+  label: String
+  id: String!
+  inTaxon: OrganismTaxon
   isaPartofClosure: [OntologyClass]
 }
 
