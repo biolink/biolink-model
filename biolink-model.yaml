@@ -3,6 +3,7 @@ name: biolink model
 description: description of the biolink datamodel
 prefixes:
   OBAN: http://purl.org/oban/
+  wgs: http://www.w3.org/2003/01/geo/wgs84_pos
 
 types:
 
@@ -177,6 +178,25 @@ slots:
       date on which thing was created
     mappings:
       - dc:created
+
+  - name: latitude
+    range: float
+    description: >-
+      latitude
+    mappings:
+      - wgs:lat
+
+  - name: longitude
+    range: float
+    description: >-
+      longitude
+    mappings:
+      - wgs:long
+
+  - name: timepoint
+    range: xsd:time
+    description: >-
+      a point in time
 
   - name: stage qualifier
     is_a: association slot
@@ -717,6 +737,21 @@ classes:
     mappings:
       - "OGMS:0000090"
 
+  - name: geographic location
+    description: >-
+      a location that can be described in lat/long coordinates
+    slots:
+      - latitude
+      - longitude
+      
+  - name: geographic location at time
+    description: >-
+      a location that can be described in lat/long coordinates, for a particular time
+    slots:
+      - latitude
+      - longitude
+      - timepoint
+      
   ## ------
   ## ASSOCIATIONS
   ## ------
