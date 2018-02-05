@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * EnvironmentalFeature
  * <p>
- * A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+ * null
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

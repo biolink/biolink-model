@@ -12,7 +12,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * GeneToExpressionSiteAssociation
  * <p>
- * An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?
+ * An association between a gene and an expression site, possibly qualified by stage/timing info.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -20,3 +20,17 @@ class Generator(object):
         if manager is None:
             manager = Manager(schema)
         self.manager = manager
+
+    def id_to_url(self, id):
+        uri = id
+        if ':' in id:
+            # TODO! use PC
+            if id.startswith('SIO:'):
+                uri = id.replace('SIO:', 'http://semanticscience.org/resource/SIO_')
+            if id.startswith('HGNC:'):
+                uri = 'https://monarchinitiative.org/gene/' + id
+            else:
+                frag = id.replace(':','_')
+                base = 'http://purl.obolibrary.org/obo/'
+                uri = base+frag
+        return uri

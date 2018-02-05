@@ -36,6 +36,7 @@ class Manager(object):
         - schema : SchemaDefinition
         """
         self.schema = schema
+        self.unreferenced = set()
 
     def get_name(self, n, style):
         if style == NameStyle.UNDERSCORE:
@@ -68,8 +69,9 @@ class Manager(object):
             for s in c.slot_usage:
                 if s.name == sn:
                     return s
-
-        logging.warning("No such slot: {} from class {}".format(sn, c))
+        if sn not in self.unreferenced:
+            logging.warning("No such slot: {} from class {}".format(sn, c))
+            self.unreferenced.add(sn)
 
     def slot_name(self, s, style=NameStyle.UNDERSCORE):
         """
@@ -101,7 +103,9 @@ class Manager(object):
         for c in self.schema.classes:
             if c.name == cn:
                 return c
-        logging.warning("No such class: {}".format(cn))
+        if cn not in self.unreferenced:
+            logging.warning("No such class: {}".format(cn))
+            self.unreferenced.add(cn)
 
 
     def class_name(self, c, style=NameStyle.CAMELCASE):
@@ -123,6 +127,62 @@ class Manager(object):
             raise ValueError("No cls for {}".format(c))
         return self.get_name(cls.name, style)
 
+    def obj_name(self, obj):
+        if isinstance(obj, ClassDefinition):
+            return self.class_name(obj)
+        else:
+            return self.slot_name(obj)
+    
+    def obj_uri(self, obj):
+        return "http://bioentity.io/vocab/{}".format(self.obj_name(obj))
+    
+    
+    def child_nodes(self, obj):
+        nodes = [c for c in self.schema.classes
+                 if c.is_a is not None and c.is_a==obj.name]
+        return nodes
+
+    def child_nodes_by_mixin(self, obj):
+        nodes = [c for c in self.schema.classes
+                 if c.mixins is not None and obj.name in c.mixins]
+        return nodes
+
+    # returns pairs (cls, refCls) if cls references obj via refCls
+    def all_class_usages(self, obj):
+        pairs = []
+        for c in self.schema.classes:
+            rc =  self.get_class_usage_of(c, obj)
+            if rc is not None:
+                pairs.append((c, rc))
+        return pairs
+
+    # if a reference class rc directly or indirectly refers to obj in class c, return rc
+    def get_class_usage_of(self, c, obj):
+        c = self.classdef(c)
+        slots = self.class_slotdefs(c, True, True)
+        for s in slots:
+            s = self.slotdef(s, c)
+            r = self.class_slot_range(c, s)
+            if r and self.classdef(r):
+                r = self.classdef(r)
+                if r.name == obj.name:
+                    return r
+                for a in self.ancestors(r, use_mixins=True, reflexive=False):
+                    if a.name == obj.name:
+                        return r
+        return None
+
+    # this is more expensive than using sets, but preserves order;
+    # may be worth using an explicit orderedDicts lib, see https://stackoverflow.com/questions/1653970/does-python-have-an-ordered-set
+    def remove_dupe_objs(self, objs):
+        r = []
+        visited = {}
+        for obj in objs:
+            if obj.name not in visited:
+                visited[obj.name] = True
+                r.append(obj)
+        return r
+    
     def ancestors(self, obj, use_mixins=False, reflexive=True, is_slot=False, use_isa=True, visited=[]):
         if isinstance(obj,str):
             if is_slot:
@@ -142,7 +202,8 @@ class Manager(object):
         if obj.mixins and use_mixins:
             for m in obj.mixins:
                 ancs += self.ancestors(m, use_mixins=use_mixins, reflexive=True, is_slot=is_slot, visited=v2)
-        return list(set(ancs))
+        #return list(set(ancs))
+        return self.remove_dupe_objs(ancs)
     
     def class_slotdefs(self, c, use_isa=True, use_mixins=False):
         """
@@ -150,11 +211,25 @@ class Manager(object):
         """
         # ensure an object
         cls = self.classdef(c)
-        slots = set()
+        slots = []
         for a in self.ancestors(c, use_mixins=use_mixins, use_isa=use_isa):
             if a.slots is not None:
-                slots.update(a.slots)
-        return list(slots)
+                for s in a.slots:
+                    slots.append(s)
+        return slots
+
+    def class_slotdef_inherited_from(self, c, s):
+        """
+        Return the class from which a slotdef in a class is inherited from
+        """
+        # ensure an object
+        cls = self.classdef(c)
+        for a in self.ancestors(c, use_mixins=True, use_isa=True):
+            if a.slots is not None:
+                for s1 in a.slots:
+                    if s.name == s1:
+                        return a
+        return None
     
     def class_slot_range(self, c, s):
         """
@@ -180,12 +255,19 @@ class Manager(object):
         # class-specific usage takes priority
         if c is not None and c.slot_usage is not None:
             for su in c.slot_usage:
-                if su.name == s.name and su.__getattribute__(attr) is not None:
-                    return su.__getattribute__(attr)
+                try:
+                    if su.name == s.name and su.__getattribute__(attr) is not None:
+                        return su.__getattribute__(attr)
+                except AttributeError:
+                    pass
 
         # general multivalued for slot
-        if s.__getattribute__(attr):
-            return s.__getattribute__(attr)
+        try:
+            if s.__getattribute__(attr):
+                return s.__getattribute__(attr)
+        except AttributeError:
+            pass
+        
 
         # inheritance up class mixins
         if c.mixins:
@@ -213,5 +295,5 @@ class Manager(object):
             if v is not None:
                 return v
         
-        return None
+        return defaultval
     

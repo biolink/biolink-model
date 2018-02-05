@@ -11,6 +11,11 @@ slots:
     primary_key: true
     description: >-
       a unique key that identifies a slot or class in a schema
+
+  - name: note
+    domain: element
+    description: >-
+      Notes about an element
     
   - name: abstract
     description: >-
@@ -64,6 +69,14 @@ slots:
     inlined: false
     description: >-
       list of equivalent or skos exact mappings to an ontology class
+    
+  - name: examples
+    multivalued: true
+    domain: element
+    range: example
+    inlined: true
+    description: >-
+      Example of usage for a slot or class
     
   - name: slots
     multivalued: true
@@ -122,6 +135,7 @@ classes:
       - singular name
       - is_a
       - description
+      - note
       - abstract
       - mappings
 
@@ -138,6 +152,7 @@ classes:
       - required
       - path
       - subproperty_of
+      - examples
 
   - name: slot usage definition
     description: "A usage of slot in the context of a class"
@@ -170,5 +185,10 @@ classes:
       - classes
       - types
 
+  - name: example
+    description: "example of usage"
+    slots:
+      - value
+      - description
 
     

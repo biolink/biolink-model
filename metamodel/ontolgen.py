@@ -94,11 +94,11 @@ class OwlSchemaGenerator(Generator):
             if c.subclass_of:
                 mappings = [c.subclass_of]
         if mappings:
+            # TODO: use geneal
             for m in mappings:
                 uri = self.class_uri(m)
                 if ':' in m:
-                    frag = m.replace(':','_')
-                    uri = URIRef('http://purl.obolibrary.org/obo/'+frag)
+                    uri = URIRef(self.id_to_url(m))
                 g.add((ci, SKOS.exactMatch, uri))
         for sn in slots:
             s = mgr.slotdef(sn, c)

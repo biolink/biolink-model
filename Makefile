@@ -13,6 +13,8 @@ build: biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views ontology/
 gen-golr-views:
 	./bin/gen-golr-views.py -d golr-views biolink-model.yaml
 
+docs/index.md: biolink-model.yaml
+	./bin/gen-markdown.py  biolink-model.yaml
 
 biolinkmodel/datamodel.py: biolink-model.yaml
 	./bin/gen-py-classes.py $< > $@
@@ -83,11 +85,13 @@ metamodel/jsonschema/metamodel.json: meta.yaml
 	bin/gen-json-schema.py $< > $@
 
 MM = metamodel/metamodel.py
-#MMS = metamodel/metaschema.py
+MMS = metamodel/metaschema.py
 regen-mm:
 	./bin/gen-py-classes.py meta.yaml  > $(MM)-tmp.py && python $(MM)-tmp.py && cp $(MM) $(MM)-PREV && mv $(MM)-tmp.py $(MM)
+
+#TODO: edit by hand for now
 #regen-mms:
-#	./bin/gen-mm-schema.py meta.yaml  > $(MM)-tmp.py && python $(MM)-tmp.py && cp $(MM) $(MM)-PREV && mv $(MM)-tmp.py $(MM)
+#	./bin/gen-mm-schema.py meta.yaml  > $(MMS)-tmp.py && python $(MMS)-tmp.py && cp $(MMS) $(MMS)-PREV && mv $(MMS)-tmp.py $(MMS)
 
 # ----------------------------------------
 # UTILS

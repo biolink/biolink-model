@@ -1,6 +1,6 @@
 id: "http://bioentity.io/json-schema/biolink.json"
 name: biolink model
-description: description of the biolink datamodel
+description: Entity and association taxonomy and datamodel for life-sciences data
 prefixes:
   OBAN: http://purl.org/oban/
   SIO: http://semanticscience.org/resource/SIO_
@@ -167,7 +167,7 @@ slots:
 
   - name: association type
     is_a: association slot
-    range: string
+    range: ontology class
     description: >-
       connects an association to the type of association (e.g. gene to phenotype)
     mappings:
@@ -429,7 +429,12 @@ classes:
   - name: severity value
     description: >-
       describes the severity of a phenotypic feature or disease
-    is_a: ontology class
+    is_a: attribute
+  
+  - name: frequency value
+    description: >-
+      describes the frequency of occurrence of an event or condition
+    is_a: attribute
   
   - name: named thing
     description: "a databased entity or concept/class"
@@ -439,15 +444,21 @@ classes:
     slot_usage:
       - name: id
         required: true
-      
+
+  - name: biological entity
+    is_a: named thing
+        
   - name: ontology class
     description: "a concept or class in an ontology, vocabulary or thesaurus"
-    is_a: named thing
+    mixin: true
       
   - name: gene ontology class
     description: >-
       an ontology class that describes a functional aspect of a gene, gene prodoct or complex
+    mixin: true
     is_a: ontology class
+    flags:
+      - testing
       
   - name: thing with taxon
     abstract: true
@@ -458,14 +469,23 @@ classes:
       - in taxon
       
   - name: organism taxon
-    is_a: ontology class
+    is_a: organismal entity
+    mixins:
+      - ontology class
     values_from:
       - ncbitaxon
+      
+  - name: organismal entity
+    description: >-
+      A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
+    abstract: true
+    is_a: biological entity
       
   - name: individual organism
     mixins:
       - thing with taxon
-    is_a: named thing
+    is_a: organismal entity
+    subclass_of: "NCBITaxon:1"
 
   - name: case
     aliases: ['patient', 'proband']
@@ -476,7 +496,7 @@ classes:
   - name: population of individual organisms
     mixins:
       - thing with taxon
-    is_a: named thing
+    is_a: organismal entity
       
   - name: cohort
     is_a: population of individual organisms
@@ -485,10 +505,10 @@ classes:
     aliases: ['biospecimen', 'sample']
     mixins:
       - thing with taxon
-    is_a: named thing
+    is_a: organismal entity
       
   - name: disease or phenotypic feature
-    is_a: ontology class
+    is_a: biological entity
     mixins:
       - thing with taxon
     union_of:
@@ -509,7 +529,7 @@ classes:
       
   - name: environment
     aliases: ['environment', 'exposure', 'experimental condition']
-    is_a: named thing
+    is_a: biological entity
     description: >-
       A feature of the environment of an organism that influences one or more phenotypic features
       of that organism, potentially mediated by genes
@@ -542,14 +562,18 @@ classes:
       The scope is intended to be general and include information published on the web as well as journals.
     mappings:
       - "IAO:0000311"
-      
+
+  - name: administrative entity
+    abstract: true
+    
   - name: provider
+    is_a: administrative entity
     aliases: ['agent', 'group']
     description: >-
       person, group, organization or project that provides a piece of information
       
   - name: molecular entity
-    is_a: named thing
+    is_a: biological entity
     mixins:
       - thing with taxon
     aliases: ['bioentity']
@@ -568,7 +592,7 @@ classes:
       A property or characteristic of an entity
     
   - name: anatomical entity
-    is_a: named thing
+    is_a: organismal entity
     mixins:
       - thing with taxon
     subclass_of: UBERON:0001062
@@ -576,7 +600,7 @@ classes:
       A subcellular location, cell type or gross anatomical part
 
   - name: life stage
-    is_a: named thing
+    is_a: organismal entity
     mixins:
       - thing with taxon
     subclass_of: UBERON:0000105
@@ -584,18 +608,51 @@ classes:
       A stage of development or growth of an organism, including post-natal adult stages
 
   - name: has genomic name
+    description: >-
+      mixing class for any entity that has a full name and a systematic synonym
+    notes: >-
+      consider revising
     abstract: true
     mixin: true
     slots:
       - full name
       - systematic synonym
       
+  - name: planetary entity
+    is_a: named thing
+    description: >-
+      Any entity or process that exists at the level of the whole planet
+      
+  - name: environmental process
+    is_a: planetary entity
+    mixins:
+      - occurrent
+    subclass_of: ENVO:02500000
+      
+  - name: environmental feature
+    is_a: planetary entity
+    subclass_of: ENVO:00002297
+      
+  - name: clinical entity
+    is_a: named thing
+    description: >-
+      Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
+      
+  - name: clinical trial
+    is_a: clinical entity
+      
+  - name: clinical intervention
+    is_a: clinical entity
       
   - name: genomic entity
     is_a: molecular entity
     aliases: ['sequence feature']
     description: >-
       an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+
+  - name: genome
+    is_a: genomic entity
+    mappings: ['SO:0001026']
 
   - name: transcript
     is_a: genomic entity
@@ -746,6 +803,7 @@ classes:
       - "OGMS:0000090"
 
   - name: geographic location
+    is_a: planetary entity
     description: >-
       a location that can be described in lat/long coordinates
     slots:
@@ -753,6 +811,7 @@ classes:
       - longitude
       
   - name: geographic location at time
+    is_a: planetary entity
     description: >-
       a location that can be described in lat/long coordinates, for a particular time
     slots:
@@ -1006,6 +1065,40 @@ classes:
         description: "the disease or phenotype that is affected by the chemical"
         definitional: true
         
+  - name: chemical to pathway association
+    is_a: association
+    mappings:
+      - SIO:001250
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - chemical to thing association
+    description: >-
+      An interaction between a chemical entity and a biological process or pathway
+    slot_usage:
+      - name: object
+        range: pathway
+        description: "the pathway that is affected by the chemical"
+        definitional: true
+        
+  - name: chemical to gene association
+    is_a: association
+    mappings:
+      - SIO:001257
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - chemical to thing association
+    description: >-
+      An interaction between a chemical entity and a gene or gene product
+    slot_usage:
+      - name: object
+        range: gene or gene product
+        description: "the gene or gene product that is affected by the chemical"
+        definitional: true
+        
   - name: biosample to thing association
     is_a: association
     defining_slots:
@@ -1054,6 +1147,25 @@ classes:
       - severity qualifier
       - onset qualifier
 
+  - name: entity to disease association
+    abstract: true
+    defining_slots:
+      - object
+    is_a: association
+    slot_usage:
+      - name: object
+        range: disease
+        description: "disease"
+        definitional: true
+        subclass_of: MONDO:0000001
+        examples:
+          - value: MONDO:0020066
+            description: "Ehlers-Danlos syndrome"
+    slots:
+      - frequency qualifier
+      - severity qualifier
+      - onset qualifier
+      
   - name: thing to disease or phenotypic feature association
     abstract: true
     is_a: association
@@ -1165,6 +1277,24 @@ classes:
       - name: subject
         range: gene or gene product
         description: "gene in which variation is correlated with the phenotypic feature"
+        example:
+          - value: HGNC:2197
+            description: "COL1A1 (Human)"
+            
+  - name: gene to disease association
+    is_a: association
+    mappings:
+      - SIO:000983
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - entity to disease association
+      - gene to thing association
+    slot_usage:
+      - name: subject
+        range: gene or gene product
+        description: "gene in which variation is correlated with the disease - may be protective or causative or associative"
 
   - name: genotype to thing association
     is_a: association
@@ -1184,6 +1314,7 @@ classes:
       - relation
     description: >-
       An association between a gene and an expression site, possibly qualified by stage/timing info.
+    notes: >-
       TBD: introduce subclasses for distinction between wild-type and experimental conditions?
     see_also: "https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee"
     slots:
@@ -1271,6 +1402,7 @@ classes:
     is_a: disease to phenotypic feature association
     
   - name: association result set
+    is_a: information content entity
     slots:
       - associations
 
@@ -1502,11 +1634,16 @@ classes:
       - "GO:0003674"
 
   - name: biological process
-    is_a: occurrent
+    is_a: biological entity
+    mixins:
+      - occurrent
     description: >-
       One or more causally connected executions of molecular functions
     mappings:
       - "GO:0008150"
+
+  - name: pathway
+    is_a: biological process
       
   - name: cellular component
     is_a: anatomical entity

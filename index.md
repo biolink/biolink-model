@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 [![Build Status](https://travis-ci.org/biolink/biolink-model.svg?branch=master)](https://travis-ci.org/biolink/biolink-model)
 
 # Biolink Model
@@ -5,6 +9,12 @@
 A high level datamodel of biological entities (genes, diseases,
 phenotypes, pathways, individuals, substances, etc) and their
 associations.
+
+# Explore
+
+Explore the model: [Datamodel index](docs/)
+
+# Background
 
 The immediate goal is to provide a __reference datamodel__ that is
 independent of storage technology (solr, neo4j, csvs, etc). This reference data model can be used for a variety of purposes:

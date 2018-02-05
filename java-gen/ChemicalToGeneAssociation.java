@@ -12,7 +12,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * ChemicalToGeneAssociation
  * <p>
- * An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug.
+ * An interaction between a chemical entity and a gene or gene product
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

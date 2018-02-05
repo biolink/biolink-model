@@ -41,6 +41,45 @@ class InteractionRelationshipType(RelationshipType):
         return self.__str__()
 
 
+class Attribute(object):
+    """
+    A property or characteristic of an entity
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class SeverityValue(Attribute):
+    """
+    describes the severity of a phenotypic feature or disease
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class FrequencyValue(Attribute):
+    """
+    describes the frequency of occurrence of an event or condition
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
 class NamedThing(object):
     """
     a databased entity or concept/class
@@ -57,9 +96,9 @@ class NamedThing(object):
         return self.__str__()
 
 
-class OntologyClass(NamedThing):
+class BiologicalEntity(NamedThing):
     """
-    a concept or class in an ontology, vocabulary or thesaurus
+    None
     """
     def __init__(self,
                  id=None,
@@ -73,18 +112,15 @@ class OntologyClass(NamedThing):
         return self.__str__()
 
 
-class SeverityValue(OntologyClass):
+class OntologyClass(object):
     """
-    describes the severity of a phenotypic feature or disease
+    a concept or class in an ontology, vocabulary or thesaurus
     """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
+    def __init__(self):
+        pass
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "".format()
     def __repr__(self):
         return self.__str__()
 
@@ -93,14 +129,11 @@ class GeneOntologyClass(OntologyClass):
     """
     an ontology class that describes a functional aspect of a gene, gene prodoct or complex
     """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
+    def __init__(self):
+        pass
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "".format()
     def __repr__(self):
         return self.__str__()
 
@@ -119,7 +152,23 @@ class ThingWithTaxon(object):
         return self.__str__()
 
 
-class OrganismTaxon(OntologyClass):
+class OrganismalEntity(BiologicalEntity):
+    """
+    A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class OrganismTaxon(OrganismalEntity):
     """
     None
     """
@@ -135,7 +184,7 @@ class OrganismTaxon(OntologyClass):
         return self.__str__()
 
 
-class IndividualOrganism(NamedThing):
+class IndividualOrganism(OrganismalEntity):
     """
     None
     """
@@ -167,7 +216,7 @@ class Case(IndividualOrganism):
         return self.__str__()
 
 
-class PopulationOfIndividualOrganisms(NamedThing):
+class PopulationOfIndividualOrganisms(OrganismalEntity):
     """
     None
     """
@@ -199,7 +248,7 @@ class Cohort(PopulationOfIndividualOrganisms):
         return self.__str__()
 
 
-class Biosample(NamedThing):
+class Biosample(OrganismalEntity):
     """
     None
     """
@@ -215,7 +264,7 @@ class Biosample(NamedThing):
         return self.__str__()
 
 
-class DiseaseOrPhenotypicFeature(OntologyClass):
+class DiseaseOrPhenotypicFeature(BiologicalEntity):
     """
     None
     """
@@ -263,7 +312,7 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
         return self.__str__()
 
 
-class Environment(NamedThing):
+class Environment(BiologicalEntity):
     """
     A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
     """
@@ -327,7 +376,20 @@ class Publication(InformationContentEntity):
         return self.__str__()
 
 
-class Provider(object):
+class AdministrativeEntity(object):
+    """
+    None
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class Provider(AdministrativeEntity):
     """
     person, group, organization or project that provides a piece of information
     """
@@ -340,7 +402,7 @@ class Provider(object):
         return self.__str__()
 
 
-class MolecularEntity(NamedThing):
+class MolecularEntity(BiologicalEntity):
     """
     A gene, gene product, small molecule or macromolecule (including protein complex)
     """
@@ -372,20 +434,7 @@ class ChemicalSubstance(MolecularEntity):
         return self.__str__()
 
 
-class Attribute(object):
-    """
-    A property or characteristic of an entity
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class AnatomicalEntity(NamedThing):
+class AnatomicalEntity(OrganismalEntity):
     """
     A subcellular location, cell type or gross anatomical part
     """
@@ -401,7 +450,7 @@ class AnatomicalEntity(NamedThing):
         return self.__str__()
 
 
-class LifeStage(NamedThing):
+class LifeStage(OrganismalEntity):
     """
     A stage of development or growth of an organism, including post-natal adult stages
     """
@@ -419,7 +468,7 @@ class LifeStage(NamedThing):
 
 class HasGenomicName(object):
     """
-    None
+    mixing class for any entity that has a full name and a systematic synonym
     """
     def __init__(self,
                  full_name=None,
@@ -433,9 +482,121 @@ class HasGenomicName(object):
         return self.__str__()
 
 
+class PlanetaryEntity(NamedThing):
+    """
+    Any entity or process that exists at the level of the whole planet
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class EnvironmentalProcess(PlanetaryEntity):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class EnvironmentalFeature(PlanetaryEntity):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class ClinicalEntity(NamedThing):
+    """
+    Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class ClinicalTrial(ClinicalEntity):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class ClinicalIntervention(ClinicalEntity):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
 class GenomicEntity(MolecularEntity):
     """
     an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Genome(GenomicEntity):
+    """
+    None
     """
     def __init__(self,
                  id=None,
@@ -562,6 +723,22 @@ class Protein(GeneProduct):
 
 
 class RnaProduct(GeneProduct):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Microrna(RnaProduct):
     """
     None
     """
@@ -707,36 +884,44 @@ class Treatment(Environment):
         return self.__str__()
 
 
-class GeographicLocation(object):
+class GeographicLocation(PlanetaryEntity):
     """
     a location that can be described in lat/long coordinates
     """
     def __init__(self,
                  latitude=None,
-                 longitude=None):
+                 longitude=None,
+                 id=None,
+                 label=None):
         self.latitude=latitude
         self.longitude=longitude
+        self.id=id
+        self.label=label
 
     def __str__(self):
-        return "latitude={} longitude={} ".format(self.latitude,self.longitude)
+        return "latitude={} longitude={} id={} label={} ".format(self.latitude,self.longitude,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
 
-class GeographicLocationAtTime(object):
+class GeographicLocationAtTime(PlanetaryEntity):
     """
     a location that can be described in lat/long coordinates, for a particular time
     """
     def __init__(self,
                  latitude=None,
                  longitude=None,
-                 timepoint=None):
+                 timepoint=None,
+                 id=None,
+                 label=None):
         self.latitude=latitude
         self.longitude=longitude
         self.timepoint=timepoint
+        self.id=id
+        self.label=label
 
     def __str__(self):
-        return "latitude={} longitude={} timepoint={} ".format(self.latitude,self.longitude,self.timepoint)
+        return "latitude={} longitude={} timepoint={} id={} label={} ".format(self.latitude,self.longitude,self.timepoint,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1245,6 +1430,90 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
         return self.__str__()
 
 
+class ChemicalToPathwayAssociation(Association):
+    """
+    An interaction between a chemical entity and a biological process or pathway
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class ChemicalToGeneAssociation(Association):
+    """
+    An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug.
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
 class BiosampleToThingAssociation(Association):
     """
     An association between a biosample and something
@@ -1332,6 +1601,54 @@ class BiosampleToDiseaseOrPhenotypicFeatureAssociation(Association):
 
 
 class EntityToPhenotypicFeatureAssociation(Association):
+    """
+    None
+    """
+    def __init__(self,
+                 frequency_qualifier=None,
+                 severity_qualifier=None,
+                 onset_qualifier=None,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.frequency_qualifier=frequency_qualifier
+        self.severity_qualifier=severity_qualifier
+        self.onset_qualifier=onset_qualifier
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class EntityToDiseaseAssociation(Association):
     """
     None
     """
@@ -1715,6 +2032,48 @@ class GeneToPhenotypicFeatureAssociation(Association):
         return self.__str__()
 
 
+class GeneToDiseaseAssociation(Association):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 subject_extensions=None,
+                 object_extensions=None,
+                 publications=None,
+                 provided_by=None,
+                 has_evidence_graph=None,
+                 has_evidence_type=None,
+                 has_evidence=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.subject_extensions=subject_extensions
+        self.object_extensions=object_extensions
+        self.publications=publications
+        self.provided_by=provided_by
+        self.has_evidence_graph=has_evidence_graph
+        self.has_evidence_type=has_evidence_type
+        self.has_evidence=has_evidence
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
 class GenotypeToThingAssociation(Association):
     """
     None
@@ -1759,7 +2118,7 @@ class GenotypeToThingAssociation(Association):
 
 class GeneToExpressionSiteAssociation(Association):
     """
-    An association between a gene and an expression site, possibly qualified by stage/timing info. TBD: introduce subclasses for distinction between wild-type and experimental conditions?
+    An association between a gene and an expression site, possibly qualified by stage/timing info.
     """
     def __init__(self,
                  stage_qualifier=None,
@@ -1979,16 +2338,20 @@ class DiseaseToPhenotypicFeatureDenormalizedAssociation(DiseaseToPhenotypicFeatu
         return self.__str__()
 
 
-class AssociationResultSet(object):
+class AssociationResultSet(InformationContentEntity):
     """
     None
     """
     def __init__(self,
-                 associations=None):
+                 associations=None,
+                 id=None,
+                 label=None):
         self.associations=associations
+        self.id=id
+        self.label=label
 
     def __str__(self):
-        return "associations={} ".format(self.associations)
+        return "associations={} id={} label={} ".format(self.associations,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2602,15 +2965,34 @@ class MolecularActivity(Occurrent):
         return self.__str__()
 
 
-class BiologicalProcess(Occurrent):
+class BiologicalProcess(BiologicalEntity):
     """
     One or more causally connected executions of molecular functions
     """
-    def __init__(self):
-        pass
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
 
     def __str__(self):
-        return "".format()
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Pathway(BiologicalProcess):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
     def __repr__(self):
         return self.__str__()
 

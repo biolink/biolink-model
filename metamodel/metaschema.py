@@ -3,6 +3,14 @@
 from marshmallow import Schema, fields, pprint, post_load
 from metamodel.metamodel import *
 
+class ExampleSchema(Schema):
+    value = fields.Str()
+    description = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        return Example(**data)
+
 class DefinitionSchema(Schema):
     id = fields.Str()
     name = fields.Str()
@@ -24,6 +32,7 @@ class SlotDefinitionSchema(DefinitionSchema):
     required = fields.Boolean()
     path = fields.Str()
     subproperty_of = fields.Str()
+    examples = fields.List(fields.Nested(ExampleSchema))
 
     @post_load
     def make_object(self, data):
@@ -41,6 +50,8 @@ class SlotUsageDefinitionSchema(SlotDefinitionSchema):
     
 class ClassDefinitionSchema(DefinitionSchema):
     subclass_of = fields.Str()
+    mixin = fields.Bool()
+    abstract = fields.Bool()
     mixins = fields.List(fields.Str())
     slots = fields.List(fields.Str)
     defining_slots = fields.List(fields.Str)
@@ -65,5 +76,3 @@ class SchemaDefinitionSchema(DefinitionSchema):
     @post_load
     def make_object(self, data):
         return SchemaDefinition(**data)
-
-
