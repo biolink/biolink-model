@@ -47,6 +47,12 @@ slots:
     description: >-
       a long-form human readable name for a thing
   
+  - name: description
+    domain: named thing
+    range: string
+    description: >-
+      a human-readable description of a thing
+  
   - name: systematic synonym
     domain: named thing
     range: label type
@@ -486,6 +492,8 @@ classes:
       - thing with taxon
     is_a: organismal entity
     subclass_of: "NCBITaxon:1"
+    mappings:
+      - SIO:010000
 
   - name: case
     aliases: ['patient', 'proband']
@@ -585,7 +593,9 @@ classes:
       may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex
       material with multiple chemical entities as part
     subclass_of: "CHEBI:24431"
-
+    mappings:
+      - SIO:010004
+      
   - name: attribute
     subclass_of: PATO:0000001
     description: >-
@@ -692,7 +702,8 @@ classes:
       - ZFIN
     mappings:
       - "SO:0000704"
-    
+      - "SIO:010035"
+      
   - name: gene product
     is_a: gene or gene product
     union_of:
@@ -703,6 +714,7 @@ classes:
     is_a: gene product
     mappings:
       - "PR:000000001"
+      - "SIO:010043"
     id_prefixes:
       - UniProtKB
       - PR
@@ -726,6 +738,7 @@ classes:
     is_a: molecular entity
     mappings:
       - "GO:0032991"
+      - "SIO:010046"
     id_prefixes:
       - IntAct
       
@@ -1656,6 +1669,7 @@ classes:
     is_a: anatomical entity
     mappings:
       - "GO:0005623"
+      - "SIO:010001"
       
   - name: gross anatomical structure
     aliases: ['tissue', 'organ']
