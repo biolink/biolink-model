@@ -2,6 +2,10 @@
 
 # biolink-models
 
+Browse the model: [https://biolink.github.io/biolink-model](https://biolink.github.io/biolink-model)
+
+# Intro
+
 A high level datamodel of biological entities (genes, diseases,
 phenotypes, pathways, individuals, substances, etc) and their
 associations.
