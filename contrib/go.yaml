@@ -1,0 +1,112 @@
+id: "http://bioentity.io/json-schema/biolink/contrib/go.json"
+name: go biolink extensions
+imports:
+  - "biolink-model"
+  - "contrib/class_extensions"  
+  - "contrib/closures"  
+  - "contrib/taxon"  
+description: GO specific extensions
+
+slots:
+
+  - name: enabled by
+    domain: molecular activity
+    range: gene or gene product
+
+
+  - name: has genomic name
+    description: >-
+      mixing class for any entity that has a full name and a systematic synonym
+    notes: >-
+      consider revising
+    abstract: true
+    mixin: true
+    slots:
+      - full name
+      - systematic synonym
+    
+
+  ## ------
+  ## DENORMALIZED
+  ## ------
+
+  - name: go term bioentity mixin
+    apply_to: molecular entity
+    mixins:
+      - has genomic name
+    description: >-
+      mixes in GO properties to bio-entities
+    slots:
+      - isa partof closure
+      - isa partof closure label
+      - regulates closure
+      - regulates closure label
+
+  ## ------
+  ## GOCAM
+  ## ------
+
+  ## entity-centric
+  
+  - name: molecular event
+    schema: gocam
+    slots:
+      - enabled by
+      - part of
+      - occurs in
+      - upstream causal relationship
+      - downstream causal relationship
+
+  ## associations
+      
+  - name: molecular activity to gene product association
+    schema: gocam
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      - name: subject
+        range: molecular activity
+      - name: object
+        range: gene or gene product
+  
+  - name: molecular activity to location association
+    schema: gocam
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      - name: subject
+        range: molecular activity
+      - name: object
+        range: cellular component
+  
+  - name: molecular activity to biological process association
+    schema: gocam
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      - name: subject
+        range: molecular activity
+      - name: object
+        range: biological process
+  
+  - name: molecular activity to downstream molecular activity association
+    schema: gocam
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    slot_usage:
+      - name: subject
+        range: molecular activity
+      - name: object
+        range: molecular activity
+      - name: relation
+        subproperty_of: RO:0002418
+      
