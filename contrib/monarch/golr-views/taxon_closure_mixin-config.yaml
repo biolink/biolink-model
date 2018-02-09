@@ -1,0 +1,40 @@
+description: An association that includes flattened inlined objects, such as subject_taxon_closure
+display_name: taxon closure mixin
+document_category: taxon closure mixin
+fields:
+- description: the taxonomic class of the entity in the object slot
+  display_name: subject taxon
+  id: subject_taxon
+  property: []
+- description: null
+  display_name: subject taxon label
+  id: subject_taxon_label
+  property: []
+- description: The taxon class or ancestor class for the subject
+  display_name: subject taxon closure
+  id: subject_taxon_closure
+  property: []
+- cardinality: multi
+  description: The label for the taxon class or ancestor class for the subject
+  display_name: subject taxon closure label
+  id: subject_taxon_closure_label
+  property: []
+- description: the taxonomic class of the entity in the object slot
+  display_name: object taxon
+  id: object_taxon
+  property: []
+- description: null
+  display_name: object taxon label
+  id: object_taxon_label
+  property: []
+- description: The taxon class or ancestor class for the object
+  display_name: object taxon closure
+  id: object_taxon_closure
+  property: []
+- description: The label for the taxon class or ancestor class for the object
+  display_name: object taxon closure label
+  id: object_taxon_closure_label
+  property: []
+id: taxon closure mixin
+schema_generating: true
+weight: 20

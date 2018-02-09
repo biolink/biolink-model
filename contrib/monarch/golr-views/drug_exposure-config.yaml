@@ -1,0 +1,20 @@
+description: A drug exposure is an intake of a particular chemical substance
+display_name: drug exposure
+document_category: drug exposure
+fields:
+- cardinality: multi
+  description: null
+  display_name: drug
+  id: drug
+  property: []
+- description: null
+  display_name: id
+  id: id
+  property: []
+- description: A human-readable name for a thing
+  display_name: label
+  id: label
+  property: []
+id: drug exposure
+schema_generating: true
+weight: 20

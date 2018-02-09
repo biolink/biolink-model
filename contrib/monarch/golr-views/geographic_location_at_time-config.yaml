@@ -1,0 +1,28 @@
+description: a location that can be described in lat/long coordinates, for a particular
+  time
+display_name: geographic location at time
+document_category: geographic location at time
+fields:
+- description: latitude
+  display_name: latitude
+  id: latitude
+  property: []
+- description: longitude
+  display_name: longitude
+  id: longitude
+  property: []
+- description: a point in time
+  display_name: timepoint
+  id: timepoint
+  property: []
+- description: null
+  display_name: id
+  id: id
+  property: []
+- description: A human-readable name for a thing
+  display_name: label
+  id: label
+  property: []
+id: geographic location at time
+schema_generating: true
+weight: 20

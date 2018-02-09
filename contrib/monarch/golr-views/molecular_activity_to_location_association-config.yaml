@@ -1,0 +1,113 @@
+description: null
+display_name: molecular activity to location association
+document_category: molecular activity to location association
+fields:
+- description: connects an association to the type of association (e.g. gene to phenotype)
+  display_name: association type
+  id: association_type
+  property: []
+- description: connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: subject
+  id: subject
+  property: []
+- description: if set to true, then the association is negated i.e. is not true
+  display_name: negated
+  id: negated
+  property: []
+- description: the relationship type by which a subject is connected to an object
+    in an association
+  display_name: relation
+  id: relation
+  property: []
+- description: connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.
+  display_name: object
+  id: object
+  property: []
+- cardinality: multi
+  description: connects an association to qualifiers that modify or qualify the meaning
+    of that association
+  display_name: qualifiers
+  id: qualifiers
+  property: []
+- cardinality: multi
+  description: connects an association to publications supporting the association
+  display_name: publications
+  id: publications
+  property: []
+- description: connects an association to the agent (person, organization or group)
+    that provided it
+  display_name: provided by
+  id: provided_by
+  property: []
+- description: null
+  display_name: id
+  id: id
+  property: []
+- description: A human-readable name for a thing
+  display_name: label
+  id: label
+  property: []
+- description: Additional relationships that are true of the subject in the context
+    of the association. For example, if the subject is a gene product in a functional
+    association, the subject extensions may represent  an isoform or a specific post-translational
+    state
+  display_name: subject extensions
+  id: subject_extensions
+  property: []
+- description: Additional relationships that are true of the object in the context
+    of the association. For example, if the object is an anatomical term in an expression
+    association, the object extensions may include part-of links
+  display_name: object extensions
+  id: object_extensions
+  property: []
+- description: connects an association to a graph object including a path from subject
+    to object
+  display_name: has evidence graph
+  id: has_evidence_graph
+  property: []
+- description: connects an association to the class of evidence used
+  display_name: has evidence type
+  id: has_evidence_type
+  property: []
+- description: connects an association to an instance of supporting evidence
+  display_name: has evidence
+  id: has_evidence
+  property: []
+- description: the taxonomic class of the entity in the object slot
+  display_name: subject taxon
+  id: subject_taxon
+  property: []
+- description: null
+  display_name: subject taxon label
+  id: subject_taxon_label
+  property: []
+- description: The taxon class or ancestor class for the subject
+  display_name: subject taxon closure
+  id: subject_taxon_closure
+  property: []
+- cardinality: multi
+  description: The label for the taxon class or ancestor class for the subject
+  display_name: subject taxon closure label
+  id: subject_taxon_closure_label
+  property: []
+- description: the taxonomic class of the entity in the object slot
+  display_name: object taxon
+  id: object_taxon
+  property: []
+- description: null
+  display_name: object taxon label
+  id: object_taxon_label
+  property: []
+- description: The taxon class or ancestor class for the object
+  display_name: object taxon closure
+  id: object_taxon_closure
+  property: []
+- description: The label for the taxon class or ancestor class for the object
+  display_name: object taxon closure label
+  id: object_taxon_closure_label
+  property: []
+id: molecular activity to location association
+schema_generating: true
+weight: 20
