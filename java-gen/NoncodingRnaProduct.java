@@ -8,7 +8,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 
 /**
- * ConditionOrPhenotypicFeature
+ * NoncodingRnaProduct
  * <p>
  * null
  * 
@@ -19,7 +19,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "in_taxon",
     "label"
 })
-public class ConditionOrPhenotypicFeature {
+public class NoncodingRnaProduct {
 
     @JsonProperty("id")
     private String id;
@@ -99,10 +99,10 @@ public class ConditionOrPhenotypicFeature {
         if (other == this) {
             return true;
         }
-        if ((other instanceof ConditionOrPhenotypicFeature) == false) {
+        if ((other instanceof NoncodingRnaProduct) == false) {
             return false;
         }
-        ConditionOrPhenotypicFeature rhs = ((ConditionOrPhenotypicFeature) other);
+        NoncodingRnaProduct rhs = ((NoncodingRnaProduct) other);
         return new EqualsBuilder().append(id, rhs.id).append(label, rhs.label).append(inTaxon, rhs.inTaxon).isEquals();
     }
 
