@@ -7,79 +7,84 @@ For examples, see the biolinkmodel directory in this repo.
 
 """
 
-import logging
+
 from .schemautils import *
+import yaml
+import logging
+from .manager import *
+from .generator import Generator
 
-def write_python_module(schema):
-    print('')
-    print('')
-    print('## CLASSES')
-    print('')
-
-    # copy
-    clist = [c.name for c in schema.classes]
-    
-    while len(clist) > 0:
-        cn = clist[0]
-        c = get_cls(cn, schema)
-        #logging.error("SELECTED: {}".format(c.name))
-        while c.is_a and c.is_a in clist:
-            #logging.error("REP {} -> {}".format(c.name, c.is_a))
-            c = get_cls(c.is_a, schema)
-        #logging.error("REMOVING: {}".format(c.name))
-        clist.remove(c.name)
+class PythonGenerator(Generator):
         
+    def serialize(self, dirname=None, **args):
+        self.dirname = dirname
+        self.tr()
+    
+    def tr(self):
+        schema = self.schema
+        mgr = self.manager
+        print('')
+        print('')
+        print('## CLASSES')
+        print('')
+
+        # create list of class names
+        clist = [c.name for c in schema.classes]
+        
+        while len(clist) > 0:
+
+            # find root
+            c = mgr.classdef(clist[0])
+            while c.is_a and c.is_a in clist:
+                c = mgr.classdef(c.is_a)
+            clist.remove(c.name)
+
+            self.tr_class(c)
+
+    def tr_class(self, c):
+        schema = self.schema
+        mgr = self.manager
         cn = c.name
         parent = c.is_a
         if parent is None:
             parent = 'object'
         else:
-            parent = get_class_name(parent)
-        print('class {}({}):'.format(get_class_name(cn), parent))
+            parent = self.get_class_name(parent)
+        print('class {}({}):'.format(self.get_class_name(cn), parent))
         print('    """')
         print('    {}'.format(c.description))
         print('    """')
-        
-        pyslots = []
-        slots = c.slots
-        if slots is None:
-              slots = []
-        for x in get_parents_refl(c, schema):
-            if x.slots:
-                pyslots += x.slots
-        for f in slots:
-            slotname = None
-            if isinstance(f,str):
-                slotname = f
-            elif isinstance(f,dict):
-                # TODO
-                slotname = f['name']
-            else:
-                slotname = f.name
-            pyslotname = get_slot_name(slotname)
-            pyslots.append(pyslotname)
 
-        pyslots = get_slots_inf(c, schema)
-        trail=','
-        if len(pyslots) == 0:
-            trail="):{}        pass".format("\n")
-        print('    def __init__(self{}'.format(trail))
-        for i in range(0,len(pyslots)):
-            pyslot = pyslots[i]
-            trail=','
-            if i == len(pyslots)-1:
-                trail='):'
-            print('                 {}=None{}'.format(pyslot,trail))
-        for pyslot in pyslots:
-            print('        self.{}={}'.format(pyslot,pyslot))
+        slots = mgr.class_slotdefs(c, True, True)
+
+        snames = []
+        init_args = ['self']
+        for s in slots:
+            s = mgr.slotdef(s, c)
+            sn = self.get_slot_name(s)
+            snames.append(sn)
+            init_args.append('{}=None'.format(sn))
+
+        print('    def __init__({}):'.format(',\n                 '.join(init_args)))
+        if snames:
+            for sn in snames:
+                print('        self.{}={}'.format(sn,sn))
+        else:
+            print('        pass')
         print('')
 
         fmtstr = ""
-        for pyslot in pyslots:
-            fmtstr = fmtstr + '{}={} '.format(pyslot,'{}')
+        for sn in snames:
+            fmtstr = fmtstr + '{}={} '.format(sn,'{}')
         print('    def __str__(self):')
-        print('        return "{}".format({})'.format(fmtstr,",".join(['self.{}'.format(s) for s in pyslots])))
+        print('        return "{}".format({})'.format(fmtstr,",".join(['self.{}'.format(s) for s in snames])))
         print('    def __repr__(self):')
         print('        return self.__str__()')
         print('')
         print('')
+    
+    def get_class_name(self, cn):
+        return self.manager.class_name(self.manager.classdef(cn))
+    
+    def get_slot_name(self, sn):
+        return self.manager.slot_name(self.manager.slotdef(sn))

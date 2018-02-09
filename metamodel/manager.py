@@ -9,6 +9,8 @@ This module provides an OO facade for accessing these
 from enum import Enum
 import logging
 from .metamodel import *
+from metamodel.metaschema import SchemaDefinitionSchema
+import yaml
 
 class NameStyle(Enum):
     """
@@ -27,7 +29,7 @@ class Manager(object):
     """
     Facade object for working with schemas
     """
-    def __init__(self, schema):
+    def __init__(self, schema=None):
         """
         initialize
 
@@ -35,8 +37,70 @@ class Manager(object):
         ---------
         - schema : SchemaDefinition
         """
-        self.schema = schema
+        if schema is not None:
+            self.schema = schema
         self.unreferenced = set()
+
+    def load_schema(self, file, depth=0):
+        """
+        loads a schema from a file
+        """
+        logging.info('LOADING: {}'.format(file))
+        obj = yaml.load(file)
+        schemadef = SchemaDefinitionSchema()
+        errs = schemadef.validate(obj)
+        if len(errs) > 0:
+            logging.error("CONFIG ERRS: {}".format(errs))
+        schema = schemadef.load(obj).data
+        logging.info('LOADING IMPORTS FOR {}'.format(schema.name))
+        self.load_imports(schema, depth)
+        if depth == 0:
+            self.schema = schema
+            logging.info('APPLYING EXTENSIONS')
+            self.apply_extensions(schema)
+        return schema
+
+    def load_imports(self, schema, depth):
+        """
+        Imports are specified with the extend field
+        """
+        logging.info('Sc: {}'.format(schema.name))
+        if schema.imports:
+            for m in schema.imports:
+                logging.info('IMPORTING: {}'.format(m))
+                file = open(m + '.yaml', 'r')
+                s2 = self.load_schema(file, depth+1)
+                file.close()
+                self.merge_schemas(schema, s2)
+
+    def merge_schemas(self, s1, s2):
+        if s2.classes:
+            if s1.classes is None:
+                s1.classes = []
+            s1.classes += s2.classes
+        if s2.slots:
+            if s1.slots is None:
+                s1.slots = []
+            s1.slots += s2.slots
+        if s2.types:
+            if s1.types is None:
+                s1.types = []
+            s1.types += s2.types
+                     
+    def apply_extensions(self, schema):
+        """
+        Auto-apply 'reverse-isas'
+        """
+        for c in schema.classes:
+            c = self.classdef(c)
+            if c.apply_to:
+                tc = self.classdef(c.apply_to)
+                if tc:
+                    if tc.mixins is None:
+                        tc.mixins = []
+                    logging.info("Applying '{}' to '{}'".format(c.name, tc.name))
+                    tc.mixins.append(c.name)
+        
 
     def get_name(self, n, style):
         if style == NameStyle.UNDERSCORE:

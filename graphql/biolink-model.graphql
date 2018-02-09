@@ -239,6 +239,12 @@ type RnaProduct {
   inTaxon: OrganismTaxon
 }
 
+type NoncodingRnaProduct {
+  id: String
+  label: String
+  inTaxon: OrganismTaxon
+}
+
 type Microrna {
   id: String
   label: String
@@ -311,13 +317,8 @@ type Association {
   relation: RelationshipType!
   object: String!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -329,13 +330,8 @@ type GenotypeToGenotypePartAssociation {
   relation: RelationshipType!
   object: Genotype!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -347,13 +343,8 @@ type GenotypeToGeneAssociation {
   relation: RelationshipType!
   object: Gene!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -365,13 +356,8 @@ type GenotypeToVariantAssociation {
   relation: RelationshipType!
   object: SequenceVariant!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -383,13 +369,8 @@ type GeneToGeneAssociation {
   relation: RelationshipType!
   object: GeneOrGeneProduct!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -401,13 +382,8 @@ type GeneToGeneHomologyAssociation {
   relation: HomologyRelationshipType!
   object: GeneOrGeneProduct!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -419,13 +395,8 @@ type MolecularInteraction {
   relation: InteractionRelationshipType!
   object: String!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -437,13 +408,8 @@ type PairwiseGeneOrProteinInteractionAssociation implements MolecularInteraction
   relation: InteractionRelationshipType!
   object: GeneOrGeneProduct!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -455,13 +421,8 @@ type ChemicalToThingAssociation {
   relation: RelationshipType!
   object: String!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -473,13 +434,8 @@ type CaseToThingAssociation {
   relation: RelationshipType!
   object: String!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -491,13 +447,8 @@ type ChemicalToGeneAssociation implements ChemicalToThingAssociation {
   relation: RelationshipType!
   object: GeneProduct!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -509,13 +460,8 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToThingA
   relation: RelationshipType!
   object: DiseaseOrPhenotypicFeature!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -527,13 +473,8 @@ type ChemicalToPathwayAssociation implements ChemicalToThingAssociation {
   relation: RelationshipType!
   object: Pathway!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -545,13 +486,8 @@ type ChemicalToGeneAssociation implements ChemicalToThingAssociation {
   relation: RelationshipType!
   object: GeneOrGeneProduct!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -563,13 +499,8 @@ type BiosampleToThingAssociation {
   relation: RelationshipType!
   object: String!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -581,13 +512,8 @@ type BiosampleToDiseaseOrPhenotypicFeatureAssociation implements BiosampleToThin
   relation: RelationshipType!
   object: DiseaseOrPhenotypicFeature!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -602,13 +528,8 @@ type EntityToPhenotypicFeatureAssociation {
   relation: RelationshipType!
   object: PhenotypicFeature!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -623,13 +544,8 @@ type EntityToDiseaseAssociation {
   relation: RelationshipType!
   object: Disease!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -641,13 +557,8 @@ type ThingToDiseaseOrPhenotypicFeatureAssociation {
   relation: RelationshipType!
   object: DiseaseOrPhenotypicFeature!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -659,13 +570,8 @@ type DiseaseToThingAssociation {
   relation: RelationshipType!
   object: String!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -677,13 +583,8 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
   relation: RelationshipType!
   object: PhenotypicFeature!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
   frequencyQualifier: FrequencyValue
@@ -698,13 +599,8 @@ type EnvironmentToPhenotypicFeatureAssociation implements EntityToPhenotypicFeat
   relation: RelationshipType!
   object: PhenotypicFeature!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
   frequencyQualifier: FrequencyValue
@@ -719,13 +615,8 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
   relation: RelationshipType!
   object: PhenotypicFeature!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
   frequencyQualifier: FrequencyValue
@@ -740,13 +631,8 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
   relation: RelationshipType!
   object: PhenotypicFeature!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
   frequencyQualifier: FrequencyValue
@@ -761,13 +647,8 @@ type GeneToThingAssociation {
   relation: RelationshipType!
   object: String!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -779,13 +660,8 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
   relation: RelationshipType!
   object: PhenotypicFeature!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
   frequencyQualifier: FrequencyValue
@@ -800,13 +676,8 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThing
   relation: RelationshipType!
   object: Disease!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
   frequencyQualifier: FrequencyValue
@@ -821,13 +692,8 @@ type GenotypeToThingAssociation {
   relation: RelationshipType!
   object: String!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -841,13 +707,8 @@ type GeneToExpressionSiteAssociation {
   relation: RelationshipType!
   object: AnatomicalEntity!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -859,87 +720,29 @@ type SequenceVariantModulatesTreatmentAssociation {
   relation: RelationshipType!
   object: Treatment!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
 
-type GoAssociation {
+type GeneToGoTermAssociation {
   associationType: OntologyClass
   subject: MolecularEntity!
   negated: String
   relation: RelationshipType!
   object: GeneOntologyClass!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
-}
-
-type DenormalizedAssociation {
-  subjectTaxon: OrganismTaxon
-  subjectTaxonLabel: String
-  subjectTaxonClosure: [OntologyClass]
-  subjectTaxonClosureLabel: [String]
-  associationType: OntologyClass
-  subject: String!
-  negated: String
-  relation: RelationshipType!
-  object: String!
-  qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
-  publications: [Publication]
-  providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
-  id: String!
-  label: String
-}
-
-type DiseaseToPhenotypicFeatureDenormalizedAssociation {
-  associationType: OntologyClass
-  subject: Disease!
-  negated: String
-  relation: RelationshipType!
-  object: PhenotypicFeature!
-  qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
-  publications: [Publication]
-  providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
-  id: String!
-  label: String
-  frequencyQualifier: FrequencyValue
-  severityQualifier: SeverityValue
-  onsetQualifier: LifeStage
 }
 
 type AssociationResultSet {
   associations: [Association]
   id: String!
   label: String
-}
-
-type PropertyValuePair {
-  relation: RelationshipType!
-  filler: NamedThing
 }
 
 type GenomicSequenceLocalization {
@@ -953,13 +756,8 @@ type GenomicSequenceLocalization {
   relation: RelationshipType!
   object: GenomicEntity!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -971,13 +769,8 @@ type SequenceFeatureRelationship {
   relation: RelationshipType!
   object: GenomicEntity!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -989,13 +782,8 @@ type TranscriptToGeneRelationship {
   relation: RelationshipType!
   object: Gene!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -1007,13 +795,8 @@ type GeneToGeneProductRelationship {
   relation: RelationshipType!
   object: GeneProduct!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -1025,13 +808,8 @@ type ExonToTranscriptRelationship {
   relation: RelationshipType!
   object: Transcript!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -1043,13 +821,8 @@ type SequenceFeatureToSequenceRelationship {
   relation: RelationshipType!
   object: String!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -1061,13 +834,8 @@ type GeneRegulatoryRelationship {
   relation: RelationshipType!
   object: GeneOrGeneProduct!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -1082,13 +850,8 @@ type MolecularActivityToGeneProductAssociation {
   relation: RelationshipType!
   object: GeneOrGeneProduct!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -1100,13 +863,8 @@ type MolecularActivityToLocationAssociation {
   relation: RelationshipType!
   object: CellularComponent!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -1118,13 +876,8 @@ type MolecularActivityToBiologicalProcessAssociation {
   relation: RelationshipType!
   object: BiologicalProcess!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -1136,13 +889,8 @@ type MolecularActivityToDownstreamMolecularActivityAssociation {
   relation: RelationshipType!
   object: MolecularActivity!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -1154,13 +902,8 @@ type AnatomicalEntityToAnatomicalEntityAssociation {
   relation: RelationshipType!
   object: AnatomicalEntity!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -1172,13 +915,8 @@ type AnatomicalEntityPartOfAnatomicalEntityAssociation {
   relation: AnatomicalEntity!
   object: AnatomicalEntity!
   qualifiers: [OntologyClass]
-  subjectExtensions: [PropertyValuePair]
-  objectExtensions: [PropertyValuePair]
   publications: [Publication]
   providedBy: Provider
-  hasEvidenceGraph: String
-  hasEvidenceType: EvidenceType
-  hasEvidence: String
   id: String!
   label: String
 }
@@ -1215,15 +953,5 @@ type GrossAnatomicalStructure {
   id: String
   label: String
   inTaxon: OrganismTaxon
-}
-
-type BioentityWithGoTerms implements HasGenomicName {
-  isaPartofClosure: [OntologyClass]
-  regulatesClosure: [RelationshipType]
-  id: String
-  label: String
-  inTaxon: OrganismTaxon
-  fullName: String
-  systematicSynonym: String
 }
 

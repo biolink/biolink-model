@@ -1,5 +1,5 @@
----
-layout: default
+None
+ayout: default
 ---
 
 ## biolink model
@@ -44,12 +44,12 @@ Entity and association taxonomy and datamodel for life-sciences data
                 * [gene product](GeneProduct.html)
                    * [protein](Protein.html)
                    * [RNA product](RnaProduct.html)
-                      * [microRNA](Microrna.html)
+                      * [noncoding RNA product](NoncodingRnaProduct.html)
+                         * [microRNA](Microrna.html)
              * [genotype](Genotype.html)
              * [sequence variant](SequenceVariant.html)
           * [macromolecular complex](MacromolecularComplex.html)
           * [gene family](GeneFamily.html)
-          * [bioentity with go terms](BioentityWithGoTerms.html)
        * [biological process](BiologicalProcess.html)
           * [pathway](Pathway.html)
     * [information content entity](InformationContentEntity.html)
@@ -78,7 +78,6 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html)
           * [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html)
           * [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html)
-             * [disease to phenotypic feature denormalized association](DiseaseToPhenotypicFeatureDenormalizedAssociation.html)
           * [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html)
           * [gene to thing association](GeneToThingAssociation.html)
           * [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
@@ -86,8 +85,7 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [genotype to thing association](GenotypeToThingAssociation.html)
           * [gene to expression site association](GeneToExpressionSiteAssociation.html)
           * [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html)
-          * [go association](GoAssociation.html)
-          * [denormalized association](DenormalizedAssociation.html)
+          * [gene to go term association](GeneToGoTermAssociation.html)
           * [genomic sequence localization](GenomicSequenceLocalization.html)
           * [sequence feature relationship](SequenceFeatureRelationship.html)
              * [transcript to gene relationship](TranscriptToGeneRelationship.html)
@@ -116,7 +114,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [severity value](SeverityValue.html)
     * [frequency value](FrequencyValue.html)
     * [zygosity](Zygosity.html)
- * [property value pair](PropertyValuePair.html)
  * [molecular event](MolecularEvent.html)
  * [occurrent](Occurrent.html)
     * [molecular activity](MolecularActivity.html)

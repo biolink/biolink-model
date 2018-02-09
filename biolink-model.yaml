@@ -58,14 +58,6 @@ slots:
     range: label type
     description: >-
       more commonly used for gene symbols in yeast
-  
-  - name: in taxon
-    domain: thing with taxon
-    range: organism taxon
-    description: >-
-      connects a thing to a class representing a taxon
-    mappings:
-      - "RO:0002162"
     
   - name: association slot
     abstract: true
@@ -112,56 +104,11 @@ slots:
     description: >-
       if set to true, then the association is negated i.e. is not true
 
-  - name: extensions context slot
-    is_a: association slot
-    abstract: true
-    range: property value pair
-    multivalued: true
-    description: >-
-      A parent slot for subject and object extension. Extensions are a way to provide additional context
-      or subtyping (aka post-composition or post-coordination) on a class.
-      
-  - name: subject extensions
-    is_a: extensions context slot
-    description: >-
-      Additional relationships that are true of the subject in the context of the association.
-      For example, if the subject is a gene product in a functional association,
-      the subject extensions may represent  an isoform or a specific post-translational state
-      
-  - name: object extensions
-    is_a: extensions context slot
-    range: property value pair
-    description: >-
-      Additional relationships that are true of the object in the context of the association.
-      For example, if the object is an anatomical term in an expression association,
-      the object extensions may include part-of links
-
   - name: has evidence
     is_a: association slot
     range: evidence instance
     description: >-
       connects an association to an instance of supporting evidence
-
-  - name: has evidence object
-    is_a: association slot
-    range: named thing
-    description: >-
-      connects an association to an supporting entity. May be a gene/product (if evidence is homology or protein interaction).
-      Same as WITH/FROM column in GO/GAFs
-
-  - name: has evidence type
-    is_a: association slot
-    range: evidence type
-    path: evidence/type
-    description: >-
-      connects an association to the class of evidence used
-
-  - name: has evidence graph
-    is_a: association slot
-    range: evidence graph
-    path: evidence/type
-    description: >-
-      connects an association to a graph object including a path from subject to object
 
   - name: provided by
     is_a: association slot
@@ -185,7 +132,15 @@ slots:
       date on which thing was created
     mappings:
       - dc:created
-
+  
+  - name: in taxon
+    domain: thing with taxon
+    range: organism taxon
+    description: >-
+      connects a thing to a class representing a taxon
+    mappings:
+      - "RO:0002162"
+      
   - name: latitude
     range: float
     description: >-
@@ -252,130 +207,12 @@ slots:
     multivalued: true
     range: publication
 
-  - name: object taxon
-    range: organism taxon
-    path: object/in_taxon
-    description: >-
-      the taxonomic class of the entity in the object slot
-
-  - name: object taxon label
-    range: label
-    path: object/in_taxon/label
-
-  - name: subject taxon
-    range: organism taxon
-    path: subject/in_taxon
-    description: >-
-      the taxonomic class of the entity in the object slot
-
-  - name: subject taxon label
-    path: subject/in_taxon/label
-    range: label
 
     ## genotypes
     
   - name: has zygosity
     domain: single locus feature complement
     range: zygosity
-
-    ## gocam
-    
-  - name: enabled by
-    domain: molecular activity
-    range: gene or gene product
-    
-
-  ## ------
-  ## CLOSURES
-  ## ------
-    
-  - name: closure concept slot
-    abstract: true
-    multivalued: true
-    description: >-
-      parent field for fields used for storing inferred relationships to a class or relation
-    range: ontology class
-    
-  - name: closure label slot
-    abstract: true
-    multivalued: true
-    description: >-
-      parent field for fields used for storing the label of the closure concept.
-      See also: closure concept field
-    range: label
-    
-  - name: taxon closure slot
-    is_a: closure concept slot
-    description: >-
-      a closure slot that includes a taxon and all ancestral taxa
-    range: organism taxon
-    
-  - name: taxon closure label slot
-    is_a: closure label slot
-    description: >-
-      label for taxon closure slot
-    range: label
-    
-  - name: subject taxon closure
-    is_a: taxon closure slot
-    description: >-
-      The taxon class or ancestor class for the subject
-    range: ontology class
-    path: subject/in_taxon*
-    
-  - name: subject taxon closure label
-    is_a: taxon closure label slot
-    description: >-
-      The label for the taxon class or ancestor class for the subject
-    multivalued: true
-    path: subject/in_taxon*/label
-    
-  - name: object taxon closure
-    is_a: taxon closure slot
-    description: >-
-      The taxon class or ancestor class for the object
-    range: ontology class
-    path: object/in_taxon*
-    
-  - name: object taxon closure label
-    is_a: taxon closure label slot
-    description: >-
-      The label for the taxon class or ancestor class for the object
-    range: ontology class
-    path: object/in_taxon*/label
-    
-  - name: isa partof closure
-    is_a: closure concept slot
-    range: ontology class
-    description: >-
-      Ancestors (reflexive) of the object field following is_a (subClassOf) and part-of links.
-      This is typically used as a query constraint and for faceting.
-      The combination of is_a and part of is a common pattern, and can be used in gene expression
-      queries (finding genes that are expressed in a structure, a subtype, or a part of that structure)
-      or in GO queries (in any of the three branches of GO)
-    path: "object/{rdfs:subClassOf|BFO:0000050}*"
-    
-  - name: regulates closure
-    is_a: closure concept slot
-    range: relationship type
-    description: >-
-      Ancestors (reflexive) of the object field following is_a (subClassOf), part-of and
-      regulates (including positive and negative) relationships.
-      This is typically used as a query constraint and for faceting where the range is
-      a biological process
-    path: "object/{rdfs:subClassOf|BFO:0000050}*"
-    
-  - name: isa partof closure label
-    is_a: closure label slot
-    range: ontology class
-    path: "object/{rdfs:subClassOf|BFO:0000050}*/label"
-
-  - name: evidence object closure
-    is_a: closure concept slot
-    range: evidence type
-    description: >-
-      ancestor of type of evidence object
-    path: "evidence object/rdfs:subClassOf*"
 
   - name: filler
     range: named thing
@@ -417,16 +254,6 @@ classes:
   - name: relationship type
     description: >-
       An OWL property used as an edge label
-
-  - name: homology relationship type
-    is_a: relationship type
-    description: >-
-      A relation used for homology
-      
-  - name: interaction relationship type
-    is_a: relationship type
-    description: >-
-      A relation used for interaction relationships
   
   ## ------
   ## THINGS
@@ -616,17 +443,6 @@ classes:
     subclass_of: UBERON:0000105
     description: >-
       A stage of development or growth of an organism, including post-natal adult stages
-
-  - name: has genomic name
-    description: >-
-      mixing class for any entity that has a full name and a systematic synonym
-    notes: >-
-      consider revising
-    abstract: true
-    mixin: true
-    slots:
-      - full name
-      - systematic synonym
       
   - name: planetary entity
     is_a: named thing
@@ -726,9 +542,14 @@ classes:
       - "CHEBI:33697"
     id_prefixes:
       - RNAcentral
+    
+  - name: noncoding RNA product
+    is_a: RNA product
+    id_prefixes:
+      - RNAcentral
       
   - name: microRNA
-    is_a: RNA product
+    is_a: noncoding RNA product
     mappings:
       - "SO:0000276"
     id_prefixes:
@@ -849,13 +670,8 @@ classes:
       - relation
       - object
       - qualifiers
-      - subject extensions
-      - object extensions
       - publications
       - provided by
-      - has evidence graph
-      - has evidence type
-      - has evidence
     mappings:
       - "OBAN:association"
       - "rdf:Statement"
@@ -964,7 +780,6 @@ classes:
     symmetric: true
     slot_usage:
       - name: relation
-        range: homology relationship type
         subproperty_of: "RO:HOM0000001"
         values_from:
           - ro
@@ -980,7 +795,6 @@ classes:
       An interaction at the molecular level between two physical entities
     slot_usage:
       - name: relation
-        range: interaction relationship type
         subproperty_of: "RO:0002436"
         values_from:
           - ro
@@ -1009,7 +823,6 @@ classes:
     symmetric: true
     slot_usage:
       - name: relation
-        range: interaction relationship type
         subproperty_of: "RO:0002436"
         values_from:
           - ro
@@ -1230,7 +1043,6 @@ classes:
         range: genotype
         description: >-
           genotype that is associated with the phenotypic feature
-
           
   - name: environment to phenotypic feature association
     is_a: association
@@ -1372,7 +1184,7 @@ classes:
         description: "treatment whose efficacy is modulated by the subject variant"
         
           
-  - name: go association
+  - name: gene to go term association
     aliases: ['functional association']
     is_a: association
     mappings:
@@ -1402,17 +1214,6 @@ classes:
           - value: GO:0016301
             description: kinase activity
 
-  - name: denormalized association
-    is_a: association
-    description: "An association that includes flattened inlined objects, such as subject_taxon_closure"
-    slots:
-      - subject taxon
-      - subject taxon label
-      - subject taxon closure
-      - subject taxon closure label
-    
-  - name: disease to phenotypic feature denormalized association
-    is_a: disease to phenotypic feature association
     
   - name: association result set
     is_a: information content entity
@@ -1425,15 +1226,6 @@ classes:
 #      - name: type
 #    slots:
 #      - results
-
-  ## ------
-  ## GENERIC
-  ## ------
-
-  - name: property value pair
-    slots:
-      - relation
-      - filler
   
   ## ------
   ## SEQUENCE FEATURES
@@ -1536,71 +1328,6 @@ classes:
         range: gene or gene product
         role: regulated gene
         
-  ## ------
-  ## GOCAM
-  ## ------
-
-  ## entity-centric
-  
-  - name: molecular event
-    schema: gocam
-    #slots:
-      #- enabled by
-      #- part of
-      #- occurs in
-      #- upstream causal relationship
-      #- downstream causal relationship
-  
-  - name: molecular activity to gene product association
-    schema: gocam
-    is_a: association
-    defining_slots:
-      - subject
-      - object
-    slot_usage:
-      - name: subject
-        range: molecular activity
-      - name: object
-        range: gene or gene product
-  
-  - name: molecular activity to location association
-    schema: gocam
-    is_a: association
-    defining_slots:
-      - subject
-      - object
-    slot_usage:
-      - name: subject
-        range: molecular activity
-      - name: object
-        range: cellular component
-  
-  - name: molecular activity to biological process association
-    schema: gocam
-    is_a: association
-    defining_slots:
-      - subject
-      - object
-    slot_usage:
-      - name: subject
-        range: molecular activity
-      - name: object
-        range: biological process
-  
-  - name: molecular activity to downstream molecular activity association
-    schema: gocam
-    is_a: association
-    defining_slots:
-      - subject
-      - object
-      - relation
-    slot_usage:
-      - name: subject
-        range: molecular activity
-      - name: object
-        range: molecular activity
-      - name: relation
-        subproperty_of: RO:0002418
   
   - name: anatomical entity to anatomical entity association
     schema: gocam
@@ -1675,21 +1402,4 @@ classes:
     aliases: ['tissue', 'organ']
     is_a: anatomical entity
       
-
-  ## ------
-  ## DENORMALIZED
-  ## ------
-
-  - name: bioentity with go terms
-    schema: amigo
-    is_a: molecular entity
-    mixins:
-      - has genomic name
-    description: >-
-      this serves as exemplar for the time being, corresponding to the bioentity document type in amigo, which has a single
-      entry per bioentity, with associated GO information
-    slots:
-      #- in family
-      - isa partof closure
-      - regulates closure
   

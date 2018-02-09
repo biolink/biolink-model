@@ -19,22 +19,17 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonPropertyOrder({
     "association_type",
     "frequency_qualifier",
-    "has_evidence",
-    "has_evidence_graph",
-    "has_evidence_type",
     "id",
     "label",
     "negated",
     "object",
-    "object_extensions",
     "onset_qualifier",
     "provided_by",
     "publications",
     "qualifiers",
     "relation",
     "severity_qualifier",
-    "subject",
-    "subject_extensions"
+    "subject"
 })
 public class CaseToPhenotypicFeatureAssociation {
 
@@ -52,27 +47,6 @@ public class CaseToPhenotypicFeatureAssociation {
     @JsonProperty("frequency_qualifier")
     @JsonPropertyDescription("a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject")
     private String frequencyQualifier;
-    /**
-     * connects an association to an instance of supporting evidence
-     * 
-     */
-    @JsonProperty("has_evidence")
-    @JsonPropertyDescription("connects an association to an instance of supporting evidence")
-    private String hasEvidence;
-    /**
-     * connects an association to a graph object including a path from subject to object
-     * 
-     */
-    @JsonProperty("has_evidence_graph")
-    @JsonPropertyDescription("connects an association to a graph object including a path from subject to object")
-    private String hasEvidenceGraph;
-    /**
-     * connects an association to the class of evidence used
-     * 
-     */
-    @JsonProperty("has_evidence_type")
-    @JsonPropertyDescription("connects an association to the class of evidence used")
-    private String hasEvidenceType;
     @JsonProperty("id")
     private String id;
     /**
@@ -96,13 +70,6 @@ public class CaseToPhenotypicFeatureAssociation {
     @JsonProperty("object")
     @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
     private String object;
-    /**
-     * Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links
-     * 
-     */
-    @JsonProperty("object_extensions")
-    @JsonPropertyDescription("Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links")
-    private List<String> objectExtensions = new ArrayList<String>();
     /**
      * a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
      * 
@@ -152,13 +119,6 @@ public class CaseToPhenotypicFeatureAssociation {
     @JsonProperty("subject")
     @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
     private String subject;
-    /**
-     * Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state
-     * 
-     */
-    @JsonProperty("subject_extensions")
-    @JsonPropertyDescription("Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state")
-    private List<String> subjectExtensions = new ArrayList<String>();
 
     /**
      * connects an association to the type of association (e.g. gene to phenotype)
@@ -194,60 +154,6 @@ public class CaseToPhenotypicFeatureAssociation {
     @JsonProperty("frequency_qualifier")
     public void setFrequencyQualifier(String frequencyQualifier) {
         this.frequencyQualifier = frequencyQualifier;
-    }
-
-    /**
-     * connects an association to an instance of supporting evidence
-     * 
-     */
-    @JsonProperty("has_evidence")
-    public String getHasEvidence() {
-        return hasEvidence;
-    }
-
-    /**
-     * connects an association to an instance of supporting evidence
-     * 
-     */
-    @JsonProperty("has_evidence")
-    public void setHasEvidence(String hasEvidence) {
-        this.hasEvidence = hasEvidence;
-    }
-
-    /**
-     * connects an association to a graph object including a path from subject to object
-     * 
-     */
-    @JsonProperty("has_evidence_graph")
-    public String getHasEvidenceGraph() {
-        return hasEvidenceGraph;
-    }
-
-    /**
-     * connects an association to a graph object including a path from subject to object
-     * 
-     */
-    @JsonProperty("has_evidence_graph")
-    public void setHasEvidenceGraph(String hasEvidenceGraph) {
-        this.hasEvidenceGraph = hasEvidenceGraph;
-    }
-
-    /**
-     * connects an association to the class of evidence used
-     * 
-     */
-    @JsonProperty("has_evidence_type")
-    public String getHasEvidenceType() {
-        return hasEvidenceType;
-    }
-
-    /**
-     * connects an association to the class of evidence used
-     * 
-     */
-    @JsonProperty("has_evidence_type")
-    public void setHasEvidenceType(String hasEvidenceType) {
-        this.hasEvidenceType = hasEvidenceType;
     }
 
     @JsonProperty("id")
@@ -312,24 +218,6 @@ public class CaseToPhenotypicFeatureAssociation {
     @JsonProperty("object")
     public void setObject(String object) {
         this.object = object;
-    }
-
-    /**
-     * Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links
-     * 
-     */
-    @JsonProperty("object_extensions")
-    public List<String> getObjectExtensions() {
-        return objectExtensions;
-    }
-
-    /**
-     * Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links
-     * 
-     */
-    @JsonProperty("object_extensions")
-    public void setObjectExtensions(List<String> objectExtensions) {
-        this.objectExtensions = objectExtensions;
     }
 
     /**
@@ -458,32 +346,14 @@ public class CaseToPhenotypicFeatureAssociation {
         this.subject = subject;
     }
 
-    /**
-     * Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state
-     * 
-     */
-    @JsonProperty("subject_extensions")
-    public List<String> getSubjectExtensions() {
-        return subjectExtensions;
-    }
-
-    /**
-     * Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state
-     * 
-     */
-    @JsonProperty("subject_extensions")
-    public void setSubjectExtensions(List<String> subjectExtensions) {
-        this.subjectExtensions = subjectExtensions;
-    }
-
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("associationType", associationType).append("frequencyQualifier", frequencyQualifier).append("hasEvidence", hasEvidence).append("hasEvidenceGraph", hasEvidenceGraph).append("hasEvidenceType", hasEvidenceType).append("id", id).append("label", label).append("negated", negated).append("object", object).append("objectExtensions", objectExtensions).append("onsetQualifier", onsetQualifier).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("severityQualifier", severityQualifier).append("subject", subject).append("subjectExtensions", subjectExtensions).toString();
+        return new ToStringBuilder(this).append("associationType", associationType).append("frequencyQualifier", frequencyQualifier).append("id", id).append("label", label).append("negated", negated).append("object", object).append("onsetQualifier", onsetQualifier).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("severityQualifier", severityQualifier).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(providedBy).append(negated).append(objectExtensions).append(hasEvidenceGraph).append(subject).append(associationType).append(frequencyQualifier).append(qualifiers).append(label).append(subjectExtensions).append(relation).append(hasEvidenceType).append(onsetQualifier).append(severityQualifier).append(hasEvidence).append(id).append(object).append(publications).toHashCode();
+        return new HashCodeBuilder().append(providedBy).append(negated).append(subject).append(associationType).append(frequencyQualifier).append(qualifiers).append(label).append(relation).append(onsetQualifier).append(severityQualifier).append(id).append(object).append(publications).toHashCode();
     }
 
     @Override
@@ -495,7 +365,7 @@ public class CaseToPhenotypicFeatureAssociation {
             return false;
         }
         CaseToPhenotypicFeatureAssociation rhs = ((CaseToPhenotypicFeatureAssociation) other);
-        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(objectExtensions, rhs.objectExtensions).append(hasEvidenceGraph, rhs.hasEvidenceGraph).append(subject, rhs.subject).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(subjectExtensions, rhs.subjectExtensions).append(relation, rhs.relation).append(hasEvidenceType, rhs.hasEvidenceType).append(onsetQualifier, rhs.onsetQualifier).append(severityQualifier, rhs.severityQualifier).append(hasEvidence, rhs.hasEvidence).append(id, rhs.id).append(object, rhs.object).append(publications, rhs.publications).isEquals();
+        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(subject, rhs.subject).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(relation, rhs.relation).append(onsetQualifier, rhs.onsetQualifier).append(severityQualifier, rhs.severityQualifier).append(id, rhs.id).append(object, rhs.object).append(publications, rhs.publications).isEquals();
     }
 
 }

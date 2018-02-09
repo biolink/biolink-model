@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/MacromolecularComplex](http://bioentity.io/vocab
 ## Mappings
 
  * [GO:0032991](http://purl.obolibrary.org/obo/GO_0032991)
+ * [SIO:010046](http://purl.obolibrary.org/obo/SIO_010046)
 
 ## Inheritance
 

@@ -32,7 +32,6 @@ URI: [http://bioentity.io/vocab/Attribute](http://bioentity.io/vocab/Attribute)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [disease to phenotypic feature denormalized association](DiseaseToPhenotypicFeatureDenormalizedAssociation.html) references: [frequency value](FrequencyValue.html)
 
 ## Fields
 

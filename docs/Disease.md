@@ -25,7 +25,6 @@ URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
  *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [disease](Disease.html)
  *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [disease](Disease.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [disease](Disease.html)
- *  class: [disease to phenotypic feature denormalized association](DiseaseToPhenotypicFeatureDenormalizedAssociation.html) references: [disease](Disease.html)
 
 ## Fields
 

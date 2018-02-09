@@ -17,6 +17,7 @@ class DefinitionSchema(Schema):
     singular_name = fields.Str()
     is_a = fields.Str()
     description = fields.Str()
+    apply_to = fields.Str()
     abstract = fields.Boolean()
     mappings = fields.List(fields.Str)
 
@@ -72,6 +73,7 @@ class SchemaDefinitionSchema(DefinitionSchema):
     slots = fields.List(fields.Nested(SlotDefinitionSchema))
     classes = fields.List(fields.Nested(ClassDefinitionSchema))
     types = fields.List(fields.Nested(TypeDefinitionSchema))
+    imports = fields.List(fields.Str)
 
     @post_load
     def make_object(self, data):

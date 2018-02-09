@@ -20,22 +20,17 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "association_type",
     "end_interbase_coordinate",
     "genome_build",
-    "has_evidence",
-    "has_evidence_graph",
-    "has_evidence_type",
     "id",
     "label",
     "negated",
     "object",
-    "object_extensions",
     "phase",
     "provided_by",
     "publications",
     "qualifiers",
     "relation",
     "start_interbase_coordinate",
-    "subject",
-    "subject_extensions"
+    "subject"
 })
 public class GenomicSequenceLocalization {
 
@@ -55,27 +50,6 @@ public class GenomicSequenceLocalization {
     @JsonProperty("genome_build")
     @JsonPropertyDescription("TODO")
     private String genomeBuild;
-    /**
-     * connects an association to an instance of supporting evidence
-     * 
-     */
-    @JsonProperty("has_evidence")
-    @JsonPropertyDescription("connects an association to an instance of supporting evidence")
-    private String hasEvidence;
-    /**
-     * connects an association to a graph object including a path from subject to object
-     * 
-     */
-    @JsonProperty("has_evidence_graph")
-    @JsonPropertyDescription("connects an association to a graph object including a path from subject to object")
-    private String hasEvidenceGraph;
-    /**
-     * connects an association to the class of evidence used
-     * 
-     */
-    @JsonProperty("has_evidence_type")
-    @JsonPropertyDescription("connects an association to the class of evidence used")
-    private String hasEvidenceType;
     @JsonProperty("id")
     private String id;
     /**
@@ -99,13 +73,6 @@ public class GenomicSequenceLocalization {
     @JsonProperty("object")
     @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
     private String object;
-    /**
-     * Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links
-     * 
-     */
-    @JsonProperty("object_extensions")
-    @JsonPropertyDescription("Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links")
-    private List<String> objectExtensions = new ArrayList<String>();
     /**
      * TODO
      * 
@@ -150,13 +117,6 @@ public class GenomicSequenceLocalization {
     @JsonProperty("subject")
     @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
     private String subject;
-    /**
-     * Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state
-     * 
-     */
-    @JsonProperty("subject_extensions")
-    @JsonPropertyDescription("Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state")
-    private List<String> subjectExtensions = new ArrayList<String>();
 
     /**
      * connects an association to the type of association (e.g. gene to phenotype)
@@ -202,60 +162,6 @@ public class GenomicSequenceLocalization {
     @JsonProperty("genome_build")
     public void setGenomeBuild(String genomeBuild) {
         this.genomeBuild = genomeBuild;
-    }
-
-    /**
-     * connects an association to an instance of supporting evidence
-     * 
-     */
-    @JsonProperty("has_evidence")
-    public String getHasEvidence() {
-        return hasEvidence;
-    }
-
-    /**
-     * connects an association to an instance of supporting evidence
-     * 
-     */
-    @JsonProperty("has_evidence")
-    public void setHasEvidence(String hasEvidence) {
-        this.hasEvidence = hasEvidence;
-    }
-
-    /**
-     * connects an association to a graph object including a path from subject to object
-     * 
-     */
-    @JsonProperty("has_evidence_graph")
-    public String getHasEvidenceGraph() {
-        return hasEvidenceGraph;
-    }
-
-    /**
-     * connects an association to a graph object including a path from subject to object
-     * 
-     */
-    @JsonProperty("has_evidence_graph")
-    public void setHasEvidenceGraph(String hasEvidenceGraph) {
-        this.hasEvidenceGraph = hasEvidenceGraph;
-    }
-
-    /**
-     * connects an association to the class of evidence used
-     * 
-     */
-    @JsonProperty("has_evidence_type")
-    public String getHasEvidenceType() {
-        return hasEvidenceType;
-    }
-
-    /**
-     * connects an association to the class of evidence used
-     * 
-     */
-    @JsonProperty("has_evidence_type")
-    public void setHasEvidenceType(String hasEvidenceType) {
-        this.hasEvidenceType = hasEvidenceType;
     }
 
     @JsonProperty("id")
@@ -320,24 +226,6 @@ public class GenomicSequenceLocalization {
     @JsonProperty("object")
     public void setObject(String object) {
         this.object = object;
-    }
-
-    /**
-     * Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links
-     * 
-     */
-    @JsonProperty("object_extensions")
-    public List<String> getObjectExtensions() {
-        return objectExtensions;
-    }
-
-    /**
-     * Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links
-     * 
-     */
-    @JsonProperty("object_extensions")
-    public void setObjectExtensions(List<String> objectExtensions) {
-        this.objectExtensions = objectExtensions;
     }
 
     /**
@@ -458,32 +346,14 @@ public class GenomicSequenceLocalization {
         this.subject = subject;
     }
 
-    /**
-     * Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state
-     * 
-     */
-    @JsonProperty("subject_extensions")
-    public List<String> getSubjectExtensions() {
-        return subjectExtensions;
-    }
-
-    /**
-     * Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state
-     * 
-     */
-    @JsonProperty("subject_extensions")
-    public void setSubjectExtensions(List<String> subjectExtensions) {
-        this.subjectExtensions = subjectExtensions;
-    }
-
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("associationType", associationType).append("endInterbaseCoordinate", endInterbaseCoordinate).append("genomeBuild", genomeBuild).append("hasEvidence", hasEvidence).append("hasEvidenceGraph", hasEvidenceGraph).append("hasEvidenceType", hasEvidenceType).append("id", id).append("label", label).append("negated", negated).append("object", object).append("objectExtensions", objectExtensions).append("phase", phase).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("startInterbaseCoordinate", startInterbaseCoordinate).append("subject", subject).append("subjectExtensions", subjectExtensions).toString();
+        return new ToStringBuilder(this).append("associationType", associationType).append("endInterbaseCoordinate", endInterbaseCoordinate).append("genomeBuild", genomeBuild).append("id", id).append("label", label).append("negated", negated).append("object", object).append("phase", phase).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("startInterbaseCoordinate", startInterbaseCoordinate).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(phase).append(providedBy).append(negated).append(objectExtensions).append(hasEvidenceGraph).append(subject).append(associationType).append(qualifiers).append(label).append(subjectExtensions).append(relation).append(startInterbaseCoordinate).append(hasEvidenceType).append(genomeBuild).append(hasEvidence).append(id).append(endInterbaseCoordinate).append(object).append(publications).toHashCode();
+        return new HashCodeBuilder().append(phase).append(providedBy).append(negated).append(subject).append(associationType).append(qualifiers).append(label).append(relation).append(startInterbaseCoordinate).append(genomeBuild).append(id).append(endInterbaseCoordinate).append(object).append(publications).toHashCode();
     }
 
     @Override
@@ -495,7 +365,7 @@ public class GenomicSequenceLocalization {
             return false;
         }
         GenomicSequenceLocalization rhs = ((GenomicSequenceLocalization) other);
-        return new EqualsBuilder().append(phase, rhs.phase).append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(objectExtensions, rhs.objectExtensions).append(hasEvidenceGraph, rhs.hasEvidenceGraph).append(subject, rhs.subject).append(associationType, rhs.associationType).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(subjectExtensions, rhs.subjectExtensions).append(relation, rhs.relation).append(startInterbaseCoordinate, rhs.startInterbaseCoordinate).append(hasEvidenceType, rhs.hasEvidenceType).append(genomeBuild, rhs.genomeBuild).append(hasEvidence, rhs.hasEvidence).append(id, rhs.id).append(endInterbaseCoordinate, rhs.endInterbaseCoordinate).append(object, rhs.object).append(publications, rhs.publications).isEquals();
+        return new EqualsBuilder().append(phase, rhs.phase).append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(subject, rhs.subject).append(associationType, rhs.associationType).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(relation, rhs.relation).append(startInterbaseCoordinate, rhs.startInterbaseCoordinate).append(genomeBuild, rhs.genomeBuild).append(id, rhs.id).append(endInterbaseCoordinate, rhs.endInterbaseCoordinate).append(object, rhs.object).append(publications, rhs.publications).isEquals();
     }
 
 }

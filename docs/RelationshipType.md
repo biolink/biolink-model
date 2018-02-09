@@ -51,10 +51,7 @@ URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/Rela
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [go association](GoAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [denormalized association](DenormalizedAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [disease to phenotypic feature denormalized association](DiseaseToPhenotypicFeatureDenormalizedAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [property value pair](PropertyValuePair.html) references: [relationship type](RelationshipType.html)
+ *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [relationship type](RelationshipType.html)
  *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [relationship type](RelationshipType.html)
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [relationship type](RelationshipType.html)
@@ -67,7 +64,6 @@ URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/Rela
  *  class: [molecular activity to biological process association](MolecularActivityToBiologicalProcessAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [molecular activity to downstream molecular activity association](MolecularActivityToDownstreamMolecularActivityAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [bioentity with go terms](BioentityWithGoTerms.html) references: [relationship type](RelationshipType.html)
 
 ## Fields
 

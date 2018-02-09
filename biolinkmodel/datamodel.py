@@ -738,7 +738,23 @@ class RnaProduct(GeneProduct):
         return self.__str__()
 
 
-class Microrna(RnaProduct):
+class NoncodingRnaProduct(RnaProduct):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Microrna(NoncodingRnaProduct):
     """
     None
     """
@@ -937,13 +953,8 @@ class Association(InformationContentEntity):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -952,18 +963,13 @@ class Association(InformationContentEntity):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -979,13 +985,8 @@ class GenotypeToGenotypePartAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -994,18 +995,13 @@ class GenotypeToGenotypePartAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1021,13 +1017,8 @@ class GenotypeToGeneAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1036,18 +1027,13 @@ class GenotypeToGeneAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1063,13 +1049,8 @@ class GenotypeToVariantAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1078,18 +1059,13 @@ class GenotypeToVariantAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1105,13 +1081,8 @@ class GeneToGeneAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1120,18 +1091,13 @@ class GeneToGeneAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1147,13 +1113,8 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1162,18 +1123,13 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1189,13 +1145,8 @@ class MolecularInteraction(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1204,18 +1155,13 @@ class MolecularInteraction(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1231,13 +1177,8 @@ class PairwiseGeneOrProteinInteractionAssociation(GeneToGeneAssociation):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1246,18 +1187,13 @@ class PairwiseGeneOrProteinInteractionAssociation(GeneToGeneAssociation):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1273,13 +1209,8 @@ class ChemicalToThingAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1288,18 +1219,13 @@ class ChemicalToThingAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1315,13 +1241,8 @@ class CaseToThingAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1330,18 +1251,13 @@ class CaseToThingAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1357,13 +1273,8 @@ class ChemicalToGeneAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1372,18 +1283,13 @@ class ChemicalToGeneAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1399,13 +1305,8 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1414,18 +1315,13 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1441,13 +1337,8 @@ class ChemicalToPathwayAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1456,18 +1347,13 @@ class ChemicalToPathwayAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1483,13 +1369,8 @@ class ChemicalToGeneAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1498,18 +1379,13 @@ class ChemicalToGeneAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1525,13 +1401,8 @@ class BiosampleToThingAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1540,18 +1411,13 @@ class BiosampleToThingAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1569,13 +1435,8 @@ class BiosampleToDiseaseOrPhenotypicFeatureAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1584,18 +1445,13 @@ class BiosampleToDiseaseOrPhenotypicFeatureAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1614,13 +1470,8 @@ class EntityToPhenotypicFeatureAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.frequency_qualifier=frequency_qualifier
@@ -1632,18 +1483,13 @@ class EntityToPhenotypicFeatureAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1662,13 +1508,8 @@ class EntityToDiseaseAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.frequency_qualifier=frequency_qualifier
@@ -1680,18 +1521,13 @@ class EntityToDiseaseAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1707,13 +1543,8 @@ class ThingToDiseaseOrPhenotypicFeatureAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1722,18 +1553,13 @@ class ThingToDiseaseOrPhenotypicFeatureAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1749,13 +1575,8 @@ class DiseaseToThingAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1764,18 +1585,13 @@ class DiseaseToThingAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1791,13 +1607,8 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1806,18 +1617,13 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1833,13 +1639,8 @@ class EnvironmentToPhenotypicFeatureAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1848,18 +1649,13 @@ class EnvironmentToPhenotypicFeatureAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1875,13 +1671,8 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1890,18 +1681,13 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1917,13 +1703,8 @@ class CaseToPhenotypicFeatureAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1932,18 +1713,13 @@ class CaseToPhenotypicFeatureAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1959,13 +1735,8 @@ class GeneToThingAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -1974,18 +1745,13 @@ class GeneToThingAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2001,13 +1767,8 @@ class GeneToPhenotypicFeatureAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2016,18 +1777,13 @@ class GeneToPhenotypicFeatureAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2043,13 +1799,8 @@ class GeneToDiseaseAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2058,18 +1809,13 @@ class GeneToDiseaseAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2085,13 +1831,8 @@ class GenotypeToThingAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2100,18 +1841,13 @@ class GenotypeToThingAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2129,13 +1865,8 @@ class GeneToExpressionSiteAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.stage_qualifier=stage_qualifier
@@ -2146,18 +1877,13 @@ class GeneToExpressionSiteAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "stage_qualifier={} quantifier_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.stage_qualifier,self.quantifier_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "stage_qualifier={} quantifier_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.stage_qualifier,self.quantifier_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2173,13 +1899,8 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2188,23 +1909,18 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
 
-class GoAssociation(Association):
+class GeneToGoTermAssociation(Association):
     """
     None
     """
@@ -2215,13 +1931,8 @@ class GoAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2230,110 +1941,13 @@ class GoAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class DenormalizedAssociation(Association):
-    """
-    An association that includes flattened inlined objects, such as subject_taxon_closure
-    """
-    def __init__(self,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 publications=None,
-                 provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 id=None,
-                 label=None):
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.publications=publications
-        self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class DiseaseToPhenotypicFeatureDenormalizedAssociation(DiseaseToPhenotypicFeatureAssociation):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 publications=None,
-                 provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 id=None,
-                 label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.publications=publications
-        self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2356,22 +1970,6 @@ class AssociationResultSet(InformationContentEntity):
         return self.__str__()
 
 
-class PropertyValuePair(object):
-    """
-    None
-    """
-    def __init__(self,
-                 relation=None,
-                 filler=None):
-        self.relation=relation
-        self.filler=filler
-
-    def __str__(self):
-        return "relation={} filler={} ".format(self.relation,self.filler)
-    def __repr__(self):
-        return self.__str__()
-
-
 class GenomicSequenceLocalization(Association):
     """
     A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
@@ -2387,13 +1985,8 @@ class GenomicSequenceLocalization(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.start_interbase_coordinate=start_interbase_coordinate
@@ -2406,18 +1999,13 @@ class GenomicSequenceLocalization(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "start_interbase_coordinate={} end_interbase_coordinate={} genome_build={} phase={} association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.start_interbase_coordinate,self.end_interbase_coordinate,self.genome_build,self.phase,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "start_interbase_coordinate={} end_interbase_coordinate={} genome_build={} phase={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.start_interbase_coordinate,self.end_interbase_coordinate,self.genome_build,self.phase,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2433,13 +2021,8 @@ class SequenceFeatureRelationship(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2448,18 +2031,13 @@ class SequenceFeatureRelationship(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2475,13 +2053,8 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2490,18 +2063,13 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2517,13 +2085,8 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2532,18 +2095,13 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2559,13 +2117,8 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2574,18 +2127,13 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2601,13 +2149,8 @@ class SequenceFeatureToSequenceRelationship(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2616,18 +2159,13 @@ class SequenceFeatureToSequenceRelationship(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2643,13 +2181,8 @@ class GeneRegulatoryRelationship(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2658,18 +2191,13 @@ class GeneRegulatoryRelationship(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2698,13 +2226,8 @@ class MolecularActivityToGeneProductAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2713,18 +2236,13 @@ class MolecularActivityToGeneProductAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2740,13 +2258,8 @@ class MolecularActivityToLocationAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2755,18 +2268,13 @@ class MolecularActivityToLocationAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2782,13 +2290,8 @@ class MolecularActivityToBiologicalProcessAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2797,18 +2300,13 @@ class MolecularActivityToBiologicalProcessAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2824,13 +2322,8 @@ class MolecularActivityToDownstreamMolecularActivityAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2839,18 +2332,13 @@ class MolecularActivityToDownstreamMolecularActivityAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2866,13 +2354,8 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2881,18 +2364,13 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -2908,13 +2386,8 @@ class AnatomicalEntityPartOfAnatomicalEntityAssociation(AnatomicalEntityToAnatom
                  relation=None,
                  object=None,
                  qualifiers=None,
-                 subject_extensions=None,
-                 object_extensions=None,
                  publications=None,
                  provided_by=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
                  id=None,
                  label=None):
         self.association_type=association_type
@@ -2923,18 +2396,13 @@ class AnatomicalEntityPartOfAnatomicalEntityAssociation(AnatomicalEntityToAnatom
         self.relation=relation
         self.object=object
         self.qualifiers=qualifiers
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
         self.publications=publications
         self.provided_by=provided_by
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
         self.id=id
         self.label=label
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} subject_extensions={} object_extensions={} publications={} provided_by={} has_evidence_graph={} has_evidence_type={} has_evidence={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.subject_extensions,self.object_extensions,self.publications,self.provided_by,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -3041,26 +2509,6 @@ class GrossAnatomicalStructure(AnatomicalEntity):
 
     def __str__(self):
         return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class BioentityWithGoTerms(MolecularEntity):
-    """
-    this serves as exemplar for the time being, corresponding to the bioentity document type in amigo, which has a single entry per bioentity, with associated GO information
-    """
-    def __init__(self,
-                 isa_partof_closure=None,
-                 regulates_closure=None,
-                 id=None,
-                 label=None):
-        self.isa_partof_closure=isa_partof_closure
-        self.regulates_closure=regulates_closure
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "isa_partof_closure={} regulates_closure={} id={} label={} ".format(self.isa_partof_closure,self.regulates_closure,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 

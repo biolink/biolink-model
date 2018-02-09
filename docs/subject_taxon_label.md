@@ -23,4 +23,3 @@ URI: [http://bioentity.io/vocab/subject_taxon_label](http://bioentity.io/vocab/s
 
 ## Used in
 
- *  usage: [denormalized association](DenormalizedAssociation.html)

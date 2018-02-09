@@ -20,7 +20,7 @@ URI: [http://bioentity.io/vocab/GeneOntologyClass](http://bioentity.io/vocab/Gen
 
 ## Used in
 
- *  class: [go association](GoAssociation.html) references: [gene ontology class](GeneOntologyClass.html)
+ *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [gene ontology class](GeneOntologyClass.html)
 
 ## Fields
 

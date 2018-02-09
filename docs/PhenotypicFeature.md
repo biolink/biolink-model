@@ -27,7 +27,6 @@ URI: [http://bioentity.io/vocab/PhenotypicFeature](http://bioentity.io/vocab/Phe
  *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
- *  class: [disease to phenotypic feature denormalized association](DiseaseToPhenotypicFeatureDenormalizedAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
 
 ## Fields
 

@@ -23,4 +23,3 @@ URI: [http://bioentity.io/vocab/filler](http://bioentity.io/vocab/filler)
 
 ## Used in
 
- *  usage: [property value pair](PropertyValuePair.html)

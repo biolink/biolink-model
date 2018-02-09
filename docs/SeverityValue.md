@@ -28,7 +28,6 @@ URI: [http://bioentity.io/vocab/SeverityValue](http://bioentity.io/vocab/Severit
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [disease to phenotypic feature denormalized association](DiseaseToPhenotypicFeatureDenormalizedAssociation.html) references: [severity value](SeverityValue.html)
 
 ## Fields
 

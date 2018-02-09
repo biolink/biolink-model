@@ -46,6 +46,7 @@ URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing
  *  class: [gene product](GeneProduct.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [protein](Protein.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [RNA product](RnaProduct.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [noncoding RNA product](NoncodingRnaProduct.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [microRNA](Microrna.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [macromolecular complex](MacromolecularComplex.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gene family](GeneFamily.html) references: [organism taxon](OrganismTaxon.html)
@@ -82,11 +83,8 @@ URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [genotype](Genotype.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [life stage](LifeStage.html)
  *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [go association](GoAssociation.html) references: [molecular entity](MolecularEntity.html)
- *  class: [denormalized association](DenormalizedAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [disease to phenotypic feature denormalized association](DiseaseToPhenotypicFeatureDenormalizedAssociation.html) references: [disease](Disease.html)
+ *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [molecular entity](MolecularEntity.html)
  *  class: [association result set](AssociationResultSet.html) references: [association](Association.html)
- *  class: [property value pair](PropertyValuePair.html) references: [named thing](NamedThing.html)
  *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [genomic entity](GenomicEntity.html)
  *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [genomic entity](GenomicEntity.html)
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [transcript](Transcript.html)
@@ -103,7 +101,6 @@ URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing
  *  class: [cellular component](CellularComponent.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [cell](Cell.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gross anatomical structure](GrossAnatomicalStructure.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [bioentity with go terms](BioentityWithGoTerms.html) references: [organism taxon](OrganismTaxon.html)
 
 ## Fields
 

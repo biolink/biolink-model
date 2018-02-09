@@ -13,7 +13,8 @@ class Definition(object):
                  description=None,
                  note=None,
                  abstract=None,
-                 mappings=None):
+                 mappings=None,
+                 apply_to=None):
         self.name=name
         self.singular_name=singular_name
         self.is_a=is_a
@@ -21,9 +22,10 @@ class Definition(object):
         self.note=note
         self.abstract=abstract
         self.mappings=mappings
+        self.apply_to=apply_to
 
     def __str__(self):
-        return "name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} ".format(self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings)
+        return "name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} apply_to={} ".format(self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.apply_to)
     def __repr__(self):
         return self.__str__()
 
@@ -49,7 +51,8 @@ class SlotDefinition(Definition):
                  description=None,
                  note=None,
                  abstract=None,
-                 mappings=None):
+                 mappings=None,
+                 apply_to=None):
         self.mixin=mixin
         self.mixins=mixins
         self.identifier=identifier
@@ -67,9 +70,10 @@ class SlotDefinition(Definition):
         self.note=note
         self.abstract=abstract
         self.mappings=mappings
+        self.apply_to=apply_to
 
     def __str__(self):
-        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} required={} path={} subproperty_of={} examples={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.required,self.path,self.subproperty_of,self.examples,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings)
+        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} required={} path={} subproperty_of={} examples={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} apply_to={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.required,self.path,self.subproperty_of,self.examples,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.apply_to)
     def __repr__(self):
         return self.__str__()
 
@@ -95,7 +99,8 @@ class SlotUsageDefinition(SlotDefinition):
                  description=None,
                  note=None,
                  abstract=None,
-                 mappings=None):
+                 mappings=None,
+                 apply_to=None):
         self.mixin=mixin
         self.mixins=mixins
         self.identifier=identifier
@@ -113,9 +118,10 @@ class SlotUsageDefinition(SlotDefinition):
         self.note=note
         self.abstract=abstract
         self.mappings=mappings
+        self.apply_to=apply_to
 
     def __str__(self):
-        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} required={} path={} subproperty_of={} examples={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.required,self.path,self.subproperty_of,self.examples,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings)
+        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} required={} path={} subproperty_of={} examples={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} apply_to={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.required,self.path,self.subproperty_of,self.examples,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.apply_to)
     def __repr__(self):
         return self.__str__()
 
@@ -137,7 +143,8 @@ class ClassDefinition(Definition):
                  description=None,
                  note=None,
                  abstract=None,
-                 mappings=None):
+                 mappings=None,
+                 apply_to=None):
         self.defining_slots=defining_slots
         self.subclass_of=subclass_of
         self.mixin=mixin
@@ -151,9 +158,10 @@ class ClassDefinition(Definition):
         self.note=note
         self.abstract=abstract
         self.mappings=mappings
+        self.apply_to=apply_to
 
     def __str__(self):
-        return "defining_slots={} subclass_of={} mixin={} mixins={} slots={} slot_usage={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} ".format(self.defining_slots,self.subclass_of,self.mixin,self.mixins,self.slots,self.slot_usage,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings)
+        return "defining_slots={} subclass_of={} mixin={} mixins={} slots={} slot_usage={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} apply_to={} ".format(self.defining_slots,self.subclass_of,self.mixin,self.mixins,self.slots,self.slot_usage,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.apply_to)
     def __repr__(self):
         return self.__str__()
 
@@ -170,7 +178,8 @@ class TypeDefinition(Definition):
                  description=None,
                  note=None,
                  abstract=None,
-                 mappings=None):
+                 mappings=None,
+                 apply_to=None):
         self.mixins=mixins
         self.name=name
         self.singular_name=singular_name
@@ -179,9 +188,10 @@ class TypeDefinition(Definition):
         self.note=note
         self.abstract=abstract
         self.mappings=mappings
+        self.apply_to=apply_to
 
     def __str__(self):
-        return "mixins={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} ".format(self.mixins,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings)
+        return "mixins={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} apply_to={} ".format(self.mixins,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.apply_to)
     def __repr__(self):
         return self.__str__()
 
@@ -195,17 +205,20 @@ class SchemaDefinition(Definition):
                  slots=None,
                  classes=None,
                  types=None,
+                 imports=None,
                  name=None,
                  singular_name=None,
                  is_a=None,
                  description=None,
                  note=None,
                  abstract=None,
-                 mappings=None):
+                 mappings=None,
+                 apply_to=None):
         self.id=id
         self.slots=slots
         self.classes=classes
         self.types=types
+        self.imports=imports
         self.name=name
         self.singular_name=singular_name
         self.is_a=is_a
@@ -213,9 +226,10 @@ class SchemaDefinition(Definition):
         self.note=note
         self.abstract=abstract
         self.mappings=mappings
+        self.apply_to=apply_to
 
     def __str__(self):
-        return "id={} slots={} classes={} types={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} ".format(self.id,self.slots,self.classes,self.types,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings)
+        return "id={} slots={} classes={} types={} imports={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} apply_to={} ".format(self.id,self.slots,self.classes,self.types,self.imports,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.apply_to)
     def __repr__(self):
         return self.__str__()
 

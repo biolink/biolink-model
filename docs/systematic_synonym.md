@@ -24,4 +24,3 @@ URI: [http://bioentity.io/vocab/systematic_synonym](http://bioentity.io/vocab/sy
 ## Used in
 
  *  usage: [has genomic name](HasGenomicName.html)
- *  usage: [bioentity with go terms](BioentityWithGoTerms.html)

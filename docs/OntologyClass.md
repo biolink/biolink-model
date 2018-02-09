@@ -44,6 +44,7 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
  *  class: [gene product](GeneProduct.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [protein](Protein.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [RNA product](RnaProduct.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [noncoding RNA product](NoncodingRnaProduct.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [microRNA](Microrna.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [macromolecular complex](MacromolecularComplex.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gene family](GeneFamily.html) references: [organism taxon](OrganismTaxon.html)
@@ -79,9 +80,7 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [ontology class](OntologyClass.html)
- *  class: [go association](GoAssociation.html) references: [ontology class](OntologyClass.html)
- *  class: [denormalized association](DenormalizedAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [disease to phenotypic feature denormalized association](DiseaseToPhenotypicFeatureDenormalizedAssociation.html) references: [ontology class](OntologyClass.html)
+ *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [ontology class](OntologyClass.html)
  *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [ontology class](OntologyClass.html)
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [ontology class](OntologyClass.html)
@@ -98,7 +97,6 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
  *  class: [cellular component](CellularComponent.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [cell](Cell.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gross anatomical structure](GrossAnatomicalStructure.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [bioentity with go terms](BioentityWithGoTerms.html) references: [ontology class](OntologyClass.html)
 
 ## Fields
 

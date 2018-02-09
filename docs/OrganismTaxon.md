@@ -44,16 +44,15 @@ URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/Organis
  *  class: [gene product](GeneProduct.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [protein](Protein.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [RNA product](RnaProduct.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [noncoding RNA product](NoncodingRnaProduct.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [microRNA](Microrna.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [macromolecular complex](MacromolecularComplex.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gene family](GeneFamily.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [genotype](Genotype.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [sequence variant](SequenceVariant.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [denormalized association](DenormalizedAssociation.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [cellular component](CellularComponent.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [cell](Cell.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gross anatomical structure](GrossAnatomicalStructure.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [bioentity with go terms](BioentityWithGoTerms.html) references: [organism taxon](OrganismTaxon.html)
 
 ## Fields
 

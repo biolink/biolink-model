@@ -16,6 +16,17 @@ slots:
     domain: element
     description: >-
       Notes about an element
+
+  - name: imports
+    domain: string
+    multivalued: true
+    description: >-
+      A list of modules that are imported
+
+  - name: apply_to
+    domain: string
+    description: >-
+      A module which the definition is applied to
     
   - name: abstract
     description: >-
@@ -138,6 +149,7 @@ classes:
       - note
       - abstract
       - mappings
+      - apply_to
 
   - name: slot definition
     description: "A property or slot"
@@ -184,6 +196,7 @@ classes:
       - slots
       - classes
       - types
+      - imports
 
   - name: example
     description: "example of usage"

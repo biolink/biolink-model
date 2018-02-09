@@ -36,7 +36,6 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeature](http://bioentity.io/
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [disease](Disease.html)
- *  class: [disease to phenotypic feature denormalized association](DiseaseToPhenotypicFeatureDenormalizedAssociation.html) references: [disease](Disease.html)
 
 ## Fields
 

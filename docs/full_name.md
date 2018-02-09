@@ -24,4 +24,3 @@ URI: [http://bioentity.io/vocab/full_name](http://bioentity.io/vocab/full_name)
 ## Used in
 
  *  usage: [has genomic name](HasGenomicName.html)
- *  usage: [bioentity with go terms](BioentityWithGoTerms.html)

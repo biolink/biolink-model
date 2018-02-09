@@ -32,4 +32,3 @@ URI: [http://bioentity.io/vocab/onset_qualifier](http://bioentity.io/vocab/onset
  *  usage: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html)
  *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
  *  usage: [gene to disease association](GeneToDiseaseAssociation.html)
- *  usage: [disease to phenotypic feature denormalized association](DiseaseToPhenotypicFeatureDenormalizedAssociation.html)

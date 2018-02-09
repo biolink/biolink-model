@@ -10,6 +10,7 @@ None
 URI: [http://bioentity.io/vocab/IndividualOrganism](http://bioentity.io/vocab/IndividualOrganism)
 ## Mappings
 
+ * [SIO:010000](http://purl.obolibrary.org/obo/SIO_010000)
  * [NCBITaxon:1](http://purl.obolibrary.org/obo/NCBITaxon_1)
 
 ## Inheritance

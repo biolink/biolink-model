@@ -16,7 +16,6 @@ URI: [http://bioentity.io/vocab/HasGenomicName](http://bioentity.io/vocab/HasGen
 
 ## Children
 
- *  mixin: [bioentity with go terms](BioentityWithGoTerms.html)
 
 
 ## Fields

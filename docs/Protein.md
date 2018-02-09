@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/Protein](http://bioentity.io/vocab/Protein)
 ## Mappings
 
  * [PR:000000001](http://purl.obolibrary.org/obo/PR_000000001)
+ * [SIO:010043](http://purl.obolibrary.org/obo/SIO_010043)
 
 ## Inheritance
 

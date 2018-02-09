@@ -1,14 +1,11 @@
 import yaml
 import logging
 
-from metamodel.metaschema import SchemaDefinitionSchema
+from .metaschema import SchemaDefinitionSchema
+from .manager import Manager
 
 def load_schema(file):
-    obj = yaml.load(file)
-    schemadef = SchemaDefinitionSchema()
-    errs = schemadef.validate(obj)
-    if len(errs) > 0:
-        logging.error("CONFIG ERRS: {}".format(errs))
-    schema = schemadef.load(obj).data
+    mgr = Manager()
+    schema = mgr.load_schema(file)
     return schema
     

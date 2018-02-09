@@ -3,24 +3,97 @@
 # ----------------------------------------
 all: build test 
 test: metatest pytests
-build: biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql
+build: build_core contrib_build_monarch
+
+build_core: docs/index.md biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql
+
+contrib_build_%: contrib/%/docs/index.md contrib/%/datamodel.py contrib/%/schema.py contrib/%-golr contrib/%/ontology.ttl contrib/%/schema.json contrib/%-java contrib/%/%.graphql
+	echo hi
 
 
 # ----------------------------------------
 # BUILD/COMPILATION
 # ----------------------------------------
 
+# ~~~~~~~~~~~~~~~~~~~~
+# JSONSCHEMA -> Java
+# ~~~~~~~~~~~~~~~~~~~~
+json-schema/%.json: %.yaml
+	bin/gen-json-schema.py $< > $@.tmp && mv $@.tmp $@
+
+contrib/%/schema.json: contrib/%.yaml
+	bin/gen-json-schema.py $< > $@.tmp && mv $@.tmp $@
+
+JSONSCHEMA2POJO = $(HOME)/src/jsonschema2pojo/bin/jsonschema2pojo
+java: json-schema/biolink-model.json
+	$(JSONSCHEMA2POJO) --source $< -T JSONSCHEMA -t java-gen
+
+contrib/%-java: contrib/%/schema.json
+	$(JSONSCHEMA2POJO) --source $< -T JSONSCHEMA -t contrib/$*/java
+
+# ~~~~~~~~~~~~~~~~~~~~
+# DOCS
+# ~~~~~~~~~~~~~~~~~~~~
+docs/index.md: biolink-model.yaml
+	./bin/gen-markdown.py --dir docs $< > $@
+contrib/%/docs/index.md: contrib/%.yaml
+	./bin/gen-markdown.py --dir contrib/$*/docs $< > $@
+
+# ~~~~~~~~~~~~~~~~~~~~
+# Ontology
+# ~~~~~~~~~~~~~~~~~~~~
+ontology/biolink.ttl: biolink-model.yaml
+	./bin/gen-rdf.py -o $@ $< 
+
+contrib/%/ontology.ttl: contrib/%.yaml
+	./bin/gen-rdf.py -o $@ $<
+
+
+# ~~~~~~~~~~~~~~~~~~~~
+# Solr
+# ~~~~~~~~~~~~~~~~~~~~
 gen-golr-views:
 	./bin/gen-golr-views.py -d golr-views biolink-model.yaml
+contrib/%-golr:
+	./bin/gen-golr-views.py -d contrib/$*/golr-views contrib/$*.yaml
 
-docs/index.md: biolink-model.yaml
-	./bin/gen-markdown.py  biolink-model.yaml
+# ~~~~~~~~~~~~~~~~~~~~
+# Python
+# ~~~~~~~~~~~~~~~~~~~~
 
 biolinkmodel/datamodel.py: biolink-model.yaml
 	./bin/gen-py-classes.py $< > $@
 
-ontology/biolink.ttl: biolink-model.yaml
-	./bin/gen-rdf.py -o $@ $< 
+contrib/%/datamodel.py: contrib/%.yaml
+	./bin/gen-py-classes.py $< > $@
+
+biolinkmodel/schema.py: biolink-model.yaml
+	./bin/gen-mm-schema.py $< > $@
+
+contrib/%/schema.py: contrib/%.yaml
+	./bin/gen-mm-schema.py $< > $@
+
+
+# trigger manually to avoid git churn
+gv: biolink-model.yaml 
+	./bin/gen-graphviz.py -d graphviz $<
+
+graphviz/%.png: biolink-model.yaml 
+	./bin/gen-graphviz.py  -c $* $< -o graphviz/$*
+
+graphql/biolink-model.graphql: biolink-model.yaml 
+	./bin/gen-graphql.py $< > $@
+
+contrib/%/%.graphql: contrib/%.yaml 
+	./bin/gen-graphql.py $< > $@
+
+#biolinkmodel/schema.py: biolink-model.yaml
+#	./bin/gen-mm-schema.py $< > $@
+
+
+# ----------------------------------------
+# Ontology conversion
+# ----------------------------------------
 
 ontology/%.json: ontology/%.ttl
 	owltools $< -o -f json $@
@@ -37,28 +110,6 @@ ontology/%.tree: ontology/%.json
 ontology/%.png: ontology/%.json
 	ogr-tree -t png -o $@ -r $< % 
 
-# trigger manually to avoid git churn
-gv: biolink-model.yaml 
-	./bin/gen-graphviz.py -d graphviz $<
-
-graphviz/%.png: biolink-model.yaml 
-	./bin/gen-graphviz.py  -c $* $< -o graphviz/$*
-
-graphql/biolink-model.graphql: biolink-model.yaml 
-	./bin/gen-graphql.py $< > $@
-
-#biolinkmodel/schema.py: biolink-model.yaml
-#	./bin/gen-mm-schema.py $< > $@
-
-# ----------------------------------------
-# JSONSCHEMA
-# ----------------------------------------
-json-schema/%.json: %.yaml
-	bin/gen-json-schema.py $< > $@.tmp && mv $@.tmp $@
-
-JSONSCHEMA2POJO = $(HOME)/src/jsonschema2pojo/bin/jsonschema2pojo
-java: json-schema/biolink-model.json
-	$(JSONSCHEMA2POJO) --source $< -T JSONSCHEMA -t java-gen
 
 # ----------------------------------------
 # TESTS

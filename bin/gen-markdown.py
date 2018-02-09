@@ -8,10 +8,11 @@ from metamodel.markdowngen import MarkdownGenerator
 
 @click.command()
 @click.argument("file", type=click.File('r'))
-def cli(file):
+@click.option("--dir")
+def cli(file, dir):
     schema = load_schema(file)
     g = MarkdownGenerator(schema=schema)
-    print(g.serialize('docs'))
+    print(g.serialize(dir))
 
 
 

@@ -3,14 +3,17 @@
 import click
 
 import logging
-from metamodel.pygen import write_python_module
+from metamodel.pygen import PythonGenerator
 from metamodel.loader import load_schema
+
+logging.basicConfig(level=logging.INFO)
 
 @click.command()
 @click.argument("file", type=click.File('r'))
 def cli(file):
     schema = load_schema(file)
-    write_python_module(schema)
+    g = PythonGenerator(schema=schema)
+    g.serialize()
 
 
 if __name__ == "__main__":

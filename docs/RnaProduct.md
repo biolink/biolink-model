@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/RnaProduct](http://bioentity.io/vocab/RnaProduct
 
 ## Children
 
- *  child: [microRNA](Microrna.html)
+ *  child: [noncoding RNA product](NoncodingRnaProduct.html)
 
 
 ## Fields

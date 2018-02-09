@@ -14,7 +14,7 @@ URI: [http://bioentity.io/vocab/Microrna](http://bioentity.io/vocab/Microrna)
 
 ## Inheritance
 
- *  is_a: [RNA product](RnaProduct.html)
+ *  is_a: [noncoding RNA product](NoncodingRnaProduct.html)
 
 ## Children
 

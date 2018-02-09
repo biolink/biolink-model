@@ -30,7 +30,7 @@ def write_owl(schema, fn):
 
 class OwlSchemaGenerator(Generator):
 
-    def serialize(self, destination=None, format='ttl', **args):
+    def serialize(self, destination=None, format='turtle', **args):
         #self.graph.add((self.base, RDFS.label, Literal(str(destination.name))))
         self.graph.serialize(destination, format, **args)
     

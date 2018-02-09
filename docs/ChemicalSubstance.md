@@ -10,6 +10,7 @@ may be a chemical entity or a formulation with a chemical entity as active ingre
 URI: [http://bioentity.io/vocab/ChemicalSubstance](http://bioentity.io/vocab/ChemicalSubstance)
 ## Mappings
 
+ * [SIO:010004](http://purl.obolibrary.org/obo/SIO_010004)
  * [CHEBI:24431](http://purl.obolibrary.org/obo/CHEBI_24431)
 
 ## Inheritance

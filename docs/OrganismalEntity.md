@@ -49,6 +49,7 @@ URI: [http://bioentity.io/vocab/OrganismalEntity](http://bioentity.io/vocab/Orga
  *  class: [gene product](GeneProduct.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [protein](Protein.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [RNA product](RnaProduct.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [noncoding RNA product](NoncodingRnaProduct.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [microRNA](Microrna.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [macromolecular complex](MacromolecularComplex.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gene family](GeneFamily.html) references: [organism taxon](OrganismTaxon.html)
@@ -66,15 +67,12 @@ URI: [http://bioentity.io/vocab/OrganismalEntity](http://bioentity.io/vocab/Orga
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [life stage](LifeStage.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [life stage](LifeStage.html)
- *  class: [denormalized association](DenormalizedAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [disease to phenotypic feature denormalized association](DiseaseToPhenotypicFeatureDenormalizedAssociation.html) references: [life stage](LifeStage.html)
  *  class: [molecular activity to location association](MolecularActivityToLocationAssociation.html) references: [cellular component](CellularComponent.html)
  *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
  *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
  *  class: [cellular component](CellularComponent.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [cell](Cell.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gross anatomical structure](GrossAnatomicalStructure.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [bioentity with go terms](BioentityWithGoTerms.html) references: [organism taxon](OrganismTaxon.html)
 
 ## Fields
 

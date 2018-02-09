@@ -22,7 +22,6 @@ URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/Molec
  *  child: [genomic entity](GenomicEntity.html)
  *  child: [macromolecular complex](MacromolecularComplex.html)
  *  child: [gene family](GeneFamily.html)
- *  child: [bioentity with go terms](BioentityWithGoTerms.html)
 
 ## Used in
 
@@ -44,7 +43,7 @@ URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/Molec
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [genotype](Genotype.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [go association](GoAssociation.html) references: [molecular entity](MolecularEntity.html)
+ *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [molecular entity](MolecularEntity.html)
  *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [genomic entity](GenomicEntity.html)
  *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [genomic entity](GenomicEntity.html)
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [transcript](Transcript.html)

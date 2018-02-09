@@ -3,7 +3,7 @@
 import click
 
 import logging
-from metamodel.golr_yaml_gen import *
+from metamodel.golrgen import *
 from metamodel.loader import load_schema
 
 @click.command()
@@ -11,7 +11,9 @@ from metamodel.loader import load_schema
 @click.argument("file", type=click.File('r'))
 def cli(file, dir):
     schema = load_schema(file)
-    write_golr_yaml_to_dir(schema, dir)
+    g = GolrSchemaGenerator(schema=schema)
+    print(g.serialize(dir))
+    #write_golr_yaml_to_dir(schema, dir)
 
 
 if __name__ == "__main__":

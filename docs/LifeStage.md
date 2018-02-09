@@ -31,7 +31,6 @@ URI: [http://bioentity.io/vocab/LifeStage](http://bioentity.io/vocab/LifeStage)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [life stage](LifeStage.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [life stage](LifeStage.html)
- *  class: [disease to phenotypic feature denormalized association](DiseaseToPhenotypicFeatureDenormalizedAssociation.html) references: [life stage](LifeStage.html)
 
 ## Fields
 
