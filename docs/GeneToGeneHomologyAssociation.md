@@ -35,7 +35,7 @@ URI: [http://bioentity.io/vocab/GeneToGeneHomologyAssociation](http://bioentity.
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _homology relationship type_
-    * __range__: [homology relationship type](HomologyRelationshipType.html) [required]
+    * __range__: [relationship type](RelationshipType.html) [required]
     * subproperty_of: [RO:HOM0000001](http://purl.obolibrary.org/obo/RO_HOM0000001)
     * inherited from: [association](Association.html)
  * [object](object.html)

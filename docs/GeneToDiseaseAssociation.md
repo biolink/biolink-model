@@ -20,6 +20,8 @@ URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vo
 
 ## Children
 
+ *  child: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
+ *  child: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html)
 
 
 ## Fields
@@ -29,7 +31,8 @@ URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vo
     * __range__: [ontology class](OntologyClass.html)
     * inherited from: [association](Association.html)
  * [subject](subject.html)
-    * _gene in which variation is correlated with the disease - may be protective or causative or associative_
+    * _gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
+  _
     * __range__: [gene or gene product](GeneOrGeneProduct.html) [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)

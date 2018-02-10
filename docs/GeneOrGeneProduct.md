@@ -31,11 +31,12 @@ URI: [http://bioentity.io/vocab/GeneOrGeneProduct](http://bioentity.io/vocab/Gen
  *  class: [gene to thing association](GeneToThingAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
+ *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
+ *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [gene](Gene.html)
  *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [gene](Gene.html)
  *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [molecular activity to gene product association](MolecularActivityToGeneProductAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
 
 ## Fields
 

@@ -10,8 +10,6 @@ Entity and association taxonomy and datamodel for life-sciences data
 ### Classes
 
  * [relationship type](RelationshipType.html)
-    * [homology relationship type](HomologyRelationshipType.html)
-    * [interaction relationship type](InteractionRelationshipType.html)
  * [named thing](NamedThing.html)
     * [biological entity](BiologicalEntity.html)
        * [organismal entity](OrganismalEntity.html)
@@ -82,6 +80,8 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [gene to thing association](GeneToThingAssociation.html)
           * [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
           * [gene to disease association](GeneToDiseaseAssociation.html)
+             * [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
+             * [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html)
           * [genotype to thing association](GenotypeToThingAssociation.html)
           * [gene to expression site association](GeneToExpressionSiteAssociation.html)
           * [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html)
@@ -93,10 +93,6 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [exon to transcript relationship](ExonToTranscriptRelationship.html)
           * [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html)
           * [gene regulatory relationship](GeneRegulatoryRelationship.html)
-          * [molecular activity to gene product association](MolecularActivityToGeneProductAssociation.html)
-          * [molecular activity to location association](MolecularActivityToLocationAssociation.html)
-          * [molecular activity to biological process association](MolecularActivityToBiologicalProcessAssociation.html)
-          * [molecular activity to downstream molecular activity association](MolecularActivityToDownstreamMolecularActivityAssociation.html)
           * [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html)
              * [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html)
        * [association result set](AssociationResultSet.html)
@@ -114,7 +110,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [severity value](SeverityValue.html)
     * [frequency value](FrequencyValue.html)
     * [zygosity](Zygosity.html)
- * [molecular event](MolecularEvent.html)
  * [occurrent](Occurrent.html)
     * [molecular activity](MolecularActivity.html)
 
@@ -123,5 +118,5 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [ontology class](OntologyClass.html)
     * [gene ontology class](GeneOntologyClass.html)
  * [thing with taxon](ThingWithTaxon.html)
- * [has genomic name](HasGenomicName.html)
  * [gene grouping](GeneGrouping.html)
+ * [model to disease mixin](ModelToDiseaseMixin.html)

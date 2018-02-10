@@ -65,12 +65,6 @@
         "object": {
             "type": "string"
         },
-        "object_taxon": {
-            "type": "string"
-        },
-        "object_taxon_label": {
-            "type": "string"
-        },
         "onset_qualifier": {
             "type": "string"
         },
@@ -108,12 +102,6 @@
             "type": "string"
         },
         "subject": {
-            "type": "string"
-        },
-        "subject_taxon": {
-            "type": "string"
-        },
-        "subject_taxon_label": {
             "type": "string"
         },
         "systematic_synonym": {
@@ -1109,6 +1097,71 @@
             "title": "Gene",
             "type": "object"
         },
+        "GeneAsAModelOfDiseaseAssociation": {
+            "description": null,
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "frequency_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "onset_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "severity_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "GeneAsAModelOfDiseaseAssociation",
+            "type": "object"
+        },
         "GeneFamily": {
             "description": "any grouping of multiple genes or gene products related by common descent",
             "properties": {
@@ -1126,6 +1179,71 @@
             },
             "required": [],
             "title": "GeneFamily",
+            "type": "object"
+        },
+        "GeneHasVariantThatContributesToDiseaseAssociation": {
+            "description": null,
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "frequency_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "onset_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "severity_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "GeneHasVariantThatContributesToDiseaseAssociation",
             "type": "object"
         },
         "GeneOntologyClass": {
@@ -1996,13 +2114,6 @@
             "title": "GrossAnatomicalStructure",
             "type": "object"
         },
-        "HomologyRelationshipType": {
-            "description": "A relation used for homology",
-            "properties": {},
-            "required": [],
-            "title": "HomologyRelationshipType",
-            "type": "object"
-        },
         "IndividualOrganism": {
             "description": null,
             "properties": {
@@ -2020,13 +2131,6 @@
             },
             "required": [],
             "title": "IndividualOrganism",
-            "type": "object"
-        },
-        "InteractionRelationshipType": {
-            "description": "A relation used for interaction relationships",
-            "properties": {},
-            "required": [],
-            "title": "InteractionRelationshipType",
             "type": "object"
         },
         "LifeStage": {
@@ -2093,218 +2197,6 @@
             "title": "MolecularActivity",
             "type": "object"
         },
-        "MolecularActivityToBiologicalProcessAssociation": {
-            "description": null,
-            "properties": {
-                "association_type": {
-                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                },
-                "negated": {
-                    "description": "if set to true, then the association is negated i.e. is not true",
-                    "type": "string"
-                },
-                "object": {
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "provided_by": {
-                    "description": "connects an association to the agent (person, organization or group) that provided it",
-                    "type": "string"
-                },
-                "publications": {
-                    "description": "connects an association to publications supporting the association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "qualifiers": {
-                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "relation": {
-                    "description": "the relationship type by which a subject is connected to an object in an association",
-                    "type": "string"
-                },
-                "subject": {
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "MolecularActivityToBiologicalProcessAssociation",
-            "type": "object"
-        },
-        "MolecularActivityToDownstreamMolecularActivityAssociation": {
-            "description": null,
-            "properties": {
-                "association_type": {
-                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                },
-                "negated": {
-                    "description": "if set to true, then the association is negated i.e. is not true",
-                    "type": "string"
-                },
-                "object": {
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "provided_by": {
-                    "description": "connects an association to the agent (person, organization or group) that provided it",
-                    "type": "string"
-                },
-                "publications": {
-                    "description": "connects an association to publications supporting the association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "qualifiers": {
-                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "relation": {
-                    "description": "the relationship type by which a subject is connected to an object in an association",
-                    "type": "string"
-                },
-                "subject": {
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "MolecularActivityToDownstreamMolecularActivityAssociation",
-            "type": "object"
-        },
-        "MolecularActivityToGeneProductAssociation": {
-            "description": null,
-            "properties": {
-                "association_type": {
-                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                },
-                "negated": {
-                    "description": "if set to true, then the association is negated i.e. is not true",
-                    "type": "string"
-                },
-                "object": {
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "provided_by": {
-                    "description": "connects an association to the agent (person, organization or group) that provided it",
-                    "type": "string"
-                },
-                "publications": {
-                    "description": "connects an association to publications supporting the association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "qualifiers": {
-                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "relation": {
-                    "description": "the relationship type by which a subject is connected to an object in an association",
-                    "type": "string"
-                },
-                "subject": {
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "MolecularActivityToGeneProductAssociation",
-            "type": "object"
-        },
-        "MolecularActivityToLocationAssociation": {
-            "description": null,
-            "properties": {
-                "association_type": {
-                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                },
-                "negated": {
-                    "description": "if set to true, then the association is negated i.e. is not true",
-                    "type": "string"
-                },
-                "object": {
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "provided_by": {
-                    "description": "connects an association to the agent (person, organization or group) that provided it",
-                    "type": "string"
-                },
-                "publications": {
-                    "description": "connects an association to publications supporting the association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "qualifiers": {
-                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "relation": {
-                    "description": "the relationship type by which a subject is connected to an object in an association",
-                    "type": "string"
-                },
-                "subject": {
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "MolecularActivityToLocationAssociation",
-            "type": "object"
-        },
         "MolecularEntity": {
             "description": "A gene, gene product, small molecule or macromolecule (including protein complex)",
             "properties": {
@@ -2322,13 +2214,6 @@
             },
             "required": [],
             "title": "MolecularEntity",
-            "type": "object"
-        },
-        "MolecularEvent": {
-            "description": null,
-            "properties": {},
-            "required": [],
-            "title": "MolecularEvent",
             "type": "object"
         },
         "NamedThing": {

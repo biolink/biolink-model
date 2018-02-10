@@ -52,10 +52,6 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
  *  child: [sequence feature relationship](SequenceFeatureRelationship.html)
  *  child: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html)
  *  child: [gene regulatory relationship](GeneRegulatoryRelationship.html)
- *  child: [molecular activity to gene product association](MolecularActivityToGeneProductAssociation.html)
- *  child: [molecular activity to location association](MolecularActivityToLocationAssociation.html)
- *  child: [molecular activity to biological process association](MolecularActivityToBiologicalProcessAssociation.html)
- *  child: [molecular activity to downstream molecular activity association](MolecularActivityToDownstreamMolecularActivityAssociation.html)
  *  child: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html)
 
 ## Used in

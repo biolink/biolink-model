@@ -24,7 +24,6 @@ URI: [http://bioentity.io/vocab/BiologicalProcess](http://bioentity.io/vocab/Bio
 ## Used in
 
  *  class: [chemical to pathway association](ChemicalToPathwayAssociation.html) references: [pathway](Pathway.html)
- *  class: [molecular activity to biological process association](MolecularActivityToBiologicalProcessAssociation.html) references: [biological process](BiologicalProcess.html)
 
 ## Fields
 

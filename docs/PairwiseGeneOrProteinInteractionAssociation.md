@@ -36,7 +36,7 @@ URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](htt
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _interaction relationship type_
-    * __range__: [interaction relationship type](InteractionRelationshipType.html) [required]
+    * __range__: [relationship type](RelationshipType.html) [required]
     * subproperty_of: [RO:0002436](http://purl.obolibrary.org/obo/RO_0002436)
     * inherited from: [association](Association.html)
  * [object](object.html)

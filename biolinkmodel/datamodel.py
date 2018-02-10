@@ -15,32 +15,6 @@ class RelationshipType(object):
         return self.__str__()
 
 
-class HomologyRelationshipType(RelationshipType):
-    """
-    A relation used for homology
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class InteractionRelationshipType(RelationshipType):
-    """
-    A relation used for interaction relationships
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
 class Attribute(object):
     """
     A property or characteristic of an entity
@@ -190,12 +164,14 @@ class IndividualOrganism(OrganismalEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -206,12 +182,14 @@ class Case(IndividualOrganism):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -222,12 +200,14 @@ class PopulationOfIndividualOrganisms(OrganismalEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -238,12 +218,14 @@ class Cohort(PopulationOfIndividualOrganisms):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -254,12 +236,14 @@ class Biosample(OrganismalEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -270,12 +254,14 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -286,12 +272,14 @@ class Disease(DiseaseOrPhenotypicFeature):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -302,12 +290,14 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -408,12 +398,14 @@ class MolecularEntity(BiologicalEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -424,12 +416,14 @@ class ChemicalSubstance(MolecularEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -440,12 +434,14 @@ class AnatomicalEntity(OrganismalEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -456,28 +452,14 @@ class LifeStage(OrganismalEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class HasGenomicName(object):
-    """
-    mixing class for any entity that has a full name and a systematic synonym
-    """
-    def __init__(self,
-                 full_name=None,
-                 systematic_synonym=None):
-        self.full_name=full_name
-        self.systematic_synonym=systematic_synonym
-
-    def __str__(self):
-        return "full_name={} systematic_synonym={} ".format(self.full_name,self.systematic_synonym)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -584,12 +566,14 @@ class GenomicEntity(MolecularEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -600,12 +584,14 @@ class Genome(GenomicEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -616,12 +602,14 @@ class Transcript(GenomicEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -632,12 +620,14 @@ class Exon(GenomicEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -648,12 +638,14 @@ class CodingSequence(GenomicEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -664,12 +656,14 @@ class GeneOrGeneProduct(GenomicEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -680,12 +674,14 @@ class Gene(GeneOrGeneProduct):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -696,12 +692,14 @@ class GeneProduct(GeneOrGeneProduct):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -712,12 +710,14 @@ class Protein(GeneProduct):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -728,12 +728,14 @@ class RnaProduct(GeneProduct):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -744,12 +746,14 @@ class NoncodingRnaProduct(RnaProduct):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -760,12 +764,14 @@ class Microrna(NoncodingRnaProduct):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -776,12 +782,14 @@ class MacromolecularComplex(MolecularEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -805,12 +813,14 @@ class GeneFamily(MolecularEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -835,13 +845,15 @@ class Genotype(GenomicEntity):
     def __init__(self,
                  has_zygosity=None,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.has_zygosity=has_zygosity
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "has_zygosity={} id={} label={} ".format(self.has_zygosity,self.id,self.label)
+        return "has_zygosity={} id={} label={} in_taxon={} ".format(self.has_zygosity,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -852,12 +864,14 @@ class SequenceVariant(GenomicEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -1610,7 +1624,10 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
                  publications=None,
                  provided_by=None,
                  id=None,
-                 label=None):
+                 label=None,
+                 frequency_qualifier=None,
+                 severity_qualifier=None,
+                 onset_qualifier=None):
         self.association_type=association_type
         self.subject=subject
         self.negated=negated
@@ -1621,9 +1638,12 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
         self.provided_by=provided_by
         self.id=id
         self.label=label
+        self.frequency_qualifier=frequency_qualifier
+        self.severity_qualifier=severity_qualifier
+        self.onset_qualifier=onset_qualifier
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
     def __repr__(self):
         return self.__str__()
 
@@ -1642,7 +1662,10 @@ class EnvironmentToPhenotypicFeatureAssociation(Association):
                  publications=None,
                  provided_by=None,
                  id=None,
-                 label=None):
+                 label=None,
+                 frequency_qualifier=None,
+                 severity_qualifier=None,
+                 onset_qualifier=None):
         self.association_type=association_type
         self.subject=subject
         self.negated=negated
@@ -1653,9 +1676,12 @@ class EnvironmentToPhenotypicFeatureAssociation(Association):
         self.provided_by=provided_by
         self.id=id
         self.label=label
+        self.frequency_qualifier=frequency_qualifier
+        self.severity_qualifier=severity_qualifier
+        self.onset_qualifier=onset_qualifier
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
     def __repr__(self):
         return self.__str__()
 
@@ -1674,7 +1700,10 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
                  publications=None,
                  provided_by=None,
                  id=None,
-                 label=None):
+                 label=None,
+                 frequency_qualifier=None,
+                 severity_qualifier=None,
+                 onset_qualifier=None):
         self.association_type=association_type
         self.subject=subject
         self.negated=negated
@@ -1685,9 +1714,12 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
         self.provided_by=provided_by
         self.id=id
         self.label=label
+        self.frequency_qualifier=frequency_qualifier
+        self.severity_qualifier=severity_qualifier
+        self.onset_qualifier=onset_qualifier
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
     def __repr__(self):
         return self.__str__()
 
@@ -1706,7 +1738,10 @@ class CaseToPhenotypicFeatureAssociation(Association):
                  publications=None,
                  provided_by=None,
                  id=None,
-                 label=None):
+                 label=None,
+                 frequency_qualifier=None,
+                 severity_qualifier=None,
+                 onset_qualifier=None):
         self.association_type=association_type
         self.subject=subject
         self.negated=negated
@@ -1717,9 +1752,12 @@ class CaseToPhenotypicFeatureAssociation(Association):
         self.provided_by=provided_by
         self.id=id
         self.label=label
+        self.frequency_qualifier=frequency_qualifier
+        self.severity_qualifier=severity_qualifier
+        self.onset_qualifier=onset_qualifier
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
     def __repr__(self):
         return self.__str__()
 
@@ -1770,7 +1808,10 @@ class GeneToPhenotypicFeatureAssociation(Association):
                  publications=None,
                  provided_by=None,
                  id=None,
-                 label=None):
+                 label=None,
+                 frequency_qualifier=None,
+                 severity_qualifier=None,
+                 onset_qualifier=None):
         self.association_type=association_type
         self.subject=subject
         self.negated=negated
@@ -1781,9 +1822,12 @@ class GeneToPhenotypicFeatureAssociation(Association):
         self.provided_by=provided_by
         self.id=id
         self.label=label
+        self.frequency_qualifier=frequency_qualifier
+        self.severity_qualifier=severity_qualifier
+        self.onset_qualifier=onset_qualifier
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
     def __repr__(self):
         return self.__str__()
 
@@ -1802,7 +1846,10 @@ class GeneToDiseaseAssociation(Association):
                  publications=None,
                  provided_by=None,
                  id=None,
-                 label=None):
+                 label=None,
+                 frequency_qualifier=None,
+                 severity_qualifier=None,
+                 onset_qualifier=None):
         self.association_type=association_type
         self.subject=subject
         self.negated=negated
@@ -1813,9 +1860,101 @@ class GeneToDiseaseAssociation(Association):
         self.provided_by=provided_by
         self.id=id
         self.label=label
+        self.frequency_qualifier=frequency_qualifier
+        self.severity_qualifier=severity_qualifier
+        self.onset_qualifier=onset_qualifier
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
+    def __repr__(self):
+        return self.__str__()
+
+
+class ModelToDiseaseMixin(object):
+    """
+    This mixin is used for any association class for which the subject plays the role of a 'model'
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 label=None,
+                 frequency_qualifier=None,
+                 severity_qualifier=None,
+                 onset_qualifier=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.label=label
+        self.frequency_qualifier=frequency_qualifier
+        self.severity_qualifier=severity_qualifier
+        self.onset_qualifier=onset_qualifier
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
+    def __repr__(self):
+        return self.__str__()
+
+
+class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 label=None,
+                 frequency_qualifier=None,
+                 severity_qualifier=None,
+                 onset_qualifier=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.label=label
+        self.frequency_qualifier=frequency_qualifier
+        self.severity_qualifier=severity_qualifier
+        self.onset_qualifier=onset_qualifier
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
     def __repr__(self):
         return self.__str__()
 
@@ -2202,147 +2341,6 @@ class GeneRegulatoryRelationship(Association):
         return self.__str__()
 
 
-class MolecularEvent(object):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class MolecularActivityToGeneProductAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class MolecularActivityToLocationAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class MolecularActivityToBiologicalProcessAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class MolecularActivityToDownstreamMolecularActivityAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     """
     None
@@ -2471,12 +2469,14 @@ class CellularComponent(AnatomicalEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -2487,12 +2487,14 @@ class Cell(AnatomicalEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -2503,12 +2505,14 @@ class GrossAnatomicalStructure(AnatomicalEntity):
     """
     def __init__(self,
                  id=None,
-                 label=None):
+                 label=None,
+                 in_taxon=None):
         self.id=id
         self.label=label
+        self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 

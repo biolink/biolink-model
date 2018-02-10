@@ -30,6 +30,8 @@ URI: [http://bioentity.io/vocab/LifeStage](http://bioentity.io/vocab/LifeStage)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [life stage](LifeStage.html)
+ *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [life stage](LifeStage.html)
+ *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [life stage](LifeStage.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [life stage](LifeStage.html)
 
 ## Fields

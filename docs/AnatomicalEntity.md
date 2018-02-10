@@ -26,7 +26,6 @@ URI: [http://bioentity.io/vocab/AnatomicalEntity](http://bioentity.io/vocab/Anat
 ## Used in
 
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [molecular activity to location association](MolecularActivityToLocationAssociation.html) references: [cellular component](CellularComponent.html)
  *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
  *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
 

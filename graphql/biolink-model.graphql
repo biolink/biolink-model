@@ -1,12 +1,6 @@
 type RelationshipType {
 }
 
-type HomologyRelationshipType {
-}
-
-type InteractionRelationshipType {
-}
-
 type SeverityValue {
 }
 
@@ -142,11 +136,6 @@ type LifeStage implements ThingWithTaxon {
   id: String
   label: String
   inTaxon: OrganismTaxon
-}
-
-type HasGenomicName {
-  fullName: String
-  systematicSynonym: String
 }
 
 type PlanetaryEntity {
@@ -379,7 +368,7 @@ type GeneToGeneHomologyAssociation {
   associationType: OntologyClass
   subject: GeneOrGeneProduct!
   negated: String
-  relation: HomologyRelationshipType!
+  relation: RelationshipType!
   object: GeneOrGeneProduct!
   qualifiers: [OntologyClass]
   publications: [Publication]
@@ -392,7 +381,7 @@ type MolecularInteraction {
   associationType: OntologyClass
   subject: String!
   negated: String
-  relation: InteractionRelationshipType!
+  relation: RelationshipType!
   object: String!
   qualifiers: [OntologyClass]
   publications: [Publication]
@@ -405,7 +394,7 @@ type PairwiseGeneOrProteinInteractionAssociation implements MolecularInteraction
   associationType: OntologyClass
   subject: GeneOrGeneProduct!
   negated: String
-  relation: InteractionRelationshipType!
+  relation: RelationshipType!
   object: GeneOrGeneProduct!
   qualifiers: [OntologyClass]
   publications: [Publication]
@@ -685,6 +674,41 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThing
   onsetQualifier: LifeStage
 }
 
+type ModelToDiseaseMixin {
+}
+
+type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin {
+  associationType: OntologyClass
+  subject: GeneOrGeneProduct!
+  negated: String
+  relation: RelationshipType!
+  object: Disease!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String
+  label: String
+  frequencyQualifier: FrequencyValue
+  severityQualifier: SeverityValue
+  onsetQualifier: LifeStage
+}
+
+type GeneHasVariantThatContributesToDiseaseAssociation {
+  associationType: OntologyClass
+  subject: GeneOrGeneProduct!
+  negated: String
+  relation: RelationshipType!
+  object: Disease!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  label: String
+  frequencyQualifier: FrequencyValue
+  severityQualifier: SeverityValue
+  onsetQualifier: LifeStage
+}
+
 type GenotypeToThingAssociation {
   associationType: OntologyClass
   subject: Genotype!
@@ -833,61 +857,6 @@ type GeneRegulatoryRelationship {
   negated: String
   relation: RelationshipType!
   object: GeneOrGeneProduct!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  label: String
-}
-
-type MolecularEvent {
-}
-
-type MolecularActivityToGeneProductAssociation {
-  associationType: OntologyClass
-  subject: MolecularActivity!
-  negated: String
-  relation: RelationshipType!
-  object: GeneOrGeneProduct!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  label: String
-}
-
-type MolecularActivityToLocationAssociation {
-  associationType: OntologyClass
-  subject: MolecularActivity!
-  negated: String
-  relation: RelationshipType!
-  object: CellularComponent!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  label: String
-}
-
-type MolecularActivityToBiologicalProcessAssociation {
-  associationType: OntologyClass
-  subject: MolecularActivity!
-  negated: String
-  relation: RelationshipType!
-  object: BiologicalProcess!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  label: String
-}
-
-type MolecularActivityToDownstreamMolecularActivityAssociation {
-  associationType: OntologyClass
-  subject: MolecularActivity!
-  negated: String
-  relation: RelationshipType!
-  object: MolecularActivity!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider

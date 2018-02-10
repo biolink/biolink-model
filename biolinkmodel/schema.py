@@ -11,24 +11,6 @@ class RelationshipTypeSchema(Schema):
     def make_object(self, data):
         RelationshipType(**data)
 
-class HomologyRelationshipTypeSchema(RelationshipTypeSchema):
-    """
-    A relation used for homology
-    """
-
-    @post_load
-    def make_object(self, data):
-        HomologyRelationshipType(**data)
-
-class InteractionRelationshipTypeSchema(RelationshipTypeSchema):
-    """
-    A relation used for interaction relationships
-    """
-
-    @post_load
-    def make_object(self, data):
-        InteractionRelationshipType(**data)
-
 class SeverityValueSchema(AttributeSchema):
     """
     describes the severity of a phenotypic feature or disease
@@ -290,17 +272,6 @@ class LifeStageSchema(OrganismalEntitySchema):
     @post_load
     def make_object(self, data):
         LifeStage(**data)
-
-class HasGenomicNameSchema(Schema):
-    """
-    mixing class for any entity that has a full name and a systematic synonym
-    """
-    full_name = fields.Str()
-    systematic_synonym = fields.Str()
-
-    @post_load
-    def make_object(self, data):
-        HasGenomicName(**data)
 
 class PlanetaryEntitySchema(NamedThingSchema):
     """
@@ -960,6 +931,33 @@ class GeneToDiseaseAssociationSchema(AssociationSchema):
     def make_object(self, data):
         GeneToDiseaseAssociation(**data)
 
+class ModelToDiseaseMixinSchema(Schema):
+    """
+    This mixin is used for any association class for which the subject plays the role of a 'model'
+    """
+
+    @post_load
+    def make_object(self, data):
+        ModelToDiseaseMixin(**data)
+
+class GeneAsAModelOfDiseaseAssociationSchema(GeneToDiseaseAssociationSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        GeneAsAModelOfDiseaseAssociation(**data)
+
+class GeneHasVariantThatContributesToDiseaseAssociationSchema(GeneToDiseaseAssociationSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        GeneHasVariantThatContributesToDiseaseAssociation(**data)
+
 class GenotypeToThingAssociationSchema(AssociationSchema):
     """
     None
@@ -1074,51 +1072,6 @@ class GeneRegulatoryRelationshipSchema(AssociationSchema):
     @post_load
     def make_object(self, data):
         GeneRegulatoryRelationship(**data)
-
-class MolecularEventSchema(Schema):
-    """
-    None
-    """
-
-    @post_load
-    def make_object(self, data):
-        MolecularEvent(**data)
-
-class MolecularActivityToGeneProductAssociationSchema(AssociationSchema):
-    """
-    None
-    """
-
-    @post_load
-    def make_object(self, data):
-        MolecularActivityToGeneProductAssociation(**data)
-
-class MolecularActivityToLocationAssociationSchema(AssociationSchema):
-    """
-    None
-    """
-
-    @post_load
-    def make_object(self, data):
-        MolecularActivityToLocationAssociation(**data)
-
-class MolecularActivityToBiologicalProcessAssociationSchema(AssociationSchema):
-    """
-    None
-    """
-
-    @post_load
-    def make_object(self, data):
-        MolecularActivityToBiologicalProcessAssociation(**data)
-
-class MolecularActivityToDownstreamMolecularActivityAssociationSchema(AssociationSchema):
-    """
-    None
-    """
-
-    @post_load
-    def make_object(self, data):
-        MolecularActivityToDownstreamMolecularActivityAssociation(**data)
 
 class AnatomicalEntityToAnatomicalEntityAssociationSchema(AssociationSchema):
     """

@@ -32,3 +32,5 @@ URI: [http://bioentity.io/vocab/frequency_qualifier](http://bioentity.io/vocab/f
  *  usage: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html)
  *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
  *  usage: [gene to disease association](GeneToDiseaseAssociation.html)
+ *  usage: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
+ *  usage: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html)
