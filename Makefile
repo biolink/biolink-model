@@ -14,6 +14,13 @@ contrib_build_%: contrib/%/docs/index.md contrib/%/datamodel.py contrib/%/schema
 # ----------------------------------------
 # BUILD/COMPILATION
 # ----------------------------------------
+# ~~~~~~~~~~~~~~~~~~~~
+# CSV
+# ~~~~~~~~~~~~~~~~~~~~
+kbsync: subsets/biological_entity.csv
+	cp $< ../translator-knowledge-beacon/api/types.csv
+subsets/biological_entity.csv: biolink-model.yaml
+	./bin/gen-csv.py -r 'biological entity' biolink-model.yaml > $@.tmp && mv $@.tmp $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # JSONSCHEMA -> Java
