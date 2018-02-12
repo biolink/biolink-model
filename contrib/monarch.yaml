@@ -9,6 +9,27 @@ description: Monarch specific extensions
 
 slots:
 
+  - name: has alternate identifier
+    domain: named thing
+    range: identifier type
+    multivalued: true
+    description: >-
+      An alternate identifier for the entity, provided by the source database
+
+  - name: has xref
+    domain: named thing
+    range: identifier type
+    multivalued: true
+    description: >-
+      A database cross-reference for the entity, provided by a separate database
+
+  - name: has synonym
+    domain: named thing
+    range: label type
+    multivalued: true
+    description: >-
+      Alternate labels for an entity
+
   - name: has evidence object
     is_a: association slot
     range: named thing

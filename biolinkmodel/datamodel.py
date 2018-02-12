@@ -1508,40 +1508,20 @@ class EntityToPhenotypicFeatureAssociation(Association):
         return self.__str__()
 
 
-class EntityToDiseaseAssociation(Association):
+class EntityToDiseaseAssociation(object):
     """
     None
     """
     def __init__(self,
                  frequency_qualifier=None,
                  severity_qualifier=None,
-                 onset_qualifier=None,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None):
+                 onset_qualifier=None):
         self.frequency_qualifier=frequency_qualifier
         self.severity_qualifier=severity_qualifier
         self.onset_qualifier=onset_qualifier
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
 
     def __str__(self):
-        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
+        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
     def __repr__(self):
         return self.__str__()
 

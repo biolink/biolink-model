@@ -27,7 +27,6 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeature](http://bioentity.io/
  *  class: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
- *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [disease](Disease.html)
  *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [disease](Disease.html)
  *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)

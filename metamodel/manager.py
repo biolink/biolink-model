@@ -189,6 +189,8 @@ class Manager(object):
         cls = self.classdef(c)
         if cls is None:
             raise ValueError("No cls for {}".format(c))
+        if cls.name is None:
+            logging.error("No class name for {}".format(c))
         return self.get_name(cls.name, style)
 
     def obj_name(self, obj):
@@ -316,7 +318,7 @@ class Manager(object):
         c = self.classdef(c)
         s = self.slotdef(s, c)
 
-        # class-specific usage takes priority
+        # class-specific slot_usage takes priority
         if c is not None and c.slot_usage is not None:
             for su in c.slot_usage:
                 try:
@@ -325,13 +327,6 @@ class Manager(object):
                 except AttributeError:
                     pass
 
-        # general multivalued for slot
-        try:
-            if s.__getattribute__(attr):
-                return s.__getattribute__(attr)
-        except AttributeError:
-            pass
-        
 
         # inheritance up class mixins
         if c.mixins:
@@ -339,7 +334,14 @@ class Manager(object):
                 v = self.class_slot_getattr(m, s, attr, defaultval=defaultval)
                 if v is not None:
                     return v
-        
+
+        # general multivalued for slot
+        try:
+            if s.__getattribute__(attr):
+                return s.__getattribute__(attr)
+        except AttributeError:
+            pass
+                
         # inheritance up slot mixins
         if s.mixins:
             for m in s.mixins:

@@ -51,6 +51,8 @@ class OwlSchemaGenerator(Generator):
         return URIRef("http://bioentity.io/vocab/{}".format(id))
 
     def class_uri(self, cn, create=True):
+        if cn is None:
+            logging.error("No class name: {}".format(cn))
         c = self.manager.classdef(cn)
         if c is None:
             if not create:
@@ -116,7 +118,9 @@ class OwlSchemaGenerator(Generator):
             g.add((ci, OWL.equivalentClass, x))
             xl = BNode()
             g.add((x, OWL.intersectionOf, xl))
-            elts = [self.class_uri(c.is_a)]
+            elts = []
+            if c.is_a:
+                elts.append(self.class_uri(c.is_a))
             for sn in c.defining_slots:
                 logging.info("Defining slot for {} = {}".format(c.name, sn))
                 s = mgr.slotdef(sn, c)

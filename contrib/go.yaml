@@ -24,7 +24,34 @@ slots:
     slots:
       - full name
       - systematic synonym
-    
+
+classes:
+
+  - name: extensions and evidence association mixin
+    abstract: true
+    mixin: true
+    mixins:
+      - taxon closure mixin
+    apply_to: association
+    slots:    
+      - object extensions
+      - has evidence graph
+      - has evidence type
+      - has evidence
+
+  - name: taxon closure mixin
+    mixin: true
+    description: "An association that includes flattened inlined objects, such as subject_taxon_closure"
+    slots:
+      - subject taxon
+      - subject taxon label
+      - subject taxon closure
+      - subject taxon closure label
+      - object taxon
+      - object taxon label
+      - object taxon closure
+      - object taxon closure label
+  
 
   ## ------
   ## DENORMALIZED

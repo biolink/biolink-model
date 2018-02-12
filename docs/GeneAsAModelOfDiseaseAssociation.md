@@ -15,6 +15,7 @@ URI: [http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation](http://bioenti
 
  *  is_a: [gene to disease association](GeneToDiseaseAssociation.html)
  *  mixin: [model to disease mixin](ModelToDiseaseMixin.html)
+ *  mixin: [entity to disease association](EntityToDiseaseAssociation.html)
 
 ## Children
 
@@ -36,7 +37,8 @@ URI: [http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation](http://bioenti
     * __range__: boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
-    * _the relationship type by which a subject is connected to an object in an association_
+    * _The relationship to the disease
+  _
     * __range__: [relationship type](RelationshipType.html) [required]
     * subproperty_of: [RO:0003301](http://purl.obolibrary.org/obo/RO_0003301)
     * inherited from: [association](Association.html)

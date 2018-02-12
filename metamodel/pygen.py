@@ -59,8 +59,11 @@ class PythonGenerator(Generator):
 
         snames = []
         init_args = ['self']
-        for s in slots:
-            s = mgr.slotdef(s, c)
+        for sn in slots:
+            s = mgr.slotdef(sn, c)
+            if s is None:
+                logging.error("No slotdef: {}".format(sn))
+                continue
             sn = self.get_slot_name(s)
             snames.append(sn)
             init_args.append('{}=None'.format(sn))
@@ -87,4 +90,9 @@ class PythonGenerator(Generator):
         return self.manager.class_name(self.manager.classdef(cn))
     
     def get_slot_name(self, sn):
-        return self.manager.slot_name(self.manager.slotdef(sn))
+        s = self.manager.slotdef(sn)
+        if s is None:
+            logging.warning("No slotdef for {}".format(sn))
+            return sn
+        else:
+            return self.manager.slot_name(s)

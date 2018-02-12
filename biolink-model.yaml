@@ -104,6 +104,12 @@ slots:
     description: >-
       if set to true, then the association is negated i.e. is not true
 
+  - name: has confidence level
+    is_a: association slot
+    range: confidence level
+    description: >-
+      connects an association to a qualitative term denoting the level of confidence
+
   - name: has evidence
     is_a: association slot
     range: evidence instance
@@ -209,6 +215,11 @@ slots:
 
 
     ## genotypes
+
+  - name: has gene
+    description: >-
+      connects and entity to a single gene
+    range: gene
     
   - name: has zygosity
     domain: single locus feature complement
@@ -377,6 +388,15 @@ classes:
       a piece of information that typically describes some piece of biology or is used as support.
     mappings:
       - "IAO:0000030"
+      
+  - name: confidence level
+    is_a: information content entity
+    description: >-
+      Level of confidence in a statement
+    values_from:
+      - cio
+    mappings:
+      - "CIO:0000028"
       
   - name: evidence type
     is_a: information content entity
@@ -589,10 +609,32 @@ classes:
     is_a: genomic entity
     description: >-
       An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
+    comment: >-
+      Consider renaming as genotypic entity
     slots:
       - has zygosity
     mapping:
       - "GENO:0000536"
+
+  - name: allele
+    is_a: genotype
+    description: >-
+      A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus
+    alt_descriptions:
+      - description: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
+        source: AGR
+    slots:
+      - has gene
+    slot_usage:
+      - slot: has gene
+        multivalued: true
+        description: Each allele can be associated with any number of genes
+      - slot: id
+        examples:
+          - value: ZFIN:ZDB-ALT-980203-1091
+            description: ti282a allele from ZFIN
+    mapping:
+      - "GENO:0000512"
 
   - name: sequence variant
     aliases: ['allele']
@@ -975,9 +1017,9 @@ classes:
 
   - name: entity to disease association
     abstract: true
+    mixin: true
     defining_slots:
       - object
-    is_a: association
     slot_usage:
       - name: object
         range: disease
@@ -1141,6 +1183,7 @@ classes:
       - relation
     mixins:
       - model to disease mixin
+      - entity to disease association
     slot_usage:
       - name: subject
         range: gene or gene product

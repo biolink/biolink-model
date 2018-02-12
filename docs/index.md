@@ -70,7 +70,6 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [biosample to thing association](BiosampleToThingAssociation.html)
           * [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html)
           * [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
-          * [entity to disease association](EntityToDiseaseAssociation.html)
           * [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html)
           * [disease to thing association](DiseaseToThingAssociation.html)
           * [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html)
@@ -119,4 +118,5 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [gene ontology class](GeneOntologyClass.html)
  * [thing with taxon](ThingWithTaxon.html)
  * [gene grouping](GeneGrouping.html)
+ * [entity to disease association](EntityToDiseaseAssociation.html)
  * [model to disease mixin](ModelToDiseaseMixin.html)

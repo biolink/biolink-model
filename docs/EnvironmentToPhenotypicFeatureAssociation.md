@@ -39,7 +39,7 @@ URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http:
     * __range__: [relationship type](RelationshipType.html) [required]
     * inherited from: [association](Association.html)
  * [object](object.html)
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _phenotypic class_
     * __range__: [phenotypic feature](PhenotypicFeature.html) [required]
     * Example: [WBPhenotype:0000180](http://purl.obolibrary.org/obo/WBPhenotype_0000180) axon morphology variant
     * Example: [MP:0001569](http://purl.obolibrary.org/obo/MP_0001569) abnormal circulating bilirubin level

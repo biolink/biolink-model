@@ -760,7 +760,7 @@ class EntityToPhenotypicFeatureAssociationSchema(AssociationSchema):
     def make_object(self, data):
         EntityToPhenotypicFeatureAssociation(**data)
 
-class EntityToDiseaseAssociationSchema(AssociationSchema):
+class EntityToDiseaseAssociationSchema(Schema):
     """
     None
     """
@@ -944,6 +944,9 @@ class GeneAsAModelOfDiseaseAssociationSchema(GeneToDiseaseAssociationSchema):
     """
     None
     """
+    frequency_qualifier = fields.Str()
+    severity_qualifier = fields.Str()
+    onset_qualifier = fields.Str()
 
     @post_load
     def make_object(self, data):

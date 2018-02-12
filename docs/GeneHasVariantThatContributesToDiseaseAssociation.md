@@ -55,7 +55,7 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
     * __range__: [provider](Provider.html)
     * inherited from: [association](Association.html)
  * [id](id.html)
-    * __range__: identifier type [required]
+    * __range__: identifier type
     * inherited from: [named thing](NamedThing.html)
  * [label](label.html)
     * _A human-readable name for a thing_

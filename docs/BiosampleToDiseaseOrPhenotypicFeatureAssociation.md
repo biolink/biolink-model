@@ -30,7 +30,7 @@ URI: [http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation
     * __range__: [ontology class](OntologyClass.html)
     * inherited from: [association](Association.html)
  * [subject](subject.html)
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the biosample being described_
     * __range__: [biosample](Biosample.html) [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)

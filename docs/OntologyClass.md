@@ -67,7 +67,6 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
  *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)
- *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)

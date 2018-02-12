@@ -28,7 +28,7 @@ URI: [http://bioentity.io/vocab/ChemicalToPathwayAssociation](http://bioentity.i
     * __range__: [ontology class](OntologyClass.html)
     * inherited from: [association](Association.html)
  * [subject](subject.html)
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the chemical substance or entity that is an interactor_
     * __range__: [chemical substance](ChemicalSubstance.html) [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)

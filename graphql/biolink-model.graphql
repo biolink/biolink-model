@@ -527,16 +527,6 @@ type EntityToDiseaseAssociation {
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
   onsetQualifier: LifeStage
-  associationType: OntologyClass
-  subject: String!
-  negated: String
-  relation: RelationshipType!
-  object: Disease!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  label: String
 }
 
 type ThingToDiseaseOrPhenotypicFeatureAssociation {
@@ -667,7 +657,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThing
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
-  id: String!
+  id: String
   label: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
@@ -677,7 +667,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThing
 type ModelToDiseaseMixin {
 }
 
-type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin {
+type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDiseaseAssociation {
   associationType: OntologyClass
   subject: GeneOrGeneProduct!
   negated: String
@@ -702,7 +692,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation {
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
-  id: String!
+  id: String
   label: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue

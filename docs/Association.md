@@ -34,7 +34,6 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
  *  child: [biosample to thing association](BiosampleToThingAssociation.html)
  *  child: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html)
  *  child: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
- *  child: [entity to disease association](EntityToDiseaseAssociation.html)
  *  child: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html)
  *  child: [disease to thing association](DiseaseToThingAssociation.html)
  *  child: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html)

@@ -44,7 +44,7 @@ URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vo
     * __range__: [relationship type](RelationshipType.html) [required]
     * inherited from: [association](Association.html)
  * [object](object.html)
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _disease_
     * __range__: [disease](Disease.html) [required]
     * Example: [MONDO:0020066](http://purl.obolibrary.org/obo/MONDO_0020066) Ehlers-Danlos syndrome
     * inherited from: [association](Association.html)
@@ -61,7 +61,7 @@ URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vo
     * __range__: [provider](Provider.html)
     * inherited from: [association](Association.html)
  * [id](id.html)
-    * __range__: identifier type [required]
+    * __range__: identifier type
     * inherited from: [named thing](NamedThing.html)
  * [label](label.html)
     * _A human-readable name for a thing_

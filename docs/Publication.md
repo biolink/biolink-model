@@ -38,7 +38,6 @@ URI: [http://bioentity.io/vocab/Publication](http://bioentity.io/vocab/Publicati
  *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [publication](Publication.html)
  *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [publication](Publication.html)
  *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
  *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [publication](Publication.html)
  *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
