@@ -21,6 +21,8 @@ kbsync: subsets/biological_entity.csv
 	cp $< ../translator-knowledge-beacon/api/types.csv
 subsets/biological_entity.csv: biolink-model.yaml
 	./bin/gen-csv.py -r 'biological entity' biolink-model.yaml > $@.tmp && mv $@.tmp $@
+biolink-model.tsv: biolink-model.yaml
+	./bin/gen-csv.py -f tsv biolink-model.yaml > $@.tmp && mv $@.tmp $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # JSONSCHEMA -> Java
@@ -116,6 +118,7 @@ ontology/%.tree: ontology/%.json
 
 ontology/%.png: ontology/%.json
 	ogr-tree -t png -o $@ -r $< % 
+
 
 
 # ----------------------------------------

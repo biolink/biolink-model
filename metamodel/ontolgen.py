@@ -101,7 +101,8 @@ class OwlSchemaGenerator(Generator):
                 uri = self.class_uri(m)
                 if ':' in m:
                     uri = URIRef(self.id_to_url(m))
-                g.add((ci, SKOS.exactMatch, uri))
+                #g.add((ci, SKOS.exactMatch, uri))
+                g.add((ci, OWL.equivalentClasses, uri))
         for sn in slots:
             s = mgr.slotdef(sn, c)
             srange = mgr.class_slot_range(c, s)

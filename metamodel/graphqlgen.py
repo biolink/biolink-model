@@ -36,7 +36,7 @@ class GraphqlGenerator(Generator):
 
         etype = 'type'
         if c.abstract or c.mixin:
-            type = 'interface'
+            etype = 'interface'
         
         cn = mgr.class_name(c)
 

@@ -10,14 +10,15 @@ logging.basicConfig(level=logging.INFO)
 
 @click.command()
 @click.argument("file", type=click.File('r'))
-@click.option("--root", "-r")
-def cli(file, root):
+@click.option("--root", "-r", default=None)
+@click.option("--format", "-f", default='csv')
+def cli(file, root, format):
     schema = load_schema(file)
     g = CsvGenerator(schema=schema)
-    roots = []
+    roots = None
     if root:
         roots = [root]
-    g.serialize(roots=roots)
+    g.serialize(roots=roots, format=format)
 
 
 if __name__ == "__main__":

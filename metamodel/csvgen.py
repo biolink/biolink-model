@@ -13,10 +13,13 @@ from .generator import Generator
 
 class CsvGenerator(Generator):
         
-    def serialize(self, dirname=None, **args):
+    def serialize(self, dirname=None, format='csv', **args):
         self.dirname = dirname
         df = self.tr(**args)
-        print(df.to_csv(sep=",", index=False))
+        sep = ","
+        if format == 'tsv':
+            sep="\t"
+        print(df.to_csv(sep=sep, index=False))
     
     def tr(self, roots=None):
         schema = self.schema
@@ -28,6 +31,8 @@ class CsvGenerator(Generator):
         
         # create list of class names
         for c in schema.classes:
+            if c.abstract:
+                continue
             in_subset = False
             ancs = set([x.name for x in mgr.ancestors(c)])
             

@@ -291,6 +291,7 @@ classes:
 
   - name: biological entity
     is_a: named thing
+    abstract: true
         
   - name: ontology class
     description: "a concept or class in an ontology, vocabulary or thesaurus"
@@ -344,9 +345,6 @@ classes:
       - thing with taxon
     is_a: organismal entity
       
-  - name: cohort
-    is_a: population of individual organisms
-      
   - name: biosample
     aliases: ['biospecimen', 'sample']
     mixins:
@@ -354,7 +352,10 @@ classes:
     is_a: organismal entity
       
   - name: disease or phenotypic feature
+    aliases: ['phenome']
     is_a: biological entity
+    description: >-
+      Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
     mixins:
       - thing with taxon
     union_of:
@@ -495,17 +496,24 @@ classes:
     aliases: ['sequence feature']
     description: >-
       an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+    mappings: ['SO:0000110']
 
   - name: genome
     is_a: genomic entity
+    description: >-
+      A genome is the sum of genetic material within a cell or virion.
     mappings: ['SO:0001026']
 
   - name: transcript
     is_a: genomic entity
+    description: >-
+      An RNA synthesized on a DNA or RNA template by an RNA polymerase
     mappings: ['SO:0000673']
 
   - name: exon
     is_a: genomic entity
+    description: >-
+      A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
     mappings: ['SO:0000147']
 
   - name: coding sequence
@@ -542,6 +550,8 @@ classes:
       
   - name: gene product
     is_a: gene or gene product
+    description: >-
+      The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
     union_of:
       - protein
       - RNA product
