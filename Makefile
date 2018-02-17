@@ -90,6 +90,18 @@ gv: biolink-model.yaml
 graphviz/%.png: biolink-model.yaml 
 	./bin/gen-graphviz.py  -c $* $< -o graphviz/$*
 
+
+# ~~~~~~~~~~~~~~~~~~~~
+# ShEx
+# ~~~~~~~~~~~~~~~~~~~~
+
+shex/biolink-model.shex: biolink-model.yaml 
+	./bin/gen-shex.py $< > $@
+
+# ~~~~~~~~~~~~~~~~~~~~
+# Graphql
+# ~~~~~~~~~~~~~~~~~~~~
+
 graphql/biolink-model.graphql: biolink-model.yaml 
 	./bin/gen-graphql.py $< > $@
 
