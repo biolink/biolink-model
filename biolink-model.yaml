@@ -288,6 +288,8 @@ classes:
     slot_usage:
       - name: id
         required: true
+    mappings:
+      - "UMLSSG:OBJC"
 
   - name: biological entity
     is_a: named thing
@@ -367,6 +369,7 @@ classes:
     is_a: disease or phenotypic feature
     mappings:
       - "MONDO:0000001"
+      - "WD:Q12136"
       
   - name: phenotypic feature
     aliases: ['sign', 'symptom', 'phenotype', 'trait']
@@ -389,6 +392,7 @@ classes:
       a piece of information that typically describes some piece of biology or is used as support.
     mappings:
       - "IAO:0000030"
+      - "UMLSSG:CONC"
       
   - name: confidence level
     is_a: information content entity
@@ -438,11 +442,20 @@ classes:
   - name: chemical substance
     is_a: molecular entity
     description: >-
-      may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex
+      May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex
       material with multiple chemical entities as part
     subclass_of: "CHEBI:24431"
     mappings:
-      - SIO:010004
+      - "SIO:010004"
+      - "UMLSSG:CHEM"
+      - "WD:Q11173"
+      
+  - name: drug
+    is_a: chemical substance
+    description: >-
+      A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+    mappings:
+      - WD:Q12140
       
   - name: attribute
     subclass_of: PATO:0000001
@@ -456,6 +469,8 @@ classes:
     subclass_of: UBERON:0001062
     description: >-
       A subcellular location, cell type or gross anatomical part
+    mappings:
+      - "UMLSSG:ANAT"
 
   - name: life stage
     is_a: organismal entity
@@ -491,12 +506,21 @@ classes:
   - name: clinical intervention
     is_a: clinical entity
       
+  - name: device
+    is_a: named thing
+    description: >-
+      A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
+    mappings:
+      - "UMLSSG:DEVI"
+
   - name: genomic entity
     is_a: molecular entity
     aliases: ['sequence feature']
     description: >-
       an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
-    mappings: ['SO:0000110']
+    mappings:
+      - "SO:0000110"
+      - "UMLSSG:GENE"
 
   - name: genome
     is_a: genomic entity
@@ -538,15 +562,16 @@ classes:
   - name: gene
     is_a: gene or gene product
     aliases: ['locus']
+    mappings:
+      - "SO:0000704"
+      - "SIO:010035"
+      - "WD:Q7187"
     id_prefixes:
       - NCBIGene
       - ENSEMBL
       - HGNC
       - MGI
       - ZFIN
-    mappings:
-      - "SO:0000704"
-      - "SIO:010035"
       
   - name: gene product
     is_a: gene or gene product
@@ -561,6 +586,7 @@ classes:
     mappings:
       - "PR:000000001"
       - "SIO:010043"
+      - "WD:Q8054"
     id_prefixes:
       - UniProtKB
       - PR
@@ -695,6 +721,8 @@ classes:
     slots:
       - latitude
       - longitude
+    mappings:
+      - "UMLSSG:GEOG"
       
   - name: geographic location at time
     is_a: planetary entity
@@ -1466,6 +1494,34 @@ classes:
     mappings:
       - "GO:0003674"
 
+  - name: activity and behavior
+    is_a: occurrent
+    description: >-
+      Activity or behavior of any independent integral living, organization or mechanical actor in the world
+    mappings:
+      - "UMLSSG:ACTI"
+
+  - name: occupation
+    is_a: occurrent
+    description: >-
+      A job or profession
+    mappings:
+      - "UMLSSG:OCCU"
+
+  - name: procedure
+    is_a: occurrent
+    description: >-
+      A series of actions conducted in a certain order or manner
+    mappings:
+      - "UMLSSG:PROC"
+
+  - name: phenomenon
+    is_a: occurrent
+    description: >-
+      a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
+    mappings:
+      - "UMLSSG:PHEN"
+
   - name: biological process
     is_a: biological entity
     mixins:
@@ -1477,6 +1533,11 @@ classes:
 
   - name: pathway
     is_a: biological process
+ 
+  - name: physiology
+    is_a: biological process
+    mappings:
+      - "UMLSSG:PHYS"
       
   - name: cellular component
     is_a: anatomical entity
