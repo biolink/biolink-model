@@ -652,9 +652,9 @@ classes:
     is_a: noncoding RNA product
     mappings:
       - "SO:0000276"
+      - SIO:001397
     id_prefixes:
       - MIR
-      - SIO:001397
         
   - name: macromolecular complex
     is_a: molecular entity
@@ -696,7 +696,7 @@ classes:
       Consider renaming as genotypic entity
     slots:
       - has zygosity
-    mapping:
+    mappings:
       - "GENO:0000536"
       - SIO:001079
 
@@ -717,7 +717,7 @@ classes:
         examples:
           - value: ZFIN:ZDB-ALT-980203-1091
             description: ti282a allele from ZFIN
-    mapping:
+    mappings:
       - "GENO:0000512"
       - SIO:010277
 
