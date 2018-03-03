@@ -20,6 +20,10 @@ URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vo
 
 ## Children
 
+ *  child: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
+ *  child: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html)
+ *  child: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
+ *  child: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html)
 
 
 ## Fields
@@ -29,7 +33,8 @@ URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vo
     * __range__: [ontology class](OntologyClass.html)
     * inherited from: [association](Association.html)
  * [subject](subject.html)
-    * _gene in which variation is correlated with the disease - may be protective or causative or associative_
+    * _gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
+  _
     * __range__: [gene or gene product](GeneOrGeneProduct.html) [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)
@@ -41,7 +46,7 @@ URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vo
     * __range__: [relationship type](RelationshipType.html) [required]
     * inherited from: [association](Association.html)
  * [object](object.html)
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _disease_
     * __range__: [disease](Disease.html) [required]
     * Example: [MONDO:0020066](http://purl.obolibrary.org/obo/MONDO_0020066) Ehlers-Danlos syndrome
     * inherited from: [association](Association.html)
@@ -97,7 +102,7 @@ URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vo
     * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
  * [subject taxon closure label](subject_taxon_closure_label.html)
     * _The label for the taxon class or ancestor class for the subject_
-    * __range__: label*
+    * __range__: label type*
     * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
  * [object taxon](object_taxon.html)
     * _the taxonomic class of the entity in the object slot_
@@ -112,7 +117,7 @@ URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vo
     * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
  * [object taxon closure label](object_taxon_closure_label.html)
     * _The label for the taxon class or ancestor class for the object_
-    * __range__: [ontology class](OntologyClass.html)*
+    * __range__: label type*
     * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
  * [frequency qualifier](frequency_qualifier.html)
     * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
@@ -124,5 +129,5 @@ URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vo
     * inherited from: [entity to disease association](EntityToDiseaseAssociation.html)
  * [onset qualifier](onset_qualifier.html)
     * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * __range__: [life stage](LifeStage.html)
+    * __range__: [onset](Onset.html)
     * inherited from: [entity to disease association](EntityToDiseaseAssociation.html)

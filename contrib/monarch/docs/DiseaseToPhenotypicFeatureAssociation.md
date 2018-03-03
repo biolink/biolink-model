@@ -40,8 +40,9 @@ URI: [http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation](http://bi
     * __range__: [relationship type](RelationshipType.html) [required]
     * inherited from: [association](Association.html)
  * [object](object.html)
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _phenotypic class_
     * __range__: [phenotypic feature](PhenotypicFeature.html) [required]
+    * Example: [HP:0002487](http://purl.obolibrary.org/obo/HP_0002487) Hyperkinesis
     * Example: [WBPhenotype:0000180](http://purl.obolibrary.org/obo/WBPhenotype_0000180) axon morphology variant
     * Example: [MP:0001569](http://purl.obolibrary.org/obo/MP_0001569) abnormal circulating bilirubin level
     * inherited from: [association](Association.html)
@@ -97,7 +98,7 @@ URI: [http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation](http://bi
     * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
  * [subject taxon closure label](subject_taxon_closure_label.html)
     * _The label for the taxon class or ancestor class for the subject_
-    * __range__: label*
+    * __range__: label type*
     * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
  * [object taxon](object_taxon.html)
     * _the taxonomic class of the entity in the object slot_
@@ -112,7 +113,7 @@ URI: [http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation](http://bi
     * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
  * [object taxon closure label](object_taxon_closure_label.html)
     * _The label for the taxon class or ancestor class for the object_
-    * __range__: [ontology class](OntologyClass.html)*
+    * __range__: label type*
     * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
  * [frequency qualifier](frequency_qualifier.html)
     * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
@@ -124,5 +125,9 @@ URI: [http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation](http://bi
     * inherited from: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
  * [onset qualifier](onset_qualifier.html)
     * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * __range__: [life stage](LifeStage.html)
+    * __range__: [onset](Onset.html)
+    * inherited from: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
+ * [sex qualifier](sex_qualifier.html)
+    * _a qualifier used in a phenotypic association to state whether the association is specific to a particular sex._
+    * __range__: [biological sex](BiologicalSex.html)
     * inherited from: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)

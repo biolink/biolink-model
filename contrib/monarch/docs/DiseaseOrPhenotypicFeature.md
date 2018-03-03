@@ -5,7 +5,7 @@ layout: default
 ## disease or phenotypic feature
 
 
-None
+Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
 
 URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeature](http://bioentity.io/vocab/DiseaseOrPhenotypicFeature)
 ## Mappings
@@ -29,7 +29,6 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeature](http://bioentity.io/
  *  class: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
- *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [disease](Disease.html)
  *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [disease](Disease.html)
  *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
@@ -38,11 +37,12 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeature](http://bioentity.io/
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [disease](Disease.html)
+ *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [disease](Disease.html)
+ *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [disease](Disease.html)
  *  class: [treatment](Treatment.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
- *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [disease](Disease.html)
  *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [disease](Disease.html)
  *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
@@ -51,6 +51,8 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeature](http://bioentity.io/
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [disease](Disease.html)
+ *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [disease](Disease.html)
+ *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [disease](Disease.html)
 
 ## Fields
 

@@ -32,5 +32,5 @@ URI: [http://bioentity.io/vocab/EntityToDiseaseAssociation](http://bioentity.io/
     * __Local__
  * [onset qualifier](onset_qualifier.html)
     * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * __range__: [life stage](LifeStage.html)
+    * __range__: [onset](Onset.html)
     * __Local__

@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * Transcript
  * <p>
- * null
+ * An RNA synthesized on a DNA or RNA template by an RNA polymerase
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

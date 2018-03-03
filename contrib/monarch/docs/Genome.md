@@ -5,7 +5,7 @@ layout: default
 ## genome
 
 
-None
+A genome is the sum of genetic material within a cell or virion.
 
 URI: [http://bioentity.io/vocab/Genome](http://bioentity.io/vocab/Genome)
 ## Mappings

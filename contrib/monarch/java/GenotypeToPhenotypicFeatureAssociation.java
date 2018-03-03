@@ -37,6 +37,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "qualifiers",
     "relation",
     "severity_qualifier",
+    "sex_qualifier",
     "subject",
     "subject_extensions",
     "subject_taxon",
@@ -176,6 +177,13 @@ public class GenotypeToPhenotypicFeatureAssociation {
     @JsonProperty("severity_qualifier")
     @JsonPropertyDescription("a qualifier used in a phenotypic association to state how severe the phenotype is in the subject")
     private String severityQualifier;
+    /**
+     * a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+     * 
+     */
+    @JsonProperty("sex_qualifier")
+    @JsonPropertyDescription("a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.")
+    private String sexQualifier;
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * 
@@ -559,6 +567,24 @@ public class GenotypeToPhenotypicFeatureAssociation {
     }
 
     /**
+     * a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+     * 
+     */
+    @JsonProperty("sex_qualifier")
+    public String getSexQualifier() {
+        return sexQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+     * 
+     */
+    @JsonProperty("sex_qualifier")
+    public void setSexQualifier(String sexQualifier) {
+        this.sexQualifier = sexQualifier;
+    }
+
+    /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * 
      */
@@ -660,12 +686,12 @@ public class GenotypeToPhenotypicFeatureAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("associationType", associationType).append("frequencyQualifier", frequencyQualifier).append("hasEvidence", hasEvidence).append("hasEvidenceGraph", hasEvidenceGraph).append("hasEvidenceType", hasEvidenceType).append("id", id).append("label", label).append("negated", negated).append("object", object).append("objectExtensions", objectExtensions).append("objectTaxon", objectTaxon).append("objectTaxonClosure", objectTaxonClosure).append("objectTaxonClosureLabel", objectTaxonClosureLabel).append("objectTaxonLabel", objectTaxonLabel).append("onsetQualifier", onsetQualifier).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("severityQualifier", severityQualifier).append("subject", subject).append("subjectExtensions", subjectExtensions).append("subjectTaxon", subjectTaxon).append("subjectTaxonClosure", subjectTaxonClosure).append("subjectTaxonClosureLabel", subjectTaxonClosureLabel).append("subjectTaxonLabel", subjectTaxonLabel).toString();
+        return new ToStringBuilder(this).append("associationType", associationType).append("frequencyQualifier", frequencyQualifier).append("hasEvidence", hasEvidence).append("hasEvidenceGraph", hasEvidenceGraph).append("hasEvidenceType", hasEvidenceType).append("id", id).append("label", label).append("negated", negated).append("object", object).append("objectExtensions", objectExtensions).append("objectTaxon", objectTaxon).append("objectTaxonClosure", objectTaxonClosure).append("objectTaxonClosureLabel", objectTaxonClosureLabel).append("objectTaxonLabel", objectTaxonLabel).append("onsetQualifier", onsetQualifier).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("severityQualifier", severityQualifier).append("sexQualifier", sexQualifier).append("subject", subject).append("subjectExtensions", subjectExtensions).append("subjectTaxon", subjectTaxon).append("subjectTaxonClosure", subjectTaxonClosure).append("subjectTaxonClosureLabel", subjectTaxonClosureLabel).append("subjectTaxonLabel", subjectTaxonLabel).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(negated).append(hasEvidenceGraph).append(subject).append(objectTaxonClosureLabel).append(relation).append(onsetQualifier).append(subjectTaxonClosureLabel).append(subjectTaxonLabel).append(id).append(subjectTaxon).append(subjectTaxonClosure).append(providedBy).append(objectExtensions).append(associationType).append(frequencyQualifier).append(qualifiers).append(label).append(subjectExtensions).append(hasEvidenceType).append(severityQualifier).append(objectTaxon).append(hasEvidence).append(objectTaxonLabel).append(objectTaxonClosure).append(object).append(publications).toHashCode();
+        return new HashCodeBuilder().append(negated).append(hasEvidenceGraph).append(subject).append(objectTaxonClosureLabel).append(relation).append(onsetQualifier).append(subjectTaxonClosureLabel).append(subjectTaxonLabel).append(id).append(subjectTaxon).append(subjectTaxonClosure).append(providedBy).append(sexQualifier).append(objectExtensions).append(associationType).append(frequencyQualifier).append(qualifiers).append(label).append(subjectExtensions).append(hasEvidenceType).append(severityQualifier).append(objectTaxon).append(hasEvidence).append(objectTaxonLabel).append(objectTaxonClosure).append(object).append(publications).toHashCode();
     }
 
     @Override
@@ -677,7 +703,7 @@ public class GenotypeToPhenotypicFeatureAssociation {
             return false;
         }
         GenotypeToPhenotypicFeatureAssociation rhs = ((GenotypeToPhenotypicFeatureAssociation) other);
-        return new EqualsBuilder().append(negated, rhs.negated).append(hasEvidenceGraph, rhs.hasEvidenceGraph).append(subject, rhs.subject).append(objectTaxonClosureLabel, rhs.objectTaxonClosureLabel).append(relation, rhs.relation).append(onsetQualifier, rhs.onsetQualifier).append(subjectTaxonClosureLabel, rhs.subjectTaxonClosureLabel).append(subjectTaxonLabel, rhs.subjectTaxonLabel).append(id, rhs.id).append(subjectTaxon, rhs.subjectTaxon).append(subjectTaxonClosure, rhs.subjectTaxonClosure).append(providedBy, rhs.providedBy).append(objectExtensions, rhs.objectExtensions).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(subjectExtensions, rhs.subjectExtensions).append(hasEvidenceType, rhs.hasEvidenceType).append(severityQualifier, rhs.severityQualifier).append(objectTaxon, rhs.objectTaxon).append(hasEvidence, rhs.hasEvidence).append(objectTaxonLabel, rhs.objectTaxonLabel).append(objectTaxonClosure, rhs.objectTaxonClosure).append(object, rhs.object).append(publications, rhs.publications).isEquals();
+        return new EqualsBuilder().append(negated, rhs.negated).append(hasEvidenceGraph, rhs.hasEvidenceGraph).append(subject, rhs.subject).append(objectTaxonClosureLabel, rhs.objectTaxonClosureLabel).append(relation, rhs.relation).append(onsetQualifier, rhs.onsetQualifier).append(subjectTaxonClosureLabel, rhs.subjectTaxonClosureLabel).append(subjectTaxonLabel, rhs.subjectTaxonLabel).append(id, rhs.id).append(subjectTaxon, rhs.subjectTaxon).append(subjectTaxonClosure, rhs.subjectTaxonClosure).append(providedBy, rhs.providedBy).append(sexQualifier, rhs.sexQualifier).append(objectExtensions, rhs.objectExtensions).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(subjectExtensions, rhs.subjectExtensions).append(hasEvidenceType, rhs.hasEvidenceType).append(severityQualifier, rhs.severityQualifier).append(objectTaxon, rhs.objectTaxon).append(hasEvidence, rhs.hasEvidence).append(objectTaxonLabel, rhs.objectTaxonLabel).append(objectTaxonClosure, rhs.objectTaxonClosure).append(object, rhs.object).append(publications, rhs.publications).isEquals();
     }
 
 }

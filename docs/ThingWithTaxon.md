@@ -26,6 +26,7 @@ URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingW
 
 ## Used in
 
+ *  class: [allele](Allele.html) references: [gene](Gene.html)
  *  class: [treatment](Treatment.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [genotype](Genotype.html)
  *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [genotype](Genotype.html)
@@ -41,8 +42,7 @@ URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingW
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [chemical substance](ChemicalSubstance.html)
  *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [biosample](Biosample.html)
  *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [biosample](Biosample.html)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
- *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [life stage](LifeStage.html)
+ *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
  *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [disease](Disease.html)
  *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [genotype](Genotype.html)

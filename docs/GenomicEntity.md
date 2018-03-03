@@ -10,6 +10,7 @@ an entity that can either be directly located on a genome (gene, transcript, exo
 URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/GenomicEntity)
 ## Mappings
 
+ * [SO:0000110](http://purl.obolibrary.org/obo/SO_0000110)
 
 ## Inheritance
 
@@ -27,6 +28,7 @@ URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/Genomic
 
 ## Used in
 
+ *  class: [allele](Allele.html) references: [gene](Gene.html)
  *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [genotype](Genotype.html)
  *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [genotype](Genotype.html)
  *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [genotype](Genotype.html)

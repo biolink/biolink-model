@@ -25,6 +25,7 @@ URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/Molec
 
 ## Used in
 
+ *  class: [allele](Allele.html) references: [gene](Gene.html)
  *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [genotype](Genotype.html)
  *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [genotype](Genotype.html)
  *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [genotype](Genotype.html)

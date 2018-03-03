@@ -27,15 +27,7 @@ URI: [http://bioentity.io/vocab/Occurrent](http://bioentity.io/vocab/Occurrent)
 ## Used in
 
  *  class: [chemical to pathway association](ChemicalToPathwayAssociation.html) references: [pathway](Pathway.html)
- *  class: [molecular activity to gene product association](MolecularActivityToGeneProductAssociation.html) references: [molecular activity](MolecularActivity.html)
- *  class: [molecular activity to location association](MolecularActivityToLocationAssociation.html) references: [molecular activity](MolecularActivity.html)
- *  class: [molecular activity to biological process association](MolecularActivityToBiologicalProcessAssociation.html) references: [molecular activity](MolecularActivity.html)
- *  class: [molecular activity to downstream molecular activity association](MolecularActivityToDownstreamMolecularActivityAssociation.html) references: [molecular activity](MolecularActivity.html)
  *  class: [chemical to pathway association](ChemicalToPathwayAssociation.html) references: [pathway](Pathway.html)
- *  class: [molecular activity to gene product association](MolecularActivityToGeneProductAssociation.html) references: [molecular activity](MolecularActivity.html)
- *  class: [molecular activity to location association](MolecularActivityToLocationAssociation.html) references: [molecular activity](MolecularActivity.html)
- *  class: [molecular activity to biological process association](MolecularActivityToBiologicalProcessAssociation.html) references: [molecular activity](MolecularActivity.html)
- *  class: [molecular activity to downstream molecular activity association](MolecularActivityToDownstreamMolecularActivityAssociation.html) references: [molecular activity](MolecularActivity.html)
 
 ## Fields
 

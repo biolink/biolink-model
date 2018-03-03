@@ -22,9 +22,11 @@ URI: [http://bioentity.io/vocab/Gene](http://bioentity.io/vocab/Gene)
 
 ## Used in
 
+ *  class: [allele](Allele.html) references: [gene](Gene.html)
  *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [gene](Gene.html)
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [gene](Gene.html)
  *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [gene](Gene.html)
+ *  class: [allele](Allele.html) references: [gene](Gene.html)
  *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [gene](Gene.html)
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [gene](Gene.html)
  *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [gene](Gene.html)

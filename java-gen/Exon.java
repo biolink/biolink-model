@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * Exon
  * <p>
- * null
+ * A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -5,7 +5,7 @@ layout: default
 ## disease or phenotypic feature
 
 
-None
+Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
 
 URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeature](http://bioentity.io/vocab/DiseaseOrPhenotypicFeature)
 ## Mappings

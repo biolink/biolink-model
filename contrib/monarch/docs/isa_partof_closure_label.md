@@ -13,7 +13,7 @@ URI: [http://bioentity.io/vocab/isa_partof_closure_label](http://bioentity.io/vo
 
 ## Domain and Range
 
- -> [ontology class](OntologyClass.html)
+ -> 
 
 ## Inheritance
 

@@ -18,6 +18,7 @@ URI: [http://bioentity.io/vocab/InformationContentEntity](http://bioentity.io/vo
 
 ## Children
 
+ *  child: [confidence level](ConfidenceLevel.html)
  *  child: [evidence type](EvidenceType.html)
  *  child: [publication](Publication.html)
  *  child: [association](Association.html)

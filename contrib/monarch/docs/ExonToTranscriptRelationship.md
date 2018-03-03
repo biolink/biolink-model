@@ -93,7 +93,7 @@ URI: [http://bioentity.io/vocab/ExonToTranscriptRelationship](http://bioentity.i
     * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
  * [subject taxon closure label](subject_taxon_closure_label.html)
     * _The label for the taxon class or ancestor class for the subject_
-    * __range__: label*
+    * __range__: label type*
     * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
  * [object taxon](object_taxon.html)
     * _the taxonomic class of the entity in the object slot_
@@ -108,5 +108,5 @@ URI: [http://bioentity.io/vocab/ExonToTranscriptRelationship](http://bioentity.i
     * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
  * [object taxon closure label](object_taxon_closure_label.html)
     * _The label for the taxon class or ancestor class for the object_
-    * __range__: [ontology class](OntologyClass.html)*
+    * __range__: label type*
     * inherited from: [taxon closure mixin](TaxonClosureMixin.html)

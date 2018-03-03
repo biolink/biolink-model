@@ -17,6 +17,8 @@ URI: [http://bioentity.io/vocab/Genotype](http://bioentity.io/vocab/Genotype)
 
 ## Children
 
+ *  child: [allele](Allele.html)
+ *  child: [allele](Allele.html)
 
 ## Used in
 

@@ -38,7 +38,7 @@ URI: [http://bioentity.io/vocab/TaxonClosureMixin](http://bioentity.io/vocab/Tax
     * __Local__
  * [subject taxon closure label](subject_taxon_closure_label.html)
     * _The label for the taxon class or ancestor class for the subject_
-    * __range__: label*
+    * __range__: label type*
     * __Local__
  * [object taxon](object_taxon.html)
     * _the taxonomic class of the entity in the object slot_
@@ -53,5 +53,5 @@ URI: [http://bioentity.io/vocab/TaxonClosureMixin](http://bioentity.io/vocab/Tax
     * __Local__
  * [object taxon closure label](object_taxon_closure_label.html)
     * _The label for the taxon class or ancestor class for the object_
-    * __range__: [ontology class](OntologyClass.html)*
+    * __range__: label type*
     * __Local__

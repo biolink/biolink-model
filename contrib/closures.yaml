@@ -21,7 +21,7 @@ slots:
     description: >-
       parent field for fields used for storing the label of the closure concept.
       See also: closure concept field
-    range: label
+    range: label type
     
   - name: taxon closure slot
     is_a: closure concept slot
@@ -33,7 +33,7 @@ slots:
     is_a: closure label slot
     description: >-
       label for taxon closure slot
-    range: label
+    range: label type
     
   - name: subject taxon closure
     is_a: taxon closure slot
@@ -60,7 +60,6 @@ slots:
     is_a: taxon closure label slot
     description: >-
       The label for the taxon class or ancestor class for the object
-    range: ontology class
     path: object/in_taxon*/label
     
   - name: isa partof closure
@@ -74,6 +73,10 @@ slots:
       or in GO queries (in any of the three branches of GO)
     path: "object/{rdfs:subClassOf|BFO:0000050}*"
     
+  - name: isa partof closure label
+    is_a: closure label slot
+    path: "object/{rdfs:subClassOf|BFO:0000050}*/label"
+
   - name: regulates closure
     is_a: closure concept slot
     range: relationship type
@@ -83,12 +86,12 @@ slots:
       This is typically used as a query constraint and for faceting where the range is
       a biological process
     path: "object/{rdfs:subClassOf|BFO:0000050}*"
-    
-  - name: isa partof closure label
-    is_a: closure label slot
-    range: ontology class
-    path: "object/{rdfs:subClassOf|BFO:0000050}*/label"
 
+  - name: regulates closure label
+    is_a: closure label slot
+    path: "object/{rdfs:subClassOf|BFO:0000050|RO:0002211}*/label"
+    
+    
   - name: evidence object closure
     is_a: closure concept slot
     range: evidence type

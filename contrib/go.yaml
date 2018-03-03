@@ -2,9 +2,12 @@ id: "http://bioentity.io/json-schema/biolink/contrib/go.json"
 name: go biolink extensions
 imports:
   - "biolink-model"
+  - "contrib/core"  
   - "contrib/class_extensions"  
   - "contrib/closures"  
   - "contrib/taxon"  
+whitelist:
+  - gene to go term association
 description: GO specific extensions
 
 slots:
@@ -13,6 +16,15 @@ slots:
     domain: molecular activity
     range: gene or gene product
 
+  - name: part of
+    
+  - name: occurs in
+    
+  - name: upstream causal relationship
+    
+  - name: downstream causal relationship
+
+classes:
 
   - name: has genomic name
     description: >-
@@ -24,10 +36,12 @@ slots:
     slots:
       - full name
       - systematic synonym
-
-classes:
-
+  
   - name: extensions and evidence association mixin
+    description: >-
+      An injected mixing that adds additional fields to association objects.
+      This is a mixture of (a) closures for denormalization (b) evidence
+      fields specific to the GO model.
     abstract: true
     mixin: true
     mixins:
@@ -35,9 +49,11 @@ classes:
     apply_to: association
     slots:    
       - object extensions
-      - has evidence graph
       - has evidence type
       - has evidence
+    slot_usage:
+      - name: subject
+        local_name: bioentity
 
   - name: taxon closure mixin
     mixin: true
@@ -73,9 +89,24 @@ classes:
   ## GOCAM
   ## ------
 
+  ## models
+  
+  - name: causal activity model
+    aliases: ['GO-CAM']
+    is_a: named graph
+    description: >-
+      A graph-based representation of how a collection of gene products operate together to achieve a biological objective.
+      A GO-CAM model is a specialization of a named graph containing instances of GO molecular functions, entities, processes,
+      cellular components etc, connected via causal relationships.
+    slot_usage:
+      - name: title
+        description: >-
+          title describing the contents of the GO-CAM
+  
   ## entity-centric
   
   - name: molecular event
+    aliases: ['annoton']
     schema: gocam
     slots:
       - enabled by

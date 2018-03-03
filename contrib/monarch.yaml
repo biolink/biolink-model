@@ -2,6 +2,7 @@ id: "http://bioentity.io/json-schema/biolink/contrib/monarch.json"
 name: monarch biolink extensions
 imports:
   - "biolink-model"
+  - "contrib/core"  
   - "contrib/class_extensions"  
   - "contrib/closures"  
   - "contrib/taxon"  
@@ -29,27 +30,6 @@ slots:
     multivalued: true
     description: >-
       Alternate labels for an entity
-
-  - name: has evidence object
-    is_a: association slot
-    range: named thing
-    description: >-
-      connects an association to an supporting entity. May be a gene/product (if evidence is homology or protein interaction).
-      Same as WITH/FROM column in GO/GAFs
-
-  - name: has evidence type
-    is_a: association slot
-    range: evidence type
-    path: evidence/type
-    description: >-
-      connects an association to the class of evidence used
-
-  - name: has evidence graph
-    is_a: association slot
-    range: evidence graph
-    path: evidence/type
-    description: >-
-      connects an association to a graph object including a path from subject to object
   
 classes:
 
@@ -57,6 +37,10 @@ classes:
     is_a: population of individual organisms
   
   - name: extensions and evidence association mixin
+    description: >-
+      An injected mixing that adds additional fields to association objects.
+      This is a mixture of (a) closures for denormalization (b) evidence
+      fields specific to the monarch model.
     abstract: true
     mixin: true
     mixins:

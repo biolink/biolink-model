@@ -22,23 +22,7 @@ URI: [http://bioentity.io/vocab/LifeStage](http://bioentity.io/vocab/LifeStage)
 
 ## Used in
 
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
- *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [life stage](LifeStage.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
- *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [life stage](LifeStage.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [life stage](LifeStage.html)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
- *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [life stage](LifeStage.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
- *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [life stage](LifeStage.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [life stage](LifeStage.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [life stage](LifeStage.html)
 
 ## Fields

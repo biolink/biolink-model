@@ -199,11 +199,24 @@ slots:
     is_a: association slot
     range: severity value
 
+  - name: sex qualifier
+    description: >-
+      a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+    is_a: association slot
+    range: biological sex
+
   - name: onset qualifier
     description: >-
       a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
     is_a: association slot
-    range: life stage
+    range: onset
+
+  - name: clinical modifier qualifier
+    description: >-
+      Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
+      with respect to severity, laterality, age of onset, and other aspects
+    is_a: association slot
+    range: clinical modifier
 
   - name: publications
     singular_name: publication
@@ -270,6 +283,22 @@ classes:
   ## THINGS
   ## ------
 
+  - name: biological sex
+    subclass_of: "PATO:0000047"
+    is_a: attribute
+
+  - name: phenotypic sex
+    description: >-
+      An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
+    subclass_of: "PATO:0001894"
+    is_a: biological sex
+
+  - name: genotypic sex
+    description: >-
+      An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
+    subclass_of: "PATO:0020000"
+    is_a: biological sex
+
   - name: severity value
     description: >-
       describes the severity of a phenotypic feature or disease
@@ -278,6 +307,20 @@ classes:
   - name: frequency value
     description: >-
       describes the frequency of occurrence of an event or condition
+    is_a: attribute
+  
+  - name: clinical modifier
+    description: >-
+      Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
+      with respect to severity, laterality, age of onset, and other aspects
+    subclass_of: "HP:0012823"
+    is_a: attribute
+  
+  - name: onset
+    description: >-
+      The age group in which manifestations appear
+    mappings:
+      - "HP:0003674"
     is_a: attribute
   
   - name: named thing
@@ -1016,6 +1059,8 @@ classes:
         values_from: ['upheno', 'hp', 'mp', 'wbphenotypic feature']
         subclass_of: UPHENO:0000001
         examples:
+          - value: HP:0002487
+            description: Hyperkinesis
           - value: WBPhenotype:0000180 
             description: axon morphology variant
           - value: MP:0001569
@@ -1024,6 +1069,7 @@ classes:
       - frequency qualifier
       - severity qualifier
       - onset qualifier
+      - sex qualifier
 
   - name: entity to disease association
     abstract: true

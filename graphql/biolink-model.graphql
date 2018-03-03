@@ -1,10 +1,25 @@
 type RelationshipType {
 }
 
+type BiologicalSex {
+}
+
+type PhenotypicSex {
+}
+
+type GenotypicSex {
+}
+
 type SeverityValue {
 }
 
 type FrequencyValue {
+}
+
+type ClinicalModifier {
+}
+
+type Onset {
 }
 
 type NamedThing {
@@ -12,18 +27,18 @@ type NamedThing {
   label: String
 }
 
-type BiologicalEntity {
+interface BiologicalEntity {
   id: String!
   label: String
 }
 
-type OntologyClass {
+interface OntologyClass {
 }
 
-type GeneOntologyClass {
+interface GeneOntologyClass {
 }
 
-type ThingWithTaxon {
+interface ThingWithTaxon {
   inTaxon: OrganismTaxon
 }
 
@@ -32,7 +47,7 @@ type OrganismTaxon implements OntologyClass {
   label: String
 }
 
-type OrganismalEntity {
+interface OrganismalEntity {
   id: String!
   label: String
 }
@@ -50,12 +65,6 @@ type Case {
 }
 
 type PopulationOfIndividualOrganisms implements ThingWithTaxon {
-  id: String
-  label: String
-  inTaxon: OrganismTaxon
-}
-
-type Cohort {
   id: String
   label: String
   inTaxon: OrganismTaxon
@@ -90,7 +99,12 @@ type Environment {
   label: String
 }
 
-type InformationContentEntity {
+interface InformationContentEntity {
+  id: String!
+  label: String
+}
+
+type ConfidenceLevel {
   id: String!
   label: String
 }
@@ -105,7 +119,7 @@ type Publication {
   label: String
 }
 
-type AdministrativeEntity {
+interface AdministrativeEntity {
 }
 
 type Provider {
@@ -246,7 +260,7 @@ type MacromolecularComplex {
   inTaxon: OrganismTaxon
 }
 
-type GeneGrouping {
+interface GeneGrouping {
 }
 
 type GeneFamily implements GeneGrouping {
@@ -259,6 +273,14 @@ type Zygosity {
 }
 
 type Genotype {
+  hasZygosity: Zygosity
+  id: String
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type Allele {
+  hasGene: Gene
   hasZygosity: Zygosity
   id: String
   label: String
@@ -299,7 +321,7 @@ type GeographicLocationAtTime {
   label: String
 }
 
-type Association {
+interface Association {
   associationType: OntologyClass
   subject: String!
   negated: String
@@ -351,7 +373,7 @@ type GenotypeToVariantAssociation {
   label: String
 }
 
-type GeneToGeneAssociation {
+interface GeneToGeneAssociation {
   associationType: OntologyClass
   subject: GeneOrGeneProduct!
   negated: String
@@ -377,7 +399,7 @@ type GeneToGeneHomologyAssociation {
   label: String
 }
 
-type MolecularInteraction {
+interface MolecularInteraction {
   associationType: OntologyClass
   subject: String!
   negated: String
@@ -403,7 +425,7 @@ type PairwiseGeneOrProteinInteractionAssociation implements MolecularInteraction
   label: String
 }
 
-type ChemicalToThingAssociation {
+interface ChemicalToThingAssociation {
   associationType: OntologyClass
   subject: ChemicalSubstance!
   negated: String
@@ -416,7 +438,7 @@ type ChemicalToThingAssociation {
   label: String
 }
 
-type CaseToThingAssociation {
+interface CaseToThingAssociation {
   associationType: OntologyClass
   subject: Case!
   negated: String
@@ -481,7 +503,7 @@ type ChemicalToGeneAssociation implements ChemicalToThingAssociation {
   label: String
 }
 
-type BiosampleToThingAssociation {
+interface BiosampleToThingAssociation {
   associationType: OntologyClass
   subject: Biosample!
   negated: String
@@ -507,10 +529,11 @@ type BiosampleToDiseaseOrPhenotypicFeatureAssociation implements BiosampleToThin
   label: String
 }
 
-type EntityToPhenotypicFeatureAssociation {
+interface EntityToPhenotypicFeatureAssociation {
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
-  onsetQualifier: LifeStage
+  onsetQualifier: Onset
+  sexQualifier: BiologicalSex
   associationType: OntologyClass
   subject: String!
   negated: String
@@ -523,13 +546,13 @@ type EntityToPhenotypicFeatureAssociation {
   label: String
 }
 
-type EntityToDiseaseAssociation {
+interface EntityToDiseaseAssociation {
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
-  onsetQualifier: LifeStage
+  onsetQualifier: Onset
 }
 
-type ThingToDiseaseOrPhenotypicFeatureAssociation {
+interface ThingToDiseaseOrPhenotypicFeatureAssociation {
   associationType: OntologyClass
   subject: String!
   negated: String
@@ -542,7 +565,7 @@ type ThingToDiseaseOrPhenotypicFeatureAssociation {
   label: String
 }
 
-type DiseaseToThingAssociation {
+interface DiseaseToThingAssociation {
   associationType: OntologyClass
   subject: Disease!
   negated: String
@@ -568,7 +591,8 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
   label: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
-  onsetQualifier: LifeStage
+  onsetQualifier: Onset
+  sexQualifier: BiologicalSex
 }
 
 type EnvironmentToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation {
@@ -584,7 +608,8 @@ type EnvironmentToPhenotypicFeatureAssociation implements EntityToPhenotypicFeat
   label: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
-  onsetQualifier: LifeStage
+  onsetQualifier: Onset
+  sexQualifier: BiologicalSex
 }
 
 type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, DiseaseToThingAssociation {
@@ -600,7 +625,8 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
   label: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
-  onsetQualifier: LifeStage
+  onsetQualifier: Onset
+  sexQualifier: BiologicalSex
 }
 
 type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, CaseToThingAssociation {
@@ -616,10 +642,11 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
   label: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
-  onsetQualifier: LifeStage
+  onsetQualifier: Onset
+  sexQualifier: BiologicalSex
 }
 
-type GeneToThingAssociation {
+interface GeneToThingAssociation {
   associationType: OntologyClass
   subject: GeneOrGeneProduct!
   negated: String
@@ -645,7 +672,8 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
   label: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
-  onsetQualifier: LifeStage
+  onsetQualifier: Onset
+  sexQualifier: BiologicalSex
 }
 
 type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThingAssociation {
@@ -661,10 +689,10 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThing
   label: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
-  onsetQualifier: LifeStage
+  onsetQualifier: Onset
 }
 
-type ModelToDiseaseMixin {
+interface ModelToDiseaseMixin {
 }
 
 type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDiseaseAssociation {
@@ -680,7 +708,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDi
   label: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
-  onsetQualifier: LifeStage
+  onsetQualifier: Onset
 }
 
 type GeneHasVariantThatContributesToDiseaseAssociation {
@@ -696,10 +724,10 @@ type GeneHasVariantThatContributesToDiseaseAssociation {
   label: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
-  onsetQualifier: LifeStage
+  onsetQualifier: Onset
 }
 
-type GenotypeToThingAssociation {
+interface GenotypeToThingAssociation {
   associationType: OntologyClass
   subject: Genotype!
   negated: String
@@ -727,7 +755,7 @@ type GeneToExpressionSiteAssociation {
   label: String
 }
 
-type SequenceVariantModulatesTreatmentAssociation {
+interface SequenceVariantModulatesTreatmentAssociation {
   associationType: OntologyClass
   subject: SequenceVariant!
   negated: String
