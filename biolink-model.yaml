@@ -387,12 +387,16 @@ classes:
     mixins:
       - thing with taxon
     is_a: organismal entity
+    mappings:
+      - SIO:001061
       
   - name: biosample
     aliases: ['biospecimen', 'sample']
     mixins:
       - thing with taxon
     is_a: organismal entity
+    mappings:
+      - SIO:001050
       
   - name: disease or phenotypic feature
     aliases: ['phenome']
@@ -410,12 +414,14 @@ classes:
     is_a: disease or phenotypic feature
     mappings:
       - "MONDO:0000001"
+      - SIO:010299
       
   - name: phenotypic feature
     aliases: ['sign', 'symptom', 'phenotype', 'trait']
     is_a: disease or phenotypic feature
     mappings:
       - "UPHENO:0000001"
+      - SIO:010056
       
   - name: environment
     aliases: ['environment', 'exposure', 'experimental condition']
@@ -423,7 +429,9 @@ classes:
     description: >-
       A feature of the environment of an organism that influences one or more phenotypic features
       of that organism, potentially mediated by genes
-      
+    mappings:
+      - SIO:000955
+
   - name: information content entity
     aliases: ['information', 'information artefact', 'information entity']
     abstract: true
@@ -477,6 +485,10 @@ classes:
       - thing with taxon
     aliases: ['bioentity']
     description: "A gene, gene product, small molecule or macromolecule (including protein complex)"
+    comment: >-
+      Check SIO mapping - also mapped to chemical substance.
+    mappings:
+      - SIO:010004
 
   - name: chemical substance
     is_a: molecular entity
@@ -499,6 +511,8 @@ classes:
     subclass_of: UBERON:0001062
     description: >-
       A subcellular location, cell type or gross anatomical part
+    mappings:
+      - SIO:010046
 
   - name: life stage
     is_a: organismal entity
@@ -545,23 +559,31 @@ classes:
     is_a: genomic entity
     description: >-
       A genome is the sum of genetic material within a cell or virion.
-    mappings: ['SO:0001026']
+    mappings:
+      - SO:0001026
+      - SIO:000984
 
   - name: transcript
     is_a: genomic entity
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase
-    mappings: ['SO:0000673']
+    mappings:
+      - SO:0000673
+      - SIO:010450
 
   - name: exon
     is_a: genomic entity
     description: >-
       A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
-    mappings: ['SO:0000147']
+    mappings:
+      - SO:0000147
+      - SIO:010445
 
   - name: coding sequence
     is_a: genomic entity
-    mappings: ['SO:0000316']
+    mappings:
+      - SO:0000316
+      - SIO:001390
       
   - name: gene or gene product
     is_a: genomic entity
@@ -613,6 +635,7 @@ classes:
     is_a: gene product
     mappings:
       - "CHEBI:33697"
+      - SIO:010450
     id_prefixes:
       - RNAcentral
     
@@ -620,6 +643,10 @@ classes:
     is_a: RNA product
     id_prefixes:
       - RNAcentral
+      - NCBIGene
+      - ENSEMBL
+    mappings:
+      - SIO:001235
       
   - name: microRNA
     is_a: noncoding RNA product
@@ -627,6 +654,7 @@ classes:
       - "SO:0000276"
     id_prefixes:
       - MIR
+      - SIO:001397
         
   - name: macromolecular complex
     is_a: molecular entity
@@ -646,12 +674,14 @@ classes:
     is_a: molecular entity
     mappings:
       - "NCIT:C20130"
+      - SIO:001380
     mixins:
       - gene grouping
     description: >-
       any grouping of multiple genes or gene products related by common descent
     id_prefixes:
       - PANTHER
+      
 
   - name: zygosity
     is_a: attribute
@@ -668,6 +698,7 @@ classes:
       - has zygosity
     mapping:
       - "GENO:0000536"
+      - SIO:001079
 
   - name: allele
     is_a: genotype
@@ -688,6 +719,7 @@ classes:
             description: ti282a allele from ZFIN
     mapping:
       - "GENO:0000512"
+      - SIO:010277
 
   - name: sequence variant
     aliases: ['allele']
@@ -711,6 +743,7 @@ classes:
         multivalued: true
     mappings:
       - "ECTO:0000509"
+      - SIO:001005
 
   - name: treatment
     aliases: ['medical action']
@@ -730,6 +763,7 @@ classes:
         required: true
     mappings:
       - "OGMS:0000090"
+      - SIO:001398
 
   - name: geographic location
     is_a: planetary entity
@@ -1520,9 +1554,14 @@ classes:
       One or more causally connected executions of molecular functions
     mappings:
       - "GO:0008150"
+      - SIO:000006
 
   - name: pathway
     is_a: biological process
+    mappings:
+      - GO:0007165
+      - SIO:010526
+      - PW:0000001
       
   - name: cellular component
     is_a: anatomical entity
@@ -1530,6 +1569,7 @@ classes:
       A location in or around a cell
     mappings:
       - "GO:0005575"
+      - SIO:001400
       
   - name: cell
     is_a: anatomical entity
@@ -1540,5 +1580,7 @@ classes:
   - name: gross anatomical structure
     aliases: ['tissue', 'organ']
     is_a: anatomical entity
+    mappings:
+      - SIO:010046
       
   
