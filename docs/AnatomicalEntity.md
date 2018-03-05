@@ -10,6 +10,7 @@ A subcellular location, cell type or gross anatomical part
 URI: [http://bioentity.io/vocab/AnatomicalEntity](http://bioentity.io/vocab/AnatomicalEntity)
 ## Mappings
 
+ * [SIO:010046](http://purl.obolibrary.org/obo/SIO_010046)
  * [UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062)
 
 ## Inheritance
@@ -25,6 +26,7 @@ URI: [http://bioentity.io/vocab/AnatomicalEntity](http://bioentity.io/vocab/Anat
 
 ## Used in
 
+ *  class: [disease or phenotypic feature association to location association](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
  *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
  *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)

@@ -10,6 +10,8 @@ An information content entity that describes a genome by specifying the total va
 URI: [http://bioentity.io/vocab/Genotype](http://bioentity.io/vocab/Genotype)
 ## Mappings
 
+ * [GENO:0000536](http://purl.obolibrary.org/obo/GENO_0000536)
+ * [SIO:001079](http://purl.obolibrary.org/obo/SIO_001079)
 
 ## Inheritance
 

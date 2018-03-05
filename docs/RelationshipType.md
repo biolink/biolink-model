@@ -36,6 +36,8 @@ URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/Rela
  *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [disease or phenotypic feature association to thing association](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [disease or phenotypic feature association to location association](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)

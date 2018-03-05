@@ -10,6 +10,7 @@ None
 URI: [http://bioentity.io/vocab/NoncodingRnaProduct](http://bioentity.io/vocab/NoncodingRnaProduct)
 ## Mappings
 
+ * [SIO:001235](http://purl.obolibrary.org/obo/SIO_001235)
 
 ## Inheritance
 

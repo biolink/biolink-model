@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/BiologicalProcess](http://bioentity.io/vocab/Bio
 ## Mappings
 
  * [GO:0008150](http://purl.obolibrary.org/obo/GO_0008150)
+ * [SIO:000006](http://purl.obolibrary.org/obo/SIO_000006)
 
 ## Inheritance
 

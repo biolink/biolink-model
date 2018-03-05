@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/PhenotypicFeature](http://bioentity.io/vocab/Phe
 ## Mappings
 
  * [UPHENO:0000001](http://purl.obolibrary.org/obo/UPHENO_0000001)
+ * [SIO:010056](http://purl.obolibrary.org/obo/SIO_010056)
 
 ## Inheritance
 

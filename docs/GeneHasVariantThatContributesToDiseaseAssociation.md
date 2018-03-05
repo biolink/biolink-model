@@ -21,6 +21,10 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
 
 ## Fields
 
+ * [sequence variant qualifier](sequence_variant_qualifier.html)
+    * _a qualifier used in an association where the variant_
+    * __range__: [sequence variant](SequenceVariant.html)
+    * __Local__
  * [association type](association_type.html)
     * _connects an association to the type of association (e.g. gene to phenotype)_
     * __range__: [ontology class](OntologyClass.html)

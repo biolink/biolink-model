@@ -10,6 +10,7 @@ None
 URI: [http://bioentity.io/vocab/GrossAnatomicalStructure](http://bioentity.io/vocab/GrossAnatomicalStructure)
 ## Mappings
 
+ * [SIO:010046](http://purl.obolibrary.org/obo/SIO_010046)
 
 ## Inheritance
 
