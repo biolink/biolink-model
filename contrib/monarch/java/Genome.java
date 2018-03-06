@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * Genome
  * <p>
- * null
+ * A genome is the sum of genetic material within a cell or virion.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

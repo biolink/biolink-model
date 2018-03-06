@@ -13,7 +13,7 @@ URI: [http://bioentity.io/vocab/onset_qualifier](http://bioentity.io/vocab/onset
 
 ## Domain and Range
 
- -> [life stage](LifeStage.html)
+ -> [onset](Onset.html)
 
 ## Inheritance
 
@@ -32,6 +32,8 @@ URI: [http://bioentity.io/vocab/onset_qualifier](http://bioentity.io/vocab/onset
  *  usage: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html)
  *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
  *  usage: [gene to disease association](GeneToDiseaseAssociation.html)
+ *  usage: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
+ *  usage: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html)
  *  usage: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
  *  usage: [entity to disease association](EntityToDiseaseAssociation.html)
  *  usage: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html)
@@ -40,3 +42,5 @@ URI: [http://bioentity.io/vocab/onset_qualifier](http://bioentity.io/vocab/onset
  *  usage: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html)
  *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
  *  usage: [gene to disease association](GeneToDiseaseAssociation.html)
+ *  usage: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
+ *  usage: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html)

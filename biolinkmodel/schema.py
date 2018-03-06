@@ -11,6 +11,33 @@ class RelationshipTypeSchema(Schema):
     def make_object(self, data):
         RelationshipType(**data)
 
+class BiologicalSexSchema(AttributeSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        BiologicalSex(**data)
+
+class PhenotypicSexSchema(BiologicalSexSchema):
+    """
+    An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
+    """
+
+    @post_load
+    def make_object(self, data):
+        PhenotypicSex(**data)
+
+class GenotypicSexSchema(BiologicalSexSchema):
+    """
+    An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
+    """
+
+    @post_load
+    def make_object(self, data):
+        GenotypicSex(**data)
+
 class SeverityValueSchema(AttributeSchema):
     """
     describes the severity of a phenotypic feature or disease
@@ -28,6 +55,24 @@ class FrequencyValueSchema(AttributeSchema):
     @post_load
     def make_object(self, data):
         FrequencyValue(**data)
+
+class ClinicalModifierSchema(AttributeSchema):
+    """
+    Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+    """
+
+    @post_load
+    def make_object(self, data):
+        ClinicalModifier(**data)
+
+class OnsetSchema(AttributeSchema):
+    """
+    The age group in which manifestations appear
+    """
+
+    @post_load
+    def make_object(self, data):
+        Onset(**data)
 
 class NamedThingSchema(Schema):
     """
@@ -124,15 +169,6 @@ class PopulationOfIndividualOrganismsSchema(OrganismalEntitySchema):
     def make_object(self, data):
         PopulationOfIndividualOrganisms(**data)
 
-class CohortSchema(PopulationOfIndividualOrganismsSchema):
-    """
-    None
-    """
-
-    @post_load
-    def make_object(self, data):
-        Cohort(**data)
-
 class BiosampleSchema(OrganismalEntitySchema):
     """
     None
@@ -145,7 +181,7 @@ class BiosampleSchema(OrganismalEntitySchema):
 
 class DiseaseOrPhenotypicFeatureSchema(BiologicalEntitySchema):
     """
-    None
+    Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
     """
     in_taxon = fields.Str()
 
@@ -188,6 +224,15 @@ class InformationContentEntitySchema(NamedThingSchema):
     @post_load
     def make_object(self, data):
         InformationContentEntity(**data)
+
+class ConfidenceLevelSchema(InformationContentEntitySchema):
+    """
+    Level of confidence in a statement
+    """
+
+    @post_load
+    def make_object(self, data):
+        ConfidenceLevel(**data)
 
 class EvidenceTypeSchema(InformationContentEntitySchema):
     """
@@ -338,7 +383,7 @@ class GenomicEntitySchema(MolecularEntitySchema):
 
 class GenomeSchema(GenomicEntitySchema):
     """
-    None
+    A genome is the sum of genetic material within a cell or virion.
     """
 
     @post_load
@@ -347,7 +392,7 @@ class GenomeSchema(GenomicEntitySchema):
 
 class TranscriptSchema(GenomicEntitySchema):
     """
-    None
+    An RNA synthesized on a DNA or RNA template by an RNA polymerase
     """
 
     @post_load
@@ -356,7 +401,7 @@ class TranscriptSchema(GenomicEntitySchema):
 
 class ExonSchema(GenomicEntitySchema):
     """
-    None
+    A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
     """
 
     @post_load
@@ -392,7 +437,7 @@ class GeneSchema(GeneOrGeneProductSchema):
 
 class GeneProductSchema(GeneOrGeneProductSchema):
     """
-    None
+    The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
     """
 
     @post_load
@@ -480,6 +525,16 @@ class GenotypeSchema(GenomicEntitySchema):
     @post_load
     def make_object(self, data):
         Genotype(**data)
+
+class AlleleSchema(GenotypeSchema):
+    """
+    A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus
+    """
+    has_gene = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        Allele(**data)
 
 class SequenceVariantSchema(GenomicEntitySchema):
     """
@@ -755,6 +810,7 @@ class EntityToPhenotypicFeatureAssociationSchema(AssociationSchema):
     frequency_qualifier = fields.Str()
     severity_qualifier = fields.Str()
     onset_qualifier = fields.Str()
+    sex_qualifier = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -797,6 +853,7 @@ class GenotypeToPhenotypicFeatureAssociationSchema(AssociationSchema):
     frequency_qualifier = fields.Str()
     severity_qualifier = fields.Str()
     onset_qualifier = fields.Str()
+    sex_qualifier = fields.Str()
     association_type = fields.Str()
     subject = fields.Str()
     negated = fields.Str()
@@ -819,6 +876,7 @@ class EnvironmentToPhenotypicFeatureAssociationSchema(AssociationSchema):
     frequency_qualifier = fields.Str()
     severity_qualifier = fields.Str()
     onset_qualifier = fields.Str()
+    sex_qualifier = fields.Str()
     association_type = fields.Str()
     subject = fields.Str()
     negated = fields.Str()
@@ -841,6 +899,7 @@ class DiseaseToPhenotypicFeatureAssociationSchema(AssociationSchema):
     frequency_qualifier = fields.Str()
     severity_qualifier = fields.Str()
     onset_qualifier = fields.Str()
+    sex_qualifier = fields.Str()
     association_type = fields.Str()
     subject = fields.Str()
     negated = fields.Str()
@@ -863,6 +922,7 @@ class CaseToPhenotypicFeatureAssociationSchema(AssociationSchema):
     frequency_qualifier = fields.Str()
     severity_qualifier = fields.Str()
     onset_qualifier = fields.Str()
+    sex_qualifier = fields.Str()
     association_type = fields.Str()
     subject = fields.Str()
     negated = fields.Str()
@@ -894,6 +954,7 @@ class GeneToPhenotypicFeatureAssociationSchema(AssociationSchema):
     frequency_qualifier = fields.Str()
     severity_qualifier = fields.Str()
     onset_qualifier = fields.Str()
+    sex_qualifier = fields.Str()
     association_type = fields.Str()
     subject = fields.Str()
     negated = fields.Str()

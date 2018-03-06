@@ -19,10 +19,6 @@ URI: [http://bioentity.io/vocab/CellularComponent](http://bioentity.io/vocab/Cel
 ## Children
 
 
-## Used in
-
- *  class: [molecular activity to location association](MolecularActivityToLocationAssociation.html) references: [cellular component](CellularComponent.html)
- *  class: [molecular activity to location association](MolecularActivityToLocationAssociation.html) references: [cellular component](CellularComponent.html)
 
 ## Fields
 

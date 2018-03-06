@@ -28,6 +28,8 @@ URI: [http://bioentity.io/vocab/SeverityValue](http://bioentity.io/vocab/Severit
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
+ *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [severity value](SeverityValue.html)
+ *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
  *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
  *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
@@ -36,6 +38,8 @@ URI: [http://bioentity.io/vocab/SeverityValue](http://bioentity.io/vocab/Severit
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
+ *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [severity value](SeverityValue.html)
+ *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
 
 ## Fields
 

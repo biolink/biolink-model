@@ -42,6 +42,7 @@ URI: [http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation](http://bioen
  * [object](object.html)
     * _phenotypic class_
     * __range__: [phenotypic feature](PhenotypicFeature.html) [required]
+    * Example: [HP:0002487](http://purl.obolibrary.org/obo/HP_0002487) Hyperkinesis
     * Example: [WBPhenotype:0000180](http://purl.obolibrary.org/obo/WBPhenotype_0000180) axon morphology variant
     * Example: [MP:0001569](http://purl.obolibrary.org/obo/MP_0001569) abnormal circulating bilirubin level
     * inherited from: [association](Association.html)
@@ -74,5 +75,9 @@ URI: [http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation](http://bioen
     * inherited from: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
  * [onset qualifier](onset_qualifier.html)
     * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * __range__: [life stage](LifeStage.html)
+    * __range__: [onset](Onset.html)
+    * inherited from: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
+ * [sex qualifier](sex_qualifier.html)
+    * _a qualifier used in a phenotypic association to state whether the association is specific to a particular sex._
+    * __range__: [biological sex](BiologicalSex.html)
     * inherited from: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)

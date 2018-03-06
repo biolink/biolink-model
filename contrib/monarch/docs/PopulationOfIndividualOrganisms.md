@@ -19,7 +19,6 @@ URI: [http://bioentity.io/vocab/PopulationOfIndividualOrganisms](http://bioentit
 ## Children
 
  *  child: [cohort](Cohort.html)
- *  child: [cohort](Cohort.html)
 
 
 ## Fields

@@ -22,6 +22,7 @@ URI: [http://bioentity.io/vocab/Zygosity](http://bioentity.io/vocab/Zygosity)
 ## Used in
 
  *  class: [genotype](Genotype.html) references: [zygosity](Zygosity.html)
+ *  class: [allele](Allele.html) references: [zygosity](Zygosity.html)
 
 ## Fields
 

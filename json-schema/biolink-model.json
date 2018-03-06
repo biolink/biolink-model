@@ -14,6 +14,9 @@
             },
             "type": "array"
         },
+        "clinical_modifier_qualifier": {
+            "type": "string"
+        },
         "creation_date": {
             "type": "string"
         },
@@ -35,7 +38,13 @@
         "genome_build": {
             "type": "string"
         },
+        "has_confidence_level": {
+            "type": "string"
+        },
         "has_evidence": {
+            "type": "string"
+        },
+        "has_gene": {
             "type": "string"
         },
         "has_zygosity": {
@@ -95,6 +104,9 @@
         "severity_qualifier": {
             "type": "string"
         },
+        "sex_qualifier": {
+            "type": "string"
+        },
         "stage_qualifier": {
             "type": "string"
         },
@@ -112,6 +124,32 @@
         }
     },
     "properties": {
+        "Allele": {
+            "description": "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus",
+            "properties": {
+                "has_gene": {
+                    "description": "connects and entity to a single gene",
+                    "type": "string"
+                },
+                "has_zygosity": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects a thing to a class representing a taxon",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Allele",
+            "type": "object"
+        },
         "AnatomicalEntity": {
             "description": "A subcellular location, cell type or gross anatomical part",
             "properties": {
@@ -265,21 +303,6 @@
             "title": "Attribute",
             "type": "object"
         },
-        "BiologicalEntity": {
-            "description": null,
-            "properties": {
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "BiologicalEntity",
-            "type": "object"
-        },
         "BiologicalProcess": {
             "description": "One or more causally connected executions of molecular functions",
             "properties": {
@@ -293,6 +316,13 @@
             },
             "required": [],
             "title": "BiologicalProcess",
+            "type": "object"
+        },
+        "BiologicalSex": {
+            "description": null,
+            "properties": {},
+            "required": [],
+            "title": "BiologicalSex",
             "type": "object"
         },
         "Biosample": {
@@ -440,6 +470,10 @@
                 },
                 "severity_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+                    "type": "string"
+                },
+                "sex_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
                 },
                 "subject": {
@@ -697,6 +731,13 @@
             "title": "ClinicalIntervention",
             "type": "object"
         },
+        "ClinicalModifier": {
+            "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
+            "properties": {},
+            "required": [],
+            "title": "ClinicalModifier",
+            "type": "object"
+        },
         "ClinicalTrial": {
             "description": null,
             "properties": {
@@ -731,14 +772,10 @@
             "title": "CodingSequence",
             "type": "object"
         },
-        "Cohort": {
-            "description": null,
+        "ConfidenceLevel": {
+            "description": "Level of confidence in a statement",
             "properties": {
                 "id": {
-                    "type": "string"
-                },
-                "in_taxon": {
-                    "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
                 "label": {
@@ -747,7 +784,7 @@
                 }
             },
             "required": [],
-            "title": "Cohort",
+            "title": "ConfidenceLevel",
             "type": "object"
         },
         "Disease": {
@@ -770,7 +807,7 @@
             "type": "object"
         },
         "DiseaseOrPhenotypicFeature": {
-            "description": null,
+            "description": "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.",
             "properties": {
                 "id": {
                     "type": "string"
@@ -842,6 +879,10 @@
                 },
                 "severity_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+                    "type": "string"
+                },
+                "sex_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
                 },
                 "subject": {
@@ -945,6 +986,10 @@
                     "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
                     "type": "string"
                 },
+                "sex_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+                    "type": "string"
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -1000,7 +1045,7 @@
             "type": "object"
         },
         "Exon": {
-            "description": null,
+            "description": "A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing",
             "properties": {
                 "id": {
                     "type": "string"
@@ -1273,7 +1318,7 @@
             "type": "object"
         },
         "GeneProduct": {
-            "description": null,
+            "description": "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules",
             "properties": {
                 "id": {
                     "type": "string"
@@ -1685,6 +1730,10 @@
                     "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
                     "type": "string"
                 },
+                "sex_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+                    "type": "string"
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -1695,7 +1744,7 @@
             "type": "object"
         },
         "Genome": {
-            "description": null,
+            "description": "A genome is the sum of genetic material within a cell or virion.",
             "properties": {
                 "id": {
                     "type": "string"
@@ -1983,6 +2032,10 @@
                     "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
                     "type": "string"
                 },
+                "sex_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+                    "type": "string"
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -2043,6 +2096,13 @@
             },
             "required": [],
             "title": "GenotypeToVariantAssociation",
+            "type": "object"
+        },
+        "GenotypicSex": {
+            "description": "An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.",
+            "properties": {},
+            "required": [],
+            "title": "GenotypicSex",
             "type": "object"
         },
         "GeographicLocation": {
@@ -2257,6 +2317,13 @@
             "title": "Occurrent",
             "type": "object"
         },
+        "Onset": {
+            "description": "The age group in which manifestations appear",
+            "properties": {},
+            "required": [],
+            "title": "Onset",
+            "type": "object"
+        },
         "OntologyClass": {
             "description": "a concept or class in an ontology, vocabulary or thesaurus",
             "properties": {},
@@ -2364,6 +2431,13 @@
             },
             "required": [],
             "title": "PhenotypicFeature",
+            "type": "object"
+        },
+        "PhenotypicSex": {
+            "description": "An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.",
+            "properties": {},
+            "required": [],
+            "title": "PhenotypicSex",
             "type": "object"
         },
         "PlanetaryEntity": {
@@ -2600,7 +2674,7 @@
             "type": "object"
         },
         "Transcript": {
-            "description": null,
+            "description": "An RNA synthesized on a DNA or RNA template by an RNA polymerase",
             "properties": {
                 "id": {
                     "type": "string"

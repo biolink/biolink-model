@@ -13,7 +13,7 @@ URI: [http://bioentity.io/vocab/object_taxon_closure_label](http://bioentity.io/
 
 ## Domain and Range
 
- -> [ontology class](OntologyClass.html)
+ -> 
 
 ## Inheritance
 
@@ -43,7 +43,6 @@ URI: [http://bioentity.io/vocab/object_taxon_closure_label](http://bioentity.io/
  *  usage: [biosample to thing association](BiosampleToThingAssociation.html)
  *  usage: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html)
  *  usage: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
- *  usage: [entity to disease association](EntityToDiseaseAssociation.html)
  *  usage: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html)
  *  usage: [disease to thing association](DiseaseToThingAssociation.html)
  *  usage: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html)
@@ -53,6 +52,8 @@ URI: [http://bioentity.io/vocab/object_taxon_closure_label](http://bioentity.io/
  *  usage: [gene to thing association](GeneToThingAssociation.html)
  *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
  *  usage: [gene to disease association](GeneToDiseaseAssociation.html)
+ *  usage: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
+ *  usage: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html)
  *  usage: [genotype to thing association](GenotypeToThingAssociation.html)
  *  usage: [gene to expression site association](GeneToExpressionSiteAssociation.html)
  *  usage: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html)
@@ -64,10 +65,6 @@ URI: [http://bioentity.io/vocab/object_taxon_closure_label](http://bioentity.io/
  *  usage: [exon to transcript relationship](ExonToTranscriptRelationship.html)
  *  usage: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html)
  *  usage: [gene regulatory relationship](GeneRegulatoryRelationship.html)
- *  usage: [molecular activity to gene product association](MolecularActivityToGeneProductAssociation.html)
- *  usage: [molecular activity to location association](MolecularActivityToLocationAssociation.html)
- *  usage: [molecular activity to biological process association](MolecularActivityToBiologicalProcessAssociation.html)
- *  usage: [molecular activity to downstream molecular activity association](MolecularActivityToDownstreamMolecularActivityAssociation.html)
  *  usage: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html)
  *  usage: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html)
  *  usage: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html)
@@ -86,7 +83,6 @@ URI: [http://bioentity.io/vocab/object_taxon_closure_label](http://bioentity.io/
  *  usage: [biosample to thing association](BiosampleToThingAssociation.html)
  *  usage: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html)
  *  usage: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
- *  usage: [entity to disease association](EntityToDiseaseAssociation.html)
  *  usage: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html)
  *  usage: [disease to thing association](DiseaseToThingAssociation.html)
  *  usage: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html)
@@ -96,6 +92,8 @@ URI: [http://bioentity.io/vocab/object_taxon_closure_label](http://bioentity.io/
  *  usage: [gene to thing association](GeneToThingAssociation.html)
  *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
  *  usage: [gene to disease association](GeneToDiseaseAssociation.html)
+ *  usage: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
+ *  usage: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html)
  *  usage: [genotype to thing association](GenotypeToThingAssociation.html)
  *  usage: [gene to expression site association](GeneToExpressionSiteAssociation.html)
  *  usage: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html)
@@ -107,9 +105,5 @@ URI: [http://bioentity.io/vocab/object_taxon_closure_label](http://bioentity.io/
  *  usage: [exon to transcript relationship](ExonToTranscriptRelationship.html)
  *  usage: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html)
  *  usage: [gene regulatory relationship](GeneRegulatoryRelationship.html)
- *  usage: [molecular activity to gene product association](MolecularActivityToGeneProductAssociation.html)
- *  usage: [molecular activity to location association](MolecularActivityToLocationAssociation.html)
- *  usage: [molecular activity to biological process association](MolecularActivityToBiologicalProcessAssociation.html)
- *  usage: [molecular activity to downstream molecular activity association](MolecularActivityToDownstreamMolecularActivityAssociation.html)
  *  usage: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html)
  *  usage: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html)

@@ -14,6 +14,9 @@
             },
             "type": "array"
         },
+        "clinical_modifier_qualifier": {
+            "type": "string"
+        },
         "closure_concept_slot": {
             "items": {
                 "type": "string"
@@ -56,6 +59,15 @@
         "genome_build": {
             "type": "string"
         },
+        "has_alternate_identifier": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "has_confidence_level": {
+            "type": "string"
+        },
         "has_evidence": {
             "type": "string"
         },
@@ -67,6 +79,21 @@
         },
         "has_evidence_type": {
             "type": "string"
+        },
+        "has_gene": {
+            "type": "string"
+        },
+        "has_synonym": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "has_xref": {
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
         },
         "has_zygosity": {
             "type": "string"
@@ -143,10 +170,16 @@
         "regulates_closure": {
             "type": "string"
         },
+        "regulates_closure_label": {
+            "type": "string"
+        },
         "relation": {
             "type": "string"
         },
         "severity_qualifier": {
+            "type": "string"
+        },
+        "sex_qualifier": {
             "type": "string"
         },
         "stage_qualifier": {
@@ -187,9 +220,38 @@
         },
         "timepoint": {
             "type": "string"
+        },
+        "title": {
+            "type": "string"
         }
     },
     "properties": {
+        "Allele": {
+            "description": "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus",
+            "properties": {
+                "has_gene": {
+                    "description": "connects and entity to a single gene",
+                    "type": "string"
+                },
+                "has_zygosity": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects a thing to a class representing a taxon",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Allele",
+            "type": "object"
+        },
         "AnatomicalEntity": {
             "description": "A subcellular location, cell type or gross anatomical part",
             "properties": {
@@ -479,21 +541,6 @@
             "title": "Attribute",
             "type": "object"
         },
-        "BiologicalEntity": {
-            "description": null,
-            "properties": {
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "BiologicalEntity",
-            "type": "object"
-        },
         "BiologicalProcess": {
             "description": "One or more causally connected executions of molecular functions",
             "properties": {
@@ -507,6 +554,13 @@
             },
             "required": [],
             "title": "BiologicalProcess",
+            "type": "object"
+        },
+        "BiologicalSex": {
+            "description": null,
+            "properties": {},
+            "required": [],
+            "title": "BiologicalSex",
             "type": "object"
         },
         "Biosample": {
@@ -762,6 +816,10 @@
                 },
                 "severity_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+                    "type": "string"
+                },
+                "sex_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
                 },
                 "subject": {
@@ -1251,6 +1309,13 @@
             "title": "ClinicalIntervention",
             "type": "object"
         },
+        "ClinicalModifier": {
+            "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
+            "properties": {},
+            "required": [],
+            "title": "ClinicalModifier",
+            "type": "object"
+        },
         "ClinicalTrial": {
             "description": null,
             "properties": {
@@ -1304,6 +1369,21 @@
             "title": "Cohort",
             "type": "object"
         },
+        "ConfidenceLevel": {
+            "description": "Level of confidence in a statement",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "ConfidenceLevel",
+            "type": "object"
+        },
         "Disease": {
             "description": null,
             "properties": {
@@ -1324,7 +1404,7 @@
             "type": "object"
         },
         "DiseaseOrPhenotypicFeature": {
-            "description": null,
+            "description": "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.",
             "properties": {
                 "id": {
                     "type": "string"
@@ -1436,6 +1516,10 @@
                 },
                 "severity_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+                    "type": "string"
+                },
+                "sex_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                     "type": "string"
                 },
                 "subject": {
@@ -1607,6 +1691,10 @@
                     "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
                     "type": "string"
                 },
+                "sex_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+                    "type": "string"
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -1690,7 +1778,7 @@
             "type": "object"
         },
         "Exon": {
-            "description": null,
+            "description": "A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing",
             "properties": {
                 "id": {
                     "type": "string"
@@ -1855,6 +1943,139 @@
             "title": "Gene",
             "type": "object"
         },
+        "GeneAsAModelOfDiseaseAssociation": {
+            "description": null,
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "frequency_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+                    "type": "string"
+                },
+                "has_evidence": {
+                    "description": "connects an association to an instance of supporting evidence",
+                    "type": "string"
+                },
+                "has_evidence_graph": {
+                    "description": "connects an association to a graph object including a path from subject to object",
+                    "type": "string"
+                },
+                "has_evidence_type": {
+                    "description": "connects an association to the class of evidence used",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "object_extensions": {
+                    "description": "Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "object_taxon": {
+                    "description": "the taxonomic class of the entity in the object slot",
+                    "type": "string"
+                },
+                "object_taxon_closure": {
+                    "description": "The taxon class or ancestor class for the object",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "object_taxon_closure_label": {
+                    "description": "The label for the taxon class or ancestor class for the object",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "object_taxon_label": {
+                    "type": "string"
+                },
+                "onset_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "severity_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "subject_extensions": {
+                    "description": "Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject_taxon": {
+                    "description": "the taxonomic class of the entity in the object slot",
+                    "type": "string"
+                },
+                "subject_taxon_closure": {
+                    "description": "The taxon class or ancestor class for the subject",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject_taxon_closure_label": {
+                    "description": "The label for the taxon class or ancestor class for the subject",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject_taxon_label": {
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "GeneAsAModelOfDiseaseAssociation",
+            "type": "object"
+        },
         "GeneFamily": {
             "description": "any grouping of multiple genes or gene products related by common descent",
             "properties": {
@@ -1872,6 +2093,139 @@
             },
             "required": [],
             "title": "GeneFamily",
+            "type": "object"
+        },
+        "GeneHasVariantThatContributesToDiseaseAssociation": {
+            "description": null,
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "frequency_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+                    "type": "string"
+                },
+                "has_evidence": {
+                    "description": "connects an association to an instance of supporting evidence",
+                    "type": "string"
+                },
+                "has_evidence_graph": {
+                    "description": "connects an association to a graph object including a path from subject to object",
+                    "type": "string"
+                },
+                "has_evidence_type": {
+                    "description": "connects an association to the class of evidence used",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "object_extensions": {
+                    "description": "Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "object_taxon": {
+                    "description": "the taxonomic class of the entity in the object slot",
+                    "type": "string"
+                },
+                "object_taxon_closure": {
+                    "description": "The taxon class or ancestor class for the object",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "object_taxon_closure_label": {
+                    "description": "The label for the taxon class or ancestor class for the object",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "object_taxon_label": {
+                    "type": "string"
+                },
+                "onset_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "severity_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "subject_extensions": {
+                    "description": "Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject_taxon": {
+                    "description": "the taxonomic class of the entity in the object slot",
+                    "type": "string"
+                },
+                "subject_taxon_closure": {
+                    "description": "The taxon class or ancestor class for the subject",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject_taxon_closure_label": {
+                    "description": "The label for the taxon class or ancestor class for the subject",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "subject_taxon_label": {
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "GeneHasVariantThatContributesToDiseaseAssociation",
             "type": "object"
         },
         "GeneOntologyClass": {
@@ -1901,7 +2255,7 @@
             "type": "object"
         },
         "GeneProduct": {
-            "description": null,
+            "description": "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules",
             "properties": {
                 "id": {
                     "type": "string"
@@ -2761,6 +3115,10 @@
                     "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
                     "type": "string"
                 },
+                "sex_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+                    "type": "string"
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -2799,7 +3157,7 @@
             "type": "object"
         },
         "Genome": {
-            "description": null,
+            "description": "A genome is the sum of genetic material within a cell or virion.",
             "properties": {
                 "id": {
                     "type": "string"
@@ -3331,6 +3689,10 @@
                     "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
                     "type": "string"
                 },
+                "sex_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+                    "type": "string"
+                },
                 "subject": {
                     "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                     "type": "string"
@@ -3489,6 +3851,13 @@
             "title": "GenotypeToVariantAssociation",
             "type": "object"
         },
+        "GenotypicSex": {
+            "description": "An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.",
+            "properties": {},
+            "required": [],
+            "title": "GenotypicSex",
+            "type": "object"
+        },
         "GeographicLocation": {
             "description": "a location that can be described in lat/long coordinates",
             "properties": {
@@ -3558,13 +3927,6 @@
             "title": "GrossAnatomicalStructure",
             "type": "object"
         },
-        "HomologyRelationshipType": {
-            "description": "A relation used for homology",
-            "properties": {},
-            "required": [],
-            "title": "HomologyRelationshipType",
-            "type": "object"
-        },
         "IndividualOrganism": {
             "description": null,
             "properties": {
@@ -3582,13 +3944,6 @@
             },
             "required": [],
             "title": "IndividualOrganism",
-            "type": "object"
-        },
-        "InteractionRelationshipType": {
-            "description": "A relation used for interaction relationships",
-            "properties": {},
-            "required": [],
-            "title": "InteractionRelationshipType",
             "type": "object"
         },
         "LifeStage": {
@@ -3655,490 +4010,6 @@
             "title": "MolecularActivity",
             "type": "object"
         },
-        "MolecularActivityToBiologicalProcessAssociation": {
-            "description": null,
-            "properties": {
-                "association_type": {
-                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
-                    "type": "string"
-                },
-                "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
-                    "type": "string"
-                },
-                "has_evidence_graph": {
-                    "description": "connects an association to a graph object including a path from subject to object",
-                    "type": "string"
-                },
-                "has_evidence_type": {
-                    "description": "connects an association to the class of evidence used",
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                },
-                "negated": {
-                    "description": "if set to true, then the association is negated i.e. is not true",
-                    "type": "string"
-                },
-                "object": {
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "object_extensions": {
-                    "description": "Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "object_taxon": {
-                    "description": "the taxonomic class of the entity in the object slot",
-                    "type": "string"
-                },
-                "object_taxon_closure": {
-                    "description": "The taxon class or ancestor class for the object",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "object_taxon_closure_label": {
-                    "description": "The label for the taxon class or ancestor class for the object",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "object_taxon_label": {
-                    "type": "string"
-                },
-                "provided_by": {
-                    "description": "connects an association to the agent (person, organization or group) that provided it",
-                    "type": "string"
-                },
-                "publications": {
-                    "description": "connects an association to publications supporting the association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "qualifiers": {
-                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "relation": {
-                    "description": "the relationship type by which a subject is connected to an object in an association",
-                    "type": "string"
-                },
-                "subject": {
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "subject_extensions": {
-                    "description": "Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "subject_taxon": {
-                    "description": "the taxonomic class of the entity in the object slot",
-                    "type": "string"
-                },
-                "subject_taxon_closure": {
-                    "description": "The taxon class or ancestor class for the subject",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "subject_taxon_closure_label": {
-                    "description": "The label for the taxon class or ancestor class for the subject",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "subject_taxon_label": {
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "MolecularActivityToBiologicalProcessAssociation",
-            "type": "object"
-        },
-        "MolecularActivityToDownstreamMolecularActivityAssociation": {
-            "description": null,
-            "properties": {
-                "association_type": {
-                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
-                    "type": "string"
-                },
-                "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
-                    "type": "string"
-                },
-                "has_evidence_graph": {
-                    "description": "connects an association to a graph object including a path from subject to object",
-                    "type": "string"
-                },
-                "has_evidence_type": {
-                    "description": "connects an association to the class of evidence used",
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                },
-                "negated": {
-                    "description": "if set to true, then the association is negated i.e. is not true",
-                    "type": "string"
-                },
-                "object": {
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "object_extensions": {
-                    "description": "Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "object_taxon": {
-                    "description": "the taxonomic class of the entity in the object slot",
-                    "type": "string"
-                },
-                "object_taxon_closure": {
-                    "description": "The taxon class or ancestor class for the object",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "object_taxon_closure_label": {
-                    "description": "The label for the taxon class or ancestor class for the object",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "object_taxon_label": {
-                    "type": "string"
-                },
-                "provided_by": {
-                    "description": "connects an association to the agent (person, organization or group) that provided it",
-                    "type": "string"
-                },
-                "publications": {
-                    "description": "connects an association to publications supporting the association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "qualifiers": {
-                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "relation": {
-                    "description": "the relationship type by which a subject is connected to an object in an association",
-                    "type": "string"
-                },
-                "subject": {
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "subject_extensions": {
-                    "description": "Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "subject_taxon": {
-                    "description": "the taxonomic class of the entity in the object slot",
-                    "type": "string"
-                },
-                "subject_taxon_closure": {
-                    "description": "The taxon class or ancestor class for the subject",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "subject_taxon_closure_label": {
-                    "description": "The label for the taxon class or ancestor class for the subject",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "subject_taxon_label": {
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "MolecularActivityToDownstreamMolecularActivityAssociation",
-            "type": "object"
-        },
-        "MolecularActivityToGeneProductAssociation": {
-            "description": null,
-            "properties": {
-                "association_type": {
-                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
-                    "type": "string"
-                },
-                "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
-                    "type": "string"
-                },
-                "has_evidence_graph": {
-                    "description": "connects an association to a graph object including a path from subject to object",
-                    "type": "string"
-                },
-                "has_evidence_type": {
-                    "description": "connects an association to the class of evidence used",
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                },
-                "negated": {
-                    "description": "if set to true, then the association is negated i.e. is not true",
-                    "type": "string"
-                },
-                "object": {
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "object_extensions": {
-                    "description": "Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "object_taxon": {
-                    "description": "the taxonomic class of the entity in the object slot",
-                    "type": "string"
-                },
-                "object_taxon_closure": {
-                    "description": "The taxon class or ancestor class for the object",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "object_taxon_closure_label": {
-                    "description": "The label for the taxon class or ancestor class for the object",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "object_taxon_label": {
-                    "type": "string"
-                },
-                "provided_by": {
-                    "description": "connects an association to the agent (person, organization or group) that provided it",
-                    "type": "string"
-                },
-                "publications": {
-                    "description": "connects an association to publications supporting the association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "qualifiers": {
-                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "relation": {
-                    "description": "the relationship type by which a subject is connected to an object in an association",
-                    "type": "string"
-                },
-                "subject": {
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "subject_extensions": {
-                    "description": "Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "subject_taxon": {
-                    "description": "the taxonomic class of the entity in the object slot",
-                    "type": "string"
-                },
-                "subject_taxon_closure": {
-                    "description": "The taxon class or ancestor class for the subject",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "subject_taxon_closure_label": {
-                    "description": "The label for the taxon class or ancestor class for the subject",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "subject_taxon_label": {
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "MolecularActivityToGeneProductAssociation",
-            "type": "object"
-        },
-        "MolecularActivityToLocationAssociation": {
-            "description": null,
-            "properties": {
-                "association_type": {
-                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
-                    "type": "string"
-                },
-                "has_evidence": {
-                    "description": "connects an association to an instance of supporting evidence",
-                    "type": "string"
-                },
-                "has_evidence_graph": {
-                    "description": "connects an association to a graph object including a path from subject to object",
-                    "type": "string"
-                },
-                "has_evidence_type": {
-                    "description": "connects an association to the class of evidence used",
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                },
-                "negated": {
-                    "description": "if set to true, then the association is negated i.e. is not true",
-                    "type": "string"
-                },
-                "object": {
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "object_extensions": {
-                    "description": "Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "object_taxon": {
-                    "description": "the taxonomic class of the entity in the object slot",
-                    "type": "string"
-                },
-                "object_taxon_closure": {
-                    "description": "The taxon class or ancestor class for the object",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "object_taxon_closure_label": {
-                    "description": "The label for the taxon class or ancestor class for the object",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "object_taxon_label": {
-                    "type": "string"
-                },
-                "provided_by": {
-                    "description": "connects an association to the agent (person, organization or group) that provided it",
-                    "type": "string"
-                },
-                "publications": {
-                    "description": "connects an association to publications supporting the association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "qualifiers": {
-                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "relation": {
-                    "description": "the relationship type by which a subject is connected to an object in an association",
-                    "type": "string"
-                },
-                "subject": {
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "subject_extensions": {
-                    "description": "Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "subject_taxon": {
-                    "description": "the taxonomic class of the entity in the object slot",
-                    "type": "string"
-                },
-                "subject_taxon_closure": {
-                    "description": "The taxon class or ancestor class for the subject",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "subject_taxon_closure_label": {
-                    "description": "The label for the taxon class or ancestor class for the subject",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "subject_taxon_label": {
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "MolecularActivityToLocationAssociation",
-            "type": "object"
-        },
         "MolecularEntity": {
             "description": "A gene, gene product, small molecule or macromolecule (including protein complex)",
             "properties": {
@@ -4158,11 +4029,19 @@
             "title": "MolecularEntity",
             "type": "object"
         },
-        "MolecularEvent": {
+        "NamedGraph": {
             "description": null,
-            "properties": {},
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
             "required": [],
-            "title": "MolecularEvent",
+            "title": "NamedGraph",
             "type": "object"
         },
         "NamedThing": {
@@ -4204,6 +4083,13 @@
             "properties": {},
             "required": [],
             "title": "Occurrent",
+            "type": "object"
+        },
+        "Onset": {
+            "description": "The age group in which manifestations appear",
+            "properties": {},
+            "required": [],
+            "title": "Onset",
             "type": "object"
         },
         "OntologyClass": {
@@ -4381,6 +4267,13 @@
             },
             "required": [],
             "title": "PhenotypicFeature",
+            "type": "object"
+        },
+        "PhenotypicSex": {
+            "description": "An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.",
+            "properties": {},
+            "required": [],
+            "title": "PhenotypicSex",
             "type": "object"
         },
         "PlanetaryEntity": {
@@ -4819,7 +4712,7 @@
             "type": "object"
         },
         "Transcript": {
-            "description": null,
+            "description": "An RNA synthesized on a DNA or RNA template by an RNA polymerase",
             "properties": {
                 "id": {
                     "type": "string"

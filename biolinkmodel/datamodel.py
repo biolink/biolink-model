@@ -28,6 +28,45 @@ class Attribute(object):
         return self.__str__()
 
 
+class BiologicalSex(Attribute):
+    """
+    None
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class PhenotypicSex(BiologicalSex):
+    """
+    An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class GenotypicSex(BiologicalSex):
+    """
+    An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
 class SeverityValue(Attribute):
     """
     describes the severity of a phenotypic feature or disease
@@ -44,6 +83,32 @@ class SeverityValue(Attribute):
 class FrequencyValue(Attribute):
     """
     describes the frequency of occurrence of an event or condition
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class ClinicalModifier(Attribute):
+    """
+    Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class Onset(Attribute):
+    """
+    The age group in which manifestations appear
     """
     def __init__(self):
         pass
@@ -212,24 +277,6 @@ class PopulationOfIndividualOrganisms(OrganismalEntity):
         return self.__str__()
 
 
-class Cohort(PopulationOfIndividualOrganisms):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
 class Biosample(OrganismalEntity):
     """
     None
@@ -250,7 +297,7 @@ class Biosample(OrganismalEntity):
 
 class DiseaseOrPhenotypicFeature(BiologicalEntity):
     """
-    None
+    Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
     """
     def __init__(self,
                  id=None,
@@ -321,6 +368,22 @@ class Environment(BiologicalEntity):
 class InformationContentEntity(NamedThing):
     """
     a piece of information that typically describes some piece of biology or is used as support.
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class ConfidenceLevel(InformationContentEntity):
+    """
+    Level of confidence in a statement
     """
     def __init__(self,
                  id=None,
@@ -580,7 +643,7 @@ class GenomicEntity(MolecularEntity):
 
 class Genome(GenomicEntity):
     """
-    None
+    A genome is the sum of genetic material within a cell or virion.
     """
     def __init__(self,
                  id=None,
@@ -598,7 +661,7 @@ class Genome(GenomicEntity):
 
 class Transcript(GenomicEntity):
     """
-    None
+    An RNA synthesized on a DNA or RNA template by an RNA polymerase
     """
     def __init__(self,
                  id=None,
@@ -616,7 +679,7 @@ class Transcript(GenomicEntity):
 
 class Exon(GenomicEntity):
     """
-    None
+    A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
     """
     def __init__(self,
                  id=None,
@@ -688,7 +751,7 @@ class Gene(GeneOrGeneProduct):
 
 class GeneProduct(GeneOrGeneProduct):
     """
-    None
+    The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
     """
     def __init__(self,
                  id=None,
@@ -854,6 +917,28 @@ class Genotype(GenomicEntity):
 
     def __str__(self):
         return "has_zygosity={} id={} label={} in_taxon={} ".format(self.has_zygosity,self.id,self.label,self.in_taxon)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Allele(Genotype):
+    """
+    A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus
+    """
+    def __init__(self,
+                 has_gene=None,
+                 has_zygosity=None,
+                 id=None,
+                 label=None,
+                 in_taxon=None):
+        self.has_gene=has_gene
+        self.has_zygosity=has_zygosity
+        self.id=id
+        self.label=label
+        self.in_taxon=in_taxon
+
+    def __str__(self):
+        return "has_gene={} has_zygosity={} id={} label={} in_taxon={} ".format(self.has_gene,self.has_zygosity,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -1478,6 +1563,7 @@ class EntityToPhenotypicFeatureAssociation(Association):
                  frequency_qualifier=None,
                  severity_qualifier=None,
                  onset_qualifier=None,
+                 sex_qualifier=None,
                  association_type=None,
                  subject=None,
                  negated=None,
@@ -1491,6 +1577,7 @@ class EntityToPhenotypicFeatureAssociation(Association):
         self.frequency_qualifier=frequency_qualifier
         self.severity_qualifier=severity_qualifier
         self.onset_qualifier=onset_qualifier
+        self.sex_qualifier=sex_qualifier
         self.association_type=association_type
         self.subject=subject
         self.negated=negated
@@ -1503,7 +1590,7 @@ class EntityToPhenotypicFeatureAssociation(Association):
         self.label=label
 
     def __str__(self):
-        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
+        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
     def __repr__(self):
         return self.__str__()
 
@@ -1607,7 +1694,8 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
                  label=None,
                  frequency_qualifier=None,
                  severity_qualifier=None,
-                 onset_qualifier=None):
+                 onset_qualifier=None,
+                 sex_qualifier=None):
         self.association_type=association_type
         self.subject=subject
         self.negated=negated
@@ -1621,9 +1709,10 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
         self.frequency_qualifier=frequency_qualifier
         self.severity_qualifier=severity_qualifier
         self.onset_qualifier=onset_qualifier
+        self.sex_qualifier=sex_qualifier
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
     def __repr__(self):
         return self.__str__()
 
@@ -1645,7 +1734,8 @@ class EnvironmentToPhenotypicFeatureAssociation(Association):
                  label=None,
                  frequency_qualifier=None,
                  severity_qualifier=None,
-                 onset_qualifier=None):
+                 onset_qualifier=None,
+                 sex_qualifier=None):
         self.association_type=association_type
         self.subject=subject
         self.negated=negated
@@ -1659,9 +1749,10 @@ class EnvironmentToPhenotypicFeatureAssociation(Association):
         self.frequency_qualifier=frequency_qualifier
         self.severity_qualifier=severity_qualifier
         self.onset_qualifier=onset_qualifier
+        self.sex_qualifier=sex_qualifier
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
     def __repr__(self):
         return self.__str__()
 
@@ -1683,7 +1774,8 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
                  label=None,
                  frequency_qualifier=None,
                  severity_qualifier=None,
-                 onset_qualifier=None):
+                 onset_qualifier=None,
+                 sex_qualifier=None):
         self.association_type=association_type
         self.subject=subject
         self.negated=negated
@@ -1697,9 +1789,10 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
         self.frequency_qualifier=frequency_qualifier
         self.severity_qualifier=severity_qualifier
         self.onset_qualifier=onset_qualifier
+        self.sex_qualifier=sex_qualifier
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
     def __repr__(self):
         return self.__str__()
 
@@ -1721,7 +1814,8 @@ class CaseToPhenotypicFeatureAssociation(Association):
                  label=None,
                  frequency_qualifier=None,
                  severity_qualifier=None,
-                 onset_qualifier=None):
+                 onset_qualifier=None,
+                 sex_qualifier=None):
         self.association_type=association_type
         self.subject=subject
         self.negated=negated
@@ -1735,9 +1829,10 @@ class CaseToPhenotypicFeatureAssociation(Association):
         self.frequency_qualifier=frequency_qualifier
         self.severity_qualifier=severity_qualifier
         self.onset_qualifier=onset_qualifier
+        self.sex_qualifier=sex_qualifier
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
     def __repr__(self):
         return self.__str__()
 
@@ -1791,7 +1886,8 @@ class GeneToPhenotypicFeatureAssociation(Association):
                  label=None,
                  frequency_qualifier=None,
                  severity_qualifier=None,
-                 onset_qualifier=None):
+                 onset_qualifier=None,
+                 sex_qualifier=None):
         self.association_type=association_type
         self.subject=subject
         self.negated=negated
@@ -1805,9 +1901,10 @@ class GeneToPhenotypicFeatureAssociation(Association):
         self.frequency_qualifier=frequency_qualifier
         self.severity_qualifier=severity_qualifier
         self.onset_qualifier=onset_qualifier
+        self.sex_qualifier=sex_qualifier
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
     def __repr__(self):
         return self.__str__()
 

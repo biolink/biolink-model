@@ -29,6 +29,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "qualifiers",
     "relation",
     "severity_qualifier",
+    "sex_qualifier",
     "subject"
 })
 public class GeneToPhenotypicFeatureAssociation {
@@ -112,6 +113,13 @@ public class GeneToPhenotypicFeatureAssociation {
     @JsonProperty("severity_qualifier")
     @JsonPropertyDescription("a qualifier used in a phenotypic association to state how severe the phenotype is in the subject")
     private String severityQualifier;
+    /**
+     * a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+     * 
+     */
+    @JsonProperty("sex_qualifier")
+    @JsonPropertyDescription("a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.")
+    private String sexQualifier;
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * 
@@ -329,6 +337,24 @@ public class GeneToPhenotypicFeatureAssociation {
     }
 
     /**
+     * a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+     * 
+     */
+    @JsonProperty("sex_qualifier")
+    public String getSexQualifier() {
+        return sexQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+     * 
+     */
+    @JsonProperty("sex_qualifier")
+    public void setSexQualifier(String sexQualifier) {
+        this.sexQualifier = sexQualifier;
+    }
+
+    /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * 
      */
@@ -348,12 +374,12 @@ public class GeneToPhenotypicFeatureAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("associationType", associationType).append("frequencyQualifier", frequencyQualifier).append("id", id).append("label", label).append("negated", negated).append("object", object).append("onsetQualifier", onsetQualifier).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("severityQualifier", severityQualifier).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("associationType", associationType).append("frequencyQualifier", frequencyQualifier).append("id", id).append("label", label).append("negated", negated).append("object", object).append("onsetQualifier", onsetQualifier).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("severityQualifier", severityQualifier).append("sexQualifier", sexQualifier).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(providedBy).append(negated).append(subject).append(associationType).append(frequencyQualifier).append(qualifiers).append(label).append(relation).append(onsetQualifier).append(severityQualifier).append(id).append(object).append(publications).toHashCode();
+        return new HashCodeBuilder().append(providedBy).append(sexQualifier).append(negated).append(subject).append(associationType).append(frequencyQualifier).append(qualifiers).append(label).append(relation).append(onsetQualifier).append(severityQualifier).append(id).append(object).append(publications).toHashCode();
     }
 
     @Override
@@ -365,7 +391,7 @@ public class GeneToPhenotypicFeatureAssociation {
             return false;
         }
         GeneToPhenotypicFeatureAssociation rhs = ((GeneToPhenotypicFeatureAssociation) other);
-        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(subject, rhs.subject).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(relation, rhs.relation).append(onsetQualifier, rhs.onsetQualifier).append(severityQualifier, rhs.severityQualifier).append(id, rhs.id).append(object, rhs.object).append(publications, rhs.publications).isEquals();
+        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(sexQualifier, rhs.sexQualifier).append(negated, rhs.negated).append(subject, rhs.subject).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(relation, rhs.relation).append(onsetQualifier, rhs.onsetQualifier).append(severityQualifier, rhs.severityQualifier).append(id, rhs.id).append(object, rhs.object).append(publications, rhs.publications).isEquals();
     }
 
 }

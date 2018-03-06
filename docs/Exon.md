@@ -5,7 +5,7 @@ layout: default
 ## exon
 
 
-None
+A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
 
 URI: [http://bioentity.io/vocab/Exon](http://bioentity.io/vocab/Exon)
 ## Mappings

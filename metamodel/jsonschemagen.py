@@ -72,6 +72,7 @@ class JsonSchemaGenerator(Generator):
         # so we duplicate slots from inherited parents and mixins
         slots = mgr.class_slotdefs(c, True, True)
         for s in slots:
+            assert s is not None, "class {} has blank slot".format(c)
             s = mgr.slotdef(s, c)
             sn = mgr.slot_name(s)
 

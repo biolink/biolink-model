@@ -24,4 +24,6 @@ URI: [http://bioentity.io/vocab/has_zygosity](http://bioentity.io/vocab/has_zygo
 ## Used in
 
  *  usage: [genotype](Genotype.html)
+ *  usage: [allele](Allele.html)
  *  usage: [genotype](Genotype.html)
+ *  usage: [allele](Allele.html)

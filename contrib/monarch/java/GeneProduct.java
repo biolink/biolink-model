@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * GeneProduct
  * <p>
- * null
+ * The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

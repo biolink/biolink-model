@@ -5,7 +5,7 @@ layout: default
 ## transcript
 
 
-None
+An RNA synthesized on a DNA or RNA template by an RNA polymerase
 
 URI: [http://bioentity.io/vocab/Transcript](http://bioentity.io/vocab/Transcript)
 ## Mappings

@@ -13,7 +13,7 @@ URI: [http://bioentity.io/vocab/onset_qualifier](http://bioentity.io/vocab/onset
 
 ## Domain and Range
 
- -> [life stage](LifeStage.html)
+ -> [onset](Onset.html)
 
 ## Inheritance
 

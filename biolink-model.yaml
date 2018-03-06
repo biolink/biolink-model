@@ -199,11 +199,24 @@ slots:
     is_a: association slot
     range: severity value
 
+  - name: sex qualifier
+    description: >-
+      a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+    is_a: association slot
+    range: biological sex
+
   - name: onset qualifier
     description: >-
       a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
     is_a: association slot
-    range: life stage
+    range: onset
+
+  - name: clinical modifier qualifier
+    description: >-
+      Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
+      with respect to severity, laterality, age of onset, and other aspects
+    is_a: association slot
+    range: clinical modifier
 
   - name: publications
     singular_name: publication
@@ -270,6 +283,22 @@ classes:
   ## THINGS
   ## ------
 
+  - name: biological sex
+    subclass_of: "PATO:0000047"
+    is_a: attribute
+
+  - name: phenotypic sex
+    description: >-
+      An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
+    subclass_of: "PATO:0001894"
+    is_a: biological sex
+
+  - name: genotypic sex
+    description: >-
+      An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
+    subclass_of: "PATO:0020000"
+    is_a: biological sex
+
   - name: severity value
     description: >-
       describes the severity of a phenotypic feature or disease
@@ -278,6 +307,20 @@ classes:
   - name: frequency value
     description: >-
       describes the frequency of occurrence of an event or condition
+    is_a: attribute
+  
+  - name: clinical modifier
+    description: >-
+      Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
+      with respect to severity, laterality, age of onset, and other aspects
+    subclass_of: "HP:0012823"
+    is_a: attribute
+  
+  - name: onset
+    description: >-
+      The age group in which manifestations appear
+    mappings:
+      - "HP:0003674"
     is_a: attribute
   
   - name: named thing
@@ -346,12 +389,16 @@ classes:
     mixins:
       - thing with taxon
     is_a: organismal entity
+    mappings:
+      - SIO:001061
       
   - name: biosample
     aliases: ['biospecimen', 'sample']
     mixins:
       - thing with taxon
     is_a: organismal entity
+    mappings:
+      - SIO:001050
       
   - name: disease or phenotypic feature
     aliases: ['phenome']
@@ -370,12 +417,14 @@ classes:
     mappings:
       - "MONDO:0000001"
       - "WD:Q12136"
+      - SIO:010299
       
   - name: phenotypic feature
     aliases: ['sign', 'symptom', 'phenotype', 'trait']
     is_a: disease or phenotypic feature
     mappings:
       - "UPHENO:0000001"
+      - SIO:010056
       
   - name: environment
     aliases: ['environment', 'exposure', 'experimental condition']
@@ -383,7 +432,9 @@ classes:
     description: >-
       A feature of the environment of an organism that influences one or more phenotypic features
       of that organism, potentially mediated by genes
-      
+    mappings:
+      - SIO:000955
+
   - name: information content entity
     aliases: ['information', 'information artefact', 'information entity']
     abstract: true
@@ -438,6 +489,10 @@ classes:
       - thing with taxon
     aliases: ['bioentity']
     description: "A gene, gene product, small molecule or macromolecule (including protein complex)"
+    comment: >-
+      Check SIO mapping - also mapped to chemical substance.
+    mappings:
+      - SIO:010004
 
   - name: chemical substance
     is_a: molecular entity
@@ -471,6 +526,7 @@ classes:
       A subcellular location, cell type or gross anatomical part
     mappings:
       - "UMLSSG:ANAT"
+      - SIO:010046
 
   - name: life stage
     is_a: organismal entity
@@ -526,23 +582,31 @@ classes:
     is_a: genomic entity
     description: >-
       A genome is the sum of genetic material within a cell or virion.
-    mappings: ['SO:0001026']
+    mappings:
+      - SO:0001026
+      - SIO:000984
 
   - name: transcript
     is_a: genomic entity
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase
-    mappings: ['SO:0000673']
+    mappings:
+      - SO:0000673
+      - SIO:010450
 
   - name: exon
     is_a: genomic entity
     description: >-
       A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
-    mappings: ['SO:0000147']
+    mappings:
+      - SO:0000147
+      - SIO:010445
 
   - name: coding sequence
     is_a: genomic entity
-    mappings: ['SO:0000316']
+    mappings:
+      - SO:0000316
+      - SIO:001390
       
   - name: gene or gene product
     is_a: genomic entity
@@ -596,6 +660,7 @@ classes:
     is_a: gene product
     mappings:
       - "CHEBI:33697"
+      - SIO:010450
     id_prefixes:
       - RNAcentral
     
@@ -603,11 +668,16 @@ classes:
     is_a: RNA product
     id_prefixes:
       - RNAcentral
+      - NCBIGene
+      - ENSEMBL
+    mappings:
+      - SIO:001235
       
   - name: microRNA
     is_a: noncoding RNA product
     mappings:
       - "SO:0000276"
+      - SIO:001397
     id_prefixes:
       - MIR
         
@@ -629,12 +699,14 @@ classes:
     is_a: molecular entity
     mappings:
       - "NCIT:C20130"
+      - SIO:001380
     mixins:
       - gene grouping
     description: >-
       any grouping of multiple genes or gene products related by common descent
     id_prefixes:
       - PANTHER
+      
 
   - name: zygosity
     is_a: attribute
@@ -649,8 +721,9 @@ classes:
       Consider renaming as genotypic entity
     slots:
       - has zygosity
-    mapping:
+    mappings:
       - "GENO:0000536"
+      - SIO:001079
 
   - name: allele
     is_a: genotype
@@ -669,8 +742,9 @@ classes:
         examples:
           - value: ZFIN:ZDB-ALT-980203-1091
             description: ti282a allele from ZFIN
-    mapping:
+    mappings:
       - "GENO:0000512"
+      - SIO:010277
 
   - name: sequence variant
     aliases: ['allele']
@@ -694,6 +768,7 @@ classes:
         multivalued: true
     mappings:
       - "ECTO:0000509"
+      - SIO:001005
 
   - name: treatment
     aliases: ['medical action']
@@ -713,6 +788,7 @@ classes:
         required: true
     mappings:
       - "OGMS:0000090"
+      - SIO:001398
 
   - name: geographic location
     is_a: planetary entity
@@ -1044,6 +1120,8 @@ classes:
         values_from: ['upheno', 'hp', 'mp', 'wbphenotypic feature']
         subclass_of: UPHENO:0000001
         examples:
+          - value: HP:0002487
+            description: Hyperkinesis
           - value: WBPhenotype:0000180 
             description: axon morphology variant
           - value: MP:0001569
@@ -1052,6 +1130,7 @@ classes:
       - frequency qualifier
       - severity qualifier
       - onset qualifier
+      - sex qualifier
 
   - name: entity to disease association
     abstract: true
@@ -1530,10 +1609,15 @@ classes:
       One or more causally connected executions of molecular functions
     mappings:
       - "GO:0008150"
+      - SIO:000006
 
   - name: pathway
     is_a: biological process
- 
+    mappings:
+      - GO:0007165
+      - SIO:010526
+      - PW:0000001
+
   - name: physiology
     is_a: biological process
     mappings:
@@ -1545,6 +1629,7 @@ classes:
       A location in or around a cell
     mappings:
       - "GO:0005575"
+      - SIO:001400
       
   - name: cell
     is_a: anatomical entity
@@ -1555,5 +1640,7 @@ classes:
   - name: gross anatomical structure
     aliases: ['tissue', 'organ']
     is_a: anatomical entity
+    mappings:
+      - SIO:010046
       
   

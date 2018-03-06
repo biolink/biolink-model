@@ -121,7 +121,7 @@ class Manager(object):
         -------
         SlotDefinition
         """
-        assert( sn is not None )
+        assert sn is not None
         if isinstance(sn,SlotDefinition):
             return sn
         for s in self.schema.slots:
@@ -151,6 +151,7 @@ class Manager(object):
         string
         """
         # ensure an object
+        assert s is not None
         slot = self.slotdef(s)
         return self.get_name(slot.name, style)
 
@@ -252,9 +253,11 @@ class Manager(object):
     def ancestors(self, obj, use_mixins=False, reflexive=True, is_slot=False, use_isa=True, visited=[]):
         if isinstance(obj,str):
             if is_slot:
-                obj = self.slotdef(obj)
+                objx = self.slotdef(obj)
             else:
-                obj = self.classdef(obj)
+                objx = self.classdef(obj)
+            assert objx is not None, "no class/slot def for '{}'".format(obj)
+            obj = objx
 
         if obj.name in visited:
             raise ValueError("CYCLE: {} + {}".format(obj.name, visited))

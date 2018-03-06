@@ -5,7 +5,7 @@ layout: default
 ## gene product
 
 
-None
+The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
 
 URI: [http://bioentity.io/vocab/GeneProduct](http://bioentity.io/vocab/GeneProduct)
 ## Mappings
