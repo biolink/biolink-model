@@ -337,6 +337,8 @@ classes:
   - name: biological entity
     is_a: named thing
     abstract: true
+    mappings:
+      - WD:Q28845870
         
   - name: ontology class
     description: "a concept or class in an ontology, vocabulary or thesaurus"
@@ -364,12 +366,16 @@ classes:
       - ontology class
     values_from:
       - ncbitaxon
+    mappings:
+      WD:Q16521
       
   - name: organismal entity
     description: >-
       A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
     abstract: true
     is_a: biological entity
+    mappings:
+      - WD:Q7239
       
   - name: individual organism
     mixins:
@@ -378,6 +384,7 @@ classes:
     subclass_of: "NCBITaxon:1"
     mappings:
       - SIO:010000
+      - WD:Q795052
 
   - name: case
     aliases: ['patient', 'proband']
@@ -425,6 +432,7 @@ classes:
     mappings:
       - "UPHENO:0000001"
       - SIO:010056
+      - WD:Q169872
       
   - name: environment
     aliases: ['environment', 'exposure', 'experimental condition']
@@ -493,6 +501,7 @@ classes:
       Check SIO mapping - also mapped to chemical substance.
     mappings:
       - SIO:010004
+      - WD:Q43460564
 
   - name: chemical substance
     is_a: molecular entity
@@ -503,7 +512,7 @@ classes:
     mappings:
       - "SIO:010004"
       - "UMLSSG:CHEM"
-      - "WD:Q11173"
+      - "WD:Q79529"
       
   - name: drug
     is_a: chemical substance
@@ -527,6 +536,7 @@ classes:
     mappings:
       - "UMLSSG:ANAT"
       - SIO:010046
+      - WD:Q4936952
 
   - name: life stage
     is_a: organismal entity
@@ -535,7 +545,7 @@ classes:
     subclass_of: UBERON:0000105
     description: >-
       A stage of development or growth of an organism, including post-natal adult stages
-      
+
   - name: planetary entity
     is_a: named thing
     description: >-
@@ -585,6 +595,7 @@ classes:
     mappings:
       - SO:0001026
       - SIO:000984
+      - WD:Q7020
 
   - name: transcript
     is_a: genomic entity
@@ -601,6 +612,7 @@ classes:
     mappings:
       - SO:0000147
       - SIO:010445
+      - WD:Q373027
 
   - name: coding sequence
     is_a: genomic entity
@@ -644,6 +656,8 @@ classes:
     union_of:
       - protein
       - RNA product
+    mappings:
+      - WD:Q424689
     
   - name: protein
     is_a: gene product
@@ -661,6 +675,7 @@ classes:
     mappings:
       - "CHEBI:33697"
       - SIO:010450
+      - WD:Q11053
     id_prefixes:
       - RNAcentral
     
@@ -678,6 +693,7 @@ classes:
     mappings:
       - "SO:0000276"
       - SIO:001397
+      - WD:Q310899
     id_prefixes:
       - MIR
         
@@ -686,6 +702,7 @@ classes:
     mappings:
       - "GO:0032991"
       - "SIO:010046"
+      - WD:Q22325163
     id_prefixes:
       - IntAct
       
@@ -700,6 +717,7 @@ classes:
     mappings:
       - "NCIT:C20130"
       - SIO:001380
+      - WD:Q417841
     mixins:
       - gene grouping
     description: >-
@@ -753,6 +771,7 @@ classes:
       A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.
     mappings:
       - "GENO:0000512"
+      - WD:Q15304597
 
   - name: drug exposure
     aliases: ['drug intake', 'drug dose']
@@ -1610,6 +1629,7 @@ classes:
     mappings:
       - "GO:0008150"
       - SIO:000006
+      - WD:Q2996394
 
   - name: pathway
     is_a: biological process
@@ -1617,6 +1637,7 @@ classes:
       - GO:0007165
       - SIO:010526
       - PW:0000001
+      - WD:Q4915012
 
   - name: physiology
     is_a: biological process
@@ -1630,17 +1651,20 @@ classes:
     mappings:
       - "GO:0005575"
       - SIO:001400
+      - WD:Q5058355
       
   - name: cell
     is_a: anatomical entity
     mappings:
       - "GO:0005623"
       - "SIO:010001"
+      - WD:Q7868
       
   - name: gross anatomical structure
     aliases: ['tissue', 'organ']
     is_a: anatomical entity
     mappings:
       - SIO:010046
+      - WD:Q4936952
       
   
