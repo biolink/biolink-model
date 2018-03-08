@@ -552,6 +552,32 @@ interface EntityToDiseaseAssociation {
   onsetQualifier: Onset
 }
 
+interface DiseaseOrPhenotypicFeatureAssociationToThingAssociation {
+  associationType: OntologyClass
+  subject: DiseaseOrPhenotypicFeature!
+  negated: String
+  relation: RelationshipType!
+  object: String!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  label: String
+}
+
+type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation {
+  associationType: OntologyClass
+  subject: DiseaseOrPhenotypicFeature!
+  negated: String
+  relation: RelationshipType!
+  object: AnatomicalEntity!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  label: String
+}
+
 interface ThingToDiseaseOrPhenotypicFeatureAssociation {
   associationType: OntologyClass
   subject: String!
@@ -712,6 +738,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDi
 }
 
 type GeneHasVariantThatContributesToDiseaseAssociation {
+  sequenceVariantQualifier: SequenceVariant
   associationType: OntologyClass
   subject: GeneOrGeneProduct!
   negated: String
@@ -755,7 +782,7 @@ type GeneToExpressionSiteAssociation {
   label: String
 }
 
-interface SequenceVariantModulatesTreatmentAssociation {
+type SequenceVariantModulatesTreatmentAssociation {
   associationType: OntologyClass
   subject: SequenceVariant!
   negated: String

@@ -828,6 +828,24 @@ class EntityToDiseaseAssociationSchema(Schema):
     def make_object(self, data):
         EntityToDiseaseAssociation(**data)
 
+class DiseaseOrPhenotypicFeatureAssociationToThingAssociationSchema(AssociationSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        DiseaseOrPhenotypicFeatureAssociationToThingAssociation(**data)
+
+class DiseaseOrPhenotypicFeatureAssociationToLocationAssociationSchema(DiseaseOrPhenotypicFeatureAssociationToThingAssociationSchema):
+    """
+    An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
+    """
+
+    @post_load
+    def make_object(self, data):
+        DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(**data)
+
 class ThingToDiseaseOrPhenotypicFeatureAssociationSchema(AssociationSchema):
     """
     None
@@ -1017,6 +1035,7 @@ class GeneHasVariantThatContributesToDiseaseAssociationSchema(GeneToDiseaseAssoc
     """
     None
     """
+    sequence_variant_qualifier = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -1044,7 +1063,7 @@ class GeneToExpressionSiteAssociationSchema(AssociationSchema):
 
 class SequenceVariantModulatesTreatmentAssociationSchema(AssociationSchema):
     """
-    None
+    An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.
     """
 
     @post_load

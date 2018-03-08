@@ -22,6 +22,7 @@ URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/Seque
 ## Used in
 
  *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [sequence variant](SequenceVariant.html)
+ *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [sequence variant](SequenceVariant.html)
  *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [sequence variant](SequenceVariant.html)
 
 ## Fields

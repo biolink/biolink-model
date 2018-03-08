@@ -25,6 +25,11 @@ types:
   - name: biological sequence
     typeof: string
 
+  - name: unit
+    typeof: string
+    mappings:
+      - UO:0000000
+
 slots:
   
   - name: id
@@ -218,6 +223,12 @@ slots:
     is_a: association slot
     range: clinical modifier
 
+  - name: sequence variant qualifier
+    description: >-
+      a qualifier used in an association where the variant
+    is_a: association slot
+    range: sequence variant
+    
   - name: publications
     singular_name: publication
     description: >-
@@ -1169,7 +1180,39 @@ classes:
       - frequency qualifier
       - severity qualifier
       - onset qualifier
-      
+
+  - name: disease or phenotypic feature association to thing association
+    abstract: true
+    is_a: association
+    defining_slots:
+      - subject
+    slot_usage:
+      - name: subject
+        range: disease or phenotypic feature
+        description: "disease or phenotype"
+        definitional: true
+        examples:
+          - value: MONDO:0017314
+            description: "Ehlers-Danlos syndrome, vascular type"
+          - value: MP:0013229
+            description: "abnormal brain ventricle size"
+
+  - name: disease or phenotypic feature association to location association
+    is_a: disease or phenotypic feature association to thing association
+    description: >-
+      An association between either a disease or a phenotypic feature and an anatomical entity,
+      where the disease/feature manifests in that site.
+    mappings:
+      - NCIT:R100
+    slot_usage:
+      - name: object
+        range: anatomical entity
+        description: "anatomical entity in which the disease or feature is found"
+        examples:
+          - value: UBERON:0002048
+            description: "lung"
+    
+            
   - name: thing to disease or phenotypic feature association
     abstract: true
     is_a: association
@@ -1286,6 +1329,8 @@ classes:
             
   - name: gene to disease association
     is_a: association
+    comment: >-
+      NCIT:R176 refers to the inverse relationship
     mappings:
       - SIO:000983
     defining_slots:
@@ -1333,6 +1378,8 @@ classes:
       - subject
       - object
       - relation
+    slots:
+      - sequence variant qualifier
     slot_usage:
       - name: subject
         range: gene or gene product
@@ -1390,10 +1437,14 @@ classes:
 
   - name: sequence variant modulates treatment association
     is_a: association
+    description: >-
+      An association between a sequence variant and a treatment or health intervention.
+      The treatment object itself encompasses both the disease and the drug used.
+    comment: >-
+      An alternate way to model the same information could be via a qualifier
     defining_slots:
       - subject
       - object
-    abstract: true
     slot_usage:
       - name: subject
         range: sequence variant

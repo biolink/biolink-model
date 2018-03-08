@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/GeneFamily](http://bioentity.io/vocab/GeneFamily
 ## Mappings
 
  * [NCIT:C20130](http://purl.obolibrary.org/obo/NCIT_C20130)
+ * [SIO:001380](http://purl.obolibrary.org/obo/SIO_001380)
 
 ## Inheritance
 

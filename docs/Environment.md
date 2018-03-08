@@ -10,6 +10,7 @@ A feature of the environment of an organism that influences one or more phenotyp
 URI: [http://bioentity.io/vocab/Environment](http://bioentity.io/vocab/Environment)
 ## Mappings
 
+ * [SIO:000955](http://purl.obolibrary.org/obo/SIO_000955)
 
 ## Inheritance
 

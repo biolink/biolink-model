@@ -1613,6 +1613,70 @@ class EntityToDiseaseAssociation(object):
         return self.__str__()
 
 
+class DiseaseOrPhenotypicFeatureAssociationToThingAssociation(Association):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(DiseaseOrPhenotypicFeatureAssociationToThingAssociation):
+    """
+    An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
 class ThingToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     None
@@ -2003,6 +2067,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     None
     """
     def __init__(self,
+                 sequence_variant_qualifier=None,
                  association_type=None,
                  subject=None,
                  negated=None,
@@ -2016,6 +2081,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
                  frequency_qualifier=None,
                  severity_qualifier=None,
                  onset_qualifier=None):
+        self.sequence_variant_qualifier=sequence_variant_qualifier
         self.association_type=association_type
         self.subject=subject
         self.negated=negated
@@ -2031,7 +2097,7 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
         self.onset_qualifier=onset_qualifier
 
     def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
+        return "sequence_variant_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.sequence_variant_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
     def __repr__(self):
         return self.__str__()
 
@@ -2106,7 +2172,7 @@ class GeneToExpressionSiteAssociation(Association):
 
 class SequenceVariantModulatesTreatmentAssociation(Association):
     """
-    None
+    An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.
     """
     def __init__(self,
                  association_type=None,
