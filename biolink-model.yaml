@@ -661,10 +661,32 @@ classes:
     
   - name: protein
     is_a: gene product
+    aliases: ['polypeptide']
+    description: >-
+      A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
     mappings:
       - "PR:000000001"
       - "SIO:010043"
       - "WD:Q8054"
+    id_prefixes:
+      - UniProtKB
+      - PR
+      - ENSEMBL
+    
+  - name: gene product isoform
+    is_a: gene product
+    description: >-
+      This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to
+      represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary,
+      or it may represent the superclass of all isoforms.
+    entity: true
+    abstract: true
+    
+  - name: protein isoform
+    is_a: protein
+    description: >-
+      Represents a protein that is a specific isoform of the canonical or reference protein
+    mixins: gene product isoform
     id_prefixes:
       - UniProtKB
       - PR
@@ -679,6 +701,14 @@ classes:
     id_prefixes:
       - RNAcentral
     
+  - name: RNA product isoform
+    is_a: RNA product
+    description: >-
+      Represents a protein that is a specific isoform of the canonical or reference RNA
+    mixins: gene product isoform
+    id_prefixes:
+      - RNAcentral
+      
   - name: noncoding RNA product
     is_a: RNA product
     id_prefixes:
