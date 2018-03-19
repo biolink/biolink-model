@@ -12,6 +12,15 @@ slots:
     description: >-
       a unique key that identifies a slot or class in a schema
 
+  - name: description
+    description: >-
+      a description
+
+  - name: license
+    domain: element
+    description: >-
+      license for the schema
+
   - name: note
     domain: element
     description: >-
@@ -199,6 +208,7 @@ classes:
       - classes
       - types
       - imports
+      - license
 
   - name: example
     description: "example of usage"
