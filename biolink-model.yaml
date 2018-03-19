@@ -687,7 +687,8 @@ classes:
     is_a: protein
     description: >-
       Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
-    mixins: gene product isoform
+    mixins:
+      - gene product isoform
     id_prefixes:
       - UniProtKB
       - PR
@@ -706,7 +707,8 @@ classes:
     is_a: RNA product
     description: >-
       Represents a protein that is a specific isoform of the canonical or reference RNA
-    mixins: gene product isoform
+    mixins:
+      - gene product isoform
     id_prefixes:
       - RNAcentral
       
