@@ -28,6 +28,9 @@ types:
   - name: symbol type
     typeof: string
 
+  - name: time type
+    typeof: time
+
   - name: biological sequence
     typeof: string
 
@@ -154,21 +157,21 @@ slots:
       - "RO:0002162"
       
   - name: latitude
-    range: float
+    range: xsd:float
     description: >-
       latitude
     mappings:
       - wgs:lat
 
   - name: longitude
-    range: float
+    range: xsd:float
     description: >-
       longitude
     mappings:
       - wgs:long
 
   - name: timepoint
-    range: xsd:time
+    range: time type
     description: >-
       a point in time
 

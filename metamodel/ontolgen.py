@@ -126,24 +126,13 @@ class OwlSchemaGenerator(Generator):
                 #g.add((ci, OWL.equivalentClass, uri))
         for sn in slots:
             s = mgr.slotdef(sn, c)
-            srange = mgr.class_slot_range(c, s)
-            if srange:
-                # represent as existential restrictions
+            slot_range = self.get_range_for_class_slot(c, s)
+            if slot_range:
                 restr = BNode()
                 g.add((ci, RDFS.subClassOf, restr))
                 g.add((restr, RDF.type, OWL.Restriction))
                 g.add((restr, OWL.onProperty, self.property_uri(sn)))
-                if mgr.typedef(srange):
-                    t = mgr.typedef(srange)
-                    typeof = t.typeof
-                    xtype = XSD.string
-                    if typeof == 'string':
-                        xtype = XSD.string
-                    else:
-                        logging.warn("Unknown type: {}".format(typeof))
-                    g.add((restr, OWL.someValuesFrom, xtype))
-                else:
-                    g.add((restr, OWL.someValuesFrom, self.class_uri(srange)))
+                g.add((restr, OWL.someValuesFrom, slot_range))
 
         if c.defining_slots:
             x = BNode()
@@ -157,21 +146,46 @@ class OwlSchemaGenerator(Generator):
                 logging.info("Defining slot for {} = {}".format(c.name, sn))
                 s = mgr.slotdef(sn, c)
                 p = self.property_uri(s, False, c)
-                srange = mgr.class_slot_range(c, s)
-                if srange is None:
-                    logging.error("Null srange for {}.{}".format(c.name, s.name))
-                filler = self.class_uri(srange, False)
-                restr = BNode()
-                g.add((restr, RDF.type, OWL.Restriction))
-                g.add((restr, OWL.onProperty, p))
-                g.add((restr, OWL.someValuesFrom, filler))
-                elts.append(restr)
+                slot_range = self.get_range_for_class_slot(c, s)
+                if slot_range:
+                    restr = BNode()
+                    g.add((ci, RDFS.subClassOf, restr))
+                    g.add((restr, RDF.type, OWL.Restriction))
+                    g.add((restr, OWL.onProperty, self.property_uri(sn)))
+                    g.add((restr, OWL.someValuesFrom, slot_range))
+                    elts.append(restr)
             c = Collection(g, xl, elts)
             
                 
                 
-            
-            
+    def get_range_for_class_slot(self, c, s):
+        mgr = self.manager
+        g = self.graph
+        srange = mgr.class_slot_range(c, s)
+        if srange:
+            return self.get_filler(srange)
+
+    def get_filler(self, srange):
+        mgr = self.manager
+        g = self.graph
+        # represent as existential restrictions
+        if mgr.typedef(srange):
+            t = mgr.typedef(srange)
+            typeof = t.typeof
+            xtype = XSD.string
+            if typeof == 'string':
+                xtype = XSD.string
+            elif typeof == 'time':
+                xtype = XSD.time
+            else:
+                logging.warn("Unknown type: {}".format(typeof))
+            return xtype
+        else:
+            if srange.startswith('xsd:'):
+                return URIRef(srange.replace('xsd:','http://www.w3.org/2001/XMLSchema#'))
+            else:
+                return self.class_uri(srange)
+        
         
     def tr_slot(self, s):
         g = self.graph
@@ -183,9 +197,9 @@ class OwlSchemaGenerator(Generator):
         if s.is_a:
             g.add((p, OWL.subObjectPropertyOf, self.property_uri(s.is_a)))
         if s.domain:
-            g.add((p, RDFS.domain, self.class_uri(s.domain)))
+            g.add((p, RDFS.domain, self.get_filler(s.domain)))
         if s.range:
-            g.add((p, RDFS.range, self.class_uri(s.range)))
+            g.add((p, RDFS.range, self.get_filler(s.range)))
         
 
     def _tr_element(self, e, uri):

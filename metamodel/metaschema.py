@@ -64,6 +64,7 @@ class ClassDefinitionSchema(DefinitionSchema):
 
 class TypeDefinitionSchema(DefinitionSchema):
     mixins = fields.Str()
+    typeof = fields.Str()
 
     @post_load
     def make_object(self, data):
