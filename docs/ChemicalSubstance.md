@@ -10,7 +10,7 @@ May be a chemical entity or a formulation with a chemical entity as active ingre
 URI: [http://bioentity.io/vocab/ChemicalSubstance](http://bioentity.io/vocab/ChemicalSubstance)
 ## Mappings
 
- * [SIO:010004](http://purl.obolibrary.org/obo/SIO_010004)
+ * [SIO:010004](http://semanticscience.org/resource/SIO_010004)
  * [UMLSSG:CHEM](http://purl.obolibrary.org/obo/UMLSSG_CHEM)
  * [WD:Q79529](http://purl.obolibrary.org/obo/WD_Q79529)
  * [CHEBI:24431](http://purl.obolibrary.org/obo/CHEBI_24431)

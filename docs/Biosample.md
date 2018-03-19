@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/Biosample](http://bioentity.io/vocab/Biosample)
 ## Mappings
 
- * [SIO:001050](http://purl.obolibrary.org/obo/SIO_001050)
+ * [SIO:001050](http://semanticscience.org/resource/SIO_001050)
 
 ## Inheritance
 

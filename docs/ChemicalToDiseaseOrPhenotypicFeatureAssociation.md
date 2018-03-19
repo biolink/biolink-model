@@ -10,7 +10,7 @@ An interaction between a chemical entity and a phenotype or disease, where the p
 URI: [http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation](http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation)
 ## Mappings
 
- * [SIO:000993](http://purl.obolibrary.org/obo/SIO_000993)
+ * [SIO:000993](http://semanticscience.org/resource/SIO_000993)
 
 ## Inheritance
 
@@ -34,7 +34,7 @@ URI: [http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation]
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_

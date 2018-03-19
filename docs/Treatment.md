@@ -11,7 +11,7 @@ URI: [http://bioentity.io/vocab/Treatment](http://bioentity.io/vocab/Treatment)
 ## Mappings
 
  * [OGMS:0000090](http://purl.obolibrary.org/obo/OGMS_0000090)
- * [SIO:001398](http://purl.obolibrary.org/obo/SIO_001398)
+ * [SIO:001398](http://semanticscience.org/resource/SIO_001398)
 
 ## Inheritance
 

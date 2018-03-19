@@ -11,7 +11,7 @@ URI: [http://bioentity.io/vocab/Cell](http://bioentity.io/vocab/Cell)
 ## Mappings
 
  * [GO:0005623](http://purl.obolibrary.org/obo/GO_0005623)
- * [SIO:010001](http://purl.obolibrary.org/obo/SIO_010001)
+ * [SIO:010001](http://semanticscience.org/resource/SIO_010001)
  * [WD:Q7868](http://purl.obolibrary.org/obo/WD_Q7868)
 
 ## Inheritance

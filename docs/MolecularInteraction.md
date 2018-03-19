@@ -32,7 +32,7 @@ URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _interaction relationship type_

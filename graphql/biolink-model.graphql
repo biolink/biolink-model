@@ -789,7 +789,7 @@ interface GenotypeToThingAssociation {
 
 type GeneToExpressionSiteAssociation {
   stageQualifier: LifeStage
-  quantifierQualifier: String
+  quantifierQualifier: OntologyClass
   associationType: OntologyClass
   subject: GeneOrGeneProduct!
   negated: String

@@ -23,15 +23,15 @@ URI: [http://bioentity.io/vocab/GeographicLocationAtTime](http://bioentity.io/vo
 
  * [latitude](latitude.html)
     * _latitude_
-    * __range__: float
+    * __range__: xsd:float
     * __Local__
  * [longitude](longitude.html)
     * _longitude_
-    * __range__: float
+    * __range__: xsd:float
     * __Local__
  * [timepoint](timepoint.html)
     * _a point in time_
-    * __range__: xsd:time
+    * __range__: time type
     * __Local__
  * [id](id.html)
     * __range__: identifier type [required]

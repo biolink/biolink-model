@@ -10,7 +10,7 @@ An interaction between a chemical entity and a biological process or pathway
 URI: [http://bioentity.io/vocab/ChemicalToPathwayAssociation](http://bioentity.io/vocab/ChemicalToPathwayAssociation)
 ## Mappings
 
- * [SIO:001250](http://purl.obolibrary.org/obo/SIO_001250)
+ * [SIO:001250](http://semanticscience.org/resource/SIO_001250)
 
 ## Inheritance
 
@@ -33,7 +33,7 @@ URI: [http://bioentity.io/vocab/ChemicalToPathwayAssociation](http://bioentity.i
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_

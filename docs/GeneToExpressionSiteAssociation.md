@@ -28,7 +28,7 @@ URI: [http://bioentity.io/vocab/GeneToExpressionSiteAssociation](http://bioentit
     * __Local__
  * [quantifier qualifier](quantifier_qualifier.html)
     * _can be used to indicate magnitude, or also ranking_
-    * __range__: quantifier
+    * __range__: [ontology class](OntologyClass.html)
     * __Local__
  * [association type](association_type.html)
     * _connects an association to the type of association (e.g. gene to phenotype)_
@@ -40,7 +40,7 @@ URI: [http://bioentity.io/vocab/GeneToExpressionSiteAssociation](http://bioentit
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _expression relationship_

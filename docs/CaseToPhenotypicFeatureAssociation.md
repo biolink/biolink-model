@@ -33,7 +33,7 @@ URI: [http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation](http://bioen
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_

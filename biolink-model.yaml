@@ -109,7 +109,7 @@ slots:
       
   - name: negated
     is_a: association slot
-    range: boolean
+    range: xsd:boolean
     description: >-
       if set to true, then the association is negated i.e. is not true
 
@@ -142,7 +142,7 @@ slots:
       - rdf:type
 
   - name: creation date
-    range: date
+    range: xsd:date
     description: >-
       date on which thing was created
     mappings:
@@ -829,7 +829,7 @@ classes:
     description: >-
       A drug exposure is an intake of a particular chemical substance
     slots:
-      - drug
+      - has input
     slot_usage:
       - name: drug
         range: chemical substance

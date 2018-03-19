@@ -11,7 +11,7 @@ URI: [http://bioentity.io/vocab/DrugExposure](http://bioentity.io/vocab/DrugExpo
 ## Mappings
 
  * [ECTO:0000509](http://purl.obolibrary.org/obo/ECTO_0000509)
- * [SIO:001005](http://purl.obolibrary.org/obo/SIO_001005)
+ * [SIO:001005](http://semanticscience.org/resource/SIO_001005)
 
 ## Inheritance
 

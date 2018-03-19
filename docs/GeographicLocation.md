@@ -24,11 +24,11 @@ URI: [http://bioentity.io/vocab/GeographicLocation](http://bioentity.io/vocab/Ge
 
  * [latitude](latitude.html)
     * _latitude_
-    * __range__: float
+    * __range__: xsd:float
     * __Local__
  * [longitude](longitude.html)
     * _longitude_
-    * __range__: float
+    * __range__: xsd:float
     * __Local__
  * [id](id.html)
     * __range__: identifier type [required]

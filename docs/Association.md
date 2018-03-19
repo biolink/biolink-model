@@ -68,7 +68,7 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
     * __Local__
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * __Local__
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_

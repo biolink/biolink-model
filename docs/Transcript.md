@@ -11,7 +11,7 @@ URI: [http://bioentity.io/vocab/Transcript](http://bioentity.io/vocab/Transcript
 ## Mappings
 
  * [SO:0000673](http://purl.obolibrary.org/obo/SO_0000673)
- * [SIO:010450](http://purl.obolibrary.org/obo/SIO_010450)
+ * [SIO:010450](http://semanticscience.org/resource/SIO_010450)
 
 ## Inheritance
 
