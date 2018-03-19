@@ -37,7 +37,10 @@ class OwlSchemaGenerator(Generator):
     
     def tr(self):
         schema = self.schema
-        self.base = URIRef("http://bioentity.io/schema/{}".format(get_class_name(schema.name)))
+        if schema.id:
+            self.base = URIRef(schema.id)
+        else:
+            self.base = URIRef("http://bioentity.io/schema/{}".format(get_class_name(schema.name)))
         self.graph = rdflib.Graph(identifier=self.base)
         self.graph.bind("owl", OWL)
         self.graph.bind("obo", "http://purl.obolibrary.org/obo/")
