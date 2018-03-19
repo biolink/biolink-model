@@ -683,9 +683,10 @@ classes:
     abstract: true
     
   - name: protein isoform
+    aliases: ['proteoform']
     is_a: protein
     description: >-
-      Represents a protein that is a specific isoform of the canonical or reference protein
+      Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
     mixins: gene product isoform
     id_prefixes:
       - UniProtKB
@@ -1616,7 +1617,9 @@ classes:
       - "BFO:0000003"
 
   - name: molecular activity
-    is_a: occurrent
+    is_a: biological entity
+    mixins:
+      - occurrent
     description: >-
       An execution of a molecular function
     mappings:
@@ -1628,13 +1631,6 @@ classes:
       Activity or behavior of any independent integral living, organization or mechanical actor in the world
     mappings:
       - "UMLSSG:ACTI"
-
-  - name: occupation
-    is_a: occurrent
-    description: >-
-      A job or profession
-    mappings:
-      - "UMLSSG:OCCU"
 
   - name: procedure
     is_a: occurrent
