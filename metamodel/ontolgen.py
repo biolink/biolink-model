@@ -20,6 +20,7 @@ from .generator import Generator
 from .metamodel import ClassDefinition, SlotDefinition
 
 OBO = Namespace("http://purl.obolibrary.org/obo/")
+DCTERMS = Namespace("http://purl.org/dc/terms/")
 
 from .schemautils import *
 
@@ -42,6 +43,13 @@ class OwlSchemaGenerator(Generator):
         self.graph.bind("obo", "http://purl.obolibrary.org/obo/")
         self.graph.add((self.base, RDF.type, OWL.Ontology))
 
+        if schema.name:
+            self.graph.add((self.base, RDFS.label, Literal(schema.name)))
+        if schema.description:
+            self.graph.add((self.base, DC.description, Literal(schema.description)))
+            if schema.license:
+            self.graph.add((self.base, DCTERMS.license, Literal(schema.license)))
+        
         for c in schema.classes:
             self.tr_class(c)
         for c in schema.slots:
