@@ -1,3 +1,10 @@
+id: "http://bioentity.io/json-schema/meta.json"
+name: metamodel
+description: Metamodel for biolink model
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  
 slots:
 
   - name: id
@@ -12,6 +19,11 @@ slots:
     description: >-
       a unique key that identifies a slot or class in a schema
 
+  - name: singular_name
+    domain: element
+    description: >-
+      a name that is used in the singular form
+
   - name: description
     description: >-
       a description
@@ -25,6 +37,18 @@ slots:
     domain: element
     description: >-
       Notes about an element
+
+  - name: classes
+    domain: schema definition
+    multivalued: true
+    description: >-
+      classes defined in schema
+
+  - name: types
+    domain: schema definition
+    multivalued: true
+    description: >-
+      types defined in schema
 
   - name: imports
     domain: string
@@ -45,6 +69,16 @@ slots:
       not instantiated.
       When generating golr-views, abstract classes are ignored
     range: boolean
+
+  - name: identifier
+    
+  - name: defining_slots
+
+  - name: value
+    
+  - name: domain
+    
+  - name: range
     
   - name: inlined
     description: >-
@@ -154,7 +188,7 @@ classes:
     abstract: true
     slots:
       - name
-      - singular name
+      - singular_name
       - is_a
       - description
       - note
@@ -186,7 +220,7 @@ classes:
     description: "A class or interface"
     is_a: definition
     slots:
-      - defining slots
+      - defining_slots
       - subclass_of
       - mixin
       - mixins

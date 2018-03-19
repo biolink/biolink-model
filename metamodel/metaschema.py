@@ -57,7 +57,6 @@ class ClassDefinitionSchema(DefinitionSchema):
     slots = fields.List(fields.Str)
     defining_slots = fields.List(fields.Str)
     slot_usage = fields.List(fields.Nested(SlotUsageDefinitionSchema))
-    license = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -75,6 +74,7 @@ class SchemaDefinitionSchema(DefinitionSchema):
     classes = fields.List(fields.Nested(ClassDefinitionSchema))
     types = fields.List(fields.Nested(TypeDefinitionSchema))
     imports = fields.List(fields.Str)
+    license = fields.Str()
 
     @post_load
     def make_object(self, data):

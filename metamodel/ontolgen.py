@@ -46,10 +46,12 @@ class OwlSchemaGenerator(Generator):
         if schema.name:
             self.graph.add((self.base, RDFS.label, Literal(schema.name)))
         if schema.description:
-            self.graph.add((self.base, DC.description, Literal(schema.description)))
-            if schema.license:
+            self.graph.add((self.base, DCTERMS.description, Literal(schema.description)))
+        if schema.license:
             self.graph.add((self.base, DCTERMS.license, Literal(schema.license)))
-        
+        else:
+            logging.warn("No license!")
+            
         for c in schema.classes:
             self.tr_class(c)
         for c in schema.slots:
