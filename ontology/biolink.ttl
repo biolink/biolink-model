@@ -1,0 +1,3171 @@
+@prefix ns1: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns2: <http://purl.org/dc/terms/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://bioentity.io/vocab/ActivityAndBehavior> a owl:Class ;
+    rdfs:label "activity and behavior" ;
+    obo:IAO_0000115 "Activity or behavior of any independent integral living, organization or mechanical actor in the world" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Occurrent> ;
+    ns1:exactMatch obo:UMLSSG_ACTI .
+
+<http://bioentity.io/vocab/Allele> a owl:Class ;
+    rdfs:label "allele" ;
+    obo:IAO_0000115 "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_gene> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Gene> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_zygosity> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Zygosity> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/Genotype> ;
+    ns1:exactMatch obo:GENO_0000512,
+        <http://semanticscience.org/resource/SIO_010277> .
+
+<http://bioentity.io/vocab/AnatomicalEntityPartOfAnatomicalEntityAssociation> a owl:Class ;
+    rdfs:label "anatomical entity part of anatomical entity association" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        _:N2a1c14b97adc415fa3ad065200ddc0b6,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/AnatomicalEntity> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/AnatomicalEntity> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/AnatomicalEntity> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        <http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation> _:N2a1c14b97adc415fa3ad065200ddc0b6 ) ] .
+
+<http://bioentity.io/vocab/AssociationResultSet> a owl:Class ;
+    rdfs:label "association result set" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/associations> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Association> ],
+        <http://bioentity.io/vocab/InformationContentEntity> .
+
+<http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation> a owl:Class ;
+    rdfs:label "biosample to disease or phenotypic feature association" ;
+    obo:IAO_0000115 """An association between a biosample and a disease or phenotype
+  definitional: true
+  """ ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        _:N4ade898fd217450793c92a6f8ee362e8,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Biosample> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        _:Nc6f794c16ede4a9690c6ecb8428c374a,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        <http://bioentity.io/vocab/Association>,
+        <http://bioentity.io/vocab/BiosampleToThingAssociation>,
+        <http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Nc6f794c16ede4a9690c6ecb8428c374a _:N4ade898fd217450793c92a6f8ee362e8 ) ] .
+
+<http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation> a owl:Class ;
+    rdfs:label "case to phenotypic feature association" ;
+    obo:IAO_0000115 "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/frequency_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/FrequencyValue> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/PhenotypicFeature> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Case> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/sex_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/BiologicalSex> ],
+        _:N9610e83289b34edcaa6dfc023942e67e,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/onset_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Onset> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/severity_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SeverityValue> ],
+        _:Ncbeb8f1d04bd43fd88d864f9931ff693,
+        <http://bioentity.io/vocab/Association>,
+        <http://bioentity.io/vocab/CaseToThingAssociation>,
+        <http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Ncbeb8f1d04bd43fd88d864f9931ff693 _:N9610e83289b34edcaa6dfc023942e67e ) ] .
+
+<http://bioentity.io/vocab/Cell> a owl:Class ;
+    rdfs:label "cell" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/AnatomicalEntity> ;
+    ns1:exactMatch obo:GO_0005623,
+        obo:WD_Q7868,
+        <http://semanticscience.org/resource/SIO_010001> .
+
+<http://bioentity.io/vocab/CellularComponent> a owl:Class ;
+    rdfs:label "cellular component" ;
+    obo:IAO_0000115 "A location in or around a cell" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/AnatomicalEntity> ;
+    ns1:exactMatch obo:GO_0005575,
+        obo:WD_Q5058355,
+        <http://semanticscience.org/resource/SIO_001400> .
+
+<http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation> a owl:Class ;
+    rdfs:label "chemical to disease or phenotypic feature association" ;
+    obo:IAO_0000115 "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        _:N91cf1528673b4fc69a5cdaa7606f8269,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/ChemicalSubstance> ],
+        _:Nc8101b1500c74cb98b632d1f2f573a50,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        <http://bioentity.io/vocab/Association>,
+        <http://bioentity.io/vocab/ChemicalToThingAssociation>,
+        <http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N91cf1528673b4fc69a5cdaa7606f8269 _:Nc8101b1500c74cb98b632d1f2f573a50 ) ] ;
+    ns1:exactMatch <http://semanticscience.org/resource/SIO_000993> .
+
+<http://bioentity.io/vocab/ChemicalToGeneAssociation> a owl:Class ;
+    rdfs:label "chemical to gene association" ;
+    obo:IAO_0000115 "An interaction between a chemical entity and a gene or gene product",
+        "An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneProduct> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        _:N566dd87061984ec3897b724aa710c59f,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/ChemicalSubstance> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        _:N6f82b43746e94a87927052f13a0ba755,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/ChemicalSubstance> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        _:Na6f2d41d721946068638044ec8c3b585,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        _:Ne933824d55e64966b509a9895c19ebe2,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        <http://bioentity.io/vocab/Association>,
+        <http://bioentity.io/vocab/ChemicalToThingAssociation> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Na6f2d41d721946068638044ec8c3b585 _:N6f82b43746e94a87927052f13a0ba755 ) ],
+        [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N566dd87061984ec3897b724aa710c59f _:Ne933824d55e64966b509a9895c19ebe2 ) ] ;
+    ns1:exactMatch <http://semanticscience.org/resource/SIO_001257> .
+
+<http://bioentity.io/vocab/ChemicalToPathwayAssociation> a owl:Class ;
+    rdfs:label "chemical to pathway association" ;
+    obo:IAO_0000115 "An interaction between a chemical entity and a biological process or pathway" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        _:N4cc757b3e61542cf83ffe8bd9a1da216,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/ChemicalSubstance> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Pathway> ],
+        _:Nfb31fa076411408b90e480a09988bf06,
+        <http://bioentity.io/vocab/Association>,
+        <http://bioentity.io/vocab/ChemicalToThingAssociation> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Nfb31fa076411408b90e480a09988bf06 _:N4cc757b3e61542cf83ffe8bd9a1da216 ) ] ;
+    ns1:exactMatch <http://semanticscience.org/resource/SIO_001250> .
+
+<http://bioentity.io/vocab/ClinicalIntervention> a owl:Class ;
+    rdfs:label "clinical intervention" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/ClinicalEntity> .
+
+<http://bioentity.io/vocab/ClinicalTrial> a owl:Class ;
+    rdfs:label "clinical trial" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/ClinicalEntity> .
+
+<http://bioentity.io/vocab/CodingSequence> a owl:Class ;
+    rdfs:label "coding sequence" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        <http://bioentity.io/vocab/GenomicEntity> ;
+    ns1:exactMatch obo:SO_0000316,
+        <http://semanticscience.org/resource/SIO_001390> .
+
+<http://bioentity.io/vocab/Device> a owl:Class ;
+    rdfs:label "device" ;
+    obo:IAO_0000115 "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/NamedThing> ;
+    ns1:exactMatch obo:UMLSSG_DEVI .
+
+<http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation> a owl:Class ;
+    rdfs:label "disease to phenotypic feature association" ;
+    obo:IAO_0000115 "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        _:N296b2af8255140db885b10dfe2c609ae,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        _:N434c53ad9fb347d69cdba39cd5b09689,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/severity_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SeverityValue> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/sex_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/BiologicalSex> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/PhenotypicFeature> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Disease> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/onset_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Onset> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/frequency_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/FrequencyValue> ],
+        <http://bioentity.io/vocab/Association>,
+        <http://bioentity.io/vocab/DiseaseToThingAssociation>,
+        <http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N296b2af8255140db885b10dfe2c609ae _:N434c53ad9fb347d69cdba39cd5b09689 ) ] .
+
+<http://bioentity.io/vocab/Drug> a owl:Class ;
+    rdfs:label "drug" ;
+    obo:IAO_0000115 "A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/ChemicalSubstance> ;
+    ns1:exactMatch obo:WD_Q12140 .
+
+<http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation> a owl:Class ;
+    rdfs:label "environment to phenotypic feature association" ;
+    obo:IAO_0000115 "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/frequency_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/FrequencyValue> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/sex_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/BiologicalSex> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/onset_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Onset> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Environment> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/severity_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SeverityValue> ],
+        _:Ncb96df5737304cb69dd7a9c8f97de314,
+        _:Nd55814f939a94da3a07f22c6f16b98b5,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/PhenotypicFeature> ],
+        <http://bioentity.io/vocab/Association>,
+        <http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Nd55814f939a94da3a07f22c6f16b98b5 _:Ncb96df5737304cb69dd7a9c8f97de314 ) ] .
+
+<http://bioentity.io/vocab/EnvironmentalFeature> a owl:Class ;
+    rdfs:label "environmental feature" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/PlanetaryEntity> ;
+    ns1:exactMatch obo:ENVO_00002297 .
+
+<http://bioentity.io/vocab/EnvironmentalProcess> a owl:Class ;
+    rdfs:label "environmental process" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/Occurrent>,
+        <http://bioentity.io/vocab/PlanetaryEntity> ;
+    ns1:exactMatch obo:ENVO_02500000 .
+
+<http://bioentity.io/vocab/EvidenceType> a owl:Class ;
+    rdfs:label "evidence type" ;
+    obo:IAO_0000115 "Class of evidence that supports an association" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/InformationContentEntity> ;
+    ns1:exactMatch obo:ECO_0000000 .
+
+<http://bioentity.io/vocab/ExonToTranscriptRelationship> a owl:Class ;
+    rdfs:label "exon to transcript relationship" ;
+    obo:IAO_0000115 "A transcript is formed from multiple exons" ;
+    rdfs:subClassOf _:N0185ce3a803144b78bdc2098538cd244,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Transcript> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Exon> ],
+        _:Nf2c1ea93d489486f9514d62817c9ed30,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/SequenceFeatureRelationship> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/SequenceFeatureRelationship> _:N0185ce3a803144b78bdc2098538cd244 _:Nf2c1ea93d489486f9514d62817c9ed30 ) ] .
+
+<http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation> a owl:Class ;
+    rdfs:label "gene as a model of disease association" ;
+    rdfs:subClassOf _:N0ef021bb89814e4d80dde0671ae880ca,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        _:N3388f72a94e64ff0a450b641db07b1d4,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/frequency_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/FrequencyValue> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/severity_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SeverityValue> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        _:Nb66790cf248e4656a868cdc2495a119a,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Disease> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/onset_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Onset> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        <http://bioentity.io/vocab/EntityToDiseaseAssociation>,
+        <http://bioentity.io/vocab/GeneToDiseaseAssociation>,
+        <http://bioentity.io/vocab/ModelToDiseaseMixin> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/GeneToDiseaseAssociation> _:N3388f72a94e64ff0a450b641db07b1d4 _:N0ef021bb89814e4d80dde0671ae880ca _:Nb66790cf248e4656a868cdc2495a119a ) ] .
+
+<http://bioentity.io/vocab/GeneFamily> a owl:Class ;
+    rdfs:label "gene family" ;
+    obo:IAO_0000115 "any grouping of multiple genes or gene products related by common descent" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        <http://bioentity.io/vocab/GeneGrouping>,
+        <http://bioentity.io/vocab/MolecularEntity> ;
+    ns1:exactMatch obo:NCIT_C20130,
+        obo:WD_Q417841,
+        <http://semanticscience.org/resource/SIO_001380> .
+
+<http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociation> a owl:Class ;
+    rdfs:label "gene has variant that contributes to disease association" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/frequency_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/FrequencyValue> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Disease> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/severity_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SeverityValue> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        _:N50e6a0a01b9c4fc6acccbcef631e2560,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/onset_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Onset> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        _:Ne46848ad5a28409b992e19d93348c68d,
+        _:Ne57fd477123949d48747e6b698e7cfb7,
+        <http://bioentity.io/vocab/GeneToDiseaseAssociation> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/GeneToDiseaseAssociation> _:Ne57fd477123949d48747e6b698e7cfb7 _:Ne46848ad5a28409b992e19d93348c68d _:N50e6a0a01b9c4fc6acccbcef631e2560 ) ] .
+
+<http://bioentity.io/vocab/GeneRegulatoryRelationship> a owl:Class ;
+    rdfs:label "gene regulatory relationship" ;
+    obo:IAO_0000115 "A regulatory relationship between two genes" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        <http://bioentity.io/vocab/Association> .
+
+<http://bioentity.io/vocab/GeneToExpressionSiteAssociation> a owl:Class ;
+    rdfs:label "gene to expression site association" ;
+    obo:IAO_0000115 "An association between a gene and an expression site, possibly qualified by stage/timing info." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/AnatomicalEntity> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/stage_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/LifeStage> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        _:N5897bd763a8b436e89f2d988aa3578de,
+        _:N59d033d5978c445486fd227c2e358290,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/quantifier_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        _:Nc7f45d44d54d42aba6f64bb3f530dc54,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N59d033d5978c445486fd227c2e358290 _:N5897bd763a8b436e89f2d988aa3578de _:Nc7f45d44d54d42aba6f64bb3f530dc54 ) ] .
+
+<http://bioentity.io/vocab/GeneToGeneHomologyAssociation> a owl:Class ;
+    rdfs:label "gene to gene homology association" ;
+    obo:IAO_0000115 "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        _:N3f4511cb539749a598187d3505bdf75a,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        _:N6b5a22554235456a942abba32c12e3a2,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        _:Na01d720b720b43ca87171527d725028b,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        <http://bioentity.io/vocab/GeneToGeneAssociation> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/GeneToGeneAssociation> _:N3f4511cb539749a598187d3505bdf75a _:Na01d720b720b43ca87171527d725028b _:N6b5a22554235456a942abba32c12e3a2 ) ] .
+
+<http://bioentity.io/vocab/GeneToGeneProductRelationship> a owl:Class ;
+    rdfs:label "gene to gene product relationship" ;
+    obo:IAO_0000115 "A gene is transcribed and potentially translated to a gene product" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneProduct> ],
+        _:N420d7233daa64913998d5a03e1d1d73f,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Gene> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        _:Nf9c0b31cb76d4c46a182677784bdec16,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/SequenceFeatureRelationship> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/SequenceFeatureRelationship> _:N420d7233daa64913998d5a03e1d1d73f _:Nf9c0b31cb76d4c46a182677784bdec16 ) ] .
+
+<http://bioentity.io/vocab/GeneToGoTermAssociation> a owl:Class ;
+    rdfs:label "gene to go term association" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        _:N46a50c5ae84141e79d7efda7128f42bd,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/MolecularEntity> ],
+        _:N5eaed691a51d4e83a696b2db9652d8bf,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N5eaed691a51d4e83a696b2db9652d8bf _:N46a50c5ae84141e79d7efda7128f42bd ) ] ;
+    ns1:exactMatch <http://purl.obolibrary.org/obo/http_//bio2rdf.org/wormbase_vocabulary_Gene-GO-Association> .
+
+<http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation> a owl:Class ;
+    rdfs:label "gene to phenotypic feature association" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/onset_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Onset> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/PhenotypicFeature> ],
+        _:N4e36811d991d4b62a78b1eafa1a7da65,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/severity_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SeverityValue> ],
+        _:N5f3ca3e1bcc7468d9850c83274d12cd4,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/sex_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/BiologicalSex> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/frequency_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/FrequencyValue> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        <http://bioentity.io/vocab/Association>,
+        <http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation>,
+        <http://bioentity.io/vocab/GeneToThingAssociation> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N4e36811d991d4b62a78b1eafa1a7da65 _:N5f3ca3e1bcc7468d9850c83274d12cd4 ) ] ;
+    ns1:exactMatch <http://purl.obolibrary.org/obo/http_//bio2rdf.org/wormbase_vocabulary_Gene-Phenotype-Association> .
+
+<http://bioentity.io/vocab/Genome> a owl:Class ;
+    rdfs:label "genome" ;
+    obo:IAO_0000115 "A genome is the sum of genetic material within a cell or virion." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        <http://bioentity.io/vocab/GenomicEntity> ;
+    ns1:exactMatch obo:SO_0001026,
+        obo:WD_Q7020,
+        <http://semanticscience.org/resource/SIO_000984> .
+
+<http://bioentity.io/vocab/GenomicSequenceLocalization> a owl:Class ;
+    rdfs:label "genomic sequence localization" ;
+    obo:IAO_0000115 "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GenomicEntity> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GenomicEntity> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        <http://bioentity.io/vocab/Association> .
+
+<http://bioentity.io/vocab/GenotypeToGeneAssociation> a owl:Class ;
+    rdfs:label "genotype to gene association" ;
+    obo:IAO_0000115 "Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Gene> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Genotype> ],
+        _:N7f43128db0124ccfb6ee320d9a4d0535,
+        _:N89ff8e2cac9f456485d9a3993e72943b,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N89ff8e2cac9f456485d9a3993e72943b _:N7f43128db0124ccfb6ee320d9a4d0535 ) ] .
+
+<http://bioentity.io/vocab/GenotypeToGenotypePartAssociation> a owl:Class ;
+    rdfs:label "genotype to genotype part association" ;
+    obo:IAO_0000115 "Any association between one genotype and a genotypic entity that is a sub-component of it" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        _:N1f805cc3c40f490aa9cc4e448d7a1c6f,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        _:N284515be817745a38b61d3f74349911b,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Genotype> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Genotype> ],
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N1f805cc3c40f490aa9cc4e448d7a1c6f _:N284515be817745a38b61d3f74349911b ) ] .
+
+<http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation> a owl:Class ;
+    rdfs:label "genotype to phenotypic feature association" ;
+    obo:IAO_0000115 "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/severity_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SeverityValue> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/PhenotypicFeature> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        _:N37bce404418e48bcb95ca702ee7c033b,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/onset_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Onset> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        _:N89749a0361e34da08fdd8b3dfbb6d1de,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/sex_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/BiologicalSex> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Genotype> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/frequency_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/FrequencyValue> ],
+        <http://bioentity.io/vocab/Association>,
+        <http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation>,
+        <http://bioentity.io/vocab/GenotypeToThingAssociation> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N37bce404418e48bcb95ca702ee7c033b _:N89749a0361e34da08fdd8b3dfbb6d1de ) ] .
+
+<http://bioentity.io/vocab/GenotypeToVariantAssociation> a owl:Class ;
+    rdfs:label "genotype to variant association" ;
+    obo:IAO_0000115 "Any association between a genotype and a sequence variant." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SequenceVariant> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Genotype> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        _:N36d917d7fa804c1fb4f3063051ce2a64,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        _:Ndba7c8d0e33c4b2d92c9e1583776c275,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Ndba7c8d0e33c4b2d92c9e1583776c275 _:N36d917d7fa804c1fb4f3063051ce2a64 ) ] .
+
+<http://bioentity.io/vocab/GenotypicSex> a owl:Class ;
+    rdfs:label "genotypic sex" ;
+    obo:IAO_0000115 "An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes." ;
+    rdfs:subClassOf <http://bioentity.io/vocab/BiologicalSex> ;
+    ns1:exactMatch obo:PATO_0020000 .
+
+<http://bioentity.io/vocab/GeographicLocation> a owl:Class ;
+    rdfs:label "geographic location" ;
+    obo:IAO_0000115 "a location that can be described in lat/long coordinates" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/longitude> ;
+            owl:someValuesFrom xsd:float ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/latitude> ;
+            owl:someValuesFrom xsd:float ],
+        <http://bioentity.io/vocab/PlanetaryEntity> ;
+    ns1:exactMatch obo:UMLSSG_GEOG .
+
+<http://bioentity.io/vocab/GeographicLocationAtTime> a owl:Class ;
+    rdfs:label "geographic location at time" ;
+    obo:IAO_0000115 "a location that can be described in lat/long coordinates, for a particular time" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/timepoint> ;
+            owl:someValuesFrom xsd:time ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/longitude> ;
+            owl:someValuesFrom xsd:float ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/latitude> ;
+            owl:someValuesFrom xsd:float ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/PlanetaryEntity> .
+
+<http://bioentity.io/vocab/GrossAnatomicalStructure> a owl:Class ;
+    rdfs:label "gross anatomical structure" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/AnatomicalEntity> ;
+    ns1:exactMatch obo:WD_Q4936952,
+        <http://semanticscience.org/resource/SIO_010046> .
+
+<http://bioentity.io/vocab/MacromolecularComplex> a owl:Class ;
+    rdfs:label "macromolecular complex" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/MolecularEntity> ;
+    ns1:exactMatch obo:GO_0032991,
+        obo:WD_Q22325163,
+        <http://semanticscience.org/resource/SIO_010046> .
+
+<http://bioentity.io/vocab/Microrna> a owl:Class ;
+    rdfs:label "microRNA" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/NoncodingRnaProduct> ;
+    ns1:exactMatch obo:SO_0000276,
+        obo:WD_Q310899,
+        <http://semanticscience.org/resource/SIO_001397> .
+
+<http://bioentity.io/vocab/MolecularActivity> a owl:Class ;
+    rdfs:label "molecular activity" ;
+    obo:IAO_0000115 "An execution of a molecular function" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/BiologicalEntity>,
+        <http://bioentity.io/vocab/Occurrent> ;
+    ns1:exactMatch obo:GO_0003674 .
+
+<http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation> a owl:Class ;
+    rdfs:label "pairwise gene or protein interaction association" ;
+    obo:IAO_0000115 "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        _:N61acbb20ae5f4b2981328a5401b4d4e4,
+        _:N65d2f32d93a4404c8cf1656f6786b27e,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        _:Nca268198bfd947789bd57532acabab02,
+        <http://bioentity.io/vocab/GeneToGeneAssociation>,
+        <http://bioentity.io/vocab/MolecularInteraction> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/GeneToGeneAssociation> _:Nca268198bfd947789bd57532acabab02 _:N65d2f32d93a4404c8cf1656f6786b27e _:N61acbb20ae5f4b2981328a5401b4d4e4 ) ] .
+
+<http://bioentity.io/vocab/Phenomenon> a owl:Class ;
+    rdfs:label "phenomenon" ;
+    obo:IAO_0000115 "a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Occurrent> ;
+    ns1:exactMatch obo:UMLSSG_PHEN .
+
+<http://bioentity.io/vocab/PhenotypicSex> a owl:Class ;
+    rdfs:label "phenotypic sex" ;
+    obo:IAO_0000115 "An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present." ;
+    rdfs:subClassOf <http://bioentity.io/vocab/BiologicalSex> ;
+    ns1:exactMatch obo:PATO_0001894 .
+
+<http://bioentity.io/vocab/Physiology> a owl:Class ;
+    rdfs:label "physiology" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/BiologicalProcess> ;
+    ns1:exactMatch obo:UMLSSG_PHYS .
+
+<http://bioentity.io/vocab/PopulationOfIndividualOrganisms> a owl:Class ;
+    rdfs:label "population of individual organisms" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        <http://bioentity.io/vocab/OrganismalEntity>,
+        <http://bioentity.io/vocab/ThingWithTaxon> ;
+    ns1:exactMatch <http://semanticscience.org/resource/SIO_001061> .
+
+<http://bioentity.io/vocab/Procedure> a owl:Class ;
+    rdfs:label "procedure" ;
+    obo:IAO_0000115 "A series of actions conducted in a certain order or manner" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Occurrent> ;
+    ns1:exactMatch obo:UMLSSG_PROC .
+
+<http://bioentity.io/vocab/ProteinIsoform> a owl:Class ;
+    rdfs:label "protein isoform" ;
+    obo:IAO_0000115 "Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/GeneProductIsoform>,
+        <http://bioentity.io/vocab/Protein> .
+
+<http://bioentity.io/vocab/RnaProductIsoform> a owl:Class ;
+    rdfs:label "RNA product isoform" ;
+    obo:IAO_0000115 "Represents a protein that is a specific isoform of the canonical or reference RNA" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/GeneProductIsoform>,
+        <http://bioentity.io/vocab/RnaProduct> .
+
+<http://bioentity.io/vocab/SequenceVariantModulatesTreatmentAssociation> a owl:Class ;
+    rdfs:label "sequence variant modulates treatment association" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SequenceVariant> ],
+        _:N2c2c4bb6977645338279df3f805bed90,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Treatment> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        _:Nd7323d80c229425891b374764a867dec,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Nd7323d80c229425891b374764a867dec _:N2c2c4bb6977645338279df3f805bed90 ) ] .
+
+<http://bioentity.io/vocab/TranscriptToGeneRelationship> a owl:Class ;
+    rdfs:label "transcript to gene relationship" ;
+    obo:IAO_0000115 "A gene is a collection of transcripts" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Gene> ],
+        _:N2b93542229c24517b93aeae386cdc1c1,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        _:N8fe2cac2259a4107950aa329b77470fa,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Transcript> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/SequenceFeatureRelationship> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/SequenceFeatureRelationship> _:N8fe2cac2259a4107950aa329b77470fa _:N2b93542229c24517b93aeae386cdc1c1 ) ] .
+
+<http://bioentity.io/vocab/clinical_modifier_qualifier> a owl:ObjectProperty ;
+    rdfs:label "clinical modifier qualifier" ;
+    obo:IAO_0000115 "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects" ;
+    rdfs:range <http://bioentity.io/vocab/ClinicalModifier> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/creation_date> a owl:ObjectProperty ;
+    rdfs:label "creation date" ;
+    obo:IAO_0000115 "date on which thing was created" ;
+    rdfs:range <http://bioentity.io/vocab/Date> .
+
+<http://bioentity.io/vocab/description> a owl:ObjectProperty ;
+    rdfs:label "description" ;
+    obo:IAO_0000115 "a human-readable description of a thing" ;
+    rdfs:domain <http://bioentity.io/vocab/NamedThing> ;
+    rdfs:range xsd:string .
+
+<http://bioentity.io/vocab/end_interbase_coordinate> a owl:ObjectProperty ;
+    rdfs:label "end interbase coordinate" ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/interbase_coordinate> .
+
+<http://bioentity.io/vocab/filler> a owl:ObjectProperty ;
+    rdfs:label "filler" ;
+    obo:IAO_0000115 "The value in a property-value tuple" ;
+    rdfs:range <http://bioentity.io/vocab/NamedThing> .
+
+<http://bioentity.io/vocab/full_name> a owl:ObjectProperty ;
+    rdfs:label "full name" ;
+    obo:IAO_0000115 "a long-form human readable name for a thing" ;
+    rdfs:domain <http://bioentity.io/vocab/NamedThing> ;
+    rdfs:range xsd:string .
+
+<http://bioentity.io/vocab/genome_build> a owl:ObjectProperty ;
+    rdfs:label "genome build" ;
+    obo:IAO_0000115 "TODO" .
+
+<http://bioentity.io/vocab/has_confidence_level> a owl:ObjectProperty ;
+    rdfs:label "has confidence level" ;
+    obo:IAO_0000115 "connects an association to a qualitative term denoting the level of confidence" ;
+    rdfs:range <http://bioentity.io/vocab/ConfidenceLevel> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/has_evidence> a owl:ObjectProperty ;
+    rdfs:label "has evidence" ;
+    obo:IAO_0000115 "connects an association to an instance of supporting evidence" ;
+    rdfs:range <http://bioentity.io/vocab/EvidenceInstance> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/phase> a owl:ObjectProperty ;
+    rdfs:label "phase" ;
+    obo:IAO_0000115 "TODO" .
+
+<http://bioentity.io/vocab/start_interbase_coordinate> a owl:ObjectProperty ;
+    rdfs:label "start interbase coordinate" ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/interbase_coordinate> .
+
+<http://bioentity.io/vocab/systematic_synonym> a owl:ObjectProperty ;
+    rdfs:label "systematic synonym" ;
+    obo:IAO_0000115 "more commonly used for gene symbols in yeast" ;
+    rdfs:domain <http://bioentity.io/vocab/NamedThing> ;
+    rdfs:range xsd:string .
+
+<https://biolink.github.io/biolink-model/ontology/biolink.ttl> a owl:Ontology ;
+    rdfs:label "biolink model" ;
+    ns2:description "Entity and association taxonomy and datamodel for life-sciences data" ;
+    ns2:license "https://creativecommons.org/publicdomain/zero/1.0/" .
+
+<http://bioentity.io/vocab/AdministrativeEntity> a owl:Class ;
+    rdfs:label "administrative entity" ;
+    rdfs:subClassOf <http://bioentity.io/meta/Abstract> .
+
+<http://bioentity.io/vocab/BiosampleToThingAssociation> a owl:Class ;
+    rdfs:label "biosample to thing association" ;
+    obo:IAO_0000115 "An association between a biosample and something" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        _:N9fa6f32cbc4344489db8d06aa5ad9653,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Biosample> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N9fa6f32cbc4344489db8d06aa5ad9653 ) ] .
+
+<http://bioentity.io/vocab/CaseToThingAssociation> a owl:Class ;
+    rdfs:label "case to thing association" ;
+    obo:IAO_0000115 "An abstract association for use where the case is the subject" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Case> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        _:Nf9f6742f540a4a2f9ae5863c05c1a4bc,
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Nf9f6742f540a4a2f9ae5863c05c1a4bc ) ] .
+
+<http://bioentity.io/vocab/ClinicalModifier> a owl:Class ;
+    rdfs:label "clinical modifier" ;
+    obo:IAO_0000115 "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Attribute> ;
+    ns1:exactMatch obo:HP_0012823 .
+
+<http://bioentity.io/vocab/ConfidenceLevel> a owl:Class ;
+    rdfs:label "confidence level" ;
+    obo:IAO_0000115 "Level of confidence in a statement" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/InformationContentEntity> ;
+    ns1:exactMatch obo:CIO_0000028 .
+
+<http://bioentity.io/vocab/DiseaseToThingAssociation> a owl:Class ;
+    rdfs:label "disease to thing association" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        _:Naf555bf3726046aab80fdb3eec5cba0b,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Disease> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Naf555bf3726046aab80fdb3eec5cba0b ) ] .
+
+<http://bioentity.io/vocab/DrugExposure> a owl:Class ;
+    rdfs:label "drug exposure" ;
+    obo:IAO_0000115 "A drug exposure is an intake of a particular chemical substance" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/drug> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/ChemicalSubstance> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/Environment> ;
+    ns1:exactMatch obo:ECTO_0000509,
+        <http://semanticscience.org/resource/SIO_001005> .
+
+<http://bioentity.io/vocab/GeneGrouping> a owl:Class ;
+    rdfs:label "gene grouping" ;
+    obo:IAO_0000115 "any grouping of multiple genes or gene products" ;
+    rdfs:subClassOf <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/meta/Mixin> .
+
+<http://bioentity.io/vocab/GenotypeToThingAssociation> a owl:Class ;
+    rdfs:label "genotype to thing association" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        _:N9a76381933c44c828cdba5cbf8fb8a6a,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Genotype> ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N9a76381933c44c828cdba5cbf8fb8a6a ) ] .
+
+<http://bioentity.io/vocab/IndividualOrganism> a owl:Class ;
+    rdfs:label "individual organism" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/OrganismalEntity>,
+        <http://bioentity.io/vocab/ThingWithTaxon> ;
+    ns1:exactMatch obo:WD_Q795052,
+        <http://semanticscience.org/resource/SIO_010000> .
+
+<http://bioentity.io/vocab/ModelToDiseaseMixin> a owl:Class ;
+    rdfs:label "model to disease mixin" ;
+    obo:IAO_0000115 "This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease" ;
+    rdfs:subClassOf <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/meta/Mixin> .
+
+<http://bioentity.io/vocab/MolecularInteraction> a owl:Class ;
+    rdfs:label "molecular interaction" ;
+    obo:IAO_0000115 "An interaction at the molecular level between two physical entities" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/meta/Mixin>,
+        <http://bioentity.io/vocab/Association> .
+
+<http://bioentity.io/vocab/NoncodingRnaProduct> a owl:Class ;
+    rdfs:label "noncoding RNA product" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        <http://bioentity.io/vocab/RnaProduct> ;
+    ns1:exactMatch <http://semanticscience.org/resource/SIO_001235> .
+
+<http://bioentity.io/vocab/Protein> a owl:Class ;
+    rdfs:label "protein" ;
+    obo:IAO_0000115 "A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/GeneProduct> ;
+    ns1:exactMatch obo:PR_000000001,
+        obo:WD_Q8054,
+        <http://semanticscience.org/resource/SIO_010043> .
+
+<http://bioentity.io/vocab/associations> a owl:ObjectProperty ;
+    rdfs:label "associations" ;
+    rdfs:range <http://bioentity.io/vocab/Association> .
+
+<http://bioentity.io/vocab/has_gene> a owl:ObjectProperty ;
+    rdfs:label "has gene" ;
+    obo:IAO_0000115 "connects and entity to a single gene" ;
+    rdfs:range <http://bioentity.io/vocab/Gene> .
+
+<http://bioentity.io/vocab/quantifier_qualifier> a owl:ObjectProperty ;
+    rdfs:label "quantifier qualifier" ;
+    obo:IAO_0000115 "A measurable quantity for the object of the association" ;
+    rdfs:range <http://bioentity.io/vocab/OntologyClass> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/stage_qualifier> a owl:ObjectProperty ;
+    rdfs:label "stage qualifier" ;
+    obo:IAO_0000115 "stage at which expression takes place" ;
+    rdfs:range <http://bioentity.io/vocab/LifeStage> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/timepoint> a owl:ObjectProperty ;
+    rdfs:label "timepoint" ;
+    obo:IAO_0000115 "a point in time" ;
+    rdfs:range xsd:time .
+
+<http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation> a owl:Class ;
+    rdfs:label "anatomical entity to anatomical entity association" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/AnatomicalEntity> ],
+        _:N84b2a06e847e464a8807a6fa620180bf,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/AnatomicalEntity> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        _:Nff15038fef4a4880b7f18bc06af0cb33,
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N84b2a06e847e464a8807a6fa620180bf _:Nff15038fef4a4880b7f18bc06af0cb33 ) ] .
+
+<http://bioentity.io/vocab/BiologicalProcess> a owl:Class ;
+    rdfs:label "biological process" ;
+    obo:IAO_0000115 "One or more causally connected executions of molecular functions" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/BiologicalEntity>,
+        <http://bioentity.io/vocab/Occurrent> ;
+    ns1:exactMatch obo:GO_0008150,
+        obo:WD_Q2996394,
+        <http://semanticscience.org/resource/SIO_000006> .
+
+<http://bioentity.io/vocab/ClinicalEntity> a owl:Class ;
+    rdfs:label "clinical entity" ;
+    obo:IAO_0000115 "Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/NamedThing> .
+
+<http://bioentity.io/vocab/EntityToDiseaseAssociation> a owl:Class ;
+    rdfs:label "entity to disease association" ;
+    obo:IAO_0000115 "mixin class for any association whose object (target node) is a disease" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/frequency_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/FrequencyValue> ],
+        _:N4addeab78b724bf2b1d428969f82973c,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/onset_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Onset> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/severity_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SeverityValue> ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/meta/Mixin> ;
+    owl:equivalentClass [ owl:intersectionOf ( _:N4addeab78b724bf2b1d428969f82973c ) ] .
+
+<http://bioentity.io/vocab/Exon> a owl:Class ;
+    rdfs:label "exon" ;
+    obo:IAO_0000115 "A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        <http://bioentity.io/vocab/GenomicEntity> ;
+    ns1:exactMatch obo:SO_0000147,
+        obo:WD_Q373027,
+        <http://semanticscience.org/resource/SIO_010445> .
+
+<http://bioentity.io/vocab/GeneOntologyClass> a owl:Class ;
+    rdfs:label "gene ontology class" ;
+    obo:IAO_0000115 "an ontology class that describes a functional aspect of a gene, gene prodoct or complex" ;
+    rdfs:subClassOf <http://bioentity.io/meta/Mixin>,
+        <http://bioentity.io/vocab/OntologyClass> .
+
+<http://bioentity.io/vocab/GeneProductIsoform> a owl:Class ;
+    rdfs:label "gene product isoform" ;
+    obo:IAO_0000115 "This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/GeneProduct> .
+
+<http://bioentity.io/vocab/GeneToThingAssociation> a owl:Class ;
+    rdfs:label "gene to thing association" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        _:Nab1e1726c5b04ef1bac87fb4e3fb527c,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Nab1e1726c5b04ef1bac87fb4e3fb527c ) ] .
+
+<http://bioentity.io/vocab/LifeStage> a owl:Class ;
+    rdfs:label "life stage" ;
+    obo:IAO_0000115 "A stage of development or growth of an organism, including post-natal adult stages" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/OrganismalEntity>,
+        <http://bioentity.io/vocab/ThingWithTaxon> ;
+    ns1:exactMatch obo:UBERON_0000105 .
+
+<http://bioentity.io/vocab/Pathway> a owl:Class ;
+    rdfs:label "pathway" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/BiologicalProcess> ;
+    ns1:exactMatch obo:GO_0007165,
+        obo:PW_0000001,
+        obo:WD_Q4915012,
+        <http://semanticscience.org/resource/SIO_010526> .
+
+<http://bioentity.io/vocab/RnaProduct> a owl:Class ;
+    rdfs:label "RNA product" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        <http://bioentity.io/vocab/GeneProduct> ;
+    ns1:exactMatch obo:CHEBI_33697,
+        obo:WD_Q11053,
+        <http://semanticscience.org/resource/SIO_010450> .
+
+<http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation> a owl:Class ;
+    rdfs:label "thing to disease or phenotypic feature association" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        _:Ne632ae6ba04742f6a7a3a643b51d6063,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Ne632ae6ba04742f6a7a3a643b51d6063 ) ] .
+
+<http://bioentity.io/vocab/Treatment> a owl:Class ;
+    rdfs:label "treatment" ;
+    obo:IAO_0000115 "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_exposure_parts> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/DrugExposure> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/treats> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> ],
+        <http://bioentity.io/vocab/Environment> ;
+    ns1:exactMatch obo:OGMS_0000090,
+        <http://semanticscience.org/resource/SIO_001398> .
+
+<http://bioentity.io/vocab/has_zygosity> a owl:ObjectProperty ;
+    rdfs:label "has zygosity" ;
+    rdfs:domain <http://bioentity.io/vocab/SingleLocusFeatureComplement> ;
+    rdfs:range <http://bioentity.io/vocab/Zygosity> .
+
+<http://bioentity.io/vocab/interbase_coordinate> a owl:ObjectProperty ;
+    rdfs:label "interbase coordinate" ;
+    obo:IAO_0000115 "TODO" .
+
+<http://bioentity.io/vocab/latitude> a owl:ObjectProperty ;
+    rdfs:label "latitude" ;
+    obo:IAO_0000115 "latitude" ;
+    rdfs:range xsd:float .
+
+<http://bioentity.io/vocab/longitude> a owl:ObjectProperty ;
+    rdfs:label "longitude" ;
+    obo:IAO_0000115 "longitude" ;
+    rdfs:range xsd:float .
+
+<http://bioentity.io/vocab/ChemicalToThingAssociation> a owl:Class ;
+    rdfs:label "chemical to thing association" ;
+    obo:IAO_0000115 "An interaction between a chemical entity and another entity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/ChemicalSubstance> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        _:Nb68feeb45e844ed484b5b61d1f14c0b1,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Nb68feeb45e844ed484b5b61d1f14c0b1 ) ] .
+
+<http://bioentity.io/vocab/Zygosity> a owl:Class ;
+    rdfs:label "zygosity" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Attribute> ;
+    ns1:exactMatch obo:GENO_0000133 .
+
+<http://bioentity.io/vocab/Biosample> a owl:Class ;
+    rdfs:label "biosample" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/OrganismalEntity>,
+        <http://bioentity.io/vocab/ThingWithTaxon> ;
+    ns1:exactMatch <http://semanticscience.org/resource/SIO_001050> .
+
+<http://bioentity.io/vocab/Case> a owl:Class ;
+    rdfs:label "case" ;
+    obo:IAO_0000115 "An individual organism that has a patient role in some clinical context." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/IndividualOrganism> .
+
+<http://bioentity.io/vocab/Environment> a owl:Class ;
+    rdfs:label "environment" ;
+    obo:IAO_0000115 "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/BiologicalEntity> ;
+    ns1:exactMatch <http://semanticscience.org/resource/SIO_000955> .
+
+<http://bioentity.io/vocab/GeneToDiseaseAssociation> a owl:Class ;
+    rdfs:label "gene to disease association" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/frequency_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/FrequencyValue> ],
+        _:Na8dc1b506ea643e7a2c2e9faa7c3df93,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        _:Nc21746c389774ba6b0e42de615f729c0,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/onset_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Onset> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/severity_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SeverityValue> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Disease> ],
+        <http://bioentity.io/vocab/Association>,
+        <http://bioentity.io/vocab/EntityToDiseaseAssociation>,
+        <http://bioentity.io/vocab/GeneToThingAssociation> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Na8dc1b506ea643e7a2c2e9faa7c3df93 _:Nc21746c389774ba6b0e42de615f729c0 ) ] ;
+    ns1:exactMatch <http://semanticscience.org/resource/SIO_000983> .
+
+<http://bioentity.io/vocab/GeneToGeneAssociation> a owl:Class ;
+    rdfs:label "gene to gene association" ;
+    obo:IAO_0000115 "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction." ;
+    rdfs:subClassOf _:N117fdb2abbbc4b1c9a693c4a05b3f2f1,
+        _:N309028740b3a4ec8af3a6f31f952f40e,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N309028740b3a4ec8af3a6f31f952f40e _:N117fdb2abbbc4b1c9a693c4a05b3f2f1 ) ] .
+
+<http://bioentity.io/vocab/PlanetaryEntity> a owl:Class ;
+    rdfs:label "planetary entity" ;
+    obo:IAO_0000115 "Any entity or process that exists at the level of the whole planet" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/NamedThing> .
+
+<http://bioentity.io/vocab/SequenceVariant> a owl:Class ;
+    rdfs:label "sequence variant" ;
+    obo:IAO_0000115 "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/GenomicEntity> ;
+    ns1:exactMatch obo:GENO_0000512,
+        obo:WD_Q15304597 .
+
+<http://bioentity.io/vocab/Transcript> a owl:Class ;
+    rdfs:label "transcript" ;
+    obo:IAO_0000115 "An RNA synthesized on a DNA or RNA template by an RNA polymerase" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/GenomicEntity> ;
+    ns1:exactMatch obo:SO_0000673,
+        <http://semanticscience.org/resource/SIO_010450> .
+
+<http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation> a owl:Class ;
+    rdfs:label "entity to phenotypic feature association" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/onset_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Onset> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/severity_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/SeverityValue> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/PhenotypicFeature> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/frequency_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/FrequencyValue> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/sex_qualifier> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/BiologicalSex> ],
+        _:Nee5b67bb20f2470cbb8d57776a94624f,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:Nee5b67bb20f2470cbb8d57776a94624f ) ] .
+
+<http://bioentity.io/vocab/InformationContentEntity> a owl:Class ;
+    rdfs:label "information content entity" ;
+    obo:IAO_0000115 "a piece of information that typically describes some piece of biology or is used as support." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/NamedThing> ;
+    ns1:exactMatch obo:IAO_0000030,
+        obo:UMLSSG_CONC .
+
+<http://bioentity.io/vocab/Attribute> a owl:Class ;
+    rdfs:label "attribute" ;
+    obo:IAO_0000115 "A property or characteristic of an entity" ;
+    ns1:exactMatch obo:PATO_0000001 .
+
+<http://bioentity.io/vocab/BiologicalEntity> a owl:Class ;
+    rdfs:label "biological entity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/NamedThing> ;
+    ns1:exactMatch obo:WD_Q28845870 .
+
+<http://bioentity.io/vocab/MolecularEntity> a owl:Class ;
+    rdfs:label "molecular entity" ;
+    obo:IAO_0000115 "A gene, gene product, small molecule or macromolecule (including protein complex)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/BiologicalEntity>,
+        <http://bioentity.io/vocab/ThingWithTaxon> ;
+    ns1:exactMatch obo:WD_Q43460564,
+        <http://semanticscience.org/resource/SIO_010004> .
+
+<http://bioentity.io/vocab/Occurrent> a owl:Class ;
+    rdfs:label "occurrent" ;
+    obo:IAO_0000115 "A processual entity" ;
+    ns1:exactMatch obo:BFO_0000003 .
+
+<http://bioentity.io/vocab/OrganismalEntity> a owl:Class ;
+    rdfs:label "organismal entity" ;
+    obo:IAO_0000115 "A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/BiologicalEntity> ;
+    ns1:exactMatch obo:WD_Q7239 .
+
+<http://bioentity.io/vocab/SequenceFeatureRelationship> a owl:Class ;
+    rdfs:label "sequence feature relationship" ;
+    obo:IAO_0000115 "For example, a particular exon is part of a particular transcript or gene" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/subject> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GenomicEntity> ],
+        _:N0a9b275fdda04aedbfac3ef8cbebcab9,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        _:N9ac5d6675a1043e3855c3d6ff75ef86d,
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/object> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/GenomicEntity> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        <http://bioentity.io/vocab/Association> ;
+    owl:equivalentClass [ owl:intersectionOf ( <http://bioentity.io/vocab/Association> _:N0a9b275fdda04aedbfac3ef8cbebcab9 _:N9ac5d6675a1043e3855c3d6ff75ef86d ) ] .
+
+<http://bioentity.io/vocab/sex_qualifier> a owl:ObjectProperty ;
+    rdfs:label "sex qualifier" ;
+    obo:IAO_0000115 "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex." ;
+    rdfs:range <http://bioentity.io/vocab/BiologicalSex> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/GeneProduct> a owl:Class ;
+    rdfs:label "gene product" ;
+    obo:IAO_0000115 "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        <http://bioentity.io/vocab/GeneOrGeneProduct> ;
+    ns1:exactMatch obo:WD_Q424689 .
+
+<http://bioentity.io/vocab/Gene> a owl:Class ;
+    rdfs:label "gene" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/GeneOrGeneProduct> ;
+    ns1:exactMatch obo:SO_0000704,
+        obo:WD_Q7187,
+        <http://semanticscience.org/resource/SIO_010035> .
+
+<http://bioentity.io/vocab/ThingWithTaxon> a owl:Class ;
+    rdfs:label "thing with taxon" ;
+    obo:IAO_0000115 "A mixin that can be used on any entity with a taxon" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/meta/Mixin> .
+
+<http://bioentity.io/vocab/BiologicalSex> a owl:Class ;
+    rdfs:label "biological sex" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Attribute> ;
+    ns1:exactMatch obo:PATO_0000047 .
+
+<http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> a owl:Class ;
+    rdfs:label "disease or phenotypic feature" ;
+    obo:IAO_0000115 "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/BiologicalEntity>,
+        <http://bioentity.io/vocab/ThingWithTaxon> .
+
+<http://bioentity.io/vocab/frequency_qualifier> a owl:ObjectProperty ;
+    rdfs:label "frequency qualifier" ;
+    obo:IAO_0000115 "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject" ;
+    rdfs:range <http://bioentity.io/vocab/FrequencyValue> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/onset_qualifier> a owl:ObjectProperty ;
+    rdfs:label "onset qualifier" ;
+    obo:IAO_0000115 "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject" ;
+    rdfs:range <http://bioentity.io/vocab/Onset> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/severity_qualifier> a owl:ObjectProperty ;
+    rdfs:label "severity qualifier" ;
+    obo:IAO_0000115 "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject" ;
+    rdfs:range <http://bioentity.io/vocab/SeverityValue> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/Disease> a owl:Class ;
+    rdfs:label "disease" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> ;
+    ns1:exactMatch obo:MONDO_0000001,
+        obo:WD_Q12136,
+        <http://semanticscience.org/resource/SIO_010299> .
+
+<http://bioentity.io/vocab/FrequencyValue> a owl:Class ;
+    rdfs:label "frequency value" ;
+    obo:IAO_0000115 "describes the frequency of occurrence of an event or condition" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Attribute> .
+
+<http://bioentity.io/vocab/NamedThing> a owl:Class ;
+    rdfs:label "named thing" ;
+    obo:IAO_0000115 "a databased entity or concept/class" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ] ;
+    ns1:exactMatch obo:UMLSSG_OBJC .
+
+<http://bioentity.io/vocab/Onset> a owl:Class ;
+    rdfs:label "onset" ;
+    obo:IAO_0000115 "The age group in which manifestations appear" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Attribute> ;
+    ns1:exactMatch obo:HP_0003674 .
+
+<http://bioentity.io/vocab/SeverityValue> a owl:Class ;
+    rdfs:label "severity value" ;
+    obo:IAO_0000115 "describes the severity of a phenotypic feature or disease" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/Attribute> .
+
+<http://bioentity.io/vocab/ChemicalSubstance> a owl:Class ;
+    rdfs:label "chemical substance" ;
+    obo:IAO_0000115 "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        <http://bioentity.io/vocab/MolecularEntity> ;
+    ns1:exactMatch obo:UMLSSG_CHEM,
+        obo:WD_Q79529,
+        <http://semanticscience.org/resource/SIO_010004> .
+
+<http://bioentity.io/vocab/PhenotypicFeature> a owl:Class ;
+    rdfs:label "phenotypic feature" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> ;
+    ns1:exactMatch obo:UPHENO_0000001,
+        obo:WD_Q169872,
+        <http://semanticscience.org/resource/SIO_010056> .
+
+<http://bioentity.io/vocab/AnatomicalEntity> a owl:Class ;
+    rdfs:label "anatomical entity" ;
+    obo:IAO_0000115 "A subcellular location, cell type or gross anatomical part" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        <http://bioentity.io/vocab/OrganismalEntity>,
+        <http://bioentity.io/vocab/ThingWithTaxon> ;
+    ns1:exactMatch obo:UMLSSG_ANAT,
+        obo:WD_Q4936952,
+        <http://semanticscience.org/resource/SIO_010046> .
+
+<http://bioentity.io/vocab/GenomicEntity> a owl:Class ;
+    rdfs:label "genomic entity" ;
+    obo:IAO_0000115 "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/MolecularEntity> ;
+    ns1:exactMatch obo:SO_0000110,
+        obo:UMLSSG_GENE .
+
+<http://bioentity.io/vocab/Genotype> a owl:Class ;
+    rdfs:label "genotype" ;
+    obo:IAO_0000115 "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_zygosity> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Zygosity> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/GenomicEntity> ;
+    ns1:exactMatch obo:GENO_0000536,
+        <http://semanticscience.org/resource/SIO_001079> .
+
+<http://bioentity.io/vocab/association_slot> a owl:ObjectProperty ;
+    rdfs:label "association slot" ;
+    obo:IAO_0000115 "any slot that relates an association to another entity" ;
+    rdfs:domain <http://bioentity.io/vocab/Association> .
+
+<http://bioentity.io/vocab/has_biological_sequence> a owl:ObjectProperty ;
+    rdfs:label "has biological sequence" ;
+    obo:IAO_0000115 "connects a genomic feature to its sequence" ;
+    rdfs:range xsd:string .
+
+<http://bioentity.io/vocab/GeneOrGeneProduct> a owl:Class ;
+    rdfs:label "gene or gene product" ;
+    obo:IAO_0000115 "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/has_biological_sequence> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/in_taxon> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OrganismTaxon> ],
+        <http://bioentity.io/vocab/GenomicEntity> .
+
+<http://bioentity.io/vocab/in_taxon> a owl:ObjectProperty ;
+    rdfs:label "in taxon" ;
+    obo:IAO_0000115 "connects a thing to a class representing a taxon" ;
+    rdfs:domain <http://bioentity.io/vocab/ThingWithTaxon> ;
+    rdfs:range <http://bioentity.io/vocab/OrganismTaxon> .
+
+<http://bioentity.io/vocab/OrganismTaxon> a owl:Class ;
+    rdfs:label "organism taxon" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/OntologyClass>,
+        <http://bioentity.io/vocab/OrganismalEntity> ;
+    ns1:exactMatch obo:WD_Q16521 .
+
+<http://bioentity.io/vocab/association_type> a owl:ObjectProperty ;
+    rdfs:label "association type" ;
+    obo:IAO_0000115 "connects an association to the type of association (e.g. gene to phenotype)" ;
+    rdfs:range <http://bioentity.io/vocab/OntologyClass> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/negated> a owl:ObjectProperty ;
+    rdfs:label "negated" ;
+    obo:IAO_0000115 "if set to true, then the association is negated i.e. is not true" ;
+    rdfs:range <http://bioentity.io/vocab/Boolean> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/provided_by> a owl:ObjectProperty ;
+    rdfs:label "provided by" ;
+    obo:IAO_0000115 "connects an association to the agent (person, organization or group) that provided it" ;
+    rdfs:range <http://bioentity.io/vocab/Provider> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/publications> a owl:ObjectProperty ;
+    rdfs:label "publications" ;
+    obo:IAO_0000115 "connects an association to publications supporting the association" ;
+    rdfs:range <http://bioentity.io/vocab/Publication> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/qualifiers> a owl:ObjectProperty ;
+    rdfs:label "qualifiers" ;
+    obo:IAO_0000115 "connects an association to qualifiers that modify or qualify the meaning of that association" ;
+    rdfs:range <http://bioentity.io/vocab/OntologyClass> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/Provider> a owl:Class ;
+    rdfs:label "provider" ;
+    obo:IAO_0000115 "person, group, organization or project that provides a piece of information" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/AdministrativeEntity> .
+
+<http://bioentity.io/vocab/Publication> a owl:Class ;
+    rdfs:label "publication" ;
+    obo:IAO_0000115 "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        <http://bioentity.io/vocab/InformationContentEntity> ;
+    ns1:exactMatch obo:IAO_0000311 .
+
+<http://bioentity.io/vocab/RelationshipType> a owl:Class ;
+    rdfs:label "relationship type" ;
+    obo:IAO_0000115 "An OWL property used as an edge label" .
+
+<http://bioentity.io/vocab/relation> a owl:ObjectProperty ;
+    rdfs:label "relation" ;
+    obo:IAO_0000115 "the relationship type by which a subject is connected to an object in an association" ;
+    rdfs:range <http://bioentity.io/vocab/RelationshipType> ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/Association> a owl:Class ;
+    rdfs:label "association" ;
+    obo:IAO_0000115 "A typed association between two entities, supported by evidence" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/label> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/id> ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/negated> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Boolean> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/publications> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Publication> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/relation> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/qualifiers> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/association_type> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/OntologyClass> ],
+        [ a owl:Restriction ;
+            owl:onProperty <http://bioentity.io/vocab/provided_by> ;
+            owl:someValuesFrom <http://bioentity.io/vocab/Provider> ],
+        <http://bioentity.io/meta/Abstract>,
+        <http://bioentity.io/vocab/InformationContentEntity> ;
+    ns1:exactMatch obo:OBAN_association,
+        obo:owl_Axiom,
+        obo:rdf_Statement .
+
+<http://bioentity.io/vocab/object> a owl:ObjectProperty ;
+    rdfs:label "object" ;
+    obo:IAO_0000115 "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/subject> a owl:ObjectProperty ;
+    rdfs:label "subject" ;
+    obo:IAO_0000115 "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
+    owl:subObjectPropertyOf <http://bioentity.io/vocab/association_slot> .
+
+<http://bioentity.io/vocab/OntologyClass> a owl:Class ;
+    rdfs:label "ontology class" ;
+    obo:IAO_0000115 "a concept or class in an ontology, vocabulary or thesaurus" ;
+    rdfs:subClassOf <http://bioentity.io/meta/Mixin> .
+
+<http://bioentity.io/vocab/id> a owl:ObjectProperty ;
+    rdfs:label "id" ;
+    rdfs:domain <http://bioentity.io/vocab/NamedThing> ;
+    rdfs:range xsd:string .
+
+<http://bioentity.io/vocab/label> a owl:ObjectProperty ;
+    rdfs:label "label" ;
+    obo:IAO_0000115 "A human-readable name for a thing" ;
+    rdfs:domain <http://bioentity.io/vocab/NamedThing> ;
+    rdfs:range xsd:string .
+
+_:N0185ce3a803144b78bdc2098538cd244 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Exon> .
+
+_:N0a9b275fdda04aedbfac3ef8cbebcab9 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GenomicEntity> .
+
+_:N0ef021bb89814e4d80dde0671ae880ca a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Disease> .
+
+_:N117fdb2abbbc4b1c9a693c4a05b3f2f1 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:N1f805cc3c40f490aa9cc4e448d7a1c6f a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Genotype> .
+
+_:N284515be817745a38b61d3f74349911b a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Genotype> .
+
+_:N296b2af8255140db885b10dfe2c609ae a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Disease> .
+
+_:N2a1c14b97adc415fa3ad065200ddc0b6 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/relation> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/AnatomicalEntity> .
+
+_:N2b93542229c24517b93aeae386cdc1c1 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Gene> .
+
+_:N2c2c4bb6977645338279df3f805bed90 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Treatment> .
+
+_:N309028740b3a4ec8af3a6f31f952f40e a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:N3388f72a94e64ff0a450b641db07b1d4 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:N36d917d7fa804c1fb4f3063051ce2a64 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/SequenceVariant> .
+
+_:N37bce404418e48bcb95ca702ee7c033b a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Genotype> .
+
+_:N3f4511cb539749a598187d3505bdf75a a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:N420d7233daa64913998d5a03e1d1d73f a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Gene> .
+
+_:N434c53ad9fb347d69cdba39cd5b09689 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/PhenotypicFeature> .
+
+_:N46a50c5ae84141e79d7efda7128f42bd a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOntologyClass> .
+
+_:N4addeab78b724bf2b1d428969f82973c a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Disease> .
+
+_:N4ade898fd217450793c92a6f8ee362e8 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> .
+
+_:N4cc757b3e61542cf83ffe8bd9a1da216 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Pathway> .
+
+_:N4e36811d991d4b62a78b1eafa1a7da65 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:N50e6a0a01b9c4fc6acccbcef631e2560 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/relation> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> .
+
+_:N566dd87061984ec3897b724aa710c59f a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/ChemicalSubstance> .
+
+_:N5897bd763a8b436e89f2d988aa3578de a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/AnatomicalEntity> .
+
+_:N59d033d5978c445486fd227c2e358290 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:N5eaed691a51d4e83a696b2db9652d8bf a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/MolecularEntity> .
+
+_:N5f3ca3e1bcc7468d9850c83274d12cd4 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/PhenotypicFeature> .
+
+_:N61acbb20ae5f4b2981328a5401b4d4e4 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/relation> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> .
+
+_:N65d2f32d93a4404c8cf1656f6786b27e a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:N6b5a22554235456a942abba32c12e3a2 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/relation> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> .
+
+_:N6f82b43746e94a87927052f13a0ba755 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:N7f43128db0124ccfb6ee320d9a4d0535 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Gene> .
+
+_:N84b2a06e847e464a8807a6fa620180bf a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/AnatomicalEntity> .
+
+_:N89749a0361e34da08fdd8b3dfbb6d1de a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/PhenotypicFeature> .
+
+_:N89ff8e2cac9f456485d9a3993e72943b a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Genotype> .
+
+_:N8fe2cac2259a4107950aa329b77470fa a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Transcript> .
+
+_:N91cf1528673b4fc69a5cdaa7606f8269 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/ChemicalSubstance> .
+
+_:N9610e83289b34edcaa6dfc023942e67e a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/PhenotypicFeature> .
+
+_:N9a76381933c44c828cdba5cbf8fb8a6a a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Genotype> .
+
+_:N9ac5d6675a1043e3855c3d6ff75ef86d a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GenomicEntity> .
+
+_:N9fa6f32cbc4344489db8d06aa5ad9653 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Biosample> .
+
+_:Na01d720b720b43ca87171527d725028b a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:Na6f2d41d721946068638044ec8c3b585 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/ChemicalSubstance> .
+
+_:Na8dc1b506ea643e7a2c2e9faa7c3df93 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:Nab1e1726c5b04ef1bac87fb4e3fb527c a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:Naf555bf3726046aab80fdb3eec5cba0b a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Disease> .
+
+_:Nb66790cf248e4656a868cdc2495a119a a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/relation> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> .
+
+_:Nb68feeb45e844ed484b5b61d1f14c0b1 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/ChemicalSubstance> .
+
+_:Nc21746c389774ba6b0e42de615f729c0 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Disease> .
+
+_:Nc6f794c16ede4a9690c6ecb8428c374a a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Biosample> .
+
+_:Nc7f45d44d54d42aba6f64bb3f530dc54 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/relation> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/RelationshipType> .
+
+_:Nc8101b1500c74cb98b632d1f2f573a50 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> .
+
+_:Nca268198bfd947789bd57532acabab02 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:Ncb96df5737304cb69dd7a9c8f97de314 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/PhenotypicFeature> .
+
+_:Ncbeb8f1d04bd43fd88d864f9931ff693 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Case> .
+
+_:Nd55814f939a94da3a07f22c6f16b98b5 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Environment> .
+
+_:Nd7323d80c229425891b374764a867dec a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/SequenceVariant> .
+
+_:Ndba7c8d0e33c4b2d92c9e1583776c275 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Genotype> .
+
+_:Ne46848ad5a28409b992e19d93348c68d a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Disease> .
+
+_:Ne57fd477123949d48747e6b698e7cfb7 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:Ne632ae6ba04742f6a7a3a643b51d6063 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> .
+
+_:Ne933824d55e64966b509a9895c19ebe2 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneProduct> .
+
+_:Nee5b67bb20f2470cbb8d57776a94624f a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/PhenotypicFeature> .
+
+_:Nf2c1ea93d489486f9514d62817c9ed30 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Transcript> .
+
+_:Nf9c0b31cb76d4c46a182677784bdec16 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/GeneProduct> .
+
+_:Nf9f6742f540a4a2f9ae5863c05c1a4bc a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/Case> .
+
+_:Nfb31fa076411408b90e480a09988bf06 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/subject> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/ChemicalSubstance> .
+
+_:Nff15038fef4a4880b7f18bc06af0cb33 a owl:Restriction ;
+    owl:onProperty <http://bioentity.io/vocab/object> ;
+    owl:someValuesFrom <http://bioentity.io/vocab/AnatomicalEntity> .
+
