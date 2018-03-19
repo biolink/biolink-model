@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * Protein
  * <p>
- * null
+ * A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

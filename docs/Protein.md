@@ -5,13 +5,14 @@ layout: default
 ## protein
 
 
-None
+A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 
 URI: [http://bioentity.io/vocab/Protein](http://bioentity.io/vocab/Protein)
 ## Mappings
 
  * [PR:000000001](http://purl.obolibrary.org/obo/PR_000000001)
  * [SIO:010043](http://purl.obolibrary.org/obo/SIO_010043)
+ * [WD:Q8054](http://purl.obolibrary.org/obo/WD_Q8054)
 
 ## Inheritance
 
@@ -19,6 +20,7 @@ URI: [http://bioentity.io/vocab/Protein](http://bioentity.io/vocab/Protein)
 
 ## Children
 
+ *  child: [protein isoform](ProteinIsoform.html)
 
 
 ## Fields

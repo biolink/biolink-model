@@ -11,6 +11,8 @@ URI: [http://bioentity.io/vocab/Microrna](http://bioentity.io/vocab/Microrna)
 ## Mappings
 
  * [SO:0000276](http://purl.obolibrary.org/obo/SO_0000276)
+ * [SIO:001397](http://purl.obolibrary.org/obo/SIO_001397)
+ * [WD:Q310899](http://purl.obolibrary.org/obo/WD_Q310899)
 
 ## Inheritance
 

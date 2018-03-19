@@ -14,7 +14,8 @@ URI: [http://bioentity.io/vocab/MolecularActivity](http://bioentity.io/vocab/Mol
 
 ## Inheritance
 
- *  is_a: [occurrent](Occurrent.html)
+ *  is_a: [biological entity](BiologicalEntity.html)
+ *  mixin: [occurrent](Occurrent.html)
 
 ## Children
 
@@ -22,3 +23,10 @@ URI: [http://bioentity.io/vocab/MolecularActivity](http://bioentity.io/vocab/Mol
 
 ## Fields
 
+ * [id](id.html)
+    * __range__: identifier type
+    * inherited from: [named thing](NamedThing.html)
+ * [label](label.html)
+    * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)

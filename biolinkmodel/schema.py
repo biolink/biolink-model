@@ -282,12 +282,21 @@ class MolecularEntitySchema(BiologicalEntitySchema):
 
 class ChemicalSubstanceSchema(MolecularEntitySchema):
     """
-    may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+    May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
     """
 
     @post_load
     def make_object(self, data):
         ChemicalSubstance(**data)
+
+class DrugSchema(ChemicalSubstanceSchema):
+    """
+    A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+    """
+
+    @post_load
+    def make_object(self, data):
+        Drug(**data)
 
 class AttributeSchema(Schema):
     """
@@ -372,6 +381,15 @@ class ClinicalInterventionSchema(ClinicalEntitySchema):
     def make_object(self, data):
         ClinicalIntervention(**data)
 
+class DeviceSchema(NamedThingSchema):
+    """
+    A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
+    """
+
+    @post_load
+    def make_object(self, data):
+        Device(**data)
+
 class GenomicEntitySchema(MolecularEntitySchema):
     """
     an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
@@ -446,12 +464,33 @@ class GeneProductSchema(GeneOrGeneProductSchema):
 
 class ProteinSchema(GeneProductSchema):
     """
-    None
+    A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
     """
 
     @post_load
     def make_object(self, data):
         Protein(**data)
+
+class GeneProductIsoformSchema(GeneProductSchema):
+    """
+    This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
+    """
+
+    @post_load
+    def make_object(self, data):
+        GeneProductIsoform(**data)
+
+class ProteinIsoformSchema(ProteinSchema):
+    """
+    Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
+    """
+    id = fields.Str()
+    label = fields.Str()
+    in_taxon = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        ProteinIsoform(**data)
 
 class RnaProductSchema(GeneProductSchema):
     """
@@ -461,6 +500,18 @@ class RnaProductSchema(GeneProductSchema):
     @post_load
     def make_object(self, data):
         RnaProduct(**data)
+
+class RnaProductIsoformSchema(RnaProductSchema):
+    """
+    Represents a protein that is a specific isoform of the canonical or reference RNA
+    """
+    id = fields.Str()
+    label = fields.Str()
+    in_taxon = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        RnaProductIsoform(**data)
 
 class NoncodingRnaProductSchema(RnaProductSchema):
     """
@@ -1164,7 +1215,7 @@ class OccurrentSchema(Schema):
     def make_object(self, data):
         Occurrent(**data)
 
-class MolecularActivitySchema(OccurrentSchema):
+class MolecularActivitySchema(BiologicalEntitySchema):
     """
     An execution of a molecular function
     """
@@ -1172,6 +1223,33 @@ class MolecularActivitySchema(OccurrentSchema):
     @post_load
     def make_object(self, data):
         MolecularActivity(**data)
+
+class ActivityAndBehaviorSchema(OccurrentSchema):
+    """
+    Activity or behavior of any independent integral living, organization or mechanical actor in the world
+    """
+
+    @post_load
+    def make_object(self, data):
+        ActivityAndBehavior(**data)
+
+class ProcedureSchema(OccurrentSchema):
+    """
+    A series of actions conducted in a certain order or manner
+    """
+
+    @post_load
+    def make_object(self, data):
+        Procedure(**data)
+
+class PhenomenonSchema(OccurrentSchema):
+    """
+    a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
+    """
+
+    @post_load
+    def make_object(self, data):
+        Phenomenon(**data)
 
 class BiologicalProcessSchema(BiologicalEntitySchema):
     """
@@ -1190,6 +1268,15 @@ class PathwaySchema(BiologicalProcessSchema):
     @post_load
     def make_object(self, data):
         Pathway(**data)
+
+class PhysiologySchema(BiologicalProcessSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        Physiology(**data)
 
 class CellularComponentSchema(AnatomicalEntitySchema):
     """

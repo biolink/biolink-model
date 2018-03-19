@@ -10,6 +10,9 @@ A subcellular location, cell type or gross anatomical part
 URI: [http://bioentity.io/vocab/AnatomicalEntity](http://bioentity.io/vocab/AnatomicalEntity)
 ## Mappings
 
+ * [UMLSSG:ANAT](http://purl.obolibrary.org/obo/UMLSSG_ANAT)
+ * [SIO:010046](http://purl.obolibrary.org/obo/SIO_010046)
+ * [WD:Q4936952](http://purl.obolibrary.org/obo/WD_Q4936952)
  * [UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062)
 
 ## Inheritance

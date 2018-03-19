@@ -475,7 +475,25 @@ class MolecularEntity(BiologicalEntity):
 
 class ChemicalSubstance(MolecularEntity):
     """
-    may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+    May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+    """
+    def __init__(self,
+                 id=None,
+                 label=None,
+                 in_taxon=None):
+        self.id=id
+        self.label=label
+        self.in_taxon=in_taxon
+
+    def __str__(self):
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Drug(ChemicalSubstance):
+    """
+    A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
     """
     def __init__(self,
                  id=None,
@@ -610,6 +628,22 @@ class ClinicalTrial(ClinicalEntity):
 class ClinicalIntervention(ClinicalEntity):
     """
     None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Device(NamedThing):
+    """
+    A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
     """
     def __init__(self,
                  id=None,
@@ -769,7 +803,43 @@ class GeneProduct(GeneOrGeneProduct):
 
 class Protein(GeneProduct):
     """
-    None
+    A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
+    """
+    def __init__(self,
+                 id=None,
+                 label=None,
+                 in_taxon=None):
+        self.id=id
+        self.label=label
+        self.in_taxon=in_taxon
+
+    def __str__(self):
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+    def __repr__(self):
+        return self.__str__()
+
+
+class GeneProductIsoform(GeneProduct):
+    """
+    This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
+    """
+    def __init__(self,
+                 id=None,
+                 label=None,
+                 in_taxon=None):
+        self.id=id
+        self.label=label
+        self.in_taxon=in_taxon
+
+    def __str__(self):
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+    def __repr__(self):
+        return self.__str__()
+
+
+class ProteinIsoform(Protein):
+    """
+    Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
     """
     def __init__(self,
                  id=None,
@@ -788,6 +858,24 @@ class Protein(GeneProduct):
 class RnaProduct(GeneProduct):
     """
     None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None,
+                 in_taxon=None):
+        self.id=id
+        self.label=label
+        self.in_taxon=in_taxon
+
+    def __str__(self):
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+    def __repr__(self):
+        return self.__str__()
+
+
+class RnaProductIsoform(RnaProduct):
+    """
+    Represents a protein that is a specific isoform of the canonical or reference RNA
     """
     def __init__(self,
                  id=None,
@@ -2495,9 +2583,51 @@ class Occurrent(object):
         return self.__str__()
 
 
-class MolecularActivity(Occurrent):
+class MolecularActivity(BiologicalEntity):
     """
     An execution of a molecular function
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class ActivityAndBehavior(Occurrent):
+    """
+    Activity or behavior of any independent integral living, organization or mechanical actor in the world
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class Procedure(Occurrent):
+    """
+    A series of actions conducted in a certain order or manner
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class Phenomenon(Occurrent):
+    """
+    a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
     """
     def __init__(self):
         pass
@@ -2525,6 +2655,22 @@ class BiologicalProcess(BiologicalEntity):
 
 
 class Pathway(BiologicalProcess):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 label=None):
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "id={} label={} ".format(self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Physiology(BiologicalProcess):
     """
     None
     """

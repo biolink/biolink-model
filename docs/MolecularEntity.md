@@ -10,6 +10,8 @@ A gene, gene product, small molecule or macromolecule (including protein complex
 URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/MolecularEntity)
 ## Mappings
 
+ * [SIO:010004](http://purl.obolibrary.org/obo/SIO_010004)
+ * [WD:Q43460564](http://purl.obolibrary.org/obo/WD_Q43460564)
 
 ## Inheritance
 

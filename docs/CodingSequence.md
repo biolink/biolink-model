@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/CodingSequence](http://bioentity.io/vocab/Coding
 ## Mappings
 
  * [SO:0000316](http://purl.obolibrary.org/obo/SO_0000316)
+ * [SIO:001390](http://purl.obolibrary.org/obo/SIO_001390)
 
 ## Inheritance
 

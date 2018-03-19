@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/InformationContentEntity](http://bioentity.io/vo
 ## Mappings
 
  * [IAO:0000030](http://purl.obolibrary.org/obo/IAO_0000030)
+ * [UMLSSG:CONC](http://purl.obolibrary.org/obo/UMLSSG_CONC)
 
 ## Inheritance
 

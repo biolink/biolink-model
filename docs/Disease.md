@@ -11,6 +11,8 @@ URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
 ## Mappings
 
  * [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)
+ * [WD:Q12136](http://purl.obolibrary.org/obo/WD_Q12136)
+ * [SIO:010299](http://purl.obolibrary.org/obo/SIO_010299)
 
 ## Inheritance
 

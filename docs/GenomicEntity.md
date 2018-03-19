@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/Genomic
 ## Mappings
 
  * [SO:0000110](http://purl.obolibrary.org/obo/SO_0000110)
+ * [UMLSSG:GENE](http://purl.obolibrary.org/obo/UMLSSG_GENE)
 
 ## Inheritance
 

@@ -17,8 +17,11 @@ URI: [http://bioentity.io/vocab/Occurrent](http://bioentity.io/vocab/Occurrent)
 
 ## Children
 
- *  child: [molecular activity](MolecularActivity.html)
+ *  child: [activity and behavior](ActivityAndBehavior.html)
+ *  child: [procedure](Procedure.html)
+ *  child: [phenomenon](Phenomenon.html)
  *  mixin: [environmental process](EnvironmentalProcess.html)
+ *  mixin: [molecular activity](MolecularActivity.html)
  *  mixin: [biological process](BiologicalProcess.html)
 
 ## Used in

@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/Seque
 ## Mappings
 
  * [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)
+ * [WD:Q15304597](http://purl.obolibrary.org/obo/WD_Q15304597)
 
 ## Inheritance
 

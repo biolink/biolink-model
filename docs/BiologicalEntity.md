@@ -10,6 +10,7 @@ None
 URI: [http://bioentity.io/vocab/BiologicalEntity](http://bioentity.io/vocab/BiologicalEntity)
 ## Mappings
 
+ * [WD:Q28845870](http://purl.obolibrary.org/obo/WD_Q28845870)
 
 ## Inheritance
 
@@ -21,6 +22,7 @@ URI: [http://bioentity.io/vocab/BiologicalEntity](http://bioentity.io/vocab/Biol
  *  child: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  child: [environment](Environment.html)
  *  child: [molecular entity](MolecularEntity.html)
+ *  child: [molecular activity](MolecularActivity.html)
  *  child: [biological process](BiologicalProcess.html)
 
 ## Used in
@@ -35,6 +37,7 @@ URI: [http://bioentity.io/vocab/BiologicalEntity](http://bioentity.io/vocab/Biol
  *  class: [phenotypic feature](PhenotypicFeature.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [molecular entity](MolecularEntity.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [chemical substance](ChemicalSubstance.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [drug](Drug.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [anatomical entity](AnatomicalEntity.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [life stage](LifeStage.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [genomic entity](GenomicEntity.html) references: [organism taxon](OrganismTaxon.html)
@@ -46,7 +49,10 @@ URI: [http://bioentity.io/vocab/BiologicalEntity](http://bioentity.io/vocab/Biol
  *  class: [gene](Gene.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gene product](GeneProduct.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [protein](Protein.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [gene product isoform](GeneProductIsoform.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [protein isoform](ProteinIsoform.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [RNA product](RnaProduct.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [RNA product isoform](RnaProductIsoform.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [noncoding RNA product](NoncodingRnaProduct.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [microRNA](Microrna.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [macromolecular complex](MacromolecularComplex.html) references: [organism taxon](OrganismTaxon.html)

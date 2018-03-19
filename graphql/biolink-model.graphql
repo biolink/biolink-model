@@ -137,6 +137,12 @@ type ChemicalSubstance {
   inTaxon: OrganismTaxon
 }
 
+type Drug {
+  id: String
+  label: String
+  inTaxon: OrganismTaxon
+}
+
 type Attribute {
 }
 
@@ -178,6 +184,11 @@ type ClinicalTrial {
 }
 
 type ClinicalIntervention {
+  id: String!
+  label: String
+}
+
+type Device {
   id: String!
   label: String
 }
@@ -236,7 +247,25 @@ type Protein {
   inTaxon: OrganismTaxon
 }
 
+interface GeneProductIsoform {
+  id: String
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type ProteinIsoform implements GeneProductIsoform {
+  id: String
+  label: String
+  inTaxon: OrganismTaxon
+}
+
 type RnaProduct {
+  id: String
+  label: String
+  inTaxon: OrganismTaxon
+}
+
+type RnaProductIsoform implements GeneProductIsoform {
   id: String
   label: String
   inTaxon: OrganismTaxon
@@ -911,7 +940,18 @@ type AnatomicalEntityPartOfAnatomicalEntityAssociation {
 type Occurrent {
 }
 
-type MolecularActivity {
+type MolecularActivity implements Occurrent {
+  id: String
+  label: String
+}
+
+type ActivityAndBehavior {
+}
+
+type Procedure {
+}
+
+type Phenomenon {
 }
 
 type BiologicalProcess implements Occurrent {
@@ -920,6 +960,11 @@ type BiologicalProcess implements Occurrent {
 }
 
 type Pathway {
+  id: String
+  label: String
+}
+
+type Physiology {
   id: String
   label: String
 }

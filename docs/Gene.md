@@ -12,6 +12,7 @@ URI: [http://bioentity.io/vocab/Gene](http://bioentity.io/vocab/Gene)
 
  * [SO:0000704](http://purl.obolibrary.org/obo/SO_0000704)
  * [SIO:010035](http://purl.obolibrary.org/obo/SIO_010035)
+ * [WD:Q7187](http://purl.obolibrary.org/obo/WD_Q7187)
 
 ## Inheritance
 

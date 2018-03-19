@@ -124,6 +124,13 @@
         }
     },
     "properties": {
+        "ActivityAndBehavior": {
+            "description": "Activity or behavior of any independent integral living, organization or mechanical actor in the world",
+            "properties": {},
+            "required": [],
+            "title": "ActivityAndBehavior",
+            "type": "object"
+        },
         "Allele": {
             "description": "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus",
             "properties": {
@@ -524,7 +531,7 @@
             "type": "object"
         },
         "ChemicalSubstance": {
-            "description": "may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part",
+            "description": "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part",
             "properties": {
                 "id": {
                     "type": "string"
@@ -787,6 +794,21 @@
             "title": "ConfidenceLevel",
             "type": "object"
         },
+        "Device": {
+            "description": "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Device",
+            "type": "object"
+        },
         "Disease": {
             "description": null,
             "properties": {
@@ -892,6 +914,25 @@
             },
             "required": [],
             "title": "DiseaseToPhenotypicFeatureAssociation",
+            "type": "object"
+        },
+        "Drug": {
+            "description": "A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects a thing to a class representing a taxon",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Drug",
             "type": "object"
         },
         "DrugExposure": {
@@ -2252,7 +2293,15 @@
         },
         "MolecularActivity": {
             "description": "An execution of a molecular function",
-            "properties": {},
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
             "required": [],
             "title": "MolecularActivity",
             "type": "object"
@@ -2414,6 +2463,13 @@
             "title": "Pathway",
             "type": "object"
         },
+        "Phenomenon": {
+            "description": "a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question",
+            "properties": {},
+            "required": [],
+            "title": "Phenomenon",
+            "type": "object"
+        },
         "PhenotypicFeature": {
             "description": null,
             "properties": {
@@ -2438,6 +2494,21 @@
             "properties": {},
             "required": [],
             "title": "PhenotypicSex",
+            "type": "object"
+        },
+        "Physiology": {
+            "description": null,
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Physiology",
             "type": "object"
         },
         "PlanetaryEntity": {
@@ -2474,8 +2545,15 @@
             "title": "PopulationOfIndividualOrganisms",
             "type": "object"
         },
+        "Procedure": {
+            "description": "A series of actions conducted in a certain order or manner",
+            "properties": {},
+            "required": [],
+            "title": "Procedure",
+            "type": "object"
+        },
         "Protein": {
-            "description": null,
+            "description": "A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA",
             "properties": {
                 "id": {
                     "type": "string"
@@ -2491,6 +2569,25 @@
             },
             "required": [],
             "title": "Protein",
+            "type": "object"
+        },
+        "ProteinIsoform": {
+            "description": "Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects a thing to a class representing a taxon",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "ProteinIsoform",
             "type": "object"
         },
         "Provider": {
@@ -2539,6 +2636,25 @@
             },
             "required": [],
             "title": "RnaProduct",
+            "type": "object"
+        },
+        "RnaProductIsoform": {
+            "description": "Represents a protein that is a specific isoform of the canonical or reference RNA",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects a thing to a class representing a taxon",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "RnaProductIsoform",
             "type": "object"
         },
         "SequenceFeatureRelationship": {

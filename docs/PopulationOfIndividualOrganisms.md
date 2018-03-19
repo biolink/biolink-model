@@ -10,6 +10,7 @@ None
 URI: [http://bioentity.io/vocab/PopulationOfIndividualOrganisms](http://bioentity.io/vocab/PopulationOfIndividualOrganisms)
 ## Mappings
 
+ * [SIO:001061](http://purl.obolibrary.org/obo/SIO_001061)
 
 ## Inheritance
 

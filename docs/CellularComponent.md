@@ -11,6 +11,8 @@ URI: [http://bioentity.io/vocab/CellularComponent](http://bioentity.io/vocab/Cel
 ## Mappings
 
  * [GO:0005575](http://purl.obolibrary.org/obo/GO_0005575)
+ * [SIO:001400](http://purl.obolibrary.org/obo/SIO_001400)
+ * [WD:Q5058355](http://purl.obolibrary.org/obo/WD_Q5058355)
 
 ## Inheritance
 

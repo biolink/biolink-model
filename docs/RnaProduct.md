@@ -11,6 +11,8 @@ URI: [http://bioentity.io/vocab/RnaProduct](http://bioentity.io/vocab/RnaProduct
 ## Mappings
 
  * [CHEBI:33697](http://purl.obolibrary.org/obo/CHEBI_33697)
+ * [SIO:010450](http://purl.obolibrary.org/obo/SIO_010450)
+ * [WD:Q11053](http://purl.obolibrary.org/obo/WD_Q11053)
 
 ## Inheritance
 
@@ -18,6 +20,7 @@ URI: [http://bioentity.io/vocab/RnaProduct](http://bioentity.io/vocab/RnaProduct
 
 ## Children
 
+ *  child: [RNA product isoform](RnaProductIsoform.html)
  *  child: [noncoding RNA product](NoncodingRnaProduct.html)
 
 

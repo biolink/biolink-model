@@ -10,6 +10,7 @@ The functional molecular product of a single gene. Gene products are either prot
 URI: [http://bioentity.io/vocab/GeneProduct](http://bioentity.io/vocab/GeneProduct)
 ## Mappings
 
+ * [WD:Q424689](http://purl.obolibrary.org/obo/WD_Q424689)
 
 ## Inheritance
 
@@ -18,6 +19,7 @@ URI: [http://bioentity.io/vocab/GeneProduct](http://bioentity.io/vocab/GeneProdu
 ## Children
 
  *  child: [protein](Protein.html)
+ *  child: [gene product isoform](GeneProductIsoform.html)
  *  child: [RNA product](RnaProduct.html)
 
 ## Used in
