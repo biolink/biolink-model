@@ -440,6 +440,7 @@ classes:
       - "MONDO:0000001"
       - "WD:Q12136"
       - SIO:010299
+      - UMLSSG:DISO
       
   - name: phenotypic feature
     aliases: ['sign', 'symptom', 'phenotype', 'trait']
@@ -505,6 +506,8 @@ classes:
     aliases: ['agent', 'group']
     description: >-
       person, group, organization or project that provides a piece of information
+    mappings:
+      - UMLSSG:ORGA
       
   - name: molecular entity
     is_a: biological entity
