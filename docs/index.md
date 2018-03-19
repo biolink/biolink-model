@@ -97,7 +97,6 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [transcript to gene relationship](TranscriptToGeneRelationship.html)
              * [gene to gene product relationship](GeneToGeneProductRelationship.html)
              * [exon to transcript relationship](ExonToTranscriptRelationship.html)
-          * [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html)
           * [gene regulatory relationship](GeneRegulatoryRelationship.html)
           * [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html)
              * [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html)

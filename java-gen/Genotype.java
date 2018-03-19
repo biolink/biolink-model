@@ -15,6 +15,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "has_biological_sequence",
     "has_zygosity",
     "id",
     "in_taxon",
@@ -22,6 +23,13 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 })
 public class Genotype {
 
+    /**
+     * connects a genomic feature to its sequence
+     * 
+     */
+    @JsonProperty("has_biological_sequence")
+    @JsonPropertyDescription("connects a genomic feature to its sequence")
+    private String hasBiologicalSequence;
     @JsonProperty("has_zygosity")
     private String hasZygosity;
     @JsonProperty("id")
@@ -40,6 +48,24 @@ public class Genotype {
     @JsonProperty("label")
     @JsonPropertyDescription("A human-readable name for a thing")
     private String label;
+
+    /**
+     * connects a genomic feature to its sequence
+     * 
+     */
+    @JsonProperty("has_biological_sequence")
+    public String getHasBiologicalSequence() {
+        return hasBiologicalSequence;
+    }
+
+    /**
+     * connects a genomic feature to its sequence
+     * 
+     */
+    @JsonProperty("has_biological_sequence")
+    public void setHasBiologicalSequence(String hasBiologicalSequence) {
+        this.hasBiologicalSequence = hasBiologicalSequence;
+    }
 
     @JsonProperty("has_zygosity")
     public String getHasZygosity() {
@@ -99,12 +125,12 @@ public class Genotype {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasZygosity", hasZygosity).append("id", id).append("inTaxon", inTaxon).append("label", label).toString();
+        return new ToStringBuilder(this).append("hasBiologicalSequence", hasBiologicalSequence).append("hasZygosity", hasZygosity).append("id", id).append("inTaxon", inTaxon).append("label", label).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(id).append(label).append(inTaxon).append(hasZygosity).toHashCode();
+        return new HashCodeBuilder().append(hasBiologicalSequence).append(id).append(label).append(inTaxon).append(hasZygosity).toHashCode();
     }
 
     @Override
@@ -116,7 +142,7 @@ public class Genotype {
             return false;
         }
         Genotype rhs = ((Genotype) other);
-        return new EqualsBuilder().append(id, rhs.id).append(label, rhs.label).append(inTaxon, rhs.inTaxon).append(hasZygosity, rhs.hasZygosity).isEquals();
+        return new EqualsBuilder().append(hasBiologicalSequence, rhs.hasBiologicalSequence).append(id, rhs.id).append(label, rhs.label).append(inTaxon, rhs.inTaxon).append(hasZygosity, rhs.hasZygosity).isEquals();
     }
 
 }

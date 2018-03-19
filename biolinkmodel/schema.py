@@ -394,6 +394,7 @@ class GenomicEntitySchema(MolecularEntitySchema):
     """
     an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
     """
+    has_biological_sequence = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -484,6 +485,7 @@ class ProteinIsoformSchema(ProteinSchema):
     """
     Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
     """
+    has_biological_sequence = fields.Str()
     id = fields.Str()
     label = fields.Str()
     in_taxon = fields.Str()
@@ -505,6 +507,7 @@ class RnaProductIsoformSchema(RnaProductSchema):
     """
     Represents a protein that is a specific isoform of the canonical or reference RNA
     """
+    has_biological_sequence = fields.Str()
     id = fields.Str()
     label = fields.Str()
     in_taxon = fields.Str()
@@ -869,7 +872,7 @@ class EntityToPhenotypicFeatureAssociationSchema(AssociationSchema):
 
 class EntityToDiseaseAssociationSchema(Schema):
     """
-    None
+    mixin class for any association whose object (target node) is a disease
     """
     frequency_qualifier = fields.Str()
     severity_qualifier = fields.Str()
@@ -1045,7 +1048,7 @@ class GeneToDiseaseAssociationSchema(AssociationSchema):
 
 class ModelToDiseaseMixinSchema(Schema):
     """
-    This mixin is used for any association class for which the subject plays the role of a 'model'
+    This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
     """
 
     @post_load
@@ -1169,15 +1172,6 @@ class ExonToTranscriptRelationshipSchema(SequenceFeatureRelationshipSchema):
     @post_load
     def make_object(self, data):
         ExonToTranscriptRelationship(**data)
-
-class SequenceFeatureToSequenceRelationshipSchema(AssociationSchema):
-    """
-    Relates a sequence feature such as a gene to its sequence
-    """
-
-    @post_load
-    def make_object(self, data):
-        SequenceFeatureToSequenceRelationship(**data)
 
 class GeneRegulatoryRelationshipSchema(AssociationSchema):
     """

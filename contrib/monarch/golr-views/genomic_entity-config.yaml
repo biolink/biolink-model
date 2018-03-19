@@ -3,6 +3,10 @@ description: an entity that can either be directly located on a genome (gene, tr
 display_name: genomic entity
 document_category: genomic entity
 fields:
+- description: connects a genomic feature to its sequence
+  display_name: has biological sequence
+  id: has_biological_sequence
+  property: []
 - description: null
   display_name: id
   id: id

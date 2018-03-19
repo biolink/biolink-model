@@ -25,6 +25,7 @@ URI: [http://bioentity.io/vocab/ChemicalSubstance](http://bioentity.io/vocab/Che
 
 ## Used in
 
+ *  class: [drug exposure](DrugExposure.html) references: [chemical substance](ChemicalSubstance.html)
  *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [chemical substance](ChemicalSubstance.html)
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [chemical substance](ChemicalSubstance.html)
  *  class: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html) references: [chemical substance](ChemicalSubstance.html)

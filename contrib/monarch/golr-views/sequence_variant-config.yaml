@@ -3,6 +3,10 @@ description: A genomic feature representing one of a set of coexisting sequence 
 display_name: sequence variant
 document_category: sequence variant
 fields:
+- description: connects a genomic feature to its sequence
+  display_name: has biological sequence
+  id: has_biological_sequence
+  property: []
 - description: null
   display_name: id
   id: id

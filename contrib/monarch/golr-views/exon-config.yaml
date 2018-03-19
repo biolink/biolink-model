@@ -3,6 +3,10 @@ description: A region of the transcript sequence within a gene which is not remo
 display_name: exon
 document_category: exon
 fields:
+- description: connects a genomic feature to its sequence
+  display_name: has biological sequence
+  id: has_biological_sequence
+  property: []
 - description: null
   display_name: id
   id: id

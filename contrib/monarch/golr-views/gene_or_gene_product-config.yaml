@@ -3,6 +3,10 @@ description: a union of genes or gene products. Frequently an identifier for one
 display_name: gene or gene product
 document_category: gene or gene product
 fields:
+- description: connects a genomic feature to its sequence
+  display_name: has biological sequence
+  id: has_biological_sequence
+  property: []
 - description: null
   display_name: id
   id: id

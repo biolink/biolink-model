@@ -38,6 +38,9 @@
         "genome_build": {
             "type": "string"
         },
+        "has_biological_sequence": {
+            "type": "string"
+        },
         "has_confidence_level": {
             "type": "string"
         },
@@ -134,6 +137,10 @@
         "Allele": {
             "description": "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus",
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "has_gene": {
                     "description": "connects and entity to a single gene",
                     "type": "string"
@@ -763,6 +770,10 @@
         "CodingSequence": {
             "description": null,
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1088,6 +1099,10 @@
         "Exon": {
             "description": "A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing",
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1167,6 +1182,10 @@
         "Gene": {
             "description": null,
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1342,6 +1361,10 @@
         "GeneOrGeneProduct": {
             "description": "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another",
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1361,6 +1384,10 @@
         "GeneProduct": {
             "description": "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules",
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1787,6 +1814,10 @@
         "Genome": {
             "description": "A genome is the sum of genetic material within a cell or virion.",
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1806,6 +1837,10 @@
         "GenomicEntity": {
             "description": "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)",
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1892,6 +1927,10 @@
         "Genotype": {
             "description": "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background",
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "has_zygosity": {
                     "type": "string"
                 },
@@ -2275,6 +2314,10 @@
         "Microrna": {
             "description": null,
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2343,6 +2386,10 @@
         "NoncodingRnaProduct": {
             "description": null,
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2555,6 +2602,10 @@
         "Protein": {
             "description": "A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA",
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2574,6 +2625,10 @@
         "ProteinIsoform": {
             "description": "Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/",
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2622,6 +2677,10 @@
         "RnaProduct": {
             "description": null,
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2641,6 +2700,10 @@
         "RnaProductIsoform": {
             "description": "Represents a protein that is a specific isoform of the canonical or reference RNA",
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2710,62 +2773,13 @@
             "title": "SequenceFeatureRelationship",
             "type": "object"
         },
-        "SequenceFeatureToSequenceRelationship": {
-            "description": "Relates a sequence feature such as a gene to its sequence",
-            "properties": {
-                "association_type": {
-                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                },
-                "negated": {
-                    "description": "if set to true, then the association is negated i.e. is not true",
-                    "type": "string"
-                },
-                "object": {
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "provided_by": {
-                    "description": "connects an association to the agent (person, organization or group) that provided it",
-                    "type": "string"
-                },
-                "publications": {
-                    "description": "connects an association to publications supporting the association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "qualifiers": {
-                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "relation": {
-                    "description": "the relationship type by which a subject is connected to an object in an association",
-                    "type": "string"
-                },
-                "subject": {
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "SequenceFeatureToSequenceRelationship",
-            "type": "object"
-        },
         "SequenceVariant": {
             "description": "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.",
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2792,6 +2806,10 @@
         "Transcript": {
             "description": "An RNA synthesized on a DNA or RNA template by an RNA polymerase",
             "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },

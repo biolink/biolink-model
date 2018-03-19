@@ -662,15 +662,17 @@ class GenomicEntity(MolecularEntity):
     an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -680,15 +682,17 @@ class Genome(GenomicEntity):
     A genome is the sum of genetic material within a cell or virion.
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -698,15 +702,17 @@ class Transcript(GenomicEntity):
     An RNA synthesized on a DNA or RNA template by an RNA polymerase
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -716,15 +722,17 @@ class Exon(GenomicEntity):
     A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -734,15 +742,17 @@ class CodingSequence(GenomicEntity):
     None
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -752,15 +762,17 @@ class GeneOrGeneProduct(GenomicEntity):
     a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -770,15 +782,17 @@ class Gene(GeneOrGeneProduct):
     None
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -788,15 +802,17 @@ class GeneProduct(GeneOrGeneProduct):
     The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -806,15 +822,17 @@ class Protein(GeneProduct):
     A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -824,15 +842,17 @@ class GeneProductIsoform(GeneProduct):
     This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -842,15 +862,17 @@ class ProteinIsoform(Protein):
     Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -860,15 +882,17 @@ class RnaProduct(GeneProduct):
     None
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -878,15 +902,17 @@ class RnaProductIsoform(RnaProduct):
     Represents a protein that is a specific isoform of the canonical or reference RNA
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -896,15 +922,17 @@ class NoncodingRnaProduct(RnaProduct):
     None
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -914,15 +942,17 @@ class Microrna(NoncodingRnaProduct):
     None
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -995,16 +1025,18 @@ class Genotype(GenomicEntity):
     """
     def __init__(self,
                  has_zygosity=None,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
         self.has_zygosity=has_zygosity
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "has_zygosity={} id={} label={} in_taxon={} ".format(self.has_zygosity,self.id,self.label,self.in_taxon)
+        return "has_zygosity={} has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_zygosity,self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -1016,17 +1048,19 @@ class Allele(Genotype):
     def __init__(self,
                  has_gene=None,
                  has_zygosity=None,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
         self.has_gene=has_gene
         self.has_zygosity=has_zygosity
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "has_gene={} has_zygosity={} id={} label={} in_taxon={} ".format(self.has_gene,self.has_zygosity,self.id,self.label,self.in_taxon)
+        return "has_gene={} has_zygosity={} has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_gene,self.has_zygosity,self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -1036,15 +1070,17 @@ class SequenceVariant(GenomicEntity):
     A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -1685,7 +1721,7 @@ class EntityToPhenotypicFeatureAssociation(Association):
 
 class EntityToDiseaseAssociation(object):
     """
-    None
+    mixin class for any association whose object (target node) is a disease
     """
     def __init__(self,
                  frequency_qualifier=None,
@@ -2037,7 +2073,7 @@ class GeneToDiseaseAssociation(Association):
 
 class ModelToDiseaseMixin(object):
     """
-    This mixin is used for any association class for which the subject plays the role of a 'model'
+    This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
     """
     def __init__(self):
         pass
@@ -2413,38 +2449,6 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
 class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     """
     A transcript is formed from multiple exons
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class SequenceFeatureToSequenceRelationship(Association):
-    """
-    Relates a sequence feature such as a gene to its sequence
     """
     def __init__(self,
                  association_type=None,

@@ -172,6 +172,23 @@ class Manager(object):
             logging.warning("No such class: {}".format(cn))
             self.unreferenced.add(cn)
 
+    def typedef(self, tn):
+        """
+        lookup a type in the schema by name
+
+        Returns
+        -------
+        TypeDefinition
+        """
+        if isinstance(tn,TypeDefinition):
+            return tn
+        for t in self.schema.types:
+            if t.name == tn:
+                return t
+        if tn not in self.unreferenced:
+            logging.warning("No such type: {}".format(tn))
+            self.unreferenced.add(tn)
+
 
     def class_name(self, c, style=NameStyle.CAMELCASE):
         """

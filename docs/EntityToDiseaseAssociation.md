@@ -5,7 +5,7 @@ layout: default
 ## entity to disease association
 
 
-None
+mixin class for any association whose object (target node) is a disease
 
 URI: [http://bioentity.io/vocab/EntityToDiseaseAssociation](http://bioentity.io/vocab/EntityToDiseaseAssociation)
 ## Mappings

@@ -27,7 +27,7 @@ class Generator(object):
             # TODO! use PC
             if id.startswith('SIO:'):
                 uri = id.replace('SIO:', 'http://semanticscience.org/resource/SIO_')
-            if id.startswith('HGNC:'):
+            elif id.startswith('HGNC:'):
                 uri = 'https://monarchinitiative.org/gene/' + id
             else:
                 frag = id.replace(':','_')

@@ -194,90 +194,105 @@ type Device {
 }
 
 type GenomicEntity {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type Genome {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type Transcript {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type Exon {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type CodingSequence {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type GeneOrGeneProduct {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type Gene {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type GeneProduct {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type Protein {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 interface GeneProductIsoform {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type ProteinIsoform implements GeneProductIsoform {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type RnaProduct {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type RnaProductIsoform implements GeneProductIsoform {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type NoncodingRnaProduct {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type Microrna {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
@@ -303,6 +318,7 @@ type Zygosity {
 
 type Genotype {
   hasZygosity: Zygosity
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
@@ -311,19 +327,21 @@ type Genotype {
 type Allele {
   hasGene: Gene
   hasZygosity: Zygosity
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type SequenceVariant {
+  hasBiologicalSequence: String
   id: String
   label: String
   inTaxon: OrganismTaxon
 }
 
 type DrugExposure {
-  drug: [String]!
+  drug: [ChemicalSubstance]!
   id: String!
   label: String
 }
@@ -878,19 +896,6 @@ type ExonToTranscriptRelationship {
   negated: String
   relation: RelationshipType!
   object: Transcript!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  label: String
-}
-
-type SequenceFeatureToSequenceRelationship {
-  associationType: OntologyClass
-  subject: GenomicEntity!
-  negated: String
-  relation: RelationshipType!
-  object: String!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider

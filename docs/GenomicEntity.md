@@ -52,11 +52,14 @@ URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/Genomic
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [transcript](Transcript.html)
  *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [gene](Gene.html)
  *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [exon](Exon.html)
- *  class: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html) references: [genomic entity](GenomicEntity.html)
  *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [gene or gene product](GeneOrGeneProduct.html)
 
 ## Fields
 
+ * [has biological sequence](has_biological_sequence.html)
+    * _connects a genomic feature to its sequence_
+    * __range__: biological sequence
+    * __Local__
  * [id](id.html)
     * __range__: identifier type
     * inherited from: [named thing](NamedThing.html)

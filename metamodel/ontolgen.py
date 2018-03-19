@@ -12,6 +12,7 @@ from rdflib.namespace import RDF
 from rdflib.namespace import RDFS
 from rdflib.namespace import OWL
 from rdflib.namespace import SKOS
+from rdflib.namespace import XSD
 import rdflib
 import logging
 import uuid
@@ -21,6 +22,8 @@ from .metamodel import ClassDefinition, SlotDefinition
 
 OBO = Namespace("http://purl.obolibrary.org/obo/")
 DCTERMS = Namespace("http://purl.org/dc/terms/")
+META = Namespace("http://bioentity.io/meta/")
+BIOTOP = Namespace("http://purl.org/biotop/biotop.owl#")
 
 from .schemautils import *
 
@@ -98,6 +101,10 @@ class OwlSchemaGenerator(Generator):
         self._tr_element(c, ci)
         g.add((ci, RDF.type, OWL.Class))
         g.add((ci, RDFS.label, Literal(c.name)))
+        if c.mixin:
+            g.add((ci, RDFS.subClassOf, META.Mixin))
+        if c.abstract:
+            g.add((ci, RDFS.subClassOf, META.Abstract))
         if c.is_a:
             g.add((ci, RDFS.subClassOf, self.class_uri(c.is_a)))
         if c.mixins:
@@ -114,8 +121,9 @@ class OwlSchemaGenerator(Generator):
                 uri = self.class_uri(m)
                 if ':' in m:
                     uri = URIRef(self.id_to_url(m))
-                #g.add((ci, SKOS.exactMatch, uri))
-                g.add((ci, OWL.equivalentClasses, uri))
+                #g.add((ci, BIOTOP.isAbout, uri))                    
+                g.add((ci, SKOS.exactMatch, uri))
+                #g.add((ci, OWL.equivalentClass, uri))
         for sn in slots:
             s = mgr.slotdef(sn, c)
             srange = mgr.class_slot_range(c, s)
@@ -125,7 +133,17 @@ class OwlSchemaGenerator(Generator):
                 g.add((ci, RDFS.subClassOf, restr))
                 g.add((restr, RDF.type, OWL.Restriction))
                 g.add((restr, OWL.onProperty, self.property_uri(sn)))
-                g.add((restr, OWL.someValuesFrom, self.class_uri(srange)))
+                if mgr.typedef(srange):
+                    t = mgr.typedef(srange)
+                    typeof = t.typeof
+                    xtype = XSD.string
+                    if typeof == 'string':
+                        xtype = XSD.string
+                    else:
+                        logging.warn("Unknown type: {}".format(typeof))
+                    g.add((restr, OWL.someValuesFrom, xtype))
+                else:
+                    g.add((restr, OWL.someValuesFrom, self.class_uri(srange)))
 
         if c.defining_slots:
             x = BNode()

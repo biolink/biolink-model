@@ -91,7 +91,6 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [ontology class](OntologyClass.html)
  *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [ontology class](OntologyClass.html)
  *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [ontology class](OntologyClass.html)
- *  class: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html) references: [ontology class](OntologyClass.html)
  *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [ontology class](OntologyClass.html)
  *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [ontology class](OntologyClass.html)

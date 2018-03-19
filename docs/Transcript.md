@@ -27,6 +27,10 @@ URI: [http://bioentity.io/vocab/Transcript](http://bioentity.io/vocab/Transcript
 
 ## Fields
 
+ * [has biological sequence](has_biological_sequence.html)
+    * _connects a genomic feature to its sequence_
+    * __range__: biological sequence
+    * inherited from: [genomic entity](GenomicEntity.html)
  * [id](id.html)
     * __range__: identifier type
     * inherited from: [named thing](NamedThing.html)

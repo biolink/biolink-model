@@ -49,7 +49,6 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
  *  child: [gene to go term association](GeneToGoTermAssociation.html)
  *  child: [genomic sequence localization](GenomicSequenceLocalization.html)
  *  child: [sequence feature relationship](SequenceFeatureRelationship.html)
- *  child: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html)
  *  child: [gene regulatory relationship](GeneRegulatoryRelationship.html)
  *  child: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html)
 

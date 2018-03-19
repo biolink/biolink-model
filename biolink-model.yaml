@@ -20,6 +20,11 @@ types:
     description: >-
       A string that provides a human-readable name for a thing
 
+  - name: narrative text
+    typeof: string
+    description: >-
+      A string that provides a human-readable description of something
+
   - name: symbol type
     typeof: string
 
@@ -50,7 +55,7 @@ slots:
   
   - name: description
     domain: named thing
-    range: string
+    range: narrative text
     description: >-
       a human-readable description of a thing
   
@@ -176,7 +181,7 @@ slots:
 
   - name: quantifier qualifier
     is_a: association slot
-    range: quantifier
+    range: ontology class
     description: >-
       A measurable quantity for the object of the association
 
@@ -227,6 +232,12 @@ slots:
     multivalued: true
     range: publication
 
+
+  - name: has biological sequence
+    description: >-
+      connects a genomic feature to its sequence
+    range: biological sequence
+    
 
     ## genotypes
 
@@ -585,6 +596,8 @@ classes:
     aliases: ['sequence feature']
     description: >-
       an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+    slots:
+      - has biological sequence
     mappings:
       - "SO:0000110"
       - "UMLSSG:GENE"
@@ -816,7 +829,7 @@ classes:
       - drug
     slot_usage:
       - name: drug
-        range: chemical entity
+        range: chemical substance
         required: true
         multivalued: true
     mappings:
@@ -1186,6 +1199,8 @@ classes:
       - sex qualifier
 
   - name: entity to disease association
+    description: >-
+      mixin class for any association whose object (target node) is a disease
     abstract: true
     mixin: true
     defining_slots:
@@ -1338,8 +1353,13 @@ classes:
     mixin: true
     abstract: true
     description: >-
-      This mixin is used for any association class for which the subject plays the role of a 'model'
+      This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some
+      features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
     slot_usage:
+      - name: subject
+        description: >-
+          The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits
+          similar features, or a gene that when mutated exhibits features of the disease
       - name: relation
         subproperty_of: "RO:0003301"
         description: >-
@@ -1555,16 +1575,6 @@ classes:
         range: exon
       - name: object
         range: transcript
-
-  - name: sequence feature to sequence relationship
-    is_a: association
-    description: >-
-      Relates a sequence feature such as a gene to its sequence
-    slot_usage:
-      - name: subject
-        range: genomic entity  ## todo protein
-      - name: object
-        range: biological sequence
 
   - name: gene regulatory relationship
     is_a: association

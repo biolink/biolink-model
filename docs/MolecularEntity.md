@@ -28,6 +28,7 @@ URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/Molec
 ## Used in
 
  *  class: [allele](Allele.html) references: [gene](Gene.html)
+ *  class: [drug exposure](DrugExposure.html) references: [chemical substance](ChemicalSubstance.html)
  *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [genotype](Genotype.html)
  *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [genotype](Genotype.html)
  *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [genotype](Genotype.html)
@@ -54,7 +55,6 @@ URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/Molec
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [transcript](Transcript.html)
  *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [gene](Gene.html)
  *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [exon](Exon.html)
- *  class: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html) references: [genomic entity](GenomicEntity.html)
  *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [gene or gene product](GeneOrGeneProduct.html)
 
 ## Fields

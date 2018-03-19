@@ -58,7 +58,6 @@ URI: [http://bioentity.io/vocab/Publication](http://bioentity.io/vocab/Publicati
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [publication](Publication.html)
  *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [publication](Publication.html)
  *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [publication](Publication.html)
- *  class: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html) references: [publication](Publication.html)
  *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [publication](Publication.html)
  *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [publication](Publication.html)
  *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [publication](Publication.html)
