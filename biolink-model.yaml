@@ -796,7 +796,7 @@ classes:
   - name: allele
     is_a: genotype
     description: >-
-      A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus
+      One of a set of genomic features that exist at a particular genomic locus.
     alt_descriptions:
       - description: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
         source: AGR
@@ -818,9 +818,9 @@ classes:
     aliases: ['allele']
     is_a: genomic entity
     description: >-
-      A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.
+      An allele that varies in it sequence from what is considered the reference allele at that locus.
     mappings:
-      - "GENO:0000512"
+      - "GENO:0000002"
       - WD:Q15304597
 
   - name: drug exposure
