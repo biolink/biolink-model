@@ -60,6 +60,9 @@ slots:
   - name: regulates, entity to entity
     aliases: ['activity directly regulates activity of']
     is_a: regulates
+    local_names:
+      translator: regulates
+      ro: activity directly regulates activity of
     mappings:
       - RO:0002448
 
