@@ -805,26 +805,46 @@ classes:
       - "GENO:0000536"
       - SIO:001079
 
+  - name: haplotype
+    is_a: genomic entity
+    description: >-
+      A set of zero or more Alleles on a single instance of a Sequence[VMC]
+#    slots:
+#      - completeness
+    mappings:
+      - VMC:Haplotype
+
   - name: allele
     is_a: genotype
     description: >-
-      One of a set of genomic features that exist at a particular genomic locus.
+      One of a set of  coexisting sequence variants that exist at a particular genomic locus.
     alt_descriptions:
       - description: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
         source: AGR
+    alt_descriptions:
+      - description: "A contiguous change at a Location"
+        source: VMC
     slots:
       - has gene
     slot_usage:
       - slot: has gene
         multivalued: true
         description: Each allele can be associated with any number of genes
+      - slot: has biological sequence
+        description: >-
+          The state of the sequence w.r.t a reference sequence
       - slot: id
         examples:
           - value: ZFIN:ZDB-ALT-980203-1091
             description: ti282a allele from ZFIN
+      - slot: id
+        examples:
+          - value: ClinVarVariant:17681
+            description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
     mappings:
       - "GENO:0000512"
       - SIO:010277
+      - VMC:Allele
 
   - name: sequence variant
     aliases: ['allele']
