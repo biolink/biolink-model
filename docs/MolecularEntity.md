@@ -32,7 +32,6 @@ URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/Molec
  *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [genotype](Genotype.html)
  *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [genotype](Genotype.html)
  *  class: [gene to gene association](GeneToGeneAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [molecular interaction](MolecularInteraction.html) references: [molecular entity](MolecularEntity.html)
  *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [molecular entity](MolecularEntity.html)
  *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [chemical substance](ChemicalSubstance.html)

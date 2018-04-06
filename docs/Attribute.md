@@ -14,6 +14,7 @@ URI: [http://bioentity.io/vocab/Attribute](http://bioentity.io/vocab/Attribute)
 
 ## Inheritance
 
+ *  mixin: [ontology class](OntologyClass.html)
 
 ## Children
 

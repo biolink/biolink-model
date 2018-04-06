@@ -21,7 +21,6 @@ URI: [http://bioentity.io/vocab/Case](http://bioentity.io/vocab/Case)
 ## Used in
 
  *  class: [case to thing association](CaseToThingAssociation.html) references: [case](Case.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [case](Case.html)
 
 ## Fields
 

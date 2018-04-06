@@ -29,7 +29,7 @@ URI: [http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation](ht
     * inherited from: [association](Association.html)
  * [subject](subject.html)
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: None [required]
+    * __range__: [named thing](NamedThing.html) [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_

@@ -65,7 +65,7 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
     * __Local__
  * [subject](subject.html)
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: None [required]
+    * __range__: [named thing](NamedThing.html) [required]
     * __Local__
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
@@ -77,7 +77,7 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
     * __Local__
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: None [required]
+    * __range__: [named thing](NamedThing.html) [required]
     * __Local__
  * [qualifiers](qualifiers.html)
     * _connects an association to qualifiers that modify or qualify the meaning of that association_

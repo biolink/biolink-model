@@ -16,7 +16,7 @@ URI: [http://bioentity.io/vocab/object](http://bioentity.io/vocab/object)
 
 ## Domain and Range
 
- -> 
+ -> [named thing](NamedThing.html)
 
 ## Inheritance
 

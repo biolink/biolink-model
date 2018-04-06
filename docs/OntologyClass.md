@@ -18,6 +18,7 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
 
  *  child: [gene ontology class](GeneOntologyClass.html)
  *  mixin: [organism taxon](OrganismTaxon.html)
+ *  mixin: [attribute](Attribute.html)
 
 ## Used in
 
@@ -51,9 +52,9 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
  *  class: [microRNA](Microrna.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [macromolecular complex](MacromolecularComplex.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gene family](GeneFamily.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype](Genotype.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [genotype](Genotype.html) references: [zygosity](Zygosity.html)
  *  class: [haplotype](Haplotype.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [allele](Allele.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [allele](Allele.html) references: [zygosity](Zygosity.html)
  *  class: [sequence variant](SequenceVariant.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [association](Association.html) references: [ontology class](OntologyClass.html)
  *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [ontology class](OntologyClass.html)
@@ -71,7 +72,8 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)
+ *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
+ *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
  *  class: [disease or phenotypic feature association to thing association](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [disease or phenotypic feature association to location association](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)

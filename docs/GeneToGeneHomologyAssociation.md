@@ -27,7 +27,7 @@ URI: [http://bioentity.io/vocab/GeneToGeneHomologyAssociation](http://bioentity.
     * inherited from: [association](Association.html)
  * [subject](subject.html)
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [gene or gene product](GeneOrGeneProduct.html) [required]
+    * __range__: [named thing](NamedThing.html) [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
@@ -40,7 +40,7 @@ URI: [http://bioentity.io/vocab/GeneToGeneHomologyAssociation](http://bioentity.
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [gene or gene product](GeneOrGeneProduct.html) [required]
+    * __range__: [named thing](NamedThing.html) [required]
     * inherited from: [association](Association.html)
  * [qualifiers](qualifiers.html)
     * _connects an association to qualifiers that modify or qualify the meaning of that association_

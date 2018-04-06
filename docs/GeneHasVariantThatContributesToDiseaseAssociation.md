@@ -43,7 +43,7 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [disease](Disease.html) [required]
+    * __range__: [named thing](NamedThing.html) [required]
     * Example: [MONDO:0020066](http://purl.obolibrary.org/obo/MONDO_0020066) Ehlers-Danlos syndrome
     * inherited from: [association](Association.html)
  * [qualifiers](qualifiers.html)
