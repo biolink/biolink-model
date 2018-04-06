@@ -28,6 +28,11 @@ types:
   - name: symbol type
     typeof: string
 
+  - name: unit
+    typeof: string
+    mappings:
+      - UO:0000000
+      
   - name: time type
     typeof: time
 
@@ -227,6 +232,13 @@ slots:
     is_a: association slot
     range: clinical modifier
 
+
+  - name: sequence variant qualifier
+    description: >-
+      a qualifier used in an association where the variant
+    is_a: association slot
+    range: sequence variant
+    
   - name: publications
     singular_name: publication
     description: >-
@@ -796,26 +808,46 @@ classes:
       - "GENO:0000536"
       - SIO:001079
 
+  - name: haplotype
+    is_a: genomic entity
+    description: >-
+      A set of zero or more Alleles on a single instance of a Sequence[VMC]
+#    slots:
+#      - completeness
+    mappings:
+      - VMC:Haplotype
+
   - name: allele
     is_a: genotype
     description: >-
-      One of a set of genomic features that exist at a particular genomic locus.
+      One of a set of  coexisting sequence variants that exist at a particular genomic locus.
     alt_descriptions:
       - description: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
         source: AGR
+    alt_descriptions:
+      - description: "A contiguous change at a Location"
+        source: VMC
     slots:
       - has gene
     slot_usage:
       - slot: has gene
         multivalued: true
         description: Each allele can be associated with any number of genes
+      - slot: has biological sequence
+        description: >-
+          The state of the sequence w.r.t a reference sequence
       - slot: id
         examples:
           - value: ZFIN:ZDB-ALT-980203-1091
             description: ti282a allele from ZFIN
+      - slot: id
+        examples:
+          - value: ClinVarVariant:17681
+            description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
     mappings:
       - "GENO:0000512"
       - SIO:010277
+      - VMC:Allele
 
   - name: sequence variant
     aliases: ['allele']
@@ -1225,6 +1257,38 @@ classes:
       - severity qualifier
       - onset qualifier
       
+
+  - name: disease or phenotypic feature association to thing association
+    abstract: true
+    is_a: association
+    defining_slots:
+      - subject
+    slot_usage:
+      - name: subject
+        range: disease or phenotypic feature
+        description: "disease or phenotype"
+        definitional: true
+        examples:
+          - value: MONDO:0017314
+            description: "Ehlers-Danlos syndrome, vascular type"
+          - value: MP:0013229
+            description: "abnormal brain ventricle size"
+
+  - name: disease or phenotypic feature association to location association
+    is_a: disease or phenotypic feature association to thing association
+    description: >-
+      An association between either a disease or a phenotypic feature and an anatomical entity,
+      where the disease/feature manifests in that site.
+    mappings:
+      - NCIT:R100
+    slot_usage:
+      - name: object
+        range: anatomical entity
+        description: "anatomical entity in which the disease or feature is found"
+        examples:
+          - value: UBERON:0002048
+            description: "lung"
+
   - name: thing to disease or phenotypic feature association
     abstract: true
     is_a: association
@@ -1341,6 +1405,8 @@ classes:
             
   - name: gene to disease association
     is_a: association
+    comment: >-
+      NCIT:R176 refers to the inverse relationship
     mappings:
       - SIO:000983
     defining_slots:
@@ -1393,6 +1459,8 @@ classes:
       - subject
       - object
       - relation
+    slots:
+      - sequence variant qualifier
     slot_usage:
       - name: subject
         range: gene or gene product
@@ -1450,6 +1518,11 @@ classes:
 
   - name: sequence variant modulates treatment association
     is_a: association
+    description: >-
+      An association between a sequence variant and a treatment or health intervention.
+      The treatment object itself encompasses both the disease and the drug used.
+    comment: >-
+      An alternate way to model the same information could be via a qualifier
     defining_slots:
       - subject
       - object
