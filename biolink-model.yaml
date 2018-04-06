@@ -50,12 +50,32 @@ slots:
       - RO:0002436
   
   - name: regulates
-    comment: This subsumes two RO relations
+    comment: This is a grouping for process-process and entity-entity relations
+    mixin: true
+    abstract: true
+    
+  - name: positively regulates
+    comment: This is a grouping for process-process and entity-entity relations
+    is_a: regulates
+    mixin: true
+    abstract: true
+    
+  - name: negatively regulates
+    comment: This is a grouping for process-process and entity-entity relations
+    is_a: regulates
+    mixin: true
+    abstract: true
   
   - name: regulates, process to process
     is_a: regulates
     mappings:
       - RO:0002211
+  
+  - name: positively regulates, process to process
+    is_a: regulates, process to process
+    mixins: positively regulates
+    mappings:
+      - TODO
   
   - name: regulates, entity to entity
     aliases: ['activity directly regulates activity of']
@@ -66,6 +86,26 @@ slots:
     mappings:
       - RO:0002448
 
+  - name: positively regulates, entity to entity
+    aliases: ['activity directly positively regulates activity of']
+    is_a: regulates, entity to entity
+    mixins: positively regulates
+    local_names:
+      translator: positively regulates
+      ro: activity directly positively regulates activity of
+    mappings:
+      - RO:0002450
+
+  - name: negatively regulates, entity to entity
+    aliases: ['activity directly negatively regulates activity of']
+    is_a: regulates, entity to entity
+    mixins: negatively regulates
+    local_names:
+      translator: negatively regulates
+      ro: activity directly negatively regulates activity of
+    mappings:
+      - RO:0002449
+      
 ## property slots
       
   - name: id
@@ -112,6 +152,7 @@ slots:
       connects an association to the subject of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     required: true
+    range: named thing
     mappings:
       - rdf:subject
       - owl:annotatedSource
@@ -123,6 +164,7 @@ slots:
       connects an association to the object of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     required: true
+    range: named thing
     mappings:
       - rdf:object
       - owl:annotatedTarget
@@ -580,6 +622,8 @@ classes:
       
   - name: attribute
     subclass_of: PATO:0000001
+    mixins:
+      - ontology class
     description: >-
       A property or characteristic of an entity
     
