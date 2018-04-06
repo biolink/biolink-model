@@ -53,6 +53,7 @@ URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/Organis
  *  class: [macromolecular complex](MacromolecularComplex.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gene family](GeneFamily.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [genotype](Genotype.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [haplotype](Haplotype.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [allele](Allele.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [sequence variant](SequenceVariant.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [cellular component](CellularComponent.html) references: [organism taxon](OrganismTaxon.html)

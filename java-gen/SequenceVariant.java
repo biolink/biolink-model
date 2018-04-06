@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * SequenceVariant
  * <p>
- * A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.
+ * An allele that varies in it sequence from what is considered the reference allele at that locus.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

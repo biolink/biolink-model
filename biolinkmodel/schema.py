@@ -580,9 +580,18 @@ class GenotypeSchema(GenomicEntitySchema):
     def make_object(self, data):
         Genotype(**data)
 
+class HaplotypeSchema(GenomicEntitySchema):
+    """
+    A set of zero or more Alleles on a single instance of a Sequence[VMC]
+    """
+
+    @post_load
+    def make_object(self, data):
+        Haplotype(**data)
+
 class AlleleSchema(GenotypeSchema):
     """
-    A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus
+    One of a set of  coexisting sequence variants that exist at a particular genomic locus.
     """
     has_gene = fields.Str()
 
@@ -592,7 +601,7 @@ class AlleleSchema(GenotypeSchema):
 
 class SequenceVariantSchema(GenomicEntitySchema):
     """
-    A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.
+    An allele that varies in it sequence from what is considered the reference allele at that locus.
     """
 
     @post_load
@@ -603,7 +612,6 @@ class DrugExposureSchema(EnvironmentSchema):
     """
     A drug exposure is an intake of a particular chemical substance
     """
-    drug = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -882,6 +890,24 @@ class EntityToDiseaseAssociationSchema(Schema):
     def make_object(self, data):
         EntityToDiseaseAssociation(**data)
 
+class DiseaseOrPhenotypicFeatureAssociationToThingAssociationSchema(AssociationSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        DiseaseOrPhenotypicFeatureAssociationToThingAssociation(**data)
+
+class DiseaseOrPhenotypicFeatureAssociationToLocationAssociationSchema(DiseaseOrPhenotypicFeatureAssociationToThingAssociationSchema):
+    """
+    An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
+    """
+
+    @post_load
+    def make_object(self, data):
+        DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(**data)
+
 class ThingToDiseaseOrPhenotypicFeatureAssociationSchema(AssociationSchema):
     """
     None
@@ -1071,6 +1097,7 @@ class GeneHasVariantThatContributesToDiseaseAssociationSchema(GeneToDiseaseAssoc
     """
     None
     """
+    sequence_variant_qualifier = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -1098,7 +1125,7 @@ class GeneToExpressionSiteAssociationSchema(AssociationSchema):
 
 class SequenceVariantModulatesTreatmentAssociationSchema(AssociationSchema):
     """
-    None
+    An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.
     """
 
     @post_load

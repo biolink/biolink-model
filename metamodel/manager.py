@@ -224,6 +224,8 @@ class Manager(object):
     def child_nodes(self, obj):
         nodes = [c for c in self.schema.classes
                  if c.is_a is not None and c.is_a==obj.name]
+        nodes += [c for c in self.schema.slots
+                  if c.is_a is not None and c.is_a==obj.name]
         return nodes
 
     def child_nodes_by_mixin(self, obj):

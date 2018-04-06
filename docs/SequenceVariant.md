@@ -5,12 +5,12 @@ layout: default
 ## sequence variant
 
 
-A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.
+An allele that varies in it sequence from what is considered the reference allele at that locus.
 
 URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/SequenceVariant)
 ## Mappings
 
- * [GENO:0000512](http://purl.obolibrary.org/obo/GENO_0000512)
+ * [GENO:0000002](http://purl.obolibrary.org/obo/GENO_0000002)
  * [WD:Q15304597](http://purl.obolibrary.org/obo/WD_Q15304597)
 
 ## Inheritance
@@ -23,6 +23,7 @@ URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/Seque
 ## Used in
 
  *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [sequence variant](SequenceVariant.html)
+ *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [sequence variant](SequenceVariant.html)
  *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [sequence variant](SequenceVariant.html)
 
 ## Fields

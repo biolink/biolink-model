@@ -28,6 +28,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "publications",
     "qualifiers",
     "relation",
+    "sequence_variant_qualifier",
     "severity_qualifier",
     "subject"
 })
@@ -105,6 +106,13 @@ public class GeneHasVariantThatContributesToDiseaseAssociation {
     @JsonProperty("relation")
     @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
     private String relation;
+    /**
+     * a qualifier used in an association where the variant
+     * 
+     */
+    @JsonProperty("sequence_variant_qualifier")
+    @JsonPropertyDescription("a qualifier used in an association where the variant")
+    private String sequenceVariantQualifier;
     /**
      * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
      * 
@@ -311,6 +319,24 @@ public class GeneHasVariantThatContributesToDiseaseAssociation {
     }
 
     /**
+     * a qualifier used in an association where the variant
+     * 
+     */
+    @JsonProperty("sequence_variant_qualifier")
+    public String getSequenceVariantQualifier() {
+        return sequenceVariantQualifier;
+    }
+
+    /**
+     * a qualifier used in an association where the variant
+     * 
+     */
+    @JsonProperty("sequence_variant_qualifier")
+    public void setSequenceVariantQualifier(String sequenceVariantQualifier) {
+        this.sequenceVariantQualifier = sequenceVariantQualifier;
+    }
+
+    /**
      * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
      * 
      */
@@ -348,12 +374,12 @@ public class GeneHasVariantThatContributesToDiseaseAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("associationType", associationType).append("frequencyQualifier", frequencyQualifier).append("id", id).append("label", label).append("negated", negated).append("object", object).append("onsetQualifier", onsetQualifier).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("severityQualifier", severityQualifier).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("associationType", associationType).append("frequencyQualifier", frequencyQualifier).append("id", id).append("label", label).append("negated", negated).append("object", object).append("onsetQualifier", onsetQualifier).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("sequenceVariantQualifier", sequenceVariantQualifier).append("severityQualifier", severityQualifier).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(providedBy).append(negated).append(subject).append(associationType).append(frequencyQualifier).append(qualifiers).append(label).append(relation).append(onsetQualifier).append(severityQualifier).append(id).append(object).append(publications).toHashCode();
+        return new HashCodeBuilder().append(providedBy).append(negated).append(sequenceVariantQualifier).append(subject).append(associationType).append(frequencyQualifier).append(qualifiers).append(label).append(relation).append(onsetQualifier).append(severityQualifier).append(id).append(object).append(publications).toHashCode();
     }
 
     @Override
@@ -365,7 +391,7 @@ public class GeneHasVariantThatContributesToDiseaseAssociation {
             return false;
         }
         GeneHasVariantThatContributesToDiseaseAssociation rhs = ((GeneHasVariantThatContributesToDiseaseAssociation) other);
-        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(subject, rhs.subject).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(relation, rhs.relation).append(onsetQualifier, rhs.onsetQualifier).append(severityQualifier, rhs.severityQualifier).append(id, rhs.id).append(object, rhs.object).append(publications, rhs.publications).isEquals();
+        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(sequenceVariantQualifier, rhs.sequenceVariantQualifier).append(subject, rhs.subject).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(relation, rhs.relation).append(onsetQualifier, rhs.onsetQualifier).append(severityQualifier, rhs.severityQualifier).append(id, rhs.id).append(object, rhs.object).append(publications, rhs.publications).isEquals();
     }
 
 }

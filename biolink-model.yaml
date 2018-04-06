@@ -40,7 +40,31 @@ types:
     typeof: string
 
 slots:
+
+## predicates/relations
   
+  - name: molecularly interacts with
+    domain: molecular entity
+    range: molecular entity
+    mappings:
+      - RO:0002436
+  
+  - name: regulates
+    comment: This subsumes two RO relations
+  
+  - name: regulates, process to process
+    is_a: regulates
+    mappings:
+      - RO:0002211
+  
+  - name: regulates, entity to entity
+    aliases: ['activity directly regulates activity of']
+    is_a: regulates
+    mappings:
+      - RO:0002448
+
+## property slots
+      
   - name: id
     identifier: true
     abstract: true
@@ -863,8 +887,8 @@ classes:
     is_a: environment
     description: >-
       A drug exposure is an intake of a particular chemical substance
-    slots:
-      - has input
+#    slots:
+#      - has input
     slot_usage:
       - name: drug
         range: chemical substance
@@ -1054,13 +1078,21 @@ classes:
     description: >-
       An interaction at the molecular level between two physical entities
     slot_usage:
+      - name: subject
+        range: molecular entity
       - name: relation
         subproperty_of: "RO:0002436"
+        range: molecularly interacts with
         values_from:
           - ro
           - mi
         description: "interaction relationship type"
         definitional: true
+        examples:
+          - value: RO:0002447
+            description: the subject molecular phosphorylates the object molecule
+      - name: object
+        range: molecular entity
       - slot: interacting molecules category
         range: class
         subclass_of: "MI:1046"

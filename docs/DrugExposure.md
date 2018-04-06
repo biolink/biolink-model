@@ -26,9 +26,6 @@ URI: [http://bioentity.io/vocab/DrugExposure](http://bioentity.io/vocab/DrugExpo
 
 ## Fields
 
- * [drug](drug.html)
-    * __range__: [chemical substance](ChemicalSubstance.html) [required]
-    * __Local__
  * [id](id.html)
     * __range__: identifier type [required]
     * inherited from: [named thing](NamedThing.html)

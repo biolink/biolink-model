@@ -182,8 +182,12 @@ class MarkdownGenerator(Generator):
             sn = self.slot_name(s)
 
             r = mgr.class_slot_range(c, s)
-            if mgr.classdef(r):
-                r = self.link(mgr.classdef(r))
+            if r:
+                if mgr.classdef(r):
+                    r = self.link(mgr.classdef(r))
+                elif mgr.slotdef(r):
+                    # reified relation
+                    r = self.link(mgr.slotdef(r))
 
             qual = ''
             if mgr.class_slot_multivalued(c, s):

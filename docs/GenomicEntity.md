@@ -25,6 +25,7 @@ URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/Genomic
  *  child: [coding sequence](CodingSequence.html)
  *  child: [gene or gene product](GeneOrGeneProduct.html)
  *  child: [genotype](Genotype.html)
+ *  child: [haplotype](Haplotype.html)
  *  child: [sequence variant](SequenceVariant.html)
 
 ## Used in
@@ -35,7 +36,6 @@ URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/Genomic
  *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [genotype](Genotype.html)
  *  class: [gene to gene association](GeneToGeneAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [gene product](GeneProduct.html)
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [genotype](Genotype.html)
@@ -43,7 +43,7 @@ URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/Genomic
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
+ *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [sequence variant](SequenceVariant.html)
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [genotype](Genotype.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [sequence variant](SequenceVariant.html)

@@ -324,6 +324,13 @@ type Genotype {
   inTaxon: OrganismTaxon
 }
 
+type Haplotype {
+  hasBiologicalSequence: String
+  id: String
+  label: String
+  inTaxon: OrganismTaxon
+}
+
 type Allele {
   hasGene: Gene
   hasZygosity: Zygosity
@@ -341,7 +348,6 @@ type SequenceVariant {
 }
 
 type DrugExposure {
-  drug: [ChemicalSubstance]!
   id: String!
   label: String
 }
@@ -599,6 +605,32 @@ interface EntityToDiseaseAssociation {
   onsetQualifier: Onset
 }
 
+interface DiseaseOrPhenotypicFeatureAssociationToThingAssociation {
+  associationType: OntologyClass
+  subject: DiseaseOrPhenotypicFeature!
+  negated: String
+  relation: RelationshipType!
+  object: String!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  label: String
+}
+
+type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation {
+  associationType: OntologyClass
+  subject: DiseaseOrPhenotypicFeature!
+  negated: String
+  relation: RelationshipType!
+  object: AnatomicalEntity!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  label: String
+}
+
 interface ThingToDiseaseOrPhenotypicFeatureAssociation {
   associationType: OntologyClass
   subject: String!
@@ -759,6 +791,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDi
 }
 
 type GeneHasVariantThatContributesToDiseaseAssociation {
+  sequenceVariantQualifier: SequenceVariant
   associationType: OntologyClass
   subject: GeneOrGeneProduct!
   negated: String

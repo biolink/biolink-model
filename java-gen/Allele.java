@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * Allele
  * <p>
- * A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus
+ * One of a set of  coexisting sequence variants that exist at a particular genomic locus.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

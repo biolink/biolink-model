@@ -41,6 +41,8 @@ URI: [http://bioentity.io/vocab/publications](http://bioentity.io/vocab/publicat
  *  usage: [biosample to thing association](BiosampleToThingAssociation.html)
  *  usage: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html)
  *  usage: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
+ *  usage: [disease or phenotypic feature association to thing association](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.html)
+ *  usage: [disease or phenotypic feature association to location association](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.html)
  *  usage: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html)
  *  usage: [disease to thing association](DiseaseToThingAssociation.html)
  *  usage: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html)

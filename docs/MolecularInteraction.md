@@ -28,7 +28,7 @@ URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/
     * inherited from: [association](Association.html)
  * [subject](subject.html)
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: None [required]
+    * __range__: [molecular entity](MolecularEntity.html) [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
@@ -36,12 +36,13 @@ URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _interaction relationship type_
-    * __range__: [relationship type](RelationshipType.html) [required]
+    * __range__: [molecularly interacts with](molecularly_interacts_with.html) [required]
     * subproperty_of: [RO:0002436](http://purl.obolibrary.org/obo/RO_0002436)
+    * Example: [RO:0002447](http://purl.obolibrary.org/obo/RO_0002447) the subject molecular phosphorylates the object molecule
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: None [required]
+    * __range__: [molecular entity](MolecularEntity.html) [required]
     * inherited from: [association](Association.html)
  * [qualifiers](qualifiers.html)
     * _connects an association to qualifiers that modify or qualify the meaning of that association_

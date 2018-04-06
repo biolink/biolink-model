@@ -104,6 +104,9 @@
         "relation": {
             "type": "string"
         },
+        "sequence_variant_qualifier": {
+            "type": "string"
+        },
         "severity_qualifier": {
             "type": "string"
         },
@@ -135,7 +138,7 @@
             "type": "object"
         },
         "Allele": {
-            "description": "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus",
+            "description": "One of a set of  coexisting sequence variants that exist at a particular genomic locus.",
             "properties": {
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
@@ -858,6 +861,59 @@
             "title": "DiseaseOrPhenotypicFeature",
             "type": "object"
         },
+        "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation": {
+            "description": "An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.",
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
+            "type": "object"
+        },
         "DiseaseToPhenotypicFeatureAssociation": {
             "description": "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way",
             "properties": {
@@ -949,12 +1005,6 @@
         "DrugExposure": {
             "description": "A drug exposure is an intake of a particular chemical substance",
             "properties": {
-                "drug": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
                 "id": {
                     "type": "string"
                 },
@@ -1336,6 +1386,10 @@
                 },
                 "relation": {
                     "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "sequence_variant_qualifier": {
+                    "description": "a qualifier used in an association where the variant",
                     "type": "string"
                 },
                 "severity_qualifier": {
@@ -2254,6 +2308,29 @@
             "title": "GrossAnatomicalStructure",
             "type": "object"
         },
+        "Haplotype": {
+            "description": "A set of zero or more Alleles on a single instance of a Sequence[VMC]",
+            "properties": {
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects a thing to a class representing a taxon",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Haplotype",
+            "type": "object"
+        },
         "IndividualOrganism": {
             "description": null,
             "properties": {
@@ -2774,7 +2851,7 @@
             "type": "object"
         },
         "SequenceVariant": {
-            "description": "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.",
+            "description": "An allele that varies in it sequence from what is considered the reference allele at that locus.",
             "properties": {
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
