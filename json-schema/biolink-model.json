@@ -71,7 +71,16 @@
         "longitude": {
             "type": "string"
         },
+        "molecularly_interacts_with": {
+            "type": "string"
+        },
         "negated": {
+            "type": "string"
+        },
+        "negatively_regulates": {
+            "type": "string"
+        },
+        "negatively_regulates,_entity_to_entity": {
             "type": "string"
         },
         "object": {
@@ -81,6 +90,15 @@
             "type": "string"
         },
         "phase": {
+            "type": "string"
+        },
+        "positively_regulates": {
+            "type": "string"
+        },
+        "positively_regulates,_entity_to_entity": {
+            "type": "string"
+        },
+        "positively_regulates,_process_to_process": {
             "type": "string"
         },
         "provided_by": {
@@ -99,6 +117,15 @@
             "type": "array"
         },
         "quantifier_qualifier": {
+            "type": "string"
+        },
+        "regulates": {
+            "type": "string"
+        },
+        "regulates,_entity_to_entity": {
+            "type": "string"
+        },
+        "regulates,_process_to_process": {
             "type": "string"
         },
         "relation": {

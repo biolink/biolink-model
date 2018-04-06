@@ -143,7 +143,7 @@ type Drug {
   inTaxon: OrganismTaxon
 }
 
-type Attribute {
+type Attribute implements OntologyClass {
 }
 
 type AnatomicalEntity implements ThingWithTaxon {
@@ -376,10 +376,10 @@ type GeographicLocationAtTime {
 
 interface Association {
   associationType: OntologyClass
-  subject: String!
+  subject: NamedThing!
   negated: String
   relation: RelationshipType!
-  object: String!
+  object: NamedThing!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
@@ -441,10 +441,10 @@ interface GeneToGeneAssociation {
 
 type GeneToGeneHomologyAssociation {
   associationType: OntologyClass
-  subject: GeneOrGeneProduct!
+  subject: NamedThing!
   negated: String
   relation: RelationshipType!
-  object: GeneOrGeneProduct!
+  object: NamedThing!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
@@ -454,10 +454,10 @@ type GeneToGeneHomologyAssociation {
 
 interface MolecularInteraction {
   associationType: OntologyClass
-  subject: String!
+  subject: MolecularEntity!
   negated: String
-  relation: RelationshipType!
-  object: String!
+  relation: String!
+  object: MolecularEntity!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
@@ -467,10 +467,10 @@ interface MolecularInteraction {
 
 type PairwiseGeneOrProteinInteractionAssociation implements MolecularInteraction {
   associationType: OntologyClass
-  subject: GeneOrGeneProduct!
+  subject: MolecularEntity!
   negated: String
-  relation: RelationshipType!
-  object: GeneOrGeneProduct!
+  relation: String!
+  object: MolecularEntity!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
@@ -483,7 +483,7 @@ interface ChemicalToThingAssociation {
   subject: ChemicalSubstance!
   negated: String
   relation: RelationshipType!
-  object: String!
+  object: NamedThing!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
@@ -496,7 +496,7 @@ interface CaseToThingAssociation {
   subject: Case!
   negated: String
   relation: RelationshipType!
-  object: String!
+  object: NamedThing!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
@@ -561,7 +561,7 @@ interface BiosampleToThingAssociation {
   subject: Biosample!
   negated: String
   relation: RelationshipType!
-  object: String!
+  object: NamedThing!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
@@ -574,7 +574,7 @@ type BiosampleToDiseaseOrPhenotypicFeatureAssociation implements BiosampleToThin
   subject: Biosample!
   negated: String
   relation: RelationshipType!
-  object: DiseaseOrPhenotypicFeature!
+  object: NamedThing!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
@@ -588,7 +588,7 @@ interface EntityToPhenotypicFeatureAssociation {
   onsetQualifier: Onset
   sexQualifier: BiologicalSex
   associationType: OntologyClass
-  subject: String!
+  subject: NamedThing!
   negated: String
   relation: RelationshipType!
   object: PhenotypicFeature!
@@ -610,7 +610,7 @@ interface DiseaseOrPhenotypicFeatureAssociationToThingAssociation {
   subject: DiseaseOrPhenotypicFeature!
   negated: String
   relation: RelationshipType!
-  object: String!
+  object: NamedThing!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
@@ -620,7 +620,7 @@ interface DiseaseOrPhenotypicFeatureAssociationToThingAssociation {
 
 type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation {
   associationType: OntologyClass
-  subject: DiseaseOrPhenotypicFeature!
+  subject: NamedThing!
   negated: String
   relation: RelationshipType!
   object: AnatomicalEntity!
@@ -633,7 +633,7 @@ type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation {
 
 interface ThingToDiseaseOrPhenotypicFeatureAssociation {
   associationType: OntologyClass
-  subject: String!
+  subject: NamedThing!
   negated: String
   relation: RelationshipType!
   object: DiseaseOrPhenotypicFeature!
@@ -649,7 +649,7 @@ interface DiseaseToThingAssociation {
   subject: Disease!
   negated: String
   relation: RelationshipType!
-  object: String!
+  object: NamedThing!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
@@ -693,7 +693,7 @@ type EnvironmentToPhenotypicFeatureAssociation implements EntityToPhenotypicFeat
 
 type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, DiseaseToThingAssociation {
   associationType: OntologyClass
-  subject: Disease!
+  subject: NamedThing!
   negated: String
   relation: RelationshipType!
   object: PhenotypicFeature!
@@ -710,7 +710,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
 
 type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, CaseToThingAssociation {
   associationType: OntologyClass
-  subject: Case!
+  subject: NamedThing!
   negated: String
   relation: RelationshipType!
   object: PhenotypicFeature!
@@ -730,7 +730,7 @@ interface GeneToThingAssociation {
   subject: GeneOrGeneProduct!
   negated: String
   relation: RelationshipType!
-  object: String!
+  object: NamedThing!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
@@ -779,7 +779,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDi
   subject: GeneOrGeneProduct!
   negated: String
   relation: RelationshipType!
-  object: Disease!
+  object: NamedThing!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
@@ -796,7 +796,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation {
   subject: GeneOrGeneProduct!
   negated: String
   relation: RelationshipType!
-  object: Disease!
+  object: NamedThing!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
@@ -812,7 +812,7 @@ interface GenotypeToThingAssociation {
   subject: Genotype!
   negated: String
   relation: RelationshipType!
-  object: String!
+  object: NamedThing!
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
