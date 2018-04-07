@@ -152,7 +152,7 @@ slots:
       connects an association to the subject of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     required: true
-    range: named thing
+#    range: named thing
     mappings:
       - rdf:subject
       - owl:annotatedSource
@@ -164,7 +164,7 @@ slots:
       connects an association to the object of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     required: true
-    range: named thing
+#    range: named thing
     mappings:
       - rdf:object
       - owl:annotatedTarget
@@ -316,12 +316,16 @@ slots:
     multivalued: true
     range: publication
 
-
   - name: has biological sequence
     description: >-
       connects a genomic feature to its sequence
     range: biological sequence
-    
+
+  - name: has molecular consequence
+    description: >-
+      connects a sequence variant to a class describing the molecular
+      consequence. E.g.  SO:0001583
+    range: ontology class
 
     ## genotypes
 
@@ -457,9 +461,7 @@ classes:
       - in taxon
       
   - name: organism taxon
-    is_a: organismal entity
-    mixins:
-      - ontology class
+    is_a: ontology class
     values_from:
       - ncbitaxon
     mappings:
@@ -515,7 +517,7 @@ classes:
       - phenotypic feature
       
   - name: disease
-    aliases: ['condition', 'disorder']
+    aliases: ['condition', 'disorder', 'medical condition']
     is_a: disease or phenotypic feature
     mappings:
       - "MONDO:0000001"
@@ -524,7 +526,7 @@ classes:
       - UMLSSG:DISO
       
   - name: phenotypic feature
-    aliases: ['sign', 'symptom', 'phenotype', 'trait']
+    aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
     mappings:
       - "UPHENO:0000001"
@@ -888,10 +890,25 @@ classes:
     mappings:
       - VMC:Haplotype
 
-  - name: allele
-    is_a: genotype
+  - name: sequence variant
+    aliases: ['allele']
+    local_names:
+      agr: allele
+    is_a: genomic entity
     description: >-
-      One of a set of  coexisting sequence variants that exist at a particular genomic locus.
+      An allele that varies in its sequence from what is considered the reference allele at that locus.
+    comment: >-
+      This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more
+      than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)
+    mappings:
+      - GENO:0000002
+      - WD:Q15304597
+      - SIO:010277
+      - VMC:Allele
+    id_prefixes:
+      - ClinVar
+      - WD
+      - CIViC
     alt_descriptions:
       - description: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
         source: AGR
@@ -915,19 +932,6 @@ classes:
         examples:
           - value: ClinVarVariant:17681
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
-    mappings:
-      - "GENO:0000512"
-      - SIO:010277
-      - VMC:Allele
-
-  - name: sequence variant
-    aliases: ['allele']
-    is_a: genomic entity
-    description: >-
-      An allele that varies in it sequence from what is considered the reference allele at that locus.
-    mappings:
-      - "GENO:0000002"
-      - WD:Q15304597
 
   - name: drug exposure
     aliases: ['drug intake', 'drug dose']
@@ -1296,6 +1300,10 @@ classes:
       - object
     is_a: association
     slot_usage:
+      - name: description
+        description: >-
+          A description of specific aspects of this phenotype, not otherwise
+          covered by the phenotype ontology class
       - name: object
         range: phenotypic feature
         description: "phenotypic class"
@@ -1463,7 +1471,24 @@ classes:
       - name: subject
         range: gene or gene product
         description: "gene that is the subject of the association"
-      
+
+  - name: variant to thing association
+    is_a: association
+    defining_slots:
+      - subject
+    abstract: true
+    mixin: true
+    slot_usage:
+      - name: subject
+        range: sequence variant
+        description: >-
+          a sequence variant in which the allele state is associated with some other entity
+        example:
+          - value: ClinVar:38077
+            description: "ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)"
+          - value: ClinGen:CA024716
+            description: "chr13:g.32921033G>C (hg19) in ClinGen"
+        
   - name: gene to phenotypic feature association
     is_a: association
     mappings:
@@ -1499,7 +1524,48 @@ classes:
         range: gene or gene product
         description: >-
           gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
-            
+
+  - name: variant to phenotypic feature association
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - variant to thing association
+      - entity to phenotypic feature association
+    slot_usage:
+      - name: subject
+        range: sequence variant
+        description: >-
+          a sequence variant in which the allele state is associated in some way with the phenotype state
+
+  - name: variant to disease association
+    is_a: association
+    comment: TODO decide no how to model pathogenicity
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - variant to thing association
+      - entity to disease association
+    slot_usage:
+      - name: subject
+        description: >-
+          a sequence variant in which the allele state is associated in some way with the disease state
+        example:
+          value: ClinVar:52241
+          description: "NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)"
+      - name: relation
+        description: >-
+          E.g. is pathogenic for
+        subproperty_of: GENO:0000790
+      - name: object
+        description: >-
+          a disease that is associated with that variant
+        example:
+          value: MONDO:0016419
+          description: hereditary breast cancer
+          
   - name: model to disease mixin
     mixin: true
     abstract: true
