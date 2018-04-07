@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociation](http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[gene to disease association]^-[gene has variant that contributes to disease association], [gene has variant that contributes to disease association]-sequence variant qualifier >[sequence variant], [genomic entity]^-[sequence variant], [sequence variant]-has gene >[gene], [gene or gene product]^-[gene], [gene]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [sequence variant]-in taxon >[organism taxon], [gene has variant that contributes to disease association]-association type >[ontology class], [gene has variant that contributes to disease association]-subject >[gene or gene product], [genomic entity]^-[gene or gene product], [gene or gene product]-in taxon >[organism taxon], [gene has variant that contributes to disease association]-relation >[relationship type], [gene has variant that contributes to disease association]-object >[disease], [disease or phenotypic feature]^-[disease], [disease]-in taxon >[organism taxon], [gene has variant that contributes to disease association]-qualifiers >[ontology class], [gene has variant that contributes to disease association]-publications >[publication], [information content entity]^-[publication], [gene has variant that contributes to disease association]-provided by >[provider], [administrative entity]^-[provider], [gene has variant that contributes to disease association]-frequency qualifier >[frequency value], [attribute]^-[frequency value], [gene has variant that contributes to disease association]-severity qualifier >[severity value], [attribute]^-[severity value], [gene has variant that contributes to disease association]-onset qualifier >[onset], [attribute]^-[onset])
 ## Mappings
 
 
@@ -43,7 +46,7 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: [disease](Disease.html) [required]
     * Example: [MONDO:0020066](http://purl.obolibrary.org/obo/MONDO_0020066) Ehlers-Danlos syndrome
     * inherited from: [association](Association.html)
  * [qualifiers](qualifiers.html)

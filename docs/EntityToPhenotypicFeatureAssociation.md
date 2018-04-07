@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[entity to phenotypic feature association], [entity to phenotypic feature association]-frequency qualifier >[frequency value], [attribute]^-[frequency value], [entity to phenotypic feature association]-severity qualifier >[severity value], [attribute]^-[severity value], [entity to phenotypic feature association]-onset qualifier >[onset], [attribute]^-[onset], [entity to phenotypic feature association]-sex qualifier >[biological sex], [attribute]^-[biological sex], [entity to phenotypic feature association]-association type >[ontology class], [entity to phenotypic feature association]-relation >[relationship type], [entity to phenotypic feature association]-object >[phenotypic feature], [disease or phenotypic feature]^-[phenotypic feature], [phenotypic feature]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [entity to phenotypic feature association]-qualifiers >[ontology class], [entity to phenotypic feature association]-publications >[publication], [information content entity]^-[publication], [entity to phenotypic feature association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 
@@ -22,6 +25,7 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
  *  mixin: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html)
  *  mixin: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html)
  *  mixin: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
+ *  mixin: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html)
 
 
 ## Fields
@@ -48,7 +52,7 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
     * inherited from: [association](Association.html)
  * [subject](subject.html)
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: None [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_

@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/CodingSequence](http://bioentity.io/vocab/CodingSequence)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[genomic entity]^-[coding sequence], [coding sequence]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [SO:0000316](http://purl.obolibrary.org/obo/SO_0000316)

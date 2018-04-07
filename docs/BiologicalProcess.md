@@ -8,6 +8,9 @@ layout: default
 One or more causally connected executions of molecular functions
 
 URI: [http://bioentity.io/vocab/BiologicalProcess](http://bioentity.io/vocab/BiologicalProcess)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[biological entity]^-[biological process])
 ## Mappings
 
  * [GO:0008150](http://purl.obolibrary.org/obo/GO_0008150)

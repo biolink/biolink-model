@@ -8,6 +8,9 @@ layout: default
 A drug exposure is an intake of a particular chemical substance
 
 URI: [http://bioentity.io/vocab/DrugExposure](http://bioentity.io/vocab/DrugExposure)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[environment]^-[drug exposure])
 ## Mappings
 
  * [ECTO:0000509](http://purl.obolibrary.org/obo/ECTO_0000509)

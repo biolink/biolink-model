@@ -8,6 +8,9 @@ layout: default
 An abstract association for use where the case is the subject
 
 URI: [http://bioentity.io/vocab/CaseToThingAssociation](http://bioentity.io/vocab/CaseToThingAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[case to thing association], [case to thing association]-association type >[ontology class], [case to thing association]-subject >[case], [individual organism]^-[case], [case]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [case to thing association]-relation >[relationship type], [case to thing association]-qualifiers >[ontology class], [case to thing association]-publications >[publication], [information content entity]^-[publication], [case to thing association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 
@@ -40,7 +43,7 @@ URI: [http://bioentity.io/vocab/CaseToThingAssociation](http://bioentity.io/voca
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: None [required]
     * inherited from: [association](Association.html)
  * [qualifiers](qualifiers.html)
     * _connects an association to qualifiers that modify or qualify the meaning of that association_

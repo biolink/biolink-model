@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/EnvironmentalFeature](http://bioentity.io/vocab/EnvironmentalFeature)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[planetary entity]^-[environmental feature])
 ## Mappings
 
  * [ENVO:00002297](http://purl.obolibrary.org/obo/ENVO_00002297)

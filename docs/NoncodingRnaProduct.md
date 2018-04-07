@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/NoncodingRnaProduct](http://bioentity.io/vocab/NoncodingRnaProduct)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[RNA product]^-[noncoding RNA product], [noncoding RNA product]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [SIO:001235](http://semanticscience.org/resource/SIO_001235)

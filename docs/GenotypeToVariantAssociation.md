@@ -8,6 +8,9 @@ layout: default
 Any association between a genotype and a sequence variant.
 
 URI: [http://bioentity.io/vocab/GenotypeToVariantAssociation](http://bioentity.io/vocab/GenotypeToVariantAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[genotype to variant association], [genotype to variant association]-association type >[ontology class], [genotype to variant association]-subject >[genotype], [genomic entity]^-[genotype], [genotype]-has zygosity >[zygosity], [attribute]^-[zygosity], [genotype]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [genotype to variant association]-relation >[relationship type], [genotype to variant association]-object >[sequence variant], [genomic entity]^-[sequence variant], [sequence variant]-has gene >[gene], [gene or gene product]^-[gene], [gene]-in taxon >[organism taxon], [sequence variant]-in taxon >[organism taxon], [genotype to variant association]-qualifiers >[ontology class], [genotype to variant association]-publications >[publication], [information content entity]^-[publication], [genotype to variant association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 

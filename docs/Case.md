@@ -8,6 +8,9 @@ layout: default
 An individual organism that has a patient role in some clinical context.
 
 URI: [http://bioentity.io/vocab/Case](http://bioentity.io/vocab/Case)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[individual organism]^-[case], [case]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
 
@@ -21,6 +24,7 @@ URI: [http://bioentity.io/vocab/Case](http://bioentity.io/vocab/Case)
 ## Used in
 
  *  class: [case to thing association](CaseToThingAssociation.html) references: [case](Case.html)
+ *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [case](Case.html)
 
 ## Fields
 

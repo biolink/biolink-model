@@ -8,6 +8,9 @@ layout: default
 An OWL property used as an edge label
 
 URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/RelationshipType)
+
+
+![img](http://yuml.me/diagram/nofunky/class/)
 ## Mappings
 
 
@@ -43,8 +46,11 @@ URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/Rela
  *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [gene to thing association](GeneToThingAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [variant to thing association](VariantToThingAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [relationship type](RelationshipType.html)

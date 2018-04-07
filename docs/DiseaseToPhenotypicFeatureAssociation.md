@@ -8,6 +8,9 @@ layout: default
 An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
 
 URI: [http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation](http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[disease to phenotypic feature association], [disease to phenotypic feature association]-association type >[ontology class], [disease to phenotypic feature association]-subject >[disease], [disease or phenotypic feature]^-[disease], [disease]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [disease to phenotypic feature association]-relation >[relationship type], [disease to phenotypic feature association]-object >[phenotypic feature], [disease or phenotypic feature]^-[phenotypic feature], [phenotypic feature]-in taxon >[organism taxon], [disease to phenotypic feature association]-qualifiers >[ontology class], [disease to phenotypic feature association]-publications >[publication], [information content entity]^-[publication], [disease to phenotypic feature association]-provided by >[provider], [administrative entity]^-[provider], [disease to phenotypic feature association]-frequency qualifier >[frequency value], [attribute]^-[frequency value], [disease to phenotypic feature association]-severity qualifier >[severity value], [attribute]^-[severity value], [disease to phenotypic feature association]-onset qualifier >[onset], [attribute]^-[onset], [disease to phenotypic feature association]-sex qualifier >[biological sex], [attribute]^-[biological sex])
 ## Mappings
 
 
@@ -29,7 +32,7 @@ URI: [http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation](http://bi
     * inherited from: [association](Association.html)
  * [subject](subject.html)
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: [disease](Disease.html) [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_

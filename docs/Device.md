@@ -8,6 +8,9 @@ layout: default
 A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
 
 URI: [http://bioentity.io/vocab/Device](http://bioentity.io/vocab/Device)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[named thing]^-[device])
 ## Mappings
 
  * [UMLSSG:DEVI](http://purl.obolibrary.org/obo/UMLSSG_DEVI)

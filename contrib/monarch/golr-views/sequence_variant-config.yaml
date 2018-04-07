@@ -1,8 +1,12 @@
-description: An allele that varies in it sequence from what is considered the reference
+description: An allele that varies in its sequence from what is considered the reference
   allele at that locus.
 display_name: sequence variant
 document_category: sequence variant
 fields:
+- description: connects and entity to a single gene
+  display_name: has gene
+  id: has_gene
+  property: []
 - description: connects a genomic feature to its sequence
   display_name: has biological sequence
   id: has_biological_sequence

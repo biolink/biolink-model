@@ -8,6 +8,9 @@ layout: default
 An interaction between a chemical entity and another entity
 
 URI: [http://bioentity.io/vocab/ChemicalToThingAssociation](http://bioentity.io/vocab/ChemicalToThingAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[chemical to thing association], [chemical to thing association]-association type >[ontology class], [chemical to thing association]-subject >[chemical substance], [molecular entity]^-[chemical substance], [chemical substance]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [chemical to thing association]-relation >[relationship type], [chemical to thing association]-qualifiers >[ontology class], [chemical to thing association]-publications >[publication], [information content entity]^-[publication], [chemical to thing association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 
@@ -43,7 +46,7 @@ URI: [http://bioentity.io/vocab/ChemicalToThingAssociation](http://bioentity.io/
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: None [required]
     * inherited from: [association](Association.html)
  * [qualifiers](qualifiers.html)
     * _connects an association to qualifiers that modify or qualify the meaning of that association_

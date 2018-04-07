@@ -23,4 +23,4 @@ URI: [http://bioentity.io/vocab/has_gene](http://bioentity.io/vocab/has_gene)
 
 ## Used in
 
- *  usage: [allele](Allele.html)
+ *  usage: [sequence variant](SequenceVariant.html)

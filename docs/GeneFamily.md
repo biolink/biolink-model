@@ -8,6 +8,9 @@ layout: default
 any grouping of multiple genes or gene products related by common descent
 
 URI: [http://bioentity.io/vocab/GeneFamily](http://bioentity.io/vocab/GeneFamily)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[molecular entity]^-[gene family], [gene family]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [NCIT:C20130](http://purl.obolibrary.org/obo/NCIT_C20130)

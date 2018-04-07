@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/AnatomicalEntityPartOfAnatomicalEntityAssociation](http://bioentity.io/vocab/AnatomicalEntityPartOfAnatomicalEntityAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[anatomical entity to anatomical entity association]^-[anatomical entity part of anatomical entity association], [anatomical entity part of anatomical entity association]-association type >[ontology class], [anatomical entity part of anatomical entity association]-subject >[anatomical entity], [organismal entity]^-[anatomical entity], [anatomical entity]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [anatomical entity part of anatomical entity association]-relation >[anatomical entity], [anatomical entity part of anatomical entity association]-object >[anatomical entity], [anatomical entity part of anatomical entity association]-qualifiers >[ontology class], [anatomical entity part of anatomical entity association]-publications >[publication], [information content entity]^-[publication], [anatomical entity part of anatomical entity association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 

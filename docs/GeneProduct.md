@@ -8,6 +8,9 @@ layout: default
 The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
 
 URI: [http://bioentity.io/vocab/GeneProduct](http://bioentity.io/vocab/GeneProduct)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[gene or gene product]^-[gene product], [gene product]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [WD:Q424689](http://purl.obolibrary.org/obo/WD_Q424689)

@@ -8,6 +8,9 @@ layout: default
 The age group in which manifestations appear
 
 URI: [http://bioentity.io/vocab/Onset](http://bioentity.io/vocab/Onset)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[attribute]^-[onset])
 ## Mappings
 
  * [HP:0003674](http://purl.obolibrary.org/obo/HP_0003674)
@@ -29,6 +32,8 @@ URI: [http://bioentity.io/vocab/Onset](http://bioentity.io/vocab/Onset)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [onset](Onset.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [onset](Onset.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [onset](Onset.html)
+ *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [onset](Onset.html)
+ *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [onset](Onset.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [onset](Onset.html)
  *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [onset](Onset.html)
 

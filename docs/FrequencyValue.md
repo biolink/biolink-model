@@ -8,6 +8,9 @@ layout: default
 describes the frequency of occurrence of an event or condition
 
 URI: [http://bioentity.io/vocab/FrequencyValue](http://bioentity.io/vocab/FrequencyValue)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[attribute]^-[frequency value])
 ## Mappings
 
 
@@ -28,6 +31,8 @@ URI: [http://bioentity.io/vocab/FrequencyValue](http://bioentity.io/vocab/Freque
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
+ *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
+ *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
  *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
 

@@ -8,6 +8,9 @@ layout: default
 A processual entity
 
 URI: [http://bioentity.io/vocab/Occurrent](http://bioentity.io/vocab/Occurrent)
+
+
+![img](http://yuml.me/diagram/nofunky/class/)
 ## Mappings
 
  * [BFO:0000003](http://purl.obolibrary.org/obo/BFO_0000003)

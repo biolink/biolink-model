@@ -8,6 +8,9 @@ layout: default
 An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 
 URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[disease or phenotypic feature association to thing association]^-[disease or phenotypic feature association to location association], [disease or phenotypic feature association to location association]-association type >[ontology class], [disease or phenotypic feature association to location association]-subject >[disease or phenotypic feature], [biological entity]^-[disease or phenotypic feature], [disease or phenotypic feature]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [disease or phenotypic feature association to location association]-relation >[relationship type], [disease or phenotypic feature association to location association]-object >[anatomical entity], [organismal entity]^-[anatomical entity], [anatomical entity]-in taxon >[organism taxon], [disease or phenotypic feature association to location association]-qualifiers >[ontology class], [disease or phenotypic feature association to location association]-publications >[publication], [information content entity]^-[publication], [disease or phenotypic feature association to location association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
  * [NCIT:R100](http://purl.obolibrary.org/obo/NCIT_R100)
@@ -28,7 +31,7 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationA
     * inherited from: [association](Association.html)
  * [subject](subject.html)
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html) [required]
     * Example: [MONDO:0017314](http://purl.obolibrary.org/obo/MONDO_0017314) Ehlers-Danlos syndrome, vascular type
     * Example: [MP:0013229](http://purl.obolibrary.org/obo/MP_0013229) abnormal brain ventricle size
     * inherited from: [association](Association.html)

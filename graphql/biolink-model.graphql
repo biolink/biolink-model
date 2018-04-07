@@ -331,16 +331,8 @@ type Haplotype {
   inTaxon: OrganismTaxon
 }
 
-type Allele {
-  hasGene: Gene
-  hasZygosity: Zygosity
-  hasBiologicalSequence: String
-  id: String
-  label: String
-  inTaxon: OrganismTaxon
-}
-
 type SequenceVariant {
+  hasGene: Gene
   hasBiologicalSequence: String
   id: String
   label: String
@@ -738,6 +730,19 @@ interface GeneToThingAssociation {
   label: String
 }
 
+interface VariantToThingAssociation {
+  associationType: OntologyClass
+  subject: SequenceVariant!
+  negated: String
+  relation: RelationshipType!
+  object: NamedThing!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  label: String
+}
+
 type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, GeneToThingAssociation {
   associationType: OntologyClass
   subject: GeneOrGeneProduct!
@@ -765,6 +770,39 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThing
   publications: [Publication]
   providedBy: Provider
   id: String
+  label: String
+  frequencyQualifier: FrequencyValue
+  severityQualifier: SeverityValue
+  onsetQualifier: Onset
+}
+
+type VariantToPhenotypicFeatureAssociation implements VariantToThingAssociation, EntityToPhenotypicFeatureAssociation {
+  associationType: OntologyClass
+  subject: SequenceVariant!
+  negated: String
+  relation: RelationshipType!
+  object: NamedThing!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  label: String
+  frequencyQualifier: FrequencyValue
+  severityQualifier: SeverityValue
+  onsetQualifier: Onset
+  sexQualifier: BiologicalSex
+}
+
+type VariantToDiseaseAssociation implements VariantToThingAssociation, EntityToDiseaseAssociation {
+  associationType: OntologyClass
+  subject: SequenceVariant!
+  negated: String
+  relation: RelationshipType!
+  object: NamedThing!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
   label: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue

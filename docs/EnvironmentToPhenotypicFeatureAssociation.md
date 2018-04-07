@@ -8,6 +8,9 @@ layout: default
 Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
 
 URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[environment to phenotypic feature association], [environment to phenotypic feature association]-association type >[ontology class], [environment to phenotypic feature association]-subject >[environment], [biological entity]^-[environment], [environment to phenotypic feature association]-relation >[relationship type], [environment to phenotypic feature association]-object >[phenotypic feature], [disease or phenotypic feature]^-[phenotypic feature], [phenotypic feature]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [environment to phenotypic feature association]-qualifiers >[ontology class], [environment to phenotypic feature association]-publications >[publication], [information content entity]^-[publication], [environment to phenotypic feature association]-provided by >[provider], [administrative entity]^-[provider], [environment to phenotypic feature association]-frequency qualifier >[frequency value], [attribute]^-[frequency value], [environment to phenotypic feature association]-severity qualifier >[severity value], [attribute]^-[severity value], [environment to phenotypic feature association]-onset qualifier >[onset], [attribute]^-[onset], [environment to phenotypic feature association]-sex qualifier >[biological sex], [attribute]^-[biological sex])
 ## Mappings
 
 

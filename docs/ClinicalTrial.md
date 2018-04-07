@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/ClinicalTrial](http://bioentity.io/vocab/ClinicalTrial)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[clinical entity]^-[clinical trial])
 ## Mappings
 
 

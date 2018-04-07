@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/PhenotypicFeature](http://bioentity.io/vocab/PhenotypicFeature)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[disease or phenotypic feature]^-[phenotypic feature], [phenotypic feature]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [UPHENO:0000001](http://purl.obolibrary.org/obo/UPHENO_0000001)
@@ -29,6 +32,7 @@ URI: [http://bioentity.io/vocab/PhenotypicFeature](http://bioentity.io/vocab/Phe
  *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
+ *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
 
 ## Fields
 

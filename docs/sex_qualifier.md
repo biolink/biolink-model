@@ -30,3 +30,4 @@ URI: [http://bioentity.io/vocab/sex_qualifier](http://bioentity.io/vocab/sex_qua
  *  usage: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html)
  *  usage: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html)
  *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
+ *  usage: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html)

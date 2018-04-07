@@ -8,6 +8,9 @@ layout: default
 An interaction between a chemical entity and a biological process or pathway
 
 URI: [http://bioentity.io/vocab/ChemicalToPathwayAssociation](http://bioentity.io/vocab/ChemicalToPathwayAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[chemical to pathway association], [chemical to pathway association]-association type >[ontology class], [chemical to pathway association]-subject >[chemical substance], [molecular entity]^-[chemical substance], [chemical substance]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [chemical to pathway association]-relation >[relationship type], [chemical to pathway association]-object >[pathway], [biological process]^-[pathway], [chemical to pathway association]-qualifiers >[ontology class], [chemical to pathway association]-publications >[publication], [information content entity]^-[publication], [chemical to pathway association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
  * [SIO:001250](http://semanticscience.org/resource/SIO_001250)

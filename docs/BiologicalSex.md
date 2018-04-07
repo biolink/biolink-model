@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/BiologicalSex](http://bioentity.io/vocab/BiologicalSex)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[attribute]^-[biological sex])
 ## Mappings
 
  * [PATO:0000047](http://purl.obolibrary.org/obo/PATO_0000047)
@@ -29,6 +32,7 @@ URI: [http://bioentity.io/vocab/BiologicalSex](http://bioentity.io/vocab/Biologi
  *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [biological sex](BiologicalSex.html)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [biological sex](BiologicalSex.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [biological sex](BiologicalSex.html)
+ *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [biological sex](BiologicalSex.html)
 
 ## Fields
 

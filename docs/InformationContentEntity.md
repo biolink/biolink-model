@@ -8,6 +8,9 @@ layout: default
 a piece of information that typically describes some piece of biology or is used as support.
 
 URI: [http://bioentity.io/vocab/InformationContentEntity](http://bioentity.io/vocab/InformationContentEntity)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[named thing]^-[information content entity])
 ## Mappings
 
  * [IAO:0000030](http://purl.obolibrary.org/obo/IAO_0000030)
@@ -53,8 +56,11 @@ URI: [http://bioentity.io/vocab/InformationContentEntity](http://bioentity.io/vo
  *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
  *  class: [gene to thing association](GeneToThingAssociation.html) references: [publication](Publication.html)
+ *  class: [variant to thing association](VariantToThingAssociation.html) references: [publication](Publication.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [publication](Publication.html)
+ *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
+ *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [publication](Publication.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [publication](Publication.html)
  *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [publication](Publication.html)
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [publication](Publication.html)

@@ -1061,46 +1061,24 @@ class Haplotype(GenomicEntity):
         return self.__str__()
 
 
-class Allele(Genotype):
+class SequenceVariant(GenomicEntity):
     """
-    One of a set of  coexisting sequence variants that exist at a particular genomic locus.
+    An allele that varies in its sequence from what is considered the reference allele at that locus.
     """
     def __init__(self,
                  has_gene=None,
-                 has_zygosity=None,
                  has_biological_sequence=None,
                  id=None,
                  label=None,
                  in_taxon=None):
         self.has_gene=has_gene
-        self.has_zygosity=has_zygosity
         self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.label=label
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "has_gene={} has_zygosity={} has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_gene,self.has_zygosity,self.has_biological_sequence,self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class SequenceVariant(GenomicEntity):
-    """
-    An allele that varies in it sequence from what is considered the reference allele at that locus.
-    """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.label,self.in_taxon)
+        return "has_gene={} has_biological_sequence={} id={} label={} in_taxon={} ".format(self.has_gene,self.has_biological_sequence,self.id,self.label,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -2075,6 +2053,38 @@ class GeneToThingAssociation(Association):
         return self.__str__()
 
 
+class VariantToThingAssociation(Association):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 label=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.label=label
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label)
+    def __repr__(self):
+        return self.__str__()
+
+
 class GeneToPhenotypicFeatureAssociation(Association):
     """
     None
@@ -2116,6 +2126,84 @@ class GeneToPhenotypicFeatureAssociation(Association):
 
 
 class GeneToDiseaseAssociation(Association):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 label=None,
+                 frequency_qualifier=None,
+                 severity_qualifier=None,
+                 onset_qualifier=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.label=label
+        self.frequency_qualifier=frequency_qualifier
+        self.severity_qualifier=severity_qualifier
+        self.onset_qualifier=onset_qualifier
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
+    def __repr__(self):
+        return self.__str__()
+
+
+class VariantToPhenotypicFeatureAssociation(Association):
+    """
+    None
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 label=None,
+                 frequency_qualifier=None,
+                 severity_qualifier=None,
+                 onset_qualifier=None,
+                 sex_qualifier=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.label=label
+        self.frequency_qualifier=frequency_qualifier
+        self.severity_qualifier=severity_qualifier
+        self.onset_qualifier=onset_qualifier
+        self.sex_qualifier=sex_qualifier
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
+    def __repr__(self):
+        return self.__str__()
+
+
+class VariantToDiseaseAssociation(Association):
     """
     None
     """

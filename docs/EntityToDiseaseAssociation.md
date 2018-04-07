@@ -8,6 +8,9 @@ layout: default
 mixin class for any association whose object (target node) is a disease
 
 URI: [http://bioentity.io/vocab/EntityToDiseaseAssociation](http://bioentity.io/vocab/EntityToDiseaseAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[entity to disease association]-frequency qualifier >[frequency value], [attribute]^-[frequency value], [entity to disease association]-severity qualifier >[severity value], [attribute]^-[severity value], [entity to disease association]-onset qualifier >[onset], [attribute]^-[onset])
 ## Mappings
 
 
@@ -17,6 +20,7 @@ URI: [http://bioentity.io/vocab/EntityToDiseaseAssociation](http://bioentity.io/
 ## Children
 
  *  mixin: [gene to disease association](GeneToDiseaseAssociation.html)
+ *  mixin: [variant to disease association](VariantToDiseaseAssociation.html)
  *  mixin: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
 
 

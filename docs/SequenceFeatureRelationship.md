@@ -8,6 +8,9 @@ layout: default
 For example, a particular exon is part of a particular transcript or gene
 
 URI: [http://bioentity.io/vocab/SequenceFeatureRelationship](http://bioentity.io/vocab/SequenceFeatureRelationship)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[sequence feature relationship], [sequence feature relationship]-association type >[ontology class], [sequence feature relationship]-subject >[genomic entity], [molecular entity]^-[genomic entity], [genomic entity]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [sequence feature relationship]-relation >[relationship type], [sequence feature relationship]-object >[genomic entity], [sequence feature relationship]-qualifiers >[ontology class], [sequence feature relationship]-publications >[publication], [information content entity]^-[publication], [sequence feature relationship]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 

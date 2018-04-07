@@ -589,20 +589,11 @@ class HaplotypeSchema(GenomicEntitySchema):
     def make_object(self, data):
         Haplotype(**data)
 
-class AlleleSchema(GenotypeSchema):
-    """
-    One of a set of  coexisting sequence variants that exist at a particular genomic locus.
-    """
-    has_gene = fields.Str()
-
-    @post_load
-    def make_object(self, data):
-        Allele(**data)
-
 class SequenceVariantSchema(GenomicEntitySchema):
     """
-    An allele that varies in it sequence from what is considered the reference allele at that locus.
+    An allele that varies in its sequence from what is considered the reference allele at that locus.
     """
+    has_gene = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -1027,6 +1018,15 @@ class GeneToThingAssociationSchema(AssociationSchema):
     def make_object(self, data):
         GeneToThingAssociation(**data)
 
+class VariantToThingAssociationSchema(AssociationSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        VariantToThingAssociation(**data)
+
 class GeneToPhenotypicFeatureAssociationSchema(AssociationSchema):
     """
     None
@@ -1071,6 +1071,51 @@ class GeneToDiseaseAssociationSchema(AssociationSchema):
     @post_load
     def make_object(self, data):
         GeneToDiseaseAssociation(**data)
+
+class VariantToPhenotypicFeatureAssociationSchema(AssociationSchema):
+    """
+    None
+    """
+    association_type = fields.Str()
+    subject = fields.Str()
+    negated = fields.Str()
+    relation = fields.Str()
+    object = fields.Str()
+    qualifiers = fields.Str()
+    publications = fields.Str()
+    provided_by = fields.Str()
+    id = fields.Str()
+    label = fields.Str()
+    frequency_qualifier = fields.Str()
+    severity_qualifier = fields.Str()
+    onset_qualifier = fields.Str()
+    sex_qualifier = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        VariantToPhenotypicFeatureAssociation(**data)
+
+class VariantToDiseaseAssociationSchema(AssociationSchema):
+    """
+    None
+    """
+    association_type = fields.Str()
+    subject = fields.Str()
+    negated = fields.Str()
+    relation = fields.Str()
+    object = fields.Str()
+    qualifiers = fields.Str()
+    publications = fields.Str()
+    provided_by = fields.Str()
+    id = fields.Str()
+    label = fields.Str()
+    frequency_qualifier = fields.Str()
+    severity_qualifier = fields.Str()
+    onset_qualifier = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        VariantToDiseaseAssociation(**data)
 
 class ModelToDiseaseMixinSchema(Schema):
     """

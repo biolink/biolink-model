@@ -8,6 +8,9 @@ layout: default
 An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
 
 URI: [http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation](http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[case to phenotypic feature association], [case to phenotypic feature association]-association type >[ontology class], [case to phenotypic feature association]-subject >[case], [individual organism]^-[case], [case]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [case to phenotypic feature association]-relation >[relationship type], [case to phenotypic feature association]-object >[phenotypic feature], [disease or phenotypic feature]^-[phenotypic feature], [phenotypic feature]-in taxon >[organism taxon], [case to phenotypic feature association]-qualifiers >[ontology class], [case to phenotypic feature association]-publications >[publication], [information content entity]^-[publication], [case to phenotypic feature association]-provided by >[provider], [administrative entity]^-[provider], [case to phenotypic feature association]-frequency qualifier >[frequency value], [attribute]^-[frequency value], [case to phenotypic feature association]-severity qualifier >[severity value], [attribute]^-[severity value], [case to phenotypic feature association]-onset qualifier >[onset], [attribute]^-[onset], [case to phenotypic feature association]-sex qualifier >[biological sex], [attribute]^-[biological sex])
 ## Mappings
 
 
@@ -29,7 +32,7 @@ URI: [http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation](http://bioen
     * inherited from: [association](Association.html)
  * [subject](subject.html)
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: [case](Case.html) [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_

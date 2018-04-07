@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation](http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[gene to phenotypic feature association], [gene to phenotypic feature association]-association type >[ontology class], [gene to phenotypic feature association]-subject >[gene or gene product], [genomic entity]^-[gene or gene product], [gene or gene product]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [gene to phenotypic feature association]-relation >[relationship type], [gene to phenotypic feature association]-object >[phenotypic feature], [disease or phenotypic feature]^-[phenotypic feature], [phenotypic feature]-in taxon >[organism taxon], [gene to phenotypic feature association]-qualifiers >[ontology class], [gene to phenotypic feature association]-publications >[publication], [information content entity]^-[publication], [gene to phenotypic feature association]-provided by >[provider], [administrative entity]^-[provider], [gene to phenotypic feature association]-frequency qualifier >[frequency value], [attribute]^-[frequency value], [gene to phenotypic feature association]-severity qualifier >[severity value], [attribute]^-[severity value], [gene to phenotypic feature association]-onset qualifier >[onset], [attribute]^-[onset], [gene to phenotypic feature association]-sex qualifier >[biological sex], [attribute]^-[biological sex])
 ## Mappings
 
  * [http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association](http://purl.obolibrary.org/obo/http_//bio2rdf.org/wormbase_vocabulary_Gene-Phenotype-Association)

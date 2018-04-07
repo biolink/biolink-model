@@ -8,6 +8,9 @@ layout: default
 Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
 
 URI: [http://bioentity.io/vocab/GenotypeToGeneAssociation](http://bioentity.io/vocab/GenotypeToGeneAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[genotype to gene association], [genotype to gene association]-association type >[ontology class], [genotype to gene association]-subject >[genotype], [genomic entity]^-[genotype], [genotype]-has zygosity >[zygosity], [attribute]^-[zygosity], [genotype]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [genotype to gene association]-relation >[relationship type], [genotype to gene association]-object >[gene], [gene or gene product]^-[gene], [gene]-in taxon >[organism taxon], [genotype to gene association]-qualifiers >[ontology class], [genotype to gene association]-publications >[publication], [information content entity]^-[publication], [genotype to gene association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 

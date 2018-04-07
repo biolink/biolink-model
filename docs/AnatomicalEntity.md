@@ -8,6 +8,9 @@ layout: default
 A subcellular location, cell type or gross anatomical part
 
 URI: [http://bioentity.io/vocab/AnatomicalEntity](http://bioentity.io/vocab/AnatomicalEntity)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[organismal entity]^-[anatomical entity], [anatomical entity]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [UMLSSG:ANAT](http://purl.obolibrary.org/obo/UMLSSG_ANAT)

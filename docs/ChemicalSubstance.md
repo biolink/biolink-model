@@ -8,6 +8,9 @@ layout: default
 May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
 
 URI: [http://bioentity.io/vocab/ChemicalSubstance](http://bioentity.io/vocab/ChemicalSubstance)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[molecular entity]^-[chemical substance], [chemical substance]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [SIO:010004](http://semanticscience.org/resource/SIO_010004)

@@ -8,6 +8,9 @@ layout: default
 An interaction between a chemical entity and a gene or gene product
 
 URI: [http://bioentity.io/vocab/ChemicalToGeneAssociation](http://bioentity.io/vocab/ChemicalToGeneAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[chemical to gene association], [chemical to gene association]-association type >[ontology class], [chemical to gene association]-subject >[chemical substance], [molecular entity]^-[chemical substance], [chemical substance]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [chemical to gene association]-relation >[relationship type], [chemical to gene association]-object >[gene or gene product], [genomic entity]^-[gene or gene product], [gene or gene product]-in taxon >[organism taxon], [chemical to gene association]-qualifiers >[ontology class], [chemical to gene association]-publications >[publication], [information content entity]^-[publication], [chemical to gene association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
  * [SIO:001257](http://semanticscience.org/resource/SIO_001257)

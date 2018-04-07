@@ -8,6 +8,9 @@ layout: default
 a location that can be described in lat/long coordinates, for a particular time
 
 URI: [http://bioentity.io/vocab/GeographicLocationAtTime](http://bioentity.io/vocab/GeographicLocationAtTime)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[planetary entity]^-[geographic location at time])
 ## Mappings
 
 

@@ -8,6 +8,9 @@ layout: default
 An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 
 URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[gene to gene association]^-[pairwise gene or protein interaction association], [pairwise gene or protein interaction association]-association type >[ontology class], [pairwise gene or protein interaction association]-subject >[molecular entity], [biological entity]^-[molecular entity], [molecular entity]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [pairwise gene or protein interaction association]-object >[molecular entity], [pairwise gene or protein interaction association]-qualifiers >[ontology class], [pairwise gene or protein interaction association]-publications >[publication], [information content entity]^-[publication], [pairwise gene or protein interaction association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 

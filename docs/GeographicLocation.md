@@ -8,6 +8,9 @@ layout: default
 a location that can be described in lat/long coordinates
 
 URI: [http://bioentity.io/vocab/GeographicLocation](http://bioentity.io/vocab/GeographicLocation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[planetary entity]^-[geographic location])
 ## Mappings
 
  * [UMLSSG:GEOG](http://purl.obolibrary.org/obo/UMLSSG_GEOG)

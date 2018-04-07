@@ -8,6 +8,9 @@ layout: default
 An RNA synthesized on a DNA or RNA template by an RNA polymerase
 
 URI: [http://bioentity.io/vocab/Transcript](http://bioentity.io/vocab/Transcript)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[genomic entity]^-[transcript], [transcript]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [SO:0000673](http://purl.obolibrary.org/obo/SO_0000673)

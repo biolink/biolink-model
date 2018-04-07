@@ -8,6 +8,9 @@ layout: default
 A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
 
 URI: [http://bioentity.io/vocab/Exon](http://bioentity.io/vocab/Exon)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[genomic entity]^-[exon], [exon]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [SO:0000147](http://purl.obolibrary.org/obo/SO_0000147)

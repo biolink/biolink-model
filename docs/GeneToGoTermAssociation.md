@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/GeneToGoTermAssociation](http://bioentity.io/vocab/GeneToGoTermAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[gene to go term association], [gene to go term association]-association type >[ontology class], [gene to go term association]-subject >[molecular entity], [biological entity]^-[molecular entity], [molecular entity]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [gene to go term association]-relation >[relationship type], [gene to go term association]-object >[gene ontology class], [ontology class]^-[gene ontology class], [gene to go term association]-qualifiers >[ontology class], [gene to go term association]-publications >[publication], [information content entity]^-[publication], [gene to go term association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
  * [http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association](http://purl.obolibrary.org/obo/http_//bio2rdf.org/wormbase_vocabulary_Gene-GO-Association)

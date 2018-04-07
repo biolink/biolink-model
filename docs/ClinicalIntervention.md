@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/ClinicalIntervention](http://bioentity.io/vocab/ClinicalIntervention)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[clinical entity]^-[clinical intervention])
 ## Mappings
 
 

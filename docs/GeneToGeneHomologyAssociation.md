@@ -8,6 +8,9 @@ layout: default
 A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
 
 URI: [http://bioentity.io/vocab/GeneToGeneHomologyAssociation](http://bioentity.io/vocab/GeneToGeneHomologyAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[gene to gene association]^-[gene to gene homology association], [gene to gene homology association]-association type >[ontology class], [gene to gene homology association]-subject >[gene or gene product], [genomic entity]^-[gene or gene product], [gene or gene product]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [gene to gene homology association]-relation >[relationship type], [gene to gene homology association]-object >[gene or gene product], [gene to gene homology association]-qualifiers >[ontology class], [gene to gene homology association]-publications >[publication], [information content entity]^-[publication], [gene to gene homology association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 
@@ -27,7 +30,7 @@ URI: [http://bioentity.io/vocab/GeneToGeneHomologyAssociation](http://bioentity.
     * inherited from: [association](Association.html)
  * [subject](subject.html)
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: [gene or gene product](GeneOrGeneProduct.html) [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
@@ -40,7 +43,7 @@ URI: [http://bioentity.io/vocab/GeneToGeneHomologyAssociation](http://bioentity.
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: [gene or gene product](GeneOrGeneProduct.html) [required]
     * inherited from: [association](Association.html)
  * [qualifiers](qualifiers.html)
     * _connects an association to qualifiers that modify or qualify the meaning of that association_

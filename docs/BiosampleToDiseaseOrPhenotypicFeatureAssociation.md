@@ -10,6 +10,9 @@ An association between a biosample and a disease or phenotype
   
 
 URI: [http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation](http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[biosample to disease or phenotypic feature association], [biosample to disease or phenotypic feature association]-association type >[ontology class], [biosample to disease or phenotypic feature association]-subject >[biosample], [organismal entity]^-[biosample], [biosample]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [biosample to disease or phenotypic feature association]-relation >[relationship type], [biosample to disease or phenotypic feature association]-object >[disease or phenotypic feature], [biological entity]^-[disease or phenotypic feature], [disease or phenotypic feature]-in taxon >[organism taxon], [biosample to disease or phenotypic feature association]-qualifiers >[ontology class], [biosample to disease or phenotypic feature association]-publications >[publication], [information content entity]^-[publication], [biosample to disease or phenotypic feature association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 
@@ -43,7 +46,7 @@ URI: [http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html) [required]
     * inherited from: [association](Association.html)
  * [qualifiers](qualifiers.html)
     * _connects an association to qualifiers that modify or qualify the meaning of that association_

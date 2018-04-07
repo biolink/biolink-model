@@ -6,6 +6,8 @@ import logging
 
 from .manager import *
 from .generator import Generator
+from .yumlgen import YumlGenerator
+
 
     
 class MarkdownGenerator(Generator):
@@ -149,6 +151,11 @@ class MarkdownGenerator(Generator):
         uri = mgr.obj_uri(c)
         self.w('URI: [{}]({})\n'.format(uri, uri))
 
+        yg = YumlGenerator(schema=schema)
+        yg.tr_class(c, recurse=True)
+        self.w('\n\n![img]({})'.format(yg.url()))
+        self.nl()
+        
         self.tr_mappings(c)
         
         self.emit_header(2, 'Inheritance')
@@ -159,9 +166,10 @@ class MarkdownGenerator(Generator):
             for m in c.mixins:
                 self.bullet(' mixin: {}'.format(self.link(mgr.classdef(m))))                
         self.nl()
-            
+
+        # show all child nodes except mixins
         self.emit_header(2, 'Children')
-        for n in mgr.child_nodes(c):
+        for n in mgr.child_nodes(c, mixin=False):
             self.bullet(' child: {}'.format(self.link(mgr.classdef(n))))
         for n in mgr.child_nodes_by_mixin(c):
             self.bullet(' mixin: {}'.format(self.link(mgr.classdef(n))))

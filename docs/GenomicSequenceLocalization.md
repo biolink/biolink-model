@@ -8,6 +8,9 @@ layout: default
 A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
 
 URI: [http://bioentity.io/vocab/GenomicSequenceLocalization](http://bioentity.io/vocab/GenomicSequenceLocalization)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[genomic sequence localization], [genomic sequence localization]-association type >[ontology class], [genomic sequence localization]-subject >[genomic entity], [molecular entity]^-[genomic entity], [genomic entity]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [genomic sequence localization]-relation >[relationship type], [genomic sequence localization]-object >[genomic entity], [genomic sequence localization]-qualifiers >[ontology class], [genomic sequence localization]-publications >[publication], [information content entity]^-[publication], [genomic sequence localization]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 

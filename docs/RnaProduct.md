@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/RnaProduct](http://bioentity.io/vocab/RnaProduct)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[gene product]^-[RNA product], [RNA product]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [CHEBI:33697](http://purl.obolibrary.org/obo/CHEBI_33697)

@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/MacromolecularComplex](http://bioentity.io/vocab/MacromolecularComplex)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[molecular entity]^-[macromolecular complex], [macromolecular complex]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [GO:0032991](http://purl.obolibrary.org/obo/GO_0032991)

@@ -40,5 +40,4 @@ URI: [http://bioentity.io/vocab/has_biological_sequence](http://bioentity.io/voc
  *  usage: [microRNA](Microrna.html)
  *  usage: [genotype](Genotype.html)
  *  usage: [haplotype](Haplotype.html)
- *  usage: [allele](Allele.html)
  *  usage: [sequence variant](SequenceVariant.html)

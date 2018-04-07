@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/AssociationResultSet](http://bioentity.io/vocab/AssociationResultSet)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[information content entity]^-[association result set], [association result set]-associations >[association], [information content entity]^-[association], [association]-association type >[ontology class], [association]-relation >[relationship type], [association]-qualifiers >[ontology class], [association]-publications >[publication], [information content entity]^-[publication], [association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 

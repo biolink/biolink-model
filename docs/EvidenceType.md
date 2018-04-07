@@ -8,6 +8,9 @@ layout: default
 Class of evidence that supports an association
 
 URI: [http://bioentity.io/vocab/EvidenceType](http://bioentity.io/vocab/EvidenceType)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[information content entity]^-[evidence type])
 ## Mappings
 
  * [ECO:0000000](http://purl.obolibrary.org/obo/ECO_0000000)

@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation](http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[disease or phenotypic feature association to thing association], [disease or phenotypic feature association to thing association]-association type >[ontology class], [disease or phenotypic feature association to thing association]-subject >[disease or phenotypic feature], [biological entity]^-[disease or phenotypic feature], [disease or phenotypic feature]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [disease or phenotypic feature association to thing association]-relation >[relationship type], [disease or phenotypic feature association to thing association]-qualifiers >[ontology class], [disease or phenotypic feature association to thing association]-publications >[publication], [information content entity]^-[publication], [disease or phenotypic feature association to thing association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 
@@ -42,7 +45,7 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAsso
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: None [required]
     * inherited from: [association](Association.html)
  * [qualifiers](qualifiers.html)
     * _connects an association to qualifiers that modify or qualify the meaning of that association_

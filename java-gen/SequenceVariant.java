@@ -10,12 +10,13 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * SequenceVariant
  * <p>
- * An allele that varies in it sequence from what is considered the reference allele at that locus.
+ * An allele that varies in its sequence from what is considered the reference allele at that locus.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "has_biological_sequence",
+    "has_gene",
     "id",
     "in_taxon",
     "label"
@@ -29,6 +30,13 @@ public class SequenceVariant {
     @JsonProperty("has_biological_sequence")
     @JsonPropertyDescription("connects a genomic feature to its sequence")
     private String hasBiologicalSequence;
+    /**
+     * connects and entity to a single gene
+     * 
+     */
+    @JsonProperty("has_gene")
+    @JsonPropertyDescription("connects and entity to a single gene")
+    private String hasGene;
     @JsonProperty("id")
     private String id;
     /**
@@ -62,6 +70,24 @@ public class SequenceVariant {
     @JsonProperty("has_biological_sequence")
     public void setHasBiologicalSequence(String hasBiologicalSequence) {
         this.hasBiologicalSequence = hasBiologicalSequence;
+    }
+
+    /**
+     * connects and entity to a single gene
+     * 
+     */
+    @JsonProperty("has_gene")
+    public String getHasGene() {
+        return hasGene;
+    }
+
+    /**
+     * connects and entity to a single gene
+     * 
+     */
+    @JsonProperty("has_gene")
+    public void setHasGene(String hasGene) {
+        this.hasGene = hasGene;
     }
 
     @JsonProperty("id")
@@ -112,12 +138,12 @@ public class SequenceVariant {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasBiologicalSequence", hasBiologicalSequence).append("id", id).append("inTaxon", inTaxon).append("label", label).toString();
+        return new ToStringBuilder(this).append("hasBiologicalSequence", hasBiologicalSequence).append("hasGene", hasGene).append("id", id).append("inTaxon", inTaxon).append("label", label).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasBiologicalSequence).append(id).append(label).append(inTaxon).toHashCode();
+        return new HashCodeBuilder().append(hasBiologicalSequence).append(hasGene).append(id).append(label).append(inTaxon).toHashCode();
     }
 
     @Override
@@ -129,7 +155,7 @@ public class SequenceVariant {
             return false;
         }
         SequenceVariant rhs = ((SequenceVariant) other);
-        return new EqualsBuilder().append(hasBiologicalSequence, rhs.hasBiologicalSequence).append(id, rhs.id).append(label, rhs.label).append(inTaxon, rhs.inTaxon).isEquals();
+        return new EqualsBuilder().append(hasBiologicalSequence, rhs.hasBiologicalSequence).append(hasGene, rhs.hasGene).append(id, rhs.id).append(label, rhs.label).append(inTaxon, rhs.inTaxon).isEquals();
     }
 
 }

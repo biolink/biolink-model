@@ -8,6 +8,9 @@ layout: default
 a concept or class in an ontology, vocabulary or thesaurus
 
 URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/OntologyClass)
+
+
+![img](http://yuml.me/diagram/nofunky/class/)
 ## Mappings
 
 
@@ -16,8 +19,7 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
 
 ## Children
 
- *  child: [gene ontology class](GeneOntologyClass.html)
- *  mixin: [organism taxon](OrganismTaxon.html)
+ *  child: [organism taxon](OrganismTaxon.html)
  *  mixin: [attribute](Attribute.html)
 
 ## Used in
@@ -54,7 +56,6 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
  *  class: [gene family](GeneFamily.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [genotype](Genotype.html) references: [zygosity](Zygosity.html)
  *  class: [haplotype](Haplotype.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [allele](Allele.html) references: [zygosity](Zygosity.html)
  *  class: [sequence variant](SequenceVariant.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [association](Association.html) references: [ontology class](OntologyClass.html)
  *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [ontology class](OntologyClass.html)
@@ -83,8 +84,11 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
  *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [gene to thing association](GeneToThingAssociation.html) references: [ontology class](OntologyClass.html)
+ *  class: [variant to thing association](VariantToThingAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [ontology class](OntologyClass.html)
+ *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)
+ *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [ontology class](OntologyClass.html)

@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/IndividualOrganism](http://bioentity.io/vocab/IndividualOrganism)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[organismal entity]^-[individual organism], [individual organism]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [SIO:010000](http://semanticscience.org/resource/SIO_010000)
@@ -26,6 +29,7 @@ URI: [http://bioentity.io/vocab/IndividualOrganism](http://bioentity.io/vocab/In
 ## Used in
 
  *  class: [case to thing association](CaseToThingAssociation.html) references: [case](Case.html)
+ *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [case](Case.html)
 
 ## Fields
 

@@ -8,6 +8,9 @@ layout: default
 A typed association between two entities, supported by evidence
 
 URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Association)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[information content entity]^-[association], [association]-association type >[ontology class], [association]-relation >[relationship type], [association]-qualifiers >[ontology class], [association]-publications >[publication], [information content entity]^-[publication], [association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
  * [OBAN:association](http://purl.obolibrary.org/obo/OBAN_association)
@@ -24,7 +27,6 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
  *  child: [genotype to gene association](GenotypeToGeneAssociation.html)
  *  child: [genotype to variant association](GenotypeToVariantAssociation.html)
  *  child: [gene to gene association](GeneToGeneAssociation.html)
- *  child: [molecular interaction](MolecularInteraction.html)
  *  child: [chemical to thing association](ChemicalToThingAssociation.html)
  *  child: [case to thing association](CaseToThingAssociation.html)
  *  child: [chemical to gene association](ChemicalToGeneAssociation.html)
@@ -44,6 +46,8 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
  *  child: [gene to thing association](GeneToThingAssociation.html)
  *  child: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
  *  child: [gene to disease association](GeneToDiseaseAssociation.html)
+ *  child: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html)
+ *  child: [variant to disease association](VariantToDiseaseAssociation.html)
  *  child: [genotype to thing association](GenotypeToThingAssociation.html)
  *  child: [gene to expression site association](GeneToExpressionSiteAssociation.html)
  *  child: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html)
@@ -65,7 +69,7 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
     * __Local__
  * [subject](subject.html)
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: None [required]
     * __Local__
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
@@ -77,7 +81,7 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
     * __Local__
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: None [required]
     * __Local__
  * [qualifiers](qualifiers.html)
     * _connects an association to qualifiers that modify or qualify the meaning of that association_

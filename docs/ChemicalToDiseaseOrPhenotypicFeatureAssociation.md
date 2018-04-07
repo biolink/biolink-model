@@ -8,6 +8,9 @@ layout: default
 An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
 
 URI: [http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation](http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[chemical to disease or phenotypic feature association], [chemical to disease or phenotypic feature association]-association type >[ontology class], [chemical to disease or phenotypic feature association]-subject >[chemical substance], [molecular entity]^-[chemical substance], [chemical substance]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [chemical to disease or phenotypic feature association]-relation >[relationship type], [chemical to disease or phenotypic feature association]-object >[disease or phenotypic feature], [biological entity]^-[disease or phenotypic feature], [disease or phenotypic feature]-in taxon >[organism taxon], [chemical to disease or phenotypic feature association]-qualifiers >[ontology class], [chemical to disease or phenotypic feature association]-publications >[publication], [information content entity]^-[publication], [chemical to disease or phenotypic feature association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
  * [SIO:000993](http://semanticscience.org/resource/SIO_000993)

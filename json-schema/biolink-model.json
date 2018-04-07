@@ -50,6 +50,9 @@
         "has_gene": {
             "type": "string"
         },
+        "has_molecular_consequence": {
+            "type": "string"
+        },
         "has_zygosity": {
             "type": "string"
         },
@@ -162,36 +165,6 @@
             "properties": {},
             "required": [],
             "title": "ActivityAndBehavior",
-            "type": "object"
-        },
-        "Allele": {
-            "description": "One of a set of  coexisting sequence variants that exist at a particular genomic locus.",
-            "properties": {
-                "has_biological_sequence": {
-                    "description": "connects a genomic feature to its sequence",
-                    "type": "string"
-                },
-                "has_gene": {
-                    "description": "connects and entity to a single gene",
-                    "type": "string"
-                },
-                "has_zygosity": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "in_taxon": {
-                    "description": "connects a thing to a class representing a taxon",
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "Allele",
             "type": "object"
         },
         "AnatomicalEntity": {
@@ -2878,10 +2851,14 @@
             "type": "object"
         },
         "SequenceVariant": {
-            "description": "An allele that varies in it sequence from what is considered the reference allele at that locus.",
+            "description": "An allele that varies in its sequence from what is considered the reference allele at that locus.",
             "properties": {
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
+                "has_gene": {
+                    "description": "connects and entity to a single gene",
                     "type": "string"
                 },
                 "id": {
@@ -3005,6 +2982,140 @@
             },
             "required": [],
             "title": "Treatment",
+            "type": "object"
+        },
+        "VariantToDiseaseAssociation": {
+            "description": null,
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "frequency_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "onset_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "severity_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "VariantToDiseaseAssociation",
+            "type": "object"
+        },
+        "VariantToPhenotypicFeatureAssociation": {
+            "description": null,
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "frequency_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "onset_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "severity_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+                    "type": "string"
+                },
+                "sex_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "VariantToPhenotypicFeatureAssociation",
             "type": "object"
         },
         "Zygosity": {

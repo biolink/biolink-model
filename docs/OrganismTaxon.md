@@ -8,14 +8,16 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/OrganismTaxon)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[ontology class]^-[organism taxon])
 ## Mappings
 
  * [WD:Q16521](http://purl.obolibrary.org/obo/WD_Q16521)
 
 ## Inheritance
 
- *  is_a: [organismal entity](OrganismalEntity.html)
- *  mixin: [ontology class](OntologyClass.html)
+ *  is_a: [ontology class](OntologyClass.html)
 
 ## Children
 
@@ -54,7 +56,6 @@ URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/Organis
  *  class: [gene family](GeneFamily.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [genotype](Genotype.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [haplotype](Haplotype.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [allele](Allele.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [sequence variant](SequenceVariant.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [cellular component](CellularComponent.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [cell](Cell.html) references: [organism taxon](OrganismTaxon.html)
@@ -62,10 +63,3 @@ URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/Organis
 
 ## Fields
 
- * [id](id.html)
-    * __range__: identifier type
-    * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)

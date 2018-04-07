@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation](http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[gene to disease association]^-[gene as a model of disease association], [gene as a model of disease association]-association type >[ontology class], [gene as a model of disease association]-subject >[gene or gene product], [genomic entity]^-[gene or gene product], [gene or gene product]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [gene as a model of disease association]-relation >[relationship type], [gene as a model of disease association]-object >[disease], [disease or phenotypic feature]^-[disease], [disease]-in taxon >[organism taxon], [gene as a model of disease association]-qualifiers >[ontology class], [gene as a model of disease association]-publications >[publication], [information content entity]^-[publication], [gene as a model of disease association]-provided by >[provider], [administrative entity]^-[provider], [gene as a model of disease association]-frequency qualifier >[frequency value], [attribute]^-[frequency value], [gene as a model of disease association]-severity qualifier >[severity value], [attribute]^-[severity value], [gene as a model of disease association]-onset qualifier >[onset], [attribute]^-[onset])
 ## Mappings
 
 
@@ -44,7 +47,7 @@ URI: [http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation](http://bioenti
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: [disease](Disease.html) [required]
     * inherited from: [association](Association.html)
  * [qualifiers](qualifiers.html)
     * _connects an association to qualifiers that modify or qualify the meaning of that association_

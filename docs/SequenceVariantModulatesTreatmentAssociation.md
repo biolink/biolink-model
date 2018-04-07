@@ -8,6 +8,9 @@ layout: default
 An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.
 
 URI: [http://bioentity.io/vocab/SequenceVariantModulatesTreatmentAssociation](http://bioentity.io/vocab/SequenceVariantModulatesTreatmentAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[sequence variant modulates treatment association], [sequence variant modulates treatment association]-association type >[ontology class], [sequence variant modulates treatment association]-subject >[sequence variant], [genomic entity]^-[sequence variant], [sequence variant]-has gene >[gene], [gene or gene product]^-[gene], [gene]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [sequence variant]-in taxon >[organism taxon], [sequence variant modulates treatment association]-relation >[relationship type], [sequence variant modulates treatment association]-object >[treatment], [environment]^-[treatment], [treatment]-treats >[disease or phenotypic feature], [biological entity]^-[disease or phenotypic feature], [disease or phenotypic feature]-in taxon >[organism taxon], [treatment]-has exposure parts >[drug exposure], [environment]^-[drug exposure], [sequence variant modulates treatment association]-qualifiers >[ontology class], [sequence variant modulates treatment association]-publications >[publication], [information content entity]^-[publication], [sequence variant modulates treatment association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 

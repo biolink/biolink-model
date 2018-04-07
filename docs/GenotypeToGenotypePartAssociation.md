@@ -8,6 +8,9 @@ layout: default
 Any association between one genotype and a genotypic entity that is a sub-component of it
 
 URI: [http://bioentity.io/vocab/GenotypeToGenotypePartAssociation](http://bioentity.io/vocab/GenotypeToGenotypePartAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[genotype to genotype part association], [genotype to genotype part association]-association type >[ontology class], [genotype to genotype part association]-subject >[genotype], [genomic entity]^-[genotype], [genotype]-has zygosity >[zygosity], [attribute]^-[zygosity], [genotype]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [genotype to genotype part association]-relation >[relationship type], [genotype to genotype part association]-object >[genotype], [genotype to genotype part association]-qualifiers >[ontology class], [genotype to genotype part association]-publications >[publication], [information content entity]^-[publication], [genotype to genotype part association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 

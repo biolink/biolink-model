@@ -8,6 +8,9 @@ layout: default
 a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
 
 URI: [http://bioentity.io/vocab/GeneOrGeneProduct](http://bioentity.io/vocab/GeneOrGeneProduct)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[genomic entity]^-[gene or gene product], [gene or gene product]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
 
@@ -22,9 +25,10 @@ URI: [http://bioentity.io/vocab/GeneOrGeneProduct](http://bioentity.io/vocab/Gen
 
 ## Used in
 
- *  class: [allele](Allele.html) references: [gene](Gene.html)
+ *  class: [sequence variant](SequenceVariant.html) references: [gene](Gene.html)
  *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [gene](Gene.html)
  *  class: [gene to gene association](GeneToGeneAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
+ *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [gene product](GeneProduct.html)
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [gene to thing association](GeneToThingAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)

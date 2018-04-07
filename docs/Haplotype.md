@@ -8,6 +8,9 @@ layout: default
 A set of zero or more Alleles on a single instance of a Sequence[VMC]
 
 URI: [http://bioentity.io/vocab/Haplotype](http://bioentity.io/vocab/Haplotype)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[genomic entity]^-[haplotype], [haplotype]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [VMC:Haplotype](http://purl.obolibrary.org/obo/VMC_Haplotype)

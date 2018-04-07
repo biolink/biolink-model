@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation](http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[thing to disease or phenotypic feature association], [thing to disease or phenotypic feature association]-association type >[ontology class], [thing to disease or phenotypic feature association]-relation >[relationship type], [thing to disease or phenotypic feature association]-object >[disease or phenotypic feature], [biological entity]^-[disease or phenotypic feature], [disease or phenotypic feature]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [thing to disease or phenotypic feature association]-qualifiers >[ontology class], [thing to disease or phenotypic feature association]-publications >[publication], [information content entity]^-[publication], [thing to disease or phenotypic feature association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 
@@ -29,7 +32,7 @@ URI: [http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation](ht
     * inherited from: [association](Association.html)
  * [subject](subject.html)
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [named thing](NamedThing.html) [required]
+    * __range__: None [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_

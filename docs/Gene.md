@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/Gene](http://bioentity.io/vocab/Gene)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[gene or gene product]^-[gene], [gene]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [SO:0000704](http://purl.obolibrary.org/obo/SO_0000704)
@@ -23,7 +26,7 @@ URI: [http://bioentity.io/vocab/Gene](http://bioentity.io/vocab/Gene)
 
 ## Used in
 
- *  class: [allele](Allele.html) references: [gene](Gene.html)
+ *  class: [sequence variant](SequenceVariant.html) references: [gene](Gene.html)
  *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [gene](Gene.html)
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [gene](Gene.html)
  *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [gene](Gene.html)

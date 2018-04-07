@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[disease or phenotypic feature]^-[disease], [disease]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)
@@ -25,7 +28,11 @@ URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
 ## Used in
 
  *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [disease](Disease.html)
+ *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [disease](Disease.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [disease](Disease.html)
+ *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [disease](Disease.html)
+ *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [disease](Disease.html)
+ *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [disease](Disease.html)
 
 ## Fields
 

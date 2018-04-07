@@ -8,6 +8,9 @@ layout: default
 A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 
 URI: [http://bioentity.io/vocab/Protein](http://bioentity.io/vocab/Protein)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[gene product]^-[protein], [protein]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [PR:000000001](http://purl.obolibrary.org/obo/PR_000000001)

@@ -221,11 +221,13 @@ class Manager(object):
         return "http://bioentity.io/vocab/{}".format(self.obj_name(obj))
     
     
-    def child_nodes(self, obj):
+    def child_nodes(self, obj, mixin=True):
         nodes = [c for c in self.schema.classes
                  if c.is_a is not None and c.is_a==obj.name]
         nodes += [c for c in self.schema.slots
                   if c.is_a is not None and c.is_a==obj.name]
+        if not mixin:
+            nodes = [c for c in nodes if not c.mixin]
         return nodes
 
     def child_nodes_by_mixin(self, obj):
@@ -333,6 +335,8 @@ class Manager(object):
         """
         return self.class_slot_getattr(c, s, 'multivalued', defaultval=False)
 
+    # TODO: there may be multiple paths to get to a class
+    # use the non-redundant result
     def class_slot_getattr(self, c, s, attr, defaultval=None):
         """
         Lookup an object attribute of a slot using inheritance

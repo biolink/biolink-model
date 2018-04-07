@@ -8,6 +8,9 @@ layout: default
 A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
 
 URI: [http://bioentity.io/vocab/Drug](http://bioentity.io/vocab/Drug)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[chemical substance]^-[drug], [drug]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
 ## Mappings
 
  * [WD:Q12140](http://purl.obolibrary.org/obo/WD_Q12140)

@@ -8,6 +8,9 @@ layout: default
 Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
 
 URI: [http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation](http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[genotype to phenotypic feature association], [genotype to phenotypic feature association]-association type >[ontology class], [genotype to phenotypic feature association]-subject >[genotype], [genomic entity]^-[genotype], [genotype]-has zygosity >[zygosity], [attribute]^-[zygosity], [genotype]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [genotype to phenotypic feature association]-relation >[relationship type], [genotype to phenotypic feature association]-object >[phenotypic feature], [disease or phenotypic feature]^-[phenotypic feature], [phenotypic feature]-in taxon >[organism taxon], [genotype to phenotypic feature association]-qualifiers >[ontology class], [genotype to phenotypic feature association]-publications >[publication], [information content entity]^-[publication], [genotype to phenotypic feature association]-provided by >[provider], [administrative entity]^-[provider], [genotype to phenotypic feature association]-frequency qualifier >[frequency value], [attribute]^-[frequency value], [genotype to phenotypic feature association]-severity qualifier >[severity value], [attribute]^-[severity value], [genotype to phenotypic feature association]-onset qualifier >[onset], [attribute]^-[onset], [genotype to phenotypic feature association]-sex qualifier >[biological sex], [attribute]^-[biological sex])
 ## Mappings
 
 

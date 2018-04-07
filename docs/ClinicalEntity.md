@@ -8,6 +8,9 @@ layout: default
 Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
 
 URI: [http://bioentity.io/vocab/ClinicalEntity](http://bioentity.io/vocab/ClinicalEntity)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[named thing]^-[clinical entity])
 ## Mappings
 
 

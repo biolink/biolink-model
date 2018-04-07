@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/AdministrativeEntity](http://bioentity.io/vocab/AdministrativeEntity)
+
+
+![img](http://yuml.me/diagram/nofunky/class/)
 ## Mappings
 
 
@@ -46,8 +49,11 @@ URI: [http://bioentity.io/vocab/AdministrativeEntity](http://bioentity.io/vocab/
  *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
  *  class: [gene to thing association](GeneToThingAssociation.html) references: [provider](Provider.html)
+ *  class: [variant to thing association](VariantToThingAssociation.html) references: [provider](Provider.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [provider](Provider.html)
+ *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
+ *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [provider](Provider.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [provider](Provider.html)
  *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [provider](Provider.html)
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [provider](Provider.html)

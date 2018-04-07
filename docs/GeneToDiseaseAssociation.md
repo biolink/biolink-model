@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vocab/GeneToDiseaseAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[gene to disease association], [gene to disease association]-association type >[ontology class], [gene to disease association]-subject >[gene or gene product], [genomic entity]^-[gene or gene product], [gene or gene product]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [gene to disease association]-relation >[relationship type], [gene to disease association]-object >[disease], [disease or phenotypic feature]^-[disease], [disease]-in taxon >[organism taxon], [gene to disease association]-qualifiers >[ontology class], [gene to disease association]-publications >[publication], [information content entity]^-[publication], [gene to disease association]-provided by >[provider], [administrative entity]^-[provider], [gene to disease association]-frequency qualifier >[frequency value], [attribute]^-[frequency value], [gene to disease association]-severity qualifier >[severity value], [attribute]^-[severity value], [gene to disease association]-onset qualifier >[onset], [attribute]^-[onset])
 ## Mappings
 
  * [SIO:000983](http://semanticscience.org/resource/SIO_000983)
@@ -31,8 +34,7 @@ URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vo
     * __range__: [ontology class](OntologyClass.html)
     * inherited from: [association](Association.html)
  * [subject](subject.html)
-    * _gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
-  _
+    * _gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model_
     * __range__: [gene or gene product](GeneOrGeneProduct.html) [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)

@@ -8,6 +8,9 @@ layout: default
 Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
 
 URI: [http://bioentity.io/vocab/Publication](http://bioentity.io/vocab/Publication)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[information content entity]^-[publication])
 ## Mappings
 
  * [IAO:0000311](http://purl.obolibrary.org/obo/IAO_0000311)
@@ -47,8 +50,11 @@ URI: [http://bioentity.io/vocab/Publication](http://bioentity.io/vocab/Publicati
  *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
  *  class: [gene to thing association](GeneToThingAssociation.html) references: [publication](Publication.html)
+ *  class: [variant to thing association](VariantToThingAssociation.html) references: [publication](Publication.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [publication](Publication.html)
+ *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
+ *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [publication](Publication.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [publication](Publication.html)
  *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [publication](Publication.html)
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [publication](Publication.html)

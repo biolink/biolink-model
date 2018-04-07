@@ -8,6 +8,9 @@ layout: default
 An association between a gene and an expression site, possibly qualified by stage/timing info.
 
 URI: [http://bioentity.io/vocab/GeneToExpressionSiteAssociation](http://bioentity.io/vocab/GeneToExpressionSiteAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association]^-[gene to expression site association], [gene to expression site association]-stage qualifier >[life stage], [organismal entity]^-[life stage], [life stage]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [gene to expression site association]-quantifier qualifier >[ontology class], [gene to expression site association]-association type >[ontology class], [gene to expression site association]-subject >[gene or gene product], [genomic entity]^-[gene or gene product], [gene or gene product]-in taxon >[organism taxon], [gene to expression site association]-relation >[relationship type], [gene to expression site association]-object >[anatomical entity], [organismal entity]^-[anatomical entity], [anatomical entity]-in taxon >[organism taxon], [gene to expression site association]-qualifiers >[ontology class], [gene to expression site association]-publications >[publication], [information content entity]^-[publication], [gene to expression site association]-provided by >[provider], [administrative entity]^-[provider])
 ## Mappings
 
 

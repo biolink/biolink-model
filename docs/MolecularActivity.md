@@ -8,6 +8,9 @@ layout: default
 An execution of a molecular function
 
 URI: [http://bioentity.io/vocab/MolecularActivity](http://bioentity.io/vocab/MolecularActivity)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[biological entity]^-[molecular activity])
 ## Mappings
 
  * [GO:0003674](http://purl.obolibrary.org/obo/GO_0003674)
