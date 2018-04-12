@@ -89,13 +89,13 @@ slots:
     mixins: negatively regulates
     mappings:
       - RO:0002212
-	  
+
   - name: regulates, entity to entity
     aliases: ['activity directly regulates activity of']
     is_a: regulates
     domain: molecular entity
     range: molecular entity
-	  local_names:
+    local_names:
       translator: regulates
       ro: activity directly regulates activity of
     mappings:
@@ -122,7 +122,7 @@ slots:
     mappings:
       - RO:0002449
       - SEMMEDDB:INHIBITS
-	  
+
   - name: has gene product
     description: >-
       holds between a gene and a transcribed and/or translated product geenrated from it
@@ -142,7 +142,7 @@ slots:
 
   - name: has affected sequence feature
     aliases: ['has affected feature']
-	  description: >-
+    description: >-
       holds between a genotype or genotype part (e.g. a sequence variant), and a sequence feature whose sequence is affected by it.
     domain:
     range: sequence feature
@@ -150,39 +150,39 @@ slots:
       - GENO:0000418
 
   - name: coexists with
-	  description: >-
+    description: >-
       holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
     mappings:
       - SEMMEDDB:COEXISTS_WITH
 
   - name: in pathway with
-	  description: >-
+    description: >-
       holds between two genes or gene products that are part of in the same biological pathway
     is_a: coexists with
     domain: gene or gene product
     range: gene or gene product
 
   - name: in complex with
-	  description: >-
+    description: >-
       holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
     is_a: coexists with
     domain: gene or gene product
     range: gene or gene product
 
   - name: in cell population with
-	  description: >-
+    description: >-
       holds between two genes or gene products that are expressed in the same cell type or population 
     is_a: coexists with
     domain: gene or gene product
     range: gene or gene product
-	
+
   - name: associated with condition
-  	description: >-
+    description: >-
       holds between an entity and a disease or phenotypic feature that the entity may influence, contribute to, or correlate with
     range: disease or phenotypic feature 
 
   - name: affects risk for condition
-	  description: >-
+    description: >-
       holds between an entity and a disease or phenotypic feature where exposure to the entity alters the chances of developing the condition 
     is_a: associated with condition
     range: disease or phenotypic feature 
@@ -190,46 +190,46 @@ slots:
       - SEMMEDDB:PREDISPOSES
 
   - name: causes or contributes to
-	  description: >-
+    description: >-
       holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or  generation of the other
-	  
+
   - name: causes
-	  description: >-
+    description: >-
       holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other
     is_a: causes or contributes to
     mappings:
-	  - RO:0002410
+      - RO:0002410
       - SEMMEDDB:CAUSES
 
   - name: treats condition 
     aliases: ['is substance that treats']
-	  description: >-
+    description: >-
       holds between a therapeutic process or chemical substance and a disease or phenotypic feature that it is used to treat 
     range: disease or phenotypic feature
     mappings:
       - RO:0002606
-	  - RO:0003307
-	  - SEMMEDDB:TREATS
+      - RO:0003307
+      - SEMMEDDB:TREATS
 
   - name: prevents condition
     aliases: [' ']
-	  description: >-
+    description: >-
       holds between a therapeutic process or molecular entity and a disease or phenotypic feature, where exposure tot the process or entity reduces chance of developing the condition
     range: disease or phenotypic feature
     mappings:
       - RO:0002559
-	  - SEMMEDDB:PREVENTS
-	  
+      - SEMMEDDB:PREVENTS
+
   - name: has biomarker
     aliases: [' ']
-	  description: >-
+    description: >-
       holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
     domain: disease or phenotypic feature
     range: molecular entity
 
   - name: treated by
     aliases: [' ']
-	  description: >-
+    description: >-
       holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition 
     domain: disease or phenotypic feature
     mappings: 
@@ -240,7 +240,7 @@ slots:
       - SEMMEDDB:AFFECTS
 
   - name: expressed in
-	  description: >-
+    description: >-
       holds between a gene or gene product and an anatomical entity in which itt is expressed
     domain: gene or gene product
     range: anatomical entity
@@ -248,7 +248,7 @@ slots:
       - RO:0002206
 
   - name: has phenotype
-	  description: >-
+    description: >-
       holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). 
     domain: biological entity
     range: phenotype
@@ -256,63 +256,63 @@ slots:
       - RO:0002200
 
   - name: disrupts
-  	description: >-
+    description: >-
 	  holds between a material entity and a process or activity it disrupts
     range: occurrent
     mappings:
       - SEMMEDDB:DISRUPTS
 
   - name: part of
-	  description: >-
+    description: >-
       holds between parts and wholes (material entities or processes)
     mappings:
       - BFO:0000050
       - SEMMEDDB:PART_OF
-	  
+
   - name: participates in
-	  description: >-
+    description: >-
       holds between a continuant and a process, where the continuant is somehow involved in the process
     range: occurrent
     mappings:
       - RO:0000056
 
   - name: has participant
-	  description: >-
+    description: >-
       holds between a process and a continuant, where the continuant is somehow involved in the process 
     domain: occurrent
     mappings:
-	  - RO:0000057
-	  
+      - RO:0000057
+
   - name: derives into
     aliases: [' ']
-	  description: >-
+    description: >-
       holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
     mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
 
   - name: manifestation of
-	  description: >-
-	  ued in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
+    description: >-
+      used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
     range: disease
     mappings:
       - SEMMEDDB:MANIFESTATION_OF	  
-	  
+
   - name: precedes
-	  description: >-
+    description: >-
       holds between two processes, where one completes before the other begins
     domain: occurrent
     range: occurrent
     mappings:
-	  - BFO:0000063
+      - BFO:0000063
 
   - name: subclass of
-	  description: >-
+    description: >-
       holds between two classes where the domain class is a specialization of the range class
     domain: class
     range: class
     mappings:
-	  - RDFS:subClassOf
+      - RDFS:subClassOf
       - SEMMEDDB:IS_A 
  
 ## property slots
