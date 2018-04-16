@@ -828,8 +828,20 @@ classes:
     is_a: chemical substance
     description: >-
       A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+    comment: >-
+      The CHEBI ID represents a role rather than a substance
     mappings:
       - WD:Q12140
+      - CHEBI:23888
+      
+  - name: metabolite
+    is_a: chemical substance
+    description: >-
+      Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
+    comment: >-
+      The CHEBI ID represents a role rather than a substance
+    mappings:
+      - CHEBI:25212
       
   - name: attribute
     subclass_of: PATO:0000001
