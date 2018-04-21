@@ -144,7 +144,6 @@ slots:
     aliases: ['has affected feature']
     description: >-
       holds between a genotype or genotype part (e.g. a sequence variant), and a sequence feature whose sequence is affected by it.
-    domain:
     range: sequence feature
     mappings:
       - GENO:0000418
@@ -296,7 +295,7 @@ slots:
       used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
     range: disease
     mappings:
-      - SEMMEDDB:MANIFESTATION_OF	  
+      - SEMMEDDB:MANIFESTATION_OF
 
   - name: precedes
     description: >-
@@ -828,8 +827,20 @@ classes:
     is_a: chemical substance
     description: >-
       A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+    comment: >-
+      The CHEBI ID represents a role rather than a substance
     mappings:
       - WD:Q12140
+      - CHEBI:23888
+      
+  - name: metabolite
+    is_a: chemical substance
+    description: >-
+      Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
+    comment: >-
+      The CHEBI ID represents a role rather than a substance
+    mappings:
+      - CHEBI:25212
       
   - name: attribute
     subclass_of: PATO:0000001

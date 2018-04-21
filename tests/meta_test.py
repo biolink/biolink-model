@@ -10,7 +10,7 @@ def test_foo():
     f = open(path,'r')
     obj = yaml.load(f)
     schemadef = SchemaDefinitionSchema()
-    schema = schemadef.load(obj).data
+    schema = schemadef.load(obj)
     errs = schemadef.validate(obj)
     if len(errs) > 0:
         logging.error("CONFIG ERRS: {}".format(errs))
