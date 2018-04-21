@@ -51,7 +51,7 @@ class Manager(object):
         errs = schemadef.validate(obj)
         if len(errs) > 0:
             logging.error("CONFIG ERRS: {}".format(errs))
-        schema = schemadef.load(obj).data
+        schema = schemadef.load(obj)
         logging.info('LOADING IMPORTS FOR {}'.format(schema.name))
         self.load_imports(schema, depth)
         if depth == 0:
