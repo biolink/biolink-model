@@ -119,6 +119,78 @@ class Onset(Attribute):
         return self.__str__()
 
 
+class RelationshipQuantifier(object):
+    """
+    None
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class SenstivityQuantifier(RelationshipQuantifier):
+    """
+    None
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class SpecificityQuantifier(RelationshipQuantifier):
+    """
+    None
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class PathognomonicityQuantifier(SpecificityQuantifier):
+    """
+    A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+    """
+    def __init__(self):
+        pass
+
+    def __str__(self):
+        return "".format()
+    def __repr__(self):
+        return self.__str__()
+
+
+class FrequencyQuantifier(RelationshipQuantifier):
+    """
+    None
+    """
+    def __init__(self,
+                 has_count=None,
+                 has_total=None,
+                 has_quotient=None,
+                 has_percentage=None):
+        self.has_count=has_count
+        self.has_total=has_total
+        self.has_quotient=has_quotient
+        self.has_percentage=has_percentage
+
+    def __str__(self):
+        return "has_count={} has_total={} has_quotient={} has_percentage={} ".format(self.has_count,self.has_total,self.has_quotient,self.has_percentage)
+    def __repr__(self):
+        return self.__str__()
+
+
 class NamedThing(object):
     """
     a databased entity or concept/class
@@ -191,25 +263,22 @@ class ThingWithTaxon(object):
         return self.__str__()
 
 
-class OrganismalEntity(BiologicalEntity):
+class OrganismTaxon(OntologyClass):
     """
-    A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
+    None
     """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
+    def __init__(self):
+        pass
 
     def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
+        return "".format()
     def __repr__(self):
         return self.__str__()
 
 
-class OrganismTaxon(OrganismalEntity):
+class OrganismalEntity(BiologicalEntity):
     """
-    None
+    A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
     """
     def __init__(self,
                  id=None,
@@ -494,6 +563,24 @@ class ChemicalSubstance(MolecularEntity):
 class Drug(ChemicalSubstance):
     """
     A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+    """
+    def __init__(self,
+                 id=None,
+                 label=None,
+                 in_taxon=None):
+        self.id=id
+        self.label=label
+        self.in_taxon=in_taxon
+
+    def __str__(self):
+        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
+    def __repr__(self):
+        return self.__str__()
+
+
+class Metabolite(ChemicalSubstance):
+    """
+    Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
     """
     def __init__(self,
                  id=None,
@@ -2159,6 +2246,48 @@ class GeneToDiseaseAssociation(Association):
 
     def __str__(self):
         return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
+    def __repr__(self):
+        return self.__str__()
+
+
+class VariantToPopulationAssociation(Association):
+    """
+    An association between a variant and a population, where the variant has particular frequency in the population
+    """
+    def __init__(self,
+                 frequency_qualifier=None,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 label=None,
+                 has_count=None,
+                 has_total=None,
+                 has_quotient=None,
+                 has_percentage=None):
+        self.frequency_qualifier=frequency_qualifier
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.label=label
+        self.has_count=has_count
+        self.has_total=has_total
+        self.has_quotient=has_quotient
+        self.has_percentage=has_percentage
+
+    def __str__(self):
+        return "frequency_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} has_count={} has_total={} has_quotient={} has_percentage={} ".format(self.frequency_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.has_count,self.has_total,self.has_quotient,self.has_percentage)
     def __repr__(self):
         return self.__str__()
 

@@ -2,6 +2,18 @@
     "$id": "https://biolink.github.io/biolink-model/ontology/biolink.ttl",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "definitions": {
+        "affects": {
+            "type": "string"
+        },
+        "affects_risk_for_condition": {
+            "type": "string"
+        },
+        "aggregate_statistic": {
+            "type": "string"
+        },
+        "associated_with_condition": {
+            "type": "string"
+        },
         "association_slot": {
             "type": "string"
         },
@@ -14,16 +26,37 @@
             },
             "type": "array"
         },
+        "causes": {
+            "type": "string"
+        },
+        "causes_or_contributes_to": {
+            "type": "string"
+        },
         "clinical_modifier_qualifier": {
+            "type": "string"
+        },
+        "coexists_with": {
             "type": "string"
         },
         "creation_date": {
             "type": "string"
         },
+        "derives_into": {
+            "type": "string"
+        },
         "description": {
             "type": "string"
         },
+        "directly_interacts_with": {
+            "type": "string"
+        },
+        "disrupts": {
+            "type": "string"
+        },
         "end_interbase_coordinate": {
+            "type": "string"
+        },
+        "expressed_in": {
             "type": "string"
         },
         "filler": {
@@ -38,10 +71,19 @@
         "genome_build": {
             "type": "string"
         },
+        "has_affected_sequence_feature": {
+            "type": "string"
+        },
         "has_biological_sequence": {
             "type": "string"
         },
+        "has_biomarker": {
+            "type": "string"
+        },
         "has_confidence_level": {
+            "type": "string"
+        },
+        "has_count": {
             "type": "string"
         },
         "has_evidence": {
@@ -50,7 +92,25 @@
         "has_gene": {
             "type": "string"
         },
+        "has_gene_product": {
+            "type": "string"
+        },
         "has_molecular_consequence": {
+            "type": "string"
+        },
+        "has_participant": {
+            "type": "string"
+        },
+        "has_percentage": {
+            "type": "string"
+        },
+        "has_phenotype": {
+            "type": "string"
+        },
+        "has_quotient": {
+            "type": "string"
+        },
+        "has_total": {
             "type": "string"
         },
         "has_zygosity": {
@@ -59,10 +119,22 @@
         "id": {
             "type": "string"
         },
+        "in_cell_population_with": {
+            "type": "string"
+        },
+        "in_complex_with": {
+            "type": "string"
+        },
+        "in_pathway_with": {
+            "type": "string"
+        },
         "in_taxon": {
             "type": "string"
         },
         "interbase_coordinate": {
+            "type": "string"
+        },
+        "is_homologous_to": {
             "type": "string"
         },
         "label": {
@@ -72,6 +144,9 @@
             "type": "string"
         },
         "longitude": {
+            "type": "string"
+        },
+        "manifestation_of": {
             "type": "string"
         },
         "molecularly_interacts_with": {
@@ -86,10 +161,19 @@
         "negatively_regulates,_entity_to_entity": {
             "type": "string"
         },
+        "negatively_regulates,_process_to_process": {
+            "type": "string"
+        },
         "object": {
             "type": "string"
         },
         "onset_qualifier": {
+            "type": "string"
+        },
+        "part_of": {
+            "type": "string"
+        },
+        "participates_in": {
             "type": "string"
         },
         "phase": {
@@ -102,6 +186,12 @@
             "type": "string"
         },
         "positively_regulates,_process_to_process": {
+            "type": "string"
+        },
+        "precedes": {
+            "type": "string"
+        },
+        "prevents_condition": {
             "type": "string"
         },
         "provided_by": {
@@ -149,6 +239,9 @@
         "start_interbase_coordinate": {
             "type": "string"
         },
+        "subclass_of": {
+            "type": "string"
+        },
         "subject": {
             "type": "string"
         },
@@ -156,6 +249,12 @@
             "type": "string"
         },
         "timepoint": {
+            "type": "string"
+        },
+        "treated_by": {
+            "type": "string"
+        },
+        "treats_condition": {
             "type": "string"
         }
     },
@@ -1220,6 +1319,29 @@
             },
             "required": [],
             "title": "ExonToTranscriptRelationship",
+            "type": "object"
+        },
+        "FrequencyQuantifier": {
+            "description": null,
+            "properties": {
+                "has_count": {
+                    "description": "number of things with a particular property",
+                    "type": "string"
+                },
+                "has_percentage": {
+                    "description": "equivalent to has quotient multiplied by 100",
+                    "type": "string"
+                },
+                "has_quotient": {
+                    "type": "string"
+                },
+                "has_total": {
+                    "description": "total number of things in a particular reference set",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "FrequencyQuantifier",
             "type": "object"
         },
         "FrequencyValue": {
@@ -2388,6 +2510,25 @@
             "title": "MacromolecularComplex",
             "type": "object"
         },
+        "Metabolite": {
+            "description": "Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects a thing to a class representing a taxon",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Metabolite",
+            "type": "object"
+        },
         "Microrna": {
             "description": null,
             "properties": {
@@ -2506,15 +2647,7 @@
         },
         "OrganismTaxon": {
             "description": null,
-            "properties": {
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                }
-            },
+            "properties": {},
             "required": [],
             "title": "OrganismTaxon",
             "type": "object"
@@ -2570,6 +2703,13 @@
             },
             "required": [],
             "title": "PairwiseGeneOrProteinInteractionAssociation",
+            "type": "object"
+        },
+        "PathognomonicityQuantifier": {
+            "description": "A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease",
+            "properties": {},
+            "required": [],
+            "title": "PathognomonicityQuantifier",
             "type": "object"
         },
         "Pathway": {
@@ -2797,6 +2937,13 @@
             "title": "RnaProductIsoform",
             "type": "object"
         },
+        "SenstivityQuantifier": {
+            "description": null,
+            "properties": {},
+            "required": [],
+            "title": "SenstivityQuantifier",
+            "type": "object"
+        },
         "SequenceFeatureRelationship": {
             "description": "For example, a particular exon is part of a particular transcript or gene",
             "properties": {
@@ -2882,6 +3029,13 @@
             "properties": {},
             "required": [],
             "title": "SeverityValue",
+            "type": "object"
+        },
+        "SpecificityQuantifier": {
+            "description": null,
+            "properties": {},
+            "required": [],
+            "title": "SpecificityQuantifier",
             "type": "object"
         },
         "Transcript": {
@@ -3116,6 +3270,78 @@
             },
             "required": [],
             "title": "VariantToPhenotypicFeatureAssociation",
+            "type": "object"
+        },
+        "VariantToPopulationAssociation": {
+            "description": "An association between a variant and a population, where the variant has particular frequency in the population",
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "frequency_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+                    "type": "string"
+                },
+                "has_count": {
+                    "description": "number of things with a particular property",
+                    "type": "string"
+                },
+                "has_percentage": {
+                    "description": "equivalent to has quotient multiplied by 100",
+                    "type": "string"
+                },
+                "has_quotient": {
+                    "type": "string"
+                },
+                "has_total": {
+                    "description": "total number of things in a particular reference set",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "VariantToPopulationAssociation",
             "type": "object"
         },
         "Zygosity": {

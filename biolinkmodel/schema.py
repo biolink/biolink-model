@@ -74,6 +74,55 @@ class OnsetSchema(AttributeSchema):
     def make_object(self, data):
         Onset(**data)
 
+class RelationshipQuantifierSchema(Schema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        RelationshipQuantifier(**data)
+
+class SenstivityQuantifierSchema(RelationshipQuantifierSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        SenstivityQuantifier(**data)
+
+class SpecificityQuantifierSchema(RelationshipQuantifierSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        SpecificityQuantifier(**data)
+
+class PathognomonicityQuantifierSchema(SpecificityQuantifierSchema):
+    """
+    A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+    """
+
+    @post_load
+    def make_object(self, data):
+        PathognomonicityQuantifier(**data)
+
+class FrequencyQuantifierSchema(RelationshipQuantifierSchema):
+    """
+    None
+    """
+    has_count = fields.Str()
+    has_total = fields.Str()
+    has_quotient = fields.Str()
+    has_percentage = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        FrequencyQuantifier(**data)
+
 class NamedThingSchema(Schema):
     """
     a databased entity or concept/class
@@ -122,7 +171,7 @@ class ThingWithTaxonSchema(Schema):
     def make_object(self, data):
         ThingWithTaxon(**data)
 
-class OrganismTaxonSchema(OrganismalEntitySchema):
+class OrganismTaxonSchema(OntologyClassSchema):
     """
     None
     """
@@ -297,6 +346,15 @@ class DrugSchema(ChemicalSubstanceSchema):
     @post_load
     def make_object(self, data):
         Drug(**data)
+
+class MetaboliteSchema(ChemicalSubstanceSchema):
+    """
+    Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
+    """
+
+    @post_load
+    def make_object(self, data):
+        Metabolite(**data)
 
 class AttributeSchema(Schema):
     """
@@ -1071,6 +1129,30 @@ class GeneToDiseaseAssociationSchema(AssociationSchema):
     @post_load
     def make_object(self, data):
         GeneToDiseaseAssociation(**data)
+
+class VariantToPopulationAssociationSchema(AssociationSchema):
+    """
+    An association between a variant and a population, where the variant has particular frequency in the population
+    """
+    frequency_qualifier = fields.Str()
+    association_type = fields.Str()
+    subject = fields.Str()
+    negated = fields.Str()
+    relation = fields.Str()
+    object = fields.Str()
+    qualifiers = fields.Str()
+    publications = fields.Str()
+    provided_by = fields.Str()
+    id = fields.Str()
+    label = fields.Str()
+    has_count = fields.Str()
+    has_total = fields.Str()
+    has_quotient = fields.Str()
+    has_percentage = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        VariantToPopulationAssociation(**data)
 
 class VariantToPhenotypicFeatureAssociationSchema(AssociationSchema):
     """
