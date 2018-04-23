@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/GrossAnatomicalStructure](http://bioentity.io/vocab/GrossAnatomicalStructure)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[anatomical entity]^-[gross anatomical structure], [gross anatomical structure]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[anatomical entity|in taxon]^-[gross anatomical structure|], [gross anatomical structure|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
  * [SIO:010046](http://semanticscience.org/resource/SIO_010046)

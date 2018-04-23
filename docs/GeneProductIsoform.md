@@ -10,7 +10,7 @@ This is an abstract class that can be mixed in with different kinds of gene prod
 URI: [http://bioentity.io/vocab/GeneProductIsoform](http://bioentity.io/vocab/GeneProductIsoform)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[gene product]^-[gene product isoform], [gene product isoform]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[gene product|]^-[gene product isoform|], [gene product isoform|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
 

@@ -10,7 +10,7 @@ A gene, gene product, small molecule or macromolecule (including protein complex
 URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/MolecularEntity)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[biological entity]^-[molecular entity], [molecular entity]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[biological entity|]^-[molecular entity|in taxon], [molecular entity|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
  * [SIO:010004](http://semanticscience.org/resource/SIO_010004)

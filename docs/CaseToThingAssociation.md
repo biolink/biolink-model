@@ -10,7 +10,7 @@ An abstract association for use where the case is the subject
 URI: [http://bioentity.io/vocab/CaseToThingAssociation](http://bioentity.io/vocab/CaseToThingAssociation)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[association]^-[case to thing association], [case to thing association]-association type >[ontology class], [case to thing association]-subject >[case], [individual organism]^-[case], [case]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [case to thing association]-relation >[relationship type], [case to thing association]-qualifiers >[ontology class], [case to thing association]-publications >[publication], [information content entity]^-[publication], [case to thing association]-provided by >[provider], [administrative entity]^-[provider])
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[case to thing association|], [case to thing association|]-association type >[ontology class|], [case to thing association|]-subject >[case|], [individual organism|in taxon]^-[case|], [case|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [case to thing association|]-relation >[relationship type|], [case to thing association|]-qualifiers >[ontology class|], [case to thing association|]-publications >[publication|], [information content entity|]^-[publication|], [case to thing association|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 

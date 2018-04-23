@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/DiseaseToThingAssociation](http://bioentity.io/vocab/DiseaseToThingAssociation)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[association]^-[disease to thing association], [disease to thing association]-association type >[ontology class], [disease to thing association]-subject >[disease], [disease or phenotypic feature]^-[disease], [disease]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [disease to thing association]-relation >[relationship type], [disease to thing association]-qualifiers >[ontology class], [disease to thing association]-publications >[publication], [information content entity]^-[publication], [disease to thing association]-provided by >[provider], [administrative entity]^-[provider])
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[disease to thing association|], [disease to thing association|]-association type >[ontology class|], [disease to thing association|]-subject >[disease|], [disease or phenotypic feature|in taxon]^-[disease|], [disease|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [disease to thing association|]-relation >[relationship type|], [disease to thing association|]-qualifiers >[ontology class|], [disease to thing association|]-publications >[publication|], [information content entity|]^-[publication|], [disease to thing association|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 

@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/GeneToThingAssociation](http://bioentity.io/vocab/GeneToThingAssociation)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[association]^-[gene to thing association], [gene to thing association]-association type >[ontology class], [gene to thing association]-subject >[gene or gene product], [genomic entity]^-[gene or gene product], [gene or gene product]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [gene to thing association]-relation >[relationship type], [gene to thing association]-qualifiers >[ontology class], [gene to thing association]-publications >[publication], [information content entity]^-[publication], [gene to thing association]-provided by >[provider], [administrative entity]^-[provider])
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[gene to thing association|], [gene to thing association|]-association type >[ontology class|], [gene to thing association|]-subject >[gene or gene product|], [genomic entity|has biological sequence]^-[gene or gene product|], [gene or gene product|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [gene to thing association|]-relation >[relationship type|], [gene to thing association|]-qualifiers >[ontology class|], [gene to thing association|]-publications >[publication|], [information content entity|]^-[publication|], [gene to thing association|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 

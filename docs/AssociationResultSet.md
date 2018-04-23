@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/AssociationResultSet](http://bioentity.io/vocab/AssociationResultSet)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[information content entity]^-[association result set], [association result set]-associations >[association], [information content entity]^-[association], [association]-association type >[ontology class], [association]-relation >[relationship type], [association]-qualifiers >[ontology class], [association]-publications >[publication], [information content entity]^-[publication], [association]-provided by >[provider], [administrative entity]^-[provider])
+![img](http://yuml.me/diagram/nofunky/class/[information content entity|]^-[association result set|associations], [association result set|associations]-associations >[association|association type;subject;negated;relation;object;qualifiers;publications;provided by], [information content entity|]^-[association|association type;subject;negated;relation;object;qualifiers;publications;provided by], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-association type >[ontology class|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-relation >[relationship type|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-qualifiers >[ontology class|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-publications >[publication|], [information content entity|]^-[publication|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 

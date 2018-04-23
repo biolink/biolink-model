@@ -10,7 +10,7 @@ An individual organism that has a patient role in some clinical context.
 URI: [http://bioentity.io/vocab/Case](http://bioentity.io/vocab/Case)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[individual organism]^-[case], [case]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[individual organism|in taxon]^-[case|], [case|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
 

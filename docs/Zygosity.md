@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/Zygosity](http://bioentity.io/vocab/Zygosity)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[attribute]^-[zygosity])
+![img](http://yuml.me/diagram/nofunky/class/[attribute|]^-[zygosity|])
 ## Mappings
 
  * [GENO:0000133](http://purl.obolibrary.org/obo/GENO_0000133)

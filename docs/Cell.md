@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/Cell](http://bioentity.io/vocab/Cell)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[anatomical entity]^-[cell], [cell]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[anatomical entity|in taxon]^-[cell|], [cell|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
  * [GO:0005623](http://purl.obolibrary.org/obo/GO_0005623)

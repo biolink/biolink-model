@@ -10,7 +10,7 @@ A typed association between two entities, supported by evidence
 URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Association)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[information content entity]^-[association], [association]-association type >[ontology class], [association]-relation >[relationship type], [association]-qualifiers >[ontology class], [association]-publications >[publication], [information content entity]^-[publication], [association]-provided by >[provider], [administrative entity]^-[provider])
+![img](http://yuml.me/diagram/nofunky/class/[information content entity|]^-[association|association type;subject;negated;relation;object;qualifiers;publications;provided by], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-association type >[ontology class|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-relation >[relationship type|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-qualifiers >[ontology class|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-publications >[publication|], [information content entity|]^-[publication|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
  * [OBAN:association](http://purl.obolibrary.org/obo/OBAN_association)

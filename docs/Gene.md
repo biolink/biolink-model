@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/Gene](http://bioentity.io/vocab/Gene)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[gene or gene product]^-[gene], [gene]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[gene or gene product|]^-[gene|], [gene|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
  * [SO:0000704](http://purl.obolibrary.org/obo/SO_0000704)

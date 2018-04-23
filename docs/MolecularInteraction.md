@@ -10,7 +10,7 @@ An interaction at the molecular level between two physical entities
 URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/MolecularInteraction)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[association]^-[molecular interaction], [molecular interaction]-association type >[ontology class], [molecular interaction]-subject >[molecular entity], [biological entity]^-[molecular entity], [molecular entity]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [molecular interaction]-object >[molecular entity], [molecular interaction]-qualifiers >[ontology class], [molecular interaction]-publications >[publication], [information content entity]^-[publication], [molecular interaction]-provided by >[provider], [administrative entity]^-[provider])
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[molecular interaction|], [molecular interaction|]-association type >[ontology class|], [molecular interaction|]-subject >[molecular entity|in taxon], [biological entity|]^-[molecular entity|in taxon], [molecular entity|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [molecular interaction|]-object >[molecular entity|in taxon], [molecular interaction|]-qualifiers >[ontology class|], [molecular interaction|]-publications >[publication|], [information content entity|]^-[publication|], [molecular interaction|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 

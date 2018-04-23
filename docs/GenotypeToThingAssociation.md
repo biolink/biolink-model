@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/GenotypeToThingAssociation](http://bioentity.io/vocab/GenotypeToThingAssociation)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[association]^-[genotype to thing association], [genotype to thing association]-association type >[ontology class], [genotype to thing association]-subject >[genotype], [genomic entity]^-[genotype], [genotype]-has zygosity >[zygosity], [attribute]^-[zygosity], [genotype]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [genotype to thing association]-relation >[relationship type], [genotype to thing association]-qualifiers >[ontology class], [genotype to thing association]-publications >[publication], [information content entity]^-[publication], [genotype to thing association]-provided by >[provider], [administrative entity]^-[provider])
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[genotype to thing association|], [genotype to thing association|]-association type >[ontology class|], [genotype to thing association|]-subject >[genotype|has zygosity], [genomic entity|has biological sequence]^-[genotype|has zygosity], [genotype|has zygosity]-has zygosity >[zygosity|], [attribute|]^-[zygosity|], [genotype|has zygosity]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [genotype to thing association|]-relation >[relationship type|], [genotype to thing association|]-qualifiers >[ontology class|], [genotype to thing association|]-publications >[publication|], [information content entity|]^-[publication|], [genotype to thing association|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 

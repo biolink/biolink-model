@@ -10,7 +10,7 @@ Any entity or process that exists in the clinical domain and outside the biologi
 URI: [http://bioentity.io/vocab/ClinicalEntity](http://bioentity.io/vocab/ClinicalEntity)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[named thing]^-[clinical entity])
+![img](http://yuml.me/diagram/nofunky/class/[named thing|id;label]^-[clinical entity|])
 ## Mappings
 
 

@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/IndividualOrganism](http://bioentity.io/vocab/IndividualOrganism)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[organismal entity]^-[individual organism], [individual organism]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[organismal entity|]^-[individual organism|in taxon], [individual organism|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
  * [SIO:010000](http://semanticscience.org/resource/SIO_010000)

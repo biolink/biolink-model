@@ -10,7 +10,7 @@ An association between a biosample and something
 URI: [http://bioentity.io/vocab/BiosampleToThingAssociation](http://bioentity.io/vocab/BiosampleToThingAssociation)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[association]^-[biosample to thing association], [biosample to thing association]-association type >[ontology class], [biosample to thing association]-subject >[biosample], [organismal entity]^-[biosample], [biosample]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [biosample to thing association]-relation >[relationship type], [biosample to thing association]-qualifiers >[ontology class], [biosample to thing association]-publications >[publication], [information content entity]^-[publication], [biosample to thing association]-provided by >[provider], [administrative entity]^-[provider])
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[biosample to thing association|], [biosample to thing association|]-association type >[ontology class|], [biosample to thing association|]-subject >[biosample|in taxon], [organismal entity|]^-[biosample|in taxon], [biosample|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [biosample to thing association|]-relation >[relationship type|], [biosample to thing association|]-qualifiers >[ontology class|], [biosample to thing association|]-publications >[publication|], [information content entity|]^-[publication|], [biosample to thing association|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 

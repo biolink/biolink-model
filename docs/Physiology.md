@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/Physiology](http://bioentity.io/vocab/Physiology)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[biological process]^-[physiology])
+![img](http://yuml.me/diagram/nofunky/class/[biological process|]^-[physiology|])
 ## Mappings
 
  * [UMLSSG:PHYS](http://purl.obolibrary.org/obo/UMLSSG_PHYS)

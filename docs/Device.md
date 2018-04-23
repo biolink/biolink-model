@@ -10,7 +10,7 @@ A thing made or adapted for a particular purpose, especially a piece of mechanic
 URI: [http://bioentity.io/vocab/Device](http://bioentity.io/vocab/Device)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[named thing]^-[device])
+![img](http://yuml.me/diagram/nofunky/class/[named thing|id;label]^-[device|])
 ## Mappings
 
  * [UMLSSG:DEVI](http://purl.obolibrary.org/obo/UMLSSG_DEVI)

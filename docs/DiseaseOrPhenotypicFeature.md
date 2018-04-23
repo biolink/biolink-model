@@ -10,7 +10,7 @@ Either one of a disease or an individual phenotypic feature. Some knowledge reso
 URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeature](http://bioentity.io/vocab/DiseaseOrPhenotypicFeature)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[biological entity]^-[disease or phenotypic feature], [disease or phenotypic feature]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[biological entity|]^-[disease or phenotypic feature|in taxon], [disease or phenotypic feature|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
 

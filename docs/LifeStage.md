@@ -10,7 +10,7 @@ A stage of development or growth of an organism, including post-natal adult stag
 URI: [http://bioentity.io/vocab/LifeStage](http://bioentity.io/vocab/LifeStage)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[organismal entity]^-[life stage], [life stage]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[organismal entity|]^-[life stage|in taxon], [life stage|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
  * [UBERON:0000105](http://purl.obolibrary.org/obo/UBERON_0000105)

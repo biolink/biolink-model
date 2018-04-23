@@ -10,7 +10,7 @@ describes the severity of a phenotypic feature or disease
 URI: [http://bioentity.io/vocab/SeverityValue](http://bioentity.io/vocab/SeverityValue)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[attribute]^-[severity value])
+![img](http://yuml.me/diagram/nofunky/class/[attribute|]^-[severity value|])
 ## Mappings
 
 

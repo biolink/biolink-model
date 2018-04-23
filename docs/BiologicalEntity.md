@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/BiologicalEntity](http://bioentity.io/vocab/BiologicalEntity)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[named thing]^-[biological entity])
+![img](http://yuml.me/diagram/nofunky/class/[named thing|id;label]^-[biological entity|])
 ## Mappings
 
  * [WD:Q28845870](http://purl.obolibrary.org/obo/WD_Q28845870)

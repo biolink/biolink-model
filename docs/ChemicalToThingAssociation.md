@@ -10,7 +10,7 @@ An interaction between a chemical entity and another entity
 URI: [http://bioentity.io/vocab/ChemicalToThingAssociation](http://bioentity.io/vocab/ChemicalToThingAssociation)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[association]^-[chemical to thing association], [chemical to thing association]-association type >[ontology class], [chemical to thing association]-subject >[chemical substance], [molecular entity]^-[chemical substance], [chemical substance]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [chemical to thing association]-relation >[relationship type], [chemical to thing association]-qualifiers >[ontology class], [chemical to thing association]-publications >[publication], [information content entity]^-[publication], [chemical to thing association]-provided by >[provider], [administrative entity]^-[provider])
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[chemical to thing association|], [chemical to thing association|]-association type >[ontology class|], [chemical to thing association|]-subject >[chemical substance|], [molecular entity|in taxon]^-[chemical substance|], [chemical substance|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [chemical to thing association|]-relation >[relationship type|], [chemical to thing association|]-qualifiers >[ontology class|], [chemical to thing association|]-publications >[publication|], [information content entity|]^-[publication|], [chemical to thing association|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 

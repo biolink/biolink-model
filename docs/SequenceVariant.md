@@ -10,7 +10,7 @@ An allele that varies in its sequence from what is considered the reference alle
 URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/SequenceVariant)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[genomic entity]^-[sequence variant], [sequence variant]-has gene >[gene], [gene or gene product]^-[gene], [gene]-in taxon >[organism taxon], [ontology class]^-[organism taxon], [sequence variant]-in taxon >[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[genomic entity|has biological sequence]^-[sequence variant|has gene], [sequence variant|has gene]-has gene >[gene|], [gene or gene product|]^-[gene|], [gene|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [sequence variant|has gene]-in taxon >[organism taxon|])
 ## Mappings
 
  * [GENO:0000002](http://purl.obolibrary.org/obo/GENO_0000002)

@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/PopulationOfIndividualOrganisms](http://bioentity.io/vocab/PopulationOfIndividualOrganisms)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[organismal entity]^-[population of individual organisms], [population of individual organisms]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[organismal entity|]^-[population of individual organisms|in taxon], [population of individual organisms|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
  * [SIO:001061](http://semanticscience.org/resource/SIO_001061)

@@ -53,7 +53,18 @@ class YumlGenerator(Generator):
             self.tr_class(c)
 
     def add_arc(self, sc, oc, sym):
-        self.arcs.append('[{}]{}[{}]'.format(sc,sym,oc))
+        scbox = self.box(sc)
+        ocbox = self.box(oc)
+        self.arcs.append('[{}]{}[{}]'.format(scbox,sym,ocbox))
+
+    def box(self, cn):
+        mgr = self.manager
+        c = mgr.classdef(cn)
+        slots = mgr.class_slotdefs(c, False, True)
+        rows = []
+        for sn in slots:
+            rows.append(sn)
+        return '{}|{}'.format(cn, ";".join(rows))
         
     
     def tr_class(self, c, recurse=False):

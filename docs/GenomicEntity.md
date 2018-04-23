@@ -10,7 +10,7 @@ an entity that can either be directly located on a genome (gene, transcript, exo
 URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/GenomicEntity)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[molecular entity]^-[genomic entity], [genomic entity]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[molecular entity|in taxon]^-[genomic entity|has biological sequence], [genomic entity|has biological sequence]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
  * [SO:0000110](http://purl.obolibrary.org/obo/SO_0000110)

@@ -10,7 +10,7 @@ May be a chemical entity or a formulation with a chemical entity as active ingre
 URI: [http://bioentity.io/vocab/ChemicalSubstance](http://bioentity.io/vocab/ChemicalSubstance)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[molecular entity]^-[chemical substance], [chemical substance]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[molecular entity|in taxon]^-[chemical substance|], [chemical substance|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
  * [SIO:010004](http://semanticscience.org/resource/SIO_010004)

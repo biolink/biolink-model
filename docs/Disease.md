@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[disease or phenotypic feature]^-[disease], [disease]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[disease or phenotypic feature|in taxon]^-[disease|], [disease|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
  * [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)

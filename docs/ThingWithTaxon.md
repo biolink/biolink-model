@@ -10,7 +10,7 @@ A mixin that can be used on any entity with a taxon
 URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingWithTaxon)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[thing with taxon]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[thing with taxon|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
 

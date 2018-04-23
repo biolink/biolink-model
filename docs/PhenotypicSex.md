@@ -10,7 +10,7 @@ An attribute corresponding to the phenotypic sex of the individual, based upon t
 URI: [http://bioentity.io/vocab/PhenotypicSex](http://bioentity.io/vocab/PhenotypicSex)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[biological sex]^-[phenotypic sex])
+![img](http://yuml.me/diagram/nofunky/class/[biological sex|]^-[phenotypic sex|])
 ## Mappings
 
  * [PATO:0001894](http://purl.obolibrary.org/obo/PATO_0001894)

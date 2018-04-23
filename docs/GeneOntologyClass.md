@@ -10,7 +10,7 @@ an ontology class that describes a functional aspect of a gene, gene prodoct or 
 URI: [http://bioentity.io/vocab/GeneOntologyClass](http://bioentity.io/vocab/GeneOntologyClass)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[ontology class]^-[gene ontology class])
+![img](http://yuml.me/diagram/nofunky/class/[ontology class|]^-[gene ontology class|])
 ## Mappings
 
 

@@ -10,7 +10,7 @@ A location in or around a cell
 URI: [http://bioentity.io/vocab/CellularComponent](http://bioentity.io/vocab/CellularComponent)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[anatomical entity]^-[cellular component], [cellular component]-in taxon >[organism taxon], [ontology class]^-[organism taxon])
+![img](http://yuml.me/diagram/nofunky/class/[anatomical entity|in taxon]^-[cellular component|], [cellular component|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
  * [GO:0005575](http://purl.obolibrary.org/obo/GO_0005575)
