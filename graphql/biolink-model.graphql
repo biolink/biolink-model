@@ -44,11 +44,13 @@ interface FrequencyQuantifier {
 type NamedThing {
   id: String!
   label: String
+  category: String
 }
 
 interface BiologicalEntity {
   id: String!
   label: String
+  category: String
 }
 
 interface OntologyClass {
@@ -67,73 +69,86 @@ type OrganismTaxon {
 interface OrganismalEntity {
   id: String!
   label: String
+  category: String
 }
 
 type IndividualOrganism implements ThingWithTaxon {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type Case {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type PopulationOfIndividualOrganisms implements ThingWithTaxon {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type Biosample implements ThingWithTaxon {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type DiseaseOrPhenotypicFeature implements ThingWithTaxon {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type Disease {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type PhenotypicFeature {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type Environment {
   id: String!
   label: String
+  category: String
 }
 
 interface InformationContentEntity {
   id: String!
   label: String
+  category: String
 }
 
 type ConfidenceLevel {
   id: String!
   label: String
+  category: String
 }
 
 type EvidenceType {
   id: String!
   label: String
+  category: String
 }
 
 type Publication {
   id: String!
   label: String
+  category: String
 }
 
 interface AdministrativeEntity {
@@ -145,24 +160,28 @@ type Provider {
 type MolecularEntity implements ThingWithTaxon {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type ChemicalSubstance {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type Drug {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type Metabolite {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -172,54 +191,64 @@ type Attribute implements OntologyClass {
 type AnatomicalEntity implements ThingWithTaxon {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type LifeStage implements ThingWithTaxon {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type PlanetaryEntity {
   id: String!
   label: String
+  category: String
 }
 
 type EnvironmentalProcess implements Occurrent {
   id: String
   label: String
+  category: String
 }
 
 type EnvironmentalFeature {
   id: String!
   label: String
+  category: String
 }
 
 type ClinicalEntity {
   id: String!
   label: String
+  category: String
 }
 
 type ClinicalTrial {
   id: String!
   label: String
+  category: String
 }
 
 type ClinicalIntervention {
   id: String!
   label: String
+  category: String
 }
 
 type Device {
   id: String!
   label: String
+  category: String
 }
 
 type GenomicEntity {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -227,6 +256,7 @@ type Genome {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -234,6 +264,7 @@ type Transcript {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -241,6 +272,7 @@ type Exon {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -248,6 +280,7 @@ type CodingSequence {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -255,6 +288,7 @@ type GeneOrGeneProduct {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -262,6 +296,7 @@ type Gene {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -269,6 +304,7 @@ type GeneProduct {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -276,6 +312,7 @@ type Protein {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -283,6 +320,7 @@ interface GeneProductIsoform {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -290,6 +328,7 @@ type ProteinIsoform implements GeneProductIsoform {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -297,6 +336,7 @@ type RnaProduct {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -304,6 +344,7 @@ type RnaProductIsoform implements GeneProductIsoform {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -311,6 +352,7 @@ type NoncodingRnaProduct {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -318,12 +360,14 @@ type Microrna {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type MacromolecularComplex {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -333,6 +377,7 @@ interface GeneGrouping {
 type GeneFamily implements GeneGrouping {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -344,6 +389,7 @@ type Genotype {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -351,6 +397,7 @@ type Haplotype {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
@@ -359,12 +406,14 @@ type SequenceVariant {
   hasBiologicalSequence: String
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type DrugExposure {
   id: String!
   label: String
+  category: String
 }
 
 type Treatment {
@@ -372,6 +421,7 @@ type Treatment {
   hasExposureParts: [DrugExposure]!
   id: String!
   label: String
+  category: String
 }
 
 type GeographicLocation {
@@ -379,6 +429,7 @@ type GeographicLocation {
   longitude: String
   id: String!
   label: String
+  category: String
 }
 
 type GeographicLocationAtTime {
@@ -387,6 +438,7 @@ type GeographicLocationAtTime {
   timepoint: String
   id: String!
   label: String
+  category: String
 }
 
 interface Association {
@@ -400,6 +452,7 @@ interface Association {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type GenotypeToGenotypePartAssociation {
@@ -413,6 +466,7 @@ type GenotypeToGenotypePartAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type GenotypeToGeneAssociation {
@@ -426,6 +480,7 @@ type GenotypeToGeneAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type GenotypeToVariantAssociation {
@@ -439,6 +494,7 @@ type GenotypeToVariantAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 interface GeneToGeneAssociation {
@@ -452,6 +508,7 @@ interface GeneToGeneAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type GeneToGeneHomologyAssociation {
@@ -465,6 +522,7 @@ type GeneToGeneHomologyAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 interface MolecularInteraction {
@@ -478,6 +536,7 @@ interface MolecularInteraction {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type PairwiseGeneOrProteinInteractionAssociation implements MolecularInteraction {
@@ -491,6 +550,7 @@ type PairwiseGeneOrProteinInteractionAssociation implements MolecularInteraction
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 interface ChemicalToThingAssociation {
@@ -504,6 +564,7 @@ interface ChemicalToThingAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 interface CaseToThingAssociation {
@@ -517,6 +578,7 @@ interface CaseToThingAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type ChemicalToGeneAssociation implements ChemicalToThingAssociation {
@@ -530,6 +592,7 @@ type ChemicalToGeneAssociation implements ChemicalToThingAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation {
@@ -543,6 +606,7 @@ type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToThingA
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type ChemicalToPathwayAssociation implements ChemicalToThingAssociation {
@@ -556,6 +620,7 @@ type ChemicalToPathwayAssociation implements ChemicalToThingAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type ChemicalToGeneAssociation implements ChemicalToThingAssociation {
@@ -569,6 +634,7 @@ type ChemicalToGeneAssociation implements ChemicalToThingAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 interface BiosampleToThingAssociation {
@@ -582,6 +648,7 @@ interface BiosampleToThingAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type BiosampleToDiseaseOrPhenotypicFeatureAssociation implements BiosampleToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation {
@@ -595,6 +662,7 @@ type BiosampleToDiseaseOrPhenotypicFeatureAssociation implements BiosampleToThin
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 interface EntityToPhenotypicFeatureAssociation {
@@ -612,6 +680,7 @@ interface EntityToPhenotypicFeatureAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 interface EntityToDiseaseAssociation {
@@ -631,6 +700,7 @@ interface DiseaseOrPhenotypicFeatureAssociationToThingAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation {
@@ -644,6 +714,7 @@ type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 interface ThingToDiseaseOrPhenotypicFeatureAssociation {
@@ -657,6 +728,7 @@ interface ThingToDiseaseOrPhenotypicFeatureAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 interface DiseaseToThingAssociation {
@@ -670,6 +742,7 @@ interface DiseaseToThingAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, GenotypeToThingAssociation {
@@ -683,6 +756,7 @@ type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeature
   providedBy: Provider
   id: String!
   label: String
+  category: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
   onsetQualifier: Onset
@@ -700,6 +774,7 @@ type EnvironmentToPhenotypicFeatureAssociation implements EntityToPhenotypicFeat
   providedBy: Provider
   id: String!
   label: String
+  category: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
   onsetQualifier: Onset
@@ -717,6 +792,7 @@ type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureA
   providedBy: Provider
   id: String!
   label: String
+  category: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
   onsetQualifier: Onset
@@ -734,6 +810,7 @@ type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
   providedBy: Provider
   id: String!
   label: String
+  category: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
   onsetQualifier: Onset
@@ -751,6 +828,7 @@ interface GeneToThingAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 interface VariantToThingAssociation {
@@ -764,6 +842,7 @@ interface VariantToThingAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, GeneToThingAssociation {
@@ -777,6 +856,7 @@ type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAsso
   providedBy: Provider
   id: String!
   label: String
+  category: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
   onsetQualifier: Onset
@@ -794,6 +874,7 @@ type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThing
   providedBy: Provider
   id: String
   label: String
+  category: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
   onsetQualifier: Onset
@@ -811,6 +892,7 @@ type VariantToPopulationAssociation implements VariantToThingAssociation, Freque
   providedBy: Provider
   id: String!
   label: String
+  category: String
   hasCount: String
   hasTotal: String
   hasQuotient: String
@@ -828,6 +910,7 @@ type VariantToPhenotypicFeatureAssociation implements VariantToThingAssociation,
   providedBy: Provider
   id: String!
   label: String
+  category: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
   onsetQualifier: Onset
@@ -845,6 +928,7 @@ type VariantToDiseaseAssociation implements VariantToThingAssociation, EntityToD
   providedBy: Provider
   id: String!
   label: String
+  category: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
   onsetQualifier: Onset
@@ -864,6 +948,7 @@ type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDi
   providedBy: Provider
   id: String
   label: String
+  category: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
   onsetQualifier: Onset
@@ -881,6 +966,7 @@ type GeneHasVariantThatContributesToDiseaseAssociation {
   providedBy: Provider
   id: String
   label: String
+  category: String
   frequencyQualifier: FrequencyValue
   severityQualifier: SeverityValue
   onsetQualifier: Onset
@@ -897,6 +983,7 @@ interface GenotypeToThingAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type GeneToExpressionSiteAssociation {
@@ -912,6 +999,7 @@ type GeneToExpressionSiteAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 interface SequenceVariantModulatesTreatmentAssociation {
@@ -925,6 +1013,7 @@ interface SequenceVariantModulatesTreatmentAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type GeneToGoTermAssociation {
@@ -938,12 +1027,14 @@ type GeneToGoTermAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type AssociationResultSet {
   associations: [Association]
   id: String!
   label: String
+  category: String
 }
 
 type GenomicSequenceLocalization {
@@ -961,6 +1052,7 @@ type GenomicSequenceLocalization {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type SequenceFeatureRelationship {
@@ -974,6 +1066,7 @@ type SequenceFeatureRelationship {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type TranscriptToGeneRelationship {
@@ -987,6 +1080,7 @@ type TranscriptToGeneRelationship {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type GeneToGeneProductRelationship {
@@ -1000,6 +1094,7 @@ type GeneToGeneProductRelationship {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type ExonToTranscriptRelationship {
@@ -1013,6 +1108,7 @@ type ExonToTranscriptRelationship {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type GeneRegulatoryRelationship {
@@ -1026,6 +1122,7 @@ type GeneRegulatoryRelationship {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type AnatomicalEntityToAnatomicalEntityAssociation {
@@ -1039,6 +1136,7 @@ type AnatomicalEntityToAnatomicalEntityAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type AnatomicalEntityPartOfAnatomicalEntityAssociation {
@@ -1052,6 +1150,7 @@ type AnatomicalEntityPartOfAnatomicalEntityAssociation {
   providedBy: Provider
   id: String!
   label: String
+  category: String
 }
 
 type Occurrent {
@@ -1060,6 +1159,7 @@ type Occurrent {
 type MolecularActivity implements Occurrent {
   id: String
   label: String
+  category: String
 }
 
 type ActivityAndBehavior {
@@ -1074,33 +1174,39 @@ type Phenomenon {
 type BiologicalProcess implements Occurrent {
   id: String
   label: String
+  category: String
 }
 
 type Pathway {
   id: String
   label: String
+  category: String
 }
 
 type Physiology {
   id: String
   label: String
+  category: String
 }
 
 type CellularComponent {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type Cell {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 
 type GrossAnatomicalStructure {
   id: String
   label: String
+  category: String
   inTaxon: OrganismTaxon
 }
 

@@ -15,6 +15,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "category",
     "has_biological_sequence",
     "id",
     "in_taxon",
@@ -22,6 +23,13 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 })
 public class Transcript {
 
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * 
+     */
+    @JsonProperty("category")
+    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class")
+    private String category;
     /**
      * connects a genomic feature to its sequence
      * 
@@ -45,6 +53,24 @@ public class Transcript {
     @JsonProperty("label")
     @JsonPropertyDescription("A human-readable name for a thing")
     private String label;
+
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * 
+     */
+    @JsonProperty("category")
+    public String getCategory() {
+        return category;
+    }
+
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * 
+     */
+    @JsonProperty("category")
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     /**
      * connects a genomic feature to its sequence
@@ -112,12 +138,12 @@ public class Transcript {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasBiologicalSequence", hasBiologicalSequence).append("id", id).append("inTaxon", inTaxon).append("label", label).toString();
+        return new ToStringBuilder(this).append("category", category).append("hasBiologicalSequence", hasBiologicalSequence).append("id", id).append("inTaxon", inTaxon).append("label", label).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasBiologicalSequence).append(id).append(label).append(inTaxon).toHashCode();
+        return new HashCodeBuilder().append(hasBiologicalSequence).append(id).append(label).append(category).append(inTaxon).toHashCode();
     }
 
     @Override
@@ -129,7 +155,7 @@ public class Transcript {
             return false;
         }
         Transcript rhs = ((Transcript) other);
-        return new EqualsBuilder().append(hasBiologicalSequence, rhs.hasBiologicalSequence).append(id, rhs.id).append(label, rhs.label).append(inTaxon, rhs.inTaxon).isEquals();
+        return new EqualsBuilder().append(hasBiologicalSequence, rhs.hasBiologicalSequence).append(id, rhs.id).append(label, rhs.label).append(category, rhs.category).append(inTaxon, rhs.inTaxon).isEquals();
     }
 
 }

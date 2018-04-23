@@ -15,6 +15,11 @@ fields:
   display_name: label
   id: label
   property: []
+- description: Name of the high level ontology class in which this entity is categorized.
+    Corresponds to the label for the biolink entity type class
+  display_name: category
+  id: category
+  property: []
 - description: connects a thing to a class representing a taxon
   display_name: in taxon
   id: in_taxon

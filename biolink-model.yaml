@@ -345,6 +345,14 @@ slots:
     mappings:
       - "rdfs:label"
   
+  - name: category
+    domain: named thing
+    range: label type
+    description: >-
+      Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+    mappings:
+      - "rdf:type"
+  
   - name: full name
     domain: named thing
     range: label type
@@ -713,11 +721,13 @@ classes:
     slots:
       - id
       - label
+      - category
     slot_usage:
       - name: id
         required: true
     mappings:
       - "UMLSSG:OBJC"
+      - WD:Q35120
 
   - name: biological entity
     is_a: named thing
@@ -1862,11 +1872,13 @@ classes:
           number in object population that carry a particular allele, aka allele count
         examples:
           - value: "4"
+            description: 4 individuals in gnomad set
       - name: has total
         description: >-
           number all populations that carry a particular allele, aka allele number
         examples:
-          - value: "4"
+          - value: "24014"
+            description: 24014 individuals in gnomad set
     slots:
       - frequency qualifier
     slots:

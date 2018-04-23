@@ -26,6 +26,9 @@
             },
             "type": "array"
         },
+        "category": {
+            "type": "string"
+        },
         "causes": {
             "type": "string"
         },
@@ -269,6 +272,10 @@
         "AnatomicalEntity": {
             "description": "A subcellular location, cell type or gross anatomical part",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -290,6 +297,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "id": {
@@ -343,6 +354,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "id": {
@@ -400,6 +415,10 @@
                     },
                     "type": "array"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -422,6 +441,10 @@
         "BiologicalProcess": {
             "description": "One or more causally connected executions of molecular functions",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -444,6 +467,10 @@
         "Biosample": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -465,6 +492,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "id": {
@@ -516,6 +547,10 @@
         "Case": {
             "description": "An individual organism that has a patient role in some clinical context.",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -537,6 +572,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "frequency_qualifier": {
@@ -604,6 +643,10 @@
         "Cell": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -623,6 +666,10 @@
         "CellularComponent": {
             "description": "A location in or around a cell",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -642,6 +689,10 @@
         "ChemicalSubstance": {
             "description": "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -663,6 +714,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "id": {
@@ -718,6 +773,10 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -771,6 +830,10 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -820,6 +883,10 @@
         "ClinicalEntity": {
             "description": "Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -835,6 +902,10 @@
         "ClinicalIntervention": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -857,6 +928,10 @@
         "ClinicalTrial": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -872,6 +947,10 @@
         "CodingSequence": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -895,6 +974,10 @@
         "ConfidenceLevel": {
             "description": "Level of confidence in a statement",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -910,6 +993,10 @@
         "Device": {
             "description": "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -925,6 +1012,10 @@
         "Disease": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -944,6 +1035,10 @@
         "DiseaseOrPhenotypicFeature": {
             "description": "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -965,6 +1060,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "id": {
@@ -1018,6 +1117,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "frequency_qualifier": {
@@ -1085,6 +1188,10 @@
         "Drug": {
             "description": "A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1104,6 +1211,10 @@
         "DrugExposure": {
             "description": "A drug exposure is an intake of a particular chemical substance",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1119,6 +1230,10 @@
         "Environment": {
             "description": "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1136,6 +1251,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "frequency_qualifier": {
@@ -1203,6 +1322,10 @@
         "EnvironmentalFeature": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1218,6 +1341,10 @@
         "EnvironmentalProcess": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1233,6 +1360,10 @@
         "EvidenceType": {
             "description": "Class of evidence that supports an association",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1248,6 +1379,10 @@
         "Exon": {
             "description": "A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -1273,6 +1408,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "id": {
@@ -1354,6 +1493,10 @@
         "Gene": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -1379,6 +1522,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "frequency_qualifier": {
@@ -1442,6 +1589,10 @@
         "GeneFamily": {
             "description": "any grouping of multiple genes or gene products related by common descent",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1463,6 +1614,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "frequency_qualifier": {
@@ -1537,6 +1692,10 @@
         "GeneOrGeneProduct": {
             "description": "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -1560,6 +1719,10 @@
         "GeneProduct": {
             "description": "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -1585,6 +1748,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "id": {
@@ -1638,6 +1805,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "frequency_qualifier": {
@@ -1705,6 +1876,10 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1766,6 +1941,10 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1817,6 +1996,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "id": {
@@ -1872,6 +2055,10 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -1923,6 +2110,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "frequency_qualifier": {
@@ -1990,6 +2181,10 @@
         "Genome": {
             "description": "A genome is the sum of genetic material within a cell or virion.",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -2013,6 +2208,10 @@
         "GenomicEntity": {
             "description": "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -2038,6 +2237,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "end_interbase_coordinate": {
@@ -2103,6 +2306,10 @@
         "Genotype": {
             "description": "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -2131,6 +2338,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "id": {
@@ -2186,6 +2397,10 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2237,6 +2452,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "frequency_qualifier": {
@@ -2308,6 +2527,10 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2364,6 +2587,10 @@
         "GeographicLocation": {
             "description": "a location that can be described in lat/long coordinates",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2387,6 +2614,10 @@
         "GeographicLocationAtTime": {
             "description": "a location that can be described in lat/long coordinates, for a particular time",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2414,6 +2645,10 @@
         "GrossAnatomicalStructure": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2433,6 +2668,10 @@
         "Haplotype": {
             "description": "A set of zero or more Alleles on a single instance of a Sequence[VMC]",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -2456,6 +2695,10 @@
         "IndividualOrganism": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2475,6 +2718,10 @@
         "LifeStage": {
             "description": "A stage of development or growth of an organism, including post-natal adult stages",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2494,6 +2741,10 @@
         "MacromolecularComplex": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2513,6 +2764,10 @@
         "Metabolite": {
             "description": "Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2532,6 +2787,10 @@
         "Microrna": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -2555,6 +2814,10 @@
         "MolecularActivity": {
             "description": "An execution of a molecular function",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2570,6 +2833,10 @@
         "MolecularEntity": {
             "description": "A gene, gene product, small molecule or macromolecule (including protein complex)",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2589,6 +2856,10 @@
         "NamedThing": {
             "description": "a databased entity or concept/class",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2604,6 +2875,10 @@
         "NoncodingRnaProduct": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -2657,6 +2932,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "id": {
@@ -2715,6 +2994,10 @@
         "Pathway": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2737,6 +3020,10 @@
         "PhenotypicFeature": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2763,6 +3050,10 @@
         "Physiology": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2778,6 +3069,10 @@
         "PlanetaryEntity": {
             "description": "Any entity or process that exists at the level of the whole planet",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2793,6 +3088,10 @@
         "PopulationOfIndividualOrganisms": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2819,6 +3118,10 @@
         "Protein": {
             "description": "A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -2842,6 +3145,10 @@
         "ProteinIsoform": {
             "description": "Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -2872,6 +3179,10 @@
         "Publication": {
             "description": "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
@@ -2894,6 +3205,10 @@
         "RnaProduct": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -2917,6 +3232,10 @@
         "RnaProductIsoform": {
             "description": "Represents a protein that is a specific isoform of the canonical or reference RNA",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -2949,6 +3268,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "id": {
@@ -3000,6 +3323,10 @@
         "SequenceVariant": {
             "description": "An allele that varies in its sequence from what is considered the reference allele at that locus.",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -3041,6 +3368,10 @@
         "Transcript": {
             "description": "An RNA synthesized on a DNA or RNA template by an RNA polymerase",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_biological_sequence": {
                     "description": "connects a genomic feature to its sequence",
                     "type": "string"
@@ -3066,6 +3397,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "id": {
@@ -3117,6 +3452,10 @@
         "Treatment": {
             "description": "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
+                    "type": "string"
+                },
                 "has_exposure_parts": {
                     "items": {
                         "type": "string"
@@ -3143,6 +3482,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "frequency_qualifier": {
@@ -3208,6 +3551,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "frequency_qualifier": {
@@ -3277,6 +3624,10 @@
             "properties": {
                 "association_type": {
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class",
                     "type": "string"
                 },
                 "frequency_qualifier": {

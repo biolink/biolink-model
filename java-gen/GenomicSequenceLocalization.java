@@ -18,6 +18,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "association_type",
+    "category",
     "end_interbase_coordinate",
     "genome_build",
     "id",
@@ -41,6 +42,13 @@ public class GenomicSequenceLocalization {
     @JsonProperty("association_type")
     @JsonPropertyDescription("connects an association to the type of association (e.g. gene to phenotype)")
     private String associationType;
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * 
+     */
+    @JsonProperty("category")
+    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class")
+    private String category;
     @JsonProperty("end_interbase_coordinate")
     private String endInterbaseCoordinate;
     /**
@@ -134,6 +142,24 @@ public class GenomicSequenceLocalization {
     @JsonProperty("association_type")
     public void setAssociationType(String associationType) {
         this.associationType = associationType;
+    }
+
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * 
+     */
+    @JsonProperty("category")
+    public String getCategory() {
+        return category;
+    }
+
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * 
+     */
+    @JsonProperty("category")
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     @JsonProperty("end_interbase_coordinate")
@@ -348,12 +374,12 @@ public class GenomicSequenceLocalization {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("associationType", associationType).append("endInterbaseCoordinate", endInterbaseCoordinate).append("genomeBuild", genomeBuild).append("id", id).append("label", label).append("negated", negated).append("object", object).append("phase", phase).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("startInterbaseCoordinate", startInterbaseCoordinate).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("associationType", associationType).append("category", category).append("endInterbaseCoordinate", endInterbaseCoordinate).append("genomeBuild", genomeBuild).append("id", id).append("label", label).append("negated", negated).append("object", object).append("phase", phase).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("startInterbaseCoordinate", startInterbaseCoordinate).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(phase).append(providedBy).append(negated).append(subject).append(associationType).append(qualifiers).append(label).append(relation).append(startInterbaseCoordinate).append(genomeBuild).append(id).append(endInterbaseCoordinate).append(object).append(publications).toHashCode();
+        return new HashCodeBuilder().append(phase).append(providedBy).append(negated).append(subject).append(associationType).append(qualifiers).append(label).append(relation).append(startInterbaseCoordinate).append(genomeBuild).append(id).append(category).append(endInterbaseCoordinate).append(object).append(publications).toHashCode();
     }
 
     @Override
@@ -365,7 +391,7 @@ public class GenomicSequenceLocalization {
             return false;
         }
         GenomicSequenceLocalization rhs = ((GenomicSequenceLocalization) other);
-        return new EqualsBuilder().append(phase, rhs.phase).append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(subject, rhs.subject).append(associationType, rhs.associationType).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(relation, rhs.relation).append(startInterbaseCoordinate, rhs.startInterbaseCoordinate).append(genomeBuild, rhs.genomeBuild).append(id, rhs.id).append(endInterbaseCoordinate, rhs.endInterbaseCoordinate).append(object, rhs.object).append(publications, rhs.publications).isEquals();
+        return new EqualsBuilder().append(phase, rhs.phase).append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(subject, rhs.subject).append(associationType, rhs.associationType).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(relation, rhs.relation).append(startInterbaseCoordinate, rhs.startInterbaseCoordinate).append(genomeBuild, rhs.genomeBuild).append(id, rhs.id).append(category, rhs.category).append(endInterbaseCoordinate, rhs.endInterbaseCoordinate).append(object, rhs.object).append(publications, rhs.publications).isEquals();
     }
 
 }

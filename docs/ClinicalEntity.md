@@ -10,7 +10,7 @@ Any entity or process that exists in the clinical domain and outside the biologi
 URI: [http://bioentity.io/vocab/ClinicalEntity](http://bioentity.io/vocab/ClinicalEntity)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[named thing|id;label]^-[clinical entity|])
+![img](http://yuml.me/diagram/nofunky/class/[named thing|id;label;category]^-[clinical entity|])
 ## Mappings
 
 
@@ -31,5 +31,9 @@ URI: [http://bioentity.io/vocab/ClinicalEntity](http://bioentity.io/vocab/Clinic
     * inherited from: [named thing](NamedThing.html)
  * [label](label.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)

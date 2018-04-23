@@ -15,6 +15,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "category",
     "id",
     "label",
     "latitude",
@@ -22,6 +23,13 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 })
 public class GeographicLocation {
 
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * 
+     */
+    @JsonProperty("category")
+    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class")
+    private String category;
     @JsonProperty("id")
     private String id;
     /**
@@ -45,6 +53,24 @@ public class GeographicLocation {
     @JsonProperty("longitude")
     @JsonPropertyDescription("longitude")
     private String longitude;
+
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * 
+     */
+    @JsonProperty("category")
+    public String getCategory() {
+        return category;
+    }
+
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * 
+     */
+    @JsonProperty("category")
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     @JsonProperty("id")
     public String getId() {
@@ -112,12 +138,12 @@ public class GeographicLocation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("id", id).append("label", label).append("latitude", latitude).append("longitude", longitude).toString();
+        return new ToStringBuilder(this).append("category", category).append("id", id).append("label", label).append("latitude", latitude).append("longitude", longitude).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(id).append(label).append(latitude).append(longitude).toHashCode();
+        return new HashCodeBuilder().append(id).append(label).append(category).append(latitude).append(longitude).toHashCode();
     }
 
     @Override
@@ -129,7 +155,7 @@ public class GeographicLocation {
             return false;
         }
         GeographicLocation rhs = ((GeographicLocation) other);
-        return new EqualsBuilder().append(id, rhs.id).append(label, rhs.label).append(latitude, rhs.latitude).append(longitude, rhs.longitude).isEquals();
+        return new EqualsBuilder().append(id, rhs.id).append(label, rhs.label).append(category, rhs.category).append(latitude, rhs.latitude).append(longitude, rhs.longitude).isEquals();
     }
 
 }

@@ -129,6 +129,7 @@ class NamedThingSchema(Schema):
     """
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -546,6 +547,7 @@ class ProteinIsoformSchema(ProteinSchema):
     has_biological_sequence = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
     in_taxon = fields.Str()
 
     @post_load
@@ -568,6 +570,7 @@ class RnaProductIsoformSchema(RnaProductSchema):
     has_biological_sequence = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
     in_taxon = fields.Str()
 
     @post_load
@@ -785,6 +788,7 @@ class PairwiseGeneOrProteinInteractionAssociationSchema(GeneToGeneAssociationSch
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -822,6 +826,7 @@ class ChemicalToGeneAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -841,6 +846,7 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -860,6 +866,7 @@ class ChemicalToPathwayAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -879,6 +886,7 @@ class ChemicalToGeneAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -909,6 +917,7 @@ class BiosampleToDiseaseOrPhenotypicFeatureAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -993,6 +1002,7 @@ class GenotypeToPhenotypicFeatureAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -1016,6 +1026,7 @@ class EnvironmentToPhenotypicFeatureAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -1039,6 +1050,7 @@ class DiseaseToPhenotypicFeatureAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -1062,6 +1074,7 @@ class CaseToPhenotypicFeatureAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -1103,6 +1116,7 @@ class GeneToPhenotypicFeatureAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -1125,6 +1139,7 @@ class GeneToDiseaseAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -1145,6 +1160,7 @@ class VariantToPopulationAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
     has_count = fields.Str()
     has_total = fields.Str()
     has_quotient = fields.Str()
@@ -1168,6 +1184,7 @@ class VariantToPhenotypicFeatureAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
     frequency_qualifier = fields.Str()
     severity_qualifier = fields.Str()
     onset_qualifier = fields.Str()
@@ -1191,6 +1208,7 @@ class VariantToDiseaseAssociationSchema(AssociationSchema):
     provided_by = fields.Str()
     id = fields.Str()
     label = fields.Str()
+    category = fields.Str()
     frequency_qualifier = fields.Str()
     severity_qualifier = fields.Str()
     onset_qualifier = fields.Str()

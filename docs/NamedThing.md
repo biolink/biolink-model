@@ -14,6 +14,7 @@ URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing
 ## Mappings
 
  * [UMLSSG:OBJC](http://purl.obolibrary.org/obo/UMLSSG_OBJC)
+ * [WD:Q35120](http://purl.obolibrary.org/obo/WD_Q35120)
 
 ## Inheritance
 
@@ -85,5 +86,9 @@ URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing
     * __Local__
  * [label](label.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * __Local__
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class_
     * __range__: label type
     * __Local__

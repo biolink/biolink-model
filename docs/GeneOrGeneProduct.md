@@ -54,6 +54,10 @@ URI: [http://bioentity.io/vocab/GeneOrGeneProduct](http://bioentity.io/vocab/Gen
     * _genes are typically designated by a short symbol and a full name. We map the symbol to the default display label and use an additional slot for full name_
     * __range__: symbol type
     * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
  * [in taxon](in_taxon.html)
     * _connects a thing to a class representing a taxon_
     * __range__: [organism taxon](OrganismTaxon.html)

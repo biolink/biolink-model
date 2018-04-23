@@ -64,3 +64,7 @@ URI: [http://bioentity.io/vocab/GeneToGeneHomologyAssociation](http://bioentity.
     * _A human-readable name for a thing_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
