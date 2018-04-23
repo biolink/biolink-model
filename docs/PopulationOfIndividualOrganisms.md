@@ -23,6 +23,9 @@ URI: [http://bioentity.io/vocab/PopulationOfIndividualOrganisms](http://bioentit
 ## Children
 
 
+## Used in
+
+ *  class: [variant to population association](VariantToPopulationAssociation.html) references: [population of individual organisms](PopulationOfIndividualOrganisms.html)
 
 ## Fields
 

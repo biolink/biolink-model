@@ -18,6 +18,7 @@ URI: [http://bioentity.io/vocab/molecularly_interacts_with](http://bioentity.io/
 
 ## Inheritance
 
+ *  is_a: [directly interacts with](directly_interacts_with.html)
 
 ## Children
 

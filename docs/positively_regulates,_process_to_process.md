@@ -10,7 +10,7 @@ None
 URI: [http://bioentity.io/vocab/positively_regulates,_process_to_process](http://bioentity.io/vocab/positively_regulates,_process_to_process)
 ## Mappings
 
- * [TODO](TODO)
+ * [RO:0002213](http://purl.obolibrary.org/obo/RO_0002213)
 
 ## Domain and Range
 

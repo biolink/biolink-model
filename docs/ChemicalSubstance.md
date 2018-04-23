@@ -25,6 +25,7 @@ URI: [http://bioentity.io/vocab/ChemicalSubstance](http://bioentity.io/vocab/Che
 ## Children
 
  *  child: [drug](Drug.html)
+ *  child: [metabolite](Metabolite.html)
 
 ## Used in
 

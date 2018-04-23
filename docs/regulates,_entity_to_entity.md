@@ -14,7 +14,7 @@ URI: [http://bioentity.io/vocab/regulates,_entity_to_entity](http://bioentity.io
 
 ## Domain and Range
 
- -> 
+[molecular entity](MolecularEntity.html) -> [molecular entity](MolecularEntity.html)
 
 ## Inheritance
 

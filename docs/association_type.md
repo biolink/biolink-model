@@ -54,6 +54,7 @@ URI: [http://bioentity.io/vocab/association_type](http://bioentity.io/vocab/asso
  *  usage: [variant to thing association](VariantToThingAssociation.html)
  *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
  *  usage: [gene to disease association](GeneToDiseaseAssociation.html)
+ *  usage: [variant to population association](VariantToPopulationAssociation.html)
  *  usage: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html)
  *  usage: [variant to disease association](VariantToDiseaseAssociation.html)
  *  usage: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)

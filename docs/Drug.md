@@ -14,6 +14,7 @@ URI: [http://bioentity.io/vocab/Drug](http://bioentity.io/vocab/Drug)
 ## Mappings
 
  * [WD:Q12140](http://purl.obolibrary.org/obo/WD_Q12140)
+ * [CHEBI:23888](http://purl.obolibrary.org/obo/CHEBI_23888)
 
 ## Inheritance
 

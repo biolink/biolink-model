@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/positively_regulates,_entity_to_entity](http://b
 ## Mappings
 
  * [RO:0002450](http://purl.obolibrary.org/obo/RO_0002450)
+ * [SEMMEDDB:STIMULATES](http://purl.obolibrary.org/obo/SEMMEDDB_STIMULATES)
 
 ## Domain and Range
 

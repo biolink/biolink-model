@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/negatively_regulates,_entity_to_entity](http://b
 ## Mappings
 
  * [RO:0002449](http://purl.obolibrary.org/obo/RO_0002449)
+ * [SEMMEDDB:INHIBITS](http://purl.obolibrary.org/obo/SEMMEDDB_INHIBITS)
 
 ## Domain and Range
 

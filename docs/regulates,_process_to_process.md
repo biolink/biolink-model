@@ -23,6 +23,7 @@ URI: [http://bioentity.io/vocab/regulates,_process_to_process](http://bioentity.
 ## Children
 
  *  child: [positively regulates, process to process](positively_regulates,_process_to_process.html)
+ *  child: [negatively regulates, process to process](negatively_regulates,_process_to_process.html)
 
 ## Used in
 

@@ -20,6 +20,7 @@ URI: [http://bioentity.io/vocab/VariantToThingAssociation](http://bioentity.io/v
 
 ## Children
 
+ *  mixin: [variant to population association](VariantToPopulationAssociation.html)
  *  mixin: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html)
  *  mixin: [variant to disease association](VariantToDiseaseAssociation.html)
 

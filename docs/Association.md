@@ -46,6 +46,7 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
  *  child: [gene to thing association](GeneToThingAssociation.html)
  *  child: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
  *  child: [gene to disease association](GeneToDiseaseAssociation.html)
+ *  child: [variant to population association](VariantToPopulationAssociation.html)
  *  child: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html)
  *  child: [variant to disease association](VariantToDiseaseAssociation.html)
  *  child: [genotype to thing association](GenotypeToThingAssociation.html)
