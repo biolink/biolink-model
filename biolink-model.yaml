@@ -28,6 +28,21 @@ types:
   - name: symbol type
     typeof: string
 
+  - name: frequency value
+    mappings:
+      - UO:0000105
+
+  - name: perecentage frequency value
+    typeof: double
+    mappings:
+      - UO:0000187
+
+  - name: quotient
+    aliases: ['ratio']
+    typeof: double
+    mappings:
+      - UO:0010006
+
   - name: unit
     typeof: string
     mappings:
@@ -356,6 +371,8 @@ slots:
     
   - name: subject
     is_a: association slot
+    local_names:
+      ga4gh: annotation subject
     description: >-
       connects an association to the subject of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
@@ -373,6 +390,8 @@ slots:
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     required: true
 #    range: named thing
+    local_names:
+      ga4gh: descriptor
     mappings:
       - rdf:object
       - owl:annotatedTarget
@@ -384,6 +403,9 @@ slots:
       the relationship type by which a subject is connected to an object in an association
     range: relationship type
     required: true
+    local_names:
+      ga4gh: annotation predicate
+      translator: descriptor
     mappings:
       - "rdf:predicate"
       - "owl:annotatedProperty"
@@ -452,6 +474,31 @@ slots:
     mappings:
       - wgs:long
 
+  - name: aggregate statistic
+    abstract: true
+      
+  - name: has count
+    description: >-
+      number of things with a particular property
+    is_a: aggregate statistic
+    range: integer
+
+  - name: has total
+    description: >-
+      total number of things in a particular reference set
+    is_a: aggregate statistic
+    range: integer
+
+  - name: has quotient
+    is_a: aggregate statistic
+    range: double
+
+  - name: has percentage
+    description: >-
+      equivalent to has quotient multiplied by 100
+    is_a: aggregate statistic
+    range: double
+
   - name: timepoint
     range: time type
     description: >-
@@ -474,6 +521,8 @@ slots:
     singular_name: qualifier
     description: >-
       connects an association to qualifiers that modify or qualify the meaning of that association
+    local_names:
+      ga4gh: annotation qualifier
     is_a: association slot
     multivalued: true
     range: ontology class
@@ -631,6 +680,34 @@ classes:
       - "HP:0003674"
     is_a: attribute
   
+  - name: relationship quantifier
+    abstract: true
+    mixin: true
+    
+  - name: senstivity quantifier
+    is_a: relationship quantifier
+    mixin: true
+    
+  - name: specificity quantifier
+    is_a: relationship quantifier
+    mixin: true
+    
+  - name: pathognomonicity quantifier
+    is_a: specificity quantifier
+    description: >-
+      A relationship quantifier between a variant or symptom and a disease, which is
+      high when the presence of the feature implies the existence of the disease
+    mixin: true
+  
+  - name: frequency quantifier
+    is_a: relationship quantifier
+    mixin: true
+    slots:
+      - has count
+      - has total
+      - has quotient
+      - has percentage
+  
   - name: named thing
     description: "a databased entity or concept/class"
     slots:
@@ -699,6 +776,8 @@ classes:
       An individual organism that has a patient role in some clinical context.
     
   - name: population of individual organisms
+    local_names:
+      ga4gh: population
     mixins:
       - thing with taxon
     is_a: organismal entity
@@ -1694,6 +1773,8 @@ classes:
 
   - name: variant to thing association
     is_a: association
+    local_names:
+      ga4gh: variant annotation
     defining_slots:
       - subject
     abstract: true
@@ -1745,6 +1826,52 @@ classes:
         description: >-
           gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
 
+  - name: variant to population association
+    description: >-
+      An association between a variant and a population, where the variant has particular frequency in the population
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - variant to thing association
+      - frequency quantifier
+    slot_usage:
+      - name: subject
+        range: sequence variant
+        description: >-
+          an allele that has a certain frequency in a given population
+        examples:
+          - value: "NC_000017.11:g.43051071A>T"
+            description: >-
+              17:41203088 A/C in gnomad
+      - name: object
+        range: population of individual organisms
+        description: >-
+          the population that is observed to have the frequency
+        examples:
+          - value: ANCESTRO:0010
+            description: African
+      - name: has quotient
+        description: >-
+          frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
+        examples:
+          - value: "0.0001666"
+      - name: has count
+        description: >-
+          number in object population that carry a particular allele, aka allele count
+        examples:
+          - value: "4"
+      - name: has total
+        description: >-
+          number all populations that carry a particular allele, aka allele number
+        examples:
+          - value: "4"
+    slots:
+      - frequency qualifier
+    slots:
+      - frequency qualifier
+          
   - name: variant to phenotypic feature association
     is_a: association
     defining_slots:
