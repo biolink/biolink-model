@@ -25,6 +25,7 @@ class MarkdownGenerator(Generator):
         self.emit_header(2, schema.name)
         self.para(schema.description)
         roots = [c for c in schema.classes if not c.is_a]
+
         self.emit_header(3, 'Classes')
         for c in roots:
             if not mgr.classdef(c).mixin:
@@ -35,7 +36,14 @@ class MarkdownGenerator(Generator):
         for c in roots:
             if mgr.classdef(c).mixin:
                 self.write_class_hier(c)
+        self.nl()
+
+        preds = mgr.predicates()
+        self.emit_header(3, 'Predicates and Properties')
+        for p in mgr.predicates():
+            self.bullet(self.link(p), 0)
             
+                
         self.close_fh()
 
         for c in schema.classes:

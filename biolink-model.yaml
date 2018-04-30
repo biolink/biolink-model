@@ -333,11 +333,14 @@ slots:
       
   - name: id
     identifier: true
-    abstract: true
+    description: >-
+      A unique identifier for a thing.
+      Must be either a CURIE shorthand for a URI or a complete URI
     domain: named thing
     range: identifier type
   
-  - name: label
+  - name: name
+    aliases: ['label', 'display name']
     domain: named thing
     range: label type
     description: >-
@@ -349,7 +352,8 @@ slots:
     domain: named thing
     range: label type
     description: >-
-      Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+      Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
+      In a neo4j database this MAY correspond to the neo4j label tag
     mappings:
       - "rdf:type"
   
@@ -720,7 +724,7 @@ classes:
     description: "a databased entity or concept/class"
     slots:
       - id
-      - label
+      - name
       - category
     slot_usage:
       - name: id
@@ -1043,10 +1047,10 @@ classes:
       a union of genes or gene products.
       Frequently an identifier for one will be used as proxy for another
     slot_usage:
-      - name: label
+      - name: name
         range: symbol type
         description: >-
-          genes are typically designated by a short symbol and a full name. We map the symbol to the default display label
+          genes are typically designated by a short symbol and a full name. We map the symbol to the default display name
           and use an additional slot for full name
       
   - name: gene
@@ -1302,7 +1306,6 @@ classes:
   ## ------
       
   - name: association
-    abstract: true
     is_a: information content entity
     description: >-
       A typed association between two entities, supported by evidence

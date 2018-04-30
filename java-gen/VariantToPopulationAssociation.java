@@ -25,7 +25,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "has_quotient",
     "has_total",
     "id",
-    "label",
+    "name",
     "negated",
     "object",
     "provided_by",
@@ -44,11 +44,11 @@ public class VariantToPopulationAssociation {
     @JsonPropertyDescription("connects an association to the type of association (e.g. gene to phenotype)")
     private String associationType;
     /**
-     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
      * 
      */
     @JsonProperty("category")
-    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class")
+    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag")
     private String category;
     /**
      * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
@@ -80,15 +80,20 @@ public class VariantToPopulationAssociation {
     @JsonProperty("has_total")
     @JsonPropertyDescription("total number of things in a particular reference set")
     private String hasTotal;
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
+    @JsonPropertyDescription("A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI")
     private String id;
     /**
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
+    @JsonProperty("name")
     @JsonPropertyDescription("A human-readable name for a thing")
-    private String label;
+    private String name;
     /**
      * if set to true, then the association is negated i.e. is not true
      * 
@@ -158,7 +163,7 @@ public class VariantToPopulationAssociation {
     }
 
     /**
-     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
      * 
      */
     @JsonProperty("category")
@@ -167,7 +172,7 @@ public class VariantToPopulationAssociation {
     }
 
     /**
-     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
      * 
      */
     @JsonProperty("category")
@@ -257,11 +262,19 @@ public class VariantToPopulationAssociation {
         this.hasTotal = hasTotal;
     }
 
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public String getId() {
         return id;
     }
 
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
@@ -271,18 +284,18 @@ public class VariantToPopulationAssociation {
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
-    public String getLabel() {
-        return label;
+    @JsonProperty("name")
+    public String getName() {
+        return name;
     }
 
     /**
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
-    public void setLabel(String label) {
-        this.label = label;
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -413,12 +426,12 @@ public class VariantToPopulationAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("associationType", associationType).append("category", category).append("frequencyQualifier", frequencyQualifier).append("hasCount", hasCount).append("hasPercentage", hasPercentage).append("hasQuotient", hasQuotient).append("hasTotal", hasTotal).append("id", id).append("label", label).append("negated", negated).append("object", object).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("associationType", associationType).append("category", category).append("frequencyQualifier", frequencyQualifier).append("hasCount", hasCount).append("hasPercentage", hasPercentage).append("hasQuotient", hasQuotient).append("hasTotal", hasTotal).append("id", id).append("name", name).append("negated", negated).append("object", object).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(providedBy).append(negated).append(subject).append(associationType).append(frequencyQualifier).append(qualifiers).append(label).append(hasCount).append(hasTotal).append(relation).append(hasPercentage).append(hasQuotient).append(id).append(category).append(object).append(publications).toHashCode();
+        return new HashCodeBuilder().append(providedBy).append(negated).append(subject).append(associationType).append(frequencyQualifier).append(qualifiers).append(hasCount).append(hasTotal).append(relation).append(hasPercentage).append(hasQuotient).append(name).append(id).append(category).append(object).append(publications).toHashCode();
     }
 
     @Override
@@ -430,7 +443,7 @@ public class VariantToPopulationAssociation {
             return false;
         }
         VariantToPopulationAssociation rhs = ((VariantToPopulationAssociation) other);
-        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(subject, rhs.subject).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(hasCount, rhs.hasCount).append(hasTotal, rhs.hasTotal).append(relation, rhs.relation).append(hasPercentage, rhs.hasPercentage).append(hasQuotient, rhs.hasQuotient).append(id, rhs.id).append(category, rhs.category).append(object, rhs.object).append(publications, rhs.publications).isEquals();
+        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(subject, rhs.subject).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(hasCount, rhs.hasCount).append(hasTotal, rhs.hasTotal).append(relation, rhs.relation).append(hasPercentage, rhs.hasPercentage).append(hasQuotient, rhs.hasQuotient).append(name, rhs.name).append(id, rhs.id).append(category, rhs.category).append(object, rhs.object).append(publications, rhs.publications).isEquals();
     }
 
 }

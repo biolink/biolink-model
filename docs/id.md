@@ -5,7 +5,7 @@ layout: default
 ## id
 
 
-None
+A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
 
 URI: [http://bioentity.io/vocab/id](http://bioentity.io/vocab/id)
 ## Mappings

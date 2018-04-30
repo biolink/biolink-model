@@ -112,6 +112,12 @@ class Manager(object):
             return s[0].lower() + s[1:]
         return n
 
+    def predicates(self):
+        if not self.schema.slots:
+            return []
+        return [self.slotdef(s) for s in self.schema.slots]
+            
+    
         
     def slotdef(self, sn, c=None):
         """

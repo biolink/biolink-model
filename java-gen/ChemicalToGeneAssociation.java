@@ -20,7 +20,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "association_type",
     "category",
     "id",
-    "label",
+    "name",
     "negated",
     "object",
     "provided_by",
@@ -39,21 +39,26 @@ public class ChemicalToGeneAssociation {
     @JsonPropertyDescription("connects an association to the type of association (e.g. gene to phenotype)")
     private String associationType;
     /**
-     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
      * 
      */
     @JsonProperty("category")
-    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class")
+    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag")
     private String category;
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
+    @JsonPropertyDescription("A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI")
     private String id;
     /**
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
+    @JsonProperty("name")
     @JsonPropertyDescription("A human-readable name for a thing")
-    private String label;
+    private String name;
     /**
      * if set to true, then the association is negated i.e. is not true
      * 
@@ -123,7 +128,7 @@ public class ChemicalToGeneAssociation {
     }
 
     /**
-     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
      * 
      */
     @JsonProperty("category")
@@ -132,7 +137,7 @@ public class ChemicalToGeneAssociation {
     }
 
     /**
-     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
      * 
      */
     @JsonProperty("category")
@@ -140,11 +145,19 @@ public class ChemicalToGeneAssociation {
         this.category = category;
     }
 
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public String getId() {
         return id;
     }
 
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
@@ -154,18 +167,18 @@ public class ChemicalToGeneAssociation {
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
-    public String getLabel() {
-        return label;
+    @JsonProperty("name")
+    public String getName() {
+        return name;
     }
 
     /**
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
-    public void setLabel(String label) {
-        this.label = label;
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -296,12 +309,12 @@ public class ChemicalToGeneAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("associationType", associationType).append("category", category).append("id", id).append("label", label).append("negated", negated).append("object", object).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("associationType", associationType).append("category", category).append("id", id).append("name", name).append("negated", negated).append("object", object).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(providedBy).append(negated).append(subject).append(associationType).append(qualifiers).append(id).append(label).append(category).append(object).append(publications).append(relation).toHashCode();
+        return new HashCodeBuilder().append(providedBy).append(negated).append(subject).append(associationType).append(name).append(qualifiers).append(id).append(category).append(object).append(publications).append(relation).toHashCode();
     }
 
     @Override
@@ -313,7 +326,7 @@ public class ChemicalToGeneAssociation {
             return false;
         }
         ChemicalToGeneAssociation rhs = ((ChemicalToGeneAssociation) other);
-        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(subject, rhs.subject).append(associationType, rhs.associationType).append(qualifiers, rhs.qualifiers).append(id, rhs.id).append(label, rhs.label).append(category, rhs.category).append(object, rhs.object).append(publications, rhs.publications).append(relation, rhs.relation).isEquals();
+        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(subject, rhs.subject).append(associationType, rhs.associationType).append(name, rhs.name).append(qualifiers, rhs.qualifiers).append(id, rhs.id).append(category, rhs.category).append(object, rhs.object).append(publications, rhs.publications).append(relation, rhs.relation).isEquals();
     }
 
 }

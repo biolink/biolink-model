@@ -17,28 +17,26 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonPropertyOrder({
     "category",
     "id",
-    "label",
     "latitude",
-    "longitude"
+    "longitude",
+    "name"
 })
 public class GeographicLocation {
 
     /**
-     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
      * 
      */
     @JsonProperty("category")
-    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class")
+    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag")
     private String category;
-    @JsonProperty("id")
-    private String id;
     /**
-     * A human-readable name for a thing
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
      * 
      */
-    @JsonProperty("label")
-    @JsonPropertyDescription("A human-readable name for a thing")
-    private String label;
+    @JsonProperty("id")
+    @JsonPropertyDescription("A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI")
+    private String id;
     /**
      * latitude
      * 
@@ -53,9 +51,16 @@ public class GeographicLocation {
     @JsonProperty("longitude")
     @JsonPropertyDescription("longitude")
     private String longitude;
+    /**
+     * A human-readable name for a thing
+     * 
+     */
+    @JsonProperty("name")
+    @JsonPropertyDescription("A human-readable name for a thing")
+    private String name;
 
     /**
-     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
      * 
      */
     @JsonProperty("category")
@@ -64,7 +69,7 @@ public class GeographicLocation {
     }
 
     /**
-     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
      * 
      */
     @JsonProperty("category")
@@ -72,32 +77,22 @@ public class GeographicLocation {
         this.category = category;
     }
 
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public String getId() {
         return id;
     }
 
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
-    }
-
-    /**
-     * A human-readable name for a thing
-     * 
-     */
-    @JsonProperty("label")
-    public String getLabel() {
-        return label;
-    }
-
-    /**
-     * A human-readable name for a thing
-     * 
-     */
-    @JsonProperty("label")
-    public void setLabel(String label) {
-        this.label = label;
     }
 
     /**
@@ -136,14 +131,32 @@ public class GeographicLocation {
         this.longitude = longitude;
     }
 
+    /**
+     * A human-readable name for a thing
+     * 
+     */
+    @JsonProperty("name")
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * A human-readable name for a thing
+     * 
+     */
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("category", category).append("id", id).append("label", label).append("latitude", latitude).append("longitude", longitude).toString();
+        return new ToStringBuilder(this).append("category", category).append("id", id).append("latitude", latitude).append("longitude", longitude).append("name", name).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(id).append(label).append(category).append(latitude).append(longitude).toHashCode();
+        return new HashCodeBuilder().append(name).append(id).append(category).append(latitude).append(longitude).toHashCode();
     }
 
     @Override
@@ -155,7 +168,7 @@ public class GeographicLocation {
             return false;
         }
         GeographicLocation rhs = ((GeographicLocation) other);
-        return new EqualsBuilder().append(id, rhs.id).append(label, rhs.label).append(category, rhs.category).append(latitude, rhs.latitude).append(longitude, rhs.longitude).isEquals();
+        return new EqualsBuilder().append(name, rhs.name).append(id, rhs.id).append(category, rhs.category).append(latitude, rhs.latitude).append(longitude, rhs.longitude).isEquals();
     }
 
 }

@@ -128,7 +128,7 @@ class NamedThingSchema(Schema):
     a databased entity or concept/class
     """
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
 
     @post_load
@@ -546,7 +546,7 @@ class ProteinIsoformSchema(ProteinSchema):
     """
     has_biological_sequence = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
     in_taxon = fields.Str()
 
@@ -569,7 +569,7 @@ class RnaProductIsoformSchema(RnaProductSchema):
     """
     has_biological_sequence = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
     in_taxon = fields.Str()
 
@@ -787,7 +787,7 @@ class PairwiseGeneOrProteinInteractionAssociationSchema(GeneToGeneAssociationSch
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
 
     @post_load
@@ -825,7 +825,7 @@ class ChemicalToGeneAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
 
     @post_load
@@ -845,7 +845,7 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
 
     @post_load
@@ -865,7 +865,7 @@ class ChemicalToPathwayAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
 
     @post_load
@@ -885,7 +885,7 @@ class ChemicalToGeneAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
 
     @post_load
@@ -916,7 +916,7 @@ class BiosampleToDiseaseOrPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
 
     @post_load
@@ -1001,7 +1001,7 @@ class GenotypeToPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
 
     @post_load
@@ -1025,7 +1025,7 @@ class EnvironmentToPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
 
     @post_load
@@ -1049,7 +1049,7 @@ class DiseaseToPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
 
     @post_load
@@ -1073,7 +1073,7 @@ class CaseToPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
 
     @post_load
@@ -1115,7 +1115,7 @@ class GeneToPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
 
     @post_load
@@ -1138,7 +1138,7 @@ class GeneToDiseaseAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
 
     @post_load
@@ -1159,7 +1159,7 @@ class VariantToPopulationAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
     has_count = fields.Str()
     has_total = fields.Str()
@@ -1183,7 +1183,7 @@ class VariantToPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
     frequency_qualifier = fields.Str()
     severity_qualifier = fields.Str()
@@ -1207,7 +1207,7 @@ class VariantToDiseaseAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
     category = fields.Str()
     frequency_qualifier = fields.Str()
     severity_qualifier = fields.Str()

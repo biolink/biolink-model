@@ -20,34 +20,39 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "category",
     "has_exposure_parts",
     "id",
-    "label",
+    "name",
     "treats"
 })
 public class Treatment {
 
     /**
-     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
      * 
      */
     @JsonProperty("category")
-    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class")
+    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag")
     private String category;
     @JsonProperty("has_exposure_parts")
     private List<String> hasExposureParts = new ArrayList<String>();
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
+    @JsonPropertyDescription("A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI")
     private String id;
     /**
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
+    @JsonProperty("name")
     @JsonPropertyDescription("A human-readable name for a thing")
-    private String label;
+    private String name;
     @JsonProperty("treats")
     private String treats;
 
     /**
-     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
      * 
      */
     @JsonProperty("category")
@@ -56,7 +61,7 @@ public class Treatment {
     }
 
     /**
-     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
      * 
      */
     @JsonProperty("category")
@@ -74,11 +79,19 @@ public class Treatment {
         this.hasExposureParts = hasExposureParts;
     }
 
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public String getId() {
         return id;
     }
 
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
@@ -88,18 +101,18 @@ public class Treatment {
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
-    public String getLabel() {
-        return label;
+    @JsonProperty("name")
+    public String getName() {
+        return name;
     }
 
     /**
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
-    public void setLabel(String label) {
-        this.label = label;
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
     }
 
     @JsonProperty("treats")
@@ -114,12 +127,12 @@ public class Treatment {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("category", category).append("hasExposureParts", hasExposureParts).append("id", id).append("label", label).append("treats", treats).toString();
+        return new ToStringBuilder(this).append("category", category).append("hasExposureParts", hasExposureParts).append("id", id).append("name", name).append("treats", treats).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasExposureParts).append(treats).append(id).append(label).append(category).toHashCode();
+        return new HashCodeBuilder().append(hasExposureParts).append(name).append(treats).append(id).append(category).toHashCode();
     }
 
     @Override
@@ -131,7 +144,7 @@ public class Treatment {
             return false;
         }
         Treatment rhs = ((Treatment) other);
-        return new EqualsBuilder().append(hasExposureParts, rhs.hasExposureParts).append(treats, rhs.treats).append(id, rhs.id).append(label, rhs.label).append(category, rhs.category).isEquals();
+        return new EqualsBuilder().append(hasExposureParts, rhs.hasExposureParts).append(name, rhs.name).append(treats, rhs.treats).append(id, rhs.id).append(category, rhs.category).isEquals();
     }
 
 }
