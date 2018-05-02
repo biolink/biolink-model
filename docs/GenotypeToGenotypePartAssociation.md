@@ -8,6 +8,9 @@ layout: default
 Any association between one genotype and a genotypic entity that is a sub-component of it
 
 URI: [http://bioentity.io/vocab/GenotypeToGenotypePartAssociation](http://bioentity.io/vocab/GenotypeToGenotypePartAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[genotype to genotype part association|], [genotype to genotype part association|]-association type >[ontology class|], [genotype to genotype part association|]-subject >[genotype|has zygosity], [genomic entity|has biological sequence]^-[genotype|has zygosity], [genotype|has zygosity]-has zygosity >[zygosity|], [attribute|]^-[zygosity|], [genotype|has zygosity]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [genotype to genotype part association|]-relation >[relationship type|], [genotype to genotype part association|]-object >[genotype|has zygosity], [genotype to genotype part association|]-qualifiers >[ontology class|], [genotype to genotype part association|]-publications >[publication|], [information content entity|]^-[publication|], [genotype to genotype part association|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 
@@ -31,7 +34,7 @@ URI: [http://bioentity.io/vocab/GenotypeToGenotypePartAssociation](http://bioent
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_
@@ -55,9 +58,14 @@ URI: [http://bioentity.io/vocab/GenotypeToGenotypePartAssociation](http://bioent
     * __range__: [provider](Provider.html)
     * inherited from: [association](Association.html)
  * [id](id.html)
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type [required]
     * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * [name](name.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)

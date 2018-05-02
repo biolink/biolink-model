@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation](http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[anatomical entity to anatomical entity association|], [anatomical entity to anatomical entity association|]-association type >[ontology class|], [anatomical entity to anatomical entity association|]-subject >[anatomical entity|in taxon], [organismal entity|]^-[anatomical entity|in taxon], [anatomical entity|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [anatomical entity to anatomical entity association|]-relation >[relationship type|], [anatomical entity to anatomical entity association|]-object >[anatomical entity|in taxon], [anatomical entity to anatomical entity association|]-qualifiers >[ontology class|], [anatomical entity to anatomical entity association|]-publications >[publication|], [information content entity|]^-[publication|], [anatomical entity to anatomical entity association|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 
@@ -32,7 +35,7 @@ URI: [http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation](h
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_
@@ -55,9 +58,14 @@ URI: [http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation](h
     * __range__: [provider](Provider.html)
     * inherited from: [association](Association.html)
  * [id](id.html)
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type [required]
     * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * [name](name.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)

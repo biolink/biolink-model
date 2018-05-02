@@ -8,9 +8,14 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/PhenotypicFeature](http://bioentity.io/vocab/PhenotypicFeature)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[disease or phenotypic feature|in taxon]^-[phenotypic feature|], [phenotypic feature|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
- * [UPHENO:0000001](http://purl.obolibrary.org/obo/UPHENO_0000001)
+ * [UPHENO:0001001](http://purl.obolibrary.org/obo/UPHENO_0001001)
+ * [SIO:010056](http://semanticscience.org/resource/SIO_010056)
+ * [WD:Q169872](http://purl.obolibrary.org/obo/WD_Q169872)
 
 ## Inheritance
 
@@ -27,14 +32,20 @@ URI: [http://bioentity.io/vocab/PhenotypicFeature](http://bioentity.io/vocab/Phe
  *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
+ *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
 
 ## Fields
 
  * [id](id.html)
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type
     * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * [name](name.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
  * [in taxon](in_taxon.html)

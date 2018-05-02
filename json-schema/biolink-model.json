@@ -1,7 +1,19 @@
 {
-    "$id": "http://bioentity.io/json-schema/biolink.json",
+    "$id": "https://biolink.github.io/biolink-model/ontology/biolink.ttl",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "definitions": {
+        "affects": {
+            "type": "string"
+        },
+        "affects_risk_for_condition": {
+            "type": "string"
+        },
+        "aggregate_statistic": {
+            "type": "string"
+        },
+        "associated_with_condition": {
+            "type": "string"
+        },
         "association_slot": {
             "type": "string"
         },
@@ -14,16 +26,40 @@
             },
             "type": "array"
         },
+        "category": {
+            "type": "string"
+        },
+        "causes": {
+            "type": "string"
+        },
+        "causes_or_contributes_to": {
+            "type": "string"
+        },
         "clinical_modifier_qualifier": {
+            "type": "string"
+        },
+        "coexists_with": {
             "type": "string"
         },
         "creation_date": {
             "type": "string"
         },
+        "derives_into": {
+            "type": "string"
+        },
         "description": {
             "type": "string"
         },
+        "directly_interacts_with": {
+            "type": "string"
+        },
+        "disrupts": {
+            "type": "string"
+        },
         "end_interbase_coordinate": {
+            "type": "string"
+        },
+        "expressed_in": {
             "type": "string"
         },
         "filler": {
@@ -38,7 +74,19 @@
         "genome_build": {
             "type": "string"
         },
+        "has_affected_sequence_feature": {
+            "type": "string"
+        },
+        "has_biological_sequence": {
+            "type": "string"
+        },
+        "has_biomarker": {
+            "type": "string"
+        },
         "has_confidence_level": {
+            "type": "string"
+        },
+        "has_count": {
             "type": "string"
         },
         "has_evidence": {
@@ -47,10 +95,40 @@
         "has_gene": {
             "type": "string"
         },
+        "has_gene_product": {
+            "type": "string"
+        },
+        "has_molecular_consequence": {
+            "type": "string"
+        },
+        "has_participant": {
+            "type": "string"
+        },
+        "has_percentage": {
+            "type": "string"
+        },
+        "has_phenotype": {
+            "type": "string"
+        },
+        "has_quotient": {
+            "type": "string"
+        },
+        "has_total": {
+            "type": "string"
+        },
         "has_zygosity": {
             "type": "string"
         },
         "id": {
+            "type": "string"
+        },
+        "in_cell_population_with": {
+            "type": "string"
+        },
+        "in_complex_with": {
+            "type": "string"
+        },
+        "in_pathway_with": {
             "type": "string"
         },
         "in_taxon": {
@@ -59,7 +137,7 @@
         "interbase_coordinate": {
             "type": "string"
         },
-        "label": {
+        "is_homologous_to": {
             "type": "string"
         },
         "latitude": {
@@ -68,7 +146,25 @@
         "longitude": {
             "type": "string"
         },
+        "manifestation_of": {
+            "type": "string"
+        },
+        "molecularly_interacts_with": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
         "negated": {
+            "type": "string"
+        },
+        "negatively_regulates": {
+            "type": "string"
+        },
+        "negatively_regulates,_entity_to_entity": {
+            "type": "string"
+        },
+        "negatively_regulates,_process_to_process": {
             "type": "string"
         },
         "object": {
@@ -77,7 +173,28 @@
         "onset_qualifier": {
             "type": "string"
         },
+        "part_of": {
+            "type": "string"
+        },
+        "participates_in": {
+            "type": "string"
+        },
         "phase": {
+            "type": "string"
+        },
+        "positively_regulates": {
+            "type": "string"
+        },
+        "positively_regulates,_entity_to_entity": {
+            "type": "string"
+        },
+        "positively_regulates,_process_to_process": {
+            "type": "string"
+        },
+        "precedes": {
+            "type": "string"
+        },
+        "prevents_condition": {
             "type": "string"
         },
         "provided_by": {
@@ -98,7 +215,19 @@
         "quantifier_qualifier": {
             "type": "string"
         },
+        "regulates": {
+            "type": "string"
+        },
+        "regulates,_entity_to_entity": {
+            "type": "string"
+        },
+        "regulates,_process_to_process": {
+            "type": "string"
+        },
         "relation": {
+            "type": "string"
+        },
+        "sequence_variant_qualifier": {
             "type": "string"
         },
         "severity_qualifier": {
@@ -113,6 +242,9 @@
         "start_interbase_coordinate": {
             "type": "string"
         },
+        "subclass_of": {
+            "type": "string"
+        },
         "subject": {
             "type": "string"
         },
@@ -121,46 +253,38 @@
         },
         "timepoint": {
             "type": "string"
+        },
+        "treated_by": {
+            "type": "string"
+        },
+        "treats_condition": {
+            "type": "string"
         }
     },
     "properties": {
-        "Allele": {
-            "description": "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus",
-            "properties": {
-                "has_gene": {
-                    "description": "connects and entity to a single gene",
-                    "type": "string"
-                },
-                "has_zygosity": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "in_taxon": {
-                    "description": "connects a thing to a class representing a taxon",
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                }
-            },
+        "ActivityAndBehavior": {
+            "description": "Activity or behavior of any independent integral living, organization or mechanical actor in the world",
+            "properties": {},
             "required": [],
-            "title": "Allele",
+            "title": "ActivityAndBehavior",
             "type": "object"
         },
         "AnatomicalEntity": {
             "description": "A subcellular location, cell type or gross anatomical part",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -176,10 +300,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -229,10 +358,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -275,6 +409,64 @@
             "title": "AnatomicalEntityToAnatomicalEntityAssociation",
             "type": "object"
         },
+        "Association": {
+            "description": "A typed association between two entities, supported by evidence",
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Association",
+            "type": "object"
+        },
         "AssociationResultSet": {
             "description": null,
             "properties": {
@@ -284,10 +476,15 @@
                     },
                     "type": "array"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -306,10 +503,15 @@
         "BiologicalProcess": {
             "description": "One or more causally connected executions of molecular functions",
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -328,14 +530,19 @@
         "Biosample": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -351,10 +558,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -400,14 +612,19 @@
         "Case": {
             "description": "An individual organism that has a patient role in some clinical context.",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -423,14 +640,19 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
                     "type": "string"
                 },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -488,14 +710,19 @@
         "Cell": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -507,14 +734,19 @@
         "CellularComponent": {
             "description": "A location in or around a cell",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -524,16 +756,21 @@
             "type": "object"
         },
         "ChemicalSubstance": {
-            "description": "may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part",
+            "description": "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -549,10 +786,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -602,10 +844,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -655,10 +902,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -704,10 +956,15 @@
         "ClinicalEntity": {
             "description": "Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities",
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -719,10 +976,15 @@
         "ClinicalIntervention": {
             "description": null,
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -741,10 +1003,15 @@
         "ClinicalTrial": {
             "description": null,
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -756,14 +1023,23 @@
         "CodingSequence": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -775,10 +1051,15 @@
         "ConfidenceLevel": {
             "description": "Level of confidence in a statement",
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -787,17 +1068,42 @@
             "title": "ConfidenceLevel",
             "type": "object"
         },
+        "Device": {
+            "description": "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Device",
+            "type": "object"
+        },
         "Disease": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -809,20 +1115,83 @@
         "DiseaseOrPhenotypicFeature": {
             "description": "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
             },
             "required": [],
             "title": "DiseaseOrPhenotypicFeature",
+            "type": "object"
+        },
+        "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation": {
+            "description": "An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.",
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
             "type": "object"
         },
         "DiseaseToPhenotypicFeatureAssociation": {
@@ -832,14 +1201,19 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
                     "type": "string"
                 },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -894,19 +1268,42 @@
             "title": "DiseaseToPhenotypicFeatureAssociation",
             "type": "object"
         },
+        "Drug": {
+            "description": "A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects a thing to a class representing a taxon",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Drug",
+            "type": "object"
+        },
         "DrugExposure": {
             "description": "A drug exposure is an intake of a particular chemical substance",
             "properties": {
-                "drug": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -918,10 +1315,15 @@
         "Environment": {
             "description": "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes",
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -937,14 +1339,19 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
                     "type": "string"
                 },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1002,10 +1409,15 @@
         "EnvironmentalFeature": {
             "description": null,
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -1017,10 +1429,15 @@
         "EnvironmentalProcess": {
             "description": null,
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -1032,10 +1449,15 @@
         "EvidenceType": {
             "description": "Class of evidence that supports an association",
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -1047,14 +1469,23 @@
         "Exon": {
             "description": "A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -1070,10 +1501,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1116,6 +1552,29 @@
             "title": "ExonToTranscriptRelationship",
             "type": "object"
         },
+        "FrequencyQuantifier": {
+            "description": null,
+            "properties": {
+                "has_count": {
+                    "description": "number of things with a particular property",
+                    "type": "string"
+                },
+                "has_percentage": {
+                    "description": "equivalent to has quotient multiplied by 100",
+                    "type": "string"
+                },
+                "has_quotient": {
+                    "type": "string"
+                },
+                "has_total": {
+                    "description": "total number of things in a particular reference set",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "FrequencyQuantifier",
+            "type": "object"
+        },
         "FrequencyValue": {
             "description": "describes the frequency of occurrence of an event or condition",
             "properties": {},
@@ -1126,14 +1585,23 @@
         "Gene": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -1149,14 +1617,19 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
                     "type": "string"
                 },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1210,14 +1683,19 @@
         "GeneFamily": {
             "description": "any grouping of multiple genes or gene products related by common descent",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -1233,14 +1711,19 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
                     "type": "string"
                 },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1278,6 +1761,10 @@
                     "description": "the relationship type by which a subject is connected to an object in an association",
                     "type": "string"
                 },
+                "sequence_variant_qualifier": {
+                    "description": "a qualifier used in an association where the variant",
+                    "type": "string"
+                },
                 "severity_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
                     "type": "string"
@@ -1301,14 +1788,23 @@
         "GeneOrGeneProduct": {
             "description": "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -1320,14 +1816,23 @@
         "GeneProduct": {
             "description": "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -1343,10 +1848,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1396,14 +1906,19 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
                     "type": "string"
                 },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1461,10 +1976,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1522,10 +2042,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1575,10 +2100,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1628,10 +2158,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1681,14 +2216,19 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
                     "type": "string"
                 },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1746,14 +2286,23 @@
         "Genome": {
             "description": "A genome is the sum of genetic material within a cell or virion.",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -1765,14 +2314,23 @@
         "GenomicEntity": {
             "description": "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -1788,6 +2346,10 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "end_interbase_coordinate": {
                     "type": "string"
                 },
@@ -1796,9 +2358,10 @@
                     "type": "string"
                 },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1851,17 +2414,26 @@
         "Genotype": {
             "description": "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "has_zygosity": {
                     "type": "string"
                 },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -1877,10 +2449,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1930,10 +2507,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -1983,14 +2565,19 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "frequency_qualifier": {
                     "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
                     "type": "string"
                 },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -2052,10 +2639,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -2108,11 +2700,12 @@
         "GeographicLocation": {
             "description": "a location that can be described in lat/long coordinates",
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
-                    "description": "A human-readable name for a thing",
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "latitude": {
@@ -2121,6 +2714,10 @@
                 },
                 "longitude": {
                     "description": "longitude",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
                     "type": "string"
                 }
             },
@@ -2131,11 +2728,12 @@
         "GeographicLocationAtTime": {
             "description": "a location that can be described in lat/long coordinates, for a particular time",
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
-                    "description": "A human-readable name for a thing",
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "latitude": {
@@ -2144,6 +2742,10 @@
                 },
                 "longitude": {
                     "description": "longitude",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
                     "type": "string"
                 },
                 "timepoint": {
@@ -2158,14 +2760,19 @@
         "GrossAnatomicalStructure": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2174,17 +2781,50 @@
             "title": "GrossAnatomicalStructure",
             "type": "object"
         },
-        "IndividualOrganism": {
-            "description": null,
+        "Haplotype": {
+            "description": "A set of zero or more Alleles on a single instance of a Sequence[VMC]",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Haplotype",
+            "type": "object"
+        },
+        "IndividualOrganism": {
+            "description": null,
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects a thing to a class representing a taxon",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2196,14 +2836,19 @@
         "LifeStage": {
             "description": "A stage of development or growth of an organism, including post-natal adult stages",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2215,14 +2860,19 @@
         "MacromolecularComplex": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2231,17 +2881,50 @@
             "title": "MacromolecularComplex",
             "type": "object"
         },
-        "Microrna": {
-            "description": null,
+        "Metabolite": {
+            "description": "Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Metabolite",
+            "type": "object"
+        },
+        "Microrna": {
+            "description": null,
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects a thing to a class representing a taxon",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2252,7 +2935,20 @@
         },
         "MolecularActivity": {
             "description": "An execution of a molecular function",
-            "properties": {},
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
             "required": [],
             "title": "MolecularActivity",
             "type": "object"
@@ -2260,14 +2956,19 @@
         "MolecularEntity": {
             "description": "A gene, gene product, small molecule or macromolecule (including protein complex)",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2279,10 +2980,15 @@
         "NamedThing": {
             "description": "a databased entity or concept/class",
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2294,14 +3000,23 @@
         "NoncodingRnaProduct": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2333,15 +3048,7 @@
         },
         "OrganismTaxon": {
             "description": null,
-            "properties": {
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                }
-            },
+            "properties": {},
             "required": [],
             "title": "OrganismTaxon",
             "type": "object"
@@ -2353,10 +3060,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -2399,13 +3111,25 @@
             "title": "PairwiseGeneOrProteinInteractionAssociation",
             "type": "object"
         },
+        "PathognomonicityQuantifier": {
+            "description": "A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease",
+            "properties": {},
+            "required": [],
+            "title": "PathognomonicityQuantifier",
+            "type": "object"
+        },
         "Pathway": {
             "description": null,
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2414,17 +3138,29 @@
             "title": "Pathway",
             "type": "object"
         },
+        "Phenomenon": {
+            "description": "a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question",
+            "properties": {},
+            "required": [],
+            "title": "Phenomenon",
+            "type": "object"
+        },
         "PhenotypicFeature": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2440,13 +3176,38 @@
             "title": "PhenotypicSex",
             "type": "object"
         },
+        "Physiology": {
+            "description": null,
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Physiology",
+            "type": "object"
+        },
         "PlanetaryEntity": {
             "description": "Any entity or process that exists at the level of the whole planet",
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2458,14 +3219,19 @@
         "PopulationOfIndividualOrganisms": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2474,23 +3240,67 @@
             "title": "PopulationOfIndividualOrganisms",
             "type": "object"
         },
+        "Procedure": {
+            "description": "A series of actions conducted in a certain order or manner",
+            "properties": {},
+            "required": [],
+            "title": "Procedure",
+            "type": "object"
+        },
         "Protein": {
-            "description": null,
+            "description": "A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
             },
             "required": [],
             "title": "Protein",
+            "type": "object"
+        },
+        "ProteinIsoform": {
+            "description": "Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects a thing to a class representing a taxon",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "ProteinIsoform",
             "type": "object"
         },
         "Provider": {
@@ -2503,10 +3313,15 @@
         "Publication": {
             "description": "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.",
             "properties": {
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2525,20 +3340,64 @@
         "RnaProduct": {
             "description": null,
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
             },
             "required": [],
             "title": "RnaProduct",
+            "type": "object"
+        },
+        "RnaProductIsoform": {
+            "description": "Represents a protein that is a specific isoform of the canonical or reference RNA",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects a thing to a class representing a taxon",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "RnaProductIsoform",
+            "type": "object"
+        },
+        "SenstivityQuantifier": {
+            "description": null,
+            "properties": {},
+            "required": [],
+            "title": "SenstivityQuantifier",
             "type": "object"
         },
         "SequenceFeatureRelationship": {
@@ -2548,10 +3407,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -2594,70 +3458,30 @@
             "title": "SequenceFeatureRelationship",
             "type": "object"
         },
-        "SequenceFeatureToSequenceRelationship": {
-            "description": "Relates a sequence feature such as a gene to its sequence",
-            "properties": {
-                "association_type": {
-                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "label": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                },
-                "negated": {
-                    "description": "if set to true, then the association is negated i.e. is not true",
-                    "type": "string"
-                },
-                "object": {
-                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                },
-                "provided_by": {
-                    "description": "connects an association to the agent (person, organization or group) that provided it",
-                    "type": "string"
-                },
-                "publications": {
-                    "description": "connects an association to publications supporting the association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "qualifiers": {
-                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "relation": {
-                    "description": "the relationship type by which a subject is connected to an object in an association",
-                    "type": "string"
-                },
-                "subject": {
-                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "SequenceFeatureToSequenceRelationship",
-            "type": "object"
-        },
         "SequenceVariant": {
-            "description": "A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.",
+            "description": "An allele that varies in its sequence from what is considered the reference allele at that locus.",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
+                "has_gene": {
+                    "description": "connects and entity to a single gene",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2673,17 +3497,33 @@
             "title": "SeverityValue",
             "type": "object"
         },
+        "SpecificityQuantifier": {
+            "description": null,
+            "properties": {},
+            "required": [],
+            "title": "SpecificityQuantifier",
+            "type": "object"
+        },
         "Transcript": {
             "description": "An RNA synthesized on a DNA or RNA template by an RNA polymerase",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "has_biological_sequence": {
+                    "description": "connects a genomic feature to its sequence",
+                    "type": "string"
+                },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
                 "in_taxon": {
                     "description": "connects a thing to a class representing a taxon",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 }
@@ -2699,10 +3539,15 @@
                     "description": "connects an association to the type of association (e.g. gene to phenotype)",
                     "type": "string"
                 },
-                "id": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
                     "type": "string"
                 },
-                "label": {
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -2748,6 +3593,10 @@
         "Treatment": {
             "description": "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'",
             "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
                 "has_exposure_parts": {
                     "items": {
                         "type": "string"
@@ -2755,9 +3604,10 @@
                     "type": "array"
                 },
                 "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
                     "type": "string"
                 },
-                "label": {
+                "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
                 },
@@ -2767,6 +3617,227 @@
             },
             "required": [],
             "title": "Treatment",
+            "type": "object"
+        },
+        "VariantToDiseaseAssociation": {
+            "description": null,
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "frequency_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "onset_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "severity_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "VariantToDiseaseAssociation",
+            "type": "object"
+        },
+        "VariantToPhenotypicFeatureAssociation": {
+            "description": null,
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "frequency_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "onset_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "severity_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+                    "type": "string"
+                },
+                "sex_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "VariantToPhenotypicFeatureAssociation",
+            "type": "object"
+        },
+        "VariantToPopulationAssociation": {
+            "description": "An association between a variant and a population, where the variant has particular frequency in the population",
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "frequency_qualifier": {
+                    "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+                    "type": "string"
+                },
+                "has_count": {
+                    "description": "number of things with a particular property",
+                    "type": "string"
+                },
+                "has_percentage": {
+                    "description": "equivalent to has quotient multiplied by 100",
+                    "type": "string"
+                },
+                "has_quotient": {
+                    "type": "string"
+                },
+                "has_total": {
+                    "description": "total number of things in a particular reference set",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "VariantToPopulationAssociation",
             "type": "object"
         },
         "Zygosity": {

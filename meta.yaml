@@ -1,3 +1,10 @@
+id: "http://bioentity.io/json-schema/meta.json"
+name: metamodel
+description: Metamodel for biolink model
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  
 slots:
 
   - name: id
@@ -12,10 +19,36 @@ slots:
     description: >-
       a unique key that identifies a slot or class in a schema
 
+  - name: singular_name
+    domain: element
+    description: >-
+      a name that is used in the singular form
+
+  - name: description
+    description: >-
+      a description
+
+  - name: license
+    domain: element
+    description: >-
+      license for the schema
+
   - name: note
     domain: element
     description: >-
       Notes about an element
+
+  - name: classes
+    domain: schema definition
+    multivalued: true
+    description: >-
+      classes defined in schema
+
+  - name: types
+    domain: schema definition
+    multivalued: true
+    description: >-
+      types defined in schema
 
   - name: imports
     domain: string
@@ -26,7 +59,9 @@ slots:
   - name: apply_to
     domain: string
     description: >-
-      A module which the definition is applied to
+      Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol,
+      and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism,
+      adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class.
     
   - name: abstract
     description: >-
@@ -34,6 +69,18 @@ slots:
       not instantiated.
       When generating golr-views, abstract classes are ignored
     range: boolean
+
+  - name: identifier
+    
+  - name: defining_slots
+
+  - name: value
+    
+  - name: domain
+    
+  - name: range
+    
+  - name: typeof
     
   - name: inlined
     description: >-
@@ -143,7 +190,7 @@ classes:
     abstract: true
     slots:
       - name
-      - singular name
+      - singular_name
       - is_a
       - description
       - note
@@ -175,7 +222,7 @@ classes:
     description: "A class or interface"
     is_a: definition
     slots:
-      - defining slots
+      - defining_slots
       - subclass_of
       - mixin
       - mixins
@@ -187,6 +234,7 @@ classes:
     is_a: definition
     slots:
       - mixins
+      - typeof
     
   - name: schema definition
     description: "A collection of definitions"
@@ -197,6 +245,7 @@ classes:
       - classes
       - types
       - imports
+      - license
 
   - name: example
     description: "example of usage"

@@ -10,18 +10,47 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * SequenceVariant
  * <p>
- * A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.
+ * An allele that varies in its sequence from what is considered the reference allele at that locus.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "category",
+    "has_biological_sequence",
+    "has_gene",
     "id",
     "in_taxon",
-    "label"
+    "name"
 })
 public class SequenceVariant {
 
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+     * 
+     */
+    @JsonProperty("category")
+    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag")
+    private String category;
+    /**
+     * connects a genomic feature to its sequence
+     * 
+     */
+    @JsonProperty("has_biological_sequence")
+    @JsonPropertyDescription("connects a genomic feature to its sequence")
+    private String hasBiologicalSequence;
+    /**
+     * connects and entity to a single gene
+     * 
+     */
+    @JsonProperty("has_gene")
+    @JsonPropertyDescription("connects and entity to a single gene")
+    private String hasGene;
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
+    @JsonPropertyDescription("A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI")
     private String id;
     /**
      * connects a thing to a class representing a taxon
@@ -34,15 +63,77 @@ public class SequenceVariant {
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
+    @JsonProperty("name")
     @JsonPropertyDescription("A human-readable name for a thing")
-    private String label;
+    private String name;
 
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+     * 
+     */
+    @JsonProperty("category")
+    public String getCategory() {
+        return category;
+    }
+
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+     * 
+     */
+    @JsonProperty("category")
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    /**
+     * connects a genomic feature to its sequence
+     * 
+     */
+    @JsonProperty("has_biological_sequence")
+    public String getHasBiologicalSequence() {
+        return hasBiologicalSequence;
+    }
+
+    /**
+     * connects a genomic feature to its sequence
+     * 
+     */
+    @JsonProperty("has_biological_sequence")
+    public void setHasBiologicalSequence(String hasBiologicalSequence) {
+        this.hasBiologicalSequence = hasBiologicalSequence;
+    }
+
+    /**
+     * connects and entity to a single gene
+     * 
+     */
+    @JsonProperty("has_gene")
+    public String getHasGene() {
+        return hasGene;
+    }
+
+    /**
+     * connects and entity to a single gene
+     * 
+     */
+    @JsonProperty("has_gene")
+    public void setHasGene(String hasGene) {
+        this.hasGene = hasGene;
+    }
+
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public String getId() {
         return id;
     }
 
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
@@ -70,28 +161,28 @@ public class SequenceVariant {
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
-    public String getLabel() {
-        return label;
+    @JsonProperty("name")
+    public String getName() {
+        return name;
     }
 
     /**
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
-    public void setLabel(String label) {
-        this.label = label;
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("id", id).append("inTaxon", inTaxon).append("label", label).toString();
+        return new ToStringBuilder(this).append("category", category).append("hasBiologicalSequence", hasBiologicalSequence).append("hasGene", hasGene).append("id", id).append("inTaxon", inTaxon).append("name", name).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(id).append(label).append(inTaxon).toHashCode();
+        return new HashCodeBuilder().append(inTaxon).append(name).append(hasBiologicalSequence).append(hasGene).append(id).append(category).toHashCode();
     }
 
     @Override
@@ -103,7 +194,7 @@ public class SequenceVariant {
             return false;
         }
         SequenceVariant rhs = ((SequenceVariant) other);
-        return new EqualsBuilder().append(id, rhs.id).append(label, rhs.label).append(inTaxon, rhs.inTaxon).isEquals();
+        return new EqualsBuilder().append(inTaxon, rhs.inTaxon).append(name, rhs.name).append(hasBiologicalSequence, rhs.hasBiologicalSequence).append(hasGene, rhs.hasGene).append(id, rhs.id).append(category, rhs.category).isEquals();
     }
 
 }

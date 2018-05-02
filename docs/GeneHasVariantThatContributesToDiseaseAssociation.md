@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociation](http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[gene to disease association|frequency qualifier;severity qualifier;onset qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]^-[gene has variant that contributes to disease association|sequence variant qualifier], [gene has variant that contributes to disease association|sequence variant qualifier]-sequence variant qualifier >[sequence variant|has gene], [genomic entity|has biological sequence]^-[sequence variant|has gene], [sequence variant|has gene]-has gene >[gene|], [gene or gene product|]^-[gene|], [gene|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [sequence variant|has gene]-in taxon >[organism taxon|], [gene has variant that contributes to disease association|sequence variant qualifier]-association type >[ontology class|], [gene has variant that contributes to disease association|sequence variant qualifier]-subject >[gene or gene product|], [genomic entity|has biological sequence]^-[gene or gene product|], [gene or gene product|]-in taxon >[organism taxon|], [gene has variant that contributes to disease association|sequence variant qualifier]-relation >[relationship type|], [gene has variant that contributes to disease association|sequence variant qualifier]-object >[disease|], [disease or phenotypic feature|in taxon]^-[disease|], [disease|]-in taxon >[organism taxon|], [gene has variant that contributes to disease association|sequence variant qualifier]-qualifiers >[ontology class|], [gene has variant that contributes to disease association|sequence variant qualifier]-publications >[publication|], [information content entity|]^-[publication|], [gene has variant that contributes to disease association|sequence variant qualifier]-provided by >[provider|], [administrative entity|]^-[provider|], [gene has variant that contributes to disease association|sequence variant qualifier]-frequency qualifier >[frequency value|], [attribute|]^-[frequency value|], [gene has variant that contributes to disease association|sequence variant qualifier]-severity qualifier >[severity value|], [attribute|]^-[severity value|], [gene has variant that contributes to disease association|sequence variant qualifier]-onset qualifier >[onset|], [attribute|]^-[onset|])
 ## Mappings
 
 
@@ -21,6 +24,10 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
 
 ## Fields
 
+ * [sequence variant qualifier](sequence_variant_qualifier.html)
+    * _a qualifier used in an association where the variant_
+    * __range__: [sequence variant](SequenceVariant.html)
+    * __Local__
  * [association type](association_type.html)
     * _connects an association to the type of association (e.g. gene to phenotype)_
     * __range__: [ontology class](OntologyClass.html)
@@ -31,7 +38,7 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_
@@ -55,10 +62,15 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
     * __range__: [provider](Provider.html)
     * inherited from: [association](Association.html)
  * [id](id.html)
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type
     * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * [name](name.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
  * [frequency qualifier](frequency_qualifier.html)

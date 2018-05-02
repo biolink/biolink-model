@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -17,39 +15,65 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "drug",
+    "category",
     "id",
-    "label"
+    "name"
 })
 public class DrugExposure {
 
-    @JsonProperty("drug")
-    private List<String> drug = new ArrayList<String>();
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+     * 
+     */
+    @JsonProperty("category")
+    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag")
+    private String category;
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
+    @JsonPropertyDescription("A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI")
     private String id;
     /**
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
+    @JsonProperty("name")
     @JsonPropertyDescription("A human-readable name for a thing")
-    private String label;
+    private String name;
 
-    @JsonProperty("drug")
-    public List<String> getDrug() {
-        return drug;
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+     * 
+     */
+    @JsonProperty("category")
+    public String getCategory() {
+        return category;
     }
 
-    @JsonProperty("drug")
-    public void setDrug(List<String> drug) {
-        this.drug = drug;
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+     * 
+     */
+    @JsonProperty("category")
+    public void setCategory(String category) {
+        this.category = category;
     }
 
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public String getId() {
         return id;
     }
 
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
@@ -59,28 +83,28 @@ public class DrugExposure {
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
-    public String getLabel() {
-        return label;
+    @JsonProperty("name")
+    public String getName() {
+        return name;
     }
 
     /**
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
-    public void setLabel(String label) {
-        this.label = label;
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("drug", drug).append("id", id).append("label", label).toString();
+        return new ToStringBuilder(this).append("category", category).append("id", id).append("name", name).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(id).append(label).append(drug).toHashCode();
+        return new HashCodeBuilder().append(name).append(id).append(category).toHashCode();
     }
 
     @Override
@@ -92,7 +116,7 @@ public class DrugExposure {
             return false;
         }
         DrugExposure rhs = ((DrugExposure) other);
-        return new EqualsBuilder().append(id, rhs.id).append(label, rhs.label).append(drug, rhs.drug).isEquals();
+        return new EqualsBuilder().append(name, rhs.name).append(id, rhs.id).append(category, rhs.category).isEquals();
     }
 
 }

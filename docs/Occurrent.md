@@ -8,6 +8,9 @@ layout: default
 A processual entity
 
 URI: [http://bioentity.io/vocab/Occurrent](http://bioentity.io/vocab/Occurrent)
+
+
+![img](http://yuml.me/diagram/nofunky/class/)
 ## Mappings
 
  * [BFO:0000003](http://purl.obolibrary.org/obo/BFO_0000003)
@@ -17,8 +20,11 @@ URI: [http://bioentity.io/vocab/Occurrent](http://bioentity.io/vocab/Occurrent)
 
 ## Children
 
- *  child: [molecular activity](MolecularActivity.html)
+ *  child: [activity and behavior](ActivityAndBehavior.html)
+ *  child: [procedure](Procedure.html)
+ *  child: [phenomenon](Phenomenon.html)
  *  mixin: [environmental process](EnvironmentalProcess.html)
+ *  mixin: [molecular activity](MolecularActivity.html)
  *  mixin: [biological process](BiologicalProcess.html)
 
 ## Used in

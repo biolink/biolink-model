@@ -74,12 +74,62 @@ class OnsetSchema(AttributeSchema):
     def make_object(self, data):
         Onset(**data)
 
+class RelationshipQuantifierSchema(Schema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        RelationshipQuantifier(**data)
+
+class SenstivityQuantifierSchema(RelationshipQuantifierSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        SenstivityQuantifier(**data)
+
+class SpecificityQuantifierSchema(RelationshipQuantifierSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        SpecificityQuantifier(**data)
+
+class PathognomonicityQuantifierSchema(SpecificityQuantifierSchema):
+    """
+    A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+    """
+
+    @post_load
+    def make_object(self, data):
+        PathognomonicityQuantifier(**data)
+
+class FrequencyQuantifierSchema(RelationshipQuantifierSchema):
+    """
+    None
+    """
+    has_count = fields.Str()
+    has_total = fields.Str()
+    has_quotient = fields.Str()
+    has_percentage = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        FrequencyQuantifier(**data)
+
 class NamedThingSchema(Schema):
     """
     a databased entity or concept/class
     """
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -122,7 +172,7 @@ class ThingWithTaxonSchema(Schema):
     def make_object(self, data):
         ThingWithTaxon(**data)
 
-class OrganismTaxonSchema(OrganismalEntitySchema):
+class OrganismTaxonSchema(OntologyClassSchema):
     """
     None
     """
@@ -282,12 +332,30 @@ class MolecularEntitySchema(BiologicalEntitySchema):
 
 class ChemicalSubstanceSchema(MolecularEntitySchema):
     """
-    may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+    May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
     """
 
     @post_load
     def make_object(self, data):
         ChemicalSubstance(**data)
+
+class DrugSchema(ChemicalSubstanceSchema):
+    """
+    A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+    """
+
+    @post_load
+    def make_object(self, data):
+        Drug(**data)
+
+class MetaboliteSchema(ChemicalSubstanceSchema):
+    """
+    Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
+    """
+
+    @post_load
+    def make_object(self, data):
+        Metabolite(**data)
 
 class AttributeSchema(Schema):
     """
@@ -372,10 +440,20 @@ class ClinicalInterventionSchema(ClinicalEntitySchema):
     def make_object(self, data):
         ClinicalIntervention(**data)
 
+class DeviceSchema(NamedThingSchema):
+    """
+    A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
+    """
+
+    @post_load
+    def make_object(self, data):
+        Device(**data)
+
 class GenomicEntitySchema(MolecularEntitySchema):
     """
     an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
     """
+    has_biological_sequence = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -446,12 +524,35 @@ class GeneProductSchema(GeneOrGeneProductSchema):
 
 class ProteinSchema(GeneProductSchema):
     """
-    None
+    A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
     """
 
     @post_load
     def make_object(self, data):
         Protein(**data)
+
+class GeneProductIsoformSchema(GeneProductSchema):
+    """
+    This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
+    """
+
+    @post_load
+    def make_object(self, data):
+        GeneProductIsoform(**data)
+
+class ProteinIsoformSchema(ProteinSchema):
+    """
+    Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
+    """
+    has_biological_sequence = fields.Str()
+    id = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
+    in_taxon = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        ProteinIsoform(**data)
 
 class RnaProductSchema(GeneProductSchema):
     """
@@ -461,6 +562,20 @@ class RnaProductSchema(GeneProductSchema):
     @post_load
     def make_object(self, data):
         RnaProduct(**data)
+
+class RnaProductIsoformSchema(RnaProductSchema):
+    """
+    Represents a protein that is a specific isoform of the canonical or reference RNA
+    """
+    has_biological_sequence = fields.Str()
+    id = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
+    in_taxon = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        RnaProductIsoform(**data)
 
 class NoncodingRnaProductSchema(RnaProductSchema):
     """
@@ -526,20 +641,20 @@ class GenotypeSchema(GenomicEntitySchema):
     def make_object(self, data):
         Genotype(**data)
 
-class AlleleSchema(GenotypeSchema):
+class HaplotypeSchema(GenomicEntitySchema):
     """
-    A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus
+    A set of zero or more Alleles on a single instance of a Sequence[VMC]
     """
-    has_gene = fields.Str()
 
     @post_load
     def make_object(self, data):
-        Allele(**data)
+        Haplotype(**data)
 
 class SequenceVariantSchema(GenomicEntitySchema):
     """
-    A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.
+    An allele that varies in its sequence from what is considered the reference allele at that locus.
     """
+    has_gene = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -549,7 +664,6 @@ class DrugExposureSchema(EnvironmentSchema):
     """
     A drug exposure is an intake of a particular chemical substance
     """
-    drug = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -673,7 +787,8 @@ class PairwiseGeneOrProteinInteractionAssociationSchema(GeneToGeneAssociationSch
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -710,7 +825,8 @@ class ChemicalToGeneAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -729,7 +845,8 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -748,7 +865,8 @@ class ChemicalToPathwayAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -767,7 +885,8 @@ class ChemicalToGeneAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -797,7 +916,8 @@ class BiosampleToDiseaseOrPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -818,7 +938,7 @@ class EntityToPhenotypicFeatureAssociationSchema(AssociationSchema):
 
 class EntityToDiseaseAssociationSchema(Schema):
     """
-    None
+    mixin class for any association whose object (target node) is a disease
     """
     frequency_qualifier = fields.Str()
     severity_qualifier = fields.Str()
@@ -827,6 +947,24 @@ class EntityToDiseaseAssociationSchema(Schema):
     @post_load
     def make_object(self, data):
         EntityToDiseaseAssociation(**data)
+
+class DiseaseOrPhenotypicFeatureAssociationToThingAssociationSchema(AssociationSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        DiseaseOrPhenotypicFeatureAssociationToThingAssociation(**data)
+
+class DiseaseOrPhenotypicFeatureAssociationToLocationAssociationSchema(DiseaseOrPhenotypicFeatureAssociationToThingAssociationSchema):
+    """
+    An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
+    """
+
+    @post_load
+    def make_object(self, data):
+        DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(**data)
 
 class ThingToDiseaseOrPhenotypicFeatureAssociationSchema(AssociationSchema):
     """
@@ -863,7 +1001,8 @@ class GenotypeToPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -886,7 +1025,8 @@ class EnvironmentToPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -909,7 +1049,8 @@ class DiseaseToPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -932,7 +1073,8 @@ class CaseToPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -946,6 +1088,15 @@ class GeneToThingAssociationSchema(AssociationSchema):
     @post_load
     def make_object(self, data):
         GeneToThingAssociation(**data)
+
+class VariantToThingAssociationSchema(AssociationSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        VariantToThingAssociation(**data)
 
 class GeneToPhenotypicFeatureAssociationSchema(AssociationSchema):
     """
@@ -964,7 +1115,8 @@ class GeneToPhenotypicFeatureAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -986,15 +1138,88 @@ class GeneToDiseaseAssociationSchema(AssociationSchema):
     publications = fields.Str()
     provided_by = fields.Str()
     id = fields.Str()
-    label = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
 
     @post_load
     def make_object(self, data):
         GeneToDiseaseAssociation(**data)
 
+class VariantToPopulationAssociationSchema(AssociationSchema):
+    """
+    An association between a variant and a population, where the variant has particular frequency in the population
+    """
+    frequency_qualifier = fields.Str()
+    association_type = fields.Str()
+    subject = fields.Str()
+    negated = fields.Str()
+    relation = fields.Str()
+    object = fields.Str()
+    qualifiers = fields.Str()
+    publications = fields.Str()
+    provided_by = fields.Str()
+    id = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
+    has_count = fields.Str()
+    has_total = fields.Str()
+    has_quotient = fields.Str()
+    has_percentage = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        VariantToPopulationAssociation(**data)
+
+class VariantToPhenotypicFeatureAssociationSchema(AssociationSchema):
+    """
+    None
+    """
+    association_type = fields.Str()
+    subject = fields.Str()
+    negated = fields.Str()
+    relation = fields.Str()
+    object = fields.Str()
+    qualifiers = fields.Str()
+    publications = fields.Str()
+    provided_by = fields.Str()
+    id = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
+    frequency_qualifier = fields.Str()
+    severity_qualifier = fields.Str()
+    onset_qualifier = fields.Str()
+    sex_qualifier = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        VariantToPhenotypicFeatureAssociation(**data)
+
+class VariantToDiseaseAssociationSchema(AssociationSchema):
+    """
+    None
+    """
+    association_type = fields.Str()
+    subject = fields.Str()
+    negated = fields.Str()
+    relation = fields.Str()
+    object = fields.Str()
+    qualifiers = fields.Str()
+    publications = fields.Str()
+    provided_by = fields.Str()
+    id = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
+    frequency_qualifier = fields.Str()
+    severity_qualifier = fields.Str()
+    onset_qualifier = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        VariantToDiseaseAssociation(**data)
+
 class ModelToDiseaseMixinSchema(Schema):
     """
-    This mixin is used for any association class for which the subject plays the role of a 'model'
+    This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
     """
 
     @post_load
@@ -1017,6 +1242,7 @@ class GeneHasVariantThatContributesToDiseaseAssociationSchema(GeneToDiseaseAssoc
     """
     None
     """
+    sequence_variant_qualifier = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -1044,7 +1270,7 @@ class GeneToExpressionSiteAssociationSchema(AssociationSchema):
 
 class SequenceVariantModulatesTreatmentAssociationSchema(AssociationSchema):
     """
-    None
+    An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.
     """
 
     @post_load
@@ -1119,15 +1345,6 @@ class ExonToTranscriptRelationshipSchema(SequenceFeatureRelationshipSchema):
     def make_object(self, data):
         ExonToTranscriptRelationship(**data)
 
-class SequenceFeatureToSequenceRelationshipSchema(AssociationSchema):
-    """
-    Relates a sequence feature such as a gene to its sequence
-    """
-
-    @post_load
-    def make_object(self, data):
-        SequenceFeatureToSequenceRelationship(**data)
-
 class GeneRegulatoryRelationshipSchema(AssociationSchema):
     """
     A regulatory relationship between two genes
@@ -1164,7 +1381,7 @@ class OccurrentSchema(Schema):
     def make_object(self, data):
         Occurrent(**data)
 
-class MolecularActivitySchema(OccurrentSchema):
+class MolecularActivitySchema(BiologicalEntitySchema):
     """
     An execution of a molecular function
     """
@@ -1172,6 +1389,33 @@ class MolecularActivitySchema(OccurrentSchema):
     @post_load
     def make_object(self, data):
         MolecularActivity(**data)
+
+class ActivityAndBehaviorSchema(OccurrentSchema):
+    """
+    Activity or behavior of any independent integral living, organization or mechanical actor in the world
+    """
+
+    @post_load
+    def make_object(self, data):
+        ActivityAndBehavior(**data)
+
+class ProcedureSchema(OccurrentSchema):
+    """
+    A series of actions conducted in a certain order or manner
+    """
+
+    @post_load
+    def make_object(self, data):
+        Procedure(**data)
+
+class PhenomenonSchema(OccurrentSchema):
+    """
+    a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
+    """
+
+    @post_load
+    def make_object(self, data):
+        Phenomenon(**data)
 
 class BiologicalProcessSchema(BiologicalEntitySchema):
     """
@@ -1190,6 +1434,15 @@ class PathwaySchema(BiologicalProcessSchema):
     @post_load
     def make_object(self, data):
         Pathway(**data)
+
+class PhysiologySchema(BiologicalProcessSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        Physiology(**data)
 
 class CellularComponentSchema(AnatomicalEntitySchema):
     """

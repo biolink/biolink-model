@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation](http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-association type >[ontology class|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-subject >[gene or gene product|], [genomic entity|has biological sequence]^-[gene or gene product|], [gene or gene product|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-relation >[relationship type|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-object >[phenotypic feature|], [disease or phenotypic feature|in taxon]^-[phenotypic feature|], [phenotypic feature|]-in taxon >[organism taxon|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-qualifiers >[ontology class|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-publications >[publication|], [information content entity|]^-[publication|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-provided by >[provider|], [administrative entity|]^-[provider|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-frequency qualifier >[frequency value|], [attribute|]^-[frequency value|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-severity qualifier >[severity value|], [attribute|]^-[severity value|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-onset qualifier >[onset|], [attribute|]^-[onset|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-sex qualifier >[biological sex|], [attribute|]^-[biological sex|])
 ## Mappings
 
  * [http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association](http://purl.obolibrary.org/obo/http_//bio2rdf.org/wormbase_vocabulary_Gene-Phenotype-Association)
@@ -34,7 +37,7 @@ URI: [http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation](http://bioen
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_
@@ -60,10 +63,15 @@ URI: [http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation](http://bioen
     * __range__: [provider](Provider.html)
     * inherited from: [association](Association.html)
  * [id](id.html)
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type [required]
     * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * [name](name.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
  * [frequency qualifier](frequency_qualifier.html)

@@ -2,13 +2,20 @@ description: null
 display_name: population of individual organisms
 document_category: population of individual organisms
 fields:
-- description: null
+- description: A unique identifier for a thing. Must be either a CURIE shorthand for
+    a URI or a complete URI
   display_name: id
   id: id
   property: []
 - description: A human-readable name for a thing
-  display_name: label
-  id: label
+  display_name: name
+  id: name
+  property: []
+- description: Name of the high level ontology class in which this entity is categorized.
+    Corresponds to the label for the biolink entity type class. In a neo4j database
+    this MAY correspond to the neo4j label tag
+  display_name: category
+  id: category
   property: []
 - description: connects a thing to a class representing a taxon
   display_name: in taxon

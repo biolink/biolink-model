@@ -3,7 +3,7 @@
 # ----------------------------------------
 all: build test 
 test: metatest pytests
-build: build_core contrib_build_monarch
+build: build_core contrib_build_monarch contrib_build_translator
 
 build_core: docs/index.md biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql
 
@@ -47,6 +47,8 @@ docs/index.md: biolink-model.yaml
 	./bin/gen-markdown.py --dir docs $< > $@
 contrib/%/docs/index.md: contrib/%.yaml
 	./bin/gen-markdown.py --dir contrib/$*/docs $< > $@
+clean-docs:
+	rm docs/*.md
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
@@ -92,6 +94,9 @@ graphviz/%.png: biolink-model.yaml
 
 graphql/biolink-model.graphql: biolink-model.yaml 
 	./bin/gen-graphql.py $< > $@
+
+proto/biolink-model.proto: biolink-model.yaml 
+	./bin/gen-proto.py $< > $@
 
 contrib/%/%.graphql: contrib/%.yaml 
 	./bin/gen-graphql.py $< > $@

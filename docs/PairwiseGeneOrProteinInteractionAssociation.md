@@ -8,6 +8,9 @@ layout: default
 An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 
 URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[gene to gene association|]^-[pairwise gene or protein interaction association|association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category], [pairwise gene or protein interaction association|association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-association type >[ontology class|], [pairwise gene or protein interaction association|association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-subject >[molecular entity|in taxon], [biological entity|]^-[molecular entity|in taxon], [molecular entity|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [pairwise gene or protein interaction association|association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-object >[molecular entity|in taxon], [pairwise gene or protein interaction association|association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-qualifiers >[ontology class|], [pairwise gene or protein interaction association|association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-publications >[publication|], [information content entity|]^-[publication|], [pairwise gene or protein interaction association|association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 
@@ -28,20 +31,21 @@ URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](htt
     * inherited from: [association](Association.html)
  * [subject](subject.html)
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [gene or gene product](GeneOrGeneProduct.html) [required]
+    * __range__: [molecular entity](MolecularEntity.html) [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _interaction relationship type_
-    * __range__: [relationship type](RelationshipType.html) [required]
+    * __range__: [molecularly interacts with](molecularly_interacts_with.html) [required]
     * subproperty_of: [RO:0002436](http://purl.obolibrary.org/obo/RO_0002436)
+    * Example: [RO:0002447](http://purl.obolibrary.org/obo/RO_0002447) the subject molecular phosphorylates the object molecule
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [gene or gene product](GeneOrGeneProduct.html) [required]
+    * __range__: [molecular entity](MolecularEntity.html) [required]
     * inherited from: [association](Association.html)
  * [qualifiers](qualifiers.html)
     * _connects an association to qualifiers that modify or qualify the meaning of that association_
@@ -56,9 +60,14 @@ URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](htt
     * __range__: [provider](Provider.html)
     * inherited from: [association](Association.html)
  * [id](id.html)
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type [required]
     * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * [name](name.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)

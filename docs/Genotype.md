@@ -8,8 +8,13 @@ layout: default
 An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
 
 URI: [http://bioentity.io/vocab/Genotype](http://bioentity.io/vocab/Genotype)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[genomic entity|has biological sequence]^-[genotype|has zygosity], [genotype|has zygosity]-has zygosity >[zygosity|], [attribute|]^-[zygosity|], [genotype|has zygosity]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
+ * [GENO:0000536](http://purl.obolibrary.org/obo/GENO_0000536)
+ * [SIO:001079](http://semanticscience.org/resource/SIO_001079)
 
 ## Inheritance
 
@@ -17,7 +22,6 @@ URI: [http://bioentity.io/vocab/Genotype](http://bioentity.io/vocab/Genotype)
 
 ## Children
 
- *  child: [allele](Allele.html)
 
 ## Used in
 
@@ -32,11 +36,20 @@ URI: [http://bioentity.io/vocab/Genotype](http://bioentity.io/vocab/Genotype)
  * [has zygosity](has_zygosity.html)
     * __range__: [zygosity](Zygosity.html)
     * __Local__
+ * [has biological sequence](has_biological_sequence.html)
+    * _connects a genomic feature to its sequence_
+    * __range__: biological sequence
+    * inherited from: [genomic entity](GenomicEntity.html)
  * [id](id.html)
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type
     * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * [name](name.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
  * [in taxon](in_taxon.html)

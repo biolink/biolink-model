@@ -8,6 +8,9 @@ layout: default
 A typed association between two entities, supported by evidence
 
 URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Association)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[information content entity|]^-[association|association type;subject;negated;relation;object;qualifiers;publications;provided by], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-association type >[ontology class|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-relation >[relationship type|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-qualifiers >[ontology class|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-publications >[publication|], [information content entity|]^-[publication|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
  * [OBAN:association](http://purl.obolibrary.org/obo/OBAN_association)
@@ -24,7 +27,6 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
  *  child: [genotype to gene association](GenotypeToGeneAssociation.html)
  *  child: [genotype to variant association](GenotypeToVariantAssociation.html)
  *  child: [gene to gene association](GeneToGeneAssociation.html)
- *  child: [molecular interaction](MolecularInteraction.html)
  *  child: [chemical to thing association](ChemicalToThingAssociation.html)
  *  child: [case to thing association](CaseToThingAssociation.html)
  *  child: [chemical to gene association](ChemicalToGeneAssociation.html)
@@ -34,6 +36,7 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
  *  child: [biosample to thing association](BiosampleToThingAssociation.html)
  *  child: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html)
  *  child: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
+ *  child: [disease or phenotypic feature association to thing association](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.html)
  *  child: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html)
  *  child: [disease to thing association](DiseaseToThingAssociation.html)
  *  child: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html)
@@ -43,13 +46,15 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
  *  child: [gene to thing association](GeneToThingAssociation.html)
  *  child: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
  *  child: [gene to disease association](GeneToDiseaseAssociation.html)
+ *  child: [variant to population association](VariantToPopulationAssociation.html)
+ *  child: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html)
+ *  child: [variant to disease association](VariantToDiseaseAssociation.html)
  *  child: [genotype to thing association](GenotypeToThingAssociation.html)
  *  child: [gene to expression site association](GeneToExpressionSiteAssociation.html)
  *  child: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html)
  *  child: [gene to go term association](GeneToGoTermAssociation.html)
  *  child: [genomic sequence localization](GenomicSequenceLocalization.html)
  *  child: [sequence feature relationship](SequenceFeatureRelationship.html)
- *  child: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html)
  *  child: [gene regulatory relationship](GeneRegulatoryRelationship.html)
  *  child: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html)
 
@@ -69,7 +74,7 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
     * __Local__
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * __Local__
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_
@@ -92,9 +97,14 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
     * __range__: [provider](Provider.html)
     * __Local__
  * [id](id.html)
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type [required]
     * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * [name](name.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)

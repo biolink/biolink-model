@@ -51,7 +51,7 @@ class Manager(object):
         errs = schemadef.validate(obj)
         if len(errs) > 0:
             logging.error("CONFIG ERRS: {}".format(errs))
-        schema = schemadef.load(obj).data
+        schema = schemadef.load(obj)
         logging.info('LOADING IMPORTS FOR {}'.format(schema.name))
         self.load_imports(schema, depth)
         if depth == 0:
@@ -112,6 +112,12 @@ class Manager(object):
             return s[0].lower() + s[1:]
         return n
 
+    def predicates(self):
+        if not self.schema.slots:
+            return []
+        return [self.slotdef(s) for s in self.schema.slots]
+            
+    
         
     def slotdef(self, sn, c=None):
         """
@@ -172,6 +178,23 @@ class Manager(object):
             logging.warning("No such class: {}".format(cn))
             self.unreferenced.add(cn)
 
+    def typedef(self, tn):
+        """
+        lookup a type in the schema by name
+
+        Returns
+        -------
+        TypeDefinition
+        """
+        if isinstance(tn,TypeDefinition):
+            return tn
+        for t in self.schema.types:
+            if t.name == tn:
+                return t
+        if tn not in self.unreferenced:
+            logging.warning("No such type: {}".format(tn))
+            self.unreferenced.add(tn)
+
 
     def class_name(self, c, style=NameStyle.CAMELCASE):
         """
@@ -204,9 +227,13 @@ class Manager(object):
         return "http://bioentity.io/vocab/{}".format(self.obj_name(obj))
     
     
-    def child_nodes(self, obj):
+    def child_nodes(self, obj, mixin=True):
         nodes = [c for c in self.schema.classes
                  if c.is_a is not None and c.is_a==obj.name]
+        nodes += [c for c in self.schema.slots
+                  if c.is_a is not None and c.is_a==obj.name]
+        if not mixin:
+            nodes = [c for c in nodes if not c.mixin]
         return nodes
 
     def child_nodes_by_mixin(self, obj):
@@ -314,6 +341,8 @@ class Manager(object):
         """
         return self.class_slot_getattr(c, s, 'multivalued', defaultval=False)
 
+    # TODO: there may be multiple paths to get to a class
+    # use the non-redundant result
     def class_slot_getattr(self, c, s, attr, defaultval=None):
         """
         Lookup an object attribute of a slot using inheritance

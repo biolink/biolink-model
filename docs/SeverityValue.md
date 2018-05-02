@@ -8,6 +8,9 @@ layout: default
 describes the severity of a phenotypic feature or disease
 
 URI: [http://bioentity.io/vocab/SeverityValue](http://bioentity.io/vocab/SeverityValue)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[attribute|]^-[severity value|])
 ## Mappings
 
 
@@ -28,6 +31,8 @@ URI: [http://bioentity.io/vocab/SeverityValue](http://bioentity.io/vocab/Severit
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
+ *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
+ *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [severity value](SeverityValue.html)
  *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
 

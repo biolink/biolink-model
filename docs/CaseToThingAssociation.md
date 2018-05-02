@@ -8,6 +8,9 @@ layout: default
 An abstract association for use where the case is the subject
 
 URI: [http://bioentity.io/vocab/CaseToThingAssociation](http://bioentity.io/vocab/CaseToThingAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[case to thing association|], [case to thing association|]-association type >[ontology class|], [case to thing association|]-subject >[case|], [individual organism|in taxon]^-[case|], [case|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [case to thing association|]-relation >[relationship type|], [case to thing association|]-qualifiers >[ontology class|], [case to thing association|]-publications >[publication|], [information content entity|]^-[publication|], [case to thing association|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 
@@ -32,7 +35,7 @@ URI: [http://bioentity.io/vocab/CaseToThingAssociation](http://bioentity.io/voca
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_
@@ -55,9 +58,14 @@ URI: [http://bioentity.io/vocab/CaseToThingAssociation](http://bioentity.io/voca
     * __range__: [provider](Provider.html)
     * inherited from: [association](Association.html)
  * [id](id.html)
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type [required]
     * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * [name](name.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)

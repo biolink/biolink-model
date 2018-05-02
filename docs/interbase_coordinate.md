@@ -20,6 +20,8 @@ URI: [http://bioentity.io/vocab/interbase_coordinate](http://bioentity.io/vocab/
 
 ## Children
 
+ *  child: [start interbase coordinate](start_interbase_coordinate.html)
+ *  child: [end interbase coordinate](end_interbase_coordinate.html)
 
 ## Used in
 

@@ -8,8 +8,12 @@ layout: default
 person, group, organization or project that provides a piece of information
 
 URI: [http://bioentity.io/vocab/Provider](http://bioentity.io/vocab/Provider)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[administrative entity|]^-[provider|])
 ## Mappings
 
+ * [UMLSSG:ORGA](http://purl.obolibrary.org/obo/UMLSSG_ORGA)
 
 ## Inheritance
 
@@ -37,6 +41,8 @@ URI: [http://bioentity.io/vocab/Provider](http://bioentity.io/vocab/Provider)
  *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [provider](Provider.html)
  *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
+ *  class: [disease or phenotypic feature association to thing association](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.html) references: [provider](Provider.html)
+ *  class: [disease or phenotypic feature association to location association](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.html) references: [provider](Provider.html)
  *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
  *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [provider](Provider.html)
  *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
@@ -44,8 +50,12 @@ URI: [http://bioentity.io/vocab/Provider](http://bioentity.io/vocab/Provider)
  *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
  *  class: [gene to thing association](GeneToThingAssociation.html) references: [provider](Provider.html)
+ *  class: [variant to thing association](VariantToThingAssociation.html) references: [provider](Provider.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [provider](Provider.html)
+ *  class: [variant to population association](VariantToPopulationAssociation.html) references: [provider](Provider.html)
+ *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
+ *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [provider](Provider.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [provider](Provider.html)
  *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [provider](Provider.html)
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [provider](Provider.html)
@@ -57,7 +67,6 @@ URI: [http://bioentity.io/vocab/Provider](http://bioentity.io/vocab/Provider)
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [provider](Provider.html)
  *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [provider](Provider.html)
  *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [provider](Provider.html)
- *  class: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html) references: [provider](Provider.html)
  *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [provider](Provider.html)
  *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [provider](Provider.html)
  *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [provider](Provider.html)

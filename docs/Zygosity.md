@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/Zygosity](http://bioentity.io/vocab/Zygosity)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[attribute|]^-[zygosity|])
 ## Mappings
 
  * [GENO:0000133](http://purl.obolibrary.org/obo/GENO_0000133)
@@ -22,7 +25,6 @@ URI: [http://bioentity.io/vocab/Zygosity](http://bioentity.io/vocab/Zygosity)
 ## Used in
 
  *  class: [genotype](Genotype.html) references: [zygosity](Zygosity.html)
- *  class: [allele](Allele.html) references: [zygosity](Zygosity.html)
 
 ## Fields
 

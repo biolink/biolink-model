@@ -8,6 +8,9 @@ layout: default
 a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
 
 URI: [http://bioentity.io/vocab/GeneOrGeneProduct](http://bioentity.io/vocab/GeneOrGeneProduct)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[genomic entity|has biological sequence]^-[gene or gene product|], [gene or gene product|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
 
@@ -22,11 +25,10 @@ URI: [http://bioentity.io/vocab/GeneOrGeneProduct](http://bioentity.io/vocab/Gen
 
 ## Used in
 
- *  class: [allele](Allele.html) references: [gene](Gene.html)
+ *  class: [sequence variant](SequenceVariant.html) references: [gene](Gene.html)
  *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [gene](Gene.html)
  *  class: [gene to gene association](GeneToGeneAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [gene product](GeneProduct.html)
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [gene to thing association](GeneToThingAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
@@ -41,12 +43,21 @@ URI: [http://bioentity.io/vocab/GeneOrGeneProduct](http://bioentity.io/vocab/Gen
 
 ## Fields
 
+ * [has biological sequence](has_biological_sequence.html)
+    * _connects a genomic feature to its sequence_
+    * __range__: biological sequence
+    * inherited from: [genomic entity](GenomicEntity.html)
  * [id](id.html)
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type
     * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
-    * _genes are typically designated by a short symbol and a full name. We map the symbol to the default display label and use an additional slot for full name_
+ * [name](name.html)
+    * _genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name_
     * __range__: symbol type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
+    * __range__: label type
     * inherited from: [named thing](NamedThing.html)
  * [in taxon](in_taxon.html)
     * _connects a thing to a class representing a taxon_

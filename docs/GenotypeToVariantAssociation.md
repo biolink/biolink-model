@@ -8,6 +8,9 @@ layout: default
 Any association between a genotype and a sequence variant.
 
 URI: [http://bioentity.io/vocab/GenotypeToVariantAssociation](http://bioentity.io/vocab/GenotypeToVariantAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[genotype to variant association|], [genotype to variant association|]-association type >[ontology class|], [genotype to variant association|]-subject >[genotype|has zygosity], [genomic entity|has biological sequence]^-[genotype|has zygosity], [genotype|has zygosity]-has zygosity >[zygosity|], [attribute|]^-[zygosity|], [genotype|has zygosity]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [genotype to variant association|]-relation >[relationship type|], [genotype to variant association|]-object >[sequence variant|has gene], [genomic entity|has biological sequence]^-[sequence variant|has gene], [sequence variant|has gene]-has gene >[gene|], [gene or gene product|]^-[gene|], [gene|]-in taxon >[organism taxon|], [sequence variant|has gene]-in taxon >[organism taxon|], [genotype to variant association|]-qualifiers >[ontology class|], [genotype to variant association|]-publications >[publication|], [information content entity|]^-[publication|], [genotype to variant association|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 
@@ -31,7 +34,7 @@ URI: [http://bioentity.io/vocab/GenotypeToVariantAssociation](http://bioentity.i
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _the relationship type used to connect genotype to gene_
@@ -54,9 +57,14 @@ URI: [http://bioentity.io/vocab/GenotypeToVariantAssociation](http://bioentity.i
     * __range__: [provider](Provider.html)
     * inherited from: [association](Association.html)
  * [id](id.html)
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type [required]
     * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * [name](name.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)

@@ -1,0 +1,20 @@
+id: "http://bioentity.io/json-schema/biolink/contrib/translator.json"
+name: translator biolink mixins
+imports:
+  - "biolink-model"
+  - "contrib/core"  
+  - "contrib/taxon"  
+description: Monarch specific extensions
+
+slots:
+
+  - name: uri
+    domain: named thing
+    range: uri
+    description: >-
+      URI expansion of CURIE
+    mappings:
+      - "@id"
+  
+classes: []
+      

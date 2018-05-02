@@ -172,6 +172,7 @@ class TypeDefinition(Definition):
     """
     def __init__(self,
                  mixins=None,
+                 typeof=None,
                  name=None,
                  singular_name=None,
                  is_a=None,
@@ -181,6 +182,7 @@ class TypeDefinition(Definition):
                  mappings=None,
                  apply_to=None):
         self.mixins=mixins
+        self.typeof=typeof
         self.name=name
         self.singular_name=singular_name
         self.is_a=is_a
@@ -191,7 +193,7 @@ class TypeDefinition(Definition):
         self.apply_to=apply_to
 
     def __str__(self):
-        return "mixins={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} apply_to={} ".format(self.mixins,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.apply_to)
+        return "mixins={} typeof={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} apply_to={} ".format(self.mixins,self.typeof,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.apply_to)
     def __repr__(self):
         return self.__str__()
 
@@ -206,6 +208,7 @@ class SchemaDefinition(Definition):
                  classes=None,
                  types=None,
                  imports=None,
+                 license=None,
                  name=None,
                  singular_name=None,
                  is_a=None,
@@ -219,6 +222,7 @@ class SchemaDefinition(Definition):
         self.classes=classes
         self.types=types
         self.imports=imports
+        self.license=license
         self.name=name
         self.singular_name=singular_name
         self.is_a=is_a
@@ -229,7 +233,7 @@ class SchemaDefinition(Definition):
         self.apply_to=apply_to
 
     def __str__(self):
-        return "id={} slots={} classes={} types={} imports={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} apply_to={} ".format(self.id,self.slots,self.classes,self.types,self.imports,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.apply_to)
+        return "id={} slots={} classes={} types={} imports={} license={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} apply_to={} ".format(self.id,self.slots,self.classes,self.types,self.imports,self.license,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.apply_to)
     def __repr__(self):
         return self.__str__()
 

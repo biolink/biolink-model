@@ -64,6 +64,7 @@ class ClassDefinitionSchema(DefinitionSchema):
 
 class TypeDefinitionSchema(DefinitionSchema):
     mixins = fields.Str()
+    typeof = fields.Str()
 
     @post_load
     def make_object(self, data):
@@ -74,6 +75,7 @@ class SchemaDefinitionSchema(DefinitionSchema):
     classes = fields.List(fields.Nested(ClassDefinitionSchema))
     types = fields.List(fields.Nested(TypeDefinitionSchema))
     imports = fields.List(fields.Str)
+    license = fields.Str()
 
     @post_load
     def make_object(self, data):

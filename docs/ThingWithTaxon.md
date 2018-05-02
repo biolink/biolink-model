@@ -8,6 +8,9 @@ layout: default
 A mixin that can be used on any entity with a taxon
 
 URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingWithTaxon)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[thing with taxon|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
 
@@ -26,14 +29,15 @@ URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingW
 
 ## Used in
 
- *  class: [allele](Allele.html) references: [gene](Gene.html)
+ *  class: [sequence variant](SequenceVariant.html) references: [gene](Gene.html)
  *  class: [treatment](Treatment.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [genotype](Genotype.html)
  *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [genotype](Genotype.html)
  *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [genotype](Genotype.html)
  *  class: [gene to gene association](GeneToGeneAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
+ *  class: [molecular interaction](MolecularInteraction.html) references: [molecular entity](MolecularEntity.html)
+ *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [molecular entity](MolecularEntity.html)
  *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [chemical substance](ChemicalSubstance.html)
  *  class: [case to thing association](CaseToThingAssociation.html) references: [case](Case.html)
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [chemical substance](ChemicalSubstance.html)
@@ -43,6 +47,8 @@ URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingW
  *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [biosample](Biosample.html)
  *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [biosample](Biosample.html)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
+ *  class: [disease or phenotypic feature association to thing association](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
+ *  class: [disease or phenotypic feature association to location association](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [disease](Disease.html)
  *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [genotype](Genotype.html)
@@ -50,10 +56,14 @@ URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingW
  *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [disease](Disease.html)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [case](Case.html)
  *  class: [gene to thing association](GeneToThingAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
+ *  class: [variant to thing association](VariantToThingAssociation.html) references: [sequence variant](SequenceVariant.html)
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
+ *  class: [variant to population association](VariantToPopulationAssociation.html) references: [sequence variant](SequenceVariant.html)
+ *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [sequence variant](SequenceVariant.html)
+ *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [sequence variant](SequenceVariant.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
+ *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [sequence variant](SequenceVariant.html)
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [genotype](Genotype.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [life stage](LifeStage.html)
  *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [sequence variant](SequenceVariant.html)
@@ -63,7 +73,6 @@ URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingW
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [transcript](Transcript.html)
  *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [gene](Gene.html)
  *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [exon](Exon.html)
- *  class: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html) references: [genomic entity](GenomicEntity.html)
  *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
  *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)

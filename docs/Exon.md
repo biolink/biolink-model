@@ -8,9 +8,14 @@ layout: default
 A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
 
 URI: [http://bioentity.io/vocab/Exon](http://bioentity.io/vocab/Exon)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[genomic entity|has biological sequence]^-[exon|], [exon|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
  * [SO:0000147](http://purl.obolibrary.org/obo/SO_0000147)
+ * [SIO:010445](http://semanticscience.org/resource/SIO_010445)
+ * [WD:Q373027](http://purl.obolibrary.org/obo/WD_Q373027)
 
 ## Inheritance
 
@@ -25,11 +30,20 @@ URI: [http://bioentity.io/vocab/Exon](http://bioentity.io/vocab/Exon)
 
 ## Fields
 
+ * [has biological sequence](has_biological_sequence.html)
+    * _connects a genomic feature to its sequence_
+    * __range__: biological sequence
+    * inherited from: [genomic entity](GenomicEntity.html)
  * [id](id.html)
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type
     * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * [name](name.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
  * [in taxon](in_taxon.html)

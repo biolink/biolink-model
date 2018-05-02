@@ -13,7 +13,7 @@ URI: [http://bioentity.io/vocab/quantifier_qualifier](http://bioentity.io/vocab/
 
 ## Domain and Range
 
- -> 
+ -> [ontology class](OntologyClass.html)
 
 ## Inheritance
 

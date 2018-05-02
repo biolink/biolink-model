@@ -6,6 +6,8 @@ import logging
 
 from .manager import *
 from .generator import Generator
+from .yumlgen import YumlGenerator
+
 
     
 class MarkdownGenerator(Generator):
@@ -23,6 +25,7 @@ class MarkdownGenerator(Generator):
         self.emit_header(2, schema.name)
         self.para(schema.description)
         roots = [c for c in schema.classes if not c.is_a]
+
         self.emit_header(3, 'Classes')
         for c in roots:
             if not mgr.classdef(c).mixin:
@@ -33,7 +36,14 @@ class MarkdownGenerator(Generator):
         for c in roots:
             if mgr.classdef(c).mixin:
                 self.write_class_hier(c)
+        self.nl()
+
+        preds = mgr.predicates()
+        self.emit_header(3, 'Predicates and Properties')
+        for p in mgr.predicates():
+            self.bullet(self.link(p), 0)
             
+                
         self.close_fh()
 
         for c in schema.classes:
@@ -149,6 +159,11 @@ class MarkdownGenerator(Generator):
         uri = mgr.obj_uri(c)
         self.w('URI: [{}]({})\n'.format(uri, uri))
 
+        yg = YumlGenerator(schema=schema)
+        yg.tr_class(c, recurse=True)
+        self.w('\n\n![img]({})'.format(yg.url()))
+        self.nl()
+        
         self.tr_mappings(c)
         
         self.emit_header(2, 'Inheritance')
@@ -159,9 +174,10 @@ class MarkdownGenerator(Generator):
             for m in c.mixins:
                 self.bullet(' mixin: {}'.format(self.link(mgr.classdef(m))))                
         self.nl()
-            
+
+        # show all child nodes except mixins
         self.emit_header(2, 'Children')
-        for n in mgr.child_nodes(c):
+        for n in mgr.child_nodes(c, mixin=False):
             self.bullet(' child: {}'.format(self.link(mgr.classdef(n))))
         for n in mgr.child_nodes_by_mixin(c):
             self.bullet(' mixin: {}'.format(self.link(mgr.classdef(n))))
@@ -182,8 +198,12 @@ class MarkdownGenerator(Generator):
             sn = self.slot_name(s)
 
             r = mgr.class_slot_range(c, s)
-            if mgr.classdef(r):
-                r = self.link(mgr.classdef(r))
+            if r:
+                if mgr.classdef(r):
+                    r = self.link(mgr.classdef(r))
+                elif mgr.slotdef(r):
+                    # reified relation
+                    r = self.link(mgr.slotdef(r))
 
             qual = ''
             if mgr.class_slot_multivalued(c, s):

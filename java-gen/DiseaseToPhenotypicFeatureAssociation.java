@@ -18,9 +18,10 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "association_type",
+    "category",
     "frequency_qualifier",
     "id",
-    "label",
+    "name",
     "negated",
     "object",
     "onset_qualifier",
@@ -42,21 +43,33 @@ public class DiseaseToPhenotypicFeatureAssociation {
     @JsonPropertyDescription("connects an association to the type of association (e.g. gene to phenotype)")
     private String associationType;
     /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+     * 
+     */
+    @JsonProperty("category")
+    @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag")
+    private String category;
+    /**
      * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
      * 
      */
     @JsonProperty("frequency_qualifier")
     @JsonPropertyDescription("a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject")
     private String frequencyQualifier;
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
+    @JsonPropertyDescription("A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI")
     private String id;
     /**
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
+    @JsonProperty("name")
     @JsonPropertyDescription("A human-readable name for a thing")
-    private String label;
+    private String name;
     /**
      * if set to true, then the association is negated i.e. is not true
      * 
@@ -147,6 +160,24 @@ public class DiseaseToPhenotypicFeatureAssociation {
     }
 
     /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+     * 
+     */
+    @JsonProperty("category")
+    public String getCategory() {
+        return category;
+    }
+
+    /**
+     * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+     * 
+     */
+    @JsonProperty("category")
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    /**
      * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
      * 
      */
@@ -164,11 +195,19 @@ public class DiseaseToPhenotypicFeatureAssociation {
         this.frequencyQualifier = frequencyQualifier;
     }
 
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public String getId() {
         return id;
     }
 
+    /**
+     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     */
     @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
@@ -178,18 +217,18 @@ public class DiseaseToPhenotypicFeatureAssociation {
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
-    public String getLabel() {
-        return label;
+    @JsonProperty("name")
+    public String getName() {
+        return name;
     }
 
     /**
      * A human-readable name for a thing
      * 
      */
-    @JsonProperty("label")
-    public void setLabel(String label) {
-        this.label = label;
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -374,12 +413,12 @@ public class DiseaseToPhenotypicFeatureAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("associationType", associationType).append("frequencyQualifier", frequencyQualifier).append("id", id).append("label", label).append("negated", negated).append("object", object).append("onsetQualifier", onsetQualifier).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("severityQualifier", severityQualifier).append("sexQualifier", sexQualifier).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("associationType", associationType).append("category", category).append("frequencyQualifier", frequencyQualifier).append("id", id).append("name", name).append("negated", negated).append("object", object).append("onsetQualifier", onsetQualifier).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("severityQualifier", severityQualifier).append("sexQualifier", sexQualifier).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(providedBy).append(sexQualifier).append(negated).append(subject).append(associationType).append(frequencyQualifier).append(qualifiers).append(label).append(relation).append(onsetQualifier).append(severityQualifier).append(id).append(object).append(publications).toHashCode();
+        return new HashCodeBuilder().append(providedBy).append(sexQualifier).append(negated).append(subject).append(associationType).append(frequencyQualifier).append(qualifiers).append(relation).append(onsetQualifier).append(severityQualifier).append(name).append(id).append(category).append(object).append(publications).toHashCode();
     }
 
     @Override
@@ -391,7 +430,7 @@ public class DiseaseToPhenotypicFeatureAssociation {
             return false;
         }
         DiseaseToPhenotypicFeatureAssociation rhs = ((DiseaseToPhenotypicFeatureAssociation) other);
-        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(sexQualifier, rhs.sexQualifier).append(negated, rhs.negated).append(subject, rhs.subject).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(label, rhs.label).append(relation, rhs.relation).append(onsetQualifier, rhs.onsetQualifier).append(severityQualifier, rhs.severityQualifier).append(id, rhs.id).append(object, rhs.object).append(publications, rhs.publications).isEquals();
+        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(sexQualifier, rhs.sexQualifier).append(negated, rhs.negated).append(subject, rhs.subject).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(relation, rhs.relation).append(onsetQualifier, rhs.onsetQualifier).append(severityQualifier, rhs.severityQualifier).append(name, rhs.name).append(id, rhs.id).append(category, rhs.category).append(object, rhs.object).append(publications, rhs.publications).isEquals();
     }
 
 }

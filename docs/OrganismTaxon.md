@@ -8,13 +8,16 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/OrganismTaxon)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[ontology class|]^-[organism taxon|])
 ## Mappings
 
+ * [WD:Q16521](http://purl.obolibrary.org/obo/WD_Q16521)
 
 ## Inheritance
 
- *  is_a: [organismal entity](OrganismalEntity.html)
- *  mixin: [ontology class](OntologyClass.html)
+ *  is_a: [ontology class](OntologyClass.html)
 
 ## Children
 
@@ -31,6 +34,8 @@ URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/Organis
  *  class: [phenotypic feature](PhenotypicFeature.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [molecular entity](MolecularEntity.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [chemical substance](ChemicalSubstance.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [drug](Drug.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [metabolite](Metabolite.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [anatomical entity](AnatomicalEntity.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [life stage](LifeStage.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [genomic entity](GenomicEntity.html) references: [organism taxon](OrganismTaxon.html)
@@ -42,13 +47,16 @@ URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/Organis
  *  class: [gene](Gene.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gene product](GeneProduct.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [protein](Protein.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [gene product isoform](GeneProductIsoform.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [protein isoform](ProteinIsoform.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [RNA product](RnaProduct.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [RNA product isoform](RnaProductIsoform.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [noncoding RNA product](NoncodingRnaProduct.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [microRNA](Microrna.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [macromolecular complex](MacromolecularComplex.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gene family](GeneFamily.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [genotype](Genotype.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [allele](Allele.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [haplotype](Haplotype.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [sequence variant](SequenceVariant.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [cellular component](CellularComponent.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [cell](Cell.html) references: [organism taxon](OrganismTaxon.html)
@@ -56,10 +64,3 @@ URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/Organis
 
 ## Fields
 
- * [id](id.html)
-    * __range__: identifier type
-    * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)

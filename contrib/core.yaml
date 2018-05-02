@@ -1,0 +1,43 @@
+id: "http://bioentity.io/schema/contrib/core.json"
+name: core extensions
+description: core
+
+slots:
+
+  - name: title
+    domain: information content entity
+    range: label type
+    description: >-
+      Narrative text describing the entity
+    mappings:
+      - "dc:title"
+
+
+  - name: has evidence object
+    is_a: association slot
+    range: named thing
+    description: >-
+      connects an association to an supporting entity. May be a gene/product (if evidence is homology or protein interaction).
+      Same as WITH/FROM column in GO/GAFs
+
+  - name: has evidence type
+    is_a: association slot
+    range: evidence type
+    path: evidence/type
+    description: >-
+      connects an association to the class of evidence used
+
+  - name: has evidence graph
+    is_a: association slot
+    range: evidence graph
+    path: evidence/type
+    description: >-
+      connects an association to a graph object including a path from subject to object
+      
+classes:
+
+  - name: named graph
+    is_a: information content entity
+    slot_usage:
+      - name: title
+        description: descriptive textual title

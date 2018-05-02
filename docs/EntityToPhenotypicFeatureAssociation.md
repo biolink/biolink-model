@@ -8,6 +8,9 @@ layout: default
 None
 
 URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation)
+
+
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[entity to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier], [entity to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier]-frequency qualifier >[frequency value|], [attribute|]^-[frequency value|], [entity to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier]-severity qualifier >[severity value|], [attribute|]^-[severity value|], [entity to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier]-onset qualifier >[onset|], [attribute|]^-[onset|], [entity to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier]-sex qualifier >[biological sex|], [attribute|]^-[biological sex|], [entity to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier]-association type >[ontology class|], [entity to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier]-relation >[relationship type|], [entity to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier]-object >[phenotypic feature|], [disease or phenotypic feature|in taxon]^-[phenotypic feature|], [phenotypic feature|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [entity to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier]-qualifiers >[ontology class|], [entity to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier]-publications >[publication|], [information content entity|]^-[publication|], [entity to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 
@@ -22,6 +25,7 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
  *  mixin: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html)
  *  mixin: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html)
  *  mixin: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
+ *  mixin: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html)
 
 
 ## Fields
@@ -52,7 +56,7 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: boolean
+    * __range__: xsd:boolean
     * inherited from: [association](Association.html)
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_
@@ -78,9 +82,14 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
     * __range__: [provider](Provider.html)
     * inherited from: [association](Association.html)
  * [id](id.html)
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type [required]
     * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * [name](name.html)
     * _A human-readable name for a thing_
+    * __range__: label type
+    * inherited from: [named thing](NamedThing.html)
+ * [category](category.html)
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
