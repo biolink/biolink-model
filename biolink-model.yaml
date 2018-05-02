@@ -385,6 +385,7 @@ slots:
     is_a: association slot
     local_names:
       ga4gh: annotation subject
+      neo4j: node with outgoing relationship
     description: >-
       connects an association to the subject of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
@@ -404,6 +405,7 @@ slots:
 #    range: named thing
     local_names:
       ga4gh: descriptor
+      neo4j: node with incoming relationship
     mappings:
       - rdf:object
       - owl:annotatedTarget
