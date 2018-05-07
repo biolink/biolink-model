@@ -3179,7 +3179,7 @@ class Pathway(BiologicalProcess):
         return self.__str__()
 
 
-class Physiology(BiologicalProcess):
+class PhysiologicalProcess(BiologicalProcess):
     """
     None
     """

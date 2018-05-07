@@ -23,4 +23,18 @@ associations.
 
  * [association](docs/Association.html)
 
+### Predicates
+
+ * [Predicates](docs#slots)
+
 See [Datamodel index](docs/) for list of predicates and properties
+
+# Mappings to different types of modeling
+
+## Neo4J Mapping
+
+See [mapping to neo4j](about/mapping-neo4j.md)
+
+## RDF Mapping
+
+See [mapping to neo4j](about/mapping-neo4j.md)

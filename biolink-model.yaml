@@ -15,6 +15,11 @@ types:
       A string that is intended to uniquely identify a thing
       May be URI in full or compact (CURIE) form
 
+  - name: iri type
+    typeof: string
+    description: >-
+      An IRI
+
   - name: label type
     typeof: string
     description: >-
@@ -339,6 +344,13 @@ slots:
       Must be either a CURIE shorthand for a URI or a complete URI
     domain: named thing
     range: identifier type
+      
+  - name: iri
+    identifier: true
+    description: >-
+      An IRI for the node. This is determined by the id using expansion rules.
+    domain: named thing
+    range: iri type
   
   - name: name
     aliases: ['label', 'display name']
@@ -2267,7 +2279,8 @@ classes:
       - PW:0000001
       - WD:Q4915012
 
-  - name: physiology
+  - name: physiological process
+    aliases: ['physiology']
     is_a: biological process
     mappings:
       - "UMLSSG:PHYS"

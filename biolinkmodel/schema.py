@@ -1435,14 +1435,14 @@ class PathwaySchema(BiologicalProcessSchema):
     def make_object(self, data):
         Pathway(**data)
 
-class PhysiologySchema(BiologicalProcessSchema):
+class PhysiologicalProcessSchema(BiologicalProcessSchema):
     """
     None
     """
 
     @post_load
     def make_object(self, data):
-        Physiology(**data)
+        PhysiologicalProcess(**data)
 
 class CellularComponentSchema(AnatomicalEntitySchema):
     """

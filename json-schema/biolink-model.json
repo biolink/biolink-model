@@ -137,6 +137,9 @@
         "interbase_coordinate": {
             "type": "string"
         },
+        "iri": {
+            "type": "string"
+        },
         "is_homologous_to": {
             "type": "string"
         },
@@ -3176,7 +3179,7 @@
             "title": "PhenotypicSex",
             "type": "object"
         },
-        "Physiology": {
+        "PhysiologicalProcess": {
             "description": null,
             "properties": {
                 "category": {
@@ -3193,7 +3196,7 @@
                 }
             },
             "required": [],
-            "title": "Physiology",
+            "title": "PhysiologicalProcess",
             "type": "object"
         },
         "PlanetaryEntity": {

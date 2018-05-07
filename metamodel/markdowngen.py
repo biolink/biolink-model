@@ -26,18 +26,21 @@ class MarkdownGenerator(Generator):
         self.para(schema.description)
         roots = [c for c in schema.classes if not c.is_a]
 
+        self.emit_anchor('classes')
         self.emit_header(3, 'Classes')
         for c in roots:
             if not mgr.classdef(c).mixin:
                 self.write_class_hier(c)
         self.nl()
         
+        self.emit_anchor('mixins')
         self.emit_header(3, 'Mixins')
         for c in roots:
             if mgr.classdef(c).mixin:
                 self.write_class_hier(c)
         self.nl()
 
+        self.emit_anchor('slots')
         preds = mgr.predicates()
         self.emit_header(3, 'Predicates and Properties')
         for p in mgr.predicates():
@@ -245,7 +248,10 @@ class MarkdownGenerator(Generator):
         
     def w(self, txt, ftuple=() ):
         self.file.write(txt.format(*ftuple))
-    
+
+    def emit_anchor(self, id):
+        self.w('<a name="{}"/\n>'.format(id))
+        
     def emit_header(self, level, txt):
         self.w('{} {}\n\n', ('#' * level, txt))
                              

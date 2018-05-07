@@ -2,35 +2,25 @@
 
 # biolink-models
 
-Browse the model: [https://biolink.github.io/biolink-model](https://biolink.github.io/biolink-model)
+Quickstart docs:
 
-# Intro
+ * Browse the model: [https://biolink.github.io/biolink-model](https://biolink.github.io/biolink-model)
+    * [named thing](docs/NamedThing.html) (root class for all things)
+    * [association](docs/Association.html) (root class for association types)
+    * [predicates](docs#slots)
 
-A high level datamodel of biological entities (genes, diseases,
-phenotypes, pathways, individuals, substances, etc) and their
-associations.
+See the [slides](https://www.slideshare.net/cmungall/introduction-to-the-biolink-datamodel)
 
-The immediate goal is to provide a __reference datamodel__ that is
-independent of storage technology (solr, neo4j, csvs, etc). 
+## Introduction
 
-The specification of the reference biolink model is a [single YAML
-file](biolink-model.yaml) following a custom meta-model. The basic
-elements of the YAML are:
+The purpose of the biolink datamodel is to provide a high level
+datamodel of biological entities (genes, diseases, phenotypes,
+pathways, individuals, substances, etc), their properties,
+relationships, and ways in which they can be associated.
 
- - definitions of upper level *classes* representing both named things
-(genes, phenotypes, etc) and associations between them
- - definitions of *slots* (aka properties) that can be used to relate
-   members of these classes to other classes or datatypes
-
-# Spec
-
- - documenting the core entity types and relationships used in a complex biological database project
- - generation of JSON-Schema, for validation of JSON data, and for defining OpenAPI payloads
- - generation of Solr schemas (as used in Monarch and GO, but not limited to these)
- - providing structure and documentation for generic graph models
- - codegen in languages such as python and javascript
- - documenting the headers of simple dermalized CSV formats
- - alignment and mapping of application-specific models
+The representation is independent of storage technology or metamodel
+(solr/documents, neo4j/property graphs, RDF/OWL, JSON, CSVs,
+etc). Different mappings to each of these are provided.
 
 The specification of the reference biolink model is a [single YAML
 file](biolink-model.yaml) following a custom meta-model. The basic
@@ -40,6 +30,43 @@ elements of the YAML are:
 (genes, phenotypes, etc) and associations between them
  - definitions of *slots* (aka properties) that can be used to relate
    members of these classes to other classes or datatypes
+
+This datamodel is being used in the NCATS Translator project. Not all
+these elements in the datamodel are used by the Translator, a subset
+is used.
+
+### Entity (Node) Types
+
+ * [named thing](docs/NamedThing.html) (root class for all things)
+
+Protege view:
+![img](images/protege-entities.png)
+
+
+### Property and Edge Types
+
+ * [predicates](docs#slots)
+
+We divide these into *relationship types* which connect two nodes together, and *node or edge properties*
+
+Protege view:
+![img](images/protege-entities.png)
+
+### Association Hierarchy
+
+ * [association](docs/Association.html) (root class for association types)
+
+## Mapping to specific database and modeling platforms
+
+### Neo4J Mapping
+
+See [mapping to neo4j](about/mapping-neo4j.md)
+
+### RDF Mapping
+
+See [mapping to neo4j](about/mapping-neo4j.md)
+
+
 
 ## Organization
 
@@ -66,11 +93,6 @@ The yaml definition is currently used to derive:
 
 We leverage existing frameworks where possible. E.g json-schema allows
 codegen to other languages
-
-TODO:
-
- - JSON-LD
- - SHACL
 
 Additionally, this repo contains the metamodel definition of itself in
 yaml, together with code for working with datamodels. In theory this
