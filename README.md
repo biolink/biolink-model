@@ -49,8 +49,6 @@ Protege view:
 
 We divide these into *relationship types* which connect two nodes together, and *node or edge properties*
 
-Protege view:
-![img](images/protege-entities.png)
 
 ### Association Hierarchy
 
@@ -60,11 +58,11 @@ Protege view:
 
 ### Neo4J Mapping
 
-See [mapping to neo4j](about/mapping-neo4j.md)
+See [mapping to neo4j](https://biolink.github.io/biolink-model/about/mapping-neo4j.html)
 
 ### RDF Mapping
 
-See [mapping to neo4j](about/mapping-neo4j.md)
+See [mapping to neo4j](https://biolink.github.io/biolink-model/about/mapping-rdf.html)
 
 
 

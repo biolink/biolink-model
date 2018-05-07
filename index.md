@@ -33,8 +33,8 @@ See [Datamodel index](docs/) for list of predicates and properties
 
 ## Neo4J Mapping
 
-See [mapping to neo4j](about/mapping-neo4j.md)
+See [mapping to neo4j](about/mapping-neo4j.html)
 
 ## RDF Mapping
 
-See [mapping to neo4j](about/mapping-neo4j.md)
+See [mapping to neo4j](about/mapping-neo4j.html)
