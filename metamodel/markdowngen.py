@@ -250,7 +250,7 @@ class MarkdownGenerator(Generator):
         self.file.write(txt.format(*ftuple))
 
     def emit_anchor(self, id):
-        self.w('<a name="{}"/\n>'.format(id))
+        self.w('<a name="{}"/>\n'.format(id))
         
     def emit_header(self, level, txt):
         self.w('{} {}\n\n', ('#' * level, txt))

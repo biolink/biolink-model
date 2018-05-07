@@ -1156,6 +1156,12 @@ type AnatomicalEntityPartOfAnatomicalEntityAssociation {
 type Occurrent {
 }
 
+type BiologicalProcessOrActivity {
+  id: String!
+  name: String
+  category: String
+}
+
 type MolecularActivity implements Occurrent {
   id: String
   name: String

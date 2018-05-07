@@ -1381,9 +1381,18 @@ class OccurrentSchema(Schema):
     def make_object(self, data):
         Occurrent(**data)
 
-class MolecularActivitySchema(BiologicalEntitySchema):
+class BiologicalProcessOrActivitySchema(BiologicalEntitySchema):
     """
-    An execution of a molecular function
+    Either an individual molecular activity, or a collection of causally connected molecular activities
+    """
+
+    @post_load
+    def make_object(self, data):
+        BiologicalProcessOrActivity(**data)
+
+class MolecularActivitySchema(BiologicalProcessOrActivitySchema):
+    """
+    An execution of a molecular function carried out by a gene product or macromolecular complex.
     """
 
     @post_load
@@ -1417,7 +1426,7 @@ class PhenomenonSchema(OccurrentSchema):
     def make_object(self, data):
         Phenomenon(**data)
 
-class BiologicalProcessSchema(BiologicalEntitySchema):
+class BiologicalProcessSchema(BiologicalProcessOrActivitySchema):
     """
     One or more causally connected executions of molecular functions
     """

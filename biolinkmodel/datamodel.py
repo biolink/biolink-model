@@ -3086,9 +3086,27 @@ class Occurrent(object):
         return self.__str__()
 
 
-class MolecularActivity(BiologicalEntity):
+class BiologicalProcessOrActivity(BiologicalEntity):
     """
-    An execution of a molecular function
+    Either an individual molecular activity, or a collection of causally connected molecular activities
+    """
+    def __init__(self,
+                 id=None,
+                 name=None,
+                 category=None):
+        self.id=id
+        self.name=name
+        self.category=category
+
+    def __str__(self):
+        return "id={} name={} category={} ".format(self.id,self.name,self.category)
+    def __repr__(self):
+        return self.__str__()
+
+
+class MolecularActivity(BiologicalProcessOrActivity):
+    """
+    An execution of a molecular function carried out by a gene product or macromolecular complex.
     """
     def __init__(self,
                  id=None,
@@ -3143,7 +3161,7 @@ class Phenomenon(Occurrent):
         return self.__str__()
 
 
-class BiologicalProcess(BiologicalEntity):
+class BiologicalProcess(BiologicalProcessOrActivity):
     """
     One or more causally connected executions of molecular functions
     """

@@ -25,8 +25,7 @@ URI: [http://bioentity.io/vocab/BiologicalEntity](http://bioentity.io/vocab/Biol
  *  child: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  child: [environment](Environment.html)
  *  child: [molecular entity](MolecularEntity.html)
- *  child: [molecular activity](MolecularActivity.html)
- *  child: [biological process](BiologicalProcess.html)
+ *  child: [biological process or activity](BiologicalProcessOrActivity.html)
 
 ## Used in
 

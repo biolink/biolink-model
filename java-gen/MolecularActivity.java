@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * MolecularActivity
  * <p>
- * An execution of a molecular function
+ * An execution of a molecular function carried out by a gene product or macromolecular complex.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

@@ -56,6 +56,9 @@
         "disrupts": {
             "type": "string"
         },
+        "edge_label": {
+            "type": "string"
+        },
         "end_interbase_coordinate": {
             "type": "string"
         },
@@ -521,6 +524,26 @@
             },
             "required": [],
             "title": "BiologicalProcess",
+            "type": "object"
+        },
+        "BiologicalProcessOrActivity": {
+            "description": "Either an individual molecular activity, or a collection of causally connected molecular activities",
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "BiologicalProcessOrActivity",
             "type": "object"
         },
         "BiologicalSex": {
@@ -2937,7 +2960,7 @@
             "type": "object"
         },
         "MolecularActivity": {
-            "description": "An execution of a molecular function",
+            "description": "An execution of a molecular function carried out by a gene product or macromolecular complex.",
             "properties": {
                 "category": {
                     "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",

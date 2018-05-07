@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/precedes](http://bioentity.io/vocab/precedes)
 ## Mappings
 
  * [BFO:0000063](http://purl.obolibrary.org/obo/BFO_0000063)
+ * [SEMMEDDB:PRECEDES](http://purl.obolibrary.org/obo/SEMMEDDB_PRECEDES)
 
 ## Domain and Range
 

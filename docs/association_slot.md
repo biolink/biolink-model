@@ -22,6 +22,7 @@ URI: [http://bioentity.io/vocab/association_slot](http://bioentity.io/vocab/asso
 
  *  child: [subject](subject.html)
  *  child: [object](object.html)
+ *  child: [edge label](edge_label.html)
  *  child: [relation](relation.html)
  *  child: [negated](negated.html)
  *  child: [has confidence level](has_confidence_level.html)

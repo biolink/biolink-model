@@ -5,19 +5,19 @@ layout: default
 ## molecular activity
 
 
-An execution of a molecular function
+An execution of a molecular function carried out by a gene product or macromolecular complex.
 
 URI: [http://bioentity.io/vocab/MolecularActivity](http://bioentity.io/vocab/MolecularActivity)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[biological entity|]^-[molecular activity|])
+![img](http://yuml.me/diagram/nofunky/class/[biological process or activity|]^-[molecular activity|])
 ## Mappings
 
  * [GO:0003674](http://purl.obolibrary.org/obo/GO_0003674)
 
 ## Inheritance
 
- *  is_a: [biological entity](BiologicalEntity.html)
+ *  is_a: [biological process or activity](BiologicalProcessOrActivity.html)
  *  mixin: [occurrent](Occurrent.html)
 
 ## Children

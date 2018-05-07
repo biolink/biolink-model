@@ -10,7 +10,7 @@ One or more causally connected executions of molecular functions
 URI: [http://bioentity.io/vocab/BiologicalProcess](http://bioentity.io/vocab/BiologicalProcess)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[biological entity|]^-[biological process|])
+![img](http://yuml.me/diagram/nofunky/class/[biological process or activity|]^-[biological process|])
 ## Mappings
 
  * [GO:0008150](http://purl.obolibrary.org/obo/GO_0008150)
@@ -19,13 +19,13 @@ URI: [http://bioentity.io/vocab/BiologicalProcess](http://bioentity.io/vocab/Bio
 
 ## Inheritance
 
- *  is_a: [biological entity](BiologicalEntity.html)
+ *  is_a: [biological process or activity](BiologicalProcessOrActivity.html)
  *  mixin: [occurrent](Occurrent.html)
 
 ## Children
 
  *  child: [pathway](Pathway.html)
- *  child: [physiology](Physiology.html)
+ *  child: [physiological process](PhysiologicalProcess.html)
 
 ## Used in
 
