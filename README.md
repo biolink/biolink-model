@@ -11,6 +11,8 @@ Quickstart docs:
 
 See the [slides](https://www.slideshare.net/cmungall/introduction-to-the-biolink-datamodel)
 
+Conversion/validation code: https://github.com/NCATS-Tangerine/kgx
+
 ## Introduction
 
 The purpose of the biolink datamodel is to provide a high level
