@@ -2239,12 +2239,21 @@ classes:
     mappings:
       - "BFO:0000003"
 
-  - name: molecular activity
+  - name: biological process or activity
     is_a: biological entity
+    description: >-
+      Either an individual molecular activity, or a collection of causally connected molecular activities
+    union_of:
+      - molecular activity
+      - biological process
+
+  - name: molecular activity
+    is_a: biological process or activity
+    aliases: ['molecular function', 'molecular event', 'reaction']
     mixins:
       - occurrent
     description: >-
-      An execution of a molecular function
+      An execution of a molecular function carried out by a gene product or macromolecular complex.
     mappings:
       - "GO:0003674"
 
@@ -2270,7 +2279,7 @@ classes:
       - "UMLSSG:PHEN"
 
   - name: biological process
-    is_a: biological entity
+    is_a: biological process or activity
     mixins:
       - occurrent
     description: >-
