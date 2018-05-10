@@ -11,7 +11,8 @@ from .generator import Generator
 from prefixcommons import curie_util as cu
 import json
 
-default_curie_maps = [cu.read_biocontext('idot_context'), cu.read_biocontext('monarch_context'),cu.read_biocontext('obo_context')]
+# highest to lowest priority
+default_curie_maps = [cu.read_biocontext('obo_context'), cu.read_biocontext('monarch_context'), cu.read_biocontext('idot_context')]
 
 class ContextGenerator(Generator):
         
