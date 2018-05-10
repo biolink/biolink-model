@@ -66,6 +66,8 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
  *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [molecular interaction](MolecularInteraction.html) references: [ontology class](OntologyClass.html)
  *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [ontology class](OntologyClass.html)
+ *  class: [cell line to thing association](CellLineToThingAssociation.html) references: [ontology class](OntologyClass.html)
+ *  class: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [case to thing association](CaseToThingAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [ontology class](OntologyClass.html)
@@ -107,6 +109,7 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
  *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [cellular component](CellularComponent.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [cell](Cell.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [cell line](CellLine.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gross anatomical structure](GrossAnatomicalStructure.html) references: [organism taxon](OrganismTaxon.html)
 
 ## Fields

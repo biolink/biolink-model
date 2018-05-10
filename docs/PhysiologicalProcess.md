@@ -2,25 +2,22 @@
 layout: default
 ---
 
-## cell
+## physiological process
 
 
 None
 
-URI: [http://bioentity.io/vocab/Cell](http://bioentity.io/vocab/Cell)
+URI: [http://bioentity.io/vocab/PhysiologicalProcess](http://bioentity.io/vocab/PhysiologicalProcess)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[anatomical entity|in taxon]^-[cell|], [cell|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
+![img](http://yuml.me/diagram/nofunky/class/[biological process|]^-[physiological process|])
 ## Mappings
 
- * [GO:0005623](http://purl.obolibrary.org/obo/GO_0005623)
- * [CL:0000000](http://purl.obolibrary.org/obo/CL_0000000)
- * [SIO:010001](http://semanticscience.org/resource/SIO_010001)
- * [WD:Q7868](http://purl.obolibrary.org/obo/WD_Q7868)
+ * [UMLSSG:PHYS](http://purl.obolibrary.org/obo/UMLSSG_PHYS)
 
 ## Inheritance
 
- *  is_a: [anatomical entity](AnatomicalEntity.html)
+ *  is_a: [biological process](BiologicalProcess.html)
 
 ## Children
 
@@ -40,7 +37,3 @@ URI: [http://bioentity.io/vocab/Cell](http://bioentity.io/vocab/Cell)
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
- * [in taxon](in_taxon.html)
-    * _connects a thing to a class representing a taxon_
-    * __range__: [organism taxon](OrganismTaxon.html)
-    * inherited from: [thing with taxon](ThingWithTaxon.html)

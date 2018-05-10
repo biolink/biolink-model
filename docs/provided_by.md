@@ -10,7 +10,7 @@ connects an association to the agent (person, organization or group) that provid
 URI: [http://bioentity.io/vocab/provided_by](http://bioentity.io/vocab/provided_by)
 ## Mappings
 
- * [prov:providedBy](http://purl.obolibrary.org/obo/prov_providedBy)
+ * [pav:providedBy](http://purl.obolibrary.org/obo/pav_providedBy)
 
 ## Domain and Range
 
@@ -33,6 +33,8 @@ URI: [http://bioentity.io/vocab/provided_by](http://bioentity.io/vocab/provided_
  *  usage: [gene to gene homology association](GeneToGeneHomologyAssociation.html)
  *  usage: [molecular interaction](MolecularInteraction.html)
  *  usage: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html)
+ *  usage: [cell line to thing association](CellLineToThingAssociation.html)
+ *  usage: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html)
  *  usage: [chemical to thing association](ChemicalToThingAssociation.html)
  *  usage: [case to thing association](CaseToThingAssociation.html)
  *  usage: [chemical to gene association](ChemicalToGeneAssociation.html)

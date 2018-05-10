@@ -27,6 +27,8 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
  *  child: [genotype to gene association](GenotypeToGeneAssociation.html)
  *  child: [genotype to variant association](GenotypeToVariantAssociation.html)
  *  child: [gene to gene association](GeneToGeneAssociation.html)
+ *  child: [cell line to thing association](CellLineToThingAssociation.html)
+ *  child: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html)
  *  child: [chemical to thing association](ChemicalToThingAssociation.html)
  *  child: [case to thing association](CaseToThingAssociation.html)
  *  child: [chemical to gene association](ChemicalToGeneAssociation.html)

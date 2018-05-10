@@ -20,6 +20,7 @@ class DefinitionSchema(Schema):
     apply_to = fields.Str()
     abstract = fields.Boolean()
     mappings = fields.List(fields.Str)
+    id_prefixes = fields.List(fields.Str)
 
     @post_load
     def make_object(self, data):

@@ -1624,6 +1624,74 @@ class PairwiseGeneOrProteinInteractionAssociation(GeneToGeneAssociation):
         return self.__str__()
 
 
+class CellLineToThingAssociation(Association):
+    """
+    An relationship between a cell line and another entity
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 name=None,
+                 category=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.name=name
+        self.category=category
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
+    def __repr__(self):
+        return self.__str__()
+
+
+class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
+    """
+    An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 name=None,
+                 category=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.name=name
+        self.category=category
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
+    def __repr__(self):
+        return self.__str__()
+
+
 class ChemicalToThingAssociation(Association):
     """
     An interaction between a chemical entity and another entity
@@ -3236,6 +3304,26 @@ class CellularComponent(AnatomicalEntity):
 
 
 class Cell(AnatomicalEntity):
+    """
+    None
+    """
+    def __init__(self,
+                 id=None,
+                 name=None,
+                 category=None,
+                 in_taxon=None):
+        self.id=id
+        self.name=name
+        self.category=category
+        self.in_taxon=in_taxon
+
+    def __str__(self):
+        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
+    def __repr__(self):
+        return self.__str__()
+
+
+class CellLine(Biosample):
     """
     None
     """

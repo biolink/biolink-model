@@ -52,6 +52,8 @@ types:
     typeof: string
     mappings:
       - UO:0000000
+    id_prefixes:
+      - UO
       
   - name: time type
     typeof: time
@@ -332,7 +334,7 @@ slots:
     domain: class
     range: class
     mappings:
-      - RDFS:subClassOf
+      - rdfs:subClassOf
       - SEMMEDDB:IS_A 
  
 ## property slots
@@ -381,6 +383,8 @@ slots:
     range: narrative text
     description: >-
       a human-readable description of a thing
+    mappings:
+      - dcterms:description
   
   - name: systematic synonym
     domain: named thing
@@ -471,7 +475,7 @@ slots:
     description: >-
       connects an association to the agent (person, organization or group) that provided it
     mappings:
-      - prov:providedBy
+      - pav:providedBy
 
   - name: association type
     is_a: association slot
@@ -486,7 +490,7 @@ slots:
     description: >-
       date on which thing was created
     mappings:
-      - dc:created
+      - dcterms:created
   
   - name: in taxon
     domain: thing with taxon
@@ -753,6 +757,7 @@ classes:
     slot_usage:
       - name: id
         required: true
+    subclass_of: BFO:0000001
     mappings:
       - "UMLSSG:OBJC"
       - WD:Q35120
@@ -786,7 +791,7 @@ classes:
   - name: organism taxon
     is_a: ontology class
     values_from:
-      - ncbitaxon
+      - NCBITaxon
     mappings:
       - WD:Q16521
       
@@ -819,8 +824,11 @@ classes:
     mixins:
       - thing with taxon
     is_a: organismal entity
+    subclass_of: PCO:0000001
     mappings:
       - SIO:001061
+    id_prefixes:
+      - ANCESTRO
       
   - name: biosample
     aliases: ['biospecimen', 'sample']
@@ -1090,6 +1098,10 @@ classes:
       - HGNC
       - MGI
       - ZFIN
+      - dictyBase
+      - WB
+      - SGD
+      - PomBase
       
   - name: gene product
     is_a: gene or gene product
@@ -1160,13 +1172,14 @@ classes:
       - RNAcentral
       - NCBIGene
       - ENSEMBL
+    subclass_of: SO:0000655
     mappings:
       - SIO:001235
       
   - name: microRNA
     is_a: noncoding RNA product
+    subclass_of: SO:0000276
     mappings:
-      - "SO:0000276"
       - SIO:001397
       - WD:Q310899
     id_prefixes:
@@ -1174,12 +1187,15 @@ classes:
         
   - name: macromolecular complex
     is_a: molecular entity
+    subclass_of: "GO:0032991"
     mappings:
-      - "GO:0032991"
       - "SIO:010046"
       - WD:Q22325163
     id_prefixes:
       - IntAct
+      - GO
+      - PR
+      - Reactome
       
   - name: gene grouping
     abstract: true
@@ -1190,8 +1206,8 @@ classes:
   - name: gene family
     is_a: molecular entity
     mappings:
-      - "NCIT:C20130"
       - SIO:001380
+      - "NCIT:C20130"
       - WD:Q417841
     mixins:
       - gene grouping
@@ -1200,7 +1216,6 @@ classes:
     id_prefixes:
       - PANTHER
       
-
   - name: zygosity
     is_a: attribute
     mappings:
@@ -1225,6 +1240,7 @@ classes:
 #    slots:
 #      - completeness
     mappings:
+      - GENO:0000871
       - VMC:Haplotype
 
   - name: sequence variant
@@ -1509,6 +1525,31 @@ classes:
         description: "interaction relationship type"
         definitional: true
 
+  - name: cell line to thing association
+    is_a: association
+    defining_slots:
+      - subject
+    abstract: true
+    description: >-
+      An relationship between a cell line and another entity
+    slot_usage:
+      - name: subject
+        range: cell line
+        definitional: true
+
+  - name: cell line to disease or phenotypic feature association
+    is_a: association
+    mixins:
+      - cell line to thing association
+      - thing to disease or phenotypic feature association
+    description: >-
+      An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
+    slot_usage:
+      - name: subject
+        range: cell line
+      - name: subject
+        range: disease or phenotypic feature
+        
   - name: chemical to thing association
     is_a: association
     defining_slots:
@@ -2131,6 +2172,8 @@ classes:
       - end interbase coordinate
       - genome build
       - phase
+    mappings:
+      - faldo:location
 
   - name: sequence feature relationship
     is_a: association
@@ -2144,6 +2187,8 @@ classes:
         range: genomic entity  ## todo protein
       - name: object
         range: genomic entity ## typically a chromosome
+    mappings:
+      - GMODChado:feature_relationship
 
   - name: transcript to gene relationship
     is_a: sequence feature relationship
@@ -2246,6 +2291,9 @@ classes:
     union_of:
       - molecular activity
       - biological process
+    id_prefixes:
+      - GO
+      - Reactome
 
   - name: molecular activity
     is_a: biological process or activity
@@ -2256,6 +2304,9 @@ classes:
       An execution of a molecular function carried out by a gene product or macromolecular complex.
     mappings:
       - "GO:0003674"
+    id_prefixes:
+      - GO
+      - Reactome
 
   - name: activity and behavior
     is_a: occurrent
@@ -2288,6 +2339,9 @@ classes:
       - "GO:0008150"
       - SIO:000006
       - WD:Q2996394
+    id_prefixes:
+      - GO
+      - Reactome
 
   - name: pathway
     is_a: biological process
@@ -2296,6 +2350,9 @@ classes:
       - SIO:010526
       - PW:0000001
       - WD:Q4915012
+    id_prefixes:
+      - GO
+      - Reactome
 
   - name: physiological process
     aliases: ['physiology']
@@ -2311,19 +2368,37 @@ classes:
       - "GO:0005575"
       - SIO:001400
       - WD:Q5058355
+    id_prefixes:
+      - GO
       
   - name: cell
     is_a: anatomical entity
     mappings:
       - "GO:0005623"
+      - "CL:0000000"
       - "SIO:010001"
       - WD:Q7868
+    id_prefixes:
+      - CL
+      - PO
+
+  - name: cell line
+    is_a: biosample
+    mappings:
+      - "CLO:0000031"
+    id_prefixes:
+      - CLO
       
   - name: gross anatomical structure
     aliases: ['tissue', 'organ']
     is_a: anatomical entity
     mappings:
+      - UBERON:0010000
       - SIO:010046
       - WD:Q4936952
+    id_prefixes:
+      - UBERON
+      - PO
+      - FAO
       
   

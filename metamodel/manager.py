@@ -21,7 +21,7 @@ class NameStyle(Enum):
     in some, property names are underscore separated.
     """
     CAMELCASE = 1
-    UNDERSCORE = 2
+    UNDERSCORE = 2   ## aka snake-case
     NATURAL = 3
     LCAMELCASE = 4
 
@@ -104,11 +104,12 @@ class Manager(object):
 
     def get_name(self, n, style):
         if style == NameStyle.UNDERSCORE:
-            return n.replace(" ","_")
+            return n.replace(" ","_").replace(",","")
         if style == NameStyle.CAMELCASE:
-            return n.title().replace(" ","")
+            # TODO: fix so microRNA -> MicroRNA
+            return n.title().replace(" ","").replace(",","")
         if style == NameStyle.LCAMELCASE:
-            s = n.title().replace(" ","")
+            s = n.title().replace(" ","").replace(",","")
             return s[0].lower() + s[1:]
         return n
 

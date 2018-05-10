@@ -13,8 +13,8 @@ URI: [http://bioentity.io/vocab/GeneFamily](http://bioentity.io/vocab/GeneFamily
 ![img](http://yuml.me/diagram/nofunky/class/[molecular entity|in taxon]^-[gene family|], [gene family|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
- * [NCIT:C20130](http://purl.obolibrary.org/obo/NCIT_C20130)
  * [SIO:001380](http://semanticscience.org/resource/SIO_001380)
+ * [NCIT:C20130](http://purl.obolibrary.org/obo/NCIT_C20130)
  * [WD:Q417841](http://purl.obolibrary.org/obo/WD_Q417841)
 
 ## Inheritance

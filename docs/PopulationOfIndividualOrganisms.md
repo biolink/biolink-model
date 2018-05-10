@@ -14,6 +14,7 @@ URI: [http://bioentity.io/vocab/PopulationOfIndividualOrganisms](http://bioentit
 ## Mappings
 
  * [SIO:001061](http://semanticscience.org/resource/SIO_001061)
+ * [PCO:0000001](http://purl.obolibrary.org/obo/PCO_0000001)
 
 ## Inheritance
 

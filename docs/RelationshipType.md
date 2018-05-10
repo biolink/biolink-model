@@ -28,6 +28,8 @@ URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/Rela
  *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [gene to gene association](GeneToGeneAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [cell line to thing association](CellLineToThingAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [case to thing association](CaseToThingAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [relationship type](RelationshipType.html)

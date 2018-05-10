@@ -60,6 +60,7 @@ URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/Organis
  *  class: [sequence variant](SequenceVariant.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [cellular component](CellularComponent.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [cell](Cell.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [cell line](CellLine.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gross anatomical structure](GrossAnatomicalStructure.html) references: [organism taxon](OrganismTaxon.html)
 
 ## Fields

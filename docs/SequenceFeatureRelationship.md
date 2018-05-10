@@ -13,6 +13,7 @@ URI: [http://bioentity.io/vocab/SequenceFeatureRelationship](http://bioentity.io
 ![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[sequence feature relationship|], [sequence feature relationship|]-association type >[ontology class|], [sequence feature relationship|]-subject >[genomic entity|has biological sequence], [molecular entity|in taxon]^-[genomic entity|has biological sequence], [genomic entity|has biological sequence]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [sequence feature relationship|]-relation >[relationship type|], [sequence feature relationship|]-object >[genomic entity|has biological sequence], [sequence feature relationship|]-qualifiers >[ontology class|], [sequence feature relationship|]-publications >[publication|], [information content entity|]^-[publication|], [sequence feature relationship|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
+ * [GMODChado:feature_relationship](http://purl.obolibrary.org/obo/GMODChado_feature_relationship)
 
 ## Inheritance
 

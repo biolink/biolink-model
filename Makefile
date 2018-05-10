@@ -3,7 +3,7 @@
 # ----------------------------------------
 all: build test 
 test: metatest pytests
-build: build_core contrib_build_monarch contrib_build_translator
+build: context.jsonld build_core contrib_build_monarch contrib_build_translator
 
 build_core: docs/index.md biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql
 
@@ -23,6 +23,12 @@ subsets/biological_entity.csv: biolink-model.yaml
 	./bin/gen-csv.py -r 'biological entity' biolink-model.yaml > $@.tmp && mv $@.tmp $@
 biolink-model.tsv: biolink-model.yaml
 	./bin/gen-csv.py -f tsv biolink-model.yaml > $@.tmp && mv $@.tmp $@
+
+# ~~~~~~~~~~~~~~~~~~~~
+# JSON-LD CONTEXT
+# ~~~~~~~~~~~~~~~~~~~~
+context.jsonld: biolink-model.yaml
+	./bin/gen-jsonld-context.py $< > $@.tmp && mv $@.tmp $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # JSONSCHEMA -> Java

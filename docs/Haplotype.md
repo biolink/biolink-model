@@ -13,6 +13,7 @@ URI: [http://bioentity.io/vocab/Haplotype](http://bioentity.io/vocab/Haplotype)
 ![img](http://yuml.me/diagram/nofunky/class/[genomic entity|has biological sequence]^-[haplotype|], [haplotype|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
+ * [GENO:0000871](http://purl.obolibrary.org/obo/GENO_0000871)
  * [VMC:Haplotype](http://purl.obolibrary.org/obo/VMC_Haplotype)
 
 ## Inheritance

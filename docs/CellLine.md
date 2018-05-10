@@ -2,28 +2,30 @@
 layout: default
 ---
 
-## macromolecular complex
+## cell line
 
 
 None
 
-URI: [http://bioentity.io/vocab/MacromolecularComplex](http://bioentity.io/vocab/MacromolecularComplex)
+URI: [http://bioentity.io/vocab/CellLine](http://bioentity.io/vocab/CellLine)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[molecular entity|in taxon]^-[macromolecular complex|], [macromolecular complex|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
+![img](http://yuml.me/diagram/nofunky/class/[biosample|in taxon]^-[cell line|], [cell line|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
- * [SIO:010046](http://semanticscience.org/resource/SIO_010046)
- * [WD:Q22325163](http://purl.obolibrary.org/obo/WD_Q22325163)
- * [GO:0032991](http://purl.obolibrary.org/obo/GO_0032991)
+ * [CLO:0000031](http://purl.obolibrary.org/obo/CLO_0000031)
 
 ## Inheritance
 
- *  is_a: [molecular entity](MolecularEntity.html)
+ *  is_a: [biosample](Biosample.html)
 
 ## Children
 
 
+## Used in
+
+ *  class: [cell line to thing association](CellLineToThingAssociation.html) references: [cell line](CellLine.html)
+ *  class: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html) references: [cell line](CellLine.html)
 
 ## Fields
 
