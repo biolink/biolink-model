@@ -29,6 +29,10 @@ associations.
 
 See [Datamodel index](docs/) for list of predicates and properties
 
+# Identifiers
+
+See [biolink json-ld context](context.jsonld)
+
 # Mappings to different types of modeling
 
 ## Neo4J Mapping

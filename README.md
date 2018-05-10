@@ -56,6 +56,10 @@ We divide these into *relationship types* which connect two nodes together, and 
 
  * [association](docs/Association.html) (root class for association types)
 
+## Identifiers
+
+See [biolink json-ld context](context.jsonld)
+
 ## Mapping to specific database and modeling platforms
 
 ### Neo4J Mapping
