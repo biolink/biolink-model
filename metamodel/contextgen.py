@@ -34,12 +34,14 @@ class ContextGenerator(Generator):
     def tr_element(self, e, n):
         schema = self.schema
         mgr = self.manager
+        # subClassOf has highest priority
         if isinstance(e, ClassDefinition) and e.subclass_of is not None:
             self.add_mapping(n, e.subclass_of)
         mappings = e.mappings
         if mappings is not None:
             for m in mappings:
                 self.add_mapping(n, m)
+        # ensure that all declared ID prefixes have an entry in the context
         if e.id_prefixes:
             for px in e.id_prefixes:
                 self.add_mapping(px, px+":")

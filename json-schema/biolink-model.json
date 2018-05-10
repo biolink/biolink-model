@@ -167,10 +167,10 @@
         "negatively_regulates": {
             "type": "string"
         },
-        "negatively_regulates,_entity_to_entity": {
+        "negatively_regulates_entity_to_entity": {
             "type": "string"
         },
-        "negatively_regulates,_process_to_process": {
+        "negatively_regulates_process_to_process": {
             "type": "string"
         },
         "object": {
@@ -191,10 +191,10 @@
         "positively_regulates": {
             "type": "string"
         },
-        "positively_regulates,_entity_to_entity": {
+        "positively_regulates_entity_to_entity": {
             "type": "string"
         },
-        "positively_regulates,_process_to_process": {
+        "positively_regulates_process_to_process": {
             "type": "string"
         },
         "precedes": {
@@ -224,10 +224,10 @@
         "regulates": {
             "type": "string"
         },
-        "regulates,_entity_to_entity": {
+        "regulates_entity_to_entity": {
             "type": "string"
         },
-        "regulates,_process_to_process": {
+        "regulates_process_to_process": {
             "type": "string"
         },
         "relation": {
@@ -755,6 +755,88 @@
             },
             "required": [],
             "title": "Cell",
+            "type": "object"
+        },
+        "CellLine": {
+            "description": null,
+            "properties": {
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "in_taxon": {
+                    "description": "connects a thing to a class representing a taxon",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "CellLine",
+            "type": "object"
+        },
+        "CellLineToDiseaseOrPhenotypicFeatureAssociation": {
+            "description": "An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype",
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
             "type": "object"
         },
         "CellularComponent": {

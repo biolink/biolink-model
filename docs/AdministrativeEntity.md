@@ -31,6 +31,8 @@ URI: [http://bioentity.io/vocab/AdministrativeEntity](http://bioentity.io/vocab/
  *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [provider](Provider.html)
  *  class: [molecular interaction](MolecularInteraction.html) references: [provider](Provider.html)
  *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [provider](Provider.html)
+ *  class: [cell line to thing association](CellLineToThingAssociation.html) references: [provider](Provider.html)
+ *  class: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
  *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [provider](Provider.html)
  *  class: [case to thing association](CaseToThingAssociation.html) references: [provider](Provider.html)
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [provider](Provider.html)

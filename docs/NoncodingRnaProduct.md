@@ -14,6 +14,7 @@ URI: [http://bioentity.io/vocab/NoncodingRnaProduct](http://bioentity.io/vocab/N
 ## Mappings
 
  * [SIO:001235](http://semanticscience.org/resource/SIO_001235)
+ * [SO:0000655](http://purl.obolibrary.org/obo/SO_0000655)
 
 ## Inheritance
 

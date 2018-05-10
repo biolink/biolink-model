@@ -3,7 +3,7 @@
 # ----------------------------------------
 all: build test 
 test: metatest pytests
-build: build_core contrib_build_monarch contrib_build_translator
+build: context.jsonld build_core contrib_build_monarch contrib_build_translator
 
 build_core: docs/index.md biolinkmodel/datamodel.py biolinkmodel/schema.py gen-golr-views ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql
 

@@ -2,18 +2,17 @@
 layout: default
 ---
 
-## genomic sequence localization
+## cell line to thing association
 
 
-A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
+An relationship between a cell line and another entity
 
-URI: [http://bioentity.io/vocab/GenomicSequenceLocalization](http://bioentity.io/vocab/GenomicSequenceLocalization)
+URI: [http://bioentity.io/vocab/CellLineToThingAssociation](http://bioentity.io/vocab/CellLineToThingAssociation)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-association type >[ontology class|], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-subject >[genomic entity|has biological sequence], [molecular entity|in taxon]^-[genomic entity|has biological sequence], [genomic entity|has biological sequence]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-relation >[relationship type|], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-object >[genomic entity|has biological sequence], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-qualifiers >[ontology class|], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-publications >[publication|], [information content entity|]^-[publication|], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-provided by >[provider|], [administrative entity|]^-[provider|])
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[cell line to thing association|], [cell line to thing association|]-association type >[ontology class|], [cell line to thing association|]-subject >[cell line|], [biosample|in taxon]^-[cell line|], [cell line|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [cell line to thing association|]-relation >[relationship type|], [cell line to thing association|]-qualifiers >[ontology class|], [cell line to thing association|]-publications >[publication|], [information content entity|]^-[publication|], [cell line to thing association|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
- * [faldo:location](http://purl.obolibrary.org/obo/faldo_location)
 
 ## Inheritance
 
@@ -21,33 +20,18 @@ URI: [http://bioentity.io/vocab/GenomicSequenceLocalization](http://bioentity.io
 
 ## Children
 
+ *  mixin: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html)
 
 
 ## Fields
 
- * [start interbase coordinate](start_interbase_coordinate.html)
-    * _TODO_
-    * __range__: None
-    * __Local__
- * [end interbase coordinate](end_interbase_coordinate.html)
-    * _TODO_
-    * __range__: None
-    * __Local__
- * [genome build](genome_build.html)
-    * _TODO_
-    * __range__: None
-    * __Local__
- * [phase](phase.html)
-    * _TODO_
-    * __range__: None
-    * __Local__
  * [association type](association_type.html)
     * _connects an association to the type of association (e.g. gene to phenotype)_
     * __range__: [ontology class](OntologyClass.html)
     * inherited from: [association](Association.html)
  * [subject](subject.html)
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [genomic entity](GenomicEntity.html) [required]
+    * __range__: [cell line](CellLine.html) [required]
     * inherited from: [association](Association.html)
  * [negated](negated.html)
     * _if set to true, then the association is negated i.e. is not true_
@@ -59,7 +43,7 @@ URI: [http://bioentity.io/vocab/GenomicSequenceLocalization](http://bioentity.io
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [genomic entity](GenomicEntity.html) [required]
+    * __range__: None [required]
     * inherited from: [association](Association.html)
  * [qualifiers](qualifiers.html)
     * _connects an association to qualifiers that modify or qualify the meaning of that association_

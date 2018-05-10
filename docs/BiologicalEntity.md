@@ -38,6 +38,8 @@ URI: [http://bioentity.io/vocab/BiologicalEntity](http://bioentity.io/vocab/Biol
  *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [molecular interaction](MolecularInteraction.html) references: [molecular entity](MolecularEntity.html)
  *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [molecular entity](MolecularEntity.html)
+ *  class: [cell line to thing association](CellLineToThingAssociation.html) references: [cell line](CellLine.html)
+ *  class: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html) references: [cell line](CellLine.html)
  *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [chemical substance](ChemicalSubstance.html)
  *  class: [case to thing association](CaseToThingAssociation.html) references: [case](Case.html)
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [chemical substance](ChemicalSubstance.html)

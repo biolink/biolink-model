@@ -757,6 +757,7 @@ classes:
     slot_usage:
       - name: id
         required: true
+    subclass_of: BFO:0000001
     mappings:
       - "UMLSSG:OBJC"
       - WD:Q35120
@@ -790,7 +791,7 @@ classes:
   - name: organism taxon
     is_a: ontology class
     values_from:
-      - ncbitaxon
+      - NCBITaxon
     mappings:
       - WD:Q16521
       
@@ -823,8 +824,11 @@ classes:
     mixins:
       - thing with taxon
     is_a: organismal entity
+    subclass_of: PCO:0000001
     mappings:
       - SIO:001061
+    id_prefixes:
+      - ANCESTRO
       
   - name: biosample
     aliases: ['biospecimen', 'sample']
@@ -1094,6 +1098,10 @@ classes:
       - HGNC
       - MGI
       - ZFIN
+      - dictyBase
+      - WB
+      - SGD
+      - PomBase
       
   - name: gene product
     is_a: gene or gene product
@@ -1164,14 +1172,14 @@ classes:
       - RNAcentral
       - NCBIGene
       - ENSEMBL
+    subclass_of: SO:0000655
     mappings:
-      - SO:0000655
       - SIO:001235
       
   - name: microRNA
     is_a: noncoding RNA product
+    subclass_of: SO:0000276
     mappings:
-      - SO:0000276
       - SIO:001397
       - WD:Q310899
     id_prefixes:
@@ -1179,8 +1187,8 @@ classes:
         
   - name: macromolecular complex
     is_a: molecular entity
+    subclass_of: "GO:0032991"
     mappings:
-      - "GO:0032991"
       - "SIO:010046"
       - WD:Q22325163
     id_prefixes:
@@ -1517,6 +1525,31 @@ classes:
         description: "interaction relationship type"
         definitional: true
 
+  - name: cell line to thing association
+    is_a: association
+    defining_slots:
+      - subject
+    abstract: true
+    description: >-
+      An relationship between a cell line and another entity
+    slot_usage:
+      - name: subject
+        range: cell line
+        definitional: true
+
+  - name: cell line to disease or phenotypic feature association
+    is_a: association
+    mixins:
+      - cell line to thing association
+      - thing to disease or phenotypic feature association
+    description: >-
+      An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
+    slot_usage:
+      - name: subject
+        range: cell line
+      - name: subject
+        range: disease or phenotypic feature
+        
   - name: chemical to thing association
     is_a: association
     defining_slots:
@@ -2139,6 +2172,8 @@ classes:
       - end interbase coordinate
       - genome build
       - phase
+    mappings:
+      - faldo:location
 
   - name: sequence feature relationship
     is_a: association
@@ -2152,6 +2187,8 @@ classes:
         range: genomic entity  ## todo protein
       - name: object
         range: genomic entity ## typically a chromosome
+    mappings:
+      - GMODChado:feature_relationship
 
   - name: transcript to gene relationship
     is_a: sequence feature relationship
@@ -2338,16 +2375,25 @@ classes:
     is_a: anatomical entity
     mappings:
       - "GO:0005623"
+      - "CL:0000000"
       - "SIO:010001"
       - WD:Q7868
     id_prefixes:
       - CL
       - PO
+
+  - name: cell line
+    is_a: biosample
+    mappings:
+      - "CLO:0000031"
+    id_prefixes:
+      - CLO
       
   - name: gross anatomical structure
     aliases: ['tissue', 'organ']
     is_a: anatomical entity
     mappings:
+      - UBERON:0010000
       - SIO:010046
       - WD:Q4936952
     id_prefixes:

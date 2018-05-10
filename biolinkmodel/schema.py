@@ -794,6 +794,35 @@ class PairwiseGeneOrProteinInteractionAssociationSchema(GeneToGeneAssociationSch
     def make_object(self, data):
         PairwiseGeneOrProteinInteractionAssociation(**data)
 
+class CellLineToThingAssociationSchema(AssociationSchema):
+    """
+    An relationship between a cell line and another entity
+    """
+
+    @post_load
+    def make_object(self, data):
+        CellLineToThingAssociation(**data)
+
+class CellLineToDiseaseOrPhenotypicFeatureAssociationSchema(AssociationSchema):
+    """
+    An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
+    """
+    association_type = fields.Str()
+    subject = fields.Str()
+    negated = fields.Str()
+    relation = fields.Str()
+    object = fields.Str()
+    qualifiers = fields.Str()
+    publications = fields.Str()
+    provided_by = fields.Str()
+    id = fields.Str()
+    name = fields.Str()
+    category = fields.Str()
+
+    @post_load
+    def make_object(self, data):
+        CellLineToDiseaseOrPhenotypicFeatureAssociation(**data)
+
 class ChemicalToThingAssociationSchema(AssociationSchema):
     """
     An interaction between a chemical entity and another entity
@@ -1470,6 +1499,15 @@ class CellSchema(AnatomicalEntitySchema):
     @post_load
     def make_object(self, data):
         Cell(**data)
+
+class CellLineSchema(BiosampleSchema):
+    """
+    None
+    """
+
+    @post_load
+    def make_object(self, data):
+        CellLine(**data)
 
 class GrossAnatomicalStructureSchema(AnatomicalEntitySchema):
     """

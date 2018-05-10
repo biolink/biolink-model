@@ -13,6 +13,7 @@ URI: [http://bioentity.io/vocab/GrossAnatomicalStructure](http://bioentity.io/vo
 ![img](http://yuml.me/diagram/nofunky/class/[anatomical entity|in taxon]^-[gross anatomical structure|], [gross anatomical structure|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
+ * [UBERON:0010000](http://purl.obolibrary.org/obo/UBERON_0010000)
  * [SIO:010046](http://semanticscience.org/resource/SIO_010046)
  * [WD:Q4936952](http://purl.obolibrary.org/obo/WD_Q4936952)
 

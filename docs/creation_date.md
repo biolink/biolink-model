@@ -10,7 +10,7 @@ date on which thing was created
 URI: [http://bioentity.io/vocab/creation_date](http://bioentity.io/vocab/creation_date)
 ## Mappings
 
- * [dc:created](http://purl.obolibrary.org/obo/dc_created)
+ * [dcterms:created](http://purl.obolibrary.org/obo/dcterms_created)
 
 ## Domain and Range
 

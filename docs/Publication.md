@@ -32,6 +32,8 @@ URI: [http://bioentity.io/vocab/Publication](http://bioentity.io/vocab/Publicati
  *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [publication](Publication.html)
  *  class: [molecular interaction](MolecularInteraction.html) references: [publication](Publication.html)
  *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [publication](Publication.html)
+ *  class: [cell line to thing association](CellLineToThingAssociation.html) references: [publication](Publication.html)
+ *  class: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
  *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [publication](Publication.html)
  *  class: [case to thing association](CaseToThingAssociation.html) references: [publication](Publication.html)
  *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [publication](Publication.html)

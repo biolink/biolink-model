@@ -22,9 +22,12 @@ URI: [http://bioentity.io/vocab/Biosample](http://bioentity.io/vocab/Biosample)
 
 ## Children
 
+ *  child: [cell line](CellLine.html)
 
 ## Used in
 
+ *  class: [cell line to thing association](CellLineToThingAssociation.html) references: [cell line](CellLine.html)
+ *  class: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html) references: [cell line](CellLine.html)
  *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [biosample](Biosample.html)
  *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [biosample](Biosample.html)
 

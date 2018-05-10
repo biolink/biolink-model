@@ -10,7 +10,7 @@ holds between two classes where the domain class is a specialization of the rang
 URI: [http://bioentity.io/vocab/subclass_of](http://bioentity.io/vocab/subclass_of)
 ## Mappings
 
- * [RDFS:subClassOf](http://purl.obolibrary.org/obo/RDFS_subClassOf)
+ * [rdfs:subClassOf](http://purl.obolibrary.org/obo/rdfs_subClassOf)
  * [SEMMEDDB:IS_A](http://purl.obolibrary.org/obo/SEMMEDDB_IS_A)
 
 ## Domain and Range

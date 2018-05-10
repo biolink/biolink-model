@@ -20,6 +20,7 @@ URI: [http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation](ht
 
 ## Children
 
+ *  mixin: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html)
  *  mixin: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html)
  *  mixin: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html)
 

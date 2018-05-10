@@ -29,6 +29,8 @@ URI: [http://bioentity.io/vocab/OrganismalEntity](http://bioentity.io/vocab/Orga
 
 ## Used in
 
+ *  class: [cell line to thing association](CellLineToThingAssociation.html) references: [cell line](CellLine.html)
+ *  class: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html) references: [cell line](CellLine.html)
  *  class: [case to thing association](CaseToThingAssociation.html) references: [case](Case.html)
  *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [biosample](Biosample.html)
  *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [biosample](Biosample.html)

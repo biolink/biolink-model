@@ -27,6 +27,7 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeature](http://bioentity.io/
 ## Used in
 
  *  class: [treatment](Treatment.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
+ *  class: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)

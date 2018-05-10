@@ -553,6 +553,34 @@ type PairwiseGeneOrProteinInteractionAssociation implements MolecularInteraction
   category: String
 }
 
+interface CellLineToThingAssociation {
+  associationType: OntologyClass
+  subject: CellLine!
+  negated: String
+  relation: RelationshipType!
+  object: String!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  name: String
+  category: String
+}
+
+type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation {
+  associationType: OntologyClass
+  subject: CellLine!
+  negated: String
+  relation: RelationshipType!
+  object: DiseaseOrPhenotypicFeature!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  name: String
+  category: String
+}
+
 interface ChemicalToThingAssociation {
   associationType: OntologyClass
   subject: ChemicalSubstance!
@@ -1203,6 +1231,13 @@ type CellularComponent {
 }
 
 type Cell {
+  id: String
+  name: String
+  category: String
+  inTaxon: OrganismTaxon
+}
+
+type CellLine {
   id: String
   name: String
   category: String
