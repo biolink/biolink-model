@@ -25,6 +25,12 @@ biolink-model.tsv: biolink-model.yaml
 	./bin/gen-csv.py -f tsv biolink-model.yaml > $@.tmp && mv $@.tmp $@
 
 # ~~~~~~~~~~~~~~~~~~~~
+# JSON-LD CONTEXT
+# ~~~~~~~~~~~~~~~~~~~~
+context.jsonld: biolink-model.yaml
+	./bin/gen-jsonld-context.py $< > $@.tmp && mv $@.tmp $@
+
+# ~~~~~~~~~~~~~~~~~~~~
 # JSONSCHEMA -> Java
 # ~~~~~~~~~~~~~~~~~~~~
 json-schema/%.json: %.yaml
