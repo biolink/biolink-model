@@ -11,12 +11,19 @@ from .generator import Generator
 from prefixcommons import curie_util as cu
 import json
 
+default_curie_maps = [cu.read_biocontext('idot_context'), cu.read_biocontext('monarch_context'),cu.read_biocontext('obo_context')]
+
 class ContextGenerator(Generator):
         
     def serialize(self, format='json', **args):
         self.prefixmap = {}
         self.tr(**args)
-        c = {"@context": self.prefixmap}
+        c = {"@context": self.prefixmap,
+             "comments":
+             """
+             This JSON-LD context file is generated automatically using the biolink-model yaml spec,
+             plus standard prefix expansions from https://github.com/prefixcommons/biocontext
+             """}
         return json.dumps(c, sort_keys=True, indent=4)
     
     def tr(self, roots=None):
@@ -47,7 +54,7 @@ class ContextGenerator(Generator):
                 self.add_mapping(px, px+":")
 
     def get_uri(self, shorthand):
-        uri = cu.expand_uri(shorthand)
+        uri = cu.expand_uri(shorthand, default_curie_maps)
         if not uri.startswith('http'):
             return None
         else:
