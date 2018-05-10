@@ -52,6 +52,8 @@ types:
     typeof: string
     mappings:
       - UO:0000000
+    id_prefixes:
+      - UO
       
   - name: time type
     typeof: time
@@ -381,6 +383,8 @@ slots:
     range: narrative text
     description: >-
       a human-readable description of a thing
+    mappings:
+      - dcterms:description
   
   - name: systematic synonym
     domain: named thing
@@ -471,7 +475,7 @@ slots:
     description: >-
       connects an association to the agent (person, organization or group) that provided it
     mappings:
-      - prov:providedBy
+      - pav:providedBy
 
   - name: association type
     is_a: association slot
@@ -486,7 +490,7 @@ slots:
     description: >-
       date on which thing was created
     mappings:
-      - dc:created
+      - dcterms:created
   
   - name: in taxon
     domain: thing with taxon
@@ -1161,12 +1165,13 @@ classes:
       - NCBIGene
       - ENSEMBL
     mappings:
+      - SO:0000655
       - SIO:001235
       
   - name: microRNA
     is_a: noncoding RNA product
     mappings:
-      - "SO:0000276"
+      - SO:0000276
       - SIO:001397
       - WD:Q310899
     id_prefixes:
@@ -1180,6 +1185,9 @@ classes:
       - WD:Q22325163
     id_prefixes:
       - IntAct
+      - GO
+      - PR
+      - Reactome
       
   - name: gene grouping
     abstract: true
@@ -1190,8 +1198,8 @@ classes:
   - name: gene family
     is_a: molecular entity
     mappings:
-      - "NCIT:C20130"
       - SIO:001380
+      - "NCIT:C20130"
       - WD:Q417841
     mixins:
       - gene grouping
@@ -1200,7 +1208,6 @@ classes:
     id_prefixes:
       - PANTHER
       
-
   - name: zygosity
     is_a: attribute
     mappings:
@@ -1225,6 +1232,7 @@ classes:
 #    slots:
 #      - completeness
     mappings:
+      - GENO:0000871
       - VMC:Haplotype
 
   - name: sequence variant
@@ -2246,6 +2254,9 @@ classes:
     union_of:
       - molecular activity
       - biological process
+    id_prefixes:
+      - GO
+      - Reactome
 
   - name: molecular activity
     is_a: biological process or activity
@@ -2256,6 +2267,9 @@ classes:
       An execution of a molecular function carried out by a gene product or macromolecular complex.
     mappings:
       - "GO:0003674"
+    id_prefixes:
+      - GO
+      - Reactome
 
   - name: activity and behavior
     is_a: occurrent
@@ -2288,6 +2302,9 @@ classes:
       - "GO:0008150"
       - SIO:000006
       - WD:Q2996394
+    id_prefixes:
+      - GO
+      - Reactome
 
   - name: pathway
     is_a: biological process
@@ -2296,6 +2313,9 @@ classes:
       - SIO:010526
       - PW:0000001
       - WD:Q4915012
+    id_prefixes:
+      - GO
+      - Reactome
 
   - name: physiological process
     aliases: ['physiology']
@@ -2311,6 +2331,8 @@ classes:
       - "GO:0005575"
       - SIO:001400
       - WD:Q5058355
+    id_prefixes:
+      - GO
       
   - name: cell
     is_a: anatomical entity
@@ -2318,6 +2340,9 @@ classes:
       - "GO:0005623"
       - "SIO:010001"
       - WD:Q7868
+    id_prefixes:
+      - CL
+      - PO
       
   - name: gross anatomical structure
     aliases: ['tissue', 'organ']
@@ -2325,5 +2350,9 @@ classes:
     mappings:
       - SIO:010046
       - WD:Q4936952
+    id_prefixes:
+      - UBERON
+      - PO
+      - FAO
       
   
