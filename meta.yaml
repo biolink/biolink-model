@@ -127,7 +127,15 @@ slots:
     inlined: false
     description: >-
       list of equivalent or skos exact mappings to an ontology class
-    
+
+  - name: id_prefixes
+    multivalued: true
+    domain: definition
+    range: string
+    inlined: false
+    description: >-
+      list of ID/CURIE prefixes applicable to that element
+      
   - name: examples
     multivalued: true
     domain: element
@@ -196,6 +204,7 @@ classes:
       - note
       - abstract
       - mappings
+      - id_prefixes
       - apply_to
 
   - name: slot definition

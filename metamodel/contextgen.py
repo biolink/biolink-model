@@ -40,6 +40,9 @@ class ContextGenerator(Generator):
         if mappings is not None:
             for m in mappings:
                 self.add_mapping(n, m)
+        if e.id_prefixes:
+            for px in e.id_prefixes:
+                self.add_mapping(px, px+":")
 
     def get_uri(self, shorthand):
         uri = cu.expand_uri(shorthand)
