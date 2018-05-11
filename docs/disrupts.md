@@ -5,7 +5,7 @@ layout: default
 ## disrupts
 
 
-holds between a material entity and a process or activity it disrupts
+describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
 
 URI: [http://bioentity.io/vocab/disrupts](http://bioentity.io/vocab/disrupts)
 ## Mappings
@@ -14,10 +14,11 @@ URI: [http://bioentity.io/vocab/disrupts](http://bioentity.io/vocab/disrupts)
 
 ## Domain and Range
 
- -> [occurrent](Occurrent.html)
+ -> 
 
 ## Inheritance
 
+ *  is_a: [affects](affects.html)
 
 ## Children
 

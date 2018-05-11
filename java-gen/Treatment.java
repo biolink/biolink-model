@@ -48,7 +48,12 @@ public class Treatment {
     @JsonProperty("name")
     @JsonPropertyDescription("A human-readable name for a thing")
     private String name;
+    /**
+     * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+     * 
+     */
     @JsonProperty("treats")
+    @JsonPropertyDescription("holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ")
     private String treats;
 
     /**
@@ -115,11 +120,19 @@ public class Treatment {
         this.name = name;
     }
 
+    /**
+     * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+     * 
+     */
     @JsonProperty("treats")
     public String getTreats() {
         return treats;
     }
 
+    /**
+     * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+     * 
+     */
     @JsonProperty("treats")
     public void setTreats(String treats) {
         this.treats = treats;

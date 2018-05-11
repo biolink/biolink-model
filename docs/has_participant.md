@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/has_participant](http://bioentity.io/vocab/has_p
 ## Mappings
 
  * [RO:0000057](http://purl.obolibrary.org/obo/RO_0000057)
+ * [WD:P2283](http://purl.obolibrary.org/obo/WD_P2283)
 
 ## Domain and Range
 

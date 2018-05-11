@@ -2,16 +2,16 @@
     "$id": "https://biolink.github.io/biolink-model/ontology/biolink.ttl",
     "$schema": "http://json-schema.org/draft-04/schema#",
     "definitions": {
+        "actively_involved_in": {
+            "type": "string"
+        },
         "affects": {
             "type": "string"
         },
-        "affects_risk_for_condition": {
+        "affects_risk_for": {
             "type": "string"
         },
         "aggregate_statistic": {
-            "type": "string"
-        },
-        "associated_with_condition": {
             "type": "string"
         },
         "association_slot": {
@@ -32,25 +32,28 @@
         "causes": {
             "type": "string"
         },
-        "causes_or_contributes_to": {
+        "clinical_modifier_qualifier": {
             "type": "string"
         },
-        "clinical_modifier_qualifier": {
+        "co-localizes_with": {
             "type": "string"
         },
         "coexists_with": {
             "type": "string"
         },
+        "contributes_to": {
+            "type": "string"
+        },
         "creation_date": {
+            "type": "string"
+        },
+        "derives_from": {
             "type": "string"
         },
         "derives_into": {
             "type": "string"
         },
         "description": {
-            "type": "string"
-        },
-        "directly_interacts_with": {
             "type": "string"
         },
         "disrupts": {
@@ -65,6 +68,9 @@
         "expressed_in": {
             "type": "string"
         },
+        "expresses": {
+            "type": "string"
+        },
         "filler": {
             "type": "string"
         },
@@ -74,10 +80,13 @@
         "full_name": {
             "type": "string"
         },
-        "genome_build": {
+        "gene_associated_with_condition": {
             "type": "string"
         },
-        "has_affected_sequence_feature": {
+        "genetically_interacts_with": {
+            "type": "string"
+        },
+        "genome_build": {
             "type": "string"
         },
         "has_biological_sequence": {
@@ -102,6 +111,9 @@
             "type": "string"
         },
         "has_molecular_consequence": {
+            "type": "string"
+        },
+        "has_part": {
             "type": "string"
         },
         "has_participant": {
@@ -137,13 +149,43 @@
         "in_taxon": {
             "type": "string"
         },
+        "interacts_with": {
+            "type": "string"
+        },
         "interbase_coordinate": {
             "type": "string"
         },
         "iri": {
             "type": "string"
         },
+        "is_biomarker_for": {
+            "type": "string"
+        },
+        "is_capable_of": {
+            "type": "string"
+        },
+        "is_correlated_with": {
+            "type": "string"
+        },
         "is_homologous_to": {
+            "type": "string"
+        },
+        "is_located_in": {
+            "type": "string"
+        },
+        "is_location_of": {
+            "type": "string"
+        },
+        "is_model_of": {
+            "type": "string"
+        },
+        "is_orthologous_to": {
+            "type": "string"
+        },
+        "is_paralogous_to": {
+            "type": "string"
+        },
+        "is_xenologous_to": {
             "type": "string"
         },
         "latitude": {
@@ -176,7 +218,13 @@
         "object": {
             "type": "string"
         },
+        "occurs_in": {
+            "type": "string"
+        },
         "onset_qualifier": {
+            "type": "string"
+        },
+        "overlaps": {
             "type": "string"
         },
         "part_of": {
@@ -186,6 +234,9 @@
             "type": "string"
         },
         "phase": {
+            "type": "string"
+        },
+        "physically_interacts_with": {
             "type": "string"
         },
         "positively_regulates": {
@@ -200,7 +251,10 @@
         "precedes": {
             "type": "string"
         },
-        "prevents_condition": {
+        "prevents": {
+            "type": "string"
+        },
+        "produces": {
             "type": "string"
         },
         "provided_by": {
@@ -233,6 +287,9 @@
         "relation": {
             "type": "string"
         },
+        "same_as": {
+            "type": "string"
+        },
         "sequence_variant_qualifier": {
             "type": "string"
         },
@@ -263,7 +320,7 @@
         "treated_by": {
             "type": "string"
         },
-        "treats_condition": {
+        "treats": {
             "type": "string"
         }
     },
@@ -3720,6 +3777,7 @@
                     "type": "string"
                 },
                 "treats": {
+                    "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ",
                     "type": "string"
                 }
             },

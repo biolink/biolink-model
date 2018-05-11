@@ -24,6 +24,7 @@ URI: [http://bioentity.io/vocab/coexists_with](http://bioentity.io/vocab/coexist
  *  child: [in pathway with](in_pathway_with.html)
  *  child: [in complex with](in_complex_with.html)
  *  child: [in cell population with](in_cell_population_with.html)
+ *  child: [co-localizes with](co-localizes_with.html)
 
 ## Used in
 

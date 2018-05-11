@@ -12,6 +12,7 @@ URI: [http://bioentity.io/vocab/causes](http://bioentity.io/vocab/causes)
 
  * [RO:0002410](http://purl.obolibrary.org/obo/RO_0002410)
  * [SEMMEDDB:CAUSES](http://purl.obolibrary.org/obo/SEMMEDDB_CAUSES)
+ * [WD:P1542](http://purl.obolibrary.org/obo/WD_P1542)
 
 ## Domain and Range
 
@@ -19,7 +20,7 @@ URI: [http://bioentity.io/vocab/causes](http://bioentity.io/vocab/causes)
 
 ## Inheritance
 
- *  is_a: [causes or contributes to](causes_or_contributes_to.html)
+ *  is_a: [contributes to](contributes_to.html)
 
 ## Children
 

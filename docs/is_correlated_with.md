@@ -2,14 +2,15 @@
 layout: default
 ---
 
-## has biomarker
+## is correlated with
 
 
 holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
 
-URI: [http://bioentity.io/vocab/has_biomarker](http://bioentity.io/vocab/has_biomarker)
+URI: [http://bioentity.io/vocab/is_correlated_with](http://bioentity.io/vocab/is_correlated_with)
 ## Mappings
 
+ * [RO:0002610](http://purl.obolibrary.org/obo/RO_0002610)
 
 ## Domain and Range
 
@@ -17,10 +18,11 @@ URI: [http://bioentity.io/vocab/has_biomarker](http://bioentity.io/vocab/has_bio
 
 ## Inheritance
 
- *  is_a: [is correlated with](is_correlated_with.html)
 
 ## Children
 
+ *  child: [has biomarker](has_biomarker.html)
+ *  child: [is biomarker for](is_biomarker_for.html)
 
 ## Used in
 

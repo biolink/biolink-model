@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/treated_by](http://bioentity.io/vocab/treated_by
 ## Mappings
 
  * [RO:0002302](http://purl.obolibrary.org/obo/RO_0002302)
+ * [WD:P2176](http://purl.obolibrary.org/obo/WD_P2176)
 
 ## Domain and Range
 

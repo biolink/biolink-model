@@ -10,6 +10,7 @@ None
 URI: [http://bioentity.io/vocab/regulates](http://bioentity.io/vocab/regulates)
 ## Mappings
 
+ * [WD:P128](http://purl.obolibrary.org/obo/WD_P128)
 
 ## Domain and Range
 
@@ -17,6 +18,7 @@ URI: [http://bioentity.io/vocab/regulates](http://bioentity.io/vocab/regulates)
 
 ## Inheritance
 
+ *  is_a: [affects](affects.html)
 
 ## Children
 

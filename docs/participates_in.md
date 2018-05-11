@@ -21,6 +21,7 @@ URI: [http://bioentity.io/vocab/participates_in](http://bioentity.io/vocab/parti
 
 ## Children
 
+ *  child: [actively involved in](actively_involved_in.html)
 
 ## Used in
 

@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/manifestation_of](http://bioentity.io/vocab/mani
 ## Mappings
 
  * [SEMMEDDB:MANIFESTATION_OF](http://purl.obolibrary.org/obo/SEMMEDDB_MANIFESTATION_OF)
+ * [WD:P1557](http://purl.obolibrary.org/obo/WD_P1557)
 
 ## Domain and Range
 

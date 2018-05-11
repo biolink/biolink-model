@@ -5,7 +5,7 @@ layout: default
 ## expressed in
 
 
-holds between a gene or gene product and an anatomical entity in which itt is expressed
+holds between a gene or gene product and an anatomical entity in which it is expressed
 
 URI: [http://bioentity.io/vocab/expressed_in](http://bioentity.io/vocab/expressed_in)
 ## Mappings
