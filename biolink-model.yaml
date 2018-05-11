@@ -65,20 +65,41 @@ slots:
 
 ## predicates/relations 
 
-  - name: directly interacts with
+  - name: interacts with
     description: >-
-      holds between any two material entities that make physical contact as part of some interaction 
+      holds between any two entities that directly or indirectly interact with each other 
     mappings:
-      - SEMMEDDB:INTERACTS_WITH
-
+      - SEMMEDDB:INTERACTS_WITH  
+  
+  - name: physically interacts with
+    is_a: interacts with
+    description: >-
+      holds between two entities that make physical contact as part of some interaction 
+      
   - name: molecularly interacts with
-    is_a: directly interacts with
+    is_a: physically interacts with
     domain: molecular entity
     range: molecular entity
     mappings:
       - RO:0002436
   
+  - name: genetically interacts with
+    is_a: interacts with
+    description: >-
+      holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
+    domain: gene
+    range: gene
+    mappings:
+      - RO:0002435
+  
+  - name: affects
+    description: >-
+      describes an entity that has a direct affect on the state or quality of another entity
+    mappings:
+      - SEMMEDDB: affects
+  
   - name: regulates
+    is_a: affects
     comment: This is a grouping for process-process and entity-entity relations
     mixin: true
     abstract: true
@@ -145,9 +166,16 @@ slots:
       - RO:0002449
       - SEMMEDDB:INHIBITS
 
+  - name: disrupts
+    is_a: affects
+    description: >-
+      holds between an entity and another entity whose composititon, structure, function, or occurrence it disrupts
+    mappings:
+      - SEMMEDDB:DISRUPTS
+      
   - name: has gene product
     description: >-
-      holds between a gene and a transcribed and/or translated product geenrated from it
+      holds between a gene and a transcribed and/or translated product generated from it
     domain: gene
     range: gene product
     mappings:
@@ -162,13 +190,29 @@ slots:
       - RO:HOM0000001
       - SIO:010302
 
-  - name: has affected sequence feature
-    aliases: ['has affected feature']
+  - name: is paralogous to
+    is_a: is homologous to
     description: >-
-      holds between a genotype or genotype part (e.g. a sequence variant), and a sequence feature whose sequence is affected by it.
-    range: sequence feature
+      a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
+    subset: translator_minimal
     mappings:
-      - GENO:0000418
+      - RO:HOM0000011
+
+  - name: is orthologous to
+    is_a: is homologous to
+    description: >-
+      a homology relationship between entities (typically genes) that diverged after a speciation event.
+    subset: translator_minimal
+    mappings:
+      - RO:HOM0000017
+
+  - name: is xenologous to
+    is_a: is homologous to
+    description: >-
+      a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
+    subset: translator_minimal
+    mappings:
+      - RO:HOM0000018
 
   - name: coexists with
     description: >-
@@ -197,33 +241,42 @@ slots:
     domain: gene or gene product
     range: gene or gene product
 
-  - name: associated with condition
+  - name: co-localizes with
     description: >-
-      holds between an entity and a disease or phenotypic feature that the entity may influence, contribute to, or correlate with
+      holds between two entities that are observed to be located in the same place.
+    is_a: coexists with
+    mappings:
+      - RO:00002325
+
+  - name: gene associated with condition
+    description: >-
+      holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
+    domain: gene
     range: disease or phenotypic feature 
 
-  - name: affects risk for condition
+  - name: affects risk for
     description: >-
-      holds between an entity and a disease or phenotypic feature where exposure to the entity alters the chances of developing the condition 
-    is_a: associated with condition
-    range: disease or phenotypic feature 
+      holds between two entities where exposure to one entity alters the chance of developing the other 
     mappings:
       - SEMMEDDB:PREDISPOSES
 
-  - name: causes or contributes to
+  - name: contributes to
     description: >-
-      holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or  generation of the other
-
+      holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
+    mappings:
+      - RO:0002326
+      
   - name: causes
     description: >-
       holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other
-    is_a: causes or contributes to
+    is_a: contributes to
     mappings:
       - RO:0002410
       - SEMMEDDB:CAUSES
 
   - name: treats condition 
     aliases: ['is substance that treats']
+    is_a: affects
     description: >-
       holds between a therapeutic process or chemical substance and a disease or phenotypic feature that it is used to treat 
     range: disease or phenotypic feature
@@ -234,6 +287,7 @@ slots:
 
   - name: prevents condition
     aliases: [' ']
+    is_a: affects
     description: >-
       holds between a therapeutic process or molecular entity and a disease or phenotypic feature, where exposure tot the process or entity reduces chance of developing the condition
     range: disease or phenotypic feature
@@ -241,32 +295,52 @@ slots:
       - RO:0002559
       - SEMMEDDB:PREVENTS
 
+  - name: is correlated with
+    description: >-
+      holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+    domain: disease or phenotypic feature
+    range: molecular entity
+    mappings:
+      - RO:0002610
+
   - name: has biomarker
-    aliases: [' ']
+    is_a: is correlated with
     description: >-
       holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
     domain: disease or phenotypic feature
     range: molecular entity
 
+  - name: is biomarker for
+    is_a: is correlated with
+    description: >-
+      holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
+    domain: molecular entity
+    range: disease or phenotypic feature
+    mappings:
+      - RO:0002607
+
   - name: treated by
-    aliases: [' ']
     description: >-
       holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition 
     domain: disease or phenotypic feature
     mappings: 
       - RO:0002302
 
-  - name: affects
-    mappings:
-      - SEMMEDDB:AFFECTS
-
   - name: expressed in
     description: >-
-      holds between a gene or gene product and an anatomical entity in which itt is expressed
+      holds between a gene or gene product and an anatomical entity in which it is expressed
     domain: gene or gene product
     range: anatomical entity
     mappings:
       - RO:0002206
+
+  - name: expresses
+    description: >-
+      holds between an anatomical entity and gene or gene product that is expressed there
+    domain: anatomical entity
+    range: gene or gene product
+    mappings:
+      - RO:0002292
 
   - name: has phenotype
     description: >-
@@ -276,14 +350,47 @@ slots:
     mappings:
       - RO:0002200
 
-  - name: disrupts
+  - name: occurs in
     description: >-
-      holds between a material entity and a process or activity it disrupts
-    range: occurrent
+      holds between a process and a material entity or site within which the process occurs
     mappings:
-      - SEMMEDDB:DISRUPTS
+      - BFO:0000066
+      - SEMMEDDB: OCCURS_IN
+
+  - name: is located in
+    description: >-
+      holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
+    mappings:
+      - BFO:0000066
+
+  - name: is location of
+    description: >-
+      holds between material entity or site and a material entity that is located within it (but not considered a part of it) 
+    mappings:  
+      - RO:0001015
+      - SEMMEDDB:LOCATION_OF
+
+  - name: is model of
+    description: >-
+      holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.    
+    mappings:  
+      - RO:0003301
+
+  - name: overlaps
+    description: >-
+      holds between entties that overlap in their extents (materials or processes)
+    mappings:
+      - RO:0002131
+
+- name: has part
+    is_a: overlaps
+    description: >-
+      holds between wholes and their parts (material entities or processes)
+    mappings:
+      - BFO:0000051
 
   - name: part of
+    is_a: overlaps
     description: >-
       holds between parts and wholes (material entities or processes)
     mappings:
@@ -297,6 +404,22 @@ slots:
     mappings:
       - RO:0000056
 
+  - name: actively involved in
+    is_a: participates in
+    description: >-
+      holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
+    range: occurrent
+    mappings:
+      - RO:0002331
+
+  - name: is capable of
+    is_a: actively involved in
+    description: >-
+      holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function. 
+    range: occurrent
+    mappings:
+      - RO:0002215
+
   - name: has participant
     description: >-
       holds between a process and a continuant, where the continuant is somehow involved in the process 
@@ -305,12 +428,17 @@ slots:
       - RO:0000057
 
   - name: derives into
-    aliases: [' ']
     description: >-
       holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
     mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
+
+  - name: derives from
+    description: >-
+      holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
+    mappings:
+      - RO:0001000
 
   - name: manifestation of
     description: >-
@@ -318,6 +446,13 @@ slots:
     range: disease
     mappings:
       - SEMMEDDB:MANIFESTATION_OF
+
+  - name: produces
+    description: >-
+      hoolds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
+    mappings:
+      - RO:0003000
+      - WD:P1056
 
   - name: precedes
     description: >-
@@ -327,6 +462,15 @@ slots:
     mappings:
       - BFO:0000063
       - SEMMEDDB:PRECEDES
+
+  - name: same as
+    description: >-
+      holds between two entities that are considered equivalent to each other
+    mappings:
+      - owl:equivalentClass
+      - owl:sameAs
+      - skos:exactMatch
+      - WD:P2888
 
   - name: subclass of
     description: >-
