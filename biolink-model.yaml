@@ -68,18 +68,24 @@ slots:
   - name: interacts with
     description: >-
       holds between any two entities that directly or indirectly interact with each other 
+    in_subset: translator_minimal
     mappings:
-      - SEMMEDDB:INTERACTS_WITH  
-  
+      - RO:0002434
+      - SEMMEDDB:INTERACTS_WITH    
+      
   - name: physically interacts with
     is_a: interacts with
     description: >-
-      holds between two entities that make physical contact as part of some interaction 
+      holds between two entities that make physical contact as part of some interaction
+    in_subset: translator_minimal
+    mappings: 
+      - WD:P129
       
   - name: molecularly interacts with
     is_a: physically interacts with
     domain: molecular entity
     range: molecular entity
+    in_subset: translator_minimal
     mappings:
       - RO:0002436
   
@@ -89,20 +95,24 @@ slots:
       holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
     domain: gene
     range: gene
+    in_subset: translator_minimal
     mappings:
       - RO:0002435
   
   - name: affects
     description: >-
       describes an entity that has a direct affect on the state or quality of another entity
+    in_subset: translator_minimal
     mappings:
-      - SEMMEDDB: affects
+      - SEMMEDDB: AFFECTS
   
   - name: regulates
     is_a: affects
     comment: This is a grouping for process-process and entity-entity relations
     mixin: true
     abstract: true
+    mappings:
+      - WD:P128
     
   - name: positively regulates
     comment: This is a grouping for process-process and entity-entity relations
@@ -141,6 +151,7 @@ slots:
     local_names:
       translator: regulates
       ro: activity directly regulates activity of
+    in_subset: translator_minimal
     mappings:
       - RO:0002448
 
@@ -151,6 +162,7 @@ slots:
     local_names:
       translator: positively regulates
       ro: activity directly positively regulates activity of
+    in_subset: translator_minimal
     mappings:
       - RO:0002450
       - SEMMEDDB:STIMULATES
@@ -162,6 +174,7 @@ slots:
     local_names:
       translator: negatively regulates
       ro: activity directly negatively regulates activity of
+    in_subset: translator_minimal
     mappings:
       - RO:0002449
       - SEMMEDDB:INHIBITS
@@ -170,6 +183,7 @@ slots:
     is_a: affects
     description: >-
       holds between an entity and another entity whose composititon, structure, function, or occurrence it disrupts
+    in_subset: translator_minimal
     mappings:
       - SEMMEDDB:DISRUPTS
       
@@ -178,14 +192,17 @@ slots:
       holds between a gene and a transcribed and/or translated product generated from it
     domain: gene
     range: gene product
+    in_subset: translator_minimal
     mappings:
       - RO:0002205
+      - WD:P688
 
   - name: is homologous to
     aliases: ['in homology relationship with']
     description: >-
       holds between two biological entities that have common evolutionary origin
     comment: typically used to describe homology relationships between genes or gene products
+    in_subset: translator_minimal
     mappings:
       - RO:HOM0000001
       - SIO:010302
@@ -194,7 +211,7 @@ slots:
     is_a: is homologous to
     description: >-
       a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
-    subset: translator_minimal
+    in_subset: translator_minimal
     mappings:
       - RO:HOM0000011
 
@@ -202,21 +219,23 @@ slots:
     is_a: is homologous to
     description: >-
       a homology relationship between entities (typically genes) that diverged after a speciation event.
-    subset: translator_minimal
+    in_subset: translator_minimal
     mappings:
       - RO:HOM0000017
+      - WD:P684
 
   - name: is xenologous to
     is_a: is homologous to
     description: >-
       a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
-    subset: translator_minimal
+    in_subset: translator_minimal
     mappings:
       - RO:HOM0000018
 
   - name: coexists with
     description: >-
       holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
+    in_subset: translator_minimal
     mappings:
       - SEMMEDDB:COEXISTS_WITH
 
@@ -226,6 +245,7 @@ slots:
     is_a: coexists with
     domain: gene or gene product
     range: gene or gene product
+    in_subset: translator_minimal
 
   - name: in complex with
     description: >-
@@ -233,6 +253,7 @@ slots:
     is_a: coexists with
     domain: gene or gene product
     range: gene or gene product
+    in_subset: translator_minimal
 
   - name: in cell population with
     description: >-
@@ -240,11 +261,13 @@ slots:
     is_a: coexists with
     domain: gene or gene product
     range: gene or gene product
+    in_subset: translator_minimal
 
   - name: co-localizes with
     description: >-
       holds between two entities that are observed to be located in the same place.
     is_a: coexists with
+    in_subset: translator_minimal
     mappings:
       - RO:00002325
 
@@ -252,17 +275,22 @@ slots:
     description: >-
       holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
     domain: gene
-    range: disease or phenotypic feature 
+    range: disease or phenotypic feature
+    in_subset: translator_minimal
+    mappings:
+      - WD:P2293
 
   - name: affects risk for
     description: >-
       holds between two entities where exposure to one entity alters the chance of developing the other 
+    in_subset: translator_minimal
     mappings:
       - SEMMEDDB:PREDISPOSES
 
   - name: contributes to
     description: >-
       holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
+    in_subset: translator_minimal
     mappings:
       - RO:0002326
       
@@ -270,9 +298,11 @@ slots:
     description: >-
       holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other
     is_a: contributes to
+    in_subset: translator_minimal
     mappings:
       - RO:0002410
       - SEMMEDDB:CAUSES
+      - WD:P1542
 
   - name: treats condition 
     aliases: ['is substance that treats']
@@ -280,17 +310,20 @@ slots:
     description: >-
       holds between a therapeutic process or chemical substance and a disease or phenotypic feature that it is used to treat 
     range: disease or phenotypic feature
+    in_subset: translator_minimal
+    inverse: treated by
     mappings:
       - RO:0002606
       - RO:0003307
       - SEMMEDDB:TREATS
+      - WD:P2175
 
   - name: prevents condition
-    aliases: [' ']
     is_a: affects
     description: >-
       holds between a therapeutic process or molecular entity and a disease or phenotypic feature, where exposure tot the process or entity reduces chance of developing the condition
     range: disease or phenotypic feature
+    in_subset: translator_minimal
     mappings:
       - RO:0002559
       - SEMMEDDB:PREVENTS
@@ -300,6 +333,7 @@ slots:
       holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
     domain: disease or phenotypic feature
     range: molecular entity
+    in_subset: translator_minimal
     mappings:
       - RO:0002610
 
@@ -309,6 +343,8 @@ slots:
       holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
     domain: disease or phenotypic feature
     range: molecular entity
+    in_subset: translator_minimal
+    inverse: is biomarker for
 
   - name: is biomarker for
     is_a: is correlated with
@@ -316,6 +352,8 @@ slots:
       holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
     domain: molecular entity
     range: disease or phenotypic feature
+    in_subset: translator_minimal
+    inverse: has biomarker
     mappings:
       - RO:0002607
 
@@ -323,14 +361,19 @@ slots:
     description: >-
       holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition 
     domain: disease or phenotypic feature
+    in_subset: translator_minimal
+    inverse: treats condition
     mappings: 
       - RO:0002302
+      - WD:P2176
 
   - name: expressed in
     description: >-
       holds between a gene or gene product and an anatomical entity in which it is expressed
     domain: gene or gene product
     range: anatomical entity
+    in_subset: translator_minimal
+    inverse: expresses
     mappings:
       - RO:0002206
 
@@ -339,6 +382,8 @@ slots:
       holds between an anatomical entity and gene or gene product that is expressed there
     domain: anatomical entity
     range: gene or gene product
+    in_subset: translator_minimal
+    inverse: expressed in
     mappings:
       - RO:0002292
 
@@ -347,25 +392,32 @@ slots:
       holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). 
     domain: biological entity
     range: phenotype
+    in_subset: translator_minimal
     mappings:
       - RO:0002200
 
   - name: occurs in
     description: >-
       holds between a process and a material entity or site within which the process occurs
+    in_subset: translator_minimal
     mappings:
       - BFO:0000066
-      - SEMMEDDB: OCCURS_IN
+      - SEMMEDDB:OCCURS_IN
 
   - name: is located in
     description: >-
       holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
+    in_subset: translator_minimal
+    inverse: is location of
     mappings:
       - BFO:0000066
+      - WD:276
 
   - name: is location of
     description: >-
       holds between material entity or site and a material entity that is located within it (but not considered a part of it) 
+    in_subset: translator_minimal
+    inverse: is located in
     mappings:  
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
@@ -373,12 +425,14 @@ slots:
   - name: is model of
     description: >-
       holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.    
+    in_subset: translator_minimal
     mappings:  
       - RO:0003301
 
   - name: overlaps
     description: >-
       holds between entties that overlap in their extents (materials or processes)
+    in_subset: translator_minimal
     mappings:
       - RO:0002131
 
@@ -386,21 +440,39 @@ slots:
     is_a: overlaps
     description: >-
       holds between wholes and their parts (material entities or processes)
+    in_subset: translator_minimal
+    inverse: part of
     mappings:
       - BFO:0000051
+      - WD:P527
 
   - name: part of
     is_a: overlaps
     description: >-
       holds between parts and wholes (material entities or processes)
+    in_subset: translator_minimal
+    inverse: has part
     mappings:
       - BFO:0000050
-      - SEMMEDDB:PART_OF
+      - SEMMEDDB:PART_OF      
+      - WD:P361
+
+  - name: has participant
+    description: >-
+      holds between a process and a continuant, where the continuant is somehow involved in the process 
+    domain: occurrent
+    in_subset: translator_minimal
+    inverse: participates in
+    mappings:
+     - RO:0000057
+     - WD:P2283
 
   - name: participates in
     description: >-
       holds between a continuant and a process, where the continuant is somehow involved in the process
     range: occurrent
+    in_subset: translator_minimal
+    inverse: has participant
     mappings:
       - RO:0000056
 
@@ -420,16 +492,11 @@ slots:
     mappings:
       - RO:0002215
 
-  - name: has participant
-    description: >-
-      holds between a process and a continuant, where the continuant is somehow involved in the process 
-    domain: occurrent
-    mappings:
-      - RO:0000057
-
   - name: derives into
     description: >-
       holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
+    in_subset: translator_minimal
+    inverse: derives from
     mappings:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
@@ -437,6 +504,8 @@ slots:
   - name: derives from
     description: >-
       holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
+    in_subset: translator_minimal
+    inverse: derives into
     mappings:
       - RO:0001000
 
@@ -444,28 +513,35 @@ slots:
     description: >-
       used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
     range: disease
+    in_subset: translator_minimal
     mappings:
       - SEMMEDDB:MANIFESTATION_OF
+      - WD:P1557
 
   - name: produces
     description: >-
-      hoolds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
+      holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
+    in_subset: translator_minimal
     mappings:
       - RO:0003000
       - WD:P1056
+      - SEMMEDDB:PRODUCES
 
   - name: precedes
     description: >-
       holds between two processes, where one completes before the other begins
     domain: occurrent
     range: occurrent
+    in_subset: translator_minimal
     mappings:
       - BFO:0000063
       - SEMMEDDB:PRECEDES
+      - WD:P156
 
   - name: same as
     description: >-
       holds between two entities that are considered equivalent to each other
+    in_subset: translator_minimal
     mappings:
       - owl:equivalentClass
       - owl:sameAs
@@ -477,9 +553,11 @@ slots:
       holds between two classes where the domain class is a specialization of the range class
     domain: class
     range: class
+    in_subset: translator_minimal
     mappings:
       - rdfs:subClassOf
-      - SEMMEDDB:IS_A 
+      - SEMMEDDB:IS_A
+      - WD:P279
  
 ## property slots
       
@@ -642,7 +720,8 @@ slots:
     description: >-
       connects a thing to a class representing a taxon
     mappings:
-      - "RO:0002162"
+      - RO:0002162
+      - WD:P703
       
   - name: latitude
     range: xsd:float
