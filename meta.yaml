@@ -190,7 +190,18 @@ slots:
       The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient
       conditions that can be transformed into an OWL equivalence axiom
     
+  - name: in_subset
+    multivalued: true
+    range: string
+    description: >-
+      used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)
 
+  - name: inverse
+    multivalued: false
+    range: slot definition
+    description: >-
+      used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')
+        
 classes:
 
   - name: definition
