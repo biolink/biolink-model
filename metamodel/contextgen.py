@@ -17,7 +17,13 @@ default_curie_maps = [cu.read_biocontext('obo_context'), cu.read_biocontext('mon
 class ContextGenerator(Generator):
         
     def serialize(self, format='json', **args):
-        self.prefixmap = {}
+        self.prefixmap = {
+            "id" : "@id",
+            "type" : {
+                "@id" : "rdf:type",
+                "@type" : "@id"
+            }
+        }
         self.tr(**args)
         c = {"@context": self.prefixmap,
              "comments":
@@ -30,14 +36,20 @@ class ContextGenerator(Generator):
     def tr(self, roots=None):
         schema = self.schema
         mgr = self.manager
+        pm = self.prefixmap
         
         # create list of class names
         for c in schema.classes:
             logging.info("Cls: {}".format(c))
             self.tr_element(c, mgr.class_name(c))
         for s in schema.slots:
-            self.tr_element(s, mgr.slot_name(s))
-
+            n = mgr.slot_name(s)
+            self.tr_element(s, n)
+            # hold off til we are sure curie_util can handle this
+            # rewrite to be an object with id/type fields
+            #if n in pm:
+            #    iri = pm[n]
+            #    pm[n] = { "@id" : iri, "@type" : "@id" }
 
     def tr_element(self, e, n):
         schema = self.schema
