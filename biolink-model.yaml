@@ -101,7 +101,8 @@ slots:
   
   - name: affects
     description: >-
-      describes an entity that has a direct affect on the state or quality of another entity
+      describes an entity that has a direct affect on the state or quality of another existing entity.
+      Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
     in_subset: translator_minimal
     mappings:
       - SEMMEDDB: AFFECTS
@@ -182,7 +183,7 @@ slots:
   - name: disrupts
     is_a: affects
     description: >-
-      holds between an entity and another entity whose composititon, structure, function, or occurrence it disrupts
+      describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
     in_subset: translator_minimal
     mappings:
       - SEMMEDDB:DISRUPTS
@@ -304,11 +305,11 @@ slots:
       - SEMMEDDB:CAUSES
       - WD:P1542
 
-  - name: treats condition 
+  - name: treats 
     aliases: ['is substance that treats']
     is_a: affects
     description: >-
-      holds between a therapeutic process or chemical substance and a disease or phenotypic feature that it is used to treat 
+      holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
     range: disease or phenotypic feature
     in_subset: translator_minimal
     inverse: treated by
@@ -318,11 +319,12 @@ slots:
       - SEMMEDDB:TREATS
       - WD:P2175
 
-  - name: prevents condition
-    is_a: affects
+  - name: prevents 
+    is_a: affects risk for
     description: >-
-      holds between a therapeutic process or molecular entity and a disease or phenotypic feature, where exposure tot the process or entity reduces chance of developing the condition
-    range: disease or phenotypic feature
+      holds between an entity whose application or use reduces the likelihood of a potential outcome. 
+      Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent
+      the onset a disease or phenotypic feature.
     in_subset: translator_minimal
     mappings:
       - RO:0002559
