@@ -2179,7 +2179,29 @@ classes:
       - frequency qualifier
     slots:
       - frequency qualifier
-          
+
+  - name: population to population association
+    description: >-
+      An association between a two populations
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    slot_usage:
+      - name: subject
+        range: population of individual organisms
+        description: >-
+          the population that form the subject of the association
+      - name: object
+        range: population of individual organisms
+        description: >-
+          the population that form the object of the association
+      - name: relation
+        description: >-
+          A relationship type that holds between the subject and object populations. Standard mereological
+          relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships
+          can also be used
+      
   - name: variant to phenotypic feature association
     is_a: association
     defining_slots:
