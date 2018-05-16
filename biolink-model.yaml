@@ -33,6 +33,9 @@ types:
   - name: symbol type
     typeof: string
 
+  - name: chemical formula type
+    typeof: string
+
   - name: frequency value
     mappings:
       - UO:0000105
@@ -739,6 +742,13 @@ slots:
       longitude
     mappings:
       - wgs:long
+
+  - name: has chemical formula
+    range: chemical formula value
+    description: >-
+      description of chemical compound based on element symbols
+    mappings:
+      - WD:P274
 
   - name: aggregate statistic
     abstract: true
