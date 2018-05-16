@@ -2524,6 +2524,40 @@ class VariantToPopulationAssociation(Association):
         return self.__str__()
 
 
+class PopulationToPopulationAssociation(Association):
+    """
+    An association between a two populations
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 name=None,
+                 category=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.name=name
+        self.category=category
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
+    def __repr__(self):
+        return self.__str__()
+
+
 class VariantToPhenotypicFeatureAssociation(Association):
     """
     None
@@ -2837,26 +2871,6 @@ class GeneToGoTermAssociation(Association):
 
     def __str__(self):
         return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
-
-
-class AssociationResultSet(InformationContentEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 associations=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.associations=associations
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "associations={} id={} name={} category={} ".format(self.associations,self.id,self.name,self.category)
     def __repr__(self):
         return self.__str__()
 

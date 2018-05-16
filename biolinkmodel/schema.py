@@ -1199,6 +1199,15 @@ class VariantToPopulationAssociationSchema(AssociationSchema):
     def make_object(self, data):
         VariantToPopulationAssociation(**data)
 
+class PopulationToPopulationAssociationSchema(AssociationSchema):
+    """
+    An association between a two populations
+    """
+
+    @post_load
+    def make_object(self, data):
+        PopulationToPopulationAssociation(**data)
+
 class VariantToPhenotypicFeatureAssociationSchema(AssociationSchema):
     """
     None
@@ -1314,16 +1323,6 @@ class GeneToGoTermAssociationSchema(AssociationSchema):
     @post_load
     def make_object(self, data):
         GeneToGoTermAssociation(**data)
-
-class AssociationResultSetSchema(InformationContentEntitySchema):
-    """
-    None
-    """
-    associations = fields.Str()
-
-    @post_load
-    def make_object(self, data):
-        AssociationResultSet(**data)
 
 class GenomicSequenceLocalizationSchema(AssociationSchema):
     """

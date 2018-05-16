@@ -20,12 +20,6 @@
         "association_type": {
             "type": "string"
         },
-        "associations": {
-            "items": {
-                "type": "string"
-            },
-            "type": "array"
-        },
         "category": {
             "type": "string"
         },
@@ -93,6 +87,9 @@
             "type": "string"
         },
         "has_biomarker": {
+            "type": "string"
+        },
+        "has_chemical_formula": {
             "type": "string"
         },
         "has_confidence_level": {
@@ -215,6 +212,9 @@
         "negatively_regulates_process_to_process": {
             "type": "string"
         },
+        "node_property": {
+            "type": "string"
+        },
         "object": {
             "type": "string"
         },
@@ -284,6 +284,9 @@
         "regulates_process_to_process": {
             "type": "string"
         },
+        "related_to": {
+            "type": "string"
+        },
         "relation": {
             "type": "string"
         },
@@ -321,6 +324,9 @@
             "type": "string"
         },
         "treats": {
+            "type": "string"
+        },
+        "update_date": {
             "type": "string"
         }
     },
@@ -528,32 +534,6 @@
             },
             "required": [],
             "title": "Association",
-            "type": "object"
-        },
-        "AssociationResultSet": {
-            "description": null,
-            "properties": {
-                "associations": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "category": {
-                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
-                    "type": "string"
-                },
-                "id": {
-                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": "string"
-                }
-            },
-            "required": [],
-            "title": "AssociationResultSet",
             "type": "object"
         },
         "Attribute": {
@@ -3403,6 +3383,64 @@
             },
             "required": [],
             "title": "PopulationOfIndividualOrganisms",
+            "type": "object"
+        },
+        "PopulationToPopulationAssociation": {
+            "description": "An association between a two populations",
+            "properties": {
+                "association_type": {
+                    "description": "connects an association to the type of association (e.g. gene to phenotype)",
+                    "type": "string"
+                },
+                "category": {
+                    "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "negated": {
+                    "description": "if set to true, then the association is negated i.e. is not true",
+                    "type": "string"
+                },
+                "object": {
+                    "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                },
+                "provided_by": {
+                    "description": "connects an association to the agent (person, organization or group) that provided it",
+                    "type": "string"
+                },
+                "publications": {
+                    "description": "connects an association to publications supporting the association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "qualifiers": {
+                    "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "relation": {
+                    "description": "the relationship type by which a subject is connected to an object in an association",
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "PopulationToPopulationAssociation",
             "type": "object"
         },
         "Procedure": {
