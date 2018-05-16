@@ -41,7 +41,7 @@ URI: [http://bioentity.io/vocab/VariantToDiseaseAssociation](http://bioentity.io
  * [relation](relation.html)
     * _E.g. is pathogenic for_
     * __range__: [relationship type](RelationshipType.html) [required]
-    * subproperty_of: [GENO:0000790](http://purl.obolibrary.org/obo/GENO_0000790)
+    * edge label: 
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _a disease that is associated with that variant_

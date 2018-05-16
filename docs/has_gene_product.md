@@ -19,6 +19,7 @@ URI: [http://bioentity.io/vocab/has_gene_product](http://bioentity.io/vocab/has_
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

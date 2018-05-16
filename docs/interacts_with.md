@@ -5,7 +5,7 @@ layout: default
 ## interacts with
 
 
-holds between any two entities that directly or indirectly interact with each other 
+holds between any two entities that directly or indirectly interact with each other
 
 URI: [http://bioentity.io/vocab/interacts_with](http://bioentity.io/vocab/interacts_with)
 ## Mappings
@@ -19,6 +19,7 @@ URI: [http://bioentity.io/vocab/interacts_with](http://bioentity.io/vocab/intera
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

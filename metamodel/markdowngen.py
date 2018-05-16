@@ -41,10 +41,9 @@ class MarkdownGenerator(Generator):
         self.nl()
 
         self.emit_anchor('slots')
-        preds = mgr.predicates()
         self.emit_header(3, 'Predicates and Properties')
-        for p in mgr.predicates():
-            self.bullet(self.link(p), 0)
+        for p in mgr.root_predicates():
+            self.write_pred_hier(p)
             
                 
         self.close_fh()
@@ -66,6 +65,12 @@ class MarkdownGenerator(Generator):
         self.bullet(self.link(c), level)
         for n in mgr.child_nodes(c):
             self.write_class_hier(n, level+1)
+        
+    def write_pred_hier(self, p, level=0):
+        mgr = self.manager
+        self.bullet(self.link(p), level)
+        for n in mgr.child_nodes(p):
+            self.write_pred_hier(n, level+1)
         
             
     def class_dir_path(self, c):
@@ -222,7 +227,8 @@ class MarkdownGenerator(Generator):
             self.bullet("__range__: {}{}".format(r, qual), level=1)
             subproperty_of = mgr.class_slot_getattr(c, s, 'subproperty_of', None)
             if subproperty_of:
-                self.bullet('subproperty_of: {}'.format(self.xlink(subproperty_of)), level=1)
+                relation = mgr.slotdef(subproperty_of)
+                self.bullet('edge label: {}'.format(self.link(relation)), level=1)
             for ex in mgr.class_slot_getattr(c, s, 'examples', []):
                 self.bullet('Example: {} {}'.format(self.xlink(ex.value), ex.description), level=1)
             defining_cls = mgr.class_slotdef_inherited_from(c, s)

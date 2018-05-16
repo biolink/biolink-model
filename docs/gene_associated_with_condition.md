@@ -18,6 +18,7 @@ URI: [http://bioentity.io/vocab/gene_associated_with_condition](http://bioentity
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

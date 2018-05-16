@@ -19,6 +19,7 @@ URI: [http://bioentity.io/vocab/treated_by](http://bioentity.io/vocab/treated_by
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

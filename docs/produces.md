@@ -20,6 +20,7 @@ URI: [http://bioentity.io/vocab/produces](http://bioentity.io/vocab/produces)
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

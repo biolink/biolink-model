@@ -927,6 +927,20 @@ type VariantToPopulationAssociation implements VariantToThingAssociation, Freque
   hasPercentage: String
 }
 
+type PopulationToPopulationAssociation {
+  associationType: OntologyClass
+  subject: PopulationOfIndividualOrganisms!
+  negated: String
+  relation: RelationshipType!
+  object: PopulationOfIndividualOrganisms!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  name: String
+  category: String
+}
+
 type VariantToPhenotypicFeatureAssociation implements VariantToThingAssociation, EntityToPhenotypicFeatureAssociation {
   associationType: OntologyClass
   subject: SequenceVariant!
@@ -1053,13 +1067,6 @@ type GeneToGoTermAssociation {
   qualifiers: [OntologyClass]
   publications: [Publication]
   providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type AssociationResultSet {
-  associations: [Association]
   id: String!
   name: String
   category: String

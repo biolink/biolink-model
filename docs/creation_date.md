@@ -5,7 +5,7 @@ layout: default
 ## creation date
 
 
-date on which thing was created
+date on which thing was created. This can be applied to nodes or edges
 
 URI: [http://bioentity.io/vocab/creation_date](http://bioentity.io/vocab/creation_date)
 ## Mappings
@@ -18,6 +18,7 @@ URI: [http://bioentity.io/vocab/creation_date](http://bioentity.io/vocab/creatio
 
 ## Inheritance
 
+ *  is_a: [node property](node_property.html)
 
 ## Children
 

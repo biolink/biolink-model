@@ -55,6 +55,7 @@ URI: [http://bioentity.io/vocab/AdministrativeEntity](http://bioentity.io/vocab/
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [provider](Provider.html)
  *  class: [variant to population association](VariantToPopulationAssociation.html) references: [provider](Provider.html)
+ *  class: [population to population association](PopulationToPopulationAssociation.html) references: [provider](Provider.html)
  *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [provider](Provider.html)
  *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [provider](Provider.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [provider](Provider.html)

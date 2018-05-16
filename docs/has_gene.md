@@ -17,6 +17,7 @@ URI: [http://bioentity.io/vocab/has_gene](http://bioentity.io/vocab/has_gene)
 
 ## Inheritance
 
+ *  is_a: [node property](node_property.html)
 
 ## Children
 

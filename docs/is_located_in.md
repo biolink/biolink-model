@@ -19,6 +19,7 @@ URI: [http://bioentity.io/vocab/is_located_in](http://bioentity.io/vocab/is_loca
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

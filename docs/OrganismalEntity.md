@@ -37,6 +37,7 @@ URI: [http://bioentity.io/vocab/OrganismalEntity](http://bioentity.io/vocab/Orga
  *  class: [disease or phenotypic feature association to location association](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
  *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [case](Case.html)
  *  class: [variant to population association](VariantToPopulationAssociation.html) references: [population of individual organisms](PopulationOfIndividualOrganisms.html)
+ *  class: [population to population association](PopulationToPopulationAssociation.html) references: [population of individual organisms](PopulationOfIndividualOrganisms.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [life stage](LifeStage.html)
  *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
  *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)

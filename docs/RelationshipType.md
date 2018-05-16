@@ -52,6 +52,7 @@ URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/Rela
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [variant to population association](VariantToPopulationAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [population to population association](PopulationToPopulationAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [relationship type](RelationshipType.html)

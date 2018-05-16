@@ -39,7 +39,7 @@ URI: [http://bioentity.io/vocab/GenotypeToGenotypePartAssociation](http://bioent
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_
     * __range__: [relationship type](RelationshipType.html) [required]
-    * subproperty_of: [GENO:0000382](http://purl.obolibrary.org/obo/GENO_0000382)
+    * edge label: 
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _child genotype_

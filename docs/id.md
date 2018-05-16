@@ -17,6 +17,7 @@ URI: [http://bioentity.io/vocab/id](http://bioentity.io/vocab/id)
 
 ## Inheritance
 
+ *  is_a: [node property](node_property.html)
 
 ## Children
 
@@ -107,6 +108,7 @@ URI: [http://bioentity.io/vocab/id](http://bioentity.io/vocab/id)
  *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
  *  usage: [gene to disease association](GeneToDiseaseAssociation.html)
  *  usage: [variant to population association](VariantToPopulationAssociation.html)
+ *  usage: [population to population association](PopulationToPopulationAssociation.html)
  *  usage: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html)
  *  usage: [variant to disease association](VariantToDiseaseAssociation.html)
  *  usage: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
@@ -115,7 +117,6 @@ URI: [http://bioentity.io/vocab/id](http://bioentity.io/vocab/id)
  *  usage: [gene to expression site association](GeneToExpressionSiteAssociation.html)
  *  usage: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html)
  *  usage: [gene to go term association](GeneToGoTermAssociation.html)
- *  usage: [association result set](AssociationResultSet.html)
  *  usage: [genomic sequence localization](GenomicSequenceLocalization.html)
  *  usage: [sequence feature relationship](SequenceFeatureRelationship.html)
  *  usage: [transcript to gene relationship](TranscriptToGeneRelationship.html)

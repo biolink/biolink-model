@@ -17,6 +17,7 @@ URI: [http://bioentity.io/vocab/phase](http://bioentity.io/vocab/phase)
 
 ## Inheritance
 
+ *  is_a: [node property](node_property.html)
 
 ## Children
 

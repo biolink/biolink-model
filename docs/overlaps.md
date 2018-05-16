@@ -18,6 +18,7 @@ URI: [http://bioentity.io/vocab/overlaps](http://bioentity.io/vocab/overlaps)
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

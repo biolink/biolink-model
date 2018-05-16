@@ -20,6 +20,7 @@ URI: [http://bioentity.io/vocab/subclass_of](http://bioentity.io/vocab/subclass_
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

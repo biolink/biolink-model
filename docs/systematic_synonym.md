@@ -17,6 +17,7 @@ URI: [http://bioentity.io/vocab/systematic_synonym](http://bioentity.io/vocab/sy
 
 ## Inheritance
 
+ *  is_a: [node property](node_property.html)
 
 ## Children
 

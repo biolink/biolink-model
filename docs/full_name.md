@@ -17,6 +17,7 @@ URI: [http://bioentity.io/vocab/full_name](http://bioentity.io/vocab/full_name)
 
 ## Inheritance
 
+ *  is_a: [node property](node_property.html)
 
 ## Children
 

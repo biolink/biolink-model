@@ -21,6 +21,7 @@ URI: [http://bioentity.io/vocab/same_as](http://bioentity.io/vocab/same_as)
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

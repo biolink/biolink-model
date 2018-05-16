@@ -18,6 +18,7 @@ URI: [http://bioentity.io/vocab/has_phenotype](http://bioentity.io/vocab/has_phe
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

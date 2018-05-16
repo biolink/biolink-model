@@ -19,6 +19,7 @@ URI: [http://bioentity.io/vocab/is_homologous_to](http://bioentity.io/vocab/is_h
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

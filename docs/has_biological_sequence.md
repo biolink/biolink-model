@@ -17,6 +17,7 @@ URI: [http://bioentity.io/vocab/has_biological_sequence](http://bioentity.io/voc
 
 ## Inheritance
 
+ *  is_a: [node property](node_property.html)
 
 ## Children
 

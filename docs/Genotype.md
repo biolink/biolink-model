@@ -34,6 +34,7 @@ URI: [http://bioentity.io/vocab/Genotype](http://bioentity.io/vocab/Genotype)
 ## Fields
 
  * [has zygosity](has_zygosity.html)
+    * _A grouping for any property that holds between a node and a value_
     * __range__: [zygosity](Zygosity.html)
     * __Local__
  * [has biological sequence](has_biological_sequence.html)

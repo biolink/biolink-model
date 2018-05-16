@@ -17,6 +17,7 @@ URI: [http://bioentity.io/vocab/has_zygosity](http://bioentity.io/vocab/has_zygo
 
 ## Inheritance
 
+ *  is_a: [node property](node_property.html)
 
 ## Children
 

@@ -18,6 +18,7 @@ URI: [http://bioentity.io/vocab/participates_in](http://bioentity.io/vocab/parti
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

@@ -17,6 +17,7 @@ URI: [http://bioentity.io/vocab/has_molecular_consequence](http://bioentity.io/v
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 
