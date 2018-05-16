@@ -226,7 +226,7 @@ slots:
       - RO:0002205
       - WD:P688
 
-  - name: is homologous to
+  - name: homologous to
     is_a: related to
     aliases: ['in homology relationship with']
     description: >-
@@ -238,8 +238,8 @@ slots:
       - RO:HOM0000001
       - SIO:010302
 
-  - name: is paralogous to
-    is_a: is homologous to
+  - name: paralogous to
+    is_a: homologous to
     description: >-
       a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
     in_subset:
@@ -247,8 +247,8 @@ slots:
     mappings:
       - RO:HOM0000011
 
-  - name: is orthologous to
-    is_a: is homologous to
+  - name: orthologous to
+    is_a: homologous to
     description: >-
       a homology relationship between entities (typically genes) that diverged after a speciation event.
     in_subset:
@@ -257,8 +257,8 @@ slots:
       - RO:HOM0000017
       - WD:P684
 
-  - name: is xenologous to
-    is_a: is homologous to
+  - name: xenologous to
+    is_a: homologous to
     description: >-
       a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
     in_subset:
@@ -378,7 +378,7 @@ slots:
       - RO:0002559
       - SEMMEDDB:PREVENTS
 
-  - name: is correlated with
+  - name: correlated with
     is_a: related to
     description: >-
       holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
@@ -390,17 +390,17 @@ slots:
       - RO:0002610
 
   - name: has biomarker
-    is_a: is correlated with
+    is_a: correlated with
     description: >-
       holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
     domain: disease or phenotypic feature
     range: molecular entity
     in_subset:
       - translator_minimal
-    inverse: is biomarker for
+    inverse: biomarker for
 
-  - name: is biomarker for
-    is_a: is correlated with
+  - name: biomarker for
+    is_a: correlated with
     description: >-
       holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
     domain: molecular entity
@@ -468,29 +468,29 @@ slots:
       - BFO:0000066
       - SEMMEDDB:OCCURS_IN
 
-  - name: is located in
+  - name: located in
     is_a: related to
     description: >-
       holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
     in_subset:
       - translator_minimal
-    inverse: is location of
+    inverse: location of
     mappings:
       - BFO:0000066
       - WD:276
 
-  - name: is location of
+  - name: location of
     is_a: related to
     description: >-
       holds between material entity or site and a material entity that is located within it (but not considered a part of it) 
     in_subset:
       - translator_minimal
-    inverse: is located in
+    inverse: located in
     mappings:  
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
 
-  - name: is model of
+  - name: model of
     is_a: related to
     description: >-
       holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.    
@@ -564,7 +564,7 @@ slots:
     mappings:
       - RO:0002331
 
-  - name: is capable of
+  - name: capable of
     is_a: actively involved in
     description: >-
       holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function. 
@@ -1824,7 +1824,7 @@ classes:
     symmetric: true
     slot_usage:
       - name: relation
-        subproperty_of: is homologous to
+        subproperty_of: homologous to
         description: >-
           homology relationship type
         definitional: true
@@ -2382,7 +2382,7 @@ classes:
           The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits
           similar features, or a gene that when mutated exhibits features of the disease
       - name: relation
-        subproperty_of: is model of
+        subproperty_of: model of
         description: >-
           The relationship to the disease
             
