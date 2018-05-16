@@ -20,7 +20,7 @@ URI: [http://bioentity.io/vocab/causes](http://bioentity.io/vocab/causes)
 
 ## Inheritance
 
- *  is_a: [contributes to](contributes_to.html)
+ *  is_a: [contributes to](contributes_to.html) *subsets: translator_minimal*
 
 ## Children
 

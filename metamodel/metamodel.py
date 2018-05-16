@@ -15,6 +15,7 @@ class Definition(object):
                  abstract=None,
                  mappings=None,
                  id_prefixes=None,
+                 in_subset=None,
                  apply_to=None):
         self.name=name
         self.singular_name=singular_name
@@ -24,10 +25,11 @@ class Definition(object):
         self.abstract=abstract
         self.mappings=mappings
         self.id_prefixes=id_prefixes
+        self.in_subset=in_subset
         self.apply_to=apply_to
 
     def __str__(self):
-        return "name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} apply_to={} ".format(self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.apply_to)
+        return "name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} in_subset={} apply_to={} ".format(self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.in_subset,self.apply_to)
     def __repr__(self):
         return self.__str__()
 
@@ -55,6 +57,7 @@ class SlotDefinition(Definition):
                  abstract=None,
                  mappings=None,
                  id_prefixes=None,
+                 in_subset=None,
                  apply_to=None):
         self.mixin=mixin
         self.mixins=mixins
@@ -74,10 +77,11 @@ class SlotDefinition(Definition):
         self.abstract=abstract
         self.mappings=mappings
         self.id_prefixes=id_prefixes
+        self.in_subset=in_subset
         self.apply_to=apply_to
 
     def __str__(self):
-        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} required={} path={} subproperty_of={} examples={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} apply_to={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.required,self.path,self.subproperty_of,self.examples,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.apply_to)
+        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} required={} path={} subproperty_of={} examples={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} in_subset={} apply_to={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.required,self.path,self.subproperty_of,self.examples,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.in_subset,self.apply_to)
     def __repr__(self):
         return self.__str__()
 
@@ -105,6 +109,7 @@ class SlotUsageDefinition(SlotDefinition):
                  abstract=None,
                  mappings=None,
                  id_prefixes=None,
+                 in_subset=None,
                  apply_to=None):
         self.mixin=mixin
         self.mixins=mixins
@@ -124,10 +129,11 @@ class SlotUsageDefinition(SlotDefinition):
         self.abstract=abstract
         self.mappings=mappings
         self.id_prefixes=id_prefixes
+        self.in_subset=in_subset
         self.apply_to=apply_to
 
     def __str__(self):
-        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} required={} path={} subproperty_of={} examples={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} apply_to={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.required,self.path,self.subproperty_of,self.examples,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.apply_to)
+        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} required={} path={} subproperty_of={} examples={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} in_subset={} apply_to={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.required,self.path,self.subproperty_of,self.examples,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.in_subset,self.apply_to)
     def __repr__(self):
         return self.__str__()
 
@@ -151,6 +157,7 @@ class ClassDefinition(Definition):
                  abstract=None,
                  mappings=None,
                  id_prefixes=None,
+                 in_subset=None,
                  apply_to=None):
         self.defining_slots=defining_slots
         self.subclass_of=subclass_of
@@ -166,10 +173,11 @@ class ClassDefinition(Definition):
         self.abstract=abstract
         self.mappings=mappings
         self.id_prefixes=id_prefixes
+        self.in_subset=in_subset
         self.apply_to=apply_to
 
     def __str__(self):
-        return "defining_slots={} subclass_of={} mixin={} mixins={} slots={} slot_usage={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} apply_to={} ".format(self.defining_slots,self.subclass_of,self.mixin,self.mixins,self.slots,self.slot_usage,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.apply_to)
+        return "defining_slots={} subclass_of={} mixin={} mixins={} slots={} slot_usage={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} in_subset={} apply_to={} ".format(self.defining_slots,self.subclass_of,self.mixin,self.mixins,self.slots,self.slot_usage,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.in_subset,self.apply_to)
     def __repr__(self):
         return self.__str__()
 
@@ -189,6 +197,7 @@ class TypeDefinition(Definition):
                  abstract=None,
                  mappings=None,
                  id_prefixes=None,
+                 in_subset=None,
                  apply_to=None):
         self.mixins=mixins
         self.typeof=typeof
@@ -200,10 +209,11 @@ class TypeDefinition(Definition):
         self.abstract=abstract
         self.mappings=mappings
         self.id_prefixes=id_prefixes
+        self.in_subset=in_subset
         self.apply_to=apply_to
 
     def __str__(self):
-        return "mixins={} typeof={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} apply_to={} ".format(self.mixins,self.typeof,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.apply_to)
+        return "mixins={} typeof={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} in_subset={} apply_to={} ".format(self.mixins,self.typeof,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.in_subset,self.apply_to)
     def __repr__(self):
         return self.__str__()
 
@@ -227,6 +237,7 @@ class SchemaDefinition(Definition):
                  abstract=None,
                  mappings=None,
                  id_prefixes=None,
+                 in_subset=None,
                  apply_to=None):
         self.id=id
         self.slots=slots
@@ -242,10 +253,11 @@ class SchemaDefinition(Definition):
         self.abstract=abstract
         self.mappings=mappings
         self.id_prefixes=id_prefixes
+        self.in_subset=in_subset
         self.apply_to=apply_to
 
     def __str__(self):
-        return "id={} slots={} classes={} types={} imports={} license={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} apply_to={} ".format(self.id,self.slots,self.classes,self.types,self.imports,self.license,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.apply_to)
+        return "id={} slots={} classes={} types={} imports={} license={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} in_subset={} apply_to={} ".format(self.id,self.slots,self.classes,self.types,self.imports,self.license,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.in_subset,self.apply_to)
     def __repr__(self):
         return self.__str__()
 

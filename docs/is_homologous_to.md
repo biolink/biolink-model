@@ -23,9 +23,9 @@ URI: [http://bioentity.io/vocab/is_homologous_to](http://bioentity.io/vocab/is_h
 
 ## Children
 
- *  child: [is paralogous to](is_paralogous_to.html)
- *  child: [is orthologous to](is_orthologous_to.html)
- *  child: [is xenologous to](is_xenologous_to.html)
+ *  child: [is paralogous to](is_paralogous_to.html) *subsets: translator_minimal*
+ *  child: [is orthologous to](is_orthologous_to.html) *subsets: translator_minimal*
+ *  child: [is xenologous to](is_xenologous_to.html) *subsets: translator_minimal*
 
 ## Used in
 

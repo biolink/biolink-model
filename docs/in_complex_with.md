@@ -17,7 +17,7 @@ URI: [http://bioentity.io/vocab/in_complex_with](http://bioentity.io/vocab/in_co
 
 ## Inheritance
 
- *  is_a: [coexists with](coexists_with.html)
+ *  is_a: [coexists with](coexists_with.html) *subsets: translator_minimal*
 
 ## Children
 

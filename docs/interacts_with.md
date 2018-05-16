@@ -23,8 +23,8 @@ URI: [http://bioentity.io/vocab/interacts_with](http://bioentity.io/vocab/intera
 
 ## Children
 
- *  child: [physically interacts with](physically_interacts_with.html)
- *  child: [genetically interacts with](genetically_interacts_with.html)
+ *  child: [physically interacts with](physically_interacts_with.html) *subsets: translator_minimal*
+ *  child: [genetically interacts with](genetically_interacts_with.html) *subsets: translator_minimal*
 
 ## Used in
 

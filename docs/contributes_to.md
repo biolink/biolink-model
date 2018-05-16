@@ -22,7 +22,7 @@ URI: [http://bioentity.io/vocab/contributes_to](http://bioentity.io/vocab/contri
 
 ## Children
 
- *  child: [causes](causes.html)
+ *  child: [causes](causes.html) *subsets: translator_minimal*
 
 ## Used in
 

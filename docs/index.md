@@ -157,62 +157,62 @@ Entity and association taxonomy and datamodel for life-sciences data
 ### Predicates and Properties
 
  * [related to](related_to.html)
-    * [interacts with](interacts_with.html)
-       * [physically interacts with](physically_interacts_with.html)
-          * [molecularly interacts with](molecularly_interacts_with.html)
-       * [genetically interacts with](genetically_interacts_with.html)
-    * [affects](affects.html)
+    * [interacts with](interacts_with.html) *subsets: translator_minimal*
+       * [physically interacts with](physically_interacts_with.html) *subsets: translator_minimal*
+          * [molecularly interacts with](molecularly_interacts_with.html) *subsets: translator_minimal*
+       * [genetically interacts with](genetically_interacts_with.html) *subsets: translator_minimal*
+    * [affects](affects.html) *subsets: translator_minimal*
        * [regulates](regulates.html)
           * [positively regulates](positively_regulates.html)
           * [negatively regulates](negatively_regulates.html)
           * [regulates, process to process](regulates_process_to_process.html)
              * [positively regulates, process to process](positively_regulates_process_to_process.html)
              * [negatively regulates, process to process](negatively_regulates_process_to_process.html)
-          * [regulates, entity to entity](regulates_entity_to_entity.html)
-             * [positively regulates, entity to entity](positively_regulates_entity_to_entity.html)
-             * [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.html)
-       * [disrupts](disrupts.html)
-       * [treats](treats.html)
-    * [has gene product](has_gene_product.html)
-    * [is homologous to](is_homologous_to.html)
-       * [is paralogous to](is_paralogous_to.html)
-       * [is orthologous to](is_orthologous_to.html)
-       * [is xenologous to](is_xenologous_to.html)
-    * [coexists with](coexists_with.html)
-       * [in pathway with](in_pathway_with.html)
-       * [in complex with](in_complex_with.html)
-       * [in cell population with](in_cell_population_with.html)
-       * [co-localizes with](co-localizes_with.html)
-    * [gene associated with condition](gene_associated_with_condition.html)
-    * [affects risk for](affects_risk_for.html)
-       * [prevents](prevents.html)
-    * [contributes to](contributes_to.html)
-       * [causes](causes.html)
-    * [is correlated with](is_correlated_with.html)
-       * [has biomarker](has_biomarker.html)
-       * [is biomarker for](is_biomarker_for.html)
-    * [treated by](treated_by.html)
-    * [expressed in](expressed_in.html)
-    * [expresses](expresses.html)
-    * [has phenotype](has_phenotype.html)
-    * [occurs in](occurs_in.html)
-    * [is located in](is_located_in.html)
-    * [is location of](is_location_of.html)
-    * [is model of](is_model_of.html)
-    * [overlaps](overlaps.html)
-       * [has part](has_part.html)
-       * [part of](part_of.html)
-    * [has participant](has_participant.html)
-    * [participates in](participates_in.html)
-       * [actively involved in](actively_involved_in.html)
-          * [is capable of](is_capable_of.html)
-    * [derives into](derives_into.html)
-    * [derives from](derives_from.html)
-    * [manifestation of](manifestation_of.html)
-    * [produces](produces.html)
-    * [precedes](precedes.html)
-    * [same as](same_as.html)
-    * [subclass of](subclass_of.html)
+          * [regulates, entity to entity](regulates_entity_to_entity.html) *subsets: translator_minimal*
+             * [positively regulates, entity to entity](positively_regulates_entity_to_entity.html) *subsets: translator_minimal*
+             * [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.html) *subsets: translator_minimal*
+       * [disrupts](disrupts.html) *subsets: translator_minimal*
+       * [treats](treats.html) *subsets: translator_minimal*
+    * [has gene product](has_gene_product.html) *subsets: translator_minimal*
+    * [is homologous to](is_homologous_to.html) *subsets: translator_minimal*
+       * [is paralogous to](is_paralogous_to.html) *subsets: translator_minimal*
+       * [is orthologous to](is_orthologous_to.html) *subsets: translator_minimal*
+       * [is xenologous to](is_xenologous_to.html) *subsets: translator_minimal*
+    * [coexists with](coexists_with.html) *subsets: translator_minimal*
+       * [in pathway with](in_pathway_with.html) *subsets: translator_minimal*
+       * [in complex with](in_complex_with.html) *subsets: translator_minimal*
+       * [in cell population with](in_cell_population_with.html) *subsets: translator_minimal*
+       * [co-localizes with](co-localizes_with.html) *subsets: translator_minimal*
+    * [gene associated with condition](gene_associated_with_condition.html) *subsets: translator_minimal*
+    * [affects risk for](affects_risk_for.html) *subsets: translator_minimal*
+       * [prevents](prevents.html) *subsets: translator_minimal*
+    * [contributes to](contributes_to.html) *subsets: translator_minimal*
+       * [causes](causes.html) *subsets: translator_minimal*
+    * [is correlated with](is_correlated_with.html) *subsets: translator_minimal*
+       * [has biomarker](has_biomarker.html) *subsets: translator_minimal*
+       * [is biomarker for](is_biomarker_for.html) *subsets: translator_minimal*
+    * [treated by](treated_by.html) *subsets: translator_minimal*
+    * [expressed in](expressed_in.html) *subsets: translator_minimal*
+    * [expresses](expresses.html) *subsets: translator_minimal*
+    * [has phenotype](has_phenotype.html) *subsets: translator_minimal*
+    * [occurs in](occurs_in.html) *subsets: translator_minimal*
+    * [is located in](is_located_in.html) *subsets: translator_minimal*
+    * [is location of](is_location_of.html) *subsets: translator_minimal*
+    * [is model of](is_model_of.html) *subsets: translator_minimal*
+    * [overlaps](overlaps.html) *subsets: translator_minimal*
+       * [has part](has_part.html) *subsets: translator_minimal*
+       * [part of](part_of.html) *subsets: translator_minimal*
+    * [has participant](has_participant.html) *subsets: translator_minimal*
+    * [participates in](participates_in.html) *subsets: translator_minimal*
+       * [actively involved in](actively_involved_in.html) *subsets: translator_minimal*
+          * [is capable of](is_capable_of.html) *subsets: translator_minimal*
+    * [derives into](derives_into.html) *subsets: translator_minimal*
+    * [derives from](derives_from.html) *subsets: translator_minimal*
+    * [manifestation of](manifestation_of.html) *subsets: translator_minimal*
+    * [produces](produces.html) *subsets: translator_minimal*
+    * [precedes](precedes.html) *subsets: translator_minimal*
+    * [same as](same_as.html) *subsets: translator_minimal*
+    * [subclass of](subclass_of.html) *subsets: translator_minimal*
     * [in taxon](in_taxon.html)
     * [has molecular consequence](has_molecular_consequence.html)
  * [node property](node_property.html)

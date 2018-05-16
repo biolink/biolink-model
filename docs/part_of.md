@@ -20,7 +20,7 @@ URI: [http://bioentity.io/vocab/part_of](http://bioentity.io/vocab/part_of)
 
 ## Inheritance
 
- *  is_a: [overlaps](overlaps.html)
+ *  is_a: [overlaps](overlaps.html) *subsets: translator_minimal*
 
 ## Children
 

@@ -23,8 +23,8 @@ URI: [http://bioentity.io/vocab/affects](http://bioentity.io/vocab/affects)
 ## Children
 
  *  child: [regulates](regulates.html)
- *  child: [disrupts](disrupts.html)
- *  child: [treats](treats.html)
+ *  child: [disrupts](disrupts.html) *subsets: translator_minimal*
+ *  child: [treats](treats.html) *subsets: translator_minimal*
 
 ## Used in
 

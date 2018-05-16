@@ -18,11 +18,11 @@ URI: [http://bioentity.io/vocab/physically_interacts_with](http://bioentity.io/v
 
 ## Inheritance
 
- *  is_a: [interacts with](interacts_with.html)
+ *  is_a: [interacts with](interacts_with.html) *subsets: translator_minimal*
 
 ## Children
 
- *  child: [molecularly interacts with](molecularly_interacts_with.html)
+ *  child: [molecularly interacts with](molecularly_interacts_with.html) *subsets: translator_minimal*
 
 ## Used in
 

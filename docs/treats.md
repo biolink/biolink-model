@@ -21,7 +21,7 @@ URI: [http://bioentity.io/vocab/treats](http://bioentity.io/vocab/treats)
 
 ## Inheritance
 
- *  is_a: [affects](affects.html)
+ *  is_a: [affects](affects.html) *subsets: translator_minimal*
 
 ## Children
 

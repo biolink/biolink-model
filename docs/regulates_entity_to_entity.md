@@ -22,8 +22,8 @@ URI: [http://bioentity.io/vocab/regulates_entity_to_entity](http://bioentity.io/
 
 ## Children
 
- *  child: [positively regulates, entity to entity](positively_regulates_entity_to_entity.html)
- *  child: [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.html)
+ *  child: [positively regulates, entity to entity](positively_regulates_entity_to_entity.html) *subsets: translator_minimal*
+ *  child: [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.html) *subsets: translator_minimal*
 
 ## Used in
 

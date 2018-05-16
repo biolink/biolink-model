@@ -21,6 +21,7 @@ class DefinitionSchema(Schema):
     abstract = fields.Boolean()
     mappings = fields.List(fields.Str)
     id_prefixes = fields.List(fields.Str)
+    in_subset = fields.List(fields.Str)
 
     @post_load
     def make_object(self, data):

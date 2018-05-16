@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/positively_regulates_entity_to_entity](http://bi
 
 ## Inheritance
 
- *  is_a: [regulates, entity to entity](regulates_entity_to_entity.html)
+ *  is_a: [regulates, entity to entity](regulates_entity_to_entity.html) *subsets: translator_minimal*
 
 ## Children
 

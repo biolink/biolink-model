@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/molecularly_interacts_with](http://bioentity.io/
 
 ## Inheritance
 
- *  is_a: [physically interacts with](physically_interacts_with.html)
+ *  is_a: [physically interacts with](physically_interacts_with.html) *subsets: translator_minimal*
 
 ## Children
 

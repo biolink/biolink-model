@@ -22,8 +22,8 @@ URI: [http://bioentity.io/vocab/overlaps](http://bioentity.io/vocab/overlaps)
 
 ## Children
 
- *  child: [has part](has_part.html)
- *  child: [part of](part_of.html)
+ *  child: [has part](has_part.html) *subsets: translator_minimal*
+ *  child: [part of](part_of.html) *subsets: translator_minimal*
 
 ## Used in
 

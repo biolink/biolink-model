@@ -18,11 +18,11 @@ URI: [http://bioentity.io/vocab/actively_involved_in](http://bioentity.io/vocab/
 
 ## Inheritance
 
- *  is_a: [participates in](participates_in.html)
+ *  is_a: [participates in](participates_in.html) *subsets: translator_minimal*
 
 ## Children
 
- *  child: [is capable of](is_capable_of.html)
+ *  child: [is capable of](is_capable_of.html) *subsets: translator_minimal*
 
 ## Used in
 

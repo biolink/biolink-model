@@ -22,10 +22,10 @@ URI: [http://bioentity.io/vocab/coexists_with](http://bioentity.io/vocab/coexist
 
 ## Children
 
- *  child: [in pathway with](in_pathway_with.html)
- *  child: [in complex with](in_complex_with.html)
- *  child: [in cell population with](in_cell_population_with.html)
- *  child: [co-localizes with](co-localizes_with.html)
+ *  child: [in pathway with](in_pathway_with.html) *subsets: translator_minimal*
+ *  child: [in complex with](in_complex_with.html) *subsets: translator_minimal*
+ *  child: [in cell population with](in_cell_population_with.html) *subsets: translator_minimal*
+ *  child: [co-localizes with](co-localizes_with.html) *subsets: translator_minimal*
 
 ## Used in
 

@@ -39,7 +39,7 @@ URI: [http://bioentity.io/vocab/GeneToGeneProductRelationship](http://bioentity.
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_
     * __range__: [relationship type](RelationshipType.html) [required]
-    * edge label: [has gene product](has_gene_product.html)
+    * edge label: [has gene product](has_gene_product.html) *subsets: translator_minimal*
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._

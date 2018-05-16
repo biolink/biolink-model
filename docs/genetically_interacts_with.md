@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/genetically_interacts_with](http://bioentity.io/
 
 ## Inheritance
 
- *  is_a: [interacts with](interacts_with.html)
+ *  is_a: [interacts with](interacts_with.html) *subsets: translator_minimal*
 
 ## Children
 

@@ -195,6 +195,8 @@ slots:
     range: string
     description: >-
       used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)
+    mappings:
+      - oio:inSubset
 
   - name: inverse
     multivalued: false
@@ -216,6 +218,7 @@ classes:
       - abstract
       - mappings
       - id_prefixes
+      - in_subset
       - apply_to
 
   - name: slot definition

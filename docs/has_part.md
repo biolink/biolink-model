@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/has_part](http://bioentity.io/vocab/has_part)
 
 ## Inheritance
 
- *  is_a: [overlaps](overlaps.html)
+ *  is_a: [overlaps](overlaps.html) *subsets: translator_minimal*
 
 ## Children
 

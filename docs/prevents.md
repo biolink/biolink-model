@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/prevents](http://bioentity.io/vocab/prevents)
 
 ## Inheritance
 
- *  is_a: [affects risk for](affects_risk_for.html)
+ *  is_a: [affects risk for](affects_risk_for.html) *subsets: translator_minimal*
 
 ## Children
 

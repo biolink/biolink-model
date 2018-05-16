@@ -22,7 +22,7 @@ URI: [http://bioentity.io/vocab/affects_risk_for](http://bioentity.io/vocab/affe
 
 ## Children
 
- *  child: [prevents](prevents.html)
+ *  child: [prevents](prevents.html) *subsets: translator_minimal*
 
 ## Used in
 

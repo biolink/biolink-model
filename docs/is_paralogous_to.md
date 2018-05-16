@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/is_paralogous_to](http://bioentity.io/vocab/is_p
 
 ## Inheritance
 
- *  is_a: [is homologous to](is_homologous_to.html)
+ *  is_a: [is homologous to](is_homologous_to.html) *subsets: translator_minimal*
 
 ## Children
 

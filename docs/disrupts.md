@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/disrupts](http://bioentity.io/vocab/disrupts)
 
 ## Inheritance
 
- *  is_a: [affects](affects.html)
+ *  is_a: [affects](affects.html) *subsets: translator_minimal*
 
 ## Children
 

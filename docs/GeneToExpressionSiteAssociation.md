@@ -48,7 +48,7 @@ URI: [http://bioentity.io/vocab/GeneToExpressionSiteAssociation](http://bioentit
  * [relation](relation.html)
     * _expression relationship_
     * __range__: [relationship type](RelationshipType.html) [required]
-    * edge label: [expressed in](expressed_in.html)
+    * edge label: [expressed in](expressed_in.html) *subsets: translator_minimal*
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _location in which the gene is expressed_

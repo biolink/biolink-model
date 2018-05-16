@@ -39,7 +39,7 @@ URI: [http://bioentity.io/vocab/GeneToGeneHomologyAssociation](http://bioentity.
  * [relation](relation.html)
     * _homology relationship type_
     * __range__: [relationship type](RelationshipType.html) [required]
-    * edge label: [is homologous to](is_homologous_to.html)
+    * edge label: [is homologous to](is_homologous_to.html) *subsets: translator_minimal*
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._

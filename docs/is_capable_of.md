@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/is_capable_of](http://bioentity.io/vocab/is_capa
 
 ## Inheritance
 
- *  is_a: [actively involved in](actively_involved_in.html)
+ *  is_a: [actively involved in](actively_involved_in.html) *subsets: translator_minimal*
 
 ## Children
 

@@ -22,8 +22,8 @@ URI: [http://bioentity.io/vocab/is_correlated_with](http://bioentity.io/vocab/is
 
 ## Children
 
- *  child: [has biomarker](has_biomarker.html)
- *  child: [is biomarker for](is_biomarker_for.html)
+ *  child: [has biomarker](has_biomarker.html) *subsets: translator_minimal*
+ *  child: [is biomarker for](is_biomarker_for.html) *subsets: translator_minimal*
 
 ## Used in
 

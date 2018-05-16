@@ -29,7 +29,7 @@ URI: [http://bioentity.io/vocab/Treatment](http://bioentity.io/vocab/Treatment)
 
 ## Fields
 
- * [treats](treats.html)
+ * [treats](treats.html) *subsets: translator_minimal*
     * _holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat _
     * __range__: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html) [required]
     * __Local__

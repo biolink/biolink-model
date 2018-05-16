@@ -277,7 +277,10 @@ class MarkdownGenerator(Generator):
         if obj is None:
             return ''
         fn = self.obj_name(obj)
-        return '[{}]({}.html)'.format(obj.name, fn)
+        s =  '[{}]({}.html)'.format(obj.name, fn)
+        if obj.in_subset:
+            s += " *subsets: " + " | ".join(obj.in_subset)+"*"
+        return s
                              
     def xlink(self, id):
         url = self.id_to_url(id)
