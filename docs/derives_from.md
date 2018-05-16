@@ -18,6 +18,7 @@ URI: [http://bioentity.io/vocab/derives_from](http://bioentity.io/vocab/derives_
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

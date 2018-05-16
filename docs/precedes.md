@@ -20,6 +20,7 @@ URI: [http://bioentity.io/vocab/precedes](http://bioentity.io/vocab/precedes)
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

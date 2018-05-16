@@ -40,7 +40,7 @@ URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](htt
  * [relation](relation.html)
     * _interaction relationship type_
     * __range__: [molecularly interacts with](molecularly_interacts_with.html) [required]
-    * subproperty_of: [RO:0002436](http://purl.obolibrary.org/obo/RO_0002436)
+    * edge label: [molecularly interacts with](molecularly_interacts_with.html)
     * Example: [RO:0002447](http://purl.obolibrary.org/obo/RO_0002447) the subject molecular phosphorylates the object molecule
     * inherited from: [association](Association.html)
  * [object](object.html)

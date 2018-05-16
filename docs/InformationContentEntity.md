@@ -26,7 +26,6 @@ URI: [http://bioentity.io/vocab/InformationContentEntity](http://bioentity.io/vo
  *  child: [evidence type](EvidenceType.html)
  *  child: [publication](Publication.html)
  *  child: [association](Association.html)
- *  child: [association result set](AssociationResultSet.html)
 
 ## Used in
 
@@ -62,6 +61,7 @@ URI: [http://bioentity.io/vocab/InformationContentEntity](http://bioentity.io/vo
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [publication](Publication.html)
  *  class: [variant to population association](VariantToPopulationAssociation.html) references: [publication](Publication.html)
+ *  class: [population to population association](PopulationToPopulationAssociation.html) references: [publication](Publication.html)
  *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
  *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [publication](Publication.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [publication](Publication.html)
@@ -70,7 +70,6 @@ URI: [http://bioentity.io/vocab/InformationContentEntity](http://bioentity.io/vo
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [publication](Publication.html)
  *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [publication](Publication.html)
  *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [publication](Publication.html)
- *  class: [association result set](AssociationResultSet.html) references: [association](Association.html)
  *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [publication](Publication.html)
  *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [publication](Publication.html)
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [publication](Publication.html)

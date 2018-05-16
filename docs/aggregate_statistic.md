@@ -17,6 +17,7 @@ URI: [http://bioentity.io/vocab/aggregate_statistic](http://bioentity.io/vocab/a
 
 ## Inheritance
 
+ *  is_a: [node property](node_property.html)
 
 ## Children
 

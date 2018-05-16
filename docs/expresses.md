@@ -18,6 +18,7 @@ URI: [http://bioentity.io/vocab/expresses](http://bioentity.io/vocab/expresses)
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

@@ -19,6 +19,7 @@ URI: [http://bioentity.io/vocab/manifestation_of](http://bioentity.io/vocab/mani
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

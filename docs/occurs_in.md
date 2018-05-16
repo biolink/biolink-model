@@ -19,6 +19,7 @@ URI: [http://bioentity.io/vocab/occurs_in](http://bioentity.io/vocab/occurs_in)
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

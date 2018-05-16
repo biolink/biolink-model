@@ -34,6 +34,7 @@ URI: [http://bioentity.io/vocab/FrequencyQuantifier](http://bioentity.io/vocab/F
     * __range__: integer
     * __Local__
  * [has quotient](has_quotient.html)
+    * _A grouping for any property that holds between a node and a value_
     * __range__: double
     * __Local__
  * [has percentage](has_percentage.html)

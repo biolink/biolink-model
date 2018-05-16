@@ -19,6 +19,7 @@ URI: [http://bioentity.io/vocab/in_taxon](http://bioentity.io/vocab/in_taxon)
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

@@ -68,10 +68,20 @@ slots:
 
 ## predicates/relations 
 
+  - name: related to
+    description: >-
+      A grouping for any relationship type that holds between any two things
+    domain: named thing
+    range: named thing
+    mappings:
+      - owl:topObjectProperty
+
   - name: interacts with
     description: >-
-      holds between any two entities that directly or indirectly interact with each other 
+      holds between any two entities that directly or indirectly interact with each other
+    is_a: related to
     in_subset: translator_minimal
+    symmetric: true
     mappings:
       - RO:0002434
       - SEMMEDDB:INTERACTS_WITH    
@@ -81,6 +91,7 @@ slots:
     description: >-
       holds between two entities that make physical contact as part of some interaction
     in_subset: translator_minimal
+    symmetric: true
     mappings: 
       - WD:P129
       
@@ -103,6 +114,7 @@ slots:
       - RO:0002435
   
   - name: affects
+    is_a: related to
     description: >-
       describes an entity that has a direct affect on the state or quality of another existing entity.
       Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
@@ -132,6 +144,8 @@ slots:
   
   - name: regulates, process to process
     is_a: regulates
+    domain: occurrent
+    range: occurrent
     mappings:
       - RO:0002211
   
@@ -192,6 +206,7 @@ slots:
       - SEMMEDDB:DISRUPTS
       
   - name: has gene product
+    is_a: related to
     description: >-
       holds between a gene and a transcribed and/or translated product generated from it
     domain: gene
@@ -202,6 +217,7 @@ slots:
       - WD:P688
 
   - name: is homologous to
+    is_a: related to
     aliases: ['in homology relationship with']
     description: >-
       holds between two biological entities that have common evolutionary origin
@@ -237,6 +253,7 @@ slots:
       - RO:HOM0000018
 
   - name: coexists with
+    is_a: related to
     description: >-
       holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
     in_subset: translator_minimal
@@ -276,6 +293,7 @@ slots:
       - RO:00002325
 
   - name: gene associated with condition
+    is_a: related to
     description: >-
       holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
     domain: gene
@@ -285,6 +303,7 @@ slots:
       - WD:P2293
 
   - name: affects risk for
+    is_a: related to
     description: >-
       holds between two entities where exposure to one entity alters the chance of developing the other 
     in_subset: translator_minimal
@@ -292,6 +311,7 @@ slots:
       - SEMMEDDB:PREDISPOSES
 
   - name: contributes to
+    is_a: related to
     description: >-
       holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
     in_subset: translator_minimal
@@ -334,6 +354,7 @@ slots:
       - SEMMEDDB:PREVENTS
 
   - name: is correlated with
+    is_a: related to
     description: >-
       holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
     domain: disease or phenotypic feature
@@ -363,6 +384,7 @@ slots:
       - RO:0002607
 
   - name: treated by
+    is_a: related to
     description: >-
       holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition 
     domain: disease or phenotypic feature
@@ -373,6 +395,7 @@ slots:
       - WD:P2176
 
   - name: expressed in
+    is_a: related to
     description: >-
       holds between a gene or gene product and an anatomical entity in which it is expressed
     domain: gene or gene product
@@ -383,6 +406,7 @@ slots:
       - RO:0002206
 
   - name: expresses
+    is_a: related to
     description: >-
       holds between an anatomical entity and gene or gene product that is expressed there
     domain: anatomical entity
@@ -393,6 +417,7 @@ slots:
       - RO:0002292
 
   - name: has phenotype
+    is_a: related to
     description: >-
       holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). 
     domain: biological entity
@@ -402,6 +427,7 @@ slots:
       - RO:0002200
 
   - name: occurs in
+    is_a: related to
     description: >-
       holds between a process and a material entity or site within which the process occurs
     in_subset: translator_minimal
@@ -410,6 +436,7 @@ slots:
       - SEMMEDDB:OCCURS_IN
 
   - name: is located in
+    is_a: related to
     description: >-
       holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
     in_subset: translator_minimal
@@ -419,6 +446,7 @@ slots:
       - WD:276
 
   - name: is location of
+    is_a: related to
     description: >-
       holds between material entity or site and a material entity that is located within it (but not considered a part of it) 
     in_subset: translator_minimal
@@ -428,6 +456,7 @@ slots:
       - SEMMEDDB:LOCATION_OF
 
   - name: is model of
+    is_a: related to
     description: >-
       holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.    
     in_subset: translator_minimal
@@ -435,6 +464,7 @@ slots:
       - RO:0003301
 
   - name: overlaps
+    is_a: related to
     description: >-
       holds between entties that overlap in their extents (materials or processes)
     in_subset: translator_minimal
@@ -463,6 +493,7 @@ slots:
       - WD:P361
 
   - name: has participant
+    is_a: related to
     description: >-
       holds between a process and a continuant, where the continuant is somehow involved in the process 
     domain: occurrent
@@ -473,6 +504,7 @@ slots:
      - WD:P2283
 
   - name: participates in
+    is_a: related to
     description: >-
       holds between a continuant and a process, where the continuant is somehow involved in the process
     range: occurrent
@@ -498,6 +530,7 @@ slots:
       - RO:0002215
 
   - name: derives into
+    is_a: related to
     description: >-
       holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
     in_subset: translator_minimal
@@ -507,6 +540,7 @@ slots:
       - SEMMEDDB:CONVERTS_TO
 
   - name: derives from
+    is_a: related to
     description: >-
       holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
     in_subset: translator_minimal
@@ -515,6 +549,7 @@ slots:
       - RO:0001000
 
   - name: manifestation of
+    is_a: related to
     description: >-
       used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
     range: disease
@@ -524,6 +559,7 @@ slots:
       - WD:P1557
 
   - name: produces
+    is_a: related to
     description: >-
       holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
     in_subset: translator_minimal
@@ -533,6 +569,7 @@ slots:
       - SEMMEDDB:PRODUCES
 
   - name: precedes
+    is_a: related to
     description: >-
       holds between two processes, where one completes before the other begins
     domain: occurrent
@@ -544,6 +581,7 @@ slots:
       - WD:P156
 
   - name: same as
+    is_a: related to
     description: >-
       holds between two entities that are considered equivalent to each other
     in_subset: translator_minimal
@@ -554,6 +592,7 @@ slots:
       - WD:P2888
 
   - name: subclass of
+    is_a: related to
     description: >-
       holds between two classes where the domain class is a specialization of the range class
     domain: class
@@ -565,8 +604,16 @@ slots:
       - WD:P279
  
 ## property slots
-      
+
+  - name: node property
+    description: >-
+      A grouping for any property that holds between a node and a value
+    domain: named thing
+    mappings:
+      - owl:topAnnotationProperty
+
   - name: id
+    is_a: node property
     identifier: true
     description: >-
       A unique identifier for a thing.
@@ -575,6 +622,7 @@ slots:
     range: identifier type
       
   - name: iri
+    is_a: node property
     identifier: true
     description: >-
       An IRI for the node. This is determined by the id using expansion rules.
@@ -582,6 +630,7 @@ slots:
     range: iri type
   
   - name: name
+    is_a: node property
     aliases: ['label', 'display name']
     domain: named thing
     range: label type
@@ -591,6 +640,7 @@ slots:
       - "rdfs:label"
   
   - name: category
+    is_a: node property
     domain: named thing
     range: label type
     description: >-
@@ -601,12 +651,14 @@ slots:
       - "rdf:type"
   
   - name: full name
+    is_a: node property
     domain: named thing
     range: label type
     description: >-
       a long-form human readable name for a thing
   
   - name: description
+    is_a: node property
     domain: named thing
     range: narrative text
     description: >-
@@ -615,6 +667,7 @@ slots:
       - dcterms:description
   
   - name: systematic synonym
+    is_a: node property
     domain: named thing
     range: label type
     description: >-
@@ -623,6 +676,7 @@ slots:
   - name: association slot
     abstract: true
     domain: association
+    aliases: ['edge property', 'statement property']
     description: >-
       any slot that relates an association to another entity
     
@@ -714,13 +768,21 @@ slots:
       - rdf:type
 
   - name: creation date
+    is_a: node property
     range: xsd:date
     description: >-
-      date on which thing was created
+      date on which thing was created. This can be applied to nodes or edges
     mappings:
       - dcterms:created
+
+  - name: update date
+    is_a: node property
+    range: xsd:date
+    description: >-
+      date on which thing was updated. This can be applied to nodes or edges
   
   - name: in taxon
+    is_a: related to
     domain: thing with taxon
     range: organism taxon
     description: >-
@@ -730,6 +792,7 @@ slots:
       - WD:P703
       
   - name: latitude
+    is_a: node property
     range: xsd:float
     description: >-
       latitude
@@ -737,6 +800,7 @@ slots:
       - wgs:lat
 
   - name: longitude
+    is_a: node property
     range: xsd:float
     description: >-
       longitude
@@ -744,6 +808,7 @@ slots:
       - wgs:long
 
   - name: has chemical formula
+    is_a: node property
     range: chemical formula value
     description: >-
       description of chemical compound based on element symbols
@@ -751,6 +816,7 @@ slots:
       - WD:P274
 
   - name: aggregate statistic
+    is_a: node property
     abstract: true
       
   - name: has count
@@ -776,6 +842,7 @@ slots:
     range: double
 
   - name: timepoint
+    is_a: node property
     range: time type
     description: >-
       a point in time
@@ -834,7 +901,6 @@ slots:
     is_a: association slot
     range: clinical modifier
 
-
   - name: sequence variant qualifier
     description: >-
       a qualifier used in an association where the variant
@@ -850,11 +916,13 @@ slots:
     range: publication
 
   - name: has biological sequence
+    is_a: node property
     description: >-
       connects a genomic feature to its sequence
     range: biological sequence
 
   - name: has molecular consequence
+    is_a: related to
     description: >-
       connects a sequence variant to a class describing the molecular
       consequence. E.g.  SO:0001583
@@ -863,28 +931,34 @@ slots:
     ## genotypes
 
   - name: has gene
+    is_a: node property
     description: >-
       connects and entity to a single gene
     range: gene
     
   - name: has zygosity
+    is_a: node property
     domain: single locus feature complement
     range: zygosity
 
   - name: filler
+    is_a: node property
     range: named thing
     description: >-
       The value in a property-value tuple
 
   - name: phase
+    is_a: node property
     description: >-
       TODO
 
   - name: genome build
+    is_a: node property
     description: >-
       TODO
 
   - name: interbase coordinate
+    is_a: node property
     description: >-
       TODO
 
@@ -894,14 +968,6 @@ slots:
   - name: end interbase coordinate
     is_a: interbase coordinate
     
-  ## ------
-  ## OTHER
-  ## ------
-
-  - name: associations
-    multivalued: true
-    range: association
-  
 classes:
 
   ## ------
@@ -1611,7 +1677,7 @@ classes:
       Any association between one genotype and a genotypic entity that is a sub-component of it
     slot_usage:
       - name: relation
-        subproperty_of: "GENO:0000382"
+        subproperty_of: has variant part
       - name: subject
         range: genotype
         description: >-
@@ -1705,9 +1771,7 @@ classes:
     symmetric: true
     slot_usage:
       - name: relation
-        subproperty_of: "RO:HOM0000001"
-        values_from:
-          - ro
+        subproperty_of: is homologous to
         description: >-
           homology relationship type
         definitional: true
@@ -1722,7 +1786,7 @@ classes:
       - name: subject
         range: molecular entity
       - name: relation
-        subproperty_of: "RO:0002436"
+        subproperty_of: molecularly interacts with
         range: molecularly interacts with
         values_from:
           - ro
@@ -1756,7 +1820,7 @@ classes:
     symmetric: true
     slot_usage:
       - name: relation
-        subproperty_of: "RO:0002436"
+        subproperty_of: molecularly interacts with
         values_from:
           - ro
           - mi
@@ -2037,7 +2101,7 @@ classes:
       - genotype to thing association
     slot_usage:
       - name: relation
-        subproperty_of: "GENO:0000382"
+        subproperty_of: has phenotype
       - name: subject
         range: genotype
         description: >-
@@ -2245,7 +2309,7 @@ classes:
       - name: relation
         description: >-
           E.g. is pathogenic for
-        subproperty_of: GENO:0000790
+        subproperty_of: related condition
       - name: object
         description: >-
           a disease that is associated with that variant
@@ -2265,7 +2329,7 @@ classes:
           The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits
           similar features, or a gene that when mutated exhibits features of the disease
       - name: relation
-        subproperty_of: "RO:0003301"
+        subproperty_of: is model of
         description: >-
           The relationship to the disease
             
@@ -2337,7 +2401,7 @@ classes:
             description: cerebellum
       - name: relation
         description: "expression relationship"
-        subproperty_of: "RO:0002206"
+        subproperty_of: expressed in
       - name: stage qualifier
         range: life stage
         description: "stage at which the gene is expressed in the site"
@@ -2398,19 +2462,6 @@ classes:
           - value: GO:0016301
             description: kinase activity
 
-    
-  - name: association result set
-    is_a: information content entity
-    slots:
-      - associations
-
-#  - name: "% result set"
-#    template: true
-#    parameters:
-#      - name: type
-#    slots:
-#      - results
-  
   ## ------
   ## SEQUENCE FEATURES
   ## ------
@@ -2476,7 +2527,7 @@ classes:
       - name: object
         range: gene product
       - name: relation
-        subproperty_of: RO:0002205
+        subproperty_of: has gene product
 
   - name: exon to transcript relationship
     is_a: sequence feature relationship

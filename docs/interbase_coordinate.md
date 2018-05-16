@@ -17,6 +17,7 @@ URI: [http://bioentity.io/vocab/interbase_coordinate](http://bioentity.io/vocab/
 
 ## Inheritance
 
+ *  is_a: [node property](node_property.html)
 
 ## Children
 

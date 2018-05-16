@@ -18,6 +18,7 @@ URI: [http://bioentity.io/vocab/longitude](http://bioentity.io/vocab/longitude)
 
 ## Inheritance
 
+ *  is_a: [node property](node_property.html)
 
 ## Children
 

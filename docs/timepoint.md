@@ -17,6 +17,7 @@ URI: [http://bioentity.io/vocab/timepoint](http://bioentity.io/vocab/timepoint)
 
 ## Inheritance
 
+ *  is_a: [node property](node_property.html)
 
 ## Children
 

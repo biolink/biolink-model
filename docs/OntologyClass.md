@@ -91,6 +91,7 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
  *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [variant to population association](VariantToPopulationAssociation.html) references: [frequency value](FrequencyValue.html)
+ *  class: [population to population association](PopulationToPopulationAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [ontology class](OntologyClass.html)
  *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [ontology class](OntologyClass.html)

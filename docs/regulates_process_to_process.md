@@ -14,7 +14,7 @@ URI: [http://bioentity.io/vocab/regulates_process_to_process](http://bioentity.i
 
 ## Domain and Range
 
- -> 
+[occurrent](Occurrent.html) -> [occurrent](Occurrent.html)
 
 ## Inheritance
 

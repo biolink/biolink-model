@@ -41,7 +41,7 @@ URI: [http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation](http://b
  * [relation](relation.html)
     * _the relationship type by which a subject is connected to an object in an association_
     * __range__: [relationship type](RelationshipType.html) [required]
-    * subproperty_of: [GENO:0000382](http://purl.obolibrary.org/obo/GENO_0000382)
+    * edge label: [has phenotype](has_phenotype.html)
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _phenotypic class_

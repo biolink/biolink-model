@@ -117,6 +117,13 @@ class Manager(object):
         if not self.schema.slots:
             return []
         return [self.slotdef(s) for s in self.schema.slots]
+    
+    def root_predicates(self):
+        """
+        All slots/properties that lack a parent
+        """
+        return [p for p in self.predicates() if not p.is_a]
+
             
     
         

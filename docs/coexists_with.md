@@ -18,6 +18,7 @@ URI: [http://bioentity.io/vocab/coexists_with](http://bioentity.io/vocab/coexist
 
 ## Inheritance
 
+ *  is_a: [related to](related_to.html)
 
 ## Children
 

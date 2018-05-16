@@ -18,6 +18,7 @@ URI: [http://bioentity.io/vocab/latitude](http://bioentity.io/vocab/latitude)
 
 ## Inheritance
 
+ *  is_a: [node property](node_property.html)
 
 ## Children
 
