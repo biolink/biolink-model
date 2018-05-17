@@ -802,7 +802,9 @@ slots:
     range: evidence instance
     description: >-
       connects an association to an instance of supporting evidence
-
+    mappings:
+      - RO:0002558
+      
   - name: provided by
     is_a: association slot
     range: provider
