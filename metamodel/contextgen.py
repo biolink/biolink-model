@@ -12,7 +12,7 @@ from prefixcommons import curie_util as cu
 import json
 
 # highest to lowest priority
-default_curie_maps = [cu.read_biocontext('obo_context'), cu.read_biocontext('monarch_context'), cu.read_biocontext('idot_context')]
+default_curie_maps = [cu.read_biocontext('obo_context'), cu.read_biocontext('monarch_context'), cu.read_biocontext('idot_context'), cu.read_biocontext('semweb_context')]
 
 class ContextGenerator(Generator):
         
@@ -81,4 +81,15 @@ class ContextGenerator(Generator):
         if uri is None:
             logging.error("No expansion for {}".format(exp))
         else:
+            logging.info("Adding {} -> {} via {}".format(shorthand, uri, exp))
             self.prefixmap[shorthand] = uri
+
+        # if we expand something like Disease=>MONDO:0000001, ensure MONDO prefix
+        # is also added
+        if uri is not None and uri != exp:
+            parts = exp.split(":",1)
+            pfx = parts[0]
+            if pfx not in self.prefixmap and not pfx.startswith("http"):
+                pfx_uri = self.get_uri(pfx + ":")
+                if pfx_uri is not None:
+                    self.prefixmap[pfx] = pfx_uri
