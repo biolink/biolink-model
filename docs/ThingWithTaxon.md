@@ -82,7 +82,7 @@ URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingW
 
 ## Fields
 
- * [in taxon](in_taxon.html)
+ * [in taxon](in_taxon.html) *subsets: translator_minimal*
     * _connects a thing to a class representing a taxon_
     * __range__: [organism taxon](OrganismTaxon.html)
     * __Local__

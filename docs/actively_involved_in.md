@@ -22,7 +22,7 @@ URI: [http://bioentity.io/vocab/actively_involved_in](http://bioentity.io/vocab/
 
 ## Children
 
- *  child: [is capable of](is_capable_of.html) *subsets: translator_minimal*
+ *  child: [capable of](capable_of.html) *subsets: translator_minimal*
 
 ## Used in
 

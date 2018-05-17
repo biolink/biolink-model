@@ -78,7 +78,7 @@ URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/Molec
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
- * [in taxon](in_taxon.html)
+ * [in taxon](in_taxon.html) *subsets: translator_minimal*
     * _connects a thing to a class representing a taxon_
     * __range__: [organism taxon](OrganismTaxon.html)
     * inherited from: [thing with taxon](ThingWithTaxon.html)

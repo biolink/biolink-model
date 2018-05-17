@@ -20,6 +20,12 @@
         "association_type": {
             "type": "string"
         },
+        "biomarker_for": {
+            "type": "string"
+        },
+        "capable_of": {
+            "type": "string"
+        },
         "category": {
             "type": "string"
         },
@@ -36,6 +42,9 @@
             "type": "string"
         },
         "contributes_to": {
+            "type": "string"
+        },
+        "correlated_with": {
             "type": "string"
         },
         "creation_date": {
@@ -131,6 +140,9 @@
         "has_zygosity": {
             "type": "string"
         },
+        "homologous_to": {
+            "type": "string"
+        },
         "id": {
             "type": "string"
         },
@@ -155,43 +167,22 @@
         "iri": {
             "type": "string"
         },
-        "is_biomarker_for": {
-            "type": "string"
-        },
-        "is_capable_of": {
-            "type": "string"
-        },
-        "is_correlated_with": {
-            "type": "string"
-        },
-        "is_homologous_to": {
-            "type": "string"
-        },
-        "is_located_in": {
-            "type": "string"
-        },
-        "is_location_of": {
-            "type": "string"
-        },
-        "is_model_of": {
-            "type": "string"
-        },
-        "is_orthologous_to": {
-            "type": "string"
-        },
-        "is_paralogous_to": {
-            "type": "string"
-        },
-        "is_xenologous_to": {
-            "type": "string"
-        },
         "latitude": {
+            "type": "string"
+        },
+        "located_in": {
+            "type": "string"
+        },
+        "location_of": {
             "type": "string"
         },
         "longitude": {
             "type": "string"
         },
         "manifestation_of": {
+            "type": "string"
+        },
+        "model_of": {
             "type": "string"
         },
         "molecularly_interacts_with": {
@@ -224,7 +215,13 @@
         "onset_qualifier": {
             "type": "string"
         },
+        "orthologous_to": {
+            "type": "string"
+        },
         "overlaps": {
+            "type": "string"
+        },
+        "paralogous_to": {
             "type": "string"
         },
         "part_of": {
@@ -327,6 +324,9 @@
             "type": "string"
         },
         "update_date": {
+            "type": "string"
+        },
+        "xenologous_to": {
             "type": "string"
         }
     },

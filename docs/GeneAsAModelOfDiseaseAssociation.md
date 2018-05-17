@@ -43,7 +43,7 @@ URI: [http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation](http://bioenti
     * _The relationship to the disease
   _
     * __range__: [relationship type](RelationshipType.html) [required]
-    * edge label: [is model of](is_model_of.html) *subsets: translator_minimal*
+    * edge label: [model of](model_of.html) *subsets: translator_minimal*
     * inherited from: [association](Association.html)
  * [object](object.html)
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._

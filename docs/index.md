@@ -174,10 +174,10 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [disrupts](disrupts.html) *subsets: translator_minimal*
        * [treats](treats.html) *subsets: translator_minimal*
     * [has gene product](has_gene_product.html) *subsets: translator_minimal*
-    * [is homologous to](is_homologous_to.html) *subsets: translator_minimal*
-       * [is paralogous to](is_paralogous_to.html) *subsets: translator_minimal*
-       * [is orthologous to](is_orthologous_to.html) *subsets: translator_minimal*
-       * [is xenologous to](is_xenologous_to.html) *subsets: translator_minimal*
+    * [homologous to](homologous_to.html) *subsets: translator_minimal*
+       * [paralogous to](paralogous_to.html) *subsets: translator_minimal*
+       * [orthologous to](orthologous_to.html) *subsets: translator_minimal*
+       * [xenologous to](xenologous_to.html) *subsets: translator_minimal*
     * [coexists with](coexists_with.html) *subsets: translator_minimal*
        * [in pathway with](in_pathway_with.html) *subsets: translator_minimal*
        * [in complex with](in_complex_with.html) *subsets: translator_minimal*
@@ -188,24 +188,24 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [prevents](prevents.html) *subsets: translator_minimal*
     * [contributes to](contributes_to.html) *subsets: translator_minimal*
        * [causes](causes.html) *subsets: translator_minimal*
-    * [is correlated with](is_correlated_with.html) *subsets: translator_minimal*
+    * [correlated with](correlated_with.html) *subsets: translator_minimal*
        * [has biomarker](has_biomarker.html) *subsets: translator_minimal*
-       * [is biomarker for](is_biomarker_for.html) *subsets: translator_minimal*
+       * [biomarker for](biomarker_for.html) *subsets: translator_minimal*
     * [treated by](treated_by.html) *subsets: translator_minimal*
     * [expressed in](expressed_in.html) *subsets: translator_minimal*
     * [expresses](expresses.html) *subsets: translator_minimal*
     * [has phenotype](has_phenotype.html) *subsets: translator_minimal*
     * [occurs in](occurs_in.html) *subsets: translator_minimal*
-    * [is located in](is_located_in.html) *subsets: translator_minimal*
-    * [is location of](is_location_of.html) *subsets: translator_minimal*
-    * [is model of](is_model_of.html) *subsets: translator_minimal*
+    * [located in](located_in.html) *subsets: translator_minimal*
+    * [location of](location_of.html) *subsets: translator_minimal*
+    * [model of](model_of.html) *subsets: translator_minimal*
     * [overlaps](overlaps.html) *subsets: translator_minimal*
        * [has part](has_part.html) *subsets: translator_minimal*
        * [part of](part_of.html) *subsets: translator_minimal*
     * [has participant](has_participant.html) *subsets: translator_minimal*
     * [participates in](participates_in.html) *subsets: translator_minimal*
        * [actively involved in](actively_involved_in.html) *subsets: translator_minimal*
-          * [is capable of](is_capable_of.html) *subsets: translator_minimal*
+          * [capable of](capable_of.html) *subsets: translator_minimal*
     * [derives into](derives_into.html) *subsets: translator_minimal*
     * [derives from](derives_from.html) *subsets: translator_minimal*
     * [manifestation of](manifestation_of.html) *subsets: translator_minimal*
@@ -213,7 +213,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [precedes](precedes.html) *subsets: translator_minimal*
     * [same as](same_as.html) *subsets: translator_minimal*
     * [subclass of](subclass_of.html) *subsets: translator_minimal*
-    * [in taxon](in_taxon.html)
+    * [in taxon](in_taxon.html) *subsets: translator_minimal*
     * [has molecular consequence](has_molecular_consequence.html)
  * [node property](node_property.html)
     * [id](id.html)

@@ -17,7 +17,7 @@ URI: [http://bioentity.io/vocab/has_biomarker](http://bioentity.io/vocab/has_bio
 
 ## Inheritance
 
- *  is_a: [is correlated with](is_correlated_with.html) *subsets: translator_minimal*
+ *  is_a: [correlated with](correlated_with.html) *subsets: translator_minimal*
 
 ## Children
 
