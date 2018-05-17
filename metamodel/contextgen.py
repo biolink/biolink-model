@@ -65,6 +65,9 @@ class ContextGenerator(Generator):
         if e.id_prefixes:
             for px in e.id_prefixes:
                 self.add_mapping(px, px+":")
+        # anything else, place in bioentity space
+        if n not in self.prefixmap:
+            self.add_mapping(n, "http://bioentity.io/vocab/"+n)
 
     def get_uri(self, shorthand):
         uri = cu.expand_uri(shorthand, default_curie_maps)
