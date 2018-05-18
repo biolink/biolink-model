@@ -75,7 +75,8 @@ slots:
     range: named thing
     mappings:
       - owl:topObjectProperty
-
+      - SEMMEDDB:ASSOCIATED_WITH
+      
   - name: interacts with
     description: >-
       holds between any two entities that directly or indirectly interact with each other
@@ -84,8 +85,7 @@ slots:
       - translator_minimal
     symmetric: true
     mappings:
-      - RO:0002434
-      - SEMMEDDB:INTERACTS_WITH    
+      - RO:0002434  
       
   - name: physically interacts with
     is_a: interacts with
@@ -96,6 +96,7 @@ slots:
     symmetric: true
     mappings: 
       - WD:P129
+      - SEMMEDDB:INTERACTS_WITH  
       
   - name: molecularly interacts with
     is_a: physically interacts with
@@ -328,6 +329,13 @@ slots:
       holds between two entities where exposure to one entity alters the chance of developing the other 
     in_subset:
       - translator_minimal
+
+  - name: predisposes
+    is_a: affects risk for
+    description: >-
+      holds between two entities where exposure to one entity increases the chance of developing the other 
+    in_subset:
+      - translator_minimal
     mappings:
       - SEMMEDDB:PREDISPOSES
 
@@ -467,6 +475,7 @@ slots:
     mappings:
       - BFO:0000066
       - SEMMEDDB:OCCURS_IN
+      - SEMMEDDB:PROCESS_OF
 
   - name: located in
     is_a: related to
@@ -542,6 +551,17 @@ slots:
     mappings:
      - RO:0000057
      - WD:P2283
+
+  - name: has input
+    is_a: has participant
+    description: >-
+      holds between a process and a continuant, where the continuant is an input into the process
+    domain: occurrent
+    in_subset:
+      - translator_minimal
+    mappings:
+      - RO:0002233
+      - SEMMEDDB:USES
 
   - name: participates in
     is_a: related to
