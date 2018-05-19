@@ -27,3 +27,4 @@ URI: [http://bioentity.io/vocab/part_of](http://bioentity.io/vocab/part_of)
 
 ## Used in
 
+ *  usage: [anatomical entity to anatomical entity part of association](AnatomicalEntityToAnatomicalEntityPartOfAssociation.html)

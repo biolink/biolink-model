@@ -910,7 +910,29 @@ class CodingSequence(GenomicEntity):
         return self.__str__()
 
 
-class GeneOrGeneProduct(GenomicEntity):
+class MacromolecularMachine(GenomicEntity):
+    """
+    A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
+    """
+    def __init__(self,
+                 has_biological_sequence=None,
+                 id=None,
+                 name=None,
+                 category=None,
+                 in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
+        self.id=id
+        self.name=name
+        self.category=category
+        self.in_taxon=in_taxon
+
+    def __str__(self):
+        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
+    def __repr__(self):
+        return self.__str__()
+
+
+class GeneOrGeneProduct(MacromolecularMachine):
     """
     a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
     """
@@ -1130,22 +1152,24 @@ class Microrna(NoncodingRnaProduct):
         return self.__str__()
 
 
-class MacromolecularComplex(MolecularEntity):
+class MacromolecularComplex(MacromolecularMachine):
     """
     None
     """
     def __init__(self,
+                 has_biological_sequence=None,
                  id=None,
                  name=None,
                  category=None,
                  in_taxon=None):
+        self.has_biological_sequence=has_biological_sequence
         self.id=id
         self.name=name
         self.category=category
         self.in_taxon=in_taxon
 
     def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
+        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
     def __repr__(self):
         return self.__str__()
 
@@ -2841,7 +2865,143 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
         return self.__str__()
 
 
-class GeneToGoTermAssociation(Association):
+class FunctionalAssociation(Association):
+    """
+    An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 name=None,
+                 category=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.name=name
+        self.category=category
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
+    def __repr__(self):
+        return self.__str__()
+
+
+class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation):
+    """
+    A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 name=None,
+                 category=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.name=name
+        self.category=category
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
+    def __repr__(self):
+        return self.__str__()
+
+
+class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation):
+    """
+    A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 name=None,
+                 category=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.name=name
+        self.category=category
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
+    def __repr__(self):
+        return self.__str__()
+
+
+class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation):
+    """
+    A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 name=None,
+                 category=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.name=name
+        self.category=category
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
+    def __repr__(self):
+        return self.__str__()
+
+
+class GeneToGoTermAssociation(FunctionalAssociation):
     """
     None
     """
@@ -3121,9 +3281,43 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
         return self.__str__()
 
 
-class AnatomicalEntityPartOfAnatomicalEntityAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
+class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
-    None
+    A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
+    """
+    def __init__(self,
+                 association_type=None,
+                 subject=None,
+                 negated=None,
+                 relation=None,
+                 object=None,
+                 qualifiers=None,
+                 publications=None,
+                 provided_by=None,
+                 id=None,
+                 name=None,
+                 category=None):
+        self.association_type=association_type
+        self.subject=subject
+        self.negated=negated
+        self.relation=relation
+        self.object=object
+        self.qualifiers=qualifiers
+        self.publications=publications
+        self.provided_by=provided_by
+        self.id=id
+        self.name=name
+        self.category=category
+
+    def __str__(self):
+        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
+    def __repr__(self):
+        return self.__str__()
+
+
+class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
+    """
+    A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
     """
     def __init__(self,
                  association_type=None,

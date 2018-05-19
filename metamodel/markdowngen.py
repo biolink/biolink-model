@@ -149,7 +149,14 @@ class MarkdownGenerator(Generator):
             for cs in mgr.class_slotdefs(c, True, True):
                 if cs == s.name:
                     self.bullet(' usage: {}'.format(self.link(c)))
-
+                if cs == 'relation':
+                    ## HARDCODED BIOLINK ASSUMPTION
+                    ## in biolink, associations are reified, and the 'relation'
+                    ## slot of a reified association class will point to a specific relation
+                    rc = mgr.class_slot_getattr(c, 'relation', 'subproperty_of', None)
+                    if rc is not None and rc == s.name:
+                        self.bullet(' usage: {}'.format(self.link(c)))                        
+                    
             
     
     def tr_class(self, c):

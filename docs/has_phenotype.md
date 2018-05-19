@@ -25,3 +25,4 @@ URI: [http://bioentity.io/vocab/has_phenotype](http://bioentity.io/vocab/has_phe
 
 ## Used in
 
+ *  usage: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html)

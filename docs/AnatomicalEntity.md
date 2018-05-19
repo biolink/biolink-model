@@ -33,20 +33,22 @@ URI: [http://bioentity.io/vocab/AnatomicalEntity](http://bioentity.io/vocab/Anat
 
  *  class: [disease or phenotypic feature association to location association](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
+ *  class: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.html) references: [cellular component](CellularComponent.html)
  *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
+ *  class: [anatomical entity to anatomical entity part of association](AnatomicalEntityToAnatomicalEntityPartOfAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
+ *  class: [anatomical entity to anatomical entity ontogenic association](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
 
 ## Fields
 
- * [id](id.html)
+ * [id](id.html) *subsets: translator_minimal*
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type
     * inherited from: [named thing](NamedThing.html)
- * [name](name.html)
+ * [name](name.html) *subsets: translator_minimal*
     * _A human-readable name for a thing_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
- * [category](category.html)
+ * [category](category.html) *subsets: translator_minimal*
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)

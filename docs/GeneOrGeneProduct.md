@@ -10,13 +10,13 @@ a union of genes or gene products. Frequently an identifier for one will be used
 URI: [http://bioentity.io/vocab/GeneOrGeneProduct](http://bioentity.io/vocab/GeneOrGeneProduct)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[genomic entity|has biological sequence]^-[gene or gene product|], [gene or gene product|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
+![img](http://yuml.me/diagram/nofunky/class/[macromolecular machine|]^-[gene or gene product|], [gene or gene product|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
 ## Mappings
 
 
 ## Inheritance
 
- *  is_a: [genomic entity](GenomicEntity.html)
+ *  is_a: [macromolecular machine](MacromolecularMachine.html)
 
 ## Children
 
@@ -47,15 +47,15 @@ URI: [http://bioentity.io/vocab/GeneOrGeneProduct](http://bioentity.io/vocab/Gen
     * _connects a genomic feature to its sequence_
     * __range__: biological sequence
     * inherited from: [genomic entity](GenomicEntity.html)
- * [id](id.html)
+ * [id](id.html) *subsets: translator_minimal*
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type
     * inherited from: [named thing](NamedThing.html)
- * [name](name.html)
-    * _genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name_
-    * __range__: symbol type
+ * [name](name.html) *subsets: translator_minimal*
+    * _A human-readable name for a thing_
+    * __range__: label type
     * inherited from: [named thing](NamedThing.html)
- * [category](category.html)
+ * [category](category.html) *subsets: translator_minimal*
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)

@@ -284,6 +284,14 @@ type CodingSequence {
   inTaxon: OrganismTaxon
 }
 
+type MacromolecularMachine {
+  hasBiologicalSequence: String
+  id: String
+  name: String
+  category: String
+  inTaxon: OrganismTaxon
+}
+
 type GeneOrGeneProduct {
   hasBiologicalSequence: String
   id: String
@@ -365,6 +373,7 @@ type Microrna {
 }
 
 type MacromolecularComplex {
+  hasBiologicalSequence: String
   id: String
   name: String
   category: String
@@ -1058,6 +1067,62 @@ interface SequenceVariantModulatesTreatmentAssociation {
   category: String
 }
 
+type FunctionalAssociation {
+  associationType: OntologyClass
+  subject: MacromolecularMachine!
+  negated: String
+  relation: RelationshipType!
+  object: GeneOntologyClass!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  name: String
+  category: String
+}
+
+type MacromolecularMachineToMolecularActivityAssociation {
+  associationType: OntologyClass
+  subject: MacromolecularMachine!
+  negated: String
+  relation: RelationshipType!
+  object: MolecularActivity!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  name: String
+  category: String
+}
+
+type MacromolecularMachineToBiologicalProcessAssociation {
+  associationType: OntologyClass
+  subject: MacromolecularMachine!
+  negated: String
+  relation: RelationshipType!
+  object: BiologicalProcess!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  name: String
+  category: String
+}
+
+type MacromolecularMachineToCellularComponentAssociation {
+  associationType: OntologyClass
+  subject: MacromolecularMachine!
+  negated: String
+  relation: RelationshipType!
+  object: CellularComponent!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  name: String
+  category: String
+}
+
 type GeneToGoTermAssociation {
   associationType: OntologyClass
   subject: MolecularEntity!
@@ -1174,11 +1239,25 @@ type AnatomicalEntityToAnatomicalEntityAssociation {
   category: String
 }
 
-type AnatomicalEntityPartOfAnatomicalEntityAssociation {
+type AnatomicalEntityToAnatomicalEntityPartOfAssociation {
   associationType: OntologyClass
   subject: AnatomicalEntity!
   negated: String
-  relation: AnatomicalEntity!
+  relation: RelationshipType!
+  object: AnatomicalEntity!
+  qualifiers: [OntologyClass]
+  publications: [Publication]
+  providedBy: Provider
+  id: String!
+  name: String
+  category: String
+}
+
+type AnatomicalEntityToAnatomicalEntityOntogenicAssociation {
+  associationType: OntologyClass
+  subject: AnatomicalEntity!
+  negated: String
+  relation: RelationshipType!
   object: AnatomicalEntity!
   qualifiers: [OntologyClass]
   publications: [Publication]

@@ -23,6 +23,7 @@ URI: [http://bioentity.io/vocab/has_participant](http://bioentity.io/vocab/has_p
 
 ## Children
 
+ *  child: [has input](has_input.html) *subsets: translator_minimal*
 
 ## Used in
 

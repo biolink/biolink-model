@@ -43,6 +43,7 @@ URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/Organis
  *  class: [transcript](Transcript.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [exon](Exon.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [coding sequence](CodingSequence.html) references: [organism taxon](OrganismTaxon.html)
+ *  class: [macromolecular machine](MacromolecularMachine.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gene or gene product](GeneOrGeneProduct.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gene](Gene.html) references: [organism taxon](OrganismTaxon.html)
  *  class: [gene product](GeneProduct.html) references: [organism taxon](OrganismTaxon.html)

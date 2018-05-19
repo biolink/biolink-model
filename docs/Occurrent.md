@@ -30,6 +30,8 @@ URI: [http://bioentity.io/vocab/Occurrent](http://bioentity.io/vocab/Occurrent)
 ## Used in
 
  *  class: [chemical to pathway association](ChemicalToPathwayAssociation.html) references: [pathway](Pathway.html)
+ *  class: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.html) references: [molecular activity](MolecularActivity.html)
+ *  class: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.html) references: [biological process](BiologicalProcess.html)
 
 ## Fields
 

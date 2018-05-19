@@ -21,12 +21,12 @@ URI: [http://bioentity.io/vocab/node_property](http://bioentity.io/vocab/node_pr
 
 ## Children
 
- *  child: [id](id.html)
- *  child: [iri](iri.html)
- *  child: [name](name.html)
- *  child: [category](category.html)
+ *  child: [id](id.html) *subsets: translator_minimal*
+ *  child: [iri](iri.html) *subsets: translator_minimal*
+ *  child: [name](name.html) *subsets: translator_minimal*
+ *  child: [category](category.html) *subsets: translator_minimal*
  *  child: [full name](full_name.html)
- *  child: [description](description.html)
+ *  child: [description](description.html) *subsets: translator_minimal*
  *  child: [systematic synonym](systematic_synonym.html)
  *  child: [creation date](creation_date.html)
  *  child: [update date](update_date.html)

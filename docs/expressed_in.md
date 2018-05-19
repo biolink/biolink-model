@@ -25,3 +25,4 @@ URI: [http://bioentity.io/vocab/expressed_in](http://bioentity.io/vocab/expresse
 
 ## Used in
 
+ *  usage: [gene to expression site association](GeneToExpressionSiteAssociation.html)

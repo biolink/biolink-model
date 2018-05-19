@@ -495,7 +495,16 @@ class CodingSequenceSchema(GenomicEntitySchema):
     def make_object(self, data):
         CodingSequence(**data)
 
-class GeneOrGeneProductSchema(GenomicEntitySchema):
+class MacromolecularMachineSchema(GenomicEntitySchema):
+    """
+    A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
+    """
+
+    @post_load
+    def make_object(self, data):
+        MacromolecularMachine(**data)
+
+class GeneOrGeneProductSchema(MacromolecularMachineSchema):
     """
     a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
     """
@@ -595,7 +604,7 @@ class MicrornaSchema(NoncodingRnaProductSchema):
     def make_object(self, data):
         Microrna(**data)
 
-class MacromolecularComplexSchema(MolecularEntitySchema):
+class MacromolecularComplexSchema(MacromolecularMachineSchema):
     """
     None
     """
@@ -1315,7 +1324,43 @@ class SequenceVariantModulatesTreatmentAssociationSchema(AssociationSchema):
     def make_object(self, data):
         SequenceVariantModulatesTreatmentAssociation(**data)
 
-class GeneToGoTermAssociationSchema(AssociationSchema):
+class FunctionalAssociationSchema(AssociationSchema):
+    """
+    An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
+    """
+
+    @post_load
+    def make_object(self, data):
+        FunctionalAssociation(**data)
+
+class MacromolecularMachineToMolecularActivityAssociationSchema(FunctionalAssociationSchema):
+    """
+    A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
+    """
+
+    @post_load
+    def make_object(self, data):
+        MacromolecularMachineToMolecularActivityAssociation(**data)
+
+class MacromolecularMachineToBiologicalProcessAssociationSchema(FunctionalAssociationSchema):
+    """
+    A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
+    """
+
+    @post_load
+    def make_object(self, data):
+        MacromolecularMachineToBiologicalProcessAssociation(**data)
+
+class MacromolecularMachineToCellularComponentAssociationSchema(FunctionalAssociationSchema):
+    """
+    A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
+    """
+
+    @post_load
+    def make_object(self, data):
+        MacromolecularMachineToCellularComponentAssociation(**data)
+
+class GeneToGoTermAssociationSchema(FunctionalAssociationSchema):
     """
     None
     """
@@ -1391,14 +1436,23 @@ class AnatomicalEntityToAnatomicalEntityAssociationSchema(AssociationSchema):
     def make_object(self, data):
         AnatomicalEntityToAnatomicalEntityAssociation(**data)
 
-class AnatomicalEntityPartOfAnatomicalEntityAssociationSchema(AnatomicalEntityToAnatomicalEntityAssociationSchema):
+class AnatomicalEntityToAnatomicalEntityPartOfAssociationSchema(AnatomicalEntityToAnatomicalEntityAssociationSchema):
     """
-    None
+    A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
     """
 
     @post_load
     def make_object(self, data):
-        AnatomicalEntityPartOfAnatomicalEntityAssociation(**data)
+        AnatomicalEntityToAnatomicalEntityPartOfAssociation(**data)
+
+class AnatomicalEntityToAnatomicalEntityOntogenicAssociationSchema(AnatomicalEntityToAnatomicalEntityAssociationSchema):
+    """
+    A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
+    """
+
+    @post_load
+    def make_object(self, data):
+        AnatomicalEntityToAnatomicalEntityOntogenicAssociation(**data)
 
 class OccurrentSchema(Schema):
     """

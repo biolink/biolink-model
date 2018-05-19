@@ -25,3 +25,4 @@ URI: [http://bioentity.io/vocab/model_of](http://bioentity.io/vocab/model_of)
 
 ## Used in
 
+ *  usage: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)

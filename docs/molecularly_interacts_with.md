@@ -25,3 +25,5 @@ URI: [http://bioentity.io/vocab/molecularly_interacts_with](http://bioentity.io/
 
 ## Used in
 
+ *  usage: [molecular interaction](MolecularInteraction.html)
+ *  usage: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html)

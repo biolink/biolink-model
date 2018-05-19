@@ -690,6 +690,8 @@ slots:
     description: >-
       A unique identifier for a thing.
       Must be either a CURIE shorthand for a URI or a complete URI
+    in_subset:
+      - translator_minimal
     domain: named thing
     range: identifier type
       
@@ -698,6 +700,8 @@ slots:
     identifier: true
     description: >-
       An IRI for the node. This is determined by the id using expansion rules.
+    in_subset:
+      - translator_minimal
     domain: named thing
     range: iri type
   
@@ -708,6 +712,8 @@ slots:
     range: label type
     description: >-
       A human-readable name for a thing
+    in_subset:
+      - translator_minimal
     mappings:
       - "rdfs:label"
   
@@ -719,6 +725,8 @@ slots:
       Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
       In a neo4j database this MAY correspond to the neo4j label tag
     is_class_field: true
+    in_subset:
+      - translator_minimal
     mappings:
       - "rdf:type"
   
@@ -735,6 +743,8 @@ slots:
     range: narrative text
     description: >-
       a human-readable description of a thing
+    in_subset:
+      - translator_minimal
     mappings:
       - dcterms:description
   
@@ -1450,20 +1460,31 @@ classes:
       - SO:0000316
       - SIO:001390
       
-  - name: gene or gene product
+  - name: macromolecular machine
     is_a: genomic entity
     union_of:
       - gene
       - gene product
+      - macromolecular complex
     description: >-
-      a union of genes or gene products.
-      Frequently an identifier for one will be used as proxy for another
+      A union of gene, gene product, and macromolecular complex.
+      These are the basic units of function in a cell. They either carry out individual
+      biological activities, or they encode molecules which do this.
     slot_usage:
       - name: name
         range: symbol type
         description: >-
           genes are typically designated by a short symbol and a full name. We map the symbol to the default display name
           and use an additional slot for full name
+      
+  - name: gene or gene product
+    is_a: macromolecular machine
+    union_of:
+      - gene
+      - gene product
+    description: >-
+      a union of genes or gene products.
+      Frequently an identifier for one will be used as proxy for another
       
   - name: gene
     is_a: gene or gene product
@@ -1567,7 +1588,7 @@ classes:
       - MIR
         
   - name: macromolecular complex
-    is_a: molecular entity
+    is_a: macromolecular machine
     subclass_of: "GO:0032991"
     mappings:
       - "SIO:010046"
@@ -2507,11 +2528,69 @@ classes:
       - name: object
         range: treatment
         description: "treatment whose efficacy is modulated by the subject variant"
-        
+
+  - name: functional association
+    is_a: association
+    description: >-
+      An association between a macromolecular machine (gene, gene product or complex of gene products) and
+      either a molecular activity, a biological process or a cellular location in which a function is executed
+    slot_usage:
+      - name: subject
+        range: macromolecular machine
+        aliases:
+          - name: bioentity
+            schema: amigo
+        description: "gene, product or macromolecular complex that has the function associated with the GO term"
+        examples:
+          - value: ZFIN:ZDB-GENE-050417-357
+            description: twist1b
+      - name: object
+        range: gene ontology class
+        aliases:
+          - name: class
+            schema: amigo
+        description: "class describing the activity, process or localization of the gene product"
+        values_from:
+          - go
+        examples:
+          - value: GO:0016301
+            description: kinase activity
+          - value: GO:0045211
+            description: postsynaptic membrane
+    
+  - name: macromolecular machine to molecular activity association
+    is_a: functional association
+    description: >-
+      A functional association between a macromolecular machine (gene, gene product or complex) and
+      a molecular activity (as represented in the GO molecular function branch), where the entity
+      carries out the activity, or contributes to its execution
+    slot_usage:
+      - name: object
+        range: molecular activity
           
+  - name: macromolecular machine to biological process association
+    is_a: functional association
+    description: >-
+      A functional association between a macromolecular machine (gene, gene product or complex) and
+      a biological process or pathway (as represented in the GO biological process branch), where the entity
+      carries out some part of the process, regulates it, or acts upstream of it
+    slot_usage:
+      - name: object
+        range: biological process
+
+  - name: macromolecular machine to cellular component association
+    is_a: functional association
+    description: >-
+      A functional association between a macromolecular machine (gene, gene product or complex) and
+      a cellular component (as represented in the GO cellular component branch), where the entity
+      carries out its function in the cellular component
+    slot_usage:
+      - name: object
+        range: cellular component
+        
   - name: gene to go term association
     aliases: ['functional association']
-    is_a: association
+    is_a: functional association
     mappings:
       - "http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association"
     defining_slots:
@@ -2633,7 +2712,6 @@ classes:
       - name: object
         range: gene or gene product
         role: regulated gene
-        
   
   - name: anatomical entity to anatomical entity association
     schema: gocam
@@ -2647,9 +2725,13 @@ classes:
       - name: object
         range: anatomical entity
   
-  - name: anatomical entity part of anatomical entity association
+  - name: anatomical entity to anatomical entity part of association
     schema: gocam
     is_a: anatomical entity to anatomical entity association
+    description: >-
+      A relationship between two anatomical entities where the relationship is mereological, i.e
+      the two entities are related by parthood. This includes relationships between cellular components
+      and cells, between cells and tissues, tissues and whole organisms
     defining_slots:
       - relation
     slot_usage:
@@ -2662,9 +2744,27 @@ classes:
         description: >-
           the whole
       - name: relation
+        subproperty_of: part of
+  
+  - name: anatomical entity to anatomical entity ontogenic association
+    is_a: anatomical entity to anatomical entity association
+    description: >-
+      A relationship between two anatomical entities where the relationship is ontogenic, i.e
+      the two entities are related by development. A number of different relationship types
+      can be used to specify the precise nature of the relationship
+    defining_slots:
+      - relation
+    slot_usage:
+      - name: subject
         range: anatomical entity
         description: >-
-          the whole
+          the structure at a later time
+      - name: object
+        range: anatomical entity
+        description: >-
+          the structure at an earlier time
+      - name: relation
+        subproperty_of: develops from
 
   - name: occurrent
     description: >-

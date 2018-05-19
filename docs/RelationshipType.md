@@ -60,6 +60,10 @@ URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/Rela
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [functional association](FunctionalAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [relationship type](RelationshipType.html)
  *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [relationship type](RelationshipType.html)
  *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [relationship type](RelationshipType.html)
@@ -68,6 +72,8 @@ URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/Rela
  *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [relationship type](RelationshipType.html)
  *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [relationship type](RelationshipType.html)
  *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [anatomical entity to anatomical entity part of association](AnatomicalEntityToAnatomicalEntityPartOfAssociation.html) references: [relationship type](RelationshipType.html)
+ *  class: [anatomical entity to anatomical entity ontogenic association](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.html) references: [relationship type](RelationshipType.html)
 
 ## Fields
 

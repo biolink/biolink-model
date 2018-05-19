@@ -26,3 +26,4 @@ URI: [http://bioentity.io/vocab/has_gene_product](http://bioentity.io/vocab/has_
 
 ## Used in
 
+ *  usage: [gene to gene product relationship](GeneToGeneProductRelationship.html)

@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/physically_interacts_with](http://bioentity.io/v
 ## Mappings
 
  * [WD:P129](http://purl.obolibrary.org/obo/WD_P129)
+ * [SEMMEDDB:INTERACTS_WITH](http://purl.obolibrary.org/obo/SEMMEDDB_INTERACTS_WITH)
 
 ## Domain and Range
 

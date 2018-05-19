@@ -10,7 +10,7 @@ An association between a gene and an expression site, possibly qualified by stag
 URI: [http://bioentity.io/vocab/GeneToExpressionSiteAssociation](http://bioentity.io/vocab/GeneToExpressionSiteAssociation)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[gene to expression site association|stage qualifier;quantifier qualifier], [gene to expression site association|stage qualifier;quantifier qualifier]-stage qualifier >[life stage|in taxon], [organismal entity|]^-[life stage|in taxon], [life stage|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [gene to expression site association|stage qualifier;quantifier qualifier]-quantifier qualifier >[ontology class|], [gene to expression site association|stage qualifier;quantifier qualifier]-association type >[ontology class|], [gene to expression site association|stage qualifier;quantifier qualifier]-subject >[gene or gene product|], [genomic entity|has biological sequence]^-[gene or gene product|], [gene or gene product|]-in taxon >[organism taxon|], [gene to expression site association|stage qualifier;quantifier qualifier]-relation >[relationship type|], [gene to expression site association|stage qualifier;quantifier qualifier]-object >[anatomical entity|in taxon], [organismal entity|]^-[anatomical entity|in taxon], [anatomical entity|in taxon]-in taxon >[organism taxon|], [gene to expression site association|stage qualifier;quantifier qualifier]-qualifiers >[ontology class|], [gene to expression site association|stage qualifier;quantifier qualifier]-publications >[publication|], [information content entity|]^-[publication|], [gene to expression site association|stage qualifier;quantifier qualifier]-provided by >[provider|], [administrative entity|]^-[provider|])
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[gene to expression site association|stage qualifier;quantifier qualifier], [gene to expression site association|stage qualifier;quantifier qualifier]-stage qualifier >[life stage|in taxon], [organismal entity|]^-[life stage|in taxon], [life stage|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [gene to expression site association|stage qualifier;quantifier qualifier]-quantifier qualifier >[ontology class|], [gene to expression site association|stage qualifier;quantifier qualifier]-association type >[ontology class|], [gene to expression site association|stage qualifier;quantifier qualifier]-subject >[gene or gene product|], [macromolecular machine|]^-[gene or gene product|], [gene or gene product|]-in taxon >[organism taxon|], [gene to expression site association|stage qualifier;quantifier qualifier]-relation >[relationship type|], [gene to expression site association|stage qualifier;quantifier qualifier]-object >[anatomical entity|in taxon], [organismal entity|]^-[anatomical entity|in taxon], [anatomical entity|in taxon]-in taxon >[organism taxon|], [gene to expression site association|stage qualifier;quantifier qualifier]-qualifiers >[ontology class|], [gene to expression site association|stage qualifier;quantifier qualifier]-publications >[publication|], [information content entity|]^-[publication|], [gene to expression site association|stage qualifier;quantifier qualifier]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 
@@ -67,15 +67,15 @@ URI: [http://bioentity.io/vocab/GeneToExpressionSiteAssociation](http://bioentit
     * _connects an association to the agent (person, organization or group) that provided it_
     * __range__: [provider](Provider.html)
     * inherited from: [association](Association.html)
- * [id](id.html)
+ * [id](id.html) *subsets: translator_minimal*
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type [required]
     * inherited from: [named thing](NamedThing.html)
- * [name](name.html)
+ * [name](name.html) *subsets: translator_minimal*
     * _A human-readable name for a thing_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
- * [category](category.html)
+ * [category](category.html) *subsets: translator_minimal*
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)

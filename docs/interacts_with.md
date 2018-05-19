@@ -11,7 +11,6 @@ URI: [http://bioentity.io/vocab/interacts_with](http://bioentity.io/vocab/intera
 ## Mappings
 
  * [RO:0002434](http://purl.obolibrary.org/obo/RO_0002434)
- * [SEMMEDDB:INTERACTS_WITH](http://purl.obolibrary.org/obo/SEMMEDDB_INTERACTS_WITH)
 
 ## Domain and Range
 

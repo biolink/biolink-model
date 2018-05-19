@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/related_to](http://bioentity.io/vocab/related_to
 ## Mappings
 
  * [owl:topObjectProperty](http://purl.obolibrary.org/obo/owl_topObjectProperty)
+ * [SEMMEDDB:ASSOCIATED_WITH](http://purl.obolibrary.org/obo/SEMMEDDB_ASSOCIATED_WITH)
 
 ## Domain and Range
 

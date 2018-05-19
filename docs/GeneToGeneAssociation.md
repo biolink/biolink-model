@@ -10,7 +10,7 @@ abstract parent class for different kinds of gene-gene or gene product to gene p
 URI: [http://bioentity.io/vocab/GeneToGeneAssociation](http://bioentity.io/vocab/GeneToGeneAssociation)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[gene to gene association|], [gene to gene association|]-association type >[ontology class|], [gene to gene association|]-subject >[gene or gene product|], [genomic entity|has biological sequence]^-[gene or gene product|], [gene or gene product|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [gene to gene association|]-relation >[relationship type|], [gene to gene association|]-object >[gene or gene product|], [gene to gene association|]-qualifiers >[ontology class|], [gene to gene association|]-publications >[publication|], [information content entity|]^-[publication|], [gene to gene association|]-provided by >[provider|], [administrative entity|]^-[provider|])
+![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[gene to gene association|], [gene to gene association|]-association type >[ontology class|], [gene to gene association|]-subject >[gene or gene product|], [macromolecular machine|]^-[gene or gene product|], [gene or gene product|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [gene to gene association|]-relation >[relationship type|], [gene to gene association|]-object >[gene or gene product|], [gene to gene association|]-qualifiers >[ontology class|], [gene to gene association|]-publications >[publication|], [information content entity|]^-[publication|], [gene to gene association|]-provided by >[provider|], [administrative entity|]^-[provider|])
 ## Mappings
 
 
@@ -58,15 +58,15 @@ URI: [http://bioentity.io/vocab/GeneToGeneAssociation](http://bioentity.io/vocab
     * _connects an association to the agent (person, organization or group) that provided it_
     * __range__: [provider](Provider.html)
     * inherited from: [association](Association.html)
- * [id](id.html)
+ * [id](id.html) *subsets: translator_minimal*
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type [required]
     * inherited from: [named thing](NamedThing.html)
- * [name](name.html)
+ * [name](name.html) *subsets: translator_minimal*
     * _A human-readable name for a thing_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
- * [category](category.html)
+ * [category](category.html) *subsets: translator_minimal*
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)

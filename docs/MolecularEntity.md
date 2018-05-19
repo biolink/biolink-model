@@ -25,7 +25,6 @@ URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/Molec
 
  *  child: [chemical substance](ChemicalSubstance.html)
  *  child: [genomic entity](GenomicEntity.html)
- *  child: [macromolecular complex](MacromolecularComplex.html)
  *  child: [gene family](GeneFamily.html)
 
 ## Used in
@@ -56,6 +55,10 @@ URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/Molec
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [genotype](Genotype.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [sequence variant](SequenceVariant.html)
+ *  class: [functional association](FunctionalAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
+ *  class: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
+ *  class: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
+ *  class: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
  *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [molecular entity](MolecularEntity.html)
  *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [genomic entity](GenomicEntity.html)
  *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [genomic entity](GenomicEntity.html)
@@ -66,15 +69,15 @@ URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/Molec
 
 ## Fields
 
- * [id](id.html)
+ * [id](id.html) *subsets: translator_minimal*
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type
     * inherited from: [named thing](NamedThing.html)
- * [name](name.html)
+ * [name](name.html) *subsets: translator_minimal*
     * _A human-readable name for a thing_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
- * [category](category.html)
+ * [category](category.html) *subsets: translator_minimal*
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)

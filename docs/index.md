@@ -39,20 +39,21 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [transcript](Transcript.html)
              * [exon](Exon.html)
              * [coding sequence](CodingSequence.html)
-             * [gene or gene product](GeneOrGeneProduct.html)
-                * [gene](Gene.html)
-                * [gene product](GeneProduct.html)
-                   * [protein](Protein.html)
-                      * [protein isoform](ProteinIsoform.html)
-                   * [gene product isoform](GeneProductIsoform.html)
-                   * [RNA product](RnaProduct.html)
-                      * [RNA product isoform](RnaProductIsoform.html)
-                      * [noncoding RNA product](NoncodingRnaProduct.html)
-                         * [microRNA](Microrna.html)
+             * [macromolecular machine](MacromolecularMachine.html)
+                * [gene or gene product](GeneOrGeneProduct.html)
+                   * [gene](Gene.html)
+                   * [gene product](GeneProduct.html)
+                      * [protein](Protein.html)
+                         * [protein isoform](ProteinIsoform.html)
+                      * [gene product isoform](GeneProductIsoform.html)
+                      * [RNA product](RnaProduct.html)
+                         * [RNA product isoform](RnaProductIsoform.html)
+                         * [noncoding RNA product](NoncodingRnaProduct.html)
+                            * [microRNA](Microrna.html)
+                * [macromolecular complex](MacromolecularComplex.html)
              * [genotype](Genotype.html)
              * [haplotype](Haplotype.html)
              * [sequence variant](SequenceVariant.html)
-          * [macromolecular complex](MacromolecularComplex.html)
           * [gene family](GeneFamily.html)
        * [biological process or activity](BiologicalProcessOrActivity.html)
           * [molecular activity](MolecularActivity.html)
@@ -103,7 +104,11 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [genotype to thing association](GenotypeToThingAssociation.html)
           * [gene to expression site association](GeneToExpressionSiteAssociation.html)
           * [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html)
-          * [gene to go term association](GeneToGoTermAssociation.html)
+          * [functional association](FunctionalAssociation.html)
+             * [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.html)
+             * [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.html)
+             * [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.html)
+             * [gene to go term association](GeneToGoTermAssociation.html)
           * [genomic sequence localization](GenomicSequenceLocalization.html)
           * [sequence feature relationship](SequenceFeatureRelationship.html)
              * [transcript to gene relationship](TranscriptToGeneRelationship.html)
@@ -111,7 +116,8 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [exon to transcript relationship](ExonToTranscriptRelationship.html)
           * [gene regulatory relationship](GeneRegulatoryRelationship.html)
           * [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html)
-             * [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html)
+             * [anatomical entity to anatomical entity part of association](AnatomicalEntityToAnatomicalEntityPartOfAssociation.html)
+             * [anatomical entity to anatomical entity ontogenic association](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.html)
     * [planetary entity](PlanetaryEntity.html)
        * [environmental process](EnvironmentalProcess.html)
        * [environmental feature](EnvironmentalFeature.html)
@@ -185,6 +191,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [co-localizes with](co-localizes_with.html) *subsets: translator_minimal*
     * [gene associated with condition](gene_associated_with_condition.html) *subsets: translator_minimal*
     * [affects risk for](affects_risk_for.html) *subsets: translator_minimal*
+       * [predisposes](predisposes.html) *subsets: translator_minimal*
        * [prevents](prevents.html) *subsets: translator_minimal*
     * [contributes to](contributes_to.html) *subsets: translator_minimal*
        * [causes](causes.html) *subsets: translator_minimal*
@@ -203,6 +210,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [has part](has_part.html) *subsets: translator_minimal*
        * [part of](part_of.html) *subsets: translator_minimal*
     * [has participant](has_participant.html) *subsets: translator_minimal*
+       * [has input](has_input.html) *subsets: translator_minimal*
     * [participates in](participates_in.html) *subsets: translator_minimal*
        * [actively involved in](actively_involved_in.html) *subsets: translator_minimal*
           * [capable of](capable_of.html) *subsets: translator_minimal*
@@ -216,12 +224,12 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [in taxon](in_taxon.html) *subsets: translator_minimal*
     * [has molecular consequence](has_molecular_consequence.html)
  * [node property](node_property.html)
-    * [id](id.html)
-    * [iri](iri.html)
-    * [name](name.html)
-    * [category](category.html)
+    * [id](id.html) *subsets: translator_minimal*
+    * [iri](iri.html) *subsets: translator_minimal*
+    * [name](name.html) *subsets: translator_minimal*
+    * [category](category.html) *subsets: translator_minimal*
     * [full name](full_name.html)
-    * [description](description.html)
+    * [description](description.html) *subsets: translator_minimal*
     * [systematic synonym](systematic_synonym.html)
     * [creation date](creation_date.html)
     * [update date](update_date.html)

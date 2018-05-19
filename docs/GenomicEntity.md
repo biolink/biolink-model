@@ -26,7 +26,7 @@ URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/Genomic
  *  child: [transcript](Transcript.html)
  *  child: [exon](Exon.html)
  *  child: [coding sequence](CodingSequence.html)
- *  child: [gene or gene product](GeneOrGeneProduct.html)
+ *  child: [macromolecular machine](MacromolecularMachine.html)
  *  child: [genotype](Genotype.html)
  *  child: [haplotype](Haplotype.html)
  *  child: [sequence variant](SequenceVariant.html)
@@ -54,6 +54,10 @@ URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/Genomic
  *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [genotype](Genotype.html)
  *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
  *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [sequence variant](SequenceVariant.html)
+ *  class: [functional association](FunctionalAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
+ *  class: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
+ *  class: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
+ *  class: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
  *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [genomic entity](GenomicEntity.html)
  *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [genomic entity](GenomicEntity.html)
  *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [transcript](Transcript.html)
@@ -67,15 +71,15 @@ URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/Genomic
     * _connects a genomic feature to its sequence_
     * __range__: biological sequence
     * __Local__
- * [id](id.html)
+ * [id](id.html) *subsets: translator_minimal*
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * __range__: identifier type
     * inherited from: [named thing](NamedThing.html)
- * [name](name.html)
+ * [name](name.html) *subsets: translator_minimal*
     * _A human-readable name for a thing_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)
- * [category](category.html)
+ * [category](category.html) *subsets: translator_minimal*
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * __range__: label type
     * inherited from: [named thing](NamedThing.html)

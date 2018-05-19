@@ -29,3 +29,4 @@ URI: [http://bioentity.io/vocab/homologous_to](http://bioentity.io/vocab/homolog
 
 ## Used in
 
+ *  usage: [gene to gene homology association](GeneToGeneHomologyAssociation.html)

@@ -10,7 +10,6 @@ holds between two entities where exposure to one entity alters the chance of dev
 URI: [http://bioentity.io/vocab/affects_risk_for](http://bioentity.io/vocab/affects_risk_for)
 ## Mappings
 
- * [SEMMEDDB:PREDISPOSES](http://purl.obolibrary.org/obo/SEMMEDDB_PREDISPOSES)
 
 ## Domain and Range
 
@@ -22,6 +21,7 @@ URI: [http://bioentity.io/vocab/affects_risk_for](http://bioentity.io/vocab/affe
 
 ## Children
 
+ *  child: [predisposes](predisposes.html) *subsets: translator_minimal*
  *  child: [prevents](prevents.html) *subsets: translator_minimal*
 
 ## Used in
