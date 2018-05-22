@@ -1,0 +1,25 @@
+id: school_test
+prefixes:
+  "" : http://school.example/#
+  ex : http://ex.example/#
+
+types:
+  - name: age int type
+    typeof: int
+  - name: IRI
+    typeof: IRI
+  
+slots:
+  - name: age
+    range: int
+  - name: has guardian
+    mappings:
+      ex:hasGuardian
+      
+classes:
+  - name: person
+  - name: enrollee
+    is_a: person
+    slots:
+      - age
+      - has guardian
