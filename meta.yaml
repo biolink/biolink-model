@@ -1,279 +1,342 @@
-id: "http://bioentity.io/json-schema/meta.json"
-name: metamodel
-description: Metamodel for biolink model
-license: https://creativecommons.org/publicdomain/zero/1.0/
-prefixes:
-  dcterms: http://purl.org/dc/terms/
-  
-slots:
+metamodel:
+    id: "http://bioentity.io/json-schema/meta.json"
+    description: Metamodel for biolink schema
+    license: https://creativecommons.org/publicdomain/zero/1.0/
+    prefixes:
+        dcterms: http://purl.org/dc/terms/
 
-  - name: id
-    domain: schema definition
-    primary_key: true
-    description: >-
-      a globally unique id or url for the schema
-
-  - name: name
-    domain: element
-    primary_key: true
-    description: >-
-      a unique key that identifies a slot or class in a schema
-
-  - name: singular_name
-    domain: element
-    description: >-
-      a name that is used in the singular form
-
-  - name: description
-    description: >-
-      a description
-
-  - name: license
-    domain: element
-    description: >-
-      license for the schema
-
-  - name: note
-    domain: element
-    description: >-
-      Notes about an element
-
-  - name: classes
-    domain: schema definition
-    multivalued: true
-    description: >-
-      classes defined in schema
-
-  - name: types
-    domain: schema definition
-    multivalued: true
-    description: >-
-      types defined in schema
-
-  - name: imports
-    domain: string
-    multivalued: true
-    description: >-
-      A list of modules that are imported
-
-  - name: apply_to
-    domain: string
-    description: >-
-      Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol,
-      and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism,
-      adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class.
-    
-  - name: abstract
-    description: >-
-      An abstract class is a high level class that is typically used to group common slots together and is generally
-      not instantiated.
-      When generating golr-views, abstract classes are ignored
-    range: boolean
-
-  - name: identifier
-    
-  - name: defining_slots
-
-  - name: value
-    
-  - name: domain
-    
-  - name: range
-    
-  - name: typeof
-    
-  - name: inlined
-    description: >-
-      if true then the value of this slot is inlined (i.e. a nested object) rather linked by key
-    range: boolean
-    
-  - name: mixin
-    description: >-
-      Similar to abstract
-    range: boolean
-    
-  - name: subproperty_of
-    description: >-
-      Ontolgy property which this is a subproperty of
-    range: string
-    
-  - name: subclass_of
-    description: >-
-      Ontolgy property which this is a subclass of.
-      Not to be confused with is_a which links datamodel classes
-    range: string
-    
-  - name: path
-    description: >-
-      For any denormalized slot, this represents the tree or graph path used to generate the denormalized form
-    range: string
-
-  - name: multivalued
-    description: >-
-      If true slot can have many values
-    domain: slot definition
-    range: boolean
-
-  - name: required
-    description: >-
-      If true slot must have at least one value
-    domain: slot definition
-    range: boolean
-
-  - name: mappings
-    multivalued: true
-    domain: definition
-    range: string
-    inlined: false
-    description: >-
-      list of equivalent or skos exact mappings to an ontology class
-
-  - name: id_prefixes
-    multivalued: true
-    domain: definition
-    range: string
-    inlined: false
-    description: >-
-      list of ID/CURIE prefixes applicable to that element
-      
-  - name: examples
-    multivalued: true
-    domain: element
-    range: example
-    inlined: true
-    description: >-
-      Example of usage for a slot or class
-    
-  - name: slots
-    multivalued: true
-    domain: class
-    range: slot definition
-    inlined: false
-    description: >-
-      list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins.
-    
-  - name: slot_usage
-    multivalued: true
-    domain: class definition
-    range: slot usage definition
-    description: >-
-      Additional info on how a slot is used in the context of a class.
-      Many slots may be re-used across different classes, but the meaning of the slot may be refined by context.
-      For example, a generic association model may use slots subject/predicate/object with generic semantics and
-      minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may
-      specify both local naming (e.g. subject=disease) and local constraints
-    
-  - name: is_a
-    multivalued: false
-    domain: class definition
-    range: class definition
-    description: >-
-      specifies single-inheritance between classes.
-      While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing.
-      The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI
-      framework (e.g. java classes, python classes) then is_a is used.
-      When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins
-      are recursively unfolded
-
-  - name: mixins
-    multivalued: true
-    domain: class definition
-    range: class definition
-    description: >-
-      see is_a
-    
-  - name: defining_slots
-    multivalued: true
-    domain: class definition
-    range: slot definition
-    description: >-
-      The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient
-      conditions that can be transformed into an OWL equivalence axiom
-    
-  - name: in_subset
-    multivalued: true
-    range: string
-    description: >-
-      used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)
-    mappings:
-      - oio:inSubset
-
-  - name: inverse
-    multivalued: false
-    range: slot definition
-    description: >-
-      used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')
-        
-classes:
-
-  - name: definition
-    description: "base class"
-    abstract: true
     slots:
-      - name
-      - singular_name
-      - is_a
-      - description
-      - note
-      - abstract
-      - mappings
-      - id_prefixes
-      - in_subset
-      - apply_to
+      id:
+          domain: schema definition
+          primary_key: true
+          description: >-
+            a globally unique id or url for a schema definition
 
-  - name: slot definition
-    description: "A property or slot"
-    is_a: definition
-    slots:
-      - mixin
-      - mixins
-      - identifier
-      - domain
-      - range
-      - multivalued
-      - required
-      - path
-      - subproperty_of
-      - examples
+      name:
+          domain: element
+          primary_key: true
+          description: >-
+            a unique key that identifies a slot, type or class in a schema
 
-  - name: slot usage definition
-    description: "A usage of slot in the context of a class"
-    is_a: slot definition
-    slots: []      
-      
-  - name: class definition
-    description: "A class or interface"
-    is_a: definition
-    slots:
-      - defining_slots
-      - subclass_of
-      - mixin
-      - mixins
-      - slots
-      - slot_usage
-    
-  - name: type definition
-    description: "A type definition"
-    is_a: definition
-    slots:
-      - mixins
-      - typeof
-    
-  - name: schema definition
-    description: "A collection of definitions"
-    is_a: definition
-    slots:
-      - id
-      - slots
-      - classes
-      - types
-      - imports
-      - license
+      singular_name:
+          domain: element
+          description: >-
+            a name that is used in the singular form
 
-  - name: example
-    description: "example of usage"
-    slots:
-      - value
-      - description
+      description:
+          description: >-
+            a description
 
-    
+      license:
+          domain: element
+          description: >-
+            license for the schema
+
+      note:
+          domain: element
+          description: >-
+            Notes about an element
+
+      classes:
+          domain: schema definition
+          range: class definition
+          multivalued: true
+          inlined: true
+          description: >-
+            classes defined in schema
+
+      types:
+          domain: schema definition
+          range: type definition
+          multivalued: true
+          inlined: true
+          description: >-
+            types defined in schema
+
+      imports:
+          domain: schema definition
+          multivalued: true
+          description: >-
+            A list of modules that are imported
+
+      apply_to:
+          domain: schema definition
+          description: >-
+            Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol,
+            and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism,
+            adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class.
+
+      abstract:
+          description: >-
+            An abstract class is a high level class that is typically used to group common slots together and is generally
+            not instantiated.
+            When generating golr-views, abstract classes are ignored
+          range: boolean
+
+      identifier:
+          range: boolean
+
+      value:
+        domain: example
+        range: string
+        required: true
+
+      domain:
+        domain:
+
+      range:
+
+      typeof:
+
+      uri:
+        domain: prefix map
+        required: true
+
+      nsname:
+        domain: prefix map
+        range: uri
+        required: true
+
+      alias:
+
+      inlined:
+          description: >-
+            if true then the value of this slot is inlined (i.e. a nested object) rather linked by key
+          range: boolean
+
+      mixin:
+          description: >-
+            Similar to abstract -
+          range: boolean
+
+      subproperty_of:
+          description: >-
+            Ontolgy property which this is a subproperty of
+          range: string
+
+      subclass_of:
+          description: >-
+            Ontolgy property which this is a subclass of.
+            Not to be confused with is_a which links datamodel classes
+          range: string
+
+      path:
+          description: >-
+            For any denormalized slot, this represents the tree or graph path used to generate the denormalized form
+          range: string
+
+      multivalued:
+          description: >-
+            If true slot can have many values
+          domain: slot definition
+          range: boolean
+
+      required:
+          description: >-
+            If true slot must have at least one value
+          domain: slot definition
+          range: boolean
+
+      mappings:
+          multivalued: true
+          domain: definition
+          range: mapping
+          inlined: false
+          description: >-
+            list of equivalent or skos exact mappings to an ontology class
+
+      localname:
+          domain: mapping
+          required: true
+          description: >-
+            the source part of a mapping
+
+      mappedname:
+          domain: mapping
+          required: true
+          description: >-
+            the target part of a mapping
+
+      prefixes:
+          multivalued: true
+          domain: definition
+          range: prefix map
+          inlined: false
+          description: >-
+            list of ID/CURIE prefixes applicable to that element
+
+      primary_key:
+          domain: definition
+          range: boolean
+          description: >-
+            True means that this serves as a unique identifier
+
+      examples:
+          multivalued: true
+          domain: element
+          range: example
+          inlined: true
+          description: >-
+            Example of usage for a slot or class
+
+      slots:
+          multivalued: true
+          domain: class
+          range: slot definition
+          inlined: false
+          description: >-
+            list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins.
+
+      slot definitions:
+          multivalued: true
+          domain: schema definition
+          range: slot definition
+          inlined: true
+          alias: slots
+          description: >-
+            collection of slot definitions in a schema
+
+      slot_usage:
+          multivalued: true
+          domain: class definition
+          range: slot usage definition
+          description: >-
+            Additional info on how a slot is used in the context of a class.
+            Many slots may be re-used across different classes, but the meaning of the slot may be refined by context.
+            For example, a generic association model may use slots subject/predicate/object with generic semantics and
+            minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may
+            specify both local naming (e.g. subject=disease) and local constraints
+
+      is_a:
+          multivalued: false
+          domain: class definition
+          range: class definition
+          description: >-
+            specifies single-inheritance between classes.
+            While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing.
+            The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI
+            framework (e.g. java classes, python classes) then is_a is used.
+            When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins
+            are recursively unfolded
+
+      mixins:
+          multivalued: true
+          domain: element
+          range: class definition
+          description: >-
+            see is_a
+
+      defining_slots:
+          multivalued: true
+          domain: class definition
+          range: slot definition
+          inlined: true
+          description: >-
+            The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient
+            conditions that can be transformed into an OWL equivalence axiom
+
+      in_subset:
+          multivalued: true
+          range: string
+          description: >-
+            used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)
+          mappings:
+            - oio:inSubset
+
+      inverse:
+          multivalued: false
+          range: slot definition
+          description: >-
+            used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')
+
+    classes:
+        mapping:
+          description: A mapping from a local to external string
+          slots:
+            - localname
+            - mappedname
+
+        prefix map:
+          description: ID/CURIE prefix applicable to that element
+          slots:
+            - nsname
+            - uri
+
+        example:
+          description: "example of usage"
+          slots:
+            - value
+            - description
+
+        element:
+          description: "root of all classes"
+          abstract: true
+          slots:
+            - name
+            - singular_name
+            - description
+            - note
+            - examples
+
+        definition:
+          description: "base class"
+          abstract: true
+          is_a: element
+          slots:
+            - is_a
+            - abstract
+            - prefixes
+            - in_subset
+            - apply_to
+            - mappings
+
+        slot definition:
+          description: "A property or slot"
+          is_a: definition
+          slots:
+            - mixin
+            - mixins
+            - identifier
+            - domain
+            - inlined
+            - range
+            - primary_key
+            - multivalued
+            - alias
+            - required
+            - path
+            - subproperty_of
+
+        slot usage definition:
+          description: "A usage of slot in the context of a class"
+          is_a: slot definition
+          slots: []
+
+        class definition:
+          description: "A class or interface"
+          is_a: definition
+          slots:
+            - defining_slots
+            - subclass_of
+            - mixin
+            - mixins
+            - slots
+            - slot_usage
+
+        type definition:
+          description: "A type definition"
+          is_a: definition
+          slots:
+            - mixins
+            - typeof
+
+        schema definition:
+          description: "A collection of definitions"
+          is_a: definition
+          slots:
+            - id
+            - imports
+            - license
+            - slot definitions
+            - types
+            - classes
