@@ -4,7 +4,7 @@ import click
 
 import logging
 from metamodel.csvgen import CsvGenerator
-from metamodel.loader import load_schema
+from metamodel.schemaloader import load_schema
 
 logging.basicConfig(level=logging.INFO)
 

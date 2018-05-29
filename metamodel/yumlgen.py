@@ -8,7 +8,7 @@ https://yuml.me/diagram/scruffy/class/samples
 from .schemautils import *
 import yaml
 import logging
-from .manager import *
+from .schemamanager import *
 from .generator import Generator
 
 class YumlGenerator(Generator):

@@ -1,3 +1,6 @@
+from typing import List
+
+
 def camelcase(txt: str) -> str:
     # TODO: fix so microRNA -> MicroRNA
     return txt.title().replace(" ", "").replace(",", "")
@@ -14,3 +17,34 @@ def lcamelcase(txt: str) -> str:
 
 def be(entry: object) -> str:
     return str(entry) if entry else ''
+
+
+split_col = 115
+
+
+def split_line(txt: str, split_len: int=split_col) -> List[str]:
+    out_lines = []
+    words = txt.split()
+    cur_line = ""
+    for word in words:
+        word += ' '
+        if len(cur_line) + len(word) > split_len:
+            out_lines.append(cur_line if cur_line else word)
+            if not cur_line:
+                word = ""
+            else:
+                cur_line = ""
+        cur_line += word
+    if cur_line:
+        out_lines.append(cur_line)
+    return out_lines
+
+
+def wrapped_annotation(txt: str) -> str:
+    rval = []
+    for line in [l.strip() for l in txt.split('\n')]:
+        if len(line) > split_col:
+            rval += split_line(line)
+        else:
+            rval.append(line)
+    return '\n\t'.join(rval)

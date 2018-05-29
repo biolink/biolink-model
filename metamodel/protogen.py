@@ -1,5 +1,5 @@
 from .schemautils import *
-from .manager import NameStyle
+from .schemamanager import NameStyle
 from .generator import Generator
 
 class ProtoGenerator(Generator):

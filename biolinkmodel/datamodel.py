@@ -1,3573 +1,1291 @@
+# Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/biolink-model.yaml by pythongen.py version: 0.0.1
+# Generation date: 2018-05-29 17:20
+# Schema: biolink model
+#
+# id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
+# description: Entity and association taxonomy and datamodel for life-sciences data
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+
+import datetime
+from typing import Optional, List, Union, Dict, NewType
+from dataclasses import dataclass
+from metamodel.metamodelcore import Root, empty_list, empty_dict
+
+# Class references
+RelationshipTypeName = NewType("RelationshipTypeName", str)
+AttributeName = NewType("AttributeName", str)
+BiologicalSexName = NewType("BiologicalSexName", str)
+PhenotypicSexName = NewType("PhenotypicSexName", str)
+GenotypicSexName = NewType("GenotypicSexName", str)
+SeverityValueName = NewType("SeverityValueName", str)
+FrequencyValueName = NewType("FrequencyValueName", str)
+ClinicalModifierName = NewType("ClinicalModifierName", str)
+OnsetName = NewType("OnsetName", str)
+RelationshipQuantifierName = NewType("RelationshipQuantifierName", str)
+SenstivityQuantifierName = NewType("SenstivityQuantifierName", str)
+SpecificityQuantifierName = NewType("SpecificityQuantifierName", str)
+PathognomonicityQuantifierName = NewType("PathognomonicityQuantifierName", str)
+FrequencyQuantifierName = NewType("FrequencyQuantifierName", str)
+NamedThingName = NewType("NamedThingName", str)
+BiologicalEntityName = NewType("BiologicalEntityName", str)
+OntologyClassName = NewType("OntologyClassName", str)
+GeneOntologyClassName = NewType("GeneOntologyClassName", str)
+ThingWithTaxonName = NewType("ThingWithTaxonName", str)
+OrganismTaxonName = NewType("OrganismTaxonName", str)
+OrganismalEntityName = NewType("OrganismalEntityName", str)
+IndividualOrganismName = NewType("IndividualOrganismName", str)
+CaseName = NewType("CaseName", str)
+PopulationOfIndividualOrganismsName = NewType("PopulationOfIndividualOrganismsName", str)
+BiosampleName = NewType("BiosampleName", str)
+DiseaseOrPhenotypicFeatureName = NewType("DiseaseOrPhenotypicFeatureName", str)
+DiseaseName = NewType("DiseaseName", str)
+PhenotypicFeatureName = NewType("PhenotypicFeatureName", str)
+EnvironmentName = NewType("EnvironmentName", str)
+InformationContentEntityName = NewType("InformationContentEntityName", str)
+ConfidenceLevelName = NewType("ConfidenceLevelName", str)
+EvidenceTypeName = NewType("EvidenceTypeName", str)
+PublicationName = NewType("PublicationName", str)
+AdministrativeEntityName = NewType("AdministrativeEntityName", str)
+ProviderName = NewType("ProviderName", str)
+MolecularEntityName = NewType("MolecularEntityName", str)
+ChemicalSubstanceName = NewType("ChemicalSubstanceName", str)
+DrugName = NewType("DrugName", str)
+MetaboliteName = NewType("MetaboliteName", str)
+AnatomicalEntityName = NewType("AnatomicalEntityName", str)
+LifeStageName = NewType("LifeStageName", str)
+PlanetaryEntityName = NewType("PlanetaryEntityName", str)
+EnvironmentalProcessName = NewType("EnvironmentalProcessName", str)
+EnvironmentalFeatureName = NewType("EnvironmentalFeatureName", str)
+ClinicalEntityName = NewType("ClinicalEntityName", str)
+ClinicalTrialName = NewType("ClinicalTrialName", str)
+ClinicalInterventionName = NewType("ClinicalInterventionName", str)
+DeviceName = NewType("DeviceName", str)
+GenomicEntityName = NewType("GenomicEntityName", str)
+GenomeName = NewType("GenomeName", str)
+TranscriptName = NewType("TranscriptName", str)
+ExonName = NewType("ExonName", str)
+CodingSequenceName = NewType("CodingSequenceName", str)
+MacromolecularMachineName = NewType("MacromolecularMachineName", str)
+GeneOrGeneProductName = NewType("GeneOrGeneProductName", str)
+GeneName = NewType("GeneName", str)
+GeneProductName = NewType("GeneProductName", str)
+ProteinName = NewType("ProteinName", str)
+GeneProductIsoformName = NewType("GeneProductIsoformName", str)
+ProteinIsoformName = NewType("ProteinIsoformName", str)
+RnaProductName = NewType("RnaProductName", str)
+RnaProductIsoformName = NewType("RnaProductIsoformName", str)
+NoncodingRnaProductName = NewType("NoncodingRnaProductName", str)
+MicrornaName = NewType("MicrornaName", str)
+MacromolecularComplexName = NewType("MacromolecularComplexName", str)
+GeneGroupingName = NewType("GeneGroupingName", str)
+GeneFamilyName = NewType("GeneFamilyName", str)
+ZygosityName = NewType("ZygosityName", str)
+GenotypeName = NewType("GenotypeName", str)
+HaplotypeName = NewType("HaplotypeName", str)
+SequenceVariantName = NewType("SequenceVariantName", str)
+DrugExposureName = NewType("DrugExposureName", str)
+TreatmentName = NewType("TreatmentName", str)
+GeographicLocationName = NewType("GeographicLocationName", str)
+GeographicLocationAtTimeName = NewType("GeographicLocationAtTimeName", str)
+AssociationName = NewType("AssociationName", str)
+GenotypeToGenotypePartAssociationName = NewType("GenotypeToGenotypePartAssociationName", str)
+GenotypeToGeneAssociationName = NewType("GenotypeToGeneAssociationName", str)
+GenotypeToVariantAssociationName = NewType("GenotypeToVariantAssociationName", str)
+GeneToGeneAssociationName = NewType("GeneToGeneAssociationName", str)
+GeneToGeneHomologyAssociationName = NewType("GeneToGeneHomologyAssociationName", str)
+MolecularInteractionName = NewType("MolecularInteractionName", str)
+PairwiseGeneOrProteinInteractionAssociationName = NewType("PairwiseGeneOrProteinInteractionAssociationName", str)
+CellLineToThingAssociationName = NewType("CellLineToThingAssociationName", str)
+CellLineToDiseaseOrPhenotypicFeatureAssociationName = NewType("CellLineToDiseaseOrPhenotypicFeatureAssociationName", str)
+ChemicalToThingAssociationName = NewType("ChemicalToThingAssociationName", str)
+CaseToThingAssociationName = NewType("CaseToThingAssociationName", str)
+ChemicalToGeneAssociationName = NewType("ChemicalToGeneAssociationName", str)
+ChemicalToDiseaseOrPhenotypicFeatureAssociationName = NewType("ChemicalToDiseaseOrPhenotypicFeatureAssociationName", str)
+ChemicalToPathwayAssociationName = NewType("ChemicalToPathwayAssociationName", str)
+BiosampleToThingAssociationName = NewType("BiosampleToThingAssociationName", str)
+BiosampleToDiseaseOrPhenotypicFeatureAssociationName = NewType("BiosampleToDiseaseOrPhenotypicFeatureAssociationName", str)
+EntityToPhenotypicFeatureAssociationName = NewType("EntityToPhenotypicFeatureAssociationName", str)
+EntityToDiseaseAssociationName = NewType("EntityToDiseaseAssociationName", str)
+DiseaseOrPhenotypicFeatureAssociationToThingAssociationName = NewType("DiseaseOrPhenotypicFeatureAssociationToThingAssociationName", str)
+DiseaseOrPhenotypicFeatureAssociationToLocationAssociationName = NewType("DiseaseOrPhenotypicFeatureAssociationToLocationAssociationName", str)
+ThingToDiseaseOrPhenotypicFeatureAssociationName = NewType("ThingToDiseaseOrPhenotypicFeatureAssociationName", str)
+DiseaseToThingAssociationName = NewType("DiseaseToThingAssociationName", str)
+GenotypeToPhenotypicFeatureAssociationName = NewType("GenotypeToPhenotypicFeatureAssociationName", str)
+EnvironmentToPhenotypicFeatureAssociationName = NewType("EnvironmentToPhenotypicFeatureAssociationName", str)
+DiseaseToPhenotypicFeatureAssociationName = NewType("DiseaseToPhenotypicFeatureAssociationName", str)
+CaseToPhenotypicFeatureAssociationName = NewType("CaseToPhenotypicFeatureAssociationName", str)
+GeneToThingAssociationName = NewType("GeneToThingAssociationName", str)
+VariantToThingAssociationName = NewType("VariantToThingAssociationName", str)
+GeneToPhenotypicFeatureAssociationName = NewType("GeneToPhenotypicFeatureAssociationName", str)
+GeneToDiseaseAssociationName = NewType("GeneToDiseaseAssociationName", str)
+VariantToPopulationAssociationName = NewType("VariantToPopulationAssociationName", str)
+PopulationToPopulationAssociationName = NewType("PopulationToPopulationAssociationName", str)
+VariantToPhenotypicFeatureAssociationName = NewType("VariantToPhenotypicFeatureAssociationName", str)
+VariantToDiseaseAssociationName = NewType("VariantToDiseaseAssociationName", str)
+ModelToDiseaseMixinName = NewType("ModelToDiseaseMixinName", str)
+GeneAsAModelOfDiseaseAssociationName = NewType("GeneAsAModelOfDiseaseAssociationName", str)
+GeneHasVariantThatContributesToDiseaseAssociationName = NewType("GeneHasVariantThatContributesToDiseaseAssociationName", str)
+GenotypeToThingAssociationName = NewType("GenotypeToThingAssociationName", str)
+GeneToExpressionSiteAssociationName = NewType("GeneToExpressionSiteAssociationName", str)
+SequenceVariantModulatesTreatmentAssociationName = NewType("SequenceVariantModulatesTreatmentAssociationName", str)
+FunctionalAssociationName = NewType("FunctionalAssociationName", str)
+MacromolecularMachineToMolecularActivityAssociationName = NewType("MacromolecularMachineToMolecularActivityAssociationName", str)
+MacromolecularMachineToBiologicalProcessAssociationName = NewType("MacromolecularMachineToBiologicalProcessAssociationName", str)
+MacromolecularMachineToCellularComponentAssociationName = NewType("MacromolecularMachineToCellularComponentAssociationName", str)
+GeneToGoTermAssociationName = NewType("GeneToGoTermAssociationName", str)
+GenomicSequenceLocalizationName = NewType("GenomicSequenceLocalizationName", str)
+SequenceFeatureRelationshipName = NewType("SequenceFeatureRelationshipName", str)
+TranscriptToGeneRelationshipName = NewType("TranscriptToGeneRelationshipName", str)
+GeneToGeneProductRelationshipName = NewType("GeneToGeneProductRelationshipName", str)
+ExonToTranscriptRelationshipName = NewType("ExonToTranscriptRelationshipName", str)
+GeneRegulatoryRelationshipName = NewType("GeneRegulatoryRelationshipName", str)
+AnatomicalEntityToAnatomicalEntityAssociationName = NewType("AnatomicalEntityToAnatomicalEntityAssociationName", str)
+AnatomicalEntityToAnatomicalEntityPartOfAssociationName = NewType("AnatomicalEntityToAnatomicalEntityPartOfAssociationName", str)
+AnatomicalEntityToAnatomicalEntityOntogenicAssociationName = NewType("AnatomicalEntityToAnatomicalEntityOntogenicAssociationName", str)
+OccurrentName = NewType("OccurrentName", str)
+BiologicalProcessOrActivityName = NewType("BiologicalProcessOrActivityName", str)
+MolecularActivityName = NewType("MolecularActivityName", str)
+ActivityAndBehaviorName = NewType("ActivityAndBehaviorName", str)
+ProcedureName = NewType("ProcedureName", str)
+PhenomenonName = NewType("PhenomenonName", str)
+BiologicalProcessName = NewType("BiologicalProcessName", str)
+PathwayName = NewType("PathwayName", str)
+PhysiologicalProcessName = NewType("PhysiologicalProcessName", str)
+CellularComponentName = NewType("CellularComponentName", str)
+CellName = NewType("CellName", str)
+CellLineName = NewType("CellLineName", str)
+GrossAnatomicalStructureName = NewType("GrossAnatomicalStructureName", str)
+
+# Type references
+IdentifierType = NewType("IdentifierType", str)
+IriType = NewType("IriType", str)
+LabelType = NewType("LabelType", str)
+NarrativeText = NewType("NarrativeText", str)
+SymbolType = NewType("SymbolType", str)
+ChemicalFormulaType = NewType("ChemicalFormulaType", str)
+FrequencyValue = NewType("FrequencyValue", str)
+PerecentageFrequencyValue = NewType("PerecentageFrequencyValue", float)
+Quotient = NewType("Quotient", float)
+Unit = NewType("Unit", str)
+TimeType = NewType("TimeType", datetime.time)
+BiologicalSequence = NewType("BiologicalSequence", str)
 
 
-## CLASSES
-
-class RelationshipType(object):
+@dataclass
+class RelationshipType(Root):
     """
     An OWL property used as an edge label
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class Attribute(object):
+@dataclass
+class Attribute(Root):
     """
     A property or characteristic of an entity
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class BiologicalSex(Attribute):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class PhenotypicSex(BiologicalSex):
     """
     An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class GenotypicSex(BiologicalSex):
     """
-    An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
+    An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex
+    chromosomes.
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class SeverityValue(Attribute):
     """
     describes the severity of a phenotypic feature or disease
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class FrequencyValue(Attribute):
     """
     describes the frequency of occurrence of an event or condition
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class ClinicalModifier(Attribute):
     """
-    Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+    Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
+    with respect to severity, laterality, age of onset, and other aspects
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Onset(Attribute):
     """
     The age group in which manifestations appear
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class RelationshipQuantifier(object):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class SenstivityQuantifier(RelationshipQuantifier):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class SpecificityQuantifier(RelationshipQuantifier):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class PathognomonicityQuantifier(SpecificityQuantifier):
-    """
-    A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class FrequencyQuantifier(RelationshipQuantifier):
-    """
-    None
-    """
-    def __init__(self,
-                 has_count=None,
-                 has_total=None,
-                 has_quotient=None,
-                 has_percentage=None):
-        self.has_count=has_count
-        self.has_total=has_total
-        self.has_quotient=has_quotient
-        self.has_percentage=has_percentage
-
-    def __str__(self):
-        return "has_count={} has_total={} has_quotient={} has_percentage={} ".format(self.has_count,self.has_total,self.has_quotient,self.has_percentage)
-    def __repr__(self):
-        return self.__str__()
-
-
-class NamedThing(object):
+@dataclass
+class NamedThing(Root):
     """
     a databased entity or concept/class
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    named_thing_id: str
+    name: Optional[LabelType] = None
+    category: Optional[LabelType] = None
+    related_to: Optional[NamedThingName] = None
+    node_property: Optional[str] = None
+    iri: Optional[IriType] = None
+    full_name: Optional[LabelType] = None
+    description: Optional[NarrativeText] = None
+    systematic_synonym: Optional[LabelType] = None
 
 
+@dataclass
 class BiologicalEntity(NamedThing):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    has_phenotype: Optional[str] = None
 
 
-class OntologyClass(object):
+@dataclass
+class OntologyClass(Root):
     """
     a concept or class in an ontology, vocabulary or thesaurus
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class GeneOntologyClass(OntologyClass):
-    """
-    an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class ThingWithTaxon(object):
-    """
-    A mixin that can be used on any entity with a taxon
-    """
-    def __init__(self,
-                 in_taxon=None):
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "in_taxon={} ".format(self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class OrganismTaxon(OntologyClass):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class OrganismalEntity(BiologicalEntity):
     """
-    A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
+    A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding
+    molecular entities
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class IndividualOrganism(OrganismalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    in_taxon: Optional[OrganismTaxonName] = None
 
 
+@dataclass
 class Case(IndividualOrganism):
     """
     An individual organism that has a patient role in some clinical context.
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class PopulationOfIndividualOrganisms(OrganismalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    in_taxon: Optional[OrganismTaxonName] = None
 
 
+@dataclass
 class Biosample(OrganismalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    in_taxon: Optional[OrganismTaxonName] = None
 
 
+@dataclass
 class DiseaseOrPhenotypicFeature(BiologicalEntity):
     """
-    Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+    Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these
+    as distinct, others such as MESH conflate.
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    correlated_with: Optional[MolecularEntityName] = None
+    has_biomarker: Optional[MolecularEntityName] = None
+    treated_by: Optional[str] = None
+    in_taxon: Optional[OrganismTaxonName] = None
 
 
+@dataclass
 class Disease(DiseaseOrPhenotypicFeature):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class PhenotypicFeature(DiseaseOrPhenotypicFeature):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Environment(BiologicalEntity):
     """
-    A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+    A feature of the environment of an organism that influences one or more phenotypic features of that organism,
+    potentially mediated by genes
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class InformationContentEntity(NamedThing):
     """
     a piece of information that typically describes some piece of biology or is used as support.
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class ConfidenceLevel(InformationContentEntity):
     """
     Level of confidence in a statement
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class EvidenceType(InformationContentEntity):
     """
     Class of evidence that supports an association
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Publication(InformationContentEntity):
     """
-    Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
+    Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure
+    legend, or section highlighted by NLP). The scope is intended to be general and include information published on
+    the web as well as journals.
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class AdministrativeEntity(object):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+@dataclass
+class AdministrativeEntity(Root):
+    pass
 
 
+@dataclass
 class Provider(AdministrativeEntity):
     """
     person, group, organization or project that provides a piece of information
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class MolecularEntity(BiologicalEntity):
     """
     A gene, gene product, small molecule or macromolecule (including protein complex)
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    molecularly_interacts_with: Optional[MolecularEntityName] = None
+    regulates_entity_to_entity: Optional[MolecularEntityName] = None
+    biomarker_for: Optional[DiseaseOrPhenotypicFeatureName] = None
+    in_taxon: Optional[OrganismTaxonName] = None
 
 
+@dataclass
 class ChemicalSubstance(MolecularEntity):
     """
-    May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+    May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with
+    multiple chemical entities as part
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Drug(ChemicalSubstance):
     """
     A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Metabolite(ChemicalSubstance):
     """
     Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class AnatomicalEntity(OrganismalEntity):
     """
     A subcellular location, cell type or gross anatomical part
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    expresses: Optional[GeneOrGeneProductName] = None
+    in_taxon: Optional[OrganismTaxonName] = None
 
 
+@dataclass
 class LifeStage(OrganismalEntity):
     """
     A stage of development or growth of an organism, including post-natal adult stages
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    in_taxon: Optional[OrganismTaxonName] = None
 
 
+@dataclass
 class PlanetaryEntity(NamedThing):
     """
     Any entity or process that exists at the level of the whole planet
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class EnvironmentalProcess(PlanetaryEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    regulates_process_to_process: Optional[OccurrentName] = None
+    has_participant: Optional[str] = None
+    has_input: Optional[str] = None
+    precedes: Optional[OccurrentName] = None
 
 
+@dataclass
 class EnvironmentalFeature(PlanetaryEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class ClinicalEntity(NamedThing):
     """
-    Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
+    Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed
+    under biological entities
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class ClinicalTrial(ClinicalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class ClinicalIntervention(ClinicalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Device(NamedThing):
     """
     A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class GenomicEntity(MolecularEntity):
     """
-    an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+    an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is
+    encoded in a genome (protein)
     """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    has_biological_sequence: Optional[BiologicalSequence] = None
 
 
+@dataclass
 class Genome(GenomicEntity):
     """
     A genome is the sum of genetic material within a cell or virion.
     """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Transcript(GenomicEntity):
     """
     An RNA synthesized on a DNA or RNA template by an RNA polymerase
     """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Exon(GenomicEntity):
     """
-    A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
+    A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA
+    splicing
     """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class CodingSequence(GenomicEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class MacromolecularMachine(GenomicEntity):
     """
-    A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
+    A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They
+    either carry out individual biological activities, or they encode molecules which do this.
     """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class GeneOrGeneProduct(MacromolecularMachine):
     """
     a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
     """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    in_pathway_with: Optional[GeneOrGeneProductName] = None
+    in_complex_with: Optional[GeneOrGeneProductName] = None
+    in_cell_population_with: Optional[GeneOrGeneProductName] = None
+    expressed_in: Optional[AnatomicalEntityName] = None
 
 
+@dataclass
 class Gene(GeneOrGeneProduct):
-    """
-    None
-    """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    genetically_interacts_with: Optional[GeneName] = None
+    has_gene_product: Optional[GeneProductName] = None
+    gene_associated_with_condition: Optional[DiseaseOrPhenotypicFeatureName] = None
 
 
+@dataclass
 class GeneProduct(GeneOrGeneProduct):
     """
     The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
     """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Protein(GeneProduct):
     """
-    A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
+    A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated
+    translation of mRNA
     """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class GeneProductIsoform(GeneProduct):
     """
-    This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
+    This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene
+    product is intended to represent a specific isoform rather than a canonical or reference or generic product. The
+    designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
     """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class ProteinIsoform(Protein):
     """
-    Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
+    Represents a protein that is a specific isoform of the canonical or reference protein. See
+    https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
     """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class RnaProduct(GeneProduct):
-    """
-    None
-    """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class RnaProductIsoform(RnaProduct):
     """
     Represents a protein that is a specific isoform of the canonical or reference RNA
     """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class NoncodingRnaProduct(RnaProduct):
-    """
-    None
-    """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Microrna(NoncodingRnaProduct):
-    """
-    None
-    """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class MacromolecularComplex(MacromolecularMachine):
-    """
-    None
-    """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class GeneGrouping(object):
-    """
-    any grouping of multiple genes or gene products
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class GeneFamily(MolecularEntity):
     """
     any grouping of multiple genes or gene products related by common descent
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Zygosity(Attribute):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Genotype(GenomicEntity):
     """
-    An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
+    An information content entity that describes a genome by specifying the total variation in genomic sequence and/or
+    gene expression, relative to some extablished background
     """
-    def __init__(self,
-                 has_zygosity=None,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_zygosity=has_zygosity
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_zygosity={} has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_zygosity,self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    has_zygosity: Optional[ZygosityName] = None
 
 
+@dataclass
 class Haplotype(GenomicEntity):
     """
     A set of zero or more Alleles on a single instance of a Sequence[VMC]
     """
-    def __init__(self,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class SequenceVariant(GenomicEntity):
     """
     An allele that varies in its sequence from what is considered the reference allele at that locus.
     """
-    def __init__(self,
-                 has_gene=None,
-                 has_biological_sequence=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.has_gene=has_gene
-        self.has_biological_sequence=has_biological_sequence
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_gene={} has_biological_sequence={} id={} name={} category={} in_taxon={} ".format(self.has_gene,self.has_biological_sequence,self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    sequence_variant_has_gene: List[str] = empty_list()
+    sequence_variant_has_biological_sequence: Optional[str] = None
+    sequence_variant_id: Optional[str] = None
 
 
+@dataclass
 class DrugExposure(Environment):
     """
     A drug exposure is an intake of a particular chemical substance
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
+    drug_exposure_drug: List[ChemicalSubstanceName] = empty_list()
 
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.drug_exposure_drug is None:
+            raise ValueError(f"drug_exposure_drug must be supplied")
 
 
+@dataclass
 class Treatment(Environment):
     """
     A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
     """
-    def __init__(self,
-                 treats=None,
-                 has_exposure_parts=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.treats=treats
-        self.has_exposure_parts=has_exposure_parts
-        self.id=id
-        self.name=name
-        self.category=category
+    treatment_treats: DiseaseOrPhenotypicFeatureName = None
+    treatment_has_exposure_parts: List[DrugExposureName] = empty_list()
 
-    def __str__(self):
-        return "treats={} has_exposure_parts={} id={} name={} category={} ".format(self.treats,self.has_exposure_parts,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.treatment_treats is None:
+            raise ValueError(f"treatment_treats must be supplied")
+        if self.treatment_has_exposure_parts is None:
+            raise ValueError(f"treatment_has_exposure_parts must be supplied")
 
 
+@dataclass
 class GeographicLocation(PlanetaryEntity):
     """
     a location that can be described in lat/long coordinates
     """
-    def __init__(self,
-                 latitude=None,
-                 longitude=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.latitude=latitude
-        self.longitude=longitude
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "latitude={} longitude={} id={} name={} category={} ".format(self.latitude,self.longitude,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
 
 
+@dataclass
 class GeographicLocationAtTime(PlanetaryEntity):
     """
     a location that can be described in lat/long coordinates, for a particular time
     """
-    def __init__(self,
-                 latitude=None,
-                 longitude=None,
-                 timepoint=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.latitude=latitude
-        self.longitude=longitude
-        self.timepoint=timepoint
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "latitude={} longitude={} timepoint={} id={} name={} category={} ".format(self.latitude,self.longitude,self.timepoint,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
+    timepoint: Optional[TimeType] = None
 
 
+@dataclass
 class Association(InformationContentEntity):
     """
     A typed association between two entities, supported by evidence
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
+    association_type: Optional[OntologyClassName] = None
+    subject: str = None
+    negated: bool = False
+    relation: RelationshipTypeName = None
+    object: str = None
+    qualifiers: List[OntologyClassName] = empty_list()
+    publications: List[PublicationName] = empty_list()
+    provided_by: Optional[ProviderName] = None
+    association_slot: Optional[str] = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
+@dataclass
 class GenotypeToGenotypePartAssociation(Association):
     """
     Any association between one genotype and a genotypic entity that is a sub-component of it
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    genotype_to_genotype_part_association_relation: Optional[str] = None
+    genotype_to_genotype_part_association_subject: Optional[GenotypeName] = None
+    genotype_to_genotype_part_association_object: Optional[GenotypeName] = None
 
 
+@dataclass
 class GenotypeToGeneAssociation(Association):
     """
-    Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
+    Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single
+    one. There is no assumption of cardinality
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    genotype_to_gene_association_relation: Optional[str] = None
+    genotype_to_gene_association_subject: Optional[GenotypeName] = None
+    genotype_to_gene_association_object: Optional[GeneName] = None
 
 
+@dataclass
 class GenotypeToVariantAssociation(Association):
     """
     Any association between a genotype and a sequence variant.
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    genotype_to_variant_association_relation: Optional[str] = None
+    genotype_to_variant_association_subject: Optional[GenotypeName] = None
+    genotype_to_variant_association_object: Optional[SequenceVariantName] = None
 
 
+@dataclass
 class GeneToGeneAssociation(Association):
     """
-    abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
+    abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes
+    homology and interaction.
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    gene_to_gene_association_subject: Optional[GeneOrGeneProductName] = None
+    gene_to_gene_association_object: Optional[GeneOrGeneProductName] = None
 
 
+@dataclass
 class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     """
-    A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
+    A homology association between two genes. May be orthology (in which case the species of subject and object should
+    differ) or paralogy (in which case the species may be the same)
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    gene_to_gene_homology_association_relation: Optional[str] = None
 
 
-class MolecularInteraction(Association):
-    """
-    An interaction at the molecular level between two physical entities
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class PairwiseGeneOrProteinInteractionAssociation(GeneToGeneAssociation):
     """
-    An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+    An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between
+    genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pairwise_gene_or_protein_interaction_association_relation: Optional[str] = None
 
 
+@dataclass
 class CellLineToThingAssociation(Association):
     """
     An relationship between a cell line and another entity
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    cell_line_to_thing_association_subject: Optional[CellLineName] = None
 
 
+@dataclass
 class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
-    An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
+    An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an
+    individual with that disease or phenotype
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    cell_line_to_disease_or_phenotypic_feature_association_subject: Optional[DiseaseOrPhenotypicFeatureName] = None
 
 
+@dataclass
 class ChemicalToThingAssociation(Association):
     """
     An interaction between a chemical entity and another entity
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    chemical_to_thing_association_subject: Optional[ChemicalSubstanceName] = None
 
 
+@dataclass
 class CaseToThingAssociation(Association):
     """
     An abstract association for use where the case is the subject
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    case_to_thing_association_subject: Optional[CaseName] = None
 
 
+@dataclass
 class ChemicalToGeneAssociation(Association):
     """
-    An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug.
+    An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a
+    drug with the gene being a target of the drug.
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    chemical_to_gene_association_object: Optional[GeneProductName] = None
 
 
+@dataclass
 class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
-    An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
+    An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise
+    to or exacerbates the phenotype
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    chemical_to_disease_or_phenotypic_feature_association_object: Optional[DiseaseOrPhenotypicFeatureName] = None
 
 
+@dataclass
 class ChemicalToPathwayAssociation(Association):
     """
     An interaction between a chemical entity and a biological process or pathway
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    chemical_to_pathway_association_object: Optional[PathwayName] = None
 
 
-class ChemicalToGeneAssociation(Association):
-    """
-    An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug.
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class BiosampleToThingAssociation(Association):
     """
     An association between a biosample and something
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    biosample_to_thing_association_subject: Optional[BiosampleName] = None
 
 
+@dataclass
 class BiosampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     An association between a biosample and a disease or phenotype
-  definitional: true
-  
+    definitional: true
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class EntityToPhenotypicFeatureAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    frequency_qualifier: Optional[FrequencyValue] = None
+    severity_qualifier: Optional[SeverityValueName] = None
+    onset_qualifier: Optional[OnsetName] = None
+    sex_qualifier: Optional[BiologicalSexName] = None
+    entity_to_phenotypic_feature_association_description: Optional[str] = None
+    entity_to_phenotypic_feature_association_object: Optional[PhenotypicFeatureName] = None
 
 
-class EntityToDiseaseAssociation(object):
-    """
-    mixin class for any association whose object (target node) is a disease
-    """
-    def __init__(self,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None):
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-
-    def __str__(self):
-        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class DiseaseOrPhenotypicFeatureAssociationToThingAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    disease_or_phenotypic_feature_association_to_thing_association_subject: Optional[DiseaseOrPhenotypicFeatureName] = None
 
 
+@dataclass
 class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(DiseaseOrPhenotypicFeatureAssociationToThingAssociation):
     """
-    An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
+    An association between either a disease or a phenotypic feature and an anatomical entity, where the
+    disease/feature manifests in that site.
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    disease_or_phenotypic_feature_association_to_location_association_object: Optional[AnatomicalEntityName] = None
 
 
+@dataclass
 class ThingToDiseaseOrPhenotypicFeatureAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    thing_to_disease_or_phenotypic_feature_association_object: Optional[DiseaseOrPhenotypicFeatureName] = None
 
 
+@dataclass
 class DiseaseToThingAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    disease_to_thing_association_subject: Optional[DiseaseName] = None
 
 
+@dataclass
 class GenotypeToPhenotypicFeatureAssociation(Association):
     """
-    Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
+    Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype,
+    either in isolation or through environment
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    frequency_qualifier: Optional[FrequencyValue] = None
+    severity_qualifier: Optional[SeverityValueName] = None
+    onset_qualifier: Optional[OnsetName] = None
+    sex_qualifier: Optional[BiologicalSexName] = None
+    genotype_to_phenotypic_feature_association_relation: Optional[str] = None
+    genotype_to_phenotypic_feature_association_subject: Optional[GenotypeName] = None
 
 
+@dataclass
 class EnvironmentToPhenotypicFeatureAssociation(Association):
     """
-    Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+    Any association between an environment and a phenotypic feature, where being in the environment influences the
+    phenotype
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    frequency_qualifier: Optional[FrequencyValue] = None
+    severity_qualifier: Optional[SeverityValueName] = None
+    onset_qualifier: Optional[OnsetName] = None
+    sex_qualifier: Optional[BiologicalSexName] = None
+    environment_to_phenotypic_feature_association_subject: Optional[EnvironmentName] = None
 
 
+@dataclass
 class DiseaseToPhenotypicFeatureAssociation(Association):
     """
-    An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
+    An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the
+    disease in some way
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    frequency_qualifier: Optional[FrequencyValue] = None
+    severity_qualifier: Optional[SeverityValueName] = None
+    onset_qualifier: Optional[OnsetName] = None
+    sex_qualifier: Optional[BiologicalSexName] = None
 
 
+@dataclass
 class CaseToPhenotypicFeatureAssociation(Association):
     """
-    An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
+    An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or
+    has had the phenotype
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    frequency_qualifier: Optional[FrequencyValue] = None
+    severity_qualifier: Optional[SeverityValueName] = None
+    onset_qualifier: Optional[OnsetName] = None
+    sex_qualifier: Optional[BiologicalSexName] = None
 
 
+@dataclass
 class GeneToThingAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    gene_to_thing_association_subject: Optional[GeneOrGeneProductName] = None
 
 
-class VariantToThingAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class GeneToPhenotypicFeatureAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    frequency_qualifier: Optional[FrequencyValue] = None
+    severity_qualifier: Optional[SeverityValueName] = None
+    onset_qualifier: Optional[OnsetName] = None
+    sex_qualifier: Optional[BiologicalSexName] = None
+    gene_to_phenotypic_feature_association_subject: Optional[GeneOrGeneProductName] = None
 
 
+@dataclass
 class GeneToDiseaseAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    frequency_qualifier: Optional[FrequencyValue] = None
+    severity_qualifier: Optional[SeverityValueName] = None
+    onset_qualifier: Optional[OnsetName] = None
+    gene_to_disease_association_subject: Optional[GeneOrGeneProductName] = None
 
 
+@dataclass
 class VariantToPopulationAssociation(Association):
     """
     An association between a variant and a population, where the variant has particular frequency in the population
     """
-    def __init__(self,
-                 frequency_qualifier=None,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 has_count=None,
-                 has_total=None,
-                 has_quotient=None,
-                 has_percentage=None):
-        self.frequency_qualifier=frequency_qualifier
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-        self.has_count=has_count
-        self.has_total=has_total
-        self.has_quotient=has_quotient
-        self.has_percentage=has_percentage
-
-    def __str__(self):
-        return "frequency_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} has_count={} has_total={} has_quotient={} has_percentage={} ".format(self.frequency_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category,self.has_count,self.has_total,self.has_quotient,self.has_percentage)
-    def __repr__(self):
-        return self.__str__()
+    frequency_qualifier: Optional[FrequencyValue] = None
+    variant_to_population_association_has_count: Optional[str] = None
+    variant_to_population_association_has_total: Optional[str] = None
+    variant_to_population_association_has_quotient: Optional[str] = None
+    has_percentage: Optional[float] = None
+    variant_to_population_association_subject: Optional[SequenceVariantName] = None
+    variant_to_population_association_object: Optional[PopulationOfIndividualOrganismsName] = None
 
 
+@dataclass
 class PopulationToPopulationAssociation(Association):
     """
     An association between a two populations
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    population_to_population_association_subject: Optional[PopulationOfIndividualOrganismsName] = None
+    population_to_population_association_object: Optional[PopulationOfIndividualOrganismsName] = None
+    population_to_population_association_relation: Optional[str] = None
 
 
+@dataclass
 class VariantToPhenotypicFeatureAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    frequency_qualifier: Optional[FrequencyValue] = None
+    severity_qualifier: Optional[SeverityValueName] = None
+    onset_qualifier: Optional[OnsetName] = None
+    sex_qualifier: Optional[BiologicalSexName] = None
+    variant_to_phenotypic_feature_association_subject: Optional[SequenceVariantName] = None
 
 
+@dataclass
 class VariantToDiseaseAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    frequency_qualifier: Optional[FrequencyValue] = None
+    severity_qualifier: Optional[SeverityValueName] = None
+    onset_qualifier: Optional[OnsetName] = None
+    variant_to_disease_association_subject: Optional[str] = None
+    variant_to_disease_association_relation: Optional[str] = None
+    variant_to_disease_association_object: Optional[str] = None
 
 
-class ModelToDiseaseMixin(object):
-    """
-    This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    frequency_qualifier: Optional[FrequencyValue] = None
+    severity_qualifier: Optional[SeverityValueName] = None
+    onset_qualifier: Optional[OnsetName] = None
+    gene_as_a_model_of_disease_association_subject: Optional[GeneOrGeneProductName] = None
 
 
+@dataclass
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
-    """
-    None
-    """
-    def __init__(self,
-                 sequence_variant_qualifier=None,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None):
-        self.sequence_variant_qualifier=sequence_variant_qualifier
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-
-    def __str__(self):
-        return "sequence_variant_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.sequence_variant_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    sequence_variant_qualifier: Optional[SequenceVariantName] = None
+    gene_has_variant_that_contributes_to_disease_association_subject: Optional[GeneOrGeneProductName] = None
 
 
+@dataclass
 class GenotypeToThingAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    genotype_to_thing_association_subject: Optional[GenotypeName] = None
 
 
+@dataclass
 class GeneToExpressionSiteAssociation(Association):
     """
     An association between a gene and an expression site, possibly qualified by stage/timing info.
     """
-    def __init__(self,
-                 stage_qualifier=None,
-                 quantifier_qualifier=None,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.stage_qualifier=stage_qualifier
-        self.quantifier_qualifier=quantifier_qualifier
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "stage_qualifier={} quantifier_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.stage_qualifier,self.quantifier_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    gene_to_expression_site_association_stage_qualifier: Optional[LifeStageName] = None
+    gene_to_expression_site_association_quantifier_qualifier: Optional[str] = None
+    gene_to_expression_site_association_subject: Optional[GeneOrGeneProductName] = None
+    gene_to_expression_site_association_object: Optional[AnatomicalEntityName] = None
+    gene_to_expression_site_association_relation: Optional[str] = None
 
 
+@dataclass
 class SequenceVariantModulatesTreatmentAssociation(Association):
     """
-    An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.
+    An association between a sequence variant and a treatment or health intervention. The treatment object itself
+    encompasses both the disease and the drug used.
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    sequence_variant_modulates_treatment_association_subject: Optional[SequenceVariantName] = None
+    sequence_variant_modulates_treatment_association_object: Optional[TreatmentName] = None
 
 
+@dataclass
 class FunctionalAssociation(Association):
     """
-    An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
+    An association between a macromolecular machine (gene, gene product or complex of gene products) and either a
+    molecular activity, a biological process or a cellular location in which a function is executed
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    functional_association_subject: Optional[MacromolecularMachineName] = None
+    functional_association_object: Optional[GeneOntologyClassName] = None
 
 
+@dataclass
 class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation):
     """
-    A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
+    A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity
+    (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to
+    its execution
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    macromolecular_machine_to_molecular_activity_association_object: Optional[MolecularActivityName] = None
 
 
+@dataclass
 class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation):
     """
-    A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
+    A functional association between a macromolecular machine (gene, gene product or complex) and a biological process
+    or pathway (as represented in the GO biological process branch), where the entity carries out some part of the
+    process, regulates it, or acts upstream of it
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    macromolecular_machine_to_biological_process_association_object: Optional[BiologicalProcessName] = None
 
 
+@dataclass
 class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation):
     """
-    A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
+    A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component
+    (as represented in the GO cellular component branch), where the entity carries out its function in the cellular
+    component
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    macromolecular_machine_to_cellular_component_association_object: Optional[CellularComponentName] = None
 
 
+@dataclass
 class GeneToGoTermAssociation(FunctionalAssociation):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    gene_to_go_term_association_subject: Optional[MolecularEntityName] = None
+    gene_to_go_term_association_object: Optional[GeneOntologyClassName] = None
 
 
+@dataclass
 class GenomicSequenceLocalization(Association):
     """
-    A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
+    A relationship between a sequence feature and an entity it is localized to. The reference entity may be a
+    chromosome, chromosome region or information entity such as a contig
     """
-    def __init__(self,
-                 start_interbase_coordinate=None,
-                 end_interbase_coordinate=None,
-                 genome_build=None,
-                 phase=None,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.start_interbase_coordinate=start_interbase_coordinate
-        self.end_interbase_coordinate=end_interbase_coordinate
-        self.genome_build=genome_build
-        self.phase=phase
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "start_interbase_coordinate={} end_interbase_coordinate={} genome_build={} phase={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.start_interbase_coordinate,self.end_interbase_coordinate,self.genome_build,self.phase,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    start_interbase_coordinate: Optional[str] = None
+    end_interbase_coordinate: Optional[str] = None
+    genome_build: Optional[str] = None
+    phase: Optional[str] = None
+    genomic_sequence_localization_subject: Optional[GenomicEntityName] = None
+    genomic_sequence_localization_object: Optional[GenomicEntityName] = None
 
 
+@dataclass
 class SequenceFeatureRelationship(Association):
     """
     For example, a particular exon is part of a particular transcript or gene
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    sequence_feature_relationship_subject: Optional[GenomicEntityName] = None
+    sequence_feature_relationship_object: Optional[GenomicEntityName] = None
 
 
+@dataclass
 class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     """
     A gene is a collection of transcripts
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    transcript_to_gene_relationship_subject: Optional[TranscriptName] = None
+    transcript_to_gene_relationship_object: Optional[GeneName] = None
 
 
+@dataclass
 class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     """
     A gene is transcribed and potentially translated to a gene product
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    gene_to_gene_product_relationship_subject: Optional[GeneName] = None
+    gene_to_gene_product_relationship_object: Optional[GeneProductName] = None
+    gene_to_gene_product_relationship_relation: Optional[str] = None
 
 
+@dataclass
 class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     """
     A transcript is formed from multiple exons
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    exon_to_transcript_relationship_subject: Optional[ExonName] = None
+    exon_to_transcript_relationship_object: Optional[TranscriptName] = None
 
 
+@dataclass
 class GeneRegulatoryRelationship(Association):
     """
     A regulatory relationship between two genes
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    gene_regulatory_relationship_relation: Optional[str] = None
+    gene_regulatory_relationship_subject: Optional[GeneOrGeneProductName] = None
+    gene_regulatory_relationship_object: Optional[GeneOrGeneProductName] = None
 
 
+@dataclass
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    anatomical_entity_to_anatomical_entity_association_subject: Optional[AnatomicalEntityName] = None
+    anatomical_entity_to_anatomical_entity_association_object: Optional[AnatomicalEntityName] = None
 
 
+@dataclass
 class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
-    A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
+    A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are
+    related by parthood. This includes relationships between cellular components and cells, between cells and tissues,
+    tissues and whole organisms
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    anatomical_entity_to_anatomical_entity_part_of_association_subject: Optional[AnatomicalEntityName] = None
+    anatomical_entity_to_anatomical_entity_part_of_association_object: Optional[AnatomicalEntityName] = None
+    anatomical_entity_to_anatomical_entity_part_of_association_relation: Optional[str] = None
 
 
+@dataclass
 class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
-    A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
+    A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are
+    related by development. A number of different relationship types can be used to specify the precise nature of the
+    relationship
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} name={} category={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    anatomical_entity_to_anatomical_entity_ontogenic_association_subject: Optional[AnatomicalEntityName] = None
+    anatomical_entity_to_anatomical_entity_ontogenic_association_object: Optional[AnatomicalEntityName] = None
+    anatomical_entity_to_anatomical_entity_ontogenic_association_relation: Optional[str] = None
 
 
-class Occurrent(object):
+@dataclass
+class Occurrent(Root):
     """
     A processual entity
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    regulates_process_to_process: Optional[OccurrentName] = None
+    has_participant: Optional[str] = None
+    has_input: Optional[str] = None
+    precedes: Optional[OccurrentName] = None
 
 
+@dataclass
 class BiologicalProcessOrActivity(BiologicalEntity):
     """
     Either an individual molecular activity, or a collection of causally connected molecular activities
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class MolecularActivity(BiologicalProcessOrActivity):
     """
     An execution of a molecular function carried out by a gene product or macromolecular complex.
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    regulates_process_to_process: Optional[OccurrentName] = None
+    has_participant: Optional[str] = None
+    has_input: Optional[str] = None
+    precedes: Optional[OccurrentName] = None
 
 
+@dataclass
 class ActivityAndBehavior(Occurrent):
     """
     Activity or behavior of any independent integral living, organization or mechanical actor in the world
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Procedure(Occurrent):
     """
     A series of actions conducted in a certain order or manner
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Phenomenon(Occurrent):
     """
     a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class BiologicalProcess(BiologicalProcessOrActivity):
     """
     One or more causally connected executions of molecular functions
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    regulates_process_to_process: Optional[OccurrentName] = None
+    has_participant: Optional[str] = None
+    has_input: Optional[str] = None
+    precedes: Optional[OccurrentName] = None
 
 
+@dataclass
 class Pathway(BiologicalProcess):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class PhysiologicalProcess(BiologicalProcess):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None):
-        self.id=id
-        self.name=name
-        self.category=category
-
-    def __str__(self):
-        return "id={} name={} category={} ".format(self.id,self.name,self.category)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class CellularComponent(AnatomicalEntity):
     """
     A location in or around a cell
     """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Cell(AnatomicalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class CellLine(Biosample):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class GrossAnatomicalStructure(AnatomicalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 name=None,
-                 category=None,
-                 in_taxon=None):
-        self.id=id
-        self.name=name
-        self.category=category
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} name={} category={} in_taxon={} ".format(self.id,self.name,self.category,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
+    pass

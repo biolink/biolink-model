@@ -1,12 +1,15 @@
+import os
+
 import pytest
 import yaml
 import logging
 from metamodel.metaschema import SchemaDefinitionSchema
 from metamodel.metamodel import *
 
+
 def test_foo():
-    print("HI")
-    path = 'biolink-model.yaml'
+    cwd = os.path.abspath(os.path.dirname(__file__))
+    path = os.path.join(cwd, '..', 'biolink-model.yaml')
     f = open(path,'r')
     obj = yaml.load(f)
     schemadef = SchemaDefinitionSchema()

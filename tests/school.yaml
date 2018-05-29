@@ -1,20 +1,21 @@
 id: school_test
+name: school
 prefixes:
   "" : http://school.example/#
   ex : http://ex.example/#
 
 types:
   - name: age int type
-    typeof: int
   - name: IRI
     typeof: IRI
   
 slots:
   - name: age
-    range: int
+    range: integer
   - name: has guardian
+    range: person
     mappings:
-      ex:hasGuardian
+      - hasGuardian
       
 classes:
   - name: person

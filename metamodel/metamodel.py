@@ -1,280 +1,148 @@
+# Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by pythongen.py version: 0.0.1
+# Generation date: 2018-05-29 17:20
+# Schema: metamodel
+#
+# id: http://bioentity.io/json-schema/meta.json
+# description: Metamodel for biolink schema
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+
+import datetime
+from typing import Optional, List, Union, Dict, NewType
+from dataclasses import dataclass
+from metamodel.metamodelcore import Root, empty_list, empty_dict
+
+# Class references
+ExampleName = NewType("ExampleName", str)
+ElementName = NewType("ElementName", str)
+DefinitionName = NewType("DefinitionName", str)
+SlotDefinitionName = NewType("SlotDefinitionName", str)
+ClassDefinitionName = NewType("ClassDefinitionName", str)
+TypeDefinitionName = NewType("TypeDefinitionName", str)
+SchemaDefinitionName = NewType("SchemaDefinitionName", str)
+SchemaDefinitionId = NewType("SchemaDefinitionId", str)
+
+# Type references
 
 
-## CLASSES
-
-class Definition(object):
+@dataclass
+class Example(Root):
     """
-    base class
+    example of usage
     """
-    def __init__(self,
-                 name=None,
-                 singular_name=None,
-                 is_a=None,
-                 description=None,
-                 note=None,
-                 abstract=None,
-                 mappings=None,
-                 id_prefixes=None,
-                 in_subset=None,
-                 apply_to=None):
-        self.name=name
-        self.singular_name=singular_name
-        self.is_a=is_a
-        self.description=description
-        self.note=note
-        self.abstract=abstract
-        self.mappings=mappings
-        self.id_prefixes=id_prefixes
-        self.in_subset=in_subset
-        self.apply_to=apply_to
-
-    def __str__(self):
-        return "name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} in_subset={} apply_to={} ".format(self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.in_subset,self.apply_to)
-    def __repr__(self):
-        return self.__str__()
+    value: Optional[str] = None
+    description: Optional[str] = None
 
 
+@dataclass
+class Element(Root):
+    """
+    root of all described things
+    """
+    name: ElementName
+    singular_name: Optional[str] = None
+    description: Optional[str] = None
+    note: Optional[str] = None
+    comment: Optional[str] = None
+    examples: List[Union[dict, Example]] = empty_list()
+    prefixes: List[str] = empty_list()
+    aliases: List[str] = empty_list()
+    mappings: List[str] = empty_list()
+    id_prefixes: List[str] = empty_list()
+    in_subset: List[str] = empty_list()
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        self.examples = [v if isinstance(v, Example) else Example(**({} if v is None else v)) for v in self.examples]
+
+
+@dataclass
+class Definition(Element):
+    """
+    definition base class
+    """
+    name: DefinitionName = None
+    is_a: Optional[DefinitionName] = None
+    mixin: bool = False
+    mixins: List[DefinitionName] = empty_list()
+    abstract: bool = False
+    local_names: List[str] = empty_list()
+    union_of: List[DefinitionName] = empty_list()
+    subclass_of: Optional[DefinitionName] = None
+    values_from: List[str] = empty_list()
+
+
+@dataclass
 class SlotDefinition(Definition):
     """
     A property or slot
     """
-    def __init__(self,
-                 mixin=None,
-                 mixins=None,
-                 identifier=None,
-                 domain=None,
-                 range=None,
-                 multivalued=None,
-                 required=None,
-                 path=None,
-                 subproperty_of=None,
-                 examples=None,
-                 name=None,
-                 singular_name=None,
-                 is_a=None,
-                 description=None,
-                 note=None,
-                 abstract=None,
-                 mappings=None,
-                 id_prefixes=None,
-                 in_subset=None,
-                 apply_to=None):
-        self.mixin=mixin
-        self.mixins=mixins
-        self.identifier=identifier
-        self.domain=domain
-        self.range=range
-        self.multivalued=multivalued
-        self.required=required
-        self.path=path
-        self.subproperty_of=subproperty_of
-        self.examples=examples
-        self.name=name
-        self.singular_name=singular_name
-        self.is_a=is_a
-        self.description=description
-        self.note=note
-        self.abstract=abstract
-        self.mappings=mappings
-        self.id_prefixes=id_prefixes
-        self.in_subset=in_subset
-        self.apply_to=apply_to
-
-    def __str__(self):
-        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} required={} path={} subproperty_of={} examples={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} in_subset={} apply_to={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.required,self.path,self.subproperty_of,self.examples,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.in_subset,self.apply_to)
-    def __repr__(self):
-        return self.__str__()
+    name: SlotDefinitionName = None
+    multivalued: bool = False
+    domain: Optional[ClassDefinitionName] = None
+    range: Optional[ElementName] = None
+    required: bool = False
+    inlined: bool = False
+    primary_key: bool = False
+    identifier: bool = False
+    definitional: bool = False
+    alias: Optional[str] = None
+    path: Optional[str] = None
+    subproperty_of: Optional[str] = None
+    symmetric: bool = False
+    inverse: Optional[SlotDefinitionName] = None
+    is_class_field: bool = False
 
 
-class SlotUsageDefinition(SlotDefinition):
-    """
-    A usage of slot in the context of a class
-    """
-    def __init__(self,
-                 mixin=None,
-                 mixins=None,
-                 identifier=None,
-                 domain=None,
-                 range=None,
-                 multivalued=None,
-                 required=None,
-                 path=None,
-                 subproperty_of=None,
-                 examples=None,
-                 name=None,
-                 singular_name=None,
-                 is_a=None,
-                 description=None,
-                 note=None,
-                 abstract=None,
-                 mappings=None,
-                 id_prefixes=None,
-                 in_subset=None,
-                 apply_to=None):
-        self.mixin=mixin
-        self.mixins=mixins
-        self.identifier=identifier
-        self.domain=domain
-        self.range=range
-        self.multivalued=multivalued
-        self.required=required
-        self.path=path
-        self.subproperty_of=subproperty_of
-        self.examples=examples
-        self.name=name
-        self.singular_name=singular_name
-        self.is_a=is_a
-        self.description=description
-        self.note=note
-        self.abstract=abstract
-        self.mappings=mappings
-        self.id_prefixes=id_prefixes
-        self.in_subset=in_subset
-        self.apply_to=apply_to
-
-    def __str__(self):
-        return "mixin={} mixins={} identifier={} domain={} range={} multivalued={} required={} path={} subproperty_of={} examples={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} in_subset={} apply_to={} ".format(self.mixin,self.mixins,self.identifier,self.domain,self.range,self.multivalued,self.required,self.path,self.subproperty_of,self.examples,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.in_subset,self.apply_to)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class ClassDefinition(Definition):
     """
     A class or interface
     """
-    def __init__(self,
-                 defining_slots=None,
-                 subclass_of=None,
-                 mixin=None,
-                 mixins=None,
-                 slots=None,
-                 slot_usage=None,
-                 name=None,
-                 singular_name=None,
-                 is_a=None,
-                 description=None,
-                 note=None,
-                 abstract=None,
-                 mappings=None,
-                 id_prefixes=None,
-                 in_subset=None,
-                 apply_to=None):
-        self.defining_slots=defining_slots
-        self.subclass_of=subclass_of
-        self.mixin=mixin
-        self.mixins=mixins
-        self.slots=slots
-        self.slot_usage=slot_usage
-        self.name=name
-        self.singular_name=singular_name
-        self.is_a=is_a
-        self.description=description
-        self.note=note
-        self.abstract=abstract
-        self.mappings=mappings
-        self.id_prefixes=id_prefixes
-        self.in_subset=in_subset
-        self.apply_to=apply_to
+    name: ClassDefinitionName = None
+    defining_slots: List[SlotDefinitionName] = empty_list()
+    slots: List[SlotDefinitionName] = empty_list()
+    slot_usage: Dict[SlotDefinitionName, Union[dict, SlotDefinition]] = empty_dict()
+    apply_to: Optional[ClassDefinitionName] = None
 
-    def __str__(self):
-        return "defining_slots={} subclass_of={} mixin={} mixins={} slots={} slot_usage={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} in_subset={} apply_to={} ".format(self.defining_slots,self.subclass_of,self.mixin,self.mixins,self.slots,self.slot_usage,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.in_subset,self.apply_to)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        for k, v in self.slot_usage.items():
+                if not isinstance(v, SlotDefinition):
+                    self.slot_usage[k] = SlotDefinition(name=k, **({} if v is None else v))
 
 
-class TypeDefinition(Definition):
+@dataclass
+class TypeDefinition(Element):
     """
     A type definition
     """
-    def __init__(self,
-                 mixins=None,
-                 typeof=None,
-                 name=None,
-                 singular_name=None,
-                 is_a=None,
-                 description=None,
-                 note=None,
-                 abstract=None,
-                 mappings=None,
-                 id_prefixes=None,
-                 in_subset=None,
-                 apply_to=None):
-        self.mixins=mixins
-        self.typeof=typeof
-        self.name=name
-        self.singular_name=singular_name
-        self.is_a=is_a
-        self.description=description
-        self.note=note
-        self.abstract=abstract
-        self.mappings=mappings
-        self.id_prefixes=id_prefixes
-        self.in_subset=in_subset
-        self.apply_to=apply_to
-
-    def __str__(self):
-        return "mixins={} typeof={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} in_subset={} apply_to={} ".format(self.mixins,self.typeof,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.in_subset,self.apply_to)
-    def __repr__(self):
-        return self.__str__()
+    name: TypeDefinitionName = None
+    typeof: Optional[str] = None
 
 
+@dataclass
 class SchemaDefinition(Definition):
     """
     A collection of definitions
     """
-    def __init__(self,
-                 id=None,
-                 slots=None,
-                 classes=None,
-                 types=None,
-                 imports=None,
-                 license=None,
-                 name=None,
-                 singular_name=None,
-                 is_a=None,
-                 description=None,
-                 note=None,
-                 abstract=None,
-                 mappings=None,
-                 id_prefixes=None,
-                 in_subset=None,
-                 apply_to=None):
-        self.id=id
-        self.slots=slots
-        self.classes=classes
-        self.types=types
-        self.imports=imports
-        self.license=license
-        self.name=name
-        self.singular_name=singular_name
-        self.is_a=is_a
-        self.description=description
-        self.note=note
-        self.abstract=abstract
-        self.mappings=mappings
-        self.id_prefixes=id_prefixes
-        self.in_subset=in_subset
-        self.apply_to=apply_to
+    name: SchemaDefinitionName = None
+    id: SchemaDefinitionId = None
+    imports: List[str] = empty_list()
+    license: Optional[str] = None
+    types: Dict[TypeDefinitionName, Union[dict, TypeDefinition]] = empty_dict()
+    slots: Dict[SlotDefinitionName, Union[dict, SlotDefinition]] = empty_dict()
+    classes: Dict[ClassDefinitionName, Union[dict, ClassDefinition]] = empty_dict()
 
-    def __str__(self):
-        return "id={} slots={} classes={} types={} imports={} license={} name={} singular_name={} is_a={} description={} note={} abstract={} mappings={} id_prefixes={} in_subset={} apply_to={} ".format(self.id,self.slots,self.classes,self.types,self.imports,self.license,self.name,self.singular_name,self.is_a,self.description,self.note,self.abstract,self.mappings,self.id_prefixes,self.in_subset,self.apply_to)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Example(object):
-    """
-    example of usage
-    """
-    def __init__(self,
-                 value=None,
-                 description=None):
-        self.value=value
-        self.description=description
-
-    def __str__(self):
-        return "value={} description={} ".format(self.value,self.description)
-    def __repr__(self):
-        return self.__str__()
-
-
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        for k, v in self.types.items():
+                if not isinstance(v, TypeDefinition):
+                    self.types[k] = TypeDefinition(name=k, **({} if v is None else v))
+        for k, v in self.slots.items():
+                if not isinstance(v, SlotDefinition):
+                    self.slots[k] = SlotDefinition(name=k, **({} if v is None else v))
+        for k, v in self.classes.items():
+                if not isinstance(v, ClassDefinition):
+                    self.classes[k] = ClassDefinition(name=k, **({} if v is None else v))

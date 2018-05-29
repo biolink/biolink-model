@@ -10,7 +10,7 @@ See the golr-views directory in this repo for examples
 from .schemautils import *
 import yaml
 import logging
-from .manager import *
+from .schemamanager import *
 from .generator import Generator
 
 class GolrSchemaGenerator(Generator):

@@ -4,7 +4,7 @@ import click
 
 import logging
 from metamodel.golrgen import *
-from metamodel.loader import load_schema
+from metamodel.schemaloader import load_schema
 
 @click.command()
 @click.option("--dir", "-d", nargs=1, default='golr-views')

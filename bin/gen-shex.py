@@ -3,7 +3,7 @@
 import click
 
 import logging
-from metamodel.loader import load_schema
+from metamodel.schemaloader import load_schema
 from metamodel.shexgen import ShexGenerator
 
 @click.command()

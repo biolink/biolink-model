@@ -4,7 +4,7 @@
 
 import logging
 
-from .manager import *
+from .schemamanager import *
 from .generator import Generator
 from .yumlgen import YumlGenerator
 

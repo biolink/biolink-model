@@ -1,36 +1,31 @@
 """Generate CSVs
 
 """
+from typing import List
+
+from metamodel.metamodel import SchemaDefinition, ClassDefinition
 
 
-import yaml
-import logging
-
-import pandas as pd
-
-from .manager import *
-from .generator import Generator
-
-class CsvGenerator(Generator):
+class CsvGenerator:
+    def __init__(self, schema: SchemaDefinition) -> None:
+        self.dirname = None
+        self.sep = None
+        self.schema = schema
         
-    def serialize(self, dirname=None, format='csv', **args):
+    def serialize(self, dirname: str=None, format: str='csv', roots=None):
         self.dirname = dirname
-        df = self.tr(**args)
-        sep = ","
-        if format == 'tsv':
-            sep="\t"
+        assert format in ('csv', 'tsv'), "Unrecognized format"
+        self.sep = ',' if format == 'csv' else '\t' if format == 'tsv'
+        df = self.tr(roots)
         print(df.to_csv(sep=sep, index=False))
     
     def tr(self, roots=None):
-        schema = self.schema
-        mgr = self.manager
-
         #roots = [mgr.classdef(x) for x in roots]
         items = []
         #print('## ROOTS: {}'.format(roots))
         
         # create list of class names
-        for c in schema.classes:
+        for cname, c in self.schema.classes.items():
             if c.abstract:
                 continue
             in_subset = False
@@ -57,3 +52,5 @@ class CsvGenerator(Generator):
                 'mappings': "|".join(mappings),
                 'description': c.description}
         return item
+
+    def ancestors(self, c: ClassDefinition) -> List[ClassDefinition]:

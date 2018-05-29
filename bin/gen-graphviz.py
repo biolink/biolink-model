@@ -4,7 +4,7 @@ import click
 
 import logging
 from metamodel.dotgen import *
-from metamodel.loader import load_schema
+from metamodel.schemaloader import load_schema
 
 logging.basicConfig(level=logging.INFO)
 

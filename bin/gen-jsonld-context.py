@@ -4,14 +4,16 @@ import click
 
 import logging
 from metamodel.contextgen import ContextGenerator
-from metamodel.loader import load_schema
+from metamodel.metamodel import SchemaDefinition
+from metamodel.schemaloader import load_schema
 
 logging.basicConfig(level=logging.INFO)
+
 
 @click.command()
 @click.argument("file", type=click.File('r'))
 @click.option("--format", "-f", default='json')
-def cli(file, format):
+def cli(file, _):
     schema = load_schema(file)
     g = ContextGenerator(schema=schema)
     print(g.serialize())
@@ -19,4 +21,3 @@ def cli(file, format):
 
 if __name__ == "__main__":
     cli()
-    
