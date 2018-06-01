@@ -16,7 +16,7 @@ def lcamelcase(txt: str) -> str:
 
 
 def be(entry: object) -> str:
-    return str(entry) if entry else ''
+    return str(entry).strip() if entry else ''
 
 
 split_col = 115

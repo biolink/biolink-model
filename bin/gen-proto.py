@@ -2,9 +2,8 @@
 
 import click
 
-import logging
-from metamodel.schemaloader import load_schema
-from metamodel.protogen import ProtoGenerator
+from metamodel.utils.schemaloader import load_schema
+from metamodel.generators.protogen import ProtoGenerator
 
 @click.command()
 @click.argument("file", type=click.File('r'))

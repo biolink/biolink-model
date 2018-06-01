@@ -1,5 +1,5 @@
 # Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by pythongen.py version: 0.0.1
-# Generation date: 2018-05-29 17:20
+# Generation date: 2018-05-30 18:15
 # Schema: metamodel
 #
 # id: http://bioentity.io/json-schema/meta.json
@@ -9,23 +9,26 @@
 import datetime
 from typing import Optional, List, Union, Dict, NewType
 from dataclasses import dataclass
-from metamodel.metamodelcore import Root, empty_list, empty_dict
+from metamodel.utils.metamodelcore import empty_list, empty_dict
+from metamodel.utils.yamlutils import YAMLRoot
+
+metamodel_version = "0.2.0"
 
 # Class references
 ExampleName = NewType("ExampleName", str)
 ElementName = NewType("ElementName", str)
-DefinitionName = NewType("DefinitionName", str)
-SlotDefinitionName = NewType("SlotDefinitionName", str)
-ClassDefinitionName = NewType("ClassDefinitionName", str)
-TypeDefinitionName = NewType("TypeDefinitionName", str)
-SchemaDefinitionName = NewType("SchemaDefinitionName", str)
+DefinitionName = NewType("DefinitionName", Union[ElementName, str])
+SlotDefinitionName = NewType("SlotDefinitionName", Union[DefinitionName, str])
+ClassDefinitionName = NewType("ClassDefinitionName", Union[DefinitionName, str])
+TypeDefinitionName = NewType("TypeDefinitionName", Union[ElementName, str])
+SchemaDefinitionName = NewType("SchemaDefinitionName", Union[DefinitionName, str])
 SchemaDefinitionId = NewType("SchemaDefinitionId", str)
 
 # Type references
 
 
 @dataclass
-class Example(Root):
+class Example(YAMLRoot):
     """
     example of usage
     """
@@ -34,7 +37,7 @@ class Example(Root):
 
 
 @dataclass
-class Element(Root):
+class Element(YAMLRoot):
     """
     root of all described things
     """
@@ -44,11 +47,15 @@ class Element(Root):
     note: Optional[str] = None
     comment: Optional[str] = None
     examples: List[Union[dict, Example]] = empty_list()
+    see_also: Optional[str] = None
+    flags: List[str] = empty_list()
     prefixes: List[str] = empty_list()
     aliases: List[str] = empty_list()
     mappings: List[str] = empty_list()
     id_prefixes: List[str] = empty_list()
     in_subset: List[str] = empty_list()
+    from_schema: Optional[str] = None
+    alt_descriptions: List[str] = empty_list()
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -69,6 +76,7 @@ class Definition(Element):
     union_of: List[DefinitionName] = empty_list()
     subclass_of: Optional[DefinitionName] = None
     values_from: List[str] = empty_list()
+    symmetric: bool = False
 
 
 @dataclass
@@ -87,10 +95,10 @@ class SlotDefinition(Definition):
     definitional: bool = False
     alias: Optional[str] = None
     path: Optional[str] = None
-    subproperty_of: Optional[str] = None
-    symmetric: bool = False
+    subproperty_of: Optional[SlotDefinitionName] = None
     inverse: Optional[SlotDefinitionName] = None
     is_class_field: bool = False
+    role: Optional[str] = None
 
 
 @dataclass
@@ -103,6 +111,7 @@ class ClassDefinition(Definition):
     slots: List[SlotDefinitionName] = empty_list()
     slot_usage: Dict[SlotDefinitionName, Union[dict, SlotDefinition]] = empty_dict()
     apply_to: Optional[ClassDefinitionName] = None
+    entity: bool = False
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -127,11 +136,17 @@ class SchemaDefinition(Definition):
     """
     name: SchemaDefinitionName = None
     id: SchemaDefinitionId = None
+    version: Optional[str] = None
     imports: List[str] = empty_list()
     license: Optional[str] = None
     types: Dict[TypeDefinitionName, Union[dict, TypeDefinition]] = empty_dict()
     slots: Dict[SlotDefinitionName, Union[dict, SlotDefinition]] = empty_dict()
     classes: Dict[ClassDefinitionName, Union[dict, ClassDefinition]] = empty_dict()
+    metamodel_version: Optional[str] = None
+    source_file: Optional[str] = None
+    source_file_size: Optional[int] = None
+    source_file_date: Optional[str] = None
+    generation_date: Optional[datetime.date] = None
 
     def _fix_elements(self):
         super()._fix_elements()

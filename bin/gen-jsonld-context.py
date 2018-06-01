@@ -1,23 +1,10 @@
 #!/usr/bin/env python3
 
-import click
-
 import logging
-from metamodel.contextgen import ContextGenerator
-from metamodel.metamodel import SchemaDefinition
-from metamodel.schemaloader import load_schema
+
+from metamodel.generators.contextgen import cli
 
 logging.basicConfig(level=logging.INFO)
-
-
-@click.command()
-@click.argument("file", type=click.File('r'))
-@click.option("--format", "-f", default='json')
-def cli(file, _):
-    schema = load_schema(file)
-    g = ContextGenerator(schema=schema)
-    print(g.serialize())
-
 
 if __name__ == "__main__":
     cli()

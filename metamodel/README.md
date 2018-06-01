@@ -21,8 +21,8 @@ This is used to generate the marshmallow schema and the python class definitions
  * generators
     * [golr_yaml_gen.py](golr_yaml_gen.py)
        * can be compiled down to solr xml using ...
-    * [jsonschemagen.py](jsonschemagen.py)
+    * [jsonschemagen.py](generators/jsonschemagen.py)
        * can be used for codegen as well as validation
     * [pygen.py](pygen.py)
        * we generate python classes directly from model rather than via jsonschema
-    * [dotgen.py](dotgen.py)
+    * [dotgen.py](generators/dotgen.py)

@@ -2,9 +2,8 @@
 
 import click
 
-import logging
-from metamodel.ontolgen import write_owl
-from metamodel.schemaloader import load_schema
+from metamodel.generators.ontolgen import write_owl
+from metamodel.utils.schemaloader import load_schema
 
 @click.command()
 @click.option("--out", "-o", default="target/foo.ttl")

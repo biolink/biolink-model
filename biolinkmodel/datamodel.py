@@ -7,9 +7,10 @@
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import datetime
-from typing import Optional, List, Union, Dict, NewType
+from typing import Optional, List, NewType
 from dataclasses import dataclass
-from metamodel.metamodelcore import Root, empty_list, empty_dict
+from metamodel.utils.metamodelcore import empty_list
+from metamodel.utils.yamlutils import YAMLRoot
 
 # Class references
 RelationshipTypeName = NewType("RelationshipTypeName", str)
@@ -172,7 +173,7 @@ BiologicalSequence = NewType("BiologicalSequence", str)
 
 
 @dataclass
-class RelationshipType(Root):
+class RelationshipType(YAMLRoot):
     """
     An OWL property used as an edge label
     """
@@ -180,7 +181,7 @@ class RelationshipType(Root):
 
 
 @dataclass
-class Attribute(Root):
+class Attribute(YAMLRoot):
     """
     A property or characteristic of an entity
     """
@@ -243,7 +244,7 @@ class Onset(Attribute):
 
 
 @dataclass
-class NamedThing(Root):
+class NamedThing(YAMLRoot):
     """
     a databased entity or concept/class
     """
@@ -264,7 +265,7 @@ class BiologicalEntity(NamedThing):
 
 
 @dataclass
-class OntologyClass(Root):
+class OntologyClass(YAMLRoot):
     """
     a concept or class in an ontology, vocabulary or thesaurus
     """
@@ -374,7 +375,7 @@ class Publication(InformationContentEntity):
 
 
 @dataclass
-class AdministrativeEntity(Root):
+class AdministrativeEntity(YAMLRoot):
     pass
 
 
@@ -1194,7 +1195,7 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
 
 
 @dataclass
-class Occurrent(Root):
+class Occurrent(YAMLRoot):
     """
     A processual entity
     """

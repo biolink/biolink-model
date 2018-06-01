@@ -2,9 +2,8 @@
 
 import click
 
-import logging
-from metamodel.schemaloader import load_schema
-from metamodel.yumlgen import YumlGenerator
+from metamodel.utils.schemaloader import load_schema
+from metamodel.generators.yumlgen import YumlGenerator
 
 @click.command()
 @click.argument("file", type=click.File('r'))

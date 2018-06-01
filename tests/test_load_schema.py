@@ -1,9 +1,8 @@
 import os
 import unittest
-from typing import Dict
 
 from metamodel.metamodel import SchemaDefinition
-from metamodel.schemaloader import load_schema
+from metamodel.utils.schemaloader import load_schema
 
 schema = """
 test1:

@@ -2,9 +2,7 @@
 
 import click
 
-import logging
-from metamodel.marshmallow.schemagen import write_schema
-from metamodel.schemaloader import load_schema
+from metamodel.utils.schemaloader import load_schema
 from marshmallow_jsonschema import JSONSchema
 
 @click.command()

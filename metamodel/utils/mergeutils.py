@@ -1,9 +1,9 @@
 from copy import deepcopy
-from typing import Dict
+from typing import Dict, Optional
 
 import dataclasses
 
-from metamodel.metamodel import SchemaDefinition, Element, SlotDefinition
+from metamodel.metamodel import SchemaDefinition, Element, SlotDefinition, SchemaDefinitionName
 
 
 def merge_schemas(target: SchemaDefinition, mergee: SchemaDefinition) -> None:
@@ -14,19 +14,23 @@ def merge_schemas(target: SchemaDefinition, mergee: SchemaDefinition) -> None:
         target.license = mergee.license
 
     target.imports += [imp for imp in mergee.imports if imp not in target.imports]
-    merge_dicts(target.classes, mergee.classes)
+    merge_dicts(target.classes, mergee.classes, mergee.name)
     merge_dicts(target.slots, mergee.slots)
     merge_dicts(target.types, mergee.types)
 
 
-def merge_dicts(target: Dict[str, Element], source: Dict[str, Element]) -> None:
+def merge_dicts(target: Dict[str, Element],
+                source: Dict[str, Element],
+                from_schema: Optional[SchemaDefinitionName]=None) -> None:
     for k, v in source.items():
         if k in target:
             raise ValueError("Conflicting definitions for {k} in schema {s1name} and {s2name}")
         target[k] = deepcopy(v)
+    if from_schema:
+        target.from_schema = from_schema
 
 
 def merge_slots(target: SlotDefinition, source: SlotDefinition) -> None:
     for k, v in dataclasses.asdict(source).items():
-        if k not in ('name', 'domain'):
+        if k not in ('name', 'domain') and not getattr(target, k, None):
             setattr(target, k, deepcopy(v))

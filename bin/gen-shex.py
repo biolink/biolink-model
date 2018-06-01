@@ -2,9 +2,8 @@
 
 import click
 
-import logging
-from metamodel.schemaloader import load_schema
-from metamodel.shexgen import ShexGenerator
+from metamodel.utils.schemaloader import load_schema
+from metamodel.generators.shexgen import ShexGenerator
 
 @click.command()
 @click.argument("file", type=click.File('r'))

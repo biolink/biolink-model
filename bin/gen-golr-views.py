@@ -1,21 +1,8 @@
 #!/usr/bin/env python3
-
-import click
-
 import logging
-from metamodel.golrgen import *
-from metamodel.schemaloader import load_schema
+from metamodel.generators.golrgen import cli
 
-@click.command()
-@click.option("--dir", "-d", nargs=1, default='golr-views')
-@click.argument("file", type=click.File('r'))
-def cli(file, dir):
-    schema = load_schema(file)
-    g = GolrSchemaGenerator(schema=schema)
-    print(g.serialize(dir))
-    #write_golr_yaml_to_dir(schema, dir)
-
+logging.basicConfig(level=logging.INFO)
 
 if __name__ == "__main__":
     cli()
-    

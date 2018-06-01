@@ -2,9 +2,8 @@
 
 import click
 
-import logging
-from metamodel.marshmallowgen import MarshmallowGenerator
-from metamodel.schemaloader import load_schema
+from metamodel.generators.marshmallowgen import MarshmallowGenerator
+from metamodel.utils.schemaloader import load_schema
 
 @click.command()
 @click.argument("file", type=click.File('r'))

@@ -1,28 +1,42 @@
-from setuptools import setup
+import sys
+
+from setuptools import setup, find_packages
 
 version = '0.0.2'
 
 requires = [
-    "marshmallow==3.0.0b8",
-    "click",
-    "pyyaml==3.12",
-    "marshmallow-jsonschema>0",
+    "click>=3.0.4",
+    "pyyaml>=3.12",
+    "jsonasobj>=1.2.1",
     "jsonschema>=2.6.0",
-    "rdflib",
-    "graphviz",
-    "pandas",
-    "prefixcommons"
+    "rdflib>=4.2.2",
+    "graphviz>=0.8.3",
+    "prefixcommons>=0.1.7"
     ]
+
+if sys.version_info < (3, 7):
+    requires.append("dataclasses")
 
 setup(
     name='Biolink Model Generator',
     version= version,
-    packages=['kgx'],
-    install_requires=requires,
-    tests_require=['pytest', 'pytest_logging'],
-    scripts=['bin/translator_kgx.py'],
-    entry_points="""
-        [console_scripts]
-        kgx=translator_kgx:cli
-    """
+    packages=find_packages(exclude=['about', 'contrib', 'docs', 'graphql', 'graphviz', 'images', 'tests']),
+    url='https://github.com/biolink/biolink-model',
+    license='CC0 1.0 Universal',
+    description='Schema and generated objects for biolink data model and upper ontology',
+    scripts=['bin/gen-csv.py', 'bin/gen-golr-views.py', 'bin/gen-graphql.py', 'bin/gen-graphviz.py',
+             'bin/gen-json-schema-via-mm.py', 'bin/gen-json-schema.py', 'bin/gen-jsonld-context.py',
+             'bin/gen-markdown.py', 'bin/gen-mm-schema.py', 'bin/gen-proto.py', 'bin/gen-py-classes.py',
+             'bin/gen-rdf.py', 'bin/gen-shex.py', 'bin/gen-yuml.py'],
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Environment :: Console",
+        "Intended Audience :: Developers",
+        "Intended Audience :: Science/Research",
+        "Intended Audience :: Healthcare Industry"
+        "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+    ]
 )

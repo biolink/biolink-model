@@ -4,7 +4,7 @@ import click
 
 import logging
 from metamodel.pygen import PythonGenerator
-from metamodel.schemaloader import load_schema
+from metamodel.utils.schemaloader import load_schema
 
 logging.basicConfig(level=logging.INFO)
 

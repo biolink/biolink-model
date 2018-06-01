@@ -1,8 +1,10 @@
 import os
 import unittest
 
-from metamodel.schemaloader import load_schema
-from metamodel.schemasynopsis import SchemaSynopsis, ClassType, References, TypeType, SlotType
+from metamodel.metamodel import SchemaDefinition, SchemaDefinitionId, SchemaDefinitionName
+
+from metamodel.utils.schemaloader import load_schema
+from metamodel.utils.schemasynopsis import SchemaSynopsis, ClassType, References, TypeType, SlotType
 
 update_source: bool = False
 
@@ -15,14 +17,22 @@ class SynopsisTestCase(unittest.TestCase):
         sourcedir = os.path.join(cwd, 'source')
 
         meta_schema = load_schema(path)
-        synopsis = SchemaSynopsis().eval_schema(meta_schema[model_name]).summary()
+        synopsis = SchemaSynopsis(meta_schema)
+        errors = synopsis.errors()
+        if errors:
+            print("***** ERRORS *****")
+            error_str = '\n'.join(errors)
+            print(error_str)
+            self.assertFalse(True, "Errrors encountered")
+        summary = synopsis.summary()
+
         sourcepath = os.path.join(sourcedir, model_name + '_synopsis.txt')
         if update_source:
             with open(sourcepath, 'w') as masterf:
-                masterf.write(synopsis)
+                masterf.write(summary)
 
         with open(sourcepath) as masterf:
-            self.assertEqual(masterf.read(), synopsis)
+            self.assertEqual(masterf.read(), summary)
         self.assertFalse(update_source, "update_source must be set to false")
 
     def test_code(self):
@@ -35,7 +45,7 @@ class SynopsisTestCase(unittest.TestCase):
         with self.assertRaises(TypeError):
             r.addref(None, 'd')         # Lint check error ok here
 
-        s = SchemaSynopsis()
+        s = SchemaSynopsis(SchemaDefinition(id=SchemaDefinitionId('test'), name=SchemaDefinitionName('test')))
         s.add_ref(SlotType, 's1', ClassType, 'c1', )
         self.assertEqual('SchemaSynopsis(classes=set(), slots=set(), types=set(), slotrefs={}, '
                          "typerefs={}, classrefs={'c1': References(classrefs=set(), slotrefs={'s1'}, "

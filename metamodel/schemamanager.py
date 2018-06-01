@@ -7,14 +7,10 @@ This module provides an OO facade for accessing these
 """
 import logging
 from enum import Enum
-from io import StringIO
-from typing import Union, TextIO, cast, List, Dict
-from urllib.request import Request, urlopen
+from typing import Union, TextIO, List, Optional
 
-import yaml
-
-from metamodel.metamodel import SchemaDefinition, Definition
-from metamodel.schemaloader import load_schema
+from metamodel.metamodel import SchemaDefinition, SlotDefinition, ClassDefinition, TypeDefinition
+from metamodel.utils.schemaloader import load_schema
 
 
 class NameStyle(Enum):
@@ -42,82 +38,11 @@ class SchemaManager:
         self.loaded: List[str] = None
         self.unreferenced = set()
 
-    def load_schema(self, data: Union[str, TextIO], depth=0):
-        """   Load a schema and apply metamodel semantics
+    def load_schema(self, data: Union[str, TextIO]):
+        self.schema = load_schema(data)
 
-        @param data: URI, file name or string yaml schema
-        @param depth:
-        @return:
-        """
-        schemas = load_schema(data)
-        for sname, sdef in {k: SchemaDefinition(name=k, **v) for k, v in schemas.items()}.items():
-            logging.info("LOADING SCHEMA {sname}")
-            self.merge_schema(sdef)
-            self.loaded.append(sname)
-        for sname in self.schema.imports:
-            if sname not in self.loaded:
-                self.load_schema(sname)
-        # Error checking
-
-        # Inject slots into classes
-        for slot in self.schema.slots.values():
-            if slot.domain and slot not in self.schema.classes[slot.domain].slots:
-                self.schema.classes[slot.domain].slots.add(slot)
-
-        # Apply slot extensions to classes
-        #
-
-
-        # TODO: Error checking
-        #
-        # if len(errs) > 0:
-        #     logging.error("CONFIG ERRS: {}".format(errs))
-
-        logging.info('LOADING IMPORTS FOR {}'.format(schema.name))
-        self.load_imports(schema, depth)
-        if depth == 0:
-            self.schema = schema
-            logging.info('APPLYING EXTENSIONS')
-            self.apply_extensions(schema)
-        return schema
-
-
-    def merge_schema(self, mergee: SchemaDefinition) -> None:
-        assert self.schema.name is not None, "Schema name must be supplied"
-        if self.schema.id is None:
-            self.schema.id = mergee.id
-        if self.schema.license is None:
-            self.schema.license = mergee.license
-
-        self.schema.imports += mergee.imports
-        self.schema.classes += mergee.classes
-        self.schema.slots += mergee.slots
-        self.schema.types += mergee.types
-
-
-    def _merge_dicts(self, s1name: str, s2name: str, d1: Dict[str, Definition], d2: Dict[str, Definition]) -> None:
-        for k, v in d2.items():
-            if k in d1:
-                raise ValueError("Conflicting definitions for {k} in schema {s1name} and {s2name}")
-            d1[k] = v
-
-                     
-    def apply_extensions(self, schema):
-        """
-        Auto-apply 'reverse-isas'
-        """
-        for c in schema.classes:
-            c = self.classdef(c)
-            if c.apply_to:
-                tc = self.classdef(c.apply_to)
-                if tc:
-                    if tc.mixins is None:
-                        tc.mixins = []
-                    logging.info("Applying '{}' to '{}'".format(c.name, tc.name))
-                    tc.mixins.append(c.name)
-        
-
-    def get_name(self, n, style):
+    @staticmethod
+    def get_name(n: str, style: NameStyle) -> str:
         if style == NameStyle.UNDERSCORE:
             return n.replace(" ","_").replace(",","")
         if style == NameStyle.CAMELCASE:
@@ -128,7 +53,7 @@ class SchemaManager:
             return s[0].lower() + s[1:]
         return n
 
-    def predicates(self):
+    def predicates(self) -> List[SlotDefinition]:
         if not self.schema.slots:
             return []
         return [self.slotdef(s) for s in self.schema.slots]
@@ -150,38 +75,32 @@ class SchemaManager:
         assert sn is not None
         if isinstance(sn, SlotDefinition):
             return sn
-        for s in self.schema.slots:
-            if s.name == sn:
-                return s
+        if sn in self.schema.slots:
+            return self.schema.slots[sn]
 
         # if not found, can use local definition
-        if c is not None and c.slot_usage is not None:
-            for s in c.slot_usage:
-                if s.name == sn:
-                    return s
+        if c and sn in c.slots:
+            return self.schema.slots[sn]
+
         if sn not in self.unreferenced:
             logging.warning("No such slot: {} from class {}".format(sn, c))
             self.unreferenced.add(sn)
 
-    def slot_name(self, s, style=NameStyle.UNDERSCORE):
-        """
-        Get the name of a slot using appropriate style
+    @staticmethod
+    def aliased_name(slot: SlotDefinition) -> str:
+        return slot.alias if slot.alias else slot.name
 
-        Arguments
-        ---------
-        - s : SlotDefinition or string
-        - style: NameStyle
-
-        Returns
-        -------
-        string
-        """
-        # ensure an object
-        assert s is not None
+    def slot_name(self, s: Union[str, SlotDefinition], style=NameStyle.UNDERSCORE):
         slot = self.slotdef(s)
-        return self.get_name(slot.name, style)
+        return self.get_name(self.aliased_name(slot), style)
 
-    def classdef(self, cn):
+    def type_name(self, t: Union[str, TypeDefinition], style=NameStyle.CAMELCASE):
+        typ = self.typedef(t)
+        if typ is None:
+            raise ValueError("No type for {}".format(t))
+        return self.get_name(t, style)
+
+    def classdef(self, cn: Union[str, ClassDefinition]) -> ClassDefinition:
         """
         lookup a class in the schema by name
 
@@ -191,14 +110,13 @@ class SchemaManager:
         """
         if isinstance(cn,ClassDefinition):
             return cn
-        for c in self.schema.classes:
-            if c.name == cn:
-                return c
-        if cn not in self.unreferenced:
+        elif cn in self.schema.classes:
+            return self.schema.classes[cn]
+        elif cn not in self.unreferenced:
             logging.warning("No such class: {}".format(cn))
             self.unreferenced.add(cn)
 
-    def typedef(self, tn):
+    def typedef(self, tn: Union[str, TypeDefinition]) -> TypeDefinition:
         """
         lookup a type in the schema by name
 
@@ -208,61 +126,57 @@ class SchemaManager:
         """
         if isinstance(tn,TypeDefinition):
             return tn
-        for t in self.schema.types:
-            if t.name == tn:
-                return t
-        if tn not in self.unreferenced:
+        elif tn in self.schema.types:
+            return self.schema.types[tn]
+        elif tn not in self.unreferenced:
             logging.warning("No such type: {}".format(tn))
             self.unreferenced.add(tn)
 
 
-    def class_name(self, c, style=NameStyle.CAMELCASE):
-        """
-        Get the name of a class using appropriate style
-
-        Arguments
-        ---------
-        - s : ClassDefinition or string
-        - style: NameStyle
-
-        Returns
-        -------
-        string
-        """
-        # ensure an object
+    def class_name(self, c: Union[str, ClassDefinition], style=NameStyle.CAMELCASE):
         cls = self.classdef(c)
         if cls is None:
             raise ValueError("No cls for {}".format(c))
-        if cls.name is None:
-            logging.error("No class name for {}".format(c))
         return self.get_name(cls.name, style)
 
-    def obj_name(self, obj):
+    def obj_name(self, obj: Union[str, ClassDefinition, SlotDefinition, TypeDefinition]) -> str:
+        if isinstance(obj, str):
+            if obj in self.schema.classes:
+                obj = self.schema.classes[obj]
+            elif obj in self.schema.slots:
+                obj = self.schema.slots[obj]
+            elif obj in self.schema.types:
+                obj = self.schema.types[obj]
+            elif obj not in self.unreferenced:
+                logging.warning("No such object: {}".format(obj))
+                self.unreferenced.add(obj)
+                return self.get_name(obj, style=NameStyle.CAMELCASE)
         if isinstance(obj, ClassDefinition):
             return self.class_name(obj)
-        else:
+        elif isinstance(obj, SlotDefinition):
             return self.slot_name(obj)
+        else:
+            return self.type_name(obj)
     
     def obj_uri(self, obj):
         return "http://bioentity.io/vocab/{}".format(self.obj_name(obj))
-    
-    
-    def child_nodes(self, obj, mixin=True):
+
+    def child_nodes(self, obj: Union[ClassDefinition, SlotDefinition], mixin=True) \
+            -> List[Union[ClassDefinition, SlotDefinition]]:
         nodes = [c for c in self.schema.classes
-                 if c.is_a is not None and c.is_a==obj.name]
-        nodes += [c for c in self.schema.slots
-                  if c.is_a is not None and c.is_a==obj.name]
-        if not mixin:
-            nodes = [c for c in nodes if not c.mixin]
+                 if c.is_a is not None and c.is_a==obj.name and (not c.mixin or mixin)]
+        nodes += [s for s in self.schema.slots
+                  if s.is_a is not None and s.is_a==obj.name and (not s.mixin or mixin)]
         return nodes
 
-    def child_nodes_by_mixin(self, obj):
-        nodes = [c for c in self.schema.classes
-                 if c.mixins is not None and obj.name in c.mixins]
+    def child_nodes_by_mixin(self, obj: Union[ClassDefinition, SlotDefinition]) \
+            -> List[Union[ClassDefinition, SlotDefinition]]:
+        nodes = [c for c in self.schema.classes if obj.name in c.mixins]
+        nodes += [s for s in self.schema.slots if obj.name in s.mixins]
         return nodes
 
     # returns pairs (cls, refCls) if cls references obj via refCls
-    def all_class_usages(self, obj):
+    def all_class_usages(self, obj: str) -> List[Tuple[]]:
         pairs = []
         for c in self.schema.classes:
             rc =  self.get_class_usage_of(c, obj)
@@ -271,7 +185,7 @@ class SchemaManager:
         return pairs
 
     # if a reference class rc directly or indirectly refers to obj in class c, return rc
-    def get_class_usage_of(self, c, obj):
+    def get_class_usage_of(self, c: Union[str, ClassDefinition], obj):
         c = self.classdef(c)
         slots = self.class_slotdefs(c, True, True)
         for s in slots:
