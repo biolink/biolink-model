@@ -8,7 +8,7 @@ from tests.test_scripts.clicktestcase import ClickTestCase
 # This has to occur post ClickTestCase
 import click
 
-update_test_files = True
+update_test_files = False
 
 
 class GraphvizTestCase(ClickTestCase):

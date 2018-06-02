@@ -1,0 +1,18 @@
+# Slot: quantifier qualifier
+
+
+A measurable quantity for the object of the association
+
+URI: http://bioentity.io/vocab/quantifier_qualifier
+## Mappings
+
+## Domain and Range
+
+None -> [ontology class](OntologyClass.md)
+## Inheritance
+
+ *  is_a: [association slot](association_slot.md)
+## Children
+
+## Used in
+

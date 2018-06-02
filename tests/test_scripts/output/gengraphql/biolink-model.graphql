@@ -1,0 +1,613 @@
+ActivityAndBehavior type
+  {
+  }
+
+AdministrativeEntity interface
+  {
+  }
+
+AnatomicalEntity typeimplements ThingWithTaxon
+  {
+  }
+
+AnatomicalEntityToAnatomicalEntityAssociation type
+  {
+  }
+
+AnatomicalEntityToAnatomicalEntityOntogenicAssociation type
+  {
+  }
+
+AnatomicalEntityToAnatomicalEntityPartOfAssociation type
+  {
+  }
+
+Association type
+  {
+    associationType: OntologyClass
+    subject: String!
+    negated: String
+    relation: RelationshipType!
+    object: String!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    providedBy: Provider
+  }
+
+Attribute typeimplements OntologyClass
+  {
+  }
+
+BiologicalEntity interface
+  {
+  }
+
+BiologicalProcess typeimplements Occurrent
+  {
+  }
+
+BiologicalProcessOrActivity type
+  {
+  }
+
+BiologicalSex type
+  {
+  }
+
+Biosample typeimplements ThingWithTaxon
+  {
+  }
+
+BiosampleToDiseaseOrPhenotypicFeatureAssociation typeimplements BiosampleToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
+  {
+  }
+
+BiosampleToThingAssociation interface
+  {
+  }
+
+Case type
+  {
+  }
+
+CaseToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, CaseToThingAssociation
+  {
+  }
+
+CaseToThingAssociation interface
+  {
+  }
+
+Cell type
+  {
+  }
+
+CellLine type
+  {
+  }
+
+CellLineToDiseaseOrPhenotypicFeatureAssociation typeimplements CellLineToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
+  {
+  }
+
+CellLineToThingAssociation interface
+  {
+  }
+
+CellularComponent type
+  {
+  }
+
+ChemicalSubstance type
+  {
+  }
+
+ChemicalToDiseaseOrPhenotypicFeatureAssociation typeimplements ChemicalToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
+  {
+  }
+
+ChemicalToGeneAssociation typeimplements ChemicalToThingAssociation
+  {
+  }
+
+ChemicalToPathwayAssociation typeimplements ChemicalToThingAssociation
+  {
+  }
+
+ChemicalToThingAssociation interface
+  {
+  }
+
+ClinicalEntity type
+  {
+  }
+
+ClinicalIntervention type
+  {
+  }
+
+ClinicalModifier type
+  {
+  }
+
+ClinicalTrial type
+  {
+  }
+
+CodingSequence type
+  {
+  }
+
+ConfidenceLevel type
+  {
+  }
+
+Device type
+  {
+  }
+
+Disease type
+  {
+  }
+
+DiseaseOrPhenotypicFeature typeimplements ThingWithTaxon
+  {
+  }
+
+DiseaseOrPhenotypicFeatureAssociationToLocationAssociation type
+  {
+  }
+
+DiseaseOrPhenotypicFeatureAssociationToThingAssociation interface
+  {
+  }
+
+DiseaseToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, DiseaseToThingAssociation
+  {
+  }
+
+DiseaseToThingAssociation interface
+  {
+  }
+
+Drug type
+  {
+  }
+
+DrugExposure type
+  {
+  }
+
+EntityToDiseaseAssociation interface
+  {
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+  }
+
+EntityToPhenotypicFeatureAssociation interface
+  {
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+  }
+
+Environment type
+  {
+  }
+
+EnvironmentToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation
+  {
+  }
+
+EnvironmentalFeature type
+  {
+  }
+
+EnvironmentalProcess typeimplements Occurrent
+  {
+  }
+
+EvidenceType type
+  {
+  }
+
+Exon type
+  {
+  }
+
+ExonToTranscriptRelationship type
+  {
+  }
+
+FrequencyQuantifier interface
+  {
+    hasCount: String
+    hasTotal: String
+    hasQuotient: String
+    hasPercentage: String
+  }
+
+FrequencyValue type
+  {
+  }
+
+FunctionalAssociation type
+  {
+  }
+
+Gene type
+  {
+  }
+
+GeneAsAModelOfDiseaseAssociation typeimplements ModelToDiseaseMixin, EntityToDiseaseAssociation
+  {
+  }
+
+GeneFamily typeimplements GeneGrouping
+  {
+  }
+
+GeneGrouping interface
+  {
+  }
+
+GeneHasVariantThatContributesToDiseaseAssociation type
+  {
+    sequenceVariantQualifier: SequenceVariant
+  }
+
+GeneOntologyClass interface
+  {
+  }
+
+GeneOrGeneProduct type
+  {
+  }
+
+GeneProduct type
+  {
+  }
+
+GeneProductIsoform interface
+  {
+  }
+
+GeneRegulatoryRelationship type
+  {
+  }
+
+GeneToDiseaseAssociation typeimplements EntityToDiseaseAssociation, GeneToThingAssociation
+  {
+  }
+
+GeneToExpressionSiteAssociation type
+  {
+    stageQualifier: LifeStage
+    quantifierQualifier: OntologyClass
+  }
+
+GeneToGeneAssociation interface
+  {
+  }
+
+GeneToGeneHomologyAssociation type
+  {
+  }
+
+GeneToGeneProductRelationship type
+  {
+  }
+
+GeneToGoTermAssociation type
+  {
+  }
+
+GeneToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, GeneToThingAssociation
+  {
+  }
+
+GeneToThingAssociation interface
+  {
+  }
+
+Genome type
+  {
+  }
+
+GenomicEntity type
+  {
+    hasBiologicalSequence: String
+  }
+
+GenomicSequenceLocalization type
+  {
+    startInterbaseCoordinate: String
+    endInterbaseCoordinate: String
+    genomeBuild: String
+    phase: String
+  }
+
+Genotype type
+  {
+    hasZygosity: Zygosity
+  }
+
+GenotypeToGeneAssociation type
+  {
+  }
+
+GenotypeToGenotypePartAssociation type
+  {
+  }
+
+GenotypeToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, GenotypeToThingAssociation
+  {
+  }
+
+GenotypeToThingAssociation interface
+  {
+  }
+
+GenotypeToVariantAssociation type
+  {
+  }
+
+GenotypicSex type
+  {
+  }
+
+GeographicLocation type
+  {
+    latitude: String
+    longitude: String
+  }
+
+GeographicLocationAtTime type
+  {
+    latitude: String
+    longitude: String
+    timepoint: String
+  }
+
+GrossAnatomicalStructure type
+  {
+  }
+
+Haplotype type
+  {
+  }
+
+IndividualOrganism typeimplements ThingWithTaxon
+  {
+  }
+
+InformationContentEntity interface
+  {
+  }
+
+LifeStage typeimplements ThingWithTaxon
+  {
+  }
+
+MacromolecularComplex type
+  {
+  }
+
+MacromolecularMachine type
+  {
+  }
+
+MacromolecularMachineToBiologicalProcessAssociation type
+  {
+  }
+
+MacromolecularMachineToCellularComponentAssociation type
+  {
+  }
+
+MacromolecularMachineToMolecularActivityAssociation type
+  {
+  }
+
+Metabolite type
+  {
+  }
+
+Microrna type
+  {
+  }
+
+ModelToDiseaseMixin interface
+  {
+  }
+
+MolecularActivity typeimplements Occurrent
+  {
+  }
+
+MolecularEntity typeimplements ThingWithTaxon
+  {
+  }
+
+MolecularInteraction interface
+  {
+  }
+
+NamedThing type
+  {
+    id: String
+    name: String
+    category: String
+  }
+
+NoncodingRnaProduct type
+  {
+  }
+
+Occurrent type
+  {
+  }
+
+Onset type
+  {
+  }
+
+OntologyClass type
+  {
+  }
+
+OrganismTaxon type
+  {
+  }
+
+OrganismalEntity interface
+  {
+  }
+
+PairwiseGeneOrProteinInteractionAssociation typeimplements MolecularInteraction
+  {
+  }
+
+PathognomonicityQuantifier interface
+  {
+  }
+
+Pathway type
+  {
+  }
+
+Phenomenon type
+  {
+  }
+
+PhenotypicFeature type
+  {
+  }
+
+PhenotypicSex type
+  {
+  }
+
+PhysiologicalProcess type
+  {
+  }
+
+PlanetaryEntity type
+  {
+  }
+
+PopulationOfIndividualOrganisms typeimplements ThingWithTaxon
+  {
+  }
+
+PopulationToPopulationAssociation type
+  {
+  }
+
+Procedure type
+  {
+  }
+
+Protein type
+  {
+  }
+
+ProteinIsoform typeimplements GeneProductIsoform
+  {
+  }
+
+Provider type
+  {
+  }
+
+Publication type
+  {
+  }
+
+RelationshipQuantifier interface
+  {
+  }
+
+RelationshipType type
+  {
+  }
+
+RnaProduct type
+  {
+  }
+
+RnaProductIsoform typeimplements GeneProductIsoform
+  {
+  }
+
+SenstivityQuantifier interface
+  {
+  }
+
+SequenceFeatureRelationship type
+  {
+  }
+
+SequenceVariant type
+  {
+    hasGene: Gene
+  }
+
+SequenceVariantModulatesTreatmentAssociation interface
+  {
+  }
+
+SeverityValue type
+  {
+  }
+
+SpecificityQuantifier interface
+  {
+  }
+
+ThingToDiseaseOrPhenotypicFeatureAssociation interface
+  {
+  }
+
+ThingWithTaxon interface
+  {
+    inTaxon: OrganismTaxon
+  }
+
+Transcript type
+  {
+  }
+
+TranscriptToGeneRelationship type
+  {
+  }
+
+Treatment type
+  {
+    treats: DiseaseOrPhenotypicFeature
+  }
+
+VariantToDiseaseAssociation typeimplements VariantToThingAssociation, EntityToDiseaseAssociation
+  {
+  }
+
+VariantToPhenotypicFeatureAssociation typeimplements VariantToThingAssociation, EntityToPhenotypicFeatureAssociation
+  {
+  }
+
+VariantToPopulationAssociation typeimplements VariantToThingAssociation, FrequencyQuantifier
+  {
+    frequencyQualifier: FrequencyValue
+  }
+
+VariantToThingAssociation interface
+  {
+  }
+
+Zygosity type
+  {
+  }
+
+

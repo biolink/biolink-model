@@ -1,0 +1,25 @@
+# Class: chemical substance
+
+
+May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+
+URI: [http://bioentity.io/vocab/ChemicalSubstance]
+## Mappings
+
+ * [SIO:010004](http://semanticscience.org/resource/SIO_010004)
+ * [UMLSSG:CHEM](http://purl.obolibrary.org/obo/UMLSSG_CHEM)
+ * [WD:Q79529](http://purl.obolibrary.org/obo/WD_Q79529)
+ * [CHEBI:24431](http://purl.obolibrary.org/obo/CHEBI_24431)
+## Inheritance
+
+ *  is_a: [molecular entity](MolecularEntity.md)
+## Children
+
+ *  child: [metabolite](Metabolite.md)
+ *  child: [drug](Drug.md)
+## Used in
+
+ *  class: [chemical substance](ChemicalSubstance.md) references: [metabolite](Metabolite.md)
+ *  class: [chemical substance](ChemicalSubstance.md) references: [drug](Drug.md)
+## Fields
+

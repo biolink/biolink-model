@@ -1,0 +1,13 @@
+display_name: frequency quantifier
+document_category: frequency quantifier
+fields:
+- {description: number of things with a particular property, display_name: has count,
+  id: has_count}
+- {description: total number of things in a particular reference set, display_name: has
+    total, id: has_total}
+- {display_name: has quotient, id: has_quotient}
+- {description: equivalent to has quotient multiplied by 100, display_name: has percentage,
+  id: has_percentage}
+id: frequency_quantifier
+schema_generating: true
+weight: 20

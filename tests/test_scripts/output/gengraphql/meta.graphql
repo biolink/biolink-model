@@ -1,0 +1,85 @@
+ClassDefinition type
+  {
+    defining_Slots: [SlotDefinition]
+    slots: [SlotDefinition]
+    slot_Usage: [SlotDefinition]
+    apply_To: ClassDefinition
+    entity: String
+  }
+
+Definition interface
+  {
+    is_A: Definition
+    mixin: String
+    mixins: [Definition]
+    abstract: String
+    local_Names: [String]
+    union_Of: [Definition]
+    subclass_Of: Definition
+    values_From: [String]
+    symmetric: String
+  }
+
+Element interface
+  {
+    name: String!
+    singular_Name: String
+    description: String
+    note: String
+    comment: String
+    examples: [Example]
+    see_Also: String
+    flags: [String]
+    prefixes: [String]
+    aliases: [String]
+    mappings: [String]
+    id_Prefixes: [String]
+    in_Subset: [String]
+    from_Schema: String
+  }
+
+Example type
+  {
+    value: String
+    description: String
+  }
+
+SchemaDefinition type
+  {
+    id: String!
+    version: String
+    imports: [String]
+    license: String
+    types: [TypeDefinition]
+    slots: [SlotDefinition]
+    classes: [ClassDefinition]
+    metamodel_Version: String
+    source_File: String
+    source_File_Size: String
+    source_File_Date: String
+    generation_Date: String
+  }
+
+SlotDefinition type
+  {
+    multivalued: String
+    domain: ClassDefinition
+    range: Element
+    required: String
+    inlined: String
+    primary_Key: String
+    identifier: String
+    definitional: String
+    alias: String
+    path: String
+    subproperty_Of: SlotDefinition
+    inverse: SlotDefinition
+    is_Class_Field: String
+  }
+
+TypeDefinition type
+  {
+    typeof: String
+  }
+
+

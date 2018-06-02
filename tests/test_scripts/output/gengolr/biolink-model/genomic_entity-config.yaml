@@ -1,0 +1,10 @@
+description: an entity that can either be directly located on a genome (gene, transcript,
+  exon, regulatory region) or is encoded in a genome (protein)
+display_name: genomic entity
+document_category: genomic entity
+fields:
+- {description: connects a genomic feature to its sequence, display_name: has biological
+    sequence, id: has_biological_sequence}
+id: genomic_entity
+schema_generating: true
+weight: 20

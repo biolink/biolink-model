@@ -1,0 +1,34 @@
+# Class: frequency quantifier
+
+
+
+
+URI: [http://bioentity.io/vocab/FrequencyQuantifier]
+## Mappings
+
+## Inheritance
+
+ *  is_a: [relationship quantifier](RelationshipQuantifier.md)
+## Children
+
+ *  mixin: [variant to population association](VariantToPopulationAssociation.md)
+## Used in
+
+ *  class: [frequency quantifier](FrequencyQuantifier.md) references: [variant to population association](VariantToPopulationAssociation.md)
+## Fields
+
+ * _[has count](has_count.md)_
+    * _number of things with a particular property_
+    * __range__: integer
+    * inherited from: [aggregate statistic](aggregate_statistic.md)
+ * _[has total](has_total.md)_
+    * _total number of things in a particular reference set_
+    * __range__: integer
+    * inherited from: [aggregate statistic](aggregate_statistic.md)
+ * _[has quotient](has_quotient.md)_
+    * __range__: double
+    * inherited from: [aggregate statistic](aggregate_statistic.md)
+ * _[has percentage](has_percentage.md)_
+    * _equivalent to has quotient multiplied by 100_
+    * __range__: double
+    * inherited from: [aggregate statistic](aggregate_statistic.md)

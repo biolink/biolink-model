@@ -1,0 +1,10 @@
+description: An association between a variant and a population, where the variant
+  has particular frequency in the population
+display_name: variant to population association
+document_category: variant to population association
+fields:
+- {description: a qualifier used in a phenotypic association to state how frequent
+    the phenotype is observed in the subject, display_name: frequency qualifier, id: frequency_qualifier}
+id: variant_to_population_association
+schema_generating: true
+weight: 20

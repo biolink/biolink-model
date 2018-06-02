@@ -1,0 +1,9 @@
+description: a location that can be described in lat/long coordinates
+display_name: geographic location
+document_category: geographic location
+fields:
+- {description: latitude, display_name: latitude, id: latitude}
+- {description: longitude, display_name: longitude, id: longitude}
+id: geographic_location
+schema_generating: true
+weight: 20

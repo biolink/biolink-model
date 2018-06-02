@@ -1,0 +1,18 @@
+# Slot: end interbase coordinate
+
+
+
+
+URI: http://bioentity.io/vocab/end_interbase_coordinate
+## Mappings
+
+## Domain and Range
+
+None -> None
+## Inheritance
+
+ *  is_a: [interbase coordinate](interbase_coordinate.md)
+## Children
+
+## Used in
+

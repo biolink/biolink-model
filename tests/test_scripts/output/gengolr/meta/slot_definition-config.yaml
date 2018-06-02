@@ -1,0 +1,32 @@
+description: A property or slot
+display_name: slot definition
+document_category: slot definition
+fields:
+- {description: If true slot can have many values, display_name: multivalued, id: multivalued}
+- {description: The class to which this slot applies., display_name: domain, id: domain}
+- {description: 'The slot type.  If absent, it is the builtin type ''string''', display_name: range,
+  id: range}
+- {description: If true slot must have at least one value, display_name: required,
+  id: required}
+- {description: if true then the value of this slot is inlined (i.e. a nested object)
+    rather linked by key, display_name: inlined, id: inlined}
+- {description: True means that this serves as a unique identifier, display_name: primary_key,
+  id: primary_key}
+- {description: True means that this slot must be unique across the collection of
+    slots, display_name: identifier, id: identifier}
+- {description: slot is a defining slot -- injection into the defining_slots list,
+  display_name: definitional, id: definitional}
+- {description: A name to be assigned to the slot in implementations that is different
+    that its type.  The primary use for this is to allow class AND schema definitions
+    to both have "slots" where one inline and the other a reference, display_name: alias,
+  id: alias}
+- {description: 'For any denormalized slot, this represents the tree or graph path
+    used to generate the denormalized form', display_name: path, id: path}
+- {description: Ontolgy property which this is a subproperty of, display_name: subproperty_of,
+  id: subproperty_of}
+- {description: used to indicate the inverse of a slot (e.g. 'expresses' is the inverse
+    predicate of 'expressed in'), display_name: inverse, id: inverse}
+- {display_name: is_class_field, id: is_class_field}
+id: slot_definition
+schema_generating: true
+weight: 20

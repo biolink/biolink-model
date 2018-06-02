@@ -1,0 +1,28 @@
+description: A collection of definitions
+display_name: schema definition
+document_category: schema definition
+fields:
+- {description: a globally unique id or url for a schema, display_name: id, id: id}
+- {description: Schema version, display_name: version, id: version}
+- {cardinality: multi, description: A list of modules that are imported into the schema,
+  display_name: imports, id: imports}
+- {description: license for the schema, display_name: license, id: license}
+- {cardinality: multi, description: types defined in schema, display_name: types,
+  id: types}
+- {cardinality: multi, description: collection of slot definitions in a schema, display_name: slot
+    definitions, id: slots}
+- {cardinality: multi, description: classes defined in schema, display_name: classes,
+  id: classes}
+- {description: Version of the metamodel used to load the schema. Supplied by the
+    loader, display_name: metamodel_version, id: metamodel_version}
+- {description: 'name, uri or description of the source of the schema.  Supplied by
+    the loader', display_name: source_file, id: source_file}
+- {description: size in bytes of the source of the schema.  Supplied by the loader,
+  display_name: source_file_size, id: source_file_size}
+- {description: modification date of the source of the schema.  Supplied by the loader,
+  display_name: source_file_date, id: source_file_date}
+- {description: date that the schema was loaded/generated.  Supplied by the loader,
+  display_name: generation_date, id: generation_date}
+id: schema_definition
+schema_generating: true
+weight: 20

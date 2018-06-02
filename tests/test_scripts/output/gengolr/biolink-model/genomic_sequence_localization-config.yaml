@@ -1,0 +1,13 @@
+description: A relationship between a sequence feature and an entity it is localized
+  to. The reference entity may be a chromosome, chromosome region or information entity
+  such as a contig
+display_name: genomic sequence localization
+document_category: genomic sequence localization
+fields:
+- {display_name: start interbase coordinate, id: start_interbase_coordinate}
+- {display_name: end interbase coordinate, id: end_interbase_coordinate}
+- {description: TODO, display_name: genome build, id: genome_build}
+- {description: TODO, display_name: phase, id: phase}
+id: genomic_sequence_localization
+schema_generating: true
+weight: 20
