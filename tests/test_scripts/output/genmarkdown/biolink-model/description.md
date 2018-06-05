@@ -3,17 +3,18 @@
 
 a human-readable description of a thing
 
-URI: http://bioentity.io/vocab/description
+URI: http://bioentity.io/vocab/entity_to_phenotypic_feature_association_description
 ## Mappings
 
  * [dcterms:description](http://purl.obolibrary.org/obo/dcterms_description)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> [narrative text](NarrativeText.md)
+[entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) -> [narrative text](NarrativeText.md)
 ## Inheritance
 
- *  is_a: [node property](node_property.md)
+ *  is_a: [description](description.md) *subsets: translator_minimal*
 ## Children
 
 ## Used in
 
+ *  usage: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md)

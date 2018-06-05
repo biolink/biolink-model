@@ -17,3 +17,4 @@ URI: http://bioentity.io/vocab/category
 
 ## Used in
 
+ *  usage: [named thing](NamedThing.md)

@@ -2,7 +2,7 @@
 
 import click
 
-from metamodel.utils.schemaloader import load_schema
+from metamodel.utils.schemaloader import load_raw_schema
 from metamodel.generators.shexgen import ShexGenerator
 
 @click.command()

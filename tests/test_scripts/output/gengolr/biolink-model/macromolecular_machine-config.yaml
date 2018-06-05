@@ -1,5 +1,11 @@
-{description: 'A union of gene, gene product, and macromolecular complex. These are
-    the basic units of function in a cell. They either carry out individual biological
-    activities, or they encode molecules which do this.', display_name: macromolecular
-    machine, document_category: macromolecular machine, id: macromolecular_machine,
-  schema_generating: true, weight: 20}
+description: A union of gene, gene product, and macromolecular complex. These are
+  the basic units of function in a cell. They either carry out individual biological
+  activities, or they encode molecules which do this.
+display_name: macromolecular machine
+document_category: macromolecular machine
+fields:
+- {description: A human-readable name for a thing, display_name: macromolecular machine
+    name, id: name}
+id: macromolecular_machine
+schema_generating: true
+weight: 20

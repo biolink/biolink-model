@@ -17,3 +17,4 @@ URI: http://bioentity.io/vocab/has_phenotype
 
 ## Used in
 
+ *  usage: [biological entity](BiologicalEntity.md)

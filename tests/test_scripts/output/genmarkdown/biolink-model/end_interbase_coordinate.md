@@ -8,7 +8,7 @@ URI: http://bioentity.io/vocab/end_interbase_coordinate
 
 ## Domain and Range
 
-None -> None
+None -> string
 ## Inheritance
 
  *  is_a: [interbase coordinate](interbase_coordinate.md)
@@ -16,3 +16,4 @@ None -> None
 
 ## Used in
 
+ *  usage: [genomic sequence localization](GenomicSequenceLocalization.md)

@@ -5,42 +5,12 @@ from dataclasses import dataclass, field
 from metamodel.utils.builtins import builtin_names
 from metamodel.metamodel import SchemaDefinition, Element, Definition
 from metamodel.utils.metamodelcore import empty_dict, empty_set
+from metamodel.utils.typereferences import RefType, ClassType, TypeType, SlotType, References
 
-
-@dataclass(repr=False, frozen=True)
-class RefType:
-    name: str
-
-    def __repr__(self):
-        return self.name
-
-
-ClassType = RefType('Class')
-TypeType = RefType('Type')
-SlotType = RefType('Slot')
-
-
-@dataclass
-class References:
-    """
-    Summary of references to a given class. The reference class is the key to the dictionary carrying classrefs
-    """
-    classrefs: Set[str] = empty_set()     # Class-class references (e.g. is_a)
-    slotrefs: Set[str] = empty_set()      # Slot-class references (e.g. domain, range, contains)
-    typerefs: Set[str] = empty_set()      # Type-class references (Is this possible?)
-
-    def addref(self, fromtype: RefType, fromname: str) -> None:
-        if fromtype is ClassType:
-            self.classrefs.add(fromname)
-        elif fromtype is TypeType:
-            self.typerefs.add(fromname)
-        elif fromtype is SlotType:
-            self.slotrefs.add(fromname)
-        else:
-            raise TypeError(f"Unknown typ: {fromtype}")
 
 def empty_references() -> field:
     return field(default_factory=References)
+
 
 @dataclass
 class SchemaSynopsis:

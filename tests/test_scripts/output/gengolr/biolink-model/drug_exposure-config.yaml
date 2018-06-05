@@ -1,3 +1,8 @@
-{description: A drug exposure is an intake of a particular chemical substance, display_name: drug
-    exposure, document_category: drug exposure, id: drug_exposure, schema_generating: true,
-  weight: 20}
+description: A drug exposure is an intake of a particular chemical substance
+display_name: drug exposure
+document_category: drug exposure
+fields:
+- {cardinality: multi, display_name: drug exposure drug, id: drug}
+id: drug_exposure
+schema_generating: true
+weight: 20

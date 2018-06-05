@@ -1,5 +1,22 @@
-{description: 'Any association between one genotype and a phenotypic feature, where
-    having the genotype confers the phenotype, either in isolation or through environment',
-  display_name: genotype to phenotypic feature association, document_category: genotype
-    to phenotypic feature association, id: genotype_to_phenotypic_feature_association,
-  schema_generating: true, weight: 20}
+description: Any association between one genotype and a phenotypic feature, where
+  having the genotype confers the phenotype, either in isolation or through environment
+display_name: genotype to phenotypic feature association
+document_category: genotype to phenotypic feature association
+fields:
+- {description: a qualifier used in a phenotypic association to state how frequent
+    the phenotype is observed in the subject, display_name: frequency qualifier, id: frequency_qualifier}
+- {description: a qualifier used in a phenotypic association to state how severe the
+    phenotype is in the subject, display_name: severity qualifier, id: severity_qualifier}
+- {description: a qualifier used in a phenotypic association to state when the phenotype
+    appears is in the subject, display_name: onset qualifier, id: onset_qualifier}
+- {description: a qualifier used in a phenotypic association to state whether the
+    association is specific to a particular sex., display_name: sex qualifier, id: sex_qualifier}
+- {description: the relationship type by which a subject is connected to an object
+    in an association, display_name: genotype to phenotypic feature association relation,
+  id: relation}
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: genotype to phenotypic feature association subject, id: subject}
+id: genotype_to_phenotypic_feature_association
+schema_generating: true
+weight: 20

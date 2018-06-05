@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/ClinicalIntervention]
+URI: http://bioentity.io/vocab/ClinicalIntervention
+
+![img](http://yuml.me/diagram/nofunky/class/\[ClinicalEntity]^-\[ClinicalIntervention],%20)
 ## Mappings
 
 ## Inheritance

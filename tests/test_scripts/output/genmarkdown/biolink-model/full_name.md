@@ -16,3 +16,4 @@ URI: http://bioentity.io/vocab/full_name
 
 ## Used in
 
+ *  usage: [named thing](NamedThing.md)

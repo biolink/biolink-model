@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/MacromolecularComplex]
+URI: http://bioentity.io/vocab/MacromolecularComplex
+
+![img](http://yuml.me/diagram/nofunky/class/\[MacromolecularMachine]^-\[MacromolecularComplex],%20)
 ## Mappings
 
  * [SIO:010046](http://semanticscience.org/resource/SIO_010046)

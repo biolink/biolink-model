@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/PopulationOfIndividualOrganisms]
+URI: http://bioentity.io/vocab/PopulationOfIndividualOrganisms
+
+![img](http://yuml.me/diagram/nofunky/class/\[OrganismalEntity]^-\[PopulationOfIndividualOrganisms],%20\[PopulationOfIndividualOrganisms]-%20in_taxon%20%3F>\[OrganismTaxon],%20\[PopulationOfIndividualOrganisms]uses%20-.->\[ThingWithTaxon],%20)
 ## Mappings
 
  * [SIO:001061](http://semanticscience.org/resource/SIO_001061)
@@ -14,5 +16,11 @@ URI: [http://bioentity.io/vocab/PopulationOfIndividualOrganisms]
  *  mixin: [thing with taxon](ThingWithTaxon.md)
 ## Children
 
+## Used in
+
 ## Fields
 
+ * _[in taxon](in_taxon.md) *subsets: translator_minimal*_
+    * _connects a thing to a class representing a taxon_
+    * range: [organism taxon](OrganismTaxon.md)
+    * inherited from: [related to](related_to.md)

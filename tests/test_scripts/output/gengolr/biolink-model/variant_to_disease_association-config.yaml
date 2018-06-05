@@ -1,2 +1,20 @@
-{display_name: variant to disease association, document_category: variant to disease
-    association, id: variant_to_disease_association, schema_generating: true, weight: 20}
+display_name: variant to disease association
+document_category: variant to disease association
+fields:
+- {description: a qualifier used in a phenotypic association to state how frequent
+    the phenotype is observed in the subject, display_name: frequency qualifier, id: frequency_qualifier}
+- {description: a qualifier used in a phenotypic association to state how severe the
+    phenotype is in the subject, display_name: severity qualifier, id: severity_qualifier}
+- {description: a qualifier used in a phenotypic association to state when the phenotype
+    appears is in the subject, display_name: onset qualifier, id: onset_qualifier}
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: variant to disease association subject, id: subject}
+- {description: the relationship type by which a subject is connected to an object
+    in an association, display_name: variant to disease association relation, id: relation}
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: variant to disease association object, id: object}
+id: variant_to_disease_association
+schema_generating: true
+weight: 20

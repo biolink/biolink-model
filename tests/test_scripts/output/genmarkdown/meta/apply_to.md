@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/apply_to
 
 ## Used in
 
+ *  usage: [class definition](ClassDefinition.md)

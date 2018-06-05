@@ -1,3 +1,4 @@
+import re
 import unittest
 
 
@@ -9,8 +10,10 @@ import click
 
 update_test_files = False
 
+def gendate_filter(s: str) -> str:
+    return re.sub(r'Generation date: .*\n', 'Generation date: \n', s, re.MULTILINE)
 
-class GenCSVTestCase(ClickTestCase):
+class GenContextTestCase(ClickTestCase):
     testdir = "genjsonld"
     click_ep = cli
     prog_name = "gen-jsonld-context"
@@ -20,13 +23,15 @@ class GenCSVTestCase(ClickTestCase):
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_meta(self):
-        self.do_test(self.metamodel_file, 'meta.jsonld', update_test_file=update_test_files)
+        self.do_test(self.metamodel_file, 'meta.jsonld', update_test_file=update_test_files, filtr=gendate_filter)
         self.do_test(self.metamodel_file + ' -f xsv', 'meta_error', update_test_file=update_test_files,
                      error=click.exceptions.BadParameter)
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_biolink(self):
-        self.do_test(self.biolink_file, "biolink-model.jsonld", update_test_file=update_test_files)
+        self.maxDiff = None
+        self.do_test(self.biolink_file, "biolink-model.jsonld", update_test_file=update_test_files,
+                     filtr=gendate_filter)
         self.assertFalse(update_test_files, "Updating test files")
 
 

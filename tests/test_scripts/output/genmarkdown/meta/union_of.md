@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/union_of
 
 ## Used in
 
+ *  usage: [definition](Definition.md)

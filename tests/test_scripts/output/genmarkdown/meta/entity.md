@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/entity
 
 ## Used in
 
+ *  usage: [class definition](ClassDefinition.md)

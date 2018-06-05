@@ -17,3 +17,4 @@ URI: http://bioentity.io/vocab/expresses
 
 ## Used in
 
+ *  usage: [anatomical entity](AnatomicalEntity.md)

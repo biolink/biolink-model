@@ -8,10 +8,11 @@ URI: http://bioentity.io/vocab/values_from
 
 ## Domain and Range
 
-[definition](Definition.md) -> None
+[definition](Definition.md) -> string
 ## Inheritance
 
 ## Children
 
 ## Used in
 
+ *  usage: [definition](Definition.md)

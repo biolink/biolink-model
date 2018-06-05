@@ -3,7 +3,7 @@
 
 connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
-URI: http://bioentity.io/vocab/subject
+URI: http://bioentity.io/vocab/variant_to_thing_association_subject
 ## Mappings
 
  * [rdf:subject](http://purl.obolibrary.org/obo/rdf_subject)
@@ -11,11 +11,12 @@ URI: http://bioentity.io/vocab/subject
  * [oban:association_has_subject](http://purl.obolibrary.org/obo/oban_association_has_subject)
 ## Domain and Range
 
-None -> None
+[variant to thing association](VariantToThingAssociation.md) -> [sequence variant](SequenceVariant.md)
 ## Inheritance
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: [subject](subject.md)
 ## Children
 
 ## Used in
 
+ *  usage: [variant to thing association](VariantToThingAssociation.md)

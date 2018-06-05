@@ -8,10 +8,11 @@ URI: http://bioentity.io/vocab/local_names
 
 ## Domain and Range
 
-[definition](Definition.md) -> None
+[definition](Definition.md) -> string
 ## Inheritance
 
 ## Children
 
 ## Used in
 
+ *  usage: [definition](Definition.md)

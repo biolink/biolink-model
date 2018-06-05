@@ -16,3 +16,10 @@ None -> [biological sex](BiologicalSex.md)
 
 ## Used in
 
+ *  usage: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
+ *  usage: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md)
+ *  usage: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
+ *  usage: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
+ *  usage: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
+ *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
+ *  usage: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md)

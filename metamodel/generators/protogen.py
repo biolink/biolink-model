@@ -1,82 +1,53 @@
-from metamodel.schemautils import *
-from metamodel.schemamanager import NameStyle
+import os
+from typing import Union, TextIO
+
+import click
+
+from metamodel.metamodel import ClassDefinition, SlotDefinition, SchemaDefinition
+from metamodel.utils.formatutils import camelcase, lcamelcase
 from metamodel.utils.generator import Generator
+
 
 class ProtoGenerator(Generator):
     """
     A `Generator` for creating Protobuf schemas from a metamodel schema.
     
     """
-    def __init__(self, **args):
-        """
-        Create a new instance
-        """
-        super().__init__(**args)
-        
-    def serialize(self, destination=None, **args):
-        self.lines = []
-        self.tr(self.schema)
-        return "\n".join(self.lines)
+    generatorname = os.path.basename(__file__)
+    generatorversion = "0.0.2"
+    valid_formats = ['proto']
+    visit_all__class_slots = True
 
-    def tr(self, schema, classname=None):
-        self.schema = schema
+    def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='proto') -> None:
+        super().__init__(schema, fmt)
+        self.relative_slot_num = 0
 
-        for c in schema.classes:
-            self.tr_class(c)
+    def visit_class(self, cls: ClassDefinition) -> bool:
+        if cls.mixin or cls.abstract or not cls.slots:
+            return False
+        if cls.description:
+            for dline in cls.description.split('\n'):
+                print(f'// {dline}')
+        print(f'message {camelcase(cls.name)}')
+        print(" {")
+        self.relative_slot_num = 0
+        return True
 
-    def slot_name(self, s):
-        return self.manager.slot_name(s, NameStyle.LCAMELCASE)
-    
-    def tr_class(self, c):
-        mgr = self.manager
-        schema = self.schema
-        lines = self.lines
-        
-        c = mgr.classdef(c)
+    def end_class(self, cls: ClassDefinition) -> None:
+        print(" }")
 
-        cn = mgr.class_name(c)
-        desc = c.description
+    def visit_class_slot(self, cls: ClassDefinition, aliased_slot_name: str, slot: SlotDefinition) -> None:
+        qual = 'repeated ' if slot.multivalued else 'optional ' if not slot.required or slot.primary_key else ''
+        slotname = lcamelcase(aliased_slot_name)
+        slot_range = self.obj_name(slot.range) if slot.range else 'String'
+        self.relative_slot_num += 1
+        print(f"  {qual}{slotname} {slot_range} = {self.relative_slot_num}")
 
-        if c.mixin:
-            return
-        if c.abstract:
-            return
 
-        # Slots:
-        # proto does not have object inheritance,
-        # so we duplicate slots from inherited parents and mixins
-        slots = mgr.class_slotdefs(c, True, True)
-        if len(slots) == 0:
-            return
-        
-        if desc:
-            dlines = desc.split("\n")
-            for dline in dlines:
-                lines.append('// {}'.format(dline))
-        line1 = "message {}".format(cn)
-        line1 += " {"
-        lines.append(line1)
-
-        counter = 0
-        for s in slots:
-            counter += 1
-            s = mgr.slotdef(s, c)
-            sn = self.slot_name(s)
-
-            r = mgr.class_slot_range(c, s)
-            if mgr.classdef(r):
-                r = mgr.class_name(r)
-            else:
-                # TODO: check types
-                r = 'String'
-
-            qual = 'optional '
-            if mgr.class_slot_multivalued(c, s):
-                qual = 'repeated '
-            elif mgr.class_slot_getattr(c, s, 'required', False):
-                qual = ''
-            lines.append("  {}{} {} = {}".format(qual, sn, r, counter))
-
-        lines.append("}\n");
-    
-    
+@click.command()
+@click.argument("yamlfile", type=click.File('r'))
+@click.option("--format", "-f", default='proto', type=click.Choice(['proto']),
+              help="Output format")
+def cli(yamlfile, format):
+    """ Generate proto representation of biolink model """
+    print(ProtoGenerator(yamlfile, format).serialize())

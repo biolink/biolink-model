@@ -3,7 +3,9 @@
 
 a concept or class in an ontology, vocabulary or thesaurus
 
-URI: [http://bioentity.io/vocab/OntologyClass]
+URI: http://bioentity.io/vocab/OntologyClass
+
+![img](http://yuml.me/diagram/nofunky/class/\[OntologyClass]^-\[GeneOntologyClass],%20\[OntologyClass]^-\[OrganismTaxon],%20)
 ## Mappings
 
 ## Inheritance
@@ -15,8 +17,12 @@ URI: [http://bioentity.io/vocab/OntologyClass]
  *  mixin: [attribute](Attribute.md)
 ## Used in
 
- *  class: [ontology class](OntologyClass.md) references: [attribute](Attribute.md)
  *  class: [ontology class](OntologyClass.md) references: [gene ontology class](GeneOntologyClass.md)
+ *  class: [ontology class](OntologyClass.md) references: [attribute](Attribute.md)
  *  class: [ontology class](OntologyClass.md) references: [organism taxon](OrganismTaxon.md)
 ## Fields
 
+ * _[subclass of](subclass_of.md) *subsets: translator_minimal*_
+    * _holds between two classes where the domain class is a specialization of the range class_
+    * range: [ontology class](OntologyClass.md)
+    * inherited from: [related to](related_to.md)

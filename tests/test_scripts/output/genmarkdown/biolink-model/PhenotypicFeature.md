@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/PhenotypicFeature]
+URI: http://bioentity.io/vocab/PhenotypicFeature
+
+![img](http://yuml.me/diagram/nofunky/class/\[DiseaseOrPhenotypicFeature]^-\[PhenotypicFeature],%20)
 ## Mappings
 
  * [UPHENO:0001001](http://purl.obolibrary.org/obo/UPHENO_0001001)

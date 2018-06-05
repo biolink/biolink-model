@@ -16,3 +16,4 @@ None -> [sequence variant](SequenceVariant.md)
 
 ## Used in
 
+ *  usage: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.md)

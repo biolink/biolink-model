@@ -1,18 +1,18 @@
 # Slot: has gene
 
 
-connects and entity to a single gene
+Each allele can be associated with any number of genes
 
-URI: http://bioentity.io/vocab/has_gene
+URI: http://bioentity.io/vocab/sequence_variant_has_gene
 ## Mappings
 
 ## Domain and Range
 
-None -> [gene](Gene.md)
+[sequence variant](SequenceVariant.md) -> string
 ## Inheritance
 
- *  is_a: [node property](node_property.md)
 ## Children
 
 ## Used in
 
+ *  usage: [sequence variant](SequenceVariant.md)

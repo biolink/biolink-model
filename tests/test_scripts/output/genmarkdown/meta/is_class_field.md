@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/is_class_field
 
 ## Used in
 
+ *  usage: [slot definition](SlotDefinition.md)

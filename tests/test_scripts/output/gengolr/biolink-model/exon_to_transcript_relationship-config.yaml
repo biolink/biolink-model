@@ -1,3 +1,13 @@
-{description: A transcript is formed from multiple exons, display_name: exon to transcript
-    relationship, document_category: exon to transcript relationship, id: exon_to_transcript_relationship,
-  schema_generating: true, weight: 20}
+description: A transcript is formed from multiple exons
+display_name: exon to transcript relationship
+document_category: exon to transcript relationship
+fields:
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: exon to transcript relationship subject, id: subject}
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: exon to transcript relationship object, id: object}
+id: exon_to_transcript_relationship
+schema_generating: true
+weight: 20

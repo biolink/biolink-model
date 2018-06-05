@@ -1,2 +1,8 @@
-{display_name: biosample, document_category: biosample, id: biosample, schema_generating: true,
-  weight: 20}
+display_name: biosample
+document_category: biosample
+fields:
+- {description: connects a thing to a class representing a taxon, display_name: in
+    taxon, id: in_taxon}
+id: biosample
+schema_generating: true
+weight: 20

@@ -16,3 +16,4 @@ URI: http://bioentity.io/vocab/in_complex_with
 
 ## Used in
 
+ *  usage: [gene or gene product](GeneOrGeneProduct.md)

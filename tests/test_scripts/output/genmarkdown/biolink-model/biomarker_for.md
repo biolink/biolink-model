@@ -17,3 +17,4 @@ URI: http://bioentity.io/vocab/biomarker_for
 
 ## Used in
 
+ *  usage: [molecular entity](MolecularEntity.md)

@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
+import logging
 
-import click
+from metamodel.generators.yumlgen import cli
 
-from metamodel.utils.schemaloader import load_schema
-from metamodel.generators.yumlgen import YumlGenerator
+logging.basicConfig(level=logging.INFO)
 
 if __name__ == "__main__":
     cli()
-    

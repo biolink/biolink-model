@@ -1,5 +1,15 @@
-{description: 'An association between a macromolecular machine (gene, gene product
-    or complex of gene products) and either a molecular activity, a biological process
-    or a cellular location in which a function is executed', display_name: functional
-    association, document_category: functional association, id: functional_association,
-  schema_generating: true, weight: 20}
+description: An association between a macromolecular machine (gene, gene product or
+  complex of gene products) and either a molecular activity, a biological process
+  or a cellular location in which a function is executed
+display_name: functional association
+document_category: functional association
+fields:
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: functional association subject, id: subject}
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: functional association object, id: object}
+id: functional_association
+schema_generating: true
+weight: 20

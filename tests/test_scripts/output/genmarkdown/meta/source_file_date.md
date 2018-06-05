@@ -8,10 +8,11 @@ URI: http://bioentity.io/vocab/source_file_date
 
 ## Domain and Range
 
-[schema definition](SchemaDefinition.md) -> None
+[schema definition](SchemaDefinition.md) -> string
 ## Inheritance
 
 ## Children
 
 ## Used in
 
+ *  usage: [schema definition](SchemaDefinition.md)

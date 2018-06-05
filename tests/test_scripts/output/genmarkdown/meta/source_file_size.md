@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/source_file_size
 
 ## Used in
 
+ *  usage: [schema definition](SchemaDefinition.md)

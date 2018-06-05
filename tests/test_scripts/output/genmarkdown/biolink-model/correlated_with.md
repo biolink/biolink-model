@@ -19,3 +19,4 @@ URI: http://bioentity.io/vocab/correlated_with
  *  child: [biomarker for](biomarker_for.md) *subsets: translator_minimal*
 ## Used in
 
+ *  usage: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)

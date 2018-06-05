@@ -1,18 +1,18 @@
 # Slot: has count
 
 
-number of things with a particular property
+number in object population that carry a particular allele, aka allele count
 
-URI: http://bioentity.io/vocab/has_count
+URI: http://bioentity.io/vocab/variant_to_population_association_has_count
 ## Mappings
 
 ## Domain and Range
 
-None -> integer
+[variant to population association](VariantToPopulationAssociation.md) -> string
 ## Inheritance
 
- *  is_a: [aggregate statistic](aggregate_statistic.md)
 ## Children
 
 ## Used in
 
+ *  usage: [variant to population association](VariantToPopulationAssociation.md)

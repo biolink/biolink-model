@@ -24,9 +24,10 @@ class ContextGenerator(Generator):
     generatorname = os.path.basename(__file__)
     generatorversion = "0.0.2"
     valid_formats = ['json']
+    visit_all__class_slots = False
 
-    def __init__(self, schema: Union[str, TextIO, SchemaDefinition], format: str='json') -> None:
-        super().__init__(schema, format)
+    def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='json') -> None:
+        super().__init__(schema, fmt)
         self.prefixmap = {
             "id": "@id",
             "type": {
@@ -35,22 +36,22 @@ class ContextGenerator(Generator):
             }
         }
 
-    def visit_schema(self, **_) -> str:
+    def end_schema(self) -> None:
         comments = f'''
-"""
-Auto generated from {self.schema.source_file} by {self.generatorname} version: {self.generatorversion}
-Generation date: {self.schema.generation_date}
-Schema: {self.schema.name}
+        """
+        Auto generated from {self.schema.source_file} by {self.generatorname} version: {self.generatorversion}
+        Generation date: {self.schema.generation_date}
+        Schema: {self.schema.name}
 
-id: {self.schema.id}
-description: {be(self.schema.description)}
-license: {be(self.schema.license)}
-"""
-'''
+        id: {self.schema.id}
+        description: {be(self.schema.description)}
+        license: {be(self.schema.license)}
+        """
+        '''
         context = {"@context": self.prefixmap,
                    "comments": comments
                    }
-        return json.dumps(context, sort_keys=True, indent=4)
+        print(json.dumps(context, sort_keys=True, indent=4))
 
     def visit_class(self, cls: ClassDefinition) -> bool:
         logging.info("Cls: {}".format(cls.name))
@@ -61,7 +62,7 @@ license: {be(self.schema.license)}
         self.tr_element(cls, camelcase(cn))
         return True
 
-    def visit_class_slot(self, cls: ClassDefinition, slot_name: str, slot: SlotDefinition) -> None:
+    def visit_class_slot(self, cls: ClassDefinition, aliased_slot_name: str, slot: SlotDefinition) -> None:
         if not slot.alias:
             self.tr_element(slot, underscore(slot.name))
         # hold off til we are sure curie_util can handle this
@@ -114,4 +115,5 @@ license: {be(self.schema.license)}
 @click.argument("yamlfile", type=click.File('r'))
 @click.option("--format", "-f", default='json', type=click.Choice(['json']), help="Output format")
 def cli(yamlfile, format):
+    """ Generate jsonld @context definition from biolink model """
     print(ContextGenerator(yamlfile, format).serialize())

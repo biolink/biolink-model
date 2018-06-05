@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/Microrna]
+URI: http://bioentity.io/vocab/Microrna
+
+![img](http://yuml.me/diagram/nofunky/class/\[NoncodingRnaProduct]^-\[Microrna],%20)
 ## Mappings
 
  * [SIO:001397](http://semanticscience.org/resource/SIO_001397)

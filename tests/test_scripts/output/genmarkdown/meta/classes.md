@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/classes
 
 ## Used in
 
+ *  usage: [schema definition](SchemaDefinition.md)

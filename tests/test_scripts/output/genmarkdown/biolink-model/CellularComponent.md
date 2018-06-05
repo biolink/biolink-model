@@ -3,7 +3,9 @@
 
 A location in or around a cell
 
-URI: [http://bioentity.io/vocab/CellularComponent]
+URI: http://bioentity.io/vocab/CellularComponent
+
+![img](http://yuml.me/diagram/nofunky/class/\[AnatomicalEntity]^-\[CellularComponent],%20)
 ## Mappings
 
  * [GO:0005575](http://purl.obolibrary.org/obo/GO_0005575)
@@ -13,6 +15,8 @@ URI: [http://bioentity.io/vocab/CellularComponent]
 
  *  is_a: [anatomical entity](AnatomicalEntity.md)
 ## Children
+
+## Used in
 
 ## Fields
 

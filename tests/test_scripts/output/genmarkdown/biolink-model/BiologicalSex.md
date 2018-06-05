@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/BiologicalSex]
+URI: http://bioentity.io/vocab/BiologicalSex
+
+![img](http://yuml.me/diagram/nofunky/class/\[Attribute]^-\[BiologicalSex],%20\[BiologicalSex]^-\[GenotypicSex],%20\[BiologicalSex]^-\[PhenotypicSex],%20)
 ## Mappings
 
  * [PATO:0000047](http://purl.obolibrary.org/obo/PATO_0000047)
@@ -12,11 +14,11 @@ URI: [http://bioentity.io/vocab/BiologicalSex]
  *  is_a: [attribute](Attribute.md)
 ## Children
 
- *  child: [phenotypic sex](PhenotypicSex.md)
  *  child: [genotypic sex](GenotypicSex.md)
+ *  child: [phenotypic sex](PhenotypicSex.md)
 ## Used in
 
- *  class: [biological sex](BiologicalSex.md) references: [phenotypic sex](PhenotypicSex.md)
  *  class: [biological sex](BiologicalSex.md) references: [genotypic sex](GenotypicSex.md)
+ *  class: [biological sex](BiologicalSex.md) references: [phenotypic sex](PhenotypicSex.md)
 ## Fields
 

@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/Pathway]
+URI: http://bioentity.io/vocab/Pathway
+
+![img](http://yuml.me/diagram/nofunky/class/\[BiologicalProcess]^-\[Pathway],%20)
 ## Mappings
 
  * [GO:0007165](http://purl.obolibrary.org/obo/GO_0007165)
@@ -14,6 +16,8 @@ URI: [http://bioentity.io/vocab/Pathway]
 
  *  is_a: [biological process](BiologicalProcess.md)
 ## Children
+
+## Used in
 
 ## Fields
 

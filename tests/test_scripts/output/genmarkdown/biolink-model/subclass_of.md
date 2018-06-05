@@ -19,3 +19,5 @@ URI: http://bioentity.io/vocab/subclass_of
 
 ## Used in
 
+ *  usage: [ontology class](OntologyClass.md)
+ *  usage: [attribute](Attribute.md)

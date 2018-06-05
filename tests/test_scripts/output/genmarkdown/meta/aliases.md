@@ -8,10 +8,11 @@ URI: http://bioentity.io/vocab/aliases
 
 ## Domain and Range
 
-[element](Element.md) -> None
+[element](Element.md) -> string
 ## Inheritance
 
 ## Children
 
 ## Used in
 
+ *  usage: [element](Element.md)

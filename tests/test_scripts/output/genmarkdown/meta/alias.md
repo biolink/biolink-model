@@ -8,10 +8,11 @@ URI: http://bioentity.io/vocab/alias
 
 ## Domain and Range
 
-[slot definition](SlotDefinition.md) -> None
+[slot definition](SlotDefinition.md) -> string
 ## Inheritance
 
 ## Children
 
 ## Used in
 
+ *  usage: [slot definition](SlotDefinition.md)

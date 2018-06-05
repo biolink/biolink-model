@@ -1,1 +1,16 @@
-{display_name: gene, document_category: gene, id: gene, schema_generating: true, weight: 20}
+display_name: gene
+document_category: gene
+fields:
+- {description: holds between two genes whose phenotypic effects are dependent on
+    each other in some way - such that their combined phenotypic effects are the result
+    of some interaction between the activity of their gene products. Examples include
+    epistasis and synthetic lethality., display_name: genetically interacts with,
+  id: genetically_interacts_with}
+- {description: holds between a gene and a transcribed and/or translated product generated
+    from it, display_name: has gene product, id: has_gene_product}
+- {description: 'holds between a gene and a disease or phenotypic feature that the
+    gene or its alleles/products may influence, contribute to, or correlate with',
+  display_name: gene associated with condition, id: gene_associated_with_condition}
+id: gene
+schema_generating: true
+weight: 20

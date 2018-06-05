@@ -3,7 +3,7 @@
 
 the relationship type by which a subject is connected to an object in an association
 
-URI: http://bioentity.io/vocab/relation
+URI: http://bioentity.io/vocab/variant_to_disease_association_relation
 ## Mappings
 
  * [rdf:predicate](http://purl.obolibrary.org/obo/rdf_predicate)
@@ -11,11 +11,13 @@ URI: http://bioentity.io/vocab/relation
  * [oban:association_has_predicate](http://purl.obolibrary.org/obo/oban_association_has_predicate)
 ## Domain and Range
 
-None -> [relationship type](RelationshipType.md)
+[variant to disease association](VariantToDiseaseAssociation.md) -> [relationship type](RelationshipType.md)
 ## Inheritance
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: [relation](relation.md)
 ## Children
 
 ## Used in
 
+ *  usage: [variant to disease association](VariantToDiseaseAssociation.md)
+ *  reifies: related condition

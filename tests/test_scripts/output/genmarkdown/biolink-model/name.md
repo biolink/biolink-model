@@ -15,5 +15,7 @@ URI: http://bioentity.io/vocab/name
  *  is_a: [node property](node_property.md)
 ## Children
 
+ *  child: [name](name.md) *subsets: translator_minimal*
 ## Used in
 
+ *  usage: [named thing](NamedThing.md)

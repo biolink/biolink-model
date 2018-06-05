@@ -13,6 +13,7 @@ class JsonSchemaGenerator(Generator):
     generatorname = os.path.basename(__file__)
     generatorversion = "0.0.2"
     valid_formats = "[json]"
+    visit_all__class_slots = False
 
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='json') -> None:
         super().__init__(schema, fmt)
@@ -48,7 +49,7 @@ class JsonSchemaGenerator(Generator):
     def end_class(self, cls: ClassDefinition) -> None:
         self.schemaobj.properties[camelcase(cls.name)] = self.clsobj
 
-    def visit_class_slot(self, cls: ClassDefinition, slot_name: str, slot: SlotDefinition) -> None:
+    def visit_class_slot(self, cls: ClassDefinition, aliased_slot_name: str, slot: SlotDefinition) -> None:
         if self.inline:
             # If inline we have to include redefined slots
             prop = JsonObj(type=JsonObj())
@@ -59,7 +60,7 @@ class JsonSchemaGenerator(Generator):
             prop = JsonObj(type="string")
         if slot.description:
             prop.description = slot.description
-        self.clsobj.properties[underscore(slot_name)] = prop
+        self.clsobj.properties[underscore(aliased_slot_name)] = prop
 
     def visit_slot(self, slot_name: str, slot: SlotDefinition) -> None:
         # Don't emit redefined slots unless we are inlining
@@ -86,4 +87,5 @@ class JsonSchemaGenerator(Generator):
 @click.option("-i", "--inline", is_flag=True, help="Generate references to types rather than inlining them")
 @click.option("--format", "-f", default='json', type=click.Choice(['json']), help="Output format")
 def cli(yamlfile, inline, format):
+    """ Generate JSON Schema representation of a biolink model """
     print(JsonSchemaGenerator(yamlfile, format).serialize(inline=inline))

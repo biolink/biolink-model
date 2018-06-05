@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/types
 
 ## Used in
 
+ *  usage: [schema definition](SchemaDefinition.md)

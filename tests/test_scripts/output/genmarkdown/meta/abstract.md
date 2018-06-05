@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/abstract
 
 ## Used in
 
+ *  usage: [definition](Definition.md)

@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/subclass_of
 
 ## Used in
 
+ *  usage: [definition](Definition.md)

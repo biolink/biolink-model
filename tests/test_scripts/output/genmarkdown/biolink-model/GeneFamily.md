@@ -3,7 +3,9 @@
 
 any grouping of multiple genes or gene products related by common descent
 
-URI: [http://bioentity.io/vocab/GeneFamily]
+URI: http://bioentity.io/vocab/GeneFamily
+
+![img](http://yuml.me/diagram/nofunky/class/\[MolecularEntity]^-\[GeneFamily],%20\[GeneFamily]uses%20-.->\[GeneGrouping],%20)
 ## Mappings
 
  * [SIO:001380](http://semanticscience.org/resource/SIO_001380)

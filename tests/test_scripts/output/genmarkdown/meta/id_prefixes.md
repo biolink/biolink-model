@@ -8,10 +8,11 @@ URI: http://bioentity.io/vocab/id_prefixes
 
 ## Domain and Range
 
-[element](Element.md) -> None
+[element](Element.md) -> string
 ## Inheritance
 
 ## Children
 
 ## Used in
 
+ *  usage: [element](Element.md)

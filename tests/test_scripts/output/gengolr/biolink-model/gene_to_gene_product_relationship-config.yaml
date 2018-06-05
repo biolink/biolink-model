@@ -1,4 +1,15 @@
-{description: A gene is transcribed and potentially translated to a gene product,
-  display_name: gene to gene product relationship, document_category: gene to gene
-    product relationship, id: gene_to_gene_product_relationship, schema_generating: true,
-  weight: 20}
+description: A gene is transcribed and potentially translated to a gene product
+display_name: gene to gene product relationship
+document_category: gene to gene product relationship
+fields:
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: gene to gene product relationship subject, id: subject}
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: gene to gene product relationship object, id: object}
+- {description: the relationship type by which a subject is connected to an object
+    in an association, display_name: gene to gene product relationship relation, id: relation}
+id: gene_to_gene_product_relationship
+schema_generating: true
+weight: 20

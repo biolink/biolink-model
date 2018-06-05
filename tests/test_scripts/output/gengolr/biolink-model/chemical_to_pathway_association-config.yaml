@@ -1,4 +1,11 @@
-{description: An interaction between a chemical entity and a biological process or
-    pathway, display_name: chemical to pathway association, document_category: chemical
-    to pathway association, id: chemical_to_pathway_association, schema_generating: true,
-  weight: 20}
+description: An interaction between a chemical entity and a biological process or
+  pathway
+display_name: chemical to pathway association
+document_category: chemical to pathway association
+fields:
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: chemical to pathway association object, id: object}
+id: chemical_to_pathway_association
+schema_generating: true
+weight: 20

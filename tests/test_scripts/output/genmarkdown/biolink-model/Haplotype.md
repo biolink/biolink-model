@@ -3,7 +3,9 @@
 
 A set of zero or more Alleles on a single instance of a Sequence[VMC]
 
-URI: [http://bioentity.io/vocab/Haplotype]
+URI: http://bioentity.io/vocab/Haplotype
+
+![img](http://yuml.me/diagram/nofunky/class/\[GenomicEntity]^-\[Haplotype],%20)
 ## Mappings
 
  * [GENO:0000871](http://purl.obolibrary.org/obo/GENO_0000871)

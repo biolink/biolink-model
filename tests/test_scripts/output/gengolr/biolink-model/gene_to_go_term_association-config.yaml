@@ -1,2 +1,12 @@
-{display_name: gene to go term association, document_category: gene to go term association,
-  id: gene_to_go_term_association, schema_generating: true, weight: 20}
+display_name: gene to go term association
+document_category: gene to go term association
+fields:
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: gene to go term association subject, id: subject}
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: gene to go term association object, id: object}
+id: gene_to_go_term_association
+schema_generating: true
+weight: 20

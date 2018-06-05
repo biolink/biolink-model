@@ -17,3 +17,4 @@ URI: http://bioentity.io/vocab/gene_associated_with_condition
 
 ## Used in
 
+ *  usage: [gene](Gene.md)

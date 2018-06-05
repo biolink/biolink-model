@@ -1,3 +1,15 @@
-{description: A regulatory relationship between two genes, display_name: gene regulatory
-    relationship, document_category: gene regulatory relationship, id: gene_regulatory_relationship,
-  schema_generating: true, weight: 20}
+description: A regulatory relationship between two genes
+display_name: gene regulatory relationship
+document_category: gene regulatory relationship
+fields:
+- {description: the relationship type by which a subject is connected to an object
+    in an association, display_name: gene regulatory relationship relation, id: relation}
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: gene regulatory relationship subject, id: subject}
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: gene regulatory relationship object, id: object}
+id: gene_regulatory_relationship
+schema_generating: true
+weight: 20

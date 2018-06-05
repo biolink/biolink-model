@@ -16,3 +16,4 @@ None -> [zygosity](Zygosity.md)
 
 ## Used in
 
+ *  usage: [genotype](Genotype.md)

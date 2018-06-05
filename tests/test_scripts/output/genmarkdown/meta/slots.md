@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/slots
 
 ## Used in
 
+ *  usage: [class definition](ClassDefinition.md)

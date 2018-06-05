@@ -16,3 +16,5 @@ None -> double
 
 ## Used in
 
+ *  usage: [variant to population association](VariantToPopulationAssociation.md)
+ *  usage: [frequency quantifier](FrequencyQuantifier.md)

@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/primary_key
 
 ## Used in
 
+ *  usage: [slot definition](SlotDefinition.md)

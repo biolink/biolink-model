@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/subproperty_of
 
 ## Used in
 
+ *  usage: [slot definition](SlotDefinition.md)

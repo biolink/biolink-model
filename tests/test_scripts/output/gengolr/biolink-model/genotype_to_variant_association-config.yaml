@@ -1,3 +1,15 @@
-{description: Any association between a genotype and a sequence variant., display_name: genotype
-    to variant association, document_category: genotype to variant association, id: genotype_to_variant_association,
-  schema_generating: true, weight: 20}
+description: Any association between a genotype and a sequence variant.
+display_name: genotype to variant association
+document_category: genotype to variant association
+fields:
+- {description: the relationship type by which a subject is connected to an object
+    in an association, display_name: genotype to variant association relation, id: relation}
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: genotype to variant association subject, id: subject}
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: genotype to variant association object, id: object}
+id: genotype_to_variant_association
+schema_generating: true
+weight: 20

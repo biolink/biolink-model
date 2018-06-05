@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/symmetric
 
 ## Used in
 
+ *  usage: [definition](Definition.md)

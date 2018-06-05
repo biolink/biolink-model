@@ -8,18 +8,28 @@ AdministrativeEntity interface
 
 AnatomicalEntity typeimplements ThingWithTaxon
   {
+    expresses: GeneOrGeneProduct
+    inTaxon: OrganismTaxon
   }
 
 AnatomicalEntityToAnatomicalEntityAssociation type
   {
+    subject: AnatomicalEntity!
+    object: AnatomicalEntity!
   }
 
 AnatomicalEntityToAnatomicalEntityOntogenicAssociation type
   {
+    subject: AnatomicalEntity!
+    object: AnatomicalEntity!
+    relation: RelationshipType!
   }
 
 AnatomicalEntityToAnatomicalEntityPartOfAssociation type
   {
+    subject: AnatomicalEntity!
+    object: AnatomicalEntity!
+    relation: RelationshipType!
   }
 
 Association type
@@ -32,18 +42,25 @@ Association type
     qualifiers: [OntologyClass]
     publications: [Publication]
     providedBy: Provider
+    associationSlot: String
   }
 
 Attribute typeimplements OntologyClass
   {
+    subclassOf: OntologyClass
   }
 
 BiologicalEntity interface
   {
+    hasPhenotype: String
   }
 
 BiologicalProcess typeimplements Occurrent
   {
+    regulatesProcessToProcess: Occurrent
+    hasParticipant: String
+    hasInput: String
+    precedes: Occurrent
   }
 
 BiologicalProcessOrActivity type
@@ -56,6 +73,7 @@ BiologicalSex type
 
 Biosample typeimplements ThingWithTaxon
   {
+    inTaxon: OrganismTaxon
   }
 
 BiosampleToDiseaseOrPhenotypicFeatureAssociation typeimplements BiosampleToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
@@ -64,6 +82,7 @@ BiosampleToDiseaseOrPhenotypicFeatureAssociation typeimplements BiosampleToThing
 
 BiosampleToThingAssociation interface
   {
+    subject: Biosample!
   }
 
 Case type
@@ -72,10 +91,15 @@ Case type
 
 CaseToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, CaseToThingAssociation
   {
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    sexQualifier: BiologicalSex
   }
 
 CaseToThingAssociation interface
   {
+    subject: Case!
   }
 
 Cell type
@@ -88,10 +112,12 @@ CellLine type
 
 CellLineToDiseaseOrPhenotypicFeatureAssociation typeimplements CellLineToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
   {
+    subject: DiseaseOrPhenotypicFeature!
   }
 
 CellLineToThingAssociation interface
   {
+    subject: CellLine!
   }
 
 CellularComponent type
@@ -104,18 +130,22 @@ ChemicalSubstance type
 
 ChemicalToDiseaseOrPhenotypicFeatureAssociation typeimplements ChemicalToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
   {
+    object: DiseaseOrPhenotypicFeature!
   }
 
 ChemicalToGeneAssociation typeimplements ChemicalToThingAssociation
   {
+    object: GeneOrGeneProduct!
   }
 
 ChemicalToPathwayAssociation typeimplements ChemicalToThingAssociation
   {
+    object: Pathway!
   }
 
 ChemicalToThingAssociation interface
   {
+    subject: ChemicalSubstance!
   }
 
 ClinicalEntity type
@@ -152,22 +182,33 @@ Disease type
 
 DiseaseOrPhenotypicFeature typeimplements ThingWithTaxon
   {
+    correlatedWith: MolecularEntity
+    hasBiomarker: MolecularEntity
+    treatedBy: String
+    inTaxon: OrganismTaxon
   }
 
 DiseaseOrPhenotypicFeatureAssociationToLocationAssociation type
   {
+    object: AnatomicalEntity!
   }
 
 DiseaseOrPhenotypicFeatureAssociationToThingAssociation interface
   {
+    subject: DiseaseOrPhenotypicFeature!
   }
 
 DiseaseToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, DiseaseToThingAssociation
   {
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    sexQualifier: BiologicalSex
   }
 
 DiseaseToThingAssociation interface
   {
+    subject: Disease!
   }
 
 Drug type
@@ -176,6 +217,7 @@ Drug type
 
 DrugExposure type
   {
+    drug: [ChemicalSubstance]!
   }
 
 EntityToDiseaseAssociation interface
@@ -183,6 +225,7 @@ EntityToDiseaseAssociation interface
     frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+    object: Disease
   }
 
 EntityToPhenotypicFeatureAssociation interface
@@ -191,6 +234,8 @@ EntityToPhenotypicFeatureAssociation interface
     severityQualifier: SeverityValue
     onsetQualifier: Onset
     sexQualifier: BiologicalSex
+    description: String
+    object: PhenotypicFeature!
   }
 
 Environment type
@@ -199,6 +244,11 @@ Environment type
 
 EnvironmentToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation
   {
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    subject: Environment!
   }
 
 EnvironmentalFeature type
@@ -207,6 +257,10 @@ EnvironmentalFeature type
 
 EnvironmentalProcess typeimplements Occurrent
   {
+    regulatesProcessToProcess: Occurrent
+    hasParticipant: String
+    hasInput: String
+    precedes: Occurrent
   }
 
 EvidenceType type
@@ -219,6 +273,8 @@ Exon type
 
 ExonToTranscriptRelationship type
   {
+    subject: Exon!
+    object: Transcript!
   }
 
 FrequencyQuantifier interface
@@ -235,14 +291,23 @@ FrequencyValue type
 
 FunctionalAssociation type
   {
+    subject: MacromolecularMachine!
+    object: GeneOntologyClass!
   }
 
 Gene type
   {
+    geneticallyInteractsWith: Gene
+    hasGeneProduct: GeneProduct
+    geneAssociatedWithCondition: DiseaseOrPhenotypicFeature
   }
 
 GeneAsAModelOfDiseaseAssociation typeimplements ModelToDiseaseMixin, EntityToDiseaseAssociation
   {
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    subject: GeneOrGeneProduct!
   }
 
 GeneFamily typeimplements GeneGrouping
@@ -256,6 +321,7 @@ GeneGrouping interface
 GeneHasVariantThatContributesToDiseaseAssociation type
   {
     sequenceVariantQualifier: SequenceVariant
+    subject: GeneOrGeneProduct!
   }
 
 GeneOntologyClass interface
@@ -264,6 +330,10 @@ GeneOntologyClass interface
 
 GeneOrGeneProduct type
   {
+    inPathwayWith: GeneOrGeneProduct
+    inComplexWith: GeneOrGeneProduct
+    inCellPopulationWith: GeneOrGeneProduct
+    expressedIn: AnatomicalEntity
   }
 
 GeneProduct type
@@ -276,40 +346,64 @@ GeneProductIsoform interface
 
 GeneRegulatoryRelationship type
   {
+    relation: RelationshipType!
+    subject: GeneOrGeneProduct!
+    object: GeneOrGeneProduct!
   }
 
 GeneToDiseaseAssociation typeimplements EntityToDiseaseAssociation, GeneToThingAssociation
   {
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    subject: GeneOrGeneProduct!
   }
 
 GeneToExpressionSiteAssociation type
   {
     stageQualifier: LifeStage
-    quantifierQualifier: OntologyClass
+    quantifierQualifier: String
+    subject: GeneOrGeneProduct!
+    object: AnatomicalEntity!
+    relation: RelationshipType!
   }
 
 GeneToGeneAssociation interface
   {
+    subject: GeneOrGeneProduct!
+    object: GeneOrGeneProduct!
   }
 
 GeneToGeneHomologyAssociation type
   {
+    relation: RelationshipType!
   }
 
 GeneToGeneProductRelationship type
   {
+    subject: Gene!
+    object: GeneProduct!
+    relation: RelationshipType!
   }
 
 GeneToGoTermAssociation type
   {
+    subject: MolecularEntity!
+    object: GeneOntologyClass!
   }
 
 GeneToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, GeneToThingAssociation
   {
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    subject: GeneOrGeneProduct!
   }
 
 GeneToThingAssociation interface
   {
+    subject: GeneOrGeneProduct!
   }
 
 Genome type
@@ -327,6 +421,8 @@ GenomicSequenceLocalization type
     endInterbaseCoordinate: String
     genomeBuild: String
     phase: String
+    subject: GenomicEntity!
+    object: GenomicEntity!
   }
 
 Genotype type
@@ -336,22 +432,38 @@ Genotype type
 
 GenotypeToGeneAssociation type
   {
+    relation: RelationshipType!
+    subject: Genotype!
+    object: Gene!
   }
 
 GenotypeToGenotypePartAssociation type
   {
+    relation: RelationshipType!
+    subject: Genotype!
+    object: Genotype!
   }
 
 GenotypeToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, GenotypeToThingAssociation
   {
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    relation: RelationshipType!
+    subject: Genotype!
   }
 
 GenotypeToThingAssociation interface
   {
+    subject: Genotype!
   }
 
 GenotypeToVariantAssociation type
   {
+    relation: RelationshipType!
+    subject: Genotype!
+    object: SequenceVariant!
   }
 
 GenotypicSex type
@@ -381,6 +493,7 @@ Haplotype type
 
 IndividualOrganism typeimplements ThingWithTaxon
   {
+    inTaxon: OrganismTaxon
   }
 
 InformationContentEntity interface
@@ -389,6 +502,7 @@ InformationContentEntity interface
 
 LifeStage typeimplements ThingWithTaxon
   {
+    inTaxon: OrganismTaxon
   }
 
 MacromolecularComplex type
@@ -397,18 +511,22 @@ MacromolecularComplex type
 
 MacromolecularMachine type
   {
+    name: String
   }
 
 MacromolecularMachineToBiologicalProcessAssociation type
   {
+    object: BiologicalProcess!
   }
 
 MacromolecularMachineToCellularComponentAssociation type
   {
+    object: CellularComponent!
   }
 
 MacromolecularMachineToMolecularActivityAssociation type
   {
+    object: MolecularActivity!
   }
 
 Metabolite type
@@ -421,18 +539,32 @@ Microrna type
 
 ModelToDiseaseMixin interface
   {
+    subject: String
+    relation: String
   }
 
 MolecularActivity typeimplements Occurrent
   {
+    regulatesProcessToProcess: Occurrent
+    hasParticipant: String
+    hasInput: String
+    precedes: Occurrent
   }
 
 MolecularEntity typeimplements ThingWithTaxon
   {
+    molecularlyInteractsWith: MolecularEntity
+    regulatesEntityToEntity: MolecularEntity
+    biomarkerFor: DiseaseOrPhenotypicFeature
+    inTaxon: OrganismTaxon
   }
 
 MolecularInteraction interface
   {
+    subject: MolecularEntity!
+    relation: RelationshipType!
+    object: MolecularEntity!
+    interactingMoleculesCategory: OntologyClass
   }
 
 NamedThing type
@@ -440,6 +572,12 @@ NamedThing type
     id: String
     name: String
     category: String
+    relatedTo: NamedThing
+    nodeProperty: String
+    iri: String
+    fullName: String
+    description: String
+    systematicSynonym: String
   }
 
 NoncodingRnaProduct type
@@ -448,6 +586,10 @@ NoncodingRnaProduct type
 
 Occurrent type
   {
+    regulatesProcessToProcess: Occurrent
+    hasParticipant: String
+    hasInput: String
+    precedes: Occurrent
   }
 
 Onset type
@@ -456,6 +598,7 @@ Onset type
 
 OntologyClass type
   {
+    subclassOf: OntologyClass
   }
 
 OrganismTaxon type
@@ -468,6 +611,7 @@ OrganismalEntity interface
 
 PairwiseGeneOrProteinInteractionAssociation typeimplements MolecularInteraction
   {
+    relation: RelationshipType!
   }
 
 PathognomonicityQuantifier interface
@@ -500,10 +644,14 @@ PlanetaryEntity type
 
 PopulationOfIndividualOrganisms typeimplements ThingWithTaxon
   {
+    inTaxon: OrganismTaxon
   }
 
 PopulationToPopulationAssociation type
   {
+    subject: PopulationOfIndividualOrganisms!
+    object: PopulationOfIndividualOrganisms!
+    relation: RelationshipType!
   }
 
 Procedure type
@@ -548,15 +696,21 @@ SenstivityQuantifier interface
 
 SequenceFeatureRelationship type
   {
+    subject: GenomicEntity!
+    object: GenomicEntity!
   }
 
 SequenceVariant type
   {
-    hasGene: Gene
+    hasGene: [String]
+    hasBiologicalSequence: String
+    id: String
   }
 
 SequenceVariantModulatesTreatmentAssociation interface
   {
+    subject: SequenceVariant!
+    object: Treatment!
   }
 
 SeverityValue type
@@ -569,6 +723,7 @@ SpecificityQuantifier interface
 
 ThingToDiseaseOrPhenotypicFeatureAssociation interface
   {
+    object: DiseaseOrPhenotypicFeature!
   }
 
 ThingWithTaxon interface
@@ -582,28 +737,49 @@ Transcript type
 
 TranscriptToGeneRelationship type
   {
+    subject: Transcript!
+    object: Gene!
   }
 
 Treatment type
   {
-    treats: DiseaseOrPhenotypicFeature
+    treats: DiseaseOrPhenotypicFeature!
+    hasExposureParts: [DrugExposure]!
   }
 
 VariantToDiseaseAssociation typeimplements VariantToThingAssociation, EntityToDiseaseAssociation
   {
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    subject: String!
+    relation: RelationshipType!
+    object: String!
   }
 
 VariantToPhenotypicFeatureAssociation typeimplements VariantToThingAssociation, EntityToPhenotypicFeatureAssociation
   {
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+    sexQualifier: BiologicalSex
+    subject: SequenceVariant!
   }
 
 VariantToPopulationAssociation typeimplements VariantToThingAssociation, FrequencyQuantifier
   {
     frequencyQualifier: FrequencyValue
+    hasCount: String
+    hasTotal: String
+    hasQuotient: String
+    hasPercentage: String
+    subject: SequenceVariant!
+    object: PopulationOfIndividualOrganisms!
   }
 
 VariantToThingAssociation interface
   {
+    subject: SequenceVariant!
   }
 
 Zygosity type

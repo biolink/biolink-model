@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/Disease]
+URI: http://bioentity.io/vocab/Disease
+
+![img](http://yuml.me/diagram/nofunky/class/\[DiseaseOrPhenotypicFeature]^-\[Disease],%20)
 ## Mappings
 
  * [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)

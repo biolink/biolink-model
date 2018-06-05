@@ -20,6 +20,8 @@ fields:
     the association, display_name: publications, id: publications}
 - {description: 'connects an association to the agent (person, organization or group)
     that provided it', display_name: provided by, id: provided_by}
+- {description: any slot that relates an association to another entity, display_name: association
+    slot, id: association_slot}
 id: association
 schema_generating: true
 weight: 20

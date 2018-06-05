@@ -17,3 +17,5 @@ None -> float
 
 ## Used in
 
+ *  usage: [geographic location](GeographicLocation.md)
+ *  usage: [geographic location at time](GeographicLocationAtTime.md)

@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/inverse
 
 ## Used in
 
+ *  usage: [slot definition](SlotDefinition.md)

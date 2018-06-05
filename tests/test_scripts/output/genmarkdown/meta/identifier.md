@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/identifier
 
 ## Used in
 
+ *  usage: [slot definition](SlotDefinition.md)

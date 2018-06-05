@@ -12,6 +12,7 @@ class GraphqlGenerator(Generator):
     generatorname = os.path.basename(__file__)
     generatorversion = "0.0.2"
     valid_formats = ['graphql']
+    visit_all__class_slots = False
 
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='csv') -> None:
         super().__init__(schema, fmt)
@@ -27,17 +28,18 @@ class GraphqlGenerator(Generator):
         print("  }")
         print()
 
-    def visit_class_slot(self, cls: ClassDefinition, slot_name: str, slot: SlotDefinition) -> None:
+    def visit_class_slot(self, cls: ClassDefinition, aliased_slot_name: str, slot: SlotDefinition) -> None:
         slotrange = camelcase(slot.range) if slot.range in self.schema.classes else "String"
         if slot.multivalued:
             slotrange = f"[{slotrange}]"
         if slot.required or slot.primary_key:
             slotrange = slotrange + '!'
-        print(f"    {lcamelcase(slot_name)}: {slotrange}")
+        print(f"    {lcamelcase(aliased_slot_name)}: {slotrange}")
 
 
 @click.command()
 @click.argument("yamlfile", type=click.File('r'))
 @click.option("--format", "-f", default='graphql', type=click.Choice(['graphql']), help="Output format")
 def cli(yamlfile, format):
+    """ Generate graphql representation of a biolink model """
     print(GraphqlGenerator(yamlfile, format).serialize())

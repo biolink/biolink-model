@@ -17,3 +17,4 @@ URI: http://bioentity.io/vocab/molecularly_interacts_with
 
 ## Used in
 
+ *  usage: [molecular entity](MolecularEntity.md)

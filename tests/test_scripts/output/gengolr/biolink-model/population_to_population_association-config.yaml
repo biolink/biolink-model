@@ -1,3 +1,16 @@
-{description: An association between a two populations, display_name: population to
-    population association, document_category: population to population association,
-  id: population_to_population_association, schema_generating: true, weight: 20}
+description: An association between a two populations
+display_name: population to population association
+document_category: population to population association
+fields:
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: population to population association subject, id: subject}
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: population to population association object, id: object}
+- {description: the relationship type by which a subject is connected to an object
+    in an association, display_name: population to population association relation,
+  id: relation}
+id: population_to_population_association
+schema_generating: true
+weight: 20

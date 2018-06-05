@@ -10,7 +10,7 @@ import click
 update_test_files = False
 
 
-class GenCSVTestCase(ClickTestCase):
+class GenJSONSchemaTestCase(ClickTestCase):
     testdir = "genjsonschema"
     click_ep = cli
     prog_name = "gen-json-schema"

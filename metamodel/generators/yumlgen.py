@@ -4,7 +4,7 @@ https://yuml.me/diagram/scruffy/class/samples
 
 """
 import os
-from typing import Union, TextIO, Set, List
+from typing import Union, TextIO, Set, List, Optional
 
 import click
 
@@ -13,7 +13,6 @@ from metamodel.utils.builtins import builtin_names
 from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.generator import Generator
 from metamodel.utils.namespaces import YUML
-from metamodel.utils.schemasynopsis import SchemaSynopsis
 
 yuml_is_a = '^-'
 yuml_uses = 'uses -.->'
@@ -27,21 +26,23 @@ class YumlGenerator(Generator):
     generatorname = os.path.basename(__file__)
     generatorversion = "0.0.2"
     valid_formats = ['yuml']
+    visit_all__class_slots = False
 
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='yuml') -> None:
         super().__init__(schema, fmt)
-        self.synopsis: SchemaSynopsis = None
-        self.referenced: Set[ClassDefinitionName] = None
+        self.referenced: List[ClassDefinitionName] = None
         self.box_generated: Set[ClassDefinitionName] = None
         self.associations_generated: Set[ClassDefinitionName] = None
+        self.gen_classes: Optional[Set[ClassDefinitionName]] = None
 
-    def visit_schema(self, cls: List[ClassDefinitionName]=None):
-        classes = [] if cls is None else list(cls)
-        closure = self.root_closure(classes)
-        self.synopsis = SchemaSynopsis(self.schema)
+    def visit_schema(self, classes: Set[ClassDefinitionName]=None):
+        for cls in classes:
+            if cls not in self.schema.classes:
+                raise ValueError("Unknown class name: {cls}")
+        self.gen_classes = classes
         self.box_generated = set()
         self.associations_generated = set()
-        self.referenced = self.synopsis.roots.classrefs
+        self.referenced = list(classes if classes else self.synopsis.roots.classrefs)
         yumlclassdef: List[str] = []
 
         while self.referenced:
@@ -50,40 +51,43 @@ class YumlGenerator(Generator):
             for cn in sorted(list(references)):
                 yumlclassdef.append(self.class_associations(cn))
 
-        print(str(YUML)+', '.join(yumlclassdef))
+        print(str(YUML)+', '.join(yumlclassdef), end="")
 
     def class_box(self, cn: ClassDefinitionName, inherited: bool=False) -> str:
         slot_defs: List[str] = []
-        if cn not in self.box_generated:
-            self.referenced.add(cn)
+        if cn not in self.box_generated and (not self.gen_classes or cn in self.gen_classes):
+            self.referenced.append(cn)
             for slotname in self.filtered_cls_slots(cn, use_isa=inherited, use_mixins=inherited, use_applytos=True):
                 slot = self.schema.slots[slotname]
                 if not slot.range or slot.range in builtin_names or slot.range in self.schema.types:
                     # TODO: generalize this
                     if not slot.range:
                         slot.range = 'string'
-                    slot_defs.append(underscore(self.slot_name(slot)) + ('(pk)' if slot.primary_key else '') + ':' +
-                                                underscore(slot.range) + self.cardinality(slot))
+                    slot_defs.append(underscore(self.aliased_slot_name(slot)) +
+                                     ('(pk)' if slot.primary_key else '') + ':' +
+                                     underscore(slot.range) + self.cardinality(slot))
             self.box_generated.add(cn)
         return '[' + camelcase(cn) + ('|' + ';'.join(slot_defs) if slot_defs else '') + ']'
 
     def class_associations(self, cn: ClassDefinitionName, inherited: bool=False) -> str:
         assocs: List[str] = []
-        if cn not in self.associations_generated:
+        if cn not in self.associations_generated and (not self.gen_classes or cn in self.gen_classes):
             cls = self.schema.classes[cn]
-            if cn in self.synopsis.isarefs:
-                for is_a_cls in self.synopsis.isarefs[cn].classrefs:
+            if cls.is_a and cls.is_a not in self.gen_classes:
+                assocs.append(self.class_box(cls.is_a, inherited) + yuml_is_a + self.class_box(cn, inherited))
+            if cn in sorted(self.synopsis.isarefs):
+                for is_a_cls in sorted(self.synopsis.isarefs[cn].classrefs):
                     assocs.append(self.class_box(cn, inherited) + yuml_is_a + self.class_box(is_a_cls, inherited))
             for slotname in self.filtered_cls_slots(cn, use_isa=inherited, use_mixins=inherited, use_applytos=True):
                 slot = self.schema.slots[slotname]
                 if slot.range in self.schema.classes:
                     assocs.append(self.class_box(cn, inherited) + (yuml_inline if slot.inlined else yuml_ref) +
-                                  underscore(self.slot_name(slot)) + self.cardinality(slot) + '>' +
-                                             self.class_box(slot.range, inherited))
+                                  underscore(self.aliased_slot_name(slot)) + self.cardinality(slot) + '>' +
+                                  self.class_box(slot.range, inherited))
             for mixin in cls.mixins:
                 assocs.append(self.class_box(cn, inherited) + yuml_uses + self.class_box(mixin, inherited))
             if cn in self.synopsis.applytos:
-                for injector in self.synopsis.applytos[cn].classrefs:
+                for injector in sorted(self.synopsis.applytos[cn].classrefs):
                     assocs.append(self.class_box(cn, inherited) + yuml_injected + self.class_box(injector, inherited))
             self.associations_generated.add(cn)
         return ', '.join(assocs)
@@ -111,8 +115,8 @@ class YumlGenerator(Generator):
 
         rval = []
         cls = self.schema.classes[cn]
-        cls_mixins = set() if cn not in self.synopsis.mixinrefs else self.synopsis.mixinrefs[cn]
-        cls_applytos = set() if cn not in self.synopsis.applytos else self.synopsis.applytos[cn]
+        cls_mixins = set() if cn not in self.synopsis.mixinrefs else self.synopsis.mixinrefs[cn].classrefs
+        cls_applytos = set() if cn not in self.synopsis.applytos else self.synopsis.applytos[cn].classrefs
         cls_isas = set() if not cls.is_a else {cls.is_a}
         for slotname in cls.slots:
             if (use_isa or not slot_in(cls_isas)) \
@@ -124,9 +128,8 @@ class YumlGenerator(Generator):
 
 @click.command()
 @click.argument("yamlfile", type=click.File('r'))
-@click.option("--cls", "-c", default=None, multiple=True, help="Class(es) to emit")
+@click.option("--classes", "-c", default=None, multiple=True, help="Class(es) to emit")
 @click.option("--format", "-f", default='yuml', type=click.Choice(['yuml']), help="Output format")
-def cli(yamlfile, format, cls):
-    print(YumlGenerator(yamlfile, format).serialize(cls=cls))
-
-
+def cli(yamlfile, format, classes):
+    """ Generate a UML representation of a biolink model """
+    print(YumlGenerator(yamlfile, format).serialize(classes=classes), end="")

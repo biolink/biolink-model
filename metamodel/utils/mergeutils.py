@@ -31,6 +31,6 @@ def merge_dicts(target: Dict[str, Element],
 
 
 def merge_slots(target: SlotDefinition, source: SlotDefinition) -> None:
-    for k, v in dataclasses.asdict(source).items():
+    for k in dataclasses.asdict(source).keys():
         if k not in ('name', 'domain') and not getattr(target, k, None):
-            setattr(target, k, deepcopy(v))
+            setattr(target, k, deepcopy(getattr(source, k)))

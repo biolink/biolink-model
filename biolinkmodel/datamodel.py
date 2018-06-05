@@ -1,5 +1,5 @@
-# Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/biolink-model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2018-05-29 17:20
+# Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/biolink-model.yaml by pythongen.py version: 0.0.2
+# Generation date: 2018-06-05 10:11
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -7,10 +7,12 @@
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import datetime
-from typing import Optional, List, NewType
+from typing import Optional, List, Union, Dict, NewType
 from dataclasses import dataclass
-from metamodel.utils.metamodelcore import empty_list
+from metamodel.utils.metamodelcore import empty_list, empty_dict
 from metamodel.utils.yamlutils import YAMLRoot
+
+metamodel_version = "0.2.0"
 
 # Class references
 RelationshipTypeName = NewType("RelationshipTypeName", str)
@@ -100,9 +102,9 @@ CellLineToThingAssociationName = NewType("CellLineToThingAssociationName", str)
 CellLineToDiseaseOrPhenotypicFeatureAssociationName = NewType("CellLineToDiseaseOrPhenotypicFeatureAssociationName", str)
 ChemicalToThingAssociationName = NewType("ChemicalToThingAssociationName", str)
 CaseToThingAssociationName = NewType("CaseToThingAssociationName", str)
-ChemicalToGeneAssociationName = NewType("ChemicalToGeneAssociationName", str)
 ChemicalToDiseaseOrPhenotypicFeatureAssociationName = NewType("ChemicalToDiseaseOrPhenotypicFeatureAssociationName", str)
 ChemicalToPathwayAssociationName = NewType("ChemicalToPathwayAssociationName", str)
+ChemicalToGeneAssociationName = NewType("ChemicalToGeneAssociationName", str)
 BiosampleToThingAssociationName = NewType("BiosampleToThingAssociationName", str)
 BiosampleToDiseaseOrPhenotypicFeatureAssociationName = NewType("BiosampleToDiseaseOrPhenotypicFeatureAssociationName", str)
 EntityToPhenotypicFeatureAssociationName = NewType("EntityToPhenotypicFeatureAssociationName", str)
@@ -158,6 +160,9 @@ CellLineName = NewType("CellLineName", str)
 GrossAnatomicalStructureName = NewType("GrossAnatomicalStructureName", str)
 
 # Type references
+Phenotype = NewType("Phenotype", str)
+EvidenceInstance = NewType("EvidenceInstance", str)
+ChemicalFormulaValue = NewType("ChemicalFormulaValue", str)
 IdentifierType = NewType("IdentifierType", str)
 IriType = NewType("IriType", str)
 LabelType = NewType("LabelType", str)
@@ -185,7 +190,7 @@ class Attribute(YAMLRoot):
     """
     A property or characteristic of an entity
     """
-    pass
+    subclass_of: Optional[OntologyClassName] = None
 
 
 @dataclass
@@ -248,7 +253,7 @@ class NamedThing(YAMLRoot):
     """
     a databased entity or concept/class
     """
-    named_thing_id: str
+    id: Optional[IdentifierType] = None
     name: Optional[LabelType] = None
     category: Optional[LabelType] = None
     related_to: Optional[NamedThingName] = None
@@ -261,7 +266,7 @@ class NamedThing(YAMLRoot):
 
 @dataclass
 class BiologicalEntity(NamedThing):
-    has_phenotype: Optional[str] = None
+    has_phenotype: Optional[Phenotype] = None
 
 
 @dataclass
@@ -269,7 +274,7 @@ class OntologyClass(YAMLRoot):
     """
     a concept or class in an ontology, vocabulary or thesaurus
     """
-    pass
+    subclass_of: Optional[OntologyClassName] = None
 
 
 @dataclass
@@ -533,7 +538,7 @@ class MacromolecularMachine(GenomicEntity):
     A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They
     either carry out individual biological activities, or they encode molecules which do this.
     """
-    pass
+    name: Optional[LabelType] = None
 
 
 @dataclass
@@ -653,9 +658,9 @@ class SequenceVariant(GenomicEntity):
     """
     An allele that varies in its sequence from what is considered the reference allele at that locus.
     """
-    sequence_variant_has_gene: List[str] = empty_list()
-    sequence_variant_has_biological_sequence: Optional[str] = None
-    sequence_variant_id: Optional[str] = None
+    has_gene: List[str] = empty_list()
+    has_biological_sequence: Optional[BiologicalSequence] = None
+    id: Optional[IdentifierType] = None
 
 
 @dataclass
@@ -663,12 +668,12 @@ class DrugExposure(Environment):
     """
     A drug exposure is an intake of a particular chemical substance
     """
-    drug_exposure_drug: List[ChemicalSubstanceName] = empty_list()
+    drug: List[ChemicalSubstanceName] = empty_list()
 
     def _fix_elements(self):
         super()._fix_elements()
-        if self.drug_exposure_drug is None:
-            raise ValueError(f"drug_exposure_drug must be supplied")
+        if self.drug is None:
+            raise ValueError(f"drug must be supplied")
 
 
 @dataclass
@@ -676,15 +681,15 @@ class Treatment(Environment):
     """
     A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
     """
-    treatment_treats: DiseaseOrPhenotypicFeatureName = None
-    treatment_has_exposure_parts: List[DrugExposureName] = empty_list()
+    treats: DiseaseOrPhenotypicFeatureName = None
+    has_exposure_parts: List[DrugExposureName] = empty_list()
 
     def _fix_elements(self):
         super()._fix_elements()
-        if self.treatment_treats is None:
-            raise ValueError(f"treatment_treats must be supplied")
-        if self.treatment_has_exposure_parts is None:
-            raise ValueError(f"treatment_has_exposure_parts must be supplied")
+        if self.treats is None:
+            raise ValueError(f"treats must be supplied")
+        if self.has_exposure_parts is None:
+            raise ValueError(f"has_exposure_parts must be supplied")
 
 
 @dataclass
@@ -736,9 +741,18 @@ class GenotypeToGenotypePartAssociation(Association):
     """
     Any association between one genotype and a genotypic entity that is a sub-component of it
     """
-    genotype_to_genotype_part_association_relation: Optional[str] = None
-    genotype_to_genotype_part_association_subject: Optional[GenotypeName] = None
-    genotype_to_genotype_part_association_object: Optional[GenotypeName] = None
+    relation: RelationshipTypeName = None
+    subject: GenotypeName = None
+    object: GenotypeName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -747,9 +761,18 @@ class GenotypeToGeneAssociation(Association):
     Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single
     one. There is no assumption of cardinality
     """
-    genotype_to_gene_association_relation: Optional[str] = None
-    genotype_to_gene_association_subject: Optional[GenotypeName] = None
-    genotype_to_gene_association_object: Optional[GeneName] = None
+    relation: RelationshipTypeName = None
+    subject: GenotypeName = None
+    object: GeneName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -757,9 +780,18 @@ class GenotypeToVariantAssociation(Association):
     """
     Any association between a genotype and a sequence variant.
     """
-    genotype_to_variant_association_relation: Optional[str] = None
-    genotype_to_variant_association_subject: Optional[GenotypeName] = None
-    genotype_to_variant_association_object: Optional[SequenceVariantName] = None
+    relation: RelationshipTypeName = None
+    subject: GenotypeName = None
+    object: SequenceVariantName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -768,8 +800,15 @@ class GeneToGeneAssociation(Association):
     abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes
     homology and interaction.
     """
-    gene_to_gene_association_subject: Optional[GeneOrGeneProductName] = None
-    gene_to_gene_association_object: Optional[GeneOrGeneProductName] = None
+    subject: GeneOrGeneProductName = None
+    object: GeneOrGeneProductName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -778,7 +817,12 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     A homology association between two genes. May be orthology (in which case the species of subject and object should
     differ) or paralogy (in which case the species may be the same)
     """
-    gene_to_gene_homology_association_relation: Optional[str] = None
+    relation: RelationshipTypeName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
 @dataclass
@@ -787,7 +831,12 @@ class PairwiseGeneOrProteinInteractionAssociation(GeneToGeneAssociation):
     An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between
     genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
     """
-    pairwise_gene_or_protein_interaction_association_relation: Optional[str] = None
+    relation: RelationshipTypeName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
 @dataclass
@@ -795,7 +844,12 @@ class CellLineToThingAssociation(Association):
     """
     An relationship between a cell line and another entity
     """
-    cell_line_to_thing_association_subject: Optional[CellLineName] = None
+    subject: CellLineName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -804,7 +858,12 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an
     individual with that disease or phenotype
     """
-    cell_line_to_disease_or_phenotypic_feature_association_subject: Optional[DiseaseOrPhenotypicFeatureName] = None
+    subject: DiseaseOrPhenotypicFeatureName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -812,7 +871,12 @@ class ChemicalToThingAssociation(Association):
     """
     An interaction between a chemical entity and another entity
     """
-    chemical_to_thing_association_subject: Optional[ChemicalSubstanceName] = None
+    subject: ChemicalSubstanceName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -820,16 +884,12 @@ class CaseToThingAssociation(Association):
     """
     An abstract association for use where the case is the subject
     """
-    case_to_thing_association_subject: Optional[CaseName] = None
+    subject: CaseName = None
 
-
-@dataclass
-class ChemicalToGeneAssociation(Association):
-    """
-    An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a
-    drug with the gene being a target of the drug.
-    """
-    chemical_to_gene_association_object: Optional[GeneProductName] = None
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -838,7 +898,12 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise
     to or exacerbates the phenotype
     """
-    chemical_to_disease_or_phenotypic_feature_association_object: Optional[DiseaseOrPhenotypicFeatureName] = None
+    object: DiseaseOrPhenotypicFeatureName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -846,7 +911,25 @@ class ChemicalToPathwayAssociation(Association):
     """
     An interaction between a chemical entity and a biological process or pathway
     """
-    chemical_to_pathway_association_object: Optional[PathwayName] = None
+    object: PathwayName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+
+
+@dataclass
+class ChemicalToGeneAssociation(Association):
+    """
+    An interaction between a chemical entity and a gene or gene product
+    """
+    object: GeneOrGeneProductName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -854,7 +937,12 @@ class BiosampleToThingAssociation(Association):
     """
     An association between a biosample and something
     """
-    biosample_to_thing_association_subject: Optional[BiosampleName] = None
+    subject: BiosampleName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -872,13 +960,23 @@ class EntityToPhenotypicFeatureAssociation(Association):
     severity_qualifier: Optional[SeverityValueName] = None
     onset_qualifier: Optional[OnsetName] = None
     sex_qualifier: Optional[BiologicalSexName] = None
-    entity_to_phenotypic_feature_association_description: Optional[str] = None
-    entity_to_phenotypic_feature_association_object: Optional[PhenotypicFeatureName] = None
+    description: Optional[NarrativeText] = None
+    object: PhenotypicFeatureName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
 class DiseaseOrPhenotypicFeatureAssociationToThingAssociation(Association):
-    disease_or_phenotypic_feature_association_to_thing_association_subject: Optional[DiseaseOrPhenotypicFeatureName] = None
+    subject: DiseaseOrPhenotypicFeatureName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -887,17 +985,32 @@ class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(DiseaseOrPhenot
     An association between either a disease or a phenotypic feature and an anatomical entity, where the
     disease/feature manifests in that site.
     """
-    disease_or_phenotypic_feature_association_to_location_association_object: Optional[AnatomicalEntityName] = None
+    object: AnatomicalEntityName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
 class ThingToDiseaseOrPhenotypicFeatureAssociation(Association):
-    thing_to_disease_or_phenotypic_feature_association_object: Optional[DiseaseOrPhenotypicFeatureName] = None
+    object: DiseaseOrPhenotypicFeatureName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
 class DiseaseToThingAssociation(Association):
-    disease_to_thing_association_subject: Optional[DiseaseName] = None
+    subject: DiseaseName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -910,8 +1023,15 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     severity_qualifier: Optional[SeverityValueName] = None
     onset_qualifier: Optional[OnsetName] = None
     sex_qualifier: Optional[BiologicalSexName] = None
-    genotype_to_phenotypic_feature_association_relation: Optional[str] = None
-    genotype_to_phenotypic_feature_association_subject: Optional[GenotypeName] = None
+    relation: RelationshipTypeName = None
+    subject: GenotypeName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -924,7 +1044,12 @@ class EnvironmentToPhenotypicFeatureAssociation(Association):
     severity_qualifier: Optional[SeverityValueName] = None
     onset_qualifier: Optional[OnsetName] = None
     sex_qualifier: Optional[BiologicalSexName] = None
-    environment_to_phenotypic_feature_association_subject: Optional[EnvironmentName] = None
+    subject: EnvironmentName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -953,7 +1078,12 @@ class CaseToPhenotypicFeatureAssociation(Association):
 
 @dataclass
 class GeneToThingAssociation(Association):
-    gene_to_thing_association_subject: Optional[GeneOrGeneProductName] = None
+    subject: GeneOrGeneProductName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -962,7 +1092,12 @@ class GeneToPhenotypicFeatureAssociation(Association):
     severity_qualifier: Optional[SeverityValueName] = None
     onset_qualifier: Optional[OnsetName] = None
     sex_qualifier: Optional[BiologicalSexName] = None
-    gene_to_phenotypic_feature_association_subject: Optional[GeneOrGeneProductName] = None
+    subject: GeneOrGeneProductName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -970,7 +1105,12 @@ class GeneToDiseaseAssociation(Association):
     frequency_qualifier: Optional[FrequencyValue] = None
     severity_qualifier: Optional[SeverityValueName] = None
     onset_qualifier: Optional[OnsetName] = None
-    gene_to_disease_association_subject: Optional[GeneOrGeneProductName] = None
+    subject: GeneOrGeneProductName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -979,12 +1119,19 @@ class VariantToPopulationAssociation(Association):
     An association between a variant and a population, where the variant has particular frequency in the population
     """
     frequency_qualifier: Optional[FrequencyValue] = None
-    variant_to_population_association_has_count: Optional[str] = None
-    variant_to_population_association_has_total: Optional[str] = None
-    variant_to_population_association_has_quotient: Optional[str] = None
+    has_count: Optional[str] = None
+    has_total: Optional[str] = None
+    has_quotient: Optional[str] = None
     has_percentage: Optional[float] = None
-    variant_to_population_association_subject: Optional[SequenceVariantName] = None
-    variant_to_population_association_object: Optional[PopulationOfIndividualOrganismsName] = None
+    subject: SequenceVariantName = None
+    object: PopulationOfIndividualOrganismsName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -992,9 +1139,18 @@ class PopulationToPopulationAssociation(Association):
     """
     An association between a two populations
     """
-    population_to_population_association_subject: Optional[PopulationOfIndividualOrganismsName] = None
-    population_to_population_association_object: Optional[PopulationOfIndividualOrganismsName] = None
-    population_to_population_association_relation: Optional[str] = None
+    subject: PopulationOfIndividualOrganismsName = None
+    object: PopulationOfIndividualOrganismsName = None
+    relation: RelationshipTypeName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
 @dataclass
@@ -1003,7 +1159,12 @@ class VariantToPhenotypicFeatureAssociation(Association):
     severity_qualifier: Optional[SeverityValueName] = None
     onset_qualifier: Optional[OnsetName] = None
     sex_qualifier: Optional[BiologicalSexName] = None
-    variant_to_phenotypic_feature_association_subject: Optional[SequenceVariantName] = None
+    subject: SequenceVariantName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -1011,9 +1172,18 @@ class VariantToDiseaseAssociation(Association):
     frequency_qualifier: Optional[FrequencyValue] = None
     severity_qualifier: Optional[SeverityValueName] = None
     onset_qualifier: Optional[OnsetName] = None
-    variant_to_disease_association_subject: Optional[str] = None
-    variant_to_disease_association_relation: Optional[str] = None
-    variant_to_disease_association_object: Optional[str] = None
+    subject: str = None
+    relation: RelationshipTypeName = None
+    object: str = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -1021,18 +1191,33 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     frequency_qualifier: Optional[FrequencyValue] = None
     severity_qualifier: Optional[SeverityValueName] = None
     onset_qualifier: Optional[OnsetName] = None
-    gene_as_a_model_of_disease_association_subject: Optional[GeneOrGeneProductName] = None
+    subject: GeneOrGeneProductName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
     sequence_variant_qualifier: Optional[SequenceVariantName] = None
-    gene_has_variant_that_contributes_to_disease_association_subject: Optional[GeneOrGeneProductName] = None
+    subject: GeneOrGeneProductName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
 class GenotypeToThingAssociation(Association):
-    genotype_to_thing_association_subject: Optional[GenotypeName] = None
+    subject: GenotypeName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
 @dataclass
@@ -1040,11 +1225,20 @@ class GeneToExpressionSiteAssociation(Association):
     """
     An association between a gene and an expression site, possibly qualified by stage/timing info.
     """
-    gene_to_expression_site_association_stage_qualifier: Optional[LifeStageName] = None
-    gene_to_expression_site_association_quantifier_qualifier: Optional[str] = None
-    gene_to_expression_site_association_subject: Optional[GeneOrGeneProductName] = None
-    gene_to_expression_site_association_object: Optional[AnatomicalEntityName] = None
-    gene_to_expression_site_association_relation: Optional[str] = None
+    stage_qualifier: Optional[LifeStageName] = None
+    quantifier_qualifier: Optional[str] = None
+    subject: GeneOrGeneProductName = None
+    object: AnatomicalEntityName = None
+    relation: RelationshipTypeName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
 @dataclass
@@ -1053,8 +1247,15 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     An association between a sequence variant and a treatment or health intervention. The treatment object itself
     encompasses both the disease and the drug used.
     """
-    sequence_variant_modulates_treatment_association_subject: Optional[SequenceVariantName] = None
-    sequence_variant_modulates_treatment_association_object: Optional[TreatmentName] = None
+    subject: SequenceVariantName = None
+    object: TreatmentName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -1063,8 +1264,15 @@ class FunctionalAssociation(Association):
     An association between a macromolecular machine (gene, gene product or complex of gene products) and either a
     molecular activity, a biological process or a cellular location in which a function is executed
     """
-    functional_association_subject: Optional[MacromolecularMachineName] = None
-    functional_association_object: Optional[GeneOntologyClassName] = None
+    subject: MacromolecularMachineName = None
+    object: GeneOntologyClassName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -1074,7 +1282,12 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
     (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to
     its execution
     """
-    macromolecular_machine_to_molecular_activity_association_object: Optional[MolecularActivityName] = None
+    object: MolecularActivityName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -1084,7 +1297,12 @@ class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation)
     or pathway (as represented in the GO biological process branch), where the entity carries out some part of the
     process, regulates it, or acts upstream of it
     """
-    macromolecular_machine_to_biological_process_association_object: Optional[BiologicalProcessName] = None
+    object: BiologicalProcessName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -1094,13 +1312,25 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
     (as represented in the GO cellular component branch), where the entity carries out its function in the cellular
     component
     """
-    macromolecular_machine_to_cellular_component_association_object: Optional[CellularComponentName] = None
+    object: CellularComponentName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
 class GeneToGoTermAssociation(FunctionalAssociation):
-    gene_to_go_term_association_subject: Optional[MolecularEntityName] = None
-    gene_to_go_term_association_object: Optional[GeneOntologyClassName] = None
+    subject: MolecularEntityName = None
+    object: GeneOntologyClassName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -1113,8 +1343,15 @@ class GenomicSequenceLocalization(Association):
     end_interbase_coordinate: Optional[str] = None
     genome_build: Optional[str] = None
     phase: Optional[str] = None
-    genomic_sequence_localization_subject: Optional[GenomicEntityName] = None
-    genomic_sequence_localization_object: Optional[GenomicEntityName] = None
+    subject: GenomicEntityName = None
+    object: GenomicEntityName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -1122,8 +1359,15 @@ class SequenceFeatureRelationship(Association):
     """
     For example, a particular exon is part of a particular transcript or gene
     """
-    sequence_feature_relationship_subject: Optional[GenomicEntityName] = None
-    sequence_feature_relationship_object: Optional[GenomicEntityName] = None
+    subject: GenomicEntityName = None
+    object: GenomicEntityName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -1131,8 +1375,15 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     """
     A gene is a collection of transcripts
     """
-    transcript_to_gene_relationship_subject: Optional[TranscriptName] = None
-    transcript_to_gene_relationship_object: Optional[GeneName] = None
+    subject: TranscriptName = None
+    object: GeneName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -1140,9 +1391,18 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     """
     A gene is transcribed and potentially translated to a gene product
     """
-    gene_to_gene_product_relationship_subject: Optional[GeneName] = None
-    gene_to_gene_product_relationship_object: Optional[GeneProductName] = None
-    gene_to_gene_product_relationship_relation: Optional[str] = None
+    subject: GeneName = None
+    object: GeneProductName = None
+    relation: RelationshipTypeName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
 @dataclass
@@ -1150,8 +1410,15 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     """
     A transcript is formed from multiple exons
     """
-    exon_to_transcript_relationship_subject: Optional[ExonName] = None
-    exon_to_transcript_relationship_object: Optional[TranscriptName] = None
+    subject: ExonName = None
+    object: TranscriptName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -1159,15 +1426,31 @@ class GeneRegulatoryRelationship(Association):
     """
     A regulatory relationship between two genes
     """
-    gene_regulatory_relationship_relation: Optional[str] = None
-    gene_regulatory_relationship_subject: Optional[GeneOrGeneProductName] = None
-    gene_regulatory_relationship_object: Optional[GeneOrGeneProductName] = None
+    relation: RelationshipTypeName = None
+    subject: GeneOrGeneProductName = None
+    object: GeneOrGeneProductName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
-    anatomical_entity_to_anatomical_entity_association_subject: Optional[AnatomicalEntityName] = None
-    anatomical_entity_to_anatomical_entity_association_object: Optional[AnatomicalEntityName] = None
+    subject: AnatomicalEntityName = None
+    object: AnatomicalEntityName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
 @dataclass
@@ -1177,9 +1460,18 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     related by parthood. This includes relationships between cellular components and cells, between cells and tissues,
     tissues and whole organisms
     """
-    anatomical_entity_to_anatomical_entity_part_of_association_subject: Optional[AnatomicalEntityName] = None
-    anatomical_entity_to_anatomical_entity_part_of_association_object: Optional[AnatomicalEntityName] = None
-    anatomical_entity_to_anatomical_entity_part_of_association_relation: Optional[str] = None
+    subject: AnatomicalEntityName = None
+    object: AnatomicalEntityName = None
+    relation: RelationshipTypeName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
 @dataclass
@@ -1189,9 +1481,18 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     related by development. A number of different relationship types can be used to specify the precise nature of the
     relationship
     """
-    anatomical_entity_to_anatomical_entity_ontogenic_association_subject: Optional[AnatomicalEntityName] = None
-    anatomical_entity_to_anatomical_entity_ontogenic_association_object: Optional[AnatomicalEntityName] = None
-    anatomical_entity_to_anatomical_entity_ontogenic_association_relation: Optional[str] = None
+    subject: AnatomicalEntityName = None
+    object: AnatomicalEntityName = None
+    relation: RelationshipTypeName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
 @dataclass
@@ -1290,3 +1591,4 @@ class CellLine(Biosample):
 @dataclass
 class GrossAnatomicalStructure(AnatomicalEntity):
     pass
+

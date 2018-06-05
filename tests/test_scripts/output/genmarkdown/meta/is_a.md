@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/is_a
 
 ## Used in
 
+ *  usage: [definition](Definition.md)

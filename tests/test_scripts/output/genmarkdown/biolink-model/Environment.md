@@ -3,7 +3,9 @@
 
 A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
 
-URI: [http://bioentity.io/vocab/Environment]
+URI: http://bioentity.io/vocab/Environment
+
+![img](http://yuml.me/diagram/nofunky/class/\[BiologicalEntity]^-\[Environment],%20\[Environment]^-\[DrugExposure],%20\[Environment]^-\[Treatment],%20)
 ## Mappings
 
  * [SIO:000955](http://semanticscience.org/resource/SIO_000955)

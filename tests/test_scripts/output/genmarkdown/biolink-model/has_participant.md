@@ -10,7 +10,7 @@ URI: http://bioentity.io/vocab/has_participant
  * [WD:P2283](http://purl.obolibrary.org/obo/WD_P2283)
 ## Domain and Range
 
-[occurrent](Occurrent.md) -> None
+[occurrent](Occurrent.md) -> string
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
@@ -19,3 +19,7 @@ URI: http://bioentity.io/vocab/has_participant
  *  child: [has input](has_input.md) *subsets: translator_minimal*
 ## Used in
 
+ *  usage: [environmental process](EnvironmentalProcess.md)
+ *  usage: [molecular activity](MolecularActivity.md)
+ *  usage: [biological process](BiologicalProcess.md)
+ *  usage: [occurrent](Occurrent.md)

@@ -1,6 +1,6 @@
 from typing import Union, TextIO, Optional, Set, List
 
-from metamodel.utils.loadschema import load_schema
+from metamodel.utils.loadschema import load_raw_schema
 from metamodel.metamodel import SchemaDefinition, SlotDefinition, SlotDefinitionName, ClassDefinition
 from metamodel.utils.schemasynopsis import SchemaSynopsis
 from metamodel.utils.mergeutils import merge_schemas, merge_slots
@@ -8,7 +8,7 @@ from metamodel.utils.mergeutils import merge_schemas, merge_slots
 
 class SchemaLoader:
     def __init__(self, data: Union[str, TextIO]) -> None:
-        self.schema = load_schema(data)
+        self.schema = load_raw_schema(data)
         self.loaded: Set[str] = {self.schema.name}
 
     def resolve(self) -> SchemaDefinition:
@@ -19,7 +19,7 @@ class SchemaLoader:
         for sname in self.schema.imports:
             if sname not in self.loaded:
                 self.loaded.add(sname)
-                merge_schemas(self.schema, load_schema(sname))
+                merge_schemas(self.schema, load_raw_schema(sname))
 
         # Inject slots into classes - we haven't error checked yet so we have to be cautious
         for slot in self.schema.slots.values():
@@ -43,9 +43,11 @@ class SchemaLoader:
                 child_name = SlotDefinitionName(cls.name + ' ' + slot_name)
                 new_slot = SlotDefinition(name=child_name, alias=slot_name, domain=cls.name)
 
-                # Copy the parent definition
+                # Copy the parent definition.  If there is no parent definition, the slot is being defined
+                # locally as a slot_usage
                 parent_slot = self.slot_definition_for(slot_name, cls)
                 if parent_slot is not None:
+                    new_slot.is_a = parent_slot.name
                     merge_slots(new_slot, parent_slot)
 
                 # Add the slot usage overrides
@@ -65,7 +67,6 @@ class SchemaLoader:
 
     def schema_errors(self) -> List[str]:
         return SchemaSynopsis(self.schema).errors()
-
 
     def slot_definition_for(self, slotname: SlotDefinitionName, cls: ClassDefinition) -> Optional[SlotDefinition]:
         if cls.is_a:

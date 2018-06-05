@@ -2,207 +2,152 @@
 
 model classes are translated to OWL classes, slots to OWL properties.
 """
-
-from rdflib import Namespace
-from rdflib import BNode
-from rdflib import Literal
-from rdflib import URIRef
-from rdflib.collection import Collection
-from rdflib.namespace import RDF
-from rdflib.namespace import RDFS
-from rdflib.namespace import OWL
-from rdflib.namespace import SKOS
-from rdflib.namespace import XSD
-import rdflib
 import logging
+import os
+from typing import List, Union, TextIO
 
+import click
+from rdflib import Graph, URIRef, RDF, OWL, Literal, BNode
+from rdflib.collection import Collection
+from rdflib.namespace import DCTERMS, RDFS, XSD
+from rdflib.plugin import plugins as rdflib_plugins, Parser as rdflib_Parser
+
+from metamodel.metamodel import ClassDefinitionName, SchemaDefinition, ClassDefinition, SlotDefinitionName, \
+    TypeDefinitionName, SlotDefinition
+from metamodel.utils.builtins import builtin_names
+from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.generator import Generator
-from metamodel.metamodel import ClassDefinition, SlotDefinition
+from metamodel.utils.namespaces import BIOENTITY, OBO, META
 
-OBO = Namespace("http://purl.obolibrary.org/obo/")
-DCTERMS = Namespace("http://purl.org/dc/terms/")
-META = Namespace("http://bioentity.io/meta/")
-BIOTOP = Namespace("http://purl.org/biotop/biotop.owl#")
-
-from metamodel.schemautils import *
-
-def write_owl(schema, fn):
-    gen = OwlSchemaGenerator(schema=schema)
-    gen.tr()
-    gen.serialize(fn)
 
 class OwlSchemaGenerator(Generator):
+    generatorname = os.path.basename(__file__)
+    generatorversion = "0.0.2"
+    valid_formats = List(x.name for x in rdflib_plugins(None, rdflib_Parser) if '/' not in str(x.name))
 
-    def serialize(self, destination=None, format='turtle', **args):
-        #self.graph.add((self.base, RDFS.label, Literal(str(destination.name))))
-        self.graph.serialize(destination, format, **args)
-    
-    def tr(self):
-        schema = self.schema
-        if schema.id:
-            self.base = URIRef(schema.id)
+    def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str = 'turtle') -> None:
+        super().__init__(schema, fmt)
+        self.graph: Graph = None
+
+    def visit_schema(self):
+        # TODO: Is it even possible to have a schema without an ID?
+        base = URIRef(self.schema.id) if self.schema.id else self.class_uri(self.schema.name)
+        self.graph = Graph(identifier=base)
+        self.graph.bind("obo", str(OBO))
+        self.graph.add((base, RDF.type, OWL.Ontology))
+        self.graph.add((base, RDF.type, OWL.Ontology))
+        self.graph.label(base, Literal(self.schema.name))
+        if self.schema.description:
+            self.graph.add((base, DCTERMS.description, Literal(self.schema.description)))
+        if self.schema.license:
+            self.graph.add((base, DCTERMS.license, Literal(self.schema.license)))
         else:
-            self.base = URIRef("http://bioentity.io/schema/{}".format(get_class_name(schema.name)))
-        self.graph = rdflib.Graph(identifier=self.base)
-        self.graph.bind("owl", OWL)
-        self.graph.bind("obo", "http://purl.obolibrary.org/obo/")
-        self.graph.add((self.base, RDF.type, OWL.Ontology))
+            logging.warning("No license!")
 
-        if schema.name:
-            self.graph.add((self.base, RDFS.label, Literal(schema.name)))
-        if schema.description:
-            self.graph.add((self.base, DCTERMS.description, Literal(schema.description)))
-        if schema.license:
-            self.graph.add((self.base, DCTERMS.license, Literal(schema.license)))
-        else:
-            logging.warn("No license!")
-            
-        for c in schema.classes:
-            self.tr_class(c)
-        for c in schema.slots:
-            self.tr_slot(c)
+    def visit_class(self, cls: ClassDefinition) -> bool:
+        cls_uri = self.class_uri(cls.name)
+        self.graph.add((cls_uri, RDF.type, OWL.Class))
+        self.graph.label(cls_uri, cls.name)
 
-    def uri(self, id):
-        return URIRef("http://bioentity.io/vocab/{}".format(id))
+        # Parent classes
+        if cls.is_a and not cls.defining_slots:
+            self.graph.add((cls_uri, RDFS.subClassOf, self.class_uri(cls.is_a)))
+        if cls.abstract:
+            self.graph.add((cls_uri, RDFS.subClassOf, META.abstract))
+        if cls.mixin:
+            self.graph.add((cls_uri, RDFS.subClassOf, META.mixin))
+        for mixin in cls.mixins:
+            self.graph.add((cls_uri, RDFS.subClassOf, self.class_uri(mixin)))
+        # TODO: Add apply_to injections
 
-    def class_uri(self, cn, create=True):
-        if cn is None:
-            logging.error("No class name: {}".format(cn))
-        c = self.manager.classdef(cn)
-        if c is None:
-            if not create:
-                raise ValueError("no such class {}".format(cn))
-            c = ClassDefinition(name=cn)
-            logging.error("Created placeholder: {}".format(c))
-
-        cn = self.manager.class_name(c)
-        return self.uri(cn)
-
-    def property_uri(self, pn, create=True, c=None):
-        p = self.manager.slotdef(pn, c)
-        if p is None:
-            logging.error("No such slot: {}".format(pn))
-            if not create:
-                raise ValueError("no such class {}".format(pn))
-            p = SlotDefinition(name=pn)
-
-        pn = self.manager.slot_name(p)
-        return self.uri(pn)
-    
-    def tr_class(self, c):
-        """
-        Translate metamodel class to OWL Class
-        """
-        mgr = self.manager
-        g = self.graph
-
-        ci = self.class_uri(c.name)
-        self._tr_element(c, ci)
-        g.add((ci, RDF.type, OWL.Class))
-        g.add((ci, RDFS.label, Literal(c.name)))
-        if c.mixin:
-            g.add((ci, RDFS.subClassOf, META.Mixin))
-        if c.abstract:
-            g.add((ci, RDFS.subClassOf, META.Abstract))
-        if c.is_a:
-            g.add((ci, RDFS.subClassOf, self.class_uri(c.is_a)))
-        if c.mixins:
-            for m in c.mixins:
-                g.add((ci, RDFS.subClassOf, self.class_uri(m)))
-        slots = mgr.class_slotdefs(c, True, True)
-        mappings = c.mappings
-        if mappings is None:
-            if c.subclass_of:
-                mappings = [c.subclass_of]
-        if mappings:
-            # TODO: use geneal
-            for m in mappings:
-                uri = self.class_uri(m)
-                if ':' in m:
-                    uri = URIRef(self.id_to_url(m))
-                #g.add((ci, BIOTOP.isAbout, uri))                    
-                g.add((ci, SKOS.exactMatch, uri))
-                #g.add((ci, OWL.equivalentClass, uri))
-        for sn in slots:
-            s = mgr.slotdef(sn, c)
-            slot_range = self.get_range_for_class_slot(c, s)
-            if slot_range:
-                restr = BNode()
-                g.add((ci, RDFS.subClassOf, restr))
-                g.add((restr, RDF.type, OWL.Restriction))
-                g.add((restr, OWL.onProperty, self.property_uri(sn)))
-                g.add((restr, OWL.someValuesFrom, slot_range))
-
-        if c.defining_slots:
+        # Defining slots give us an equivalent class
+        if cls.defining_slots:
             x = BNode()
-            g.add((ci, OWL.equivalentClass, x))
+            self.graph.add((cls_uri, OWL.equivalentClass, x))
             xl = BNode()
-            g.add((x, OWL.intersectionOf, xl))
+            self.graph.add((x, OWL.intersectionOf, xl))
+
             elts = []
-            if c.is_a:
-                elts.append(self.class_uri(c.is_a))
-            for sn in c.defining_slots:
-                logging.info("Defining slot for {} = {}".format(c.name, sn))
-                s = mgr.slotdef(sn, c)
-                p = self.property_uri(s, False, c)
-                slot_range = self.get_range_for_class_slot(c, s)
-                if slot_range:
-                    restr = BNode()
-                    g.add((ci, RDFS.subClassOf, restr))
-                    g.add((restr, RDF.type, OWL.Restriction))
-                    g.add((restr, OWL.onProperty, self.property_uri(sn)))
-                    g.add((restr, OWL.someValuesFrom, slot_range))
-                    elts.append(restr)
-            c = Collection(g, xl, elts)
-            
-                
-                
-    def get_range_for_class_slot(self, c, s):
-        mgr = self.manager
-        g = self.graph
-        srange = mgr.class_slot_range(c, s)
-        if srange:
-            return self.get_filler(srange)
+            if cls.is_a:
+                elts.append(self.class_uri(cls.is_a))
+            for slotname in cls.defining_slots:
+                slot = self.schema.slots[slotname]
+                if slot.range in builtin_names:
+                    prop_type = XSD[slot]
+                elif slot.range in self.schema.types:
+                    prop_type = self.type_uri(slot.range)
+                else:
+                    prop_type = self.class_uri(slot.range)
+                restr = BNode()
+                self.graph.add((cls_uri, RDFS.subClassOf, restr))
+                self.graph.add((restr, RDF.type, OWL.Restriction))
+                self.graph.add((restr, OWL.onProperty, self.prop_uri(slot.name)))
+                # TODO: Look up data values restriction
+                self.graph.add((restr, OWL.someValuesFrom, prop_type))
+                elts.append(restr)
+            equ_bnode = BNode()
+            self.graph.add((cls_uri, OWL.equivalentClass, equ_bnode))
+            Collection(self.graph, equ_bnode, elts)
 
-    def get_filler(self, srange):
-        mgr = self.manager
-        g = self.graph
-        # represent as existential restrictions
-        if mgr.typedef(srange):
-            t = mgr.typedef(srange)
-            typeof = t.typeof
-            xtype = XSD.string
-            if typeof == 'string':
-                xtype = XSD.string
-            elif typeof == 'time':
-                xtype = XSD.time
-            else:
-                logging.warn("Unknown type: {}".format(typeof))
-            return xtype
+        return True
+
+    @staticmethod
+    def class_uri(cn: ClassDefinitionName) -> URIRef:
+        return BIOENTITY[camelcase(cn)]
+
+    @staticmethod
+    def prop_uri(pn: SlotDefinitionName) -> URIRef:
+        return BIOENTITY[underscore(pn)]
+    
+    @staticmethod
+    def type_uri(tn: TypeDefinitionName) -> URIRef:
+        return BIOENTITY[underscore(tn)]
+
+    def visit_slot(self, slot_name: str, slot: SlotDefinition) -> None:
+        """ Add a slot definition per slot
+
+        @param slot_name:
+        @param slot:
+        @return:
+        """
+        # Note: We use the raw name in OWL and add a subProperty arc
+        slot_uri = self.prop_uri(slot.name)
+
+        # Parent slots
+        if slot.is_a:
+            self.graph.add((slot_uri, RDFS.subPropertyOf, self.class_uri(slot.is_a)))
+        if slot.abstract:
+            self.graph.add((slot_uri, RDFS.subPropertyOf, META.abstract))
+        if slot.mixin:
+            self.graph.add((slot_uri, RDFS.subPropertyOf, META.mixin))
+        for mixin in slot.mixins:
+            self.graph.add((slot_uri, RDFS.subPropertyOf, self.class_uri(mixin)))
+
+        # Slot range
+        if slot.range in builtin_names:
+            self.graph.add((slot_uri, RDF.type, OWL.DatatypeProperty))
+            self.graph.add((slot_uri, RDFS.range, XSD[slot.range]))
+        elif slot.range in self.schema.types:
+            self.graph.add((slot_uri, RDF.type, OWL.DatatypeProperty))
+            self.graph.add((slot_uri, RDFS.range, self.type_uri(slot.range)))
         else:
-            if srange.startswith('xsd:'):
-                return URIRef(srange.replace('xsd:','http://www.w3.org/2001/XMLSchema#'))
-            else:
-                return self.class_uri(srange)
-        
-        
-    def tr_slot(self, s):
-        g = self.graph
+            self.graph.add((slot_uri, RDF.type, OWL.ObjectProperty))
+            self.graph.add((slot_uri, RDFS.range, self.class_uri(slot.range)))
 
-        p = self.property_uri(s.name)
-        self._tr_element(s, p)
-        g.add((p, RDF.type, OWL.ObjectProperty))
-        g.add((p, RDFS.label, Literal(s.name)))
-        if s.is_a:
-            g.add((p, OWL.subObjectPropertyOf, self.property_uri(s.is_a)))
-        if s.domain:
-            g.add((p, RDFS.domain, self.get_filler(s.domain)))
-        if s.range:
-            g.add((p, RDFS.range, self.get_filler(s.range)))
-        
+        # Slot domain
+        self.graph.add((slot_uri, RDFS.domain, self.class_uri(slot.domain)))
 
-    def _tr_element(self, e, uri):
-        g = self.graph
-        if e.description:
-            g.add((uri, OBO.IAO_0000115, Literal(e.description)))
-                  
+        # Annotations
+        self.graph.label(slot_uri, slot.name)
+        if slot.description:
+            self.graph.add((slot_uri, DCTERMS.description, Literal(slot.description)))
+            self.graph.add((slot_uri, OBO.IAO_0000115, Literal(slot.description)))
+
+
+@click.command()
+@click.argument("yamlfile", type=click.File('r'))
+@click.option("--format", "-f", default='rdf', type=click.Choice(OwlSchemaGenerator.valid_formats),
+              help="Output format")
+def cli(yamlfile, format):
+    """ Generate an OWL representation of a biolink model """
+    print(OwlSchemaGenerator(yamlfile, format).serialize())

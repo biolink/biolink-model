@@ -4,7 +4,9 @@
 An association between a biosample and a disease or phenotype
   definitional: true
 
-URI: [http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation]
+URI: http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation
+
+![img](http://yuml.me/diagram/nofunky/class/\[Association]^-\[BiosampleToDiseaseOrPhenotypicFeatureAssociation],%20\[BiosampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[BiosampleToThingAssociation],%20\[BiosampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20)
 ## Mappings
 
 ## Inheritance

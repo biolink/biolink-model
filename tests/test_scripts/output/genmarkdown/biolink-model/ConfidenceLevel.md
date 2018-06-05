@@ -3,7 +3,9 @@
 
 Level of confidence in a statement
 
-URI: [http://bioentity.io/vocab/ConfidenceLevel]
+URI: http://bioentity.io/vocab/ConfidenceLevel
+
+![img](http://yuml.me/diagram/nofunky/class/\[InformationContentEntity]^-\[ConfidenceLevel],%20)
 ## Mappings
 
  * [CIO:0000028](http://purl.obolibrary.org/obo/CIO_0000028)

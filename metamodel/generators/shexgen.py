@@ -54,7 +54,7 @@ class ShexGenerator(Generator):
             shape = ShExJ.Shape(id=self.as_iriref(BASE, typ.name))
             self.tr_type(shape, typ)
 
-    def slot_name(self, s):
+    def aliased_slot_name(self, s):
         return self.manager.slot_name(s, NameStyle.LCAMELCASE)
 
     def tr_type(self, shape: ShExJ.Shape, typ: TypeDefinition) -> None:

@@ -15,7 +15,11 @@ URI: http://bioentity.io/vocab/regulates_process_to_process
  *  is_a: [regulates](regulates.md)
 ## Children
 
- *  child: [negatively regulates, process to process](negatively_regulates_process_to_process.md)
  *  child: [positively regulates, process to process](positively_regulates_process_to_process.md)
+ *  child: [negatively regulates, process to process](negatively_regulates_process_to_process.md)
 ## Used in
 
+ *  usage: [environmental process](EnvironmentalProcess.md)
+ *  usage: [molecular activity](MolecularActivity.md)
+ *  usage: [biological process](BiologicalProcess.md)
+ *  usage: [occurrent](Occurrent.md)

@@ -1,4 +1,14 @@
-{description: 'For example, a particular exon is part of a particular transcript or
-    gene', display_name: sequence feature relationship, document_category: sequence
-    feature relationship, id: sequence_feature_relationship, schema_generating: true,
-  weight: 20}
+description: For example, a particular exon is part of a particular transcript or
+  gene
+display_name: sequence feature relationship
+document_category: sequence feature relationship
+fields:
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: sequence feature relationship subject, id: subject}
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: sequence feature relationship object, id: object}
+id: sequence_feature_relationship
+schema_generating: true
+weight: 20

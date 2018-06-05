@@ -16,3 +16,4 @@ URI: http://bioentity.io/vocab/iri
 
 ## Used in
 
+ *  usage: [named thing](NamedThing.md)

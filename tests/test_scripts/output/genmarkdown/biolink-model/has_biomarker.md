@@ -16,3 +16,4 @@ URI: http://bioentity.io/vocab/has_biomarker
 
 ## Used in
 
+ *  usage: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)

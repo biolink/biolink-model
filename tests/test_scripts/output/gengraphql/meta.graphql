@@ -36,6 +36,7 @@ Element interface
     id_Prefixes: [String]
     in_Subset: [String]
     from_Schema: String
+    alt_Descriptions: [String]
   }
 
 Example type
@@ -75,6 +76,7 @@ SlotDefinition type
     subproperty_Of: SlotDefinition
     inverse: SlotDefinition
     is_Class_Field: String
+    role: String
   }
 
 TypeDefinition type

@@ -11,10 +11,10 @@ from metamodel.metamodel import SchemaDefinition, metamodel_version
 from metamodel.utils.mergeutils import merge_schemas
 
 
-def load_schema(data: Union[str, TextIO],
-                source_file: str=None,
-                source_file_date: str=None,
-                source_file_size: int=None) -> SchemaDefinition:
+def load_raw_schema(data: Union[str, TextIO],
+                    source_file: str=None,
+                    source_file_date: str=None,
+                    source_file_size: int=None) -> SchemaDefinition:
     """ Load and flatten SchemaDefinition from a file name, a URL or a block of text
 
     @param data: URL, file name or block of text
@@ -25,16 +25,16 @@ def load_schema(data: Union[str, TextIO],
     """
     if isinstance(data, str):
         if '\n' in data:
-            return load_schema((cast(TextIO, StringIO(data))))  # Not sure why typing doesn't see StringIO as TextIO
+            return load_raw_schema((cast(TextIO, StringIO(data))))  # Not sure why typing doesn't see StringIO as TextIO
         elif '://' in data:
             # TODO: complete and test URL access
             req = Request(data)
             req.add_header("Accept", "application/yaml, text/yaml;q=0.9")
             with urlopen(req) as response:
-                return load_schema(response)
+                return load_raw_schema(response)
         else:
             with open(data) as f:
-                return load_schema(f, data, time.ctime(os.path.getmtime(data)), os.path.getsize(data))
+                return load_raw_schema(f, data, time.ctime(os.path.getmtime(data)), os.path.getsize(data))
     else:
         schemadefs = yaml.load(data, DupCheckYamlLoader)
         # Some schemas don't have an outermost identifier.  Construct one if necessary

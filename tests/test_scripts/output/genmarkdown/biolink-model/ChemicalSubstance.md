@@ -3,7 +3,9 @@
 
 May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
 
-URI: [http://bioentity.io/vocab/ChemicalSubstance]
+URI: http://bioentity.io/vocab/ChemicalSubstance
+
+![img](http://yuml.me/diagram/nofunky/class/\[MolecularEntity]^-\[ChemicalSubstance],%20\[ChemicalSubstance]^-\[Drug],%20\[ChemicalSubstance]^-\[Metabolite],%20)
 ## Mappings
 
  * [SIO:010004](http://semanticscience.org/resource/SIO_010004)

@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/GrossAnatomicalStructure]
+URI: http://bioentity.io/vocab/GrossAnatomicalStructure
+
+![img](http://yuml.me/diagram/nofunky/class/\[AnatomicalEntity]^-\[GrossAnatomicalStructure],%20)
 ## Mappings
 
  * [UBERON:0010000](http://purl.obolibrary.org/obo/UBERON_0010000)

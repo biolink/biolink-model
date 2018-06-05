@@ -8,10 +8,11 @@ URI: http://bioentity.io/vocab/typeof
 
 ## Domain and Range
 
-[type definition](TypeDefinition.md) -> None
+[type definition](TypeDefinition.md) -> string
 ## Inheritance
 
 ## Children
 
 ## Used in
 
+ *  usage: [type definition](TypeDefinition.md)

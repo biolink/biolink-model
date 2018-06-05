@@ -17,3 +17,4 @@ None -> [ontology class](OntologyClass.md)
 
 ## Used in
 
+ *  usage: [association](Association.md)

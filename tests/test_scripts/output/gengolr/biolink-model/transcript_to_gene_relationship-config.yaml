@@ -1,3 +1,13 @@
-{description: A gene is a collection of transcripts, display_name: transcript to gene
-    relationship, document_category: transcript to gene relationship, id: transcript_to_gene_relationship,
-  schema_generating: true, weight: 20}
+description: A gene is a collection of transcripts
+display_name: transcript to gene relationship
+document_category: transcript to gene relationship
+fields:
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: transcript to gene relationship subject, id: subject}
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: transcript to gene relationship object, id: object}
+id: transcript_to_gene_relationship
+schema_generating: true
+weight: 20

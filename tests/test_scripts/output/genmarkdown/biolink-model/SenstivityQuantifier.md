@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/SenstivityQuantifier]
+URI: http://bioentity.io/vocab/SenstivityQuantifier
+
+![img](http://yuml.me/diagram/nofunky/class/\[RelationshipQuantifier]^-\[SenstivityQuantifier],%20)
 ## Mappings
 
 ## Inheritance

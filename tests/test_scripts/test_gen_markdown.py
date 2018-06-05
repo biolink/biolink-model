@@ -11,7 +11,7 @@ import click
 update_test_files = False
 
 
-class GraphvizTestCase(ClickTestCase):
+class GenMarkdownTestCase(ClickTestCase):
     testdir = "genmarkdown"
     click_ep = cli
     prog_name = "gen-markdown"

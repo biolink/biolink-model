@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/FrequencyQuantifier]
+URI: http://bioentity.io/vocab/FrequencyQuantifier
+
+![img](http://yuml.me/diagram/nofunky/class/\[RelationshipQuantifier]^-\[FrequencyQuantifier|has_count:integer%20%3F;has_total:integer%20%3F;has_quotient:double%20%3F],%20)
 ## Mappings
 
 ## Inheritance
@@ -19,16 +21,16 @@ URI: [http://bioentity.io/vocab/FrequencyQuantifier]
 
  * _[has count](has_count.md)_
     * _number of things with a particular property_
-    * __range__: integer
+    * range: integer
     * inherited from: [aggregate statistic](aggregate_statistic.md)
  * _[has total](has_total.md)_
     * _total number of things in a particular reference set_
-    * __range__: integer
+    * range: integer
     * inherited from: [aggregate statistic](aggregate_statistic.md)
  * _[has quotient](has_quotient.md)_
-    * __range__: double
+    * range: double
     * inherited from: [aggregate statistic](aggregate_statistic.md)
  * _[has percentage](has_percentage.md)_
     * _equivalent to has quotient multiplied by 100_
-    * __range__: double
+    * range: double
     * inherited from: [aggregate statistic](aggregate_statistic.md)

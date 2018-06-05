@@ -3,7 +3,9 @@
 
 Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
 
-URI: [http://bioentity.io/vocab/Publication]
+URI: http://bioentity.io/vocab/Publication
+
+![img](http://yuml.me/diagram/nofunky/class/\[InformationContentEntity]^-\[Publication],%20)
 ## Mappings
 
  * [IAO:0000311](http://purl.obolibrary.org/obo/IAO_0000311)

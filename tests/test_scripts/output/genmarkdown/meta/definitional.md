@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/definitional
 
 ## Used in
 
+ *  usage: [slot definition](SlotDefinition.md)

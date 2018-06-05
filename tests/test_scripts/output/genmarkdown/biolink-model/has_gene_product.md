@@ -18,3 +18,4 @@ URI: http://bioentity.io/vocab/has_gene_product
 
 ## Used in
 
+ *  usage: [gene](Gene.md)

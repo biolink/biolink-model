@@ -3,9 +3,8 @@ description: A treatment is targeted at a disease or phenotype and may involve m
 display_name: treatment
 document_category: treatment
 fields:
-- {description: 'holds between a therapeutic procedure or chemical substance and a
-    disease or phenotypic feature that it is used to treat ', display_name: treats,
-  id: treats}
+- {display_name: treatment treats, id: treats}
+- {cardinality: multi, display_name: treatment has exposure parts, id: has_exposure_parts}
 id: treatment
 schema_generating: true
 weight: 20

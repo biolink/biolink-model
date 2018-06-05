@@ -3,7 +3,9 @@
 
 A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
 
-URI: [http://bioentity.io/vocab/Exon]
+URI: http://bioentity.io/vocab/Exon
+
+![img](http://yuml.me/diagram/nofunky/class/\[GenomicEntity]^-\[Exon],%20)
 ## Mappings
 
  * [SO:0000147](http://purl.obolibrary.org/obo/SO_0000147)
@@ -13,6 +15,8 @@ URI: [http://bioentity.io/vocab/Exon]
 
  *  is_a: [genomic entity](GenomicEntity.md)
 ## Children
+
+## Used in
 
 ## Fields
 

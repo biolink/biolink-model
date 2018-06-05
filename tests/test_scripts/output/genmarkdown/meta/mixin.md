@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/mixin
 
 ## Used in
 
+ *  usage: [definition](Definition.md)

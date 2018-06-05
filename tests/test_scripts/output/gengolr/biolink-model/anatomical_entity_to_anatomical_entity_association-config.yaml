@@ -1,3 +1,12 @@
-{display_name: anatomical entity to anatomical entity association, document_category: anatomical
-    entity to anatomical entity association, id: anatomical_entity_to_anatomical_entity_association,
-  schema_generating: true, weight: 20}
+display_name: anatomical entity to anatomical entity association
+document_category: anatomical entity to anatomical entity association
+fields:
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: anatomical entity to anatomical entity association subject, id: subject}
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: anatomical entity to anatomical entity association object, id: object}
+id: anatomical_entity_to_anatomical_entity_association
+schema_generating: true
+weight: 20

@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/value
 
 ## Used in
 
+ *  usage: [example](Example.md)

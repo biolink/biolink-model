@@ -16,3 +16,4 @@ None -> [time type](TimeType.md)
 
 ## Used in
 
+ *  usage: [geographic location at time](GeographicLocationAtTime.md)

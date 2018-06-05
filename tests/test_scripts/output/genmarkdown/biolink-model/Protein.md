@@ -3,7 +3,9 @@
 
 A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 
-URI: [http://bioentity.io/vocab/Protein]
+URI: http://bioentity.io/vocab/Protein
+
+![img](http://yuml.me/diagram/nofunky/class/\[GeneProduct]^-\[Protein],%20\[Protein]^-\[ProteinIsoform],%20)
 ## Mappings
 
  * [PR:000000001](http://purl.obolibrary.org/obo/PR_000000001)
@@ -17,7 +19,7 @@ URI: [http://bioentity.io/vocab/Protein]
  *  child: [protein isoform](ProteinIsoform.md)
 ## Used in
 
- *  class: [protein](Protein.md) references: [protein isoform](ProteinIsoform.md)
  *  class: [protein](Protein.md) references: [gene product](GeneProduct.md)
+ *  class: [protein](Protein.md) references: [protein isoform](ProteinIsoform.md)
 ## Fields
 

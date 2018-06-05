@@ -7,9 +7,9 @@ Metamodel for biolink schema
 
  * [element](Element.md) - root of all described things
     * [definition](Definition.md) - definition base class
-       * [schema definition](SchemaDefinition.md) - A collection of definitions
-       * [class definition](ClassDefinition.md) - A class or interface
        * [slot definition](SlotDefinition.md) - A property or slot
+       * [class definition](ClassDefinition.md) - A class or interface
+       * [schema definition](SchemaDefinition.md) - A collection of definitions
     * [type definition](TypeDefinition.md) - A type definition
  * [example](Example.md) - example of usage
 ### Mixins
@@ -58,7 +58,7 @@ Metamodel for biolink schema
  * [role](role.md)
  * [see_also](see_also.md)
  * [singular_name](singular_name.md) - a name that is used in the singular form
- * [slot definitions](slots.md) - collection of slot definitions in a schema
+ * [slots](slots.md) - collection of slot definitions in a schema
  * [slot_usage](slot_usage.md) - Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints
  * [slots](slots.md) - list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins.
  * [source_file](source_file.md) - name, uri or description of the source of the schema.  Supplied by the loader
@@ -71,7 +71,7 @@ Metamodel for biolink schema
  * [types](types.md) - types defined in schema
  * [union_of](union_of.md) - list of class or slot definitions that are combined to create the union class
  * [value](value.md)
- * [value description](description.md)
+ * [description](description.md)
  * [values_from](values_from.md) - identifies the possible uri's of the range
  * [version](version.md) - Schema version
 ### Types

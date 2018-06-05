@@ -1,13 +1,14 @@
 import os
 import re
-from typing import Dict, Optional, Tuple, List
+from typing import Dict, Optional, Tuple, List, Union, TextIO
+
+import click
 
 from metamodel.utils.builtins import Builtin, builtin_names
 from metamodel.metamodel import SchemaDefinition, SlotDefinition, ClassDefinition, ClassDefinitionName, \
     SlotDefinitionName, metamodel_version
 from metamodel.utils.formatutils import camelcase, underscore, be, wrapped_annotation
-
-__version__ = "0.0.1"           # Generator version
+from metamodel.utils.generator import Generator
 
 python_builtins: Dict[Builtin, str] = {
     Builtin.string: 'str',
@@ -39,18 +40,17 @@ def python_name_for(name: str, schema: SchemaDefinition) -> str:
            python_builtins[builtin_names[name]] if name in builtin_names else name
 
 
-class Generator:
+class PythonGenerator(Generator):
     generatorname = os.path.basename(__file__)
-    generatorversion = __version__
+    generatorversion = "0.0.2"
+    valid_formats = ['py']
+    visit_all__class_slots = False
 
-    def __init__(self, sourcefile: str, schema: SchemaDefinition) -> None:
-        self.sourcefile = sourcefile
-        self.schema = schema
-        if not self.schema.source_file and sourcefile:
-            self.schema.source_file = sourcefile
-
-    def __str__(self) -> str:
-        return re.sub(r' +\n', '\n', self.gen_schema().replace('\t', '    ')).strip(' ')
+    def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='py') -> None:
+        self.sourcefile = schema
+        super().__init__(schema, fmt)
+        if not self.schema.source_file and isinstance(self.sourcefile, str) and '\n' not in self.sourcefile:
+            self.schema.source_file = self.sourcefile
 
     def gen_schema(self) -> str:
         return f'''# Auto generated from {self.sourcefile} by {self.generatorname} version: {self.generatorversion}
@@ -64,7 +64,7 @@ class Generator:
 import datetime
 from typing import Optional, List, Union, Dict, NewType
 from dataclasses import dataclass
-from metamodel.metamodelcore import empty_list, empty_dict
+from metamodel.utils.metamodelcore import empty_list, empty_dict
 from metamodel.utils.yamlutils import YAMLRoot
 
 metamodel_version = "{metamodel_version}"
@@ -72,6 +72,9 @@ metamodel_version = "{metamodel_version}"
 {self.gen_references()}
 
 {self.gen_classdefs()}'''
+
+    def end_schema(self):
+        print(re.sub(r' +\n', '\n', self.gen_schema().replace('\t', '    ')).strip(' '))
 
     def gen_references(self) -> str:
         """ Generate NewType declarations for all identifiers
@@ -83,6 +86,8 @@ metamodel_version = "{metamodel_version}"
             for pk in pkeys:
                 keyname = camelcase(cls.name) + camelcase(pk)
                 keytype = python_name_for(self.schema.slots[pk].range, self.schema)
+                if cls.is_a and getattr(self.schema.classes[cls.is_a], pk, None):
+                    keytype = f'Union[{camelcase(cls.is_a) + camelcase(pk)}, {keytype}]'
                 rval.append(f'{keyname} = NewType("{keyname}", {keytype})')
             if not pkeys:
                 keyname = camelcase(cls.name) + 'Name'
@@ -97,7 +102,7 @@ metamodel_version = "{metamodel_version}"
         return '\n'.join([self.gen_classdef(k, v) for k, v in self.schema.classes.items() if not v.mixin])
 
     def gen_classdef(self, clsname: str,  cls: ClassDefinition) -> str:
-        parentref = f'({camelcase(cls.is_a if cls.is_a else "YAMLRoot")})'
+        parentref = f'({camelcase(cls.is_a) if cls.is_a else "YAMLRoot"})'
         slotdefs = self.gen_slots(cls)
         postinits = self.gen_postinits(cls)
         if not slotdefs:
@@ -200,3 +205,12 @@ class {camelcase(clsname)}{parentref}:{wrapped_description}
             elif cname == slot_range:
                 return False            # Occurs before
         return True
+
+
+@click.command()
+@click.argument("yamlfile", type=click.File('r'))
+@click.option("--format", "-f", default='py', type=click.Choice(['py']),
+              help="Output format")
+def cli(yamlfile, format):
+    """ Generate python classes to represent a biolink model """
+    print(PythonGenerator(yamlfile, format).serialize())

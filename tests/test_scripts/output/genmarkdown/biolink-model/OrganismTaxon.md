@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/OrganismTaxon]
+URI: http://bioentity.io/vocab/OrganismTaxon
+
+![img](http://yuml.me/diagram/nofunky/class/\[OntologyClass]^-\[OrganismTaxon],%20)
 ## Mappings
 
  * [WD:Q16521](http://purl.obolibrary.org/obo/WD_Q16521)

@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/IndividualOrganism]
+URI: http://bioentity.io/vocab/IndividualOrganism
+
+![img](http://yuml.me/diagram/nofunky/class/\[OrganismalEntity]^-\[IndividualOrganism],%20\[IndividualOrganism]^-\[Case],%20\[IndividualOrganism]-%20in_taxon%20%3F>\[OrganismTaxon],%20\[IndividualOrganism]uses%20-.->\[ThingWithTaxon],%20)
 ## Mappings
 
  * [SIO:010000](http://semanticscience.org/resource/SIO_010000)
@@ -21,3 +23,7 @@ URI: [http://bioentity.io/vocab/IndividualOrganism]
  *  class: [individual organism](IndividualOrganism.md) references: [case](Case.md)
 ## Fields
 
+ * _[in taxon](in_taxon.md) *subsets: translator_minimal*_
+    * _connects a thing to a class representing a taxon_
+    * range: [organism taxon](OrganismTaxon.md)
+    * inherited from: [related to](related_to.md)

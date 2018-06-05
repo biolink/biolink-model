@@ -3,6 +3,10 @@ document_category: gene has variant that contributes to disease association
 fields:
 - {description: a qualifier used in an association where the variant, display_name: sequence
     variant qualifier, id: sequence_variant_qualifier}
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: gene has variant that contributes to disease association subject,
+  id: subject}
 id: gene_has_variant_that_contributes_to_disease_association
 schema_generating: true
 weight: 20

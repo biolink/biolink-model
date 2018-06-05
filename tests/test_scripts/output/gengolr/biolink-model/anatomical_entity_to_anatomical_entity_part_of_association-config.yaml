@@ -1,7 +1,21 @@
-{description: 'A relationship between two anatomical entities where the relationship
-    is mereological, i.e the two entities are related by parthood. This includes relationships
-    between cellular components and cells, between cells and tissues, tissues and
-    whole organisms', display_name: anatomical entity to anatomical entity part of
-    association, document_category: anatomical entity to anatomical entity part of
-    association, id: anatomical_entity_to_anatomical_entity_part_of_association, schema_generating: true,
-  weight: 20}
+description: A relationship between two anatomical entities where the relationship
+  is mereological, i.e the two entities are related by parthood. This includes relationships
+  between cellular components and cells, between cells and tissues, tissues and whole
+  organisms
+display_name: anatomical entity to anatomical entity part of association
+document_category: anatomical entity to anatomical entity part of association
+fields:
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: anatomical entity to anatomical entity part of association subject,
+  id: subject}
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: anatomical entity to anatomical entity part of association object,
+  id: object}
+- {description: the relationship type by which a subject is connected to an object
+    in an association, display_name: anatomical entity to anatomical entity part of
+    association relation, id: relation}
+id: anatomical_entity_to_anatomical_entity_part_of_association
+schema_generating: true
+weight: 20

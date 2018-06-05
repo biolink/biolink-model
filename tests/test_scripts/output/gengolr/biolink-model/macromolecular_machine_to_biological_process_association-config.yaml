@@ -1,7 +1,13 @@
-{description: 'A functional association between a macromolecular machine (gene, gene
-    product or complex) and a biological process or pathway (as represented in the
-    GO biological process branch), where the entity carries out some part of the process,
-    regulates it, or acts upstream of it', display_name: macromolecular machine to
-    biological process association, document_category: macromolecular machine to biological
-    process association, id: macromolecular_machine_to_biological_process_association,
-  schema_generating: true, weight: 20}
+description: A functional association between a macromolecular machine (gene, gene
+  product or complex) and a biological process or pathway (as represented in the GO
+  biological process branch), where the entity carries out some part of the process,
+  regulates it, or acts upstream of it
+display_name: macromolecular machine to biological process association
+document_category: macromolecular machine to biological process association
+fields:
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: macromolecular machine to biological process association object, id: object}
+id: macromolecular_machine_to_biological_process_association
+schema_generating: true
+weight: 20

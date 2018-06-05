@@ -3,7 +3,12 @@ description: An allele that varies in its sequence from what is considered the r
 display_name: sequence variant
 document_category: sequence variant
 fields:
-- {description: connects and entity to a single gene, display_name: has gene, id: has_gene}
+- {cardinality: multi, description: Each allele can be associated with any number
+    of genes, display_name: sequence variant has gene, id: has_gene}
+- {description: connects a genomic feature to its sequence, display_name: sequence
+    variant has biological sequence, id: has_biological_sequence}
+- {description: A unique identifier for a thing. Must be either a CURIE shorthand
+    for a URI or a complete URI, display_name: sequence variant id, id: id}
 id: sequence_variant
 schema_generating: true
 weight: 20

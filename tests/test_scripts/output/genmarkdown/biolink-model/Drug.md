@@ -1,17 +1,18 @@
-# Class: drug
+# Slot: drug
 
 
-A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
 
-URI: [http://bioentity.io/vocab/Drug]
+
+URI: http://bioentity.io/vocab/drug_exposure_drug
 ## Mappings
 
- * [WD:Q12140](http://purl.obolibrary.org/obo/WD_Q12140)
- * [CHEBI:23888](http://purl.obolibrary.org/obo/CHEBI_23888)
+## Domain and Range
+
+[drug exposure](DrugExposure.md) -> [chemical substance](ChemicalSubstance.md)
 ## Inheritance
 
- *  is_a: [chemical substance](ChemicalSubstance.md)
 ## Children
 
-## Fields
+## Used in
 
+ *  usage: [drug exposure](DrugExposure.md)

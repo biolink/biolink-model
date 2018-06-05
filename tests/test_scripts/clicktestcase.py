@@ -2,7 +2,7 @@ import os
 import unittest
 from contextlib import redirect_stdout
 from io import StringIO
-from typing import Union, List, Optional
+from typing import Union, List, Optional, Callable
 
 # Make sure you import click from here rather than the root
 import click
@@ -31,7 +31,8 @@ class ClickTestCase(unittest.TestCase):
         os.makedirs(cls.testdir_path, exist_ok=True)
 
     def do_test(self, args: Union[str, List[str]], testfile: Optional[str]="",
-                update_test_file: bool=False, error: type(Exception)=None) -> None:
+                update_test_file: bool=False, error: type(Exception)=None,
+                filtr: Optional[Callable[[str], str]]=None) -> None:
         testfile_path = os.path.join(self.testdir_path, testfile)
 
         outf = StringIO()
@@ -53,7 +54,13 @@ class ClickTestCase(unittest.TestCase):
 
         if testfile:
             with open(testfile_path) as f:
-                self.assertEqual(outf.getvalue().replace('\r\n', '\n'), f.read().replace('\r\n', '\n'))
+                old_txt = outf.getvalue().replace('\r\n', '\n')
+                if filtr:
+                    old_txt = filtr(old_txt)
+                new_txt = f.read().replace('\r\n', '\n')
+                if filtr:
+                    new_txt = filtr(new_txt)
+                self.assertEqual(old_txt, new_txt)
         else:
             print("Directory comparison needs to be added")
 

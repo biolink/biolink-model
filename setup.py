@@ -5,13 +5,14 @@ from setuptools import setup, find_packages
 version = '0.0.2'
 
 requires = [
-    "click>=3.0.4",
-    "pyyaml>=3.12",
+    "click>=6.7",
+    "PyYAML>=3.12",
     "jsonasobj>=1.2.1",
     "jsonschema>=2.6.0",
     "rdflib>=4.2.2",
     "graphviz>=0.8.3",
     "prefixcommons>=0.1.7"
+    "rdflib-jsonld>=0.4.0"
     ]
 
 if sys.version_info < (3, 7):

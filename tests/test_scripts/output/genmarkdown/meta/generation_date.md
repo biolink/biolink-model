@@ -15,3 +15,4 @@ URI: http://bioentity.io/vocab/generation_date
 
 ## Used in
 
+ *  usage: [schema definition](SchemaDefinition.md)

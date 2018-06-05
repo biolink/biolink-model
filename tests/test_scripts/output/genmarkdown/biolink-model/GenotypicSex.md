@@ -3,7 +3,9 @@
 
 An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
 
-URI: [http://bioentity.io/vocab/GenotypicSex]
+URI: http://bioentity.io/vocab/GenotypicSex
+
+![img](http://yuml.me/diagram/nofunky/class/\[BiologicalSex]^-\[GenotypicSex],%20)
 ## Mappings
 
  * [PATO:0020000](http://purl.obolibrary.org/obo/PATO_0020000)

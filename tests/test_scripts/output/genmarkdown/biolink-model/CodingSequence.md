@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/CodingSequence]
+URI: http://bioentity.io/vocab/CodingSequence
+
+![img](http://yuml.me/diagram/nofunky/class/\[GenomicEntity]^-\[CodingSequence],%20)
 ## Mappings
 
  * [SO:0000316](http://purl.obolibrary.org/obo/SO_0000316)

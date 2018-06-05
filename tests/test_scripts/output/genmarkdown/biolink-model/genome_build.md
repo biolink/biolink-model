@@ -8,7 +8,7 @@ URI: http://bioentity.io/vocab/genome_build
 
 ## Domain and Range
 
-None -> None
+None -> string
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
@@ -16,3 +16,4 @@ None -> None
 
 ## Used in
 
+ *  usage: [genomic sequence localization](GenomicSequenceLocalization.md)

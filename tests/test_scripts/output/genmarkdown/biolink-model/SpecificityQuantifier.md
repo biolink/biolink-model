@@ -3,7 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/SpecificityQuantifier]
+URI: http://bioentity.io/vocab/SpecificityQuantifier
+
+![img](http://yuml.me/diagram/nofunky/class/\[RelationshipQuantifier]^-\[SpecificityQuantifier],%20\[SpecificityQuantifier]^-\[PathognomonicityQuantifier],%20)
 ## Mappings
 
 ## Inheritance

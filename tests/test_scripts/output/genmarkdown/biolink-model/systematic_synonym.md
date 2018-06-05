@@ -16,3 +16,4 @@ URI: http://bioentity.io/vocab/systematic_synonym
 
 ## Used in
 
+ *  usage: [named thing](NamedThing.md)

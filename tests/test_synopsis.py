@@ -2,9 +2,9 @@ import os
 import unittest
 
 from metamodel.metamodel import SchemaDefinition, SchemaDefinitionId, SchemaDefinitionName
-
-from metamodel.utils.schemaloader import load_schema
-from metamodel.utils.schemasynopsis import SchemaSynopsis, ClassType, References, TypeType, SlotType
+from metamodel.utils.schemaloader import SchemaLoader
+from metamodel.utils.schemasynopsis import SchemaSynopsis
+from metamodel.utils.typereferences import ClassType, TypeType, SlotType, References
 
 update_source: bool = False
 
@@ -16,7 +16,7 @@ class SynopsisTestCase(unittest.TestCase):
         path = os.path.abspath(os.path.join(cwd, '..', yaml_fname))
         sourcedir = os.path.join(cwd, 'source')
 
-        meta_schema = load_schema(path)
+        meta_schema = SchemaLoader(path).resolve()
         synopsis = SchemaSynopsis(meta_schema)
         errors = synopsis.errors()
         if errors:

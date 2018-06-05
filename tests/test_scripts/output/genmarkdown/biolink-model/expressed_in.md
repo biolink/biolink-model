@@ -17,3 +17,4 @@ URI: http://bioentity.io/vocab/expressed_in
 
 ## Used in
 
+ *  usage: [gene or gene product](GeneOrGeneProduct.md)

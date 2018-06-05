@@ -3,7 +3,9 @@
 
 A genome is the sum of genetic material within a cell or virion.
 
-URI: [http://bioentity.io/vocab/Genome]
+URI: http://bioentity.io/vocab/Genome
+
+![img](http://yuml.me/diagram/nofunky/class/\[GenomicEntity]^-\[Genome],%20)
 ## Mappings
 
  * [SO:0001026](http://purl.obolibrary.org/obo/SO_0001026)

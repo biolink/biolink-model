@@ -1,4 +1,17 @@
-{description: Any association between one genotype and a genotypic entity that is
-    a sub-component of it, display_name: genotype to genotype part association, document_category: genotype
-    to genotype part association, id: genotype_to_genotype_part_association, schema_generating: true,
-  weight: 20}
+description: Any association between one genotype and a genotypic entity that is a
+  sub-component of it
+display_name: genotype to genotype part association
+document_category: genotype to genotype part association
+fields:
+- {description: the relationship type by which a subject is connected to an object
+    in an association, display_name: genotype to genotype part association relation,
+  id: relation}
+- {description: 'connects an association to the subject of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: genotype to genotype part association subject, id: subject}
+- {description: 'connects an association to the object of the association. For example,
+    in a gene-to-phenotype association, the gene is subject and phenotype is object.',
+  display_name: genotype to genotype part association object, id: object}
+id: genotype_to_genotype_part_association
+schema_generating: true
+weight: 20

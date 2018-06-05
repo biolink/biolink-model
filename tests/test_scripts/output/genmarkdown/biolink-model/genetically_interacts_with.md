@@ -17,3 +17,4 @@ URI: http://bioentity.io/vocab/genetically_interacts_with
 
 ## Used in
 
+ *  usage: [gene](Gene.md)
