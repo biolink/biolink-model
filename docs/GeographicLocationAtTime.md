@@ -1,50 +1,29 @@
----
-layout: default
----
-
-## geographic location at time
+# Class: geographic location at time
 
 
 a location that can be described in lat/long coordinates, for a particular time
 
-URI: [http://bioentity.io/vocab/GeographicLocationAtTime](http://bioentity.io/vocab/GeographicLocationAtTime)
+URI: http://bioentity.io/vocab/GeographicLocationAtTime
 
-
-![img](http://yuml.me/diagram/nofunky/class/[planetary entity|]^-[geographic location at time|latitude;longitude;timepoint])
+![img](http://yuml.me/diagram/nofunky/class/\[PlanetaryEntity]^-\[GeographicLocationAtTime|latitude:float%20%3F;longitude:float%20%3F;timepoint:time_type%20%3F],%20)
 ## Mappings
-
 
 ## Inheritance
 
- *  is_a: [planetary entity](PlanetaryEntity.html)
-
+ *  is_a: [planetary entity](PlanetaryEntity.md)
 ## Children
-
-
 
 ## Fields
 
- * [latitude](latitude.html)
+ * _[latitude](latitude.md)_
     * _latitude_
-    * __range__: xsd:float
-    * __Local__
- * [longitude](longitude.html)
+    * range: float
+    * inherited from: [node property](node_property.md)
+ * _[longitude](longitude.md)_
     * _longitude_
-    * __range__: xsd:float
-    * __Local__
- * [timepoint](timepoint.html)
+    * range: float
+    * inherited from: [node property](node_property.md)
+ * _[timepoint](timepoint.md)_
     * _a point in time_
-    * __range__: time type
-    * __Local__
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type [required]
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
+    * range: [time type](TimeType.md)
+    * inherited from: [node property](node_property.md)

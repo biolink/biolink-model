@@ -1,28 +1,20 @@
----
-layout: default
----
-
-## location of
+# Slot: location of
 
 
-holds between material entity or site and a material entity that is located within it (but not considered a part of it) 
+holds between material entity or site and a material entity that is located within it (but not considered a part of it)
 
-URI: [http://bioentity.io/vocab/location_of](http://bioentity.io/vocab/location_of)
+URI: http://bioentity.io/vocab/location_of
 ## Mappings
 
  * [RO:0001015](http://purl.obolibrary.org/obo/RO_0001015)
  * [SEMMEDDB:LOCATION_OF](http://purl.obolibrary.org/obo/SEMMEDDB_LOCATION_OF)
-
 ## Domain and Range
 
- -> 
-
+None -> None
 ## Inheritance
 
- *  is_a: [related to](related_to.html)
-
+ *  is_a: [related to](related_to.md)
 ## Children
-
 
 ## Used in
 

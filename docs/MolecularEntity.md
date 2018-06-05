@@ -1,87 +1,42 @@
----
-layout: default
----
-
-## molecular entity
+# Class: molecular entity
 
 
 A gene, gene product, small molecule or macromolecule (including protein complex)
 
-URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/MolecularEntity)
+URI: http://bioentity.io/vocab/MolecularEntity
 
-
-![img](http://yuml.me/diagram/nofunky/class/[biological entity|]^-[molecular entity|in taxon], [molecular entity|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
+![img](http://yuml.me/diagram/nofunky/class/\[BiologicalEntity]^-\[MolecularEntity],%20\[MolecularEntity]^-\[ChemicalSubstance],%20\[MolecularEntity]^-\[GeneFamily],%20\[MolecularEntity]^-\[GenomicEntity],%20\[MolecularEntity]-%20molecularly_interacts_with%20%3F>\[MolecularEntity],%20\[MolecularEntity]-%20regulates_entity_to_entity%20%3F>\[MolecularEntity],%20\[MolecularEntity]-%20biomarker_for%20%3F>\[DiseaseOrPhenotypicFeature],%20\[MolecularEntity]-%20in_taxon%20%3F>\[OrganismTaxon],%20\[MolecularEntity]uses%20-.->\[ThingWithTaxon],%20)
 ## Mappings
 
  * [SIO:010004](http://semanticscience.org/resource/SIO_010004)
  * [WD:Q43460564](http://purl.obolibrary.org/obo/WD_Q43460564)
-
 ## Inheritance
 
- *  is_a: [biological entity](BiologicalEntity.html)
- *  mixin: [thing with taxon](ThingWithTaxon.html)
-
+ *  is_a: [biological entity](BiologicalEntity.md)
+ *  mixin: [thing with taxon](ThingWithTaxon.md)
 ## Children
 
- *  child: [chemical substance](ChemicalSubstance.html)
- *  child: [genomic entity](GenomicEntity.html)
- *  child: [gene family](GeneFamily.html)
-
+ *  child: [chemical substance](ChemicalSubstance.md)
+ *  child: [gene family](GeneFamily.md)
+ *  child: [genomic entity](GenomicEntity.md)
 ## Used in
 
- *  class: [sequence variant](SequenceVariant.html) references: [gene](Gene.html)
- *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [genotype](Genotype.html)
- *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [genotype](Genotype.html)
- *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [genotype](Genotype.html)
- *  class: [gene to gene association](GeneToGeneAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [molecular interaction](MolecularInteraction.html) references: [molecular entity](MolecularEntity.html)
- *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [molecular entity](MolecularEntity.html)
- *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [chemical substance](ChemicalSubstance.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [chemical substance](ChemicalSubstance.html)
- *  class: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html) references: [chemical substance](ChemicalSubstance.html)
- *  class: [chemical to pathway association](ChemicalToPathwayAssociation.html) references: [chemical substance](ChemicalSubstance.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [chemical substance](ChemicalSubstance.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [genotype](Genotype.html)
- *  class: [gene to thing association](GeneToThingAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [variant to thing association](VariantToThingAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [variant to population association](VariantToPopulationAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [genotype](Genotype.html)
- *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [functional association](FunctionalAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
- *  class: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
- *  class: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
- *  class: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
- *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [molecular entity](MolecularEntity.html)
- *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [genomic entity](GenomicEntity.html)
- *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [genomic entity](GenomicEntity.html)
- *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [transcript](Transcript.html)
- *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [gene](Gene.html)
- *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [exon](Exon.html)
- *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [gene or gene product](GeneOrGeneProduct.html)
-
+ *  class: [molecular entity](MolecularEntity.md) references: [chemical substance](ChemicalSubstance.md)
+ *  class: [molecular entity](MolecularEntity.md) references: [gene family](GeneFamily.md)
+ *  class: [molecular entity](MolecularEntity.md) references: [genomic entity](GenomicEntity.md)
 ## Fields
 
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [in taxon](in_taxon.html) *subsets: translator_minimal*
+ * _[molecularly interacts with](molecularly_interacts_with.md) *subsets: translator_minimal*_
+    * range: [molecular entity](MolecularEntity.md)
+    * inherited from: [physically interacts with](physically_interacts_with.md) *subsets: translator_minimal*
+ * _[regulates, entity to entity](regulates_entity_to_entity.md) *subsets: translator_minimal*_
+    * range: [molecular entity](MolecularEntity.md)
+    * inherited from: [regulates](regulates.md)
+ * _[biomarker for](biomarker_for.md) *subsets: translator_minimal*_
+    * _holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature._
+    * range: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
+    * inherited from: [correlated with](correlated_with.md) *subsets: translator_minimal*
+ * _[in taxon](in_taxon.md) *subsets: translator_minimal*_
     * _connects a thing to a class representing a taxon_
-    * __range__: [organism taxon](OrganismTaxon.html)
-    * inherited from: [thing with taxon](ThingWithTaxon.html)
+    * range: [organism taxon](OrganismTaxon.md)
+    * inherited from: [related to](related_to.md)

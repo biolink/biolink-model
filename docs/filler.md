@@ -1,26 +1,18 @@
----
-layout: default
----
-
-## filler
+# Slot: filler
 
 
 The value in a property-value tuple
 
-URI: [http://bioentity.io/vocab/filler](http://bioentity.io/vocab/filler)
+URI: http://bioentity.io/vocab/filler
 ## Mappings
-
 
 ## Domain and Range
 
- -> [named thing](NamedThing.html)
-
+None -> [named thing](NamedThing.md)
 ## Inheritance
 
- *  is_a: [node property](node_property.html)
-
+ *  is_a: [node property](node_property.md)
 ## Children
-
 
 ## Used in
 

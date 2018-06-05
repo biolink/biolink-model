@@ -1,26 +1,17 @@
----
-layout: default
----
-
-## senstivity quantifier
+# Class: senstivity quantifier
 
 
-None
-
-URI: [http://bioentity.io/vocab/SenstivityQuantifier](http://bioentity.io/vocab/SenstivityQuantifier)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[relationship quantifier|]^-[senstivity quantifier|])
+URI: http://bioentity.io/vocab/SenstivityQuantifier
+
+![img](http://yuml.me/diagram/nofunky/class/\[RelationshipQuantifier]^-\[SenstivityQuantifier],%20)
 ## Mappings
-
 
 ## Inheritance
 
- *  is_a: [relationship quantifier](RelationshipQuantifier.html)
-
+ *  is_a: [relationship quantifier](RelationshipQuantifier.md)
 ## Children
-
-
 
 ## Fields
 

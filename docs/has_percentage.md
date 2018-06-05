@@ -1,28 +1,20 @@
----
-layout: default
----
-
-## has percentage
+# Slot: has percentage
 
 
 equivalent to has quotient multiplied by 100
 
-URI: [http://bioentity.io/vocab/has_percentage](http://bioentity.io/vocab/has_percentage)
+URI: http://bioentity.io/vocab/has_percentage
 ## Mappings
-
 
 ## Domain and Range
 
- -> 
-
+None -> double
 ## Inheritance
 
- *  is_a: [aggregate statistic](aggregate_statistic.html)
-
+ *  is_a: [aggregate statistic](aggregate_statistic.md)
 ## Children
-
 
 ## Used in
 
- *  usage: [frequency quantifier](FrequencyQuantifier.html)
- *  usage: [variant to population association](VariantToPopulationAssociation.html)
+ *  usage: [frequency quantifier](FrequencyQuantifier.md)
+ *  usage: [variant to population association](VariantToPopulationAssociation.md)

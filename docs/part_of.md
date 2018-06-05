@@ -1,30 +1,21 @@
----
-layout: default
----
-
-## part of
+# Slot: part of
 
 
 holds between parts and wholes (material entities or processes)
 
-URI: [http://bioentity.io/vocab/part_of](http://bioentity.io/vocab/part_of)
+URI: http://bioentity.io/vocab/part_of
 ## Mappings
 
  * [BFO:0000050](http://purl.obolibrary.org/obo/BFO_0000050)
  * [SEMMEDDB:PART_OF](http://purl.obolibrary.org/obo/SEMMEDDB_PART_OF)
  * [WD:P361](http://purl.obolibrary.org/obo/WD_P361)
-
 ## Domain and Range
 
- -> 
-
+None -> None
 ## Inheritance
 
- *  is_a: [overlaps](overlaps.html) *subsets: translator_minimal*
-
+ *  is_a: [overlaps](overlaps.md) *subsets: translator_minimal*
 ## Children
-
 
 ## Used in
 
- *  usage: [anatomical entity to anatomical entity part of association](AnatomicalEntityToAnatomicalEntityPartOfAssociation.html)

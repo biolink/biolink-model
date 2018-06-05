@@ -1,27 +1,19 @@
----
-layout: default
----
-
-## sequence variant qualifier
+# Slot: sequence variant qualifier
 
 
 a qualifier used in an association where the variant
 
-URI: [http://bioentity.io/vocab/sequence_variant_qualifier](http://bioentity.io/vocab/sequence_variant_qualifier)
+URI: http://bioentity.io/vocab/sequence_variant_qualifier
 ## Mappings
-
 
 ## Domain and Range
 
- -> [sequence variant](SequenceVariant.html)
-
+None -> [sequence variant](SequenceVariant.md)
 ## Inheritance
 
- *  is_a: [association slot](association_slot.html)
-
+ *  is_a: [association slot](association_slot.md)
 ## Children
-
 
 ## Used in
 
- *  usage: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html)
+ *  usage: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.md)

@@ -1,73 +1,31 @@
----
-layout: default
----
-
-## variant to thing association
+# Class: variant to thing association
 
 
-None
-
-URI: [http://bioentity.io/vocab/VariantToThingAssociation](http://bioentity.io/vocab/VariantToThingAssociation)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[variant to thing association|], [variant to thing association|]-association type >[ontology class|], [variant to thing association|]-subject >[sequence variant|has gene], [genomic entity|has biological sequence]^-[sequence variant|has gene], [sequence variant|has gene]-has gene >[gene|], [gene or gene product|]^-[gene|], [gene|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [sequence variant|has gene]-in taxon >[organism taxon|], [variant to thing association|]-relation >[relationship type|], [variant to thing association|]-qualifiers >[ontology class|], [variant to thing association|]-publications >[publication|], [information content entity|]^-[publication|], [variant to thing association|]-provided by >[provider|], [administrative entity|]^-[provider|])
+URI: http://bioentity.io/vocab/VariantToThingAssociation
+
+![img](http://yuml.me/diagram/nofunky/class/\[Association]^-\[VariantToThingAssociation],%20\[VariantToThingAssociation]-%20subject>\[SequenceVariant],%20)
 ## Mappings
-
 
 ## Inheritance
 
- *  is_a: [association](Association.html)
-
+ *  is_a: [association](Association.md)
 ## Children
 
- *  mixin: [variant to population association](VariantToPopulationAssociation.html)
- *  mixin: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html)
- *  mixin: [variant to disease association](VariantToDiseaseAssociation.html)
+ *  mixin: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
+ *  mixin: [variant to population association](VariantToPopulationAssociation.md)
+ *  mixin: [variant to disease association](VariantToDiseaseAssociation.md)
+## Used in
 
-
+ *  class: [variant to thing association](VariantToThingAssociation.md) references: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
+ *  class: [variant to thing association](VariantToThingAssociation.md) references: [variant to population association](VariantToPopulationAssociation.md)
+ *  class: [variant to thing association](VariantToThingAssociation.md) references: [variant to disease association](VariantToDiseaseAssociation.md)
 ## Fields
 
- * [association type](association_type.html)
-    * _connects an association to the type of association (e.g. gene to phenotype)_
-    * __range__: [ontology class](OntologyClass.html)
-    * inherited from: [association](Association.html)
- * [subject](subject.html)
-    * _a sequence variant in which the allele state is associated with some other entity_
-    * __range__: [sequence variant](SequenceVariant.html) [required]
-    * inherited from: [association](Association.html)
- * [negated](negated.html)
-    * _if set to true, then the association is negated i.e. is not true_
-    * __range__: xsd:boolean
-    * inherited from: [association](Association.html)
- * [relation](relation.html)
-    * _the relationship type by which a subject is connected to an object in an association_
-    * __range__: [relationship type](RelationshipType.html) [required]
-    * inherited from: [association](Association.html)
- * [object](object.html)
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: None [required]
-    * inherited from: [association](Association.html)
- * [qualifiers](qualifiers.html)
-    * _connects an association to qualifiers that modify or qualify the meaning of that association_
-    * __range__: [ontology class](OntologyClass.html)*
-    * inherited from: [association](Association.html)
- * [publications](publications.html)
-    * _connects an association to publications supporting the association_
-    * __range__: [publication](Publication.html)*
-    * inherited from: [association](Association.html)
- * [provided by](provided_by.html)
-    * _connects an association to the agent (person, organization or group) that provided it_
-    * __range__: [provider](Provider.html)
-    * inherited from: [association](Association.html)
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type [required]
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
+ * _[subject](subject.md)_
+    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * range: [sequence variant](SequenceVariant.md) [required]
+    * Example: [ClinVar:38077](http://purl.obolibrary.org/obo/ClinVar_38077) ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)
+    * Example: [ClinGen:CA024716](http://purl.obolibrary.org/obo/ClinGen_CA024716) chr13:g.32921033G>C (hg19) in ClinGen
+    * inherited from: [subject](subject.md)

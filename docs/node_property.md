@@ -1,47 +1,40 @@
----
-layout: default
----
-
-## node property
+# Slot: node property
 
 
 A grouping for any property that holds between a node and a value
 
-URI: [http://bioentity.io/vocab/node_property](http://bioentity.io/vocab/node_property)
+URI: http://bioentity.io/vocab/node_property
 ## Mappings
 
  * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
-
 ## Domain and Range
 
-[named thing](NamedThing.html) -> 
-
+[named thing](NamedThing.md) -> string
 ## Inheritance
-
 
 ## Children
 
- *  child: [id](id.html) *subsets: translator_minimal*
- *  child: [iri](iri.html) *subsets: translator_minimal*
- *  child: [name](name.html) *subsets: translator_minimal*
- *  child: [category](category.html) *subsets: translator_minimal*
- *  child: [full name](full_name.html)
- *  child: [description](description.html) *subsets: translator_minimal*
- *  child: [systematic synonym](systematic_synonym.html)
- *  child: [creation date](creation_date.html)
- *  child: [update date](update_date.html)
- *  child: [latitude](latitude.html)
- *  child: [longitude](longitude.html)
- *  child: [has chemical formula](has_chemical_formula.html)
- *  child: [aggregate statistic](aggregate_statistic.html)
- *  child: [timepoint](timepoint.html)
- *  child: [has biological sequence](has_biological_sequence.html)
- *  child: [has gene](has_gene.html)
- *  child: [has zygosity](has_zygosity.html)
- *  child: [filler](filler.html)
- *  child: [phase](phase.html)
- *  child: [genome build](genome_build.html)
- *  child: [interbase coordinate](interbase_coordinate.html)
-
+ *  child: [description](description.md) *subsets: translator_minimal*
+ *  child: [iri](iri.md) *subsets: translator_minimal*
+ *  child: [interbase coordinate](interbase_coordinate.md)
+ *  child: [name](name.md) *subsets: translator_minimal*
+ *  child: [filler](filler.md)
+ *  child: [has biological sequence](has_biological_sequence.md)
+ *  child: [phase](phase.md)
+ *  child: [has gene](has_gene.md)
+ *  child: [timepoint](timepoint.md)
+ *  child: [longitude](longitude.md)
+ *  child: [genome build](genome_build.md)
+ *  child: [has chemical formula](has_chemical_formula.md)
+ *  child: [id](id.md) *subsets: translator_minimal*
+ *  child: [full name](full_name.md)
+ *  child: [latitude](latitude.md)
+ *  child: [creation date](creation_date.md)
+ *  child: [update date](update_date.md)
+ *  child: [systematic synonym](systematic_synonym.md)
+ *  child: [has zygosity](has_zygosity.md)
+ *  child: [category](category.md) *subsets: translator_minimal*
+ *  child: [aggregate statistic](aggregate_statistic.md)
 ## Used in
 
+ *  usage: [named thing](NamedThing.md)

@@ -1,43 +1,37 @@
----
-layout: default
----
-
-## molecular activity
+# Class: molecular activity
 
 
 An execution of a molecular function carried out by a gene product or macromolecular complex.
 
-URI: [http://bioentity.io/vocab/MolecularActivity](http://bioentity.io/vocab/MolecularActivity)
+URI: http://bioentity.io/vocab/MolecularActivity
 
-
-![img](http://yuml.me/diagram/nofunky/class/[biological process or activity|]^-[molecular activity|])
+![img](http://yuml.me/diagram/nofunky/class/\[BiologicalProcessOrActivity]^-\[MolecularActivity|has_participant:string%20%3F;has_input:string%20%3F],%20\[MolecularActivity]-%20regulates_process_to_process%20%3F>\[Occurrent],%20\[MolecularActivity]-%20precedes%20%3F>\[Occurrent],%20\[MolecularActivity]uses%20-.->\[Occurrent],%20)
 ## Mappings
 
  * [GO:0003674](http://purl.obolibrary.org/obo/GO_0003674)
-
 ## Inheritance
 
- *  is_a: [biological process or activity](BiologicalProcessOrActivity.html)
- *  mixin: [occurrent](Occurrent.html)
-
+ *  is_a: [biological process or activity](BiologicalProcessOrActivity.md)
+ *  mixin: [occurrent](Occurrent.md)
 ## Children
-
 
 ## Used in
 
- *  class: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.html) references: [molecular activity](MolecularActivity.html)
-
+ *  class: [molecular activity](MolecularActivity.md) references: [biological process or activity](BiologicalProcessOrActivity.md)
 ## Fields
 
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
+ * _[regulates, process to process](regulates_process_to_process.md)_
+    * range: [occurrent](Occurrent.md)
+    * inherited from: [regulates](regulates.md)
+ * _[has participant](has_participant.md) *subsets: translator_minimal*_
+    * _holds between a process and a continuant, where the continuant is somehow involved in the process _
+    * range: string
+    * inherited from: [related to](related_to.md)
+ * _[has input](has_input.md) *subsets: translator_minimal*_
+    * _holds between a process and a continuant, where the continuant is an input into the process_
+    * range: string
+    * inherited from: [has participant](has_participant.md) *subsets: translator_minimal*
+ * _[precedes](precedes.md) *subsets: translator_minimal*_
+    * _holds between two processes, where one completes before the other begins_
+    * range: [occurrent](Occurrent.md)
+    * inherited from: [related to](related_to.md)

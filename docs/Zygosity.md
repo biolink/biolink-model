@@ -1,30 +1,20 @@
----
-layout: default
----
-
-## zygosity
+# Class: zygosity
 
 
-None
-
-URI: [http://bioentity.io/vocab/Zygosity](http://bioentity.io/vocab/Zygosity)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[attribute|]^-[zygosity|])
+URI: http://bioentity.io/vocab/Zygosity
+
+![img](http://yuml.me/diagram/nofunky/class/\[Attribute]^-\[Zygosity],%20)
 ## Mappings
 
  * [GENO:0000133](http://purl.obolibrary.org/obo/GENO_0000133)
-
 ## Inheritance
 
- *  is_a: [attribute](Attribute.html)
-
+ *  is_a: [attribute](Attribute.md)
 ## Children
 
-
 ## Used in
-
- *  class: [genotype](Genotype.html) references: [zygosity](Zygosity.html)
 
 ## Fields
 

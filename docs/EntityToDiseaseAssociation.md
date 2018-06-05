@@ -1,40 +1,40 @@
----
-layout: default
----
-
-## entity to disease association
+# Class: entity to disease association
 
 
 mixin class for any association whose object (target node) is a disease
 
-URI: [http://bioentity.io/vocab/EntityToDiseaseAssociation](http://bioentity.io/vocab/EntityToDiseaseAssociation)
+URI: http://bioentity.io/vocab/EntityToDiseaseAssociation
 
-
-![img](http://yuml.me/diagram/nofunky/class/[entity to disease association|frequency qualifier;severity qualifier;onset qualifier]-frequency qualifier >[frequency value|], [attribute|]^-[frequency value|], [entity to disease association|frequency qualifier;severity qualifier;onset qualifier]-severity qualifier >[severity value|], [attribute|]^-[severity value|], [entity to disease association|frequency qualifier;severity qualifier;onset qualifier]-onset qualifier >[onset|], [attribute|]^-[onset|])
+![img](http://yuml.me/diagram/nofunky/class/\[EntityToDiseaseAssociation]-%20object%20%3F>\[Disease],%20)
 ## Mappings
-
 
 ## Inheritance
 
-
 ## Children
 
- *  mixin: [gene to disease association](GeneToDiseaseAssociation.html)
- *  mixin: [variant to disease association](VariantToDiseaseAssociation.html)
- *  mixin: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
+ *  mixin: [gene to disease association](GeneToDiseaseAssociation.md)
+ *  mixin: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
+ *  mixin: [variant to disease association](VariantToDiseaseAssociation.md)
+## Used in
 
-
+ *  class: [entity to disease association](EntityToDiseaseAssociation.md) references: [gene to disease association](GeneToDiseaseAssociation.md)
+ *  class: [entity to disease association](EntityToDiseaseAssociation.md) references: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
+ *  class: [entity to disease association](EntityToDiseaseAssociation.md) references: [variant to disease association](VariantToDiseaseAssociation.md)
 ## Fields
 
- * [frequency qualifier](frequency_qualifier.html)
+ * _[frequency qualifier](frequency_qualifier.md)_
     * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
-    * __range__: [frequency value](FrequencyValue.html)
-    * __Local__
- * [severity qualifier](severity_qualifier.html)
+    * range: [frequency value](FrequencyValue.md)
+    * inherited from: [association slot](association_slot.md)
+ * _[severity qualifier](severity_qualifier.md)_
     * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
-    * __range__: [severity value](SeverityValue.html)
-    * __Local__
- * [onset qualifier](onset_qualifier.html)
+    * range: [severity value](SeverityValue.md)
+    * inherited from: [association slot](association_slot.md)
+ * _[onset qualifier](onset_qualifier.md)_
     * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * __range__: [onset](Onset.html)
-    * __Local__
+    * range: [onset](Onset.md)
+    * inherited from: [association slot](association_slot.md)
+ * _[object](object.md)_
+    * _disease_
+    * range: [disease](Disease.md)
+    * Example: [MONDO:0020066](http://purl.obolibrary.org/obo/MONDO_0020066) Ehlers-Danlos syndrome

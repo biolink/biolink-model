@@ -1,54 +1,28 @@
----
-layout: default
----
-
-## gene product
+# Class: gene product
 
 
 The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
 
-URI: [http://bioentity.io/vocab/GeneProduct](http://bioentity.io/vocab/GeneProduct)
+URI: http://bioentity.io/vocab/GeneProduct
 
-
-![img](http://yuml.me/diagram/nofunky/class/[gene or gene product|]^-[gene product|], [gene product|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
+![img](http://yuml.me/diagram/nofunky/class/\[GeneOrGeneProduct]^-\[GeneProduct],%20\[GeneProduct]^-\[RnaProduct],%20\[GeneProduct]^-\[GeneProductIsoform],%20\[GeneProduct]^-\[Protein],%20)
 ## Mappings
 
  * [WD:Q424689](http://purl.obolibrary.org/obo/WD_Q424689)
-
 ## Inheritance
 
- *  is_a: [gene or gene product](GeneOrGeneProduct.html)
-
+ *  is_a: [gene or gene product](GeneOrGeneProduct.md)
 ## Children
 
- *  child: [protein](Protein.html)
- *  child: [gene product isoform](GeneProductIsoform.html)
- *  child: [RNA product](RnaProduct.html)
-
+ *  child: [RNA product](RnaProduct.md)
+ *  child: [gene product isoform](GeneProductIsoform.md)
+ *  child: [protein](Protein.md)
 ## Used in
 
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [gene product](GeneProduct.html)
- *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [gene product](GeneProduct.html)
-
+ *  class: [gene product](GeneProduct.md) references: [gene or gene product](GeneOrGeneProduct.md)
+ *  class: [gene product](GeneProduct.md) references: [macromolecular machine](MacromolecularMachine.md)
+ *  class: [gene product](GeneProduct.md) references: [RNA product](RnaProduct.md)
+ *  class: [gene product](GeneProduct.md) references: [gene product isoform](GeneProductIsoform.md)
+ *  class: [gene product](GeneProduct.md) references: [protein](Protein.md)
 ## Fields
 
- * [has biological sequence](has_biological_sequence.html)
-    * _connects a genomic feature to its sequence_
-    * __range__: biological sequence
-    * inherited from: [genomic entity](GenomicEntity.html)
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [in taxon](in_taxon.html) *subsets: translator_minimal*
-    * _connects a thing to a class representing a taxon_
-    * __range__: [organism taxon](OrganismTaxon.html)
-    * inherited from: [thing with taxon](ThingWithTaxon.html)

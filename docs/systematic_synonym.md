@@ -1,26 +1,19 @@
----
-layout: default
----
-
-## systematic synonym
+# Slot: systematic synonym
 
 
 more commonly used for gene symbols in yeast
 
-URI: [http://bioentity.io/vocab/systematic_synonym](http://bioentity.io/vocab/systematic_synonym)
+URI: http://bioentity.io/vocab/systematic_synonym
 ## Mappings
-
 
 ## Domain and Range
 
-[named thing](NamedThing.html) -> 
-
+[named thing](NamedThing.md) -> [label type](LabelType.md)
 ## Inheritance
 
- *  is_a: [node property](node_property.html)
-
+ *  is_a: [node property](node_property.md)
 ## Children
-
 
 ## Used in
 
+ *  usage: [named thing](NamedThing.md)

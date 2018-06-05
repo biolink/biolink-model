@@ -1,110 +1,133 @@
----
-layout: default
----
-
-## association
+# Class: association
 
 
 A typed association between two entities, supported by evidence
 
-URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Association)
+URI: http://bioentity.io/vocab/Association
 
-
-![img](http://yuml.me/diagram/nofunky/class/[information content entity|]^-[association|association type;subject;negated;relation;object;qualifiers;publications;provided by], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-association type >[ontology class|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-relation >[relationship type|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-qualifiers >[ontology class|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-publications >[publication|], [information content entity|]^-[publication|], [association|association type;subject;negated;relation;object;qualifiers;publications;provided by]-provided by >[provider|], [administrative entity|]^-[provider|])
+![img](http://yuml.me/diagram/nofunky/class/\[InformationContentEntity]^-\[Association|subject:string;negated:boolean%20%3F;object:string;association_slot:string%20%3F],%20\[Association]^-\[AnatomicalEntityToAnatomicalEntityAssociation],%20\[Association]^-\[BiosampleToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[BiosampleToThingAssociation],%20\[Association]^-\[CaseToPhenotypicFeatureAssociation],%20\[Association]^-\[CaseToThingAssociation],%20\[Association]^-\[CellLineToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[CellLineToThingAssociation],%20\[Association]^-\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[ChemicalToGeneAssociation],%20\[Association]^-\[ChemicalToPathwayAssociation],%20\[Association]^-\[ChemicalToThingAssociation],%20\[Association]^-\[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],%20\[Association]^-\[DiseaseToPhenotypicFeatureAssociation],%20\[Association]^-\[DiseaseToThingAssociation],%20\[Association]^-\[EntityToPhenotypicFeatureAssociation],%20\[Association]^-\[EnvironmentToPhenotypicFeatureAssociation],%20\[Association]^-\[FunctionalAssociation],%20\[Association]^-\[GeneRegulatoryRelationship],%20\[Association]^-\[GeneToDiseaseAssociation],%20\[Association]^-\[GeneToExpressionSiteAssociation],%20\[Association]^-\[GeneToGeneAssociation],%20\[Association]^-\[GeneToPhenotypicFeatureAssociation],%20\[Association]^-\[GeneToThingAssociation],%20\[Association]^-\[GenomicSequenceLocalization],%20\[Association]^-\[GenotypeToGeneAssociation],%20\[Association]^-\[GenotypeToGenotypePartAssociation],%20\[Association]^-\[GenotypeToPhenotypicFeatureAssociation],%20\[Association]^-\[GenotypeToThingAssociation],%20\[Association]^-\[GenotypeToVariantAssociation],%20\[Association]^-\[MolecularInteraction],%20\[Association]^-\[PopulationToPopulationAssociation],%20\[Association]^-\[SequenceFeatureRelationship],%20\[Association]^-\[SequenceVariantModulatesTreatmentAssociation],%20\[Association]^-\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[VariantToDiseaseAssociation],%20\[Association]^-\[VariantToPhenotypicFeatureAssociation],%20\[Association]^-\[VariantToPopulationAssociation],%20\[Association]^-\[VariantToThingAssociation],%20\[Association]-%20association_type%20%3F>\[OntologyClass],%20\[Association]-%20relation>\[RelationshipType],%20\[Association]-%20qualifiers%20*>\[OntologyClass],%20\[Association]-%20publications%20*>\[Publication],%20\[Association]-%20provided_by%20%3F>\[Provider],%20)
 ## Mappings
 
  * [OBAN:association](http://purl.obolibrary.org/obo/OBAN_association)
  * [rdf:Statement](http://purl.obolibrary.org/obo/rdf_Statement)
  * [owl:Axiom](http://purl.obolibrary.org/obo/owl_Axiom)
-
 ## Inheritance
 
- *  is_a: [information content entity](InformationContentEntity.html)
-
+ *  is_a: [information content entity](InformationContentEntity.md)
 ## Children
 
- *  child: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html)
- *  child: [genotype to gene association](GenotypeToGeneAssociation.html)
- *  child: [genotype to variant association](GenotypeToVariantAssociation.html)
- *  child: [gene to gene association](GeneToGeneAssociation.html)
- *  child: [cell line to thing association](CellLineToThingAssociation.html)
- *  child: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html)
- *  child: [chemical to thing association](ChemicalToThingAssociation.html)
- *  child: [case to thing association](CaseToThingAssociation.html)
- *  child: [chemical to gene association](ChemicalToGeneAssociation.html)
- *  child: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html)
- *  child: [chemical to pathway association](ChemicalToPathwayAssociation.html)
- *  child: [chemical to gene association](ChemicalToGeneAssociation.html)
- *  child: [biosample to thing association](BiosampleToThingAssociation.html)
- *  child: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html)
- *  child: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
- *  child: [disease or phenotypic feature association to thing association](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.html)
- *  child: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html)
- *  child: [disease to thing association](DiseaseToThingAssociation.html)
- *  child: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html)
- *  child: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html)
- *  child: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html)
- *  child: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html)
- *  child: [gene to thing association](GeneToThingAssociation.html)
- *  child: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html)
- *  child: [gene to disease association](GeneToDiseaseAssociation.html)
- *  child: [variant to population association](VariantToPopulationAssociation.html)
- *  child: [population to population association](PopulationToPopulationAssociation.html)
- *  child: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html)
- *  child: [variant to disease association](VariantToDiseaseAssociation.html)
- *  child: [genotype to thing association](GenotypeToThingAssociation.html)
- *  child: [gene to expression site association](GeneToExpressionSiteAssociation.html)
- *  child: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html)
- *  child: [functional association](FunctionalAssociation.html)
- *  child: [genomic sequence localization](GenomicSequenceLocalization.html)
- *  child: [sequence feature relationship](SequenceFeatureRelationship.html)
- *  child: [gene regulatory relationship](GeneRegulatoryRelationship.html)
- *  child: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html)
+ *  child: [variant to disease association](VariantToDiseaseAssociation.md)
+ *  child: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
+ *  child: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
+ *  child: [population to population association](PopulationToPopulationAssociation.md)
+ *  child: [genotype to genotype part association](GenotypeToGenotypePartAssociation.md)
+ *  child: [genotype to thing association](GenotypeToThingAssociation.md)
+ *  child: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.md)
+ *  child: [biosample to thing association](BiosampleToThingAssociation.md)
+ *  child: [variant to thing association](VariantToThingAssociation.md)
+ *  child: [molecular interaction](MolecularInteraction.md)
+ *  child: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.md)
+ *  child: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md)
+ *  child: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
+ *  child: [disease or phenotypic feature association to thing association](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
+ *  child: [gene to gene association](GeneToGeneAssociation.md)
+ *  child: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.md)
+ *  child: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md)
+ *  child: [genotype to gene association](GenotypeToGeneAssociation.md)
+ *  child: [genomic sequence localization](GenomicSequenceLocalization.md)
+ *  child: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
+ *  child: [chemical to thing association](ChemicalToThingAssociation.md)
+ *  child: [sequence feature relationship](SequenceFeatureRelationship.md)
+ *  child: [cell line to thing association](CellLineToThingAssociation.md)
+ *  child: [case to thing association](CaseToThingAssociation.md)
+ *  child: [chemical to pathway association](ChemicalToPathwayAssociation.md)
+ *  child: [genotype to variant association](GenotypeToVariantAssociation.md)
+ *  child: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
+ *  child: [gene to expression site association](GeneToExpressionSiteAssociation.md)
+ *  child: [gene to thing association](GeneToThingAssociation.md)
+ *  child: [chemical to gene association](ChemicalToGeneAssociation.md)
+ *  child: [disease to thing association](DiseaseToThingAssociation.md)
+ *  child: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)
+ *  child: [gene regulatory relationship](GeneRegulatoryRelationship.md)
+ *  child: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.md)
+ *  child: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.md)
+ *  child: [gene to disease association](GeneToDiseaseAssociation.md)
+ *  child: [functional association](FunctionalAssociation.md)
+ *  child: [variant to population association](VariantToPopulationAssociation.md)
+## Used in
 
-
+ *  class: [association](Association.md) references: [variant to disease association](VariantToDiseaseAssociation.md)
+ *  class: [association](Association.md) references: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
+ *  class: [association](Association.md) references: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
+ *  class: [association](Association.md) references: [population to population association](PopulationToPopulationAssociation.md)
+ *  class: [association](Association.md) references: [genotype to genotype part association](GenotypeToGenotypePartAssociation.md)
+ *  class: [association](Association.md) references: [genotype to thing association](GenotypeToThingAssociation.md)
+ *  class: [association](Association.md) references: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.md)
+ *  class: [association](Association.md) references: [biosample to thing association](BiosampleToThingAssociation.md)
+ *  class: [association](Association.md) references: [variant to thing association](VariantToThingAssociation.md)
+ *  class: [association](Association.md) references: [molecular interaction](MolecularInteraction.md)
+ *  class: [association](Association.md) references: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.md)
+ *  class: [association](Association.md) references: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md)
+ *  class: [association](Association.md) references: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
+ *  class: [association](Association.md) references: [disease or phenotypic feature association to thing association](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
+ *  class: [association](Association.md) references: [gene to gene association](GeneToGeneAssociation.md)
+ *  class: [association](Association.md) references: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.md)
+ *  class: [association](Association.md) references: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md)
+ *  class: [association](Association.md) references: [genotype to gene association](GenotypeToGeneAssociation.md)
+ *  class: [association](Association.md) references: [genomic sequence localization](GenomicSequenceLocalization.md)
+ *  class: [association](Association.md) references: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
+ *  class: [association](Association.md) references: [chemical to thing association](ChemicalToThingAssociation.md)
+ *  class: [association](Association.md) references: [sequence feature relationship](SequenceFeatureRelationship.md)
+ *  class: [association](Association.md) references: [cell line to thing association](CellLineToThingAssociation.md)
+ *  class: [association](Association.md) references: [case to thing association](CaseToThingAssociation.md)
+ *  class: [association](Association.md) references: [chemical to pathway association](ChemicalToPathwayAssociation.md)
+ *  class: [association](Association.md) references: [genotype to variant association](GenotypeToVariantAssociation.md)
+ *  class: [association](Association.md) references: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
+ *  class: [association](Association.md) references: [gene to expression site association](GeneToExpressionSiteAssociation.md)
+ *  class: [association](Association.md) references: [gene to thing association](GeneToThingAssociation.md)
+ *  class: [association](Association.md) references: [chemical to gene association](ChemicalToGeneAssociation.md)
+ *  class: [association](Association.md) references: [disease to thing association](DiseaseToThingAssociation.md)
+ *  class: [association](Association.md) references: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)
+ *  class: [association](Association.md) references: [gene regulatory relationship](GeneRegulatoryRelationship.md)
+ *  class: [association](Association.md) references: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.md)
+ *  class: [association](Association.md) references: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.md)
+ *  class: [association](Association.md) references: [gene to disease association](GeneToDiseaseAssociation.md)
+ *  class: [association](Association.md) references: [functional association](FunctionalAssociation.md)
+ *  class: [association](Association.md) references: [variant to population association](VariantToPopulationAssociation.md)
 ## Fields
 
- * [association type](association_type.html)
+ * _[association type](association_type.md)_
     * _connects an association to the type of association (e.g. gene to phenotype)_
-    * __range__: [ontology class](OntologyClass.html)
+    * range: [ontology class](OntologyClass.md)
     * __Local__
- * [subject](subject.html)
+ * _[subject](subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: None [required]
+    * range: string [required]
     * __Local__
- * [negated](negated.html)
+ * _[negated](negated.md)_
     * _if set to true, then the association is negated i.e. is not true_
-    * __range__: xsd:boolean
+    * range: boolean
     * __Local__
- * [relation](relation.html)
+ * _[relation](relation.md)_
     * _the relationship type by which a subject is connected to an object in an association_
-    * __range__: [relationship type](RelationshipType.html) [required]
+    * range: [relationship type](RelationshipType.md) [required]
     * __Local__
- * [object](object.html)
+ * _[object](object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: None [required]
+    * range: string [required]
     * __Local__
- * [qualifiers](qualifiers.html)
+ * _[qualifiers](qualifiers.md)_
     * _connects an association to qualifiers that modify or qualify the meaning of that association_
-    * __range__: [ontology class](OntologyClass.html)*
+    * range: [ontology class](OntologyClass.md)*
     * __Local__
- * [publications](publications.html)
+ * _[publications](publications.md)_
     * _connects an association to publications supporting the association_
-    * __range__: [publication](Publication.html)*
+    * range: [publication](Publication.md)*
     * __Local__
- * [provided by](provided_by.html)
+ * _[provided by](provided_by.md)_
     * _connects an association to the agent (person, organization or group) that provided it_
-    * __range__: [provider](Provider.html)
+    * range: [provider](Provider.md)
     * __Local__
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type [required]
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
+ * _[association slot](association_slot.md)_
+    * _any slot that relates an association to another entity_
+    * range: string

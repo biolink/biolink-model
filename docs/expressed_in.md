@@ -1,28 +1,20 @@
----
-layout: default
----
-
-## expressed in
+# Slot: expressed in
 
 
 holds between a gene or gene product and an anatomical entity in which it is expressed
 
-URI: [http://bioentity.io/vocab/expressed_in](http://bioentity.io/vocab/expressed_in)
+URI: http://bioentity.io/vocab/expressed_in
 ## Mappings
 
  * [RO:0002206](http://purl.obolibrary.org/obo/RO_0002206)
-
 ## Domain and Range
 
-[gene or gene product](GeneOrGeneProduct.html) -> [anatomical entity](AnatomicalEntity.html)
-
+[gene or gene product](GeneOrGeneProduct.md) -> [anatomical entity](AnatomicalEntity.md)
 ## Inheritance
 
- *  is_a: [related to](related_to.html)
-
+ *  is_a: [related to](related_to.md)
 ## Children
-
 
 ## Used in
 
- *  usage: [gene to expression site association](GeneToExpressionSiteAssociation.html)
+ *  usage: [gene or gene product](GeneOrGeneProduct.md)

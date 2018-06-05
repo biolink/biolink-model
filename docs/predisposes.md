@@ -1,27 +1,19 @@
----
-layout: default
----
-
-## predisposes
+# Slot: predisposes
 
 
-holds between two entities where exposure to one entity increases the chance of developing the other 
+holds between two entities where exposure to one entity increases the chance of developing the other
 
-URI: [http://bioentity.io/vocab/predisposes](http://bioentity.io/vocab/predisposes)
+URI: http://bioentity.io/vocab/predisposes
 ## Mappings
 
  * [SEMMEDDB:PREDISPOSES](http://purl.obolibrary.org/obo/SEMMEDDB_PREDISPOSES)
-
 ## Domain and Range
 
- -> 
-
+None -> None
 ## Inheritance
 
- *  is_a: [affects risk for](affects_risk_for.html) *subsets: translator_minimal*
-
+ *  is_a: [affects risk for](affects_risk_for.md) *subsets: translator_minimal*
 ## Children
-
 
 ## Used in
 

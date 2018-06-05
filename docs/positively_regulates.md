@@ -1,26 +1,18 @@
----
-layout: default
----
-
-## positively regulates
+# Slot: positively regulates
 
 
-None
 
-URI: [http://bioentity.io/vocab/positively_regulates](http://bioentity.io/vocab/positively_regulates)
+
+URI: http://bioentity.io/vocab/positively_regulates
 ## Mappings
-
 
 ## Domain and Range
 
- -> 
-
+None -> None
 ## Inheritance
 
- *  is_a: [regulates](regulates.html)
-
+ *  is_a: [regulates](regulates.md)
 ## Children
-
 
 ## Used in
 

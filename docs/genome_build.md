@@ -1,27 +1,19 @@
----
-layout: default
----
-
-## genome build
+# Slot: genome build
 
 
 TODO
 
-URI: [http://bioentity.io/vocab/genome_build](http://bioentity.io/vocab/genome_build)
+URI: http://bioentity.io/vocab/genome_build
 ## Mappings
-
 
 ## Domain and Range
 
- -> 
-
+None -> string
 ## Inheritance
 
- *  is_a: [node property](node_property.html)
-
+ *  is_a: [node property](node_property.md)
 ## Children
-
 
 ## Used in
 
- *  usage: [genomic sequence localization](GenomicSequenceLocalization.html)
+ *  usage: [genomic sequence localization](GenomicSequenceLocalization.md)

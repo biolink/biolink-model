@@ -50,11 +50,12 @@ contrib/%-java: contrib/%/schema.json
 # DOCS
 # ~~~~~~~~~~~~~~~~~~~~
 docs/index.md: biolink-model.yaml
-	./bin/gen-markdown.py --dir docs $< > $@
+	gen-markdown --dir docs $< > $@
 contrib/%/docs/index.md: contrib/%.yaml
-	./bin/gen-markdown.py --dir contrib/$*/docs $< > $@
+	gen-markdown --dir contrib/$*/docs $< > $@
 clean-docs:
 	rm docs/*.md
+	rm contrib/%/docs/*.md
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology

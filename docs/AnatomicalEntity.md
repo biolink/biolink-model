@@ -1,58 +1,38 @@
----
-layout: default
----
-
-## anatomical entity
+# Class: anatomical entity
 
 
 A subcellular location, cell type or gross anatomical part
 
-URI: [http://bioentity.io/vocab/AnatomicalEntity](http://bioentity.io/vocab/AnatomicalEntity)
+URI: http://bioentity.io/vocab/AnatomicalEntity
 
-
-![img](http://yuml.me/diagram/nofunky/class/[organismal entity|]^-[anatomical entity|in taxon], [anatomical entity|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
+![img](http://yuml.me/diagram/nofunky/class/\[OrganismalEntity]^-\[AnatomicalEntity],%20\[AnatomicalEntity]^-\[Cell],%20\[AnatomicalEntity]^-\[CellularComponent],%20\[AnatomicalEntity]^-\[GrossAnatomicalStructure],%20\[AnatomicalEntity]-%20expresses%20%3F>\[GeneOrGeneProduct],%20\[AnatomicalEntity]-%20in_taxon%20%3F>\[OrganismTaxon],%20\[AnatomicalEntity]uses%20-.->\[ThingWithTaxon],%20)
 ## Mappings
 
  * [UMLSSG:ANAT](http://purl.obolibrary.org/obo/UMLSSG_ANAT)
  * [SIO:010046](http://semanticscience.org/resource/SIO_010046)
  * [WD:Q4936952](http://purl.obolibrary.org/obo/WD_Q4936952)
  * [UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062)
-
 ## Inheritance
 
- *  is_a: [organismal entity](OrganismalEntity.html)
- *  mixin: [thing with taxon](ThingWithTaxon.html)
-
+ *  is_a: [organismal entity](OrganismalEntity.md)
+ *  mixin: [thing with taxon](ThingWithTaxon.md)
 ## Children
 
- *  child: [cellular component](CellularComponent.html)
- *  child: [cell](Cell.html)
- *  child: [gross anatomical structure](GrossAnatomicalStructure.html)
-
+ *  child: [cellular component](CellularComponent.md)
+ *  child: [gross anatomical structure](GrossAnatomicalStructure.md)
+ *  child: [cell](Cell.md)
 ## Used in
 
- *  class: [disease or phenotypic feature association to location association](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.html) references: [cellular component](CellularComponent.html)
- *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [anatomical entity to anatomical entity part of association](AnatomicalEntityToAnatomicalEntityPartOfAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [anatomical entity to anatomical entity ontogenic association](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
-
+ *  class: [anatomical entity](AnatomicalEntity.md) references: [cellular component](CellularComponent.md)
+ *  class: [anatomical entity](AnatomicalEntity.md) references: [gross anatomical structure](GrossAnatomicalStructure.md)
+ *  class: [anatomical entity](AnatomicalEntity.md) references: [cell](Cell.md)
 ## Fields
 
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [in taxon](in_taxon.html) *subsets: translator_minimal*
+ * _[expresses](expresses.md) *subsets: translator_minimal*_
+    * _holds between an anatomical entity and gene or gene product that is expressed there_
+    * range: [gene or gene product](GeneOrGeneProduct.md)
+    * inherited from: [related to](related_to.md)
+ * _[in taxon](in_taxon.md) *subsets: translator_minimal*_
     * _connects a thing to a class representing a taxon_
-    * __range__: [organism taxon](OrganismTaxon.html)
-    * inherited from: [thing with taxon](ThingWithTaxon.html)
+    * range: [organism taxon](OrganismTaxon.md)
+    * inherited from: [related to](related_to.md)

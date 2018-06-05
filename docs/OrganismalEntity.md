@@ -1,60 +1,30 @@
----
-layout: default
----
-
-## organismal entity
+# Class: organismal entity
 
 
 A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
 
-URI: [http://bioentity.io/vocab/OrganismalEntity](http://bioentity.io/vocab/OrganismalEntity)
+URI: http://bioentity.io/vocab/OrganismalEntity
 
-
-![img](http://yuml.me/diagram/nofunky/class/[biological entity|]^-[organismal entity|])
+![img](http://yuml.me/diagram/nofunky/class/\[BiologicalEntity]^-\[OrganismalEntity],%20\[OrganismalEntity]^-\[AnatomicalEntity],%20\[OrganismalEntity]^-\[Biosample],%20\[OrganismalEntity]^-\[IndividualOrganism],%20\[OrganismalEntity]^-\[LifeStage],%20\[OrganismalEntity]^-\[PopulationOfIndividualOrganisms],%20)
 ## Mappings
 
  * [WD:Q7239](http://purl.obolibrary.org/obo/WD_Q7239)
-
 ## Inheritance
 
- *  is_a: [biological entity](BiologicalEntity.html)
-
+ *  is_a: [biological entity](BiologicalEntity.md)
 ## Children
 
- *  child: [individual organism](IndividualOrganism.html)
- *  child: [population of individual organisms](PopulationOfIndividualOrganisms.html)
- *  child: [biosample](Biosample.html)
- *  child: [anatomical entity](AnatomicalEntity.html)
- *  child: [life stage](LifeStage.html)
-
+ *  child: [life stage](LifeStage.md)
+ *  child: [anatomical entity](AnatomicalEntity.md)
+ *  child: [biosample](Biosample.md)
+ *  child: [individual organism](IndividualOrganism.md)
+ *  child: [population of individual organisms](PopulationOfIndividualOrganisms.md)
 ## Used in
 
- *  class: [cell line to thing association](CellLineToThingAssociation.html) references: [cell line](CellLine.html)
- *  class: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html) references: [cell line](CellLine.html)
- *  class: [case to thing association](CaseToThingAssociation.html) references: [case](Case.html)
- *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [biosample](Biosample.html)
- *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [biosample](Biosample.html)
- *  class: [disease or phenotypic feature association to location association](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [case](Case.html)
- *  class: [variant to population association](VariantToPopulationAssociation.html) references: [population of individual organisms](PopulationOfIndividualOrganisms.html)
- *  class: [population to population association](PopulationToPopulationAssociation.html) references: [population of individual organisms](PopulationOfIndividualOrganisms.html)
- *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [life stage](LifeStage.html)
- *  class: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.html) references: [cellular component](CellularComponent.html)
- *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [anatomical entity to anatomical entity part of association](AnatomicalEntityToAnatomicalEntityPartOfAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [anatomical entity to anatomical entity ontogenic association](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
-
+ *  class: [organismal entity](OrganismalEntity.md) references: [life stage](LifeStage.md)
+ *  class: [organismal entity](OrganismalEntity.md) references: [anatomical entity](AnatomicalEntity.md)
+ *  class: [organismal entity](OrganismalEntity.md) references: [biosample](Biosample.md)
+ *  class: [organismal entity](OrganismalEntity.md) references: [individual organism](IndividualOrganism.md)
+ *  class: [organismal entity](OrganismalEntity.md) references: [population of individual organisms](PopulationOfIndividualOrganisms.md)
 ## Fields
 
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type [required]
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)

@@ -1,89 +1,41 @@
----
-layout: default
----
-
-## genomic entity
+# Class: genomic entity
 
 
 an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
 
-URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/GenomicEntity)
+URI: http://bioentity.io/vocab/GenomicEntity
 
-
-![img](http://yuml.me/diagram/nofunky/class/[molecular entity|in taxon]^-[genomic entity|has biological sequence], [genomic entity|has biological sequence]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
+![img](http://yuml.me/diagram/nofunky/class/\[MolecularEntity]^-\[GenomicEntity|has_biological_sequence:biological_sequence%20%3F],%20\[GenomicEntity]^-\[CodingSequence],%20\[GenomicEntity]^-\[Exon],%20\[GenomicEntity]^-\[Genome],%20\[GenomicEntity]^-\[Genotype],%20\[GenomicEntity]^-\[Haplotype],%20\[GenomicEntity]^-\[MacromolecularMachine],%20\[GenomicEntity]^-\[SequenceVariant],%20\[GenomicEntity]^-\[Transcript],%20)
 ## Mappings
 
  * [SO:0000110](http://purl.obolibrary.org/obo/SO_0000110)
  * [UMLSSG:GENE](http://purl.obolibrary.org/obo/UMLSSG_GENE)
-
 ## Inheritance
 
- *  is_a: [molecular entity](MolecularEntity.html)
-
+ *  is_a: [molecular entity](MolecularEntity.md)
 ## Children
 
- *  child: [genome](Genome.html)
- *  child: [transcript](Transcript.html)
- *  child: [exon](Exon.html)
- *  child: [coding sequence](CodingSequence.html)
- *  child: [macromolecular machine](MacromolecularMachine.html)
- *  child: [genotype](Genotype.html)
- *  child: [haplotype](Haplotype.html)
- *  child: [sequence variant](SequenceVariant.html)
-
+ *  child: [genome](Genome.md)
+ *  child: [haplotype](Haplotype.md)
+ *  child: [coding sequence](CodingSequence.md)
+ *  child: [macromolecular machine](MacromolecularMachine.md)
+ *  child: [genotype](Genotype.md)
+ *  child: [sequence variant](SequenceVariant.md)
+ *  child: [exon](Exon.md)
+ *  child: [transcript](Transcript.md)
 ## Used in
 
- *  class: [sequence variant](SequenceVariant.html) references: [gene](Gene.html)
- *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [genotype](Genotype.html)
- *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [genotype](Genotype.html)
- *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [genotype](Genotype.html)
- *  class: [gene to gene association](GeneToGeneAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [gene product](GeneProduct.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [genotype](Genotype.html)
- *  class: [gene to thing association](GeneToThingAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [variant to thing association](VariantToThingAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [variant to population association](VariantToPopulationAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [genotype](Genotype.html)
- *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [sequence variant](SequenceVariant.html)
- *  class: [functional association](FunctionalAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
- *  class: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
- *  class: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
- *  class: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
- *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [genomic entity](GenomicEntity.html)
- *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [genomic entity](GenomicEntity.html)
- *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [transcript](Transcript.html)
- *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [gene](Gene.html)
- *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [exon](Exon.html)
- *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [gene or gene product](GeneOrGeneProduct.html)
-
+ *  class: [genomic entity](GenomicEntity.md) references: [genome](Genome.md)
+ *  class: [genomic entity](GenomicEntity.md) references: [haplotype](Haplotype.md)
+ *  class: [genomic entity](GenomicEntity.md) references: [coding sequence](CodingSequence.md)
+ *  class: [genomic entity](GenomicEntity.md) references: [macromolecular machine](MacromolecularMachine.md)
+ *  class: [genomic entity](GenomicEntity.md) references: [genotype](Genotype.md)
+ *  class: [genomic entity](GenomicEntity.md) references: [sequence variant](SequenceVariant.md)
+ *  class: [genomic entity](GenomicEntity.md) references: [exon](Exon.md)
+ *  class: [genomic entity](GenomicEntity.md) references: [transcript](Transcript.md)
 ## Fields
 
- * [has biological sequence](has_biological_sequence.html)
+ * _[has biological sequence](has_biological_sequence.md)_
     * _connects a genomic feature to its sequence_
-    * __range__: biological sequence
-    * __Local__
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [in taxon](in_taxon.html) *subsets: translator_minimal*
-    * _connects a thing to a class representing a taxon_
-    * __range__: [organism taxon](OrganismTaxon.html)
-    * inherited from: [thing with taxon](ThingWithTaxon.html)
+    * range: [biological sequence](BiologicalSequence.md)
+    * inherited from: [node property](node_property.md)

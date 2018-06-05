@@ -1,49 +1,36 @@
----
-layout: default
----
-
-## attribute
+# Class: attribute
 
 
 A property or characteristic of an entity
 
-URI: [http://bioentity.io/vocab/Attribute](http://bioentity.io/vocab/Attribute)
+URI: http://bioentity.io/vocab/Attribute
 
-
-![img](http://yuml.me/diagram/nofunky/class/)
+![img](http://yuml.me/diagram/nofunky/class/\[Attribute]^-\[BiologicalSex],%20\[Attribute]^-\[ClinicalModifier],%20\[Attribute]^-\[FrequencyValue],%20\[Attribute]^-\[Onset],%20\[Attribute]^-\[SeverityValue],%20\[Attribute]^-\[Zygosity],%20\[Attribute]-%20subclass_of%20%3F>\[OntologyClass],%20\[Attribute]uses%20-.->\[OntologyClass],%20)
 ## Mappings
 
  * [PATO:0000001](http://purl.obolibrary.org/obo/PATO_0000001)
-
 ## Inheritance
 
- *  mixin: [ontology class](OntologyClass.html)
-
+ *  mixin: [ontology class](OntologyClass.md)
 ## Children
 
- *  child: [biological sex](BiologicalSex.html)
- *  child: [severity value](SeverityValue.html)
- *  child: [frequency value](FrequencyValue.html)
- *  child: [clinical modifier](ClinicalModifier.html)
- *  child: [onset](Onset.html)
- *  child: [zygosity](Zygosity.html)
-
+ *  child: [zygosity](Zygosity.md)
+ *  child: [frequency value](FrequencyValue.md)
+ *  child: [onset](Onset.md)
+ *  child: [biological sex](BiologicalSex.md)
+ *  child: [severity value](SeverityValue.md)
+ *  child: [clinical modifier](ClinicalModifier.md)
 ## Used in
 
- *  class: [genotype](Genotype.html) references: [zygosity](Zygosity.html)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [variant to population association](VariantToPopulationAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
-
+ *  class: [attribute](Attribute.md) references: [zygosity](Zygosity.md)
+ *  class: [attribute](Attribute.md) references: [frequency value](FrequencyValue.md)
+ *  class: [attribute](Attribute.md) references: [onset](Onset.md)
+ *  class: [attribute](Attribute.md) references: [biological sex](BiologicalSex.md)
+ *  class: [attribute](Attribute.md) references: [severity value](SeverityValue.md)
+ *  class: [attribute](Attribute.md) references: [clinical modifier](ClinicalModifier.md)
 ## Fields
 
+ * _[subclass of](subclass_of.md) *subsets: translator_minimal*_
+    * _holds between two classes where the domain class is a specialization of the range class_
+    * range: [ontology class](OntologyClass.md)
+    * inherited from: [related to](related_to.md)

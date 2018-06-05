@@ -1,31 +1,23 @@
----
-layout: default
----
-
-## regulates
+# Slot: regulates
 
 
-None
 
-URI: [http://bioentity.io/vocab/regulates](http://bioentity.io/vocab/regulates)
+
+URI: http://bioentity.io/vocab/regulates
 ## Mappings
 
  * [WD:P128](http://purl.obolibrary.org/obo/WD_P128)
-
 ## Domain and Range
 
- -> 
-
+None -> None
 ## Inheritance
 
- *  is_a: [affects](affects.html) *subsets: translator_minimal*
-
+ *  is_a: [affects](affects.md) *subsets: translator_minimal*
 ## Children
 
- *  child: [positively regulates](positively_regulates.html)
- *  child: [negatively regulates](negatively_regulates.html)
- *  child: [regulates, process to process](regulates_process_to_process.html)
- *  child: [regulates, entity to entity](regulates_entity_to_entity.html) *subsets: translator_minimal*
-
+ *  child: [regulates, process to process](regulates_process_to_process.md)
+ *  child: [positively regulates](positively_regulates.md)
+ *  child: [regulates, entity to entity](regulates_entity_to_entity.md) *subsets: translator_minimal*
+ *  child: [negatively regulates](negatively_regulates.md)
 ## Used in
 

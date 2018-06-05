@@ -1,28 +1,20 @@
----
-layout: default
----
-
-## affects risk for
+# Slot: affects risk for
 
 
-holds between two entities where exposure to one entity alters the chance of developing the other 
+holds between two entities where exposure to one entity alters the chance of developing the other
 
-URI: [http://bioentity.io/vocab/affects_risk_for](http://bioentity.io/vocab/affects_risk_for)
+URI: http://bioentity.io/vocab/affects_risk_for
 ## Mappings
-
 
 ## Domain and Range
 
- -> 
-
+None -> None
 ## Inheritance
 
- *  is_a: [related to](related_to.html)
-
+ *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [predisposes](predisposes.html) *subsets: translator_minimal*
- *  child: [prevents](prevents.html) *subsets: translator_minimal*
-
+ *  child: [predisposes](predisposes.md) *subsets: translator_minimal*
+ *  child: [prevents](prevents.md) *subsets: translator_minimal*
 ## Used in
 

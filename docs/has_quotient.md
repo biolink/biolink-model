@@ -1,28 +1,18 @@
----
-layout: default
----
-
-## has quotient
+# Slot: has quotient
 
 
-None
+frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
 
-URI: [http://bioentity.io/vocab/has_quotient](http://bioentity.io/vocab/has_quotient)
+URI: http://bioentity.io/vocab/variant_to_population_association_has_quotient
 ## Mappings
-
 
 ## Domain and Range
 
- -> 
-
+[variant to population association](VariantToPopulationAssociation.md) -> string
 ## Inheritance
-
- *  is_a: [aggregate statistic](aggregate_statistic.html)
 
 ## Children
 
-
 ## Used in
 
- *  usage: [frequency quantifier](FrequencyQuantifier.html)
- *  usage: [variant to population association](VariantToPopulationAssociation.html)
+ *  usage: [variant to population association](VariantToPopulationAssociation.md)

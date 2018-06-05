@@ -1,66 +1,40 @@
----
-layout: default
----
-
-## disease or phenotypic feature
+# Class: disease or phenotypic feature
 
 
 Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
 
-URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeature](http://bioentity.io/vocab/DiseaseOrPhenotypicFeature)
+URI: http://bioentity.io/vocab/DiseaseOrPhenotypicFeature
 
-
-![img](http://yuml.me/diagram/nofunky/class/[biological entity|]^-[disease or phenotypic feature|in taxon], [disease or phenotypic feature|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
+![img](http://yuml.me/diagram/nofunky/class/\[BiologicalEntity]^-\[DiseaseOrPhenotypicFeature|treated_by:string%20%3F],%20\[DiseaseOrPhenotypicFeature]^-\[Disease],%20\[DiseaseOrPhenotypicFeature]^-\[PhenotypicFeature],%20\[DiseaseOrPhenotypicFeature]-%20correlated_with%20%3F>\[MolecularEntity],%20\[DiseaseOrPhenotypicFeature]-%20has_biomarker%20%3F>\[MolecularEntity],%20\[DiseaseOrPhenotypicFeature]-%20in_taxon%20%3F>\[OrganismTaxon],%20\[DiseaseOrPhenotypicFeature]uses%20-.->\[ThingWithTaxon],%20)
 ## Mappings
-
 
 ## Inheritance
 
- *  is_a: [biological entity](BiologicalEntity.html)
- *  mixin: [thing with taxon](ThingWithTaxon.html)
-
+ *  is_a: [biological entity](BiologicalEntity.md)
+ *  mixin: [thing with taxon](ThingWithTaxon.md)
 ## Children
 
- *  child: [disease](Disease.html)
- *  child: [phenotypic feature](PhenotypicFeature.html)
-
+ *  child: [disease](Disease.md)
+ *  child: [phenotypic feature](PhenotypicFeature.md)
 ## Used in
 
- *  class: [treatment](Treatment.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
- *  class: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
- *  class: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
- *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
- *  class: [disease or phenotypic feature association to thing association](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
- *  class: [disease or phenotypic feature association to location association](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
- *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html)
- *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [disease](Disease.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
- *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [disease](Disease.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [disease](Disease.html)
- *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [phenotypic feature](PhenotypicFeature.html)
- *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [disease](Disease.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [disease](Disease.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [disease](Disease.html)
-
+ *  class: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md) references: [disease](Disease.md)
+ *  class: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md) references: [phenotypic feature](PhenotypicFeature.md)
 ## Fields
 
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [in taxon](in_taxon.html) *subsets: translator_minimal*
+ * _[correlated with](correlated_with.md) *subsets: translator_minimal*_
+    * _holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature._
+    * range: [molecular entity](MolecularEntity.md)
+    * inherited from: [related to](related_to.md)
+ * _[has biomarker](has_biomarker.md) *subsets: translator_minimal*_
+    * _holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature._
+    * range: [molecular entity](MolecularEntity.md)
+    * __Local__
+ * _[treated by](treated_by.md) *subsets: translator_minimal*_
+    * _holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition _
+    * range: string
+    * inherited from: [related to](related_to.md)
+ * _[in taxon](in_taxon.md) *subsets: translator_minimal*_
     * _connects a thing to a class representing a taxon_
-    * __range__: [organism taxon](OrganismTaxon.html)
-    * inherited from: [thing with taxon](ThingWithTaxon.html)
+    * range: [organism taxon](OrganismTaxon.md)
+    * inherited from: [related to](related_to.md)

@@ -1,51 +1,29 @@
----
-layout: default
----
-
-## individual organism
+# Class: individual organism
 
 
-None
-
-URI: [http://bioentity.io/vocab/IndividualOrganism](http://bioentity.io/vocab/IndividualOrganism)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[organismal entity|]^-[individual organism|in taxon], [individual organism|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
+URI: http://bioentity.io/vocab/IndividualOrganism
+
+![img](http://yuml.me/diagram/nofunky/class/\[OrganismalEntity]^-\[IndividualOrganism],%20\[IndividualOrganism]^-\[Case],%20\[IndividualOrganism]-%20in_taxon%20%3F>\[OrganismTaxon],%20\[IndividualOrganism]uses%20-.->\[ThingWithTaxon],%20)
 ## Mappings
 
  * [SIO:010000](http://semanticscience.org/resource/SIO_010000)
  * [WD:Q795052](http://purl.obolibrary.org/obo/WD_Q795052)
  * [NCBITaxon:1](http://purl.obolibrary.org/obo/NCBITaxon_1)
-
 ## Inheritance
 
- *  is_a: [organismal entity](OrganismalEntity.html)
- *  mixin: [thing with taxon](ThingWithTaxon.html)
-
+ *  is_a: [organismal entity](OrganismalEntity.md)
+ *  mixin: [thing with taxon](ThingWithTaxon.md)
 ## Children
 
- *  child: [case](Case.html)
-
+ *  child: [case](Case.md)
 ## Used in
 
- *  class: [case to thing association](CaseToThingAssociation.html) references: [case](Case.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [case](Case.html)
-
+ *  class: [individual organism](IndividualOrganism.md) references: [case](Case.md)
 ## Fields
 
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [in taxon](in_taxon.html) *subsets: translator_minimal*
+ * _[in taxon](in_taxon.md) *subsets: translator_minimal*_
     * _connects a thing to a class representing a taxon_
-    * __range__: [organism taxon](OrganismTaxon.html)
-    * inherited from: [thing with taxon](ThingWithTaxon.html)
+    * range: [organism taxon](OrganismTaxon.md)
+    * inherited from: [related to](related_to.md)

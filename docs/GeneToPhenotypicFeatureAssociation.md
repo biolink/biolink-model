@@ -1,92 +1,43 @@
----
-layout: default
----
-
-## gene to phenotypic feature association
+# Class: gene to phenotypic feature association
 
 
-None
-
-URI: [http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation](http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-association type >[ontology class|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-subject >[gene or gene product|], [macromolecular machine|]^-[gene or gene product|], [gene or gene product|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-relation >[relationship type|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-object >[phenotypic feature|], [disease or phenotypic feature|in taxon]^-[phenotypic feature|], [phenotypic feature|]-in taxon >[organism taxon|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-qualifiers >[ontology class|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-publications >[publication|], [information content entity|]^-[publication|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-provided by >[provider|], [administrative entity|]^-[provider|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-frequency qualifier >[frequency value|], [attribute|]^-[frequency value|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-severity qualifier >[severity value|], [attribute|]^-[severity value|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-onset qualifier >[onset|], [attribute|]^-[onset|], [gene to phenotypic feature association|frequency qualifier;severity qualifier;onset qualifier;sex qualifier;association type;subject;negated;relation;object;qualifiers;publications;provided by;id;name;category]-sex qualifier >[biological sex|], [attribute|]^-[biological sex|])
+URI: http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation
+
+![img](http://yuml.me/diagram/nofunky/class/\[Association]^-\[GeneToPhenotypicFeatureAssociation|frequency_qualifier:frequency_value%20%3F],%20\[GeneToPhenotypicFeatureAssociation]-%20frequency_qualifier%20%3F>\[FrequencyValue],%20\[GeneToPhenotypicFeatureAssociation]-%20severity_qualifier%20%3F>\[SeverityValue],%20\[GeneToPhenotypicFeatureAssociation]-%20onset_qualifier%20%3F>\[Onset],%20\[GeneToPhenotypicFeatureAssociation]-%20sex_qualifier%20%3F>\[BiologicalSex],%20\[GeneToPhenotypicFeatureAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GeneToPhenotypicFeatureAssociation]uses%20-.->\[GeneToThingAssociation],%20)
 ## Mappings
 
  * [http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association](http://purl.obolibrary.org/obo/http_//bio2rdf.org/wormbase_vocabulary_Gene-Phenotype-Association)
-
 ## Inheritance
 
- *  is_a: [association](Association.html)
- *  mixin: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
- *  mixin: [gene to thing association](GeneToThingAssociation.html)
-
+ *  is_a: [association](Association.md)
+ *  mixin: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md)
+ *  mixin: [gene to thing association](GeneToThingAssociation.md)
 ## Children
 
-
+## Used in
 
 ## Fields
 
- * [association type](association_type.html)
-    * _connects an association to the type of association (e.g. gene to phenotype)_
-    * __range__: [ontology class](OntologyClass.html)
-    * inherited from: [association](Association.html)
- * [subject](subject.html)
-    * _gene in which variation is correlated with the phenotypic feature_
-    * __range__: [gene or gene product](GeneOrGeneProduct.html) [required]
-    * inherited from: [association](Association.html)
- * [negated](negated.html)
-    * _if set to true, then the association is negated i.e. is not true_
-    * __range__: xsd:boolean
-    * inherited from: [association](Association.html)
- * [relation](relation.html)
-    * _the relationship type by which a subject is connected to an object in an association_
-    * __range__: [relationship type](RelationshipType.html) [required]
-    * inherited from: [association](Association.html)
- * [object](object.html)
-    * _phenotypic class_
-    * __range__: [phenotypic feature](PhenotypicFeature.html) [required]
-    * Example: [HP:0002487](http://purl.obolibrary.org/obo/HP_0002487) Hyperkinesis
-    * Example: [WBPhenotype:0000180](http://purl.obolibrary.org/obo/WBPhenotype_0000180) axon morphology variant
-    * Example: [MP:0001569](http://purl.obolibrary.org/obo/MP_0001569) abnormal circulating bilirubin level
-    * inherited from: [association](Association.html)
- * [qualifiers](qualifiers.html)
-    * _connects an association to qualifiers that modify or qualify the meaning of that association_
-    * __range__: [ontology class](OntologyClass.html)*
-    * inherited from: [association](Association.html)
- * [publications](publications.html)
-    * _connects an association to publications supporting the association_
-    * __range__: [publication](Publication.html)*
-    * inherited from: [association](Association.html)
- * [provided by](provided_by.html)
-    * _connects an association to the agent (person, organization or group) that provided it_
-    * __range__: [provider](Provider.html)
-    * inherited from: [association](Association.html)
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type [required]
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [frequency qualifier](frequency_qualifier.html)
+ * _[frequency qualifier](frequency_qualifier.md)_
     * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
-    * __range__: [frequency value](FrequencyValue.html)
-    * inherited from: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
- * [severity qualifier](severity_qualifier.html)
+    * range: [frequency value](FrequencyValue.md)
+    * inherited from: [association slot](association_slot.md)
+ * _[severity qualifier](severity_qualifier.md)_
     * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
-    * __range__: [severity value](SeverityValue.html)
-    * inherited from: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
- * [onset qualifier](onset_qualifier.html)
+    * range: [severity value](SeverityValue.md)
+    * inherited from: [association slot](association_slot.md)
+ * _[onset qualifier](onset_qualifier.md)_
     * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * __range__: [onset](Onset.html)
-    * inherited from: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
- * [sex qualifier](sex_qualifier.html)
+    * range: [onset](Onset.md)
+    * inherited from: [association slot](association_slot.md)
+ * _[sex qualifier](sex_qualifier.md)_
     * _a qualifier used in a phenotypic association to state whether the association is specific to a particular sex._
-    * __range__: [biological sex](BiologicalSex.html)
-    * inherited from: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html)
+    * range: [biological sex](BiologicalSex.md)
+    * inherited from: [association slot](association_slot.md)
+ * _[subject](subject.md)_
+    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * range: [gene or gene product](GeneOrGeneProduct.md) [required]
+    * Example: [HGNC:2197](https://monarchinitiative.org/gene/HGNC:2197) COL1A1 (Human)
+    * inherited from: [subject](subject.md)

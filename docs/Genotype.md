@@ -1,59 +1,24 @@
----
-layout: default
----
-
-## genotype
+# Class: genotype
 
 
 An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
 
-URI: [http://bioentity.io/vocab/Genotype](http://bioentity.io/vocab/Genotype)
+URI: http://bioentity.io/vocab/Genotype
 
-
-![img](http://yuml.me/diagram/nofunky/class/[genomic entity|has biological sequence]^-[genotype|has zygosity], [genotype|has zygosity]-has zygosity >[zygosity|], [attribute|]^-[zygosity|], [genotype|has zygosity]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
+![img](http://yuml.me/diagram/nofunky/class/\[GenomicEntity]^-\[Genotype],%20\[Genotype]-%20has_zygosity%20%3F>\[Zygosity],%20)
 ## Mappings
 
  * [GENO:0000536](http://purl.obolibrary.org/obo/GENO_0000536)
  * [SIO:001079](http://semanticscience.org/resource/SIO_001079)
-
 ## Inheritance
 
- *  is_a: [genomic entity](GenomicEntity.html)
-
+ *  is_a: [genomic entity](GenomicEntity.md)
 ## Children
-
 
 ## Used in
 
- *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [genotype](Genotype.html)
- *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [genotype](Genotype.html)
- *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [genotype](Genotype.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [genotype](Genotype.html)
- *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [genotype](Genotype.html)
-
 ## Fields
 
- * [has zygosity](has_zygosity.html)
-    * _A grouping for any property that holds between a node and a value_
-    * __range__: [zygosity](Zygosity.html)
-    * __Local__
- * [has biological sequence](has_biological_sequence.html)
-    * _connects a genomic feature to its sequence_
-    * __range__: biological sequence
-    * inherited from: [genomic entity](GenomicEntity.html)
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [in taxon](in_taxon.html) *subsets: translator_minimal*
-    * _connects a thing to a class representing a taxon_
-    * __range__: [organism taxon](OrganismTaxon.html)
-    * inherited from: [thing with taxon](ThingWithTaxon.html)
+ * _[has zygosity](has_zygosity.md)_
+    * range: [zygosity](Zygosity.md)
+    * inherited from: [node property](node_property.md)

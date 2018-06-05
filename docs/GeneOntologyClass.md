@@ -1,30 +1,19 @@
----
-layout: default
----
-
-## gene ontology class
+# Class: gene ontology class
 
 
 an ontology class that describes a functional aspect of a gene, gene prodoct or complex
 
-URI: [http://bioentity.io/vocab/GeneOntologyClass](http://bioentity.io/vocab/GeneOntologyClass)
+URI: http://bioentity.io/vocab/GeneOntologyClass
 
-
-![img](http://yuml.me/diagram/nofunky/class/[ontology class|]^-[gene ontology class|])
+![img](http://yuml.me/diagram/nofunky/class/\[OntologyClass]^-\[GeneOntologyClass],%20)
 ## Mappings
-
 
 ## Inheritance
 
- *  is_a: [ontology class](OntologyClass.html)
-
+ *  is_a: [ontology class](OntologyClass.md)
 ## Children
 
-
 ## Used in
-
- *  class: [functional association](FunctionalAssociation.html) references: [gene ontology class](GeneOntologyClass.html)
- *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [gene ontology class](GeneOntologyClass.html)
 
 ## Fields
 

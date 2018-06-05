@@ -1,27 +1,19 @@
----
-layout: default
----
-
-## has zygosity
+# Slot: has zygosity
 
 
-None
 
-URI: [http://bioentity.io/vocab/has_zygosity](http://bioentity.io/vocab/has_zygosity)
+
+URI: http://bioentity.io/vocab/has_zygosity
 ## Mappings
-
 
 ## Domain and Range
 
- -> [zygosity](Zygosity.html)
-
+None -> [zygosity](Zygosity.md)
 ## Inheritance
 
- *  is_a: [node property](node_property.html)
-
+ *  is_a: [node property](node_property.md)
 ## Children
-
 
 ## Used in
 
- *  usage: [genotype](Genotype.html)
+ *  usage: [genotype](Genotype.md)

@@ -1,43 +1,36 @@
----
-layout: default
----
-
-## frequency quantifier
+# Class: frequency quantifier
 
 
-None
-
-URI: [http://bioentity.io/vocab/FrequencyQuantifier](http://bioentity.io/vocab/FrequencyQuantifier)
 
 
-![img](http://yuml.me/diagram/nofunky/class/[relationship quantifier|]^-[frequency quantifier|has count;has total;has quotient;has percentage])
+URI: http://bioentity.io/vocab/FrequencyQuantifier
+
+![img](http://yuml.me/diagram/nofunky/class/\[RelationshipQuantifier]^-\[FrequencyQuantifier|has_count:integer%20%3F;has_total:integer%20%3F;has_quotient:double%20%3F],%20)
 ## Mappings
-
 
 ## Inheritance
 
- *  is_a: [relationship quantifier](RelationshipQuantifier.html)
-
+ *  is_a: [relationship quantifier](RelationshipQuantifier.md)
 ## Children
 
- *  mixin: [variant to population association](VariantToPopulationAssociation.html)
+ *  mixin: [variant to population association](VariantToPopulationAssociation.md)
+## Used in
 
-
+ *  class: [frequency quantifier](FrequencyQuantifier.md) references: [variant to population association](VariantToPopulationAssociation.md)
 ## Fields
 
- * [has count](has_count.html)
+ * _[has count](has_count.md)_
     * _number of things with a particular property_
-    * __range__: integer
-    * __Local__
- * [has total](has_total.html)
+    * range: integer
+    * inherited from: [aggregate statistic](aggregate_statistic.md)
+ * _[has total](has_total.md)_
     * _total number of things in a particular reference set_
-    * __range__: integer
-    * __Local__
- * [has quotient](has_quotient.html)
-    * _A grouping for any property that holds between a node and a value_
-    * __range__: double
-    * __Local__
- * [has percentage](has_percentage.html)
+    * range: integer
+    * inherited from: [aggregate statistic](aggregate_statistic.md)
+ * _[has quotient](has_quotient.md)_
+    * range: double
+    * inherited from: [aggregate statistic](aggregate_statistic.md)
+ * _[has percentage](has_percentage.md)_
     * _equivalent to has quotient multiplied by 100_
-    * __range__: double
-    * __Local__
+    * range: double
+    * inherited from: [aggregate statistic](aggregate_statistic.md)
