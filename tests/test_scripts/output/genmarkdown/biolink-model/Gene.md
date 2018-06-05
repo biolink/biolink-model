@@ -19,8 +19,8 @@ URI: http://bioentity.io/vocab/Gene
 
 ## Used in
 
- *  class: [gene](Gene.md) references: [macromolecular machine](MacromolecularMachine.md)
  *  class: [gene](Gene.md) references: [gene or gene product](GeneOrGeneProduct.md)
+ *  class: [gene](Gene.md) references: [macromolecular machine](MacromolecularMachine.md)
 ## Fields
 
  * _[genetically interacts with](genetically_interacts_with.md) *subsets: translator_minimal*_

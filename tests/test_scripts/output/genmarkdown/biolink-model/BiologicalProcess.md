@@ -17,13 +17,13 @@ URI: http://bioentity.io/vocab/BiologicalProcess
  *  mixin: [occurrent](Occurrent.md)
 ## Children
 
- *  child: [pathway](Pathway.md)
  *  child: [physiological process](PhysiologicalProcess.md)
+ *  child: [pathway](Pathway.md)
 ## Used in
 
  *  class: [biological process](BiologicalProcess.md) references: [physiological process](PhysiologicalProcess.md)
- *  class: [biological process](BiologicalProcess.md) references: [pathway](Pathway.md)
  *  class: [biological process](BiologicalProcess.md) references: [biological process or activity](BiologicalProcessOrActivity.md)
+ *  class: [biological process](BiologicalProcess.md) references: [pathway](Pathway.md)
 ## Fields
 
  * _[regulates, process to process](regulates_process_to_process.md)_

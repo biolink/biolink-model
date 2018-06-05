@@ -13,11 +13,11 @@ URI: http://bioentity.io/vocab/ClinicalEntity
  *  is_a: [named thing](NamedThing.md)
 ## Children
 
- *  child: [clinical trial](ClinicalTrial.md)
  *  child: [clinical intervention](ClinicalIntervention.md)
+ *  child: [clinical trial](ClinicalTrial.md)
 ## Used in
 
- *  class: [clinical entity](ClinicalEntity.md) references: [clinical trial](ClinicalTrial.md)
  *  class: [clinical entity](ClinicalEntity.md) references: [clinical intervention](ClinicalIntervention.md)
+ *  class: [clinical entity](ClinicalEntity.md) references: [clinical trial](ClinicalTrial.md)
 ## Fields
 

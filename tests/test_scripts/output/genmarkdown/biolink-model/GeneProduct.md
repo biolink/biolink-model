@@ -19,8 +19,8 @@ URI: http://bioentity.io/vocab/GeneProduct
  *  child: [gene product isoform](GeneProductIsoform.md)
 ## Used in
 
- *  class: [gene product](GeneProduct.md) references: [macromolecular machine](MacromolecularMachine.md)
  *  class: [gene product](GeneProduct.md) references: [protein](Protein.md)
+ *  class: [gene product](GeneProduct.md) references: [macromolecular machine](MacromolecularMachine.md)
  *  class: [gene product](GeneProduct.md) references: [gene or gene product](GeneOrGeneProduct.md)
  *  class: [gene product](GeneProduct.md) references: [RNA product](RnaProduct.md)
  *  class: [gene product](GeneProduct.md) references: [gene product isoform](GeneProductIsoform.md)

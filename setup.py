@@ -1,7 +1,6 @@
-import os
 import sys
 
-from setuptools import setup, find_packages, findall
+from setuptools import setup, find_packages
 
 version = '0.0.2'
 
@@ -13,7 +12,8 @@ requires = [
     "rdflib>=4.2.2",
     "graphviz>=0.8.3",
     "prefixcommons>=0.1.7",
-    "rdflib-jsonld>=0.4.0"
+    "rdflib-jsonld>=0.4.0",
+    "ShExJSG>=0.2.1"
     ]
 
 if sys.version_info < (3, 7):

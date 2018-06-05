@@ -16,8 +16,8 @@ None -> None
 ## Children
 
  *  child: [positively regulates](positively_regulates.md)
- *  child: [regulates, entity to entity](regulates_entity_to_entity.md) *subsets: translator_minimal*
- *  child: [regulates, process to process](regulates_process_to_process.md)
  *  child: [negatively regulates](negatively_regulates.md)
+ *  child: [regulates, process to process](regulates_process_to_process.md)
+ *  child: [regulates, entity to entity](regulates_entity_to_entity.md) *subsets: translator_minimal*
 ## Used in
 

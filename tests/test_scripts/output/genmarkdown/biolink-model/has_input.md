@@ -18,7 +18,7 @@ URI: http://bioentity.io/vocab/has_input
 
 ## Used in
 
- *  usage: [environmental process](EnvironmentalProcess.md)
- *  usage: [molecular activity](MolecularActivity.md)
- *  usage: [biological process](BiologicalProcess.md)
  *  usage: [occurrent](Occurrent.md)
+ *  usage: [molecular activity](MolecularActivity.md)
+ *  usage: [environmental process](EnvironmentalProcess.md)
+ *  usage: [biological process](BiologicalProcess.md)

@@ -20,8 +20,8 @@ URI: http://bioentity.io/vocab/RnaProduct
  *  child: [noncoding RNA product](NoncodingRnaProduct.md)
 ## Used in
 
- *  class: [RNA product](RnaProduct.md) references: [gene product](GeneProduct.md)
  *  class: [RNA product](RnaProduct.md) references: [RNA product isoform](RnaProductIsoform.md)
+ *  class: [RNA product](RnaProduct.md) references: [gene product](GeneProduct.md)
  *  class: [RNA product](RnaProduct.md) references: [noncoding RNA product](NoncodingRnaProduct.md)
 ## Fields
 

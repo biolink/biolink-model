@@ -15,15 +15,15 @@ URI: http://bioentity.io/vocab/InformationContentEntity
  *  is_a: [named thing](NamedThing.md)
 ## Children
 
- *  child: [publication](Publication.md)
+ *  child: [confidence level](ConfidenceLevel.md)
  *  child: [evidence type](EvidenceType.md)
  *  child: [association](Association.md)
- *  child: [confidence level](ConfidenceLevel.md)
+ *  child: [publication](Publication.md)
 ## Used in
 
- *  class: [information content entity](InformationContentEntity.md) references: [publication](Publication.md)
+ *  class: [information content entity](InformationContentEntity.md) references: [confidence level](ConfidenceLevel.md)
  *  class: [information content entity](InformationContentEntity.md) references: [evidence type](EvidenceType.md)
  *  class: [information content entity](InformationContentEntity.md) references: [association](Association.md)
- *  class: [information content entity](InformationContentEntity.md) references: [confidence level](ConfidenceLevel.md)
+ *  class: [information content entity](InformationContentEntity.md) references: [publication](Publication.md)
 ## Fields
 

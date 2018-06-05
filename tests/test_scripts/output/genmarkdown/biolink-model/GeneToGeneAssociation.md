@@ -13,12 +13,12 @@ URI: http://bioentity.io/vocab/GeneToGeneAssociation
  *  is_a: [association](Association.md)
 ## Children
 
- *  child: [gene to gene homology association](GeneToGeneHomologyAssociation.md)
  *  child: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.md)
+ *  child: [gene to gene homology association](GeneToGeneHomologyAssociation.md)
 ## Used in
 
- *  class: [gene to gene association](GeneToGeneAssociation.md) references: [gene to gene homology association](GeneToGeneHomologyAssociation.md)
  *  class: [gene to gene association](GeneToGeneAssociation.md) references: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.md)
+ *  class: [gene to gene association](GeneToGeneAssociation.md) references: [gene to gene homology association](GeneToGeneHomologyAssociation.md)
 ## Fields
 
  * _[subject](subject.md)_

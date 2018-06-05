@@ -18,14 +18,14 @@ URI: http://bioentity.io/vocab/AnatomicalEntity
  *  mixin: [thing with taxon](ThingWithTaxon.md)
 ## Children
 
- *  child: [cellular component](CellularComponent.md)
- *  child: [cell](Cell.md)
  *  child: [gross anatomical structure](GrossAnatomicalStructure.md)
+ *  child: [cell](Cell.md)
+ *  child: [cellular component](CellularComponent.md)
 ## Used in
 
- *  class: [anatomical entity](AnatomicalEntity.md) references: [cellular component](CellularComponent.md)
- *  class: [anatomical entity](AnatomicalEntity.md) references: [cell](Cell.md)
  *  class: [anatomical entity](AnatomicalEntity.md) references: [gross anatomical structure](GrossAnatomicalStructure.md)
+ *  class: [anatomical entity](AnatomicalEntity.md) references: [cell](Cell.md)
+ *  class: [anatomical entity](AnatomicalEntity.md) references: [cellular component](CellularComponent.md)
 ## Fields
 
  * _[expresses](expresses.md) *subsets: translator_minimal*_

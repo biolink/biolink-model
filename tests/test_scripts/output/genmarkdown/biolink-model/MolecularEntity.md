@@ -17,13 +17,13 @@ URI: http://bioentity.io/vocab/MolecularEntity
 ## Children
 
  *  child: [chemical substance](ChemicalSubstance.md)
- *  child: [gene family](GeneFamily.md)
  *  child: [genomic entity](GenomicEntity.md)
+ *  child: [gene family](GeneFamily.md)
 ## Used in
 
  *  class: [molecular entity](MolecularEntity.md) references: [chemical substance](ChemicalSubstance.md)
- *  class: [molecular entity](MolecularEntity.md) references: [gene family](GeneFamily.md)
  *  class: [molecular entity](MolecularEntity.md) references: [genomic entity](GenomicEntity.md)
+ *  class: [molecular entity](MolecularEntity.md) references: [gene family](GeneFamily.md)
 ## Fields
 
  * _[molecularly interacts with](molecularly_interacts_with.md) *subsets: translator_minimal*_

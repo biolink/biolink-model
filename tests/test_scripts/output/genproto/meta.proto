@@ -1,0 +1,55 @@
+// A class or interface
+message ClassDefinition
+ {
+  repeated defining_Slots SlotDefinition = 1
+  repeated slots SlotDefinition = 2
+  repeated slot_Usage SlotDefinition = 3
+  optional apply_To ClassDefinition = 4
+  optional entity String = 5
+ }
+// example of usage
+message Example
+ {
+  optional value String = 1
+  optional description String = 2
+ }
+// A collection of definitions
+message SchemaDefinition
+ {
+  optional id String = 1
+  optional version String = 2
+  repeated imports String = 3
+  optional license String = 4
+  repeated types TypeDefinition = 5
+  repeated slots SlotDefinition = 6
+  repeated classes ClassDefinition = 7
+  optional metamodel_Version String = 8
+  optional source_File String = 9
+  optional source_File_Size String = 10
+  optional source_File_Date String = 11
+  optional generation_Date String = 12
+ }
+// A property or slot
+message SlotDefinition
+ {
+  optional multivalued String = 1
+  optional domain ClassDefinition = 2
+  optional range Element = 3
+  optional required String = 4
+  optional inlined String = 5
+  optional primary_Key String = 6
+  optional identifier String = 7
+  optional definitional String = 8
+  optional alias String = 9
+  optional path String = 10
+  optional subproperty_Of SlotDefinition = 11
+  optional inverse SlotDefinition = 12
+  optional is_Class_Field String = 13
+  optional role String = 14
+ }
+// A type definition
+message TypeDefinition
+ {
+  optional typeof String = 1
+ }
+

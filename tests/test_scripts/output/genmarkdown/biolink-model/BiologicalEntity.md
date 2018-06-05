@@ -14,18 +14,18 @@ URI: http://bioentity.io/vocab/BiologicalEntity
  *  is_a: [named thing](NamedThing.md)
 ## Children
 
- *  child: [molecular entity](MolecularEntity.md)
  *  child: [biological process or activity](BiologicalProcessOrActivity.md)
- *  child: [environment](Environment.md)
- *  child: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
  *  child: [organismal entity](OrganismalEntity.md)
+ *  child: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
+ *  child: [molecular entity](MolecularEntity.md)
+ *  child: [environment](Environment.md)
 ## Used in
 
- *  class: [biological entity](BiologicalEntity.md) references: [molecular entity](MolecularEntity.md)
  *  class: [biological entity](BiologicalEntity.md) references: [biological process or activity](BiologicalProcessOrActivity.md)
- *  class: [biological entity](BiologicalEntity.md) references: [environment](Environment.md)
- *  class: [biological entity](BiologicalEntity.md) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
  *  class: [biological entity](BiologicalEntity.md) references: [organismal entity](OrganismalEntity.md)
+ *  class: [biological entity](BiologicalEntity.md) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
+ *  class: [biological entity](BiologicalEntity.md) references: [molecular entity](MolecularEntity.md)
+ *  class: [biological entity](BiologicalEntity.md) references: [environment](Environment.md)
 ## Fields
 
  * _[has phenotype](has_phenotype.md) *subsets: translator_minimal*_

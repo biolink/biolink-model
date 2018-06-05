@@ -15,22 +15,22 @@ URI: http://bioentity.io/vocab/GenomicEntity
  *  is_a: [molecular entity](MolecularEntity.md)
 ## Children
 
+ *  child: [sequence variant](SequenceVariant.md)
+ *  child: [coding sequence](CodingSequence.md)
+ *  child: [genotype](Genotype.md)
+ *  child: [haplotype](Haplotype.md)
  *  child: [transcript](Transcript.md)
  *  child: [macromolecular machine](MacromolecularMachine.md)
- *  child: [genotype](Genotype.md)
- *  child: [sequence variant](SequenceVariant.md)
- *  child: [haplotype](Haplotype.md)
- *  child: [coding sequence](CodingSequence.md)
  *  child: [exon](Exon.md)
  *  child: [genome](Genome.md)
 ## Used in
 
+ *  class: [genomic entity](GenomicEntity.md) references: [sequence variant](SequenceVariant.md)
+ *  class: [genomic entity](GenomicEntity.md) references: [coding sequence](CodingSequence.md)
+ *  class: [genomic entity](GenomicEntity.md) references: [genotype](Genotype.md)
+ *  class: [genomic entity](GenomicEntity.md) references: [haplotype](Haplotype.md)
  *  class: [genomic entity](GenomicEntity.md) references: [transcript](Transcript.md)
  *  class: [genomic entity](GenomicEntity.md) references: [macromolecular machine](MacromolecularMachine.md)
- *  class: [genomic entity](GenomicEntity.md) references: [genotype](Genotype.md)
- *  class: [genomic entity](GenomicEntity.md) references: [sequence variant](SequenceVariant.md)
- *  class: [genomic entity](GenomicEntity.md) references: [haplotype](Haplotype.md)
- *  class: [genomic entity](GenomicEntity.md) references: [coding sequence](CodingSequence.md)
  *  class: [genomic entity](GenomicEntity.md) references: [exon](Exon.md)
  *  class: [genomic entity](GenomicEntity.md) references: [genome](Genome.md)
 ## Fields

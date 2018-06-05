@@ -14,20 +14,20 @@ URI: http://bioentity.io/vocab/Attribute
  *  mixin: [ontology class](OntologyClass.md)
 ## Children
 
- *  child: [onset](Onset.md)
- *  child: [severity value](SeverityValue.md)
- *  child: [zygosity](Zygosity.md)
- *  child: [biological sex](BiologicalSex.md)
  *  child: [clinical modifier](ClinicalModifier.md)
+ *  child: [biological sex](BiologicalSex.md)
+ *  child: [zygosity](Zygosity.md)
+ *  child: [onset](Onset.md)
  *  child: [frequency value](FrequencyValue.md)
+ *  child: [severity value](SeverityValue.md)
 ## Used in
 
- *  class: [attribute](Attribute.md) references: [onset](Onset.md)
- *  class: [attribute](Attribute.md) references: [severity value](SeverityValue.md)
- *  class: [attribute](Attribute.md) references: [zygosity](Zygosity.md)
- *  class: [attribute](Attribute.md) references: [biological sex](BiologicalSex.md)
  *  class: [attribute](Attribute.md) references: [clinical modifier](ClinicalModifier.md)
+ *  class: [attribute](Attribute.md) references: [biological sex](BiologicalSex.md)
+ *  class: [attribute](Attribute.md) references: [zygosity](Zygosity.md)
+ *  class: [attribute](Attribute.md) references: [onset](Onset.md)
  *  class: [attribute](Attribute.md) references: [frequency value](FrequencyValue.md)
+ *  class: [attribute](Attribute.md) references: [severity value](SeverityValue.md)
 ## Fields
 
  * _[subclass of](subclass_of.md) *subsets: translator_minimal*_

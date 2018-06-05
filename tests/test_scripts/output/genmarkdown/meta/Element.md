@@ -12,12 +12,12 @@ URI: http://bioentity.io/vocab/Element
 
 ## Children
 
- *  child: [definition](Definition.md)
  *  child: [type definition](TypeDefinition.md)
+ *  child: [definition](Definition.md)
 ## Used in
 
- *  class: [element](Element.md) references: [definition](Definition.md)
  *  class: [element](Element.md) references: [type definition](TypeDefinition.md)
+ *  class: [element](Element.md) references: [definition](Definition.md)
 ## Fields
 
  * _[name](name.md)_

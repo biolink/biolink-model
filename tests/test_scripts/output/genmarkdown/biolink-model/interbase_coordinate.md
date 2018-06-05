@@ -14,7 +14,7 @@ None -> None
  *  is_a: [node property](node_property.md)
 ## Children
 
- *  child: [start interbase coordinate](start_interbase_coordinate.md)
  *  child: [end interbase coordinate](end_interbase_coordinate.md)
+ *  child: [start interbase coordinate](start_interbase_coordinate.md)
 ## Used in
 

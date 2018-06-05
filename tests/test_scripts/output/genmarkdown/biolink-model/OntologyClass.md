@@ -17,9 +17,9 @@ URI: http://bioentity.io/vocab/OntologyClass
  *  mixin: [attribute](Attribute.md)
 ## Used in
 
- *  class: [ontology class](OntologyClass.md) references: [gene ontology class](GeneOntologyClass.md)
  *  class: [ontology class](OntologyClass.md) references: [attribute](Attribute.md)
  *  class: [ontology class](OntologyClass.md) references: [organism taxon](OrganismTaxon.md)
+ *  class: [ontology class](OntologyClass.md) references: [gene ontology class](GeneOntologyClass.md)
 ## Fields
 
  * _[subclass of](subclass_of.md) *subsets: translator_minimal*_

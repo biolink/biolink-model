@@ -13,20 +13,20 @@ URI: http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation
  *  is_a: [association](Association.md)
 ## Children
 
- *  mixin: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
- *  mixin: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
- *  mixin: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
- *  mixin: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
  *  mixin: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
+ *  mixin: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
+ *  mixin: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
+ *  mixin: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
  *  mixin: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md)
+ *  mixin: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
 ## Used in
 
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
+ *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
+ *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
+ *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md)
+ *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
 ## Fields
 
  * _[frequency qualifier](frequency_qualifier.md)_

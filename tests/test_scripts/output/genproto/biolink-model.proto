@@ -1,0 +1,416 @@
+// A subcellular location, cell type or gross anatomical part
+message AnatomicalEntity
+ {
+  optional expresses GeneOrGeneProduct = 1
+  optional inTaxon OrganismTaxon = 2
+ }
+message AnatomicalEntityToAnatomicalEntityAssociation
+ {
+  subject AnatomicalEntity = 1
+  object AnatomicalEntity = 2
+ }
+// A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
+message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
+ {
+  subject AnatomicalEntity = 1
+  object AnatomicalEntity = 2
+  relation RelationshipType = 3
+ }
+// A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
+message AnatomicalEntityToAnatomicalEntityPartOfAssociation
+ {
+  subject AnatomicalEntity = 1
+  object AnatomicalEntity = 2
+  relation RelationshipType = 3
+ }
+// A typed association between two entities, supported by evidence
+message Association
+ {
+  optional associationType OntologyClass = 1
+  subject String = 2
+  optional negated String = 3
+  relation RelationshipType = 4
+  object String = 5
+  repeated qualifiers OntologyClass = 6
+  repeated publications Publication = 7
+  optional providedBy Provider = 8
+  optional associationSlot String = 9
+ }
+// A property or characteristic of an entity
+message Attribute
+ {
+  optional subclassOf OntologyClass = 1
+ }
+// One or more causally connected executions of molecular functions
+message BiologicalProcess
+ {
+  optional regulatesProcessToProcess Occurrent = 1
+  optional hasParticipant String = 2
+  optional hasInput String = 3
+  optional precedes Occurrent = 4
+ }
+message Biosample
+ {
+  optional inTaxon OrganismTaxon = 1
+ }
+// An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
+message CaseToPhenotypicFeatureAssociation
+ {
+  optional frequencyQualifier FrequencyValue = 1
+  optional severityQualifier SeverityValue = 2
+  optional onsetQualifier Onset = 3
+  optional sexQualifier BiologicalSex = 4
+ }
+// An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
+message CellLineToDiseaseOrPhenotypicFeatureAssociation
+ {
+  subject DiseaseOrPhenotypicFeature = 1
+ }
+// An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
+message ChemicalToDiseaseOrPhenotypicFeatureAssociation
+ {
+  object DiseaseOrPhenotypicFeature = 1
+ }
+// An interaction between a chemical entity and a gene or gene product
+message ChemicalToGeneAssociation
+ {
+  object GeneOrGeneProduct = 1
+ }
+// An interaction between a chemical entity and a biological process or pathway
+message ChemicalToPathwayAssociation
+ {
+  object Pathway = 1
+ }
+// Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+message DiseaseOrPhenotypicFeature
+ {
+  optional correlatedWith MolecularEntity = 1
+  optional hasBiomarker MolecularEntity = 2
+  optional treatedBy String = 3
+  optional inTaxon OrganismTaxon = 4
+ }
+// An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
+message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
+ {
+  object AnatomicalEntity = 1
+ }
+// An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
+message DiseaseToPhenotypicFeatureAssociation
+ {
+  optional frequencyQualifier FrequencyValue = 1
+  optional severityQualifier SeverityValue = 2
+  optional onsetQualifier Onset = 3
+  optional sexQualifier BiologicalSex = 4
+ }
+// A drug exposure is an intake of a particular chemical substance
+message DrugExposure
+ {
+  repeated drug ChemicalSubstance = 1
+ }
+// Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+message EnvironmentToPhenotypicFeatureAssociation
+ {
+  optional frequencyQualifier FrequencyValue = 1
+  optional severityQualifier SeverityValue = 2
+  optional onsetQualifier Onset = 3
+  optional sexQualifier BiologicalSex = 4
+  subject Environment = 5
+ }
+message EnvironmentalProcess
+ {
+  optional regulatesProcessToProcess Occurrent = 1
+  optional hasParticipant String = 2
+  optional hasInput String = 3
+  optional precedes Occurrent = 4
+ }
+// A transcript is formed from multiple exons
+message ExonToTranscriptRelationship
+ {
+  subject Exon = 1
+  object Transcript = 2
+ }
+// An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
+message FunctionalAssociation
+ {
+  subject MacromolecularMachine = 1
+  object GeneOntologyClass = 2
+ }
+message Gene
+ {
+  optional geneticallyInteractsWith Gene = 1
+  optional hasGeneProduct GeneProduct = 2
+  optional geneAssociatedWithCondition DiseaseOrPhenotypicFeature = 3
+ }
+message GeneAsAModelOfDiseaseAssociation
+ {
+  optional frequencyQualifier FrequencyValue = 1
+  optional severityQualifier SeverityValue = 2
+  optional onsetQualifier Onset = 3
+  subject GeneOrGeneProduct = 4
+ }
+message GeneHasVariantThatContributesToDiseaseAssociation
+ {
+  optional sequenceVariantQualifier SequenceVariant = 1
+  subject GeneOrGeneProduct = 2
+ }
+// a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
+message GeneOrGeneProduct
+ {
+  optional inPathwayWith GeneOrGeneProduct = 1
+  optional inComplexWith GeneOrGeneProduct = 2
+  optional inCellPopulationWith GeneOrGeneProduct = 3
+  optional expressedIn AnatomicalEntity = 4
+ }
+// A regulatory relationship between two genes
+message GeneRegulatoryRelationship
+ {
+  relation RelationshipType = 1
+  subject GeneOrGeneProduct = 2
+  object GeneOrGeneProduct = 3
+ }
+message GeneToDiseaseAssociation
+ {
+  optional frequencyQualifier FrequencyValue = 1
+  optional severityQualifier SeverityValue = 2
+  optional onsetQualifier Onset = 3
+  subject GeneOrGeneProduct = 4
+ }
+// An association between a gene and an expression site, possibly qualified by stage/timing info.
+message GeneToExpressionSiteAssociation
+ {
+  optional stageQualifier LifeStage = 1
+  optional quantifierQualifier String = 2
+  subject GeneOrGeneProduct = 3
+  object AnatomicalEntity = 4
+  relation RelationshipType = 5
+ }
+// A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
+message GeneToGeneHomologyAssociation
+ {
+  relation RelationshipType = 1
+ }
+// A gene is transcribed and potentially translated to a gene product
+message GeneToGeneProductRelationship
+ {
+  subject Gene = 1
+  object GeneProduct = 2
+  relation RelationshipType = 3
+ }
+message GeneToGoTermAssociation
+ {
+  subject MolecularEntity = 1
+  object GeneOntologyClass = 2
+ }
+message GeneToPhenotypicFeatureAssociation
+ {
+  optional frequencyQualifier FrequencyValue = 1
+  optional severityQualifier SeverityValue = 2
+  optional onsetQualifier Onset = 3
+  optional sexQualifier BiologicalSex = 4
+  subject GeneOrGeneProduct = 5
+ }
+// an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+message GenomicEntity
+ {
+  optional hasBiologicalSequence BiologicalSequence = 1
+ }
+// A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
+message GenomicSequenceLocalization
+ {
+  optional startInterbaseCoordinate String = 1
+  optional endInterbaseCoordinate String = 2
+  optional genomeBuild String = 3
+  optional phase String = 4
+  subject GenomicEntity = 5
+  object GenomicEntity = 6
+ }
+// An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
+message Genotype
+ {
+  optional hasZygosity Zygosity = 1
+ }
+// Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
+message GenotypeToGeneAssociation
+ {
+  relation RelationshipType = 1
+  subject Genotype = 2
+  object Gene = 3
+ }
+// Any association between one genotype and a genotypic entity that is a sub-component of it
+message GenotypeToGenotypePartAssociation
+ {
+  relation RelationshipType = 1
+  subject Genotype = 2
+  object Genotype = 3
+ }
+// Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
+message GenotypeToPhenotypicFeatureAssociation
+ {
+  optional frequencyQualifier FrequencyValue = 1
+  optional severityQualifier SeverityValue = 2
+  optional onsetQualifier Onset = 3
+  optional sexQualifier BiologicalSex = 4
+  relation RelationshipType = 5
+  subject Genotype = 6
+ }
+// Any association between a genotype and a sequence variant.
+message GenotypeToVariantAssociation
+ {
+  relation RelationshipType = 1
+  subject Genotype = 2
+  object SequenceVariant = 3
+ }
+// a location that can be described in lat/long coordinates
+message GeographicLocation
+ {
+  optional latitude String = 1
+  optional longitude String = 2
+ }
+// a location that can be described in lat/long coordinates, for a particular time
+message GeographicLocationAtTime
+ {
+  optional latitude String = 1
+  optional longitude String = 2
+  optional timepoint TimeType = 3
+ }
+message IndividualOrganism
+ {
+  optional inTaxon OrganismTaxon = 1
+ }
+// A stage of development or growth of an organism, including post-natal adult stages
+message LifeStage
+ {
+  optional inTaxon OrganismTaxon = 1
+ }
+// A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
+message MacromolecularMachine
+ {
+  optional name LabelType = 1
+ }
+// A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
+message MacromolecularMachineToBiologicalProcessAssociation
+ {
+  object BiologicalProcess = 1
+ }
+// A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
+message MacromolecularMachineToCellularComponentAssociation
+ {
+  object CellularComponent = 1
+ }
+// A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
+message MacromolecularMachineToMolecularActivityAssociation
+ {
+  object MolecularActivity = 1
+ }
+// An execution of a molecular function carried out by a gene product or macromolecular complex.
+message MolecularActivity
+ {
+  optional regulatesProcessToProcess Occurrent = 1
+  optional hasParticipant String = 2
+  optional hasInput String = 3
+  optional precedes Occurrent = 4
+ }
+// A gene, gene product, small molecule or macromolecule (including protein complex)
+message MolecularEntity
+ {
+  optional molecularlyInteractsWith MolecularEntity = 1
+  optional regulatesEntityToEntity MolecularEntity = 2
+  optional biomarkerFor DiseaseOrPhenotypicFeature = 3
+  optional inTaxon OrganismTaxon = 4
+ }
+// a databased entity or concept/class
+message NamedThing
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+ }
+// A processual entity
+message Occurrent
+ {
+  optional regulatesProcessToProcess Occurrent = 1
+  optional hasParticipant String = 2
+  optional hasInput String = 3
+  optional precedes Occurrent = 4
+ }
+// a concept or class in an ontology, vocabulary or thesaurus
+message OntologyClass
+ {
+  optional subclassOf OntologyClass = 1
+ }
+// An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+message PairwiseGeneOrProteinInteractionAssociation
+ {
+  relation RelationshipType = 1
+ }
+message PopulationOfIndividualOrganisms
+ {
+  optional inTaxon OrganismTaxon = 1
+ }
+// An association between a two populations
+message PopulationToPopulationAssociation
+ {
+  subject PopulationOfIndividualOrganisms = 1
+  object PopulationOfIndividualOrganisms = 2
+  relation RelationshipType = 3
+ }
+// For example, a particular exon is part of a particular transcript or gene
+message SequenceFeatureRelationship
+ {
+  subject GenomicEntity = 1
+  object GenomicEntity = 2
+ }
+// An allele that varies in its sequence from what is considered the reference allele at that locus.
+message SequenceVariant
+ {
+  repeated hasGene String = 1
+  optional hasBiologicalSequence BiologicalSequence = 2
+  optional id IdentifierType = 3
+ }
+// A gene is a collection of transcripts
+message TranscriptToGeneRelationship
+ {
+  subject Transcript = 1
+  object Gene = 2
+ }
+// A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
+message Treatment
+ {
+  treats DiseaseOrPhenotypicFeature = 1
+  repeated hasExposureParts DrugExposure = 2
+ }
+message VariantToDiseaseAssociation
+ {
+  optional frequencyQualifier FrequencyValue = 1
+  optional severityQualifier SeverityValue = 2
+  optional onsetQualifier Onset = 3
+  subject String = 4
+  relation RelationshipType = 5
+  object String = 6
+ }
+message VariantToPhenotypicFeatureAssociation
+ {
+  optional frequencyQualifier FrequencyValue = 1
+  optional severityQualifier SeverityValue = 2
+  optional onsetQualifier Onset = 3
+  optional sexQualifier BiologicalSex = 4
+  subject SequenceVariant = 5
+ }
+// An association between a variant and a population, where the variant has particular frequency in the population
+message VariantToPopulationAssociation
+ {
+  optional frequencyQualifier FrequencyValue = 1
+  optional hasCount String = 2
+  optional hasTotal String = 3
+  optional hasQuotient String = 4
+  optional hasPercentage String = 5
+  subject SequenceVariant = 6
+  object PopulationOfIndividualOrganisms = 7
+ }
+

@@ -13,13 +13,13 @@ URI: http://bioentity.io/vocab/Definition
  *  is_a: [element](Element.md)
 ## Children
 
- *  child: [slot definition](SlotDefinition.md)
  *  child: [class definition](ClassDefinition.md)
+ *  child: [slot definition](SlotDefinition.md)
  *  child: [schema definition](SchemaDefinition.md)
 ## Used in
 
- *  class: [definition](Definition.md) references: [slot definition](SlotDefinition.md)
  *  class: [definition](Definition.md) references: [class definition](ClassDefinition.md)
+ *  class: [definition](Definition.md) references: [slot definition](SlotDefinition.md)
  *  class: [definition](Definition.md) references: [schema definition](SchemaDefinition.md)
 ## Fields
 

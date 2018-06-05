@@ -13,13 +13,13 @@ URI: http://bioentity.io/vocab/ChemicalToThingAssociation
  *  is_a: [association](Association.md)
 ## Children
 
- *  mixin: [chemical to pathway association](ChemicalToPathwayAssociation.md)
  *  mixin: [chemical to gene association](ChemicalToGeneAssociation.md)
+ *  mixin: [chemical to pathway association](ChemicalToPathwayAssociation.md)
  *  mixin: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)
 ## Used in
 
- *  class: [chemical to thing association](ChemicalToThingAssociation.md) references: [chemical to pathway association](ChemicalToPathwayAssociation.md)
  *  class: [chemical to thing association](ChemicalToThingAssociation.md) references: [chemical to gene association](ChemicalToGeneAssociation.md)
+ *  class: [chemical to thing association](ChemicalToThingAssociation.md) references: [chemical to pathway association](ChemicalToPathwayAssociation.md)
  *  class: [chemical to thing association](ChemicalToThingAssociation.md) references: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)
 ## Fields
 

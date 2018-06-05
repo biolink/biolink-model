@@ -18,11 +18,11 @@ URI: http://bioentity.io/vocab/in_taxon
 
 ## Used in
 
- *  usage: [thing with taxon](ThingWithTaxon.md)
- *  usage: [individual organism](IndividualOrganism.md)
- *  usage: [molecular entity](MolecularEntity.md)
- *  usage: [biosample](Biosample.md)
  *  usage: [population of individual organisms](PopulationOfIndividualOrganisms.md)
- *  usage: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
- *  usage: [anatomical entity](AnatomicalEntity.md)
  *  usage: [life stage](LifeStage.md)
+ *  usage: [anatomical entity](AnatomicalEntity.md)
+ *  usage: [biosample](Biosample.md)
+ *  usage: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
+ *  usage: [molecular entity](MolecularEntity.md)
+ *  usage: [individual organism](IndividualOrganism.md)
+ *  usage: [thing with taxon](ThingWithTaxon.md)
