@@ -41,7 +41,7 @@ class CsvGenerator(Generator):
 
 
 @click.command()
-@click.argument("yamlfile", type=click.File('r'))
+@click.argument("yamlfile", type=click.Path(exists=True, dir_okay=False))
 @click.option("--root", "-r", default=None, multiple=True, help="Class(es) to transform")
 @click.option("--format", "-f", default='csv', type=click.Choice(['csv', 'tsv']), help="Output format")
 def cli(yamlfile, root, format):

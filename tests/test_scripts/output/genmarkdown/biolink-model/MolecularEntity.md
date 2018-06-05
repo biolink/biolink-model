@@ -16,13 +16,13 @@ URI: http://bioentity.io/vocab/MolecularEntity
  *  mixin: [thing with taxon](ThingWithTaxon.md)
 ## Children
 
- *  child: [chemical substance](ChemicalSubstance.md)
  *  child: [genomic entity](GenomicEntity.md)
+ *  child: [chemical substance](ChemicalSubstance.md)
  *  child: [gene family](GeneFamily.md)
 ## Used in
 
- *  class: [molecular entity](MolecularEntity.md) references: [chemical substance](ChemicalSubstance.md)
  *  class: [molecular entity](MolecularEntity.md) references: [genomic entity](GenomicEntity.md)
+ *  class: [molecular entity](MolecularEntity.md) references: [chemical substance](ChemicalSubstance.md)
  *  class: [molecular entity](MolecularEntity.md) references: [gene family](GeneFamily.md)
 ## Fields
 

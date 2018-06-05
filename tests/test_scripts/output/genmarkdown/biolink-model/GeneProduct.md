@@ -14,15 +14,15 @@ URI: http://bioentity.io/vocab/GeneProduct
  *  is_a: [gene or gene product](GeneOrGeneProduct.md)
 ## Children
 
+ *  child: [gene product isoform](GeneProductIsoform.md)
  *  child: [RNA product](RnaProduct.md)
  *  child: [protein](Protein.md)
- *  child: [gene product isoform](GeneProductIsoform.md)
 ## Used in
 
- *  class: [gene product](GeneProduct.md) references: [protein](Protein.md)
- *  class: [gene product](GeneProduct.md) references: [macromolecular machine](MacromolecularMachine.md)
- *  class: [gene product](GeneProduct.md) references: [gene or gene product](GeneOrGeneProduct.md)
  *  class: [gene product](GeneProduct.md) references: [RNA product](RnaProduct.md)
+ *  class: [gene product](GeneProduct.md) references: [gene or gene product](GeneOrGeneProduct.md)
+ *  class: [gene product](GeneProduct.md) references: [macromolecular machine](MacromolecularMachine.md)
  *  class: [gene product](GeneProduct.md) references: [gene product isoform](GeneProductIsoform.md)
+ *  class: [gene product](GeneProduct.md) references: [protein](Protein.md)
 ## Fields
 

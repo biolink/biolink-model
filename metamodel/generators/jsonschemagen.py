@@ -83,7 +83,7 @@ class JsonSchemaGenerator(Generator):
 
 
 @click.command()
-@click.argument("yamlfile", type=click.File('r'))
+@click.argument("yamlfile", type=click.Path(exists=True, dir_okay=False))
 @click.option("-i", "--inline", is_flag=True, help="Generate references to types rather than inlining them")
 @click.option("--format", "-f", default='json', type=click.Choice(['json']), help="Output format")
 def cli(yamlfile, inline, format):

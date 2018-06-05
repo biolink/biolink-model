@@ -19,7 +19,7 @@ URI: http://bioentity.io/vocab/has_participant
  *  child: [has input](has_input.md) *subsets: translator_minimal*
 ## Used in
 
- *  usage: [occurrent](Occurrent.md)
  *  usage: [molecular activity](MolecularActivity.md)
- *  usage: [environmental process](EnvironmentalProcess.md)
+ *  usage: [occurrent](Occurrent.md)
  *  usage: [biological process](BiologicalProcess.md)
+ *  usage: [environmental process](EnvironmentalProcess.md)

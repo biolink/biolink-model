@@ -13,15 +13,15 @@ URI: http://bioentity.io/vocab/PlanetaryEntity
  *  is_a: [named thing](NamedThing.md)
 ## Children
 
- *  child: [geographic location](GeographicLocation.md)
- *  child: [geographic location at time](GeographicLocationAtTime.md)
  *  child: [environmental feature](EnvironmentalFeature.md)
+ *  child: [geographic location at time](GeographicLocationAtTime.md)
  *  child: [environmental process](EnvironmentalProcess.md)
+ *  child: [geographic location](GeographicLocation.md)
 ## Used in
 
- *  class: [planetary entity](PlanetaryEntity.md) references: [geographic location](GeographicLocation.md)
- *  class: [planetary entity](PlanetaryEntity.md) references: [geographic location at time](GeographicLocationAtTime.md)
  *  class: [planetary entity](PlanetaryEntity.md) references: [environmental feature](EnvironmentalFeature.md)
+ *  class: [planetary entity](PlanetaryEntity.md) references: [geographic location at time](GeographicLocationAtTime.md)
  *  class: [planetary entity](PlanetaryEntity.md) references: [environmental process](EnvironmentalProcess.md)
+ *  class: [planetary entity](PlanetaryEntity.md) references: [geographic location](GeographicLocation.md)
 ## Fields
 

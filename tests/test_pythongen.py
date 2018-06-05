@@ -1,16 +1,12 @@
 import os
-import re
 import unittest
 
-import metamodel.metamodel
-
-from metamodel.utils.schemaloader import SchemaLoader
-from metamodel.generators.pythongen import PythonGenerator
-
 import biolinkmodel.datamodel
-
-
+import metamodel.metamodel
+from metamodel.generators.pythongen import PythonGenerator
 # If true, update the output
+from tests.test_scripts.clicktestcase import metadata_filter
+
 update_master: bool = False
 
 
@@ -33,9 +29,9 @@ class PythonGenTestCase(unittest.TestCase):
             self.assertFalse(True, f"{path}: Master file updated. Set: update_master to False")
 
         with open(model_out) as newf:
-            newdat = re.sub(r'# Generation date: .*\n', '', newf.read(), re.MULTILINE)
+            newdat = metadata_filter(newf.read())
             with open(master_file) as oldf:
-                olddat = re.sub(r'# Generation date: .*\n', '', oldf.read(), re.MULTILINE)
+                olddat = metadata_filter(oldf.read())
                 self.maxDiff = None
                 self.assertEqual(olddat, newdat, f'{master_file_name} does not match output -- should it be updated?')
 

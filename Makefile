@@ -2,7 +2,7 @@
 # TOP LEVEL TARGETS
 # ----------------------------------------
 all: build test 
-test: metatest pytests
+test: pytests
 build: context.jsonld build_core contrib_build_monarch contrib_build_translator
 
 build_core: metamodel/metamodel.py biolinkmodel/datamodel.py docs/index.md gen-golr-views ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql
@@ -20,24 +20,24 @@ contrib_build_%: contrib/%/docs/index.md contrib/%/datamodel.py contrib/%/schema
 kbsync: subsets/biological_entity.csv
 	cp $< ../translator-knowledge-beacon/api/types.csv
 subsets/biological_entity.csv: biolink-model.yaml
-	./bin/gen-csv.py -r 'biological entity' biolink-model.yaml > $@.tmp && mv $@.tmp $@
+	gen-csv -r 'biological entity' biolink-model.yaml > $@.tmp && mv $@.tmp $@
 biolink-model.tsv: biolink-model.yaml
-	./bin/gen-csv.py -f tsv biolink-model.yaml > $@.tmp && mv $@.tmp $@
+	gen-csv -f tsv biolink-model.yaml > $@.tmp && mv $@.tmp $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # JSON-LD CONTEXT
 # ~~~~~~~~~~~~~~~~~~~~
 context.jsonld: biolink-model.yaml
-	./bin/gen-jsonld-context.py $< > $@.tmp && mv $@.tmp $@
+	gen-jsonld-context $< > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # JSONSCHEMA -> Java
 # ~~~~~~~~~~~~~~~~~~~~
 json-schema/%.json: %.yaml
-	bin/gen-json-schema.py $< > $@.tmp && mv $@.tmp $@
+	gen-json-schema $< > $@
 
 contrib/%/schema.json: contrib/%.yaml
-	bin/gen-json-schema.py $< > $@.tmp && mv $@.tmp $@
+	gen-json-schema $< > $@
 
 JSONSCHEMA2POJO = $(HOME)/src/jsonschema2pojo/bin/jsonschema2pojo
 java: json-schema/biolink-model.json
@@ -61,26 +61,29 @@ clean-docs:
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
 ontology/biolink.ttl: biolink-model.yaml
-	./bin/gen-rdf.py -o $@ $< 
+	gen-rdf -o $@ $<
 
 contrib/%/ontology.ttl: contrib/%.yaml
-	./bin/gen-rdf.py -o $@ $<
+	gen-rdf -o $@ $<
 
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Solr
 # ~~~~~~~~~~~~~~~~~~~~
 gen-golr-views:
-	./bin/gen-golr-views.py -d golr-views biolink-model.yaml
+	gen-golr-views -d golr-views biolink-model.yaml
+
 contrib/%-golr:
-	./bin/gen-golr-views.py -d contrib/$*/golr-views contrib/$*.yaml
+	gen-golr-views -d contrib/$*/golr-views contrib/$*.yaml
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Python
 # ~~~~~~~~~~~~~~~~~~~~
+metamodel/metamodel.py: meta.yaml
+    gen-py-classes $< > $@
 
 biolinkmodel/datamodel.py: biolink-model.yaml
-	./bin/gen-py-classes.py $< > $@
+	gen-py-classes $< > $@
 
 contrib/%/datamodel.py: contrib/%.yaml
 	./bin/gen-py-classes.py $< > $@
@@ -112,17 +115,13 @@ shex/biolink-model.shex: biolink-model.yaml
 # ~~~~~~~~~~~~~~~~~~~~
 
 graphql/biolink-model.graphql: biolink-model.yaml 
-	./bin/gen-graphql.py $< > $@
+	gen-graphql.py $< > $@
 
 proto/biolink-model.proto: biolink-model.yaml 
 	./bin/gen-proto.py $< > $@
 
 contrib/%/%.graphql: contrib/%.yaml 
 	./bin/gen-graphql.py $< > $@
-
-#biolinkmodel/schema.py: biolink-model.yaml
-#	./bin/gen-mm-schema.py $< > $@
-
 
 # ----------------------------------------
 # Ontology conversion
@@ -150,37 +149,4 @@ ontology/%.png: ontology/%.json
 # ----------------------------------------
 
 pytests:
-	pytest -s tests/*py
-
-metatest: test-gen-meta test-gen-biolink-model
-
-test-gen-%: test-pygen-% test-mmgen-%
-	echo done
-
-test-pygen-%: %.yaml
-	./bin/gen-py-classes.py $< > $@ && python $@
-test-mmgen-%: %.yaml
-	./bin/gen-mm-schema.py $<
-
-# ----------------------------------------
-# METAMODEL
-# ----------------------------------------
-
-metamodel/jsonschema/metamodel.json: meta.yaml
-	bin/gen-json-schema.py $< > $@
-
-MM = metamodel/metamodel.py
-MMS = metamodel/metaschema.py
-regen-mm:
-	./bin/gen-py-classes.py meta.yaml  > $(MM)-tmp.py && python $(MM)-tmp.py && cp $(MM) $(MM)-PREV && mv $(MM)-tmp.py $(MM)
-
-#TODO: edit by hand for now
-#regen-mms:
-#	./bin/gen-mm-schema.py meta.yaml  > $(MMS)-tmp.py && python $(MMS)-tmp.py && cp $(MMS) $(MMS)-PREV && mv $(MMS)-tmp.py $(MMS)
-
-# ----------------------------------------
-# UTILS
-# ----------------------------------------
-
-dir-%:
-	mkdir -p $@
+	python -m unittest

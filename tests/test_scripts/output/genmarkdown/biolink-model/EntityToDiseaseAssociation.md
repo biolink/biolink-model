@@ -12,14 +12,14 @@ URI: http://bioentity.io/vocab/EntityToDiseaseAssociation
 
 ## Children
 
- *  mixin: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
  *  mixin: [variant to disease association](VariantToDiseaseAssociation.md)
  *  mixin: [gene to disease association](GeneToDiseaseAssociation.md)
+ *  mixin: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
 ## Used in
 
- *  class: [entity to disease association](EntityToDiseaseAssociation.md) references: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
  *  class: [entity to disease association](EntityToDiseaseAssociation.md) references: [variant to disease association](VariantToDiseaseAssociation.md)
  *  class: [entity to disease association](EntityToDiseaseAssociation.md) references: [gene to disease association](GeneToDiseaseAssociation.md)
+ *  class: [entity to disease association](EntityToDiseaseAssociation.md) references: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
 ## Fields
 
  * _[frequency qualifier](frequency_qualifier.md)_

@@ -237,7 +237,7 @@ class MarkdownGenerator(Generator):
 
 
 @click.command()
-@click.argument("yamlfile", type=click.File('r'))
+@click.argument("yamlfile", type=click.Path(exists=True, dir_okay=False))
 @click.option("-d", "--dir", help="Output directory")
 @click.option("-f", "--format", default='md', type=click.Choice(['md']), help="Output format")
 @click.option("--classes", "-c", default=None, multiple=True, help="Class(es) to emit")

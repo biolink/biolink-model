@@ -63,9 +63,8 @@ class SchemaSynopsis:
                 self.slotdomains[k] = v.domain
             else:
                 self.mtdomains.add(k)
-            rng = v.range if v.range else 'string'
-            self.rangerefs.setdefault(rng, set()).add(k)
-            self.add_ref(SlotType, k, ClassType if rng in self.schema.classes else TypeType, rng)
+            self.rangerefs.setdefault(v.range, set()).add(k)
+            self.add_ref(SlotType, k, ClassType if v.range in self.schema.classes else TypeType, v.range)
             if v.inverse:
                 self.inverses.setdefault(v.inverse, set()).add(k)
                 self.add_ref(SlotType, k, SlotType, v.inverse)

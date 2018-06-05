@@ -61,8 +61,6 @@ class YumlGenerator(Generator):
                 slot = self.schema.slots[slotname]
                 if not slot.range or slot.range in builtin_names or slot.range in self.schema.types:
                     # TODO: generalize this
-                    if not slot.range:
-                        slot.range = 'string'
                     slot_defs.append(underscore(self.aliased_slot_name(slot)) +
                                      ('(pk)' if slot.primary_key else '') + ':' +
                                      underscore(slot.range) + self.cardinality(slot))
@@ -127,7 +125,7 @@ class YumlGenerator(Generator):
 
 
 @click.command()
-@click.argument("yamlfile", type=click.File('r'))
+@click.argument("yamlfile", type=click.Path(exists=True, dir_okay=False))
 @click.option("--classes", "-c", default=None, multiple=True, help="Class(es) to emit")
 @click.option("--format", "-f", default='yuml', type=click.Choice(['yuml']), help="Output format")
 def cli(yamlfile, format, classes):

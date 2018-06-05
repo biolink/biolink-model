@@ -14,14 +14,14 @@ URI: http://bioentity.io/vocab/SequenceFeatureRelationship
  *  is_a: [association](Association.md)
 ## Children
 
+ *  child: [exon to transcript relationship](ExonToTranscriptRelationship.md)
  *  child: [transcript to gene relationship](TranscriptToGeneRelationship.md)
  *  child: [gene to gene product relationship](GeneToGeneProductRelationship.md)
- *  child: [exon to transcript relationship](ExonToTranscriptRelationship.md)
 ## Used in
 
+ *  class: [sequence feature relationship](SequenceFeatureRelationship.md) references: [exon to transcript relationship](ExonToTranscriptRelationship.md)
  *  class: [sequence feature relationship](SequenceFeatureRelationship.md) references: [transcript to gene relationship](TranscriptToGeneRelationship.md)
  *  class: [sequence feature relationship](SequenceFeatureRelationship.md) references: [gene to gene product relationship](GeneToGeneProductRelationship.md)
- *  class: [sequence feature relationship](SequenceFeatureRelationship.md) references: [exon to transcript relationship](ExonToTranscriptRelationship.md)
 ## Fields
 
  * _[subject](subject.md)_

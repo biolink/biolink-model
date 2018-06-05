@@ -13,11 +13,11 @@ URI: http://bioentity.io/vocab/GeneProductIsoform
  *  is_a: [gene product](GeneProduct.md)
 ## Children
 
- *  mixin: [RNA product isoform](RnaProductIsoform.md)
  *  mixin: [protein isoform](ProteinIsoform.md)
+ *  mixin: [RNA product isoform](RnaProductIsoform.md)
 ## Used in
 
- *  class: [gene product isoform](GeneProductIsoform.md) references: [RNA product isoform](RnaProductIsoform.md)
  *  class: [gene product isoform](GeneProductIsoform.md) references: [protein isoform](ProteinIsoform.md)
+ *  class: [gene product isoform](GeneProductIsoform.md) references: [RNA product isoform](RnaProductIsoform.md)
 ## Fields
 

@@ -4,7 +4,7 @@ model classes are translated to OWL classes, slots to OWL properties.
 """
 import logging
 import os
-from typing import List, Union, TextIO
+from typing import Union, TextIO
 
 import click
 from rdflib import Graph, URIRef, RDF, OWL, Literal, BNode
@@ -23,9 +23,9 @@ from metamodel.utils.namespaces import BIOENTITY, OBO, META
 class OwlSchemaGenerator(Generator):
     generatorname = os.path.basename(__file__)
     generatorversion = "0.0.2"
-    valid_formats = List(x.name for x in rdflib_plugins(None, rdflib_Parser) if '/' not in str(x.name))
+    valid_formats = [x.name for x in rdflib_plugins(None, rdflib_Parser) if '/' not in str(x.name)]
 
-    def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str = 'turtle') -> None:
+    def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str = 'ttl') -> None:
         super().__init__(schema, fmt)
         self.graph: Graph = None
 
@@ -34,20 +34,27 @@ class OwlSchemaGenerator(Generator):
         base = URIRef(self.schema.id) if self.schema.id else self.class_uri(self.schema.name)
         self.graph = Graph(identifier=base)
         self.graph.bind("obo", str(OBO))
+        self.graph.bind("dcterms", str(DCTERMS))
+        self.graph.bind("owl", str(OWL))
+        self.graph.bind("bioentity", str(BIOENTITY))
+        self.graph.bind("meta", str(META))
         self.graph.add((base, RDF.type, OWL.Ontology))
         self.graph.add((base, RDF.type, OWL.Ontology))
         self.graph.label(base, Literal(self.schema.name))
-        if self.schema.description:
-            self.graph.add((base, DCTERMS.description, Literal(self.schema.description)))
         if self.schema.license:
             self.graph.add((base, DCTERMS.license, Literal(self.schema.license)))
         else:
             logging.warning("No license!")
 
+    def end_schema(self, **kwargs) -> None:
+        print(self.graph.serialize(format='turtle' if self.format == 'ttl' else self.format).decode())
+
     def visit_class(self, cls: ClassDefinition) -> bool:
         cls_uri = self.class_uri(cls.name)
         self.graph.add((cls_uri, RDF.type, OWL.Class))
         self.graph.label(cls_uri, cls.name)
+        if cls.description:
+            self.graph.add((cls_uri, OBO.IAO_0000115, Literal(cls.description)))
 
         # Parent classes
         if cls.is_a and not cls.defining_slots:
@@ -60,36 +67,72 @@ class OwlSchemaGenerator(Generator):
             self.graph.add((cls_uri, RDFS.subClassOf, self.class_uri(mixin)))
         # TODO: Add apply_to injections
 
+        if cls.union_of:
+            union_node = BNode()
+            union_coll = BNode()
+            Collection(self.graph, union_coll, [self.class_uri(union_node) for union_node in cls.union_of])
+            self.graph.add((union_node, OWL.unionOf, union_coll))
+            self.graph.add((cls_uri, RDFS.subClassOf, union_node))
+
         # Defining slots give us an equivalent class
         if cls.defining_slots:
-            x = BNode()
-            self.graph.add((cls_uri, OWL.equivalentClass, x))
-            xl = BNode()
-            self.graph.add((x, OWL.intersectionOf, xl))
+            equ_node = BNode()
+            self.graph.add((cls_uri, OWL.equivalentClass, equ_node))
+            self.graph.add((equ_node, RDF.type, OWL.Class))
 
             elts = []
             if cls.is_a:
                 elts.append(self.class_uri(cls.is_a))
             for slotname in cls.defining_slots:
                 slot = self.schema.slots[slotname]
-                if slot.range in builtin_names:
-                    prop_type = XSD[slot]
-                elif slot.range in self.schema.types:
-                    prop_type = self.type_uri(slot.range)
-                else:
-                    prop_type = self.class_uri(slot.range)
-                restr = BNode()
-                self.graph.add((cls_uri, RDFS.subClassOf, restr))
-                self.graph.add((restr, RDF.type, OWL.Restriction))
-                self.graph.add((restr, OWL.onProperty, self.prop_uri(slot.name)))
-                # TODO: Look up data values restriction
-                self.graph.add((restr, OWL.someValuesFrom, prop_type))
-                elts.append(restr)
-            equ_bnode = BNode()
-            self.graph.add((cls_uri, OWL.equivalentClass, equ_bnode))
-            Collection(self.graph, equ_bnode, elts)
+                restr_node = BNode()
+                self.graph.add((restr_node, RDF.type, OWL.Restriction))
+                self.graph.add((restr_node, OWL.onProperty, self.prop_uri(slotname)))
+                self.add_cardinality(restr_node, slot)
+                self.graph.add((restr_node, OWL.someValuesFrom, self.build_range(slot)))
+                elts.append(restr_node)
+
+            coll_bnode = BNode()
+            Collection(self.graph, coll_bnode, elts)
+            self.graph.add((equ_node, OWL.intersectionOf, coll_bnode))
+
+        for slotname in cls.slots:
+            if slotname not in cls.defining_slots:
+                subc_node = BNode()
+                slot = self.schema.slots[slotname]
+                self.graph.add((subc_node, RDF.type, OWL.Restriction))
+                self.graph.add((subc_node, OWL.onProperty, self.prop_uri(slotname)))
+                self.add_cardinality(subc_node, slot)
+                self.graph.add((subc_node, OWL.someValuesFrom, self.build_range(slot)))
+                self.graph.add((cls_uri, RDFS.subClassOf, subc_node))
 
         return True
+
+    def add_cardinality(self, subj: Union[BNode, URIRef], slot) -> None:
+        if slot.required or slot.primary_key:
+            if slot.multivalued:
+                self.graph.add((subj, OWL.minCardinality, Literal(1)))
+            else:
+                self.graph.add((subj, OWL.cardinality, Literal(1)))
+        elif not slot.multivalued:
+            self.graph.add((subj, OWL.maxCardinality, Literal(1)))
+
+    def build_range(self, slot) -> Union[BNode, URIRef]:
+        # if slot.range in builtin_names or slot.range in self.schema.types:
+        #     datatype_node = BNode()
+        #     self.graph.add((datatype_node, RDF.type, RDFS.DataProperty))
+        #     self.graph.add((datatype_node, OWL.onDataType, self.range_uri(slot)))
+        #     return datatype_node
+        # else:
+            return self.range_uri(slot)
+
+    def range_uri(self, slot: SlotDefinition) -> URIRef:
+        if slot.range in builtin_names or not slot.range:
+            return XSD[slot.range]
+        elif slot.range in self.schema.types:
+            return self.type_uri(slot.range)
+        else:
+            return self.class_uri(slot.range)
 
     @staticmethod
     def class_uri(cn: ClassDefinitionName) -> URIRef:
@@ -124,29 +167,29 @@ class OwlSchemaGenerator(Generator):
             self.graph.add((slot_uri, RDFS.subPropertyOf, self.class_uri(mixin)))
 
         # Slot range
-        if slot.range in builtin_names:
-            self.graph.add((slot_uri, RDF.type, OWL.DatatypeProperty))
-            self.graph.add((slot_uri, RDFS.range, XSD[slot.range]))
+        if not slot.range or slot.range in builtin_names:
+            self.graph.add((slot_uri, RDF.type, OWL.DataProperty))
+            self.graph.add((slot_uri, RDFS.range, XSD[slot.range if slot.range else 'string']))
         elif slot.range in self.schema.types:
-            self.graph.add((slot_uri, RDF.type, OWL.DatatypeProperty))
+            self.graph.add((slot_uri, RDF.type, OWL.DataProperty))
             self.graph.add((slot_uri, RDFS.range, self.type_uri(slot.range)))
         else:
             self.graph.add((slot_uri, RDF.type, OWL.ObjectProperty))
             self.graph.add((slot_uri, RDFS.range, self.class_uri(slot.range)))
 
         # Slot domain
-        self.graph.add((slot_uri, RDFS.domain, self.class_uri(slot.domain)))
+        if slot.domain:
+            self.graph.add((slot_uri, RDFS.domain, self.class_uri(slot.domain)))
 
         # Annotations
         self.graph.label(slot_uri, slot.name)
         if slot.description:
-            self.graph.add((slot_uri, DCTERMS.description, Literal(slot.description)))
             self.graph.add((slot_uri, OBO.IAO_0000115, Literal(slot.description)))
 
 
 @click.command()
-@click.argument("yamlfile", type=click.File('r'))
-@click.option("--format", "-f", default='rdf', type=click.Choice(OwlSchemaGenerator.valid_formats),
+@click.argument("yamlfile", type=click.Path(exists=True, dir_okay=False))
+@click.option("--format", "-f", default='ttl', type=click.Choice(OwlSchemaGenerator.valid_formats),
               help="Output format")
 def cli(yamlfile, format):
     """ Generate an OWL representation of a biolink model """

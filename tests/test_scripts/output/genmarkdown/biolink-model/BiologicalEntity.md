@@ -15,17 +15,17 @@ URI: http://bioentity.io/vocab/BiologicalEntity
 ## Children
 
  *  child: [biological process or activity](BiologicalProcessOrActivity.md)
- *  child: [organismal entity](OrganismalEntity.md)
  *  child: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
  *  child: [molecular entity](MolecularEntity.md)
  *  child: [environment](Environment.md)
+ *  child: [organismal entity](OrganismalEntity.md)
 ## Used in
 
  *  class: [biological entity](BiologicalEntity.md) references: [biological process or activity](BiologicalProcessOrActivity.md)
- *  class: [biological entity](BiologicalEntity.md) references: [organismal entity](OrganismalEntity.md)
  *  class: [biological entity](BiologicalEntity.md) references: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
  *  class: [biological entity](BiologicalEntity.md) references: [molecular entity](MolecularEntity.md)
  *  class: [biological entity](BiologicalEntity.md) references: [environment](Environment.md)
+ *  class: [biological entity](BiologicalEntity.md) references: [organismal entity](OrganismalEntity.md)
 ## Fields
 
  * _[has phenotype](has_phenotype.md) *subsets: translator_minimal*_

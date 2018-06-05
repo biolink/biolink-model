@@ -13,12 +13,12 @@ URI: http://bioentity.io/vocab/GeneToThingAssociation
  *  is_a: [association](Association.md)
 ## Children
 
- *  mixin: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
  *  mixin: [gene to disease association](GeneToDiseaseAssociation.md)
+ *  mixin: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
 ## Used in
 
- *  class: [gene to thing association](GeneToThingAssociation.md) references: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
  *  class: [gene to thing association](GeneToThingAssociation.md) references: [gene to disease association](GeneToDiseaseAssociation.md)
+ *  class: [gene to thing association](GeneToThingAssociation.md) references: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
 ## Fields
 
  * _[subject](subject.md)_

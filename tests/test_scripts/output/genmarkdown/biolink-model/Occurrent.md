@@ -17,15 +17,15 @@ URI: http://bioentity.io/vocab/Occurrent
  *  child: [procedure](Procedure.md)
  *  child: [activity and behavior](ActivityAndBehavior.md)
  *  mixin: [molecular activity](MolecularActivity.md)
- *  mixin: [environmental process](EnvironmentalProcess.md)
  *  mixin: [biological process](BiologicalProcess.md)
+ *  mixin: [environmental process](EnvironmentalProcess.md)
 ## Used in
 
  *  class: [occurrent](Occurrent.md) references: [phenomenon](Phenomenon.md)
  *  class: [occurrent](Occurrent.md) references: [environmental process](EnvironmentalProcess.md)
+ *  class: [occurrent](Occurrent.md) references: [procedure](Procedure.md)
  *  class: [occurrent](Occurrent.md) references: [activity and behavior](ActivityAndBehavior.md)
  *  class: [occurrent](Occurrent.md) references: [molecular activity](MolecularActivity.md)
- *  class: [occurrent](Occurrent.md) references: [procedure](Procedure.md)
  *  class: [occurrent](Occurrent.md) references: [biological process](BiologicalProcess.md)
 ## Fields
 

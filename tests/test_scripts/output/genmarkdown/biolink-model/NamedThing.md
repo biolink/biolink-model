@@ -16,17 +16,17 @@ URI: http://bioentity.io/vocab/NamedThing
 ## Children
 
  *  child: [information content entity](InformationContentEntity.md)
+ *  child: [clinical entity](ClinicalEntity.md)
+ *  child: [device](Device.md)
  *  child: [biological entity](BiologicalEntity.md)
  *  child: [planetary entity](PlanetaryEntity.md)
- *  child: [device](Device.md)
- *  child: [clinical entity](ClinicalEntity.md)
 ## Used in
 
  *  class: [named thing](NamedThing.md) references: [information content entity](InformationContentEntity.md)
+ *  class: [named thing](NamedThing.md) references: [clinical entity](ClinicalEntity.md)
+ *  class: [named thing](NamedThing.md) references: [device](Device.md)
  *  class: [named thing](NamedThing.md) references: [biological entity](BiologicalEntity.md)
  *  class: [named thing](NamedThing.md) references: [planetary entity](PlanetaryEntity.md)
- *  class: [named thing](NamedThing.md) references: [device](Device.md)
- *  class: [named thing](NamedThing.md) references: [clinical entity](ClinicalEntity.md)
 ## Fields
 
  * _[id](id.md) *subsets: translator_minimal*_

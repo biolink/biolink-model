@@ -13,16 +13,16 @@ URI: http://bioentity.io/vocab/FunctionalAssociation
  *  is_a: [association](Association.md)
 ## Children
 
- *  child: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.md)
- *  child: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.md)
- *  child: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.md)
  *  child: [gene to go term association](GeneToGoTermAssociation.md)
+ *  child: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.md)
+ *  child: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.md)
+ *  child: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.md)
 ## Used in
 
- *  class: [functional association](FunctionalAssociation.md) references: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.md)
- *  class: [functional association](FunctionalAssociation.md) references: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.md)
- *  class: [functional association](FunctionalAssociation.md) references: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.md)
  *  class: [functional association](FunctionalAssociation.md) references: [gene to go term association](GeneToGoTermAssociation.md)
+ *  class: [functional association](FunctionalAssociation.md) references: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.md)
+ *  class: [functional association](FunctionalAssociation.md) references: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.md)
+ *  class: [functional association](FunctionalAssociation.md) references: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.md)
 ## Fields
 
  * _[subject](subject.md)_

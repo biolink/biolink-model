@@ -53,7 +53,7 @@ class PythonGenerator(Generator):
             self.schema.source_file = self.sourcefile
 
     def gen_schema(self) -> str:
-        return f'''# Auto generated from {self.sourcefile} by {self.generatorname} version: {self.generatorversion}
+        return f'''# Auto generated from {self.schema.source_file} by {self.generatorname} version: {self.generatorversion}
 # Generation date: {self.schema.generation_date}
 # Schema: {self.schema.name}
 #
@@ -74,7 +74,7 @@ metamodel_version = "{metamodel_version}"
 {self.gen_classdefs()}'''
 
     def end_schema(self):
-        print(re.sub(r' +\n', '\n', self.gen_schema().replace('\t', '    ')).strip(' '))
+        print(re.sub(r' +\n', '\n', self.gen_schema().replace('\t', '    ')).strip(' '), end='')
 
     def gen_references(self) -> str:
         """ Generate NewType declarations for all identifiers
@@ -208,7 +208,7 @@ class {camelcase(clsname)}{parentref}:{wrapped_description}
 
 
 @click.command()
-@click.argument("yamlfile", type=click.File('r'))
+@click.argument("yamlfile", type=click.Path(exists=True, dir_okay=False))
 @click.option("--format", "-f", default='py', type=click.Choice(['py']),
               help="Output format")
 def cli(yamlfile, format):

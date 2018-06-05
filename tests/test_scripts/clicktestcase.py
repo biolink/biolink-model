@@ -1,4 +1,6 @@
 import os
+import re
+import sys
 import unittest
 from contextlib import redirect_stdout
 from io import StringIO
@@ -16,6 +18,9 @@ def no_click_exit(self, code=0):
 
 click.core.Context.exit = no_click_exit
 
+
+def metadata_filter(s: str) -> str:
+    return re.sub(r'Auto generated from.* ', '', re.sub(r'# Generation date: .*\n', '', s, re.MULTILINE), re.MULTILINE)
 
 class ClickTestCase(unittest.TestCase):
     testdir: str = None
@@ -60,9 +65,9 @@ class ClickTestCase(unittest.TestCase):
                 new_txt = f.read().replace('\r\n', '\n')
                 if filtr:
                     new_txt = filtr(new_txt)
-                self.assertEqual(old_txt, new_txt)
+                self.assertEqual(old_txt.strip(), new_txt.strip())
         else:
-            print("Directory comparison needs to be added")
+            print("Directory comparison needs to be added", file=sys.stderr)
 
 
 

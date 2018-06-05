@@ -112,7 +112,7 @@ class ContextGenerator(Generator):
 
 
 @click.command()
-@click.argument("yamlfile", type=click.File('r'))
+@click.argument("yamlfile", type=click.Path(exists=True, dir_okay=False))
 @click.option("--format", "-f", default='json', type=click.Choice(['json']), help="Output format")
 def cli(yamlfile, format):
     """ Generate jsonld @context definition from biolink model """

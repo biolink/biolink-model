@@ -14,12 +14,12 @@ URI: http://bioentity.io/vocab/DiseaseOrPhenotypicFeature
  *  mixin: [thing with taxon](ThingWithTaxon.md)
 ## Children
 
- *  child: [phenotypic feature](PhenotypicFeature.md)
  *  child: [disease](Disease.md)
+ *  child: [phenotypic feature](PhenotypicFeature.md)
 ## Used in
 
- *  class: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md) references: [phenotypic feature](PhenotypicFeature.md)
  *  class: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md) references: [disease](Disease.md)
+ *  class: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md) references: [phenotypic feature](PhenotypicFeature.md)
 ## Fields
 
  * _[correlated with](correlated_with.md) *subsets: translator_minimal*_

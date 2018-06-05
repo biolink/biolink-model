@@ -39,13 +39,13 @@ class ProtoGenerator(Generator):
     def visit_class_slot(self, cls: ClassDefinition, aliased_slot_name: str, slot: SlotDefinition) -> None:
         qual = 'repeated ' if slot.multivalued else 'optional ' if not slot.required or slot.primary_key else ''
         slotname = lcamelcase(aliased_slot_name)
-        slot_range = self.obj_name(slot.range) if slot.range else 'String'
+        slot_range = self.obj_name(slot.range)
         self.relative_slot_num += 1
         print(f"  {qual}{slotname} {slot_range} = {self.relative_slot_num}")
 
 
 @click.command()
-@click.argument("yamlfile", type=click.File('r'))
+@click.argument("yamlfile", type=click.Path(exists=True, dir_okay=False))
 @click.option("--format", "-f", default='proto', type=click.Choice(['proto']),
               help="Output format")
 def cli(yamlfile, format):

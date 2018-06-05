@@ -17,11 +17,11 @@ URI: http://bioentity.io/vocab/ChemicalSubstance
  *  is_a: [molecular entity](MolecularEntity.md)
 ## Children
 
- *  child: [metabolite](Metabolite.md)
  *  child: [drug](Drug.md)
+ *  child: [metabolite](Metabolite.md)
 ## Used in
 
- *  class: [chemical substance](ChemicalSubstance.md) references: [metabolite](Metabolite.md)
  *  class: [chemical substance](ChemicalSubstance.md) references: [drug](Drug.md)
+ *  class: [chemical substance](ChemicalSubstance.md) references: [metabolite](Metabolite.md)
 ## Fields
 

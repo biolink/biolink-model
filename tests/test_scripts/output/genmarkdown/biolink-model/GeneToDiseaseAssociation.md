@@ -16,12 +16,12 @@ URI: http://bioentity.io/vocab/GeneToDiseaseAssociation
  *  mixin: [gene to thing association](GeneToThingAssociation.md)
 ## Children
 
- *  child: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
  *  child: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.md)
+ *  child: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
 ## Used in
 
- *  class: [gene to disease association](GeneToDiseaseAssociation.md) references: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
  *  class: [gene to disease association](GeneToDiseaseAssociation.md) references: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.md)
+ *  class: [gene to disease association](GeneToDiseaseAssociation.md) references: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
 ## Fields
 
  * _[frequency qualifier](frequency_qualifier.md)_

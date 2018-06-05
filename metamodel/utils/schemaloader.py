@@ -63,6 +63,12 @@ class SchemaLoader:
                         break
                 if append:
                     cls.slots.append(SlotDefinitionName(child_name))
+
+        # Clean up the slot range defaults
+        for slot in self.schema.slots.values():
+            if not slot.range:
+                slot.range = 'string'
+
         return self.schema
 
     def schema_errors(self) -> List[str]:

@@ -1,5 +1,5 @@
-# Auto generated from <_io.TextIOWrapper name='/Users/solbrig/git/hsolbrig/biolink-model/meta.yaml' mode='r' encoding='UTF-8'> by pythongen.py version: 0.0.2
-# Generation date: 2018-06-05 10:38
+# Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by pythongen.py version: 0.0.2
+# Generation date: 2018-06-05 15:18
 # Schema: metamodel
 #
 # id: http://bioentity.io/json-schema/meta.json

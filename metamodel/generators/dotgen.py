@@ -93,7 +93,7 @@ class DotGenerator(Generator):
 
 
 @click.command()
-@click.argument("yamlfile", type=click.File('r'))
+@click.argument("yamlfile", type=click.Path(exists=True, dir_okay=False))
 @click.option("--directory", "-d", help="Output directory - if supplied, a graph per class will be generated")
 @click.option("--out", "-o", help="Target file -- if supplied, one large graph will be generated")
 @click.option("--classname", "-c", default=None, multiple=True, help="Class(es) to transform")

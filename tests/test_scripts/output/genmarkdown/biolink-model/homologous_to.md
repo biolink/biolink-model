@@ -17,7 +17,7 @@ None -> None
 ## Children
 
  *  child: [orthologous to](orthologous_to.md) *subsets: translator_minimal*
- *  child: [xenologous to](xenologous_to.md) *subsets: translator_minimal*
  *  child: [paralogous to](paralogous_to.md) *subsets: translator_minimal*
+ *  child: [xenologous to](xenologous_to.md) *subsets: translator_minimal*
 ## Used in
 

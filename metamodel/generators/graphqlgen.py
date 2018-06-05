@@ -38,7 +38,7 @@ class GraphqlGenerator(Generator):
 
 
 @click.command()
-@click.argument("yamlfile", type=click.File('r'))
+@click.argument("yamlfile", type=click.Path(exists=True, dir_okay=False))
 @click.option("--format", "-f", default='graphql', type=click.Choice(['graphql']), help="Output format")
 def cli(yamlfile, format):
     """ Generate graphql representation of a biolink model """

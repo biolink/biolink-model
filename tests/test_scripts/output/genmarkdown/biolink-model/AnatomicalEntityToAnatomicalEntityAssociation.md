@@ -13,12 +13,12 @@ URI: http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation
  *  is_a: [association](Association.md)
 ## Children
 
- *  child: [anatomical entity to anatomical entity part of association](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md)
  *  child: [anatomical entity to anatomical entity ontogenic association](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md)
+ *  child: [anatomical entity to anatomical entity part of association](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md)
 ## Used in
 
- *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.md) references: [anatomical entity to anatomical entity part of association](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md)
  *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.md) references: [anatomical entity to anatomical entity ontogenic association](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md)
+ *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.md) references: [anatomical entity to anatomical entity part of association](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md)
 ## Fields
 
  * _[subject](subject.md)_

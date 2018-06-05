@@ -80,7 +80,7 @@ class GolrSchemaGenerator(Generator):
 
 @click.command()
 @click.option("--dir", "-d", default='golr-views', help="Output directory")
-@click.argument("file", type=click.File('r'))
+@click.argument("file", type=click.Path(exists=True, dir_okay=False))
 @click.option("--format", "-f", default='golr', type=click.Choice(['golr']), help="Output format")
 def cli(file, dir, format):
     """ Generate GOLR representation of a biolink model """
