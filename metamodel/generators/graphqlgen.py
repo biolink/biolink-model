@@ -3,8 +3,8 @@ from typing import Union, TextIO
 
 import click
 
+from metamodel.metamodel import SchemaDefinition, ClassDefinition, SlotDefinition
 from metamodel.utils.formatutils import camelcase, lcamelcase
-from tests.target.metamodel import SchemaDefinition, ClassDefinition, SlotDefinition
 from metamodel.utils.generator import Generator
 
 

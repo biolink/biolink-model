@@ -9,7 +9,7 @@ from graphviz import Digraph, FORMATS
 
 from metamodel.utils.generator import Generator
 from metamodel.utils.formatutils import underscore
-from tests.target.metamodel import SchemaDefinition, ClassDefinition, SlotDefinition, ClassDefinitionName
+from metamodel.metamodel import SchemaDefinition, ClassDefinition, SlotDefinition, ClassDefinitionName
 
 
 class DotGenerator(Generator):

@@ -1,6 +1,7 @@
+import os
 import sys
 
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages, findall
 
 version = '0.0.2'
 
@@ -11,7 +12,7 @@ requires = [
     "jsonschema>=2.6.0",
     "rdflib>=4.2.2",
     "graphviz>=0.8.3",
-    "prefixcommons>=0.1.7"
+    "prefixcommons>=0.1.7",
     "rdflib-jsonld>=0.4.0"
     ]
 
@@ -24,11 +25,29 @@ setup(
     packages=find_packages(exclude=['about', 'contrib', 'docs', 'graphql', 'graphviz', 'images', 'tests']),
     url='https://github.com/biolink/biolink-model',
     license='CC0 1.0 Universal',
+    install_requires = requires,
+    python_requires='>=3.6',
     description='Schema and generated objects for biolink data model and upper ontology',
-    scripts=['bin/gen-csv.py', 'bin/gen-golr-views.py', 'bin/gen-graphql.py', 'bin/gen-graphviz.py',
-             'bin/gen-json-schema-via-mm.py', 'bin/gen-json-schema.py', 'bin/gen-jsonld-context.py',
-             'bin/gen-markdown.py', 'bin/gen-mm-schema.py', 'bin/gen-proto.py', 'bin/gen-py-classes.py',
-             'bin/gen-rdf.py', 'bin/gen-shex.py', 'bin/gen-yuml.py'],
+    # scripts=['bin/gen-csv.py', 'bin/gen-golr-views.py', 'bin/gen-graphql.py', 'bin/gen-graphviz.py',
+    #          'bin/gen-json-schema-via-mm.py', 'bin/gen-json-schema.py', 'bin/gen-jsonld-context.py',
+    #          'bin/gen-markdown.py', 'bin/gen-mm-schema.py', 'bin/gen-proto.py', 'bin/gen-py-classes.py',
+    #          'bin/gen-rdf.py', 'bin/gen-shex.py', 'bin/gen-yuml.py'],
+    entry_points={
+        'console_scripts': [
+            'gen-csv = metamodel.generators.csvgen:cli',
+            'gen-golr-views = metamodel.generators.golrgen:cli',
+            'gen-graphql = metamodel.generators.graphqlgen:cli',
+            'gen-graphviz = metamodel.generators.dotgen:cli',
+            'gen-json-schema = metamodel.generators.jsonschemagen:cli',
+            'gen-jsonld-context = metamodel.generators.contextgen:cli',
+            'gen-markdown = metamodel.generators.markdowngen:cli',
+            'gen-proto = metamodel.generators.protogen:cli',
+            'gen-py-classes = metamodel.generators.pythongen:cli',
+            'gen-rdf = metamodel.generators.ontolgen:cli',
+            'gen-shex = metamodel.generators.shexgen:cli',
+            'gen-yuml = metamodel.generators.yumlgen:cli'
+        ]
+    },
     classifiers=[
         "Development Status :: 4 - Beta",
         "Environment :: Console",
