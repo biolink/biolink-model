@@ -5,7 +5,7 @@ Any association between one genotype and a genotypic entity that is a sub-compon
 
 URI: [http://bioentity.io/vocab/GenotypeToGenotypePartAssociation](http://bioentity.io/vocab/GenotypeToGenotypePartAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[GenotypeToGenotypePartAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F],%20\[GenotypeToGenotypePartAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GenotypeToGenotypePartAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToGenotypePartAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToGenotypePartAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToGenotypePartAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToGenotypePartAssociation]-%20relation>\[RelationshipType],%20\[GenotypeToGenotypePartAssociation]-%20subject>\[Genotype],%20\[GenotypeToGenotypePartAssociation]-%20object>\[Genotype])
+![img](images/GenotypeToGenotypePartAssociation.png)
 ## Mappings
 
 ## Inheritance

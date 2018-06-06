@@ -5,7 +5,7 @@ Activity or behavior of any independent integral living, organization or mechani
 
 URI: [http://bioentity.io/vocab/ActivityAndBehavior](http://bioentity.io/vocab/ActivityAndBehavior)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[ActivityAndBehavior|has_participant(i):string%20%3F;has_input(i):string%20%3F],%20\[ActivityAndBehavior]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[ActivityAndBehavior]-%20precedes(i)%20%3F>\[Occurrent])
+![img](images/ActivityAndBehavior.png)
 ## Mappings
 
  * [UMLSSG:ACTI](http://purl.obolibrary.org/obo/UMLSSG_ACTI)

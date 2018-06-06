@@ -5,7 +5,7 @@ An association between a variant and a population, where the variant has particu
 
 URI: [http://bioentity.io/vocab/VariantToPopulationAssociation](http://bioentity.io/vocab/VariantToPopulationAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[VariantToPopulationAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F;frequency_qualifier:frequency_value%20%3F;has_count:string%20%3F;has_total:string%20%3F;has_quotient:string%20%3F;has_percentage:double%20%3F],%20\[VariantToPopulationAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[VariantToPopulationAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[VariantToPopulationAssociation]-%20relation(i)>\[RelationshipType],%20\[VariantToPopulationAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[VariantToPopulationAssociation]-%20publications(i)%20*>\[Publication],%20\[VariantToPopulationAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[VariantToPopulationAssociation]-%20frequency%20qualifier%20%3F>\[FrequencyValue],%20\[VariantToPopulationAssociation]-%20subject>\[SequenceVariant],%20\[VariantToPopulationAssociation]-%20object>\[PopulationOfIndividualOrganisms],%20\[VariantToPopulationAssociation]uses%20-.->\[VariantToThingAssociation],%20\[VariantToPopulationAssociation]uses%20-.->\[FrequencyQuantifier])
+![img](images/VariantToPopulationAssociation.png)
 ## Mappings
 
 ## Inheritance

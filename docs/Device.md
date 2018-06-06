@@ -5,7 +5,7 @@ A thing made or adapted for a particular purpose, especially a piece of mechanic
 
 URI: [http://bioentity.io/vocab/Device](http://bioentity.io/vocab/Device)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]^-\[Device|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F],%20\[Device]-%20related%20to(i)%20%3F>\[NamedThing])
+![img](images/Device.png)
 ## Mappings
 
  * [UMLSSG:DEVI](http://purl.obolibrary.org/obo/UMLSSG_DEVI)

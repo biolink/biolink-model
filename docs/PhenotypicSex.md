@@ -5,7 +5,7 @@ An attribute corresponding to the phenotypic sex of the individual, based upon t
 
 URI: [http://bioentity.io/vocab/PhenotypicSex](http://bioentity.io/vocab/PhenotypicSex)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalSex]^-\[PhenotypicSex],%20\[PhenotypicSex]-%20subclass%20of(i)%20%3F>\[OntologyClass])
+![img](images/PhenotypicSex.png)
 ## Mappings
 
  * [PATO:0001894](http://purl.obolibrary.org/obo/PATO_0001894)

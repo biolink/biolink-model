@@ -5,7 +5,7 @@ Any association between a genotype and a gene. The genotype have have multiple v
 
 URI: [http://bioentity.io/vocab/GenotypeToGeneAssociation](http://bioentity.io/vocab/GenotypeToGeneAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[GenotypeToGeneAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F],%20\[GenotypeToGeneAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GenotypeToGeneAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToGeneAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToGeneAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToGeneAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToGeneAssociation]-%20relation>\[RelationshipType],%20\[GenotypeToGeneAssociation]-%20subject>\[Genotype],%20\[GenotypeToGeneAssociation]-%20object>\[Gene])
+![img](images/GenotypeToGeneAssociation.png)
 ## Mappings
 
 ## Inheritance

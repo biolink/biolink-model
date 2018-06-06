@@ -5,7 +5,7 @@ An execution of a molecular function carried out by a gene product or macromolec
 
 URI: [http://bioentity.io/vocab/MolecularActivity](http://bioentity.io/vocab/MolecularActivity)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalProcessOrActivity]^-\[MolecularActivity|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_participant:string%20%3F;has_input:string%20%3F],%20\[MolecularActivity]-%20related%20to(i)%20%3F>\[NamedThing],%20\[MolecularActivity]-%20regulates,%20process%20to%20process%20%3F>\[Occurrent],%20\[MolecularActivity]-%20precedes%20%3F>\[Occurrent],%20\[MolecularActivity]uses%20-.->\[Occurrent])
+![img](images/MolecularActivity.png)
 ## Mappings
 
  * [GO:0003674](http://purl.obolibrary.org/obo/GO_0003674)

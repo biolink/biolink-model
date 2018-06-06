@@ -15,7 +15,7 @@ None -> string
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [has part](has_part.md) *subsets: translator_minimal*
  *  child: [part of](part_of.md) *subsets: translator_minimal*
+ *  child: [has part](has_part.md) *subsets: translator_minimal*
 ## Used in
 

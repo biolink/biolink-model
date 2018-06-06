@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/GenotypeToThingAssociation](http://bioentity.io/vocab/GenotypeToThingAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[GenotypeToThingAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;object(i):string;association_slot(i):string%20%3F],%20\[GenotypeToThingAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GenotypeToThingAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToThingAssociation]-%20relation(i)>\[RelationshipType],%20\[GenotypeToThingAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToThingAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToThingAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToThingAssociation]-%20subject>\[Genotype])
+![img](images/GenotypeToThingAssociation.png)
 ## Mappings
 
 ## Inheritance

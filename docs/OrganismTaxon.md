@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/OrganismTaxon)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OntologyClass]^-\[OrganismTaxon],%20\[OrganismTaxon]-%20subclass%20of(i)%20%3F>\[OntologyClass])
+![img](images/OrganismTaxon.png)
 ## Mappings
 
  * [WD:Q16521](http://purl.obolibrary.org/obo/WD_Q16521)

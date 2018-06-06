@@ -5,7 +5,7 @@ An abstract association for use where the case is the subject
 
 URI: [http://bioentity.io/vocab/CaseToThingAssociation](http://bioentity.io/vocab/CaseToThingAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[CaseToThingAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;object(i):string;association_slot(i):string%20%3F],%20\[CaseToThingAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[CaseToThingAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[CaseToThingAssociation]-%20relation(i)>\[RelationshipType],%20\[CaseToThingAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[CaseToThingAssociation]-%20publications(i)%20*>\[Publication],%20\[CaseToThingAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[CaseToThingAssociation]-%20subject>\[Case])
+![img](images/CaseToThingAssociation.png)
 ## Mappings
 
 ## Inheritance

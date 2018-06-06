@@ -5,7 +5,7 @@ a fact or situation that is observed to exist or happen, especially one whose ca
 
 URI: [http://bioentity.io/vocab/Phenomenon](http://bioentity.io/vocab/Phenomenon)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[Phenomenon|has_participant(i):string%20%3F;has_input(i):string%20%3F],%20\[Phenomenon]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[Phenomenon]-%20precedes(i)%20%3F>\[Occurrent])
+![img](images/Phenomenon.png)
 ## Mappings
 
  * [UMLSSG:PHEN](http://purl.obolibrary.org/obo/UMLSSG_PHEN)

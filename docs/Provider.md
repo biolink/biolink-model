@@ -5,7 +5,7 @@ person, group, organization or project that provides a piece of information
 
 URI: [http://bioentity.io/vocab/Provider](http://bioentity.io/vocab/Provider)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[AdministrativeEntity]^-\[Provider])
+![img](images/Provider.png)
 ## Mappings
 
  * [UMLSSG:ORGA](http://purl.obolibrary.org/obo/UMLSSG_ORGA)

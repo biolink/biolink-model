@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[EntityToPhenotypicFeatureAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;systematic_synonym(i):label_type%20%3F;subject(i):string;negated(i):boolean%20%3F;association_slot(i):string%20%3F;frequency_qualifier:frequency_value%20%3F;description:narrative_text%20%3F],%20\[EntityToPhenotypicFeatureAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EntityToPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[EntityToPhenotypicFeatureAssociation]-%20relation(i)>\[RelationshipType],%20\[EntityToPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[EntityToPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[EntityToPhenotypicFeatureAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[EntityToPhenotypicFeatureAssociation]-%20frequency%20qualifier%20%3F>\[FrequencyValue],%20\[EntityToPhenotypicFeatureAssociation]-%20severity%20qualifier%20%3F>\[SeverityValue],%20\[EntityToPhenotypicFeatureAssociation]-%20onset%20qualifier%20%3F>\[Onset],%20\[EntityToPhenotypicFeatureAssociation]-%20sex%20qualifier%20%3F>\[BiologicalSex],%20\[EntityToPhenotypicFeatureAssociation]-%20object>\[PhenotypicFeature])
+![img](images/EntityToPhenotypicFeatureAssociation.png)
 ## Mappings
 
 ## Inheritance
@@ -13,20 +13,20 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
  *  is_a: [association](Association.md) - A typed association between two entities, supported by evidence
 ## Children
 
- *  mixin: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md) - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
- *  mixin: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
  *  mixin: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md) - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
- *  mixin: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md) - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
- *  mixin: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
  *  mixin: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+ *  mixin: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
+ *  mixin: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md) - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
+ *  mixin: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
+ *  mixin: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md) - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
 ## Used in
 
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
  *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
+ *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
+ *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
+ *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
+ *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
 ## Fields
 
  * _[frequency qualifier](frequency_qualifier.md)_

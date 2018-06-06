@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation](http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[AnatomicalEntityToAnatomicalEntityAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F],%20\[AnatomicalEntityToAnatomicalEntityAssociation]^-\[AnatomicalEntityToAnatomicalEntityOntogenicAssociation],%20\[AnatomicalEntityToAnatomicalEntityAssociation]^-\[AnatomicalEntityToAnatomicalEntityPartOfAssociation],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20relation(i)>\[RelationshipType],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20publications(i)%20*>\[Publication],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20subject>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20object>\[AnatomicalEntity])
+![img](images/AnatomicalEntityToAnatomicalEntityAssociation.png)
 ## Mappings
 
 ## Inheritance

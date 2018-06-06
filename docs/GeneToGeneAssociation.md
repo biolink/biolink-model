@@ -5,7 +5,7 @@ abstract parent class for different kinds of gene-gene or gene product to gene p
 
 URI: [http://bioentity.io/vocab/GeneToGeneAssociation](http://bioentity.io/vocab/GeneToGeneAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[GeneToGeneAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F],%20\[GeneToGeneAssociation]^-\[GeneToGeneHomologyAssociation],%20\[GeneToGeneAssociation]^-\[PairwiseGeneOrProteinInteractionAssociation],%20\[GeneToGeneAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneToGeneAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToGeneAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToGeneAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToGeneAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToGeneAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToGeneAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToGeneAssociation]-%20object>\[GeneOrGeneProduct])
+![img](images/GeneToGeneAssociation.png)
 ## Mappings
 
 ## Inheritance
@@ -13,12 +13,12 @@ URI: [http://bioentity.io/vocab/GeneToGeneAssociation](http://bioentity.io/vocab
  *  is_a: [association](Association.md) - A typed association between two entities, supported by evidence
 ## Children
 
- *  child: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.md) - An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
  *  child: [gene to gene homology association](GeneToGeneHomologyAssociation.md) - A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
+ *  child: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.md) - An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 ## Used in
 
- *  class: [gene to gene association](GeneToGeneAssociation.md) references: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.md)
  *  class: [gene to gene association](GeneToGeneAssociation.md) references: [gene to gene homology association](GeneToGeneHomologyAssociation.md)
+ *  class: [gene to gene association](GeneToGeneAssociation.md) references: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.md)
 ## Fields
 
  * _[subject](subject.md)_

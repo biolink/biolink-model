@@ -50,7 +50,7 @@ contrib/%-java: contrib/%/schema.json
 # DOCS
 # ~~~~~~~~~~~~~~~~~~~~
 docs/index.md: biolink-model.yaml
-	gen-markdown --dir docs $< > $@
+	gen-markdown --dir docs -i $< > $@
 contrib/%/docs/index.md: contrib/%.yaml
 	gen-markdown --dir contrib/$*/docs $< > $@
 clean-docs:

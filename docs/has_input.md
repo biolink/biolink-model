@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/has_input](slot_uri)
 
 ## Used in
 
- *  usage: [biological process](BiologicalProcess.md)
  *  usage: [occurrent](Occurrent.md)
- *  usage: [molecular activity](MolecularActivity.md)
+ *  usage: [biological process](BiologicalProcess.md)
  *  usage: [environmental process](EnvironmentalProcess.md)
+ *  usage: [molecular activity](MolecularActivity.md)

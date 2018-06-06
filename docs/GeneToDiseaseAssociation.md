@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vocab/GeneToDiseaseAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[GeneToDiseaseAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;object(i):string;association_slot(i):string%20%3F;frequency_qualifier:frequency_value%20%3F],%20\[GeneToDiseaseAssociation]^-\[GeneAsAModelOfDiseaseAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneHasVariantThatContributesToDiseaseAssociation],%20\[GeneToDiseaseAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneToDiseaseAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToDiseaseAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToDiseaseAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToDiseaseAssociation]-%20frequency%20qualifier%20%3F>\[FrequencyValue],%20\[GeneToDiseaseAssociation]-%20severity%20qualifier%20%3F>\[SeverityValue],%20\[GeneToDiseaseAssociation]-%20onset%20qualifier%20%3F>\[Onset],%20\[GeneToDiseaseAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneToDiseaseAssociation]uses%20-.->\[GeneToThingAssociation])
+![img](images/GeneToDiseaseAssociation.png)
 ## Mappings
 
  * [SIO:000983](http://semanticscience.org/resource/SIO_000983)

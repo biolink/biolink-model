@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/EnvironmentalProcess](http://bioentity.io/vocab/EnvironmentalProcess)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PlanetaryEntity]^-\[EnvironmentalProcess|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_participant:string%20%3F;has_input:string%20%3F],%20\[EnvironmentalProcess]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EnvironmentalProcess]-%20regulates,%20process%20to%20process%20%3F>\[Occurrent],%20\[EnvironmentalProcess]-%20precedes%20%3F>\[Occurrent],%20\[EnvironmentalProcess]uses%20-.->\[Occurrent])
+![img](images/EnvironmentalProcess.png)
 ## Mappings
 
  * [ENVO:02500000](http://purl.obolibrary.org/obo/ENVO_02500000)

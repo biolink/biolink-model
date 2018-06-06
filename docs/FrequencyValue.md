@@ -5,7 +5,7 @@ describes the frequency of occurrence of an event or condition
 
 URI: [http://bioentity.io/vocab/FrequencyValue](http://bioentity.io/vocab/FrequencyValue)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]^-\[FrequencyValue],%20\[FrequencyValue]-%20subclass%20of(i)%20%3F>\[OntologyClass])
+![img](images/FrequencyValue.png)
 ## Mappings
 
 ## Inheritance

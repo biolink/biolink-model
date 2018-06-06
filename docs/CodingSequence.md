@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/CodingSequence](http://bioentity.io/vocab/CodingSequence)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenomicEntity]^-\[CodingSequence|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_biological_sequence(i):biological_sequence%20%3F],%20\[CodingSequence]-%20related%20to(i)%20%3F>\[NamedThing],%20\[CodingSequence]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[CodingSequence]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[CodingSequence]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[CodingSequence]-%20in%20taxon(i)%20%3F>\[OrganismTaxon])
+![img](images/CodingSequence.png)
 ## Mappings
 
  * [SO:0000316](http://purl.obolibrary.org/obo/SO_0000316)

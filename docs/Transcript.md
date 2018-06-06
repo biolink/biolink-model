@@ -5,7 +5,7 @@ An RNA synthesized on a DNA or RNA template by an RNA polymerase
 
 URI: [http://bioentity.io/vocab/Transcript](http://bioentity.io/vocab/Transcript)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenomicEntity]^-\[Transcript|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_biological_sequence(i):biological_sequence%20%3F],%20\[Transcript]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Transcript]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[Transcript]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[Transcript]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[Transcript]-%20in%20taxon(i)%20%3F>\[OrganismTaxon])
+![img](images/Transcript.png)
 ## Mappings
 
  * [SO:0000673](http://purl.obolibrary.org/obo/SO_0000673)

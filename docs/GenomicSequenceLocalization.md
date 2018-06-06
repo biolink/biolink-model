@@ -5,7 +5,7 @@ A relationship between a sequence feature and an entity it is localized to. The 
 
 URI: [http://bioentity.io/vocab/GenomicSequenceLocalization](http://bioentity.io/vocab/GenomicSequenceLocalization)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[GenomicSequenceLocalization|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F;start_interbase_coordinate:string%20%3F;end_interbase_coordinate:string%20%3F;genome_build:string%20%3F;phase:string%20%3F],%20\[GenomicSequenceLocalization]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GenomicSequenceLocalization]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenomicSequenceLocalization]-%20relation(i)>\[RelationshipType],%20\[GenomicSequenceLocalization]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenomicSequenceLocalization]-%20publications(i)%20*>\[Publication],%20\[GenomicSequenceLocalization]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenomicSequenceLocalization]-%20subject>\[GenomicEntity],%20\[GenomicSequenceLocalization]-%20object>\[GenomicEntity])
+![img](images/GenomicSequenceLocalization.png)
 ## Mappings
 
  * [faldo:location](http://purl.obolibrary.org/obo/faldo_location)

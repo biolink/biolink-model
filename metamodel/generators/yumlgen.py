@@ -44,6 +44,7 @@ class YumlGenerator(Generator):
         self.associations_generated: Set[ClassDefinitionName] = None    # Classes with associations generated
         self.focus_classes: Optional[Set[ClassDefinitionName]] = None   # Classes to be completely filled
         self.gen_classes: Set[ClassDefinitionName] = None           # Classes to be generated
+        self.output_file_name: Optional[str] = None             # Location of output file if directory used
 
     def visit_schema(self, classes: Set[ClassDefinitionName]=None, directory: Optional[str] = None) -> None:
         if directory and not os.path.isdir(directory):
@@ -73,10 +74,11 @@ class YumlGenerator(Generator):
                    (('.' + self.format) if self.format not in ('yuml', 'png') else '')
         file_suffix = '.png' if self.format == 'yuml' else '.' + self.format
         if directory:
+            self.output_file_name = os.path.join(directory,
+                                       camelcase(classes[0] if classes else self.schema.name) + file_suffix)
             resp = requests.get(yuml_url, stream=True)
             if resp.ok:
-                with open(os.path.join(directory,
-                                       camelcase(classes[0] if classes else self.schema.name) + file_suffix), 'wb') as f:
+                with open(self.output_file_name, 'wb') as f:
                     for chunk in resp.iter_content(chunk_size=2048):
                         f.write(chunk)
         else:

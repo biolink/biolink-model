@@ -5,7 +5,7 @@ Used to characterize and specify the phenotypic abnormalities defined in the Phe
 
 URI: [http://bioentity.io/vocab/ClinicalModifier](http://bioentity.io/vocab/ClinicalModifier)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]^-\[ClinicalModifier],%20\[ClinicalModifier]-%20subclass%20of(i)%20%3F>\[OntologyClass])
+![img](images/ClinicalModifier.png)
 ## Mappings
 
  * [HP:0012823](http://purl.obolibrary.org/obo/HP_0012823)

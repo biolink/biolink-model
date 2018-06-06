@@ -5,7 +5,7 @@ describes the severity of a phenotypic feature or disease
 
 URI: [http://bioentity.io/vocab/SeverityValue](http://bioentity.io/vocab/SeverityValue)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]^-\[SeverityValue],%20\[SeverityValue]-%20subclass%20of(i)%20%3F>\[OntologyClass])
+![img](images/SeverityValue.png)
 ## Mappings
 
 ## Inheritance

@@ -5,7 +5,7 @@ any grouping of multiple genes or gene products related by common descent
 
 URI: [http://bioentity.io/vocab/GeneFamily](http://bioentity.io/vocab/GeneFamily)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MolecularEntity]^-\[GeneFamily|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F],%20\[GeneFamily]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneFamily]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[GeneFamily]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[GeneFamily]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[GeneFamily]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneFamily]uses%20-.->\[GeneGrouping])
+![img](images/GeneFamily.png)
 ## Mappings
 
  * [SIO:001380](http://semanticscience.org/resource/SIO_001380)

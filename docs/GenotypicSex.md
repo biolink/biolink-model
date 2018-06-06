@@ -5,7 +5,7 @@ An attribute corresponding to the genotypic sex of the individual, based upon ge
 
 URI: [http://bioentity.io/vocab/GenotypicSex](http://bioentity.io/vocab/GenotypicSex)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalSex]^-\[GenotypicSex],%20\[GenotypicSex]-%20subclass%20of(i)%20%3F>\[OntologyClass])
+![img](images/GenotypicSex.png)
 ## Mappings
 
  * [PATO:0020000](http://purl.obolibrary.org/obo/PATO_0020000)

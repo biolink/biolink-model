@@ -5,7 +5,7 @@ An interaction between a chemical entity and a biological process or pathway
 
 URI: [http://bioentity.io/vocab/ChemicalToPathwayAssociation](http://bioentity.io/vocab/ChemicalToPathwayAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[ChemicalToPathwayAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;subject(i):string;negated(i):boolean%20%3F;association_slot(i):string%20%3F],%20\[ChemicalToPathwayAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[ChemicalToPathwayAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[ChemicalToPathwayAssociation]-%20relation(i)>\[RelationshipType],%20\[ChemicalToPathwayAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[ChemicalToPathwayAssociation]-%20publications(i)%20*>\[Publication],%20\[ChemicalToPathwayAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[ChemicalToPathwayAssociation]-%20object>\[Pathway],%20\[ChemicalToPathwayAssociation]uses%20-.->\[ChemicalToThingAssociation])
+![img](images/ChemicalToPathwayAssociation.png)
 ## Mappings
 
  * [SIO:001250](http://semanticscience.org/resource/SIO_001250)

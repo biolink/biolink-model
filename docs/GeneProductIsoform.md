@@ -5,7 +5,7 @@ This is an abstract class that can be mixed in with different kinds of gene prod
 
 URI: [http://bioentity.io/vocab/GeneProductIsoform](http://bioentity.io/vocab/GeneProductIsoform)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneProduct]^-\[GeneProductIsoform|id(i):identifier_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_biological_sequence(i):biological_sequence%20%3F;name(i):label_type%20%3F],%20\[GeneProductIsoform]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneProductIsoform]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[GeneProductIsoform]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[GeneProductIsoform]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[GeneProductIsoform]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneProductIsoform]-%20in%20pathway%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[GeneProductIsoform]-%20in%20complex%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[GeneProductIsoform]-%20in%20cell%20population%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[GeneProductIsoform]-%20expressed%20in(i)%20%3F>\[AnatomicalEntity])
+![img](images/GeneProductIsoform.png)
 ## Mappings
 
 ## Inheritance

@@ -22,11 +22,12 @@ class MarkdownGenerator(Generator):
 
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='json') -> None:
         super().__init__(schema, fmt)
-        self.directory: str = None
+        self.directory: Optional[str] = None
+        self.image_directory: Optional[str] = None
         self.gen_classes: Optional[Set[ClassDefinitionName]] = None
         self.gen_classes_neighborhood: Optional[References] = None
 
-    def visit_schema(self, directory: str=None, classes: Set[ClassDefinitionName]=None) -> None:
+    def visit_schema(self, directory: str=None, classes: Set[ClassDefinitionName]=None, image_dir: bool=False) -> None:
         for cls in classes:
             if cls not in self.schema.classes:
                 raise ValueError("Unknown class name: {cls}")
@@ -34,6 +35,14 @@ class MarkdownGenerator(Generator):
         if classes:
             self.gen_classes_neighborhood = self.neighborhood(list(classes))
         self.directory = directory
+        if directory:
+            if not os.path.isdir(directory):
+                raise ValueError(f"Directory {directory} does not exist")
+        elif image_dir:
+            raise ValueError(f"Image directory can only be used with '-d' option")
+        if image_dir:
+            self.image_directory = os.path.join(directory, 'images')
+            os.makedirs(self.image_directory, exist_ok=True)
         self.synopsis = SchemaSynopsis(self.schema)
         os.makedirs(self.directory, exist_ok=True)
         with open(os.path.join(directory, 'index.md'), 'w') as ixfile:
@@ -83,10 +92,15 @@ class MarkdownGenerator(Generator):
                 cls_uri = BIOENTITY[camelcase(cls.name)]
                 print(f'URI: [{cls_uri}]({cls_uri})')
                 print()
-                yg = YumlGenerator(self.schema).serialize(classes=[cls.name])\
-                    .replace('[', '\\[').replace('?', '%3F').replace(' ', '%20')
+                if self.image_directory:
+                    yg = YumlGenerator(self.schema)
+                    yg.serialize(classes=[cls.name], directory=self.image_directory)
+                    img_url = os.path.join('images', os.path.basename(yg.output_file_name))
+                else:
+                    img_url = YumlGenerator(self.schema).serialize(classes=[cls.name])\
+                        .replace('[', '\\[').replace('?', '%3F').replace(' ', '%20')
 
-                print(f'![img]({yg})')
+                print(f'![img]({img_url})')
                 self.mappings(cls)
 
                 self.header(2, 'Inheritance')
@@ -250,6 +264,7 @@ class MarkdownGenerator(Generator):
 @click.option("-d", "--dir", help="Output directory")
 @click.option("-f", "--format", default='md', type=click.Choice(['md']), help="Output format")
 @click.option("--classes", "-c", default=None, multiple=True, help="Class(es) to emit")
-def cli(yamlfile, format, dir, classes):
+@click.option("-i", "--img", is_flag=True, help="Download YUML images to 'image' directory")
+def cli(yamlfile, format, dir, classes, img):
     """ Generate markdown documentation of a biolink model """
-    MarkdownGenerator(yamlfile, format).serialize(classes=classes, directory=dir)
+    MarkdownGenerator(yamlfile, format).serialize(classes=classes, directory=dir, image_dir=img)

@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/BiologicalSex](http://bioentity.io/vocab/BiologicalSex)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]^-\[BiologicalSex],%20\[BiologicalSex]^-\[GenotypicSex],%20\[BiologicalSex]^-\[PhenotypicSex],%20\[BiologicalSex]-%20subclass%20of(i)%20%3F>\[OntologyClass])
+![img](images/BiologicalSex.png)
 ## Mappings
 
  * [PATO:0000047](http://purl.obolibrary.org/obo/PATO_0000047)

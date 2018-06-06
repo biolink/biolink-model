@@ -5,7 +5,7 @@ The age group in which manifestations appear
 
 URI: [http://bioentity.io/vocab/Onset](http://bioentity.io/vocab/Onset)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]^-\[Onset],%20\[Onset]-%20subclass%20of(i)%20%3F>\[OntologyClass])
+![img](images/Onset.png)
 ## Mappings
 
  * [HP:0003674](http://purl.obolibrary.org/obo/HP_0003674)

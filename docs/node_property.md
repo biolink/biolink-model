@@ -14,26 +14,26 @@ URI: [http://bioentity.io/vocab/node_property](slot_uri)
 
 ## Children
 
- *  child: [systematic synonym](systematic_synonym.md)
- *  child: [phase](phase.md)
- *  child: [has gene](has_gene.md)
- *  child: [aggregate statistic](aggregate_statistic.md)
- *  child: [creation date](creation_date.md)
- *  child: [interbase coordinate](interbase_coordinate.md)
- *  child: [iri](iri.md) *subsets: translator_minimal*
- *  child: [update date](update_date.md)
- *  child: [has biological sequence](has_biological_sequence.md)
- *  child: [full name](full_name.md)
- *  child: [name](name.md) *subsets: translator_minimal*
- *  child: [description](description.md) *subsets: translator_minimal*
- *  child: [category](category.md) *subsets: translator_minimal*
- *  child: [id](id.md) *subsets: translator_minimal*
- *  child: [latitude](latitude.md)
- *  child: [longitude](longitude.md)
  *  child: [has chemical formula](has_chemical_formula.md)
+ *  child: [interbase coordinate](interbase_coordinate.md)
+ *  child: [id](id.md) *subsets: translator_minimal*
+ *  child: [full name](full_name.md)
+ *  child: [creation date](creation_date.md)
+ *  child: [name](name.md) *subsets: translator_minimal*
+ *  child: [phase](phase.md)
  *  child: [has zygosity](has_zygosity.md)
- *  child: [timepoint](timepoint.md)
+ *  child: [systematic synonym](systematic_synonym.md)
+ *  child: [update date](update_date.md)
+ *  child: [category](category.md) *subsets: translator_minimal*
  *  child: [genome build](genome_build.md)
+ *  child: [timepoint](timepoint.md)
+ *  child: [has biological sequence](has_biological_sequence.md)
+ *  child: [longitude](longitude.md)
+ *  child: [aggregate statistic](aggregate_statistic.md)
+ *  child: [has gene](has_gene.md)
+ *  child: [iri](iri.md) *subsets: translator_minimal*
+ *  child: [latitude](latitude.md)
+ *  child: [description](description.md) *subsets: translator_minimal*
  *  child: [filler](filler.md)
 ## Used in
 

@@ -5,7 +5,7 @@ Any published piece of information. Can refer to a whole publication, or to a pa
 
 URI: [http://bioentity.io/vocab/Publication](http://bioentity.io/vocab/Publication)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[InformationContentEntity]^-\[Publication|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F],%20\[Publication]-%20related%20to(i)%20%3F>\[NamedThing])
+![img](images/Publication.png)
 ## Mappings
 
  * [IAO:0000311](http://purl.obolibrary.org/obo/IAO_0000311)

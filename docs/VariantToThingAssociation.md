@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/VariantToThingAssociation](http://bioentity.io/vocab/VariantToThingAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[VariantToThingAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;object(i):string;association_slot(i):string%20%3F],%20\[VariantToThingAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[VariantToThingAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[VariantToThingAssociation]-%20relation(i)>\[RelationshipType],%20\[VariantToThingAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[VariantToThingAssociation]-%20publications(i)%20*>\[Publication],%20\[VariantToThingAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[VariantToThingAssociation]-%20subject>\[SequenceVariant])
+![img](images/VariantToThingAssociation.png)
 ## Mappings
 
 ## Inheritance
@@ -13,14 +13,14 @@ URI: [http://bioentity.io/vocab/VariantToThingAssociation](http://bioentity.io/v
  *  is_a: [association](Association.md) - A typed association between two entities, supported by evidence
 ## Children
 
+ *  mixin: [variant to disease association](VariantToDiseaseAssociation.md)
  *  mixin: [variant to population association](VariantToPopulationAssociation.md) - An association between a variant and a population, where the variant has particular frequency in the population
  *  mixin: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
- *  mixin: [variant to disease association](VariantToDiseaseAssociation.md)
 ## Used in
 
+ *  class: [variant to thing association](VariantToThingAssociation.md) references: [variant to disease association](VariantToDiseaseAssociation.md)
  *  class: [variant to thing association](VariantToThingAssociation.md) references: [variant to population association](VariantToPopulationAssociation.md)
  *  class: [variant to thing association](VariantToThingAssociation.md) references: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
- *  class: [variant to thing association](VariantToThingAssociation.md) references: [variant to disease association](VariantToDiseaseAssociation.md)
 ## Fields
 
  * _[subject](subject.md)_

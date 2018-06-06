@@ -5,7 +5,7 @@ An allele that varies in its sequence from what is considered the reference alle
 
 URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/SequenceVariant)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenomicEntity]^-\[SequenceVariant|name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_gene:string%20*;has_biological_sequence:biological_sequence%20%3F;id:identifier_type%20%3F],%20\[SequenceVariant]-%20related%20to(i)%20%3F>\[NamedThing],%20\[SequenceVariant]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[SequenceVariant]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[SequenceVariant]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[SequenceVariant]-%20in%20taxon(i)%20%3F>\[OrganismTaxon])
+![img](images/SequenceVariant.png)
 ## Mappings
 
  * [GENO:0000002](http://purl.obolibrary.org/obo/GENO_0000002)

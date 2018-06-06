@@ -5,7 +5,7 @@ A series of actions conducted in a certain order or manner
 
 URI: [http://bioentity.io/vocab/Procedure](http://bioentity.io/vocab/Procedure)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[Procedure|has_participant(i):string%20%3F;has_input(i):string%20%3F],%20\[Procedure]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[Procedure]-%20precedes(i)%20%3F>\[Occurrent])
+![img](images/Procedure.png)
 ## Mappings
 
  * [UMLSSG:PROC](http://purl.obolibrary.org/obo/UMLSSG_PROC)

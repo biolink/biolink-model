@@ -5,7 +5,7 @@ An association between a macromolecular machine (gene, gene product or complex o
 
 URI: [http://bioentity.io/vocab/FunctionalAssociation](http://bioentity.io/vocab/FunctionalAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[FunctionalAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F],%20\[FunctionalAssociation]^-\[GeneToGoTermAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToBiologicalProcessAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToCellularComponentAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToMolecularActivityAssociation],%20\[FunctionalAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[FunctionalAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[FunctionalAssociation]-%20relation(i)>\[RelationshipType],%20\[FunctionalAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[FunctionalAssociation]-%20publications(i)%20*>\[Publication],%20\[FunctionalAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[FunctionalAssociation]-%20subject>\[MacromolecularMachine],%20\[FunctionalAssociation]-%20object>\[GeneOntologyClass])
+![img](images/FunctionalAssociation.png)
 ## Mappings
 
 ## Inheritance
@@ -13,16 +13,16 @@ URI: [http://bioentity.io/vocab/FunctionalAssociation](http://bioentity.io/vocab
  *  is_a: [association](Association.md) - A typed association between two entities, supported by evidence
 ## Children
 
- *  child: [gene to go term association](GeneToGoTermAssociation.md)
  *  child: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
- *  child: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
  *  child: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
+ *  child: [gene to go term association](GeneToGoTermAssociation.md)
+ *  child: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
 ## Used in
 
- *  class: [functional association](FunctionalAssociation.md) references: [gene to go term association](GeneToGoTermAssociation.md)
  *  class: [functional association](FunctionalAssociation.md) references: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.md)
- *  class: [functional association](FunctionalAssociation.md) references: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.md)
  *  class: [functional association](FunctionalAssociation.md) references: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.md)
+ *  class: [functional association](FunctionalAssociation.md) references: [gene to go term association](GeneToGoTermAssociation.md)
+ *  class: [functional association](FunctionalAssociation.md) references: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.md)
 ## Fields
 
  * _[subject](subject.md)_

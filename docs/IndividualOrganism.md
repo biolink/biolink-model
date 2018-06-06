@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/IndividualOrganism](http://bioentity.io/vocab/IndividualOrganism)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismalEntity]^-\[IndividualOrganism|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F],%20\[IndividualOrganism]^-\[Case],%20\[IndividualOrganism]-%20related%20to(i)%20%3F>\[NamedThing],%20\[IndividualOrganism]-%20in%20taxon%20%3F>\[OrganismTaxon],%20\[IndividualOrganism]uses%20-.->\[ThingWithTaxon])
+![img](images/IndividualOrganism.png)
 ## Mappings
 
  * [SIO:010000](http://semanticscience.org/resource/SIO_010000)

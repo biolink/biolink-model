@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/RnaProduct](http://bioentity.io/vocab/RnaProduct)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneProduct]^-\[RnaProduct|id(i):identifier_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_biological_sequence(i):biological_sequence%20%3F;name(i):label_type%20%3F],%20\[RnaProduct]^-\[RnaProductIsoform],%20\[RnaProduct]^-\[NoncodingRnaProduct],%20\[RnaProduct]-%20related%20to(i)%20%3F>\[NamedThing],%20\[RnaProduct]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[RnaProduct]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[RnaProduct]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[RnaProduct]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[RnaProduct]-%20in%20pathway%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[RnaProduct]-%20in%20complex%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[RnaProduct]-%20in%20cell%20population%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[RnaProduct]-%20expressed%20in(i)%20%3F>\[AnatomicalEntity])
+![img](images/RnaProduct.png)
 ## Mappings
 
  * [CHEBI:33697](http://purl.obolibrary.org/obo/CHEBI_33697)
@@ -16,13 +16,13 @@ URI: [http://bioentity.io/vocab/RnaProduct](http://bioentity.io/vocab/RnaProduct
  *  is_a: [gene product](GeneProduct.md) - The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
 ## Children
 
- *  child: [RNA product isoform](RnaProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
  *  child: [noncoding RNA product](NoncodingRnaProduct.md)
+ *  child: [RNA product isoform](RnaProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
 ## Used in
 
  *  class: [RNA product](RnaProduct.md) references: [RNA product isoform](RnaProductIsoform.md)
- *  class: [RNA product](RnaProduct.md) references: [gene product](GeneProduct.md)
  *  class: [RNA product](RnaProduct.md) references: [noncoding RNA product](NoncodingRnaProduct.md)
+ *  class: [RNA product](RnaProduct.md) references: [gene product](GeneProduct.md)
 ## Fields
 
  * _[related to](related_to.md)_

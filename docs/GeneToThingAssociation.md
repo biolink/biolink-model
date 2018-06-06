@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/GeneToThingAssociation](http://bioentity.io/vocab/GeneToThingAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[GeneToThingAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;object(i):string;association_slot(i):string%20%3F],%20\[GeneToThingAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneToThingAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToThingAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToThingAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToThingAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToThingAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToThingAssociation]-%20subject>\[GeneOrGeneProduct])
+![img](images/GeneToThingAssociation.png)
 ## Mappings
 
 ## Inheritance
@@ -13,12 +13,12 @@ URI: [http://bioentity.io/vocab/GeneToThingAssociation](http://bioentity.io/voca
  *  is_a: [association](Association.md) - A typed association between two entities, supported by evidence
 ## Children
 
- *  mixin: [gene to disease association](GeneToDiseaseAssociation.md)
  *  mixin: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
+ *  mixin: [gene to disease association](GeneToDiseaseAssociation.md)
 ## Used in
 
- *  class: [gene to thing association](GeneToThingAssociation.md) references: [gene to disease association](GeneToDiseaseAssociation.md)
  *  class: [gene to thing association](GeneToThingAssociation.md) references: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
+ *  class: [gene to thing association](GeneToThingAssociation.md) references: [gene to disease association](GeneToDiseaseAssociation.md)
 ## Fields
 
  * _[subject](subject.md)_

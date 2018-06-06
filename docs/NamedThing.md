@@ -5,7 +5,7 @@ a databased entity or concept/class
 
 URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing|id:identifier_type%20%3F;name:label_type%20%3F;category:label_type%20%3F;node_property:string%20%3F;iri:iri_type%20%3F;full_name:label_type%20%3F;description:narrative_text%20%3F;systematic_synonym:label_type%20%3F]^-\[BiologicalEntity],%20\[NamedThing]^-\[ClinicalEntity],%20\[NamedThing]^-\[Device],%20\[NamedThing]^-\[InformationContentEntity],%20\[NamedThing]^-\[PlanetaryEntity],%20\[NamedThing]-%20related%20to%20%3F>\[NamedThing])
+![img](images/NamedThing.png)
 ## Mappings
 
  * [UMLSSG:OBJC](http://purl.obolibrary.org/obo/UMLSSG_OBJC)
@@ -15,18 +15,18 @@ URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing
 
 ## Children
 
- *  child: [biological entity](BiologicalEntity.md)
- *  child: [clinical entity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
- *  child: [device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
- *  child: [information content entity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
  *  child: [planetary entity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet
+ *  child: [information content entity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
+ *  child: [biological entity](BiologicalEntity.md)
+ *  child: [device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
+ *  child: [clinical entity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
 ## Used in
 
- *  class: [named thing](NamedThing.md) references: [biological entity](BiologicalEntity.md)
- *  class: [named thing](NamedThing.md) references: [clinical entity](ClinicalEntity.md)
- *  class: [named thing](NamedThing.md) references: [device](Device.md)
- *  class: [named thing](NamedThing.md) references: [information content entity](InformationContentEntity.md)
  *  class: [named thing](NamedThing.md) references: [planetary entity](PlanetaryEntity.md)
+ *  class: [named thing](NamedThing.md) references: [information content entity](InformationContentEntity.md)
+ *  class: [named thing](NamedThing.md) references: [biological entity](BiologicalEntity.md)
+ *  class: [named thing](NamedThing.md) references: [device](Device.md)
+ *  class: [named thing](NamedThing.md) references: [clinical entity](ClinicalEntity.md)
 ## Fields
 
  * _[id](id.md) *subsets: translator_minimal*_

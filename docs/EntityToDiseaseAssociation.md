@@ -5,7 +5,7 @@ mixin class for any association whose object (target node) is a disease
 
 URI: [http://bioentity.io/vocab/EntityToDiseaseAssociation](http://bioentity.io/vocab/EntityToDiseaseAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EntityToDiseaseAssociation|frequency_qualifier:frequency_value%20%3F]-%20frequency%20qualifier%20%3F>\[FrequencyValue],%20\[EntityToDiseaseAssociation]-%20severity%20qualifier%20%3F>\[SeverityValue],%20\[EntityToDiseaseAssociation]-%20onset%20qualifier%20%3F>\[Onset],%20\[EntityToDiseaseAssociation]-%20object%20%3F>\[Disease])
+![img](images/EntityToDiseaseAssociation.png)
 ## Mappings
 
 ## Inheritance

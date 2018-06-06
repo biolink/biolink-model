@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/RelationshipQuantifier](http://bioentity.io/vocab/RelationshipQuantifier)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[RelationshipQuantifier]^-\[FrequencyQuantifier],%20\[RelationshipQuantifier]^-\[SenstivityQuantifier],%20\[RelationshipQuantifier]^-\[SpecificityQuantifier])
+![img](images/RelationshipQuantifier.png)
 ## Mappings
 
 ## Inheritance

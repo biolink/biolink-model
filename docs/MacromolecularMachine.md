@@ -5,7 +5,7 @@ A union of gene, gene product, and macromolecular complex. These are the basic u
 
 URI: [http://bioentity.io/vocab/MacromolecularMachine](http://bioentity.io/vocab/MacromolecularMachine)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenomicEntity]^-\[MacromolecularMachine|id(i):identifier_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_biological_sequence(i):biological_sequence%20%3F;name:label_type%20%3F],%20\[MacromolecularMachine]^-\[GeneOrGeneProduct],%20\[MacromolecularMachine]^-\[MacromolecularComplex],%20\[MacromolecularMachine]-%20related%20to(i)%20%3F>\[NamedThing],%20\[MacromolecularMachine]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[MacromolecularMachine]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[MacromolecularMachine]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[MacromolecularMachine]-%20in%20taxon(i)%20%3F>\[OrganismTaxon])
+![img](images/MacromolecularMachine.png)
 ## Mappings
 
 ## Inheritance
@@ -13,12 +13,12 @@ URI: [http://bioentity.io/vocab/MacromolecularMachine](http://bioentity.io/vocab
  *  is_a: [genomic entity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
 ## Children
 
- *  child: [macromolecular complex](MacromolecularComplex.md)
  *  child: [gene or gene product](GeneOrGeneProduct.md) - a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
+ *  child: [macromolecular complex](MacromolecularComplex.md)
 ## Used in
 
- *  class: [macromolecular machine](MacromolecularMachine.md) references: [macromolecular complex](MacromolecularComplex.md)
  *  class: [macromolecular machine](MacromolecularMachine.md) references: [gene or gene product](GeneOrGeneProduct.md)
+ *  class: [macromolecular machine](MacromolecularMachine.md) references: [macromolecular complex](MacromolecularComplex.md)
 ## Fields
 
  * _[name](name.md) *subsets: translator_minimal*_

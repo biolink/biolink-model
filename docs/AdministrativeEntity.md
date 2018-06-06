@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/AdministrativeEntity](http://bioentity.io/vocab/AdministrativeEntity)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[AdministrativeEntity]^-\[Provider])
+![img](images/AdministrativeEntity.png)
 ## Mappings
 
 ## Inheritance
