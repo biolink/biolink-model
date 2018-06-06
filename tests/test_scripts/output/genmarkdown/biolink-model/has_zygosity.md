@@ -3,7 +3,7 @@
 
 
 
-URI: http://bioentity.io/vocab/has_zygosity
+URI: [http://bioentity.io/vocab/has_zygosity](slot_uri)
 ## Mappings
 
 ## Domain and Range

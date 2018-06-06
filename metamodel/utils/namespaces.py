@@ -1,13 +1,11 @@
 from typing import Dict, Optional
 
 from rdflib import Namespace
-from rdflib.namespace import DCTERMS
 
 SIO = Namespace('http://semanticscience.org/resource/SIO_')
 HGNC = Namespace('https://monarchinitiative.org/gene/')
 OBOID = Namespace('http://purl.obolibrary.org/obo/_')
 BIOENTITY = Namespace("http://bioentity.io/vocab/")
-YUML = Namespace('http://yuml.me/diagram/nofunky/class/')
 OBO = Namespace("http://purl.obolibrary.org/obo/")
 META = Namespace("http://bioentity.io/meta/")
 BIOTOP = Namespace("http://purl.org/biotop/biotop.owl#")
@@ -17,7 +15,6 @@ known_namespaces: Dict[str, Namespace] = {
     'HGNC': HGNC,
     'OBO_': OBOID,
     'BIOENTITY': BIOENTITY,
-    'YUML': YUML,
     'OBO': OBO,
     'META': META,
     'BIOTOP': BIOTOP
@@ -27,4 +24,6 @@ known_namespaces: Dict[str, Namespace] = {
 def nsname_to_url(nsname: str) -> Optional[str]:
     if ':' in nsname and '://' not in nsname:
         raise ValueError("Not a nsname: {nsname}")
-    prefix = nsname.split(':')[0].upper()
+    prefix, name = nsname.split(':')
+    prefix = prefix.upper()
+    return known_namespaces[prefix][name] if prefix in known_namespaces else None

@@ -3,7 +3,7 @@
 
 stage at which expression takes place
 
-URI: http://bioentity.io/vocab/stage_qualifier
+URI: [http://bioentity.io/vocab/stage_qualifier](slot_uri)
 ## Mappings
 
 ## Domain and Range

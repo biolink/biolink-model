@@ -3,7 +3,7 @@
 
 name, uri or description of the source of the schema.  Supplied by the loader
 
-URI: http://bioentity.io/vocab/source_file
+URI: [http://bioentity.io/vocab/source_file](slot_uri)
 ## Mappings
 
 ## Domain and Range

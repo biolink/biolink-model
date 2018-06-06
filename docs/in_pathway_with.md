@@ -3,7 +3,7 @@
 
 holds between two genes or gene products that are part of in the same biological pathway
 
-URI: http://bioentity.io/vocab/in_pathway_with
+URI: [http://bioentity.io/vocab/in_pathway_with](slot_uri)
 ## Mappings
 
 ## Domain and Range

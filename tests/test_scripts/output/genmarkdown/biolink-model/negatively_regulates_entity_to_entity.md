@@ -3,14 +3,14 @@
 
 
 
-URI: http://bioentity.io/vocab/negatively_regulates_entity_to_entity
+URI: [http://bioentity.io/vocab/negatively_regulates_entity_to_entity](slot_uri)
 ## Mappings
 
  * [RO:0002449](http://purl.obolibrary.org/obo/RO_0002449)
  * [SEMMEDDB:INHIBITS](http://purl.obolibrary.org/obo/SEMMEDDB_INHIBITS)
 ## Domain and Range
 
-None -> None
+None -> string
 ## Inheritance
 
  *  is_a: [regulates, entity to entity](regulates_entity_to_entity.md) *subsets: translator_minimal*

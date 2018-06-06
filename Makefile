@@ -1,7 +1,7 @@
 # ----------------------------------------
 # TOP LEVEL TARGETS
 # ----------------------------------------
-all: build test 
+all: build test
 test: pytests
 build: context.jsonld build_core contrib_build_monarch contrib_build_translator
 
@@ -80,27 +80,20 @@ contrib/%-golr:
 # Python
 # ~~~~~~~~~~~~~~~~~~~~
 metamodel/metamodel.py: meta.yaml
-    gen-py-classes $< > $@
+	gen-py-classes $< > $@
 
 biolinkmodel/datamodel.py: biolink-model.yaml
 	gen-py-classes $< > $@
 
 contrib/%/datamodel.py: contrib/%.yaml
-	./bin/gen-py-classes.py $< > $@
-
-biolinkmodel/schema.py: biolink-model.yaml
-	./bin/gen-mm-schema.py $< > $@
-
-contrib/%/schema.py: contrib/%.yaml
-	./bin/gen-mm-schema.py $< > $@
-
+	gen-py-classes $< > $@
 
 # trigger manually to avoid git churn
 gv: biolink-model.yaml 
-	./bin/gen-graphviz.py -d graphviz $<
+	gen-graphviz -d graphviz $<
 
 graphviz/%.png: biolink-model.yaml 
-	./bin/gen-graphviz.py  -c $* $< -o graphviz/$*
+	gen-graphviz  -c $* $< -o graphviz/$*
 
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -108,20 +101,20 @@ graphviz/%.png: biolink-model.yaml
 # ~~~~~~~~~~~~~~~~~~~~
 
 shex/biolink-model.shex: biolink-model.yaml 
-	./bin/gen-shex.py $< > $@
+	gen-shex $< > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Graphql
 # ~~~~~~~~~~~~~~~~~~~~
 
 graphql/biolink-model.graphql: biolink-model.yaml 
-	gen-graphql.py $< > $@
+	gen-graphql $< > $@
 
 proto/biolink-model.proto: biolink-model.yaml 
-	./bin/gen-proto.py $< > $@
+	gen-proto $< > $@
 
 contrib/%/%.graphql: contrib/%.yaml 
-	./bin/gen-graphql.py $< > $@
+	gen-graphql $< > $@
 
 # ----------------------------------------
 # Ontology conversion

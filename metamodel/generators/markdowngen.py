@@ -80,7 +80,8 @@ class MarkdownGenerator(Generator):
                 self.frontmatter(f"Class: {cls.name}")
                 self.para(be(cls.description))
 
-                print(f'URI: {str(BIOENTITY[camelcase(cls.name)])}')
+                cls_uri = BIOENTITY[camelcase(cls.name)]
+                print(f'URI: [{cls_uri}]({cls_uri})')
                 print()
                 yg = YumlGenerator(self.schema).serialize(classes=[cls.name])\
                     .replace('[', '\\[').replace('?', '%3F').replace(' ', '%20')
@@ -90,17 +91,17 @@ class MarkdownGenerator(Generator):
 
                 self.header(2, 'Inheritance')
                 if cls.is_a is not None:
-                    self.bullet(f' is_a: {self.link(cls.is_a)}')
+                    self.bullet(f' is_a: {self.link(cls.is_a, use_desc=True)}')
                 for mixin in cls.mixins:
-                    self.bullet(f' mixin: {self.link(mixin)}')
+                    self.bullet(f' mixin: {self.link(mixin, use_desc=True)}')
 
                 self.header(2, 'Children')
                 if cls.name in self.synopsis.isarefs:
                     for child in self.synopsis.isarefs[cls.name].classrefs:
-                        self.bullet(f' child: {self.link(child)}')
+                        self.bullet(f' child: {self.link(child, use_desc=True)}')
                 if cls.name in self.synopsis.mixinrefs:
                     for mixin in self.synopsis.mixinrefs[cls.name].classrefs:
-                        self.bullet(f' mixin: {self.link(mixin)}')
+                        self.bullet(f' mixin: {self.link(mixin, use_desc=True)}')
                 if cls.name in self.synopsis.classrefs:
                     self.header(2, 'Used in')
                     for cn in self.synopsis.classrefs[cls.name].classrefs:
@@ -108,23 +109,11 @@ class MarkdownGenerator(Generator):
 
                 self.header(2, 'Fields')
                 for sn in cls.slots:
-                    slot = self.schema.slots[sn]
-                    self.bullet(f'_{self.link(slot)}_')
-                    if slot.description:
-                        self.bullet(f'_{slot.description}_', level=1)
-                    qual = '*' if slot.multivalued else ''
-                    qual += ' [required]' if slot.required else ''
-                    self.bullet(f'range: {self.link(slot.range) if slot.range else ""}{qual}', level=1)
-                    if slot.subproperty_of:
-                        self.bullet(f'edge label: {self.link(slot.subproperty_of)}', level=1)
-                    for example in slot.examples:
-                        self.bullet(f'Example: {self.xlink(example.value)} {example.description}', level=1)
-                    if slot.is_a:
-                        parent = self.schema.slots[slot.is_a]
-                        if parent.domain == cls.name:
-                            self.bullet('__Local__', level=1)
-                        else:
-                            self.bullet(f'inherited from: {self.link(parent.name)}', level=1)
+                    self.slot_field(cls, self.schema.slots[sn])
+
+                for slot in self.all_slots(cls):
+                    if slot.range in self.schema.classes and slot.name not in cls.slots:
+                       self.slot_field(cls, slot)
 
         return True
 
@@ -133,7 +122,8 @@ class MarkdownGenerator(Generator):
             with redirect_stdout(slotfile):
                 self.frontmatter(f"Slot: {aliased_slot_name}")
                 self.para(be(slot.description))
-                print(f'URI: {str(BIOENTITY[underscore(slot.name)])}')
+                slot_uri = BIOENTITY[underscore(slot.name)]
+                print(f'URI: [{slot_uri}](slot_uri)')
                 self.mappings(slot)
 
                 self.header(2, 'Domain and Range')
@@ -193,6 +183,22 @@ class MarkdownGenerator(Generator):
         else:
             return True
 
+    def slot_field(self, cls: ClassDefinition, slot: SlotDefinition) -> None:
+        self.bullet(f'_{self.link(slot)}_')
+        if slot.description:
+            self.bullet(f'_{slot.description}_', level=1)
+        qual = '*' if slot.multivalued else ''
+        qual += ' [required]' if slot.required else ''
+        self.bullet(f'range: {self.link(slot.range) if slot.range else ""}{qual}', level=1)
+        if slot.subproperty_of:
+            self.bullet(f'edge label: {self.link(slot.subproperty_of)}', level=1)
+        for example in slot.examples:
+            self.bullet(f'Example: {self.xlink(example.value)} {example.description}', level=1)
+        if slot.name in cls.slots:
+            self.bullet('__Local__', level=1)
+        else:
+            self.bullet(f'inherited from: {self.link(slot.domain)}', level=1)
+
     # --
     # FORMATTING
     # --
@@ -225,12 +231,15 @@ class MarkdownGenerator(Generator):
         self.header(1, thingtype)
         # print(f'---\nlayout: {layout}\n---\n')
 
-    def link(self, ref: Optional[Union[str, Element]]) -> str:
+    def link(self, ref: Optional[Union[str, Element]], use_desc: bool=False) -> str:
         obj = self.obj_for(ref) if isinstance(ref, str) else ref
+        nl = '\n'
         return ref if obj is None or not self.secondary_ref(obj.name) \
-            else  f'[{self.aliased_slot_name(obj) if isinstance(obj, SlotDefinition) else obj.name}]' \
-                  f'({self.obj_name(obj)}.{self.format})' + \
-                  (f' *subsets: {"| ".join(obj.in_subset)}*' if obj.in_subset else '')
+            else f'[{self.aliased_slot_name(obj) if isinstance(obj, SlotDefinition) else obj.name}]' \
+                 f'({self.obj_name(obj)}.{self.format})' + \
+                 (f' *subsets: {"| ".join(obj.in_subset)}*' if obj.in_subset else '') + \
+                 (f' - {obj.description.split(nl)[0]}' if use_desc and
+                                                          isinstance(obj, Element) and obj.description else '')
 
     def xlink(self, id_: str) -> str:
         return f'[{id_}]({self.id_to_url(id_)})'

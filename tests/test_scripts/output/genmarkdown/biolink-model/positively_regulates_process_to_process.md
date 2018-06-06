@@ -3,13 +3,13 @@
 
 
 
-URI: http://bioentity.io/vocab/positively_regulates_process_to_process
+URI: [http://bioentity.io/vocab/positively_regulates_process_to_process](slot_uri)
 ## Mappings
 
  * [RO:0002213](http://purl.obolibrary.org/obo/RO_0002213)
 ## Domain and Range
 
-None -> None
+None -> string
 ## Inheritance
 
  *  is_a: [regulates, process to process](regulates_process_to_process.md)

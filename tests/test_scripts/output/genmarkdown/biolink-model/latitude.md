@@ -3,7 +3,7 @@
 
 latitude
 
-URI: http://bioentity.io/vocab/latitude
+URI: [http://bioentity.io/vocab/latitude](slot_uri)
 ## Mappings
 
  * [wgs:lat](http://purl.obolibrary.org/obo/wgs_lat)
@@ -17,5 +17,5 @@ None -> float
 
 ## Used in
 
- *  usage: [geographic location at time](GeographicLocationAtTime.md)
  *  usage: [geographic location](GeographicLocation.md)
+ *  usage: [geographic location at time](GeographicLocationAtTime.md)

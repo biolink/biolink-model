@@ -3,7 +3,7 @@
 
 used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)
 
-URI: http://bioentity.io/vocab/in_subset
+URI: [http://bioentity.io/vocab/in_subset](slot_uri)
 ## Mappings
 
  * [oio](oio)

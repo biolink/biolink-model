@@ -3,12 +3,12 @@
 
 TODO
 
-URI: http://bioentity.io/vocab/interbase_coordinate
+URI: [http://bioentity.io/vocab/interbase_coordinate](slot_uri)
 ## Mappings
 
 ## Domain and Range
 
-None -> None
+None -> string
 ## Inheritance
 
  *  is_a: [node property](node_property.md)

@@ -5,6 +5,7 @@ import biolinkmodel.datamodel
 import metamodel.metamodel
 from metamodel.generators.pythongen import PythonGenerator
 # If true, update the output
+from tests import refresh_files
 from tests.test_scripts.clicktestcase import metadata_filter
 
 update_master: bool = False
@@ -23,10 +24,12 @@ class PythonGenTestCase(unittest.TestCase):
         with open(model_out, 'w') as pyfile:
             pyfile.write(str(PythonGenerator(path).serialize()))
 
-        if update_master:
+        if update_master or refresh_files:
             with open(os.path.join(cwd, master_file), 'w') as masterf:
                 masterf.write(str(PythonGenerator(path).serialize()))
-            self.assertFalse(True, f"{path}: Master file updated. Set: update_master to False")
+            self.assertFalse(update_master, f"{path}: Master file updated. Set: update_master to False")
+            if refresh_files:
+                print(f"{path} refreshed")
 
         with open(model_out) as newf:
             newdat = metadata_filter(newf.read())

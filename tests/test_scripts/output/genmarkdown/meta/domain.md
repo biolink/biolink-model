@@ -3,7 +3,7 @@
 
 The class to which this slot applies.
 
-URI: http://bioentity.io/vocab/domain
+URI: [http://bioentity.io/vocab/domain](slot_uri)
 ## Mappings
 
 ## Domain and Range

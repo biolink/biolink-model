@@ -3,7 +3,7 @@
 
 True means that this slot must be unique across the collection of slots
 
-URI: http://bioentity.io/vocab/identifier
+URI: [http://bioentity.io/vocab/identifier](slot_uri)
 ## Mappings
 
 ## Domain and Range

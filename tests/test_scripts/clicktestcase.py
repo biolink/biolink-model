@@ -9,18 +9,25 @@ from typing import Union, List, Optional, Callable
 # Make sure you import click from here rather than the root
 import click
 
+
 # Stop click from doing a sys.exit
+from tests import refresh_files
+
+
 class CLIExitException(Exception):
     ...
 
+
 def no_click_exit(self, code=0):
     raise CLIExitException()
+
 
 click.core.Context.exit = no_click_exit
 
 
 def metadata_filter(s: str) -> str:
     return re.sub(r'Auto generated from.* ', '', re.sub(r'# Generation date: .*\n', '', s, re.MULTILINE), re.MULTILINE)
+
 
 class ClickTestCase(unittest.TestCase):
     testdir: str = None
@@ -53,9 +60,11 @@ class ClickTestCase(unittest.TestCase):
             except CLIExitException:
                 pass
 
-        if testfile and update_test_file:
+        if testfile and (update_test_file or refresh_files):
             with open(testfile_path, 'w') as f:
                 f.write(outf.getvalue())
+            if refresh_files:
+                print(f'{testfile_path} updated')
 
         if testfile:
             with open(testfile_path) as f:
@@ -68,7 +77,6 @@ class ClickTestCase(unittest.TestCase):
                 self.assertEqual(old_txt.strip(), new_txt.strip())
         else:
             print("Directory comparison needs to be added", file=sys.stderr)
-
 
 
 if __name__ == '__main__':

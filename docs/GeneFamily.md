@@ -3,9 +3,9 @@
 
 any grouping of multiple genes or gene products related by common descent
 
-URI: http://bioentity.io/vocab/GeneFamily
+URI: [http://bioentity.io/vocab/GeneFamily](http://bioentity.io/vocab/GeneFamily)
 
-![img](http://yuml.me/diagram/nofunky/class/\[MolecularEntity]^-\[GeneFamily],%20\[GeneFamily]uses%20-.->\[GeneGrouping],%20)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MolecularEntity]^-\[GeneFamily|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F],%20\[GeneFamily]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneFamily]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[GeneFamily]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[GeneFamily]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[GeneFamily]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneFamily]uses%20-.->\[GeneGrouping])
 ## Mappings
 
  * [SIO:001380](http://semanticscience.org/resource/SIO_001380)
@@ -13,9 +13,27 @@ URI: http://bioentity.io/vocab/GeneFamily
  * [WD:Q417841](http://purl.obolibrary.org/obo/WD_Q417841)
 ## Inheritance
 
- *  is_a: [molecular entity](MolecularEntity.md)
- *  mixin: [gene grouping](GeneGrouping.md)
+ *  is_a: [molecular entity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
+ *  mixin: [gene grouping](GeneGrouping.md) - any grouping of multiple genes or gene products
 ## Children
 
 ## Fields
 
+ * _[related to](related_to.md)_
+    * _A grouping for any relationship type that holds between any two things_
+    * range: [named thing](NamedThing.md)
+    * inherited from: [named thing](NamedThing.md)
+ * _[molecularly interacts with](molecularly_interacts_with.md) *subsets: translator_minimal*_
+    * range: [molecular entity](MolecularEntity.md)
+    * inherited from: [molecular entity](MolecularEntity.md)
+ * _[regulates, entity to entity](regulates_entity_to_entity.md) *subsets: translator_minimal*_
+    * range: [molecular entity](MolecularEntity.md)
+    * inherited from: [molecular entity](MolecularEntity.md)
+ * _[biomarker for](biomarker_for.md) *subsets: translator_minimal*_
+    * _holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature._
+    * range: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
+    * inherited from: [molecular entity](MolecularEntity.md)
+ * _[in taxon](in_taxon.md) *subsets: translator_minimal*_
+    * _connects a thing to a class representing a taxon_
+    * range: [organism taxon](OrganismTaxon.md)
+    * inherited from: [thing with taxon](ThingWithTaxon.md)

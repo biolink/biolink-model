@@ -3,7 +3,7 @@
 
 slot is a defining slot -- injection into the defining_slots list
 
-URI: http://bioentity.io/vocab/definitional
+URI: [http://bioentity.io/vocab/definitional](slot_uri)
 ## Mappings
 
 ## Domain and Range

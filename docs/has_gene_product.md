@@ -3,7 +3,7 @@
 
 holds between a gene and a transcribed and/or translated product generated from it
 
-URI: http://bioentity.io/vocab/has_gene_product
+URI: [http://bioentity.io/vocab/has_gene_product](slot_uri)
 ## Mappings
 
  * [RO:0002205](http://purl.obolibrary.org/obo/RO_0002205)

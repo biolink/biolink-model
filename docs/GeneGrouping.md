@@ -3,16 +3,16 @@
 
 any grouping of multiple genes or gene products
 
-URI: http://bioentity.io/vocab/GeneGrouping
+URI: [http://bioentity.io/vocab/GeneGrouping](http://bioentity.io/vocab/GeneGrouping)
 
-![img](http://yuml.me/diagram/nofunky/class/)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/)
 ## Mappings
 
 ## Inheritance
 
 ## Children
 
- *  mixin: [gene family](GeneFamily.md)
+ *  mixin: [gene family](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
 ## Used in
 
  *  class: [gene grouping](GeneGrouping.md) references: [gene family](GeneFamily.md)

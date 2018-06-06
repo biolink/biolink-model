@@ -3,7 +3,7 @@
 
 holds between two processes, where one completes before the other begins
 
-URI: http://bioentity.io/vocab/precedes
+URI: [http://bioentity.io/vocab/precedes](slot_uri)
 ## Mappings
 
  * [BFO:0000063](http://purl.obolibrary.org/obo/BFO_0000063)
@@ -21,5 +21,5 @@ URI: http://bioentity.io/vocab/precedes
 
  *  usage: [biological process](BiologicalProcess.md)
  *  usage: [occurrent](Occurrent.md)
- *  usage: [environmental process](EnvironmentalProcess.md)
  *  usage: [molecular activity](MolecularActivity.md)
+ *  usage: [environmental process](EnvironmentalProcess.md)

@@ -3,7 +3,7 @@
 
 holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
 
-URI: http://bioentity.io/vocab/produces
+URI: [http://bioentity.io/vocab/produces](slot_uri)
 ## Mappings
 
  * [RO:0003000](http://purl.obolibrary.org/obo/RO_0003000)
@@ -11,7 +11,7 @@ URI: http://bioentity.io/vocab/produces
  * [SEMMEDDB:PRODUCES](http://purl.obolibrary.org/obo/SEMMEDDB_PRODUCES)
 ## Domain and Range
 
-None -> None
+None -> string
 ## Inheritance
 
  *  is_a: [related to](related_to.md)

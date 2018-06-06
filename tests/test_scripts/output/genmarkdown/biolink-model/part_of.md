@@ -3,7 +3,7 @@
 
 holds between parts and wholes (material entities or processes)
 
-URI: http://bioentity.io/vocab/part_of
+URI: [http://bioentity.io/vocab/part_of](slot_uri)
 ## Mappings
 
  * [BFO:0000050](http://purl.obolibrary.org/obo/BFO_0000050)
@@ -11,7 +11,7 @@ URI: http://bioentity.io/vocab/part_of
  * [WD:P361](http://purl.obolibrary.org/obo/WD_P361)
 ## Domain and Range
 
-None -> None
+None -> string
 ## Inheritance
 
  *  is_a: [overlaps](overlaps.md) *subsets: translator_minimal*

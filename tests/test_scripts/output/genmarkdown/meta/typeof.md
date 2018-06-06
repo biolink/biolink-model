@@ -3,7 +3,7 @@
 
 a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time') or another type definition
 
-URI: http://bioentity.io/vocab/typeof
+URI: [http://bioentity.io/vocab/typeof](slot_uri)
 ## Mappings
 
 ## Domain and Range

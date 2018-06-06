@@ -3,7 +3,7 @@
 
 
 
-URI: http://bioentity.io/vocab/end_interbase_coordinate
+URI: [http://bioentity.io/vocab/end_interbase_coordinate](slot_uri)
 ## Mappings
 
 ## Domain and Range

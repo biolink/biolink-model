@@ -3,17 +3,17 @@
 
 
 
-URI: http://bioentity.io/vocab/DiseaseToThingAssociation
+URI: [http://bioentity.io/vocab/DiseaseToThingAssociation](http://bioentity.io/vocab/DiseaseToThingAssociation)
 
-![img](http://yuml.me/diagram/nofunky/class/\[Association]^-\[DiseaseToThingAssociation],%20\[DiseaseToThingAssociation]-%20subject>\[Disease],%20)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[DiseaseToThingAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;object(i):string;association_slot(i):string%20%3F],%20\[DiseaseToThingAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[DiseaseToThingAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[DiseaseToThingAssociation]-%20relation(i)>\[RelationshipType],%20\[DiseaseToThingAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[DiseaseToThingAssociation]-%20publications(i)%20*>\[Publication],%20\[DiseaseToThingAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[DiseaseToThingAssociation]-%20subject>\[Disease])
 ## Mappings
 
 ## Inheritance
 
- *  is_a: [association](Association.md)
+ *  is_a: [association](Association.md) - A typed association between two entities, supported by evidence
 ## Children
 
- *  mixin: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
+ *  mixin: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md) - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
 ## Used in
 
  *  class: [disease to thing association](DiseaseToThingAssociation.md) references: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
@@ -23,4 +23,28 @@ URI: http://bioentity.io/vocab/DiseaseToThingAssociation
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [disease](Disease.md) [required]
     * Example: [MONDO:0017314](http://purl.obolibrary.org/obo/MONDO_0017314) Ehlers-Danlos syndrome, vascular type
-    * inherited from: [subject](subject.md)
+    * __Local__
+ * _[related to](related_to.md)_
+    * _A grouping for any relationship type that holds between any two things_
+    * range: [named thing](NamedThing.md)
+    * inherited from: [named thing](NamedThing.md)
+ * _[association type](association_type.md)_
+    * _connects an association to the type of association (e.g. gene to phenotype)_
+    * range: [ontology class](OntologyClass.md)
+    * inherited from: None
+ * _[relation](relation.md)_
+    * _the relationship type by which a subject is connected to an object in an association_
+    * range: [relationship type](RelationshipType.md) [required]
+    * inherited from: None
+ * _[qualifiers](qualifiers.md)_
+    * _connects an association to qualifiers that modify or qualify the meaning of that association_
+    * range: [ontology class](OntologyClass.md)*
+    * inherited from: None
+ * _[publications](publications.md)_
+    * _connects an association to publications supporting the association_
+    * range: [publication](Publication.md)*
+    * inherited from: None
+ * _[provided by](provided_by.md)_
+    * _connects an association to the agent (person, organization or group) that provided it_
+    * range: [provider](Provider.md)
+    * inherited from: None

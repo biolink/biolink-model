@@ -3,7 +3,7 @@
 
 If true slot can have many values
 
-URI: http://bioentity.io/vocab/multivalued
+URI: [http://bioentity.io/vocab/multivalued](slot_uri)
 ## Mappings
 
 ## Domain and Range

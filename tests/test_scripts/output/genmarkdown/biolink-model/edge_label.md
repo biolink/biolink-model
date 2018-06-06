@@ -3,7 +3,7 @@
 
 A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
 
-URI: http://bioentity.io/vocab/edge_label
+URI: [http://bioentity.io/vocab/edge_label](slot_uri)
 ## Mappings
 
 ## Domain and Range

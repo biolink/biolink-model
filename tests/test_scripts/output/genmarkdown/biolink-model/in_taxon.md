@@ -3,7 +3,7 @@
 
 connects a thing to a class representing a taxon
 
-URI: http://bioentity.io/vocab/in_taxon
+URI: [http://bioentity.io/vocab/in_taxon](slot_uri)
 ## Mappings
 
  * [RO:0002162](http://purl.obolibrary.org/obo/RO_0002162)
@@ -18,11 +18,11 @@ URI: http://bioentity.io/vocab/in_taxon
 
 ## Used in
 
- *  usage: [thing with taxon](ThingWithTaxon.md)
- *  usage: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
  *  usage: [biosample](Biosample.md)
- *  usage: [life stage](LifeStage.md)
- *  usage: [individual organism](IndividualOrganism.md)
- *  usage: [molecular entity](MolecularEntity.md)
+ *  usage: [thing with taxon](ThingWithTaxon.md)
  *  usage: [anatomical entity](AnatomicalEntity.md)
+ *  usage: [individual organism](IndividualOrganism.md)
  *  usage: [population of individual organisms](PopulationOfIndividualOrganisms.md)
+ *  usage: [life stage](LifeStage.md)
+ *  usage: [molecular entity](MolecularEntity.md)
+ *  usage: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)

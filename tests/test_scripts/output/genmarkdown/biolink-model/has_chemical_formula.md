@@ -3,7 +3,7 @@
 
 description of chemical compound based on element symbols
 
-URI: http://bioentity.io/vocab/has_chemical_formula
+URI: [http://bioentity.io/vocab/has_chemical_formula](slot_uri)
 ## Mappings
 
  * [WD:P274](http://purl.obolibrary.org/obo/WD_P274)

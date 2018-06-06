@@ -3,7 +3,7 @@
 
 holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
 
-URI: http://bioentity.io/vocab/treats
+URI: [http://bioentity.io/vocab/treats](slot_uri)
 ## Mappings
 
  * [RO:0002606](http://purl.obolibrary.org/obo/RO_0002606)

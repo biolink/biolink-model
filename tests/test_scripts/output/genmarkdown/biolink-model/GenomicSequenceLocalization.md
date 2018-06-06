@@ -3,15 +3,15 @@
 
 A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
 
-URI: http://bioentity.io/vocab/GenomicSequenceLocalization
+URI: [http://bioentity.io/vocab/GenomicSequenceLocalization](http://bioentity.io/vocab/GenomicSequenceLocalization)
 
-![img](http://yuml.me/diagram/nofunky/class/\[Association]^-\[GenomicSequenceLocalization|start_interbase_coordinate:string%20%3F;end_interbase_coordinate:string%20%3F;genome_build:string%20%3F;phase:string%20%3F],%20\[GenomicSequenceLocalization]-%20subject>\[GenomicEntity],%20\[GenomicSequenceLocalization]-%20object>\[GenomicEntity],%20)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[GenomicSequenceLocalization|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F;start_interbase_coordinate:string%20%3F;end_interbase_coordinate:string%20%3F;genome_build:string%20%3F;phase:string%20%3F],%20\[GenomicSequenceLocalization]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GenomicSequenceLocalization]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenomicSequenceLocalization]-%20relation(i)>\[RelationshipType],%20\[GenomicSequenceLocalization]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenomicSequenceLocalization]-%20publications(i)%20*>\[Publication],%20\[GenomicSequenceLocalization]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenomicSequenceLocalization]-%20subject>\[GenomicEntity],%20\[GenomicSequenceLocalization]-%20object>\[GenomicEntity])
 ## Mappings
 
  * [faldo:location](http://purl.obolibrary.org/obo/faldo_location)
 ## Inheritance
 
- *  is_a: [association](Association.md)
+ *  is_a: [association](Association.md) - A typed association between two entities, supported by evidence
 ## Children
 
 ## Used in
@@ -20,23 +20,47 @@ URI: http://bioentity.io/vocab/GenomicSequenceLocalization
 
  * _[start interbase coordinate](start_interbase_coordinate.md)_
     * range: string
-    * inherited from: [interbase coordinate](interbase_coordinate.md)
+    * __Local__
  * _[end interbase coordinate](end_interbase_coordinate.md)_
     * range: string
-    * inherited from: [interbase coordinate](interbase_coordinate.md)
+    * __Local__
  * _[genome build](genome_build.md)_
     * _TODO_
     * range: string
-    * inherited from: [node property](node_property.md)
+    * __Local__
  * _[phase](phase.md)_
     * _TODO_
     * range: string
-    * inherited from: [node property](node_property.md)
+    * __Local__
  * _[subject](subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [genomic entity](GenomicEntity.md) [required]
-    * inherited from: [subject](subject.md)
+    * __Local__
  * _[object](object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [genomic entity](GenomicEntity.md) [required]
-    * inherited from: [object](object.md)
+    * __Local__
+ * _[related to](related_to.md)_
+    * _A grouping for any relationship type that holds between any two things_
+    * range: [named thing](NamedThing.md)
+    * inherited from: [named thing](NamedThing.md)
+ * _[association type](association_type.md)_
+    * _connects an association to the type of association (e.g. gene to phenotype)_
+    * range: [ontology class](OntologyClass.md)
+    * inherited from: None
+ * _[relation](relation.md)_
+    * _the relationship type by which a subject is connected to an object in an association_
+    * range: [relationship type](RelationshipType.md) [required]
+    * inherited from: None
+ * _[qualifiers](qualifiers.md)_
+    * _connects an association to qualifiers that modify or qualify the meaning of that association_
+    * range: [ontology class](OntologyClass.md)*
+    * inherited from: None
+ * _[publications](publications.md)_
+    * _connects an association to publications supporting the association_
+    * range: [publication](Publication.md)*
+    * inherited from: None
+ * _[provided by](provided_by.md)_
+    * _connects an association to the agent (person, organization or group) that provided it_
+    * range: [provider](Provider.md)
+    * inherited from: None

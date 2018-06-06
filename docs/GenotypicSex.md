@@ -3,9 +3,9 @@
 
 An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
 
-URI: http://bioentity.io/vocab/GenotypicSex
+URI: [http://bioentity.io/vocab/GenotypicSex](http://bioentity.io/vocab/GenotypicSex)
 
-![img](http://yuml.me/diagram/nofunky/class/\[BiologicalSex]^-\[GenotypicSex],%20)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalSex]^-\[GenotypicSex],%20\[GenotypicSex]-%20subclass%20of(i)%20%3F>\[OntologyClass])
 ## Mappings
 
  * [PATO:0020000](http://purl.obolibrary.org/obo/PATO_0020000)
@@ -16,3 +16,7 @@ URI: http://bioentity.io/vocab/GenotypicSex
 
 ## Fields
 
+ * _[subclass of](subclass_of.md) *subsets: translator_minimal*_
+    * _holds between two classes where the domain class is a specialization of the range class_
+    * range: [ontology class](OntologyClass.md)
+    * inherited from: [ontology class](OntologyClass.md)

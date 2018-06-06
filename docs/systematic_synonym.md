@@ -3,7 +3,7 @@
 
 more commonly used for gene symbols in yeast
 
-URI: http://bioentity.io/vocab/systematic_synonym
+URI: [http://bioentity.io/vocab/systematic_synonym](slot_uri)
 ## Mappings
 
 ## Domain and Range

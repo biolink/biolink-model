@@ -3,14 +3,14 @@
 
 An association between a variant and a population, where the variant has particular frequency in the population
 
-URI: http://bioentity.io/vocab/VariantToPopulationAssociation
+URI: [http://bioentity.io/vocab/VariantToPopulationAssociation](http://bioentity.io/vocab/VariantToPopulationAssociation)
 
-![img](http://yuml.me/diagram/nofunky/class/\[Association]^-\[VariantToPopulationAssociation|frequency_qualifier:frequency_value%20%3F;has_count:string%20%3F;has_total:string%20%3F;has_quotient:string%20%3F;has_percentage:double%20%3F],%20\[VariantToPopulationAssociation]-%20frequency_qualifier%20%3F>\[FrequencyValue],%20\[VariantToPopulationAssociation]-%20subject>\[SequenceVariant],%20\[VariantToPopulationAssociation]-%20object>\[PopulationOfIndividualOrganisms],%20\[VariantToPopulationAssociation]uses%20-.->\[VariantToThingAssociation],%20\[VariantToPopulationAssociation]uses%20-.->\[FrequencyQuantifier],%20)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]^-\[VariantToPopulationAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F;frequency_qualifier:frequency_value%20%3F;has_count:string%20%3F;has_total:string%20%3F;has_quotient:string%20%3F;has_percentage:double%20%3F],%20\[VariantToPopulationAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[VariantToPopulationAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[VariantToPopulationAssociation]-%20relation(i)>\[RelationshipType],%20\[VariantToPopulationAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[VariantToPopulationAssociation]-%20publications(i)%20*>\[Publication],%20\[VariantToPopulationAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[VariantToPopulationAssociation]-%20frequency%20qualifier%20%3F>\[FrequencyValue],%20\[VariantToPopulationAssociation]-%20subject>\[SequenceVariant],%20\[VariantToPopulationAssociation]-%20object>\[PopulationOfIndividualOrganisms],%20\[VariantToPopulationAssociation]uses%20-.->\[VariantToThingAssociation],%20\[VariantToPopulationAssociation]uses%20-.->\[FrequencyQuantifier])
 ## Mappings
 
 ## Inheritance
 
- *  is_a: [association](Association.md)
+ *  is_a: [association](Association.md) - A typed association between two entities, supported by evidence
  *  mixin: [variant to thing association](VariantToThingAssociation.md)
  *  mixin: [frequency quantifier](FrequencyQuantifier.md)
 ## Children
@@ -22,30 +22,57 @@ URI: http://bioentity.io/vocab/VariantToPopulationAssociation
  * _[frequency qualifier](frequency_qualifier.md)_
     * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
     * range: [frequency value](FrequencyValue.md)
-    * inherited from: [association slot](association_slot.md)
+    * __Local__
  * _[has count](has_count.md)_
     * _number in object population that carry a particular allele, aka allele count_
     * range: string
     * Example: [4](4) 4 individuals in gnomad set
+    * __Local__
  * _[has total](has_total.md)_
     * _number all populations that carry a particular allele, aka allele number_
     * range: string
     * Example: [24014](24014) 24014 individuals in gnomad set
+    * __Local__
  * _[has quotient](has_quotient.md)_
     * _frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency_
     * range: string
     * Example: [0.0001666](0.0001666) None
+    * __Local__
  * _[has percentage](has_percentage.md)_
     * _equivalent to has quotient multiplied by 100_
     * range: double
-    * inherited from: [aggregate statistic](aggregate_statistic.md)
+    * __Local__
  * _[subject](subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [sequence variant](SequenceVariant.md) [required]
     * Example: [NC_000017.11:g.43051071A>T](http://purl.obolibrary.org/obo/NC_000017.11_g.43051071A>T) 17:41203088 A/C in gnomad
-    * inherited from: [subject](subject.md)
+    * __Local__
  * _[object](object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [population of individual organisms](PopulationOfIndividualOrganisms.md) [required]
     * Example: [ANCESTRO:0010](http://purl.obolibrary.org/obo/ANCESTRO_0010) African
-    * inherited from: [object](object.md)
+    * __Local__
+ * _[related to](related_to.md)_
+    * _A grouping for any relationship type that holds between any two things_
+    * range: [named thing](NamedThing.md)
+    * inherited from: [named thing](NamedThing.md)
+ * _[association type](association_type.md)_
+    * _connects an association to the type of association (e.g. gene to phenotype)_
+    * range: [ontology class](OntologyClass.md)
+    * inherited from: None
+ * _[relation](relation.md)_
+    * _the relationship type by which a subject is connected to an object in an association_
+    * range: [relationship type](RelationshipType.md) [required]
+    * inherited from: None
+ * _[qualifiers](qualifiers.md)_
+    * _connects an association to qualifiers that modify or qualify the meaning of that association_
+    * range: [ontology class](OntologyClass.md)*
+    * inherited from: None
+ * _[publications](publications.md)_
+    * _connects an association to publications supporting the association_
+    * range: [publication](Publication.md)*
+    * inherited from: None
+ * _[provided by](provided_by.md)_
+    * _connects an association to the agent (person, organization or group) that provided it_
+    * range: [provider](Provider.md)
+    * inherited from: None

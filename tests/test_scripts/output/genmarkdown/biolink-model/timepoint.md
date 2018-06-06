@@ -3,7 +3,7 @@
 
 a point in time
 
-URI: http://bioentity.io/vocab/timepoint
+URI: [http://bioentity.io/vocab/timepoint](slot_uri)
 ## Mappings
 
 ## Domain and Range

@@ -3,7 +3,7 @@
 
 Used only as a mixin -- cannot be instantiated on its own.
 
-URI: http://bioentity.io/vocab/mixin
+URI: [http://bioentity.io/vocab/mixin](slot_uri)
 ## Mappings
 
 ## Domain and Range

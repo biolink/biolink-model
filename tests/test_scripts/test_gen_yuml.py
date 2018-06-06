@@ -1,11 +1,11 @@
+import os
 import unittest
-
-
-from metamodel.generators.yumlgen import cli
-from tests.test_scripts.clicktestcase import ClickTestCase
 
 # This has to occur post ClickTestCase
 import click
+
+from metamodel.generators.yumlgen import cli, YumlGenerator
+from tests.test_scripts.clicktestcase import ClickTestCase
 
 update_test_files = False
 
@@ -20,6 +20,8 @@ class GenYUMLTestCase(ClickTestCase):
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_meta(self):
+        meta_dir = os.path.join(self.testdir_path, 'meta')
+        os.makedirs(meta_dir, exist_ok=True)
         self.do_test(self.metamodel_file, 'meta.yuml', update_test_file=update_test_files)
         self.do_test(self.metamodel_file + ' -f yuml', 'meta.yuml', update_test_file=update_test_files)
         self.do_test(self.metamodel_file + ' -f xsv', 'meta_error', update_test_file=update_test_files,
@@ -29,6 +31,13 @@ class GenYUMLTestCase(ClickTestCase):
                      update_test_file=update_test_files)
         self.do_test(self.metamodel_file + ' -c noclass', 'definition.yuml', update_test_file=update_test_files,
                      error=ValueError)
+
+        self.do_test([self.metamodel_file, '-c', 'schema definition', '-d', meta_dir])
+        # Directory tests
+        for fmt in YumlGenerator.valid_formats:
+            if fmt != 'yuml':
+                self.do_test([self.metamodel_file, '-f', fmt, '-c', 'schema definition', '-d', meta_dir])
+        self.do_test([self.metamodel_file, '-c', 'schema definition', '-d', meta_dir + 'z'], error=ValueError)
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_biolink(self):

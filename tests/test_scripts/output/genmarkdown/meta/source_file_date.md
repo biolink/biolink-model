@@ -3,7 +3,7 @@
 
 modification date of the source of the schema.  Supplied by the loader
 
-URI: http://bioentity.io/vocab/source_file_date
+URI: [http://bioentity.io/vocab/source_file_date](slot_uri)
 ## Mappings
 
 ## Domain and Range

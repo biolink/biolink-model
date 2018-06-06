@@ -3,7 +3,7 @@
 
 A measurable quantity for the object of the association
 
-URI: http://bioentity.io/vocab/quantifier_qualifier
+URI: [http://bioentity.io/vocab/quantifier_qualifier](slot_uri)
 ## Mappings
 
 ## Domain and Range

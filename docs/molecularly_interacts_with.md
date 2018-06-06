@@ -3,7 +3,7 @@
 
 
 
-URI: http://bioentity.io/vocab/molecularly_interacts_with
+URI: [http://bioentity.io/vocab/molecularly_interacts_with](slot_uri)
 ## Mappings
 
  * [RO:0002436](http://purl.obolibrary.org/obo/RO_0002436)

@@ -3,7 +3,7 @@
 
 used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
 
-URI: http://bioentity.io/vocab/manifestation_of
+URI: [http://bioentity.io/vocab/manifestation_of](slot_uri)
 ## Mappings
 
  * [SEMMEDDB:MANIFESTATION_OF](http://purl.obolibrary.org/obo/SEMMEDDB_MANIFESTATION_OF)

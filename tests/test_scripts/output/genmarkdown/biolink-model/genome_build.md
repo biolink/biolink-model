@@ -3,7 +3,7 @@
 
 TODO
 
-URI: http://bioentity.io/vocab/genome_build
+URI: [http://bioentity.io/vocab/genome_build](slot_uri)
 ## Mappings
 
 ## Domain and Range

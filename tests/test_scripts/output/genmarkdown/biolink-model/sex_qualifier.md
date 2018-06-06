@@ -3,7 +3,7 @@
 
 a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
 
-URI: http://bioentity.io/vocab/sex_qualifier
+URI: [http://bioentity.io/vocab/sex_qualifier](slot_uri)
 ## Mappings
 
 ## Domain and Range
@@ -16,10 +16,10 @@ None -> [biological sex](BiologicalSex.md)
 
 ## Used in
 
- *  usage: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
  *  usage: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md)
- *  usage: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md)
- *  usage: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
- *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
  *  usage: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
+ *  usage: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
+ *  usage: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md)
  *  usage: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
+ *  usage: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
+ *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)

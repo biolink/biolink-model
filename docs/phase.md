@@ -3,7 +3,7 @@
 
 TODO
 
-URI: http://bioentity.io/vocab/phase
+URI: [http://bioentity.io/vocab/phase](slot_uri)
 ## Mappings
 
 ## Domain and Range

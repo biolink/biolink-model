@@ -120,13 +120,14 @@ class Generator(metaclass=abc.ABCMeta):
         if not isinstance(cls, ClassDefinition):
             cls = self.schema.classes[cls]
         known_slots: Set[str] = self.aliased_slot_names(cls.slots)
-        rval: List[SlotDefinition] = self.cls_slots(cls)
+        rval: List[SlotDefinition] = []
 
         merge_definitions(cls.is_a)
         for applier in self.synopsis.applytos:
             merge_definitions(applier)
         for mixin in cls.mixins:
             merge_definitions(mixin)
+        rval += self.cls_slots(cls)
 
         return rval
 
@@ -161,7 +162,8 @@ class Generator(metaclass=abc.ABCMeta):
                 if cls.is_a:
                     touches.classrefs.add(cls.is_a)
                 touches.classrefs.update(set(cls.mixins))
-                touches.classrefs.update(self.synopsis.applytos[element].classrefs)
+                if element in self.synopsis.applytos:
+                    touches.classrefs.update(self.synopsis.applytos[element].classrefs)
                 for slotname in cls.slots:
                     slot = self.schema.slots[slotname]
                     if slot.range in self.schema.classes:
@@ -182,9 +184,6 @@ class Generator(metaclass=abc.ABCMeta):
                 elif slot.range in self.schema.types:
                     touches.typerefs.add(slot.range)
             elif element in self.schema.types:
-                touches.update(self.schema.types[element])
-            else:
-                # Assuming a builtin type
                 if element in self.synopsis.rangerefs:
                     touches.slotrefs.update(self.synopsis.rangerefs[element])
 

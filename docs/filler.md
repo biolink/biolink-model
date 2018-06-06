@@ -3,7 +3,7 @@
 
 The value in a property-value tuple
 
-URI: http://bioentity.io/vocab/filler
+URI: [http://bioentity.io/vocab/filler](slot_uri)
 ## Mappings
 
 ## Domain and Range

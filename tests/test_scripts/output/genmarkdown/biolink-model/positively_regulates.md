@@ -3,12 +3,12 @@
 
 
 
-URI: http://bioentity.io/vocab/positively_regulates
+URI: [http://bioentity.io/vocab/positively_regulates](slot_uri)
 ## Mappings
 
 ## Domain and Range
 
-None -> None
+None -> string
 ## Inheritance
 
  *  is_a: [regulates](regulates.md)

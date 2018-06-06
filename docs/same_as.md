@@ -3,7 +3,7 @@
 
 holds between two entities that are considered equivalent to each other
 
-URI: http://bioentity.io/vocab/same_as
+URI: [http://bioentity.io/vocab/same_as](slot_uri)
 ## Mappings
 
  * [owl:equivalentClass](http://purl.obolibrary.org/obo/owl_equivalentClass)
@@ -12,7 +12,7 @@ URI: http://bioentity.io/vocab/same_as
  * [WD:P2888](http://purl.obolibrary.org/obo/WD_P2888)
 ## Domain and Range
 
-None -> None
+None -> string
 ## Inheritance
 
  *  is_a: [related to](related_to.md)

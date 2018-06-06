@@ -3,12 +3,12 @@
 
 holds between two entities where exposure to one entity alters the chance of developing the other
 
-URI: http://bioentity.io/vocab/affects_risk_for
+URI: [http://bioentity.io/vocab/affects_risk_for](slot_uri)
 ## Mappings
 
 ## Domain and Range
 
-None -> None
+None -> string
 ## Inheritance
 
  *  is_a: [related to](related_to.md)

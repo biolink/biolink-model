@@ -3,7 +3,7 @@
 
 date that the schema was loaded/generated.  Supplied by the loader
 
-URI: http://bioentity.io/vocab/generation_date
+URI: [http://bioentity.io/vocab/generation_date](slot_uri)
 ## Mappings
 
 ## Domain and Range

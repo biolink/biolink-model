@@ -3,7 +3,7 @@
 
 longitude
 
-URI: http://bioentity.io/vocab/longitude
+URI: [http://bioentity.io/vocab/longitude](slot_uri)
 ## Mappings
 
  * [wgs:long](http://purl.obolibrary.org/obo/wgs_long)
@@ -17,5 +17,5 @@ None -> float
 
 ## Used in
 
- *  usage: [geographic location at time](GeographicLocationAtTime.md)
  *  usage: [geographic location](GeographicLocation.md)
+ *  usage: [geographic location at time](GeographicLocationAtTime.md)

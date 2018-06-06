@@ -5,6 +5,7 @@ from metamodel.metamodel import SchemaDefinition, SchemaDefinitionId, SchemaDefi
 from metamodel.utils.schemaloader import SchemaLoader
 from metamodel.utils.schemasynopsis import SchemaSynopsis
 from metamodel.utils.typereferences import ClassType, TypeType, SlotType, References
+from tests import refresh_files
 
 update_source: bool = False
 
@@ -27,9 +28,11 @@ class SynopsisTestCase(unittest.TestCase):
         summary = synopsis.summary()
 
         sourcepath = os.path.join(sourcedir, model_name + '_synopsis.txt')
-        if update_source:
+        if update_source or refresh_files:
             with open(sourcepath, 'w') as masterf:
                 masterf.write(summary)
+            if refresh_files:
+                print(f'{sourcepath} updated')
 
         with open(sourcepath) as masterf:
             self.assertEqual(masterf.read(), summary)

@@ -3,7 +3,7 @@
 
 
 
-URI: http://bioentity.io/vocab/aliases
+URI: [http://bioentity.io/vocab/aliases](slot_uri)
 ## Mappings
 
 ## Domain and Range

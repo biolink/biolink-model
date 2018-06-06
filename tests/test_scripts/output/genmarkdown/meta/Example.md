@@ -3,9 +3,9 @@
 
 example of usage
 
-URI: http://bioentity.io/vocab/Example
+URI: [http://bioentity.io/vocab/Example](http://bioentity.io/vocab/Example)
 
-![img](http://yuml.me/diagram/nofunky/class/)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/)
 ## Mappings
 
 ## Inheritance
@@ -17,6 +17,8 @@ URI: http://bioentity.io/vocab/Example
 ## Fields
 
  * _[value](value.md)_
-    * range: 
+    * range: string
+    * __Local__
  * _[description](description.md)_
-    * range: 
+    * range: string
+    * __Local__

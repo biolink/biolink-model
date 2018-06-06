@@ -3,7 +3,7 @@
 
 holds between two genes or gene products that are expressed in the same cell type or population
 
-URI: http://bioentity.io/vocab/in_cell_population_with
+URI: [http://bioentity.io/vocab/in_cell_population_with](slot_uri)
 ## Mappings
 
 ## Domain and Range

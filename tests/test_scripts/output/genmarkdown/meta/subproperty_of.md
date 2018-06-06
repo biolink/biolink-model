@@ -3,7 +3,7 @@
 
 Ontolgy property which this is a subproperty of
 
-URI: http://bioentity.io/vocab/subproperty_of
+URI: [http://bioentity.io/vocab/subproperty_of](slot_uri)
 ## Mappings
 
 ## Domain and Range

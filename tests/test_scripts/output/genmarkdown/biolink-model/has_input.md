@@ -3,7 +3,7 @@
 
 holds between a process and a continuant, where the continuant is an input into the process
 
-URI: http://bioentity.io/vocab/has_input
+URI: [http://bioentity.io/vocab/has_input](slot_uri)
 ## Mappings
 
  * [RO:0002233](http://purl.obolibrary.org/obo/RO_0002233)
@@ -18,7 +18,7 @@ URI: http://bioentity.io/vocab/has_input
 
 ## Used in
 
- *  usage: [molecular activity](MolecularActivity.md)
- *  usage: [occurrent](Occurrent.md)
  *  usage: [biological process](BiologicalProcess.md)
+ *  usage: [molecular activity](MolecularActivity.md)
  *  usage: [environmental process](EnvironmentalProcess.md)
+ *  usage: [occurrent](Occurrent.md)

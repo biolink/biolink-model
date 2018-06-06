@@ -2,6 +2,7 @@ import unittest
 
 
 from metamodel.generators.csvgen import cli
+from tests import refresh_files
 from tests.test_scripts.clicktestcase import ClickTestCase
 
 # This has to occur post ClickTestCase

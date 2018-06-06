@@ -1,14 +1,13 @@
-import re
 import unittest
-
-
-from metamodel.generators.contextgen import cli
-from tests.test_scripts.clicktestcase import ClickTestCase, metadata_filter
 
 # This has to occur post ClickTestCase
 import click
 
+from metamodel.generators.contextgen import cli
+from tests.test_scripts.clicktestcase import ClickTestCase, metadata_filter
+
 update_test_files = False
+
 
 class GenContextTestCase(ClickTestCase):
     testdir = "genjsonld"

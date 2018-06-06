@@ -1,5 +1,5 @@
 # Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/biolink-model.yaml by pythongen.py version: 0.0.2
-# Generation date: 2018-06-05 15:19
+# Generation date: 2018-06-06 13:33
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl

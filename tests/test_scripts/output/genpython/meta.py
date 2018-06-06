@@ -1,8 +1,8 @@
 # Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by pythongen.py version: 0.0.2
-# Generation date: 2018-06-05 15:18
+# Generation date: 2018-06-06 13:34
 # Schema: metamodel
 #
-# id: http://bioentity.io/json-schema/meta.json
+# id: https://biolink.github.io/metamodel/ontology/meta.ttl
 # description: Metamodel for biolink schema
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
@@ -161,5 +161,4 @@ class SchemaDefinition(Definition):
         for k, v in self.classes.items():
                 if not isinstance(v, ClassDefinition):
                     self.classes[k] = ClassDefinition(name=k, **({} if v is None else v))
-
 
