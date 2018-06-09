@@ -19,3 +19,4 @@ This is used to generate the marshmallow schema and the python class definitions
  * [metamodel.py](metamodel.py) - python OO model (auto-generated from meta.yaml)
  * [generators](generators) - various YAMM to code and other representations
 
+See: [docs/index.html](docs/index.html) for further details
