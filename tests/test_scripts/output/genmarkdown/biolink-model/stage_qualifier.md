@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/stage_qualifier](slot_uri)
 
 ## Domain and Range
 
-None -> [life stage](LifeStage.md)
+[gene to expression site association](GeneToExpressionSiteAssociation.md) -> [life stage](LifeStage.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)

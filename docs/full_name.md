@@ -6,9 +6,10 @@ a long-form human readable name for a thing
 URI: [http://bioentity.io/vocab/full_name](slot_uri)
 ## Mappings
 
+ * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> [label type](LabelType.md)
+[NamedThing](NamedThing.md) -> [LabelType](LabelType.md)
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
@@ -16,4 +17,4 @@ URI: [http://bioentity.io/vocab/full_name](slot_uri)
 
 ## Used in
 
- *  usage: [named thing](NamedThing.md)
+ *  usage: [NamedThing](NamedThing.md)

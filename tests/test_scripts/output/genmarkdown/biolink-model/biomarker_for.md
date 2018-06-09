@@ -12,7 +12,7 @@ URI: [http://bioentity.io/vocab/biomarker_for](slot_uri)
 [molecular entity](MolecularEntity.md) -> [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
 ## Inheritance
 
- *  is_a: [correlated with](correlated_with.md) *subsets: translator_minimal*
+ *  is_a: [correlated with](correlated_with.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in

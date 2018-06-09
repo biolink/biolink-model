@@ -12,7 +12,7 @@ URI: [http://bioentity.io/vocab/genetically_interacts_with](slot_uri)
 [gene](Gene.md) -> [gene](Gene.md)
 ## Inheritance
 
- *  is_a: [interacts with](interacts_with.md) *subsets: translator_minimal*
+ *  is_a: [interacts with](interacts_with.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in

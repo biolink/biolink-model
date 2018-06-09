@@ -14,23 +14,17 @@ URI: [http://bioentity.io/vocab/Attribute](http://bioentity.io/vocab/Attribute)
  *  mixin: [ontology class](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
 ## Children
 
+ *  child: [biological sex](BiologicalSex.md)
  *  child: [clinical modifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
  *  child: [frequency value](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
- *  child: [severity value](SeverityValue.md) - describes the severity of a phenotypic feature or disease
- *  child: [biological sex](BiologicalSex.md)
- *  child: [zygosity](Zygosity.md)
  *  child: [onset](Onset.md) - The age group in which manifestations appear
+ *  child: [severity value](SeverityValue.md) - describes the severity of a phenotypic feature or disease
+ *  child: [zygosity](Zygosity.md)
 ## Used in
 
- *  class: [attribute](Attribute.md) references: [clinical modifier](ClinicalModifier.md)
- *  class: [attribute](Attribute.md) references: [frequency value](FrequencyValue.md)
- *  class: [attribute](Attribute.md) references: [severity value](SeverityValue.md)
- *  class: [attribute](Attribute.md) references: [biological sex](BiologicalSex.md)
- *  class: [attribute](Attribute.md) references: [zygosity](Zygosity.md)
- *  class: [attribute](Attribute.md) references: [onset](Onset.md)
 ## Fields
 
- * _[subclass of](subclass_of.md) *subsets: translator_minimal*_
+ * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
     * _holds between two classes where the domain class is a specialization of the range class_
     * range: [ontology class](OntologyClass.md)
     * __Local__

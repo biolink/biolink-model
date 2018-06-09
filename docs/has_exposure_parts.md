@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/treatment_has_exposure_parts](slot_uri)
 
 ## Domain and Range
 
-[treatment](Treatment.md) -> [drug exposure](DrugExposure.md)
+[Treatment](Treatment.md) -> [DrugExposure](DrugExposure.md)
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [treatment](Treatment.md)
+ *  usage: [Treatment](Treatment.md)

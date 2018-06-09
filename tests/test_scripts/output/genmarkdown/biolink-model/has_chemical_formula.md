@@ -9,7 +9,7 @@ URI: [http://bioentity.io/vocab/has_chemical_formula](slot_uri)
  * [WD:P274](http://purl.obolibrary.org/obo/WD_P274)
 ## Domain and Range
 
-None -> [chemical formula value](ChemicalFormulaValue.md)
+[named thing](NamedThing.md) -> [chemical formula value](ChemicalFormulaValue.md)
 ## Inheritance
 
  *  is_a: [node property](node_property.md)

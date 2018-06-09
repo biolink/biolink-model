@@ -100,13 +100,15 @@ class Generator(metaclass=abc.ABCMeta):
             cls = self.schema.classes[cls]
         return [self.schema.slots[s] for s in cls.slots]
 
-    def all_slots(self, cls: Union[ClassDefinitionName, ClassDefinition]) -> List[SlotDefinition]:
+    def all_slots(self, cls: Union[ClassDefinitionName, ClassDefinition], *, cls_slots_first: bool = False) \
+            -> List[SlotDefinition]:
         """ Return all slots that are part of the class definition.  This includes all is_a, mixin and apply_to slots
         but does NOT include slot_usage targets.  If class B has a slot_usage entry for slot "s", only the slot
         definition for the redefined slot will be included, not its base.  Slots are added in the order they appear
         in classes, with recursive is_a's being added first followed by mixins and finally apply_tos
 
         @param cls: class definition or class definition name
+        @param cls_slots_first: True means return class slots at the top of the list
         @return: ordered list of slots in the class with slot usages removed
         """
         def merge_definitions(cls_name: Optional[ClassDefinitionName]) -> None:
@@ -122,12 +124,20 @@ class Generator(metaclass=abc.ABCMeta):
         known_slots: Set[str] = self.aliased_slot_names(cls.slots)
         rval: List[SlotDefinition] = []
 
-        merge_definitions(cls.is_a)
-        for applier in self.synopsis.applytos:
-            merge_definitions(applier)
-        for mixin in cls.mixins:
-            merge_definitions(mixin)
-        rval += self.cls_slots(cls)
+        if cls_slots_first:
+            rval += self.cls_slots(cls)
+            for mixin in cls.mixins:
+                merge_definitions(mixin)
+            for applier in self.synopsis.applytos:
+                merge_definitions(applier)
+            merge_definitions(cls.is_a)
+        else:
+            merge_definitions(cls.is_a)
+            for applier in self.synopsis.applytos:
+                merge_definitions(applier)
+            for mixin in cls.mixins:
+                merge_definitions(mixin)
+            rval += self.cls_slots(cls)
 
         return rval
 
@@ -211,14 +221,14 @@ class Generator(metaclass=abc.ABCMeta):
         """ Return the class, slot or type that represents name
 
         @param name:
-        @return:
+        @return: Corresponding element or None if not found (most likely cause is that it is a builtin type)
         """
         return self.schema.classes[name] if name in self.schema.classes \
             else self.schema.slots[name] if name in self.schema.slots \
             else self.schema.types[name] if name in self.schema.types else None
 
     def obj_name(self, obj: Union[str, ClassDefinition, SlotDefinition, TypeDefinition]) -> str:
-        """ Return the name used for the supplied definition """
+        """ Return the formatted name used for the supplied definition """
         if isinstance(obj, str):
             obj = self.obj_for(obj)
         if isinstance(obj, SlotDefinition):

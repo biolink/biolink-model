@@ -12,19 +12,18 @@ URI: [http://bioentity.io/vocab/ModelToDiseaseMixin](http://bioentity.io/vocab/M
 
 ## Children
 
- *  mixin: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
+ * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) (mixin) 
 ## Used in
 
- *  class: [model to disease mixin](ModelToDiseaseMixin.md) references: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
 ## Fields
 
- * _[subject](subject.md)_
-    * _The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease_
-    * range: string
-    * __Local__
  * _[relation](relation.md)_
     * _The relationship to the disease
   _
-    * range: string
-    * edge label: [model of](model_of.md) *subsets: translator_minimal*
+    * range: **string**
+    * edge label: [model of](model_of.md) *subsets*: (translator_minimal)
+    * __Local__
+ * _[subject](subject.md)_
+    * _The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease_
+    * range: **string**
     * __Local__

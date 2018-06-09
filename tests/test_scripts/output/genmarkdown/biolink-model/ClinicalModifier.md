@@ -16,9 +16,10 @@ URI: [http://bioentity.io/vocab/ClinicalModifier](http://bioentity.io/vocab/Clin
 
 ## Used in
 
+ *  class: [association](Association.md) references: [clinical modifier](ClinicalModifier.md)
 ## Fields
 
- * _[subclass of](subclass_of.md) *subsets: translator_minimal*_
+ * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
     * _holds between two classes where the domain class is a specialization of the range class_
     * range: [ontology class](OntologyClass.md)
     * inherited from: [ontology class](OntologyClass.md)

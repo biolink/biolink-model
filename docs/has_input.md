@@ -10,15 +10,15 @@ URI: [http://bioentity.io/vocab/has_input](slot_uri)
  * [SEMMEDDB:USES](http://purl.obolibrary.org/obo/SEMMEDDB_USES)
 ## Domain and Range
 
-[occurrent](Occurrent.md) -> string
+[Occurrent](Occurrent.md) -> **string**
 ## Inheritance
 
- *  is_a: [has participant](has_participant.md) *subsets: translator_minimal*
+ *  is_a: [has participant](has_participant.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in
 
- *  usage: [occurrent](Occurrent.md)
- *  usage: [biological process](BiologicalProcess.md)
- *  usage: [environmental process](EnvironmentalProcess.md)
- *  usage: [molecular activity](MolecularActivity.md)
+ *  usage: [Occurrent](Occurrent.md)
+ *  usage: [EnvironmentalProcess](EnvironmentalProcess.md)
+ *  usage: [MolecularActivity](MolecularActivity.md)
+ *  usage: [BiologicalProcess](BiologicalProcess.md)

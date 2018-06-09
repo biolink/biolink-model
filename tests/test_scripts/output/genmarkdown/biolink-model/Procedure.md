@@ -16,10 +16,19 @@ URI: [http://bioentity.io/vocab/Procedure](http://bioentity.io/vocab/Procedure)
 
 ## Fields
 
- * _[regulates, process to process](regulates_process_to_process.md)_
+ * _[has input](has_input.md) *subsets*: (translator_minimal)_
+    * _holds between a process and a continuant, where the continuant is an input into the process_
+    * range: string
+    * inherited from: [occurrent](Occurrent.md)
+ * _[has participant](has_participant.md) *subsets*: (translator_minimal)_
+    * _holds between a process and a continuant, where the continuant is somehow involved in the process _
+    * range: string
+    * inherited from: [occurrent](Occurrent.md)
+ * _[precedes](precedes.md) *subsets*: (translator_minimal)_
+    * _holds between two processes, where one completes before the other begins_
     * range: [occurrent](Occurrent.md)
     * inherited from: [occurrent](Occurrent.md)
- * _[precedes](precedes.md) *subsets: translator_minimal*_
-    * _holds between two processes, where one completes before the other begins_
+ * _[regulates, process to process](regulates_process_to_process.md) *subsets*: (translator_minimal)_
+    * _describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be._
     * range: [occurrent](Occurrent.md)
     * inherited from: [occurrent](Occurrent.md)

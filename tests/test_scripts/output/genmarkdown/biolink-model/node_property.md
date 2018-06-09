@@ -14,27 +14,27 @@ URI: [http://bioentity.io/vocab/node_property](slot_uri)
 
 ## Children
 
- *  child: [id](id.md) *subsets: translator_minimal*
- *  child: [has zygosity](has_zygosity.md)
- *  child: [has biological sequence](has_biological_sequence.md)
- *  child: [longitude](longitude.md)
- *  child: [description](description.md) *subsets: translator_minimal*
- *  child: [has chemical formula](has_chemical_formula.md)
- *  child: [update date](update_date.md)
- *  child: [iri](iri.md) *subsets: translator_minimal*
- *  child: [systematic synonym](systematic_synonym.md)
- *  child: [timepoint](timepoint.md)
- *  child: [phase](phase.md)
- *  child: [interbase coordinate](interbase_coordinate.md)
- *  child: [latitude](latitude.md)
- *  child: [filler](filler.md)
- *  child: [aggregate statistic](aggregate_statistic.md)
- *  child: [has gene](has_gene.md)
- *  child: [name](name.md) *subsets: translator_minimal*
  *  child: [full name](full_name.md)
+ *  child: [systematic synonym](systematic_synonym.md)
  *  child: [genome build](genome_build.md)
- *  child: [category](category.md) *subsets: translator_minimal*
+ *  child: [has zygosity](has_zygosity.md)
+ *  child: [name](name.md) *subsets*: (translator_minimal)
+ *  child: [has chemical formula](has_chemical_formula.md)
  *  child: [creation date](creation_date.md)
+ *  child: [update date](update_date.md)
+ *  child: [iri](iri.md) *subsets*: (translator_minimal)
+ *  child: [longitude](longitude.md)
+ *  child: [timepoint](timepoint.md)
+ *  child: [has gene](has_gene.md)
+ *  child: [category](category.md) *subsets*: (translator_minimal)
+ *  child: [latitude](latitude.md)
+ *  child: [aggregate statistic](aggregate_statistic.md)
+ *  child: [has biological sequence](has_biological_sequence.md)
+ *  child: [phase](phase.md)
+ *  child: [description](description.md) *subsets*: (translator_minimal)
+ *  child: [interbase coordinate](interbase_coordinate.md)
+ *  child: [filler](filler.md)
+ *  child: [id](id.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [named thing](NamedThing.md)

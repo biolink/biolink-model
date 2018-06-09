@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/edge_label](slot_uri)
 
 ## Domain and Range
 
-None -> [label type](LabelType.md)
+[Association](Association.md) -> [LabelType](LabelType.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)

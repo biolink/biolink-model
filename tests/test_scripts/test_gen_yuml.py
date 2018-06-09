@@ -46,6 +46,11 @@ class GenYUMLTestCase(ClickTestCase):
                      update_test_file=update_test_files)
         self.assertFalse(update_test_files, "Updating test files")
 
+    def test_occurrent(self):
+        biolink_dir = os.path.join(self.testdir_path, 'biolink')
+        os.makedirs(biolink_dir, exist_ok=True)
+        self.do_test([self.biolink_file, '-c', 'occurrent', '-d', biolink_dir])
+
 
 if __name__ == '__main__':
     unittest.main()

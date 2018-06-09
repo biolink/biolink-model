@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/publications](slot_uri)
 
 ## Domain and Range
 
-None -> [publication](Publication.md)
+[association](Association.md) -> [publication](Publication.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)

@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/frequency_qualifier](slot_uri)
 
 ## Domain and Range
 
-None -> [frequency value](FrequencyValue.md)
+[entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) -> [frequency value](FrequencyValue.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)
@@ -16,15 +16,15 @@ None -> [frequency value](FrequencyValue.md)
 
 ## Used in
 
- *  usage: [variant to population association](VariantToPopulationAssociation.md)
- *  usage: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
- *  usage: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md)
- *  usage: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
- *  usage: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
  *  usage: [gene to disease association](GeneToDiseaseAssociation.md)
- *  usage: [entity to disease association](EntityToDiseaseAssociation.md)
- *  usage: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md)
  *  usage: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
- *  usage: [variant to disease association](VariantToDiseaseAssociation.md)
  *  usage: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
+ *  usage: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
+ *  usage: [variant to population association](VariantToPopulationAssociation.md)
+ *  usage: [entity to disease association](EntityToDiseaseAssociation.md)
+ *  usage: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md)
  *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
+ *  usage: [variant to disease association](VariantToDiseaseAssociation.md)
+ *  usage: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
+ *  usage: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md)
+ *  usage: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)

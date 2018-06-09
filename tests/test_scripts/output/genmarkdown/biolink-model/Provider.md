@@ -16,5 +16,6 @@ URI: [http://bioentity.io/vocab/Provider](http://bioentity.io/vocab/Provider)
 
 ## Used in
 
+ *  class: [association](Association.md) references: [provider](Provider.md)
 ## Fields
 

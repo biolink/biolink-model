@@ -26,6 +26,13 @@ class SchemaLoader:
             if slot.domain in self.schema.classes and slot.name not in self.schema.classes[slot.domain].slots:
                 self.schema.classes[slot.domain].slots.append(slot.name)
 
+        # Inject class domain references into slots
+        for cls in self.schema.classes.values():
+            for slotname in cls.slots:
+                if slotname in self.schema.slots:
+                    if self.schema.slots[slotname].domain is None:
+                        self.schema.slots[slotname].domain = cls.name
+
         # Inject class extensions as reverse mixins
         for cls in self.schema.classes.values():
             if cls.apply_to in self.schema.classes:
@@ -69,6 +76,10 @@ class SchemaLoader:
             if not slot.range:
                 slot.range = 'string'
 
+        # Update slots with parental information
+        for slot in self.schema.slots.values():
+            if slot.is_a:
+                merge_slots(slot, self.schema.slots[slot.is_a])
         return self.schema
 
     def schema_errors(self) -> List[str]:

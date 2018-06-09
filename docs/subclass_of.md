@@ -11,7 +11,7 @@ URI: [http://bioentity.io/vocab/subclass_of](slot_uri)
  * [WD:P279](http://purl.obolibrary.org/obo/WD_P279)
 ## Domain and Range
 
-[ontology class](OntologyClass.md) -> [ontology class](OntologyClass.md)
+[OntologyClass](OntologyClass.md) -> [OntologyClass](OntologyClass.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
@@ -19,5 +19,5 @@ URI: [http://bioentity.io/vocab/subclass_of](slot_uri)
 
 ## Used in
 
- *  usage: [attribute](Attribute.md)
- *  usage: [ontology class](OntologyClass.md)
+ *  usage: [Attribute](Attribute.md)
+ *  usage: [OntologyClass](OntologyClass.md)

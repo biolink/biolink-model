@@ -10,12 +10,12 @@ URI: [http://bioentity.io/vocab/physically_interacts_with](slot_uri)
  * [SEMMEDDB:INTERACTS_WITH](http://purl.obolibrary.org/obo/SEMMEDDB_INTERACTS_WITH)
 ## Domain and Range
 
-None -> string
+[named thing](NamedThing.md) -> string
 ## Inheritance
 
- *  is_a: [interacts with](interacts_with.md) *subsets: translator_minimal*
+ *  is_a: [interacts with](interacts_with.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [molecularly interacts with](molecularly_interacts_with.md) *subsets: translator_minimal*
+ *  child: [molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)
 ## Used in
 

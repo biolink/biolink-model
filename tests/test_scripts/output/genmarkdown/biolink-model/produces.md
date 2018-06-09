@@ -11,7 +11,7 @@ URI: [http://bioentity.io/vocab/produces](slot_uri)
  * [SEMMEDDB:PRODUCES](http://purl.obolibrary.org/obo/SEMMEDDB_PRODUCES)
 ## Domain and Range
 
-None -> string
+[named thing](NamedThing.md) -> string
 ## Inheritance
 
  *  is_a: [related to](related_to.md)

@@ -24,10 +24,12 @@ class MarkdownGenerator(Generator):
         super().__init__(schema, fmt)
         self.directory: Optional[str] = None
         self.image_directory: Optional[str] = None
+        self.noimages: bool = False
         self.gen_classes: Optional[Set[ClassDefinitionName]] = None
         self.gen_classes_neighborhood: Optional[References] = None
 
-    def visit_schema(self, directory: str=None, classes: Set[ClassDefinitionName]=None, image_dir: bool=False) -> None:
+    def visit_schema(self, directory: str=None, classes: Set[ClassDefinitionName]=None, image_dir: bool=False,
+                     noimages: bool=False) -> None:
         for cls in classes:
             if cls not in self.schema.classes:
                 raise ValueError("Unknown class name: {cls}")
@@ -42,7 +44,9 @@ class MarkdownGenerator(Generator):
             raise ValueError(f"Image directory can only be used with '-d' option")
         if image_dir:
             self.image_directory = os.path.join(directory, 'images')
-            os.makedirs(self.image_directory, exist_ok=True)
+            if not noimages:
+                os.makedirs(self.image_directory, exist_ok=True)
+        self.noimages = noimages
         self.synopsis = SchemaSynopsis(self.schema)
         os.makedirs(self.directory, exist_ok=True)
         with open(os.path.join(directory, 'index.md'), 'w') as ixfile:
@@ -52,17 +56,17 @@ class MarkdownGenerator(Generator):
 
                 self.header(3, 'Classes')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
-                    if not cls.is_a and not cls.mixin and self.secondary_ref(cls.name):
+                    if not cls.is_a and not cls.mixin and self.is_secondary_ref(cls.name):
                         self.class_hier(cls)
 
                 self.header(3, 'Mixins')
                 for cls in sorted(self.schema.classes.values(), key=lambda c: c.name):
-                    if cls.mixin and self.secondary_ref(cls.name):
+                    if cls.mixin and self.is_secondary_ref(cls.name):
                         self.class_hier(cls)
 
                 self.header(3, 'Slots')
                 for slot in sorted(self.schema.slots.values(), key=lambda s: s.name):
-                    if not slot.is_a and self.secondary_ref(slot.name):
+                    if not slot.is_a and self.is_secondary_ref(slot.name):
                         self.pred_hier(slot)
 
                 self.header(3, 'Types')
@@ -71,7 +75,7 @@ class MarkdownGenerator(Generator):
                     self.bullet(f'**{builtin_name}**')
                 self.header(4, 'Defined')
                 for typ in sorted(self.schema.types.values(), key=lambda t: t.name):
-                    if self.secondary_ref(typ.name):
+                    if self.is_secondary_ref(typ.name):
                         if typ.typeof is None:
                             typ_typ = '**string**'
                         elif typ.typeof in builtin_names:
@@ -94,7 +98,7 @@ class MarkdownGenerator(Generator):
                 print()
                 if self.image_directory:
                     yg = YumlGenerator(self.schema)
-                    yg.serialize(classes=[cls.name], directory=self.image_directory)
+                    yg.serialize(classes=[cls.name], directory=self.image_directory, load_image=not self.noimages)
                     img_url = os.path.join('images', os.path.basename(yg.output_file_name))
                 else:
                     img_url = YumlGenerator(self.schema).serialize(classes=[cls.name])\
@@ -111,23 +115,26 @@ class MarkdownGenerator(Generator):
 
                 self.header(2, 'Children')
                 if cls.name in self.synopsis.isarefs:
-                    for child in self.synopsis.isarefs[cls.name].classrefs:
-                        self.bullet(f' child: {self.link(child, use_desc=True)}')
+                    for child in sorted(self.synopsis.isarefs[cls.name].classrefs):
+                        self.bullet(f'{self.link(child, use_desc=True)}')
                 if cls.name in self.synopsis.mixinrefs:
-                    for mixin in self.synopsis.mixinrefs[cls.name].classrefs:
-                        self.bullet(f' mixin: {self.link(mixin, use_desc=True)}')
+                    for mixin in sorted(self.synopsis.mixinrefs[cls.name].classrefs):
+                        self.bullet(f'{self.link(mixin, use_desc=True, after_link="(mixin)")}')
                 if cls.name in self.synopsis.classrefs:
                     self.header(2, 'Used in')
-                    for cn in self.synopsis.classrefs[cls.name].classrefs:
-                        self.bullet(f' class: {self.link(cls)} references: {self.link(cn)}')
+                    for sn in sorted(self.synopsis.classrefs[cls.name].slotrefs):
+                        slot = self.schema.slots[sn]
+                        if slot.range == cls.name:
+                            self.bullet(f' class: **{self.link(slot.domain)}** '
+                                        f'*{self.link(slot.name, add_subset=False)}* **{self.link(cls.name)}**')
 
                 self.header(2, 'Fields')
-                for sn in cls.slots:
+                for sn in sorted(cls.slots):
                     self.slot_field(cls, self.schema.slots[sn])
 
-                for slot in self.all_slots(cls):
-                    if slot.range in self.schema.classes and slot.name not in cls.slots:
-                       self.slot_field(cls, slot)
+                for slot in sorted(self.all_slots(cls), key=lambda s: s.name):
+                    if slot.name not in cls.slots:
+                        self.slot_field(cls, slot)
 
         return True
 
@@ -182,10 +189,13 @@ class MarkdownGenerator(Generator):
         if obj.subclass_of:
             self.bullet(self.xlink(obj.subclass_of))
 
-    def primary_ref(self, cn: ClassDefinitionName) -> bool:
-        return not self.gen_classes or cn in self.gen_classes
+    def is_secondary_ref(self, en: str) -> bool:
+        """ Determine whether 'en' is the name of something in the neighborhood of the requested classes
 
-    def secondary_ref(self, en: str) -> bool:
+        @param en: element name
+        @return: True if 'en' is the name of a slot, class or type in the immediate neighborhood of of what we are
+        building
+        """
         if not self.gen_classes:
             return True
         elif en in self.schema.classes:
@@ -245,13 +255,31 @@ class MarkdownGenerator(Generator):
         self.header(1, thingtype)
         # print(f'---\nlayout: {layout}\n---\n')
 
-    def link(self, ref: Optional[Union[str, Element]], use_desc: bool=False) -> str:
+    @staticmethod
+    def bbin(obj: Union[str, Element]) -> str:
+        """ Boldify built in types
+
+        @param obj: object name or id
+        @return:
+        """
+        return obj.name if isinstance(obj, Element ) else f'**{obj}**' if obj in builtin_names else obj
+
+    def link(self, ref: Optional[Union[str, Element]], *, after_link: str = None, use_desc: bool=False, add_subset: bool=True) -> str:
+        """ Create a link to ref if appropriate.
+
+        @param ref: the name or value of a class, slot, type or the name of a built in type.
+        @param after_link: Text to put between link and description
+        @param use_desc: True means append a description after the link if available
+        @param add_subset: True means add any subset information that is available
+        @return:
+        """
         obj = self.obj_for(ref) if isinstance(ref, str) else ref
         nl = '\n'
-        return ref if obj is None or not self.secondary_ref(obj.name) \
-            else f'[{self.aliased_slot_name(obj) if isinstance(obj, SlotDefinition) else obj.name}]' \
+        return self.bbin(ref) if obj is None or not self.is_secondary_ref(obj.name) \
+            else f'[{self.aliased_slot_name(obj) if isinstance(obj, SlotDefinition) else self.obj_name(obj)}]' \
                  f'({self.obj_name(obj)}.{self.format})' + \
-                 (f' *subsets: {"| ".join(obj.in_subset)}*' if obj.in_subset else '') + \
+                 (f' *subsets*: ({"| ".join(obj.in_subset)})' if add_subset and obj.in_subset else '') + \
+                 (f' {after_link} ' if after_link else '') + \
                  (f' - {obj.description.split(nl)[0]}' if use_desc and
                                                           isinstance(obj, Element) and obj.description else '')
 
@@ -265,6 +293,7 @@ class MarkdownGenerator(Generator):
 @click.option("-f", "--format", default='md', type=click.Choice(['md']), help="Output format")
 @click.option("--classes", "-c", default=None, multiple=True, help="Class(es) to emit")
 @click.option("-i", "--img", is_flag=True, help="Download YUML images to 'image' directory")
-def cli(yamlfile, format, dir, classes, img):
+@click.option("--noimages", is_flag=True, help="Do not (re-)generate images")
+def cli(yamlfile, format, dir, classes, img, noimages):
     """ Generate markdown documentation of a biolink model """
-    MarkdownGenerator(yamlfile, format).serialize(classes=classes, directory=dir, image_dir=img)
+    MarkdownGenerator(yamlfile, format).serialize(classes=classes, directory=dir, image_dir=img, noimages=noimages)

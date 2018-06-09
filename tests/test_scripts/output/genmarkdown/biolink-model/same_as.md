@@ -12,7 +12,7 @@ URI: [http://bioentity.io/vocab/same_as](slot_uri)
  * [WD:P2888](http://purl.obolibrary.org/obo/WD_P2888)
 ## Domain and Range
 
-None -> string
+[named thing](NamedThing.md) -> string
 ## Inheritance
 
  *  is_a: [related to](related_to.md)

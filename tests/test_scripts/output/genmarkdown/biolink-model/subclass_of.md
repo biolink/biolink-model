@@ -19,5 +19,5 @@ URI: [http://bioentity.io/vocab/subclass_of](slot_uri)
 
 ## Used in
 
- *  usage: [attribute](Attribute.md)
  *  usage: [ontology class](OntologyClass.md)
+ *  usage: [attribute](Attribute.md)

@@ -5,7 +5,7 @@ all: build test
 test: pytests
 build: context.jsonld build_core contrib_build_monarch contrib_build_translator
 
-build_core: metamodel/metamodel.py biolinkmodel/datamodel.py docs/index.md gen-golr-views ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql
+build_core: metamodel/metamodel.py metamodel/docs/index.md biolinkmodel/datamodel.py docs/index.md gen-golr-views ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql
 
 contrib_build_%: contrib/%/docs/index.md contrib/%/datamodel.py contrib/%/schema.py contrib/%-golr contrib/%/ontology.ttl contrib/%/schema.json contrib/%-java contrib/%/%.graphql
 	echo hi
@@ -50,13 +50,18 @@ contrib/%-java: contrib/%/schema.json
 # DOCS
 # ~~~~~~~~~~~~~~~~~~~~
 docs/index.md: biolink-model.yaml
-	gen-markdown --dir docs -i $< > $@
+	gen-markdown --dir docs -i $< 
+metamodel/docs/index.md: meta.yaml
+	gen-markdown --dir metamodel/docs -i $< 
 contrib/%/docs/index.md: contrib/%.yaml
 	gen-markdown --dir contrib/$*/docs $< > $@
-clean-docs:
-	rm docs/*.md
+
+clean-docs: 
+	 docs/*.md
 	rm contrib/%/docs/*.md
 
+update-docs: biolink-model.yaml
+	gen-markdown --dir docs -i --noimages $< > $@
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
@@ -134,8 +139,6 @@ ontology/%.tree: ontology/%.json
 
 ontology/%.png: ontology/%.json
 	ogr-tree -t png -o $@ -r $< % 
-
-
 
 # ----------------------------------------
 # TESTS

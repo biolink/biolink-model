@@ -11,10 +11,10 @@ URI: [http://bioentity.io/vocab/part_of](slot_uri)
  * [WD:P361](http://purl.obolibrary.org/obo/WD_P361)
 ## Domain and Range
 
-None -> string
+[NamedThing](NamedThing.md) -> **string**
 ## Inheritance
 
- *  is_a: [overlaps](overlaps.md) *subsets: translator_minimal*
+ *  is_a: [overlaps](overlaps.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in

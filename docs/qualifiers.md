@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/qualifiers](slot_uri)
 
 ## Domain and Range
 
-None -> [ontology class](OntologyClass.md)
+[Association](Association.md) -> [OntologyClass](OntologyClass.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)
@@ -16,4 +16,4 @@ None -> [ontology class](OntologyClass.md)
 
 ## Used in
 
- *  usage: [association](Association.md)
+ *  usage: [Association](Association.md)

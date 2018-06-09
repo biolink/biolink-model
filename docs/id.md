@@ -6,14 +6,15 @@ A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a
 URI: [http://bioentity.io/vocab/sequence_variant_id](slot_uri)
 ## Mappings
 
+ * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-[sequence variant](SequenceVariant.md) -> [identifier type](IdentifierType.md)
+[SequenceVariant](SequenceVariant.md) -> [IdentifierType](IdentifierType.md)
 ## Inheritance
 
- *  is_a: [id](id.md) *subsets: translator_minimal*
+ *  is_a: [id](id.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in
 
- *  usage: [sequence variant](SequenceVariant.md)
+ *  usage: [SequenceVariant](SequenceVariant.md)

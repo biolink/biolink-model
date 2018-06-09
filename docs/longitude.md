@@ -9,7 +9,7 @@ URI: [http://bioentity.io/vocab/longitude](slot_uri)
  * [wgs:long](http://purl.obolibrary.org/obo/wgs_long)
 ## Domain and Range
 
-None -> float
+[GeographicLocation](GeographicLocation.md) -> **float**
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
@@ -17,5 +17,5 @@ None -> float
 
 ## Used in
 
- *  usage: [geographic location at time](GeographicLocationAtTime.md)
- *  usage: [geographic location](GeographicLocation.md)
+ *  usage: [GeographicLocationAtTime](GeographicLocationAtTime.md)
+ *  usage: [GeographicLocation](GeographicLocation.md)

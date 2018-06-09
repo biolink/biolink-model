@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/drug_exposure_drug](slot_uri)
 
 ## Domain and Range
 
-[drug exposure](DrugExposure.md) -> [chemical substance](ChemicalSubstance.md)
+[DrugExposure](DrugExposure.md) -> [ChemicalSubstance](ChemicalSubstance.md)
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [drug exposure](DrugExposure.md)
+ *  usage: [DrugExposure](DrugExposure.md)

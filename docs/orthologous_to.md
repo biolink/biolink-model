@@ -10,10 +10,10 @@ URI: [http://bioentity.io/vocab/orthologous_to](slot_uri)
  * [WD:P684](http://purl.obolibrary.org/obo/WD_P684)
 ## Domain and Range
 
-None -> string
+[NamedThing](NamedThing.md) -> **string**
 ## Inheritance
 
- *  is_a: [homologous to](homologous_to.md) *subsets: translator_minimal*
+ *  is_a: [homologous to](homologous_to.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in

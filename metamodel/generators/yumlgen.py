@@ -46,7 +46,8 @@ class YumlGenerator(Generator):
         self.gen_classes: Set[ClassDefinitionName] = None           # Classes to be generated
         self.output_file_name: Optional[str] = None             # Location of output file if directory used
 
-    def visit_schema(self, classes: Set[ClassDefinitionName]=None, directory: Optional[str] = None) -> None:
+    def visit_schema(self, classes: Set[ClassDefinitionName]=None, directory: Optional[str] = None,
+                     load_image: bool=True) -> None:
         if directory and not os.path.isdir(directory):
             raise ValueError(f"Directory {directory} does not exist")
         for cls in classes:
@@ -64,7 +65,7 @@ class YumlGenerator(Generator):
         yumlclassdef: List[str] = []
 
         while self.referenced.difference(self.generated):
-            cn = sorted(list(self.referenced.difference(self.generated)))[0]
+            cn = sorted(list(self.referenced.difference(self.generated)), reverse=True)[0]
             self.generated.add(cn)
             assocs = self.class_associations(cn)
             if assocs:
@@ -76,11 +77,12 @@ class YumlGenerator(Generator):
         if directory:
             self.output_file_name = os.path.join(directory,
                                        camelcase(classes[0] if classes else self.schema.name) + file_suffix)
-            resp = requests.get(yuml_url, stream=True)
-            if resp.ok:
-                with open(self.output_file_name, 'wb') as f:
-                    for chunk in resp.iter_content(chunk_size=2048):
-                        f.write(chunk)
+            if load_image:
+                resp = requests.get(yuml_url, stream=True)
+                if resp.ok:
+                    with open(self.output_file_name, 'wb') as f:
+                        for chunk in resp.iter_content(chunk_size=2048):
+                            f.write(chunk)
         else:
             print(str(YUML)+', '.join(yumlclassdef), end='')
 
@@ -94,7 +96,7 @@ class YumlGenerator(Generator):
         """
         slot_defs: List[str] = []
         if cn not in self.box_generated and (not self.focus_classes or cn in self.focus_classes):
-            for slotname in self.filtered_cls_slots(cn, True):
+            for slotname in self.filtered_cls_slots(cn, all_slots=True):
                 cls = self.schema.classes[cn]
                 slot = self.schema.slots[slotname]
                 if not slot.range or slot.range in builtin_names or slot.range in self.schema.types:
@@ -112,28 +114,44 @@ class YumlGenerator(Generator):
         @param cn: Name of class to be emitted
         @return: YUML representation of the association
         """
+
+        # NOTE: YUML diagrams draw in the opposite order in which they are created, so we work from bottom to top and
+        # from right to left
         assocs: List[str] = []
         if cn not in self.associations_generated and (not self.focus_classes or cn in self.focus_classes):
             cls = self.schema.classes[cn]
 
-            # Emit the parent class
-            if cls.is_a:
-                assocs.append(self.class_box(cls.is_a) + yuml_is_a + self.class_box(cn))
-            if cn in sorted(self.synopsis.isarefs):
-                for is_a_cls in sorted(self.synopsis.isarefs[cn].classrefs):
-                    assocs.append(self.class_box(cn) + yuml_is_a + self.class_box(is_a_cls))
-            for slotname in self.filtered_cls_slots(cn, False):
+            # Slots
+            for slotname in self.filtered_cls_slots(cn, False)[::-1]:
                 slot = self.schema.slots[slotname]
                 if slot.range in self.schema.classes:
                     assocs.append(self.class_box(cn) + (yuml_inline if slot.inlined else yuml_ref) +
                                   self.aliased_slot_name(slot) + self.prop_modifier(cls, slot) +
                                   self.cardinality(slot) + '>' + self.class_box(slot.range))
+
+            # Mixins used in the class
             for mixin in cls.mixins:
                 assocs.append(self.class_box(cn) + yuml_uses + self.class_box(mixin))
+
+            # Classes that use the class as a mixin
+            if cls.name in self.synopsis.mixinrefs:
+                for mixin in sorted(self.synopsis.mixinrefs[cls.name].classrefs, reverse=True):
+                    assocs.append(self.class_box(mixin) + yuml_uses + self.class_box(cn))
+
+            # Classes that inject information
             if cn in self.synopsis.applytos:
-                for injector in sorted(self.synopsis.applytos[cn].classrefs):
+                for injector in sorted(self.synopsis.applytos[cn].classrefs, reverse=True):
                     assocs.append(self.class_box(cn) + yuml_injected + self.class_box(injector))
             self.associations_generated.add(cn)
+
+            # Children
+            if cn in self.synopsis.isarefs:
+                for is_a_cls in sorted(self.synopsis.isarefs[cn].classrefs, reverse=True):
+                    assocs.append(self.class_box(cn) + yuml_is_a + self.class_box(is_a_cls))
+
+            # Parent
+            if cls.is_a:
+                assocs.append(self.class_box(cls.is_a) + yuml_is_a + self.class_box(cn))
         return ', '.join(assocs)
 
     @staticmethod
@@ -143,17 +161,18 @@ class YumlGenerator(Generator):
         else:
             return '' if slot.primary_key or slot.required else ' %3F'
 
-    def filtered_cls_slots(self, cn: ClassDefinitionName, all_slots: bool) \
+    def filtered_cls_slots(self, cn: ClassDefinitionName, all_slots: bool=True) \
             -> List[SlotDefinitionName]:
-        """ Return the set of slots associated with the class that meet the filter criteria
+        """ Return the set of slots associated with the class that meet the filter criteria.  Slots will be returned
+        in defining order, with class slots returned last
 
         @param cn: name of class to filter
         @param all_slots: True means include attributes
-        @return: List of slot definitions that mee the criteria
+        @return: List of slot definitions
         """
         rval = []
         cls = self.schema.classes[cn]
-        cls_slots = self.all_slots(cls)
+        cls_slots = self.all_slots(cls, cls_slots_first=True)
         for slot in cls_slots:
             if all_slots or slot.range in self.schema.classes:
                 rval.append(slot.name)

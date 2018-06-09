@@ -9,7 +9,7 @@ URI: [http://bioentity.io/vocab/has_phenotype](slot_uri)
  * [RO:0002200](http://purl.obolibrary.org/obo/RO_0002200)
 ## Domain and Range
 
-[biological entity](BiologicalEntity.md) -> [phenotype](Phenotype.md)
+[BiologicalEntity](BiologicalEntity.md) -> [Phenotype](Phenotype.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
@@ -17,4 +17,4 @@ URI: [http://bioentity.io/vocab/has_phenotype](slot_uri)
 
 ## Used in
 
- *  usage: [biological entity](BiologicalEntity.md)
+ *  usage: [BiologicalEntity](BiologicalEntity.md)

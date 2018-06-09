@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/sex_qualifier](slot_uri)
 
 ## Domain and Range
 
-None -> [biological sex](BiologicalSex.md)
+[entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) -> [biological sex](BiologicalSex.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)
@@ -16,10 +16,10 @@ None -> [biological sex](BiologicalSex.md)
 
 ## Used in
 
- *  usage: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md)
- *  usage: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
- *  usage: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
- *  usage: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md)
  *  usage: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
  *  usage: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
+ *  usage: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
+ *  usage: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md)
  *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
+ *  usage: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
+ *  usage: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md)

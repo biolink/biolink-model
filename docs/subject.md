@@ -11,7 +11,7 @@ URI: [http://bioentity.io/vocab/variant_to_thing_association_subject](slot_uri)
  * [oban:association_has_subject](http://purl.obolibrary.org/obo/oban_association_has_subject)
 ## Domain and Range
 
-[variant to thing association](VariantToThingAssociation.md) -> [sequence variant](SequenceVariant.md)
+[VariantToThingAssociation](VariantToThingAssociation.md) -> [SequenceVariant](SequenceVariant.md)
 ## Inheritance
 
  *  is_a: [subject](subject.md)
@@ -19,4 +19,4 @@ URI: [http://bioentity.io/vocab/variant_to_thing_association_subject](slot_uri)
 
 ## Used in
 
- *  usage: [variant to thing association](VariantToThingAssociation.md)
+ *  usage: [VariantToThingAssociation](VariantToThingAssociation.md)

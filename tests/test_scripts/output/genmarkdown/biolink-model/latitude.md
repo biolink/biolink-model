@@ -9,7 +9,7 @@ URI: [http://bioentity.io/vocab/latitude](slot_uri)
  * [wgs:lat](http://purl.obolibrary.org/obo/wgs_lat)
 ## Domain and Range
 
-None -> float
+[geographic location](GeographicLocation.md) -> float
 ## Inheritance
 
  *  is_a: [node property](node_property.md)

@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/contributes_to](slot_uri)
  * [RO:0002326](http://purl.obolibrary.org/obo/RO_0002326)
 ## Domain and Range
 
-None -> string
+[named thing](NamedThing.md) -> string
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [causes](causes.md) *subsets: translator_minimal*
+ *  child: [causes](causes.md) *subsets*: (translator_minimal)
 ## Used in
 

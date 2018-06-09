@@ -12,17 +12,20 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
 
 ## Children
 
- *  child: [organism taxon](OrganismTaxon.md)
- *  child: [gene ontology class](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
- *  mixin: [attribute](Attribute.md) - A property or characteristic of an entity
+ * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
+ * [OrganismTaxon](OrganismTaxon.md)
+ * [Attribute](Attribute.md) (mixin)  - A property or characteristic of an entity
 ## Used in
 
- *  class: [ontology class](OntologyClass.md) references: [attribute](Attribute.md)
- *  class: [ontology class](OntologyClass.md) references: [organism taxon](OrganismTaxon.md)
- *  class: [ontology class](OntologyClass.md) references: [gene ontology class](GeneOntologyClass.md)
+ *  class: **[Association](Association.md)** *[association type](association_type.md)* **[OntologyClass](OntologyClass.md)**
+ *  class: **[NamedThing](NamedThing.md)** *[has molecular consequence](has_molecular_consequence.md)* **[OntologyClass](OntologyClass.md)**
+ *  class: **[MolecularInteraction](MolecularInteraction.md)** *[interacting molecules category](interacting_molecules_category.md)* **[OntologyClass](OntologyClass.md)**
+ *  class: **[Association](Association.md)** *[qualifiers](qualifiers.md)* **[OntologyClass](OntologyClass.md)**
+ *  class: **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[quantifier qualifier](quantifier_qualifier.md)* **[OntologyClass](OntologyClass.md)**
+ *  class: **[OntologyClass](OntologyClass.md)** *[subclass of](subclass_of.md)* **[OntologyClass](OntologyClass.md)**
 ## Fields
 
- * _[subclass of](subclass_of.md) *subsets: translator_minimal*_
+ * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
     * _holds between two classes where the domain class is a specialization of the range class_
-    * range: [ontology class](OntologyClass.md)
+    * range: [OntologyClass](OntologyClass.md)
     * __Local__

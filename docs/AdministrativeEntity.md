@@ -12,9 +12,8 @@ URI: [http://bioentity.io/vocab/AdministrativeEntity](http://bioentity.io/vocab/
 
 ## Children
 
- *  child: [provider](Provider.md) - person, group, organization or project that provides a piece of information
+ * [Provider](Provider.md) - person, group, organization or project that provides a piece of information
 ## Used in
 
- *  class: [administrative entity](AdministrativeEntity.md) references: [provider](Provider.md)
 ## Fields
 

@@ -10,12 +10,11 @@ URI: [http://bioentity.io/vocab/SpecificityQuantifier](http://bioentity.io/vocab
 
 ## Inheritance
 
- *  is_a: [relationship quantifier](RelationshipQuantifier.md)
+ *  is_a: [RelationshipQuantifier](RelationshipQuantifier.md)
 ## Children
 
- *  child: [pathognomonicity quantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+ * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
 ## Used in
 
- *  class: [specificity quantifier](SpecificityQuantifier.md) references: [pathognomonicity quantifier](PathognomonicityQuantifier.md)
 ## Fields
 

@@ -1,7 +1,7 @@
 # Slot: molecularly interacts with
 
 
-
+holds between two entities that make physical contact as part of some interaction
 
 URI: [http://bioentity.io/vocab/molecularly_interacts_with](slot_uri)
 ## Mappings
@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/molecularly_interacts_with](slot_uri)
  * [RO:0002436](http://purl.obolibrary.org/obo/RO_0002436)
 ## Domain and Range
 
-[molecular entity](MolecularEntity.md) -> [molecular entity](MolecularEntity.md)
+[MolecularEntity](MolecularEntity.md) -> [MolecularEntity](MolecularEntity.md)
 ## Inheritance
 
- *  is_a: [physically interacts with](physically_interacts_with.md) *subsets: translator_minimal*
+ *  is_a: [physically interacts with](physically_interacts_with.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in
 
- *  usage: [molecular entity](MolecularEntity.md)
+ *  usage: [MolecularEntity](MolecularEntity.md)

@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/quantifier_qualifier](slot_uri)
 
 ## Domain and Range
 
-None -> [ontology class](OntologyClass.md)
+[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) -> [OntologyClass](OntologyClass.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)

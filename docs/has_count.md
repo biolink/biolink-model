@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/variant_to_population_association_has_count](slo
 
 ## Domain and Range
 
-[variant to population association](VariantToPopulationAssociation.md) -> string
+[VariantToPopulationAssociation](VariantToPopulationAssociation.md) -> **string**
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [variant to population association](VariantToPopulationAssociation.md)
+ *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

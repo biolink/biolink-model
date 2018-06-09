@@ -9,7 +9,7 @@ URI: [http://bioentity.io/vocab/gene_associated_with_condition](slot_uri)
  * [WD:P2293](http://purl.obolibrary.org/obo/WD_P2293)
 ## Domain and Range
 
-[gene](Gene.md) -> [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
+[Gene](Gene.md) -> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
@@ -17,4 +17,4 @@ URI: [http://bioentity.io/vocab/gene_associated_with_condition](slot_uri)
 
 ## Used in
 
- *  usage: [gene](Gene.md)
+ *  usage: [Gene](Gene.md)

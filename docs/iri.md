@@ -6,9 +6,10 @@ An IRI for the node. This is determined by the id using expansion rules.
 URI: [http://bioentity.io/vocab/iri](slot_uri)
 ## Mappings
 
+ * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> [iri type](IriType.md)
+[NamedThing](NamedThing.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
@@ -16,4 +17,4 @@ URI: [http://bioentity.io/vocab/iri](slot_uri)
 
 ## Used in
 
- *  usage: [named thing](NamedThing.md)
+ *  usage: [NamedThing](NamedThing.md)

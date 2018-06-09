@@ -6,11 +6,11 @@ Metamodel for biolink schema
 ### Classes
 
  * [element](Element.md) - root of all described things
-    * [type definition](TypeDefinition.md) - A type definition
     * [definition](Definition.md) - definition base class
        * [class definition](ClassDefinition.md) - A class or interface
-       * [slot definition](SlotDefinition.md) - A property or slot
        * [schema definition](SchemaDefinition.md) - A collection of definitions
+       * [slot definition](SlotDefinition.md) - A property or slot
+    * [type definition](TypeDefinition.md) - A type definition
  * [example](Example.md) - example of usage
 ### Mixins
 

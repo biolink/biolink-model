@@ -10,10 +10,10 @@ URI: [http://bioentity.io/vocab/prevents](slot_uri)
  * [SEMMEDDB:PREVENTS](http://purl.obolibrary.org/obo/SEMMEDDB_PREVENTS)
 ## Domain and Range
 
-None -> string
+[named thing](NamedThing.md) -> string
 ## Inheritance
 
- *  is_a: [affects risk for](affects_risk_for.md) *subsets: translator_minimal*
+ *  is_a: [affects risk for](affects_risk_for.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in

@@ -10,7 +10,7 @@ URI: [http://bioentity.io/vocab/located_in](slot_uri)
  * [WD:276](http://purl.obolibrary.org/obo/WD_276)
 ## Domain and Range
 
-None -> string
+[NamedThing](NamedThing.md) -> **string**
 ## Inheritance
 
  *  is_a: [related to](related_to.md)

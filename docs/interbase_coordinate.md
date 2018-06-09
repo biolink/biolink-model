@@ -6,9 +6,10 @@ TODO
 URI: [http://bioentity.io/vocab/interbase_coordinate](slot_uri)
 ## Mappings
 
+ * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-None -> string
+[NamedThing](NamedThing.md) -> **string**
 ## Inheritance
 
  *  is_a: [node property](node_property.md)

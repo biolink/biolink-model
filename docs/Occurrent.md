@@ -13,34 +13,34 @@ URI: [http://bioentity.io/vocab/Occurrent](http://bioentity.io/vocab/Occurrent)
 
 ## Children
 
- *  child: [procedure](Procedure.md) - A series of actions conducted in a certain order or manner
- *  child: [phenomenon](Phenomenon.md) - a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
- *  child: [activity and behavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
- *  mixin: [molecular activity](MolecularActivity.md) - An execution of a molecular function carried out by a gene product or macromolecular complex.
- *  mixin: [biological process](BiologicalProcess.md) - One or more causally connected executions of molecular functions
- *  mixin: [environmental process](EnvironmentalProcess.md)
+ * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
+ * [Phenomenon](Phenomenon.md) - a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
+ * [Procedure](Procedure.md) - A series of actions conducted in a certain order or manner
+ * [BiologicalProcess](BiologicalProcess.md) (mixin)  - One or more causally connected executions of molecular functions
+ * [EnvironmentalProcess](EnvironmentalProcess.md) (mixin) 
+ * [MolecularActivity](MolecularActivity.md) (mixin)  - An execution of a molecular function carried out by a gene product or macromolecular complex.
 ## Used in
 
- *  class: [occurrent](Occurrent.md) references: [procedure](Procedure.md)
- *  class: [occurrent](Occurrent.md) references: [activity and behavior](ActivityAndBehavior.md)
- *  class: [occurrent](Occurrent.md) references: [environmental process](EnvironmentalProcess.md)
- *  class: [occurrent](Occurrent.md) references: [molecular activity](MolecularActivity.md)
- *  class: [occurrent](Occurrent.md) references: [biological process](BiologicalProcess.md)
- *  class: [occurrent](Occurrent.md) references: [phenomenon](Phenomenon.md)
+ *  class: **[NamedThing](NamedThing.md)** *[actively involved in](actively_involved_in.md)* **[Occurrent](Occurrent.md)**
+ *  class: **[NamedThing](NamedThing.md)** *[capable of](capable_of.md)* **[Occurrent](Occurrent.md)**
+ *  class: **[NamedThing](NamedThing.md)** *[participates in](participates_in.md)* **[Occurrent](Occurrent.md)**
+ *  class: **[Occurrent](Occurrent.md)** *[precedes](precedes.md)* **[Occurrent](Occurrent.md)**
+ *  class: **[Occurrent](Occurrent.md)** *[regulates, process to process](regulates_process_to_process.md)* **[Occurrent](Occurrent.md)**
 ## Fields
 
- * _[regulates, process to process](regulates_process_to_process.md)_
-    * range: [occurrent](Occurrent.md)
-    * __Local__
- * _[has participant](has_participant.md) *subsets: translator_minimal*_
-    * _holds between a process and a continuant, where the continuant is somehow involved in the process _
-    * range: string
-    * __Local__
- * _[has input](has_input.md) *subsets: translator_minimal*_
+ * _[has input](has_input.md) *subsets*: (translator_minimal)_
     * _holds between a process and a continuant, where the continuant is an input into the process_
-    * range: string
+    * range: **string**
     * __Local__
- * _[precedes](precedes.md) *subsets: translator_minimal*_
+ * _[has participant](has_participant.md) *subsets*: (translator_minimal)_
+    * _holds between a process and a continuant, where the continuant is somehow involved in the process _
+    * range: **string**
+    * __Local__
+ * _[precedes](precedes.md) *subsets*: (translator_minimal)_
     * _holds between two processes, where one completes before the other begins_
-    * range: [occurrent](Occurrent.md)
+    * range: [Occurrent](Occurrent.md)
+    * __Local__
+ * _[regulates, process to process](regulates_process_to_process.md) *subsets*: (translator_minimal)_
+    * _describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be._
+    * range: [Occurrent](Occurrent.md)
     * __Local__

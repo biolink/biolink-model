@@ -138,7 +138,7 @@ class SchemaSynopsis:
         return [e for e in elements if e not in self.types and e not in self.slots and
                 e not in self.classes and e not in builtin_names]
 
-    def errors(self) -> List[str]:
+    def errors(self, repair:bool = False) -> List[str]:
         rval = []
         undefined_classes = self.check_classes(self.classrefs.keys())
         if undefined_classes:
@@ -149,6 +149,13 @@ class SchemaSynopsis:
         undefined_types = self.check_types(self.typerefs.keys())
         if undefined_types:
             rval += [f"\tUndefined type references: {', '.join(undefined_types)}"]
+        # TODO: add other checks
+        for cls in self.schema.classes:
+            for slotname in self.schema.slots:
+                if slotname in self.schema.slots:       # Error checked above
+                    if self.schema.slots[slotname].domain != cls.name:
+                        rval += [f"\tDomain mismatch: slot {slotname} domain is: {self.schema.slots[slotname].domain} "
+                                 f"class {cls.name} claims ownership"]
         return rval
 
     def summary(self) -> str:

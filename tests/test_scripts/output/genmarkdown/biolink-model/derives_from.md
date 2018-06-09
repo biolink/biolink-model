@@ -9,7 +9,7 @@ URI: [http://bioentity.io/vocab/derives_from](slot_uri)
  * [RO:0001000](http://purl.obolibrary.org/obo/RO_0001000)
 ## Domain and Range
 
-None -> string
+[named thing](NamedThing.md) -> string
 ## Inheritance
 
  *  is_a: [related to](related_to.md)

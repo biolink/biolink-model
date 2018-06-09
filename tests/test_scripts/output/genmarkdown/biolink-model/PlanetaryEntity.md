@@ -13,19 +13,47 @@ URI: [http://bioentity.io/vocab/PlanetaryEntity](http://bioentity.io/vocab/Plane
  *  is_a: [named thing](NamedThing.md) - a databased entity or concept/class
 ## Children
 
- *  child: [geographic location](GeographicLocation.md) - a location that can be described in lat/long coordinates
- *  child: [environmental process](EnvironmentalProcess.md)
- *  child: [geographic location at time](GeographicLocationAtTime.md) - a location that can be described in lat/long coordinates, for a particular time
  *  child: [environmental feature](EnvironmentalFeature.md)
+ *  child: [environmental process](EnvironmentalProcess.md)
+ *  child: [geographic location](GeographicLocation.md) - a location that can be described in lat/long coordinates
+ *  child: [geographic location at time](GeographicLocationAtTime.md) - a location that can be described in lat/long coordinates, for a particular time
 ## Used in
 
- *  class: [planetary entity](PlanetaryEntity.md) references: [geographic location](GeographicLocation.md)
- *  class: [planetary entity](PlanetaryEntity.md) references: [environmental process](EnvironmentalProcess.md)
- *  class: [planetary entity](PlanetaryEntity.md) references: [geographic location at time](GeographicLocationAtTime.md)
- *  class: [planetary entity](PlanetaryEntity.md) references: [environmental feature](EnvironmentalFeature.md)
 ## Fields
 
+ * _[category](category.md) *subsets*: (translator_minimal)_
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
+    * range: [label type](LabelType.md)
+    * inherited from: [named thing](NamedThing.md)
+ * _[description](description.md) *subsets*: (translator_minimal)_
+    * _a human-readable description of a thing_
+    * range: [narrative text](NarrativeText.md)
+    * inherited from: [named thing](NamedThing.md)
+ * _[full name](full_name.md)_
+    * _a long-form human readable name for a thing_
+    * range: [label type](LabelType.md)
+    * inherited from: [named thing](NamedThing.md)
+ * _[id](id.md) *subsets*: (translator_minimal)_
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+    * range: [identifier type](IdentifierType.md)
+    * inherited from: [named thing](NamedThing.md)
+ * _[iri](iri.md) *subsets*: (translator_minimal)_
+    * _An IRI for the node. This is determined by the id using expansion rules._
+    * range: [iri type](IriType.md)
+    * inherited from: [named thing](NamedThing.md)
+ * _[name](name.md) *subsets*: (translator_minimal)_
+    * _A human-readable name for a thing_
+    * range: [label type](LabelType.md)
+    * inherited from: [named thing](NamedThing.md)
+ * _[node property](node_property.md)_
+    * _A grouping for any property that holds between a node and a value_
+    * range: string
+    * inherited from: [named thing](NamedThing.md)
  * _[related to](related_to.md)_
     * _A grouping for any relationship type that holds between any two things_
     * range: [named thing](NamedThing.md)
+    * inherited from: [named thing](NamedThing.md)
+ * _[systematic synonym](systematic_synonym.md)_
+    * _more commonly used for gene symbols in yeast_
+    * range: [label type](LabelType.md)
     * inherited from: [named thing](NamedThing.md)

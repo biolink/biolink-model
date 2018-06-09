@@ -11,7 +11,7 @@ URI: [http://bioentity.io/vocab/precedes](slot_uri)
  * [WD:P156](http://purl.obolibrary.org/obo/WD_P156)
 ## Domain and Range
 
-[occurrent](Occurrent.md) -> [occurrent](Occurrent.md)
+[Occurrent](Occurrent.md) -> [Occurrent](Occurrent.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/precedes](slot_uri)
 
 ## Used in
 
- *  usage: [occurrent](Occurrent.md)
- *  usage: [biological process](BiologicalProcess.md)
- *  usage: [environmental process](EnvironmentalProcess.md)
- *  usage: [molecular activity](MolecularActivity.md)
+ *  usage: [Occurrent](Occurrent.md)
+ *  usage: [EnvironmentalProcess](EnvironmentalProcess.md)
+ *  usage: [MolecularActivity](MolecularActivity.md)
+ *  usage: [BiologicalProcess](BiologicalProcess.md)

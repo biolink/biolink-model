@@ -10,7 +10,7 @@ URI: [http://bioentity.io/vocab/has_gene_product](slot_uri)
  * [WD:P688](http://purl.obolibrary.org/obo/WD_P688)
 ## Domain and Range
 
-[gene](Gene.md) -> [gene product](GeneProduct.md)
+[Gene](Gene.md) -> [GeneProduct](GeneProduct.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
@@ -18,4 +18,4 @@ URI: [http://bioentity.io/vocab/has_gene_product](slot_uri)
 
 ## Used in
 
- *  usage: [gene](Gene.md)
+ *  usage: [Gene](Gene.md)

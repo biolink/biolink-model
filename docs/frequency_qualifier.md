@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/frequency_qualifier](slot_uri)
 
 ## Domain and Range
 
-None -> [frequency value](FrequencyValue.md)
+[EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) -> [FrequencyValue](FrequencyValue.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)
@@ -16,15 +16,15 @@ None -> [frequency value](FrequencyValue.md)
 
 ## Used in
 
- *  usage: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.md)
- *  usage: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.md)
- *  usage: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md)
- *  usage: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.md)
- *  usage: [variant to disease association](VariantToDiseaseAssociation.md)
- *  usage: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md)
- *  usage: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.md)
- *  usage: [entity to disease association](EntityToDiseaseAssociation.md)
- *  usage: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.md)
- *  usage: [gene to disease association](GeneToDiseaseAssociation.md)
- *  usage: [variant to population association](VariantToPopulationAssociation.md)
- *  usage: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.md)
+ *  usage: [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)
+ *  usage: [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
+ *  usage: [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
+ *  usage: [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
+ *  usage: [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
+ *  usage: [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md)
+ *  usage: [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
+ *  usage: [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+ *  usage: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
+ *  usage: [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
+ *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
+ *  usage: [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)

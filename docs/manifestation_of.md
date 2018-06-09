@@ -10,7 +10,7 @@ URI: [http://bioentity.io/vocab/manifestation_of](slot_uri)
  * [WD:P1557](http://purl.obolibrary.org/obo/WD_P1557)
 ## Domain and Range
 
-None -> [disease](Disease.md)
+[NamedThing](NamedThing.md) -> [Disease](Disease.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)

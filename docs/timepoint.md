@@ -6,9 +6,10 @@ a point in time
 URI: [http://bioentity.io/vocab/timepoint](slot_uri)
 ## Mappings
 
+ * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-None -> [time type](TimeType.md)
+[GeographicLocationAtTime](GeographicLocationAtTime.md) -> [TimeType](TimeType.md)
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
@@ -16,4 +17,4 @@ None -> [time type](TimeType.md)
 
 ## Used in
 
- *  usage: [geographic location at time](GeographicLocationAtTime.md)
+ *  usage: [GeographicLocationAtTime](GeographicLocationAtTime.md)

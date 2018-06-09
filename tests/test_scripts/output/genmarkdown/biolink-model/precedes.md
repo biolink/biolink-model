@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/precedes](slot_uri)
 
 ## Used in
 
- *  usage: [biological process](BiologicalProcess.md)
- *  usage: [molecular activity](MolecularActivity.md)
- *  usage: [environmental process](EnvironmentalProcess.md)
  *  usage: [occurrent](Occurrent.md)
+ *  usage: [environmental process](EnvironmentalProcess.md)
+ *  usage: [molecular activity](MolecularActivity.md)
+ *  usage: [biological process](BiologicalProcess.md)

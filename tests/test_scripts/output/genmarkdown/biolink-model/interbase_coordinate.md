@@ -6,15 +6,16 @@ TODO
 URI: [http://bioentity.io/vocab/interbase_coordinate](slot_uri)
 ## Mappings
 
+ * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-None -> string
+[named thing](NamedThing.md) -> string
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
 ## Children
 
- *  child: [end interbase coordinate](end_interbase_coordinate.md)
  *  child: [start interbase coordinate](start_interbase_coordinate.md)
+ *  child: [end interbase coordinate](end_interbase_coordinate.md)
 ## Used in
 

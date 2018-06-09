@@ -16,9 +16,10 @@ URI: [http://bioentity.io/vocab/Onset](http://bioentity.io/vocab/Onset)
 
 ## Used in
 
+ *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [onset](Onset.md)
 ## Fields
 
- * _[subclass of](subclass_of.md) *subsets: translator_minimal*_
+ * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
     * _holds between two classes where the domain class is a specialization of the range class_
     * range: [ontology class](OntologyClass.md)
     * inherited from: [ontology class](OntologyClass.md)

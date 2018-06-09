@@ -12,7 +12,7 @@ URI: [http://bioentity.io/vocab/entity_to_phenotypic_feature_association_descrip
 [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) -> [narrative text](NarrativeText.md)
 ## Inheritance
 
- *  is_a: [description](description.md) *subsets: translator_minimal*
+ *  is_a: [description](description.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in

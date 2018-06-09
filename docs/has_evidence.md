@@ -9,7 +9,7 @@ URI: [http://bioentity.io/vocab/has_evidence](slot_uri)
  * [RO:0002558](http://purl.obolibrary.org/obo/RO_0002558)
 ## Domain and Range
 
-None -> [evidence instance](EvidenceInstance.md)
+[Association](Association.md) -> [EvidenceInstance](EvidenceInstance.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)

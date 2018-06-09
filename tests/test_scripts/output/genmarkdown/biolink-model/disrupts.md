@@ -9,10 +9,10 @@ URI: [http://bioentity.io/vocab/disrupts](slot_uri)
  * [SEMMEDDB:DISRUPTS](http://purl.obolibrary.org/obo/SEMMEDDB_DISRUPTS)
 ## Domain and Range
 
-None -> string
+[named thing](NamedThing.md) -> string
 ## Inheritance
 
- *  is_a: [affects](affects.md) *subsets: translator_minimal*
+ *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in
