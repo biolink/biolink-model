@@ -180,6 +180,10 @@ class Generator(metaclass=abc.ABCMeta):
                         touches.classrefs.add(slot.range)
                     elif slot.range in self.schema.types:
                         touches.typerefs.add(slot.range)
+                if element in self.synopsis.rangerefs:
+                    for slotname in self.synopsis.rangerefs[element]:
+                        touches.slotrefs.add(slotname)
+                        touches.classrefs.add(self.schema.slots[slotname].domain)
             elif element in self.schema.slots:
                 slot = self.schema.slots[element]
                 touches.slotrefs.update(set(slot.mixins))

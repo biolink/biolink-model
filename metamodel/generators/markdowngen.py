@@ -36,6 +36,7 @@ class MarkdownGenerator(Generator):
         self.gen_classes = classes
         if classes:
             self.gen_classes_neighborhood = self.neighborhood(list(classes))
+
         self.directory = directory
         if directory:
             if not os.path.isdir(directory):
@@ -47,8 +48,7 @@ class MarkdownGenerator(Generator):
             if not noimages:
                 os.makedirs(self.image_directory, exist_ok=True)
         self.noimages = noimages
-        self.synopsis = SchemaSynopsis(self.schema)
-        os.makedirs(self.directory, exist_ok=True)
+
         with open(os.path.join(directory, 'index.md'), 'w') as ixfile:
             with redirect_stdout(ixfile):
                 self.frontmatter(f"{self.schema.name.title()} schema")
@@ -86,7 +86,7 @@ class MarkdownGenerator(Generator):
                                     f' ({typ_typ}){self.description(typ.description)}')
 
     def visit_class(self, cls: ClassDefinition) -> bool:
-        if self.gen_classes and cls not in self.gen_classes:
+        if self.gen_classes and cls.name not in self.gen_classes:
             return False
         with open(self.dir_path(cls), 'w') as clsfile:
             with redirect_stdout(clsfile):

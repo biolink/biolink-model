@@ -1,12 +1,11 @@
 import os
 import unittest
 
-import click
-
 from metamodel.generators.markdowngen import cli
 from tests.test_scripts.clicktestcase import ClickTestCase
 
 # This has to occur post ClickTestCase
+from tests.utils.dirutils import make_and_clear_directory
 
 update_test_files = False
 
@@ -31,6 +30,16 @@ class GenMarkdownTestCase(ClickTestCase):
         os.makedirs(outdir, exist_ok=True)
         self.do_test(self.biolink_file + f" -d {outdir}", update_test_file=update_test_files)
         self.assertFalse(update_test_files, "Updating test files")
+
+    def test_issue_2(self):
+        outdir = os.path.join(self.testdir_path, 'issue2')
+        make_and_clear_directory(outdir)
+        testfile = os.path.join(outdir, 'images', 'example.png')
+        if os.path.exists(testfile):
+            os.remove(testfile)
+        self.do_test(self.metamodel_file + f" -d {outdir} -c example -i ")
+        self.assertTrue(os.path.exists(os.path.join(outdir, 'images', 'example.png')))
+        make_and_clear_directory(outdir)
 
 
 if __name__ == '__main__':

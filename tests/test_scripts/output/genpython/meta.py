@@ -97,7 +97,6 @@ class SlotDefinition(Definition):
     path: Optional[str] = None
     subproperty_of: Optional[SlotDefinitionName] = None
     inverse: Optional[SlotDefinitionName] = None
-    is_class_field: bool = False
     role: Optional[str] = None
 
 

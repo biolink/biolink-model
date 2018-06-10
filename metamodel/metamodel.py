@@ -1,5 +1,5 @@
 # Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by pythongen.py version: 0.0.2
-# Generation date: 2018-06-07 13:18
+# Generation date: 2018-06-09 19:34
 # Schema: metamodel
 #
 # id: https://biolink.github.io/metamodel/ontology/meta.ttl
@@ -97,7 +97,6 @@ class SlotDefinition(Definition):
     path: Optional[str] = None
     subproperty_of: Optional[SlotDefinitionName] = None
     inverse: Optional[SlotDefinitionName] = None
-    is_class_field: bool = False
     role: Optional[str] = None
 
 

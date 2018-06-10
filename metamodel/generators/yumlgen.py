@@ -129,6 +129,15 @@ class YumlGenerator(Generator):
                                   self.aliased_slot_name(slot) + self.prop_modifier(cls, slot) +
                                   self.cardinality(slot) + '>' + self.class_box(slot.range))
 
+            # Referencing slots
+            if cn in self.synopsis.rangerefs:
+                for slotname in self.synopsis.rangerefs[cn]:
+                    slot = self.schema.slots[slotname]
+                    if slot.domain in self.schema.classes:
+                        assocs.append(self.class_box(slot.domain) + (yuml_inline if slot.inlined else yuml_ref) +
+                                      self.aliased_slot_name(slot) + self.prop_modifier(cls, slot) +
+                                      self.cardinality(slot) + '>' + self.class_box(cn))
+
             # Mixins used in the class
             for mixin in cls.mixins:
                 assocs.append(self.class_box(cn) + yuml_uses + self.class_box(mixin))

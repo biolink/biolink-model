@@ -78,6 +78,17 @@ class ClickTestCase(unittest.TestCase):
         else:
             print("Directory comparison needs to be added", file=sys.stderr)
 
+    @staticmethod
+    def clear_dir(dir: str) -> None:
+        import os, shutil
+        for the_file in os.listdir(folder):
+            file_path = os.path.join(folder, the_file)
+            try:
+                if os.path.isfile(file_path):
+                    os.unlink(file_path)
+                # elif os.path.isdir(file_path): shutil.rmtree(file_path)
+            except Exception as e:
+                print(e)
 
 if __name__ == '__main__':
     unittest.main()
