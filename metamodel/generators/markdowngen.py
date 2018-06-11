@@ -275,7 +275,7 @@ class MarkdownGenerator(Generator):
         """
         obj = self.obj_for(ref) if isinstance(ref, str) else ref
         nl = '\n'
-        return self.bbin(ref) if obj is None or not self.is_secondary_ref(obj.name) \
+        return self.bbin(ref) if isinstance(obj, str) or obj is None or self.is_secondary_ref(obj.name) \
             else f'[{self.aliased_slot_name(obj) if isinstance(obj, SlotDefinition) else self.obj_name(obj)}]' \
                  f'({self.obj_name(obj)}.{self.format})' + \
                  (f' *subsets*: ({"| ".join(obj.in_subset)})' if add_subset and obj.in_subset else '') + \
