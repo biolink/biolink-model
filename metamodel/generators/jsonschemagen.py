@@ -13,7 +13,7 @@ class JsonSchemaGenerator(Generator):
     generatorname = os.path.basename(__file__)
     generatorversion = "0.0.2"
     valid_formats = "[json]"
-    visit_all__class_slots = False
+    visit_all_class_slots = False
 
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='json') -> None:
         super().__init__(schema, fmt)
@@ -65,8 +65,8 @@ class JsonSchemaGenerator(Generator):
     def visit_slot(self, slot_name: str, slot: SlotDefinition) -> None:
         # Don't emit redefined slots unless we are inlining
         if slot_name == slot.name or self.inline:
-            defn = JsonObj(type="array", items=self.type_or_ref(slot.range) if slot.multivalued \
-                   else self.type_or_ref(slot.range))
+            defn = JsonObj(type="array", items=self.type_or_ref(slot.range)) if slot.multivalued \
+                   else self.type_or_ref(slot.range)
             if slot.description:
                 defn.description = slot.description
             self.schemaobj.definitions[underscore(slot.name)] = defn
