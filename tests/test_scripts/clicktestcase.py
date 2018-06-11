@@ -74,6 +74,13 @@ class ClickTestCase(unittest.TestCase):
                 old_txt = f.read().replace('\r\n', '\n')
                 if filtr:
                     old_txt = filtr(old_txt)
+                # nt = new_txt.strip()
+                # ot = old_txt.strip()
+                # while nt and ot and nt[:20] == ot[:20]:
+                #     nt = nt[20:]
+                #     ot = ot[20:]
+                # print(nt)
+                # print(ot)
                 self.assertEqual(old_txt.strip(), new_txt.strip())
         else:
             print("Directory comparison needs to be added", file=sys.stderr)
@@ -89,6 +96,7 @@ class ClickTestCase(unittest.TestCase):
                 # elif os.path.isdir(file_path): shutil.rmtree(file_path)
             except Exception as e:
                 print(e)
+
 
 if __name__ == '__main__':
     unittest.main()

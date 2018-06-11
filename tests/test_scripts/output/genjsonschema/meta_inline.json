@@ -228,6 +228,13 @@
          },
          "type": "array"
       },
+      "not_inherited": {
+         "description": "True means that the slot is local and is not_inherited across is_a or slot_usage paths",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "note": {
          "description": "Notes about an element",
          "items": {
@@ -957,6 +964,12 @@
                "description": "a unique key that identifies a slot, type or class in a schema",
                "type": {
                   "$ref": "#/definitions/name"
+               }
+            },
+            "not_inherited": {
+               "description": "True means that the slot is local and is not_inherited across is_a or slot_usage paths",
+               "type": {
+                  "$ref": "#/definitions/not_inherited"
                }
             },
             "note": {

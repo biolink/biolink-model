@@ -45,7 +45,8 @@ message SlotDefinition
   optional subproperty_Of SlotDefinition = 11
   optional inverse SlotDefinition = 12
   optional is_Class_Field Boolean = 13
-  optional role String = 14
+  optional not_Inherited Boolean = 14
+  optional role String = 15
  }
 // A type definition
 message TypeDefinition

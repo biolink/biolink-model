@@ -1,5 +1,5 @@
 # Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by pythongen.py version: 0.0.2
-# Generation date: 2018-06-11 13:48
+# Generation date: 2018-06-11 15:41
 # Schema: metamodel
 #
 # id: https://biolink.github.io/metamodel/ontology/meta.ttl
@@ -13,6 +13,8 @@ from metamodel.utils.metamodelcore import empty_list, empty_dict
 from metamodel.utils.yamlutils import YAMLRoot
 
 metamodel_version = "0.2.0"
+
+not_inherited_slots: List[str] = ["name", "note", "comment", "examples", "mappings"]
 
 # Class references
 ExampleName = NewType("ExampleName", str)
