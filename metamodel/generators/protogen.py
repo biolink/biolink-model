@@ -16,7 +16,7 @@ class ProtoGenerator(Generator):
     generatorname = os.path.basename(__file__)
     generatorversion = "0.0.2"
     valid_formats = ['proto']
-    visit_all__class_slots = True
+    visit_all_class_slots = True
 
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='proto') -> None:
         super().__init__(schema, fmt)

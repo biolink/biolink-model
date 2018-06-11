@@ -43,7 +43,7 @@ class GolrSchemaGenerator(Generator):
     generatorname = os.path.basename(__file__)
     generatorversion = "0.0.2"
     valid_formats = "[golr]"
-    visit_all__class_slots = False
+    visit_all_class_slots = True
 
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='csv') -> None:
         super().__init__(schema, fmt)

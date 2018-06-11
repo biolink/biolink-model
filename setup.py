@@ -2,7 +2,7 @@ import sys
 
 from setuptools import setup, find_packages
 
-version = '0.0.2'
+version = '0.0.3'
 
 requires = [
     "click>=6.7",
@@ -43,7 +43,7 @@ setup(
             'gen-markdown = metamodel.generators.markdowngen:cli',
             'gen-proto = metamodel.generators.protogen:cli',
             'gen-py-classes = metamodel.generators.pythongen:cli',
-            'gen-rdf = metamodel.generators.ontolgen:cli',
+            'gen-owl = metamodel.generators.owlgen:cli',
             'gen-shex = metamodel.generators.shexgen:cli',
             'gen-yuml = metamodel.generators.yumlgen:cli'
         ]

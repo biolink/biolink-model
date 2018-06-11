@@ -21,14 +21,13 @@ class Generator(metaclass=abc.ABCMeta):
     generatorname: str = None        # Set to os.path.basename(__file__)
     generatorversion: str = None
     valid_formats: List[str] = []
-    visit_all__class_slots: bool = False    # False means only visit direct slots, True means visit all slots
+    visit_all_class_slots: bool = False    # False means only visit direct slots, True means visit all slots
 
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str=None) -> None:
         assert fmt in self.valid_formats, f"Unrecognized format: {fmt}"
         self.format = fmt
         self.schema = schema if isinstance(schema, SchemaDefinition) else SchemaLoader(schema).resolve()
         self.synopsis: SchemaSynopsis = SchemaSynopsis(self.schema)
-        self.visit_all_slots = False
 
     def serialize(self, **kwargs) -> str:
         output = StringIO()
@@ -36,7 +35,7 @@ class Generator(metaclass=abc.ABCMeta):
             self.visit_schema(**kwargs)
             for cls in sorted(self.schema.classes.values(), key=lambda c: c.name.lower()):
                 if self.visit_class(cls):
-                    for slot in self.all_slots(cls) if self.visit_all_slots else self.cls_slots(cls):
+                    for slot in self.all_slots(cls) if self.visit_all_class_slots else self.cls_slots(cls):
                         self.visit_class_slot(cls, self.aliased_slot_name(slot), slot)
                     self.end_class(cls)
             for sn, slot in sorted(self.schema.slots.items(), key=lambda c: c[0].lower()):

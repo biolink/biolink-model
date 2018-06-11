@@ -44,7 +44,7 @@ class PythonGenerator(Generator):
     generatorname = os.path.basename(__file__)
     generatorversion = "0.0.2"
     valid_formats = ['py']
-    visit_all__class_slots = False
+    visit_all_class_slots = False
 
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='py') -> None:
         self.sourcefile = schema

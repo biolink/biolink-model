@@ -4,7 +4,7 @@ model classes are translated to OWL classes, slots to OWL properties.
 """
 import logging
 import os
-from typing import Union, TextIO
+from typing import Union, TextIO, Optional
 
 import click
 from rdflib import Graph, URIRef, RDF, OWL, Literal, BNode
@@ -29,7 +29,7 @@ class OwlSchemaGenerator(Generator):
         super().__init__(schema, fmt)
         self.graph: Graph = None
 
-    def visit_schema(self):
+    def visit_schema(self, output: Optional[str]):
         # TODO: Is it even possible to have a schema without an ID?
         base = URIRef(self.schema.id) if self.schema.id else self.class_uri(self.schema.name)
         self.graph = Graph(identifier=base)
@@ -46,8 +46,13 @@ class OwlSchemaGenerator(Generator):
         else:
             logging.warning("No license!")
 
-    def end_schema(self, **kwargs) -> None:
-        print(self.graph.serialize(format='turtle' if self.format == 'ttl' else self.format).decode())
+    def end_schema(self, output: Optional[str]) -> None:
+        data = lambda: self.graph.serialize(format='turtle' if self.format == 'ttl' else self.format).decode()
+        if output:
+            with open(output, 'w') as outf:
+                outf.write(data())
+        else:
+            print(data())
 
     def visit_class(self, cls: ClassDefinition) -> bool:
         cls_uri = self.class_uri(cls.name)
@@ -191,6 +196,7 @@ class OwlSchemaGenerator(Generator):
 @click.argument("yamlfile", type=click.Path(exists=True, dir_okay=False))
 @click.option("--format", "-f", default='ttl', type=click.Choice(OwlSchemaGenerator.valid_formats),
               help="Output format")
-def cli(yamlfile, format):
+@click.option("-o", "--output", help="Output file name")
+def cli(yamlfile, format, output):
     """ Generate an OWL representation of a biolink model """
-    print(OwlSchemaGenerator(yamlfile, format).serialize())
+    print(OwlSchemaGenerator(yamlfile, format).serialize(output=output))

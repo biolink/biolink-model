@@ -66,10 +66,10 @@ update-docs: biolink-model.yaml
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
 ontology/biolink.ttl: biolink-model.yaml
-	gen-rdf -o $@ $<
+	gen-owl -o $@ $<
 
 contrib/%/ontology.ttl: contrib/%.yaml
-	gen-rdf -o $@ $<
+	gen-owl -o $@ $<
 
 
 # ~~~~~~~~~~~~~~~~~~~~

@@ -34,7 +34,7 @@ class YumlGenerator(Generator):
     generatorname = os.path.basename(__file__)
     generatorversion = "0.0.2"
     valid_formats = ['yuml', 'png', 'pdf', 'jpg', 'json', 'svg']
-    visit_all__class_slots = False
+    visit_all_class_slots = False
 
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='yuml') -> None:
         super().__init__(schema, fmt)
