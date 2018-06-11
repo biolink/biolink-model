@@ -69,6 +69,8 @@ from metamodel.utils.yamlutils import YAMLRoot
 
 metamodel_version = "{metamodel_version}"
 
+{self.gen_not_inherited()}
+
 {self.gen_references()}
 
 {self.gen_classdefs()}'''
@@ -205,6 +207,10 @@ class {camelcase(clsname)}{parentref}:{wrapped_description}
             elif cname == slot_range:
                 return False            # Occurs before
         return True
+
+    def gen_not_inherited(self) -> str:
+        uninherited_slots = [f'"{underscore(slot.name)}"' for slot in self.schema.slots.values() if slot.not_inherited]
+        return f"not_inherited_slots: List[str] = [{', '.join(uninherited_slots)}]"
 
 
 @click.command()

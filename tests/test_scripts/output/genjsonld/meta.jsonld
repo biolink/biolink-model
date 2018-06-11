@@ -1,12 +1,12 @@
 {
     "@context": {
-        "Classdefinition": "http://bioentity.io/vocab/Classdefinition",
+        "ClassDefinition": "http://bioentity.io/vocab/ClassDefinition",
         "Definition": "http://bioentity.io/vocab/Definition",
         "Element": "http://bioentity.io/vocab/Element",
         "Example": "http://bioentity.io/vocab/Example",
-        "Schemadefinition": "http://bioentity.io/vocab/Schemadefinition",
-        "Slotdefinition": "http://bioentity.io/vocab/Slotdefinition",
-        "Typedefinition": "http://bioentity.io/vocab/Typedefinition",
+        "SchemaDefinition": "http://bioentity.io/vocab/SchemaDefinition",
+        "SlotDefinition": "http://bioentity.io/vocab/SlotDefinition",
+        "TypeDefinition": "http://bioentity.io/vocab/TypeDefinition",
         "abstract": "http://bioentity.io/vocab/abstract",
         "alias": "http://bioentity.io/vocab/alias",
         "aliases": "http://bioentity.io/vocab/aliases",
@@ -40,6 +40,7 @@
         "mixins": "http://bioentity.io/vocab/mixins",
         "multivalued": "http://bioentity.io/vocab/multivalued",
         "name": "http://bioentity.io/vocab/name",
+        "not_inherited": "http://bioentity.io/vocab/not_inherited",
         "note": "http://bioentity.io/vocab/note",
         "path": "http://bioentity.io/vocab/path",
         "prefixes": "http://bioentity.io/vocab/prefixes",
@@ -68,6 +69,6 @@
         "values_from": "http://bioentity.io/vocab/values_from",
         "version": "http://bioentity.io/vocab/version"
     },
-    "comments": "\n        \"\"\"\n        Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by contextgen.py version: 0.0.2\n        Generation date: 2018-06-09 22:54\n        Schema: metamodel\n\n        id: https://biolink.github.io/metamodel/ontology/meta.ttl\n        description: Metamodel for biolink schema\n        license: https://creativecommons.org/publicdomain/zero/1.0/\n        \"\"\"\n        "
+    "comments": "Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-06-11 15:15\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n"
 }
 

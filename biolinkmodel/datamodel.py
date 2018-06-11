@@ -1,5 +1,5 @@
 # Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/biolink-model.yaml by pythongen.py version: 0.0.2
-# Generation date: 2018-06-09 22:54
+# Generation date: 2018-06-11 14:44
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -13,6 +13,8 @@ from metamodel.utils.metamodelcore import empty_list, empty_dict
 from metamodel.utils.yamlutils import YAMLRoot
 
 metamodel_version = "0.2.0"
+
+not_inherited_slots: List[str] = []
 
 # Class references
 RelationshipTypeName = NewType("RelationshipTypeName", str)
@@ -696,12 +698,10 @@ class GeographicLocation(PlanetaryEntity):
 
 
 @dataclass
-class GeographicLocationAtTime(PlanetaryEntity):
+class GeographicLocationAtTime(GeographicLocation):
     """
     a location that can be described in lat/long coordinates, for a particular time
     """
-    latitude: Optional[float] = None
-    longitude: Optional[float] = None
     timepoint: Optional[TimeType] = None
 
 
