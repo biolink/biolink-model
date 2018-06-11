@@ -37,17 +37,14 @@ class ContextGenerator(Generator):
         }
 
     def end_schema(self) -> None:
-        comments = f'''
-        """
-        Auto generated from {self.schema.source_file} by {self.generatorname} version: {self.generatorversion}
-        Generation date: {self.schema.generation_date}
-        Schema: {self.schema.name}
+        comments = f'''Auto generated from {self.schema.source_file} by {self.generatorname} version: {self.generatorversion}
+Generation date: {self.schema.generation_date}
+Schema: {self.schema.name}
 
-        id: {self.schema.id}
-        description: {be(self.schema.description)}
-        license: {be(self.schema.license)}
-        """
-        '''
+id: {self.schema.id}
+description: {be(self.schema.description)}
+license: {be(self.schema.license)}
+'''
         context = {"@context": self.prefixmap,
                    "comments": comments
                    }
