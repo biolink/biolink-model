@@ -16,5 +16,5 @@ entity to phenotypic feature association -> onset
 
 ## Used in
 
- *  usage: entity to disease association
  *  usage: entity to phenotypic feature association
+ *  usage: entity to disease association

@@ -15,9 +15,9 @@ named thing -> **string**
  *  is_a: affects
 ## Children
 
- *  child: negatively regulates
- *  child: regulates, process to process
- *  child: positively regulates
  *  child: regulates, entity to entity
+ *  child: positively regulates
+ *  child: regulates, process to process
+ *  child: negatively regulates
 ## Used in
 

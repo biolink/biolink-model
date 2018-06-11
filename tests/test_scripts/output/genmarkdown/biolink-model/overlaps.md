@@ -15,7 +15,7 @@ named thing -> **string**
  *  is_a: related to
 ## Children
 
- *  child: part of
  *  child: has part
+ *  child: part of
 ## Used in
 

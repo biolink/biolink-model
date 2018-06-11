@@ -16,6 +16,6 @@ entity to phenotypic feature association -> frequency value
 
 ## Used in
 
- *  usage: entity to disease association
- *  usage: variant to population association
  *  usage: entity to phenotypic feature association
+ *  usage: variant to population association
+ *  usage: entity to disease association

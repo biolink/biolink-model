@@ -8,9 +8,9 @@ Metamodel for biolink schema
  * element - root of all described things
     * type definition - A type definition
     * definition - definition base class
-       * schema definition - A collection of definitions
-       * slot definition - A property or slot
        * class definition - A class or interface
+       * slot definition - A property or slot
+       * schema definition - A collection of definitions
  * example - example of usage
 ### Mixins
 
