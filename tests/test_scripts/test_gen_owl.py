@@ -3,16 +3,16 @@ import unittest
 # This has to occur post ClickTestCase
 import click
 
-from metamodel.generators.ontolgen import cli
+from metamodel.generators.owlgen import cli
 from tests.test_scripts.clicktestcase import ClickTestCase
 
 update_test_files = False
 
 
-class GenRDFTestCase(ClickTestCase):
-    testdir = "genrdf"
+class GenOWLTestCase(ClickTestCase):
+    testdir = "genowl"
     click_ep = cli
-    prog_name = "gen-rdf"
+    prog_name = "gen-owl"
 
     def test_help(self):
         self.do_test("--help", 'help', update_test_file=update_test_files)
