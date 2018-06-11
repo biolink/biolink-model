@@ -206,17 +206,17 @@ DrugExposure type
 
 EntityToDiseaseAssociation interface
   {
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
     object: Disease
   }
 
-EntityToPhenotypicFeatureAssociation interface
+EntityToFeatureOrDiseaseQualifiers interface
   {
-    frequencyQualifier: FrequencyValue
     severityQualifier: SeverityValue
     onsetQualifier: Onset
+  }
+
+EntityToPhenotypicFeatureAssociation interfaceimplements EntityToFeatureOrDiseaseQualifiers
+  {
     sexQualifier: BiologicalSex
     description: String
     object: PhenotypicFeature!
@@ -251,6 +251,10 @@ ExonToTranscriptRelationship type
   {
     subject: Exon!
     object: Transcript!
+  }
+
+FrequencyQualifier interface
+  {
   }
 
 FrequencyQuantifier interface
@@ -711,9 +715,8 @@ VariantToPhenotypicFeatureAssociation typeimplements VariantToThingAssociation, 
     subject: SequenceVariant!
   }
 
-VariantToPopulationAssociation typeimplements VariantToThingAssociation, FrequencyQuantifier
+VariantToPopulationAssociation typeimplements VariantToThingAssociation, FrequencyQuantifier, FrequencyQualifier
   {
-    frequencyQualifier: FrequencyValue
     subject: SequenceVariant!
     object: PopulationOfIndividualOrganisms!
     hasQuotient: String

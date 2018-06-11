@@ -15,8 +15,8 @@ disease or phenotypic feature -> molecular entity
  *  is_a: related to
 ## Children
 
- *  child: biomarker for
  *  child: has biomarker
+ *  child: biomarker for
 ## Used in
 
  *  usage: disease or phenotypic feature

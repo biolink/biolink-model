@@ -2066,12 +2066,29 @@ classes:
     description: >-
       An association between a biosample and a disease or phenotype
         definitional: true
-        
+
+  frequency qualifier:
+    mixin: true
+    description: >-
+      Qualifier for freqency type associations
+
+  entity to feature or disease qualifiers:
+    abstract: true
+    mixin: true
+    is_a: frequency qualifier
+    description: >-
+      Qualifiers for entity to disease or phenotype associations
+    slots:
+      - severity qualifier
+      - onset qualifier
+
   entity to phenotypic feature association:
     abstract: true
     defining_slots:
       - object
     is_a: association
+    mixins:
+      - entity to feature or disease qualifiers
     slot_usage:
       description:
         description: >-
@@ -2091,9 +2108,6 @@ classes:
           - value: MP:0001569
             description: abnormal circulating bilirubin level
     slots:
-      - frequency qualifier
-      - severity qualifier
-      - onset qualifier
       - sex qualifier
 
   entity to disease association:
@@ -2101,6 +2115,7 @@ classes:
       mixin class for any association whose object (target node) is a disease
     abstract: true
     mixin: true
+    is_a: entity to feature or disease qualifiers
     defining_slots:
       - object
     slot_usage:
@@ -2112,10 +2127,6 @@ classes:
         examples:
           - value: MONDO:0020066
             description: "Ehlers-Danlos syndrome"
-    slots:
-      - frequency qualifier
-      - severity qualifier
-      - onset qualifier
       
 
   disease or phenotypic feature association to thing association:
@@ -2310,6 +2321,7 @@ classes:
     mixins:
       - variant to thing association
       - frequency quantifier
+      - frequency qualifier
     slot_usage:
       subject:
         range: sequence variant
@@ -2343,8 +2355,6 @@ classes:
         examples:
           - value: "24014"
             description: 24014 individuals in gnomad set
-    slots:
-      - frequency qualifier
 
   population to population association:
     description: >-

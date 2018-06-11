@@ -5,7 +5,7 @@ Any association between an environment and a phenotypic feature, where being in 
 
 URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EnvironmentToPhenotypicFeatureAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F;frequency_qualifier(i):frequency_value%20%3F;description(i):narrative_text%20%3F]-%20object(i)>\[PhenotypicFeature],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20sex%20qualifier(i)%20%3F>\[BiologicalSex],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20frequency%20qualifier(i)%20%3F>\[FrequencyValue],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20relation(i)>\[RelationshipType],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20subject>\[Environment],%20\[EnvironmentToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[Association]^-\[EnvironmentToPhenotypicFeatureAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EnvironmentToPhenotypicFeatureAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F;description(i):narrative_text%20%3F]-%20object(i)>\[PhenotypicFeature],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20sex%20qualifier(i)%20%3F>\[BiologicalSex],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20relation(i)>\[RelationshipType],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20subject>\[Environment],%20\[EnvironmentToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[Association]^-\[EnvironmentToPhenotypicFeatureAssociation])
 ## Mappings
 
 ## Inheritance
@@ -38,10 +38,6 @@ URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http:
     * _a human-readable description of a thing_
     * range: narrative text
     * inherited from: named thing
- * _frequency qualifier_
-    * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
-    * range: frequency value
-    * inherited from: entity to phenotypic feature association
  * _full name_
     * _a long-form human readable name for a thing_
     * range: label type
@@ -73,7 +69,7 @@ URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http:
  * _onset qualifier_
     * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
     * range: onset
-    * inherited from: entity to phenotypic feature association
+    * inherited from: entity to feature or disease qualifiers
  * _provided by_
     * _connects an association to the agent (person, organization or group) that provided it_
     * range: provider
@@ -97,7 +93,7 @@ URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http:
  * _severity qualifier_
     * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
     * range: severity value
-    * inherited from: entity to phenotypic feature association
+    * inherited from: entity to feature or disease qualifiers
  * _sex qualifier_
     * _a qualifier used in a phenotypic association to state whether the association is specific to a particular sex._
     * range: biological sex

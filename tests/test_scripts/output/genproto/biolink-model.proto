@@ -314,11 +314,10 @@ message VariantToPhenotypicFeatureAssociation
 // An association between a variant and a population, where the variant has particular frequency in the population
 message VariantToPopulationAssociation
  {
-  optional frequencyQualifier FrequencyValue = 1
-  subject SequenceVariant = 2
-  object PopulationOfIndividualOrganisms = 3
-  optional hasQuotient String = 4
-  optional hasCount String = 5
-  optional hasTotal String = 6
+  subject SequenceVariant = 1
+  object PopulationOfIndividualOrganisms = 2
+  optional hasQuotient String = 3
+  optional hasCount String = 4
+  optional hasTotal String = 5
  }
 

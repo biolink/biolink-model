@@ -44,6 +44,7 @@ disease_to_thing_association
 drug	WD:Q12140|CHEBI:23888	A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
 drug_exposure	ECTO:0000509|SIO:001005	A drug exposure is an intake of a particular chemical substance
 entity_to_disease_association		mixin class for any association whose object (target node) is a disease
+entity_to_feature_or_disease_qualifiers		Qualifiers for entity to disease or phenotype associations
 entity_to_phenotypic_feature_association		
 environment	SIO:000955	A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
 environment_to_phenotypic_feature_association		Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
@@ -52,6 +53,7 @@ environmental_process
 evidence_type	ECO:0000000	Class of evidence that supports an association
 exon	SO:0000147|SIO:010445|WD:Q373027	A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
 exon_to_transcript_relationship		A transcript is formed from multiple exons
+frequency_qualifier		Qualifier for freqency type associations
 frequency_quantifier		
 frequency_value		describes the frequency of occurrence of an event or condition
 functional_association		An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed

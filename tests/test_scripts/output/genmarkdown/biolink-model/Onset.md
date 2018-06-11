@@ -5,7 +5,7 @@ The age group in which manifestations appear
 
 URI: [http://bioentity.io/vocab/Onset](http://bioentity.io/vocab/Onset)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Onset]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[EntityToPhenotypicFeatureAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[Attribute]^-\[Onset])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Onset]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[EntityToFeatureOrDiseaseQualifiers]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[Attribute]^-\[Onset])
 ## Mappings
 
  * [HP:0003674](http://purl.obolibrary.org/obo/HP_0003674)
@@ -16,7 +16,7 @@ URI: [http://bioentity.io/vocab/Onset](http://bioentity.io/vocab/Onset)
 
 ## Used in
 
- *  class: **entity to phenotypic feature association** *onset qualifier* **onset**
+ *  class: **entity to feature or disease qualifiers** *onset qualifier* **onset**
 ## Fields
 
  * _subclass of_

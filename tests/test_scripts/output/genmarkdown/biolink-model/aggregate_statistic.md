@@ -14,9 +14,9 @@ named thing -> **string**
  *  is_a: node property
 ## Children
 
- *  child: has count
- *  child: has quotient
  *  child: has percentage
+ *  child: has quotient
  *  child: has total
+ *  child: has count
 ## Used in
 

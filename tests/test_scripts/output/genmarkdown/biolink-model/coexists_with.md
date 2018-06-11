@@ -15,9 +15,9 @@ named thing -> **string**
  *  is_a: related to
 ## Children
 
- *  child: in pathway with
- *  child: co-localizes with
  *  child: in cell population with
+ *  child: co-localizes with
+ *  child: in pathway with
  *  child: in complex with
 ## Used in
 

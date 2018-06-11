@@ -5,12 +5,13 @@
 
 URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EntityToPhenotypicFeatureAssociation|frequency_qualifier:frequency_value%20%3F;description:narrative_text%20%3F;id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;systematic_synonym(i):label_type%20%3F;subject(i):string;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[EntityToPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[EntityToPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[EntityToPhenotypicFeatureAssociation]-%20relation(i)>\[RelationshipType],%20\[EntityToPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[EntityToPhenotypicFeatureAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EntityToPhenotypicFeatureAssociation]-%20object>\[PhenotypicFeature],%20\[EntityToPhenotypicFeatureAssociation]-%20sex%20qualifier%20%3F>\[BiologicalSex],%20\[EntityToPhenotypicFeatureAssociation]-%20onset%20qualifier%20%3F>\[Onset],%20\[EntityToPhenotypicFeatureAssociation]-%20severity%20qualifier%20%3F>\[SeverityValue],%20\[EntityToPhenotypicFeatureAssociation]-%20frequency%20qualifier%20%3F>\[FrequencyValue],%20\[VariantToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GenotypeToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GeneToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[EnvironmentToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[DiseaseToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[CaseToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[Association]^-\[EntityToPhenotypicFeatureAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EntityToPhenotypicFeatureAssociation|description:narrative_text%20%3F;id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;systematic_synonym(i):label_type%20%3F;subject(i):string;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[EntityToPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[EntityToPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[EntityToPhenotypicFeatureAssociation]-%20relation(i)>\[RelationshipType],%20\[EntityToPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[EntityToPhenotypicFeatureAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EntityToPhenotypicFeatureAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[EntityToPhenotypicFeatureAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[EntityToPhenotypicFeatureAssociation]-%20object>\[PhenotypicFeature],%20\[EntityToPhenotypicFeatureAssociation]-%20sex%20qualifier%20%3F>\[BiologicalSex],%20\[EntityToPhenotypicFeatureAssociation]uses%20-.->\[EntityToFeatureOrDiseaseQualifiers],%20\[VariantToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GenotypeToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GeneToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[EnvironmentToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[DiseaseToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[CaseToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[Association]^-\[EntityToPhenotypicFeatureAssociation])
 ## Mappings
 
 ## Inheritance
 
  *  is_a: association
+ *  mixin: entity to feature or disease qualifiers
 ## Children
 
  * case to phenotypic feature association
@@ -30,18 +31,6 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
  * _entity to phenotypic feature association object_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: phenotypic feature [required]
-    * __Local__
- * _frequency qualifier_
-    * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
-    * range: frequency value
-    * __Local__
- * _onset qualifier_
-    * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * range: onset
-    * __Local__
- * _severity qualifier_
-    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
-    * range: severity value
     * __Local__
  * _sex qualifier_
     * _a qualifier used in a phenotypic association to state whether the association is specific to a particular sex._
@@ -83,6 +72,10 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
     * _A grouping for any property that holds between a node and a value_
     * range: **string**
     * inherited from: named thing
+ * _onset qualifier_
+    * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
+    * range: onset
+    * inherited from: entity to feature or disease qualifiers
  * _provided by_
     * _connects an association to the agent (person, organization or group) that provided it_
     * range: provider
@@ -103,6 +96,10 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
     * _the relationship type by which a subject is connected to an object in an association_
     * range: relationship type [required]
     * inherited from: association
+ * _severity qualifier_
+    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
+    * range: severity value
+    * inherited from: entity to feature or disease qualifiers
  * _subject_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: **string** [required]

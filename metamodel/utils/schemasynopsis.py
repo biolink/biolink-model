@@ -3,7 +3,7 @@ from typing import Dict, Set, List, Iterable
 from dataclasses import dataclass, field
 
 from metamodel.utils.builtins import builtin_names
-from metamodel.metamodel import SchemaDefinition, Element, Definition
+from metamodel.metamodel import SchemaDefinition, Element, Definition, ClassDefinition, SlotDefinitionName
 from metamodel.utils.metamodelcore import empty_dict, empty_set
 from metamodel.utils.typereferences import RefType, ClassType, TypeType, SlotType, References
 
@@ -82,18 +82,34 @@ class SchemaSynopsis:
             self.classes.add(k)
             self.summarize_element(ClassType, k, v)
             self.summarize_definition(ClassType, k, v)
-            self.classslots[k] = set(v.slots)
             if v.apply_to:
                 self.applytos.setdefault(v.apply_to, References()).addref(ClassType, k)
-            for slot in v.slots:
-                self.slotclasses.setdefault(slot, set()).add(k)
-            for slot in v.slots:
-                self.slotrefs.setdefault(slot, References()).addref(ClassType, k)
+            self.classslots[k] = set(v.slots)
+            self.add_inherited_classlots(k, v)
+            for slotname in v.slots:
+                self.slotclasses.setdefault(slotname, set()).add(k)
+                self.slotrefs.setdefault(slotname, References()).addref(ClassType, k)
             for ds in v.defining_slots:
                 self.slotrefs.setdefault(ds, References()).addref(ClassType, k)
                 self.definingslots.setdefault(ds, set()).add(k)
                 # TODO: slot usages
 
+    def add_inherited_classlots(self, classname: str, cls: ClassDefinition) -> None:
+        if cls.is_a and cls.is_a in self.schema.classes:
+            parent_cls = self.schema.classes[cls.is_a]
+            self.classslots[classname].update(parent_cls.slots)
+            self.add_inherited_classlots(classname, parent_cls)
+        for mixin in cls.mixins:
+            if mixin in self.schema.classes:
+                self.classslots[classname].update(self.schema.classes[mixin].slots)
+        for slot in cls.slots:
+            self.add_inherited_classslot_slots(classname, slot)
+
+    def add_inherited_classslot_slots(self, classname: str, slotname: SlotDefinitionName) -> None:
+        if slotname in self.isarefs:
+            for child in self.isarefs[slotname].slotrefs:
+                self.classslots[classname].add(child)
+                self.add_inherited_classslot_slots(classname, child)
 
     def summarize_element(self, typ: RefType, k: str, v: Element) -> None:
         pass
@@ -138,7 +154,7 @@ class SchemaSynopsis:
         return [e for e in elements if e not in self.types and e not in self.slots and
                 e not in self.classes and e not in builtin_names]
 
-    def errors(self, repair:bool = False) -> List[str]:
+    def errors(self, repair: bool = False) -> List[str]:
         rval = []
         undefined_classes = self.check_classes(self.classrefs.keys())
         if undefined_classes:
@@ -196,9 +212,11 @@ class SchemaSynopsis:
         rval += [f"\tDeclared mixin: {len(self.mixins.slotrefs)}"]
         rval += [f"\tUndeclared mixin: {len([c for c in self.mixinrefs if c not in self.mixins.slotrefs])}"]
         rval += [f"\tAbstract: {len(self.abstracts.slotrefs)}"]
-        unused_slots = [f'"{s}"' for s in self.slots if s not in self.slotrefs]
-        if unused_slots:
-            rval += [f"\tUnused: {', '.join(sorted(unused_slots))}"]
+
+        unused_slots = [s for s in self.slots if s not in self.slotrefs]
+        rval += [f"\tUnused: {len(unused_slots)}"]
+        for slot in sorted(unused_slots):
+            rval.append(f'\t\t\t"{slot}"')
         undefined_slots = [s for s in self.slotrefs if s not in self.slots]
         if undefined_slots:
             rval += [f"\tUndefined: {len(undefined_slots)}"]
@@ -221,8 +239,10 @@ class SchemaSynopsis:
                 unkdomains.add(f"{slot}:{dom}")
         rval += [f"\t\tMatching: {len(domain_matches)}"]
         rval += [f"\t\tNot in domain: {len(not_in_domain)}"]
+        if len(not_in_domain):
+            rval += ["\t\t\tslot.name: slot.name"]
         for slot in sorted(not_in_domain):
-            rval.append(f'\t\t\t"{slot}":"{self.slotdomains[slot]}"')
+            rval.append(f'\t\t\t"{slot}": "{self.slotdomains[slot]}"')
         rval += [f"\t\tMismatches: {len(domain_mismatches)}"]
         for slot in sorted(domain_mismatches):
             rval.append(f'\t\t\tSlot: "{slot}" declared domain: "{self.slotdomains[slot]}" '

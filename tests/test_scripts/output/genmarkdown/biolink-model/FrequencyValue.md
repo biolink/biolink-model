@@ -5,7 +5,7 @@ describes the frequency of occurrence of an event or condition
 
 URI: [http://bioentity.io/vocab/FrequencyValue](http://bioentity.io/vocab/FrequencyValue)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[FrequencyValue]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[EntityToPhenotypicFeatureAssociation]-%20frequency%20qualifier(i)%20%3F>\[FrequencyValue],%20\[Attribute]^-\[FrequencyValue])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[FrequencyValue]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[Association]-%20frequency%20qualifier(i)%20%3F>\[FrequencyValue],%20\[Attribute]^-\[FrequencyValue])
 ## Mappings
 
 ## Inheritance
@@ -15,7 +15,7 @@ URI: [http://bioentity.io/vocab/FrequencyValue](http://bioentity.io/vocab/Freque
 
 ## Used in
 
- *  class: **entity to phenotypic feature association** *frequency qualifier* **frequency value**
+ *  class: **association** *frequency qualifier* **frequency value**
 ## Fields
 
  * _subclass of_

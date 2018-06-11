@@ -16,8 +16,8 @@ named thing -> **string**
  *  is_a: related to
 ## Children
 
- *  child: xenologous to
- *  child: paralogous to
  *  child: orthologous to
+ *  child: paralogous to
+ *  child: xenologous to
 ## Used in
 

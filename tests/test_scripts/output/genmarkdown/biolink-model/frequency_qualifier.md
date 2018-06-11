@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/frequency_qualifier](slot_uri)
 
 ## Domain and Range
 
-entity to phenotypic feature association -> frequency value
+association -> frequency value
 ## Inheritance
 
  *  is_a: association slot
@@ -16,6 +16,3 @@ entity to phenotypic feature association -> frequency value
 
 ## Used in
 
- *  usage: entity to phenotypic feature association
- *  usage: variant to population association
- *  usage: entity to disease association

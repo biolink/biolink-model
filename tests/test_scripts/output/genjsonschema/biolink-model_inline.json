@@ -2511,12 +2511,6 @@
                   "$ref": "#/definitions/description"
                }
             },
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": {
-                  "$ref": "#/definitions/frequency_qualifier"
-               }
-            },
             "full_name": {
                "description": "a long-form human readable name for a thing",
                "type": {
@@ -4163,12 +4157,6 @@
                   "$ref": "#/definitions/description"
                }
             },
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": {
-                  "$ref": "#/definitions/frequency_qualifier"
-               }
-            },
             "full_name": {
                "description": "a long-form human readable name for a thing",
                "type": {
@@ -4534,12 +4522,6 @@
                "description": "a human-readable description of a thing",
                "type": {
                   "$ref": "#/definitions/description"
-               }
-            },
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": {
-                  "$ref": "#/definitions/frequency_qualifier"
                }
             },
             "full_name": {
@@ -5073,6 +5055,13 @@
          "title": "ExonToTranscriptRelationship",
          "type": "object"
       },
+      "FrequencyQualifier": {
+         "description": "Qualifier for freqency type associations",
+         "properties": {},
+         "required": [],
+         "title": "FrequencyQualifier",
+         "type": "object"
+      },
       "FrequencyQuantifier": {
          "description": "",
          "properties": {
@@ -5402,12 +5391,6 @@
                   "$ref": "#/definitions/description"
                }
             },
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": {
-                  "$ref": "#/definitions/frequency_qualifier"
-               }
-            },
             "full_name": {
                "description": "a long-form human readable name for a thing",
                "type": {
@@ -5626,12 +5609,6 @@
                "description": "a human-readable description of a thing",
                "type": {
                   "$ref": "#/definitions/description"
-               }
-            },
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": {
-                  "$ref": "#/definitions/frequency_qualifier"
                }
             },
             "full_name": {
@@ -6140,12 +6117,6 @@
                "description": "a human-readable description of a thing",
                "type": {
                   "$ref": "#/definitions/description"
-               }
-            },
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": {
-                  "$ref": "#/definitions/frequency_qualifier"
                }
             },
             "full_name": {
@@ -6750,12 +6721,6 @@
                "description": "a human-readable description of a thing",
                "type": {
                   "$ref": "#/definitions/description"
-               }
-            },
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": {
-                  "$ref": "#/definitions/frequency_qualifier"
                }
             },
             "full_name": {
@@ -7562,12 +7527,6 @@
                "description": "a human-readable description of a thing",
                "type": {
                   "$ref": "#/definitions/description"
-               }
-            },
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": {
-                  "$ref": "#/definitions/frequency_qualifier"
                }
             },
             "full_name": {
@@ -11352,12 +11311,6 @@
                   "$ref": "#/definitions/description"
                }
             },
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": {
-                  "$ref": "#/definitions/frequency_qualifier"
-               }
-            },
             "full_name": {
                "description": "a long-form human readable name for a thing",
                "type": {
@@ -11484,12 +11437,6 @@
                "description": "a human-readable description of a thing",
                "type": {
                   "$ref": "#/definitions/description"
-               }
-            },
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": {
-                  "$ref": "#/definitions/frequency_qualifier"
                }
             },
             "full_name": {
@@ -11624,12 +11571,6 @@
                "description": "a human-readable description of a thing",
                "type": {
                   "$ref": "#/definitions/description"
-               }
-            },
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": {
-                  "$ref": "#/definitions/frequency_qualifier"
                }
             },
             "full_name": {

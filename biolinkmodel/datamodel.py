@@ -1,5 +1,5 @@
 # Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/biolink-model.yaml by pythongen.py version: 0.0.2
-# Generation date: 2018-06-11 15:33
+# Generation date: 2018-06-11 18:27
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -109,6 +109,8 @@ ChemicalToPathwayAssociationName = NewType("ChemicalToPathwayAssociationName", s
 ChemicalToGeneAssociationName = NewType("ChemicalToGeneAssociationName", str)
 BiosampleToThingAssociationName = NewType("BiosampleToThingAssociationName", str)
 BiosampleToDiseaseOrPhenotypicFeatureAssociationName = NewType("BiosampleToDiseaseOrPhenotypicFeatureAssociationName", str)
+FrequencyQualifierName = NewType("FrequencyQualifierName", str)
+EntityToFeatureOrDiseaseQualifiersName = NewType("EntityToFeatureOrDiseaseQualifiersName", str)
 EntityToPhenotypicFeatureAssociationName = NewType("EntityToPhenotypicFeatureAssociationName", str)
 EntityToDiseaseAssociationName = NewType("EntityToDiseaseAssociationName", str)
 DiseaseOrPhenotypicFeatureAssociationToThingAssociationName = NewType("DiseaseOrPhenotypicFeatureAssociationToThingAssociationName", str)
@@ -950,9 +952,6 @@ class BiosampleToDiseaseOrPhenotypicFeatureAssociation(Association):
 
 @dataclass
 class EntityToPhenotypicFeatureAssociation(Association):
-    frequency_qualifier: Optional[FrequencyValue] = None
-    severity_qualifier: Optional[SeverityValueName] = None
-    onset_qualifier: Optional[OnsetName] = None
     sex_qualifier: Optional[BiologicalSexName] = None
     description: Optional[NarrativeText] = None
     object: PhenotypicFeatureName = None
@@ -1091,7 +1090,6 @@ class VariantToPopulationAssociation(Association):
     """
     An association between a variant and a population, where the variant has particular frequency in the population
     """
-    frequency_qualifier: Optional[FrequencyValue] = None
     subject: SequenceVariantName = None
     object: PopulationOfIndividualOrganismsName = None
     has_quotient: Optional[str] = None

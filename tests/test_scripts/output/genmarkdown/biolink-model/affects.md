@@ -16,7 +16,7 @@ named thing -> **string**
 ## Children
 
  *  child: disrupts
- *  child: treats
  *  child: regulates
+ *  child: treats
 ## Used in
 

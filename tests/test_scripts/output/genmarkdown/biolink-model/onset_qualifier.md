@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/onset_qualifier](slot_uri)
 
 ## Domain and Range
 
-entity to phenotypic feature association -> onset
+entity to feature or disease qualifiers -> onset
 ## Inheritance
 
  *  is_a: association slot
@@ -16,5 +16,4 @@ entity to phenotypic feature association -> onset
 
 ## Used in
 
- *  usage: entity to phenotypic feature association
- *  usage: entity to disease association
+ *  usage: entity to feature or disease qualifiers

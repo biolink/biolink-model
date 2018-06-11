@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/severity_qualifier](slot_uri)
 
 ## Domain and Range
 
-entity to phenotypic feature association -> severity value
+entity to feature or disease qualifiers -> severity value
 ## Inheritance
 
  *  is_a: association slot
@@ -16,5 +16,4 @@ entity to phenotypic feature association -> severity value
 
 ## Used in
 
- *  usage: entity to phenotypic feature association
- *  usage: entity to disease association
+ *  usage: entity to feature or disease qualifiers
