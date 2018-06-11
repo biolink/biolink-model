@@ -209,9 +209,7 @@ message GeographicLocation
 // a location that can be described in lat/long coordinates, for a particular time
 message GeographicLocationAtTime
  {
-  optional latitude Float = 1
-  optional longitude Float = 2
-  optional timepoint TimeType = 3
+  optional timepoint TimeType = 1
  }
 // A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
 message MacromolecularMachine

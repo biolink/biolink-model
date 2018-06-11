@@ -24,6 +24,7 @@ class GenGraphqlTestCase(ClickTestCase):
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_biolink(self):
+        self.maxDiff = None
         self.do_test(self.biolink_file, "biolink-model.graphql", update_test_file=update_test_files)
         self.assertFalse(update_test_files, "Updating test files")
 

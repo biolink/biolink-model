@@ -24,7 +24,7 @@ class SynopsisTestCase(unittest.TestCase):
             print("***** ERRORS *****")
             error_str = '\n'.join(errors)
             print(error_str)
-            self.assertFalse(True, "Errrors encountered")
+            self.assertFalse(True, "Errors encountered")
         summary = synopsis.summary()
 
         sourcepath = os.path.join(sourcedir, model_name + '_synopsis.txt')

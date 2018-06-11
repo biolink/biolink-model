@@ -20,6 +20,7 @@ class GenYUMLTestCase(ClickTestCase):
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_meta(self):
+        self.maxDiff = None
         meta_dir = os.path.join(self.testdir_path, 'meta')
         os.makedirs(meta_dir, exist_ok=True)
         self.do_test(self.metamodel_file, 'meta.yuml', update_test_file=update_test_files)
@@ -41,6 +42,7 @@ class GenYUMLTestCase(ClickTestCase):
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_biolink(self):
+        self.maxDiff = None
         self.do_test(self.biolink_file, "biolink-model.yuml", update_test_file=update_test_files)
         self.do_test([self.biolink_file, "-c", "organismal entity"], "organismal_entity.yuml",
                      update_test_file=update_test_files)

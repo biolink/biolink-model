@@ -27,6 +27,8 @@ fields:
 - {description: used to indicate the inverse of a slot (e.g. 'expresses' is the inverse
     predicate of 'expressed in'), display_name: inverse, id: inverse}
 - {display_name: is_class_field, id: is_class_field}
+- {description: True means that the slot is local and is not_inherited across is_a
+    or slot_usage paths, display_name: not_inherited, id: not_inherited}
 - {display_name: role, id: role}
 id: slot_definition
 schema_generating: true

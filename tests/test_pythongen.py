@@ -8,7 +8,7 @@ from metamodel.generators.pythongen import PythonGenerator
 from tests import refresh_files
 from tests.test_scripts.clicktestcase import metadata_filter
 
-update_master: bool = True
+update_master: bool = False
 
 
 class PythonGenTestCase(unittest.TestCase):
