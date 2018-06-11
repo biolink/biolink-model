@@ -9,7 +9,6 @@ AdministrativeEntity interface
 AnatomicalEntity typeimplements ThingWithTaxon
   {
     expresses: GeneOrGeneProduct
-    inTaxon: OrganismTaxon
   }
 
 AnatomicalEntityToAnatomicalEntityAssociation type
@@ -47,7 +46,6 @@ Association type
 
 Attribute typeimplements OntologyClass
   {
-    subclassOf: OntologyClass
   }
 
 BiologicalEntity interface
@@ -57,10 +55,6 @@ BiologicalEntity interface
 
 BiologicalProcess typeimplements Occurrent
   {
-    regulatesProcessToProcess: Occurrent
-    hasParticipant: String
-    hasInput: String
-    precedes: Occurrent
   }
 
 BiologicalProcessOrActivity type
@@ -73,7 +67,6 @@ BiologicalSex type
 
 Biosample typeimplements ThingWithTaxon
   {
-    inTaxon: OrganismTaxon
   }
 
 BiosampleToDiseaseOrPhenotypicFeatureAssociation typeimplements BiosampleToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
@@ -91,10 +84,6 @@ Case type
 
 CaseToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, CaseToThingAssociation
   {
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
-    sexQualifier: BiologicalSex
   }
 
 CaseToThingAssociation interface
@@ -185,7 +174,6 @@ DiseaseOrPhenotypicFeature typeimplements ThingWithTaxon
     correlatedWith: MolecularEntity
     hasBiomarker: MolecularEntity
     treatedBy: String
-    inTaxon: OrganismTaxon
   }
 
 DiseaseOrPhenotypicFeatureAssociationToLocationAssociation type
@@ -200,10 +188,6 @@ DiseaseOrPhenotypicFeatureAssociationToThingAssociation interface
 
 DiseaseToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, DiseaseToThingAssociation
   {
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
-    sexQualifier: BiologicalSex
   }
 
 DiseaseToThingAssociation interface
@@ -244,10 +228,6 @@ Environment type
 
 EnvironmentToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation
   {
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
-    sexQualifier: BiologicalSex
     subject: Environment!
   }
 
@@ -257,10 +237,6 @@ EnvironmentalFeature type
 
 EnvironmentalProcess typeimplements Occurrent
   {
-    regulatesProcessToProcess: Occurrent
-    hasParticipant: String
-    hasInput: String
-    precedes: Occurrent
   }
 
 EvidenceType type
@@ -304,9 +280,6 @@ Gene type
 
 GeneAsAModelOfDiseaseAssociation typeimplements ModelToDiseaseMixin, EntityToDiseaseAssociation
   {
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
     subject: GeneOrGeneProduct!
   }
 
@@ -353,9 +326,6 @@ GeneRegulatoryRelationship type
 
 GeneToDiseaseAssociation typeimplements EntityToDiseaseAssociation, GeneToThingAssociation
   {
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
     subject: GeneOrGeneProduct!
   }
 
@@ -394,10 +364,6 @@ GeneToGoTermAssociation type
 
 GeneToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, GeneToThingAssociation
   {
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
-    sexQualifier: BiologicalSex
     subject: GeneOrGeneProduct!
   }
 
@@ -446,10 +412,6 @@ GenotypeToGenotypePartAssociation type
 
 GenotypeToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, GenotypeToThingAssociation
   {
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
-    sexQualifier: BiologicalSex
     relation: RelationshipType!
     subject: Genotype!
   }
@@ -493,7 +455,6 @@ Haplotype type
 
 IndividualOrganism typeimplements ThingWithTaxon
   {
-    inTaxon: OrganismTaxon
   }
 
 InformationContentEntity interface
@@ -502,7 +463,6 @@ InformationContentEntity interface
 
 LifeStage typeimplements ThingWithTaxon
   {
-    inTaxon: OrganismTaxon
   }
 
 MacromolecularComplex type
@@ -545,10 +505,6 @@ ModelToDiseaseMixin interface
 
 MolecularActivity typeimplements Occurrent
   {
-    regulatesProcessToProcess: Occurrent
-    hasParticipant: String
-    hasInput: String
-    precedes: Occurrent
   }
 
 MolecularEntity typeimplements ThingWithTaxon
@@ -556,7 +512,6 @@ MolecularEntity typeimplements ThingWithTaxon
     molecularlyInteractsWith: MolecularEntity
     regulatesEntityToEntity: MolecularEntity
     biomarkerFor: DiseaseOrPhenotypicFeature
-    inTaxon: OrganismTaxon
   }
 
 MolecularInteraction interface
@@ -644,7 +599,6 @@ PlanetaryEntity type
 
 PopulationOfIndividualOrganisms typeimplements ThingWithTaxon
   {
-    inTaxon: OrganismTaxon
   }
 
 PopulationToPopulationAssociation type
@@ -749,9 +703,6 @@ Treatment type
 
 VariantToDiseaseAssociation typeimplements VariantToThingAssociation, EntityToDiseaseAssociation
   {
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
     subject: String!
     relation: RelationshipType!
     object: String!
@@ -759,22 +710,17 @@ VariantToDiseaseAssociation typeimplements VariantToThingAssociation, EntityToDi
 
 VariantToPhenotypicFeatureAssociation typeimplements VariantToThingAssociation, EntityToPhenotypicFeatureAssociation
   {
-    frequencyQualifier: FrequencyValue
-    severityQualifier: SeverityValue
-    onsetQualifier: Onset
-    sexQualifier: BiologicalSex
     subject: SequenceVariant!
   }
 
 VariantToPopulationAssociation typeimplements VariantToThingAssociation, FrequencyQuantifier
   {
     frequencyQualifier: FrequencyValue
-    hasCount: String
-    hasTotal: String
-    hasQuotient: String
-    hasPercentage: String
     subject: SequenceVariant!
     object: PopulationOfIndividualOrganisms!
+    hasQuotient: String
+    hasCount: String
+    hasTotal: String
   }
 
 VariantToThingAssociation interface

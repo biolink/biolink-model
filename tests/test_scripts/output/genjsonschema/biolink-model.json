@@ -24,6 +24,7 @@
          "type": "array"
       },
       "aggregate_statistic": {
+         "description": "A grouping for any property that holds between a node and a value",
          "items": {
             "type": "string"
          },
@@ -149,6 +150,7 @@
          "type": "array"
       },
       "end_interbase_coordinate": {
+         "description": "TODO",
          "items": {
             "type": "string"
          },
@@ -309,6 +311,7 @@
          "type": "array"
       },
       "has_quotient": {
+         "description": "A grouping for any property that holds between a node and a value",
          "items": {
             "type": "string"
          },
@@ -322,6 +325,7 @@
          "type": "array"
       },
       "has_zygosity": {
+         "description": "A grouping for any property that holds between a node and a value",
          "items": {
             "type": "string"
          },
@@ -433,6 +437,7 @@
          "type": "array"
       },
       "molecularly_interacts_with": {
+         "description": "holds between two entities that make physical contact as part of some interaction",
          "items": {
             "type": "string"
          },
@@ -453,18 +458,21 @@
          "type": "array"
       },
       "negatively_regulates": {
+         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
          "items": {
             "type": "string"
          },
          "type": "array"
       },
       "negatively_regulates_entity_to_entity": {
+         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
          "items": {
             "type": "string"
          },
          "type": "array"
       },
       "negatively_regulates_process_to_process": {
+         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
          "items": {
             "type": "string"
          },
@@ -548,18 +556,21 @@
          "type": "array"
       },
       "positively_regulates": {
+         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
          "items": {
             "type": "string"
          },
          "type": "array"
       },
       "positively_regulates_entity_to_entity": {
+         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
          "items": {
             "type": "string"
          },
          "type": "array"
       },
       "positively_regulates_process_to_process": {
+         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
          "items": {
             "type": "string"
          },
@@ -622,18 +633,21 @@
          "type": "array"
       },
       "regulates": {
+         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
          "items": {
             "type": "string"
          },
          "type": "array"
       },
       "regulates_entity_to_entity": {
+         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
          "items": {
             "type": "string"
          },
          "type": "array"
       },
       "regulates_process_to_process": {
+         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
          "items": {
             "type": "string"
          },
@@ -689,6 +703,7 @@
          "type": "array"
       },
       "start_interbase_coordinate": {
+         "description": "TODO",
          "items": {
             "type": "string"
          },
@@ -768,6 +783,7 @@
                "type": "string"
             },
             "regulates_process_to_process": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             }
          },
@@ -1235,6 +1251,7 @@
                "type": "string"
             },
             "regulates_process_to_process": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -1888,6 +1905,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -1899,6 +1917,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -2356,6 +2375,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -2367,6 +2387,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -2822,6 +2843,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -2833,6 +2855,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -3140,6 +3163,7 @@
                "type": "string"
             },
             "regulates_process_to_process": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -3239,6 +3263,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -3250,6 +3275,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -3363,6 +3389,7 @@
                "type": "string"
             },
             "has_quotient": {
+               "description": "A grouping for any property that holds between a node and a value",
                "type": "string"
             },
             "has_total": {
@@ -3540,6 +3567,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -3551,6 +3579,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -3700,6 +3729,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -3711,6 +3741,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -3896,6 +3927,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -3907,6 +3939,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -3978,6 +4011,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -3989,6 +4023,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -4682,6 +4717,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -4693,6 +4729,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -4748,6 +4785,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -4759,6 +4797,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -4794,6 +4833,7 @@
                "type": "string"
             },
             "end_interbase_coordinate": {
+               "description": "TODO",
                "type": "string"
             },
             "full_name": {
@@ -4859,6 +4899,7 @@
                "type": "string"
             },
             "start_interbase_coordinate": {
+               "description": "TODO",
                "type": "string"
             },
             "subject": {
@@ -4902,6 +4943,7 @@
                "type": "string"
             },
             "has_zygosity": {
+               "description": "A grouping for any property that holds between a node and a value",
                "type": "string"
             },
             "id": {
@@ -4917,6 +4959,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -4928,6 +4971,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -5519,6 +5563,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -5530,6 +5575,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -5689,6 +5735,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -5700,6 +5747,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -5755,6 +5803,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -5766,6 +5815,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -6075,6 +6125,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -6086,6 +6137,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -6157,6 +6209,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -6168,6 +6221,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -6231,6 +6285,7 @@
                "type": "string"
             },
             "regulates_process_to_process": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -6282,6 +6337,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -6293,6 +6349,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -6408,6 +6465,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -6419,6 +6477,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -6450,6 +6509,7 @@
                "type": "string"
             },
             "regulates_process_to_process": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             }
          },
@@ -6637,6 +6697,7 @@
                "type": "string"
             },
             "regulates_process_to_process": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -6668,6 +6729,7 @@
                "type": "string"
             },
             "regulates_process_to_process": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             }
          },
@@ -6799,6 +6861,7 @@
                "type": "string"
             },
             "regulates_process_to_process": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -7012,6 +7075,7 @@
                "type": "string"
             },
             "regulates_process_to_process": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             }
          },
@@ -7075,6 +7139,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -7086,6 +7151,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -7157,6 +7223,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -7168,6 +7235,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -7297,6 +7365,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -7308,6 +7377,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -7379,6 +7449,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -7390,6 +7461,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -7545,6 +7617,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -7556,6 +7629,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {
@@ -7630,6 +7704,7 @@
                "type": "string"
             },
             "molecularly_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
                "type": "string"
             },
             "name": {
@@ -7641,6 +7716,7 @@
                "type": "string"
             },
             "regulates_entity_to_entity": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
                "type": "string"
             },
             "related_to": {

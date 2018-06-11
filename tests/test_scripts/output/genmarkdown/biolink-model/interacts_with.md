@@ -9,13 +9,13 @@ URI: [http://bioentity.io/vocab/interacts_with](slot_uri)
  * [RO:0002434](http://purl.obolibrary.org/obo/RO_0002434)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> string
+named thing -> **string**
 ## Inheritance
 
- *  is_a: [related to](related_to.md)
+ *  is_a: related to
 ## Children
 
- *  child: [physically interacts with](physically_interacts_with.md) *subsets*: (translator_minimal)
- *  child: [genetically interacts with](genetically_interacts_with.md) *subsets*: (translator_minimal)
+ *  child: physically interacts with
+ *  child: genetically interacts with
 ## Used in
 

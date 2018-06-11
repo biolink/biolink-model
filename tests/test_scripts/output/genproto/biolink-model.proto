@@ -2,7 +2,6 @@
 message AnatomicalEntity
  {
   optional expresses GeneOrGeneProduct = 1
-  optional inTaxon OrganismTaxon = 2
  }
 message AnatomicalEntityToAnatomicalEntityAssociation
  {
@@ -28,38 +27,13 @@ message Association
  {
   optional associationType OntologyClass = 1
   subject String = 2
-  optional negated String = 3
+  optional negated Boolean = 3
   relation RelationshipType = 4
   object String = 5
   repeated qualifiers OntologyClass = 6
   repeated publications Publication = 7
   optional providedBy Provider = 8
   optional associationSlot String = 9
- }
-// A property or characteristic of an entity
-message Attribute
- {
-  optional subclassOf OntologyClass = 1
- }
-// One or more causally connected executions of molecular functions
-message BiologicalProcess
- {
-  optional regulatesProcessToProcess Occurrent = 1
-  optional hasParticipant String = 2
-  optional hasInput String = 3
-  optional precedes Occurrent = 4
- }
-message Biosample
- {
-  optional inTaxon OrganismTaxon = 1
- }
-// An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
-message CaseToPhenotypicFeatureAssociation
- {
-  optional frequencyQualifier FrequencyValue = 1
-  optional severityQualifier SeverityValue = 2
-  optional onsetQualifier Onset = 3
-  optional sexQualifier BiologicalSex = 4
  }
 // An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
 message CellLineToDiseaseOrPhenotypicFeatureAssociation
@@ -87,20 +61,11 @@ message DiseaseOrPhenotypicFeature
   optional correlatedWith MolecularEntity = 1
   optional hasBiomarker MolecularEntity = 2
   optional treatedBy String = 3
-  optional inTaxon OrganismTaxon = 4
  }
 // An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
  {
   object AnatomicalEntity = 1
- }
-// An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
-message DiseaseToPhenotypicFeatureAssociation
- {
-  optional frequencyQualifier FrequencyValue = 1
-  optional severityQualifier SeverityValue = 2
-  optional onsetQualifier Onset = 3
-  optional sexQualifier BiologicalSex = 4
  }
 // A drug exposure is an intake of a particular chemical substance
 message DrugExposure
@@ -110,18 +75,7 @@ message DrugExposure
 // Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
 message EnvironmentToPhenotypicFeatureAssociation
  {
-  optional frequencyQualifier FrequencyValue = 1
-  optional severityQualifier SeverityValue = 2
-  optional onsetQualifier Onset = 3
-  optional sexQualifier BiologicalSex = 4
-  subject Environment = 5
- }
-message EnvironmentalProcess
- {
-  optional regulatesProcessToProcess Occurrent = 1
-  optional hasParticipant String = 2
-  optional hasInput String = 3
-  optional precedes Occurrent = 4
+  subject Environment = 1
  }
 // A transcript is formed from multiple exons
 message ExonToTranscriptRelationship
@@ -143,10 +97,7 @@ message Gene
  }
 message GeneAsAModelOfDiseaseAssociation
  {
-  optional frequencyQualifier FrequencyValue = 1
-  optional severityQualifier SeverityValue = 2
-  optional onsetQualifier Onset = 3
-  subject GeneOrGeneProduct = 4
+  subject GeneOrGeneProduct = 1
  }
 message GeneHasVariantThatContributesToDiseaseAssociation
  {
@@ -170,10 +121,7 @@ message GeneRegulatoryRelationship
  }
 message GeneToDiseaseAssociation
  {
-  optional frequencyQualifier FrequencyValue = 1
-  optional severityQualifier SeverityValue = 2
-  optional onsetQualifier Onset = 3
-  subject GeneOrGeneProduct = 4
+  subject GeneOrGeneProduct = 1
  }
 // An association between a gene and an expression site, possibly qualified by stage/timing info.
 message GeneToExpressionSiteAssociation
@@ -203,11 +151,7 @@ message GeneToGoTermAssociation
  }
 message GeneToPhenotypicFeatureAssociation
  {
-  optional frequencyQualifier FrequencyValue = 1
-  optional severityQualifier SeverityValue = 2
-  optional onsetQualifier Onset = 3
-  optional sexQualifier BiologicalSex = 4
-  subject GeneOrGeneProduct = 5
+  subject GeneOrGeneProduct = 1
  }
 // an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
 message GenomicEntity
@@ -246,12 +190,8 @@ message GenotypeToGenotypePartAssociation
 // Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
 message GenotypeToPhenotypicFeatureAssociation
  {
-  optional frequencyQualifier FrequencyValue = 1
-  optional severityQualifier SeverityValue = 2
-  optional onsetQualifier Onset = 3
-  optional sexQualifier BiologicalSex = 4
-  relation RelationshipType = 5
-  subject Genotype = 6
+  relation RelationshipType = 1
+  subject Genotype = 2
  }
 // Any association between a genotype and a sequence variant.
 message GenotypeToVariantAssociation
@@ -263,24 +203,15 @@ message GenotypeToVariantAssociation
 // a location that can be described in lat/long coordinates
 message GeographicLocation
  {
-  optional latitude String = 1
-  optional longitude String = 2
+  optional latitude Float = 1
+  optional longitude Float = 2
  }
 // a location that can be described in lat/long coordinates, for a particular time
 message GeographicLocationAtTime
  {
-  optional latitude String = 1
-  optional longitude String = 2
+  optional latitude Float = 1
+  optional longitude Float = 2
   optional timepoint TimeType = 3
- }
-message IndividualOrganism
- {
-  optional inTaxon OrganismTaxon = 1
- }
-// A stage of development or growth of an organism, including post-natal adult stages
-message LifeStage
- {
-  optional inTaxon OrganismTaxon = 1
  }
 // A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
 message MacromolecularMachine
@@ -302,21 +233,12 @@ message MacromolecularMachineToMolecularActivityAssociation
  {
   object MolecularActivity = 1
  }
-// An execution of a molecular function carried out by a gene product or macromolecular complex.
-message MolecularActivity
- {
-  optional regulatesProcessToProcess Occurrent = 1
-  optional hasParticipant String = 2
-  optional hasInput String = 3
-  optional precedes Occurrent = 4
- }
 // A gene, gene product, small molecule or macromolecule (including protein complex)
 message MolecularEntity
  {
   optional molecularlyInteractsWith MolecularEntity = 1
   optional regulatesEntityToEntity MolecularEntity = 2
   optional biomarkerFor DiseaseOrPhenotypicFeature = 3
-  optional inTaxon OrganismTaxon = 4
  }
 // a databased entity or concept/class
 message NamedThing
@@ -348,10 +270,6 @@ message OntologyClass
 message PairwiseGeneOrProteinInteractionAssociation
  {
   relation RelationshipType = 1
- }
-message PopulationOfIndividualOrganisms
- {
-  optional inTaxon OrganismTaxon = 1
  }
 // An association between a two populations
 message PopulationToPopulationAssociation
@@ -387,30 +305,22 @@ message Treatment
  }
 message VariantToDiseaseAssociation
  {
-  optional frequencyQualifier FrequencyValue = 1
-  optional severityQualifier SeverityValue = 2
-  optional onsetQualifier Onset = 3
-  subject String = 4
-  relation RelationshipType = 5
-  object String = 6
+  subject String = 1
+  relation RelationshipType = 2
+  object String = 3
  }
 message VariantToPhenotypicFeatureAssociation
  {
-  optional frequencyQualifier FrequencyValue = 1
-  optional severityQualifier SeverityValue = 2
-  optional onsetQualifier Onset = 3
-  optional sexQualifier BiologicalSex = 4
-  subject SequenceVariant = 5
+  subject SequenceVariant = 1
  }
 // An association between a variant and a population, where the variant has particular frequency in the population
 message VariantToPopulationAssociation
  {
   optional frequencyQualifier FrequencyValue = 1
-  optional hasCount String = 2
-  optional hasTotal String = 3
+  subject SequenceVariant = 2
+  object PopulationOfIndividualOrganisms = 3
   optional hasQuotient String = 4
-  optional hasPercentage String = 5
-  subject SequenceVariant = 6
-  object PopulationOfIndividualOrganisms = 7
+  optional hasCount String = 5
+  optional hasTotal String = 6
  }
 

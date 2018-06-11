@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/in_complex_with](slot_uri)
  * [SEMMEDDB:COEXISTS_WITH](http://purl.obolibrary.org/obo/SEMMEDDB_COEXISTS_WITH)
 ## Domain and Range
 
-[gene or gene product](GeneOrGeneProduct.md) -> [gene or gene product](GeneOrGeneProduct.md)
+gene or gene product -> gene or gene product
 ## Inheritance
 
- *  is_a: [coexists with](coexists_with.md) *subsets*: (translator_minimal)
+ *  is_a: coexists with
 ## Children
 
 ## Used in
 
- *  usage: [gene or gene product](GeneOrGeneProduct.md)
+ *  usage: gene or gene product

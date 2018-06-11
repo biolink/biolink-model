@@ -64,16 +64,16 @@ class ClickTestCase(unittest.TestCase):
             with open(testfile_path, 'w') as f:
                 f.write(outf.getvalue())
             if refresh_files:
-                print(f'{testfile_path} updated')
+                print(f'refresh_files is True: {testfile_path} updated')
 
         if testfile:
             with open(testfile_path) as f:
-                old_txt = outf.getvalue().replace('\r\n', '\n')
-                if filtr:
-                    old_txt = filtr(old_txt)
-                new_txt = f.read().replace('\r\n', '\n')
+                new_txt = outf.getvalue().replace('\r\n', '\n')
                 if filtr:
                     new_txt = filtr(new_txt)
+                old_txt = f.read().replace('\r\n', '\n')
+                if filtr:
+                    old_txt = filtr(old_txt)
                 self.assertEqual(old_txt.strip(), new_txt.strip())
         else:
             print("Directory comparison needs to be added", file=sys.stderr)

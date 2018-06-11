@@ -11,12 +11,12 @@ URI: [http://bioentity.io/vocab/variant_to_population_association_object](slot_u
  * [oban:association_has_object](http://purl.obolibrary.org/obo/oban_association_has_object)
 ## Domain and Range
 
-[variant to population association](VariantToPopulationAssociation.md) -> [population of individual organisms](PopulationOfIndividualOrganisms.md)
+variant to population association -> population of individual organisms
 ## Inheritance
 
- *  is_a: [object](object.md)
+ *  is_a: object
 ## Children
 
 ## Used in
 
- *  usage: [variant to population association](VariantToPopulationAssociation.md)
+ *  usage: variant to population association

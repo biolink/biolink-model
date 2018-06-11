@@ -8,12 +8,12 @@ URI: [http://bioentity.io/vocab/qualifiers](slot_uri)
 
 ## Domain and Range
 
-[association](Association.md) -> [ontology class](OntologyClass.md)
+association -> ontology class
 ## Inheritance
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: association slot
 ## Children
 
 ## Used in
 
- *  usage: [association](Association.md)
+ *  usage: association

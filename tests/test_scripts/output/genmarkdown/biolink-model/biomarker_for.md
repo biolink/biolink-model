@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/biomarker_for](slot_uri)
  * [RO:0002607](http://purl.obolibrary.org/obo/RO_0002607)
 ## Domain and Range
 
-[molecular entity](MolecularEntity.md) -> [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
+molecular entity -> disease or phenotypic feature
 ## Inheritance
 
- *  is_a: [correlated with](correlated_with.md) *subsets*: (translator_minimal)
+ *  is_a: correlated with
 ## Children
 
 ## Used in
 
- *  usage: [molecular entity](MolecularEntity.md)
+ *  usage: molecular entity

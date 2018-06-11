@@ -8,12 +8,12 @@ URI: [http://bioentity.io/vocab/publications](slot_uri)
 
 ## Domain and Range
 
-[association](Association.md) -> [publication](Publication.md)
+association -> publication
 ## Inheritance
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: association slot
 ## Children
 
 ## Used in
 
- *  usage: [association](Association.md)
+ *  usage: association

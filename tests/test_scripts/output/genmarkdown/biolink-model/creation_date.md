@@ -9,10 +9,10 @@ URI: [http://bioentity.io/vocab/creation_date](slot_uri)
  * [dcterms:created](http://purl.obolibrary.org/obo/dcterms_created)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> date
+named thing -> **date**
 ## Inheritance
 
- *  is_a: [node property](node_property.md)
+ *  is_a: node property
 ## Children
 
 ## Used in

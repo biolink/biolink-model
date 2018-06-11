@@ -11,13 +11,13 @@ URI: [http://bioentity.io/vocab/variant_to_disease_association_relation](slot_ur
  * [oban:association_has_predicate](http://purl.obolibrary.org/obo/oban_association_has_predicate)
 ## Domain and Range
 
-[variant to disease association](VariantToDiseaseAssociation.md) -> [relationship type](RelationshipType.md)
+variant to disease association -> relationship type
 ## Inheritance
 
- *  is_a: [relation](relation.md)
+ *  is_a: relation
 ## Children
 
 ## Used in
 
- *  usage: [variant to disease association](VariantToDiseaseAssociation.md)
+ *  usage: variant to disease association
  *  reifies: related condition

@@ -1,16 +1,5 @@
-description: An association between a disease and a phenotypic feature in which the
-  phenotypic feature is associated with the disease in some way
-display_name: disease to phenotypic feature association
-document_category: disease to phenotypic feature association
-fields:
-- {description: a qualifier used in a phenotypic association to state how frequent
-    the phenotype is observed in the subject, display_name: frequency qualifier, id: frequency_qualifier}
-- {description: a qualifier used in a phenotypic association to state how severe the
-    phenotype is in the subject, display_name: severity qualifier, id: severity_qualifier}
-- {description: a qualifier used in a phenotypic association to state when the phenotype
-    appears is in the subject, display_name: onset qualifier, id: onset_qualifier}
-- {description: a qualifier used in a phenotypic association to state whether the
-    association is specific to a particular sex., display_name: sex qualifier, id: sex_qualifier}
-id: disease_to_phenotypic_feature_association
-schema_generating: true
-weight: 20
+{description: An association between a disease and a phenotypic feature in which the
+    phenotypic feature is associated with the disease in some way, display_name: disease
+    to phenotypic feature association, document_category: disease to phenotypic feature
+    association, id: disease_to_phenotypic_feature_association, schema_generating: true,
+  weight: 20}

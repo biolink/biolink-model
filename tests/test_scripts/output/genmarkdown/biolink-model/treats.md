@@ -12,10 +12,10 @@ URI: [http://bioentity.io/vocab/treats](slot_uri)
  * [WD:P2175](http://purl.obolibrary.org/obo/WD_P2175)
 ## Domain and Range
 
-[treatment](Treatment.md) -> [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
+treatment -> disease or phenotypic feature
 ## Inheritance
 
- *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
+ *  is_a: affects
 ## Children
 
 ## Used in

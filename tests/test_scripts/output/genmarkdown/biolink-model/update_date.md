@@ -9,10 +9,10 @@ URI: [http://bioentity.io/vocab/update_date](slot_uri)
  * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> date
+named thing -> **date**
 ## Inheritance
 
- *  is_a: [node property](node_property.md)
+ *  is_a: node property
 ## Children
 
 ## Used in

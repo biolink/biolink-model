@@ -10,6 +10,7 @@ metamodel:
       name:
           domain: element
           primary_key: true
+          not_inherited: true
           description: >-
             a unique key that identifies a slot, type or class in a schema
 
@@ -31,11 +32,13 @@ metamodel:
 
       note:
           domain: element
+          not_inherited: true
           description: >-
             Notes about an element
 
       comment:
           domain: element
+          not_inherited: true
           description: >-
             Comment about an element
 
@@ -44,6 +47,7 @@ metamodel:
           domain: element
           range: example
           inlined: true
+          not_inherited: true
           description: >-
             Example of usage for a slot or class
 
@@ -95,6 +99,7 @@ metamodel:
           multivalued: true
           domain: element
           inlined: false
+          not_inherited: true
           description: >-
             list of equivalent or skos exact mappings to an ontology class
 
@@ -372,10 +377,22 @@ metamodel:
           description: >-
             used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')
 
+      is_class_field:
+          domain: slot definition
+          range: boolean
+          note: >-
+            Needs description
+
       role:
           domain: slot definition
           note: >-
             Needs description
+            
+      not_inherited:
+          domain: slot definition
+          range: boolean
+          description: >-
+            True means that the slot is local and is not_inherited across is_a or slot_usage paths
 
       #
       # Slots for type definition
@@ -450,6 +467,8 @@ metamodel:
             - path
             - subproperty_of
             - inverse
+            - is_class_field
+            - not_inherited
 
         class definition:
           description: "A class or interface"

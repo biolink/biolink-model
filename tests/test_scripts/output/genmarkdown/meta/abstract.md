@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/abstract](slot_uri)
 
 ## Domain and Range
 
-[definition](Definition.md) -> boolean
+definition -> **boolean**
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [definition](Definition.md)
+ *  usage: definition

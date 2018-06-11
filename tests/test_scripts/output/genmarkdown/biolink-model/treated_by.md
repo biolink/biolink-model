@@ -10,12 +10,12 @@ URI: [http://bioentity.io/vocab/treated_by](slot_uri)
  * [WD:P2176](http://purl.obolibrary.org/obo/WD_P2176)
 ## Domain and Range
 
-[disease or phenotypic feature](DiseaseOrPhenotypicFeature.md) -> string
+disease or phenotypic feature -> **string**
 ## Inheritance
 
- *  is_a: [related to](related_to.md)
+ *  is_a: related to
 ## Children
 
 ## Used in
 
- *  usage: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
+ *  usage: disease or phenotypic feature

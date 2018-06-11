@@ -4,7 +4,8 @@ description: An information content entity that describes a genome by specifying
 display_name: genotype
 document_category: genotype
 fields:
-- {display_name: has zygosity, id: has_zygosity}
+- {description: A grouping for any property that holds between a node and a value,
+  display_name: has zygosity, id: has_zygosity}
 id: genotype
 schema_generating: true
 weight: 20

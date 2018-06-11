@@ -5,21 +5,21 @@ an ontology class that describes a functional aspect of a gene, gene prodoct or 
 
 URI: [http://bioentity.io/vocab/GeneOntologyClass](http://bioentity.io/vocab/GeneOntologyClass)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OntologyClass]^-\[GeneOntologyClass],%20\[GeneOntologyClass]-%20subclass%20of(i)%20%3F>\[OntologyClass])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneOntologyClass]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[GeneToGoTermAssociation]-%20object(i)>\[GeneOntologyClass],%20\[FunctionalAssociation]-%20object(i)>\[GeneOntologyClass],%20\[OntologyClass]^-\[GeneOntologyClass])
 ## Mappings
 
 ## Inheritance
 
- *  is_a: [ontology class](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
+ *  is_a: ontology class
 ## Children
 
 ## Used in
 
- *  class: [functional association](FunctionalAssociation.md) references: [gene ontology class](GeneOntologyClass.md)
- *  class: [gene to go term association](GeneToGoTermAssociation.md) references: [gene ontology class](GeneOntologyClass.md)
+ *  class: **functional association** *functional association object* **gene ontology class**
+ *  class: **gene to go term association** *gene to go term association object* **gene ontology class**
 ## Fields
 
- * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
+ * _subclass of_
     * _holds between two classes where the domain class is a specialization of the range class_
-    * range: [ontology class](OntologyClass.md)
-    * inherited from: [ontology class](OntologyClass.md)
+    * range: ontology class
+    * inherited from: ontology class

@@ -9,13 +9,13 @@ URI: [http://bioentity.io/vocab/name](slot_uri)
  * [rdfs:label](http://purl.obolibrary.org/obo/rdfs_label)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> [label type](LabelType.md)
+named thing -> label type
 ## Inheritance
 
- *  is_a: [node property](node_property.md)
+ *  is_a: node property
 ## Children
 
- *  child: [name](name.md) *subsets*: (translator_minimal)
+ *  child: macromolecular machine name
 ## Used in
 
- *  usage: [named thing](NamedThing.md)
+ *  usage: named thing

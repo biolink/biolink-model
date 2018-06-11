@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/sequence_variant_has_biological_sequence](slot_u
  * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-[sequence variant](SequenceVariant.md) -> [biological sequence](BiologicalSequence.md)
+sequence variant -> biological sequence
 ## Inheritance
 
- *  is_a: [has biological sequence](has_biological_sequence.md)
+ *  is_a: has biological sequence
 ## Children
 
 ## Used in
 
- *  usage: [sequence variant](SequenceVariant.md)
+ *  usage: sequence variant

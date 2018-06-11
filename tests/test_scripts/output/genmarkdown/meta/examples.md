@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/examples](slot_uri)
 
 ## Domain and Range
 
-[element](Element.md) -> [example](Example.md)
+element -> example
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [element](Element.md)
+ *  usage: element

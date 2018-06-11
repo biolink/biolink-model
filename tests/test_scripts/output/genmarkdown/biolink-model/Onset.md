@@ -5,21 +5,21 @@ The age group in which manifestations appear
 
 URI: [http://bioentity.io/vocab/Onset](http://bioentity.io/vocab/Onset)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]^-\[Onset],%20\[Onset]-%20subclass%20of(i)%20%3F>\[OntologyClass])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Onset]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[EntityToPhenotypicFeatureAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[Attribute]^-\[Onset])
 ## Mappings
 
  * [HP:0003674](http://purl.obolibrary.org/obo/HP_0003674)
 ## Inheritance
 
- *  is_a: [attribute](Attribute.md) - A property or characteristic of an entity
+ *  is_a: attribute
 ## Children
 
 ## Used in
 
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [onset](Onset.md)
+ *  class: **entity to phenotypic feature association** *onset qualifier* **onset**
 ## Fields
 
- * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
+ * _subclass of_
     * _holds between two classes where the domain class is a specialization of the range class_
-    * range: [ontology class](OntologyClass.md)
-    * inherited from: [ontology class](OntologyClass.md)
+    * range: ontology class
+    * inherited from: ontology class

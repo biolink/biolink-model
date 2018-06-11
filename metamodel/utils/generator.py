@@ -1,14 +1,20 @@
 import abc
 from contextlib import redirect_stdout
 from io import StringIO
-from typing import List, Set, Union, TextIO, Optional
+from typing import List, Set, Union, TextIO, Optional, TypeVar
 
 from metamodel.metamodel import SchemaDefinition, ClassDefinition, SlotDefinition, ClassDefinitionName, \
     TypeDefinition, Element, SlotDefinitionName, TypeDefinitionName
+from metamodel.utils.builtins import builtin_names
 from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.schemaloader import SchemaLoader
 from metamodel.utils.schemasynopsis import SchemaSynopsis
 from metamodel.utils.typereferences import References
+
+CLASS_OR_CLASSNAME = TypeVar('CLASS_OR_CLASSNAME', ClassDefinitionName, ClassDefinition)
+SLOT_OR_SLOTNAME = TypeVar('SLOT_OR_SLOTNAME', SlotDefinitionName, SlotDefinition)
+TYPE_OR_TYPENAME = TypeVar('TYPE_OR_TYPENAME', TypeDefinitionName, TypeDefinition)
+ELEMENT_NAME = TypeVar('ELEMENT_NAME', ClassDefinitionName, SlotDefinitionName, TypeDefinitionName)
 
 
 class Generator(metaclass=abc.ABCMeta):
@@ -87,11 +93,11 @@ class Generator(metaclass=abc.ABCMeta):
 
     #
     # Helper methods
-    def cls_slots(self, cls: Union[ClassDefinitionName, ClassDefinition]) -> List[SlotDefinition]:
-        """ Return the list of slots directly included in the class definition.  Includes:
-        1. Slots whose domain is cls -- as declared in slot.domain or class.slots
-        2. Slots defined in classes with apply_to
-        Does not include slots declared in mixins or is_a reference
+    def cls_slots(self, cls: CLASS_OR_CLASSNAME) -> List[SlotDefinition]:
+        """ Return the list of slots directly included in the class definition.  Includes slots whose
+        domain is cls -- as declared in slot.domain or class.slots
+
+        Does not include slots declared in mixins, apply_to or is_a links
 
         @param cls: class name or class definition name
         @return: all direct class slots
@@ -100,7 +106,7 @@ class Generator(metaclass=abc.ABCMeta):
             cls = self.schema.classes[cls]
         return [self.schema.slots[s] for s in cls.slots]
 
-    def all_slots(self, cls: Union[ClassDefinitionName, ClassDefinition], *, cls_slots_first: bool = False) \
+    def all_slots(self, cls: CLASS_OR_CLASSNAME, *, cls_slots_first: bool = False) \
             -> List[SlotDefinition]:
         """ Return all slots that are part of the class definition.  This includes all is_a, mixin and apply_to slots
         but does NOT include slot_usage targets.  If class B has a slot_usage entry for slot "s", only the slot
@@ -128,39 +134,30 @@ class Generator(metaclass=abc.ABCMeta):
             rval += self.cls_slots(cls)
             for mixin in cls.mixins:
                 merge_definitions(mixin)
-            for applier in self.synopsis.applytos:
-                merge_definitions(applier)
             merge_definitions(cls.is_a)
         else:
             merge_definitions(cls.is_a)
-            for applier in self.synopsis.applytos:
-                merge_definitions(applier)
             for mixin in cls.mixins:
                 merge_definitions(mixin)
             rval += self.cls_slots(cls)
 
         return rval
 
-    def ancestors(self, definition: Union[SlotDefinitionName, SlotDefinition]) \
+    def ancestors(self, definition: Union[SLOT_OR_SLOTNAME,
+                                          CLASS_OR_CLASSNAME]) \
             -> List[Union[SlotDefinitionName, ClassDefinitionName]]:
-        """ Return an ordered list of ancestors for a class or a slot, inclusive """
+        """ Return an ordered list of ancestor names for the supplied slot or class
+
+        @param definition: Slot or class name or definition
+        @return: List of ancestor names
+        """
         definition = self.obj_for(definition)
         return [definition.name] + self.ancestors(definition.is_a) if definition.is_a else []
 
-    def root_closure(self, roots: List[Union[SlotDefinitionName, ClassDefinitionName]]) \
-            -> Set[Union[SlotDefinitionName, ClassDefinitionName]]:
-        """ Return the union of the ancesters of the elements in roots """
-        closure: Set[Union[SlotDefinitionName, SlotDefinition]] = set()
-        for root in roots:
-            if root not in self.schema.classes and root not in self.schema.slots:
-                raise ValueError("Unknown root: {root}")
-            else:
-                closure.update(set(self.ancestors(root)))
-        return closure
-
-    def neighborhood(self, elements: List[Union[SlotDefinitionName, ClassDefinitionName, TypeDefinitionName]]) \
+    def neighborhood(self, elements: List[ELEMENT_NAME]) \
             -> References:
-        """ Return a list of all slots ane delements that touch any element in elements
+        """ Return a list of all slots, classes and types that touch any element in elements, including the element
+        itself
 
         @param elements: Elements to do proximity with
         @return: All slots and classes that touch element
@@ -168,12 +165,12 @@ class Generator(metaclass=abc.ABCMeta):
         touches = References()
         for element in elements:
             if element in self.schema.classes:
+                touches.classrefs.add(element)
                 cls = self.schema.classes[element]
                 if cls.is_a:
                     touches.classrefs.add(cls.is_a)
+                # Mixins include apply_to's
                 touches.classrefs.update(set(cls.mixins))
-                if element in self.synopsis.applytos:
-                    touches.classrefs.update(self.synopsis.applytos[element].classrefs)
                 for slotname in cls.slots:
                     slot = self.schema.slots[slotname]
                     if slot.range in self.schema.classes:
@@ -185,6 +182,7 @@ class Generator(metaclass=abc.ABCMeta):
                         touches.slotrefs.add(slotname)
                         touches.classrefs.add(self.schema.slots[slotname].domain)
             elif element in self.schema.slots:
+                touches.slotrefs.add(element)
                 slot = self.schema.slots[element]
                 touches.slotrefs.update(set(slot.mixins))
                 if slot.is_a:
@@ -203,7 +201,7 @@ class Generator(metaclass=abc.ABCMeta):
 
         return touches
 
-    def aliased_slot_name(self, slot: Union[SlotDefinitionName, SlotDefinition]) -> str:
+    def aliased_slot_name(self, slot: SLOT_OR_SLOTNAME) -> str:
         """ Return the overloaded slot name -- the alias if one exists otherwise the actual name
 
         @param slot: either a slot name or a definition
@@ -221,15 +219,17 @@ class Generator(metaclass=abc.ABCMeta):
         """
         return {self.aliased_slot_name(sn) for sn in slot_names}
 
-    def obj_for(self, name: str) -> Optional[Element]:
-        """ Return the class, slot or type that represents name
+    def obj_for(self, obj_or_name: Union[str, Element]) -> Optional[Union[str, Element]]:
+        """ Return the class, slot or type that represents name or name itself if it is a builtin
 
-        @param name:
+        @param obj_or_name: Object or name
         @return: Corresponding element or None if not found (most likely cause is that it is a builtin type)
         """
+        name = obj_or_name.name if isinstance(obj_or_name, Element) else obj_or_name
         return self.schema.classes[name] if name in self.schema.classes \
             else self.schema.slots[name] if name in self.schema.slots \
-            else self.schema.types[name] if name in self.schema.types else None
+            else self.schema.types[name] if name in self.schema.types else name if name in builtin_names \
+            else None
 
     def obj_name(self, obj: Union[str, ClassDefinition, SlotDefinition, TypeDefinition]) -> str:
         """ Return the formatted name used for the supplied definition """
@@ -238,7 +238,7 @@ class Generator(metaclass=abc.ABCMeta):
         if isinstance(obj, SlotDefinition):
             return underscore(self.aliased_slot_name(obj))
         else:
-            return camelcase(obj.name) if obj else 'String'
+            return camelcase(obj if isinstance(obj, str) else obj.name)
 
     @staticmethod
     def id_to_url(id_: str) -> str:

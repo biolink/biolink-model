@@ -5,20 +5,20 @@ describes the severity of a phenotypic feature or disease
 
 URI: [http://bioentity.io/vocab/SeverityValue](http://bioentity.io/vocab/SeverityValue)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]^-\[SeverityValue],%20\[SeverityValue]-%20subclass%20of(i)%20%3F>\[OntologyClass])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SeverityValue]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[EntityToPhenotypicFeatureAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[Attribute]^-\[SeverityValue])
 ## Mappings
 
 ## Inheritance
 
- *  is_a: [attribute](Attribute.md) - A property or characteristic of an entity
+ *  is_a: attribute
 ## Children
 
 ## Used in
 
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) references: [severity value](SeverityValue.md)
+ *  class: **entity to phenotypic feature association** *severity qualifier* **severity value**
 ## Fields
 
- * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
+ * _subclass of_
     * _holds between two classes where the domain class is a specialization of the range class_
-    * range: [ontology class](OntologyClass.md)
-    * inherited from: [ontology class](OntologyClass.md)
+    * range: ontology class
+    * inherited from: ontology class

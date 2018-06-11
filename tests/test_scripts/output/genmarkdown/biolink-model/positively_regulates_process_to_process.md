@@ -9,10 +9,10 @@ URI: [http://bioentity.io/vocab/positively_regulates_process_to_process](slot_ur
  * [RO:0002213](http://purl.obolibrary.org/obo/RO_0002213)
 ## Domain and Range
 
-[occurrent](Occurrent.md) -> string
+occurrent -> **string**
 ## Inheritance
 
- *  is_a: [regulates, process to process](regulates_process_to_process.md) *subsets*: (translator_minimal)
+ *  is_a: regulates, process to process
 ## Children
 
 ## Used in

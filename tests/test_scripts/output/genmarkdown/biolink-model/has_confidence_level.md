@@ -8,10 +8,10 @@ URI: [http://bioentity.io/vocab/has_confidence_level](slot_uri)
 
 ## Domain and Range
 
-[association](Association.md) -> [confidence level](ConfidenceLevel.md)
+association -> confidence level
 ## Inheritance
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: association slot
 ## Children
 
 ## Used in

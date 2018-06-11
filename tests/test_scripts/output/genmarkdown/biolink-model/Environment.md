@@ -5,59 +5,59 @@ A feature of the environment of an organism that influences one or more phenotyp
 
 URI: [http://bioentity.io/vocab/Environment](http://bioentity.io/vocab/Environment)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalEntity]^-\[Environment|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F],%20\[Environment]^-\[DrugExposure],%20\[Environment]^-\[Treatment],%20\[Environment]-%20related%20to(i)%20%3F>\[NamedThing])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Environment|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20subject(i)>\[Environment],%20\[Environment]^-\[Treatment],%20\[Environment]^-\[DrugExposure],%20\[BiologicalEntity]^-\[Environment])
 ## Mappings
 
  * [SIO:000955](http://semanticscience.org/resource/SIO_000955)
 ## Inheritance
 
- *  is_a: [biological entity](BiologicalEntity.md)
+ *  is_a: biological entity
 ## Children
 
- *  child: [drug exposure](DrugExposure.md) - A drug exposure is an intake of a particular chemical substance
- *  child: [treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
+ * drug exposure
+ * treatment
 ## Used in
 
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.md) references: [environment](Environment.md)
+ *  class: **environment to phenotypic feature association** *environment to phenotypic feature association subject* **environment**
 ## Fields
 
- * _[category](category.md) *subsets*: (translator_minimal)_
+ * _category_
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * range: [label type](LabelType.md)
-    * inherited from: [named thing](NamedThing.md)
- * _[description](description.md) *subsets*: (translator_minimal)_
+    * range: label type
+    * inherited from: named thing
+ * _description_
     * _a human-readable description of a thing_
-    * range: [narrative text](NarrativeText.md)
-    * inherited from: [named thing](NamedThing.md)
- * _[full name](full_name.md)_
+    * range: narrative text
+    * inherited from: named thing
+ * _full name_
     * _a long-form human readable name for a thing_
-    * range: [label type](LabelType.md)
-    * inherited from: [named thing](NamedThing.md)
- * _[has phenotype](has_phenotype.md) *subsets*: (translator_minimal)_
+    * range: label type
+    * inherited from: named thing
+ * _has phenotype_
     * _holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). _
-    * range: [phenotype](Phenotype.md)
-    * inherited from: [biological entity](BiologicalEntity.md)
- * _[id](id.md) *subsets*: (translator_minimal)_
+    * range: phenotype
+    * inherited from: biological entity
+ * _id_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * range: [identifier type](IdentifierType.md)
-    * inherited from: [named thing](NamedThing.md)
- * _[iri](iri.md) *subsets*: (translator_minimal)_
+    * range: identifier type
+    * inherited from: named thing
+ * _iri_
     * _An IRI for the node. This is determined by the id using expansion rules._
-    * range: [iri type](IriType.md)
-    * inherited from: [named thing](NamedThing.md)
- * _[name](name.md) *subsets*: (translator_minimal)_
+    * range: iri type
+    * inherited from: named thing
+ * _name_
     * _A human-readable name for a thing_
-    * range: [label type](LabelType.md)
-    * inherited from: [named thing](NamedThing.md)
- * _[node property](node_property.md)_
+    * range: label type
+    * inherited from: named thing
+ * _node property_
     * _A grouping for any property that holds between a node and a value_
-    * range: string
-    * inherited from: [named thing](NamedThing.md)
- * _[related to](related_to.md)_
+    * range: **string**
+    * inherited from: named thing
+ * _related to_
     * _A grouping for any relationship type that holds between any two things_
-    * range: [named thing](NamedThing.md)
-    * inherited from: [named thing](NamedThing.md)
- * _[systematic synonym](systematic_synonym.md)_
+    * range: named thing
+    * inherited from: named thing
+ * _systematic synonym_
     * _more commonly used for gene symbols in yeast_
-    * range: [label type](LabelType.md)
-    * inherited from: [named thing](NamedThing.md)
+    * range: label type
+    * inherited from: named thing

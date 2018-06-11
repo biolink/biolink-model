@@ -9,10 +9,10 @@ URI: [http://bioentity.io/vocab/filler](slot_uri)
  * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> [named thing](NamedThing.md)
+named thing -> named thing
 ## Inheritance
 
- *  is_a: [node property](node_property.md)
+ *  is_a: node property
 ## Children
 
 ## Used in

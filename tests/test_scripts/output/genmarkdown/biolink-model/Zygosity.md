@@ -5,21 +5,21 @@
 
 URI: [http://bioentity.io/vocab/Zygosity](http://bioentity.io/vocab/Zygosity)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]^-\[Zygosity],%20\[Zygosity]-%20subclass%20of(i)%20%3F>\[OntologyClass])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Zygosity]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[Genotype]-%20has%20zygosity(i)%20%3F>\[Zygosity],%20\[Attribute]^-\[Zygosity])
 ## Mappings
 
  * [GENO:0000133](http://purl.obolibrary.org/obo/GENO_0000133)
 ## Inheritance
 
- *  is_a: [attribute](Attribute.md) - A property or characteristic of an entity
+ *  is_a: attribute
 ## Children
 
 ## Used in
 
- *  class: [genotype](Genotype.md) references: [zygosity](Zygosity.md)
+ *  class: **genotype** *has zygosity* **zygosity**
 ## Fields
 
- * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
+ * _subclass of_
     * _holds between two classes where the domain class is a specialization of the range class_
-    * range: [ontology class](OntologyClass.md)
-    * inherited from: [ontology class](OntologyClass.md)
+    * range: ontology class
+    * inherited from: ontology class

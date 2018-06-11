@@ -58,11 +58,11 @@ class ContextGenerator(Generator):
         # subClassOf has highest priority
         cn = camelcase(cls.name)
         if cls.subclass_of is not None:
-            self.add_mapping(camelcase(cn), cls.subclass_of)
-        self.tr_element(cls, camelcase(cn))
+            self.add_mapping(cn, cls.subclass_of)
+        self.tr_element(cls, cn)
         return True
 
-    def visit_class_slot(self, cls: ClassDefinition, aliased_slot_name: str, slot: SlotDefinition) -> None:
+    def visit_slot(self, aliased_slot_name: str, slot: SlotDefinition) -> None:
         if not slot.alias:
             self.tr_element(slot, underscore(slot.name))
         # hold off til we are sure curie_util can handle this

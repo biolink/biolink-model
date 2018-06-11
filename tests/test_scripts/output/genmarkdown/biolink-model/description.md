@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/entity_to_phenotypic_feature_association_descrip
  * [dcterms:description](http://purl.obolibrary.org/obo/dcterms_description)
 ## Domain and Range
 
-[entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md) -> [narrative text](NarrativeText.md)
+entity to phenotypic feature association -> narrative text
 ## Inheritance
 
- *  is_a: [description](description.md) *subsets*: (translator_minimal)
+ *  is_a: description
 ## Children
 
 ## Used in
 
- *  usage: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.md)
+ *  usage: entity to phenotypic feature association

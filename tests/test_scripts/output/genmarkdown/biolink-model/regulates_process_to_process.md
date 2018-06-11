@@ -9,17 +9,14 @@ URI: [http://bioentity.io/vocab/regulates_process_to_process](slot_uri)
  * [RO:0002211](http://purl.obolibrary.org/obo/RO_0002211)
 ## Domain and Range
 
-[occurrent](Occurrent.md) -> [occurrent](Occurrent.md)
+occurrent -> occurrent
 ## Inheritance
 
- *  is_a: [regulates](regulates.md) *subsets*: (translator_minimal)
+ *  is_a: regulates
 ## Children
 
- *  child: [negatively regulates, process to process](negatively_regulates_process_to_process.md) *subsets*: (translator_minimal)
- *  child: [positively regulates, process to process](positively_regulates_process_to_process.md) *subsets*: (translator_minimal)
+ *  child: negatively regulates, process to process
+ *  child: positively regulates, process to process
 ## Used in
 
- *  usage: [occurrent](Occurrent.md)
- *  usage: [environmental process](EnvironmentalProcess.md)
- *  usage: [molecular activity](MolecularActivity.md)
- *  usage: [biological process](BiologicalProcess.md)
+ *  usage: occurrent

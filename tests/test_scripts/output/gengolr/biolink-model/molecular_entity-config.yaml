@@ -3,13 +3,16 @@ description: A gene, gene product, small molecule or macromolecule (including pr
 display_name: molecular entity
 document_category: molecular entity
 fields:
-- {display_name: molecularly interacts with, id: molecularly_interacts_with}
-- {display_name: 'regulates, entity to entity', id: regulates_entity_to_entity}
+- {description: holds between two entities that make physical contact as part of some
+    interaction, display_name: molecularly interacts with, id: molecularly_interacts_with}
+- {description: 'describes an entity that has a direct affect on the state or quality
+    of another existing entity. Use of the ''affects'' predicate implies that the
+    affected entity already exists, unlike predicates such as ''affects risk for''
+    and ''prevents, where the outcome is something that may or may not come to be.',
+  display_name: 'regulates, entity to entity', id: regulates_entity_to_entity}
 - {description: 'holds between a measurable molecular entity and a disease or phenotypic
     feature, where the entity is used as an indicator of the presence or state of
     the disease or feature.', display_name: biomarker for, id: biomarker_for}
-- {description: connects a thing to a class representing a taxon, display_name: in
-    taxon, id: in_taxon}
 id: molecular_entity
 schema_generating: true
 weight: 20

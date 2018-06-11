@@ -5,32 +5,32 @@
 
 URI: [http://bioentity.io/vocab/FrequencyQuantifier](http://bioentity.io/vocab/FrequencyQuantifier)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[RelationshipQuantifier]^-\[FrequencyQuantifier|has_count:integer%20%3F;has_total:integer%20%3F;has_quotient:double%20%3F;has_percentage:double%20%3F])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[VariantToPopulationAssociation]uses%20-.->\[FrequencyQuantifier|has_count:integer%20%3F;has_total:integer%20%3F;has_quotient:double%20%3F;has_percentage:double%20%3F],%20\[RelationshipQuantifier]^-\[FrequencyQuantifier])
 ## Mappings
 
 ## Inheritance
 
- *  is_a: [relationship quantifier](RelationshipQuantifier.md)
+ *  is_a: relationship quantifier
 ## Children
 
- *  mixin: [variant to population association](VariantToPopulationAssociation.md) - An association between a variant and a population, where the variant has particular frequency in the population
+ * variant to population association
 ## Used in
 
 ## Fields
 
- * _[has count](has_count.md)_
+ * _has count_
     * _number of things with a particular property_
-    * range: integer
+    * range: **integer**
     * __Local__
- * _[has percentage](has_percentage.md)_
+ * _has percentage_
     * _equivalent to has quotient multiplied by 100_
-    * range: double
+    * range: **double**
     * __Local__
- * _[has quotient](has_quotient.md)_
+ * _has quotient_
     * _A grouping for any property that holds between a node and a value_
-    * range: double
+    * range: **double**
     * __Local__
- * _[has total](has_total.md)_
+ * _has total_
     * _total number of things in a particular reference set_
-    * range: integer
+    * range: **integer**
     * __Local__

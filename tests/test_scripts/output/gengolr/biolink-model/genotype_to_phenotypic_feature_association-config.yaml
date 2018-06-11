@@ -3,14 +3,6 @@ description: Any association between one genotype and a phenotypic feature, wher
 display_name: genotype to phenotypic feature association
 document_category: genotype to phenotypic feature association
 fields:
-- {description: a qualifier used in a phenotypic association to state how frequent
-    the phenotype is observed in the subject, display_name: frequency qualifier, id: frequency_qualifier}
-- {description: a qualifier used in a phenotypic association to state how severe the
-    phenotype is in the subject, display_name: severity qualifier, id: severity_qualifier}
-- {description: a qualifier used in a phenotypic association to state when the phenotype
-    appears is in the subject, display_name: onset qualifier, id: onset_qualifier}
-- {description: a qualifier used in a phenotypic association to state whether the
-    association is specific to a particular sex., display_name: sex qualifier, id: sex_qualifier}
 - {description: the relationship type by which a subject is connected to an object
     in an association, display_name: genotype to phenotypic feature association relation,
   id: relation}

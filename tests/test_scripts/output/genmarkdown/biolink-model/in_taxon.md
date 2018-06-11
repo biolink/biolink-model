@@ -10,19 +10,12 @@ URI: [http://bioentity.io/vocab/in_taxon](slot_uri)
  * [WD:P703](http://purl.obolibrary.org/obo/WD_P703)
 ## Domain and Range
 
-[thing with taxon](ThingWithTaxon.md) -> [organism taxon](OrganismTaxon.md)
+thing with taxon -> organism taxon
 ## Inheritance
 
- *  is_a: [related to](related_to.md)
+ *  is_a: related to
 ## Children
 
 ## Used in
 
- *  usage: [anatomical entity](AnatomicalEntity.md)
- *  usage: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.md)
- *  usage: [population of individual organisms](PopulationOfIndividualOrganisms.md)
- *  usage: [life stage](LifeStage.md)
- *  usage: [thing with taxon](ThingWithTaxon.md)
- *  usage: [individual organism](IndividualOrganism.md)
- *  usage: [molecular entity](MolecularEntity.md)
- *  usage: [biosample](Biosample.md)
+ *  usage: thing with taxon

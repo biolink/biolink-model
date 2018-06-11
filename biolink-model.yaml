@@ -1747,12 +1747,10 @@ classes:
       - "UMLSSG:GEOG"
       
   geographic location at time:
-    is_a: planetary entity
+    is_a: geographic location
     description: >-
       a location that can be described in lat/long coordinates, for a particular time
     slots:
-      - latitude
-      - longitude
       - timepoint
       
   ## ------

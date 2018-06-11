@@ -9,13 +9,13 @@ URI: [http://bioentity.io/vocab/interbase_coordinate](slot_uri)
  * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> string
+named thing -> **string**
 ## Inheritance
 
- *  is_a: [node property](node_property.md)
+ *  is_a: node property
 ## Children
 
- *  child: [start interbase coordinate](start_interbase_coordinate.md)
- *  child: [end interbase coordinate](end_interbase_coordinate.md)
+ *  child: end interbase coordinate
+ *  child: start interbase coordinate
 ## Used in
 

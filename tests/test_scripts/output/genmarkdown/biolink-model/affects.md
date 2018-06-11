@@ -9,14 +9,14 @@ URI: [http://bioentity.io/vocab/affects](slot_uri)
  * [SEMMEDDB:AFFECTS](http://purl.obolibrary.org/obo/SEMMEDDB_AFFECTS)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> string
+named thing -> **string**
 ## Inheritance
 
- *  is_a: [related to](related_to.md)
+ *  is_a: related to
 ## Children
 
- *  child: [regulates](regulates.md) *subsets*: (translator_minimal)
- *  child: [disrupts](disrupts.md) *subsets*: (translator_minimal)
- *  child: [treats](treats.md) *subsets*: (translator_minimal)
+ *  child: regulates
+ *  child: disrupts
+ *  child: treats
 ## Used in
 

@@ -8,12 +8,12 @@ URI: [http://bioentity.io/vocab/sequence_variant_qualifier](slot_uri)
 
 ## Domain and Range
 
-[gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.md) -> [sequence variant](SequenceVariant.md)
+gene has variant that contributes to disease association -> sequence variant
 ## Inheritance
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: association slot
 ## Children
 
 ## Used in
 
- *  usage: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.md)
+ *  usage: gene has variant that contributes to disease association

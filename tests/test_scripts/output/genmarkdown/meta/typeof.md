@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/typeof](slot_uri)
 
 ## Domain and Range
 
-[type definition](TypeDefinition.md) -> string
+type definition -> **string**
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [type definition](TypeDefinition.md)
+ *  usage: type definition

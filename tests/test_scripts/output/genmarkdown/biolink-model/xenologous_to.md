@@ -9,10 +9,10 @@ URI: [http://bioentity.io/vocab/xenologous_to](slot_uri)
  * [RO:HOM0000018](http://purl.obolibrary.org/obo/RO_HOM0000018)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> string
+named thing -> **string**
 ## Inheritance
 
- *  is_a: [homologous to](homologous_to.md) *subsets*: (translator_minimal)
+ *  is_a: homologous to
 ## Children
 
 ## Used in

@@ -1,14 +1,6 @@
 display_name: gene to phenotypic feature association
 document_category: gene to phenotypic feature association
 fields:
-- {description: a qualifier used in a phenotypic association to state how frequent
-    the phenotype is observed in the subject, display_name: frequency qualifier, id: frequency_qualifier}
-- {description: a qualifier used in a phenotypic association to state how severe the
-    phenotype is in the subject, display_name: severity qualifier, id: severity_qualifier}
-- {description: a qualifier used in a phenotypic association to state when the phenotype
-    appears is in the subject, display_name: onset qualifier, id: onset_qualifier}
-- {description: a qualifier used in a phenotypic association to state whether the
-    association is specific to a particular sex., display_name: sex qualifier, id: sex_qualifier}
 - {description: 'connects an association to the subject of the association. For example,
     in a gene-to-phenotype association, the gene is subject and phenotype is object.',
   display_name: gene to phenotypic feature association subject, id: subject}

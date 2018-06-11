@@ -12,3 +12,8 @@ URI: [http://bioentity.io/vocab/AdministrativeEntity](http://bioentity.io/vocab/
 
 ## Children
 
+ * provider
+## Used in
+
+## Fields
+

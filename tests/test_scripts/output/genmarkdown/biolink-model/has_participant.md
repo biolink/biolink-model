@@ -10,16 +10,13 @@ URI: [http://bioentity.io/vocab/has_participant](slot_uri)
  * [WD:P2283](http://purl.obolibrary.org/obo/WD_P2283)
 ## Domain and Range
 
-[occurrent](Occurrent.md) -> string
+occurrent -> **string**
 ## Inheritance
 
- *  is_a: [related to](related_to.md)
+ *  is_a: related to
 ## Children
 
- *  child: [has input](has_input.md) *subsets*: (translator_minimal)
+ *  child: has input
 ## Used in
 
- *  usage: [occurrent](Occurrent.md)
- *  usage: [environmental process](EnvironmentalProcess.md)
- *  usage: [molecular activity](MolecularActivity.md)
- *  usage: [biological process](BiologicalProcess.md)
+ *  usage: occurrent

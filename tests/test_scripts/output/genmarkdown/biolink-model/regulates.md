@@ -9,15 +9,15 @@ URI: [http://bioentity.io/vocab/regulates](slot_uri)
  * [WD:P128](http://purl.obolibrary.org/obo/WD_P128)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> string
+named thing -> **string**
 ## Inheritance
 
- *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
+ *  is_a: affects
 ## Children
 
- *  child: [regulates, entity to entity](regulates_entity_to_entity.md) *subsets*: (translator_minimal)
- *  child: [positively regulates](positively_regulates.md) *subsets*: (translator_minimal)
- *  child: [negatively regulates](negatively_regulates.md) *subsets*: (translator_minimal)
- *  child: [regulates, process to process](regulates_process_to_process.md) *subsets*: (translator_minimal)
+ *  child: regulates, process to process
+ *  child: regulates, entity to entity
+ *  child: negatively regulates
+ *  child: positively regulates
 ## Used in
 

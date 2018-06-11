@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/sequence_variant_id](slot_uri)
  * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-[sequence variant](SequenceVariant.md) -> [identifier type](IdentifierType.md)
+sequence variant -> identifier type
 ## Inheritance
 
- *  is_a: [id](id.md) *subsets*: (translator_minimal)
+ *  is_a: id
 ## Children
 
 ## Used in
 
- *  usage: [sequence variant](SequenceVariant.md)
+ *  usage: sequence variant

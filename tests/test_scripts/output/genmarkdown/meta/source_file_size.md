@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/source_file_size](slot_uri)
 
 ## Domain and Range
 
-[schema definition](SchemaDefinition.md) -> integer
+schema definition -> **integer**
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [schema definition](SchemaDefinition.md)
+ *  usage: schema definition

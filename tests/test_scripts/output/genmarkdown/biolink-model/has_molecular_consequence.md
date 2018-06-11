@@ -10,10 +10,10 @@ URI: [http://bioentity.io/vocab/has_molecular_consequence](slot_uri)
  * [SEMMEDDB:ASSOCIATED_WITH](http://purl.obolibrary.org/obo/SEMMEDDB_ASSOCIATED_WITH)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> [ontology class](OntologyClass.md)
+named thing -> ontology class
 ## Inheritance
 
- *  is_a: [related to](related_to.md)
+ *  is_a: related to
 ## Children
 
 ## Used in

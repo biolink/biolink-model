@@ -5,18 +5,18 @@ An attribute corresponding to the phenotypic sex of the individual, based upon t
 
 URI: [http://bioentity.io/vocab/PhenotypicSex](http://bioentity.io/vocab/PhenotypicSex)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalSex]^-\[PhenotypicSex],%20\[PhenotypicSex]-%20subclass%20of(i)%20%3F>\[OntologyClass])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PhenotypicSex]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[BiologicalSex]^-\[PhenotypicSex])
 ## Mappings
 
  * [PATO:0001894](http://purl.obolibrary.org/obo/PATO_0001894)
 ## Inheritance
 
- *  is_a: [biological sex](BiologicalSex.md)
+ *  is_a: biological sex
 ## Children
 
 ## Fields
 
- * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
+ * _subclass of_
     * _holds between two classes where the domain class is a specialization of the range class_
-    * range: [ontology class](OntologyClass.md)
-    * inherited from: [ontology class](OntologyClass.md)
+    * range: ontology class
+    * inherited from: ontology class

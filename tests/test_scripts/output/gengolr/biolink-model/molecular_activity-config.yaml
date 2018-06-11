@@ -1,15 +1,3 @@
-description: An execution of a molecular function carried out by a gene product or
-  macromolecular complex.
-display_name: molecular activity
-document_category: molecular activity
-fields:
-- {display_name: 'regulates, process to process', id: regulates_process_to_process}
-- {description: 'holds between a process and a continuant, where the continuant is
-    somehow involved in the process ', display_name: has participant, id: has_participant}
-- {description: 'holds between a process and a continuant, where the continuant is
-    an input into the process', display_name: has input, id: has_input}
-- {description: 'holds between two processes, where one completes before the other
-    begins', display_name: precedes, id: precedes}
-id: molecular_activity
-schema_generating: true
-weight: 20
+{description: An execution of a molecular function carried out by a gene product or
+    macromolecular complex., display_name: molecular activity, document_category: molecular
+    activity, id: molecular_activity, schema_generating: true, weight: 20}

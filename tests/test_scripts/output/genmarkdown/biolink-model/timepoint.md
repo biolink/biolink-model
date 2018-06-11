@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/timepoint](slot_uri)
  * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-[geographic location at time](GeographicLocationAtTime.md) -> [time type](TimeType.md)
+geographic location at time -> time type
 ## Inheritance
 
- *  is_a: [node property](node_property.md)
+ *  is_a: node property
 ## Children
 
 ## Used in
 
- *  usage: [geographic location at time](GeographicLocationAtTime.md)
+ *  usage: geographic location at time

@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/expressed_in](slot_uri)
  * [RO:0002206](http://purl.obolibrary.org/obo/RO_0002206)
 ## Domain and Range
 
-[gene or gene product](GeneOrGeneProduct.md) -> [anatomical entity](AnatomicalEntity.md)
+gene or gene product -> anatomical entity
 ## Inheritance
 
- *  is_a: [related to](related_to.md)
+ *  is_a: related to
 ## Children
 
 ## Used in
 
- *  usage: [gene or gene product](GeneOrGeneProduct.md)
+ *  usage: gene or gene product

@@ -5,27 +5,27 @@ a concept or class in an ontology, vocabulary or thesaurus
 
 URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/OntologyClass)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OntologyClass]^-\[GeneOntologyClass],%20\[OntologyClass]^-\[OrganismTaxon],%20\[OntologyClass]-%20subclass%20of%20%3F>\[OntologyClass])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OntologyClass]-%20subclass%20of%20%3F>\[OntologyClass],%20\[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier(i)%20%3F>\[OntologyClass],%20\[MolecularInteraction]-%20interacting%20molecules%20category(i)%20%3F>\[OntologyClass],%20\[Association]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[NamedThing]-%20has%20molecular%20consequence(i)%20%3F>\[OntologyClass],%20\[OntologyClass]-%20subclass%20of%20%3F>\[OntologyClass],%20\[Association]-%20qualifiers(i)%20*>\[OntologyClass],%20\[Attribute]uses%20-.->\[OntologyClass],%20\[OntologyClass]^-\[OrganismTaxon],%20\[OntologyClass]^-\[GeneOntologyClass])
 ## Mappings
 
 ## Inheritance
 
 ## Children
 
- *  child: [gene ontology class](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
- *  child: [organism taxon](OrganismTaxon.md)
- *  mixin: [attribute](Attribute.md) - A property or characteristic of an entity
+ * gene ontology class
+ * organism taxon
+ * attribute
 ## Used in
 
- *  class: [association](Association.md) references: [ontology class](OntologyClass.md)
- *  class: [named thing](NamedThing.md) references: [ontology class](OntologyClass.md)
- *  class: [molecular interaction](MolecularInteraction.md) references: [ontology class](OntologyClass.md)
- *  class: [association](Association.md) references: [ontology class](OntologyClass.md)
- *  class: [gene to expression site association](GeneToExpressionSiteAssociation.md) references: [ontology class](OntologyClass.md)
- *  class: [ontology class](OntologyClass.md) references: [ontology class](OntologyClass.md)
+ *  class: **association** *association type* **ontology class**
+ *  class: **named thing** *has molecular consequence* **ontology class**
+ *  class: **molecular interaction** *molecular interaction interacting molecules category* **ontology class**
+ *  class: **association** *qualifiers* **ontology class**
+ *  class: **gene to expression site association** *quantifier qualifier* **ontology class**
+ *  class: **ontology class** *subclass of* **ontology class**
 ## Fields
 
- * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
+ * _subclass of_
     * _holds between two classes where the domain class is a specialization of the range class_
-    * range: [ontology class](OntologyClass.md)
+    * range: ontology class
     * __Local__

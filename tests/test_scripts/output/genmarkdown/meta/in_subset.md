@@ -9,11 +9,11 @@ URI: [http://bioentity.io/vocab/in_subset](slot_uri)
  * [oio](oio)
 ## Domain and Range
 
-[element](Element.md) -> string
+element -> **string**
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [element](Element.md)
+ *  usage: element

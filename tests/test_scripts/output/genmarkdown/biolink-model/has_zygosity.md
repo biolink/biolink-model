@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/has_zygosity](slot_uri)
  * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-[genotype](Genotype.md) -> [zygosity](Zygosity.md)
+genotype -> zygosity
 ## Inheritance
 
- *  is_a: [node property](node_property.md)
+ *  is_a: node property
 ## Children
 
 ## Used in
 
- *  usage: [genotype](Genotype.md)
+ *  usage: genotype

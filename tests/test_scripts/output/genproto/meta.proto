@@ -5,7 +5,7 @@ message ClassDefinition
   repeated slots SlotDefinition = 2
   repeated slot_Usage SlotDefinition = 3
   optional apply_To ClassDefinition = 4
-  optional entity String = 5
+  optional entity Boolean = 5
  }
 // example of usage
 message Example
@@ -25,26 +25,26 @@ message SchemaDefinition
   repeated classes ClassDefinition = 7
   optional metamodel_Version String = 8
   optional source_File String = 9
-  optional source_File_Size String = 10
+  optional source_File_Size Integer = 10
   optional source_File_Date String = 11
-  optional generation_Date String = 12
+  optional generation_Date Date = 12
  }
 // A property or slot
 message SlotDefinition
  {
-  optional multivalued String = 1
+  optional multivalued Boolean = 1
   optional domain ClassDefinition = 2
   optional range Element = 3
-  optional required String = 4
-  optional inlined String = 5
-  optional primary_Key String = 6
-  optional identifier String = 7
-  optional definitional String = 8
+  optional required Boolean = 4
+  optional inlined Boolean = 5
+  optional primary_Key Boolean = 6
+  optional identifier Boolean = 7
+  optional definitional Boolean = 8
   optional alias String = 9
   optional path String = 10
   optional subproperty_Of SlotDefinition = 11
   optional inverse SlotDefinition = 12
-  optional is_Class_Field String = 13
+  optional is_Class_Field Boolean = 13
   optional role String = 14
  }
 // A type definition

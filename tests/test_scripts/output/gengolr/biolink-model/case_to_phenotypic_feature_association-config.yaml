@@ -1,16 +1,5 @@
-description: An association between a case (e.g. individual patient) and a phenotypic
-  feature in which the individual has or has had the phenotype
-display_name: case to phenotypic feature association
-document_category: case to phenotypic feature association
-fields:
-- {description: a qualifier used in a phenotypic association to state how frequent
-    the phenotype is observed in the subject, display_name: frequency qualifier, id: frequency_qualifier}
-- {description: a qualifier used in a phenotypic association to state how severe the
-    phenotype is in the subject, display_name: severity qualifier, id: severity_qualifier}
-- {description: a qualifier used in a phenotypic association to state when the phenotype
-    appears is in the subject, display_name: onset qualifier, id: onset_qualifier}
-- {description: a qualifier used in a phenotypic association to state whether the
-    association is specific to a particular sex., display_name: sex qualifier, id: sex_qualifier}
-id: case_to_phenotypic_feature_association
-schema_generating: true
-weight: 20
+{description: An association between a case (e.g. individual patient) and a phenotypic
+    feature in which the individual has or has had the phenotype, display_name: case
+    to phenotypic feature association, document_category: case to phenotypic feature
+    association, id: case_to_phenotypic_feature_association, schema_generating: true,
+  weight: 20}

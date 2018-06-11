@@ -9,15 +9,15 @@ URI: [http://bioentity.io/vocab/coexists_with](slot_uri)
  * [SEMMEDDB:COEXISTS_WITH](http://purl.obolibrary.org/obo/SEMMEDDB_COEXISTS_WITH)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> string
+named thing -> **string**
 ## Inheritance
 
- *  is_a: [related to](related_to.md)
+ *  is_a: related to
 ## Children
 
- *  child: [in complex with](in_complex_with.md) *subsets*: (translator_minimal)
- *  child: [in pathway with](in_pathway_with.md) *subsets*: (translator_minimal)
- *  child: [in cell population with](in_cell_population_with.md) *subsets*: (translator_minimal)
- *  child: [co-localizes with](co-localizes_with.md) *subsets*: (translator_minimal)
+ *  child: in pathway with
+ *  child: in complex with
+ *  child: co-localizes with
+ *  child: in cell population with
 ## Used in
 

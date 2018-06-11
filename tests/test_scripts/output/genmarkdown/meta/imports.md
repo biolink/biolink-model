@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/imports](slot_uri)
 
 ## Domain and Range
 
-[schema definition](SchemaDefinition.md) -> string
+schema definition -> **string**
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [schema definition](SchemaDefinition.md)
+ *  usage: schema definition

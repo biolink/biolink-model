@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/association_type](slot_uri)
  * [rdf:type](http://purl.obolibrary.org/obo/rdf_type)
 ## Domain and Range
 
-[association](Association.md) -> [ontology class](OntologyClass.md)
+association -> ontology class
 ## Inheritance
 
- *  is_a: [association slot](association_slot.md)
+ *  is_a: association slot
 ## Children
 
 ## Used in
 
- *  usage: [association](Association.md)
+ *  usage: association

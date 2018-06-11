@@ -9,10 +9,10 @@ URI: [http://bioentity.io/vocab/predisposes](slot_uri)
  * [SEMMEDDB:PREDISPOSES](http://purl.obolibrary.org/obo/SEMMEDDB_PREDISPOSES)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> string
+named thing -> **string**
 ## Inheritance
 
- *  is_a: [affects risk for](affects_risk_for.md) *subsets*: (translator_minimal)
+ *  is_a: affects risk for
 ## Children
 
 ## Used in

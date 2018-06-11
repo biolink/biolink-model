@@ -9,15 +9,15 @@ URI: [http://bioentity.io/vocab/aggregate_statistic](slot_uri)
  * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> string
+named thing -> **string**
 ## Inheritance
 
- *  is_a: [node property](node_property.md)
+ *  is_a: node property
 ## Children
 
- *  child: [has total](has_total.md)
- *  child: [has quotient](has_quotient.md)
- *  child: [has percentage](has_percentage.md)
- *  child: [has count](has_count.md)
+ *  child: has count
+ *  child: has quotient
+ *  child: has percentage
+ *  child: has total
 ## Used in
 

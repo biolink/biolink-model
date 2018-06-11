@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/sequence_variant_has_gene](slot_uri)
 
 ## Domain and Range
 
-[sequence variant](SequenceVariant.md) -> string
+sequence variant -> **string**
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [sequence variant](SequenceVariant.md)
+ *  usage: sequence variant

@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/genetically_interacts_with](slot_uri)
  * [RO:0002435](http://purl.obolibrary.org/obo/RO_0002435)
 ## Domain and Range
 
-[gene](Gene.md) -> [gene](Gene.md)
+gene -> gene
 ## Inheritance
 
- *  is_a: [interacts with](interacts_with.md) *subsets*: (translator_minimal)
+ *  is_a: interacts with
 ## Children
 
 ## Used in
 
- *  usage: [gene](Gene.md)
+ *  usage: gene

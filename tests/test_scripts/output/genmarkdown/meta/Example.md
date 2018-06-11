@@ -5,7 +5,7 @@ example of usage
 
 URI: [http://bioentity.io/vocab/Example](http://bioentity.io/vocab/Example)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Element]++-%20examples(i)%20*>\[Example|value:string%20%3F;description:string%20%3F])
 ## Mappings
 
 ## Inheritance
@@ -14,11 +14,12 @@ URI: [http://bioentity.io/vocab/Example](http://bioentity.io/vocab/Example)
 
 ## Used in
 
+ *  class: **element** *examples* **example**
 ## Fields
 
- * _[value](value.md)_
-    * range: string
+ * _value_
+    * range: **string**
     * __Local__
- * _[description](description.md)_
-    * range: string
+ * _value description_
+    * range: **string**
     * __Local__

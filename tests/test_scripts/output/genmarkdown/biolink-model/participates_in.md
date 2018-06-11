@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/participates_in](slot_uri)
  * [RO:0000056](http://purl.obolibrary.org/obo/RO_0000056)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> [occurrent](Occurrent.md)
+named thing -> occurrent
 ## Inheritance
 
- *  is_a: [related to](related_to.md)
+ *  is_a: related to
 ## Children
 
- *  child: [actively involved in](actively_involved_in.md) *subsets*: (translator_minimal)
+ *  child: actively involved in
 ## Used in
 

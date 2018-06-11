@@ -21,29 +21,24 @@ class SchemaLoader:
                 self.loaded.add(sname)
                 merge_schemas(self.schema, load_raw_schema(sname))
 
-        # Inject slots into classes - we haven't error checked yet so we have to be cautious
+        # slot.domain --> class.slots
         for slot in self.schema.slots.values():
             if slot.domain in self.schema.classes and slot.name not in self.schema.classes[slot.domain].slots:
                 self.schema.classes[slot.domain].slots.append(slot.name)
 
-        # Inject class domain references into slots
+        # class.slots --> slot.domain
         for cls in self.schema.classes.values():
             for slotname in cls.slots:
                 if slotname in self.schema.slots:
                     if self.schema.slots[slotname].domain is None:
                         self.schema.slots[slotname].domain = cls.name
 
-        # Inject class extensions as reverse mixins
+        # apply to --> mixins
         for cls in self.schema.classes.values():
             if cls.apply_to in self.schema.classes:
                 self.schema.classes[cls.apply_to].mixins.append(cls.name)
 
-        # Incorporate the mixins into the referencing classes
-        for cls in self.schema.classes.values():
-            for mixin in cls.mixins:
-                cls.slots += self.schema.classes[mixin].slots
-
-        # Apply slot usages
+        # Override class slots with slot usage definitions
         for cls in self.schema.classes.values():
             for slot_name, slot_usage in cls.slot_usage.items():
                 # Construct a new slot

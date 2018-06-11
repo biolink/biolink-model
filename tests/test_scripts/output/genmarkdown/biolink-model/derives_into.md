@@ -10,10 +10,10 @@ URI: [http://bioentity.io/vocab/derives_into](slot_uri)
  * [SEMMEDDB:CONVERTS_TO](http://purl.obolibrary.org/obo/SEMMEDDB_CONVERTS_TO)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> string
+named thing -> **string**
 ## Inheritance
 
- *  is_a: [related to](related_to.md)
+ *  is_a: related to
 ## Children
 
 ## Used in

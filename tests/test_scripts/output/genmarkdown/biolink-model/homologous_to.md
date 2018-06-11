@@ -10,14 +10,14 @@ URI: [http://bioentity.io/vocab/homologous_to](slot_uri)
  * [SIO:010302](http://semanticscience.org/resource/SIO_010302)
 ## Domain and Range
 
-[named thing](NamedThing.md) -> string
+named thing -> **string**
 ## Inheritance
 
- *  is_a: [related to](related_to.md)
+ *  is_a: related to
 ## Children
 
- *  child: [orthologous to](orthologous_to.md) *subsets*: (translator_minimal)
- *  child: [xenologous to](xenologous_to.md) *subsets*: (translator_minimal)
- *  child: [paralogous to](paralogous_to.md) *subsets*: (translator_minimal)
+ *  child: xenologous to
+ *  child: paralogous to
+ *  child: orthologous to
 ## Used in
 

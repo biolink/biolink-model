@@ -8,30 +8,30 @@ URI: [http://bioentity.io/vocab/association_slot](slot_uri)
 
 ## Domain and Range
 
-[association](Association.md) -> string
+association -> **string**
 ## Inheritance
 
 ## Children
 
- *  child: [object](object.md)
- *  child: [qualifiers](qualifiers.md)
- *  child: [sex qualifier](sex_qualifier.md)
- *  child: [relation](relation.md)
- *  child: [sequence variant qualifier](sequence_variant_qualifier.md)
- *  child: [negated](negated.md)
- *  child: [subject](subject.md)
- *  child: [severity qualifier](severity_qualifier.md)
- *  child: [has evidence](has_evidence.md)
- *  child: [has confidence level](has_confidence_level.md)
- *  child: [association type](association_type.md)
- *  child: [quantifier qualifier](quantifier_qualifier.md)
- *  child: [stage qualifier](stage_qualifier.md)
- *  child: [onset qualifier](onset_qualifier.md)
- *  child: [clinical modifier qualifier](clinical_modifier_qualifier.md)
- *  child: [frequency qualifier](frequency_qualifier.md)
- *  child: [provided by](provided_by.md)
- *  child: [publications](publications.md)
- *  child: [edge label](edge_label.md)
+ *  child: quantifier qualifier
+ *  child: negated
+ *  child: sequence variant qualifier
+ *  child: has evidence
+ *  child: publications
+ *  child: relation
+ *  child: subject
+ *  child: object
+ *  child: association type
+ *  child: frequency qualifier
+ *  child: sex qualifier
+ *  child: edge label
+ *  child: onset qualifier
+ *  child: provided by
+ *  child: clinical modifier qualifier
+ *  child: qualifiers
+ *  child: stage qualifier
+ *  child: has confidence level
+ *  child: severity qualifier
 ## Used in
 
- *  usage: [association](Association.md)
+ *  usage: association
