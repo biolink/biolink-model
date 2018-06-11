@@ -1,5 +1,5 @@
 # Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/biolink-model.yaml by pythongen.py version: 0.0.2
-# Generation date: 2018-06-07 13:18
+# Generation date: 2018-06-09 22:54
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -190,7 +190,7 @@ class Attribute(YAMLRoot):
     """
     A property or characteristic of an entity
     """
-    subclass_of: Optional[OntologyClassName] = None
+    pass
 
 
 @dataclass
@@ -293,7 +293,7 @@ class OrganismalEntity(BiologicalEntity):
 
 @dataclass
 class IndividualOrganism(OrganismalEntity):
-    in_taxon: Optional[OrganismTaxonName] = None
+    pass
 
 
 @dataclass
@@ -306,12 +306,12 @@ class Case(IndividualOrganism):
 
 @dataclass
 class PopulationOfIndividualOrganisms(OrganismalEntity):
-    in_taxon: Optional[OrganismTaxonName] = None
+    pass
 
 
 @dataclass
 class Biosample(OrganismalEntity):
-    in_taxon: Optional[OrganismTaxonName] = None
+    pass
 
 
 @dataclass
@@ -323,7 +323,6 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
     correlated_with: Optional[MolecularEntityName] = None
     has_biomarker: Optional[MolecularEntityName] = None
     treated_by: Optional[str] = None
-    in_taxon: Optional[OrganismTaxonName] = None
 
 
 @dataclass
@@ -400,7 +399,6 @@ class MolecularEntity(BiologicalEntity):
     molecularly_interacts_with: Optional[MolecularEntityName] = None
     regulates_entity_to_entity: Optional[MolecularEntityName] = None
     biomarker_for: Optional[DiseaseOrPhenotypicFeatureName] = None
-    in_taxon: Optional[OrganismTaxonName] = None
 
 
 @dataclass
@@ -434,7 +432,6 @@ class AnatomicalEntity(OrganismalEntity):
     A subcellular location, cell type or gross anatomical part
     """
     expresses: Optional[GeneOrGeneProductName] = None
-    in_taxon: Optional[OrganismTaxonName] = None
 
 
 @dataclass
@@ -442,7 +439,7 @@ class LifeStage(OrganismalEntity):
     """
     A stage of development or growth of an organism, including post-natal adult stages
     """
-    in_taxon: Optional[OrganismTaxonName] = None
+    pass
 
 
 @dataclass
@@ -455,10 +452,7 @@ class PlanetaryEntity(NamedThing):
 
 @dataclass
 class EnvironmentalProcess(PlanetaryEntity):
-    regulates_process_to_process: Optional[OccurrentName] = None
-    has_participant: Optional[str] = None
-    has_input: Optional[str] = None
-    precedes: Optional[OccurrentName] = None
+    pass
 
 
 @dataclass
@@ -1019,10 +1013,6 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype,
     either in isolation or through environment
     """
-    frequency_qualifier: Optional[FrequencyValue] = None
-    severity_qualifier: Optional[SeverityValueName] = None
-    onset_qualifier: Optional[OnsetName] = None
-    sex_qualifier: Optional[BiologicalSexName] = None
     relation: RelationshipTypeName = None
     subject: GenotypeName = None
 
@@ -1040,10 +1030,6 @@ class EnvironmentToPhenotypicFeatureAssociation(Association):
     Any association between an environment and a phenotypic feature, where being in the environment influences the
     phenotype
     """
-    frequency_qualifier: Optional[FrequencyValue] = None
-    severity_qualifier: Optional[SeverityValueName] = None
-    onset_qualifier: Optional[OnsetName] = None
-    sex_qualifier: Optional[BiologicalSexName] = None
     subject: EnvironmentName = None
 
     def _fix_elements(self):
@@ -1058,10 +1044,7 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
     An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the
     disease in some way
     """
-    frequency_qualifier: Optional[FrequencyValue] = None
-    severity_qualifier: Optional[SeverityValueName] = None
-    onset_qualifier: Optional[OnsetName] = None
-    sex_qualifier: Optional[BiologicalSexName] = None
+    pass
 
 
 @dataclass
@@ -1070,10 +1053,7 @@ class CaseToPhenotypicFeatureAssociation(Association):
     An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or
     has had the phenotype
     """
-    frequency_qualifier: Optional[FrequencyValue] = None
-    severity_qualifier: Optional[SeverityValueName] = None
-    onset_qualifier: Optional[OnsetName] = None
-    sex_qualifier: Optional[BiologicalSexName] = None
+    pass
 
 
 @dataclass
@@ -1088,10 +1068,6 @@ class GeneToThingAssociation(Association):
 
 @dataclass
 class GeneToPhenotypicFeatureAssociation(Association):
-    frequency_qualifier: Optional[FrequencyValue] = None
-    severity_qualifier: Optional[SeverityValueName] = None
-    onset_qualifier: Optional[OnsetName] = None
-    sex_qualifier: Optional[BiologicalSexName] = None
     subject: GeneOrGeneProductName = None
 
     def _fix_elements(self):
@@ -1102,9 +1078,6 @@ class GeneToPhenotypicFeatureAssociation(Association):
 
 @dataclass
 class GeneToDiseaseAssociation(Association):
-    frequency_qualifier: Optional[FrequencyValue] = None
-    severity_qualifier: Optional[SeverityValueName] = None
-    onset_qualifier: Optional[OnsetName] = None
     subject: GeneOrGeneProductName = None
 
     def _fix_elements(self):
@@ -1119,12 +1092,11 @@ class VariantToPopulationAssociation(Association):
     An association between a variant and a population, where the variant has particular frequency in the population
     """
     frequency_qualifier: Optional[FrequencyValue] = None
-    has_count: Optional[str] = None
-    has_total: Optional[str] = None
-    has_quotient: Optional[str] = None
-    has_percentage: Optional[float] = None
     subject: SequenceVariantName = None
     object: PopulationOfIndividualOrganismsName = None
+    has_quotient: Optional[str] = None
+    has_count: Optional[str] = None
+    has_total: Optional[str] = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -1155,10 +1127,6 @@ class PopulationToPopulationAssociation(Association):
 
 @dataclass
 class VariantToPhenotypicFeatureAssociation(Association):
-    frequency_qualifier: Optional[FrequencyValue] = None
-    severity_qualifier: Optional[SeverityValueName] = None
-    onset_qualifier: Optional[OnsetName] = None
-    sex_qualifier: Optional[BiologicalSexName] = None
     subject: SequenceVariantName = None
 
     def _fix_elements(self):
@@ -1169,9 +1137,6 @@ class VariantToPhenotypicFeatureAssociation(Association):
 
 @dataclass
 class VariantToDiseaseAssociation(Association):
-    frequency_qualifier: Optional[FrequencyValue] = None
-    severity_qualifier: Optional[SeverityValueName] = None
-    onset_qualifier: Optional[OnsetName] = None
     subject: str = None
     relation: RelationshipTypeName = None
     object: str = None
@@ -1188,9 +1153,6 @@ class VariantToDiseaseAssociation(Association):
 
 @dataclass
 class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
-    frequency_qualifier: Optional[FrequencyValue] = None
-    severity_qualifier: Optional[SeverityValueName] = None
-    onset_qualifier: Optional[OnsetName] = None
     subject: GeneOrGeneProductName = None
 
     def _fix_elements(self):
@@ -1519,10 +1481,7 @@ class MolecularActivity(BiologicalProcessOrActivity):
     """
     An execution of a molecular function carried out by a gene product or macromolecular complex.
     """
-    regulates_process_to_process: Optional[OccurrentName] = None
-    has_participant: Optional[str] = None
-    has_input: Optional[str] = None
-    precedes: Optional[OccurrentName] = None
+    pass
 
 
 @dataclass
@@ -1554,10 +1513,7 @@ class BiologicalProcess(BiologicalProcessOrActivity):
     """
     One or more causally connected executions of molecular functions
     """
-    regulates_process_to_process: Optional[OccurrentName] = None
-    has_participant: Optional[str] = None
-    has_input: Optional[str] = None
-    precedes: Optional[OccurrentName] = None
+    pass
 
 
 @dataclass
