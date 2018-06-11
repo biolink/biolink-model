@@ -23,8 +23,6 @@ URI: [http://bioentity.io/vocab/VariantToThingAssociation](http://bioentity.io/v
  * _variant to thing association subject_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: sequence variant [required]
-    * Example: [ClinVar:38077](http://purl.obolibrary.org/obo/ClinVar_38077) ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)
-    * Example: [ClinGen:CA024716](http://purl.obolibrary.org/obo/ClinGen_CA024716) chr13:g.32921033G>C (hg19) in ClinGen
     * __Local__
  * _association slot_
     * _any slot that relates an association to another entity_

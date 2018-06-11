@@ -26,27 +26,22 @@ URI: [http://bioentity.io/vocab/VariantToPopulationAssociation](http://bioentity
  * _variant to population association has count_
     * _number in object population that carry a particular allele, aka allele count_
     * range: **string**
-    * Example: [4](4) 4 individuals in gnomad set
     * __Local__
  * _variant to population association has quotient_
     * _frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency_
     * range: **string**
-    * Example: [0.0001666](0.0001666) None
     * __Local__
  * _variant to population association has total_
     * _number all populations that carry a particular allele, aka allele number_
     * range: **string**
-    * Example: [24014](24014) 24014 individuals in gnomad set
     * __Local__
  * _variant to population association object_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: population of individual organisms [required]
-    * Example: [ANCESTRO:0010](http://purl.obolibrary.org/obo/ANCESTRO_0010) African
     * __Local__
  * _variant to population association subject_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: sequence variant [required]
-    * Example: [NC_000017.11:g.43051071A>T](http://purl.obolibrary.org/obo/NC_000017.11_g.43051071A>T) 17:41203088 A/C in gnomad
     * __Local__
  * _association slot_
     * _any slot that relates an association to another entity_

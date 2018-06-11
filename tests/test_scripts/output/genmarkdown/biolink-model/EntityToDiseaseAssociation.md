@@ -22,7 +22,6 @@ URI: [http://bioentity.io/vocab/EntityToDiseaseAssociation](http://bioentity.io/
  * _entity to disease association object_
     * _disease_
     * range: disease
-    * Example: [MONDO:0020066](http://purl.obolibrary.org/obo/MONDO_0020066) Ehlers-Danlos syndrome
     * __Local__
  * _frequency qualifier_
     * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_

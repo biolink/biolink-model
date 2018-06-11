@@ -23,7 +23,6 @@ URI: [http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation](http://bioen
  * _gene to phenotypic feature association subject_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: gene or gene product [required]
-    * Example: [HGNC:2197](https://monarchinitiative.org/gene/HGNC:2197) COL1A1 (Human)
     * __Local__
  * _association slot_
     * _any slot that relates an association to another entity_

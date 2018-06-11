@@ -23,8 +23,6 @@ URI: [http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation](ht
  * _thing to disease or phenotypic feature association object_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: disease or phenotypic feature [required]
-    * Example: [MONDO:0017314](http://purl.obolibrary.org/obo/MONDO_0017314) Ehlers-Danlos syndrome, vascular type
-    * Example: [MP:0013229](http://purl.obolibrary.org/obo/MP_0013229) abnormal brain ventricle size
     * __Local__
  * _association slot_
     * _any slot that relates an association to another entity_

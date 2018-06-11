@@ -22,7 +22,6 @@ URI: [http://bioentity.io/vocab/VariantToDiseaseAssociation](http://bioentity.io
  * _variant to disease association object_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: **string** [required]
-    * Example: [MONDO:0016419](http://purl.obolibrary.org/obo/MONDO_0016419) hereditary breast cancer
     * __Local__
  * _variant to disease association relation_
     * _the relationship type by which a subject is connected to an object in an association_
@@ -32,7 +31,6 @@ URI: [http://bioentity.io/vocab/VariantToDiseaseAssociation](http://bioentity.io
  * _variant to disease association subject_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: **string** [required]
-    * Example: [ClinVar:52241](http://purl.obolibrary.org/obo/ClinVar_52241) NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)
     * __Local__
  * _association slot_
     * _any slot that relates an association to another entity_

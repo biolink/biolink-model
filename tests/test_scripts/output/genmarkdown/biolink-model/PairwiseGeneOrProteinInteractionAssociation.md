@@ -61,7 +61,6 @@ URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](htt
     * inherited from: named thing
  * _molecular interaction interacting molecules category_
     * range: ontology class
-    * Example: [MI:1048](http://purl.obolibrary.org/obo/MI_1048) smallmolecule-protein
     * inherited from: molecular interaction
  * _name_
     * _A human-readable name for a thing_

@@ -44,7 +44,6 @@ URI: [http://bioentity.io/vocab/MacromolecularMachineToCellularComponentAssociat
  * _functional association subject_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: macromolecular machine [required]
-    * Example: [ZFIN:ZDB-GENE-050417-357](http://purl.obolibrary.org/obo/ZFIN_ZDB-GENE-050417-357) twist1b
     * inherited from: functional association
  * _id_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_

@@ -20,7 +20,6 @@ URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/
 
  * _molecular interaction interacting molecules category_
     * range: ontology class
-    * Example: [MI:1048](http://purl.obolibrary.org/obo/MI_1048) smallmolecule-protein
     * __Local__
  * _molecular interaction object_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
@@ -30,7 +29,6 @@ URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/
     * _the relationship type by which a subject is connected to an object in an association_
     * range: relationship type [required]
     * edge label: molecularly interacts with
-    * Example: [RO:0002447](http://purl.obolibrary.org/obo/RO_0002447) the subject molecular phosphorylates the object molecule
     * __Local__
  * _molecular interaction subject_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._

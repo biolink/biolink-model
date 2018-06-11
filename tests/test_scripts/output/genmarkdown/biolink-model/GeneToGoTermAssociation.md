@@ -21,12 +21,10 @@ URI: [http://bioentity.io/vocab/GeneToGoTermAssociation](http://bioentity.io/voc
  * _gene to go term association object_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: gene ontology class [required]
-    * Example: [GO:0016301](http://purl.obolibrary.org/obo/GO_0016301) kinase activity
     * __Local__
  * _gene to go term association subject_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: molecular entity [required]
-    * Example: [ZFIN:ZDB-GENE-050417-357](http://purl.obolibrary.org/obo/ZFIN_ZDB-GENE-050417-357) twist1b
     * __Local__
  * _association slot_
     * _any slot that relates an association to another entity_

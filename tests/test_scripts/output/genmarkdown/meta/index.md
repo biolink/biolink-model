@@ -6,11 +6,11 @@ Metamodel for biolink schema
 ### Classes
 
  * element - root of all described things
+    * type definition - A type definition
     * definition - definition base class
        * schema definition - A collection of definitions
        * slot definition - A property or slot
        * class definition - A class or interface
-    * type definition - A type definition
  * example - example of usage
 ### Mixins
 
@@ -49,6 +49,7 @@ Metamodel for biolink schema
  * mixins - List of definitions to be mixed in. Targets may be any definition of the same type
  * multivalued - If true slot can have many values
  * name - a unique key that identifies a slot, type or class in a schema
+ * not_inherited - True means that the slot is local and is not_inherited across is_a or slot_usage paths
  * note - Notes about an element
  * path - For any denormalized slot, this represents the tree or graph path used to generate the denormalized form
  * prefixes - list of ID/CURIE prefixes applicable to that element

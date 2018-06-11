@@ -5,7 +5,7 @@ An allele that varies in its sequence from what is considered the reference alle
 
 URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/SequenceVariant)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SequenceVariant|has_gene:string%20*;has_biological_sequence:biological_sequence%20%3F;id:identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[SequenceVariant]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[SequenceVariant]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[SequenceVariant]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[SequenceVariant]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneHasVariantThatContributesToDiseaseAssociation]-%20sequence%20variant%20qualifier(i)%20%3F>\[SequenceVariant],%20\[VariantToPhenotypicFeatureAssociation]-%20subject(i)>\[SequenceVariant],%20\[VariantToThingAssociation]-%20subject(i)>\[SequenceVariant],%20\[SequenceVariantModulatesTreatmentAssociation]-%20subject(i)>\[SequenceVariant],%20\[GenotypeToVariantAssociation]-%20object(i)>\[SequenceVariant],%20\[VariantToPopulationAssociation]-%20subject(i)>\[SequenceVariant],%20\[GenomicEntity]^-\[SequenceVariant])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SequenceVariant|has_gene:string%20*;has_biological_sequence:biological_sequence%20%3F;id:identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[SequenceVariant]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[SequenceVariant]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[SequenceVariant]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[SequenceVariant]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GenotypeToVariantAssociation]-%20object(i)>\[SequenceVariant],%20\[SequenceVariantModulatesTreatmentAssociation]-%20subject(i)>\[SequenceVariant],%20\[GeneHasVariantThatContributesToDiseaseAssociation]-%20sequence%20variant%20qualifier(i)%20%3F>\[SequenceVariant],%20\[VariantToPhenotypicFeatureAssociation]-%20subject(i)>\[SequenceVariant],%20\[VariantToPopulationAssociation]-%20subject(i)>\[SequenceVariant],%20\[VariantToThingAssociation]-%20subject(i)>\[SequenceVariant],%20\[GenomicEntity]^-\[SequenceVariant])
 ## Mappings
 
  * [GENO:0000002](http://purl.obolibrary.org/obo/GENO_0000002)
@@ -38,8 +38,6 @@ URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/Seque
  * _sequence variant id_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * range: identifier type
-    * Example: [ZFIN:ZDB-ALT-980203-1091](http://purl.obolibrary.org/obo/ZFIN_ZDB-ALT-980203-1091) ti282a allele from ZFIN
-    * Example: [ClinVarVariant:17681](http://purl.obolibrary.org/obo/ClinVarVariant_17681) NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
     * __Local__
  * _biomarker for_
     * _holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature._

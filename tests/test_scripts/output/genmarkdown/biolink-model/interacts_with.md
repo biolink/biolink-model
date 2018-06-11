@@ -15,7 +15,7 @@ named thing -> **string**
  *  is_a: related to
 ## Children
 
- *  child: physically interacts with
  *  child: genetically interacts with
+ *  child: physically interacts with
 ## Used in
 

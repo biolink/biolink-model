@@ -17,5 +17,4 @@ geographic location -> **float**
 
 ## Used in
 
- *  usage: geographic location at time
  *  usage: geographic location

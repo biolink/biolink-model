@@ -6,7 +6,6 @@ holds between a disease or phenotypic feature and a measurable molecular entity 
 URI: [http://bioentity.io/vocab/has_biomarker](slot_uri)
 ## Mappings
 
- * [RO:0002610](http://purl.obolibrary.org/obo/RO_0002610)
 ## Domain and Range
 
 disease or phenotypic feature -> molecular entity

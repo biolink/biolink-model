@@ -16,5 +16,5 @@ entity to phenotypic feature association -> severity value
 
 ## Used in
 
- *  usage: entity to phenotypic feature association
  *  usage: entity to disease association
+ *  usage: entity to phenotypic feature association

@@ -5,26 +5,18 @@ a location that can be described in lat/long coordinates, for a particular time
 
 URI: [http://bioentity.io/vocab/GeographicLocationAtTime](http://bioentity.io/vocab/GeographicLocationAtTime)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeographicLocationAtTime|latitude:float%20%3F;longitude:float%20%3F;timepoint:time_type%20%3F;id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[PlanetaryEntity]^-\[GeographicLocationAtTime])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeographicLocationAtTime|timepoint:time_type%20%3F;id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;latitude(i):float%20%3F;longitude(i):float%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeographicLocation]^-\[GeographicLocationAtTime])
 ## Mappings
 
 ## Inheritance
 
- *  is_a: planetary entity
+ *  is_a: geographic location
 ## Children
 
 ## Used in
 
 ## Fields
 
- * _latitude_
-    * _latitude_
-    * range: **float**
-    * __Local__
- * _longitude_
-    * _longitude_
-    * range: **float**
-    * __Local__
  * _timepoint_
     * _a point in time_
     * range: time type
@@ -49,6 +41,14 @@ URI: [http://bioentity.io/vocab/GeographicLocationAtTime](http://bioentity.io/vo
     * _An IRI for the node. This is determined by the id using expansion rules._
     * range: iri type
     * inherited from: named thing
+ * _latitude_
+    * _latitude_
+    * range: **float**
+    * inherited from: geographic location
+ * _longitude_
+    * _longitude_
+    * range: **float**
+    * inherited from: geographic location
  * _name_
     * _A human-readable name for a thing_
     * range: label type

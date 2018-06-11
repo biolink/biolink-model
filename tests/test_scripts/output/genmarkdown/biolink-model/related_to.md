@@ -15,35 +15,35 @@ named thing -> named thing
 
 ## Children
 
- *  child: coexists with
- *  child: overlaps
- *  child: expresses
- *  child: gene associated with condition
- *  child: derives from
- *  child: location of
- *  child: same as
- *  child: homologous to
- *  child: occurs in
- *  child: model of
- *  child: has phenotype
- *  child: manifestation of
- *  child: participates in
- *  child: treated by
- *  child: affects
- *  child: correlated with
  *  child: has molecular consequence
- *  child: subclass of
- *  child: has participant
- *  child: in taxon
- *  child: has gene product
- *  child: contributes to
- *  child: derives into
- *  child: precedes
- *  child: affects risk for
- *  child: interacts with
- *  child: located in
- *  child: produces
+ *  child: gene associated with condition
  *  child: expressed in
+ *  child: interacts with
+ *  child: contributes to
+ *  child: model of
+ *  child: has gene product
+ *  child: derives into
+ *  child: location of
+ *  child: occurs in
+ *  child: same as
+ *  child: overlaps
+ *  child: homologous to
+ *  child: produces
+ *  child: affects
+ *  child: subclass of
+ *  child: participates in
+ *  child: expresses
+ *  child: coexists with
+ *  child: treated by
+ *  child: has participant
+ *  child: has phenotype
+ *  child: precedes
+ *  child: manifestation of
+ *  child: derives from
+ *  child: correlated with
+ *  child: in taxon
+ *  child: affects risk for
+ *  child: located in
 ## Used in
 
  *  usage: named thing

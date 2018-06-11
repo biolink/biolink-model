@@ -20,7 +20,6 @@ URI: [http://bioentity.io/vocab/GeneToExpressionSiteAssociation](http://bioentit
  * _gene to expression site association object_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: anatomical entity [required]
-    * Example: [UBERON:0002037](http://purl.obolibrary.org/obo/UBERON_0002037) cerebellum
     * __Local__
  * _gene to expression site association quantifier qualifier_
     * _can be used to indicate magnitude, or also ranking_
@@ -34,7 +33,6 @@ URI: [http://bioentity.io/vocab/GeneToExpressionSiteAssociation](http://bioentit
  * _gene to expression site association stage qualifier_
     * _stage at which the gene is expressed in the site_
     * range: life stage
-    * Example: [UBERON:0000069](http://purl.obolibrary.org/obo/UBERON_0000069) larval stage
     * __Local__
  * _gene to expression site association subject_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._

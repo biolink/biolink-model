@@ -14,27 +14,27 @@ named thing -> **string**
 
 ## Children
 
- *  child: aggregate statistic
- *  child: latitude
- *  child: description
- *  child: phase
- *  child: interbase coordinate
- *  child: filler
- *  child: update date
- *  child: has chemical formula
- *  child: category
- *  child: longitude
- *  child: has zygosity
- *  child: name
- *  child: iri
- *  child: has biological sequence
- *  child: creation date
  *  child: has gene
+ *  child: longitude
+ *  child: iri
+ *  child: interbase coordinate
+ *  child: name
+ *  child: has chemical formula
+ *  child: latitude
+ *  child: creation date
+ *  child: description
+ *  child: filler
+ *  child: has biological sequence
  *  child: full name
- *  child: genome build
  *  child: systematic synonym
- *  child: id
+ *  child: update date
+ *  child: aggregate statistic
+ *  child: has zygosity
  *  child: timepoint
+ *  child: genome build
+ *  child: category
+ *  child: phase
+ *  child: id
 ## Used in
 
  *  usage: named thing

@@ -13,25 +13,25 @@ association -> **string**
 
 ## Children
 
- *  child: quantifier qualifier
- *  child: negated
- *  child: sequence variant qualifier
- *  child: has evidence
- *  child: publications
- *  child: relation
- *  child: subject
- *  child: object
- *  child: association type
- *  child: frequency qualifier
- *  child: sex qualifier
- *  child: edge label
- *  child: onset qualifier
- *  child: provided by
- *  child: clinical modifier qualifier
- *  child: qualifiers
- *  child: stage qualifier
  *  child: has confidence level
+ *  child: qualifiers
+ *  child: subject
+ *  child: negated
+ *  child: provided by
+ *  child: edge label
+ *  child: association type
+ *  child: has evidence
+ *  child: sex qualifier
+ *  child: onset qualifier
+ *  child: sequence variant qualifier
  *  child: severity qualifier
+ *  child: publications
+ *  child: frequency qualifier
+ *  child: object
+ *  child: stage qualifier
+ *  child: clinical modifier qualifier
+ *  child: quantifier qualifier
+ *  child: relation
 ## Used in
 
  *  usage: association

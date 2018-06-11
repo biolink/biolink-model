@@ -15,8 +15,8 @@ occurrent -> occurrent
  *  is_a: regulates
 ## Children
 
- *  child: negatively regulates, process to process
  *  child: positively regulates, process to process
+ *  child: negatively regulates, process to process
 ## Used in
 
  *  usage: occurrent
