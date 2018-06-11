@@ -96,8 +96,8 @@ class YumlGenerator(Generator):
         """
         slot_defs: List[str] = []
         if cn not in self.box_generated and (not self.focus_classes or cn in self.focus_classes):
+            cls = self.schema.classes[cn]
             for slotname in self.filtered_cls_slots(cn, all_slots=True):
-                cls = self.schema.classes[cn]
                 slot = self.schema.slots[slotname]
                 if not slot.range or slot.range in builtin_names or slot.range in self.schema.types:
                     mod = self.prop_modifier(cls, slot)
@@ -131,7 +131,7 @@ class YumlGenerator(Generator):
 
             # Referencing slots
             if cn in self.synopsis.rangerefs:
-                for slotname in self.synopsis.rangerefs[cn]:
+                for slotname in sorted(self.synopsis.rangerefs[cn]):
                     slot = self.schema.slots[slotname]
                     if slot.domain in self.schema.classes:
                         assocs.append(self.class_box(slot.domain) + (yuml_inline if slot.inlined else yuml_ref) +
@@ -205,7 +205,7 @@ class YumlGenerator(Generator):
                 [mslot.name for mslot in [self.schema.classes[m] for m in cls.mixins]]
         injected = cls.name in self.synopsis.applytos and \
                    slot.name in [aslot.name for aslot in
-                                 [self.schema.classes[a] for a in self.synopsis.applytos[cls.name].classrefs]]
+                                 [self.schema.classes[a] for a in sorted(self.synopsis.applytos[cls.name].classrefs)]]
         return pk + '(a)' if injected else '(m)' if mixin else '(i)' if inherited else ''
 
 
