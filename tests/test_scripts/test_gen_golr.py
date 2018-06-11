@@ -1,13 +1,11 @@
 import os
 import unittest
 
-
-from metamodel.generators.golrgen import cli
-from tests import refresh_files
-from tests.test_scripts.clicktestcase import ClickTestCase
-
 # This has to occur post ClickTestCase
 import click
+
+from metamodel.generators.golrgen import cli
+from tests.test_scripts.clicktestcase import ClickTestCase
 
 update_test_files = False
 

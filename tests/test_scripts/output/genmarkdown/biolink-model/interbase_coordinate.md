@@ -14,7 +14,7 @@ named thing -> **string**
  *  is_a: node property
 ## Children
 
- *  child: start interbase coordinate
  *  child: end interbase coordinate
+ *  child: start interbase coordinate
 ## Used in
 

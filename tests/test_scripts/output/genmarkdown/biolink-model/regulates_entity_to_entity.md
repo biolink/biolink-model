@@ -15,8 +15,8 @@ molecular entity -> molecular entity
  *  is_a: regulates
 ## Children
 
- *  child: positively regulates, entity to entity
  *  child: negatively regulates, entity to entity
+ *  child: positively regulates, entity to entity
 ## Used in
 
  *  usage: molecular entity

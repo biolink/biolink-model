@@ -14,7 +14,7 @@ named thing -> **string**
  *  is_a: related to
 ## Children
 
- *  child: prevents
  *  child: predisposes
+ *  child: prevents
 ## Used in
 
