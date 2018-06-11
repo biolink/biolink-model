@@ -4,13 +4,13 @@
 import os
 import sys
 from csv import DictWriter
-from typing import List, Union, TextIO
+from typing import List, Union, TextIO, Set
 
 import click
 
-from metamodel.utils.generator import Generator
 from metamodel.metamodel import ClassDefinition, ClassDefinitionName, SchemaDefinition
 from metamodel.utils.formatutils import underscore, be
+from metamodel.utils.generator import Generator
 
 
 class CsvGenerator(Generator):
@@ -20,13 +20,18 @@ class CsvGenerator(Generator):
 
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='csv') -> None:
         super().__init__(schema, fmt)
-        self.sep = None
-        self.closure = None
-        self.writer = None
+        self.sep: str = None
+        self.closure: Set[ClassDefinitionName] = None
+        self.writer: DictWriter = None
         
-    def visit_schema(self, root: List[ClassDefinitionName]=None) -> None:
-        roots = [] if root is None else list(root)
-        self.closure = self.root_closure(roots)
+    def visit_schema(self, classes: List[ClassDefinitionName]=None) -> None:
+        self.closure = set()
+        for clsname in classes:
+            if clsname not in self.schema.classes:
+                raise ValueError(f"Unrecognized class: {clsname}")
+            else:
+               self.closure.update(self.ancestors(clsname))
+
         dialect: str = "excel" if self.format == 'csv' else "excel-tab"
         self.writer = DictWriter(sys.stdout, ['id', 'mappings', 'description'], dialect=dialect)
         self.writer.writeheader()
@@ -46,4 +51,4 @@ class CsvGenerator(Generator):
 @click.option("--format", "-f", default='csv', type=click.Choice(['csv', 'tsv']), help="Output format")
 def cli(yamlfile, root, format):
     """ Generate CSV/TSV file from biolink model """
-    print(CsvGenerator(yamlfile, format).serialize(root=root))
+    print(CsvGenerator(yamlfile, format).serialize(classes=root))
