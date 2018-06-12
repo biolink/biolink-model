@@ -17,7 +17,7 @@ def json_metadata_filter(s: str) -> str:
 
 
 class GenContextTestCase(ClickTestCase):
-    testdir = "genjsonld"
+    testdir = "gencontext"
     click_ep = cli
     prog_name = "gen-jsonld-context"
 
