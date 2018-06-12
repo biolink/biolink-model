@@ -1,14 +1,15 @@
+.SECONDARY:
+
 # ----------------------------------------
 # TOP LEVEL TARGETS
 # ----------------------------------------
 all: build test
 test: pytests
-build: context.jsonld build_core contrib_build_monarch contrib_build_translator
-
+build: metamodel/context.jsonld context.jsonld build_core contrib_build_monarch contrib_build_translator
 build_core: metamodel/metamodel.py metamodel/docs/index.md biolinkmodel/datamodel.py docs/index.md gen-golr-views ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql
 
-contrib_build_%: contrib/%/docs/index.md contrib/%/datamodel.py contrib/%/schema.py contrib/%-golr contrib/%/ontology.ttl contrib/%/schema.json contrib/%-java contrib/%/%.graphql
-	echo hi
+contrib_build_%: dir-contrib-% contrib/%/docs/index.md contrib/%/datamodel.py contrib-golr-% contrib/%/ontology.ttl contrib/%/schema.json contrib-java-% contrib/%/%.graphql
+	echo
 
 
 # ----------------------------------------
@@ -19,8 +20,10 @@ contrib_build_%: contrib/%/docs/index.md contrib/%/datamodel.py contrib/%/schema
 # ~~~~~~~~~~~~~~~~~~~~
 kbsync: subsets/biological_entity.csv
 	cp $< ../translator-knowledge-beacon/api/types.csv
+
 subsets/biological_entity.csv: biolink-model.yaml
 	gen-csv -r 'biological entity' biolink-model.yaml > $@.tmp && mv $@.tmp $@
+
 biolink-model.tsv: biolink-model.yaml
 	gen-csv -f tsv biolink-model.yaml > $@.tmp && mv $@.tmp $@
 
@@ -30,38 +33,36 @@ biolink-model.tsv: biolink-model.yaml
 context.jsonld: biolink-model.yaml
 	gen-jsonld-context $< > $@
 
+metamodel/context.jsonld: meta.yaml
+	gen-jsonld-context $< > $@
+
 # ~~~~~~~~~~~~~~~~~~~~
 # JSONSCHEMA -> Java
 # ~~~~~~~~~~~~~~~~~~~~
-json-schema/%.json: %.yaml
+json-schema/%.json: dir-json-schema %.yaml
 	gen-json-schema $< > $@
 
 contrib/%/schema.json: contrib/%.yaml
 	gen-json-schema $< > $@
 
-JSONSCHEMA2POJO = $(HOME)/src/jsonschema2pojo/bin/jsonschema2pojo
-java: json-schema/biolink-model.json
-	$(JSONSCHEMA2POJO) --source $< -T JSONSCHEMA -t java-gen
+java: dir-json-schema json-schema/biolink-model.json
+	jsonschema2pojo --source $< -T JSONSCHEMA -t java
 
-contrib/%-java: contrib/%/schema.json
-	$(JSONSCHEMA2POJO) --source $< -T JSONSCHEMA -t contrib/$*/java
+contrib-java-%: contrib/%/schema.json
+	jsonschema2pojo --source $< -T JSONSCHEMA -t contrib/$*/java
 
 # ~~~~~~~~~~~~~~~~~~~~
 # DOCS
 # ~~~~~~~~~~~~~~~~~~~~
 docs/index.md: biolink-model.yaml
-	gen-markdown --dir docs -i $< 
+	gen-markdown --dir docs -i $<
+
 metamodel/docs/index.md: meta.yaml
-	gen-markdown --dir metamodel/docs -i $< 
+	gen-markdown --dir metamodel/docs -i $<
+
 contrib/%/docs/index.md: contrib/%.yaml
-	gen-markdown --dir contrib/$*/docs $< > $@
+	gen-markdown --dir contrib/$*/docs -i $<
 
-clean-docs: 
-	 docs/*.md
-	rm contrib/%/docs/*.md
-
-update-docs: biolink-model.yaml
-	gen-markdown --dir docs -i --noimages $< > $@
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
@@ -75,10 +76,10 @@ contrib/%/ontology.ttl: contrib/%.yaml
 # ~~~~~~~~~~~~~~~~~~~~
 # Solr
 # ~~~~~~~~~~~~~~~~~~~~
-gen-golr-views:
+gen-golr-views: dir-golr-views
 	gen-golr-views -d golr-views biolink-model.yaml
 
-contrib/%-golr:
+contrib-golr-%: contrib/%.yaml
 	gen-golr-views -d contrib/$*/golr-views contrib/$*.yaml
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -93,11 +94,7 @@ biolinkmodel/datamodel.py: biolink-model.yaml
 contrib/%/datamodel.py: contrib/%.yaml
 	gen-py-classes $< > $@
 
-# trigger manually to avoid git churn
-gv: biolink-model.yaml 
-	gen-graphviz -d graphviz $<
-
-graphviz/%.png: biolink-model.yaml 
+graphviz/%.png: biolink-model.yaml
 	gen-graphviz  -c $* $< -o graphviz/$*
 
 
@@ -105,21 +102,21 @@ graphviz/%.png: biolink-model.yaml
 # ShEx
 # ~~~~~~~~~~~~~~~~~~~~
 
-shex/biolink-model.shex: biolink-model.yaml 
+shex/biolink-model.shex: biolink-model.yaml
 	gen-shex $< > $@
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Graphql
 # ~~~~~~~~~~~~~~~~~~~~
 
-graphql/biolink-model.graphql: biolink-model.yaml 
+graphql/biolink-model.graphql: biolink-model.yaml
 	gen-graphql $< > $@
 
-proto/biolink-model.proto: biolink-model.yaml 
+proto/biolink-model.proto: biolink-model.yaml
 	gen-proto $< > $@
 
-contrib/%/%.graphql: contrib/%.yaml 
-	gen-graphql $< > $@
+contrib/%/%.graphql: contrib/%.yaml
+	gen-graphql $< > contrib/$*/$*.graphql
 
 # ----------------------------------------
 # Ontology conversion
@@ -138,11 +135,26 @@ ontology/%.tree: ontology/%.json
 	ogr --showdefs -t tree -r $< % > $@
 
 ontology/%.png: ontology/%.json
-	ogr-tree -t png -o $@ -r $< % 
+	ogr-tree -t png -o $@ -r $< %
 
 # ----------------------------------------
 # TESTS
 # ----------------------------------------
-
 pytests:
 	python -m unittest
+
+
+# ----------------------------------------
+# CLEAN
+# ----------------------------------------
+clean:
+	rm -rf subsets shex proto ontology json-schema java-gen graphviz graphql golr-views contrib/go contrib/monarch docs/images/* docs/*.md
+
+# ----------------------------------------
+# UTILS
+# ----------------------------------------
+dir-%:
+	mkdir -p $*
+
+dir-contrib-%:
+	mkdir -p contrib/$*
