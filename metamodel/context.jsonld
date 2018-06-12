@@ -1,24 +1,21 @@
 {
     "@context": {
-        "ClassDefinition": "http://bioentity.io/vocab/ClassDefinition",
-        "Definition": "http://bioentity.io/vocab/Definition",
-        "Element": "http://bioentity.io/vocab/Element",
-        "Example": "http://bioentity.io/vocab/Example",
-        "SchemaDefinition": "http://bioentity.io/vocab/SchemaDefinition",
-        "SlotDefinition": "http://bioentity.io/vocab/SlotDefinition",
-        "TypeDefinition": "http://bioentity.io/vocab/TypeDefinition",
         "abstract": "http://bioentity.io/vocab/abstract",
         "alias": "http://bioentity.io/vocab/alias",
         "aliases": "http://bioentity.io/vocab/aliases",
         "alt_descriptions": "http://bioentity.io/vocab/alt_descriptions",
         "apply_to": "http://bioentity.io/vocab/apply_to",
+        "class definition": "http://bioentity.io/vocab/class definition",
         "classes": "http://bioentity.io/vocab/classes",
         "comment": "http://bioentity.io/vocab/comment",
         "defining_slots": "http://bioentity.io/vocab/defining_slots",
+        "definition": "http://bioentity.io/vocab/definition",
         "definitional": "http://bioentity.io/vocab/definitional",
         "description": "http://bioentity.io/vocab/description",
         "domain": "http://bioentity.io/vocab/domain",
+        "element": "http://bioentity.io/vocab/element",
         "entity": "http://bioentity.io/vocab/entity",
+        "example": "http://bioentity.io/vocab/example",
         "examples": "http://bioentity.io/vocab/examples",
         "flags": "http://bioentity.io/vocab/flags",
         "from_schema": "http://bioentity.io/vocab/from_schema",
@@ -48,8 +45,10 @@
         "range": "http://bioentity.io/vocab/range",
         "required": "http://bioentity.io/vocab/required",
         "role": "http://bioentity.io/vocab/role",
+        "schema definition": "http://bioentity.io/vocab/schema definition",
         "see_also": "http://bioentity.io/vocab/see_also",
         "singular_name": "http://bioentity.io/vocab/singular_name",
+        "slot definition": "http://bioentity.io/vocab/slot definition",
         "slot_usage": "http://bioentity.io/vocab/slot_usage",
         "slots": "http://bioentity.io/vocab/slots",
         "source_file": "http://bioentity.io/vocab/source_file",
@@ -62,6 +61,7 @@
             "@id": "rdf:type",
             "@type": "@id"
         },
+        "type definition": "http://bioentity.io/vocab/type definition",
         "typeof": "http://bioentity.io/vocab/typeof",
         "types": "http://bioentity.io/vocab/types",
         "union_of": "http://bioentity.io/vocab/union_of",
@@ -69,6 +69,6 @@
         "values_from": "http://bioentity.io/vocab/values_from",
         "version": "http://bioentity.io/vocab/version"
     },
-    "comments": "Auto generated from meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-06-12 12:39\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n"
+    "comments": "Auto generated from meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-06-12 12:53\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n"
 }
 
