@@ -29,6 +29,7 @@ class ContextGenerator(Generator):
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='json') -> None:
         super().__init__(schema, fmt)
         self.prefixmap = {
+            "id": "@id",
             "type": {
                 "@id": "rdf:type",
                 "@type": "@id"
@@ -59,9 +60,7 @@ license: {be(self.schema.license)}
         return True
 
     def visit_slot(self, aliased_slot_name: str, slot: SlotDefinition) -> None:
-        if slot.primary_key:
-            self.prefixmap[slot.name] = '@id'
-        elif not slot.alias:
+        if not slot.alias:
             self.tr_element(slot, slot.name)
         # hold off til we are sure curie_util can handle this
         # rewrite to be an object with id/type fields
