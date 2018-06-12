@@ -2,8 +2,10 @@ from typing import List
 
 
 def camelcase(txt: str) -> str:
-    # TODO: fix so microRNA -> MicroRNA
-    return txt.title().replace(" ", "").replace(",", "")
+    def _up(s: str):
+        return s[0].upper() + (s[1:] if len(s) > 1 else '')
+
+    return ''.join([_up(word) for word in txt.split()])
 
 
 def underscore(txt: str) -> str:
