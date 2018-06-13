@@ -38,7 +38,9 @@ class GenYUMLTestCase(ClickTestCase):
         for fmt in YumlGenerator.valid_formats:
             if fmt != 'yuml':
                 self.do_test([self.metamodel_file, '-f', fmt, '-c', 'schema definition', '-d', meta_dir])
-        self.do_test([self.metamodel_file, '-c', 'schema definition', '-d', meta_dir + 'z'], error=ValueError)
+        # test create directory
+        # TODO: delete the target and make sure it creates
+        # self.do_test([self.metamodel_file, '-c', 'schema definition', '-d', meta_dir + 'z'])
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_biolink(self):

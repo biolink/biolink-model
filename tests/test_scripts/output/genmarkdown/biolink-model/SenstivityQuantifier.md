@@ -10,7 +10,7 @@ URI: [http://bioentity.io/vocab/SenstivityQuantifier](http://bioentity.io/vocab/
 
 ## Inheritance
 
- *  is_a: relationship quantifier
+ *  is_a: [RelationshipQuantifier](RelationshipQuantifier.md)
 ## Children
 
 ## Fields

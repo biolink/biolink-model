@@ -13,44 +13,32 @@ URI: [http://bioentity.io/vocab/VariantToPopulationAssociation](http://bioentity
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
  *  mixin: [VariantToThingAssociation](VariantToThingAssociation.md)
  *  mixin: [FrequencyQuantifier](FrequencyQuantifier.md)
+ *  mixin: [FrequencyQualifier](FrequencyQualifier.md) - Qualifier for freqency type associations
 ## Children
 
 ## Used in
 
 ## Fields
 
- * _[frequency qualifier](frequency_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
-    * range: [FrequencyValue](FrequencyValue.md)
-    * __Local__
- * _[has percentage](has_percentage.md)_
-    * _equivalent to has quotient multiplied by 100_
-    * range: **double**
-    * __Local__
- * _[has count](has_count.md)_
+ * _[variant to population association.has count](variant_to_population_association_has_count.md)_
     * _number in object population that carry a particular allele, aka allele count_
     * range: **string**
-    * Example: [4](4) 4 individuals in gnomad set
     * __Local__
- * _[has quotient](has_quotient.md)_
+ * _[variant to population association.has quotient](variant_to_population_association_has_quotient.md)_
     * _frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency_
     * range: **string**
-    * Example: [0.0001666](0.0001666) None
     * __Local__
- * _[has total](has_total.md)_
+ * _[variant to population association.has total](variant_to_population_association_has_total.md)_
     * _number all populations that carry a particular allele, aka allele number_
     * range: **string**
-    * Example: [24014](24014) 24014 individuals in gnomad set
     * __Local__
- * _[object](object.md)_
+ * _[variant to population association.object](variant_to_population_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) [required]
-    * Example: [ANCESTRO:0010](http://purl.obolibrary.org/obo/ANCESTRO_0010) African
     * __Local__
- * _[subject](subject.md)_
+ * _[variant to population association.subject](variant_to_population_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [SequenceVariant](SequenceVariant.md) [required]
-    * Example: [NC_000017.11:g.43051071A>T](http://purl.obolibrary.org/obo/NC_000017.11_g.43051071A>T) 17:41203088 A/C in gnomad
     * __Local__
  * _[association slot](association_slot.md)_
     * _any slot that relates an association to another entity_
@@ -72,6 +60,10 @@ URI: [http://bioentity.io/vocab/VariantToPopulationAssociation](http://bioentity
     * _a long-form human readable name for a thing_
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
+ * _[has percentage](has_percentage.md)_
+    * _equivalent to has quotient multiplied by 100_
+    * range: **double**
+    * inherited from: [FrequencyQuantifier](FrequencyQuantifier.md)
  * _[id](id.md) *subsets*: (translator_minimal)_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * range: [IdentifierType](IdentifierType.md)

@@ -25,6 +25,7 @@ split_col = 115
 
 
 def split_line(txt: str, split_len: int=split_col) -> List[str]:
+    # TODO: consider replacing by textwrap.fill function, but note that its behavior is a bit different
     out_lines = []
     words = txt.split()
     cur_line = ""

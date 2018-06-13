@@ -8,12 +8,12 @@ URI: [http://bioentity.io/vocab/timepoint](slot_uri)
 
 ## Domain and Range
 
-geographic location at time -> time type
+[GeographicLocationAtTime](GeographicLocationAtTime.md) -> [TimeType](TimeType.md)
 ## Inheritance
 
- *  is_a: node property
+ *  is_a: [node property](node_property.md)
 ## Children
 
 ## Used in
 
- *  usage: geographic location at time
+ *  usage: [GeographicLocationAtTime](GeographicLocationAtTime.md)

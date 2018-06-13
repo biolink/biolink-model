@@ -52,6 +52,8 @@ class GolrSchemaGenerator(Generator):
 
     def visit_schema(self, dirname: str) -> None:
         self.dirname = dirname
+        if dirname:
+            os.makedirs(dirname, exist_ok=True)
         # write_golr_yaml_to_dir(schema, dir)
 
     def visit_class(self, cls: ClassDefinition) -> bool:

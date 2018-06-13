@@ -13,7 +13,8 @@ requires = [
     "graphviz>=0.8.3",
     "prefixcommons>=0.1.7",
     "rdflib-jsonld>=0.4.0",
-    "ShExJSG>=0.2.1"
+    "ShExJSG>=0.2.1",
+    "certifi>=2018.4.16"
     ]
 
 if sys.version_info < (3, 7):
@@ -34,16 +35,18 @@ setup(
     #          'bin/gen-rdf.py', 'bin/gen-shex.py', 'bin/gen-yuml.py'],
     entry_points={
         'console_scripts': [
+            'gen-jsonld-context = metamodel.generators.contextgen:cli',
             'gen-csv = metamodel.generators.csvgen:cli',
+            'gen-graphviz = metamodel.generators.dotgen:cli',
             'gen-golr-views = metamodel.generators.golrgen:cli',
             'gen-graphql = metamodel.generators.graphqlgen:cli',
-            'gen-graphviz = metamodel.generators.dotgen:cli',
+            'gen-jsonld = metamodel.generators.jsonldgen:cli',
             'gen-json-schema = metamodel.generators.jsonschemagen:cli',
-            'gen-jsonld-context = metamodel.generators.contextgen:cli',
             'gen-markdown = metamodel.generators.markdowngen:cli',
+            'gen-owl = metamodel.generators.owlgen:cli',
             'gen-proto = metamodel.generators.protogen:cli',
             'gen-py-classes = metamodel.generators.pythongen:cli',
-            'gen-owl = metamodel.generators.owlgen:cli',
+            'gen-rdf = metamodel.generators.rdfgen:cli',
             'gen-shex = metamodel.generators.shexgen:cli',
             'gen-yuml = metamodel.generators.yumlgen:cli'
         ]

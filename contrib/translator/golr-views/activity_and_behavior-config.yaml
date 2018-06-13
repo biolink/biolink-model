@@ -1,0 +1,19 @@
+description: Activity or behavior of any independent integral living, organization
+  or mechanical actor in the world
+display_name: activity and behavior
+document_category: activity and behavior
+fields:
+- {description: 'describes an entity that has a direct affect on the state or quality
+    of another existing entity. Use of the ''affects'' predicate implies that the
+    affected entity already exists, unlike predicates such as ''affects risk for''
+    and ''prevents, where the outcome is something that may or may not come to be.',
+  display_name: 'regulates, process to process', id: regulates_process_to_process}
+- {description: 'holds between a process and a continuant, where the continuant is
+    somehow involved in the process ', display_name: has participant, id: has_participant}
+- {description: 'holds between a process and a continuant, where the continuant is
+    an input into the process', display_name: has input, id: has_input}
+- {description: 'holds between two processes, where one completes before the other
+    begins', display_name: precedes, id: precedes}
+id: activity_and_behavior
+schema_generating: true
+weight: 20

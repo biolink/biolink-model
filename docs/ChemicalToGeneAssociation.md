@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/ChemicalToGeneAssociation](http://bioentity.io/v
 
 ## Fields
 
- * _[object](object.md)_
+ * _[chemical to gene association.object](chemical_to_gene_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__

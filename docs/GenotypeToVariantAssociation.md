@@ -17,15 +17,15 @@ URI: [http://bioentity.io/vocab/GenotypeToVariantAssociation](http://bioentity.i
 
 ## Fields
 
- * _[object](object.md)_
+ * _[genotype to variant association.object](genotype_to_variant_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [SequenceVariant](SequenceVariant.md) [required]
     * __Local__
- * _[relation](relation.md)_
+ * _[genotype to variant association.relation](genotype_to_variant_association_relation.md)_
     * _the relationship type by which a subject is connected to an object in an association_
     * range: [RelationshipType](RelationshipType.md) [required]
     * __Local__
- * _[subject](subject.md)_
+ * _[genotype to variant association.subject](genotype_to_variant_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [Genotype](Genotype.md) [required]
     * __Local__

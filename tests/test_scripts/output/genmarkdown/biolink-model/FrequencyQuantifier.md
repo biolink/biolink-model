@@ -10,27 +10,27 @@ URI: [http://bioentity.io/vocab/FrequencyQuantifier](http://bioentity.io/vocab/F
 
 ## Inheritance
 
- *  is_a: relationship quantifier
+ *  is_a: [RelationshipQuantifier](RelationshipQuantifier.md)
 ## Children
 
- * variant to population association
+ * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) (mixin)  - An association between a variant and a population, where the variant has particular frequency in the population
 ## Used in
 
 ## Fields
 
- * _has count_
+ * _[has count](has_count.md)_
     * _number of things with a particular property_
     * range: **integer**
     * __Local__
- * _has percentage_
+ * _[has percentage](has_percentage.md)_
     * _equivalent to has quotient multiplied by 100_
     * range: **double**
     * __Local__
- * _has quotient_
+ * _[has quotient](has_quotient.md)_
     * _A grouping for any property that holds between a node and a value_
     * range: **double**
     * __Local__
- * _has total_
+ * _[has total](has_total.md)_
     * _total number of things in a particular reference set_
     * range: **integer**
     * __Local__

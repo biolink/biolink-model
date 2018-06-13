@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/GeneToThingAssociation](http://bioentity.io/voca
 
 ## Fields
 
- * _[subject](subject.md)_
+ * _[gene to thing association.subject](gene_to_thing_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__

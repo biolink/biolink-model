@@ -1,78 +1,70 @@
----
-layout: default
----
-
-## extensions and evidence association mixin
+# Class: extensions and evidence association mixin
 
 
 An injected mixing that adds additional fields to association objects. This is a mixture of (a) closures for denormalization (b) evidence fields specific to the monarch model.
 
 URI: [http://bioentity.io/vocab/ExtensionsAndEvidenceAssociationMixin](http://bioentity.io/vocab/ExtensionsAndEvidenceAssociationMixin)
-## Mappings
 
+![img](images/ExtensionsAndEvidenceAssociationMixin.png)
+## Mappings
 
 ## Inheritance
 
- *  mixin: [taxon closure mixin](TaxonClosureMixin.html)
-
+ *  mixin: [TaxonClosureMixin](TaxonClosureMixin.md) - An association that includes flattened inlined objects, such as subject_taxon_closure
 ## Children
 
- *  mixin: [association](Association.html)
-
+ * [Association](Association.md) (mixin)  - A typed association between two entities, supported by evidence
 ## Used in
-
- *  class: [association result set](AssociationResultSet.html) references: [association](Association.html)
- *  class: [association result set](AssociationResultSet.html) references: [association](Association.html)
 
 ## Fields
 
- * [subject extensions](subject_extensions.html)
-    * _Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state_
-    * __range__: [property value pair](PropertyValuePair.html)*
-    * __Local__
- * [object extensions](object_extensions.html)
-    * _Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links_
-    * __range__: [property value pair](PropertyValuePair.html)*
-    * __Local__
- * [has evidence graph](has_evidence_graph.html)
-    * _connects an association to a graph object including a path from subject to object_
-    * __range__: evidence graph
-    * __Local__
- * [has evidence type](has_evidence_type.html)
-    * _connects an association to the class of evidence used_
-    * __range__: [evidence type](EvidenceType.html)
-    * __Local__
- * [has evidence](has_evidence.html)
+ * _[has evidence](has_evidence.md)_
     * _connects an association to an instance of supporting evidence_
-    * __range__: evidence instance
+    * range: [EvidenceInstance](EvidenceInstance.md)
     * __Local__
- * [subject taxon](subject_taxon.html)
+ * _[has evidence graph](has_evidence_graph.md)_
+    * _connects an association to a graph object including a path from subject to object_
+    * range: evidence graph
+    * __Local__
+ * _[has evidence type](has_evidence_type.md)_
+    * _connects an association to the class of evidence used_
+    * range: [EvidenceType](EvidenceType.md)
+    * __Local__
+ * _[object extensions](object_extensions.md)_
+    * _Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links_
+    * range: [PropertyValuePair](PropertyValuePair.md)*
+    * __Local__
+ * _[subject extensions](subject_extensions.md)_
+    * _Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state_
+    * range: **string***
+    * __Local__
+ * _[object taxon](object_taxon.md)_
     * _the taxonomic class of the entity in the object slot_
-    * __range__: [organism taxon](OrganismTaxon.html)
-    * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
- * [subject taxon label](subject_taxon_label.html)
-    * __range__: label
-    * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
- * [subject taxon closure](subject_taxon_closure.html)
-    * _The taxon class or ancestor class for the subject_
-    * __range__: [ontology class](OntologyClass.html)*
-    * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
- * [subject taxon closure label](subject_taxon_closure_label.html)
-    * _The label for the taxon class or ancestor class for the subject_
-    * __range__: label type*
-    * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
- * [object taxon](object_taxon.html)
-    * _the taxonomic class of the entity in the object slot_
-    * __range__: [organism taxon](OrganismTaxon.html)
-    * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
- * [object taxon label](object_taxon_label.html)
-    * __range__: label
-    * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
- * [object taxon closure](object_taxon_closure.html)
+    * range: [OrganismTaxon](OrganismTaxon.md)
+    * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
+ * _[object taxon closure](object_taxon_closure.md)_
     * _The taxon class or ancestor class for the object_
-    * __range__: [ontology class](OntologyClass.html)*
-    * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
- * [object taxon closure label](object_taxon_closure_label.html)
+    * range: [OntologyClass](OntologyClass.md)*
+    * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
+ * _[object taxon closure label](object_taxon_closure_label.md)_
     * _The label for the taxon class or ancestor class for the object_
-    * __range__: label type*
-    * inherited from: [taxon closure mixin](TaxonClosureMixin.html)
+    * range: **string***
+    * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
+ * _[object taxon label](object_taxon_label.md)_
+    * range: label
+    * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
+ * _[subject taxon](subject_taxon.md)_
+    * _the taxonomic class of the entity in the object slot_
+    * range: [OrganismTaxon](OrganismTaxon.md)
+    * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
+ * _[subject taxon closure](subject_taxon_closure.md)_
+    * _The taxon class or ancestor class for the subject_
+    * range: [OntologyClass](OntologyClass.md)*
+    * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
+ * _[subject taxon closure label](subject_taxon_closure_label.md)_
+    * _The label for the taxon class or ancestor class for the subject_
+    * range: **string***
+    * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
+ * _[subject taxon label](subject_taxon_label.md)_
+    * range: label
+    * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)

@@ -9,32 +9,32 @@ URI: [http://bioentity.io/vocab/node_property](slot_uri)
  * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-named thing -> **string**
+[NamedThing](NamedThing.md) -> **string**
 ## Inheritance
 
 ## Children
 
- *  child: latitude
- *  child: genome build
- *  child: systematic synonym
- *  child: name
- *  child: description
- *  child: creation date
- *  child: full name
- *  child: has zygosity
- *  child: longitude
- *  child: iri
- *  child: has gene
- *  child: has biological sequence
- *  child: has chemical formula
- *  child: update date
- *  child: category
- *  child: filler
- *  child: timepoint
- *  child: id
- *  child: aggregate statistic
- *  child: interbase coordinate
- *  child: phase
+ *  child: [id](id.md) *subsets*: (translator_minimal)
+ *  child: [creation date](creation_date.md)
+ *  child: [name](name.md) *subsets*: (translator_minimal)
+ *  child: [genome build](genome_build.md)
+ *  child: [has gene](has_gene.md)
+ *  child: [aggregate statistic](aggregate_statistic.md)
+ *  child: [description](description.md) *subsets*: (translator_minimal)
+ *  child: [has chemical formula](has_chemical_formula.md)
+ *  child: [has zygosity](has_zygosity.md)
+ *  child: [full name](full_name.md)
+ *  child: [filler](filler.md)
+ *  child: [longitude](longitude.md)
+ *  child: [timepoint](timepoint.md)
+ *  child: [has biological sequence](has_biological_sequence.md)
+ *  child: [phase](phase.md)
+ *  child: [category](category.md) *subsets*: (translator_minimal)
+ *  child: [iri](iri.md) *subsets*: (translator_minimal)
+ *  child: [update date](update_date.md)
+ *  child: [systematic synonym](systematic_synonym.md)
+ *  child: [interbase coordinate](interbase_coordinate.md)
+ *  child: [latitude](latitude.md)
 ## Used in
 
- *  usage: named thing
+ *  usage: [NamedThing](NamedThing.md)

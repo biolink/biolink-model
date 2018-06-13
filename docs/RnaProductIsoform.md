@@ -3,14 +3,14 @@
 
 Represents a protein that is a specific isoform of the canonical or reference RNA
 
-URI: [http://bioentity.io/vocab/RnaProductIsoform](http://bioentity.io/vocab/RnaProductIsoform)
+URI: [http://bioentity.io/vocab/RNAProductIsoform](http://bioentity.io/vocab/RNAProductIsoform)
 
-![img](images/RnaProductIsoform.png)
+![img](images/RNAProductIsoform.png)
 ## Mappings
 
 ## Inheritance
 
- *  is_a: [RnaProduct](RnaProduct.md)
+ *  is_a: [RNAProduct](RNAProduct.md)
  *  mixin: [GeneProductIsoform](GeneProductIsoform.md) - This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
 ## Children
 
@@ -68,7 +68,7 @@ URI: [http://bioentity.io/vocab/RnaProductIsoform](http://bioentity.io/vocab/Rna
     * _An IRI for the node. This is determined by the id using expansion rules._
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[name](name.md) *subsets*: (translator_minimal)_
+ * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
     * range: [LabelType](LabelType.md)
     * inherited from: [MacromolecularMachine](MacromolecularMachine.md)

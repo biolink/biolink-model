@@ -17,8 +17,8 @@ URI: [http://bioentity.io/vocab/Transcript](http://bioentity.io/vocab/Transcript
 
 ## Used in
 
- *  class: **[ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)** *[object](object.md)* **[Transcript](Transcript.md)**
- *  class: **[TranscriptToGeneRelationship](TranscriptToGeneRelationship.md)** *[subject](subject.md)* **[Transcript](Transcript.md)**
+ *  class: **[ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)** *[exon to transcript relationship.object](exon_to_transcript_relationship_object.md)* **[Transcript](Transcript.md)**
+ *  class: **[TranscriptToGeneRelationship](TranscriptToGeneRelationship.md)** *[transcript to gene relationship.subject](transcript_to_gene_relationship_subject.md)* **[Transcript](Transcript.md)**
 ## Fields
 
  * _[biomarker for](biomarker_for.md) *subsets*: (translator_minimal)_

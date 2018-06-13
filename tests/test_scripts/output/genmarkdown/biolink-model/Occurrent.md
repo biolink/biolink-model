@@ -13,34 +13,34 @@ URI: [http://bioentity.io/vocab/Occurrent](http://bioentity.io/vocab/Occurrent)
 
 ## Children
 
- * activity and behavior
- * phenomenon
- * procedure
- * biological process
- * environmental process
- * molecular activity
+ * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
+ * [Phenomenon](Phenomenon.md) - a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
+ * [Procedure](Procedure.md) - A series of actions conducted in a certain order or manner
+ * [BiologicalProcess](BiologicalProcess.md) (mixin)  - One or more causally connected executions of molecular functions
+ * [EnvironmentalProcess](EnvironmentalProcess.md) (mixin) 
+ * [MolecularActivity](MolecularActivity.md) (mixin)  - An execution of a molecular function carried out by a gene product or macromolecular complex.
 ## Used in
 
- *  class: **named thing** *actively involved in* **occurrent**
- *  class: **named thing** *capable of* **occurrent**
- *  class: **named thing** *participates in* **occurrent**
- *  class: **occurrent** *precedes* **occurrent**
- *  class: **occurrent** *regulates, process to process* **occurrent**
+ *  class: **[NamedThing](NamedThing.md)** *[actively involved in](actively_involved_in.md)* **[Occurrent](Occurrent.md)**
+ *  class: **[NamedThing](NamedThing.md)** *[capable of](capable_of.md)* **[Occurrent](Occurrent.md)**
+ *  class: **[NamedThing](NamedThing.md)** *[participates in](participates_in.md)* **[Occurrent](Occurrent.md)**
+ *  class: **[Occurrent](Occurrent.md)** *[precedes](precedes.md)* **[Occurrent](Occurrent.md)**
+ *  class: **[Occurrent](Occurrent.md)** *[regulates, process to process](regulates_process_to_process.md)* **[Occurrent](Occurrent.md)**
 ## Fields
 
- * _has input_
+ * _[has input](has_input.md) *subsets*: (translator_minimal)_
     * _holds between a process and a continuant, where the continuant is an input into the process_
     * range: **string**
     * __Local__
- * _has participant_
+ * _[has participant](has_participant.md) *subsets*: (translator_minimal)_
     * _holds between a process and a continuant, where the continuant is somehow involved in the process _
     * range: **string**
     * __Local__
- * _precedes_
+ * _[precedes](precedes.md) *subsets*: (translator_minimal)_
     * _holds between two processes, where one completes before the other begins_
-    * range: occurrent
+    * range: [Occurrent](Occurrent.md)
     * __Local__
- * _regulates, process to process_
+ * _[regulates, process to process](regulates_process_to_process.md) *subsets*: (translator_minimal)_
     * _describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be._
-    * range: occurrent
+    * range: [Occurrent](Occurrent.md)
     * __Local__

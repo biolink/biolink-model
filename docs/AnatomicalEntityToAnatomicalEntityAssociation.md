@@ -19,11 +19,11 @@ URI: [http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation](h
 
 ## Fields
 
- * _[object](object.md)_
+ * _[anatomical entity to anatomical entity association.object](anatomical_entity_to_anatomical_entity_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [AnatomicalEntity](AnatomicalEntity.md) [required]
     * __Local__
- * _[subject](subject.md)_
+ * _[anatomical entity to anatomical entity association.subject](anatomical_entity_to_anatomical_entity_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [AnatomicalEntity](AnatomicalEntity.md) [required]
     * __Local__

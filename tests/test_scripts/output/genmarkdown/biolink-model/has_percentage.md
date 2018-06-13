@@ -8,12 +8,12 @@ URI: [http://bioentity.io/vocab/has_percentage](slot_uri)
 
 ## Domain and Range
 
-frequency quantifier -> **double**
+[FrequencyQuantifier](FrequencyQuantifier.md) -> **double**
 ## Inheritance
 
- *  is_a: aggregate statistic
+ *  is_a: [aggregate statistic](aggregate_statistic.md)
 ## Children
 
 ## Used in
 
- *  usage: frequency quantifier
+ *  usage: [FrequencyQuantifier](FrequencyQuantifier.md)

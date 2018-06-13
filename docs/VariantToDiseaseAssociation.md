@@ -19,32 +19,18 @@ URI: [http://bioentity.io/vocab/VariantToDiseaseAssociation](http://bioentity.io
 
 ## Fields
 
- * _[frequency qualifier](frequency_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
-    * range: [FrequencyValue](FrequencyValue.md)
-    * __Local__
- * _[onset qualifier](onset_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * range: [Onset](Onset.md)
-    * __Local__
- * _[severity qualifier](severity_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
-    * range: [SeverityValue](SeverityValue.md)
-    * __Local__
- * _[object](object.md)_
+ * _[variant to disease association.object](variant_to_disease_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: **string** [required]
-    * Example: [MONDO:0016419](http://purl.obolibrary.org/obo/MONDO_0016419) hereditary breast cancer
     * __Local__
- * _[relation](relation.md)_
+ * _[variant to disease association.relation](variant_to_disease_association_relation.md)_
     * _the relationship type by which a subject is connected to an object in an association_
     * range: [RelationshipType](RelationshipType.md) [required]
     * edge label: related condition
     * __Local__
- * _[subject](subject.md)_
+ * _[variant to disease association.subject](variant_to_disease_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: **string** [required]
-    * Example: [ClinVar:52241](http://purl.obolibrary.org/obo/ClinVar_52241) NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)
     * __Local__
  * _[association slot](association_slot.md)_
     * _any slot that relates an association to another entity_
@@ -86,6 +72,10 @@ URI: [http://bioentity.io/vocab/VariantToDiseaseAssociation](http://bioentity.io
     * _A grouping for any property that holds between a node and a value_
     * range: **string**
     * inherited from: [NamedThing](NamedThing.md)
+ * _[onset qualifier](onset_qualifier.md)_
+    * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
+    * range: [Onset](Onset.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
  * _[provided by](provided_by.md)_
     * _connects an association to the agent (person, organization or group) that provided it_
     * range: [Provider](Provider.md)
@@ -102,6 +92,10 @@ URI: [http://bioentity.io/vocab/VariantToDiseaseAssociation](http://bioentity.io
     * _A grouping for any relationship type that holds between any two things_
     * range: [NamedThing](NamedThing.md)
     * inherited from: [NamedThing](NamedThing.md)
+ * _[severity qualifier](severity_qualifier.md)_
+    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
+    * range: [SeverityValue](SeverityValue.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
  * _[systematic synonym](systematic_synonym.md)_
     * _more commonly used for gene symbols in yeast_
     * range: [LabelType](LabelType.md)

@@ -19,11 +19,11 @@ URI: [http://bioentity.io/vocab/Gene](http://bioentity.io/vocab/Gene)
 
 ## Used in
 
- *  class: **[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)** *[subject](subject.md)* **[Gene](Gene.md)**
+ *  class: **[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)** *[gene to gene product relationship.subject](gene_to_gene_product_relationship_subject.md)* **[Gene](Gene.md)**
  *  class: **[Gene](Gene.md)** *[genetically interacts with](genetically_interacts_with.md)* **[Gene](Gene.md)**
- *  class: **[GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)** *[object](object.md)* **[Gene](Gene.md)**
+ *  class: **[GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)** *[genotype to gene association.object](genotype_to_gene_association_object.md)* **[Gene](Gene.md)**
  *  class: **[SequenceVariant](SequenceVariant.md)** *[has gene](has_gene.md)* **[Gene](Gene.md)**
- *  class: **[TranscriptToGeneRelationship](TranscriptToGeneRelationship.md)** *[object](object.md)* **[Gene](Gene.md)**
+ *  class: **[TranscriptToGeneRelationship](TranscriptToGeneRelationship.md)** *[transcript to gene relationship.object](transcript_to_gene_relationship_object.md)* **[Gene](Gene.md)**
 ## Fields
 
  * _[gene associated with condition](gene_associated_with_condition.md) *subsets*: (translator_minimal)_
@@ -90,7 +90,7 @@ URI: [http://bioentity.io/vocab/Gene](http://bioentity.io/vocab/Gene)
     * _An IRI for the node. This is determined by the id using expansion rules._
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[name](name.md) *subsets*: (translator_minimal)_
+ * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
     * range: [LabelType](LabelType.md)
     * inherited from: [MacromolecularMachine](MacromolecularMachine.md)

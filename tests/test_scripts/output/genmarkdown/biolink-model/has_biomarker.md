@@ -8,12 +8,12 @@ URI: [http://bioentity.io/vocab/has_biomarker](slot_uri)
 
 ## Domain and Range
 
-disease or phenotypic feature -> molecular entity
+[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) -> [MolecularEntity](MolecularEntity.md)
 ## Inheritance
 
- *  is_a: correlated with
+ *  is_a: [correlated with](correlated_with.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in
 
- *  usage: disease or phenotypic feature
+ *  usage: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)

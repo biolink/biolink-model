@@ -17,16 +17,16 @@ URI: [http://bioentity.io/vocab/GeneToGeneProductRelationship](http://bioentity.
 
 ## Fields
 
- * _[object](object.md)_
+ * _[gene to gene product relationship.object](gene_to_gene_product_relationship_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GeneProduct](GeneProduct.md) [required]
     * __Local__
- * _[relation](relation.md)_
+ * _[gene to gene product relationship.relation](gene_to_gene_product_relationship_relation.md)_
     * _the relationship type by which a subject is connected to an object in an association_
     * range: [RelationshipType](RelationshipType.md) [required]
     * edge label: [has gene product](has_gene_product.md) *subsets*: (translator_minimal)
     * __Local__
- * _[subject](subject.md)_
+ * _[gene to gene product relationship.subject](gene_to_gene_product_relationship_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [Gene](Gene.md) [required]
     * __Local__

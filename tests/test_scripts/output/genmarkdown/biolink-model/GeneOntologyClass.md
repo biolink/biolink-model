@@ -10,16 +10,16 @@ URI: [http://bioentity.io/vocab/GeneOntologyClass](http://bioentity.io/vocab/Gen
 
 ## Inheritance
 
- *  is_a: ontology class
+ *  is_a: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
 ## Children
 
 ## Used in
 
- *  class: **functional association** *functional association object* **gene ontology class**
- *  class: **gene to go term association** *gene to go term association object* **gene ontology class**
+ *  class: **[FunctionalAssociation](FunctionalAssociation.md)** *[functional association.object](functional_association_object.md)* **[GeneOntologyClass](GeneOntologyClass.md)**
+ *  class: **[GeneToGoTermAssociation](GeneToGoTermAssociation.md)** *[gene to go term association.object](gene_to_go_term_association_object.md)* **[GeneOntologyClass](GeneOntologyClass.md)**
 ## Fields
 
- * _subclass of_
+ * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
     * _holds between two classes where the domain class is a specialization of the range class_
-    * range: ontology class
-    * inherited from: ontology class
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [OntologyClass](OntologyClass.md)

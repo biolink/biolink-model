@@ -1,0 +1,29 @@
+@prefix CHEMBL.TARGET: <http://identifiers.org/chembl.target/> .
+@prefix ClinVar: <http://www.ncbi.nlm.nih.gov/clinvar/> .
+@prefix ENSEMBL: <http://identifiers.org/ensembl/> .
+@prefix HGNC: <http://identifiers.org/hgnc/HGNC:> .
+@prefix MGI: <http://www.informatics.jax.org/accession/MGI:> .
+@prefix MIR: <http://identifiers.org/mir/> .
+@prefix NCBIGene: <http://www.ncbi.nlm.nih.gov/gene/> .
+@prefix OBAN: <http://purl.org/oban/> .
+@prefix PomBase: <http://identifiers.org/PomBase:> .
+@prefix SGD: <http://identifiers.org/sgd/> .
+@prefix UniProtKB: <http://identifiers.org/uniprot/> .
+@prefix ZFIN: <http://zfin.org/> .
+@prefix bioentity: <http://bioentity.io/vocab/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dictyBase: <http://dictybase.org/gene/> .
+@prefix faldo: <http://biohackathon.org/resource/faldo#> .
+@prefix meta: <http://bioentity.io/meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://biolink.github.io/biolink-model/ontology/biolink.ttl> rdfs:label "biolink model" ;
+    dcterms:description "A high level datamodel of biological entities (genes, diseases, phenotypes, pathways, individuals, substances, etc) and their associations." .
+
+
+

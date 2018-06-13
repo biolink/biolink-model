@@ -56,7 +56,7 @@ URI: [http://bioentity.io/vocab/MacromolecularComplex](http://bioentity.io/vocab
     * _An IRI for the node. This is determined by the id using expansion rules._
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[name](name.md) *subsets*: (translator_minimal)_
+ * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
     * range: [LabelType](LabelType.md)
     * inherited from: [MacromolecularMachine](MacromolecularMachine.md)

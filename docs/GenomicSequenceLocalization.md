@@ -26,11 +26,11 @@ URI: [http://bioentity.io/vocab/GenomicSequenceLocalization](http://bioentity.io
     * _TODO_
     * range: **string**
     * __Local__
- * _[object](object.md)_
+ * _[genomic sequence localization.object](genomic_sequence_localization_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GenomicEntity](GenomicEntity.md) [required]
     * __Local__
- * _[subject](subject.md)_
+ * _[genomic sequence localization.subject](genomic_sequence_localization_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GenomicEntity](GenomicEntity.md) [required]
     * __Local__

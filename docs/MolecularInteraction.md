@@ -18,21 +18,19 @@ URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/
 
 ## Fields
 
- * _[interacting molecules category](interacting_molecules_category.md)_
+ * _[molecular interaction.interacting molecules category](molecular_interaction_interacting_molecules_category.md)_
     * range: [OntologyClass](OntologyClass.md)
-    * Example: [MI:1048](http://purl.obolibrary.org/obo/MI_1048) smallmolecule-protein
     * __Local__
- * _[object](object.md)_
+ * _[molecular interaction.object](molecular_interaction_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [MolecularEntity](MolecularEntity.md) [required]
     * __Local__
- * _[relation](relation.md)_
+ * _[molecular interaction.relation](molecular_interaction_relation.md)_
     * _the relationship type by which a subject is connected to an object in an association_
     * range: [RelationshipType](RelationshipType.md) [required]
     * edge label: [molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)
-    * Example: [RO:0002447](http://purl.obolibrary.org/obo/RO_0002447) the subject molecular phosphorylates the object molecule
     * __Local__
- * _[subject](subject.md)_
+ * _[molecular interaction.subject](molecular_interaction_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [MolecularEntity](MolecularEntity.md) [required]
     * __Local__

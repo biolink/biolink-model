@@ -1,61 +1,30 @@
----
-layout: default
----
-
-## attribute
+# Class: attribute
 
 
 A property or characteristic of an entity
 
 URI: [http://bioentity.io/vocab/Attribute](http://bioentity.io/vocab/Attribute)
+
+![img](images/Attribute.png)
 ## Mappings
 
  * [PATO:0000001](http://purl.obolibrary.org/obo/PATO_0000001)
-
 ## Inheritance
 
-
+ *  mixin: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
 ## Children
 
- *  child: [biological sex](BiologicalSex.html)
- *  child: [severity value](SeverityValue.html)
- *  child: [frequency value](FrequencyValue.html)
- *  child: [clinical modifier](ClinicalModifier.html)
- *  child: [onset](Onset.html)
- *  child: [zygosity](Zygosity.html)
- *  child: [biological sex](BiologicalSex.html)
- *  child: [severity value](SeverityValue.html)
- *  child: [frequency value](FrequencyValue.html)
- *  child: [clinical modifier](ClinicalModifier.html)
- *  child: [onset](Onset.html)
- *  child: [zygosity](Zygosity.html)
-
+ * [BiologicalSex](BiologicalSex.md)
+ * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+ * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
+ * [Onset](Onset.md) - The age group in which manifestations appear
+ * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
+ * [Zygosity](Zygosity.md)
 ## Used in
-
- *  class: [genotype](Genotype.html) references: [zygosity](Zygosity.html)
- *  class: [allele](Allele.html) references: [zygosity](Zygosity.html)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [genotype](Genotype.html) references: [zygosity](Zygosity.html)
- *  class: [allele](Allele.html) references: [zygosity](Zygosity.html)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [frequency value](FrequencyValue.html)
 
 ## Fields
 
+ * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
+    * _holds between two classes where the domain class is a specialization of the range class_
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [OntologyClass](OntologyClass.md)

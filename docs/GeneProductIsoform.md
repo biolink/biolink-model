@@ -13,7 +13,7 @@ URI: [http://bioentity.io/vocab/GeneProductIsoform](http://bioentity.io/vocab/Ge
  *  is_a: [GeneProduct](GeneProduct.md) - The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
 ## Children
 
- * [RnaProductIsoform](RnaProductIsoform.md) (mixin)  - Represents a protein that is a specific isoform of the canonical or reference RNA
+ * [RNAProductIsoform](RNAProductIsoform.md) (mixin)  - Represents a protein that is a specific isoform of the canonical or reference RNA
  * [ProteinIsoform](ProteinIsoform.md) (mixin)  - Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
 ## Used in
 
@@ -71,7 +71,7 @@ URI: [http://bioentity.io/vocab/GeneProductIsoform](http://bioentity.io/vocab/Ge
     * _An IRI for the node. This is determined by the id using expansion rules._
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[name](name.md) *subsets*: (translator_minimal)_
+ * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
     * range: [LabelType](LabelType.md)
     * inherited from: [MacromolecularMachine](MacromolecularMachine.md)

@@ -8,10 +8,10 @@ URI: [http://bioentity.io/vocab/has_molecular_consequence](slot_uri)
 
 ## Domain and Range
 
-named thing -> ontology class
+[NamedThing](NamedThing.md) -> [OntologyClass](OntologyClass.md)
 ## Inheritance
 
- *  is_a: related to
+ *  is_a: [related to](related_to.md)
 ## Children
 
 ## Used in

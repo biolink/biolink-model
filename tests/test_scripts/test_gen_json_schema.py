@@ -15,7 +15,7 @@ class GenJSONSchemaTestCase(ClickTestCase):
     prog_name = "gen-json-schema"
 
     def test_help(self):
-        self.do_test("--help", 'help', update_test_file=update_test_files)
+        self.do_test("--help", 'help', update_test_file=update_test_files, tox_wrap_fix=True)
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_meta(self):

@@ -21,16 +21,13 @@ URI: [http://bioentity.io/vocab/FunctionalAssociation](http://bioentity.io/vocab
 
 ## Fields
 
- * _[object](object.md)_
+ * _[functional association.object](functional_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GeneOntologyClass](GeneOntologyClass.md) [required]
-    * Example: [GO:0016301](http://purl.obolibrary.org/obo/GO_0016301) kinase activity
-    * Example: [GO:0045211](http://purl.obolibrary.org/obo/GO_0045211) postsynaptic membrane
     * __Local__
- * _[subject](subject.md)_
+ * _[functional association.subject](functional_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [MacromolecularMachine](MacromolecularMachine.md) [required]
-    * Example: [ZFIN:ZDB-GENE-050417-357](http://purl.obolibrary.org/obo/ZFIN_ZDB-GENE-050417-357) twist1b
     * __Local__
  * _[association slot](association_slot.md)_
     * _any slot that relates an association to another entity_

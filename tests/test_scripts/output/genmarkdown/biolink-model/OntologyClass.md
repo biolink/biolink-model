@@ -12,20 +12,20 @@ URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/Ontolog
 
 ## Children
 
- * gene ontology class
- * organism taxon
- * attribute
+ * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
+ * [OrganismTaxon](OrganismTaxon.md)
+ * [Attribute](Attribute.md) (mixin)  - A property or characteristic of an entity
 ## Used in
 
- *  class: **association** *association type* **ontology class**
- *  class: **named thing** *has molecular consequence* **ontology class**
- *  class: **molecular interaction** *molecular interaction interacting molecules category* **ontology class**
- *  class: **association** *qualifiers* **ontology class**
- *  class: **gene to expression site association** *quantifier qualifier* **ontology class**
- *  class: **ontology class** *subclass of* **ontology class**
+ *  class: **[Association](Association.md)** *[association type](association_type.md)* **[OntologyClass](OntologyClass.md)**
+ *  class: **[NamedThing](NamedThing.md)** *[has molecular consequence](has_molecular_consequence.md)* **[OntologyClass](OntologyClass.md)**
+ *  class: **[MolecularInteraction](MolecularInteraction.md)** *[molecular interaction.interacting molecules category](molecular_interaction_interacting_molecules_category.md)* **[OntologyClass](OntologyClass.md)**
+ *  class: **[Association](Association.md)** *[qualifiers](qualifiers.md)* **[OntologyClass](OntologyClass.md)**
+ *  class: **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[quantifier qualifier](quantifier_qualifier.md)* **[OntologyClass](OntologyClass.md)**
+ *  class: **[OntologyClass](OntologyClass.md)** *[subclass of](subclass_of.md)* **[OntologyClass](OntologyClass.md)**
 ## Fields
 
- * _subclass of_
+ * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
     * _holds between two classes where the domain class is a specialization of the range class_
-    * range: ontology class
+    * range: [OntologyClass](OntologyClass.md)
     * __Local__

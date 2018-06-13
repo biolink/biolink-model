@@ -4,6 +4,7 @@ https://yuml.me/diagram/scruffy/class/samples
 
 """
 import os
+import sys
 from typing import Union, TextIO, Set, List, Optional
 
 import click
@@ -48,8 +49,8 @@ class YumlGenerator(Generator):
 
     def visit_schema(self, classes: Set[ClassDefinitionName]=None, directory: Optional[str] = None,
                      load_image: bool=True) -> None:
-        if directory and not os.path.isdir(directory):
-            raise ValueError(f"Directory {directory} does not exist")
+        if directory:
+            os.makedirs(directory, exist_ok=True)
         for cls in classes:
             if cls not in self.schema.classes:
                 raise ValueError("Unknown class name: {cls}")
@@ -63,7 +64,6 @@ class YumlGenerator(Generator):
         self.referenced = self.gen_classes
         self.generated = set()
         yumlclassdef: List[str] = []
-
         while self.referenced.difference(self.generated):
             cn = sorted(list(self.referenced.difference(self.generated)), reverse=True)[0]
             self.generated.add(cn)

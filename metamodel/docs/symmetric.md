@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/symmetric](slot_uri)
 
 ## Domain and Range
 
-[Definition](Definition.md) -> **boolean**
+definition -> **boolean**
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [Definition](Definition.md)
+ *  usage: definition

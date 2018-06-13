@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation]
 
 ## Fields
 
- * _[subject](subject.md)_
+ * _[cell line to disease or phenotypic feature association.subject](cell_line_to_disease_or_phenotypic_feature_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) [required]
     * __Local__

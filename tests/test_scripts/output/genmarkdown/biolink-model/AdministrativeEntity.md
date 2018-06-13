@@ -12,7 +12,7 @@ URI: [http://bioentity.io/vocab/AdministrativeEntity](http://bioentity.io/vocab/
 
 ## Children
 
- * provider
+ * [Provider](Provider.md) - person, group, organization or project that provides a piece of information
 ## Used in
 
 ## Fields

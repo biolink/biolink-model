@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/provided_by](slot_uri)
  * [pav:providedBy](http://purl.obolibrary.org/obo/pav_providedBy)
 ## Domain and Range
 
-association -> provider
+[Association](Association.md) -> [Provider](Provider.md)
 ## Inheritance
 
- *  is_a: association slot
+ *  is_a: [association slot](association_slot.md)
 ## Children
 
 ## Used in
 
- *  usage: association
+ *  usage: [Association](Association.md)

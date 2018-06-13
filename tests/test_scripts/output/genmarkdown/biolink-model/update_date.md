@@ -8,10 +8,10 @@ URI: [http://bioentity.io/vocab/update_date](slot_uri)
 
 ## Domain and Range
 
-named thing -> **date**
+[NamedThing](NamedThing.md) -> **date**
 ## Inheritance
 
- *  is_a: node property
+ *  is_a: [node property](node_property.md)
 ## Children
 
 ## Used in

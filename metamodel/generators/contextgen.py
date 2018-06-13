@@ -13,7 +13,7 @@ from prefixcommons import curie_util as cu
 from metamodel.utils.generator import Generator
 from metamodel.metamodel import SchemaDefinition, SlotDefinition, ClassDefinition
 from metamodel.utils.namespaces import BIOENTITY
-from metamodel.utils.formatutils import be
+from metamodel.utils.formatutils import camelcase, underscore, be
 
 # highest to lowest priority
 default_curie_maps = [cu.read_biocontext('obo_context'), cu.read_biocontext('monarch_context'),
@@ -53,7 +53,7 @@ license: {be(self.schema.license)}
     def visit_class(self, cls: ClassDefinition) -> bool:
         logging.info("Cls: {}".format(cls.name))
         # subClassOf has highest priority
-        cn = cls.name
+        cn = camelcase(cls.name)
         if cls.subclass_of is not None:
             self.add_mapping(cn, cls.subclass_of)
         self.tr_element(cls, cn)
@@ -61,7 +61,7 @@ license: {be(self.schema.license)}
 
     def visit_slot(self, aliased_slot_name: str, slot: SlotDefinition) -> None:
         if not slot.alias:
-            self.tr_element(slot, slot.name)
+            self.tr_element(slot, underscore(slot.name))
         # hold off til we are sure curie_util can handle this
         # rewrite to be an object with id/type fields
         # if n in pm:

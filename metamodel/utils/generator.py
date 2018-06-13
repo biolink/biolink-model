@@ -165,9 +165,13 @@ class Generator(metaclass=abc.ABCMeta):
         for element in elements:
             if element in self.schema.classes:
                 touches.classrefs.add(element)
+                if None in touches.classrefs:
+                    raise ValueError("1")
                 cls = self.schema.classes[element]
                 if cls.is_a:
                     touches.classrefs.add(cls.is_a)
+                if None in touches.classrefs:
+                    raise ValueError("1")
                 # Mixins include apply_to's
                 touches.classrefs.update(set(cls.mixins))
                 for slotname in cls.slots:
@@ -176,10 +180,13 @@ class Generator(metaclass=abc.ABCMeta):
                         touches.classrefs.add(slot.range)
                     elif slot.range in self.schema.types:
                         touches.typerefs.add(slot.range)
+                    if None in touches.classrefs:
+                        raise ValueError("1")
                 if element in self.synopsis.rangerefs:
                     for slotname in self.synopsis.rangerefs[element]:
                         touches.slotrefs.add(slotname)
-                        touches.classrefs.add(self.schema.slots[slotname].domain)
+                        if self.schema.slots[slotname].domain:
+                            touches.classrefs.add(self.schema.slots[slotname].domain)
             elif element in self.schema.slots:
                 touches.slotrefs.add(element)
                 slot = self.schema.slots[element]
@@ -230,7 +237,7 @@ class Generator(metaclass=abc.ABCMeta):
             else self.schema.types[name] if name in self.schema.types else name if name in builtin_names \
             else None
 
-    def obj_name(self, obj: Union[str, ClassDefinition, SlotDefinition, TypeDefinition]) -> str:
+    def obj_name(self, obj: Union[str, Element]) -> str:
         """ Return the formatted name used for the supplied definition """
         if isinstance(obj, str):
             obj = self.obj_for(obj)

@@ -10,12 +10,12 @@ URI: [http://bioentity.io/vocab/in_taxon](slot_uri)
  * [WD:P703](http://purl.obolibrary.org/obo/WD_P703)
 ## Domain and Range
 
-thing with taxon -> organism taxon
+[ThingWithTaxon](ThingWithTaxon.md) -> [OrganismTaxon](OrganismTaxon.md)
 ## Inheritance
 
- *  is_a: related to
+ *  is_a: [related to](related_to.md)
 ## Children
 
 ## Used in
 
- *  usage: thing with taxon
+ *  usage: [ThingWithTaxon](ThingWithTaxon.md)

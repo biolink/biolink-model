@@ -1,14 +1,24 @@
+# All artifacts of the build should be preserved
 .SECONDARY:
+
+# It can be fairly expensive to regenerate the various png's in the markdown.
+# There are three alternatives:
+#   1) make imgflags="-i"             -- generate uml images in images subdirectory (default)
+#   2) make imgflags="-i --noimages"  -- assume uml images already exist and generate links to them
+#   3) make imgflags=""               -- genrate uml images as inline url's
+imgflags?="-i"
+
 
 # ----------------------------------------
 # TOP LEVEL TARGETS
 # ----------------------------------------
 all: build test
 test: pytests
-build: metamodel/context.jsonld context.jsonld build_core contrib_build_monarch contrib_build_translator
-build_core: metamodel/metamodel.py metamodel/docs/index.md biolinkmodel/datamodel.py docs/index.md gen-golr-views ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql
+build: metamodel/context.jsonld context.jsonld build_core contrib_build_monarch contrib_build_translator contrib_build_go
+build_core: metamodel/metamodel.py metamodel/docs/index.md biolinkmodel/datamodel.py docs/index.md gen-golr-views \
+ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql proto/biolink-model.proto gen-graphviz
 
-contrib_build_%: dir-contrib-% contrib/%/docs/index.md contrib/%/datamodel.py contrib-golr-% contrib/%/ontology.ttl contrib/%/schema.json contrib-java-% contrib/%/%.graphql
+contrib_build_%: contrib-dir-% contrib/%/docs/index.md contrib/%/datamodel.py contrib-golr-% contrib/%/ontology.ttl contrib/%/schema.json contrib-java-% contrib/%/%.graphql
 	echo
 
 
@@ -40,46 +50,48 @@ metamodel/context.jsonld: meta.yaml
 # JSONSCHEMA -> Java
 # ~~~~~~~~~~~~~~~~~~~~
 json-schema/%.json: dir-json-schema %.yaml
-	gen-json-schema $< > $@
+	gen-json-schema $*.yaml > $@
 
-contrib/%/schema.json: contrib/%.yaml
-	gen-json-schema $< > $@
+contrib/%/schema.json: contrib-dir-% contrib/%.yaml
+	gen-json-schema contrib/$*.yaml > $@
 
-java: dir-json-schema json-schema/biolink-model.json
-	jsonschema2pojo --source $< -T JSONSCHEMA -t java
+java: dir-java json-schema/biolink-model.json
+	jsonschema2pojo --source json-schema/biolink-model.json -T JSONSCHEMA -t java
 
-contrib-java-%: contrib/%/schema.json
-	jsonschema2pojo --source $< -T JSONSCHEMA -t contrib/$*/java
+contrib-java-%: contrib-dir-% contrib/%/schema.json
+	mkdir -p contrib/$*/java
+	jsonschema2pojo --source contrib/$*/schema.json -T JSONSCHEMA -t contrib/$*/java
 
 # ~~~~~~~~~~~~~~~~~~~~
 # DOCS
 # ~~~~~~~~~~~~~~~~~~~~
 docs/index.md: biolink-model.yaml
-	gen-markdown --dir docs -i $<
+	gen-markdown --dir docs $(imgflags) $<
 
 metamodel/docs/index.md: meta.yaml
-	gen-markdown --dir metamodel/docs -i $<
+	gen-markdown --dir metamodel/docs $(imgflags) $<
 
 contrib/%/docs/index.md: contrib/%.yaml
-	gen-markdown --dir contrib/$*/docs -i $<
+	gen-markdown --dir contrib/$*/docs $(imgflags) $<
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
-ontology/biolink.ttl: biolink-model.yaml
-	gen-owl -o $@ $<
+ontology/biolink.ttl: dir-ontology biolink-model.yaml
+	gen-owl -o $@ biolink-model.yaml
 
-contrib/%/ontology.ttl: contrib/%.yaml
-	gen-owl -o $@ $<
+contrib/%/ontology.ttl: contrib-dir-% contrib/%.yaml
+	gen-owl -o $@ contrib/$*.yaml
 
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Solr
 # ~~~~~~~~~~~~~~~~~~~~
-gen-golr-views: dir-golr-views
+gen-golr-views: dir-golr-views biolink-model.yaml
 	gen-golr-views -d golr-views biolink-model.yaml
 
 contrib-golr-%: contrib/%.yaml
+	mkdir -p contrib/$*/golr-views
 	gen-golr-views -d contrib/$*/golr-views contrib/$*.yaml
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -91,11 +103,11 @@ metamodel/metamodel.py: meta.yaml
 biolinkmodel/datamodel.py: biolink-model.yaml
 	gen-py-classes $< > $@
 
-contrib/%/datamodel.py: contrib/%.yaml
-	gen-py-classes $< > $@
+contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml
+	gen-py-classes contrib/$*.yaml > $@
 
-graphviz/%.png: biolink-model.yaml
-	gen-graphviz  -c $* $< -o graphviz/$*
+gen-graphviz: dir-graphviz biolink-model.yaml
+	gen-graphviz  -d graphviz biolink-model.yaml
 
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -109,14 +121,14 @@ shex/biolink-model.shex: biolink-model.yaml
 # Graphql
 # ~~~~~~~~~~~~~~~~~~~~
 
-graphql/biolink-model.graphql: biolink-model.yaml
-	gen-graphql $< > $@
+graphql/biolink-model.graphql: dir-graphql biolink-model.yaml
+	gen-graphql biolink-model.yaml > $@
 
-proto/biolink-model.proto: biolink-model.yaml
-	gen-proto $< > $@
+proto/biolink-model.proto: dir-proto biolink-model.yaml
+	gen-proto biolink-model.yaml > $@
 
-contrib/%/%.graphql: contrib/%.yaml
-	gen-graphql $< > contrib/$*/$*.graphql
+contrib/%/%.graphql: contrib-dir-% contrib/%.yaml
+	gen-graphql contrib/$*.yaml > contrib/$*/$*.graphql
 
 # ----------------------------------------
 # Ontology conversion
@@ -148,7 +160,7 @@ pytests:
 # CLEAN
 # ----------------------------------------
 clean:
-	rm -rf subsets shex proto ontology json-schema java-gen graphviz graphql golr-views contrib/go contrib/monarch docs/images/* docs/*.md
+	rm -rf subsets java shex proto ontology json-schema graphviz graphql golr-views contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md
 
 # ----------------------------------------
 # UTILS
@@ -156,5 +168,5 @@ clean:
 dir-%:
 	mkdir -p $*
 
-dir-contrib-%:
+contrib-dir-%:
 	mkdir -p contrib/$*

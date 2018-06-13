@@ -1,6 +1,7 @@
 import os
 import re
 import sys
+import textwrap
 import unittest
 from contextlib import redirect_stdout
 from io import StringIO
@@ -44,7 +45,17 @@ class ClickTestCase(unittest.TestCase):
 
     def do_test(self, args: Union[str, List[str]], testfile: Optional[str]="",
                 update_test_file: bool=False, error: type(Exception)=None,
-                filtr: Optional[Callable[[str], str]]=None) -> None:
+                filtr: Optional[Callable[[str], str]]=None, tox_wrap_fix: bool=False) -> None:
+        """ Execute a command test
+
+        @param args: Argument string or list to command
+        @param testfile: name of file to record output in.  If absent, using directory mode
+        @param update_test_file: True means we need to update the test file
+        @param error: If present, we expect this error
+        @param filtr: Filter to remove date and app specific information from text
+        @param tox_wrap_fix: tox seems to wrap redirected output at 60 columns.  If true, try wrapping the test
+        file before failing
+        """
         testfile_path = os.path.join(self.testdir_path, testfile)
 
         outf = StringIO()
@@ -68,12 +79,16 @@ class ClickTestCase(unittest.TestCase):
 
         if testfile:
             with open(testfile_path) as f:
-                new_txt = outf.getvalue().replace('\r\n', '\n')
+                new_txt = outf.getvalue().replace('\r\n', '\n').strip()
                 if filtr:
                     new_txt = filtr(new_txt)
-                old_txt = f.read().replace('\r\n', '\n')
+                old_txt = f.read().replace('\r\n', '\n').strip()
                 if filtr:
                     old_txt = filtr(old_txt)
+                if old_txt != new_txt and tox_wrap_fix:
+                    old_txt = textwrap.fill(old_txt, 60)
+                    new_txt = textwrap.fill(new_txt, 60)
+
                 # nt = new_txt.strip()
                 # ot = old_txt.strip()
                 # while nt and ot and nt[:20] == ot[:20]:
@@ -81,7 +96,7 @@ class ClickTestCase(unittest.TestCase):
                 #     ot = ot[20:]
                 # print(nt)
                 # print(ot)
-                self.assertEqual(old_txt.strip(), new_txt.strip())
+                self.assertEqual(old_txt, new_txt)
         else:
             print("Directory comparison needs to be added", file=sys.stderr)
 

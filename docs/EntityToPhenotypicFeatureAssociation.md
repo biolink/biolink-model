@@ -11,6 +11,7 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
 ## Inheritance
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+ *  mixin: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) - Qualifiers for entity to disease or phenotype associations
 ## Children
 
  * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
@@ -23,28 +24,13 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
 
 ## Fields
 
- * _[description](description.md) *subsets*: (translator_minimal)_
+ * _[entity to phenotypic feature association.description](entity_to_phenotypic_feature_association_description.md) *subsets*: (translator_minimal)_
     * _a human-readable description of a thing_
     * range: [NarrativeText](NarrativeText.md)
     * __Local__
- * _[object](object.md)_
+ * _[entity to phenotypic feature association.object](entity_to_phenotypic_feature_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [PhenotypicFeature](PhenotypicFeature.md) [required]
-    * Example: [HP:0002487](http://purl.obolibrary.org/obo/HP_0002487) Hyperkinesis
-    * Example: [WBPhenotype:0000180](http://purl.obolibrary.org/obo/WBPhenotype_0000180) axon morphology variant
-    * Example: [MP:0001569](http://purl.obolibrary.org/obo/MP_0001569) abnormal circulating bilirubin level
-    * __Local__
- * _[frequency qualifier](frequency_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
-    * range: [FrequencyValue](FrequencyValue.md)
-    * __Local__
- * _[onset qualifier](onset_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * range: [Onset](Onset.md)
-    * __Local__
- * _[severity qualifier](severity_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
-    * range: [SeverityValue](SeverityValue.md)
     * __Local__
  * _[sex qualifier](sex_qualifier.md)_
     * _a qualifier used in a phenotypic association to state whether the association is specific to a particular sex._
@@ -86,6 +72,10 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
     * _A grouping for any property that holds between a node and a value_
     * range: **string**
     * inherited from: [NamedThing](NamedThing.md)
+ * _[onset qualifier](onset_qualifier.md)_
+    * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
+    * range: [Onset](Onset.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
  * _[provided by](provided_by.md)_
     * _connects an association to the agent (person, organization or group) that provided it_
     * range: [Provider](Provider.md)
@@ -106,6 +96,10 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
     * _the relationship type by which a subject is connected to an object in an association_
     * range: [RelationshipType](RelationshipType.md) [required]
     * inherited from: [Association](Association.md)
+ * _[severity qualifier](severity_qualifier.md)_
+    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
+    * range: [SeverityValue](SeverityValue.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
  * _[subject](subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: **string** [required]

@@ -8,12 +8,12 @@ URI: [http://bioentity.io/vocab/negated](slot_uri)
 
 ## Domain and Range
 
-association -> **boolean**
+[Association](Association.md) -> **boolean**
 ## Inheritance
 
- *  is_a: association slot
+ *  is_a: [association slot](association_slot.md)
 ## Children
 
 ## Used in
 
- *  usage: association
+ *  usage: [Association](Association.md)

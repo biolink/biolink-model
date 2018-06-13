@@ -3,17 +3,18 @@
 
 connects a genomic feature to its sequence
 
-URI: [http://bioentity.io/vocab/sequence_variant_has_biological_sequence](slot_uri)
+URI: [http://bioentity.io/vocab/has_biological_sequence](slot_uri)
 ## Mappings
 
 ## Domain and Range
 
-sequence variant -> biological sequence
+[GenomicEntity](GenomicEntity.md) -> [BiologicalSequence](BiologicalSequence.md)
 ## Inheritance
 
- *  is_a: has biological sequence
+ *  is_a: [node property](node_property.md)
 ## Children
 
+ *  child: [sequence variant.has biological sequence](sequence_variant_has_biological_sequence.md)
 ## Used in
 
- *  usage: sequence variant
+ *  usage: [GenomicEntity](GenomicEntity.md)

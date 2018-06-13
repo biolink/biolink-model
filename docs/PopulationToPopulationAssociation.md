@@ -17,15 +17,15 @@ URI: [http://bioentity.io/vocab/PopulationToPopulationAssociation](http://bioent
 
 ## Fields
 
- * _[object](object.md)_
+ * _[population to population association.object](population_to_population_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) [required]
     * __Local__
- * _[relation](relation.md)_
+ * _[population to population association.relation](population_to_population_association_relation.md)_
     * _the relationship type by which a subject is connected to an object in an association_
     * range: [RelationshipType](RelationshipType.md) [required]
     * __Local__
- * _[subject](subject.md)_
+ * _[population to population association.subject](population_to_population_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) [required]
     * __Local__

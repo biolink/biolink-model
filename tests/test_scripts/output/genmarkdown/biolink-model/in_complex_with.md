@@ -8,12 +8,12 @@ URI: [http://bioentity.io/vocab/in_complex_with](slot_uri)
 
 ## Domain and Range
 
-gene or gene product -> gene or gene product
+[GeneOrGeneProduct](GeneOrGeneProduct.md) -> [GeneOrGeneProduct](GeneOrGeneProduct.md)
 ## Inheritance
 
- *  is_a: coexists with
+ *  is_a: [coexists with](coexists_with.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in
 
- *  usage: gene or gene product
+ *  usage: [GeneOrGeneProduct](GeneOrGeneProduct.md)

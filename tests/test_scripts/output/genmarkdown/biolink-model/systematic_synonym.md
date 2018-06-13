@@ -8,12 +8,12 @@ URI: [http://bioentity.io/vocab/systematic_synonym](slot_uri)
 
 ## Domain and Range
 
-named thing -> label type
+[NamedThing](NamedThing.md) -> [LabelType](LabelType.md)
 ## Inheritance
 
- *  is_a: node property
+ *  is_a: [node property](node_property.md)
 ## Children
 
 ## Used in
 
- *  usage: named thing
+ *  usage: [NamedThing](NamedThing.md)

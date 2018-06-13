@@ -8,12 +8,12 @@ URI: [http://bioentity.io/vocab/end_interbase_coordinate](slot_uri)
 
 ## Domain and Range
 
-genomic sequence localization -> **string**
+[GenomicSequenceLocalization](GenomicSequenceLocalization.md) -> **string**
 ## Inheritance
 
- *  is_a: interbase coordinate
+ *  is_a: [interbase coordinate](interbase_coordinate.md)
 ## Children
 
 ## Used in
 
- *  usage: genomic sequence localization
+ *  usage: [GenomicSequenceLocalization](GenomicSequenceLocalization.md)

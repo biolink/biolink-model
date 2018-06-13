@@ -1,38 +1,34 @@
----
-layout: default
----
-
-## entity to disease association
+# Class: entity to disease association
 
 
-None
+mixin class for any association whose object (target node) is a disease
 
 URI: [http://bioentity.io/vocab/EntityToDiseaseAssociation](http://bioentity.io/vocab/EntityToDiseaseAssociation)
-## Mappings
 
+![img](images/EntityToDiseaseAssociation.png)
+## Mappings
 
 ## Inheritance
 
-
+ *  is_a: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) - Qualifiers for entity to disease or phenotype associations
 ## Children
 
- *  mixin: [gene to disease association](GeneToDiseaseAssociation.html)
- *  mixin: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
- *  mixin: [gene to disease association](GeneToDiseaseAssociation.html)
- *  mixin: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html)
-
+ * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) (mixin) 
+ * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) (mixin) 
+ * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) (mixin) 
+## Used in
 
 ## Fields
 
- * [frequency qualifier](frequency_qualifier.html)
-    * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
-    * __range__: [frequency value](FrequencyValue.html)
+ * _[entity to disease association.object](entity_to_disease_association_object.md)_
+    * _disease_
+    * range: [Disease](Disease.md)
     * __Local__
- * [severity qualifier](severity_qualifier.html)
-    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
-    * __range__: [severity value](SeverityValue.html)
-    * __Local__
- * [onset qualifier](onset_qualifier.html)
+ * _[onset qualifier](onset_qualifier.md)_
     * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * __range__: [onset](Onset.html)
-    * __Local__
+    * range: [Onset](Onset.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
+ * _[severity qualifier](severity_qualifier.md)_
+    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
+    * range: [SeverityValue](SeverityValue.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)

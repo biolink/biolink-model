@@ -14,12 +14,12 @@ URI: [http://bioentity.io/vocab/Example](http://bioentity.io/vocab/Example)
 
 ## Used in
 
- *  class: **[Element](Element.md)** *[examples](examples.md)* **[Example](Example.md)**
+ *  class: **element** *examples* **example**
 ## Fields
 
- * _[value](value.md)_
+ * _value_
     * range: **string**
     * __Local__
- * _[description](description.md)_
+ * _value description_
     * range: **string**
     * __Local__

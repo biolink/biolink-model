@@ -17,16 +17,16 @@ URI: [http://bioentity.io/vocab/GenotypeToGenotypePartAssociation](http://bioent
 
 ## Fields
 
- * _[object](object.md)_
+ * _[genotype to genotype part association.object](genotype_to_genotype_part_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [Genotype](Genotype.md) [required]
     * __Local__
- * _[relation](relation.md)_
+ * _[genotype to genotype part association.relation](genotype_to_genotype_part_association_relation.md)_
     * _the relationship type by which a subject is connected to an object in an association_
     * range: [RelationshipType](RelationshipType.md) [required]
     * edge label: has variant part
     * __Local__
- * _[subject](subject.md)_
+ * _[genotype to genotype part association.subject](genotype_to_genotype_part_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [Genotype](Genotype.md) [required]
     * __Local__

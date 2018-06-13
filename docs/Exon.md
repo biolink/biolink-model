@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/Exon](http://bioentity.io/vocab/Exon)
 
 ## Used in
 
- *  class: **[ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)** *[subject](subject.md)* **[Exon](Exon.md)**
+ *  class: **[ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)** *[exon to transcript relationship.subject](exon_to_transcript_relationship_subject.md)* **[Exon](Exon.md)**
 ## Fields
 
  * _[biomarker for](biomarker_for.md) *subsets*: (translator_minimal)_

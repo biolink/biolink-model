@@ -14,12 +14,12 @@ URI: [http://bioentity.io/vocab/GeneProduct](http://bioentity.io/vocab/GeneProdu
  *  is_a: [GeneOrGeneProduct](GeneOrGeneProduct.md) - a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
 ## Children
 
- * [RnaProduct](RnaProduct.md)
+ * [RNAProduct](RNAProduct.md)
  * [GeneProductIsoform](GeneProductIsoform.md) - This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
  * [Protein](Protein.md) - A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 ## Used in
 
- *  class: **[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)** *[object](object.md)* **[GeneProduct](GeneProduct.md)**
+ *  class: **[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)** *[gene to gene product relationship.object](gene_to_gene_product_relationship_object.md)* **[GeneProduct](GeneProduct.md)**
  *  class: **[Gene](Gene.md)** *[has gene product](has_gene_product.md)* **[GeneProduct](GeneProduct.md)**
 ## Fields
 
@@ -75,7 +75,7 @@ URI: [http://bioentity.io/vocab/GeneProduct](http://bioentity.io/vocab/GeneProdu
     * _An IRI for the node. This is determined by the id using expansion rules._
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[name](name.md) *subsets*: (translator_minimal)_
+ * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
     * range: [LabelType](LabelType.md)
     * inherited from: [MacromolecularMachine](MacromolecularMachine.md)

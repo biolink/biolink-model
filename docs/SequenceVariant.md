@@ -19,27 +19,25 @@ URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/Seque
 
 ## Used in
 
- *  class: **[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)** *[object](object.md)* **[SequenceVariant](SequenceVariant.md)**
- *  class: **[SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md)** *[subject](subject.md)* **[SequenceVariant](SequenceVariant.md)**
+ *  class: **[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)** *[genotype to variant association.object](genotype_to_variant_association_object.md)* **[SequenceVariant](SequenceVariant.md)**
+ *  class: **[SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md)** *[sequence variant modulates treatment association.subject](sequence_variant_modulates_treatment_association_subject.md)* **[SequenceVariant](SequenceVariant.md)**
  *  class: **[GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)** *[sequence variant qualifier](sequence_variant_qualifier.md)* **[SequenceVariant](SequenceVariant.md)**
- *  class: **[VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)** *[subject](subject.md)* **[SequenceVariant](SequenceVariant.md)**
- *  class: **[VariantToPopulationAssociation](VariantToPopulationAssociation.md)** *[subject](subject.md)* **[SequenceVariant](SequenceVariant.md)**
- *  class: **[VariantToThingAssociation](VariantToThingAssociation.md)** *[subject](subject.md)* **[SequenceVariant](SequenceVariant.md)**
+ *  class: **[VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)** *[variant to phenotypic feature association.subject](variant_to_phenotypic_feature_association_subject.md)* **[SequenceVariant](SequenceVariant.md)**
+ *  class: **[VariantToPopulationAssociation](VariantToPopulationAssociation.md)** *[variant to population association.subject](variant_to_population_association_subject.md)* **[SequenceVariant](SequenceVariant.md)**
+ *  class: **[VariantToThingAssociation](VariantToThingAssociation.md)** *[variant to thing association.subject](variant_to_thing_association_subject.md)* **[SequenceVariant](SequenceVariant.md)**
 ## Fields
 
- * _[has biological sequence](has_biological_sequence.md)_
+ * _[sequence variant.has biological sequence](sequence_variant_has_biological_sequence.md)_
     * _connects a genomic feature to its sequence_
     * range: [BiologicalSequence](BiologicalSequence.md)
     * __Local__
- * _[has gene](has_gene.md)_
+ * _[sequence variant.has gene](sequence_variant_has_gene.md)_
     * _Each allele can be associated with any number of genes_
     * range: **string***
     * __Local__
- * _[id](id.md) *subsets*: (translator_minimal)_
+ * _[sequence variant.id](sequence_variant_id.md) *subsets*: (translator_minimal)_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * range: [IdentifierType](IdentifierType.md)
-    * Example: [ZFIN:ZDB-ALT-980203-1091](http://purl.obolibrary.org/obo/ZFIN_ZDB-ALT-980203-1091) ti282a allele from ZFIN
-    * Example: [ClinVarVariant:17681](http://purl.obolibrary.org/obo/ClinVarVariant_17681) NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
     * __Local__
  * _[biomarker for](biomarker_for.md) *subsets*: (translator_minimal)_
     * _holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature._

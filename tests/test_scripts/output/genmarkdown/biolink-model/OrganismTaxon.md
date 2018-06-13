@@ -11,15 +11,15 @@ URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/Organis
  * [WD:Q16521](http://purl.obolibrary.org/obo/WD_Q16521)
 ## Inheritance
 
- *  is_a: ontology class
+ *  is_a: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
 ## Children
 
 ## Used in
 
- *  class: **thing with taxon** *in taxon* **organism taxon**
+ *  class: **[ThingWithTaxon](ThingWithTaxon.md)** *[in taxon](in_taxon.md)* **[OrganismTaxon](OrganismTaxon.md)**
 ## Fields
 
- * _subclass of_
+ * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
     * _holds between two classes where the domain class is a specialization of the range class_
-    * range: ontology class
-    * inherited from: ontology class
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [OntologyClass](OntologyClass.md)

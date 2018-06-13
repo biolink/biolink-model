@@ -17,11 +17,11 @@ URI: [http://bioentity.io/vocab/SequenceVariantModulatesTreatmentAssociation](ht
 
 ## Fields
 
- * _[object](object.md)_
+ * _[sequence variant modulates treatment association.object](sequence_variant_modulates_treatment_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [Treatment](Treatment.md) [required]
     * __Local__
- * _[subject](subject.md)_
+ * _[sequence variant modulates treatment association.subject](sequence_variant_modulates_treatment_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [SequenceVariant](SequenceVariant.md) [required]
     * __Local__

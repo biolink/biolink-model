@@ -1,18 +1,18 @@
 # Slot: description
 
 
+a description
 
-
-URI: [http://bioentity.io/vocab/value_description](slot_uri)
+URI: [http://bioentity.io/vocab/description](slot_uri)
 ## Mappings
 
 ## Domain and Range
 
-example -> **string**
+[Element](Element.md) -> **string**
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: example
+ *  usage: [Element](Element.md)

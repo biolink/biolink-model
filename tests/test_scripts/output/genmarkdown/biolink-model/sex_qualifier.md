@@ -8,12 +8,12 @@ URI: [http://bioentity.io/vocab/sex_qualifier](slot_uri)
 
 ## Domain and Range
 
-entity to phenotypic feature association -> biological sex
+[EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) -> [BiologicalSex](BiologicalSex.md)
 ## Inheritance
 
- *  is_a: association slot
+ *  is_a: [association slot](association_slot.md)
 ## Children
 
 ## Used in
 
- *  usage: entity to phenotypic feature association
+ *  usage: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)

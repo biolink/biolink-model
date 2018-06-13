@@ -17,22 +17,6 @@ URI: [http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation](http://bi
 
 ## Fields
 
- * _[frequency qualifier](frequency_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
-    * range: [FrequencyValue](FrequencyValue.md)
-    * __Local__
- * _[onset qualifier](onset_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * range: [Onset](Onset.md)
-    * __Local__
- * _[severity qualifier](severity_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
-    * range: [SeverityValue](SeverityValue.md)
-    * __Local__
- * _[sex qualifier](sex_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state whether the association is specific to a particular sex._
-    * range: [BiologicalSex](BiologicalSex.md)
-    * __Local__
  * _[association slot](association_slot.md)_
     * _any slot that relates an association to another entity_
     * range: **string**
@@ -77,6 +61,10 @@ URI: [http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation](http://bi
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: **string** [required]
     * inherited from: [Association](Association.md)
+ * _[onset qualifier](onset_qualifier.md)_
+    * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
+    * range: [Onset](Onset.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
  * _[provided by](provided_by.md)_
     * _connects an association to the agent (person, organization or group) that provided it_
     * range: [Provider](Provider.md)
@@ -97,6 +85,14 @@ URI: [http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation](http://bi
     * _the relationship type by which a subject is connected to an object in an association_
     * range: [RelationshipType](RelationshipType.md) [required]
     * inherited from: [Association](Association.md)
+ * _[severity qualifier](severity_qualifier.md)_
+    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
+    * range: [SeverityValue](SeverityValue.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
+ * _[sex qualifier](sex_qualifier.md)_
+    * _a qualifier used in a phenotypic association to state whether the association is specific to a particular sex._
+    * range: [BiologicalSex](BiologicalSex.md)
+    * inherited from: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
  * _[subject](subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: **string** [required]

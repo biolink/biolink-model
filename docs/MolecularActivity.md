@@ -17,25 +17,9 @@ URI: [http://bioentity.io/vocab/MolecularActivity](http://bioentity.io/vocab/Mol
 
 ## Used in
 
- *  class: **[MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md)** *[object](object.md)* **[MolecularActivity](MolecularActivity.md)**
+ *  class: **[MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md)** *[macromolecular machine to molecular activity association.object](macromolecular_machine_to_molecular_activity_association_object.md)* **[MolecularActivity](MolecularActivity.md)**
 ## Fields
 
- * _[has input](has_input.md) *subsets*: (translator_minimal)_
-    * _holds between a process and a continuant, where the continuant is an input into the process_
-    * range: **string**
-    * __Local__
- * _[has participant](has_participant.md) *subsets*: (translator_minimal)_
-    * _holds between a process and a continuant, where the continuant is somehow involved in the process _
-    * range: **string**
-    * __Local__
- * _[precedes](precedes.md) *subsets*: (translator_minimal)_
-    * _holds between two processes, where one completes before the other begins_
-    * range: [Occurrent](Occurrent.md)
-    * __Local__
- * _[regulates, process to process](regulates_process_to_process.md) *subsets*: (translator_minimal)_
-    * _describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be._
-    * range: [Occurrent](Occurrent.md)
-    * __Local__
  * _[category](category.md) *subsets*: (translator_minimal)_
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
     * range: [LabelType](LabelType.md)
@@ -48,6 +32,14 @@ URI: [http://bioentity.io/vocab/MolecularActivity](http://bioentity.io/vocab/Mol
     * _a long-form human readable name for a thing_
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
+ * _[has input](has_input.md) *subsets*: (translator_minimal)_
+    * _holds between a process and a continuant, where the continuant is an input into the process_
+    * range: **string**
+    * inherited from: [Occurrent](Occurrent.md)
+ * _[has participant](has_participant.md) *subsets*: (translator_minimal)_
+    * _holds between a process and a continuant, where the continuant is somehow involved in the process _
+    * range: **string**
+    * inherited from: [Occurrent](Occurrent.md)
  * _[has phenotype](has_phenotype.md) *subsets*: (translator_minimal)_
     * _holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). _
     * range: [Phenotype](Phenotype.md)
@@ -68,6 +60,14 @@ URI: [http://bioentity.io/vocab/MolecularActivity](http://bioentity.io/vocab/Mol
     * _A grouping for any property that holds between a node and a value_
     * range: **string**
     * inherited from: [NamedThing](NamedThing.md)
+ * _[precedes](precedes.md) *subsets*: (translator_minimal)_
+    * _holds between two processes, where one completes before the other begins_
+    * range: [Occurrent](Occurrent.md)
+    * inherited from: [Occurrent](Occurrent.md)
+ * _[regulates, process to process](regulates_process_to_process.md) *subsets*: (translator_minimal)_
+    * _describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be._
+    * range: [Occurrent](Occurrent.md)
+    * inherited from: [Occurrent](Occurrent.md)
  * _[related to](related_to.md)_
     * _A grouping for any relationship type that holds between any two things_
     * range: [NamedThing](NamedThing.md)

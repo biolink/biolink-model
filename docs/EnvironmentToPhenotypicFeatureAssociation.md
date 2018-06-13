@@ -18,25 +18,9 @@ URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http:
 
 ## Fields
 
- * _[subject](subject.md)_
+ * _[environment to phenotypic feature association.subject](environment_to_phenotypic_feature_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [Environment](Environment.md) [required]
-    * __Local__
- * _[frequency qualifier](frequency_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
-    * range: [FrequencyValue](FrequencyValue.md)
-    * __Local__
- * _[onset qualifier](onset_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * range: [Onset](Onset.md)
-    * __Local__
- * _[severity qualifier](severity_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
-    * range: [SeverityValue](SeverityValue.md)
-    * __Local__
- * _[sex qualifier](sex_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state whether the association is specific to a particular sex._
-    * range: [BiologicalSex](BiologicalSex.md)
     * __Local__
  * _[association slot](association_slot.md)_
     * _any slot that relates an association to another entity_
@@ -82,6 +66,10 @@ URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http:
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: **string** [required]
     * inherited from: [Association](Association.md)
+ * _[onset qualifier](onset_qualifier.md)_
+    * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
+    * range: [Onset](Onset.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
  * _[provided by](provided_by.md)_
     * _connects an association to the agent (person, organization or group) that provided it_
     * range: [Provider](Provider.md)
@@ -102,6 +90,14 @@ URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http:
     * _the relationship type by which a subject is connected to an object in an association_
     * range: [RelationshipType](RelationshipType.md) [required]
     * inherited from: [Association](Association.md)
+ * _[severity qualifier](severity_qualifier.md)_
+    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
+    * range: [SeverityValue](SeverityValue.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
+ * _[sex qualifier](sex_qualifier.md)_
+    * _a qualifier used in a phenotypic association to state whether the association is specific to a particular sex._
+    * range: [BiologicalSex](BiologicalSex.md)
+    * inherited from: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
  * _[systematic synonym](systematic_synonym.md)_
     * _more commonly used for gene symbols in yeast_
     * range: [LabelType](LabelType.md)

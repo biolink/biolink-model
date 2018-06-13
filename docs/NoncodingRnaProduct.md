@@ -3,19 +3,19 @@
 
 
 
-URI: [http://bioentity.io/vocab/NoncodingRnaProduct](http://bioentity.io/vocab/NoncodingRnaProduct)
+URI: [http://bioentity.io/vocab/NoncodingRNAProduct](http://bioentity.io/vocab/NoncodingRNAProduct)
 
-![img](images/NoncodingRnaProduct.png)
+![img](images/NoncodingRNAProduct.png)
 ## Mappings
 
  * [SIO:001235](http://semanticscience.org/resource/SIO_001235)
  * [SO:0000655](http://purl.obolibrary.org/obo/SO_0000655)
 ## Inheritance
 
- *  is_a: [RnaProduct](RnaProduct.md)
+ *  is_a: [RNAProduct](RNAProduct.md)
 ## Children
 
- * [Microrna](Microrna.md)
+ * [MicroRNA](MicroRNA.md)
 ## Used in
 
 ## Fields
@@ -72,7 +72,7 @@ URI: [http://bioentity.io/vocab/NoncodingRnaProduct](http://bioentity.io/vocab/N
     * _An IRI for the node. This is determined by the id using expansion rules._
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[name](name.md) *subsets*: (translator_minimal)_
+ * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
     * range: [LabelType](LabelType.md)
     * inherited from: [MacromolecularMachine](MacromolecularMachine.md)

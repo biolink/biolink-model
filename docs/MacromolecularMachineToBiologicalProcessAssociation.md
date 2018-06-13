@@ -17,7 +17,7 @@ URI: [http://bioentity.io/vocab/MacromolecularMachineToBiologicalProcessAssociat
 
 ## Fields
 
- * _[object](object.md)_
+ * _[macromolecular machine to biological process association.object](macromolecular_machine_to_biological_process_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [BiologicalProcess](BiologicalProcess.md) [required]
     * __Local__
@@ -41,10 +41,9 @@ URI: [http://bioentity.io/vocab/MacromolecularMachineToBiologicalProcessAssociat
     * _a long-form human readable name for a thing_
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[subject](subject.md)_
+ * _[functional association.subject](functional_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [MacromolecularMachine](MacromolecularMachine.md) [required]
-    * Example: [ZFIN:ZDB-GENE-050417-357](http://purl.obolibrary.org/obo/ZFIN_ZDB-GENE-050417-357) twist1b
     * inherited from: [FunctionalAssociation](FunctionalAssociation.md)
  * _[id](id.md) *subsets*: (translator_minimal)_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_

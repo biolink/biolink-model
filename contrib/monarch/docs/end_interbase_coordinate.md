@@ -1,28 +1,19 @@
----
-layout: default
----
-
-## end interbase coordinate
+# Slot: end interbase coordinate
 
 
-None
+TODO
 
-URI: [http://bioentity.io/vocab/end_interbase_coordinate](http://bioentity.io/vocab/end_interbase_coordinate)
+URI: [http://bioentity.io/vocab/end_interbase_coordinate](slot_uri)
 ## Mappings
-
 
 ## Domain and Range
 
- -> 
-
+[GenomicSequenceLocalization](GenomicSequenceLocalization.md) -> **string**
 ## Inheritance
 
- *  is_a: [interbase coordinate](interbase_coordinate.html)
-
+ *  is_a: [interbase coordinate](interbase_coordinate.md)
 ## Children
-
 
 ## Used in
 
- *  usage: [genomic sequence localization](GenomicSequenceLocalization.html)
- *  usage: [genomic sequence localization](GenomicSequenceLocalization.html)
+ *  usage: [GenomicSequenceLocalization](GenomicSequenceLocalization.md)

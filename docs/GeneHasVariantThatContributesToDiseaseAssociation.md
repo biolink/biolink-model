@@ -17,7 +17,7 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
 
 ## Fields
 
- * _[subject](subject.md)_
+ * _[gene has variant that contributes to disease association.subject](gene_has_variant_that_contributes_to_disease_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__
@@ -41,10 +41,6 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
     * _a human-readable description of a thing_
     * range: [NarrativeText](NarrativeText.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[frequency qualifier](frequency_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject_
-    * range: [FrequencyValue](FrequencyValue.md)
-    * inherited from: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
  * _[full name](full_name.md)_
     * _a long-form human readable name for a thing_
     * range: [LabelType](LabelType.md)
@@ -76,7 +72,7 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
  * _[onset qualifier](onset_qualifier.md)_
     * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
     * range: [Onset](Onset.md)
-    * inherited from: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
  * _[provided by](provided_by.md)_
     * _connects an association to the agent (person, organization or group) that provided it_
     * range: [Provider](Provider.md)
@@ -100,7 +96,7 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
  * _[severity qualifier](severity_qualifier.md)_
     * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
     * range: [SeverityValue](SeverityValue.md)
-    * inherited from: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
  * _[systematic synonym](systematic_synonym.md)_
     * _more commonly used for gene symbols in yeast_
     * range: [LabelType](LabelType.md)

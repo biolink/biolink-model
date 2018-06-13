@@ -20,6 +20,3 @@ URI: [http://bioentity.io/vocab/regulates_process_to_process](slot_uri)
 ## Used in
 
  *  usage: [Occurrent](Occurrent.md)
- *  usage: [EnvironmentalProcess](EnvironmentalProcess.md)
- *  usage: [MolecularActivity](MolecularActivity.md)
- *  usage: [BiologicalProcess](BiologicalProcess.md)

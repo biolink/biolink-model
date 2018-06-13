@@ -10,101 +10,101 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
 
 ## Inheritance
 
- *  is_a: association
- *  mixin: entity to feature or disease qualifiers
+ *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+ *  mixin: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) - Qualifiers for entity to disease or phenotype associations
 ## Children
 
- * case to phenotypic feature association
- * disease to phenotypic feature association
- * environment to phenotypic feature association
- * gene to phenotypic feature association
- * genotype to phenotypic feature association
- * variant to phenotypic feature association
+ * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
+ * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
+ * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md) (mixin)  - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+ * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) (mixin) 
+ * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) (mixin)  - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
+ * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) (mixin) 
 ## Used in
 
 ## Fields
 
- * _entity to phenotypic feature association description_
+ * _[entity to phenotypic feature association.description](entity_to_phenotypic_feature_association_description.md) *subsets*: (translator_minimal)_
     * _a human-readable description of a thing_
-    * range: narrative text
+    * range: [NarrativeText](NarrativeText.md)
     * __Local__
- * _entity to phenotypic feature association object_
+ * _[entity to phenotypic feature association.object](entity_to_phenotypic_feature_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * range: phenotypic feature [required]
+    * range: [PhenotypicFeature](PhenotypicFeature.md) [required]
     * __Local__
- * _sex qualifier_
+ * _[sex qualifier](sex_qualifier.md)_
     * _a qualifier used in a phenotypic association to state whether the association is specific to a particular sex._
-    * range: biological sex
+    * range: [BiologicalSex](BiologicalSex.md)
     * __Local__
- * _association slot_
+ * _[association slot](association_slot.md)_
     * _any slot that relates an association to another entity_
     * range: **string**
-    * inherited from: association
- * _association type_
+    * inherited from: [Association](Association.md)
+ * _[association type](association_type.md)_
     * _connects an association to the type of association (e.g. gene to phenotype)_
-    * range: ontology class
-    * inherited from: association
- * _category_
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [Association](Association.md)
+ * _[category](category.md) *subsets*: (translator_minimal)_
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * range: label type
-    * inherited from: named thing
- * _full name_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[full name](full_name.md)_
     * _a long-form human readable name for a thing_
-    * range: label type
-    * inherited from: named thing
- * _id_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[id](id.md) *subsets*: (translator_minimal)_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * range: identifier type
-    * inherited from: named thing
- * _iri_
+    * range: [IdentifierType](IdentifierType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[iri](iri.md) *subsets*: (translator_minimal)_
     * _An IRI for the node. This is determined by the id using expansion rules._
-    * range: iri type
-    * inherited from: named thing
- * _name_
+    * range: [IriType](IriType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[name](name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
-    * range: label type
-    * inherited from: named thing
- * _negated_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[negated](negated.md)_
     * _if set to true, then the association is negated i.e. is not true_
     * range: **boolean**
-    * inherited from: association
- * _node property_
+    * inherited from: [Association](Association.md)
+ * _[node property](node_property.md)_
     * _A grouping for any property that holds between a node and a value_
     * range: **string**
-    * inherited from: named thing
- * _onset qualifier_
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[onset qualifier](onset_qualifier.md)_
     * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * range: onset
-    * inherited from: entity to feature or disease qualifiers
- * _provided by_
+    * range: [Onset](Onset.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
+ * _[provided by](provided_by.md)_
     * _connects an association to the agent (person, organization or group) that provided it_
-    * range: provider
-    * inherited from: association
- * _publications_
+    * range: [Provider](Provider.md)
+    * inherited from: [Association](Association.md)
+ * _[publications](publications.md)_
     * _connects an association to publications supporting the association_
-    * range: publication*
-    * inherited from: association
- * _qualifiers_
+    * range: [Publication](Publication.md)*
+    * inherited from: [Association](Association.md)
+ * _[qualifiers](qualifiers.md)_
     * _connects an association to qualifiers that modify or qualify the meaning of that association_
-    * range: ontology class*
-    * inherited from: association
- * _related to_
+    * range: [OntologyClass](OntologyClass.md)*
+    * inherited from: [Association](Association.md)
+ * _[related to](related_to.md)_
     * _A grouping for any relationship type that holds between any two things_
-    * range: named thing
-    * inherited from: named thing
- * _relation_
+    * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[relation](relation.md)_
     * _the relationship type by which a subject is connected to an object in an association_
-    * range: relationship type [required]
-    * inherited from: association
- * _severity qualifier_
+    * range: [RelationshipType](RelationshipType.md) [required]
+    * inherited from: [Association](Association.md)
+ * _[severity qualifier](severity_qualifier.md)_
     * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
-    * range: severity value
-    * inherited from: entity to feature or disease qualifiers
- * _subject_
+    * range: [SeverityValue](SeverityValue.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
+ * _[subject](subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: **string** [required]
-    * inherited from: association
- * _systematic synonym_
+    * inherited from: [Association](Association.md)
+ * _[systematic synonym](systematic_synonym.md)_
     * _more commonly used for gene symbols in yeast_
-    * range: label type
-    * inherited from: named thing
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)

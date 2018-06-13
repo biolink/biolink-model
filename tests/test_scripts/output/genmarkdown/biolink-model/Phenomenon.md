@@ -11,24 +11,24 @@ URI: [http://bioentity.io/vocab/Phenomenon](http://bioentity.io/vocab/Phenomenon
  * [UMLSSG:PHEN](http://purl.obolibrary.org/obo/UMLSSG_PHEN)
 ## Inheritance
 
- *  is_a: occurrent
+ *  is_a: [Occurrent](Occurrent.md) - A processual entity
 ## Children
 
 ## Fields
 
- * _has input_
+ * _[has input](has_input.md) *subsets*: (translator_minimal)_
     * _holds between a process and a continuant, where the continuant is an input into the process_
     * range: **string**
-    * inherited from: occurrent
- * _has participant_
+    * inherited from: [Occurrent](Occurrent.md)
+ * _[has participant](has_participant.md) *subsets*: (translator_minimal)_
     * _holds between a process and a continuant, where the continuant is somehow involved in the process _
     * range: **string**
-    * inherited from: occurrent
- * _precedes_
+    * inherited from: [Occurrent](Occurrent.md)
+ * _[precedes](precedes.md) *subsets*: (translator_minimal)_
     * _holds between two processes, where one completes before the other begins_
-    * range: occurrent
-    * inherited from: occurrent
- * _regulates, process to process_
+    * range: [Occurrent](Occurrent.md)
+    * inherited from: [Occurrent](Occurrent.md)
+ * _[regulates, process to process](regulates_process_to_process.md) *subsets*: (translator_minimal)_
     * _describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be._
-    * range: occurrent
-    * inherited from: occurrent
+    * range: [Occurrent](Occurrent.md)
+    * inherited from: [Occurrent](Occurrent.md)

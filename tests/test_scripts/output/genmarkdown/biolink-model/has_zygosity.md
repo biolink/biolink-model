@@ -8,12 +8,12 @@ URI: [http://bioentity.io/vocab/has_zygosity](slot_uri)
 
 ## Domain and Range
 
-genotype -> zygosity
+[Genotype](Genotype.md) -> [Zygosity](Zygosity.md)
 ## Inheritance
 
- *  is_a: node property
+ *  is_a: [node property](node_property.md)
 ## Children
 
 ## Used in
 
- *  usage: genotype
+ *  usage: [Genotype](Genotype.md)

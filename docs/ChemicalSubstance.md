@@ -21,8 +21,8 @@ URI: [http://bioentity.io/vocab/ChemicalSubstance](http://bioentity.io/vocab/Che
  * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
 ## Used in
 
- *  class: **[ChemicalToThingAssociation](ChemicalToThingAssociation.md)** *[subject](subject.md)* **[ChemicalSubstance](ChemicalSubstance.md)**
- *  class: **[DrugExposure](DrugExposure.md)** *[drug](drug.md)* **[ChemicalSubstance](ChemicalSubstance.md)**
+ *  class: **[ChemicalToThingAssociation](ChemicalToThingAssociation.md)** *[chemical to thing association.subject](chemical_to_thing_association_subject.md)* **[ChemicalSubstance](ChemicalSubstance.md)**
+ *  class: **[DrugExposure](DrugExposure.md)** *[drug exposure.drug](drug_exposure_drug.md)* **[ChemicalSubstance](ChemicalSubstance.md)**
 ## Fields
 
  * _[biomarker for](biomarker_for.md) *subsets*: (translator_minimal)_

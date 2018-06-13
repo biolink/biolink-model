@@ -2,7 +2,7 @@ import os
 import unittest
 
 from metamodel.metamodel import SchemaDefinition
-from metamodel.utils.schemaloader import load_raw_schema
+from metamodel.utils.schemaloader import load_raw_schema, SchemaLoader
 
 schema = """
 test1:
@@ -74,6 +74,13 @@ class LoadSchemaTestCase(unittest.TestCase):
             load_raw_schema(schema.format(dupslot='', duptype='identifier type:', dupclass=''))
         with self.assertRaises(ValueError):
             load_raw_schema(schema.format(dupslot='', duptype='', dupclass='c:'))
+
+    def test_monarch(self):
+        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+        monarch_path =  os.path.join('contrib', 'monarch.yaml')
+        schema = load_raw_schema(monarch_path, base_dir=base_dir)
+        schema = SchemaLoader(monarch_path, base_dir=base_dir).resolve()
+        self.assertTrue(True, 'We pass by getting here')
 
 
 if __name__ == '__main__':

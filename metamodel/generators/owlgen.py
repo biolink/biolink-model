@@ -40,7 +40,7 @@ class OwlSchemaGenerator(Generator):
         self.graph.bind("meta", str(META))
         self.graph.add((base, RDF.type, OWL.Ontology))
         self.graph.add((base, RDF.type, OWL.Ontology))
-        self.graph.label(base, Literal(self.schema.name))
+        self.graph.add((base, RDFS.label, Literal(self.schema.name)))
         if self.schema.license:
             self.graph.add((base, DCTERMS.license, Literal(self.schema.license)))
         else:
@@ -57,7 +57,7 @@ class OwlSchemaGenerator(Generator):
     def visit_class(self, cls: ClassDefinition) -> bool:
         cls_uri = self.class_uri(cls.name)
         self.graph.add((cls_uri, RDF.type, OWL.Class))
-        self.graph.label(cls_uri, cls.name)
+        self.graph.add((cls_uri, RDFS.label, Literal(cls.name)))
         if cls.description:
             self.graph.add((cls_uri, OBO.IAO_0000115, Literal(cls.description)))
 
@@ -187,7 +187,7 @@ class OwlSchemaGenerator(Generator):
             self.graph.add((slot_uri, RDFS.domain, self.class_uri(slot.domain)))
 
         # Annotations
-        self.graph.label(slot_uri, slot.name)
+        self.graph.add((slot_uri, RDFS.label, Literal(slot.name)))
         if slot.description:
             self.graph.add((slot_uri, OBO.IAO_0000115, Literal(slot.description)))
 

@@ -6,30 +6,26 @@ imports:
   - "contrib/class_extensions"  
   - "contrib/closures"  
   - "contrib/taxon"  
-whitelist:
-  - gene to go term association
+# whitelist:
+#  - gene to go term association
 description: GO specific extensions
 
 slots:
 
-  - name: enabled by
+  enabled by:
     domain: molecular activity
     range: gene or gene product
 
-  - name: part of
+  upstream causal relationship:
     
-  - name: occurs in
-    
-  - name: upstream causal relationship
-    
-  - name: downstream causal relationship
+  downstream causal relationship:
 
 classes:
 
-  - name: has genomic name
+  has genomic name:
     description: >-
       mixing class for any entity that has a full name and a systematic synonym
-    notes: >-
+    note: >-
       consider revising
     abstract: true
     mixin: true
@@ -37,7 +33,7 @@ classes:
       - full name
       - systematic synonym
   
-  - name: extensions and evidence association mixin
+  extensions and evidence association mixin:
     description: >-
       An injected mixing that adds additional fields to association objects.
       This is a mixture of (a) closures for denormalization (b) evidence
@@ -52,10 +48,11 @@ classes:
       - has evidence type
       - has evidence
     slot_usage:
-      - name: subject
-        local_name: bioentity
+      subject:
+        local_names:
+          - bioentity
 
-  - name: taxon closure mixin
+  taxon closure mixin:
     mixin: true
     description: "An association that includes flattened inlined objects, such as subject_taxon_closure"
     slots:
@@ -73,7 +70,7 @@ classes:
   ## DENORMALIZED
   ## ------
 
-  - name: go term bioentity mixin
+  go term bioentity mixin:
     apply_to: molecular entity
     mixins:
       - has genomic name
@@ -91,7 +88,7 @@ classes:
 
   ## models
   
-  - name: causal activity model
+  causal activity model:
     aliases: ['GO-CAM']
     is_a: named graph
     description: >-
@@ -99,15 +96,15 @@ classes:
       A GO-CAM model is a specialization of a named graph containing instances of GO molecular functions, entities, processes,
       cellular components etc, connected via causal relationships.
     slot_usage:
-      - name: title
+      title:
         description: >-
           title describing the contents of the GO-CAM
   
   ## entity-centric
   
-  - name: molecular event
+  molecular event:
     aliases: ['annoton']
-    schema: gocam
+    # schema: gocam
     slots:
       - enabled by
       - part of
@@ -117,54 +114,54 @@ classes:
 
   ## associations
       
-  - name: molecular activity to gene product association
-    schema: gocam
+  molecular activity to gene product association:
+    # schema: gocam
     is_a: association
     defining_slots:
       - subject
       - object
     slot_usage:
-      - name: subject
+      subject:
         range: molecular activity
-      - name: object
+      object:
         range: gene or gene product
   
-  - name: molecular activity to location association
-    schema: gocam
+  molecular activity to location association:
+    # schema: gocam
     is_a: association
     defining_slots:
       - subject
       - object
     slot_usage:
-      - name: subject
+      subject:
         range: molecular activity
-      - name: object
+      object:
         range: cellular component
   
-  - name: molecular activity to biological process association
-    schema: gocam
+  molecular activity to biological process association:
+    # schema: gocam
     is_a: association
     defining_slots:
       - subject
       - object
     slot_usage:
-      - name: subject
+      subject:
         range: molecular activity
-      - name: object
+      object:
         range: biological process
   
-  - name: molecular activity to downstream molecular activity association
-    schema: gocam
+  molecular activity to downstream molecular activity association:
+    # schema: gocam
     is_a: association
     defining_slots:
       - subject
       - object
       - relation
     slot_usage:
-      - name: subject
+      subject:
         range: molecular activity
-      - name: object
+      object:
         range: molecular activity
-      - name: relation
+      relation:
         subproperty_of: RO:0002418
       

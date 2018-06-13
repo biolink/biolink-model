@@ -22,10 +22,10 @@ URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/Molec
 ## Used in
 
  *  class: **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[correlated with](correlated_with.md)* **[MolecularEntity](MolecularEntity.md)**
- *  class: **[GeneToGoTermAssociation](GeneToGoTermAssociation.md)** *[subject](subject.md)* **[MolecularEntity](MolecularEntity.md)**
+ *  class: **[GeneToGoTermAssociation](GeneToGoTermAssociation.md)** *[gene to go term association.subject](gene_to_go_term_association_subject.md)* **[MolecularEntity](MolecularEntity.md)**
  *  class: **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[has biomarker](has_biomarker.md)* **[MolecularEntity](MolecularEntity.md)**
- *  class: **[MolecularInteraction](MolecularInteraction.md)** *[object](object.md)* **[MolecularEntity](MolecularEntity.md)**
- *  class: **[MolecularInteraction](MolecularInteraction.md)** *[subject](subject.md)* **[MolecularEntity](MolecularEntity.md)**
+ *  class: **[MolecularInteraction](MolecularInteraction.md)** *[molecular interaction.object](molecular_interaction_object.md)* **[MolecularEntity](MolecularEntity.md)**
+ *  class: **[MolecularInteraction](MolecularInteraction.md)** *[molecular interaction.subject](molecular_interaction_subject.md)* **[MolecularEntity](MolecularEntity.md)**
  *  class: **[MolecularEntity](MolecularEntity.md)** *[molecularly interacts with](molecularly_interacts_with.md)* **[MolecularEntity](MolecularEntity.md)**
  *  class: **[MolecularEntity](MolecularEntity.md)** *[regulates, entity to entity](regulates_entity_to_entity.md)* **[MolecularEntity](MolecularEntity.md)**
 ## Fields
@@ -33,10 +33,6 @@ URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/Molec
  * _[biomarker for](biomarker_for.md) *subsets*: (translator_minimal)_
     * _holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature._
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-    * __Local__
- * _[in taxon](in_taxon.md) *subsets*: (translator_minimal)_
-    * _connects a thing to a class representing a taxon_
-    * range: [OrganismTaxon](OrganismTaxon.md)
     * __Local__
  * _[molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)_
     * _holds between two entities that make physical contact as part of some interaction_
@@ -66,6 +62,10 @@ URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/Molec
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * range: [IdentifierType](IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
+ * _[in taxon](in_taxon.md) *subsets*: (translator_minimal)_
+    * _connects a thing to a class representing a taxon_
+    * range: [OrganismTaxon](OrganismTaxon.md)
+    * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
  * _[iri](iri.md) *subsets*: (translator_minimal)_
     * _An IRI for the node. This is determined by the id using expansion rules._
     * range: [IriType](IriType.md)

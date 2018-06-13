@@ -11,12 +11,12 @@ URI: [http://bioentity.io/vocab/subclass_of](slot_uri)
  * [WD:P279](http://purl.obolibrary.org/obo/WD_P279)
 ## Domain and Range
 
-ontology class -> ontology class
+[OntologyClass](OntologyClass.md) -> [OntologyClass](OntologyClass.md)
 ## Inheritance
 
- *  is_a: related to
+ *  is_a: [related to](related_to.md)
 ## Children
 
 ## Used in
 
- *  usage: ontology class
+ *  usage: [OntologyClass](OntologyClass.md)

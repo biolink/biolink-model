@@ -1,27 +1,19 @@
----
-layout: default
----
-
-## timepoint
+# Slot: timepoint
 
 
 a point in time
 
-URI: [http://bioentity.io/vocab/timepoint](http://bioentity.io/vocab/timepoint)
+URI: [http://bioentity.io/vocab/timepoint](slot_uri)
 ## Mappings
-
 
 ## Domain and Range
 
- -> 
-
+[GeographicLocationAtTime](GeographicLocationAtTime.md) -> [TimeType](TimeType.md)
 ## Inheritance
 
-
+ *  is_a: [node property](node_property.md)
 ## Children
-
 
 ## Used in
 
- *  usage: [geographic location at time](GeographicLocationAtTime.html)
- *  usage: [geographic location at time](GeographicLocationAtTime.html)
+ *  usage: [GeographicLocationAtTime](GeographicLocationAtTime.md)

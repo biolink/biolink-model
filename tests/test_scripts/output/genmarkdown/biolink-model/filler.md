@@ -8,10 +8,10 @@ URI: [http://bioentity.io/vocab/filler](slot_uri)
 
 ## Domain and Range
 
-named thing -> named thing
+[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
 ## Inheritance
 
- *  is_a: node property
+ *  is_a: [node property](node_property.md)
 ## Children
 
 ## Used in

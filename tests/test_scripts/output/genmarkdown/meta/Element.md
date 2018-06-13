@@ -12,66 +12,66 @@ URI: [http://bioentity.io/vocab/Element](http://bioentity.io/vocab/Element)
 
 ## Children
 
- * definition
- * type definition
+ * [Definition](Definition.md) - definition base class
+ * [TypeDefinition](TypeDefinition.md) - A type definition
 ## Used in
 
- *  class: **slot definition** *range* **element**
+ *  class: **[SlotDefinition](SlotDefinition.md)** *[range](range.md)* **[Element](Element.md)**
 ## Fields
 
- * _aliases_
+ * _[aliases](aliases.md)_
     * range: **string***
     * __Local__
- * _alt_descriptions_
+ * _[alt_descriptions](alt_descriptions.md)_
     * range: **string***
     * __Local__
- * _comment_
+ * _[comment](comment.md)_
     * _Comment about an element_
     * range: **string**
     * __Local__
- * _description_
+ * _[description](description.md)_
     * _a description_
     * range: **string**
     * __Local__
- * _examples_
+ * _[examples](examples.md)_
     * _Example of usage for a slot or class_
-    * range: example*
+    * range: [Example](Example.md)*
     * __Local__
- * _flags_
+ * _[flags](flags.md)_
     * _State information and other details_
     * range: **string***
     * __Local__
- * _from_schema_
+ * _[from_schema](from_schema.md)_
     * _id of the schema that the element was derived from.  Supplied by the loader._
     * range: **string**
     * __Local__
- * _id_prefixes_
+ * _[id_prefixes](id_prefixes.md)_
     * range: **string***
     * __Local__
- * _in_subset_
+ * _[in_subset](in_subset.md)_
     * _used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)_
     * range: **string***
     * __Local__
- * _mappings_
+ * _[mappings](mappings.md)_
     * _list of equivalent or skos exact mappings to an ontology class_
     * range: **string***
     * __Local__
- * _name_
+ * _[name](name.md)_
     * _a unique key that identifies a slot, type or class in a schema_
     * range: **string**
     * __Local__
- * _note_
+ * _[note](note.md)_
     * _Notes about an element_
     * range: **string**
     * __Local__
- * _prefixes_
+ * _[prefixes](prefixes.md)_
     * _list of ID/CURIE prefixes applicable to that element_
     * range: **string***
     * __Local__
- * _see_also_
+ * _[see_also](see_also.md)_
     * range: **string**
     * __Local__
- * _singular_name_
+ * _[singular_name](singular_name.md)_
     * _a name that is used in the singular form_
     * range: **string**
     * __Local__

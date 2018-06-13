@@ -24,10 +24,12 @@ def merge_dicts(target: Dict[str, Element],
                 from_schema: Optional[SchemaDefinitionName]=None) -> None:
     for k, v in source.items():
         if k in target:
-            raise ValueError("Conflicting definitions for {k} in schema {s1name} and {s2name}")
+            raise ValueError(f"Conflicting definitions for {k}")
         target[k] = deepcopy(v)
-    if from_schema:
-        target.from_schema = from_schema
+        if 'name' not in v:
+            v['name'] = k
+        if from_schema:
+            target[k].from_schema = from_schema
 
 
 def merge_slots(target: SlotDefinition, source: SlotDefinition) -> None:

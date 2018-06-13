@@ -1,0 +1,85 @@
+# Slot: object
+
+
+connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+
+URI: [http://bioentity.io/vocab/object](slot_uri)
+## Mappings
+
+ * [rdf:object](http://purl.obolibrary.org/obo/rdf_object)
+ * [owl:annotatedTarget](http://purl.obolibrary.org/obo/owl_annotatedTarget)
+ * [oban:association_has_object](http://purl.obolibrary.org/obo/oban_association_has_object)
+## Domain and Range
+
+[Association](Association.md) -> **string**
+## Inheritance
+
+ *  is_a: [association slot](association_slot.md)
+## Children
+
+ *  child: [macromolecular machine to molecular activity association.object](macromolecular_machine_to_molecular_activity_association_object.md)
+ *  child: [anatomical entity to anatomical entity part of association.object](anatomical_entity_to_anatomical_entity_part_of_association_object.md)
+ *  child: [genotype to variant association.object](genotype_to_variant_association_object.md)
+ *  child: [exon to transcript relationship.object](exon_to_transcript_relationship_object.md)
+ *  child: [genotype to gene association.object](genotype_to_gene_association_object.md)
+ *  child: [sequence variant modulates treatment association.object](sequence_variant_modulates_treatment_association_object.md)
+ *  child: [macromolecular machine to biological process association.object](macromolecular_machine_to_biological_process_association_object.md)
+ *  child: [gene to go term association.object](gene_to_go_term_association_object.md)
+ *  child: [anatomical entity to anatomical entity ontogenic association.object](anatomical_entity_to_anatomical_entity_ontogenic_association_object.md)
+ *  child: [thing to disease or phenotypic feature association.object](thing_to_disease_or_phenotypic_feature_association_object.md)
+ *  child: [chemical to disease or phenotypic feature association.object](chemical_to_disease_or_phenotypic_feature_association_object.md)
+ *  child: [variant to population association.object](variant_to_population_association_object.md)
+ *  child: [gene to gene association.object](gene_to_gene_association_object.md)
+ *  child: [gene regulatory relationship.object](gene_regulatory_relationship_object.md)
+ *  child: [macromolecular machine to cellular component association.object](macromolecular_machine_to_cellular_component_association_object.md)
+ *  child: [gene to expression site association.object](gene_to_expression_site_association_object.md)
+ *  child: [anatomical entity to anatomical entity association.object](anatomical_entity_to_anatomical_entity_association_object.md)
+ *  child: [genomic sequence localization.object](genomic_sequence_localization_object.md)
+ *  child: [transcript to gene relationship.object](transcript_to_gene_relationship_object.md)
+ *  child: [chemical to pathway association.object](chemical_to_pathway_association_object.md)
+ *  child: [sequence feature relationship.object](sequence_feature_relationship_object.md)
+ *  child: [population to population association.object](population_to_population_association_object.md)
+ *  child: [variant to disease association.object](variant_to_disease_association_object.md)
+ *  child: [entity to phenotypic feature association.object](entity_to_phenotypic_feature_association_object.md)
+ *  child: [genotype to genotype part association.object](genotype_to_genotype_part_association_object.md)
+ *  child: [disease or phenotypic feature association to location association.object](disease_or_phenotypic_feature_association_to_location_association_object.md)
+ *  child: [gene to gene product relationship.object](gene_to_gene_product_relationship_object.md)
+ *  child: [molecular interaction.object](molecular_interaction_object.md)
+ *  child: [chemical to gene association.object](chemical_to_gene_association_object.md)
+ *  child: [functional association.object](functional_association_object.md)
+## Used in
+
+ *  usage: [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
+ *  usage: [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)
+ *  usage: [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
+ *  usage: [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md)
+ *  usage: [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)
+ *  usage: [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)
+ *  usage: [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+ *  usage: [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)
+ *  usage: [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
+ *  usage: [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)
+ *  usage: [GeneToGeneAssociation](GeneToGeneAssociation.md)
+ *  usage: [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
+ *  usage: [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
+ *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
+ *  usage: [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
+ *  usage: [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
+ *  usage: [PairwiseGeneOrProteinInteractionAssociation](PairwiseGeneOrProteinInteractionAssociation.md)
+ *  usage: [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md)
+ *  usage: [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
+ *  usage: [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ *  usage: [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
+ *  usage: [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md)
+ *  usage: [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)
+ *  usage: [ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)
+ *  usage: [SequenceFeatureRelationship](SequenceFeatureRelationship.md)
+ *  usage: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
+ *  usage: [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md)
+ *  usage: [Association](Association.md)
+ *  usage: [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)
+ *  usage: [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md)
+ *  usage: [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
+ *  usage: [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)
+ *  usage: [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
+ *  usage: [BiosampleToDiseaseOrPhenotypicFeatureAssociation](BiosampleToDiseaseOrPhenotypicFeatureAssociation.md)

@@ -15,50 +15,50 @@ URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing
 
 ## Children
 
- * biological entity
- * clinical entity
- * device
- * information content entity
- * planetary entity
+ * [BiologicalEntity](BiologicalEntity.md)
+ * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
+ * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
+ * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
+ * [PlanetaryEntity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet
 ## Used in
 
- *  class: **named thing** *filler* **named thing**
- *  class: **named thing** *related to* **named thing**
+ *  class: **[NamedThing](NamedThing.md)** *[filler](filler.md)* **[NamedThing](NamedThing.md)**
+ *  class: **[NamedThing](NamedThing.md)** *[related to](related_to.md)* **[NamedThing](NamedThing.md)**
 ## Fields
 
- * _category_
+ * _[category](category.md) *subsets*: (translator_minimal)_
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * range: label type
+    * range: [LabelType](LabelType.md)
     * __Local__
- * _description_
+ * _[description](description.md) *subsets*: (translator_minimal)_
     * _a human-readable description of a thing_
-    * range: narrative text
+    * range: [NarrativeText](NarrativeText.md)
     * __Local__
- * _full name_
+ * _[full name](full_name.md)_
     * _a long-form human readable name for a thing_
-    * range: label type
+    * range: [LabelType](LabelType.md)
     * __Local__
- * _id_
+ * _[id](id.md) *subsets*: (translator_minimal)_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * range: identifier type
+    * range: [IdentifierType](IdentifierType.md)
     * __Local__
- * _iri_
+ * _[iri](iri.md) *subsets*: (translator_minimal)_
     * _An IRI for the node. This is determined by the id using expansion rules._
-    * range: iri type
+    * range: [IriType](IriType.md)
     * __Local__
- * _name_
+ * _[name](name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
-    * range: label type
+    * range: [LabelType](LabelType.md)
     * __Local__
- * _node property_
+ * _[node property](node_property.md)_
     * _A grouping for any property that holds between a node and a value_
     * range: **string**
     * __Local__
- * _related to_
+ * _[related to](related_to.md)_
     * _A grouping for any relationship type that holds between any two things_
-    * range: named thing
+    * range: [NamedThing](NamedThing.md)
     * __Local__
- * _systematic synonym_
+ * _[systematic synonym](systematic_synonym.md)_
     * _more commonly used for gene symbols in yeast_
-    * range: label type
+    * range: [LabelType](LabelType.md)
     * __Local__

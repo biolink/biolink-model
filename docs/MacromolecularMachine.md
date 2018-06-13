@@ -17,10 +17,10 @@ URI: [http://bioentity.io/vocab/MacromolecularMachine](http://bioentity.io/vocab
  * [MacromolecularComplex](MacromolecularComplex.md)
 ## Used in
 
- *  class: **[FunctionalAssociation](FunctionalAssociation.md)** *[subject](subject.md)* **[MacromolecularMachine](MacromolecularMachine.md)**
+ *  class: **[FunctionalAssociation](FunctionalAssociation.md)** *[functional association.subject](functional_association_subject.md)* **[MacromolecularMachine](MacromolecularMachine.md)**
 ## Fields
 
- * _[name](name.md) *subsets*: (translator_minimal)_
+ * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
     * range: [LabelType](LabelType.md)
     * __Local__

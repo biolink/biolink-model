@@ -1,3 +1,5 @@
+import os
+import sys
 from typing import Union, TextIO, Optional, Set, List
 
 from metamodel.utils.loadschema import load_raw_schema
@@ -7,19 +9,26 @@ from metamodel.utils.mergeutils import merge_schemas, merge_slots
 
 
 class SchemaLoader:
-    def __init__(self, data: Union[str, TextIO]) -> None:
-        self.schema = load_raw_schema(data)
+    def __init__(self, data: Union[str, TextIO], base_dir: Optional[str]=None) -> None:
+        self.schema = load_raw_schema(data, base_dir=base_dir)
         self.loaded: Set[str] = {self.schema.name}
+        self.base_dir = base_dir
 
     def resolve(self) -> SchemaDefinition:
         """ Return a fully resolved schema
         """
 
+        if not isinstance(self.schema.slots, dict):
+            raise ValueError(f"File: {self.schema.source_file} Slots are not not a dictionary")
+
+        if not isinstance(self.schema.classes, dict):
+            raise ValueError(f"File: {self.schema.source_file} Classes are not not a dictionary")
+
         # Process imports
         for sname in self.schema.imports:
             if sname not in self.loaded:
                 self.loaded.add(sname)
-                merge_schemas(self.schema, load_raw_schema(sname))
+                merge_schemas(self.schema, load_raw_schema(sname + '.yaml', base_dir=self.base_dir))
 
         # slot.domain --> class.slots
         for slot in self.schema.slots.values():
@@ -28,6 +37,11 @@ class SchemaLoader:
 
         # class.slots --> slot.domain
         for cls in self.schema.classes.values():
+            if not isinstance(cls, ClassDefinition):
+                raise ValueError(f'File: {self.schema.source_file} Class "{cls} (type: {type(cls)})" definition is peculiar')
+            if isinstance(cls.slots, str):
+                print(f"File: {self.schema.source_file} Class: {cls.name} Slots are not an array", file=sys.stderr)
+                cls.slots = [cls.slots]
             for slotname in cls.slots:
                 if slotname in self.schema.slots:
                     if self.schema.slots[slotname].domain is None:

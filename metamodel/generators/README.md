@@ -1,6 +1,6 @@
 # YAMM representation generators
 
-* [contextgen.py]() - generate a JSON-LD @context block (see: [contextgen help](../../tests/test_scripts/output/genjsonld/help))
+* [contextgen.py]() - generate a JSON-LD @context block (see: [contextgen help](../../tests/test_scripts/output/gencontext/help))
 * [csvgen.py]() - generate a csv summary (see: [csvgen help](../../tests/test_scripts/output/gencsv/help))
 * [dotgen.py]() - generate graphviz representation (see: [dotgen help](../../tests/test_scripts/output/gengraphviz/help))
 * [golrgen.py]() - generate a GOLR(?) representation (see: [golrgen help](../../tests/test_scripts/output/genglor/help))

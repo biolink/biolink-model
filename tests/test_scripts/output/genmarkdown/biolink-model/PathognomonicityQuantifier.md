@@ -10,7 +10,7 @@ URI: [http://bioentity.io/vocab/PathognomonicityQuantifier](http://bioentity.io/
 
 ## Inheritance
 
- *  is_a: specificity quantifier
+ *  is_a: [SpecificityQuantifier](SpecificityQuantifier.md)
 ## Children
 
 ## Fields

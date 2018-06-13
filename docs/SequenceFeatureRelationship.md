@@ -21,11 +21,11 @@ URI: [http://bioentity.io/vocab/SequenceFeatureRelationship](http://bioentity.io
 
 ## Fields
 
- * _[object](object.md)_
+ * _[sequence feature relationship.object](sequence_feature_relationship_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GenomicEntity](GenomicEntity.md) [required]
     * __Local__
- * _[subject](subject.md)_
+ * _[sequence feature relationship.subject](sequence_feature_relationship_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GenomicEntity](GenomicEntity.md) [required]
     * __Local__

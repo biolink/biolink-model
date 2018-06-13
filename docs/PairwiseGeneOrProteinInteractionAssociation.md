@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](htt
 
 ## Fields
 
- * _[relation](relation.md)_
+ * _[pairwise gene or protein interaction association.relation](pairwise_gene_or_protein_interaction_association_relation.md)_
     * _the relationship type by which a subject is connected to an object in an association_
     * range: [RelationshipType](RelationshipType.md) [required]
     * edge label: [molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)
@@ -43,11 +43,11 @@ URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](htt
     * _a long-form human readable name for a thing_
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[object](object.md)_
+ * _[gene to gene association.object](gene_to_gene_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * inherited from: [GeneToGeneAssociation](GeneToGeneAssociation.md)
- * _[subject](subject.md)_
+ * _[gene to gene association.subject](gene_to_gene_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * inherited from: [GeneToGeneAssociation](GeneToGeneAssociation.md)
@@ -59,9 +59,8 @@ URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](htt
     * _An IRI for the node. This is determined by the id using expansion rules._
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[interacting molecules category](interacting_molecules_category.md)_
+ * _[molecular interaction.interacting molecules category](molecular_interaction_interacting_molecules_category.md)_
     * range: [OntologyClass](OntologyClass.md)
-    * Example: [MI:1048](http://purl.obolibrary.org/obo/MI_1048) smallmolecule-protein
     * inherited from: [MolecularInteraction](MolecularInteraction.md)
  * _[name](name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_

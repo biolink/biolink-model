@@ -17,18 +17,18 @@ URI: [http://bioentity.io/vocab/GeneOrGeneProduct](http://bioentity.io/vocab/Gen
  * [GeneProduct](GeneProduct.md) - The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
 ## Used in
 
- *  class: **[ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)** *[object](object.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
+ *  class: **[ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)** *[chemical to gene association.object](chemical_to_gene_association_object.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
  *  class: **[AnatomicalEntity](AnatomicalEntity.md)** *[expresses](expresses.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  class: **[GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)** *[subject](subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  class: **[GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)** *[subject](subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  class: **[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md)** *[object](object.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  class: **[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md)** *[subject](subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  class: **[GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)** *[subject](subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  class: **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[subject](subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  class: **[GeneToGeneAssociation](GeneToGeneAssociation.md)** *[object](object.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  class: **[GeneToGeneAssociation](GeneToGeneAssociation.md)** *[subject](subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  class: **[GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)** *[subject](subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
- *  class: **[GeneToThingAssociation](GeneToThingAssociation.md)** *[subject](subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
+ *  class: **[GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)** *[gene as a model of disease association.subject](gene_as_a_model_of_disease_association_subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
+ *  class: **[GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)** *[gene has variant that contributes to disease association.subject](gene_has_variant_that_contributes_to_disease_association_subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
+ *  class: **[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md)** *[gene regulatory relationship.object](gene_regulatory_relationship_object.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
+ *  class: **[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md)** *[gene regulatory relationship.subject](gene_regulatory_relationship_subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
+ *  class: **[GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)** *[gene to disease association.subject](gene_to_disease_association_subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
+ *  class: **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[gene to expression site association.subject](gene_to_expression_site_association_subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
+ *  class: **[GeneToGeneAssociation](GeneToGeneAssociation.md)** *[gene to gene association.object](gene_to_gene_association_object.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
+ *  class: **[GeneToGeneAssociation](GeneToGeneAssociation.md)** *[gene to gene association.subject](gene_to_gene_association_subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
+ *  class: **[GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)** *[gene to phenotypic feature association.subject](gene_to_phenotypic_feature_association_subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
+ *  class: **[GeneToThingAssociation](GeneToThingAssociation.md)** *[gene to thing association.subject](gene_to_thing_association_subject.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
  *  class: **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[in cell population with](in_cell_population_with.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
  *  class: **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[in complex with](in_complex_with.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
  *  class: **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[in pathway with](in_pathway_with.md)* **[GeneOrGeneProduct](GeneOrGeneProduct.md)**
@@ -86,7 +86,7 @@ URI: [http://bioentity.io/vocab/GeneOrGeneProduct](http://bioentity.io/vocab/Gen
     * _An IRI for the node. This is determined by the id using expansion rules._
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[name](name.md) *subsets*: (translator_minimal)_
+ * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
     * range: [LabelType](LabelType.md)
     * inherited from: [MacromolecularMachine](MacromolecularMachine.md)

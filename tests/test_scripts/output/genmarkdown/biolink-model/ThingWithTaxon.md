@@ -12,18 +12,18 @@ URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingW
 
 ## Children
 
- * anatomical entity
- * biosample
- * disease or phenotypic feature
- * individual organism
- * life stage
- * molecular entity
- * population of individual organisms
+ * [AnatomicalEntity](AnatomicalEntity.md) (mixin)  - A subcellular location, cell type or gross anatomical part
+ * [Biosample](Biosample.md) (mixin) 
+ * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) (mixin)  - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+ * [IndividualOrganism](IndividualOrganism.md) (mixin) 
+ * [LifeStage](LifeStage.md) (mixin)  - A stage of development or growth of an organism, including post-natal adult stages
+ * [MolecularEntity](MolecularEntity.md) (mixin)  - A gene, gene product, small molecule or macromolecule (including protein complex)
+ * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) (mixin) 
 ## Used in
 
 ## Fields
 
- * _in taxon_
+ * _[in taxon](in_taxon.md) *subsets*: (translator_minimal)_
     * _connects a thing to a class representing a taxon_
-    * range: organism taxon
+    * range: [OrganismTaxon](OrganismTaxon.md)
     * __Local__

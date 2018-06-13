@@ -11,11 +11,11 @@ URI: [http://bioentity.io/vocab/Provider](http://bioentity.io/vocab/Provider)
  * [UMLSSG:ORGA](http://purl.obolibrary.org/obo/UMLSSG_ORGA)
 ## Inheritance
 
- *  is_a: administrative entity
+ *  is_a: [AdministrativeEntity](AdministrativeEntity.md)
 ## Children
 
 ## Used in
 
- *  class: **association** *provided by* **provider**
+ *  class: **[Association](Association.md)** *[provided by](provided_by.md)* **[Provider](Provider.md)**
 ## Fields
 

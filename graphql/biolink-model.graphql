@@ -1,1339 +1,736 @@
-type RelationshipType {
-}
-
-type BiologicalSex {
-}
-
-type PhenotypicSex {
-}
-
-type GenotypicSex {
-}
-
-type SeverityValue {
-}
-
-type FrequencyValue {
-}
-
-type ClinicalModifier {
-}
-
-type Onset {
-}
-
-interface RelationshipQuantifier {
-}
-
-interface SenstivityQuantifier {
-}
-
-interface SpecificityQuantifier {
-}
-
-interface PathognomonicityQuantifier {
-}
-
-interface FrequencyQuantifier {
-  hasCount: String
-  hasTotal: String
-  hasQuotient: String
-  hasPercentage: String
-}
-
-type NamedThing {
-  id: String!
-  name: String
-  category: String
-}
-
-interface BiologicalEntity {
-  id: String!
-  name: String
-  category: String
-}
-
-interface OntologyClass {
-}
-
-interface GeneOntologyClass {
-}
-
-interface ThingWithTaxon {
-  inTaxon: OrganismTaxon
-}
-
-type OrganismTaxon {
-}
-
-interface OrganismalEntity {
-  id: String!
-  name: String
-  category: String
-}
-
-type IndividualOrganism implements ThingWithTaxon {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Case {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type PopulationOfIndividualOrganisms implements ThingWithTaxon {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Biosample implements ThingWithTaxon {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type DiseaseOrPhenotypicFeature implements ThingWithTaxon {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Disease {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type PhenotypicFeature {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Environment {
-  id: String!
-  name: String
-  category: String
-}
-
-interface InformationContentEntity {
-  id: String!
-  name: String
-  category: String
-}
-
-type ConfidenceLevel {
-  id: String!
-  name: String
-  category: String
-}
-
-type EvidenceType {
-  id: String!
-  name: String
-  category: String
-}
-
-type Publication {
-  id: String!
-  name: String
-  category: String
-}
-
-interface AdministrativeEntity {
-}
-
-type Provider {
-}
-
-type MolecularEntity implements ThingWithTaxon {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type ChemicalSubstance {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Drug {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Metabolite {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Attribute implements OntologyClass {
-}
-
-type AnatomicalEntity implements ThingWithTaxon {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type LifeStage implements ThingWithTaxon {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type PlanetaryEntity {
-  id: String!
-  name: String
-  category: String
-}
-
-type EnvironmentalProcess implements Occurrent {
-  id: String
-  name: String
-  category: String
-}
-
-type EnvironmentalFeature {
-  id: String!
-  name: String
-  category: String
-}
-
-type ClinicalEntity {
-  id: String!
-  name: String
-  category: String
-}
-
-type ClinicalTrial {
-  id: String!
-  name: String
-  category: String
-}
-
-type ClinicalIntervention {
-  id: String!
-  name: String
-  category: String
-}
-
-type Device {
-  id: String!
-  name: String
-  category: String
-}
-
-type GenomicEntity {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Genome {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Transcript {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Exon {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type CodingSequence {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type MacromolecularMachine {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type GeneOrGeneProduct {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Gene {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type GeneProduct {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Protein {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-interface GeneProductIsoform {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type ProteinIsoform implements GeneProductIsoform {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type RnaProduct {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type RnaProductIsoform implements GeneProductIsoform {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type NoncodingRnaProduct {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Microrna {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type MacromolecularComplex {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-interface GeneGrouping {
-}
-
-type GeneFamily implements GeneGrouping {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Zygosity {
-}
-
-type Genotype {
-  hasZygosity: Zygosity
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Haplotype {
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type SequenceVariant {
-  hasGene: Gene
-  hasBiologicalSequence: String
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type DrugExposure {
-  id: String!
-  name: String
-  category: String
-}
-
-type Treatment {
-  treats: DiseaseOrPhenotypicFeature!
-  hasExposureParts: [DrugExposure]!
-  id: String!
-  name: String
-  category: String
-}
-
-type GeographicLocation {
-  latitude: String
-  longitude: String
-  id: String!
-  name: String
-  category: String
-}
-
-type GeographicLocationAtTime {
-  latitude: String
-  longitude: String
-  timepoint: String
-  id: String!
-  name: String
-  category: String
-}
-
-type Association {
-  associationType: OntologyClass
-  subject: String!
-  negated: String
-  relation: RelationshipType!
-  object: String!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type GenotypeToGenotypePartAssociation {
-  associationType: OntologyClass
-  subject: Genotype!
-  negated: String
-  relation: RelationshipType!
-  object: Genotype!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type GenotypeToGeneAssociation {
-  associationType: OntologyClass
-  subject: Genotype!
-  negated: String
-  relation: RelationshipType!
-  object: Gene!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type GenotypeToVariantAssociation {
-  associationType: OntologyClass
-  subject: Genotype!
-  negated: String
-  relation: RelationshipType!
-  object: SequenceVariant!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-interface GeneToGeneAssociation {
-  associationType: OntologyClass
-  subject: GeneOrGeneProduct!
-  negated: String
-  relation: RelationshipType!
-  object: GeneOrGeneProduct!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type GeneToGeneHomologyAssociation {
-  associationType: OntologyClass
-  subject: GeneOrGeneProduct!
-  negated: String
-  relation: RelationshipType!
-  object: GeneOrGeneProduct!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-interface MolecularInteraction {
-  associationType: OntologyClass
-  subject: MolecularEntity!
-  negated: String
-  relation: String!
-  object: MolecularEntity!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type PairwiseGeneOrProteinInteractionAssociation implements MolecularInteraction {
-  associationType: OntologyClass
-  subject: MolecularEntity!
-  negated: String
-  relation: String!
-  object: MolecularEntity!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-interface CellLineToThingAssociation {
-  associationType: OntologyClass
-  subject: CellLine!
-  negated: String
-  relation: RelationshipType!
-  object: String!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type CellLineToDiseaseOrPhenotypicFeatureAssociation implements CellLineToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation {
-  associationType: OntologyClass
-  subject: CellLine!
-  negated: String
-  relation: RelationshipType!
-  object: DiseaseOrPhenotypicFeature!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-interface ChemicalToThingAssociation {
-  associationType: OntologyClass
-  subject: ChemicalSubstance!
-  negated: String
-  relation: RelationshipType!
-  object: String!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-interface CaseToThingAssociation {
-  associationType: OntologyClass
-  subject: Case!
-  negated: String
-  relation: RelationshipType!
-  object: String!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type ChemicalToGeneAssociation implements ChemicalToThingAssociation {
-  associationType: OntologyClass
-  subject: ChemicalSubstance!
-  negated: String
-  relation: RelationshipType!
-  object: GeneProduct!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation {
-  associationType: OntologyClass
-  subject: ChemicalSubstance!
-  negated: String
-  relation: RelationshipType!
-  object: DiseaseOrPhenotypicFeature!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type ChemicalToPathwayAssociation implements ChemicalToThingAssociation {
-  associationType: OntologyClass
-  subject: ChemicalSubstance!
-  negated: String
-  relation: RelationshipType!
-  object: Pathway!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type ChemicalToGeneAssociation implements ChemicalToThingAssociation {
-  associationType: OntologyClass
-  subject: ChemicalSubstance!
-  negated: String
-  relation: RelationshipType!
-  object: GeneOrGeneProduct!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-interface BiosampleToThingAssociation {
-  associationType: OntologyClass
-  subject: Biosample!
-  negated: String
-  relation: RelationshipType!
-  object: String!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type BiosampleToDiseaseOrPhenotypicFeatureAssociation implements BiosampleToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation {
-  associationType: OntologyClass
-  subject: Biosample!
-  negated: String
-  relation: RelationshipType!
-  object: DiseaseOrPhenotypicFeature!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-interface EntityToPhenotypicFeatureAssociation {
-  frequencyQualifier: FrequencyValue
-  severityQualifier: SeverityValue
-  onsetQualifier: Onset
-  sexQualifier: BiologicalSex
-  associationType: OntologyClass
-  subject: String!
-  negated: String
-  relation: RelationshipType!
-  object: PhenotypicFeature!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-interface EntityToDiseaseAssociation {
-  frequencyQualifier: FrequencyValue
-  severityQualifier: SeverityValue
-  onsetQualifier: Onset
-}
-
-interface DiseaseOrPhenotypicFeatureAssociationToThingAssociation {
-  associationType: OntologyClass
-  subject: DiseaseOrPhenotypicFeature!
-  negated: String
-  relation: RelationshipType!
-  object: String!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type DiseaseOrPhenotypicFeatureAssociationToLocationAssociation {
-  associationType: OntologyClass
-  subject: DiseaseOrPhenotypicFeature!
-  negated: String
-  relation: RelationshipType!
-  object: AnatomicalEntity!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-interface ThingToDiseaseOrPhenotypicFeatureAssociation {
-  associationType: OntologyClass
-  subject: String!
-  negated: String
-  relation: RelationshipType!
-  object: DiseaseOrPhenotypicFeature!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-interface DiseaseToThingAssociation {
-  associationType: OntologyClass
-  subject: Disease!
-  negated: String
-  relation: RelationshipType!
-  object: String!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type GenotypeToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, GenotypeToThingAssociation {
-  associationType: OntologyClass
-  subject: Genotype!
-  negated: String
-  relation: RelationshipType!
-  object: PhenotypicFeature!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-  frequencyQualifier: FrequencyValue
-  severityQualifier: SeverityValue
-  onsetQualifier: Onset
-  sexQualifier: BiologicalSex
-}
-
-type EnvironmentToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation {
-  associationType: OntologyClass
-  subject: Environment!
-  negated: String
-  relation: RelationshipType!
-  object: PhenotypicFeature!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-  frequencyQualifier: FrequencyValue
-  severityQualifier: SeverityValue
-  onsetQualifier: Onset
-  sexQualifier: BiologicalSex
-}
-
-type DiseaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, DiseaseToThingAssociation {
-  associationType: OntologyClass
-  subject: Disease!
-  negated: String
-  relation: RelationshipType!
-  object: PhenotypicFeature!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-  frequencyQualifier: FrequencyValue
-  severityQualifier: SeverityValue
-  onsetQualifier: Onset
-  sexQualifier: BiologicalSex
-}
-
-type CaseToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, CaseToThingAssociation {
-  associationType: OntologyClass
-  subject: Case!
-  negated: String
-  relation: RelationshipType!
-  object: PhenotypicFeature!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-  frequencyQualifier: FrequencyValue
-  severityQualifier: SeverityValue
-  onsetQualifier: Onset
-  sexQualifier: BiologicalSex
-}
-
-interface GeneToThingAssociation {
-  associationType: OntologyClass
-  subject: GeneOrGeneProduct!
-  negated: String
-  relation: RelationshipType!
-  object: String!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-interface VariantToThingAssociation {
-  associationType: OntologyClass
-  subject: SequenceVariant!
-  negated: String
-  relation: RelationshipType!
-  object: String!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type GeneToPhenotypicFeatureAssociation implements EntityToPhenotypicFeatureAssociation, GeneToThingAssociation {
-  associationType: OntologyClass
-  subject: GeneOrGeneProduct!
-  negated: String
-  relation: RelationshipType!
-  object: PhenotypicFeature!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-  frequencyQualifier: FrequencyValue
-  severityQualifier: SeverityValue
-  onsetQualifier: Onset
-  sexQualifier: BiologicalSex
-}
-
-type GeneToDiseaseAssociation implements EntityToDiseaseAssociation, GeneToThingAssociation {
-  associationType: OntologyClass
-  subject: GeneOrGeneProduct!
-  negated: String
-  relation: RelationshipType!
-  object: Disease!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String
-  name: String
-  category: String
-  frequencyQualifier: FrequencyValue
-  severityQualifier: SeverityValue
-  onsetQualifier: Onset
-}
-
-type VariantToPopulationAssociation implements VariantToThingAssociation, FrequencyQuantifier {
-  frequencyQualifier: FrequencyValue
-  associationType: OntologyClass
-  subject: SequenceVariant!
-  negated: String
-  relation: RelationshipType!
-  object: PopulationOfIndividualOrganisms!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-  hasCount: String
-  hasTotal: String
-  hasQuotient: String
-  hasPercentage: String
-}
-
-type PopulationToPopulationAssociation {
-  associationType: OntologyClass
-  subject: PopulationOfIndividualOrganisms!
-  negated: String
-  relation: RelationshipType!
-  object: PopulationOfIndividualOrganisms!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type VariantToPhenotypicFeatureAssociation implements VariantToThingAssociation, EntityToPhenotypicFeatureAssociation {
-  associationType: OntologyClass
-  subject: SequenceVariant!
-  negated: String
-  relation: RelationshipType!
-  object: PhenotypicFeature!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-  frequencyQualifier: FrequencyValue
-  severityQualifier: SeverityValue
-  onsetQualifier: Onset
-  sexQualifier: BiologicalSex
-}
-
-type VariantToDiseaseAssociation implements VariantToThingAssociation, EntityToDiseaseAssociation {
-  associationType: OntologyClass
-  subject: SequenceVariant!
-  negated: String
-  relation: RelationshipType!
-  object: Disease!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-  frequencyQualifier: FrequencyValue
-  severityQualifier: SeverityValue
-  onsetQualifier: Onset
-}
-
-interface ModelToDiseaseMixin {
-}
-
-type GeneAsAModelOfDiseaseAssociation implements ModelToDiseaseMixin, EntityToDiseaseAssociation {
-  associationType: OntologyClass
-  subject: GeneOrGeneProduct!
-  negated: String
-  relation: RelationshipType!
-  object: Disease!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String
-  name: String
-  category: String
-  frequencyQualifier: FrequencyValue
-  severityQualifier: SeverityValue
-  onsetQualifier: Onset
-}
-
-type GeneHasVariantThatContributesToDiseaseAssociation {
-  sequenceVariantQualifier: SequenceVariant
-  associationType: OntologyClass
-  subject: GeneOrGeneProduct!
-  negated: String
-  relation: RelationshipType!
-  object: Disease!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String
-  name: String
-  category: String
-  frequencyQualifier: FrequencyValue
-  severityQualifier: SeverityValue
-  onsetQualifier: Onset
-}
-
-interface GenotypeToThingAssociation {
-  associationType: OntologyClass
-  subject: Genotype!
-  negated: String
-  relation: RelationshipType!
-  object: String!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type GeneToExpressionSiteAssociation {
-  stageQualifier: LifeStage
-  quantifierQualifier: OntologyClass
-  associationType: OntologyClass
-  subject: GeneOrGeneProduct!
-  negated: String
-  relation: RelationshipType!
-  object: AnatomicalEntity!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-interface SequenceVariantModulatesTreatmentAssociation {
-  associationType: OntologyClass
-  subject: SequenceVariant!
-  negated: String
-  relation: RelationshipType!
-  object: Treatment!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type FunctionalAssociation {
-  associationType: OntologyClass
-  subject: MacromolecularMachine!
-  negated: String
-  relation: RelationshipType!
-  object: GeneOntologyClass!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type MacromolecularMachineToMolecularActivityAssociation {
-  associationType: OntologyClass
-  subject: MacromolecularMachine!
-  negated: String
-  relation: RelationshipType!
-  object: MolecularActivity!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type MacromolecularMachineToBiologicalProcessAssociation {
-  associationType: OntologyClass
-  subject: MacromolecularMachine!
-  negated: String
-  relation: RelationshipType!
-  object: BiologicalProcess!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type MacromolecularMachineToCellularComponentAssociation {
-  associationType: OntologyClass
-  subject: MacromolecularMachine!
-  negated: String
-  relation: RelationshipType!
-  object: CellularComponent!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type GeneToGoTermAssociation {
-  associationType: OntologyClass
-  subject: MolecularEntity!
-  negated: String
-  relation: RelationshipType!
-  object: GeneOntologyClass!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type GenomicSequenceLocalization {
-  startInterbaseCoordinate: String
-  endInterbaseCoordinate: String
-  genomeBuild: String
-  phase: String
-  associationType: OntologyClass
-  subject: GenomicEntity!
-  negated: String
-  relation: RelationshipType!
-  object: GenomicEntity!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type SequenceFeatureRelationship {
-  associationType: OntologyClass
-  subject: GenomicEntity!
-  negated: String
-  relation: RelationshipType!
-  object: GenomicEntity!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type TranscriptToGeneRelationship {
-  associationType: OntologyClass
-  subject: Transcript!
-  negated: String
-  relation: RelationshipType!
-  object: Gene!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type GeneToGeneProductRelationship {
-  associationType: OntologyClass
-  subject: Gene!
-  negated: String
-  relation: RelationshipType!
-  object: GeneProduct!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type ExonToTranscriptRelationship {
-  associationType: OntologyClass
-  subject: Exon!
-  negated: String
-  relation: RelationshipType!
-  object: Transcript!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type GeneRegulatoryRelationship {
-  associationType: OntologyClass
-  subject: GeneOrGeneProduct!
-  negated: String
-  relation: RelationshipType!
-  object: GeneOrGeneProduct!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type AnatomicalEntityToAnatomicalEntityAssociation {
-  associationType: OntologyClass
-  subject: AnatomicalEntity!
-  negated: String
-  relation: RelationshipType!
-  object: AnatomicalEntity!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type AnatomicalEntityToAnatomicalEntityPartOfAssociation {
-  associationType: OntologyClass
-  subject: AnatomicalEntity!
-  negated: String
-  relation: RelationshipType!
-  object: AnatomicalEntity!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type AnatomicalEntityToAnatomicalEntityOntogenicAssociation {
-  associationType: OntologyClass
-  subject: AnatomicalEntity!
-  negated: String
-  relation: RelationshipType!
-  object: AnatomicalEntity!
-  qualifiers: [OntologyClass]
-  publications: [Publication]
-  providedBy: Provider
-  id: String!
-  name: String
-  category: String
-}
-
-type Occurrent {
-}
-
-type BiologicalProcessOrActivity {
-  id: String!
-  name: String
-  category: String
-}
-
-type MolecularActivity implements Occurrent {
-  id: String
-  name: String
-  category: String
-}
-
-type ActivityAndBehavior {
-}
-
-type Procedure {
-}
-
-type Phenomenon {
-}
-
-type BiologicalProcess implements Occurrent {
-  id: String
-  name: String
-  category: String
-}
-
-type Pathway {
-  id: String
-  name: String
-  category: String
-}
-
-type PhysiologicalProcess {
-  id: String
-  name: String
-  category: String
-}
-
-type CellularComponent {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type Cell {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type CellLine {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
-
-type GrossAnatomicalStructure {
-  id: String
-  name: String
-  category: String
-  inTaxon: OrganismTaxon
-}
+ActivityAndBehavior type
+  {
+  }
+
+AdministrativeEntity interface
+  {
+  }
+
+AnatomicalEntity typeimplements ThingWithTaxon
+  {
+    expresses: GeneOrGeneProduct
+  }
+
+AnatomicalEntityToAnatomicalEntityAssociation type
+  {
+    subject: AnatomicalEntity!
+    object: AnatomicalEntity!
+  }
+
+AnatomicalEntityToAnatomicalEntityOntogenicAssociation type
+  {
+    subject: AnatomicalEntity!
+    object: AnatomicalEntity!
+    relation: RelationshipType!
+  }
+
+AnatomicalEntityToAnatomicalEntityPartOfAssociation type
+  {
+    subject: AnatomicalEntity!
+    object: AnatomicalEntity!
+    relation: RelationshipType!
+  }
+
+Association type
+  {
+    associationType: OntologyClass
+    subject: String!
+    negated: String
+    relation: RelationshipType!
+    object: String!
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    providedBy: Provider
+    associationSlot: String
+  }
+
+Attribute typeimplements OntologyClass
+  {
+  }
+
+BiologicalEntity interface
+  {
+    hasPhenotype: String
+  }
+
+BiologicalProcess typeimplements Occurrent
+  {
+  }
+
+BiologicalProcessOrActivity type
+  {
+  }
+
+BiologicalSex type
+  {
+  }
+
+Biosample typeimplements ThingWithTaxon
+  {
+  }
+
+BiosampleToDiseaseOrPhenotypicFeatureAssociation typeimplements BiosampleToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
+  {
+  }
+
+BiosampleToThingAssociation interface
+  {
+    subject: Biosample!
+  }
+
+Case type
+  {
+  }
+
+CaseToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, CaseToThingAssociation
+  {
+  }
+
+CaseToThingAssociation interface
+  {
+    subject: Case!
+  }
+
+Cell type
+  {
+  }
+
+CellLine type
+  {
+  }
+
+CellLineToDiseaseOrPhenotypicFeatureAssociation typeimplements CellLineToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
+  {
+    subject: DiseaseOrPhenotypicFeature!
+  }
+
+CellLineToThingAssociation interface
+  {
+    subject: CellLine!
+  }
+
+CellularComponent type
+  {
+  }
+
+ChemicalSubstance type
+  {
+  }
+
+ChemicalToDiseaseOrPhenotypicFeatureAssociation typeimplements ChemicalToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
+  {
+    object: DiseaseOrPhenotypicFeature!
+  }
+
+ChemicalToGeneAssociation typeimplements ChemicalToThingAssociation
+  {
+    object: GeneOrGeneProduct!
+  }
+
+ChemicalToPathwayAssociation typeimplements ChemicalToThingAssociation
+  {
+    object: Pathway!
+  }
+
+ChemicalToThingAssociation interface
+  {
+    subject: ChemicalSubstance!
+  }
+
+ClinicalEntity type
+  {
+  }
+
+ClinicalIntervention type
+  {
+  }
+
+ClinicalModifier type
+  {
+  }
+
+ClinicalTrial type
+  {
+  }
+
+CodingSequence type
+  {
+  }
+
+ConfidenceLevel type
+  {
+  }
+
+Device type
+  {
+  }
+
+Disease type
+  {
+  }
+
+DiseaseOrPhenotypicFeature typeimplements ThingWithTaxon
+  {
+    correlatedWith: MolecularEntity
+    hasBiomarker: MolecularEntity
+    treatedBy: String
+  }
+
+DiseaseOrPhenotypicFeatureAssociationToLocationAssociation type
+  {
+    object: AnatomicalEntity!
+  }
+
+DiseaseOrPhenotypicFeatureAssociationToThingAssociation interface
+  {
+    subject: DiseaseOrPhenotypicFeature!
+  }
+
+DiseaseToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, DiseaseToThingAssociation
+  {
+  }
+
+DiseaseToThingAssociation interface
+  {
+    subject: Disease!
+  }
+
+Drug type
+  {
+  }
+
+DrugExposure type
+  {
+    drug: [ChemicalSubstance]!
+  }
+
+EntityToDiseaseAssociation interface
+  {
+    object: Disease
+  }
+
+EntityToFeatureOrDiseaseQualifiers interface
+  {
+    severityQualifier: SeverityValue
+    onsetQualifier: Onset
+  }
+
+EntityToPhenotypicFeatureAssociation interfaceimplements EntityToFeatureOrDiseaseQualifiers
+  {
+    sexQualifier: BiologicalSex
+    description: String
+    object: PhenotypicFeature!
+  }
+
+Environment type
+  {
+  }
+
+EnvironmentToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation
+  {
+    subject: Environment!
+  }
+
+EnvironmentalFeature type
+  {
+  }
+
+EnvironmentalProcess typeimplements Occurrent
+  {
+  }
+
+EvidenceType type
+  {
+  }
+
+Exon type
+  {
+  }
+
+ExonToTranscriptRelationship type
+  {
+    subject: Exon!
+    object: Transcript!
+  }
+
+FrequencyQualifier interface
+  {
+  }
+
+FrequencyQuantifier interface
+  {
+    hasCount: String
+    hasTotal: String
+    hasQuotient: String
+    hasPercentage: String
+  }
+
+FrequencyValue type
+  {
+  }
+
+FunctionalAssociation type
+  {
+    subject: MacromolecularMachine!
+    object: GeneOntologyClass!
+  }
+
+Gene type
+  {
+    geneticallyInteractsWith: Gene
+    hasGeneProduct: GeneProduct
+    geneAssociatedWithCondition: DiseaseOrPhenotypicFeature
+  }
+
+GeneAsAModelOfDiseaseAssociation typeimplements ModelToDiseaseMixin, EntityToDiseaseAssociation
+  {
+    subject: GeneOrGeneProduct!
+  }
+
+GeneFamily typeimplements GeneGrouping
+  {
+  }
+
+GeneGrouping interface
+  {
+  }
+
+GeneHasVariantThatContributesToDiseaseAssociation type
+  {
+    sequenceVariantQualifier: SequenceVariant
+    subject: GeneOrGeneProduct!
+  }
+
+GeneOntologyClass interface
+  {
+  }
+
+GeneOrGeneProduct type
+  {
+    inPathwayWith: GeneOrGeneProduct
+    inComplexWith: GeneOrGeneProduct
+    inCellPopulationWith: GeneOrGeneProduct
+    expressedIn: AnatomicalEntity
+  }
+
+GeneProduct type
+  {
+  }
+
+GeneProductIsoform interface
+  {
+  }
+
+GeneRegulatoryRelationship type
+  {
+    relation: RelationshipType!
+    subject: GeneOrGeneProduct!
+    object: GeneOrGeneProduct!
+  }
+
+GeneToDiseaseAssociation typeimplements EntityToDiseaseAssociation, GeneToThingAssociation
+  {
+    subject: GeneOrGeneProduct!
+  }
+
+GeneToExpressionSiteAssociation type
+  {
+    stageQualifier: LifeStage
+    quantifierQualifier: String
+    subject: GeneOrGeneProduct!
+    object: AnatomicalEntity!
+    relation: RelationshipType!
+  }
+
+GeneToGeneAssociation interface
+  {
+    subject: GeneOrGeneProduct!
+    object: GeneOrGeneProduct!
+  }
+
+GeneToGeneHomologyAssociation type
+  {
+    relation: RelationshipType!
+  }
+
+GeneToGeneProductRelationship type
+  {
+    subject: Gene!
+    object: GeneProduct!
+    relation: RelationshipType!
+  }
+
+GeneToGoTermAssociation type
+  {
+    subject: MolecularEntity!
+    object: GeneOntologyClass!
+  }
+
+GeneToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, GeneToThingAssociation
+  {
+    subject: GeneOrGeneProduct!
+  }
+
+GeneToThingAssociation interface
+  {
+    subject: GeneOrGeneProduct!
+  }
+
+Genome type
+  {
+  }
+
+GenomicEntity type
+  {
+    hasBiologicalSequence: String
+  }
+
+GenomicSequenceLocalization type
+  {
+    startInterbaseCoordinate: String
+    endInterbaseCoordinate: String
+    genomeBuild: String
+    phase: String
+    subject: GenomicEntity!
+    object: GenomicEntity!
+  }
+
+Genotype type
+  {
+    hasZygosity: Zygosity
+  }
+
+GenotypeToGeneAssociation type
+  {
+    relation: RelationshipType!
+    subject: Genotype!
+    object: Gene!
+  }
+
+GenotypeToGenotypePartAssociation type
+  {
+    relation: RelationshipType!
+    subject: Genotype!
+    object: Genotype!
+  }
+
+GenotypeToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, GenotypeToThingAssociation
+  {
+    relation: RelationshipType!
+    subject: Genotype!
+  }
+
+GenotypeToThingAssociation interface
+  {
+    subject: Genotype!
+  }
+
+GenotypeToVariantAssociation type
+  {
+    relation: RelationshipType!
+    subject: Genotype!
+    object: SequenceVariant!
+  }
+
+GenotypicSex type
+  {
+  }
+
+GeographicLocation type
+  {
+    latitude: String
+    longitude: String
+  }
+
+GeographicLocationAtTime type
+  {
+    timepoint: String
+  }
+
+GrossAnatomicalStructure type
+  {
+  }
+
+Haplotype type
+  {
+  }
+
+IndividualOrganism typeimplements ThingWithTaxon
+  {
+  }
+
+InformationContentEntity interface
+  {
+  }
+
+LifeStage typeimplements ThingWithTaxon
+  {
+  }
+
+MacromolecularComplex type
+  {
+  }
+
+MacromolecularMachine type
+  {
+    name: String
+  }
+
+MacromolecularMachineToBiologicalProcessAssociation type
+  {
+    object: BiologicalProcess!
+  }
+
+MacromolecularMachineToCellularComponentAssociation type
+  {
+    object: CellularComponent!
+  }
+
+MacromolecularMachineToMolecularActivityAssociation type
+  {
+    object: MolecularActivity!
+  }
+
+Metabolite type
+  {
+  }
+
+MicroRNA type
+  {
+  }
+
+ModelToDiseaseMixin interface
+  {
+    subject: String
+    relation: String
+  }
+
+MolecularActivity typeimplements Occurrent
+  {
+  }
+
+MolecularEntity typeimplements ThingWithTaxon
+  {
+    molecularlyInteractsWith: MolecularEntity
+    regulatesEntityToEntity: MolecularEntity
+    biomarkerFor: DiseaseOrPhenotypicFeature
+  }
+
+MolecularInteraction interface
+  {
+    subject: MolecularEntity!
+    relation: RelationshipType!
+    object: MolecularEntity!
+    interactingMoleculesCategory: OntologyClass
+  }
+
+NamedThing type
+  {
+    id: String
+    name: String
+    category: String
+    relatedTo: NamedThing
+    nodeProperty: String
+    iri: String
+    fullName: String
+    description: String
+    systematicSynonym: String
+  }
+
+NoncodingRNAProduct type
+  {
+  }
+
+Occurrent type
+  {
+    regulatesProcessToProcess: Occurrent
+    hasParticipant: String
+    hasInput: String
+    precedes: Occurrent
+  }
+
+Onset type
+  {
+  }
+
+OntologyClass type
+  {
+    subclassOf: OntologyClass
+  }
+
+OrganismTaxon type
+  {
+  }
+
+OrganismalEntity interface
+  {
+  }
+
+PairwiseGeneOrProteinInteractionAssociation typeimplements MolecularInteraction
+  {
+    relation: RelationshipType!
+  }
+
+PathognomonicityQuantifier interface
+  {
+  }
+
+Pathway type
+  {
+  }
+
+Phenomenon type
+  {
+  }
+
+PhenotypicFeature type
+  {
+  }
+
+PhenotypicSex type
+  {
+  }
+
+PhysiologicalProcess type
+  {
+  }
+
+PlanetaryEntity type
+  {
+  }
+
+PopulationOfIndividualOrganisms typeimplements ThingWithTaxon
+  {
+  }
+
+PopulationToPopulationAssociation type
+  {
+    subject: PopulationOfIndividualOrganisms!
+    object: PopulationOfIndividualOrganisms!
+    relation: RelationshipType!
+  }
+
+Procedure type
+  {
+  }
+
+Protein type
+  {
+  }
+
+ProteinIsoform typeimplements GeneProductIsoform
+  {
+  }
+
+Provider type
+  {
+  }
+
+Publication type
+  {
+  }
+
+RelationshipQuantifier interface
+  {
+  }
+
+RelationshipType type
+  {
+  }
+
+RNAProduct type
+  {
+  }
+
+RNAProductIsoform typeimplements GeneProductIsoform
+  {
+  }
+
+SenstivityQuantifier interface
+  {
+  }
+
+SequenceFeatureRelationship type
+  {
+    subject: GenomicEntity!
+    object: GenomicEntity!
+  }
+
+SequenceVariant type
+  {
+    hasGene: [String]
+    hasBiologicalSequence: String
+    id: String
+  }
+
+SequenceVariantModulatesTreatmentAssociation interface
+  {
+    subject: SequenceVariant!
+    object: Treatment!
+  }
+
+SeverityValue type
+  {
+  }
+
+SpecificityQuantifier interface
+  {
+  }
+
+ThingToDiseaseOrPhenotypicFeatureAssociation interface
+  {
+    object: DiseaseOrPhenotypicFeature!
+  }
+
+ThingWithTaxon interface
+  {
+    inTaxon: OrganismTaxon
+  }
+
+Transcript type
+  {
+  }
+
+TranscriptToGeneRelationship type
+  {
+    subject: Transcript!
+    object: Gene!
+  }
+
+Treatment type
+  {
+    treats: DiseaseOrPhenotypicFeature!
+    hasExposureParts: [DrugExposure]!
+  }
+
+VariantToDiseaseAssociation typeimplements VariantToThingAssociation, EntityToDiseaseAssociation
+  {
+    subject: String!
+    relation: RelationshipType!
+    object: String!
+  }
+
+VariantToPhenotypicFeatureAssociation typeimplements VariantToThingAssociation, EntityToPhenotypicFeatureAssociation
+  {
+    subject: SequenceVariant!
+  }
+
+VariantToPopulationAssociation typeimplements VariantToThingAssociation, FrequencyQuantifier, FrequencyQualifier
+  {
+    subject: SequenceVariant!
+    object: PopulationOfIndividualOrganisms!
+    hasQuotient: String
+    hasCount: String
+    hasTotal: String
+  }
+
+VariantToThingAssociation interface
+  {
+    subject: SequenceVariant!
+  }
+
+Zygosity type
+  {
+  }
+
 

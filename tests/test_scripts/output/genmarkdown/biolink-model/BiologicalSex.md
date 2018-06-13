@@ -11,17 +11,17 @@ URI: [http://bioentity.io/vocab/BiologicalSex](http://bioentity.io/vocab/Biologi
  * [PATO:0000047](http://purl.obolibrary.org/obo/PATO_0000047)
 ## Inheritance
 
- *  is_a: attribute
+ *  is_a: [Attribute](Attribute.md) - A property or characteristic of an entity
 ## Children
 
- * genotypic sex
- * phenotypic sex
+ * [GenotypicSex](GenotypicSex.md) - An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
+ * [PhenotypicSex](PhenotypicSex.md) - An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
 ## Used in
 
- *  class: **entity to phenotypic feature association** *sex qualifier* **biological sex**
+ *  class: **[EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)** *[sex qualifier](sex_qualifier.md)* **[BiologicalSex](BiologicalSex.md)**
 ## Fields
 
- * _subclass of_
+ * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
     * _holds between two classes where the domain class is a specialization of the range class_
-    * range: ontology class
-    * inherited from: ontology class
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [OntologyClass](OntologyClass.md)

@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/types](slot_uri)
 
 ## Domain and Range
 
-[SchemaDefinition](SchemaDefinition.md) -> [TypeDefinition](TypeDefinition.md)
+schema definition -> type definition
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [SchemaDefinition](SchemaDefinition.md)
+ *  usage: schema definition

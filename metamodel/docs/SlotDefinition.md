@@ -10,162 +10,166 @@ URI: [http://bioentity.io/vocab/SlotDefinition](http://bioentity.io/vocab/SlotDe
 
 ## Inheritance
 
- *  is_a: [Definition](Definition.md) - definition base class
+ *  is_a: definition
 ## Children
 
 ## Used in
 
- *  class: **[ClassDefinition](ClassDefinition.md)** *[defining_slots](defining_slots.md)* **[SlotDefinition](SlotDefinition.md)**
- *  class: **[SlotDefinition](SlotDefinition.md)** *[inverse](inverse.md)* **[SlotDefinition](SlotDefinition.md)**
- *  class: **[SchemaDefinition](SchemaDefinition.md)** *[slots](slots.md)* **[SlotDefinition](SlotDefinition.md)**
- *  class: **[ClassDefinition](ClassDefinition.md)** *[slot_usage](slot_usage.md)* **[SlotDefinition](SlotDefinition.md)**
- *  class: **[ClassDefinition](ClassDefinition.md)** *[slots](slots.md)* **[SlotDefinition](SlotDefinition.md)**
- *  class: **[SlotDefinition](SlotDefinition.md)** *[subproperty_of](subproperty_of.md)* **[SlotDefinition](SlotDefinition.md)**
+ *  class: **class definition** *defining_slots* **slot definition**
+ *  class: **slot definition** *inverse* **slot definition**
+ *  class: **schema definition** *slot definitions* **slot definition**
+ *  class: **class definition** *slot_usage* **slot definition**
+ *  class: **class definition** *slots* **slot definition**
+ *  class: **slot definition** *subproperty_of* **slot definition**
 ## Fields
 
- * _[alias](alias.md)_
+ * _alias_
     * _A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have "slots" where one inline and the other a reference_
     * range: **string**
     * __Local__
- * _[definitional](definitional.md)_
+ * _definitional_
     * _slot is a defining slot -- injection into the defining_slots list_
     * range: **boolean**
     * __Local__
- * _[domain](domain.md)_
+ * _domain_
     * _The class to which this slot applies._
-    * range: [ClassDefinition](ClassDefinition.md)
+    * range: class definition
     * __Local__
- * _[identifier](identifier.md)_
+ * _identifier_
     * _True means that this slot must be unique across the collection of slots_
     * range: **boolean**
     * __Local__
- * _[inlined](inlined.md)_
+ * _inlined_
     * _if true then the value of this slot is inlined (i.e. a nested object) rather linked by key_
     * range: **boolean**
     * __Local__
- * _[inverse](inverse.md)_
+ * _inverse_
     * _used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')_
-    * range: [SlotDefinition](SlotDefinition.md)
+    * range: slot definition
     * __Local__
- * _[is_class_field](is_class_field.md)_
+ * _is_class_field_
     * range: **boolean**
     * __Local__
- * _[multivalued](multivalued.md)_
+ * _multivalued_
     * _If true slot can have many values_
     * range: **boolean**
     * __Local__
- * _[path](path.md)_
+ * _not_inherited_
+    * _True means that the slot is local and is not_inherited across is_a or slot_usage paths_
+    * range: **boolean**
+    * __Local__
+ * _path_
     * _For any denormalized slot, this represents the tree or graph path used to generate the denormalized form_
     * range: **string**
     * __Local__
- * _[primary_key](primary_key.md)_
+ * _primary_key_
     * _True means that this serves as a unique identifier_
     * range: **boolean**
     * __Local__
- * _[range](range.md)_
+ * _range_
     * _The slot type.  If absent, it is the builtin type 'string'_
-    * range: [Element](Element.md)
+    * range: element
     * __Local__
- * _[required](required.md)_
+ * _required_
     * _If true slot must have at least one value_
     * range: **boolean**
     * __Local__
- * _[role](role.md)_
+ * _role_
     * range: **string**
     * __Local__
- * _[subproperty_of](subproperty_of.md)_
+ * _subproperty_of_
     * _Ontolgy property which this is a subproperty of_
-    * range: [SlotDefinition](SlotDefinition.md)
+    * range: slot definition
     * __Local__
- * _[abstract](abstract.md)_
+ * _abstract_
     * _An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored_
     * range: **boolean**
-    * inherited from: [Definition](Definition.md)
- * _[aliases](aliases.md)_
+    * inherited from: definition
+ * _aliases_
     * range: **string***
-    * inherited from: [Element](Element.md)
- * _[alt_descriptions](alt_descriptions.md)_
+    * inherited from: element
+ * _alt_descriptions_
     * range: **string***
-    * inherited from: [Element](Element.md)
- * _[comment](comment.md)_
+    * inherited from: element
+ * _comment_
     * _Comment about an element_
     * range: **string**
-    * inherited from: [Element](Element.md)
- * _[description](description.md)_
+    * inherited from: element
+ * _description_
     * _a description_
     * range: **string**
-    * inherited from: [Element](Element.md)
- * _[examples](examples.md)_
+    * inherited from: element
+ * _examples_
     * _Example of usage for a slot or class_
-    * range: [Example](Example.md)*
-    * inherited from: [Element](Element.md)
- * _[flags](flags.md)_
+    * range: example*
+    * inherited from: element
+ * _flags_
     * _State information and other details_
     * range: **string***
-    * inherited from: [Element](Element.md)
- * _[from_schema](from_schema.md)_
+    * inherited from: element
+ * _from_schema_
     * _id of the schema that the element was derived from.  Supplied by the loader._
     * range: **string**
-    * inherited from: [Element](Element.md)
- * _[id_prefixes](id_prefixes.md)_
+    * inherited from: element
+ * _id_prefixes_
     * range: **string***
-    * inherited from: [Element](Element.md)
- * _[in_subset](in_subset.md)_
+    * inherited from: element
+ * _in_subset_
     * _used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)_
     * range: **string***
-    * inherited from: [Element](Element.md)
- * _[is_a](is_a.md)_
+    * inherited from: element
+ * _is_a_
     * _specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded_
-    * range: [Definition](Definition.md)
-    * inherited from: [Definition](Definition.md)
- * _[local_names](local_names.md)_
+    * range: definition
+    * inherited from: definition
+ * _local_names_
     * _map from local identifier to slot_
     * range: **string***
-    * inherited from: [Definition](Definition.md)
- * _[mappings](mappings.md)_
+    * inherited from: definition
+ * _mappings_
     * _list of equivalent or skos exact mappings to an ontology class_
     * range: **string***
-    * inherited from: [Element](Element.md)
- * _[mixin](mixin.md)_
+    * inherited from: element
+ * _mixin_
     * _Used only as a mixin -- cannot be instantiated on its own._
     * range: **boolean**
-    * inherited from: [Definition](Definition.md)
- * _[mixins](mixins.md)_
+    * inherited from: definition
+ * _mixins_
     * _List of definitions to be mixed in. Targets may be any definition of the same type_
-    * range: [Definition](Definition.md)*
-    * inherited from: [Definition](Definition.md)
- * _[name](name.md)_
+    * range: definition*
+    * inherited from: definition
+ * _name_
     * _a unique key that identifies a slot, type or class in a schema_
     * range: **string**
-    * inherited from: [Element](Element.md)
- * _[note](note.md)_
+    * inherited from: element
+ * _note_
     * _Notes about an element_
     * range: **string**
-    * inherited from: [Element](Element.md)
- * _[prefixes](prefixes.md)_
+    * inherited from: element
+ * _prefixes_
     * _list of ID/CURIE prefixes applicable to that element_
     * range: **string***
-    * inherited from: [Element](Element.md)
- * _[see_also](see_also.md)_
+    * inherited from: element
+ * _see_also_
     * range: **string**
-    * inherited from: [Element](Element.md)
- * _[singular_name](singular_name.md)_
+    * inherited from: element
+ * _singular_name_
     * _a name that is used in the singular form_
     * range: **string**
-    * inherited from: [Element](Element.md)
- * _[subclass_of](subclass_of.md)_
+    * inherited from: element
+ * _subclass_of_
     * _Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes_
-    * range: [Definition](Definition.md)
-    * inherited from: [Definition](Definition.md)
- * _[symmetric](symmetric.md)_
+    * range: definition
+    * inherited from: definition
+ * _symmetric_
     * _Symmetric slot_
     * range: **boolean**
-    * inherited from: [Definition](Definition.md)
- * _[union_of](union_of.md)_
+    * inherited from: definition
+ * _union_of_
     * _list of class or slot definitions that are combined to create the union class_
-    * range: [Definition](Definition.md)*
-    * inherited from: [Definition](Definition.md)
- * _[values_from](values_from.md)_
+    * range: definition*
+    * inherited from: definition
+ * _values_from_
     * _identifies the possible uri's of the range_
     * range: **string***
-    * inherited from: [Definition](Definition.md)
+    * inherited from: definition

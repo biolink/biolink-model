@@ -8,10 +8,10 @@ URI: [http://bioentity.io/vocab/negatively_regulates](slot_uri)
 
 ## Domain and Range
 
-named thing -> **string**
+[NamedThing](NamedThing.md) -> **string**
 ## Inheritance
 
- *  is_a: regulates
+ *  is_a: [regulates](regulates.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in

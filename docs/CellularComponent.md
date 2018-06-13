@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/CellularComponent](http://bioentity.io/vocab/Cel
 
 ## Used in
 
- *  class: **[MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md)** *[object](object.md)* **[CellularComponent](CellularComponent.md)**
+ *  class: **[MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md)** *[macromolecular machine to cellular component association.object](macromolecular_machine_to_cellular_component_association_object.md)* **[CellularComponent](CellularComponent.md)**
 ## Fields
 
  * _[category](category.md) *subsets*: (translator_minimal)_

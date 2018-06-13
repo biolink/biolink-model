@@ -10,25 +10,25 @@ URI: [http://bioentity.io/vocab/EntityToDiseaseAssociation](http://bioentity.io/
 
 ## Inheritance
 
- *  is_a: entity to feature or disease qualifiers
+ *  is_a: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) - Qualifiers for entity to disease or phenotype associations
 ## Children
 
- * gene as a model of disease association
- * gene to disease association
- * variant to disease association
+ * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) (mixin) 
+ * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md) (mixin) 
+ * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) (mixin) 
 ## Used in
 
 ## Fields
 
- * _entity to disease association object_
+ * _[entity to disease association.object](entity_to_disease_association_object.md)_
     * _disease_
-    * range: disease
+    * range: [Disease](Disease.md)
     * __Local__
- * _onset qualifier_
+ * _[onset qualifier](onset_qualifier.md)_
     * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
-    * range: onset
-    * inherited from: entity to feature or disease qualifiers
- * _severity qualifier_
+    * range: [Onset](Onset.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
+ * _[severity qualifier](severity_qualifier.md)_
     * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
-    * range: severity value
-    * inherited from: entity to feature or disease qualifiers
+    * range: [SeverityValue](SeverityValue.md)
+    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)

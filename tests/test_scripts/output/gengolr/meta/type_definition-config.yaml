@@ -2,6 +2,31 @@ description: A type definition
 display_name: type definition
 document_category: type definition
 fields:
+- {description: 'a unique key that identifies a slot, type or class in a schema',
+  display_name: name, id: name}
+- {description: a name that is used in the singular form, display_name: singular_name,
+  id: singular_name}
+- {description: a description, display_name: description, id: description}
+- {description: Notes about an element, display_name: note, id: note}
+- {description: Comment about an element, display_name: comment, id: comment}
+- {cardinality: multi, description: Example of usage for a slot or class, display_name: examples,
+  id: examples}
+- {display_name: see_also, id: see_also}
+- {cardinality: multi, description: State information and other details, display_name: flags,
+  id: flags}
+- {cardinality: multi, description: list of ID/CURIE prefixes applicable to that element,
+  display_name: prefixes, id: prefixes}
+- {cardinality: multi, display_name: aliases, id: aliases}
+- {cardinality: multi, description: list of equivalent or skos exact mappings to an
+    ontology class, display_name: mappings, id: mappings}
+- {cardinality: multi, display_name: id_prefixes, id: id_prefixes}
+- {cardinality: multi, description: used to indicate membership of a term in a defined
+    subset of biolink terms used for a particular domain or application (e.g. the
+    translator_minimal subset holding the minimal set of predicates used in a translator
+    knowledge graph), display_name: in_subset, id: in_subset}
+- {description: id of the schema that the element was derived from.  Supplied by the
+    loader., display_name: from_schema, id: from_schema}
+- {cardinality: multi, display_name: alt_descriptions, id: alt_descriptions}
 - {description: 'a builtin (''string'', ''integer'', ''float'', ''double'', ''boolean'',
     ''time'') or another type definition', display_name: typeof, id: typeof}
 id: type_definition

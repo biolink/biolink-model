@@ -17,15 +17,15 @@ URI: [http://bioentity.io/vocab/GeneRegulatoryRelationship](http://bioentity.io/
 
 ## Fields
 
- * _[object](object.md)_
+ * _[gene regulatory relationship.object](gene_regulatory_relationship_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__
- * _[relation](relation.md)_
+ * _[gene regulatory relationship.relation](gene_regulatory_relationship_relation.md)_
     * _the relationship type by which a subject is connected to an object in an association_
     * range: [RelationshipType](RelationshipType.md) [required]
     * __Local__
- * _[subject](subject.md)_
+ * _[gene regulatory relationship.subject](gene_regulatory_relationship_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__

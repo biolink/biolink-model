@@ -1,7436 +1,1572 @@
+# Auto generated from contrib/monarch.yaml by pythongen.py version: 0.0.2
+# Generation date: 2018-06-13 14:21
+# Schema: monarch biolink extensions
+#
+# id: http://bioentity.io/json-schema/biolink/contrib/monarch.json
+# description: Monarch specific extensions
+# license: https://creativecommons.org/publicdomain/zero/1.0/
+
+import datetime
+from typing import Optional, List, Union, Dict, NewType
+from dataclasses import dataclass
+from metamodel.utils.metamodelcore import empty_list, empty_dict
+from metamodel.utils.yamlutils import YAMLRoot
+
+metamodel_version = "0.2.0"
+
+not_inherited_slots: List[str] = []
+
+# Class references
+CohortName = NewType("CohortName", str)
+ExtensionsAndEvidenceAssociationMixinName = NewType("ExtensionsAndEvidenceAssociationMixinName", str)
+TaxonClosureMixinName = NewType("TaxonClosureMixinName", str)
+RelationshipTypeName = NewType("RelationshipTypeName", str)
+AttributeName = NewType("AttributeName", str)
+BiologicalSexName = NewType("BiologicalSexName", str)
+PhenotypicSexName = NewType("PhenotypicSexName", str)
+GenotypicSexName = NewType("GenotypicSexName", str)
+SeverityValueName = NewType("SeverityValueName", str)
+FrequencyValueName = NewType("FrequencyValueName", str)
+ClinicalModifierName = NewType("ClinicalModifierName", str)
+OnsetName = NewType("OnsetName", str)
+RelationshipQuantifierName = NewType("RelationshipQuantifierName", str)
+SenstivityQuantifierName = NewType("SenstivityQuantifierName", str)
+SpecificityQuantifierName = NewType("SpecificityQuantifierName", str)
+PathognomonicityQuantifierName = NewType("PathognomonicityQuantifierName", str)
+FrequencyQuantifierName = NewType("FrequencyQuantifierName", str)
+NamedThingName = NewType("NamedThingName", str)
+BiologicalEntityName = NewType("BiologicalEntityName", str)
+OntologyClassName = NewType("OntologyClassName", str)
+GeneOntologyClassName = NewType("GeneOntologyClassName", str)
+ThingWithTaxonName = NewType("ThingWithTaxonName", str)
+OrganismTaxonName = NewType("OrganismTaxonName", str)
+OrganismalEntityName = NewType("OrganismalEntityName", str)
+IndividualOrganismName = NewType("IndividualOrganismName", str)
+CaseName = NewType("CaseName", str)
+PopulationOfIndividualOrganismsName = NewType("PopulationOfIndividualOrganismsName", str)
+BiosampleName = NewType("BiosampleName", str)
+DiseaseOrPhenotypicFeatureName = NewType("DiseaseOrPhenotypicFeatureName", str)
+DiseaseName = NewType("DiseaseName", str)
+PhenotypicFeatureName = NewType("PhenotypicFeatureName", str)
+EnvironmentName = NewType("EnvironmentName", str)
+InformationContentEntityName = NewType("InformationContentEntityName", str)
+ConfidenceLevelName = NewType("ConfidenceLevelName", str)
+EvidenceTypeName = NewType("EvidenceTypeName", str)
+PublicationName = NewType("PublicationName", str)
+AdministrativeEntityName = NewType("AdministrativeEntityName", str)
+ProviderName = NewType("ProviderName", str)
+MolecularEntityName = NewType("MolecularEntityName", str)
+ChemicalSubstanceName = NewType("ChemicalSubstanceName", str)
+DrugName = NewType("DrugName", str)
+MetaboliteName = NewType("MetaboliteName", str)
+AnatomicalEntityName = NewType("AnatomicalEntityName", str)
+LifeStageName = NewType("LifeStageName", str)
+PlanetaryEntityName = NewType("PlanetaryEntityName", str)
+EnvironmentalProcessName = NewType("EnvironmentalProcessName", str)
+EnvironmentalFeatureName = NewType("EnvironmentalFeatureName", str)
+ClinicalEntityName = NewType("ClinicalEntityName", str)
+ClinicalTrialName = NewType("ClinicalTrialName", str)
+ClinicalInterventionName = NewType("ClinicalInterventionName", str)
+DeviceName = NewType("DeviceName", str)
+GenomicEntityName = NewType("GenomicEntityName", str)
+GenomeName = NewType("GenomeName", str)
+TranscriptName = NewType("TranscriptName", str)
+ExonName = NewType("ExonName", str)
+CodingSequenceName = NewType("CodingSequenceName", str)
+MacromolecularMachineName = NewType("MacromolecularMachineName", str)
+GeneOrGeneProductName = NewType("GeneOrGeneProductName", str)
+GeneName = NewType("GeneName", str)
+GeneProductName = NewType("GeneProductName", str)
+ProteinName = NewType("ProteinName", str)
+GeneProductIsoformName = NewType("GeneProductIsoformName", str)
+ProteinIsoformName = NewType("ProteinIsoformName", str)
+RNAProductName = NewType("RNAProductName", str)
+RNAProductIsoformName = NewType("RNAProductIsoformName", str)
+NoncodingRNAProductName = NewType("NoncodingRNAProductName", str)
+MicroRNAName = NewType("MicroRNAName", str)
+MacromolecularComplexName = NewType("MacromolecularComplexName", str)
+GeneGroupingName = NewType("GeneGroupingName", str)
+GeneFamilyName = NewType("GeneFamilyName", str)
+ZygosityName = NewType("ZygosityName", str)
+GenotypeName = NewType("GenotypeName", str)
+HaplotypeName = NewType("HaplotypeName", str)
+SequenceVariantName = NewType("SequenceVariantName", str)
+DrugExposureName = NewType("DrugExposureName", str)
+TreatmentName = NewType("TreatmentName", str)
+GeographicLocationName = NewType("GeographicLocationName", str)
+GeographicLocationAtTimeName = NewType("GeographicLocationAtTimeName", str)
+AssociationName = NewType("AssociationName", str)
+GenotypeToGenotypePartAssociationName = NewType("GenotypeToGenotypePartAssociationName", str)
+GenotypeToGeneAssociationName = NewType("GenotypeToGeneAssociationName", str)
+GenotypeToVariantAssociationName = NewType("GenotypeToVariantAssociationName", str)
+GeneToGeneAssociationName = NewType("GeneToGeneAssociationName", str)
+GeneToGeneHomologyAssociationName = NewType("GeneToGeneHomologyAssociationName", str)
+MolecularInteractionName = NewType("MolecularInteractionName", str)
+PairwiseGeneOrProteinInteractionAssociationName = NewType("PairwiseGeneOrProteinInteractionAssociationName", str)
+CellLineToThingAssociationName = NewType("CellLineToThingAssociationName", str)
+CellLineToDiseaseOrPhenotypicFeatureAssociationName = NewType("CellLineToDiseaseOrPhenotypicFeatureAssociationName", str)
+ChemicalToThingAssociationName = NewType("ChemicalToThingAssociationName", str)
+CaseToThingAssociationName = NewType("CaseToThingAssociationName", str)
+ChemicalToDiseaseOrPhenotypicFeatureAssociationName = NewType("ChemicalToDiseaseOrPhenotypicFeatureAssociationName", str)
+ChemicalToPathwayAssociationName = NewType("ChemicalToPathwayAssociationName", str)
+ChemicalToGeneAssociationName = NewType("ChemicalToGeneAssociationName", str)
+BiosampleToThingAssociationName = NewType("BiosampleToThingAssociationName", str)
+BiosampleToDiseaseOrPhenotypicFeatureAssociationName = NewType("BiosampleToDiseaseOrPhenotypicFeatureAssociationName", str)
+FrequencyQualifierName = NewType("FrequencyQualifierName", str)
+EntityToFeatureOrDiseaseQualifiersName = NewType("EntityToFeatureOrDiseaseQualifiersName", str)
+EntityToPhenotypicFeatureAssociationName = NewType("EntityToPhenotypicFeatureAssociationName", str)
+EntityToDiseaseAssociationName = NewType("EntityToDiseaseAssociationName", str)
+DiseaseOrPhenotypicFeatureAssociationToThingAssociationName = NewType("DiseaseOrPhenotypicFeatureAssociationToThingAssociationName", str)
+DiseaseOrPhenotypicFeatureAssociationToLocationAssociationName = NewType("DiseaseOrPhenotypicFeatureAssociationToLocationAssociationName", str)
+ThingToDiseaseOrPhenotypicFeatureAssociationName = NewType("ThingToDiseaseOrPhenotypicFeatureAssociationName", str)
+DiseaseToThingAssociationName = NewType("DiseaseToThingAssociationName", str)
+GenotypeToPhenotypicFeatureAssociationName = NewType("GenotypeToPhenotypicFeatureAssociationName", str)
+EnvironmentToPhenotypicFeatureAssociationName = NewType("EnvironmentToPhenotypicFeatureAssociationName", str)
+DiseaseToPhenotypicFeatureAssociationName = NewType("DiseaseToPhenotypicFeatureAssociationName", str)
+CaseToPhenotypicFeatureAssociationName = NewType("CaseToPhenotypicFeatureAssociationName", str)
+GeneToThingAssociationName = NewType("GeneToThingAssociationName", str)
+VariantToThingAssociationName = NewType("VariantToThingAssociationName", str)
+GeneToPhenotypicFeatureAssociationName = NewType("GeneToPhenotypicFeatureAssociationName", str)
+GeneToDiseaseAssociationName = NewType("GeneToDiseaseAssociationName", str)
+VariantToPopulationAssociationName = NewType("VariantToPopulationAssociationName", str)
+PopulationToPopulationAssociationName = NewType("PopulationToPopulationAssociationName", str)
+VariantToPhenotypicFeatureAssociationName = NewType("VariantToPhenotypicFeatureAssociationName", str)
+VariantToDiseaseAssociationName = NewType("VariantToDiseaseAssociationName", str)
+ModelToDiseaseMixinName = NewType("ModelToDiseaseMixinName", str)
+GeneAsAModelOfDiseaseAssociationName = NewType("GeneAsAModelOfDiseaseAssociationName", str)
+GeneHasVariantThatContributesToDiseaseAssociationName = NewType("GeneHasVariantThatContributesToDiseaseAssociationName", str)
+GenotypeToThingAssociationName = NewType("GenotypeToThingAssociationName", str)
+GeneToExpressionSiteAssociationName = NewType("GeneToExpressionSiteAssociationName", str)
+SequenceVariantModulatesTreatmentAssociationName = NewType("SequenceVariantModulatesTreatmentAssociationName", str)
+FunctionalAssociationName = NewType("FunctionalAssociationName", str)
+MacromolecularMachineToMolecularActivityAssociationName = NewType("MacromolecularMachineToMolecularActivityAssociationName", str)
+MacromolecularMachineToBiologicalProcessAssociationName = NewType("MacromolecularMachineToBiologicalProcessAssociationName", str)
+MacromolecularMachineToCellularComponentAssociationName = NewType("MacromolecularMachineToCellularComponentAssociationName", str)
+GeneToGoTermAssociationName = NewType("GeneToGoTermAssociationName", str)
+GenomicSequenceLocalizationName = NewType("GenomicSequenceLocalizationName", str)
+SequenceFeatureRelationshipName = NewType("SequenceFeatureRelationshipName", str)
+TranscriptToGeneRelationshipName = NewType("TranscriptToGeneRelationshipName", str)
+GeneToGeneProductRelationshipName = NewType("GeneToGeneProductRelationshipName", str)
+ExonToTranscriptRelationshipName = NewType("ExonToTranscriptRelationshipName", str)
+GeneRegulatoryRelationshipName = NewType("GeneRegulatoryRelationshipName", str)
+AnatomicalEntityToAnatomicalEntityAssociationName = NewType("AnatomicalEntityToAnatomicalEntityAssociationName", str)
+AnatomicalEntityToAnatomicalEntityPartOfAssociationName = NewType("AnatomicalEntityToAnatomicalEntityPartOfAssociationName", str)
+AnatomicalEntityToAnatomicalEntityOntogenicAssociationName = NewType("AnatomicalEntityToAnatomicalEntityOntogenicAssociationName", str)
+OccurrentName = NewType("OccurrentName", str)
+BiologicalProcessOrActivityName = NewType("BiologicalProcessOrActivityName", str)
+MolecularActivityName = NewType("MolecularActivityName", str)
+ActivityAndBehaviorName = NewType("ActivityAndBehaviorName", str)
+ProcedureName = NewType("ProcedureName", str)
+PhenomenonName = NewType("PhenomenonName", str)
+BiologicalProcessName = NewType("BiologicalProcessName", str)
+PathwayName = NewType("PathwayName", str)
+PhysiologicalProcessName = NewType("PhysiologicalProcessName", str)
+CellularComponentName = NewType("CellularComponentName", str)
+CellName = NewType("CellName", str)
+CellLineName = NewType("CellLineName", str)
+GrossAnatomicalStructureName = NewType("GrossAnatomicalStructureName", str)
+NamedGraphName = NewType("NamedGraphName", str)
+PropertyValuePairName = NewType("PropertyValuePairName", str)
+
+# Type references
+Phenotype = NewType("Phenotype", str)
+EvidenceInstance = NewType("EvidenceInstance", str)
+ChemicalFormulaValue = NewType("ChemicalFormulaValue", str)
+IdentifierType = NewType("IdentifierType", str)
+IriType = NewType("IriType", str)
+LabelType = NewType("LabelType", str)
+NarrativeText = NewType("NarrativeText", str)
+SymbolType = NewType("SymbolType", str)
+ChemicalFormulaType = NewType("ChemicalFormulaType", str)
+FrequencyValue = NewType("FrequencyValue", str)
+PerecentageFrequencyValue = NewType("PerecentageFrequencyValue", float)
+Quotient = NewType("Quotient", float)
+Unit = NewType("Unit", str)
+TimeType = NewType("TimeType", datetime.time)
+BiologicalSequence = NewType("BiologicalSequence", str)
 
 
-## CLASSES
-
-class NamedThing(object):
-    """
-    a databased entity or concept/class
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class NamedThing(object):
-    """
-    a databased entity or concept/class
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class BiologicalEntity(NamedThing):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class BiologicalEntity(NamedThing):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class OrganismalEntity(BiologicalEntity):
-    """
-    A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class OrganismalEntity(BiologicalEntity):
-    """
-    A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class PopulationOfIndividualOrganisms(OrganismalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class PopulationOfIndividualOrganisms(OrganismalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class Cohort(PopulationOfIndividualOrganisms):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class ExtensionsAndEvidenceAssociationMixin(object):
-    """
-    An injected mixing that adds additional fields to association objects. This is a mixture of (a) closures for denormalization (b) evidence fields specific to the monarch model.
-    """
-    def __init__(self,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class TaxonClosureMixin(object):
-    """
-    An association that includes flattened inlined objects, such as subject_taxon_closure
-    """
-    def __init__(self,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class RelationshipType(object):
+@dataclass
+class RelationshipType(YAMLRoot):
     """
     An OWL property used as an edge label
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class Attribute(object):
+@dataclass
+class Attribute(YAMLRoot):
     """
     A property or characteristic of an entity
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class Attribute(object):
-    """
-    A property or characteristic of an entity
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class BiologicalSex(Attribute):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class BiologicalSex(Attribute):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class PhenotypicSex(BiologicalSex):
     """
     An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class GenotypicSex(BiologicalSex):
     """
-    An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
+    An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex
+    chromosomes.
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class SeverityValue(Attribute):
     """
     describes the severity of a phenotypic feature or disease
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class FrequencyValue(Attribute):
     """
     describes the frequency of occurrence of an event or condition
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class ClinicalModifier(Attribute):
     """
-    Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+    Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
+    with respect to severity, laterality, age of onset, and other aspects
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Onset(Attribute):
     """
     The age group in which manifestations appear
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class OntologyClass(object):
+@dataclass
+class NamedThing(YAMLRoot):
+    """
+    a databased entity or concept/class
+    """
+    id: Optional[IdentifierType] = None
+    name: Optional[LabelType] = None
+    category: Optional[LabelType] = None
+    has_alternate_identifier: List[IdentifierType] = empty_list()
+    has_xref: List[IdentifierType] = empty_list()
+    has_synonym: List[LabelType] = empty_list()
+    related_to: Optional[NamedThingName] = None
+    node_property: Optional[str] = None
+    iri: Optional[IriType] = None
+    full_name: Optional[LabelType] = None
+    description: Optional[NarrativeText] = None
+    systematic_synonym: Optional[LabelType] = None
+
+
+@dataclass
+class BiologicalEntity(NamedThing):
+    has_phenotype: Optional[Phenotype] = None
+
+
+@dataclass
+class OntologyClass(YAMLRoot):
     """
     a concept or class in an ontology, vocabulary or thesaurus
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    subclass_of: Optional[OntologyClassName] = None
 
 
-class OntologyClass(object):
+@dataclass
+class OrganismTaxon(OntologyClass):
+    pass
+
+
+@dataclass
+class OrganismalEntity(BiologicalEntity):
     """
-    a concept or class in an ontology, vocabulary or thesaurus
+    A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding
+    molecular entities
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class GeneOntologyClass(OntologyClass):
-    """
-    an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class ThingWithTaxon(object):
-    """
-    A mixin that can be used on any entity with a taxon
-    """
-    def __init__(self,
-                 in_taxon=None):
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "in_taxon={} ".format(self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class OrganismTaxon(OrganismalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class IndividualOrganism(OrganismalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class IndividualOrganism(OrganismalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class Case(IndividualOrganism):
     """
     An individual organism that has a patient role in some clinical context.
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
+class PopulationOfIndividualOrganisms(OrganismalEntity):
+    pass
+
+
+@dataclass
 class Biosample(OrganismalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class DiseaseOrPhenotypicFeature(BiologicalEntity):
     """
-    Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+    Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these
+    as distinct, others such as MESH conflate.
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    correlated_with: Optional[MolecularEntityName] = None
+    has_biomarker: Optional[MolecularEntityName] = None
+    treated_by: Optional[str] = None
 
 
-class DiseaseOrPhenotypicFeature(BiologicalEntity):
-    """
-    Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class Disease(DiseaseOrPhenotypicFeature):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class PhenotypicFeature(DiseaseOrPhenotypicFeature):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Environment(BiologicalEntity):
     """
-    A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+    A feature of the environment of an organism that influences one or more phenotypic features of that organism,
+    potentially mediated by genes
     """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class InformationContentEntity(NamedThing):
     """
     a piece of information that typically describes some piece of biology or is used as support.
     """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    title: Optional[LabelType] = None
 
 
-class InformationContentEntity(NamedThing):
-    """
-    a piece of information that typically describes some piece of biology or is used as support.
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class ConfidenceLevel(InformationContentEntity):
     """
     Level of confidence in a statement
     """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class EvidenceType(InformationContentEntity):
     """
     Class of evidence that supports an association
     """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Publication(InformationContentEntity):
     """
-    Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
+    Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure
+    legend, or section highlighted by NLP). The scope is intended to be general and include information published on
+    the web as well as journals.
     """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class AdministrativeEntity(object):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+@dataclass
+class AdministrativeEntity(YAMLRoot):
+    pass
 
 
-class AdministrativeEntity(object):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class Provider(AdministrativeEntity):
     """
     person, group, organization or project that provides a piece of information
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class MolecularEntity(BiologicalEntity):
     """
     A gene, gene product, small molecule or macromolecule (including protein complex)
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    molecularly_interacts_with: Optional[MolecularEntityName] = None
+    regulates_entity_to_entity: Optional[MolecularEntityName] = None
+    biomarker_for: Optional[DiseaseOrPhenotypicFeatureName] = None
 
 
-class MolecularEntity(BiologicalEntity):
-    """
-    A gene, gene product, small molecule or macromolecule (including protein complex)
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class ChemicalSubstance(MolecularEntity):
     """
-    may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+    May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with
+    multiple chemical entities as part
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
+class Drug(ChemicalSubstance):
+    """
+    A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+    """
+    pass
+
+
+@dataclass
+class Metabolite(ChemicalSubstance):
+    """
+    Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
+    """
+    pass
+
+
+@dataclass
 class AnatomicalEntity(OrganismalEntity):
     """
     A subcellular location, cell type or gross anatomical part
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    expresses: Optional[GeneOrGeneProductName] = None
 
 
+@dataclass
 class LifeStage(OrganismalEntity):
     """
     A stage of development or growth of an organism, including post-natal adult stages
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class PlanetaryEntity(NamedThing):
     """
     Any entity or process that exists at the level of the whole planet
     """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class PlanetaryEntity(NamedThing):
-    """
-    Any entity or process that exists at the level of the whole planet
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class EnvironmentalProcess(PlanetaryEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class EnvironmentalFeature(PlanetaryEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class ClinicalEntity(NamedThing):
     """
-    Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
+    Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed
+    under biological entities
     """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class ClinicalEntity(NamedThing):
-    """
-    Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class ClinicalTrial(ClinicalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class ClinicalIntervention(ClinicalEntity):
+    pass
+
+
+@dataclass
+class Device(NamedThing):
     """
-    None
+    A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
     """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class GenomicEntity(MolecularEntity):
     """
-    an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+    an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is
+    encoded in a genome (protein)
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    has_biological_sequence: Optional[BiologicalSequence] = None
 
 
-class GenomicEntity(MolecularEntity):
-    """
-    an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class Genome(GenomicEntity):
     """
     A genome is the sum of genetic material within a cell or virion.
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Transcript(GenomicEntity):
     """
     An RNA synthesized on a DNA or RNA template by an RNA polymerase
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Exon(GenomicEntity):
     """
-    A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
+    A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA
+    splicing
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class CodingSequence(GenomicEntity):
+    pass
+
+
+@dataclass
+class MacromolecularMachine(GenomicEntity):
     """
-    None
+    A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They
+    either carry out individual biological activities, or they encode molecules which do this.
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    name: Optional[LabelType] = None
 
 
-class GeneOrGeneProduct(GenomicEntity):
+@dataclass
+class GeneOrGeneProduct(MacromolecularMachine):
     """
     a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    in_pathway_with: Optional[GeneOrGeneProductName] = None
+    in_complex_with: Optional[GeneOrGeneProductName] = None
+    in_cell_population_with: Optional[GeneOrGeneProductName] = None
+    expressed_in: Optional[AnatomicalEntityName] = None
 
 
-class GeneOrGeneProduct(GenomicEntity):
-    """
-    a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class Gene(GeneOrGeneProduct):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    genetically_interacts_with: Optional[GeneName] = None
+    has_gene_product: Optional[GeneProductName] = None
+    gene_associated_with_condition: Optional[DiseaseOrPhenotypicFeatureName] = None
 
 
+@dataclass
 class GeneProduct(GeneOrGeneProduct):
     """
     The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class GeneProduct(GeneOrGeneProduct):
-    """
-    The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class Protein(GeneProduct):
     """
-    None
+    A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated
+    translation of mRNA
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class RnaProduct(GeneProduct):
+@dataclass
+class GeneProductIsoform(GeneProduct):
     """
-    None
+    This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene
+    product is intended to represent a specific isoform rather than a canonical or reference or generic product. The
+    designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class RnaProduct(GeneProduct):
+@dataclass
+class ProteinIsoform(Protein):
     """
-    None
+    Represents a protein that is a specific isoform of the canonical or reference protein. See
+    https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class NoncodingRnaProduct(RnaProduct):
+@dataclass
+class RNAProduct(GeneProduct):
+    pass
+
+
+@dataclass
+class RNAProductIsoform(RNAProduct):
     """
-    None
+    Represents a protein that is a specific isoform of the canonical or reference RNA
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class NoncodingRnaProduct(RnaProduct):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+@dataclass
+class NoncodingRNAProduct(RNAProduct):
+    pass
 
 
-class Microrna(NoncodingRnaProduct):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+@dataclass
+class MicroRNA(NoncodingRNAProduct):
+    pass
 
 
-class MacromolecularComplex(MolecularEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+@dataclass
+class MacromolecularComplex(MacromolecularMachine):
+    pass
 
 
-class GeneGrouping(object):
-    """
-    any grouping of multiple genes or gene products
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class GeneFamily(MolecularEntity):
     """
     any grouping of multiple genes or gene products related by common descent
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Zygosity(Attribute):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Genotype(GenomicEntity):
     """
-    An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
+    An information content entity that describes a genome by specifying the total variation in genomic sequence and/or
+    gene expression, relative to some extablished background
     """
-    def __init__(self,
-                 has_zygosity=None,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.has_zygosity=has_zygosity
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_zygosity={} id={} label={} in_taxon={} ".format(self.has_zygosity,self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    has_zygosity: Optional[ZygosityName] = None
 
 
-class Genotype(GenomicEntity):
+@dataclass
+class Haplotype(GenomicEntity):
     """
-    An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
+    A set of zero or more Alleles on a single instance of a Sequence[VMC]
     """
-    def __init__(self,
-                 has_zygosity=None,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.has_zygosity=has_zygosity
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_zygosity={} id={} label={} in_taxon={} ".format(self.has_zygosity,self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class Allele(Genotype):
-    """
-    A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus
-    """
-    def __init__(self,
-                 has_gene=None,
-                 has_zygosity=None,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.has_gene=has_gene
-        self.has_zygosity=has_zygosity
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_gene={} has_zygosity={} id={} label={} in_taxon={} ".format(self.has_gene,self.has_zygosity,self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class SequenceVariant(GenomicEntity):
     """
-    A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.
+    An allele that varies in its sequence from what is considered the reference allele at that locus.
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    has_gene: List[str] = empty_list()
+    has_biological_sequence: Optional[BiologicalSequence] = None
+    id: Optional[IdentifierType] = None
 
 
-class Environment(BiologicalEntity):
-    """
-    A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class DrugExposure(Environment):
     """
     A drug exposure is an intake of a particular chemical substance
     """
-    def __init__(self,
-                 drug=None,
-                 id=None,
-                 label=None):
-        self.drug=drug
-        self.id=id
-        self.label=label
+    drug: List[ChemicalSubstanceName] = empty_list()
 
-    def __str__(self):
-        return "drug={} id={} label={} ".format(self.drug,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.drug is None:
+            raise ValueError(f"drug must be supplied")
 
 
+@dataclass
 class Treatment(Environment):
     """
     A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
     """
-    def __init__(self,
-                 treats=None,
-                 has_exposure_parts=None,
-                 id=None,
-                 label=None):
-        self.treats=treats
-        self.has_exposure_parts=has_exposure_parts
-        self.id=id
-        self.label=label
+    treats: DiseaseOrPhenotypicFeatureName = None
+    has_exposure_parts: List[DrugExposureName] = empty_list()
 
-    def __str__(self):
-        return "treats={} has_exposure_parts={} id={} label={} ".format(self.treats,self.has_exposure_parts,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.treats is None:
+            raise ValueError(f"treats must be supplied")
+        if self.has_exposure_parts is None:
+            raise ValueError(f"has_exposure_parts must be supplied")
 
 
+@dataclass
 class GeographicLocation(PlanetaryEntity):
     """
     a location that can be described in lat/long coordinates
     """
-    def __init__(self,
-                 latitude=None,
-                 longitude=None,
-                 id=None,
-                 label=None):
-        self.latitude=latitude
-        self.longitude=longitude
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "latitude={} longitude={} id={} label={} ".format(self.latitude,self.longitude,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
 
 
-class GeographicLocationAtTime(PlanetaryEntity):
+@dataclass
+class GeographicLocationAtTime(GeographicLocation):
     """
     a location that can be described in lat/long coordinates, for a particular time
     """
-    def __init__(self,
-                 latitude=None,
-                 longitude=None,
-                 timepoint=None,
-                 id=None,
-                 label=None):
-        self.latitude=latitude
-        self.longitude=longitude
-        self.timepoint=timepoint
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "latitude={} longitude={} timepoint={} id={} label={} ".format(self.latitude,self.longitude,self.timepoint,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    timepoint: Optional[TimeType] = None
 
 
+@dataclass
 class Association(InformationContentEntity):
     """
     A typed association between two entities, supported by evidence
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    association_type: Optional[OntologyClassName] = None
+    subject: str = None
+    negated: bool = False
+    relation: RelationshipTypeName = None
+    object: str = None
+    qualifiers: List[OntologyClassName] = empty_list()
+    publications: List[PublicationName] = empty_list()
+    provided_by: Optional[ProviderName] = None
+    association_slot: Optional[str] = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
-class Association(InformationContentEntity):
-    """
-    A typed association between two entities, supported by evidence
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class GenotypeToGenotypePartAssociation(Association):
     """
     Any association between one genotype and a genotypic entity that is a sub-component of it
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    relation: RelationshipTypeName = None
+    subject: GenotypeName = None
+    object: GenotypeName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
+@dataclass
 class GenotypeToGeneAssociation(Association):
     """
-    Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
+    Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single
+    one. There is no assumption of cardinality
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    relation: RelationshipTypeName = None
+    subject: GenotypeName = None
+    object: GeneName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
+@dataclass
 class GenotypeToVariantAssociation(Association):
     """
     Any association between a genotype and a sequence variant.
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    relation: RelationshipTypeName = None
+    subject: GenotypeName = None
+    object: SequenceVariantName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
+@dataclass
 class GeneToGeneAssociation(Association):
     """
-    abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
+    abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes
+    homology and interaction.
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: GeneOrGeneProductName = None
+    object: GeneOrGeneProductName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
-class GeneToGeneAssociation(Association):
-    """
-    abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     """
-    A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
+    A homology association between two genes. May be orthology (in which case the species of subject and object should
+    differ) or paralogy (in which case the species may be the same)
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    relation: RelationshipTypeName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
-class MolecularInteraction(Association):
-    """
-    An interaction at the molecular level between two physical entities
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class PairwiseGeneOrProteinInteractionAssociation(GeneToGeneAssociation):
     """
-    An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+    An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between
+    genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    relation: RelationshipTypeName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
+@dataclass
+class CellLineToThingAssociation(Association):
+    """
+    An relationship between a cell line and another entity
+    """
+    subject: CellLineName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+
+
+@dataclass
+class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
+    """
+    An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an
+    individual with that disease or phenotype
+    """
+    subject: DiseaseOrPhenotypicFeatureName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+
+
+@dataclass
 class ChemicalToThingAssociation(Association):
     """
     An interaction between a chemical entity and another entity
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: ChemicalSubstanceName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
+@dataclass
 class CaseToThingAssociation(Association):
     """
     An abstract association for use where the case is the subject
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: CaseName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
-class ChemicalToGeneAssociation(Association):
-    """
-    An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug.
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
-    An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
+    An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise
+    to or exacerbates the phenotype
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    object: DiseaseOrPhenotypicFeatureName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
+@dataclass
 class ChemicalToPathwayAssociation(Association):
     """
     An interaction between a chemical entity and a biological process or pathway
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    object: PathwayName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
+@dataclass
 class ChemicalToGeneAssociation(Association):
     """
-    An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug.
+    An interaction between a chemical entity and a gene or gene product
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    object: GeneOrGeneProductName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
+@dataclass
 class BiosampleToThingAssociation(Association):
     """
     An association between a biosample and something
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: BiosampleName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
+@dataclass
 class BiosampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     """
     An association between a biosample and a disease or phenotype
-  definitional: true
-  
+    definitional: true
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class EntityToPhenotypicFeatureAssociation(Association):
+    sex_qualifier: Optional[BiologicalSexName] = None
+    description: Optional[NarrativeText] = None
+    object: PhenotypicFeatureName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+
+
+@dataclass
+class DiseaseOrPhenotypicFeatureAssociationToThingAssociation(Association):
+    subject: DiseaseOrPhenotypicFeatureName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+
+
+@dataclass
+class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(DiseaseOrPhenotypicFeatureAssociationToThingAssociation):
     """
-    None
+    An association between either a disease or a phenotypic feature and an anatomical entity, where the
+    disease/feature manifests in that site.
     """
-    def __init__(self,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    object: AnatomicalEntityName = None
 
-    def __str__(self):
-        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
-class EntityToDiseaseAssociation(object):
-    """
-    None
-    """
-    def __init__(self,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None):
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-
-    def __str__(self):
-        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class ThingToDiseaseOrPhenotypicFeatureAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    object: DiseaseOrPhenotypicFeatureName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
+@dataclass
 class DiseaseToThingAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: DiseaseName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
+@dataclass
 class GenotypeToPhenotypicFeatureAssociation(Association):
     """
-    Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
+    Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype,
+    either in isolation or through environment
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
+    relation: RelationshipTypeName = None
+    subject: GenotypeName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
+@dataclass
 class EnvironmentToPhenotypicFeatureAssociation(Association):
     """
-    Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+    Any association between an environment and a phenotypic feature, where being in the environment influences the
+    phenotype
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
+    subject: EnvironmentName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
+@dataclass
 class DiseaseToPhenotypicFeatureAssociation(Association):
     """
-    An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
+    An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the
+    disease in some way
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class CaseToPhenotypicFeatureAssociation(Association):
     """
-    An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
+    An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or
+    has had the phenotype
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class GeneToThingAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: GeneOrGeneProductName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
+@dataclass
 class GeneToPhenotypicFeatureAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
+    subject: GeneOrGeneProductName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
+@dataclass
 class GeneToDiseaseAssociation(Association):
+    subject: GeneOrGeneProductName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+
+
+@dataclass
+class VariantToPopulationAssociation(Association):
     """
-    None
+    An association between a variant and a population, where the variant has particular frequency in the population
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
+    subject: SequenceVariantName = None
+    object: PopulationOfIndividualOrganismsName = None
+    has_quotient: Optional[str] = None
+    has_count: Optional[str] = None
+    has_total: Optional[str] = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
-class ModelToDiseaseMixin(object):
+@dataclass
+class PopulationToPopulationAssociation(Association):
     """
-    This mixin is used for any association class for which the subject plays the role of a 'model'
+    An association between a two populations
     """
-    def __init__(self):
-        pass
+    subject: PopulationOfIndividualOrganismsName = None
+    object: PopulationOfIndividualOrganismsName = None
+    relation: RelationshipTypeName = None
 
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeneToDiseaseAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
+@dataclass
+class VariantToPhenotypicFeatureAssociation(Association):
+    subject: SequenceVariantName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+
+
+@dataclass
+class VariantToDiseaseAssociation(Association):
+    subject: str = None
+    relation: RelationshipTypeName = None
+    object: str = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+
+
+@dataclass
 class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
+    subject: GeneOrGeneProductName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
+@dataclass
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
+    sequence_variant_qualifier: Optional[SequenceVariantName] = None
+    subject: GeneOrGeneProductName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
+@dataclass
 class GenotypeToThingAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: GenotypeName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
 
 
+@dataclass
 class GeneToExpressionSiteAssociation(Association):
     """
     An association between a gene and an expression site, possibly qualified by stage/timing info.
     """
-    def __init__(self,
-                 stage_qualifier=None,
-                 quantifier_qualifier=None,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.stage_qualifier=stage_qualifier
-        self.quantifier_qualifier=quantifier_qualifier
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    stage_qualifier: Optional[LifeStageName] = None
+    quantifier_qualifier: Optional[str] = None
+    subject: GeneOrGeneProductName = None
+    object: AnatomicalEntityName = None
+    relation: RelationshipTypeName = None
 
-    def __str__(self):
-        return "stage_qualifier={} quantifier_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.stage_qualifier,self.quantifier_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
+@dataclass
 class SequenceVariantModulatesTreatmentAssociation(Association):
     """
-    None
+    An association between a sequence variant and a treatment or health intervention. The treatment object itself
+    encompasses both the disease and the drug used.
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: SequenceVariantName = None
+    object: TreatmentName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
-class GeneToGoTermAssociation(Association):
+@dataclass
+class FunctionalAssociation(Association):
     """
-    None
+    An association between a macromolecular machine (gene, gene product or complex of gene products) and either a
+    molecular activity, a biological process or a cellular location in which a function is executed
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: MacromolecularMachineName = None
+    object: GeneOntologyClassName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
-class AssociationResultSet(InformationContentEntity):
+@dataclass
+class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation):
     """
-    None
+    A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity
+    (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to
+    its execution
     """
-    def __init__(self,
-                 associations=None,
-                 id=None,
-                 label=None):
-        self.associations=associations
-        self.id=id
-        self.label=label
+    object: MolecularActivityName = None
 
-    def __str__(self):
-        return "associations={} id={} label={} ".format(self.associations,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
+@dataclass
+class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation):
+    """
+    A functional association between a macromolecular machine (gene, gene product or complex) and a biological process
+    or pathway (as represented in the GO biological process branch), where the entity carries out some part of the
+    process, regulates it, or acts upstream of it
+    """
+    object: BiologicalProcessName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+
+
+@dataclass
+class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation):
+    """
+    A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component
+    (as represented in the GO cellular component branch), where the entity carries out its function in the cellular
+    component
+    """
+    object: CellularComponentName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+
+
+@dataclass
+class GeneToGoTermAssociation(FunctionalAssociation):
+    subject: MolecularEntityName = None
+    object: GeneOntologyClassName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+
+
+@dataclass
 class GenomicSequenceLocalization(Association):
     """
-    A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
+    A relationship between a sequence feature and an entity it is localized to. The reference entity may be a
+    chromosome, chromosome region or information entity such as a contig
     """
-    def __init__(self,
-                 start_interbase_coordinate=None,
-                 end_interbase_coordinate=None,
-                 genome_build=None,
-                 phase=None,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.start_interbase_coordinate=start_interbase_coordinate
-        self.end_interbase_coordinate=end_interbase_coordinate
-        self.genome_build=genome_build
-        self.phase=phase
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    start_interbase_coordinate: Optional[str] = None
+    end_interbase_coordinate: Optional[str] = None
+    genome_build: Optional[str] = None
+    phase: Optional[str] = None
+    subject: GenomicEntityName = None
+    object: GenomicEntityName = None
 
-    def __str__(self):
-        return "start_interbase_coordinate={} end_interbase_coordinate={} genome_build={} phase={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.start_interbase_coordinate,self.end_interbase_coordinate,self.genome_build,self.phase,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
+@dataclass
 class SequenceFeatureRelationship(Association):
     """
     For example, a particular exon is part of a particular transcript or gene
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: GenomicEntityName = None
+    object: GenomicEntityName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
-class SequenceFeatureRelationship(Association):
-    """
-    For example, a particular exon is part of a particular transcript or gene
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     """
     A gene is a collection of transcripts
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: TranscriptName = None
+    object: GeneName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
+@dataclass
 class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     """
     A gene is transcribed and potentially translated to a gene product
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: GeneName = None
+    object: GeneProductName = None
+    relation: RelationshipTypeName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
+@dataclass
 class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     """
     A transcript is formed from multiple exons
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: ExonName = None
+    object: TranscriptName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
-class SequenceFeatureToSequenceRelationship(Association):
-    """
-    Relates a sequence feature such as a gene to its sequence
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
+@dataclass
 class GeneRegulatoryRelationship(Association):
     """
     A regulatory relationship between two genes
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    relation: RelationshipTypeName = None
+    subject: GeneOrGeneProductName = None
+    object: GeneOrGeneProductName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
 
 
+@dataclass
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
+    subject: AnatomicalEntityName = None
+    object: AnatomicalEntityName = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+
+
+@dataclass
+class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
-    None
+    A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are
+    related by parthood. This includes relationships between cellular components and cells, between cells and tissues,
+    tissues and whole organisms
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: AnatomicalEntityName = None
+    object: AnatomicalEntityName = None
+    relation: RelationshipTypeName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
-class AnatomicalEntityToAnatomicalEntityAssociation(Association):
+@dataclass
+class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
     """
-    None
+    A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are
+    related by development. A number of different relationship types can be used to specify the precise nature of the
+    relationship
     """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
+    subject: AnatomicalEntityName = None
+    object: AnatomicalEntityName = None
+    relation: RelationshipTypeName = None
 
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
 
 
-class AnatomicalEntityPartOfAnatomicalEntityAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Occurrent(object):
+@dataclass
+class Occurrent(YAMLRoot):
     """
     A processual entity
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    regulates_process_to_process: Optional[OccurrentName] = None
+    has_participant: Optional[str] = None
+    has_input: Optional[str] = None
+    precedes: Optional[OccurrentName] = None
 
 
-class Occurrent(object):
+@dataclass
+class BiologicalProcessOrActivity(BiologicalEntity):
     """
-    A processual entity
+    Either an individual molecular activity, or a collection of causally connected molecular activities
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class MolecularActivity(Occurrent):
+@dataclass
+class MolecularActivity(BiologicalProcessOrActivity):
     """
-    An execution of a molecular function
+    An execution of a molecular function carried out by a gene product or macromolecular complex.
     """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class BiologicalProcess(BiologicalEntity):
+@dataclass
+class ActivityAndBehavior(Occurrent):
     """
-    One or more causally connected executions of molecular functions
+    Activity or behavior of any independent integral living, organization or mechanical actor in the world
     """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class BiologicalProcess(BiologicalEntity):
+@dataclass
+class Procedure(Occurrent):
+    """
+    A series of actions conducted in a certain order or manner
+    """
+    pass
+
+
+@dataclass
+class Phenomenon(Occurrent):
+    """
+    a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
+    """
+    pass
+
+
+@dataclass
+class BiologicalProcess(BiologicalProcessOrActivity):
     """
     One or more causally connected executions of molecular functions
     """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Pathway(BiologicalProcess):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
-class AnatomicalEntity(OrganismalEntity):
-    """
-    A subcellular location, cell type or gross anatomical part
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+@dataclass
+class PhysiologicalProcess(BiologicalProcess):
+    pass
 
 
+@dataclass
 class CellularComponent(AnatomicalEntity):
     """
     A location in or around a cell
     """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class Cell(AnatomicalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
+class CellLine(Biosample):
+    pass
+
+
+@dataclass
 class GrossAnatomicalStructure(AnatomicalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
+    pass
 
 
+@dataclass
 class NamedGraph(InformationContentEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
+    title: Optional[LabelType] = None
 
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
 
-
-class PropertyValuePair(object):
-    """
-    None
-    """
-    def __init__(self,
-                 relation=None,
-                 filler=None):
-        self.relation=relation
-        self.filler=filler
-
-    def __str__(self):
-        return "relation={} filler={} ".format(self.relation,self.filler)
-    def __repr__(self):
-        return self.__str__()
-
-
-class RelationshipType(object):
-    """
-    An OWL property used as an edge label
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class PhenotypicSex(BiologicalSex):
-    """
-    An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class GenotypicSex(BiologicalSex):
-    """
-    An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class SeverityValue(Attribute):
-    """
-    describes the severity of a phenotypic feature or disease
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class FrequencyValue(Attribute):
-    """
-    describes the frequency of occurrence of an event or condition
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class ClinicalModifier(Attribute):
-    """
-    Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class Onset(Attribute):
-    """
-    The age group in which manifestations appear
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeneOntologyClass(OntologyClass):
-    """
-    an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class ThingWithTaxon(object):
-    """
-    A mixin that can be used on any entity with a taxon
-    """
-    def __init__(self,
-                 in_taxon=None):
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "in_taxon={} ".format(self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class OrganismTaxon(OrganismalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Case(IndividualOrganism):
-    """
-    An individual organism that has a patient role in some clinical context.
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Biosample(OrganismalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Disease(DiseaseOrPhenotypicFeature):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class PhenotypicFeature(DiseaseOrPhenotypicFeature):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class ConfidenceLevel(InformationContentEntity):
-    """
-    Level of confidence in a statement
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class EvidenceType(InformationContentEntity):
-    """
-    Class of evidence that supports an association
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Publication(InformationContentEntity):
-    """
-    Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Provider(AdministrativeEntity):
-    """
-    person, group, organization or project that provides a piece of information
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class ChemicalSubstance(MolecularEntity):
-    """
-    may be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class LifeStage(OrganismalEntity):
-    """
-    A stage of development or growth of an organism, including post-natal adult stages
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class EnvironmentalProcess(PlanetaryEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class EnvironmentalFeature(PlanetaryEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class ClinicalTrial(ClinicalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class ClinicalIntervention(ClinicalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Genome(GenomicEntity):
-    """
-    A genome is the sum of genetic material within a cell or virion.
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Transcript(GenomicEntity):
-    """
-    An RNA synthesized on a DNA or RNA template by an RNA polymerase
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Exon(GenomicEntity):
-    """
-    A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class CodingSequence(GenomicEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Gene(GeneOrGeneProduct):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Protein(GeneProduct):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Microrna(NoncodingRnaProduct):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class MacromolecularComplex(MolecularEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeneGrouping(object):
-    """
-    any grouping of multiple genes or gene products
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeneFamily(MolecularEntity):
-    """
-    any grouping of multiple genes or gene products related by common descent
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Zygosity(Attribute):
-    """
-    None
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class Allele(Genotype):
-    """
-    A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus
-    """
-    def __init__(self,
-                 has_gene=None,
-                 has_zygosity=None,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.has_gene=has_gene
-        self.has_zygosity=has_zygosity
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "has_gene={} has_zygosity={} id={} label={} in_taxon={} ".format(self.has_gene,self.has_zygosity,self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class SequenceVariant(GenomicEntity):
-    """
-    A genomic feature representing one of a set of coexisting sequence variants at a particular genomic locus.
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class DrugExposure(Environment):
-    """
-    A drug exposure is an intake of a particular chemical substance
-    """
-    def __init__(self,
-                 drug=None,
-                 id=None,
-                 label=None):
-        self.drug=drug
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "drug={} id={} label={} ".format(self.drug,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Treatment(Environment):
-    """
-    A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
-    """
-    def __init__(self,
-                 treats=None,
-                 has_exposure_parts=None,
-                 id=None,
-                 label=None):
-        self.treats=treats
-        self.has_exposure_parts=has_exposure_parts
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "treats={} has_exposure_parts={} id={} label={} ".format(self.treats,self.has_exposure_parts,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeographicLocation(PlanetaryEntity):
-    """
-    a location that can be described in lat/long coordinates
-    """
-    def __init__(self,
-                 latitude=None,
-                 longitude=None,
-                 id=None,
-                 label=None):
-        self.latitude=latitude
-        self.longitude=longitude
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "latitude={} longitude={} id={} label={} ".format(self.latitude,self.longitude,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeographicLocationAtTime(PlanetaryEntity):
-    """
-    a location that can be described in lat/long coordinates, for a particular time
-    """
-    def __init__(self,
-                 latitude=None,
-                 longitude=None,
-                 timepoint=None,
-                 id=None,
-                 label=None):
-        self.latitude=latitude
-        self.longitude=longitude
-        self.timepoint=timepoint
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "latitude={} longitude={} timepoint={} id={} label={} ".format(self.latitude,self.longitude,self.timepoint,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GenotypeToGenotypePartAssociation(Association):
-    """
-    Any association between one genotype and a genotypic entity that is a sub-component of it
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GenotypeToGeneAssociation(Association):
-    """
-    Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GenotypeToVariantAssociation(Association):
-    """
-    Any association between a genotype and a sequence variant.
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
-    """
-    A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class MolecularInteraction(Association):
-    """
-    An interaction at the molecular level between two physical entities
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class PairwiseGeneOrProteinInteractionAssociation(GeneToGeneAssociation):
-    """
-    An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class ChemicalToThingAssociation(Association):
-    """
-    An interaction between a chemical entity and another entity
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class CaseToThingAssociation(Association):
-    """
-    An abstract association for use where the case is the subject
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class ChemicalToGeneAssociation(Association):
-    """
-    An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug.
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
-    """
-    An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class ChemicalToPathwayAssociation(Association):
-    """
-    An interaction between a chemical entity and a biological process or pathway
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class ChemicalToGeneAssociation(Association):
-    """
-    An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug.
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class BiosampleToThingAssociation(Association):
-    """
-    An association between a biosample and something
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class BiosampleToDiseaseOrPhenotypicFeatureAssociation(Association):
-    """
-    An association between a biosample and a disease or phenotype
-  definitional: true
-  
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class EntityToPhenotypicFeatureAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class EntityToDiseaseAssociation(object):
-    """
-    None
-    """
-    def __init__(self,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None):
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-
-    def __str__(self):
-        return "frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
-    def __repr__(self):
-        return self.__str__()
-
-
-class ThingToDiseaseOrPhenotypicFeatureAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class DiseaseToThingAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GenotypeToPhenotypicFeatureAssociation(Association):
-    """
-    Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
-
-
-class EnvironmentToPhenotypicFeatureAssociation(Association):
-    """
-    Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
-
-
-class DiseaseToPhenotypicFeatureAssociation(Association):
-    """
-    An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
-
-
-class CaseToPhenotypicFeatureAssociation(Association):
-    """
-    An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeneToThingAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeneToPhenotypicFeatureAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None,
-                 sex_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-        self.sex_qualifier=sex_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} sex_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier,self.sex_qualifier)
-    def __repr__(self):
-        return self.__str__()
-
-
-class ModelToDiseaseMixin(object):
-    """
-    This mixin is used for any association class for which the subject plays the role of a 'model'
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None,
-                 frequency_qualifier=None,
-                 severity_qualifier=None,
-                 onset_qualifier=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-        self.frequency_qualifier=frequency_qualifier
-        self.severity_qualifier=severity_qualifier
-        self.onset_qualifier=onset_qualifier
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} frequency_qualifier={} severity_qualifier={} onset_qualifier={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label,self.frequency_qualifier,self.severity_qualifier,self.onset_qualifier)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GenotypeToThingAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeneToExpressionSiteAssociation(Association):
-    """
-    An association between a gene and an expression site, possibly qualified by stage/timing info.
-    """
-    def __init__(self,
-                 stage_qualifier=None,
-                 quantifier_qualifier=None,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.stage_qualifier=stage_qualifier
-        self.quantifier_qualifier=quantifier_qualifier
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "stage_qualifier={} quantifier_qualifier={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.stage_qualifier,self.quantifier_qualifier,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class SequenceVariantModulatesTreatmentAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeneToGoTermAssociation(Association):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class AssociationResultSet(InformationContentEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 associations=None,
-                 id=None,
-                 label=None):
-        self.associations=associations
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "associations={} id={} label={} ".format(self.associations,self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GenomicSequenceLocalization(Association):
-    """
-    A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
-    """
-    def __init__(self,
-                 start_interbase_coordinate=None,
-                 end_interbase_coordinate=None,
-                 genome_build=None,
-                 phase=None,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.start_interbase_coordinate=start_interbase_coordinate
-        self.end_interbase_coordinate=end_interbase_coordinate
-        self.genome_build=genome_build
-        self.phase=phase
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "start_interbase_coordinate={} end_interbase_coordinate={} genome_build={} phase={} association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.start_interbase_coordinate,self.end_interbase_coordinate,self.genome_build,self.phase,self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class TranscriptToGeneRelationship(SequenceFeatureRelationship):
-    """
-    A gene is a collection of transcripts
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeneToGeneProductRelationship(SequenceFeatureRelationship):
-    """
-    A gene is transcribed and potentially translated to a gene product
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class ExonToTranscriptRelationship(SequenceFeatureRelationship):
-    """
-    A transcript is formed from multiple exons
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class SequenceFeatureToSequenceRelationship(Association):
-    """
-    Relates a sequence feature such as a gene to its sequence
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GeneRegulatoryRelationship(Association):
-    """
-    A regulatory relationship between two genes
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class AnatomicalEntityPartOfAnatomicalEntityAssociation(AnatomicalEntityToAnatomicalEntityAssociation):
-    """
-    None
-    """
-    def __init__(self,
-                 association_type=None,
-                 subject=None,
-                 negated=None,
-                 relation=None,
-                 object=None,
-                 qualifiers=None,
-                 publications=None,
-                 provided_by=None,
-                 id=None,
-                 label=None,
-                 subject_extensions=None,
-                 object_extensions=None,
-                 has_evidence_graph=None,
-                 has_evidence_type=None,
-                 has_evidence=None,
-                 subject_taxon=None,
-                 subject_taxon_label=None,
-                 subject_taxon_closure=None,
-                 subject_taxon_closure_label=None,
-                 object_taxon=None,
-                 object_taxon_label=None,
-                 object_taxon_closure=None,
-                 object_taxon_closure_label=None):
-        self.association_type=association_type
-        self.subject=subject
-        self.negated=negated
-        self.relation=relation
-        self.object=object
-        self.qualifiers=qualifiers
-        self.publications=publications
-        self.provided_by=provided_by
-        self.id=id
-        self.label=label
-        self.subject_extensions=subject_extensions
-        self.object_extensions=object_extensions
-        self.has_evidence_graph=has_evidence_graph
-        self.has_evidence_type=has_evidence_type
-        self.has_evidence=has_evidence
-        self.subject_taxon=subject_taxon
-        self.subject_taxon_label=subject_taxon_label
-        self.subject_taxon_closure=subject_taxon_closure
-        self.subject_taxon_closure_label=subject_taxon_closure_label
-        self.object_taxon=object_taxon
-        self.object_taxon_label=object_taxon_label
-        self.object_taxon_closure=object_taxon_closure
-        self.object_taxon_closure_label=object_taxon_closure_label
-
-    def __str__(self):
-        return "association_type={} subject={} negated={} relation={} object={} qualifiers={} publications={} provided_by={} id={} label={} subject_extensions={} object_extensions={} has_evidence_graph={} has_evidence_type={} has_evidence={} subject_taxon={} subject_taxon_label={} subject_taxon_closure={} subject_taxon_closure_label={} object_taxon={} object_taxon_label={} object_taxon_closure={} object_taxon_closure_label={} ".format(self.association_type,self.subject,self.negated,self.relation,self.object,self.qualifiers,self.publications,self.provided_by,self.id,self.label,self.subject_extensions,self.object_extensions,self.has_evidence_graph,self.has_evidence_type,self.has_evidence,self.subject_taxon,self.subject_taxon_label,self.subject_taxon_closure,self.subject_taxon_closure_label,self.object_taxon,self.object_taxon_label,self.object_taxon_closure,self.object_taxon_closure_label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class MolecularActivity(Occurrent):
-    """
-    An execution of a molecular function
-    """
-    def __init__(self):
-        pass
-
-    def __str__(self):
-        return "".format()
-    def __repr__(self):
-        return self.__str__()
-
-
-class Pathway(BiologicalProcess):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None):
-        self.id=id
-        self.label=label
-
-    def __str__(self):
-        return "id={} label={} ".format(self.id,self.label)
-    def __repr__(self):
-        return self.__str__()
-
-
-class CellularComponent(AnatomicalEntity):
-    """
-    A location in or around a cell
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class Cell(AnatomicalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
-
-class GrossAnatomicalStructure(AnatomicalEntity):
-    """
-    None
-    """
-    def __init__(self,
-                 id=None,
-                 label=None,
-                 in_taxon=None):
-        self.id=id
-        self.label=label
-        self.in_taxon=in_taxon
-
-    def __str__(self):
-        return "id={} label={} in_taxon={} ".format(self.id,self.label,self.in_taxon)
-    def __repr__(self):
-        return self.__str__()
-
+@dataclass
+class PropertyValuePair(YAMLRoot):
+    relation: RelationshipTypeName
+    filler: Optional[NamedThingName] = None
 

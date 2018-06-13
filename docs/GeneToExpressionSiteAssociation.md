@@ -17,26 +17,24 @@ URI: [http://bioentity.io/vocab/GeneToExpressionSiteAssociation](http://bioentit
 
 ## Fields
 
- * _[object](object.md)_
+ * _[gene to expression site association.object](gene_to_expression_site_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [AnatomicalEntity](AnatomicalEntity.md) [required]
-    * Example: [UBERON:0002037](http://purl.obolibrary.org/obo/UBERON_0002037) cerebellum
     * __Local__
- * _[quantifier qualifier](quantifier_qualifier.md)_
+ * _[gene to expression site association.quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)_
     * _can be used to indicate magnitude, or also ranking_
     * range: **string**
     * __Local__
- * _[relation](relation.md)_
+ * _[gene to expression site association.relation](gene_to_expression_site_association_relation.md)_
     * _the relationship type by which a subject is connected to an object in an association_
     * range: [RelationshipType](RelationshipType.md) [required]
     * edge label: [expressed in](expressed_in.md) *subsets*: (translator_minimal)
     * __Local__
- * _[stage qualifier](stage_qualifier.md)_
+ * _[gene to expression site association.stage qualifier](gene_to_expression_site_association_stage_qualifier.md)_
     * _stage at which the gene is expressed in the site_
     * range: [LifeStage](LifeStage.md)
-    * Example: [UBERON:0000069](http://purl.obolibrary.org/obo/UBERON_0000069) larval stage
     * __Local__
- * _[subject](subject.md)_
+ * _[gene to expression site association.subject](gene_to_expression_site_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__

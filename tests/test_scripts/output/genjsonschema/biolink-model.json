@@ -1413,11 +1413,11 @@
          "title": "Metabolite",
          "type": "object"
       },
-      "Microrna": {
+      "MicroRNA": {
          "description": "",
          "properties": {},
          "required": [],
-         "title": "Microrna",
+         "title": "MicroRNA",
          "type": "object"
       },
       "MolecularActivity": {
@@ -1491,11 +1491,11 @@
          "title": "NamedThing",
          "type": "object"
       },
-      "NoncodingRnaProduct": {
+      "NoncodingRNAProduct": {
          "description": "",
          "properties": {},
          "required": [],
-         "title": "NoncodingRnaProduct",
+         "title": "NoncodingRNAProduct",
          "type": "object"
       },
       "Occurrent": {
@@ -1671,25 +1671,25 @@
          "title": "Publication",
          "type": "object"
       },
+      "RNAProduct": {
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "RNAProduct",
+         "type": "object"
+      },
+      "RNAProductIsoform": {
+         "description": "Represents a protein that is a specific isoform of the canonical or reference RNA",
+         "properties": {},
+         "required": [],
+         "title": "RNAProductIsoform",
+         "type": "object"
+      },
       "RelationshipType": {
          "description": "An OWL property used as an edge label",
          "properties": {},
          "required": [],
          "title": "RelationshipType",
-         "type": "object"
-      },
-      "RnaProduct": {
-         "description": "",
-         "properties": {},
-         "required": [],
-         "title": "RnaProduct",
-         "type": "object"
-      },
-      "RnaProductIsoform": {
-         "description": "Represents a protein that is a specific isoform of the canonical or reference RNA",
-         "properties": {},
-         "required": [],
-         "title": "RnaProductIsoform",
          "type": "object"
       },
       "SenstivityQuantifier": {

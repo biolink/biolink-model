@@ -17,11 +17,11 @@ URI: [http://bioentity.io/vocab/ExonToTranscriptRelationship](http://bioentity.i
 
 ## Fields
 
- * _[object](object.md)_
+ * _[exon to transcript relationship.object](exon_to_transcript_relationship_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [Transcript](Transcript.md) [required]
     * __Local__
- * _[subject](subject.md)_
+ * _[exon to transcript relationship.subject](exon_to_transcript_relationship_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [Exon](Exon.md) [required]
     * __Local__

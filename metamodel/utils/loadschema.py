@@ -2,7 +2,7 @@ import os
 import time
 from datetime import date, datetime
 from io import StringIO
-from typing import Union, TextIO, cast
+from typing import Union, TextIO, cast, Optional
 from urllib.request import Request, urlopen
 
 import yaml
@@ -14,13 +14,15 @@ from metamodel.utils.mergeutils import merge_schemas
 def load_raw_schema(data: Union[str, TextIO],
                     source_file: str=None,
                     source_file_date: str=None,
-                    source_file_size: int=None) -> SchemaDefinition:
+                    source_file_size: int=None,
+                    base_dir: Optional[str]=None) -> SchemaDefinition:
     """ Load and flatten SchemaDefinition from a file name, a URL or a block of text
 
     @param data: URL, file name or block of text
     @param source_file: Source file name for the schema
     @param source_file_date: timestamp of source file
     @param source_file_size: size of source file
+    @param base_dir: Working directory of sources
     @return: Map from schema name to SchemaDefinition
     """
     if isinstance(data, str):
@@ -33,8 +35,9 @@ def load_raw_schema(data: Union[str, TextIO],
             with urlopen(req) as response:
                 return load_raw_schema(response)
         else:
-            with open(data) as f:
-                return load_raw_schema(f, data, time.ctime(os.path.getmtime(data)), os.path.getsize(data))
+            fname = os.path.join(base_dir if base_dir else '', data)
+            with open(fname) as f:
+                return load_raw_schema(f, data, time.ctime(os.path.getmtime(fname)), os.path.getsize(fname))
     else:
         schemadefs = yaml.load(data, DupCheckYamlLoader)
         # Some schemas don't have an outermost identifier.  Construct one if necessary

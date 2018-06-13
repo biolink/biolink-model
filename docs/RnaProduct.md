@@ -3,9 +3,9 @@
 
 
 
-URI: [http://bioentity.io/vocab/RnaProduct](http://bioentity.io/vocab/RnaProduct)
+URI: [http://bioentity.io/vocab/RNAProduct](http://bioentity.io/vocab/RNAProduct)
 
-![img](images/RnaProduct.png)
+![img](images/RNAProduct.png)
 ## Mappings
 
  * [CHEBI:33697](http://purl.obolibrary.org/obo/CHEBI_33697)
@@ -16,8 +16,8 @@ URI: [http://bioentity.io/vocab/RnaProduct](http://bioentity.io/vocab/RnaProduct
  *  is_a: [GeneProduct](GeneProduct.md) - The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
 ## Children
 
- * [RnaProductIsoform](RnaProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
- * [NoncodingRnaProduct](NoncodingRnaProduct.md)
+ * [RNAProductIsoform](RNAProductIsoform.md) - Represents a protein that is a specific isoform of the canonical or reference RNA
+ * [NoncodingRNAProduct](NoncodingRNAProduct.md)
 ## Used in
 
 ## Fields
@@ -74,7 +74,7 @@ URI: [http://bioentity.io/vocab/RnaProduct](http://bioentity.io/vocab/RnaProduct
     * _An IRI for the node. This is determined by the id using expansion rules._
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[name](name.md) *subsets*: (translator_minimal)_
+ * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
     * range: [LabelType](LabelType.md)
     * inherited from: [MacromolecularMachine](MacromolecularMachine.md)

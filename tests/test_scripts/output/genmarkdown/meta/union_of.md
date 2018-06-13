@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/union_of](slot_uri)
 
 ## Domain and Range
 
-definition -> definition
+[Definition](Definition.md) -> [Definition](Definition.md)
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: definition
+ *  usage: [Definition](Definition.md)

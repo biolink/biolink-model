@@ -11,12 +11,12 @@ URI: [http://bioentity.io/vocab/GenotypicSex](http://bioentity.io/vocab/Genotypi
  * [PATO:0020000](http://purl.obolibrary.org/obo/PATO_0020000)
 ## Inheritance
 
- *  is_a: biological sex
+ *  is_a: [BiologicalSex](BiologicalSex.md)
 ## Children
 
 ## Fields
 
- * _subclass of_
+ * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
     * _holds between two classes where the domain class is a specialization of the range class_
-    * range: ontology class
-    * inherited from: ontology class
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [OntologyClass](OntologyClass.md)

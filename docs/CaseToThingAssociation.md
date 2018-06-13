@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/CaseToThingAssociation](http://bioentity.io/voca
 
 ## Fields
 
- * _[subject](subject.md)_
+ * _[case to thing association.subject](case_to_thing_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [Case](Case.md) [required]
     * __Local__

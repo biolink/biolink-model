@@ -8,12 +8,12 @@ URI: [http://bioentity.io/vocab/iri](slot_uri)
 
 ## Domain and Range
 
-named thing -> iri type
+[NamedThing](NamedThing.md) -> [IriType](IriType.md)
 ## Inheritance
 
- *  is_a: node property
+ *  is_a: [node property](node_property.md)
 ## Children
 
 ## Used in
 
- *  usage: named thing
+ *  usage: [NamedThing](NamedThing.md)

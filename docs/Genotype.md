@@ -17,12 +17,12 @@ URI: [http://bioentity.io/vocab/Genotype](http://bioentity.io/vocab/Genotype)
 
 ## Used in
 
- *  class: **[GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)** *[subject](subject.md)* **[Genotype](Genotype.md)**
- *  class: **[GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)** *[object](object.md)* **[Genotype](Genotype.md)**
- *  class: **[GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)** *[subject](subject.md)* **[Genotype](Genotype.md)**
- *  class: **[GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)** *[subject](subject.md)* **[Genotype](Genotype.md)**
- *  class: **[GenotypeToThingAssociation](GenotypeToThingAssociation.md)** *[subject](subject.md)* **[Genotype](Genotype.md)**
- *  class: **[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)** *[subject](subject.md)* **[Genotype](Genotype.md)**
+ *  class: **[GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)** *[genotype to gene association.subject](genotype_to_gene_association_subject.md)* **[Genotype](Genotype.md)**
+ *  class: **[GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)** *[genotype to genotype part association.object](genotype_to_genotype_part_association_object.md)* **[Genotype](Genotype.md)**
+ *  class: **[GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)** *[genotype to genotype part association.subject](genotype_to_genotype_part_association_subject.md)* **[Genotype](Genotype.md)**
+ *  class: **[GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)** *[genotype to phenotypic feature association.subject](genotype_to_phenotypic_feature_association_subject.md)* **[Genotype](Genotype.md)**
+ *  class: **[GenotypeToThingAssociation](GenotypeToThingAssociation.md)** *[genotype to thing association.subject](genotype_to_thing_association_subject.md)* **[Genotype](Genotype.md)**
+ *  class: **[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)** *[genotype to variant association.subject](genotype_to_variant_association_subject.md)* **[Genotype](Genotype.md)**
 ## Fields
 
  * _[has zygosity](has_zygosity.md)_

@@ -11,12 +11,12 @@ URI: [http://bioentity.io/vocab/precedes](slot_uri)
  * [WD:P156](http://purl.obolibrary.org/obo/WD_P156)
 ## Domain and Range
 
-occurrent -> occurrent
+[Occurrent](Occurrent.md) -> [Occurrent](Occurrent.md)
 ## Inheritance
 
- *  is_a: related to
+ *  is_a: [related to](related_to.md)
 ## Children
 
 ## Used in
 
- *  usage: occurrent
+ *  usage: [Occurrent](Occurrent.md)

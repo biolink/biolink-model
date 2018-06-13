@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/entity](slot_uri)
 
 ## Domain and Range
 
-[ClassDefinition](ClassDefinition.md) -> **boolean**
+class definition -> **boolean**
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [ClassDefinition](ClassDefinition.md)
+ *  usage: class definition

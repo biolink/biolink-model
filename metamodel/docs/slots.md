@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/slots](slot_uri)
 
 ## Domain and Range
 
-[ClassDefinition](ClassDefinition.md) -> [SlotDefinition](SlotDefinition.md)
+class definition -> slot definition
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: [ClassDefinition](ClassDefinition.md)
+ *  usage: class definition

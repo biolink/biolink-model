@@ -12,7 +12,7 @@ URI: [http://bioentity.io/vocab/GeneGrouping](http://bioentity.io/vocab/GeneGrou
 
 ## Children
 
- * gene family
+ * [GeneFamily](GeneFamily.md) (mixin)  - any grouping of multiple genes or gene products related by common descent
 ## Used in
 
 ## Fields

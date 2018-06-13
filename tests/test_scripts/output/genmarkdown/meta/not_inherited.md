@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/not_inherited](slot_uri)
 
 ## Domain and Range
 
-slot definition -> **boolean**
+[SlotDefinition](SlotDefinition.md) -> **boolean**
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: slot definition
+ *  usage: [SlotDefinition](SlotDefinition.md)

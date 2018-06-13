@@ -9,12 +9,12 @@ URI: [http://bioentity.io/vocab/latitude](slot_uri)
  * [wgs:lat](http://purl.obolibrary.org/obo/wgs_lat)
 ## Domain and Range
 
-geographic location -> **float**
+[GeographicLocation](GeographicLocation.md) -> **float**
 ## Inheritance
 
- *  is_a: node property
+ *  is_a: [node property](node_property.md)
 ## Children
 
 ## Used in
 
- *  usage: geographic location
+ *  usage: [GeographicLocation](GeographicLocation.md)

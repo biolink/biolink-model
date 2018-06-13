@@ -1,5 +1,5 @@
 # Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/biolink-model.yaml by pythongen.py version: 0.0.2
-# Generation date: 2018-06-11 18:28
+# Generation date: 2018-06-12 17:22
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -77,10 +77,10 @@ GeneProductName = NewType("GeneProductName", str)
 ProteinName = NewType("ProteinName", str)
 GeneProductIsoformName = NewType("GeneProductIsoformName", str)
 ProteinIsoformName = NewType("ProteinIsoformName", str)
-RnaProductName = NewType("RnaProductName", str)
-RnaProductIsoformName = NewType("RnaProductIsoformName", str)
-NoncodingRnaProductName = NewType("NoncodingRnaProductName", str)
-MicrornaName = NewType("MicrornaName", str)
+RNAProductName = NewType("RNAProductName", str)
+RNAProductIsoformName = NewType("RNAProductIsoformName", str)
+NoncodingRNAProductName = NewType("NoncodingRNAProductName", str)
+MicroRNAName = NewType("MicroRNAName", str)
 MacromolecularComplexName = NewType("MacromolecularComplexName", str)
 GeneGroupingName = NewType("GeneGroupingName", str)
 GeneFamilyName = NewType("GeneFamilyName", str)
@@ -594,12 +594,12 @@ class ProteinIsoform(Protein):
 
 
 @dataclass
-class RnaProduct(GeneProduct):
+class RNAProduct(GeneProduct):
     pass
 
 
 @dataclass
-class RnaProductIsoform(RnaProduct):
+class RNAProductIsoform(RNAProduct):
     """
     Represents a protein that is a specific isoform of the canonical or reference RNA
     """
@@ -607,12 +607,12 @@ class RnaProductIsoform(RnaProduct):
 
 
 @dataclass
-class NoncodingRnaProduct(RnaProduct):
+class NoncodingRNAProduct(RNAProduct):
     pass
 
 
 @dataclass
-class Microrna(NoncodingRnaProduct):
+class MicroRNA(NoncodingRNAProduct):
     pass
 
 

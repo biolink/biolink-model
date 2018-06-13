@@ -12,9 +12,9 @@ URI: [http://bioentity.io/vocab/RelationshipQuantifier](http://bioentity.io/voca
 
 ## Children
 
- * frequency quantifier
- * senstivity quantifier
- * specificity quantifier
+ * [FrequencyQuantifier](FrequencyQuantifier.md)
+ * [SenstivityQuantifier](SenstivityQuantifier.md)
+ * [SpecificityQuantifier](SpecificityQuantifier.md)
 ## Used in
 
 ## Fields

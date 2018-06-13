@@ -1,115 +1,73 @@
----
-layout: default
----
-
-## publication
+# Class: publication
 
 
 Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
 
 URI: [http://bioentity.io/vocab/Publication](http://bioentity.io/vocab/Publication)
+
+![img](images/Publication.png)
 ## Mappings
 
  * [IAO:0000311](http://purl.obolibrary.org/obo/IAO_0000311)
-
 ## Inheritance
 
- *  is_a: [information content entity](InformationContentEntity.html)
-
+ *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
 ## Children
-
 
 ## Used in
 
- *  class: [association](Association.html) references: [publication](Publication.html)
- *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [publication](Publication.html)
- *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [publication](Publication.html)
- *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [publication](Publication.html)
- *  class: [gene to gene association](GeneToGeneAssociation.html) references: [publication](Publication.html)
- *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [publication](Publication.html)
- *  class: [molecular interaction](MolecularInteraction.html) references: [publication](Publication.html)
- *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [publication](Publication.html)
- *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [publication](Publication.html)
- *  class: [case to thing association](CaseToThingAssociation.html) references: [publication](Publication.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [publication](Publication.html)
- *  class: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [chemical to pathway association](ChemicalToPathwayAssociation.html) references: [publication](Publication.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [publication](Publication.html)
- *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [publication](Publication.html)
- *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [publication](Publication.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [gene to thing association](GeneToThingAssociation.html) references: [publication](Publication.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [publication](Publication.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [publication](Publication.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [publication](Publication.html)
- *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [publication](Publication.html)
- *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [publication](Publication.html)
- *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [publication](Publication.html)
- *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [publication](Publication.html)
- *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [publication](Publication.html)
- *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [publication](Publication.html)
- *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [publication](Publication.html)
- *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [publication](Publication.html)
- *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [publication](Publication.html)
- *  class: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html) references: [publication](Publication.html)
- *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [publication](Publication.html)
- *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [publication](Publication.html)
- *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [publication](Publication.html)
- *  class: [association](Association.html) references: [publication](Publication.html)
- *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [publication](Publication.html)
- *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [publication](Publication.html)
- *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [publication](Publication.html)
- *  class: [gene to gene association](GeneToGeneAssociation.html) references: [publication](Publication.html)
- *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [publication](Publication.html)
- *  class: [molecular interaction](MolecularInteraction.html) references: [publication](Publication.html)
- *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [publication](Publication.html)
- *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [publication](Publication.html)
- *  class: [case to thing association](CaseToThingAssociation.html) references: [publication](Publication.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [publication](Publication.html)
- *  class: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [chemical to pathway association](ChemicalToPathwayAssociation.html) references: [publication](Publication.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [publication](Publication.html)
- *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [publication](Publication.html)
- *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [publication](Publication.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [gene to thing association](GeneToThingAssociation.html) references: [publication](Publication.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [publication](Publication.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [publication](Publication.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [publication](Publication.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [publication](Publication.html)
- *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [publication](Publication.html)
- *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [publication](Publication.html)
- *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [publication](Publication.html)
- *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [publication](Publication.html)
- *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [publication](Publication.html)
- *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [publication](Publication.html)
- *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [publication](Publication.html)
- *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [publication](Publication.html)
- *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [publication](Publication.html)
- *  class: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html) references: [publication](Publication.html)
- *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [publication](Publication.html)
- *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [publication](Publication.html)
- *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [publication](Publication.html)
-
+ *  class: **[Association](Association.md)** *[publications](publications.md)* **[Publication](Publication.md)**
 ## Fields
 
- * [id](id.html)
-    * __range__: identifier type [required]
-    * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * _[category](category.md) *subsets*: (translator_minimal)_
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[description](description.md) *subsets*: (translator_minimal)_
+    * _a human-readable description of a thing_
+    * range: [NarrativeText](NarrativeText.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[full name](full_name.md)_
+    * _a long-form human readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[has alternate identifier](has_alternate_identifier.md)_
+    * _An alternate identifier for the entity, provided by the source database_
+    * range: [IdentifierType](IdentifierType.md)*
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[has synonym](has_synonym.md)_
+    * _Alternate labels for an entity_
+    * range: [LabelType](LabelType.md)*
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[has xref](has_xref.md)_
+    * _A database cross-reference for the entity, provided by a separate database_
+    * range: [IdentifierType](IdentifierType.md)*
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[id](id.md) *subsets*: (translator_minimal)_
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+    * range: [IdentifierType](IdentifierType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[iri](iri.md) *subsets*: (translator_minimal)_
+    * _An IRI for the node. This is determined by the id using expansion rules._
+    * range: [IriType](IriType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[name](name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[node property](node_property.md)_
+    * _A grouping for any property that holds between a node and a value_
+    * range: **string**
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[related to](related_to.md)_
+    * _A grouping for any relationship type that holds between any two things_
+    * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[systematic synonym](systematic_synonym.md)_
+    * _more commonly used for gene symbols in yeast_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[title](title.md)_
+    * _Narrative text describing the entity_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [InformationContentEntity](InformationContentEntity.md)

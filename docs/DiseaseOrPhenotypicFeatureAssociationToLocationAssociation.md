@@ -18,10 +18,9 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationA
 
 ## Fields
 
- * _[object](object.md)_
+ * _[disease or phenotypic feature association to location association.object](disease_or_phenotypic_feature_association_to_location_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [AnatomicalEntity](AnatomicalEntity.md) [required]
-    * Example: [UBERON:0002048](http://purl.obolibrary.org/obo/UBERON_0002048) lung
     * __Local__
  * _[association slot](association_slot.md)_
     * _any slot that relates an association to another entity_
@@ -39,11 +38,9 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationA
     * _a human-readable description of a thing_
     * range: [NarrativeText](NarrativeText.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[subject](subject.md)_
+ * _[disease or phenotypic feature association to thing association.subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)_
     * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) [required]
-    * Example: [MONDO:0017314](http://purl.obolibrary.org/obo/MONDO_0017314) Ehlers-Danlos syndrome, vascular type
-    * Example: [MP:0013229](http://purl.obolibrary.org/obo/MP_0013229) abnormal brain ventricle size
     * inherited from: [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
  * _[full name](full_name.md)_
     * _a long-form human readable name for a thing_

@@ -25,10 +25,10 @@ URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/Genomic
  * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase
 ## Used in
 
- *  class: **[GenomicSequenceLocalization](GenomicSequenceLocalization.md)** *[object](object.md)* **[GenomicEntity](GenomicEntity.md)**
- *  class: **[GenomicSequenceLocalization](GenomicSequenceLocalization.md)** *[subject](subject.md)* **[GenomicEntity](GenomicEntity.md)**
- *  class: **[SequenceFeatureRelationship](SequenceFeatureRelationship.md)** *[object](object.md)* **[GenomicEntity](GenomicEntity.md)**
- *  class: **[SequenceFeatureRelationship](SequenceFeatureRelationship.md)** *[subject](subject.md)* **[GenomicEntity](GenomicEntity.md)**
+ *  class: **[GenomicSequenceLocalization](GenomicSequenceLocalization.md)** *[genomic sequence localization.object](genomic_sequence_localization_object.md)* **[GenomicEntity](GenomicEntity.md)**
+ *  class: **[GenomicSequenceLocalization](GenomicSequenceLocalization.md)** *[genomic sequence localization.subject](genomic_sequence_localization_subject.md)* **[GenomicEntity](GenomicEntity.md)**
+ *  class: **[SequenceFeatureRelationship](SequenceFeatureRelationship.md)** *[sequence feature relationship.object](sequence_feature_relationship_object.md)* **[GenomicEntity](GenomicEntity.md)**
+ *  class: **[SequenceFeatureRelationship](SequenceFeatureRelationship.md)** *[sequence feature relationship.subject](sequence_feature_relationship_subject.md)* **[GenomicEntity](GenomicEntity.md)**
 ## Fields
 
  * _[has biological sequence](has_biological_sequence.md)_

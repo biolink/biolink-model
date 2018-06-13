@@ -1,45 +1,24 @@
----
-layout: default
----
-
-## severity value
+# Class: severity value
 
 
 describes the severity of a phenotypic feature or disease
 
 URI: [http://bioentity.io/vocab/SeverityValue](http://bioentity.io/vocab/SeverityValue)
-## Mappings
 
+![img](images/SeverityValue.png)
+## Mappings
 
 ## Inheritance
 
- *  is_a: [attribute](Attribute.html)
-
+ *  is_a: [Attribute](Attribute.md) - A property or characteristic of an entity
 ## Children
-
 
 ## Used in
 
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [entity to disease association](EntityToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [severity value](SeverityValue.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [severity value](SeverityValue.html)
-
+ *  class: **[EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)** *[severity qualifier](severity_qualifier.md)* **[SeverityValue](SeverityValue.md)**
 ## Fields
 
+ * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
+    * _holds between two classes where the domain class is a specialization of the range class_
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [OntologyClass](OntologyClass.md)

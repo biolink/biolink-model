@@ -1,1007 +1,1083 @@
-// a databased entity or concept/class
-message NamedThing {
-  id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-message IndividualOrganism {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-// An individual organism that has a patient role in some clinical context.
-message Case {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-message PopulationOfIndividualOrganisms {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-message Biosample {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-// Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
-message DiseaseOrPhenotypicFeature {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-message Disease {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-message PhenotypicFeature {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-// A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
-message Environment {
-  id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-// Level of confidence in a statement
-message ConfidenceLevel {
-  id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-// Class of evidence that supports an association
-message EvidenceType {
-  id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-// Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
-message Publication {
-  id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-// A gene, gene product, small molecule or macromolecule (including protein complex)
-message MolecularEntity {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-// May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
-message ChemicalSubstance {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-// A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
-message Drug {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-// Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
-message Metabolite {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
 // A subcellular location, cell type or gross anatomical part
-message AnatomicalEntity {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-// A stage of development or growth of an organism, including post-natal adult stages
-message LifeStage {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-// Any entity or process that exists at the level of the whole planet
-message PlanetaryEntity {
-  id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-message EnvironmentalProcess {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-message EnvironmentalFeature {
-  id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-// Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
-message ClinicalEntity {
-  id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-message ClinicalTrial {
-  id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-message ClinicalIntervention {
-  id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-// A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
-message Device {
-  id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-// an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
-message GenomicEntity {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-// A genome is the sum of genetic material within a cell or virion.
-message Genome {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-// An RNA synthesized on a DNA or RNA template by an RNA polymerase
-message Transcript {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-// A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
-message Exon {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-message CodingSequence {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-// a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
-message GeneOrGeneProduct {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-message Gene {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-// The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
-message GeneProduct {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-// A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
-message Protein {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-// Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
-message ProteinIsoform {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-message RnaProduct {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-// Represents a protein that is a specific isoform of the canonical or reference RNA
-message RnaProductIsoform {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-message NoncodingRnaProduct {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-message Microrna {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-message MacromolecularComplex {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-// any grouping of multiple genes or gene products related by common descent
-message GeneFamily {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-// An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
-message Genotype {
-  optional hasZygosity Zygosity = 1
-  optional hasBiologicalSequence String = 2
-  optional id String = 3
-  optional name String = 4
-  optional category String = 5
-  optional inTaxon OrganismTaxon = 6
-}
-
-// A set of zero or more Alleles on a single instance of a Sequence[VMC]
-message Haplotype {
-  optional hasBiologicalSequence String = 1
-  optional id String = 2
-  optional name String = 3
-  optional category String = 4
-  optional inTaxon OrganismTaxon = 5
-}
-
-// An allele that varies in its sequence from what is considered the reference allele at that locus.
-message SequenceVariant {
-  optional hasGene Gene = 1
-  optional hasBiologicalSequence String = 2
-  optional id String = 3
-  optional name String = 4
-  optional category String = 5
-  optional inTaxon OrganismTaxon = 6
-}
-
-// A drug exposure is an intake of a particular chemical substance
-message DrugExposure {
-  id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-// A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
-message Treatment {
-  treats DiseaseOrPhenotypicFeature = 1
-  repeated hasExposureParts DrugExposure = 2
-  id String = 3
-  optional name String = 4
-  optional category String = 5
-}
-
-// a location that can be described in lat/long coordinates
-message GeographicLocation {
-  optional latitude String = 1
-  optional longitude String = 2
-  id String = 3
-  optional name String = 4
-  optional category String = 5
-}
-
-// a location that can be described in lat/long coordinates, for a particular time
-message GeographicLocationAtTime {
-  optional latitude String = 1
-  optional longitude String = 2
-  optional timepoint String = 3
-  id String = 4
-  optional name String = 5
-  optional category String = 6
-}
-
+message AnatomicalEntity
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional hasPhenotype Phenotype = 10
+  optional inTaxon OrganismTaxon = 11
+  optional expresses GeneOrGeneProduct = 12
+ }
+message AnatomicalEntityToAnatomicalEntityAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional providedBy Provider = 15
+  optional associationSlot String = 16
+  subject AnatomicalEntity = 17
+  object AnatomicalEntity = 18
+ }
+// A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
+message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional providedBy Provider = 14
+  optional associationSlot String = 15
+  subject AnatomicalEntity = 16
+  object AnatomicalEntity = 17
+  relation RelationshipType = 18
+ }
+// A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
+message AnatomicalEntityToAnatomicalEntityPartOfAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional providedBy Provider = 14
+  optional associationSlot String = 15
+  subject AnatomicalEntity = 16
+  object AnatomicalEntity = 17
+  relation RelationshipType = 18
+ }
 // A typed association between two entities, supported by evidence
-message Association {
-  optional associationType OntologyClass = 1
-  subject String = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object String = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-// Any association between one genotype and a genotypic entity that is a sub-component of it
-message GenotypeToGenotypePartAssociation {
-  optional associationType OntologyClass = 1
-  subject Genotype = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object Genotype = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-// Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
-message GenotypeToGeneAssociation {
-  optional associationType OntologyClass = 1
-  subject Genotype = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object Gene = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-// Any association between a genotype and a sequence variant.
-message GenotypeToVariantAssociation {
-  optional associationType OntologyClass = 1
-  subject Genotype = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object SequenceVariant = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-// A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
-message GeneToGeneHomologyAssociation {
-  optional associationType OntologyClass = 1
-  subject GeneOrGeneProduct = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object GeneOrGeneProduct = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-// An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
-message PairwiseGeneOrProteinInteractionAssociation {
-  optional associationType OntologyClass = 1
-  subject MolecularEntity = 2
-  optional negated String = 3
-  relation String = 4
-  object MolecularEntity = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
+message Association
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  subject String = 11
+  optional negated Boolean = 12
+  relation RelationshipType = 13
+  object String = 14
+  repeated qualifiers OntologyClass = 15
+  repeated publications Publication = 16
+  optional providedBy Provider = 17
+  optional associationSlot String = 18
+ }
 // An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
-message CellLineToDiseaseOrPhenotypicFeatureAssociation {
-  optional associationType OntologyClass = 1
-  subject CellLine = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object DiseaseOrPhenotypicFeature = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-// An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may be a drug with the gene being a target of the drug.
-message ChemicalToGeneAssociation {
-  optional associationType OntologyClass = 1
-  subject ChemicalSubstance = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object GeneProduct = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
+message CellLineToDiseaseOrPhenotypicFeatureAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  object String = 13
+  repeated qualifiers OntologyClass = 14
+  repeated publications Publication = 15
+  optional providedBy Provider = 16
+  optional associationSlot String = 17
+  subject DiseaseOrPhenotypicFeature = 18
+ }
 // An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
-message ChemicalToDiseaseOrPhenotypicFeatureAssociation {
-  optional associationType OntologyClass = 1
-  subject ChemicalSubstance = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object DiseaseOrPhenotypicFeature = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-// An interaction between a chemical entity and a biological process or pathway
-message ChemicalToPathwayAssociation {
-  optional associationType OntologyClass = 1
-  subject ChemicalSubstance = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object Pathway = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
+message ChemicalToDiseaseOrPhenotypicFeatureAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  subject String = 11
+  optional negated Boolean = 12
+  relation RelationshipType = 13
+  repeated qualifiers OntologyClass = 14
+  repeated publications Publication = 15
+  optional providedBy Provider = 16
+  optional associationSlot String = 17
+  object DiseaseOrPhenotypicFeature = 18
+ }
 // An interaction between a chemical entity and a gene or gene product
-message ChemicalToGeneAssociation {
-  optional associationType OntologyClass = 1
-  subject ChemicalSubstance = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object GeneOrGeneProduct = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-// An association between a biosample and a disease or phenotype
-//   definitional: true
-//   
-message BiosampleToDiseaseOrPhenotypicFeatureAssociation {
-  optional associationType OntologyClass = 1
-  subject Biosample = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object DiseaseOrPhenotypicFeature = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
+message ChemicalToGeneAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  subject String = 11
+  optional negated Boolean = 12
+  relation RelationshipType = 13
+  repeated qualifiers OntologyClass = 14
+  repeated publications Publication = 15
+  optional providedBy Provider = 16
+  optional associationSlot String = 17
+  object GeneOrGeneProduct = 18
+ }
+// An interaction between a chemical entity and a biological process or pathway
+message ChemicalToPathwayAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  subject String = 11
+  optional negated Boolean = 12
+  relation RelationshipType = 13
+  repeated qualifiers OntologyClass = 14
+  repeated publications Publication = 15
+  optional providedBy Provider = 16
+  optional associationSlot String = 17
+  object Pathway = 18
+ }
+// Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+message DiseaseOrPhenotypicFeature
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional hasPhenotype Phenotype = 10
+  optional inTaxon OrganismTaxon = 11
+  optional correlatedWith MolecularEntity = 12
+  optional hasBiomarker MolecularEntity = 13
+  optional treatedBy String = 14
+ }
 // An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
-message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation {
-  optional associationType OntologyClass = 1
-  subject DiseaseOrPhenotypicFeature = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object AnatomicalEntity = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-// Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
-message GenotypeToPhenotypicFeatureAssociation {
-  optional associationType OntologyClass = 1
-  subject Genotype = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object PhenotypicFeature = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-  optional frequencyQualifier FrequencyValue = 12
-  optional severityQualifier SeverityValue = 13
-  optional onsetQualifier Onset = 14
-  optional sexQualifier BiologicalSex = 15
-}
-
+message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional providedBy Provider = 15
+  optional associationSlot String = 16
+  subject DiseaseOrPhenotypicFeature = 17
+  object AnatomicalEntity = 18
+ }
+// A drug exposure is an intake of a particular chemical substance
+message DrugExposure
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional hasPhenotype Phenotype = 10
+  repeated drug ChemicalSubstance = 11
+ }
 // Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
-message EnvironmentToPhenotypicFeatureAssociation {
-  optional associationType OntologyClass = 1
-  subject Environment = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object PhenotypicFeature = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-  optional frequencyQualifier FrequencyValue = 12
-  optional severityQualifier SeverityValue = 13
-  optional onsetQualifier Onset = 14
-  optional sexQualifier BiologicalSex = 15
-}
-
-// An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
-message DiseaseToPhenotypicFeatureAssociation {
-  optional associationType OntologyClass = 1
-  subject Disease = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object PhenotypicFeature = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-  optional frequencyQualifier FrequencyValue = 12
-  optional severityQualifier SeverityValue = 13
-  optional onsetQualifier Onset = 14
-  optional sexQualifier BiologicalSex = 15
-}
-
-// An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
-message CaseToPhenotypicFeatureAssociation {
-  optional associationType OntologyClass = 1
-  subject Case = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object PhenotypicFeature = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-  optional frequencyQualifier FrequencyValue = 12
-  optional severityQualifier SeverityValue = 13
-  optional onsetQualifier Onset = 14
-  optional sexQualifier BiologicalSex = 15
-}
-
-message GeneToPhenotypicFeatureAssociation {
-  optional associationType OntologyClass = 1
-  subject GeneOrGeneProduct = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object PhenotypicFeature = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-  optional frequencyQualifier FrequencyValue = 12
-  optional severityQualifier SeverityValue = 13
-  optional onsetQualifier Onset = 14
-  optional sexQualifier BiologicalSex = 15
-}
-
-message GeneToDiseaseAssociation {
-  optional associationType OntologyClass = 1
-  subject GeneOrGeneProduct = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object Disease = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  optional id String = 9
-  optional name String = 10
-  optional category String = 11
-  optional frequencyQualifier FrequencyValue = 12
-  optional severityQualifier SeverityValue = 13
-  optional onsetQualifier Onset = 14
-}
-
-// An association between a variant and a population, where the variant has particular frequency in the population
-message VariantToPopulationAssociation {
-  optional frequencyQualifier FrequencyValue = 1
-  optional associationType OntologyClass = 2
-  subject SequenceVariant = 3
-  optional negated String = 4
-  relation RelationshipType = 5
-  object PopulationOfIndividualOrganisms = 6
-  repeated qualifiers OntologyClass = 7
-  repeated publications Publication = 8
-  optional providedBy Provider = 9
-  id String = 10
-  optional name String = 11
-  optional category String = 12
-  optional hasCount String = 13
-  optional hasTotal String = 14
-  optional hasQuotient String = 15
-  optional hasPercentage String = 16
-}
-
-// An association between a two populations
-message PopulationToPopulationAssociation {
-  optional associationType OntologyClass = 1
-  subject PopulationOfIndividualOrganisms = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object PopulationOfIndividualOrganisms = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-message VariantToPhenotypicFeatureAssociation {
-  optional associationType OntologyClass = 1
-  subject SequenceVariant = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object PhenotypicFeature = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-  optional frequencyQualifier FrequencyValue = 12
-  optional severityQualifier SeverityValue = 13
-  optional onsetQualifier Onset = 14
-  optional sexQualifier BiologicalSex = 15
-}
-
-message VariantToDiseaseAssociation {
-  optional associationType OntologyClass = 1
-  subject SequenceVariant = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object Disease = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-  optional frequencyQualifier FrequencyValue = 12
-  optional severityQualifier SeverityValue = 13
-  optional onsetQualifier Onset = 14
-}
-
-message GeneAsAModelOfDiseaseAssociation {
-  optional associationType OntologyClass = 1
-  subject GeneOrGeneProduct = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object Disease = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  optional id String = 9
-  optional name String = 10
-  optional category String = 11
-  optional frequencyQualifier FrequencyValue = 12
-  optional severityQualifier SeverityValue = 13
-  optional onsetQualifier Onset = 14
-}
-
-message GeneHasVariantThatContributesToDiseaseAssociation {
-  optional sequenceVariantQualifier SequenceVariant = 1
-  optional associationType OntologyClass = 2
-  subject GeneOrGeneProduct = 3
-  optional negated String = 4
-  relation RelationshipType = 5
-  object Disease = 6
-  repeated qualifiers OntologyClass = 7
-  repeated publications Publication = 8
-  optional providedBy Provider = 9
-  optional id String = 10
-  optional name String = 11
-  optional category String = 12
-  optional frequencyQualifier FrequencyValue = 13
-  optional severityQualifier SeverityValue = 14
-  optional onsetQualifier Onset = 15
-}
-
-// An association between a gene and an expression site, possibly qualified by stage/timing info.
-message GeneToExpressionSiteAssociation {
-  optional stageQualifier LifeStage = 1
-  optional quantifierQualifier OntologyClass = 2
-  optional associationType OntologyClass = 3
-  subject GeneOrGeneProduct = 4
-  optional negated String = 5
-  relation RelationshipType = 6
-  object AnatomicalEntity = 7
-  repeated qualifiers OntologyClass = 8
-  repeated publications Publication = 9
-  optional providedBy Provider = 10
-  id String = 11
-  optional name String = 12
-  optional category String = 13
-}
-
-message GeneToGoTermAssociation {
-  optional associationType OntologyClass = 1
-  subject MolecularEntity = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object GeneOntologyClass = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-// A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
-message GenomicSequenceLocalization {
-  optional startInterbaseCoordinate String = 1
-  optional endInterbaseCoordinate String = 2
-  optional genomeBuild String = 3
-  optional phase String = 4
-  optional associationType OntologyClass = 5
-  subject GenomicEntity = 6
-  optional negated String = 7
-  relation RelationshipType = 8
-  object GenomicEntity = 9
-  repeated qualifiers OntologyClass = 10
-  repeated publications Publication = 11
-  optional providedBy Provider = 12
-  id String = 13
-  optional name String = 14
-  optional category String = 15
-}
-
-// For example, a particular exon is part of a particular transcript or gene
-message SequenceFeatureRelationship {
-  optional associationType OntologyClass = 1
-  subject GenomicEntity = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object GenomicEntity = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-// A gene is a collection of transcripts
-message TranscriptToGeneRelationship {
-  optional associationType OntologyClass = 1
-  subject Transcript = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object Gene = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-// A gene is transcribed and potentially translated to a gene product
-message GeneToGeneProductRelationship {
-  optional associationType OntologyClass = 1
-  subject Gene = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object GeneProduct = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
+message EnvironmentToPhenotypicFeatureAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  object String = 13
+  repeated qualifiers OntologyClass = 14
+  repeated publications Publication = 15
+  optional providedBy Provider = 16
+  optional associationSlot String = 17
+  optional severityQualifier SeverityValue = 18
+  optional onsetQualifier Onset = 19
+  optional sexQualifier BiologicalSex = 20
+  subject Environment = 21
+ }
 // A transcript is formed from multiple exons
-message ExonToTranscriptRelationship {
-  optional associationType OntologyClass = 1
-  subject Exon = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object Transcript = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
+message ExonToTranscriptRelationship
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional providedBy Provider = 15
+  optional associationSlot String = 16
+  subject Exon = 17
+  object Transcript = 18
+ }
+// An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
+message FunctionalAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional providedBy Provider = 15
+  optional associationSlot String = 16
+  subject MacromolecularMachine = 17
+  object GeneOntologyClass = 18
+ }
+message Gene
+ {
+  optional id IdentifierType = 1
+  optional category LabelType = 2
+  optional relatedTo NamedThing = 3
+  optional nodeProperty String = 4
+  optional iri IriType = 5
+  optional fullName LabelType = 6
+  optional description NarrativeText = 7
+  optional systematicSynonym LabelType = 8
+  optional hasPhenotype Phenotype = 9
+  optional inTaxon OrganismTaxon = 10
+  optional molecularlyInteractsWith MolecularEntity = 11
+  optional regulatesEntityToEntity MolecularEntity = 12
+  optional biomarkerFor DiseaseOrPhenotypicFeature = 13
+  optional hasBiologicalSequence BiologicalSequence = 14
+  optional name LabelType = 15
+  optional inPathwayWith GeneOrGeneProduct = 16
+  optional inComplexWith GeneOrGeneProduct = 17
+  optional inCellPopulationWith GeneOrGeneProduct = 18
+  optional expressedIn AnatomicalEntity = 19
+  optional geneticallyInteractsWith Gene = 20
+  optional hasGeneProduct GeneProduct = 21
+  optional geneAssociatedWithCondition DiseaseOrPhenotypicFeature = 22
+ }
+message GeneAsAModelOfDiseaseAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  object String = 13
+  repeated qualifiers OntologyClass = 14
+  repeated publications Publication = 15
+  optional providedBy Provider = 16
+  optional associationSlot String = 17
+  optional severityQualifier SeverityValue = 18
+  optional onsetQualifier Onset = 19
+  subject GeneOrGeneProduct = 20
+ }
+message GeneHasVariantThatContributesToDiseaseAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  object String = 13
+  repeated qualifiers OntologyClass = 14
+  repeated publications Publication = 15
+  optional providedBy Provider = 16
+  optional associationSlot String = 17
+  optional severityQualifier SeverityValue = 18
+  optional onsetQualifier Onset = 19
+  optional sequenceVariantQualifier SequenceVariant = 20
+  subject GeneOrGeneProduct = 21
+ }
+// a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
+message GeneOrGeneProduct
+ {
+  optional id IdentifierType = 1
+  optional category LabelType = 2
+  optional relatedTo NamedThing = 3
+  optional nodeProperty String = 4
+  optional iri IriType = 5
+  optional fullName LabelType = 6
+  optional description NarrativeText = 7
+  optional systematicSynonym LabelType = 8
+  optional hasPhenotype Phenotype = 9
+  optional inTaxon OrganismTaxon = 10
+  optional molecularlyInteractsWith MolecularEntity = 11
+  optional regulatesEntityToEntity MolecularEntity = 12
+  optional biomarkerFor DiseaseOrPhenotypicFeature = 13
+  optional hasBiologicalSequence BiologicalSequence = 14
+  optional name LabelType = 15
+  optional inPathwayWith GeneOrGeneProduct = 16
+  optional inComplexWith GeneOrGeneProduct = 17
+  optional inCellPopulationWith GeneOrGeneProduct = 18
+  optional expressedIn AnatomicalEntity = 19
+ }
 // A regulatory relationship between two genes
-message GeneRegulatoryRelationship {
-  optional associationType OntologyClass = 1
-  subject GeneOrGeneProduct = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object GeneOrGeneProduct = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-message AnatomicalEntityToAnatomicalEntityAssociation {
-  optional associationType OntologyClass = 1
-  subject AnatomicalEntity = 2
-  optional negated String = 3
-  relation RelationshipType = 4
-  object AnatomicalEntity = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-message AnatomicalEntityPartOfAnatomicalEntityAssociation {
-  optional associationType OntologyClass = 1
-  subject AnatomicalEntity = 2
-  optional negated String = 3
-  relation AnatomicalEntity = 4
-  object AnatomicalEntity = 5
-  repeated qualifiers OntologyClass = 6
-  repeated publications Publication = 7
-  optional providedBy Provider = 8
-  id String = 9
-  optional name String = 10
-  optional category String = 11
-}
-
-// Either an individual molecular activity, or a collection of causally connected molecular activities
-message BiologicalProcessOrActivity {
-  id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-// An execution of a molecular function carried out by a gene product or macromolecular complex.
-message MolecularActivity {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-// One or more causally connected executions of molecular functions
-message BiologicalProcess {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-message Pathway {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-message PhysiologicalProcess {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-}
-
-// A location in or around a cell
-message CellularComponent {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-message Cell {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-message CellLine {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
-
-message GrossAnatomicalStructure {
-  optional id String = 1
-  optional name String = 2
-  optional category String = 3
-  optional inTaxon OrganismTaxon = 4
-}
+message GeneRegulatoryRelationship
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional providedBy Provider = 14
+  optional associationSlot String = 15
+  relation RelationshipType = 16
+  subject GeneOrGeneProduct = 17
+  object GeneOrGeneProduct = 18
+ }
+message GeneToDiseaseAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  object String = 13
+  repeated qualifiers OntologyClass = 14
+  repeated publications Publication = 15
+  optional providedBy Provider = 16
+  optional associationSlot String = 17
+  optional severityQualifier SeverityValue = 18
+  optional onsetQualifier Onset = 19
+  subject GeneOrGeneProduct = 20
+ }
+// An association between a gene and an expression site, possibly qualified by stage/timing info.
+message GeneToExpressionSiteAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional providedBy Provider = 14
+  optional associationSlot String = 15
+  optional stageQualifier LifeStage = 16
+  optional quantifierQualifier String = 17
+  subject GeneOrGeneProduct = 18
+  object AnatomicalEntity = 19
+  relation RelationshipType = 20
+ }
+// A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
+message GeneToGeneHomologyAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional providedBy Provider = 14
+  optional associationSlot String = 15
+  subject GeneOrGeneProduct = 16
+  object GeneOrGeneProduct = 17
+  relation RelationshipType = 18
+ }
+// A gene is transcribed and potentially translated to a gene product
+message GeneToGeneProductRelationship
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional providedBy Provider = 14
+  optional associationSlot String = 15
+  subject Gene = 16
+  object GeneProduct = 17
+  relation RelationshipType = 18
+ }
+message GeneToGoTermAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional providedBy Provider = 15
+  optional associationSlot String = 16
+  subject MolecularEntity = 17
+  object GeneOntologyClass = 18
+ }
+message GeneToPhenotypicFeatureAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  object String = 13
+  repeated qualifiers OntologyClass = 14
+  repeated publications Publication = 15
+  optional providedBy Provider = 16
+  optional associationSlot String = 17
+  optional severityQualifier SeverityValue = 18
+  optional onsetQualifier Onset = 19
+  optional sexQualifier BiologicalSex = 20
+  subject GeneOrGeneProduct = 21
+ }
+// an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+message GenomicEntity
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional hasPhenotype Phenotype = 10
+  optional inTaxon OrganismTaxon = 11
+  optional molecularlyInteractsWith MolecularEntity = 12
+  optional regulatesEntityToEntity MolecularEntity = 13
+  optional biomarkerFor DiseaseOrPhenotypicFeature = 14
+  optional hasBiologicalSequence BiologicalSequence = 15
+ }
+// A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
+message GenomicSequenceLocalization
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional providedBy Provider = 15
+  optional associationSlot String = 16
+  optional startInterbaseCoordinate String = 17
+  optional endInterbaseCoordinate String = 18
+  optional genomeBuild String = 19
+  optional phase String = 20
+  subject GenomicEntity = 21
+  object GenomicEntity = 22
+ }
+// An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
+message Genotype
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional hasPhenotype Phenotype = 10
+  optional inTaxon OrganismTaxon = 11
+  optional molecularlyInteractsWith MolecularEntity = 12
+  optional regulatesEntityToEntity MolecularEntity = 13
+  optional biomarkerFor DiseaseOrPhenotypicFeature = 14
+  optional hasBiologicalSequence BiologicalSequence = 15
+  optional hasZygosity Zygosity = 16
+ }
+// Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
+message GenotypeToGeneAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional providedBy Provider = 14
+  optional associationSlot String = 15
+  relation RelationshipType = 16
+  subject Genotype = 17
+  object Gene = 18
+ }
+// Any association between one genotype and a genotypic entity that is a sub-component of it
+message GenotypeToGenotypePartAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional providedBy Provider = 14
+  optional associationSlot String = 15
+  relation RelationshipType = 16
+  subject Genotype = 17
+  object Genotype = 18
+ }
+// Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
+message GenotypeToPhenotypicFeatureAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  object String = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional providedBy Provider = 15
+  optional associationSlot String = 16
+  optional severityQualifier SeverityValue = 17
+  optional onsetQualifier Onset = 18
+  optional sexQualifier BiologicalSex = 19
+  relation RelationshipType = 20
+  subject Genotype = 21
+ }
+// Any association between a genotype and a sequence variant.
+message GenotypeToVariantAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional providedBy Provider = 14
+  optional associationSlot String = 15
+  relation RelationshipType = 16
+  subject Genotype = 17
+  object SequenceVariant = 18
+ }
+// a location that can be described in lat/long coordinates
+message GeographicLocation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional latitude Float = 10
+  optional longitude Float = 11
+ }
+// a location that can be described in lat/long coordinates, for a particular time
+message GeographicLocationAtTime
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional latitude Float = 10
+  optional longitude Float = 11
+  optional timepoint TimeType = 12
+ }
+// A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
+message MacromolecularMachine
+ {
+  optional id IdentifierType = 1
+  optional category LabelType = 2
+  optional relatedTo NamedThing = 3
+  optional nodeProperty String = 4
+  optional iri IriType = 5
+  optional fullName LabelType = 6
+  optional description NarrativeText = 7
+  optional systematicSynonym LabelType = 8
+  optional hasPhenotype Phenotype = 9
+  optional inTaxon OrganismTaxon = 10
+  optional molecularlyInteractsWith MolecularEntity = 11
+  optional regulatesEntityToEntity MolecularEntity = 12
+  optional biomarkerFor DiseaseOrPhenotypicFeature = 13
+  optional hasBiologicalSequence BiologicalSequence = 14
+  optional name LabelType = 15
+ }
+// A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
+message MacromolecularMachineToBiologicalProcessAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional providedBy Provider = 15
+  optional associationSlot String = 16
+  subject MacromolecularMachine = 17
+  object BiologicalProcess = 18
+ }
+// A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
+message MacromolecularMachineToCellularComponentAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional providedBy Provider = 15
+  optional associationSlot String = 16
+  subject MacromolecularMachine = 17
+  object CellularComponent = 18
+ }
+// A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
+message MacromolecularMachineToMolecularActivityAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional providedBy Provider = 15
+  optional associationSlot String = 16
+  subject MacromolecularMachine = 17
+  object MolecularActivity = 18
+ }
+// A gene, gene product, small molecule or macromolecule (including protein complex)
+message MolecularEntity
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional hasPhenotype Phenotype = 10
+  optional inTaxon OrganismTaxon = 11
+  optional molecularlyInteractsWith MolecularEntity = 12
+  optional regulatesEntityToEntity MolecularEntity = 13
+  optional biomarkerFor DiseaseOrPhenotypicFeature = 14
+ }
+// a databased entity or concept/class
+message NamedThing
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+ }
+// A processual entity
+message Occurrent
+ {
+  optional regulatesProcessToProcess Occurrent = 1
+  optional hasParticipant String = 2
+  optional hasInput String = 3
+  optional precedes Occurrent = 4
+ }
+// a concept or class in an ontology, vocabulary or thesaurus
+message OntologyClass
+ {
+  optional subclassOf OntologyClass = 1
+ }
+// An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+message PairwiseGeneOrProteinInteractionAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional providedBy Provider = 14
+  optional associationSlot String = 15
+  subject GeneOrGeneProduct = 16
+  object GeneOrGeneProduct = 17
+  optional interactingMoleculesCategory OntologyClass = 18
+  relation RelationshipType = 19
+ }
+// An association between a two populations
+message PopulationToPopulationAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional providedBy Provider = 14
+  optional associationSlot String = 15
+  subject PopulationOfIndividualOrganisms = 16
+  object PopulationOfIndividualOrganisms = 17
+  relation RelationshipType = 18
+ }
+// For example, a particular exon is part of a particular transcript or gene
+message SequenceFeatureRelationship
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional providedBy Provider = 15
+  optional associationSlot String = 16
+  subject GenomicEntity = 17
+  object GenomicEntity = 18
+ }
+// An allele that varies in its sequence from what is considered the reference allele at that locus.
+message SequenceVariant
+ {
+  optional name LabelType = 1
+  optional category LabelType = 2
+  optional relatedTo NamedThing = 3
+  optional nodeProperty String = 4
+  optional iri IriType = 5
+  optional fullName LabelType = 6
+  optional description NarrativeText = 7
+  optional systematicSynonym LabelType = 8
+  optional hasPhenotype Phenotype = 9
+  optional inTaxon OrganismTaxon = 10
+  optional molecularlyInteractsWith MolecularEntity = 11
+  optional regulatesEntityToEntity MolecularEntity = 12
+  optional biomarkerFor DiseaseOrPhenotypicFeature = 13
+  repeated hasGene String = 14
+  optional hasBiologicalSequence BiologicalSequence = 15
+  optional id IdentifierType = 16
+ }
+// A gene is a collection of transcripts
+message TranscriptToGeneRelationship
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional providedBy Provider = 15
+  optional associationSlot String = 16
+  subject Transcript = 17
+  object Gene = 18
+ }
+// A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
+message Treatment
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional hasPhenotype Phenotype = 10
+  treats DiseaseOrPhenotypicFeature = 11
+  repeated hasExposureParts DrugExposure = 12
+ }
+message VariantToDiseaseAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  repeated qualifiers OntologyClass = 12
+  repeated publications Publication = 13
+  optional providedBy Provider = 14
+  optional associationSlot String = 15
+  optional severityQualifier SeverityValue = 16
+  optional onsetQualifier Onset = 17
+  subject String = 18
+  relation RelationshipType = 19
+  object String = 20
+ }
+message VariantToPhenotypicFeatureAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  object String = 13
+  repeated qualifiers OntologyClass = 14
+  repeated publications Publication = 15
+  optional providedBy Provider = 16
+  optional associationSlot String = 17
+  optional severityQualifier SeverityValue = 18
+  optional onsetQualifier Onset = 19
+  optional sexQualifier BiologicalSex = 20
+  subject SequenceVariant = 21
+ }
+// An association between a variant and a population, where the variant has particular frequency in the population
+message VariantToPopulationAssociation
+ {
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional associationType OntologyClass = 10
+  optional negated Boolean = 11
+  relation RelationshipType = 12
+  repeated qualifiers OntologyClass = 13
+  repeated publications Publication = 14
+  optional providedBy Provider = 15
+  optional associationSlot String = 16
+  optional hasPercentage Double = 17
+  subject SequenceVariant = 18
+  object PopulationOfIndividualOrganisms = 19
+  optional hasQuotient String = 20
+  optional hasCount String = 21
+  optional hasTotal String = 22
+ }
 

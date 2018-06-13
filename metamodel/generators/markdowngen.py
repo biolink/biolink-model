@@ -39,8 +39,7 @@ class MarkdownGenerator(Generator):
 
         self.directory = directory
         if directory:
-            if not os.path.isdir(directory):
-                raise ValueError(f"Directory {directory} does not exist")
+            os.makedirs(directory, exist_ok=True)
         elif image_dir:
             raise ValueError(f"Image directory can only be used with '-d' option")
         if image_dir:
@@ -82,8 +81,7 @@ class MarkdownGenerator(Generator):
                             typ_typ = f'**{typ.typeof}**'
                         else:
                             typ_typ = self.link(typ.typeof)
-                        self.bullet(self.link(typ) +
-                                    f' ({typ_typ}){self.description(typ.description)}')
+                        self.bullet(self.link(typ, after_link=f' ({typ_typ})', use_desc=True))
 
     def visit_class(self, cls: ClassDefinition) -> bool:
         if self.gen_classes and cls.name not in self.gen_classes:
@@ -168,19 +166,20 @@ class MarkdownGenerator(Generator):
                         self.bullet(f' reifies: {self.link(slot.subproperty_of)}')
 
     def class_hier(self, cls: ClassDefinition, level=0) -> None:
-        self.bullet(self.link(cls) + self.description(cls.description), level)
+        self.bullet(self.link(cls, use_desc=True), level)
         if cls.name in self.synopsis.isarefs:
             for child in self.synopsis.isarefs[cls.name].classrefs:
                 self.class_hier(self.schema.classes[child], level+1)
         
     def pred_hier(self, slot: SlotDefinition, level=0) -> None:
-        self.bullet(self.link(slot) + self.description(slot.description), level)
+        self.bullet(self.link(slot, use_desc=True), level)
         if slot.name in self.synopsis.isarefs:
             for child in self.synopsis.isarefs[slot.name].slotrefs:
                 self.pred_hier(self.schema.slots[child], level+1)
 
     def dir_path(self, obj: Union[ClassDefinition, SlotDefinition]) -> str:
-        return f'{self.directory}/{underscore(self.obj_name(obj))}.md'
+        filename = self.obj_name(obj) if isinstance(obj, ClassDefinition) else underscore(obj.name)
+        return f'{self.directory}/{filename}.md'
 
     def mappings(self, obj: [SlotDefinition, ClassDefinition]) -> None:
         self.header(2, 'Mappings')
@@ -247,10 +246,6 @@ class MarkdownGenerator(Generator):
     def bullet(txt: str, level=0) -> None:
         print(f'{"   " * level} * {txt}')
 
-    @staticmethod
-    def description(txt: Optional[str]) -> str:
-        return f'{" - " + be(txt) if txt else ""}'
-
     def frontmatter(self, thingtype: str, layout='default') -> None:
         self.header(1, thingtype)
         # print(f'---\nlayout: {layout}\n---\n')
@@ -264,7 +259,26 @@ class MarkdownGenerator(Generator):
         """
         return obj.name if isinstance(obj, Element ) else f'**{obj}**' if obj in builtin_names else obj
 
-    def link(self, ref: Optional[Union[str, Element]], *, after_link: str = None, use_desc: bool=False, add_subset: bool=True) -> str:
+    def desc_for(self, obj: Element, doing_descs: bool) -> str:
+        """ Return a description for object if it is unique (different than its parent)
+
+        @param obj: object to be described
+        @param doing_descs: If false, always return an empty string
+        @return: text or empty string
+        """
+        if obj.description and doing_descs:
+            if isinstance(obj, SlotDefinition) and obj.is_a:
+                parent = self.schema.slots[obj.is_a]
+            elif isinstance(obj, ClassDefinition) and obj.is_a:
+                parent = self.schema.classes[obj.is_a]
+            else:
+                parent = None
+            return '' if parent and obj.description == parent.description else obj.description
+        return ''
+
+
+    def link(self, ref: Optional[Union[str, Element]], *, after_link: str = None, use_desc: bool=False,
+             add_subset: bool=True) -> str:
         """ Create a link to ref if appropriate.
 
         @param ref: the name or value of a class, slot, type or the name of a built in type.
@@ -275,13 +289,19 @@ class MarkdownGenerator(Generator):
         """
         obj = self.obj_for(ref) if isinstance(ref, str) else ref
         nl = '\n'
-        return self.bbin(ref) if isinstance(obj, str) or obj is None or self.is_secondary_ref(obj.name) \
-            else f'[{self.aliased_slot_name(obj) if isinstance(obj, SlotDefinition) else self.obj_name(obj)}]' \
-                 f'({self.obj_name(obj)}.{self.format})' + \
+        if isinstance(obj, str) or obj is None or not self.is_secondary_ref(obj.name):
+            return self.bbin(ref)
+        if isinstance(obj, SlotDefinition):
+            link_name = ((be(obj.domain) + '.') if obj.alias else '') + self.aliased_slot_name(obj)
+            link_ref = underscore(obj.name)
+        else:
+            link_name = self.obj_name(obj)
+            link_ref = link_name
+        desc = self.desc_for(obj, use_desc)
+        return f'[{link_name}]' \
+               f'({link_ref}.{self.format})' + \
                  (f' *subsets*: ({"| ".join(obj.in_subset)})' if add_subset and obj.in_subset else '') + \
-                 (f' {after_link} ' if after_link else '') + \
-                 (f' - {obj.description.split(nl)[0]}' if use_desc and
-                                                          isinstance(obj, Element) and obj.description else '')
+                 (f' {after_link} ' if after_link else '') + (f' - {desc.split(nl)[0]}' if desc else '')
 
     def xlink(self, id_: str) -> str:
         return f'[{id_}]({self.id_to_url(id_)})'
