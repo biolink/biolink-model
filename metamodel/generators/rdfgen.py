@@ -2,18 +2,15 @@
 
 """
 import os
-import sys
-from contextlib import redirect_stdout
 from typing import Union, TextIO, Optional
 
 import click
 from rdflib import Graph
+from rdflib.plugin import plugins as rdflib_plugins, Parser as rdflib_Parser
 
 from metamodel.generators.jsonldgen import JSONLDGenerator, biolink_context
 from metamodel.metamodel import SchemaDefinition
 from metamodel.utils.generator import Generator
-from rdflib.plugin import plugins as rdflib_plugins, Parser as rdflib_Parser
-
 from metamodel.utils.namespaces import BIOENTITY, META
 
 

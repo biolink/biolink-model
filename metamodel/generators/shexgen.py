@@ -1,126 +1,123 @@
-from typing import Optional, Dict, Union
+"""Generate RDF
 
-from ShExJSG import ShExJ
+"""
+import os
+from typing import Union, TextIO, Optional
+
+import click
+from ShExJSG import ShExC
 from jsonasobj import as_json
-from prefixcommons.curie_util import read_biocontext
-from rdflib import Namespace, XSD
+from pyjsg.jsglib import jsg
+from rdflib import Graph, XSD, OWL
+from ShExJSG.SchemaWithContext import Schema
+from ShExJSG.ShExJ import Shape, IRIREF, shapeExpr, ShapeAnd, EachOf, TripleConstraint, NodeConstraint
 
-from metamodel.metamodel import ClassDefinition, TypeDefinition
+from metamodel.generators.jsonldgen import JSONLDGenerator, biolink_context
+from metamodel.metamodel import SchemaDefinition, ClassDefinition, SlotDefinition, ClassDefinitionName, \
+    SlotDefinitionName, TypeDefinition
+from metamodel.utils.builtins import builtin_names
+from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.generator import Generator
-from metamodel.schemamanager import NameStyle
-
-SCHEMA = Namespace("http://bioentity.io/vocab/")
-BASE = Namespace("http://namespace.org/base/")
-
-XSDMap: Dict[str, str] = {'integer': 'integer', 'double': 'decimal'}
-
-# TODO: Extend PrefixLibrary to allow libraries to be merged
-biocontext = read_biocontext('commons_context')
+from metamodel.utils.namespaces import BIOENTITY, META
 
 
-class ShexGenerator(Generator):
-    """
-    A `Generator` for creating Shex from a metamodel schema.
-    """
-    def __init__(self, **args):
-        """
-        Create a new instance
-        """
-        super().__init__(**args)
-        self.shex = None
+class ShExGenerator(Generator):
+    generatorname = os.path.basename(__file__)
+    generatorversion = "0.0.2"
+    valid_formats = ['shex', 'json', 'rdf']
+    visit_all_class_slots = False
 
-    @staticmethod
-    def as_iriref(ns: Namespace, id_: str) -> ShExJ.IRIREF:
-        return ShExJ.IRIREF(ns[id_.replace(':', '_').replace(' ', '_')])
+    def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str = 'shex') -> None:
+        super().__init__(schema, fmt)
+        self.shex: Schema = None
+        self.shape: Shape = None                # Shape being defined
 
-    @staticmethod
-    def as_shapref(id_: str) -> ShExJ.ShapeExternal:
-        return ShExJ.ShapeExternal(ShexGenerator.as_iriref(BASE, id_))
-        
-    def serialize(self, _=None, classname: Optional[str] = None):
-        self.shex = ShExJ.Schema()
+    def visit_schema(self, **_):
+        self.shex = Schema()
         self.shex.shapes = []
-        self.tr(classname)
-        return as_json(self.shex)
+        if self.format == 'shex':
+            raise NotImplementedError("ShExC format is not yet implemented")
+        # TODO: Imports
 
-    def tr(self, classname=None):
-        for cn in self.schema.classes:
-            if not classname or cn == classname:
-                cls = self.manager.classdef(cn)
-                shape = ShExJ.Shape(id=self.as_iriref(BASE, cls.name))
-                self.tr_class(shape, cls)
-        for tn in self.schema.types:
-            typ = self.manager.typedef(tn)
-            shape = ShExJ.Shape(id=self.as_iriref(BASE, typ.name))
-            self.tr_type(shape, typ)
+    @staticmethod
+    def _shapeIRI(name: ClassDefinitionName) -> IRIREF:
+        return IRIREF(BIOENTITY[camelcase(name)])
 
-    def aliased_slot_name(self, s):
-        return self.manager.slot_name(s, NameStyle.LCAMELCASE)
+    @staticmethod
+    def _predicate(name: SlotDefinitionName) -> IRIREF:
+        # TODO: look at the RDF to figure out what URI's go here
+        return IRIREF(BIOENTITY[underscore(name)])
 
-    def tr_type(self, shape: ShExJ.Shape, typ: TypeDefinition) -> None:
-        pass
-    
-    def tr_class(self, shape: ShExJ.Shape, cls_or_typ: Union[ClassDefinition, TypeDefinition]) -> None:
-        if cls_or_typ.is_a or cls_or_typ.mixins:
-            expr = ShExJ.ShapeAnd()
-            expr.shapeExprs = [shape]
-            if cls_or_typ.is_a:
-                expr.shapeExprs.append(self.as_shapref(self.manager.class_name(cls_or_typ.is_a)))
-            if cls_or_typ.mixins:
-                expr.shapeExprs += [self.as_shapref(self.manager.class_name(mixin)) for mixin in cls_or_typ.mixins]
+    def visit_class(self, cls: ClassDefinition) -> bool:
+        self.shape = Shape()
+        # if not cls.mixin and not cls.name in self.synopsis.mixinrefs and not cls.abstract:
+        #     self.shapeExpr.closed = jsg.Boolean(True)
+        # # TODO: Add this when shex 2.1 is committed
+        # if cls.abstract:
+        #     self.shapeExpr.abstract = True
+        # TODO: Figure out the semantics of union_of
+        # TODO: symmetric
+        return True
+
+    def end_class(self, cls: ClassDefinition) -> None:
+        if cls.is_a or cls.mixins:
+            shapeExpr = ShapeAnd(shapeExprs=([self._shapeIRI(cls.is_a)] if cls.is_a else []) +
+                                                 [self._shapeIRI(mixin) for mixin in cls.mixins] + [self.shape])
         else:
-            expr = shape
-        self.shex.shapes.append(expr)
+            shapeExpr = self.shape
+        shapeExpr.id = self._shapeIRI(cls.name)
+        self.shex.shapes.append(shapeExpr)
 
-        # Slots:
-        for slot in self.manager.class_slotdefs(cls_or_typ.name, use_isa=False, use_mixins=False):
-            slot_def = self.manager.slotdef(slot, cls_or_typ)
-            shape.expression = ShExJ.TripleConstraint(predicate=self.as_iriref(SCHEMA, slot_def.name))
-            if slot_def.range:
-                if self.manager.classdef(slot_def.range):
-                    shape.expression.valueExpr = self.as_shapref(self.manager.class_name(slot_def.range))
-                elif self.manager.typedef(slot_def.range):
-                    shape.expression.valueExpr = self.as_shapref(slot_def.range)
-                elif ':' in slot_def.range:
-                    ns, name = slot_def.range.split(':')
-                    if ns in biocontext:
-                        shape.expression.valueExpr = \
-                            ShExJ.NodeConstraint(datatype=ShExJ.IRIREF(biocontext[ns] + name))
-                    else:
-                        print(f"Unknown ref: {slot_def.range}")
-                elif slot_def.range in XSDMap:
-                    shape.expression.valueExpr = \
-                        ShExJ.NodeConstraint(datatype=self.as_iriref(XSD, XSDMap[slot_def.range]))
-                else:
-                    ...
-        ...
+    def _type_constraint(self, rnge: Optional[str]) -> NodeConstraint:
+        # TODO: missing type - string or '.'?
+        if rnge in builtin_names:
+            return NodeConstraint(datatype=IRIREF(XSD[rnge]))
+        elif rnge in self.schema.types:
+            return self._type_constraint(self.schema.types[rnge].typeof)
+        else:
+            return NodeConstraint()
 
-        #
-        #
-        # nl = "\n  "
-        # for s in slots:
-        #     s = mgr.slotdef(s, c)
-        #     sn = self.slot_name(s)
-        #
-        #     r = mgr.class_slot_range(c, s)
-        #     if mgr.classdef(r):
-        #         r = ':' + mgr.class_name(r)
-        #     else:
-        #         # TODO: check types
-        #         r = 'xsd:string'
-        #
-        #     cardinality = '?'
-        #     reqd = mgr.class_slot_getattr(c, s, 'required', False)
-        #     if reqd:
-        #         cardinality = ''
-        #     if mgr.class_slot_multivalued(c, s):
-        #         if reqd:
-        #             cardinality = '+'
-        #         else:
-        #             cardinality = '*'
-        #
-        #     lines.append(nl+"  schema:{}   {}".format(sn, r))
-        #     nl = " ;\n  "
-        #
-        # lines.append("\n}\n\n");
-        #
+    def visit_class_slot(self, cls: ClassDefinition, aliased_slot_name: str, slot: SlotDefinition) -> None:
+        constraint = TripleConstraint()
+        if not self.shape.expression:
+            self.shape.expression = constraint
+        elif isinstance(self.shape.expression, TripleConstraint):
+            self.shape.expression = EachOf(expressions=[self.shape.expression])
+        else:
+            self.shape.expression.expressions.append(constraint)
+        constraint.predicate = self._predicate(slot.name)
+        constraint.min = 1 if slot.primary_key or slot.required else 0
+        constraint.max = -1 if slot.multivalued else 1
+        if slot.range and slot.range not in self.schema.classes:
+            constraint.valueExpr = self._type_constraint(slot.range)
+        else:
+            constraint.valueExpr = self._shapeIRI(slot.range)
+
+
+    def end_schema(self, output: Optional[str]) -> None:
+        shex = as_json(self.shex)
+        if self.format == 'rdf':
+            g = Graph()
+            g.parse(data=shex, format="json-ld")
+            g.bind('owl', OWL)
+            g.bind('biolink', BIOENTITY)
+            g.bind('meta', META)
+            shex = g.serialize(format='turtle').decode()
+        elif self.format == 'shex':
+            # TODO: wait until the better ShExC emitter is committed
+            shex = str(ShExC(self.shex))
+        if output:
+            with open(output, 'w') as outf:
+                outf.write(shex)
+        else:
+            print(shex)
+
+
+@click.command()
+@click.argument("yamlfile", type=click.Path(exists=True, dir_okay=False))
+@click.option("--format", "-f", default='shex', type=click.Choice(ShExGenerator.valid_formats),
+              help="Output format")
+@click.option("-o", "--output", help="Output file name")
+def cli(yamlfile, format, output):
+    """ Generate a ShEx Schema for a  biolink model """
+    print(ShExGenerator(yamlfile, format).serialize(output=output))

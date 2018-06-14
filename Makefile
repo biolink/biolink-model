@@ -16,9 +16,11 @@ all: build test
 test: pytests
 build: metamodel/context.jsonld context.jsonld build_core contrib_build_monarch contrib_build_translator contrib_build_go
 build_core: metamodel/metamodel.py metamodel/docs/index.md biolinkmodel/datamodel.py docs/index.md gen-golr-views \
-ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql proto/biolink-model.proto gen-graphviz
+ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql proto/biolink-model.proto \
+gen-graphviz shex/meta.ttl shex/biolink-model.ttl
 
-contrib_build_%: contrib-dir-% contrib/%/docs/index.md contrib/%/datamodel.py contrib-golr-% contrib/%/ontology.ttl contrib/%/schema.json contrib-java-% contrib/%/%.graphql
+contrib_build_%: contrib-dir-% contrib/%/docs/index.md contrib/%/datamodel.py contrib-golr-% contrib/%/ontology.ttl \
+contrib/%/schema.json contrib-java-% contrib/%/%.graphql contrib/%/shex
 	echo
 
 
@@ -113,9 +115,15 @@ gen-graphviz: dir-graphviz biolink-model.yaml
 # ~~~~~~~~~~~~~~~~~~~~
 # ShEx
 # ~~~~~~~~~~~~~~~~~~~~
+shex/%.ttl: dir-shex %.yaml
+	gen-shex $*.yaml -f rdf > shex/$*.ttl
+	gen-shex $*.yaml -f json > shex/$*.json
 
-shex/biolink-model.shex: biolink-model.yaml
-	gen-shex $< > $@
+contrib/%/shex:
+	mkdir -p contrib/$*/shex
+	gen-shex contrib/$*.yaml -f rdf > contrib/$*/shex/$*.ttl
+	gen-shex contrib/$*.yaml -f json > contrib/$*/shex/$*.json
+
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Graphql

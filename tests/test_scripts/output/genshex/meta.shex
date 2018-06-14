@@ -1,0 +1,118 @@
+ <http://bioentity.io/vocab/ClassDefinition>
+    @<http://bioentity.io/vocab/Definition> AND  { (
+            <http://bioentity.io/vocab/defining_slots> @<http://bioentity.io/vocab/SlotDefinition> * ;
+            <http://bioentity.io/vocab/slot_usage> @<http://bioentity.io/vocab/SlotDefinition> * ;
+ <http://bioentity.io/vocab/apply_to>
+ @<http://bioentity.io/vocab/ClassDefinition> ? ;
+ <http://bioentity.io/vocab/entity> 
+ <http://www.w3.org/2001/XMLSchema#boolean>           ? ) }
+ <http://bioentity.io/vocab/Definition>
+ @<http://bioentity.io/vocab/Element> AND  { (
+ <http://bioentity.io/vocab/is_a>
+ @<http://bioentity.io/vocab/Definition> ? ;
+ <http://bioentity.io/vocab/mixins>
+ @<http://bioentity.io/vocab/Definition> * ;
+ <http://bioentity.io/vocab/abstract> 
+ <http://www.w3.org/2001/XMLSchema#boolean>           ? ;
+ <http://bioentity.io/vocab/local_names> 
+ <http://www.w3.org/2001/XMLSchema#string>           * ;
+ <http://bioentity.io/vocab/union_of>
+ @<http://bioentity.io/vocab/Definition> * ;
+ <http://bioentity.io/vocab/subclass_of>
+ @<http://bioentity.io/vocab/Definition> ? ;
+ <http://bioentity.io/vocab/values_from> 
+ <http://www.w3.org/2001/XMLSchema#string>           * ;
+ <http://bioentity.io/vocab/symmetric> 
+ <http://www.w3.org/2001/XMLSchema#boolean>           ? ) }
+ <http://bioentity.io/vocab/Element> { (
+ <http://bioentity.io/vocab/name> 
+ <http://www.w3.org/2001/XMLSchema#string>           ;
+ <http://bioentity.io/vocab/description> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? ;
+ <http://bioentity.io/vocab/note> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? ;
+ <http://bioentity.io/vocab/comment> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? ;
+ <http://bioentity.io/vocab/examples>
+ @<http://bioentity.io/vocab/Example> * ;
+ <http://bioentity.io/vocab/see_also> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? ;
+ <http://bioentity.io/vocab/flags> 
+ <http://www.w3.org/2001/XMLSchema#string>           * ;
+ <http://bioentity.io/vocab/prefixes> 
+ <http://www.w3.org/2001/XMLSchema#string>           * ;
+ <http://bioentity.io/vocab/aliases> 
+ <http://www.w3.org/2001/XMLSchema#string>           * ;
+ <http://bioentity.io/vocab/mappings> 
+ <http://www.w3.org/2001/XMLSchema#string>           * ;
+ <http://bioentity.io/vocab/id_prefixes> 
+ <http://www.w3.org/2001/XMLSchema#string>           * ;
+ <http://bioentity.io/vocab/in_subset> 
+ <http://www.w3.org/2001/XMLSchema#string>           * ;
+ <http://bioentity.io/vocab/from_schema> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? ;
+ <http://bioentity.io/vocab/alt_descriptions> 
+ <http://www.w3.org/2001/XMLSchema#string>           * ) }
+ <http://bioentity.io/vocab/Example> { (
+ <http://bioentity.io/vocab/value> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? ) }
+ <http://bioentity.io/vocab/SchemaDefinition>
+ @<http://bioentity.io/vocab/Definition> AND  { (
+ <http://bioentity.io/vocab/id> 
+ <http://www.w3.org/2001/XMLSchema#string>           ;
+ <http://bioentity.io/vocab/imports> 
+ <http://www.w3.org/2001/XMLSchema#string>           * ;
+ <http://bioentity.io/vocab/license> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? ;
+ <http://bioentity.io/vocab/types>
+ @<http://bioentity.io/vocab/TypeDefinition> * ;
+ <http://bioentity.io/vocab/slot_definitions>
+ @<http://bioentity.io/vocab/SlotDefinition> * ;
+ <http://bioentity.io/vocab/classes>
+ @<http://bioentity.io/vocab/ClassDefinition> * ;
+ <http://bioentity.io/vocab/metamodel_version> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? ;
+ <http://bioentity.io/vocab/source_file> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? ;
+ <http://bioentity.io/vocab/source_file_size> 
+ <http://www.w3.org/2001/XMLSchema#integer>           ? ;
+ <http://bioentity.io/vocab/source_file_date> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? ;
+ <http://bioentity.io/vocab/generation_date> 
+ <http://www.w3.org/2001/XMLSchema#date>           ? ) }
+ <http://bioentity.io/vocab/SlotDefinition>
+ @<http://bioentity.io/vocab/Definition> AND  { (
+ <http://bioentity.io/vocab/multivalued> 
+ <http://www.w3.org/2001/XMLSchema#boolean>           ? ;
+ <http://bioentity.io/vocab/range>
+ @<http://bioentity.io/vocab/Element> ? ;
+ <http://bioentity.io/vocab/required> 
+ <http://www.w3.org/2001/XMLSchema#boolean>           ? ;
+ <http://bioentity.io/vocab/inlined> 
+ <http://www.w3.org/2001/XMLSchema#boolean>           ? ;
+ <http://bioentity.io/vocab/primary_key> 
+ <http://www.w3.org/2001/XMLSchema#boolean>           ? ;
+ <http://bioentity.io/vocab/identifier> 
+ <http://www.w3.org/2001/XMLSchema#boolean>           ? ;
+ <http://bioentity.io/vocab/definitional> 
+ <http://www.w3.org/2001/XMLSchema#boolean>           ? ;
+ <http://bioentity.io/vocab/alias> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? ;
+ <http://bioentity.io/vocab/path> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? ;
+ <http://bioentity.io/vocab/subproperty_of>
+ @<http://bioentity.io/vocab/SlotDefinition> ? ;
+ <http://bioentity.io/vocab/inverse>
+ @<http://bioentity.io/vocab/SlotDefinition> ? ;
+ <http://bioentity.io/vocab/is_class_field> 
+ <http://www.w3.org/2001/XMLSchema#boolean>           ? ;
+ <http://bioentity.io/vocab/not_inherited> 
+ <http://www.w3.org/2001/XMLSchema#boolean>           ? ;
+ <http://bioentity.io/vocab/role> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? ) }
+ <http://bioentity.io/vocab/TypeDefinition>
+ @<http://bioentity.io/vocab/Element> AND  {
+ <http://bioentity.io/vocab/typeof> 
+ <http://www.w3.org/2001/XMLSchema#string>           ? }
+
+

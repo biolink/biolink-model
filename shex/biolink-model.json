@@ -1,0 +1,2543 @@
+{
+   "@context": "http://www.w3.org/ns/shex.jsonld",
+   "shapes": [
+      {
+         "id": "http://bioentity.io/vocab/ActivityAndBehavior",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Occurrent",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/AdministrativeEntity",
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/AnatomicalEntity",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/OrganismalEntity",
+            "http://bioentity.io/vocab/ThingWithTaxon",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/expresses",
+                  "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_association_subject",
+                        "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityOntogenicAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_subject",
+                        "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_relation",
+                        "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_part_of_association_subject",
+                        "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_part_of_association_relation",
+                        "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Association",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/InformationContentEntity",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/association_type",
+                        "valueExpr": "http://bioentity.io/vocab/OntologyClass",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/negated",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/relation",
+                        "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/object",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/qualifiers",
+                        "valueExpr": "http://bioentity.io/vocab/OntologyClass",
+                        "min": 0,
+                        "max": -1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/publications",
+                        "valueExpr": "http://bioentity.io/vocab/Publication",
+                        "min": 0,
+                        "max": -1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/provided_by",
+                        "valueExpr": "http://bioentity.io/vocab/Provider",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/association_slot",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Attribute",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/OntologyClass",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/BiologicalEntity",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/NamedThing",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/has_phenotype",
+                  "valueExpr": {
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/BiologicalProcess",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/BiologicalProcessOrActivity",
+            "http://bioentity.io/vocab/Occurrent",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/BiologicalProcessOrActivity",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/BiologicalEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/BiologicalSex",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Attribute",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Biosample",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/OrganismalEntity",
+            "http://bioentity.io/vocab/ThingWithTaxon",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/BiosampleToThingAssociation",
+            "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/BiosampleToThingAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/biosample_to_thing_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/Biosample",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Case",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/IndividualOrganism",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
+            "http://bioentity.io/vocab/CaseToThingAssociation",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/CaseToThingAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/case_to_thing_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/Case",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Cell",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/AnatomicalEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/CellLine",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Biosample",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/CellLineToThingAssociation",
+            "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/cell_line_to_disease_or_phenotypic_feature_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/CellLineToThingAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/cell_line_to_thing_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/CellLine",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/CellularComponent",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/AnatomicalEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ChemicalSubstance",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/MolecularEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/ChemicalToThingAssociation",
+            "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/chemical_to_disease_or_phenotypic_feature_association_object",
+                  "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ChemicalToGeneAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/ChemicalToThingAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/chemical_to_gene_association_object",
+                  "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ChemicalToPathwayAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/ChemicalToThingAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/chemical_to_pathway_association_object",
+                  "valueExpr": "http://bioentity.io/vocab/Pathway",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ChemicalToThingAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/chemical_to_thing_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/ChemicalSubstance",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ClinicalEntity",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/NamedThing",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ClinicalIntervention",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/ClinicalEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ClinicalModifier",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Attribute",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ClinicalTrial",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/ClinicalEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/CodingSequence",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GenomicEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ConfidenceLevel",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/InformationContentEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Device",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/NamedThing",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Disease",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/BiologicalEntity",
+            "http://bioentity.io/vocab/ThingWithTaxon",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/correlated_with",
+                        "valueExpr": "http://bioentity.io/vocab/MolecularEntity",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/treated_by",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/disease_or_phenotypic_feature_association_to_location_association_object",
+                  "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/disease_or_phenotypic_feature_association_to_thing_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
+            "http://bioentity.io/vocab/DiseaseToThingAssociation",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/DiseaseToThingAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/disease_to_thing_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/Disease",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Drug",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/ChemicalSubstance",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/DrugExposure",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Environment",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/drug_exposure_drug",
+                  "valueExpr": "http://bioentity.io/vocab/ChemicalSubstance",
+                  "min": 1,
+                  "max": -1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/EntityToDiseaseAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/EntityToFeatureOrDiseaseQualifiers",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/entity_to_disease_association_object",
+                  "valueExpr": "http://bioentity.io/vocab/Disease",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/EntityToFeatureOrDiseaseQualifiers",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/FrequencyQualifier",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/severity_qualifier",
+                        "valueExpr": "http://bioentity.io/vocab/SeverityValue",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/EntityToFeatureOrDiseaseQualifiers",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/sex_qualifier",
+                        "valueExpr": "http://bioentity.io/vocab/BiologicalSex",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/entity_to_phenotypic_feature_association_object",
+                        "valueExpr": "http://bioentity.io/vocab/PhenotypicFeature",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Environment",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/BiologicalEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/environment_to_phenotypic_feature_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/Environment",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/EnvironmentalFeature",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/PlanetaryEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/EnvironmentalProcess",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/PlanetaryEntity",
+            "http://bioentity.io/vocab/Occurrent",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/EvidenceType",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/InformationContentEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Exon",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GenomicEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ExonToTranscriptRelationship",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/SequenceFeatureRelationship",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/exon_to_transcript_relationship_subject",
+                        "valueExpr": "http://bioentity.io/vocab/Exon",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/FrequencyQualifier",
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/FrequencyQuantifier",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/RelationshipQuantifier",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/has_count",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/has_quotient",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/has_percentage",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/FrequencyValue",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Attribute",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/FunctionalAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/functional_association_subject",
+                        "valueExpr": "http://bioentity.io/vocab/MacromolecularMachine",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Gene",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GeneOrGeneProduct",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/genetically_interacts_with",
+                        "valueExpr": "http://bioentity.io/vocab/Gene",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/gene_associated_with_condition",
+                        "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GeneToDiseaseAssociation",
+            "http://bioentity.io/vocab/ModelToDiseaseMixin",
+            "http://bioentity.io/vocab/EntityToDiseaseAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/gene_as_a_model_of_disease_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneFamily",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/MolecularEntity",
+            "http://bioentity.io/vocab/GeneGrouping",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneGrouping",
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GeneToDiseaseAssociation",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/sequence_variant_qualifier",
+                        "valueExpr": "http://bioentity.io/vocab/SequenceVariant",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneOntologyClass",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/OntologyClass",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneOrGeneProduct",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/MacromolecularMachine",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/in_pathway_with",
+                        "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/in_cell_population_with",
+                        "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/expressed_in",
+                        "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneProduct",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GeneOrGeneProduct",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneProductIsoform",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GeneProduct",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneRegulatoryRelationship",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/gene_regulatory_relationship_relation",
+                        "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/gene_regulatory_relationship_object",
+                        "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneToDiseaseAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/EntityToDiseaseAssociation",
+            "http://bioentity.io/vocab/GeneToThingAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/gene_to_disease_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneToExpressionSiteAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/gene_to_expression_site_association_stage_qualifier",
+                        "valueExpr": "http://bioentity.io/vocab/LifeStage",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/gene_to_expression_site_association_subject",
+                        "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/gene_to_expression_site_association_object",
+                        "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/gene_to_expression_site_association_relation",
+                        "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneToGeneAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/gene_to_gene_association_subject",
+                        "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneToGeneHomologyAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GeneToGeneAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/gene_to_gene_homology_association_relation",
+                  "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneToGeneProductRelationship",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/SequenceFeatureRelationship",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/gene_to_gene_product_relationship_subject",
+                        "valueExpr": "http://bioentity.io/vocab/Gene",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/gene_to_gene_product_relationship_relation",
+                        "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneToGoTermAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/FunctionalAssociation",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/gene_to_go_term_association_subject",
+                        "valueExpr": "http://bioentity.io/vocab/MolecularEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
+            "http://bioentity.io/vocab/GeneToThingAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/gene_to_phenotypic_feature_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeneToThingAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/gene_to_thing_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Genome",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GenomicEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GenomicEntity",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/MolecularEntity",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/has_biological_sequence",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GenomicSequenceLocalization",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/start_interbase_coordinate",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/genome_build",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/phase",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/genomic_sequence_localization_subject",
+                        "valueExpr": "http://bioentity.io/vocab/GenomicEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/genomic_sequence_localization_object",
+                        "valueExpr": "http://bioentity.io/vocab/GenomicEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Genotype",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GenomicEntity",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/has_zygosity",
+                  "valueExpr": "http://bioentity.io/vocab/Zygosity",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GenotypeToGeneAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/genotype_to_gene_association_relation",
+                        "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/genotype_to_gene_association_object",
+                        "valueExpr": "http://bioentity.io/vocab/Gene",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GenotypeToGenotypePartAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/genotype_to_genotype_part_association_relation",
+                        "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/genotype_to_genotype_part_association_object",
+                        "valueExpr": "http://bioentity.io/vocab/Genotype",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
+            "http://bioentity.io/vocab/GenotypeToThingAssociation",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/genotype_to_phenotypic_feature_association_relation",
+                        "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GenotypeToThingAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/genotype_to_thing_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/Genotype",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GenotypeToVariantAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/genotype_to_variant_association_relation",
+                        "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/genotype_to_variant_association_object",
+                        "valueExpr": "http://bioentity.io/vocab/SequenceVariant",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GenotypicSex",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/BiologicalSex",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeographicLocation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/PlanetaryEntity",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/latitude",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#float",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GeographicLocationAtTime",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GeographicLocation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/timepoint",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#time",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/GrossAnatomicalStructure",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/AnatomicalEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Haplotype",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GenomicEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/IndividualOrganism",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/OrganismalEntity",
+            "http://bioentity.io/vocab/ThingWithTaxon",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/InformationContentEntity",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/NamedThing",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/LifeStage",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/OrganismalEntity",
+            "http://bioentity.io/vocab/ThingWithTaxon",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/MacromolecularComplex",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/MacromolecularMachine",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/MacromolecularMachine",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GenomicEntity",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/macromolecular_machine_name",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/MacromolecularMachineToBiologicalProcessAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/FunctionalAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/macromolecular_machine_to_biological_process_association_object",
+                  "valueExpr": "http://bioentity.io/vocab/BiologicalProcess",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/MacromolecularMachineToCellularComponentAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/FunctionalAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/macromolecular_machine_to_cellular_component_association_object",
+                  "valueExpr": "http://bioentity.io/vocab/CellularComponent",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/MacromolecularMachineToMolecularActivityAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/FunctionalAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/macromolecular_machine_to_molecular_activity_association_object",
+                  "valueExpr": "http://bioentity.io/vocab/MolecularActivity",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Metabolite",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/ChemicalSubstance",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/MicroRNA",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/NoncodingRNAProduct",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ModelToDiseaseMixin",
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://bioentity.io/vocab/model_to_disease_mixin_subject",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/MolecularActivity",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/BiologicalProcessOrActivity",
+            "http://bioentity.io/vocab/Occurrent",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/MolecularEntity",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/BiologicalEntity",
+            "http://bioentity.io/vocab/ThingWithTaxon",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/molecularly_interacts_with",
+                        "valueExpr": "http://bioentity.io/vocab/MolecularEntity",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/biomarker_for",
+                        "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/MolecularInteraction",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/molecular_interaction_subject",
+                        "valueExpr": "http://bioentity.io/vocab/MolecularEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/molecular_interaction_object",
+                        "valueExpr": "http://bioentity.io/vocab/MolecularEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/molecular_interaction_interacting_molecules_category",
+                        "valueExpr": "http://bioentity.io/vocab/OntologyClass",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/NamedThing",
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://bioentity.io/vocab/id",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://bioentity.io/vocab/category",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://bioentity.io/vocab/related_to",
+                  "valueExpr": "http://bioentity.io/vocab/NamedThing",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://bioentity.io/vocab/node_property",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://bioentity.io/vocab/iri",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://bioentity.io/vocab/full_name",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://bioentity.io/vocab/description",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://bioentity.io/vocab/systematic_synonym",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/NoncodingRNAProduct",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/RNAProduct",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Occurrent",
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://bioentity.io/vocab/regulates_process_to_process",
+                  "valueExpr": "http://bioentity.io/vocab/Occurrent",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://bioentity.io/vocab/has_input",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://bioentity.io/vocab/precedes",
+                  "valueExpr": "http://bioentity.io/vocab/Occurrent",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Onset",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Attribute",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/OntologyClass",
+         "expression": {
+            "predicate": "http://bioentity.io/vocab/subclass_of",
+            "valueExpr": "http://bioentity.io/vocab/OntologyClass",
+            "min": 0,
+            "max": 1,
+            "type": "TripleConstraint"
+         },
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/OrganismTaxon",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/OntologyClass",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/OrganismalEntity",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/BiologicalEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GeneToGeneAssociation",
+            "http://bioentity.io/vocab/MolecularInteraction",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/pairwise_gene_or_protein_interaction_association_relation",
+                  "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/PathognomonicityQuantifier",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/SpecificityQuantifier",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Pathway",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/BiologicalProcess",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Phenomenon",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Occurrent",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/PhenotypicFeature",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/PhenotypicSex",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/BiologicalSex",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/PhysiologicalProcess",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/BiologicalProcess",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/PlanetaryEntity",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/NamedThing",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/PopulationOfIndividualOrganisms",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/OrganismalEntity",
+            "http://bioentity.io/vocab/ThingWithTaxon",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/PopulationToPopulationAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/population_to_population_association_subject",
+                        "valueExpr": "http://bioentity.io/vocab/PopulationOfIndividualOrganisms",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/population_to_population_association_relation",
+                        "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Procedure",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Occurrent",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Protein",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GeneProduct",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ProteinIsoform",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Protein",
+            "http://bioentity.io/vocab/GeneProductIsoform",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Provider",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/AdministrativeEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Publication",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/InformationContentEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/RelationshipQuantifier",
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/RelationshipType",
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/RNAProduct",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GeneProduct",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/RNAProductIsoform",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/RNAProduct",
+            "http://bioentity.io/vocab/GeneProductIsoform",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/SenstivityQuantifier",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/RelationshipQuantifier",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/SequenceFeatureRelationship",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/sequence_feature_relationship_subject",
+                        "valueExpr": "http://bioentity.io/vocab/GenomicEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/SequenceVariant",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GenomicEntity",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/sequence_variant_has_gene",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": -1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/sequence_variant_id",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/SequenceVariantModulatesTreatmentAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/sequence_variant_modulates_treatment_association_subject",
+                        "valueExpr": "http://bioentity.io/vocab/SequenceVariant",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/SeverityValue",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Attribute",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/SpecificityQuantifier",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/RelationshipQuantifier",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/thing_to_disease_or_phenotypic_feature_association_object",
+                  "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ThingWithTaxon",
+         "expression": {
+            "predicate": "http://bioentity.io/vocab/in_taxon",
+            "valueExpr": "http://bioentity.io/vocab/OrganismTaxon",
+            "min": 0,
+            "max": 1,
+            "type": "TripleConstraint"
+         },
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Transcript",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/GenomicEntity",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/TranscriptToGeneRelationship",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/SequenceFeatureRelationship",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/transcript_to_gene_relationship_subject",
+                        "valueExpr": "http://bioentity.io/vocab/Transcript",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Treatment",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Environment",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/treatment_treats",
+                        "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/VariantToDiseaseAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/VariantToThingAssociation",
+            "http://bioentity.io/vocab/EntityToDiseaseAssociation",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/variant_to_disease_association_subject",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/variant_to_disease_association_object",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/VariantToPhenotypicFeatureAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/VariantToThingAssociation",
+            "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/variant_to_phenotypic_feature_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/SequenceVariant",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/VariantToPopulationAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            "http://bioentity.io/vocab/VariantToThingAssociation",
+            "http://bioentity.io/vocab/FrequencyQuantifier",
+            "http://bioentity.io/vocab/FrequencyQualifier",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://bioentity.io/vocab/variant_to_population_association_subject",
+                        "valueExpr": "http://bioentity.io/vocab/SequenceVariant",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/variant_to_population_association_has_quotient",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/variant_to_population_association_has_count",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/variant_to_population_association_has_total",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/VariantToThingAssociation",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Association",
+            {
+               "expression": {
+                  "predicate": "http://bioentity.io/vocab/variant_to_thing_association_subject",
+                  "valueExpr": "http://bioentity.io/vocab/SequenceVariant",
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Zygosity",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/Attribute",
+            {
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
+      }
+   ],
+   "type": "Schema"
+}
+

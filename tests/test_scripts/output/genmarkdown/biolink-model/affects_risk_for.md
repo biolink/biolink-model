@@ -14,7 +14,7 @@ URI: [http://bioentity.io/vocab/affects_risk_for](slot_uri)
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [prevents](prevents.md) *subsets*: (translator_minimal)
  *  child: [predisposes](predisposes.md) *subsets*: (translator_minimal)
+ *  child: [prevents](prevents.md) *subsets*: (translator_minimal)
 ## Used in
 
