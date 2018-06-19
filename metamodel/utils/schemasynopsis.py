@@ -173,6 +173,12 @@ class SchemaSynopsis:
                     if self.schema.slots[slotname].domain != cls.name:
                         rval += [f'\tDomain mismatch: slot "{slotname}" domain is: '
                                  f'"{self.schema.slots[slotname].domain}" class "{cls.name}" claims ownership']
+
+        # Inlined slots must be multivalued (not a inviolable rule, but we make assumptions about this elsewhere in
+        # the python generator
+        for slot in self.schema.slots.values():
+            if slot.inlined and not slot.multivalued:
+                rval += [f'\tSlot {slot.name} is declared inline but single valued']
         return rval
 
     def summary(self) -> str:

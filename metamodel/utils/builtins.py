@@ -1,5 +1,7 @@
 from enum import Enum
-from typing import Dict
+from typing import Dict, Optional
+
+from rdflib import XSD
 
 """ Built in types """
 
@@ -12,6 +14,7 @@ class Builtin(Enum):
     boolean = 4
     time = 5
     date = 6
+    uri = 7
 
 
 builtin_names: Dict[str, Builtin] = {
@@ -21,5 +24,27 @@ builtin_names: Dict[str, Builtin] = {
     'double': Builtin.double,
     'boolean': Builtin.boolean,
     'time': Builtin.time,
-    'date': Builtin.date
+    'date': Builtin.date,
+    'uri' : Builtin.uri
 }
+
+def builtin_uri(name: Optional[str], expand: bool = False) -> Optional[str]:
+    if name is None:
+        name = DEFAULT_BUILTIN_TYPE_NAME
+    elif name not in builtin_names:
+        return None
+    elif name is 'uri':
+        name = 'anyURI'
+    return XSD[name] if expand else f'xsd:{name}'
+
+DEFAULT_BUILTIN_TYPE_NAME = "string"
+
+python_builtins: Dict[Builtin, str] = {
+    Builtin.string: 'str',
+    Builtin.integer: 'int',
+    Builtin.float: 'float',
+    Builtin.double: 'float',
+    Builtin.boolean: 'bool',
+    Builtin.time: 'datetime.time',
+    Builtin.date: 'datetime.date',
+    Builtin.uri: 'str'}

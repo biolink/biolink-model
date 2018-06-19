@@ -5,7 +5,7 @@ from typing import List, Set, Union, TextIO, Optional, TypeVar
 
 from metamodel.metamodel import SchemaDefinition, ClassDefinition, SlotDefinition, ClassDefinitionName, \
     TypeDefinition, Element, SlotDefinitionName, TypeDefinitionName
-from metamodel.utils.builtins import builtin_names
+from metamodel.utils.builtins import builtin_names, DEFAULT_BUILTIN_TYPE_NAME
 from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.schemaloader import SchemaLoader
 from metamodel.utils.schemasynopsis import SchemaSynopsis
@@ -206,6 +206,23 @@ class Generator(metaclass=abc.ABCMeta):
                     touches.slotrefs.update(self.synopsis.rangerefs[element])
 
         return touches
+
+    def grounded_slot_range(self, slot: Union[SlotDefinition, Optional[str]]) -> str:
+        """ Chase the slot range to its final form
+
+        @param slot: slot to check
+        @return: name of resolved range
+        """
+        if not isinstance(slot, str):
+            slot = slot.range
+        if slot is None:
+            return DEFAULT_BUILTIN_TYPE_NAME         # Default type name
+        elif slot in builtin_names:
+            return slot
+        elif slot in self.schema.types:
+            return self.grounded_slot_range(self.schema.types[slot].typeof)
+        else:
+            return slot
 
     def aliased_slot_name(self, slot: SLOT_OR_SLOTNAME) -> str:
         """ Return the overloaded slot name -- the alias if one exists otherwise the actual name

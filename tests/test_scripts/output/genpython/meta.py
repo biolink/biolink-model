@@ -1,5 +1,5 @@
 # Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by pythongen.py version: 0.0.2
-# Generation date: 2018-06-11 18:28
+# Generation date: 2018-06-18 18:35
 # Schema: metamodel
 #
 # id: https://biolink.github.io/metamodel/ontology/meta.ttl
@@ -17,6 +17,7 @@ metamodel_version = "0.2.0"
 not_inherited_slots: List[str] = ["name", "note", "comment", "examples", "mappings"]
 
 # Class references
+PrefixLocalName = NewType("PrefixLocalName", str)
 ExampleName = NewType("ExampleName", str)
 ElementName = NewType("ElementName", str)
 DefinitionName = NewType("DefinitionName", Union[ElementName, str])
@@ -27,6 +28,15 @@ SchemaDefinitionName = NewType("SchemaDefinitionName", Union[DefinitionName, str
 SchemaDefinitionId = NewType("SchemaDefinitionId", str)
 
 # Type references
+
+
+@dataclass
+class Prefix(YAMLRoot):
+    """
+    Prefix URI map
+    """
+    local_name: PrefixLocalName
+    prefix_uri: Optional[str] = None
 
 
 @dataclass
@@ -51,7 +61,6 @@ class Element(YAMLRoot):
     examples: List[Union[dict, Example]] = empty_list()
     see_also: Optional[str] = None
     flags: List[str] = empty_list()
-    prefixes: List[str] = empty_list()
     aliases: List[str] = empty_list()
     mappings: List[str] = empty_list()
     id_prefixes: List[str] = empty_list()
@@ -115,6 +124,7 @@ class ClassDefinition(Definition):
     slot_usage: Dict[SlotDefinitionName, Union[dict, SlotDefinition]] = empty_dict()
     apply_to: Optional[ClassDefinitionName] = None
     entity: bool = False
+    is_a: Optional[ClassDefinitionName] = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -142,6 +152,7 @@ class SchemaDefinition(Definition):
     version: Optional[str] = None
     imports: List[str] = empty_list()
     license: Optional[str] = None
+    prefixes: Dict[PrefixLocalName, Union[str, Prefix]] = empty_dict()
     types: Dict[TypeDefinitionName, Union[dict, TypeDefinition]] = empty_dict()
     slots: Dict[SlotDefinitionName, Union[dict, SlotDefinition]] = empty_dict()
     classes: Dict[ClassDefinitionName, Union[dict, ClassDefinition]] = empty_dict()
@@ -150,11 +161,16 @@ class SchemaDefinition(Definition):
     source_file_size: Optional[int] = None
     source_file_date: Optional[str] = None
     generation_date: Optional[datetime.date] = None
+    default_curi_maps: List[str] = empty_list()
+    default_prefix: Optional[strName] = None
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
+        for k, v in self.prefixes.items():
+                if not isinstance(v, Prefix):
+                    self.prefixes[k] = Prefix(k, v)
         for k, v in self.types.items():
                 if not isinstance(v, TypeDefinition):
                     self.types[k] = TypeDefinition(name=k, **({} if v is None else v))

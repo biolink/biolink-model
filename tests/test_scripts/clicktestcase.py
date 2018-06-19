@@ -101,7 +101,7 @@ class ClickTestCase(unittest.TestCase):
             print("Directory comparison needs to be added", file=sys.stderr)
 
     @staticmethod
-    def clear_dir(dir: str) -> None:
+    def clear_dir(folder: str) -> None:
         import os, shutil
         for the_file in os.listdir(folder):
             file_path = os.path.join(folder, the_file)

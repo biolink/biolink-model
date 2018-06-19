@@ -56,12 +56,13 @@ class SchemaLoader:
         for cls in self.schema.classes.values():
             for slot_name, slot_usage in cls.slot_usage.items():
                 # Construct a new slot
-                child_name = SlotDefinitionName(cls.name + ' ' + slot_name)
+                parent_slot = self.slot_definition_for(slot_name, cls)
+                child_name = SlotDefinitionName(cls.name + ' ' + slot_name) if parent_slot else slot_name
                 new_slot = SlotDefinition(name=child_name, alias=slot_name, domain=cls.name)
+                merge_slots(new_slot, slot_usage)
 
                 # Copy the parent definition.  If there is no parent definition, the slot is being defined
                 # locally as a slot_usage
-                parent_slot = self.slot_definition_for(slot_name, cls)
                 if parent_slot is not None:
                     new_slot.is_a = parent_slot.name
                     merge_slots(new_slot, parent_slot)

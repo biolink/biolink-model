@@ -6,6 +6,8 @@ from dataclasses import dataclass
 from jsonasobj import JsonObj
 
 from metamodel.utils.formatutils import camelcase, underscore
+from metamodel.utils.namespaces import BIOENTITY
+
 
 @dataclass(init=False)
 class YAMLRoot(JsonObj):
@@ -16,29 +18,32 @@ class YAMLRoot(JsonObj):
         pass
 
     def _default(self, obj):
-        """ JSON serializer callback. Filter out empty values (None, {}, [] and False) and mangle the names
+        """ JSON serializer callback.
+        1) Filter out empty values (None, {}, [] and False) and mangle the names
+        2) Add ID entries for dictionary entries
 
         :param obj: YAMLRoot object to serialize
         :return: Serialized version of obj
         """
-        from metamodel.metamodel import ClassDefinition, SlotDefinition, TypeDefinition
+        from metamodel.metamodel import ClassDefinition, SlotDefinition, TypeDefinition, Element
 
         if isinstance(obj, JsonObj):
             rval = dict()
             for k, v in obj.__dict__.items():
                 if not k.startswith('_') and v is not None and (not isinstance(v, (dict, list, bool)) or v):
                     if isinstance(v, dict):
-                        vcopy = {}
+                        itemslist = []
                         for vk, vv in v.items():
                             if isinstance(vv, ClassDefinition):
                                 vk = camelcase(vk)
+                                vv['@id'] = vk
                             elif isinstance(vv, (SlotDefinition, TypeDefinition)):
                                 vk = underscore(vk)
-                            else:
-                                pass
-                            vcopy[vk] = vv
-                        v = vcopy
-                    rval[k] = v
+                                vv['@id'] = vk
+                            itemslist.append(vv)
+                        rval[k] = itemslist
+                    else:
+                        rval[k] = v
             return rval
         else:
             return super()._default(obj)

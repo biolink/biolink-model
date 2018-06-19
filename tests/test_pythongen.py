@@ -4,10 +4,11 @@ import unittest
 import biolinkmodel.datamodel
 import metamodel.metamodel
 from metamodel.generators.pythongen import PythonGenerator
-# If true, update the output
+
 from tests import refresh_files
 from tests.test_scripts.clicktestcase import metadata_filter
 
+# If true, update the output
 update_master: bool = False
 
 

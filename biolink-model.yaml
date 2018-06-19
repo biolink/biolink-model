@@ -709,7 +709,6 @@ slots:
       
   iri:
     is_a: node property
-    identifier: true
     description: >-
       An IRI for the node. This is determined by the id using expansion rules.
     in_subset:
@@ -1174,12 +1173,12 @@ classes:
       - WD:Q28845870
         
   ontology class:
+    is_a: named thing
     description: "a concept or class in an ontology, vocabulary or thesaurus"
       
   gene ontology class:
     description: >-
       an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-    mixin: true
     is_a: ontology class
     flags:
       - testing
@@ -2773,6 +2772,7 @@ classes:
   occurrent:
     description: >-
       A processual entity
+    is_a: named thing
     mappings:
       - "BFO:0000003"
 

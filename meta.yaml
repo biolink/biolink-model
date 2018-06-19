@@ -2,7 +2,31 @@ metamodel:
     id: "https://biolink.github.io/metamodel/ontology/meta.ttl"
     description: Metamodel for biolink schema
     license: https://creativecommons.org/publicdomain/zero/1.0/
-    version: 0.2.0
+    version: 0.2.1
+
+    prefixes:
+      biolink: http://bioentity.io/vocab/
+      meta: http://bioentity.io/meta/
+      skos: http://www.w3.org/2004/02/skos/core#
+      owl: http://www.w3.org/2002/07/owl#
+
+    default_prefix: biolink
+
+    default_curi_maps:
+      - obo_context
+      - monarch_context
+      - idot_context
+      - semweb_context
+
+    id_prefixes:
+      - rdf
+      - rdfs
+      - xsd
+      - skos
+      - OIO
+
+    note:
+      - OIO prefix is not correct -- where IS "inSubset" derived from?
 
     slots:
       #
@@ -13,6 +37,8 @@ metamodel:
           not_inherited: true
           description: >-
             a unique key that identifies a slot, type or class in a schema
+          mappings:
+            - rdf:label
 
       singular_name:
           domain: element
@@ -23,6 +49,8 @@ metamodel:
           domain: element
           description: >-
             a description
+          mappings:
+            - skos:definition
 
       alt_descriptions:
           multivalued: true
@@ -35,12 +63,16 @@ metamodel:
           not_inherited: true
           description: >-
             Notes about an element
+          mappings:
+            - skos:note
 
       comment:
           domain: element
           not_inherited: true
           description: >-
             Comment about an element
+          mappings:
+            - skos:editorialNote
 
       examples:
           multivalued: true
@@ -50,13 +82,8 @@ metamodel:
           not_inherited: true
           description: >-
             Example of usage for a slot or class
-
-      prefixes:
-          multivalued: true
-          domain: element
-          inlined: true
-          description: >-
-            list of ID/CURIE prefixes applicable to that element
+          mappings:
+            - skos:example
 
       aliases:
         domain: element
@@ -69,12 +96,14 @@ metamodel:
           description: >-
             used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)
           mappings:
-            oio: inSubset
+            - OIO:inSubset
 
       from_schema:
           domain: element
           description: >-
             id of the schema that the element was derived from.  Supplied by the loader.
+          mappings:
+            - skos:inScheme
 
       flags:
           multivalued: true
@@ -88,12 +117,15 @@ metamodel:
           range: string
           note: >-
             needs description
+          mappings:
+            - skos:related
 
       id_prefixes:
           multivalued: true
           domain: element
           note: >-
-            needs description
+            A list of CURI prefixes that are used in the representation of instances of the model.  All prefixes in
+            this list are added to the prefix sections of the target models.  These prefixes are fetched from
 
       mappings:
           multivalued: true
@@ -116,6 +148,8 @@ metamodel:
             framework (e.g. java classes, python classes) then is_a is used.
             When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins
             are recursively unfolded
+          mappings:
+            - rdf:type
 
       mixin:
           domain: definition
@@ -166,10 +200,12 @@ metamodel:
 
       subclass_of:
           domain: definition
-          range: definition
+          range: uri
           description: >-
             Ontolgy property which this is a subclass of.
             Not to be confused with is_a which links datamodel classes
+          mappings:
+            - rdfs:subClassOf
 
       symmetric:
           domain: definition
@@ -202,6 +238,26 @@ metamodel:
           domain: schema definition
           description: >-
             license for the schema
+
+      prefixes:
+          multivalued: true
+          domain: schema definition
+          range: prefix
+          inlined: true
+          description: >-
+            Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes
+
+      default_curi_maps:
+          multivalued: true
+          domain: schema definition
+          description: >-
+            List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables
+
+      default_prefix:
+          domain: schema definition
+          range: string
+          description: >-
+            default and base prefix -- used for ':' identifiers, @base and @vocab
 
       types:
           domain: schema definition
@@ -334,7 +390,6 @@ metamodel:
           description: >-
             if true then the value of this slot is inlined (i.e. a nested object) rather linked by key
 
-
       definitional:
           domain: slot definition
           range: boolean
@@ -370,12 +425,16 @@ metamodel:
           range: slot definition
           description: >-
             Ontolgy property which this is a subproperty of
+          mappings:
+            - rdfs:subPropertyOf
 
       inverse:
           domain: slot definition
           range: slot definition
           description: >-
             used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')
+          mappings:
+            - owl:inverseOf
 
       is_class_field:
           domain: slot definition
@@ -410,7 +469,26 @@ metamodel:
           domain: example
           alias: description
 
+      #
+      # Slots for prefix type
+      local name:
+          domain: prefix
+          primary_key: true
+          description: >-
+            the nsname (sans ':' for a given prefix)
+
+      prefix uri:
+          domain: prefix
+          description: >-
+            A URI associated with a given prefix
+
     classes:
+        prefix:
+          description: "Prefix URI map"
+          slots:
+            - local name
+            - prefix uri
+
         example:
           description: "example of usage"
           slots:
@@ -429,7 +507,6 @@ metamodel:
             - examples
             - see_also
             - flags
-            - prefixes
             - aliases
             - mappings
             - id_prefixes
@@ -469,6 +546,13 @@ metamodel:
             - inverse
             - is_class_field
             - not_inherited
+          slot_usage:
+            is_a:
+              range: slot definition
+            mixins:
+              range: slot definition
+            union_of:
+              range: slot definition
 
         class definition:
           description: "A class or interface"
@@ -479,6 +563,15 @@ metamodel:
             - slot_usage
             - apply_to
             - entity
+          slot_usage:
+            is_a:
+              range: class definition
+            mixins:
+              domain: class definition
+              range: class definition
+            union_of:
+              domain: class definition
+              range: class definition
 
         type definition:
           description: "A type definition"
@@ -494,6 +587,7 @@ metamodel:
             - version
             - imports
             - license
+            - prefixes
             - types
             - slot definitions
             - classes
