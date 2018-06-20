@@ -20,7 +20,7 @@ URI: [http://bioentity.io/vocab/ChemicalToPathwayAssociation](http://bioentity.i
 ## Fields
 
  * _[chemical to pathway association.object](chemical_to_pathway_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the pathway that is affected by the chemical_
     * range: [Pathway](Pathway.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

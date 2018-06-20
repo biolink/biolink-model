@@ -13,7 +13,7 @@ def underscore(txt: str) -> str:
 
 
 def lcamelcase(txt: str) -> str:
-    s = txt.title().replace(" ", "").replace(",", "")
+    s = camelcase(txt.replace('_', ' '))
     return s[0].lower() + s[1:]
 
 

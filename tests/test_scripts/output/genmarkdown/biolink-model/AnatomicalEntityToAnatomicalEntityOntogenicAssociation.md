@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityOntogenicAssoc
 ## Fields
 
  * _[anatomical entity to anatomical entity ontogenic association.object](anatomical_entity_to_anatomical_entity_ontogenic_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the structure at an earlier time_
     * range: [AnatomicalEntity](AnatomicalEntity.md) [required]
     * __Local__
  * _[anatomical entity to anatomical entity ontogenic association.relation](anatomical_entity_to_anatomical_entity_ontogenic_association_relation.md)_
@@ -27,7 +27,7 @@ URI: [http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityOntogenicAssoc
     * edge label: develops from
     * __Local__
  * _[anatomical entity to anatomical entity ontogenic association.subject](anatomical_entity_to_anatomical_entity_ontogenic_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the structure at a later time_
     * range: [AnatomicalEntity](AnatomicalEntity.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

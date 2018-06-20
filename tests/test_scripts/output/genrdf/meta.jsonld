@@ -1,19 +1,1914 @@
 [
   {
+    "@id": "http://bioentity.io/vocab/is_a",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Definition"
+      }
+    ],
+    "http://bioentity.io/vocab/mappings": [
+      {
+        "@list": [
+          {
+            "@value": "rdf:type"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      },
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      },
+      {
+        "@id": "http://bioentity.io/vocab/Definition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "is_a"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/from_schema",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Element"
+      }
+    ],
+    "http://bioentity.io/vocab/mappings": [
+      {
+        "@list": [
+          {
+            "@value": "skos:inScheme"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "from_schema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "id of the schema that the element was derived from.  Supplied by the loader."
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/abstract",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Definition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/boolean"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "abstract"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/is_class_field",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/boolean"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "is_class_field"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@value": "Needs description"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/slot_definitions",
+    "http://bioentity.io/vocab/alias": [
+      {
+        "@value": "slots"
+      }
+    ],
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/inlined": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "slot_definitions"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "collection of slot definitions in a schema"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/mappings",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Element"
+      }
+    ],
+    "http://bioentity.io/vocab/inherited": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "mappings"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "list of equivalent or skos exact mappings to an ontology class"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/ClassDefinition",
+    "@type": [
+      "http://bioentity.io/vocab/Definition"
+    ],
+    "http://bioentity.io/vocab/slot_usage": [
+      {
+        "@list": [
+          {
+            "@id": "http://bioentity.io/vocab/is_a"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/mixins"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/union_of"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/slots": [
+      {
+        "@list": [
+          {
+            "@id": "http://bioentity.io/vocab/defining_slots"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/slots"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/slot_usage"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/apply_to"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/entity"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/class_definition_is_a"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/class_definition_mixins"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/class_definition_union_of"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "ClassDefinition"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A class or interface"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/required",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/inherited": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/boolean"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "required"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "If true slot must have at least one value"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/version",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "version"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Schema version"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/inverse",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/mappings": [
+      {
+        "@list": [
+          {
+            "@value": "owl:inverseOf"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "inverse"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/id",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/primary_key": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "id"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "a globally unique id or url for a schema"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/local_names",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Definition"
+      }
+    ],
+    "http://bioentity.io/vocab/inlined": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "local_names"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "map from local identifier to slot"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/slot_definition_mixins",
+    "@type": [
+      "http://bioentity.io/vocab/mixins"
+    ],
+    "http://bioentity.io/vocab/alias": [
+      {
+        "@value": "mixins"
+      }
+    ],
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "slot_definition_mixins"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "List of definitions to be mixed in. Targets may be any definition of the same type"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/TypeDefinition",
+    "@type": [
+      "http://bioentity.io/vocab/Element"
+    ],
+    "http://bioentity.io/vocab/slots": [
+      {
+        "@list": [
+          {
+            "@id": "http://bioentity.io/vocab/typeof"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "TypeDefinition"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A type definition"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/entity",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/boolean"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@value": "needs description"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/path",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "path"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "For any denormalized slot, this represents the tree or graph path used to generate the denormalized form"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/Prefix",
+    "http://bioentity.io/vocab/slots": [
+      {
+        "@list": [
+          {
+            "@id": "http://bioentity.io/vocab/local_name"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/prefix_uri"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "Prefix"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Prefix URI map"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/classes",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/inlined": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "classes defined in schema"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/values_from",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Definition"
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "values_from"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "identifies the possible uri's of the range"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/default_curi_maps",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "default_curi_maps"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/aliases",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Element"
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "aliases"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/types",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/inlined": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/TypeDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "types"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "types defined in schema"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/local_name",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Prefix"
+      }
+    ],
+    "http://bioentity.io/vocab/primary_key": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "local_name"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "the nsname (sans ':' for a given prefix)"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/Example",
+    "http://bioentity.io/vocab/slots": [
+      {
+        "@list": [
+          {
+            "@id": "http://bioentity.io/vocab/value"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/value_description"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "Example"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "example of usage"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/primary_key",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/boolean"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "primary_key"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "True means that this serves as a unique identifier"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/definitional",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/inherited": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/boolean"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "definitional"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@value": "needs description"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/license",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "license"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "license for the schema"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/class_definition_mixins",
+    "@type": [
+      "http://bioentity.io/vocab/mixins"
+    ],
+    "http://bioentity.io/vocab/alias": [
+      {
+        "@value": "mixins"
+      }
+    ],
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "class_definition_mixins"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "List of definitions to be mixed in. Targets may be any definition of the same type"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/id_prefixes",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Element"
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "id_prefixes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@value": "A list of CURI prefixes that are used in the representation of instances of the model.  All prefixes in this list are added to the prefix sections of the target models.  These prefixes are fetched from"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/class_definition_is_a",
+    "@type": [
+      "http://bioentity.io/vocab/is_a"
+    ],
+    "http://bioentity.io/vocab/alias": [
+      {
+        "@value": "is_a"
+      }
+    ],
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/mappings": [
+      {
+        "@list": [
+          {
+            "@value": "rdf:type"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "class_definition_is_a"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/defining_slots",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "defining_slots"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/flags",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Element"
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "flags"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "State information and other details"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/apply_to",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "apply_to"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class."
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/source_file_size",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/integer"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "source_file_size"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "size in bytes of the source of the schema.  Supplied by the loader"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/prefixes",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/inlined": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/Prefix"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "prefixes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/see_also",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Element"
+      }
+    ],
+    "http://bioentity.io/vocab/mappings": [
+      {
+        "@list": [
+          {
+            "@value": "skos:related"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "see_also"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@value": "needs description"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/generation_date",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/date"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "generation_date"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "date that the schema was loaded/generated.  Supplied by the loader"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/slot_usage",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/inlined": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "slot_usage"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/imports",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "imports"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A list of modules that are imported into the schema"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/Element",
+    "http://bioentity.io/vocab/abstract": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/slots": [
+      {
+        "@list": [
+          {
+            "@id": "http://bioentity.io/vocab/name"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/singular_name"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/description"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/note"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/comment"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/examples"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/see_also"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/flags"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/aliases"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/mappings"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/id_prefixes"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/in_subset"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/from_schema"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/alt_descriptions"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "Element"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "root of all described things"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/SlotDefinition",
+    "@type": [
+      "http://bioentity.io/vocab/Definition"
+    ],
+    "http://bioentity.io/vocab/slot_usage": [
+      {
+        "@list": [
+          {
+            "@id": "http://bioentity.io/vocab/is_a"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/mixins"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/union_of"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/slots": [
+      {
+        "@list": [
+          {
+            "@id": "http://bioentity.io/vocab/multivalued"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/domain"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/range"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/required"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/object_property"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/inlined"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/primary_key"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/identifier"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/definitional"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/alias"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/path"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/subproperty_of"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/inverse"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/is_class_field"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/role"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/inherited"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/slot_definition_is_a"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/slot_definition_mixins"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/slot_definition_union_of"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "SlotDefinition"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A property or slot"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/role",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "role"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@value": "Needs description"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/alias",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "alias"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have \"slots\" where one inline and the other a reference"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/value_description",
+    "http://bioentity.io/vocab/alias": [
+      {
+        "@value": "description"
+      }
+    ],
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Example"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "value_description"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/source_file",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "source_file"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "name, uri or description of the source of the schema.  Supplied by the loader"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/singular_name",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Element"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "singular_name"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "a name that is used in the singular form"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/prefix_uri",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Prefix"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "prefix_uri"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A URI associated with a given prefix"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/symmetric",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Definition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/boolean"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "symmetric"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Symmetric slot"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@value": "Indications that a slot or reified association is symmetric"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/domain",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "domain"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The class to which this slot applies."
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/slot_definition_union_of",
+    "@type": [
+      "http://bioentity.io/vocab/union_of"
+    ],
+    "http://bioentity.io/vocab/alias": [
+      {
+        "@value": "union_of"
+      }
+    ],
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "slot_definition_union_of"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "list of class or slot definitions that are combined to create the union class"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/Definition",
+    "@type": [
+      "http://bioentity.io/vocab/Element"
+    ],
+    "http://bioentity.io/vocab/abstract": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/slots": [
+      {
+        "@list": [
+          {
+            "@id": "http://bioentity.io/vocab/is_a"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/mixin"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/mixins"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/abstract"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/local_names"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/union_of"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/subclass_of"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/values_from"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/symmetric"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "Definition"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "definition base class"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/source_file_date",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "source_file_date"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "modification date of the source of the schema.  Supplied by the loader"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/range",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/inherited": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/Element"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "range"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "The slot type.  If absent, it is the builtin type 'string'"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/multivalued",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/inherited": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/boolean"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "multivalued"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "If true slot can have many values"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/default_prefix",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "default_prefix"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "default and base prefix -- used for ':' identifiers, @base and @vocab"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/slot_definition_is_a",
+    "@type": [
+      "http://bioentity.io/vocab/is_a"
+    ],
+    "http://bioentity.io/vocab/alias": [
+      {
+        "@value": "is_a"
+      }
+    ],
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/mappings": [
+      {
+        "@list": [
+          {
+            "@value": "rdf:type"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "slot_definition_is_a"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/metamodel_version",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SchemaDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "metamodel_version"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Version of the metamodel used to load the schema. Supplied by the loader"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/subproperty_of",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/inherited": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/mappings": [
+      {
+        "@list": [
+          {
+            "@value": "rdfs:subPropertyOf"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "subproperty_of"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Ontolgy property which this is a subproperty of"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/alt_descriptions",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Element"
+      }
+    ],
+    "http://bioentity.io/vocab/inherited": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "alt_descriptions"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@value": "Needs description"
+      }
+    ]
+  },
+  {
     "@id": "https://biolink.github.io/metamodel/ontology/meta.ttl",
     "http://bioentity.io/vocab/classes": [
       {
-        "@id": "_:N41b8a291041046a4913d70321c660548"
+        "@list": [
+          {
+            "@id": "http://bioentity.io/vocab/Prefix"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/Example"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/Element"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/Definition"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/SlotDefinition"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/ClassDefinition"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/TypeDefinition"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/SchemaDefinition"
+          }
+        ]
       }
     ],
-    "http://bioentity.io/vocab/description": [
+    "http://bioentity.io/vocab/default_curi_maps": [
       {
-        "@value": "Metamodel for biolink schema"
+        "@list": [
+          {
+            "@value": "obo_context"
+          },
+          {
+            "@value": "monarch_context"
+          },
+          {
+            "@value": "idot_context"
+          },
+          {
+            "@value": "semweb_context"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/default_prefix": [
+      {
+        "@value": "biolink"
       }
     ],
     "http://bioentity.io/vocab/generation_date": [
       {
-        "@value": "2018-06-12 12:55"
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2018-06-20"
+      }
+    ],
+    "http://bioentity.io/vocab/id": [
+      {
+        "@value": "https://biolink.github.io/metamodel/ontology/meta.ttl"
+      }
+    ],
+    "http://bioentity.io/vocab/id_prefixes": [
+      {
+        "@list": [
+          {
+            "@value": "rdf"
+          },
+          {
+            "@value": "rdfs"
+          },
+          {
+            "@value": "xsd"
+          },
+          {
+            "@value": "skos"
+          },
+          {
+            "@value": "OIO"
+          }
+        ]
       }
     ],
     "http://bioentity.io/vocab/license": [
@@ -23,17 +1918,241 @@
     ],
     "http://bioentity.io/vocab/metamodel_version": [
       {
-        "@value": "0.2.0"
+        "@value": "0.3.0"
       }
     ],
-    "http://bioentity.io/vocab/name": [
+    "http://bioentity.io/vocab/prefixes": [
       {
-        "@value": "metamodel"
+        "@list": [
+          {
+            "@id": "_:N76403eae62264c829f03eaf6adca8245"
+          },
+          {
+            "@id": "_:Nec016420dbb54277a940378a0e2bbc49"
+          },
+          {
+            "@id": "_:N4e4cc29e276c4a098ccc8caf8b36bc6d"
+          },
+          {
+            "@id": "_:N3b3e8bc08f4a404db341b096c23a1ee0"
+          }
+        ]
       }
     ],
     "http://bioentity.io/vocab/slots": [
       {
-        "@id": "_:N5a1c96100e9b4ccfbef67d177373d158"
+        "@list": [
+          {
+            "@id": "http://bioentity.io/vocab/name"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/singular_name"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/description"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/alt_descriptions"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/note"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/comment"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/examples"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/aliases"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/in_subset"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/from_schema"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/flags"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/see_also"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/id_prefixes"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/mappings"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/is_a"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/mixin"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/mixins"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/abstract"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/local_names"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/union_of"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/values_from"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/subclass_of"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/symmetric"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/id"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/version"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/imports"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/license"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/prefixes"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/default_curi_maps"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/default_prefix"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/types"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/slot_definitions"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/classes"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/metamodel_version"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/source_file"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/source_file_date"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/source_file_size"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/generation_date"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/defining_slots"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/slots"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/slot_usage"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/apply_to"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/entity"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/multivalued"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/domain"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/range"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/required"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/inlined"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/definitional"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/object_property"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/primary_key"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/identifier"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/alias"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/path"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/subproperty_of"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/inverse"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/is_class_field"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/role"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/inherited"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/typeof"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/value"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/value_description"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/local_name"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/prefix_uri"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/slot_definition_is_a"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/slot_definition_mixins"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/slot_definition_union_of"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/class_definition_is_a"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/class_definition_mixins"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/class_definition_union_of"
+          }
+        ]
       }
     ],
     "http://bioentity.io/vocab/source_file": [
@@ -43,966 +2162,100 @@
     ],
     "http://bioentity.io/vocab/source_file_date": [
       {
-        "@value": "Mon Jun 11 12:48:39 2018"
+        "@value": "Wed Jun 20 09:57:54 2018"
       }
     ],
     "http://bioentity.io/vocab/source_file_size": [
       {
-        "@value": 14901
+        "@value": 17849
       }
     ],
     "http://bioentity.io/vocab/version": [
       {
-        "@value": "0.2.0"
+        "@value": "0.3.0"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "metamodel"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Metamodel for biolink schema"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@value": "OIO prefix is not correct -- where IS \"inSubset\" derived from?"
       }
     ]
   },
   {
-    "@id": "_:N41b8a291041046a4913d70321c660548"
+    "@id": "_:N76403eae62264c829f03eaf6adca8245",
+    "http://bioentity.io/vocab/local_name": [
+      {
+        "@value": "biolink"
+      }
+    ],
+    "http://bioentity.io/vocab/prefix_uri": [
+      {
+        "@value": "http://bioentity.io/vocab/"
+      }
+    ]
   },
   {
-    "@id": "_:N5a1c96100e9b4ccfbef67d177373d158",
-    "http://bioentity.io/vocab/abstract": [
+    "@id": "_:Nec016420dbb54277a940378a0e2bbc49",
+    "http://bioentity.io/vocab/local_name": [
       {
-        "@id": "_:N54e1f0f15814486c8efa9958d52e9ea8"
+        "@value": "meta"
       }
+    ],
+    "http://bioentity.io/vocab/prefix_uri": [
+      {
+        "@value": "http://bioentity.io/meta/"
+      }
+    ]
+  },
+  {
+    "@id": "_:N4e4cc29e276c4a098ccc8caf8b36bc6d",
+    "http://bioentity.io/vocab/local_name": [
+      {
+        "@value": "skos"
+      }
+    ],
+    "http://bioentity.io/vocab/prefix_uri": [
+      {
+        "@value": "http://www.w3.org/2004/02/skos/core#"
+      }
+    ]
+  },
+  {
+    "@id": "_:N3b3e8bc08f4a404db341b096c23a1ee0",
+    "http://bioentity.io/vocab/local_name": [
+      {
+        "@value": "owl"
+      }
+    ],
+    "http://bioentity.io/vocab/prefix_uri": [
+      {
+        "@value": "http://www.w3.org/2002/07/owl#"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/class_definition_union_of",
+    "@type": [
+      "http://bioentity.io/vocab/union_of"
     ],
     "http://bioentity.io/vocab/alias": [
-      {
-        "@id": "_:N4a22864bdbfd480cbad4bed23bbab700"
-      }
-    ],
-    "http://bioentity.io/vocab/aliases": [
-      {
-        "@id": "_:N159abd07a1fe4fa68a8c7d918022878b"
-      }
-    ],
-    "http://bioentity.io/vocab/alt_descriptions": [
-      {
-        "@id": "_:Nd6e74acbe2704af7a4d98d46f2cefc0a"
-      }
-    ],
-    "http://bioentity.io/vocab/apply_to": [
-      {
-        "@id": "_:N88145ffa7ac54519974326e1786f64d3"
-      }
-    ],
-    "http://bioentity.io/vocab/classes": [
-      {
-        "@id": "_:N901e8ee0686a4ccc859145da5697d08a"
-      }
-    ],
-    "http://bioentity.io/vocab/comment": [
-      {
-        "@id": "_:N83a94a70fbce4922ba2bd6d9ab538c29"
-      }
-    ],
-    "http://bioentity.io/vocab/defining_slots": [
-      {
-        "@id": "_:Nfd6832242dd74c2a940468695fe0aed3"
-      }
-    ],
-    "http://bioentity.io/vocab/definitional": [
-      {
-        "@id": "_:N009b31bfd6254e2faf8cf6c752bba5f3"
-      }
-    ],
-    "http://bioentity.io/vocab/description": [
-      {
-        "@id": "_:N9003d921923248abbf16e28109da771f"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@id": "_:N45a0a4ca615f4899aa0289a1a7928755"
-      }
-    ],
-    "http://bioentity.io/vocab/entity": [
-      {
-        "@id": "_:N8fcd904751aa451ead289c717087858b"
-      }
-    ],
-    "http://bioentity.io/vocab/examples": [
-      {
-        "@id": "_:N4df48f47b08747ed85487199e3154db4"
-      }
-    ],
-    "http://bioentity.io/vocab/flags": [
-      {
-        "@id": "_:Naba4a3da13cd4515a47bb62a614356b3"
-      }
-    ],
-    "http://bioentity.io/vocab/from_schema": [
-      {
-        "@id": "_:Nd2bc9470ae79418fb8a2155e383ea4dd"
-      }
-    ],
-    "http://bioentity.io/vocab/generation_date": [
-      {
-        "@id": "_:Nd15d5d5cb3634fb5bf652ab1db6dea10"
-      }
-    ],
-    "http://bioentity.io/vocab/id_prefixes": [
-      {
-        "@id": "_:N252a6aa2087840e7a2316dac3728ea61"
-      }
-    ],
-    "http://bioentity.io/vocab/identifier": [
-      {
-        "@id": "_:Nd549df5f439948d5a15966627a97d84d"
-      }
-    ],
-    "http://bioentity.io/vocab/imports": [
-      {
-        "@id": "_:N0fc53ccc4106452c976268635ab9484c"
-      }
-    ],
-    "http://bioentity.io/vocab/in_subset": [
-      {
-        "@id": "_:Nf86279216cbb429c8e8c946dde1fa979"
-      }
-    ],
-    "http://bioentity.io/vocab/inlined": [
-      {
-        "@id": "_:Ne76e9f3490a9438eae9ced197aedaa69"
-      }
-    ],
-    "http://bioentity.io/vocab/inverse": [
-      {
-        "@id": "_:N94fb6106c30e4af2bc7f5bda81bdec81"
-      }
-    ],
-    "http://bioentity.io/vocab/is_a": [
-      {
-        "@id": "_:N6acc1334cd3242f09630c05ba39c835e"
-      }
-    ],
-    "http://bioentity.io/vocab/is_class_field": [
-      {
-        "@id": "_:Ne45367c3f2b84bcaa74d02d83baa3018"
-      }
-    ],
-    "http://bioentity.io/vocab/license": [
-      {
-        "@id": "_:N44b724bd0d9243a28b2fb27a416683d1"
-      }
-    ],
-    "http://bioentity.io/vocab/local_names": [
-      {
-        "@id": "_:Ne668048f60504a06990a86984f33b545"
-      }
-    ],
-    "http://bioentity.io/vocab/mappings": [
-      {
-        "@id": "_:Nbdb9cd6017e14db59d4a3bae037aad30"
-      }
-    ],
-    "http://bioentity.io/vocab/metamodel_version": [
-      {
-        "@id": "_:Nb487656d78d64445851d470feabb176f"
-      }
-    ],
-    "http://bioentity.io/vocab/mixin": [
-      {
-        "@id": "_:N51764d9881174e46992518fb2cf4f9b2"
-      }
-    ],
-    "http://bioentity.io/vocab/mixins": [
-      {
-        "@id": "_:N3146525ea430414db4261c80e90eda8d"
-      }
-    ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@id": "_:N4c40661fc4f54010b2eb89e30a3be663"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@id": "_:N3952e8ea2ab44cb28195495a6cc4ea0e"
-      }
-    ],
-    "http://bioentity.io/vocab/not_inherited": [
-      {
-        "@id": "_:N7965cb6a3add4b04bba1e19863a5f3b0"
-      }
-    ],
-    "http://bioentity.io/vocab/note": [
-      {
-        "@id": "_:N32cc930c1d1c4466987f90837d185df9"
-      }
-    ],
-    "http://bioentity.io/vocab/path": [
-      {
-        "@id": "_:N196af2e1f0cf4568b74ac4b04dfb043b"
-      }
-    ],
-    "http://bioentity.io/vocab/prefixes": [
-      {
-        "@id": "_:N28696502bf2247afa8ea4803b7c8f0f3"
-      }
-    ],
-    "http://bioentity.io/vocab/primary_key": [
-      {
-        "@id": "_:N5e143970eea64757b77d9536f48cb244"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@id": "_:N8975301f42cf4aa5be12530615ea4e78"
-      }
-    ],
-    "http://bioentity.io/vocab/required": [
-      {
-        "@id": "_:N755230e314e142b992c53eb41c1e44f0"
-      }
-    ],
-    "http://bioentity.io/vocab/role": [
-      {
-        "@id": "_:Nfe583e7b951d47c3b22cec00ddb82ad0"
-      }
-    ],
-    "http://bioentity.io/vocab/see_also": [
-      {
-        "@id": "_:Nd5eda43bdee546bb8310f1dacaa13a9f"
-      }
-    ],
-    "http://bioentity.io/vocab/singular_name": [
-      {
-        "@id": "_:Nc9a55cc2b498411190e3291fff0f5029"
-      }
-    ],
-    "http://bioentity.io/vocab/slot_usage": [
-      {
-        "@id": "_:N0176ed46f51a46d89ab894dc5e8efc2a"
-      }
-    ],
-    "http://bioentity.io/vocab/slots": [
-      {
-        "@id": "_:N5fe0fc36df834a15bed1296d5864671f"
-      }
-    ],
-    "http://bioentity.io/vocab/source_file": [
-      {
-        "@id": "_:N10ff58b12e144365a6a5f745caad9adc"
-      }
-    ],
-    "http://bioentity.io/vocab/source_file_date": [
-      {
-        "@id": "_:Na3e9f26c138d47d1b25ff187849d2fad"
-      }
-    ],
-    "http://bioentity.io/vocab/source_file_size": [
-      {
-        "@id": "_:Ne165d9fc15924010bff35e19fda32ebe"
-      }
-    ],
-    "http://bioentity.io/vocab/subclass_of": [
-      {
-        "@id": "_:N6573912829a449908f5049ffeb9ade23"
-      }
-    ],
-    "http://bioentity.io/vocab/subproperty_of": [
-      {
-        "@id": "_:Nd1a9c4b6eee34e61a7dfa67dcd94e03e"
-      }
-    ],
-    "http://bioentity.io/vocab/symmetric": [
-      {
-        "@id": "_:N6dcbb49609d2442d93f3e40c4a35fd01"
-      }
-    ],
-    "http://bioentity.io/vocab/typeof": [
-      {
-        "@id": "_:N4eb46cdee65846888cee882e06bfedf4"
-      }
-    ],
-    "http://bioentity.io/vocab/types": [
-      {
-        "@id": "_:Neacba237724041eb9a30b4f261ec5a8d"
-      }
-    ],
-    "http://bioentity.io/vocab/union_of": [
-      {
-        "@id": "_:Ncb905ec11c7a4a19ba2a43088427db9e"
-      }
-    ],
-    "http://bioentity.io/vocab/value": [
-      {
-        "@id": "_:N5fb5b1f83c9d4bb7a58a03ae2873ee29"
-      }
-    ],
-    "http://bioentity.io/vocab/values_from": [
-      {
-        "@id": "_:N3e1268af60d74e9ea88c54495e4ce10f"
-      }
-    ],
-    "http://bioentity.io/vocab/version": [
-      {
-        "@id": "_:N323e2dbb40cc42dcaad4a632b772107c"
-      }
-    ]
-  },
-  {
-    "@id": "_:N6573912829a449908f5049ffeb9ade23",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "subclass_of"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "definition"
-      }
-    ]
-  },
-  {
-    "@id": "_:N755230e314e142b992c53eb41c1e44f0",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "If true slot must have at least one value"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "slot definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "required"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "boolean"
-      }
-    ]
-  },
-  {
-    "@id": "_:N94fb6106c30e4af2bc7f5bda81bdec81",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "slot definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "inverse"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "slot definition"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ne45367c3f2b84bcaa74d02d83baa3018",
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "slot definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "is_class_field"
-      }
-    ],
-    "http://bioentity.io/vocab/note": [
-      {
-        "@value": "Needs description"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "boolean"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nc9a55cc2b498411190e3291fff0f5029",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "a name that is used in the singular form"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "element"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "singular_name"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N159abd07a1fe4fa68a8c7d918022878b",
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "element"
-      }
-    ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "aliases"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ne668048f60504a06990a86984f33b545",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "map from local identifier to slot"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "http://bioentity.io/vocab/inlined": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "local_names"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nd1a9c4b6eee34e61a7dfa67dcd94e03e",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "Ontolgy property which this is a subproperty of"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "slot definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "subproperty_of"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "slot definition"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ne76e9f3490a9438eae9ced197aedaa69",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "if true then the value of this slot is inlined (i.e. a nested object) rather linked by key"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "slot definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "inlined"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "boolean"
-      }
-    ]
-  },
-  {
-    "@id": "_:N10ff58b12e144365a6a5f745caad9adc",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "name, uri or description of the source of the schema.  Supplied by the loader"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "schema definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "source_file"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N83a94a70fbce4922ba2bd6d9ab538c29",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "Comment about an element"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "element"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "comment"
-      }
-    ],
-    "http://bioentity.io/vocab/not_inherited": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nfd6832242dd74c2a940468695fe0aed3",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "class definition"
-      }
-    ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "defining_slots"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "slot definition"
-      }
-    ]
-  },
-  {
-    "@id": "_:N7965cb6a3add4b04bba1e19863a5f3b0",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "True means that the slot is local and is not_inherited across is_a or slot_usage paths"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "slot definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "not_inherited"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "boolean"
-      }
-    ]
-  },
-  {
-    "@id": "_:N3952e8ea2ab44cb28195495a6cc4ea0e",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "a unique key that identifies a slot, type or class in a schema"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "element"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "name"
-      }
-    ],
-    "http://bioentity.io/vocab/not_inherited": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/primary_key": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N44b724bd0d9243a28b2fb27a416683d1",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "license for the schema"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "schema definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "license"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N9003d921923248abbf16e28109da771f",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "a description"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "element"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "description"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N51764d9881174e46992518fb2cf4f9b2",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "Used only as a mixin -- cannot be instantiated on its own."
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "mixin"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "boolean"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nd6e74acbe2704af7a4d98d46f2cefc0a",
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "element"
-      }
-    ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "alt_descriptions"
-      }
-    ],
-    "http://bioentity.io/vocab/note": [
-      {
-        "@value": "Needs description"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nbdb9cd6017e14db59d4a3bae037aad30",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "list of equivalent or skos exact mappings to an ontology class"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "element"
-      }
-    ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "mappings"
-      }
-    ],
-    "http://bioentity.io/vocab/not_inherited": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N3e1268af60d74e9ea88c54495e4ce10f",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "identifies the possible uri's of the range"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "values_from"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:Neacba237724041eb9a30b4f261ec5a8d",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "types defined in schema"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "schema definition"
-      }
-    ],
-    "http://bioentity.io/vocab/inlined": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "types"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "type definition"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nb487656d78d64445851d470feabb176f",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "Version of the metamodel used to load the schema. Supplied by the loader"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "schema definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "metamodel_version"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N28696502bf2247afa8ea4803b7c8f0f3",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "list of ID/CURIE prefixes applicable to that element"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "element"
-      }
-    ],
-    "http://bioentity.io/vocab/inlined": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "prefixes"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N6acc1334cd3242f09630c05ba39c835e",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "is_a"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "definition"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ncb905ec11c7a4a19ba2a43088427db9e",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "list of class or slot definitions that are combined to create the union class"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
       {
         "@value": "union_of"
       }
     ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "definition"
-      }
-    ]
-  },
-  {
-    "@id": "_:N0fc53ccc4106452c976268635ab9484c",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "A list of modules that are imported into the schema"
-      }
-    ],
     "http://bioentity.io/vocab/domain": [
       {
-        "@value": "schema definition"
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
       }
     ],
     "http://bioentity.io/vocab/multivalued": [
@@ -1010,443 +2263,163 @@
         "@value": true
       }
     ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "imports"
-      }
-    ],
     "http://bioentity.io/vocab/range": [
       {
-        "@value": "string"
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "class_definition_union_of"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "list of class or slot definitions that are combined to create the union class"
       }
     ]
   },
   {
-    "@id": "_:N4a22864bdbfd480cbad4bed23bbab700",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have \"slots\" where one inline and the other a reference"
-      }
-    ],
+    "@id": "http://bioentity.io/vocab/comment",
     "http://bioentity.io/vocab/domain": [
       {
-        "@value": "slot definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "alias"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nf86279216cbb429c8e8c946dde1fa979",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "element"
+        "@id": "http://bioentity.io/vocab/Element"
       }
     ],
     "http://bioentity.io/vocab/mappings": [
       {
-        "@id": "_:N579b5c811cad4be9a6e2d5d359b19e78"
-      }
-    ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "in_subset"
+        "@list": [
+          {
+            "@value": "skos:editorialNote"
+          }
+        ]
       }
     ],
     "http://bioentity.io/vocab/range": [
       {
-        "@value": "string"
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "comment"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Comment about an element"
       }
     ]
   },
   {
-    "@id": "_:N579b5c811cad4be9a6e2d5d359b19e78"
-  },
-  {
-    "@id": "_:N4c40661fc4f54010b2eb89e30a3be663",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "If true slot can have many values"
-      }
-    ],
+    "@id": "http://bioentity.io/vocab/value",
     "http://bioentity.io/vocab/domain": [
       {
-        "@value": "slot definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "multivalued"
+        "@id": "http://bioentity.io/vocab/Example"
       }
     ],
     "http://bioentity.io/vocab/range": [
       {
-        "@value": "boolean"
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "value"
       }
     ]
   },
   {
-    "@id": "_:N5fe0fc36df834a15bed1296d5864671f",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins."
-      }
-    ],
+    "@id": "http://bioentity.io/vocab/object_property",
     "http://bioentity.io/vocab/domain": [
       {
-        "@value": "class definition"
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
       }
     ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "slots"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "slot definition"
-      }
-    ]
-  },
-  {
-    "@id": "_:N6dcbb49609d2442d93f3e40c4a35fd01",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "Symmetric slot"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "symmetric"
-      }
-    ],
-    "http://bioentity.io/vocab/note": [
-      {
-        "@value": "Indications that a slot or reified association is symmetric"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "boolean"
-      }
-    ]
-  },
-  {
-    "@id": "_:N4df48f47b08747ed85487199e3154db4",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "Example of usage for a slot or class"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "element"
-      }
-    ],
-    "http://bioentity.io/vocab/inlined": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "examples"
-      }
-    ],
-    "http://bioentity.io/vocab/not_inherited": [
+    "http://bioentity.io/vocab/inherited": [
       {
         "@value": true
       }
     ],
     "http://bioentity.io/vocab/range": [
       {
-        "@value": "example"
+        "@id": "http://bioentity.io/vocab/boolean"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "object_property"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "true means that this slot is part of the formal definition of a class"
       }
     ]
   },
   {
-    "@id": "_:N009b31bfd6254e2faf8cf6c752bba5f3",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "slot is a defining slot -- injection into the defining_slots list"
-      }
-    ],
+    "@id": "http://bioentity.io/vocab/mixin",
     "http://bioentity.io/vocab/domain": [
       {
-        "@value": "slot definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "definitional"
+        "@id": "http://bioentity.io/vocab/Definition"
       }
     ],
     "http://bioentity.io/vocab/range": [
       {
-        "@value": "boolean"
+        "@id": "http://bioentity.io/vocab/boolean"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "mixin"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Used only as a mixin -- cannot be instantiated on its own."
       }
     ]
   },
   {
-    "@id": "_:Nfe583e7b951d47c3b22cec00ddb82ad0",
+    "@id": "http://bioentity.io/vocab/note",
     "http://bioentity.io/vocab/domain": [
       {
-        "@value": "slot definition"
+        "@id": "http://bioentity.io/vocab/Element"
       }
     ],
-    "http://bioentity.io/vocab/name": [
+    "http://bioentity.io/vocab/mappings": [
       {
-        "@value": "role"
-      }
-    ],
-    "http://bioentity.io/vocab/note": [
-      {
-        "@value": "Needs description"
+        "@list": [
+          {
+            "@value": "skos:note"
+          }
+        ]
       }
     ],
     "http://bioentity.io/vocab/range": [
       {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N252a6aa2087840e7a2316dac3728ea61",
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "element"
+        "@id": "http://bioentity.io/vocab/string"
       }
     ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "id_prefixes"
-      }
-    ],
-    "http://bioentity.io/vocab/note": [
-      {
-        "@value": "needs description"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:Na3e9f26c138d47d1b25ff187849d2fad",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "modification date of the source of the schema.  Supplied by the loader"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "schema definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "source_file_date"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nd15d5d5cb3634fb5bf652ab1db6dea10",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "date that the schema was loaded/generated.  Supplied by the loader"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "schema definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "generation_date"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "date"
-      }
-    ]
-  },
-  {
-    "@id": "_:N45a0a4ca615f4899aa0289a1a7928755",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "The class to which this slot applies."
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "slot definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "domain"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "class definition"
-      }
-    ]
-  },
-  {
-    "@id": "_:N54e1f0f15814486c8efa9958d52e9ea8",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "abstract"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "boolean"
-      }
-    ]
-  },
-  {
-    "@id": "_:N4eb46cdee65846888cee882e06bfedf4",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time') or another type definition"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "type definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "typeof"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N32cc930c1d1c4466987f90837d185df9",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "Notes about an element"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "element"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
       {
         "@value": "note"
       }
     ],
-    "http://bioentity.io/vocab/not_inherited": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
+        "@value": "Notes about an element"
       }
     ]
   },
   {
-    "@id": "_:N8fcd904751aa451ead289c717087858b",
+    "@id": "http://bioentity.io/vocab/mixins",
     "http://bioentity.io/vocab/domain": [
       {
-        "@value": "class definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      },
       {
-        "@value": "entity"
-      }
-    ],
-    "http://bioentity.io/vocab/note": [
-      {
-        "@value": "needs description"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "boolean"
-      }
-    ]
-  },
-  {
-    "@id": "_:Naba4a3da13cd4515a47bb62a614356b3",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "State information and other details"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "element"
+        "@id": "http://bioentity.io/vocab/Definition"
       }
     ],
     "http://bioentity.io/vocab/multivalued": [
@@ -1454,101 +2427,33 @@
         "@value": true
       }
     ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "flags"
-      }
-    ],
     "http://bioentity.io/vocab/range": [
       {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:Nd5eda43bdee546bb8310f1dacaa13a9f",
-    "http://bioentity.io/vocab/domain": [
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      },
       {
-        "@value": "element"
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      },
+      {
+        "@id": "http://bioentity.io/vocab/Definition"
       }
     ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "see_also"
-      }
-    ],
-    "http://bioentity.io/vocab/note": [
-      {
-        "@value": "needs description"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ne165d9fc15924010bff35e19fda32ebe",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "size in bytes of the source of the schema.  Supplied by the loader"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "schema definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "source_file_size"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "integer"
-      }
-    ]
-  },
-  {
-    "@id": "_:N3146525ea430414db4261c80e90eda8d",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "List of definitions to be mixed in. Targets may be any definition of the same type"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "definition"
-      }
-    ],
-    "http://bioentity.io/vocab/multivalued": [
-      {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
       {
         "@value": "mixins"
       }
     ],
-    "http://bioentity.io/vocab/range": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@value": "definition"
+        "@value": "List of definitions to be mixed in. Targets may be any definition of the same type"
       }
     ]
   },
   {
-    "@id": "_:N0176ed46f51a46d89ab894dc5e8efc2a",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints"
-      }
-    ],
+    "@id": "http://bioentity.io/vocab/examples",
     "http://bioentity.io/vocab/domain": [
       {
-        "@value": "class definition"
+        "@id": "http://bioentity.io/vocab/Element"
       }
     ],
     "http://bioentity.io/vocab/inlined": [
@@ -1556,101 +2461,13 @@
         "@value": true
       }
     ],
-    "http://bioentity.io/vocab/multivalued": [
+    "http://bioentity.io/vocab/mappings": [
       {
-        "@value": true
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "slot_usage"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "slot definition"
-      }
-    ]
-  },
-  {
-    "@id": "_:N5fb5b1f83c9d4bb7a58a03ae2873ee29",
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "example"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "value"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N196af2e1f0cf4568b74ac4b04dfb043b",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "For any denormalized slot, this represents the tree or graph path used to generate the denormalized form"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "slot definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "path"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N323e2dbb40cc42dcaad4a632b772107c",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "Schema version"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "schema definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "version"
-      }
-    ],
-    "http://bioentity.io/vocab/range": [
-      {
-        "@value": "string"
-      }
-    ]
-  },
-  {
-    "@id": "_:N901e8ee0686a4ccc859145da5697d08a",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "classes defined in schema"
-      }
-    ],
-    "http://bioentity.io/vocab/domain": [
-      {
-        "@value": "schema definition"
-      }
-    ],
-    "http://bioentity.io/vocab/inlined": [
-      {
-        "@value": true
+        "@list": [
+          {
+            "@value": "skos:example"
+          }
+        ]
       }
     ],
     "http://bioentity.io/vocab/multivalued": [
@@ -1658,129 +2475,401 @@
         "@value": true
       }
     ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "classes"
-      }
-    ],
     "http://bioentity.io/vocab/range": [
       {
-        "@value": "class definition"
+        "@id": "http://bioentity.io/vocab/Example"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "examples"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Example of usage for a slot or class"
       }
     ]
   },
   {
-    "@id": "_:N88145ffa7ac54519974326e1786f64d3",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class."
-      }
-    ],
+    "@id": "http://bioentity.io/vocab/inlined",
     "http://bioentity.io/vocab/domain": [
       {
-        "@value": "class definition"
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
       }
     ],
-    "http://bioentity.io/vocab/name": [
+    "http://bioentity.io/vocab/inherited": [
       {
-        "@value": "apply_to"
+        "@value": true
       }
     ],
     "http://bioentity.io/vocab/range": [
       {
-        "@value": "class definition"
+        "@id": "http://bioentity.io/vocab/boolean"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "inlined"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "if true then the value of this slot is inlined (i.e. a nested object) rather linked by key"
       }
     ]
   },
   {
-    "@id": "_:Nd549df5f439948d5a15966627a97d84d",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "True means that this slot must be unique across the collection of slots"
-      }
-    ],
+    "@id": "http://bioentity.io/vocab/description",
     "http://bioentity.io/vocab/domain": [
       {
-        "@value": "slot definition"
+        "@id": "http://bioentity.io/vocab/Element"
       }
     ],
-    "http://bioentity.io/vocab/name": [
+    "http://bioentity.io/vocab/inherited": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/mappings": [
+      {
+        "@list": [
+          {
+            "@value": "skos:definition"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "description"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "a description"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/identifier",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/boolean"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
       {
         "@value": "identifier"
       }
     ],
-    "http://bioentity.io/vocab/range": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@value": "boolean"
+        "@value": "True means that this slot must be unique across the collection of slots"
       }
     ]
   },
   {
-    "@id": "_:N5e143970eea64757b77d9536f48cb244",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "True means that this serves as a unique identifier"
-      }
-    ],
+    "@id": "http://bioentity.io/vocab/inherited",
     "http://bioentity.io/vocab/domain": [
       {
-        "@value": "slot definition"
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
       }
     ],
-    "http://bioentity.io/vocab/name": [
+    "http://bioentity.io/vocab/inherited": [
       {
-        "@value": "primary_key"
+        "@value": true
       }
     ],
     "http://bioentity.io/vocab/range": [
       {
-        "@value": "boolean"
+        "@id": "http://bioentity.io/vocab/boolean"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "inherited"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths"
       }
     ]
   },
   {
-    "@id": "_:N8975301f42cf4aa5be12530615ea4e78",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "The slot type.  If absent, it is the builtin type 'string'"
-      }
-    ],
+    "@id": "http://bioentity.io/vocab/typeof",
     "http://bioentity.io/vocab/domain": [
       {
-        "@value": "slot definition"
-      }
-    ],
-    "http://bioentity.io/vocab/name": [
-      {
-        "@value": "range"
+        "@id": "http://bioentity.io/vocab/TypeDefinition"
       }
     ],
     "http://bioentity.io/vocab/range": [
       {
-        "@value": "element"
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "typeof"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition"
       }
     ]
   },
   {
-    "@id": "_:Nd2bc9470ae79418fb8a2155e383ea4dd",
-    "http://bioentity.io/vocab/description": [
-      {
-        "@value": "id of the schema that the element was derived from.  Supplied by the loader."
-      }
-    ],
+    "@id": "http://bioentity.io/vocab/name",
     "http://bioentity.io/vocab/domain": [
       {
-        "@value": "element"
+        "@id": "http://bioentity.io/vocab/Element"
       }
     ],
-    "http://bioentity.io/vocab/name": [
+    "http://bioentity.io/vocab/mappings": [
       {
-        "@value": "from_schema"
+        "@list": [
+          {
+            "@value": "rdf:label"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/primary_key": [
+      {
+        "@value": true
       }
     ],
     "http://bioentity.io/vocab/range": [
       {
-        "@value": "string"
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "name"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "a unique key that identifies a slot, type or class in a schema"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/subclass_of",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Definition"
+      }
+    ],
+    "http://bioentity.io/vocab/mappings": [
+      {
+        "@list": [
+          {
+            "@value": "rdfs:subClassOf"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/uri"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "subclass_of"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/union_of",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Definition"
+      },
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      },
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      },
+      {
+        "@id": "http://bioentity.io/vocab/Definition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "union_of"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "list of class or slot definitions that are combined to create the union class"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/slots",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/ClassDefinition"
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/SlotDefinition"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "slots"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins."
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/in_subset",
+    "http://bioentity.io/vocab/domain": [
+      {
+        "@id": "http://bioentity.io/vocab/Element"
+      }
+    ],
+    "http://bioentity.io/vocab/inherited": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/mappings": [
+      {
+        "@list": [
+          {
+            "@value": "OIO:inSubset"
+          }
+        ]
+      }
+    ],
+    "http://bioentity.io/vocab/multivalued": [
+      {
+        "@value": true
+      }
+    ],
+    "http://bioentity.io/vocab/range": [
+      {
+        "@id": "http://bioentity.io/vocab/string"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "in_subset"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)"
+      }
+    ]
+  },
+  {
+    "@id": "http://bioentity.io/vocab/SchemaDefinition",
+    "@type": [
+      "http://bioentity.io/vocab/Definition"
+    ],
+    "http://bioentity.io/vocab/slots": [
+      {
+        "@list": [
+          {
+            "@id": "http://bioentity.io/vocab/id"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/version"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/imports"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/license"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/prefixes"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/types"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/slot_definitions"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/classes"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/metamodel_version"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/source_file"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/source_file_size"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/source_file_date"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/generation_date"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/default_curi_maps"
+          },
+          {
+            "@id": "http://bioentity.io/vocab/default_prefix"
+          }
+        ]
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#label": [
+      {
+        "@value": "SchemaDefinition"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@value": "A collection of definitions"
       }
     ]
   }

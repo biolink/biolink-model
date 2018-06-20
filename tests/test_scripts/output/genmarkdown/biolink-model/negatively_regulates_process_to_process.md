@@ -9,7 +9,7 @@ URI: [http://bioentity.io/vocab/negatively_regulates_process_to_process](slot_ur
  * [RO:0002212](http://purl.obolibrary.org/obo/RO_0002212)
 ## Domain and Range
 
-[Occurrent](Occurrent.md) -> **string**
+None -> **string**
 ## Inheritance
 
  *  is_a: [regulates, process to process](regulates_process_to_process.md) *subsets*: (translator_minimal)

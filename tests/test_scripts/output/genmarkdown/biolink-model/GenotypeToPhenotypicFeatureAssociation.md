@@ -25,7 +25,7 @@ URI: [http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation](http://b
     * edge label: [has phenotype](has_phenotype.md) *subsets*: (translator_minimal)
     * __Local__
  * _[genotype to phenotypic feature association.subject](genotype_to_phenotypic_feature_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _genotype that is associated with the phenotypic feature_
     * range: [Genotype](Genotype.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

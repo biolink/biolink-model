@@ -206,7 +206,7 @@ DrugExposure type
 
 EntityToDiseaseAssociation interface
   {
-    object: Disease
+    object: Disease!
   }
 
 EntityToFeatureOrDiseaseQualifiers interface
@@ -301,7 +301,7 @@ GeneHasVariantThatContributesToDiseaseAssociation type
     subject: GeneOrGeneProduct!
   }
 
-GeneOntologyClass interface
+GeneOntologyClass type
   {
   }
 
@@ -336,7 +336,7 @@ GeneToDiseaseAssociation typeimplements EntityToDiseaseAssociation, GeneToThingA
 GeneToExpressionSiteAssociation type
   {
     stageQualifier: LifeStage
-    quantifierQualifier: String
+    quantifierQualifier: OntologyClass
     subject: GeneOrGeneProduct!
     object: AnatomicalEntity!
     relation: RelationshipType!
@@ -501,8 +501,8 @@ MicroRNA type
 
 ModelToDiseaseMixin interface
   {
-    subject: String
-    relation: String
+    subject: String!
+    relation: RelationshipType!
   }
 
 MolecularActivity typeimplements Occurrent
@@ -512,7 +512,7 @@ MolecularActivity typeimplements Occurrent
 MolecularEntity typeimplements ThingWithTaxon
   {
     molecularlyInteractsWith: MolecularEntity
-    regulatesEntityToEntity: MolecularEntity
+    regulates,EntityToEntity: MolecularEntity
     biomarkerFor: DiseaseOrPhenotypicFeature
   }
 
@@ -543,7 +543,7 @@ NoncodingRNAProduct type
 
 Occurrent type
   {
-    regulatesProcessToProcess: Occurrent
+    regulates,ProcessToProcess: Occurrent
     hasParticipant: String
     hasInput: String
     precedes: Occurrent
@@ -658,7 +658,7 @@ SequenceFeatureRelationship type
 
 SequenceVariant type
   {
-    hasGene: [String]
+    hasGene: [Gene]
     hasBiologicalSequence: String
     id: String
   }

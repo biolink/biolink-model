@@ -5,7 +5,7 @@ A union of gene, gene product, and macromolecular complex. These are the basic u
 
 URI: [http://bioentity.io/vocab/MacromolecularMachine](http://bioentity.io/vocab/MacromolecularMachine)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MacromolecularMachine|name:label_type%20%3F;id(i):identifier_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_biological_sequence(i):biological_sequence%20%3F]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[MacromolecularMachine]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[MacromolecularMachine]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[MacromolecularMachine]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[MacromolecularMachine]-%20related%20to(i)%20%3F>\[NamedThing],%20\[FunctionalAssociation]-%20subject(i)>\[MacromolecularMachine],%20\[MacromolecularMachine]^-\[MacromolecularComplex],%20\[MacromolecularMachine]^-\[GeneOrGeneProduct],%20\[GenomicEntity]^-\[MacromolecularMachine])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MacromolecularMachine|name:symbol_type%20%3F;id(i):identifier_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_biological_sequence(i):biological_sequence%20%3F]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[MacromolecularMachine]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[MacromolecularMachine]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[MacromolecularMachine]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[MacromolecularMachine]-%20related%20to(i)%20%3F>\[NamedThing],%20\[FunctionalAssociation]-%20subject(i)>\[MacromolecularMachine],%20\[MacromolecularMachine]^-\[MacromolecularComplex],%20\[MacromolecularMachine]^-\[GeneOrGeneProduct],%20\[GenomicEntity]^-\[MacromolecularMachine])
 ## Mappings
 
 ## Inheritance
@@ -21,8 +21,8 @@ URI: [http://bioentity.io/vocab/MacromolecularMachine](http://bioentity.io/vocab
 ## Fields
 
  * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
-    * _A human-readable name for a thing_
-    * range: [LabelType](LabelType.md)
+    * _genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name_
+    * range: [SymbolType](SymbolType.md)
     * __Local__
  * _[biomarker for](biomarker_for.md) *subsets*: (translator_minimal)_
     * _holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature._

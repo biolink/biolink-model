@@ -1,5 +1,5 @@
-# Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by pythongen.py version: 0.0.2
-# Generation date: 2018-06-19 14:07
+# Auto generated from meta.yaml by pythongen.py version: 0.0.4
+# Generation date: 2018-06-20 10:25
 # Schema: metamodel
 #
 # id: https://biolink.github.io/metamodel/ontology/meta.ttl
@@ -12,13 +12,13 @@ from dataclasses import dataclass
 from metamodel.utils.metamodelcore import empty_list, empty_dict
 from metamodel.utils.yamlutils import YAMLRoot
 
-metamodel_version = "0.2.0"
+metamodel_version = "0.3.0"
 
-not_inherited_slots: List[str] = ["name", "note", "comment", "examples", "mappings"]
+inherited_slots: List[str] = ["description", "alt_descriptions", "in_subset", "mappings", "multivalued", "range",
+                              "required", "inlined", "definitional", "object_property", "subproperty_of", "inherited"]
 
 
 # Type names
-
 
 
 # Class references
@@ -129,6 +129,7 @@ class SlotDefinition(Definition):
     domain: Optional[ClassDefinitionName] = None
     range: Optional[ElementName] = None
     required: bool = False
+    object_property: bool = False
     inlined: bool = False
     primary_key: bool = False
     identifier: bool = False
@@ -138,8 +139,8 @@ class SlotDefinition(Definition):
     subproperty_of: Optional[SlotDefinitionName] = None
     inverse: Optional[SlotDefinitionName] = None
     is_class_field: bool = False
-    not_inherited: bool = False
     role: Optional[str] = None
+    inherited: bool = False
     is_a: Optional[SlotDefinitionName] = None
     mixins: List[SlotDefinitionName] = empty_list()
     union_of: List[SlotDefinitionName] = empty_list()
@@ -264,3 +265,4 @@ class SchemaDefinition(Definition):
         for k, v in self.classes.items():
             if not isinstance(v, ClassDefinition):
                 self.classes[k] = ClassDefinition(name=k, **({} if v is None else v))
+

@@ -5,7 +5,7 @@ An association between a gene and an expression site, possibly qualified by stag
 
 URI: [http://bioentity.io/vocab/GeneToExpressionSiteAssociation](http://bioentity.io/vocab/GeneToExpressionSiteAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToExpressionSiteAssociation|quantifier_qualifier:string%20%3F;id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToExpressionSiteAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToExpressionSiteAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToExpressionSiteAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToExpressionSiteAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneToExpressionSiteAssociation]-%20relation>\[RelationshipType],%20\[GeneToExpressionSiteAssociation]-%20object>\[AnatomicalEntity],%20\[GeneToExpressionSiteAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToExpressionSiteAssociation]-%20stage%20qualifier%20%3F>\[LifeStage],%20\[Association]^-\[GeneToExpressionSiteAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToExpressionSiteAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToExpressionSiteAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToExpressionSiteAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToExpressionSiteAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToExpressionSiteAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneToExpressionSiteAssociation]-%20relation>\[RelationshipType],%20\[GeneToExpressionSiteAssociation]-%20object>\[AnatomicalEntity],%20\[GeneToExpressionSiteAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier%20%3F>\[OntologyClass],%20\[GeneToExpressionSiteAssociation]-%20stage%20qualifier%20%3F>\[LifeStage],%20\[Association]^-\[GeneToExpressionSiteAssociation])
 ## Mappings
 
 ## Inheritance
@@ -18,15 +18,15 @@ URI: [http://bioentity.io/vocab/GeneToExpressionSiteAssociation](http://bioentit
 ## Fields
 
  * _[gene to expression site association.object](gene_to_expression_site_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _location in which the gene is expressed_
     * range: [AnatomicalEntity](AnatomicalEntity.md) [required]
     * __Local__
  * _[gene to expression site association.quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)_
     * _can be used to indicate magnitude, or also ranking_
-    * range: **string**
+    * range: [OntologyClass](OntologyClass.md)
     * __Local__
  * _[gene to expression site association.relation](gene_to_expression_site_association_relation.md)_
-    * _the relationship type by which a subject is connected to an object in an association_
+    * _expression relationship_
     * range: [RelationshipType](RelationshipType.md) [required]
     * edge label: [expressed in](expressed_in.md) *subsets*: (translator_minimal)
     * __Local__
@@ -35,7 +35,7 @@ URI: [http://bioentity.io/vocab/GeneToExpressionSiteAssociation](http://bioentit
     * range: [LifeStage](LifeStage.md)
     * __Local__
  * _[gene to expression site association.subject](gene_to_expression_site_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _gene in which variation is correlated with the phenotypic feature_
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

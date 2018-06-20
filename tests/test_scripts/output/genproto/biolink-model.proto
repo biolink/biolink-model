@@ -326,10 +326,10 @@ message Gene
   optional hasPhenotype Phenotype = 9
   optional inTaxon OrganismTaxon = 10
   optional molecularlyInteractsWith MolecularEntity = 11
-  optional regulatesEntityToEntity MolecularEntity = 12
+  optional regulates,EntityToEntity MolecularEntity = 12
   optional biomarkerFor DiseaseOrPhenotypicFeature = 13
   optional hasBiologicalSequence BiologicalSequence = 14
-  optional name LabelType = 15
+  optional name SymbolType = 15
   optional inPathwayWith GeneOrGeneProduct = 16
   optional inComplexWith GeneOrGeneProduct = 17
   optional inCellPopulationWith GeneOrGeneProduct = 18
@@ -399,10 +399,10 @@ message GeneOrGeneProduct
   optional hasPhenotype Phenotype = 9
   optional inTaxon OrganismTaxon = 10
   optional molecularlyInteractsWith MolecularEntity = 11
-  optional regulatesEntityToEntity MolecularEntity = 12
+  optional regulates,EntityToEntity MolecularEntity = 12
   optional biomarkerFor DiseaseOrPhenotypicFeature = 13
   optional hasBiologicalSequence BiologicalSequence = 14
-  optional name LabelType = 15
+  optional name SymbolType = 15
   optional inPathwayWith GeneOrGeneProduct = 16
   optional inComplexWith GeneOrGeneProduct = 17
   optional inCellPopulationWith GeneOrGeneProduct = 18
@@ -472,7 +472,7 @@ message GeneToExpressionSiteAssociation
   optional providedBy Provider = 14
   optional associationSlot String = 15
   optional stageQualifier LifeStage = 16
-  optional quantifierQualifier String = 17
+  optional quantifierQualifier OntologyClass = 17
   subject GeneOrGeneProduct = 18
   object AnatomicalEntity = 19
   relation RelationshipType = 20
@@ -581,7 +581,7 @@ message GenomicEntity
   optional hasPhenotype Phenotype = 10
   optional inTaxon OrganismTaxon = 11
   optional molecularlyInteractsWith MolecularEntity = 12
-  optional regulatesEntityToEntity MolecularEntity = 13
+  optional regulates,EntityToEntity MolecularEntity = 13
   optional biomarkerFor DiseaseOrPhenotypicFeature = 14
   optional hasBiologicalSequence BiologicalSequence = 15
  }
@@ -626,7 +626,7 @@ message Genotype
   optional hasPhenotype Phenotype = 10
   optional inTaxon OrganismTaxon = 11
   optional molecularlyInteractsWith MolecularEntity = 12
-  optional regulatesEntityToEntity MolecularEntity = 13
+  optional regulates,EntityToEntity MolecularEntity = 13
   optional biomarkerFor DiseaseOrPhenotypicFeature = 14
   optional hasBiologicalSequence BiologicalSequence = 15
   optional hasZygosity Zygosity = 16
@@ -767,10 +767,10 @@ message MacromolecularMachine
   optional hasPhenotype Phenotype = 9
   optional inTaxon OrganismTaxon = 10
   optional molecularlyInteractsWith MolecularEntity = 11
-  optional regulatesEntityToEntity MolecularEntity = 12
+  optional regulates,EntityToEntity MolecularEntity = 12
   optional biomarkerFor DiseaseOrPhenotypicFeature = 13
   optional hasBiologicalSequence BiologicalSequence = 14
-  optional name LabelType = 15
+  optional name SymbolType = 15
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
 message MacromolecularMachineToBiologicalProcessAssociation
@@ -853,7 +853,7 @@ message MolecularEntity
   optional hasPhenotype Phenotype = 10
   optional inTaxon OrganismTaxon = 11
   optional molecularlyInteractsWith MolecularEntity = 12
-  optional regulatesEntityToEntity MolecularEntity = 13
+  optional regulates,EntityToEntity MolecularEntity = 13
   optional biomarkerFor DiseaseOrPhenotypicFeature = 14
  }
 // a databased entity or concept/class
@@ -872,15 +872,33 @@ message NamedThing
 // A processual entity
 message Occurrent
  {
-  optional regulatesProcessToProcess Occurrent = 1
-  optional hasParticipant String = 2
-  optional hasInput String = 3
-  optional precedes Occurrent = 4
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional regulates,ProcessToProcess Occurrent = 10
+  optional hasParticipant String = 11
+  optional hasInput String = 12
+  optional precedes Occurrent = 13
  }
 // a concept or class in an ontology, vocabulary or thesaurus
 message OntologyClass
  {
-  optional subclassOf OntologyClass = 1
+  optional id IdentifierType = 1
+  optional name LabelType = 2
+  optional category LabelType = 3
+  optional relatedTo NamedThing = 4
+  optional nodeProperty String = 5
+  optional iri IriType = 6
+  optional fullName LabelType = 7
+  optional description NarrativeText = 8
+  optional systematicSynonym LabelType = 9
+  optional subclassOf OntologyClass = 10
  }
 // An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 message PairwiseGeneOrProteinInteractionAssociation
@@ -963,9 +981,9 @@ message SequenceVariant
   optional hasPhenotype Phenotype = 9
   optional inTaxon OrganismTaxon = 10
   optional molecularlyInteractsWith MolecularEntity = 11
-  optional regulatesEntityToEntity MolecularEntity = 12
+  optional regulates,EntityToEntity MolecularEntity = 12
   optional biomarkerFor DiseaseOrPhenotypicFeature = 13
-  repeated hasGene String = 14
+  repeated hasGene Gene = 14
   optional hasBiologicalSequence BiologicalSequence = 15
   optional id IdentifierType = 16
  }
@@ -1076,8 +1094,8 @@ message VariantToPopulationAssociation
   optional hasPercentage Double = 17
   subject SequenceVariant = 18
   object PopulationOfIndividualOrganisms = 19
-  optional hasQuotient String = 20
-  optional hasCount String = 21
-  optional hasTotal String = 22
+  optional hasQuotient Double = 20
+  optional hasCount Integer = 21
+  optional hasTotal Integer = 22
  }
 

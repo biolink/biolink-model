@@ -13,7 +13,7 @@ from metamodel.utils.generator import Generator
 
 class PythonGenerator(Generator):
     generatorname = os.path.basename(__file__)
-    generatorversion = "0.0.2"
+    generatorversion = "0.0.4"
     valid_formats = ['py']
     visit_all_class_slots = False
 
@@ -39,14 +39,13 @@ from dataclasses import dataclass
 from metamodel.utils.metamodelcore import empty_list, empty_dict
 from metamodel.utils.yamlutils import YAMLRoot
 
-metamodel_version = "{metamodel_version}"
+metamodel_version = "{self.schema.version}"
 
-{self.gen_not_inherited()}
+{self.gen_inherited()}
 
 
 # Type names
 {self.gen_typedefs()}
-
 
 # Class references
 {self.gen_references()}
@@ -56,10 +55,13 @@ metamodel_version = "{metamodel_version}"
     def end_schema(self):
         print(re.sub(r' +\n', '\n', self.gen_schema().replace('\t', '    ')).strip(' '), end='')
 
-    def gen_not_inherited(self) -> str:
-        """ Generate the list of slot properties that are not inherited across slot_usage or is_a paths """
-        uninherited_slots = [f'"{underscore(slot.name)}"' for slot in self.schema.slots.values() if slot.not_inherited]
-        return f"not_inherited_slots: List[str] = [{', '.join(uninherited_slots)}]"
+    def gen_inherited(self) -> str:
+        """ Generate the list of slot properties that are inherited across slot_usage or is_a paths """
+        inherited_head = 'inherited_slots: List[str] = ['
+        inherited_slots = ', '.join([f'"{underscore(slot.name)}"' for slot in self.schema.slots.values()
+                                     if slot.inherited])
+        is_rows = split_line(inherited_slots, 120 - len(inherited_head))
+        return inherited_head + ('\n' + len(inherited_head) * ' ').join([r.strip() for r in is_rows]) + ']'
 
     def gen_references(self) -> str:
         """ Generate python type declarations for all identifiers (primary keys)
@@ -85,7 +87,7 @@ metamodel_version = "{metamodel_version}"
             typname = self.python_name_for(typ.name)
             parent = self.python_name_for(typ.typeof)
             rval.append(f'class {typname}({parent}):\n\tpass')
-        return '\n\n\n'.join(rval)
+        return '\n\n\n'.join(rval) + ('\n' if rval else '')
 
     def gen_classdefs(self) -> str:
         """ Create class definitions for all non-mixin classes in the model

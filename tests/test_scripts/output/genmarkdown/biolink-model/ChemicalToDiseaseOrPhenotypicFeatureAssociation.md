@@ -21,7 +21,7 @@ URI: [http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation]
 ## Fields
 
  * _[chemical to disease or phenotypic feature association.object](chemical_to_disease_or_phenotypic_feature_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the disease or phenotype that is affected by the chemical_
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

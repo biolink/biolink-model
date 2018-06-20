@@ -6,6 +6,7 @@ specifies single-inheritance between classes and slots. While multiple inheritan
 URI: [http://bioentity.io/vocab/is_a](slot_uri)
 ## Mappings
 
+ * [rdf:type](http://purl.obolibrary.org/obo/rdf_type)
 ## Domain and Range
 
 [Definition](Definition.md) -> [Definition](Definition.md)
@@ -13,6 +14,10 @@ URI: [http://bioentity.io/vocab/is_a](slot_uri)
 
 ## Children
 
+ *  child: [slot definition.is_a](slot_definition_is_a.md)
+ *  child: [class definition.is_a](class_definition_is_a.md)
 ## Used in
 
+ *  usage: [SlotDefinition](SlotDefinition.md)
+ *  usage: [ClassDefinition](ClassDefinition.md)
  *  usage: [Definition](Definition.md)

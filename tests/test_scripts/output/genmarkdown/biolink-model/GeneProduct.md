@@ -5,7 +5,7 @@ The functional molecular product of a single gene. Gene products are either prot
 
 URI: [http://bioentity.io/vocab/GeneProduct](http://bioentity.io/vocab/GeneProduct)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneProduct|id(i):identifier_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_biological_sequence(i):biological_sequence%20%3F;name(i):label_type%20%3F]-%20expressed%20in(i)%20%3F>\[AnatomicalEntity],%20\[GeneProduct]-%20in%20cell%20population%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[GeneProduct]-%20in%20complex%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[GeneProduct]-%20in%20pathway%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[GeneProduct]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[GeneProduct]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[GeneProduct]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[GeneProduct]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneProduct]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneToGeneProductRelationship]-%20object(i)>\[GeneProduct],%20\[Gene]-%20has%20gene%20product(i)%20%3F>\[GeneProduct],%20\[GeneProduct]^-\[Protein],%20\[GeneProduct]^-\[GeneProductIsoform],%20\[GeneProduct]^-\[RNAProduct],%20\[GeneOrGeneProduct]^-\[GeneProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneProduct|id(i):identifier_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_biological_sequence(i):biological_sequence%20%3F;name(i):symbol_type%20%3F]-%20expressed%20in(i)%20%3F>\[AnatomicalEntity],%20\[GeneProduct]-%20in%20cell%20population%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[GeneProduct]-%20in%20complex%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[GeneProduct]-%20in%20pathway%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[GeneProduct]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[GeneProduct]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[GeneProduct]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[GeneProduct]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneProduct]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneToGeneProductRelationship]-%20object(i)>\[GeneProduct],%20\[Gene]-%20has%20gene%20product(i)%20%3F>\[GeneProduct],%20\[GeneProduct]^-\[Protein],%20\[GeneProduct]^-\[GeneProductIsoform],%20\[GeneProduct]^-\[RNAProduct],%20\[GeneOrGeneProduct]^-\[GeneProduct])
 ## Mappings
 
  * [WD:Q424689](http://purl.obolibrary.org/obo/WD_Q424689)
@@ -76,8 +76,8 @@ URI: [http://bioentity.io/vocab/GeneProduct](http://bioentity.io/vocab/GeneProdu
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
  * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
-    * _A human-readable name for a thing_
-    * range: [LabelType](LabelType.md)
+    * _genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name_
+    * range: [SymbolType](SymbolType.md)
     * inherited from: [MacromolecularMachine](MacromolecularMachine.md)
  * _[molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)_
     * _holds between two entities that make physical contact as part of some interaction_

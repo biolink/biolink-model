@@ -1,10 +1,9 @@
-# Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/biolink-model.yaml by pythongen.py version: 0.0.2
-# Generation date: 2018-06-19 14:29
+# Auto generated from biolink-model.yaml by pythongen.py version: 0.0.4
+# Generation date: 2018-06-20 12:19
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
-# description: A high level datamodel of biological entities (genes, diseases, phenotypes, pathways, individuals,
-#              substances, etc) and their associations.
+# description: Entity and association taxonomy and datamodel for life-sciences data
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import datetime
@@ -13,9 +12,9 @@ from dataclasses import dataclass
 from metamodel.utils.metamodelcore import empty_list, empty_dict
 from metamodel.utils.yamlutils import YAMLRoot
 
-metamodel_version = "0.2.0"
+metamodel_version = "None"
 
-not_inherited_slots: List[str] = []
+inherited_slots: List[str] = []
 
 
 # Type names
@@ -281,10 +280,6 @@ class GenotypeId(IdentifierType):
 
 
 class HaplotypeId(IdentifierType):
-    pass
-
-
-class SequenceVariantSequenceVariantId(IdentifierType):
     pass
 
 
@@ -1439,18 +1434,18 @@ class SequenceVariant(GenomicEntity):
     """
     An allele that varies in its sequence from what is considered the reference allele at that locus.
     """
-    id: SequenceVariantSequenceVariantId = None
-    has_gene: List[str] = empty_list()
+    has_gene: List[GeneId] = empty_list()
     has_biological_sequence: Optional[BiologicalSequence] = None
+    id: Optional[IdentifierType] = None
 
     def _fix_elements(self):
         super()._fix_elements()
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, SequenceVariantSequenceVariantId):
-            self.id = SequenceVariantSequenceVariantId(self.id)
+        self.has_gene = [v if isinstance(v, GeneId)
+                         else GeneId(v) for v in self.has_gene]
         if self.has_biological_sequence and not isinstance(self.has_biological_sequence, BiologicalSequence):
             self.has_biological_sequence = BiologicalSequence(self.has_biological_sequence)
+        if self.id and not isinstance(self.id, IdentifierType):
+            self.id = IdentifierType(self.id)
 
 
 @dataclass
@@ -1540,10 +1535,10 @@ class Association(InformationContentEntity):
     """
     id: AssociationId = None
     association_type: Optional[OntologyClassId] = None
-    subject: Optional[str] = None
+    subject: str = None
     negated: bool = False
-    relation: Optional[str] = None
-    object: Optional[DiseaseId] = None
+    relation: RelationshipType = None
+    object: str = None
     qualifiers: List[OntologyClassId] = empty_list()
     publications: List[PublicationId] = empty_list()
     provided_by: Optional[Provider] = None
@@ -1557,8 +1552,18 @@ class Association(InformationContentEntity):
             self.id = AssociationId(self.id)
         if self.association_type and not isinstance(self.association_type, OntologyClassId):
             self.association_type = OntologyClassId(self.association_type)
-        if self.object and not isinstance(self.object, DiseaseId):
-            self.object = DiseaseId(self.object)
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, str):
+            self.subject = str(self.subject)
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if not isinstance(self.relation, RelationshipType):
+            self.relation = RelationshipType(self.relation)
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, str):
+            self.object = str(self.object)
         self.qualifiers = [v if isinstance(v, OntologyClassId)
                            else OntologyClassId(v) for v in self.qualifiers]
         self.publications = [v if isinstance(v, PublicationId)
@@ -1636,7 +1641,7 @@ class GenotypeToVariantAssociation(Association):
     id: GenotypeToVariantAssociationId = None
     relation: RelationshipType = None
     subject: GenotypeId = None
-    object: SequenceVariantSequenceVariantId = None
+    object: SequenceVariant = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -1654,8 +1659,8 @@ class GenotypeToVariantAssociation(Association):
             self.subject = GenotypeId(self.subject)
         if self.object is None:
             raise ValueError(f"object must be supplied")
-        if not isinstance(self.object, SequenceVariantSequenceVariantId):
-            self.object = SequenceVariantSequenceVariantId(self.object)
+        if not isinstance(self.object, SequenceVariant):
+            self.object = SequenceVariant(self.object)
 
 
 @dataclass
@@ -1923,7 +1928,7 @@ class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(DiseaseOrPhenot
     disease/feature manifests in that site.
     """
     id: DiseaseOrPhenotypicFeatureAssociationToLocationAssociationId = None
-    object: Optional[AnatomicalEntityId] = None
+    object: AnatomicalEntityId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -1931,18 +1936,22 @@ class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(DiseaseOrPhenot
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, DiseaseOrPhenotypicFeatureAssociationToLocationAssociationId):
             self.id = DiseaseOrPhenotypicFeatureAssociationToLocationAssociationId(self.id)
-        if self.object and not isinstance(self.object, AnatomicalEntityId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, AnatomicalEntityId):
             self.object = AnatomicalEntityId(self.object)
 
 
 @dataclass
 class ThingToDiseaseOrPhenotypicFeatureAssociation(Association):
     id: ThingToDiseaseOrPhenotypicFeatureAssociationId = None
-    object: Optional[DiseaseOrPhenotypicFeatureId] = None
+    object: DiseaseOrPhenotypicFeatureId = None
 
     def _fix_elements(self):
         super()._fix_elements()
-        if self.object and not isinstance(self.object, DiseaseOrPhenotypicFeatureId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, DiseaseOrPhenotypicFeatureId):
             self.object = DiseaseOrPhenotypicFeatureId(self.object)
 
 
@@ -2091,11 +2100,11 @@ class VariantToPopulationAssociation(Association):
     An association between a variant and a population, where the variant has particular frequency in the population
     """
     id: VariantToPopulationAssociationId = None
-    subject: SequenceVariantSequenceVariantId = None
-    object: Optional[PopulationOfIndividualOrganismsId] = None
-    has_quotient: Optional[str] = None
-    has_count: Optional[str] = None
-    has_total: Optional[str] = None
+    subject: SequenceVariant = None
+    object: PopulationOfIndividualOrganismsId = None
+    has_quotient: Optional[float] = None
+    has_count: Optional[int] = None
+    has_total: Optional[int] = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2105,9 +2114,11 @@ class VariantToPopulationAssociation(Association):
             self.id = VariantToPopulationAssociationId(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
-        if not isinstance(self.subject, SequenceVariantSequenceVariantId):
-            self.subject = SequenceVariantSequenceVariantId(self.subject)
-        if self.object and not isinstance(self.object, PopulationOfIndividualOrganismsId):
+        if not isinstance(self.subject, SequenceVariant):
+            self.subject = SequenceVariant(self.subject)
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, PopulationOfIndividualOrganismsId):
             self.object = PopulationOfIndividualOrganismsId(self.object)
 
 
@@ -2118,7 +2129,7 @@ class PopulationToPopulationAssociation(Association):
     """
     id: PopulationToPopulationAssociationId = None
     subject: PopulationOfIndividualOrganismsId = None
-    object: Optional[PopulationOfIndividualOrganismsId] = None
+    object: PopulationOfIndividualOrganismsId = None
     relation: RelationshipType = None
 
     def _fix_elements(self):
@@ -2131,7 +2142,9 @@ class PopulationToPopulationAssociation(Association):
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, PopulationOfIndividualOrganismsId):
             self.subject = PopulationOfIndividualOrganismsId(self.subject)
-        if self.object and not isinstance(self.object, PopulationOfIndividualOrganismsId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, PopulationOfIndividualOrganismsId):
             self.object = PopulationOfIndividualOrganismsId(self.object)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
@@ -2142,7 +2155,7 @@ class PopulationToPopulationAssociation(Association):
 @dataclass
 class VariantToPhenotypicFeatureAssociation(Association):
     id: VariantToPhenotypicFeatureAssociationId = None
-    subject: SequenceVariantSequenceVariantId = None
+    subject: SequenceVariant = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2152,8 +2165,8 @@ class VariantToPhenotypicFeatureAssociation(Association):
             self.id = VariantToPhenotypicFeatureAssociationId(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
-        if not isinstance(self.subject, SequenceVariantSequenceVariantId):
-            self.subject = SequenceVariantSequenceVariantId(self.subject)
+        if not isinstance(self.subject, SequenceVariant):
+            self.subject = SequenceVariant(self.subject)
 
 
 @dataclass
@@ -2161,7 +2174,7 @@ class VariantToDiseaseAssociation(Association):
     id: VariantToDiseaseAssociationId = None
     subject: str = None
     relation: RelationshipType = None
-    object: Optional[DiseaseId] = None
+    object: str = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2177,14 +2190,16 @@ class VariantToDiseaseAssociation(Association):
             raise ValueError(f"relation must be supplied")
         if not isinstance(self.relation, RelationshipType):
             self.relation = RelationshipType(self.relation)
-        if self.object and not isinstance(self.object, DiseaseId):
-            self.object = DiseaseId(self.object)
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, str):
+            self.object = str(self.object)
 
 
 @dataclass
 class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     id: GeneAsAModelOfDiseaseAssociationId = None
-    subject: Optional[GeneOrGeneProductId] = None
+    subject: GeneOrGeneProductId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2192,15 +2207,17 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, GeneAsAModelOfDiseaseAssociationId):
             self.id = GeneAsAModelOfDiseaseAssociationId(self.id)
-        if self.subject and not isinstance(self.subject, GeneOrGeneProductId):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, GeneOrGeneProductId):
             self.subject = GeneOrGeneProductId(self.subject)
 
 
 @dataclass
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
     id: GeneHasVariantThatContributesToDiseaseAssociationId = None
-    sequence_variant_qualifier: Optional[SequenceVariantSequenceVariantId] = None
-    subject: Optional[GeneOrGeneProductId] = None
+    sequence_variant_qualifier: Optional[SequenceVariant] = None
+    subject: GeneOrGeneProductId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2208,20 +2225,24 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, GeneHasVariantThatContributesToDiseaseAssociationId):
             self.id = GeneHasVariantThatContributesToDiseaseAssociationId(self.id)
-        if self.sequence_variant_qualifier and not isinstance(self.sequence_variant_qualifier, SequenceVariantSequenceVariantId):
-            self.sequence_variant_qualifier = SequenceVariantSequenceVariantId(self.sequence_variant_qualifier)
-        if self.subject and not isinstance(self.subject, GeneOrGeneProductId):
+        if self.sequence_variant_qualifier and not isinstance(self.sequence_variant_qualifier, SequenceVariant):
+            self.sequence_variant_qualifier = SequenceVariant(self.sequence_variant_qualifier)
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, GeneOrGeneProductId):
             self.subject = GeneOrGeneProductId(self.subject)
 
 
 @dataclass
 class GenotypeToThingAssociation(Association):
     id: GenotypeToThingAssociationId = None
-    subject: Optional[GenotypeId] = None
+    subject: GenotypeId = None
 
     def _fix_elements(self):
         super()._fix_elements()
-        if self.subject and not isinstance(self.subject, GenotypeId):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, GenotypeId):
             self.subject = GenotypeId(self.subject)
 
 
@@ -2232,10 +2253,10 @@ class GeneToExpressionSiteAssociation(Association):
     """
     id: GeneToExpressionSiteAssociationId = None
     stage_qualifier: Optional[LifeStageId] = None
-    quantifier_qualifier: Optional[str] = None
-    subject: Optional[GeneOrGeneProductId] = None
-    object: Optional[AnatomicalEntityId] = None
-    relation: Optional[str] = None
+    quantifier_qualifier: Optional[OntologyClassId] = None
+    subject: GeneOrGeneProductId = None
+    object: AnatomicalEntityId = None
+    relation: RelationshipType = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2245,10 +2266,20 @@ class GeneToExpressionSiteAssociation(Association):
             self.id = GeneToExpressionSiteAssociationId(self.id)
         if self.stage_qualifier and not isinstance(self.stage_qualifier, LifeStageId):
             self.stage_qualifier = LifeStageId(self.stage_qualifier)
-        if self.subject and not isinstance(self.subject, GeneOrGeneProductId):
+        if self.quantifier_qualifier and not isinstance(self.quantifier_qualifier, OntologyClassId):
+            self.quantifier_qualifier = OntologyClassId(self.quantifier_qualifier)
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, GeneOrGeneProductId):
             self.subject = GeneOrGeneProductId(self.subject)
-        if self.object and not isinstance(self.object, AnatomicalEntityId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, AnatomicalEntityId):
             self.object = AnatomicalEntityId(self.object)
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if not isinstance(self.relation, RelationshipType):
+            self.relation = RelationshipType(self.relation)
 
 
 @dataclass
@@ -2258,14 +2289,18 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     encompasses both the disease and the drug used.
     """
     id: SequenceVariantModulatesTreatmentAssociationId = None
-    subject: Optional[SequenceVariantSequenceVariantId] = None
-    object: Optional[TreatmentId] = None
+    subject: SequenceVariant = None
+    object: TreatmentId = None
 
     def _fix_elements(self):
         super()._fix_elements()
-        if self.subject and not isinstance(self.subject, SequenceVariantSequenceVariantId):
-            self.subject = SequenceVariantSequenceVariantId(self.subject)
-        if self.object and not isinstance(self.object, TreatmentId):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, SequenceVariant):
+            self.subject = SequenceVariant(self.subject)
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, TreatmentId):
             self.object = TreatmentId(self.object)
 
 
@@ -2276,8 +2311,8 @@ class FunctionalAssociation(Association):
     molecular activity, a biological process or a cellular location in which a function is executed
     """
     id: FunctionalAssociationId = None
-    subject: Optional[MacromolecularMachineId] = None
-    object: Optional[GeneOntologyClassId] = None
+    subject: MacromolecularMachineId = None
+    object: GeneOntologyClassId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2285,9 +2320,13 @@ class FunctionalAssociation(Association):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, FunctionalAssociationId):
             self.id = FunctionalAssociationId(self.id)
-        if self.subject and not isinstance(self.subject, MacromolecularMachineId):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, MacromolecularMachineId):
             self.subject = MacromolecularMachineId(self.subject)
-        if self.object and not isinstance(self.object, GeneOntologyClassId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, GeneOntologyClassId):
             self.object = GeneOntologyClassId(self.object)
 
 
@@ -2299,7 +2338,7 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
     its execution
     """
     id: MacromolecularMachineToMolecularActivityAssociationId = None
-    object: Optional[MolecularActivityId] = None
+    object: MolecularActivityId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2307,7 +2346,9 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, MacromolecularMachineToMolecularActivityAssociationId):
             self.id = MacromolecularMachineToMolecularActivityAssociationId(self.id)
-        if self.object and not isinstance(self.object, MolecularActivityId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, MolecularActivityId):
             self.object = MolecularActivityId(self.object)
 
 
@@ -2319,7 +2360,7 @@ class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation)
     process, regulates it, or acts upstream of it
     """
     id: MacromolecularMachineToBiologicalProcessAssociationId = None
-    object: Optional[BiologicalProcessId] = None
+    object: BiologicalProcessId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2327,7 +2368,9 @@ class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation)
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, MacromolecularMachineToBiologicalProcessAssociationId):
             self.id = MacromolecularMachineToBiologicalProcessAssociationId(self.id)
-        if self.object and not isinstance(self.object, BiologicalProcessId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, BiologicalProcessId):
             self.object = BiologicalProcessId(self.object)
 
 
@@ -2339,7 +2382,7 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
     component
     """
     id: MacromolecularMachineToCellularComponentAssociationId = None
-    object: Optional[CellularComponentId] = None
+    object: CellularComponentId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2347,15 +2390,17 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, MacromolecularMachineToCellularComponentAssociationId):
             self.id = MacromolecularMachineToCellularComponentAssociationId(self.id)
-        if self.object and not isinstance(self.object, CellularComponentId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, CellularComponentId):
             self.object = CellularComponentId(self.object)
 
 
 @dataclass
 class GeneToGoTermAssociation(FunctionalAssociation):
     id: GeneToGoTermAssociationId = None
-    subject: Optional[MolecularEntityId] = None
-    object: Optional[GeneOntologyClassId] = None
+    subject: MolecularEntityId = None
+    object: GeneOntologyClassId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2363,9 +2408,13 @@ class GeneToGoTermAssociation(FunctionalAssociation):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, GeneToGoTermAssociationId):
             self.id = GeneToGoTermAssociationId(self.id)
-        if self.subject and not isinstance(self.subject, MolecularEntityId):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, MolecularEntityId):
             self.subject = MolecularEntityId(self.subject)
-        if self.object and not isinstance(self.object, GeneOntologyClassId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, GeneOntologyClassId):
             self.object = GeneOntologyClassId(self.object)
 
 
@@ -2380,8 +2429,8 @@ class GenomicSequenceLocalization(Association):
     end_interbase_coordinate: Optional[str] = None
     genome_build: Optional[str] = None
     phase: Optional[str] = None
-    subject: Optional[GenomicEntityId] = None
-    object: Optional[GenomicEntityId] = None
+    subject: GenomicEntityId = None
+    object: GenomicEntityId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2389,9 +2438,13 @@ class GenomicSequenceLocalization(Association):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, GenomicSequenceLocalizationId):
             self.id = GenomicSequenceLocalizationId(self.id)
-        if self.subject and not isinstance(self.subject, GenomicEntityId):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, GenomicEntityId):
             self.subject = GenomicEntityId(self.subject)
-        if self.object and not isinstance(self.object, GenomicEntityId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, GenomicEntityId):
             self.object = GenomicEntityId(self.object)
 
 
@@ -2401,8 +2454,8 @@ class SequenceFeatureRelationship(Association):
     For example, a particular exon is part of a particular transcript or gene
     """
     id: SequenceFeatureRelationshipId = None
-    subject: Optional[GenomicEntityId] = None
-    object: Optional[GenomicEntityId] = None
+    subject: GenomicEntityId = None
+    object: GenomicEntityId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2410,9 +2463,13 @@ class SequenceFeatureRelationship(Association):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, SequenceFeatureRelationshipId):
             self.id = SequenceFeatureRelationshipId(self.id)
-        if self.subject and not isinstance(self.subject, GenomicEntityId):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, GenomicEntityId):
             self.subject = GenomicEntityId(self.subject)
-        if self.object and not isinstance(self.object, GenomicEntityId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, GenomicEntityId):
             self.object = GenomicEntityId(self.object)
 
 
@@ -2422,8 +2479,8 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     A gene is a collection of transcripts
     """
     id: TranscriptToGeneRelationshipId = None
-    subject: Optional[TranscriptId] = None
-    object: Optional[GeneId] = None
+    subject: TranscriptId = None
+    object: GeneId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2431,9 +2488,13 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, TranscriptToGeneRelationshipId):
             self.id = TranscriptToGeneRelationshipId(self.id)
-        if self.subject and not isinstance(self.subject, TranscriptId):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, TranscriptId):
             self.subject = TranscriptId(self.subject)
-        if self.object and not isinstance(self.object, GeneId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, GeneId):
             self.object = GeneId(self.object)
 
 
@@ -2443,9 +2504,9 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     A gene is transcribed and potentially translated to a gene product
     """
     id: GeneToGeneProductRelationshipId = None
-    subject: Optional[GeneId] = None
-    object: Optional[GeneProductId] = None
-    relation: Optional[str] = None
+    subject: GeneId = None
+    object: GeneProductId = None
+    relation: RelationshipType = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2453,10 +2514,18 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, GeneToGeneProductRelationshipId):
             self.id = GeneToGeneProductRelationshipId(self.id)
-        if self.subject and not isinstance(self.subject, GeneId):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, GeneId):
             self.subject = GeneId(self.subject)
-        if self.object and not isinstance(self.object, GeneProductId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, GeneProductId):
             self.object = GeneProductId(self.object)
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if not isinstance(self.relation, RelationshipType):
+            self.relation = RelationshipType(self.relation)
 
 
 @dataclass
@@ -2465,8 +2534,8 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     A transcript is formed from multiple exons
     """
     id: ExonToTranscriptRelationshipId = None
-    subject: Optional[ExonId] = None
-    object: Optional[TranscriptId] = None
+    subject: ExonId = None
+    object: TranscriptId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2474,9 +2543,13 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, ExonToTranscriptRelationshipId):
             self.id = ExonToTranscriptRelationshipId(self.id)
-        if self.subject and not isinstance(self.subject, ExonId):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, ExonId):
             self.subject = ExonId(self.subject)
-        if self.object and not isinstance(self.object, TranscriptId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, TranscriptId):
             self.object = TranscriptId(self.object)
 
 
@@ -2486,9 +2559,9 @@ class GeneRegulatoryRelationship(Association):
     A regulatory relationship between two genes
     """
     id: GeneRegulatoryRelationshipId = None
-    relation: Optional[str] = None
-    subject: Optional[GeneOrGeneProductId] = None
-    object: Optional[GeneOrGeneProductId] = None
+    relation: RelationshipType = None
+    subject: GeneOrGeneProductId = None
+    object: GeneOrGeneProductId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2496,17 +2569,25 @@ class GeneRegulatoryRelationship(Association):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, GeneRegulatoryRelationshipId):
             self.id = GeneRegulatoryRelationshipId(self.id)
-        if self.subject and not isinstance(self.subject, GeneOrGeneProductId):
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if not isinstance(self.relation, RelationshipType):
+            self.relation = RelationshipType(self.relation)
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, GeneOrGeneProductId):
             self.subject = GeneOrGeneProductId(self.subject)
-        if self.object and not isinstance(self.object, GeneOrGeneProductId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, GeneOrGeneProductId):
             self.object = GeneOrGeneProductId(self.object)
 
 
 @dataclass
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     id: AnatomicalEntityToAnatomicalEntityAssociationId = None
-    subject: Optional[AnatomicalEntityId] = None
-    object: Optional[AnatomicalEntityId] = None
+    subject: AnatomicalEntityId = None
+    object: AnatomicalEntityId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2514,9 +2595,13 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, AnatomicalEntityToAnatomicalEntityAssociationId):
             self.id = AnatomicalEntityToAnatomicalEntityAssociationId(self.id)
-        if self.subject and not isinstance(self.subject, AnatomicalEntityId):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, AnatomicalEntityId):
             self.subject = AnatomicalEntityId(self.subject)
-        if self.object and not isinstance(self.object, AnatomicalEntityId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, AnatomicalEntityId):
             self.object = AnatomicalEntityId(self.object)
 
 
@@ -2528,9 +2613,9 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     tissues and whole organisms
     """
     id: AnatomicalEntityToAnatomicalEntityPartOfAssociationId = None
-    subject: Optional[AnatomicalEntityId] = None
-    object: Optional[AnatomicalEntityId] = None
-    relation: Optional[str] = None
+    subject: AnatomicalEntityId = None
+    object: AnatomicalEntityId = None
+    relation: RelationshipType = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2538,10 +2623,18 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, AnatomicalEntityToAnatomicalEntityPartOfAssociationId):
             self.id = AnatomicalEntityToAnatomicalEntityPartOfAssociationId(self.id)
-        if self.subject and not isinstance(self.subject, AnatomicalEntityId):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, AnatomicalEntityId):
             self.subject = AnatomicalEntityId(self.subject)
-        if self.object and not isinstance(self.object, AnatomicalEntityId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, AnatomicalEntityId):
             self.object = AnatomicalEntityId(self.object)
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if not isinstance(self.relation, RelationshipType):
+            self.relation = RelationshipType(self.relation)
 
 
 @dataclass
@@ -2552,9 +2645,9 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     relationship
     """
     id: AnatomicalEntityToAnatomicalEntityOntogenicAssociationId = None
-    subject: Optional[AnatomicalEntityId] = None
-    object: Optional[AnatomicalEntityId] = None
-    relation: Optional[str] = None
+    subject: AnatomicalEntityId = None
+    object: AnatomicalEntityId = None
+    relation: RelationshipType = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2562,10 +2655,18 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, AnatomicalEntityToAnatomicalEntityOntogenicAssociationId):
             self.id = AnatomicalEntityToAnatomicalEntityOntogenicAssociationId(self.id)
-        if self.subject and not isinstance(self.subject, AnatomicalEntityId):
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if not isinstance(self.subject, AnatomicalEntityId):
             self.subject = AnatomicalEntityId(self.subject)
-        if self.object and not isinstance(self.object, AnatomicalEntityId):
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if not isinstance(self.object, AnatomicalEntityId):
             self.object = AnatomicalEntityId(self.object)
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if not isinstance(self.relation, RelationshipType):
+            self.relation = RelationshipType(self.relation)
 
 
 @dataclass
@@ -2754,3 +2855,4 @@ class GrossAnatomicalStructure(AnatomicalEntity):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, GrossAnatomicalStructureId):
             self.id = GrossAnatomicalStructureId(self.id)
+

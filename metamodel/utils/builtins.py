@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import Dict, Optional
 
-from rdflib import XSD
+from rdflib import XSD, URIRef
 
 """ Built in types """
 
@@ -28,14 +28,16 @@ builtin_names: Dict[str, Builtin] = {
     'uri' : Builtin.uri
 }
 
+
 def builtin_uri(name: Optional[str], expand: bool = False) -> Optional[str]:
     if name is None:
         name = DEFAULT_BUILTIN_TYPE_NAME
     elif name not in builtin_names:
         return None
-    elif name is 'uri':
+    elif name == 'uri':
         name = 'anyURI'
     return XSD[name] if expand else f'xsd:{name}'
+
 
 DEFAULT_BUILTIN_TYPE_NAME = "string"
 
@@ -47,4 +49,5 @@ python_builtins: Dict[Builtin, str] = {
     Builtin.boolean: 'bool',
     Builtin.time: 'datetime.time',
     Builtin.date: 'datetime.date',
-    Builtin.uri: 'str'}
+    Builtin.uri: 'str'
+}

@@ -29,9 +29,9 @@ class RDFGenerator(Generator):
     def end_schema(self, output: Optional[str], context: str=biolink_context) -> None:
         jsonld_str = JSONLDGenerator(self.schema).serialize(context=context)
         graph = Graph()
-        graph.parse(data=jsonld_str, format="json-ld")
-        graph.bind("bioentity", str(BIOENTITY))
-        graph.bind("meta", str(META))
+        # TODO: retrieve the base out of the JSON_LD (generalize how it is fetched from the schema when generating
+        # context
+        graph.parse(data=jsonld_str, format="json-ld", base="http://bioentity.io/vocab/")
         if output:
             with open(output, 'w') as outf:
                 outf.write(self._data(graph))

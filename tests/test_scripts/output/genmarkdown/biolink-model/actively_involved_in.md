@@ -9,7 +9,7 @@ URI: [http://bioentity.io/vocab/actively_involved_in](slot_uri)
  * [RO:0002331](http://purl.obolibrary.org/obo/RO_0002331)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [Occurrent](Occurrent.md)
+None -> [Occurrent](Occurrent.md)
 ## Inheritance
 
  *  is_a: [participates in](participates_in.md) *subsets*: (translator_minimal)

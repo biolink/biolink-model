@@ -6,7 +6,7 @@ used to indicate membership of a term in a defined subset of biolink terms used 
 URI: [http://bioentity.io/vocab/in_subset](slot_uri)
 ## Mappings
 
- * [oio](oio)
+ * [OIO:inSubset](http://purl.obolibrary.org/obo/OIO_inSubset)
 ## Domain and Range
 
 [Element](Element.md) -> **string**

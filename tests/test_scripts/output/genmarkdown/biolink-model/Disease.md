@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Disease|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;treated_by(i):string%20%3F]-%20has%20biomarker(i)%20%3F>\[MolecularEntity],%20\[Disease]-%20correlated%20with(i)%20%3F>\[MolecularEntity],%20\[Disease]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[Disease]-%20related%20to(i)%20%3F>\[NamedThing],%20\[DiseaseToThingAssociation]-%20subject(i)>\[Disease],%20\[EntityToDiseaseAssociation]-%20object(i)%20%3F>\[Disease],%20\[NamedThing]-%20manifestation%20of(i)%20%3F>\[Disease],%20\[DiseaseOrPhenotypicFeature]^-\[Disease])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Disease|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;treated_by(i):string%20%3F]-%20has%20biomarker(i)%20%3F>\[MolecularEntity],%20\[Disease]-%20correlated%20with(i)%20%3F>\[MolecularEntity],%20\[Disease]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[Disease]-%20related%20to(i)%20%3F>\[NamedThing],%20\[DiseaseToThingAssociation]-%20subject(i)>\[Disease],%20\[EntityToDiseaseAssociation]-%20object(i)>\[Disease],%20\[DiseaseOrPhenotypicFeature]^-\[Disease])
 ## Mappings
 
  * [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)
@@ -21,7 +21,7 @@ URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
 
  *  class: **[DiseaseToThingAssociation](DiseaseToThingAssociation.md)** *[disease to thing association.subject](disease_to_thing_association_subject.md)* **[Disease](Disease.md)**
  *  class: **[EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)** *[entity to disease association.object](entity_to_disease_association_object.md)* **[Disease](Disease.md)**
- *  class: **[NamedThing](NamedThing.md)** *[manifestation of](manifestation_of.md)* **[Disease](Disease.md)**
+ *  class: **None** *[manifestation of](manifestation_of.md)* **[Disease](Disease.md)**
 ## Fields
 
  * _[category](category.md) *subsets*: (translator_minimal)_

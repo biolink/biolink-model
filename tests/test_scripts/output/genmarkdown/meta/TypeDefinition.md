@@ -5,7 +5,7 @@ A type definition
 
 URI: [http://bioentity.io/vocab/TypeDefinition](http://bioentity.io/vocab/TypeDefinition)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[TypeDefinition|typeof:string%20%3F;name(i):string;singular_name(i):string%20%3F;description(i):string%20%3F;note(i):string%20%3F;comment(i):string%20%3F;see_also(i):string%20%3F;flags(i):string%20*;prefixes(i):string%20*;aliases(i):string%20*;mappings(i):string%20*;id_prefixes(i):string%20*;in_subset(i):string%20*;from_schema(i):string%20%3F;alt_descriptions(i):string%20*]++-%20examples(i)%20*>\[Example],%20\[SchemaDefinition]++-%20types(i)%20*>\[TypeDefinition],%20\[Element]^-\[TypeDefinition])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[TypeDefinition|typeof:string%20%3F;name(i):string;singular_name(i):string%20%3F;description(i):string%20%3F;note(i):string%20%3F;comment(i):string%20%3F;see_also(i):string%20%3F;flags(i):string%20*;aliases(i):string%20*;mappings(i):string%20*;id_prefixes(i):string%20*;in_subset(i):string%20*;from_schema(i):string%20%3F;alt_descriptions(i):string%20*]++-%20examples(i)%20*>\[Example],%20\[SchemaDefinition]++-%20types(i)%20*>\[TypeDefinition],%20\[Element]^-\[TypeDefinition])
 ## Mappings
 
 ## Inheritance
@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/TypeDefinition](http://bioentity.io/vocab/TypeDe
 ## Fields
 
  * _[typeof](typeof.md)_
-    * _a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time') or another type definition_
+    * _a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition_
     * range: **string**
     * __Local__
  * _[aliases](aliases.md)_
@@ -66,10 +66,6 @@ URI: [http://bioentity.io/vocab/TypeDefinition](http://bioentity.io/vocab/TypeDe
  * _[note](note.md)_
     * _Notes about an element_
     * range: **string**
-    * inherited from: [Element](Element.md)
- * _[prefixes](prefixes.md)_
-    * _list of ID/CURIE prefixes applicable to that element_
-    * range: **string***
     * inherited from: [Element](Element.md)
  * _[see_also](see_also.md)_
     * range: **string**

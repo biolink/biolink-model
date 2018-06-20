@@ -1,7 +1,7 @@
 # Slot: typeof
 
 
-a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time') or another type definition
+a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition
 
 URI: [http://bioentity.io/vocab/typeof](slot_uri)
 ## Mappings

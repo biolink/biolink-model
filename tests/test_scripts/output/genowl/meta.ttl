@@ -8,354 +8,407 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://biolink.github.io/metamodel/ontology/meta.ttl> a owl:Ontology ;
-    rdfs:label "metamodel" ;
-    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" .
-
-bioentity:abstract a owl:DataProperty ;
-    rdfs:label "abstract" ;
-    obo:IAO_0000115 "An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored" ;
-    rdfs:domain bioentity:Definition ;
-    rdfs:range xsd:boolean .
-
-bioentity:alias a owl:DataProperty ;
-    rdfs:label "alias" ;
-    obo:IAO_0000115 "A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have \"slots\" where one inline and the other a reference" ;
-    rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range xsd:string .
-
-bioentity:aliases a owl:DataProperty ;
-    rdfs:label "aliases" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:alt_descriptions a owl:DataProperty ;
-    rdfs:label "alt_descriptions" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:apply_to a owl:ObjectProperty ;
-    rdfs:label "apply_to" ;
-    obo:IAO_0000115 "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class." ;
-    rdfs:domain bioentity:ClassDefinition ;
-    rdfs:range bioentity:ClassDefinition .
-
-bioentity:classes a owl:ObjectProperty ;
-    rdfs:label "classes" ;
-    obo:IAO_0000115 "classes defined in schema" ;
-    rdfs:domain bioentity:SchemaDefinition ;
-    rdfs:range bioentity:ClassDefinition .
-
-bioentity:comment a owl:DataProperty ;
-    rdfs:label "comment" ;
-    obo:IAO_0000115 "Comment about an element" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:defining_slots a owl:ObjectProperty ;
-    rdfs:label "defining_slots" ;
-    obo:IAO_0000115 "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom" ;
-    rdfs:domain bioentity:ClassDefinition ;
-    rdfs:range bioentity:SlotDefinition .
-
-bioentity:definitional a owl:DataProperty ;
-    rdfs:label "definitional" ;
-    obo:IAO_0000115 "slot is a defining slot -- injection into the defining_slots list" ;
-    rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range xsd:boolean .
-
-bioentity:description a owl:DataProperty ;
-    rdfs:label "description" ;
-    obo:IAO_0000115 "a description" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:domain a owl:ObjectProperty ;
-    rdfs:label "domain" ;
-    obo:IAO_0000115 "The class to which this slot applies." ;
-    rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range bioentity:ClassDefinition .
-
-bioentity:entity a owl:DataProperty ;
-    rdfs:label "entity" ;
-    rdfs:domain bioentity:ClassDefinition ;
-    rdfs:range xsd:boolean .
-
-bioentity:examples a owl:ObjectProperty ;
-    rdfs:label "examples" ;
-    obo:IAO_0000115 "Example of usage for a slot or class" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range bioentity:Example .
-
-bioentity:flags a owl:DataProperty ;
-    rdfs:label "flags" ;
-    obo:IAO_0000115 "State information and other details" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:from_schema a owl:DataProperty ;
-    rdfs:label "from_schema" ;
-    obo:IAO_0000115 "id of the schema that the element was derived from.  Supplied by the loader." ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:generation_date a owl:DataProperty ;
-    rdfs:label "generation_date" ;
-    obo:IAO_0000115 "date that the schema was loaded/generated.  Supplied by the loader" ;
-    rdfs:domain bioentity:SchemaDefinition ;
-    rdfs:range xsd:date .
-
-bioentity:id a owl:DataProperty ;
-    rdfs:label "id" ;
-    obo:IAO_0000115 "a globally unique id or url for a schema" ;
-    rdfs:domain bioentity:SchemaDefinition ;
-    rdfs:range xsd:string .
-
-bioentity:id_prefixes a owl:DataProperty ;
-    rdfs:label "id_prefixes" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:identifier a owl:DataProperty ;
-    rdfs:label "identifier" ;
-    obo:IAO_0000115 "True means that this slot must be unique across the collection of slots" ;
-    rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range xsd:boolean .
-
-bioentity:imports a owl:DataProperty ;
-    rdfs:label "imports" ;
-    obo:IAO_0000115 "A list of modules that are imported into the schema" ;
-    rdfs:domain bioentity:SchemaDefinition ;
-    rdfs:range xsd:string .
-
-bioentity:in_subset a owl:DataProperty ;
-    rdfs:label "in_subset" ;
-    obo:IAO_0000115 "used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:inlined a owl:DataProperty ;
-    rdfs:label "inlined" ;
-    obo:IAO_0000115 "if true then the value of this slot is inlined (i.e. a nested object) rather linked by key" ;
-    rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range xsd:boolean .
-
-bioentity:inverse a owl:ObjectProperty ;
-    rdfs:label "inverse" ;
-    obo:IAO_0000115 "used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')" ;
-    rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range bioentity:SlotDefinition .
-
-bioentity:is_a a owl:ObjectProperty ;
-    rdfs:label "is_a" ;
+bioentity:class_definition_is_a a owl:AnnotationProperty ;
+    rdfs:label "class definition is_a" ;
     obo:IAO_0000115 "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" ;
-    rdfs:domain bioentity:Definition ;
-    rdfs:range bioentity:Definition .
+    rdfs:domain bioentity:ClassDefinition ;
+    rdfs:range bioentity:ClassDefinition ;
+    rdfs:subPropertyOf bioentity:is_a .
 
-bioentity:is_class_field a owl:DataProperty ;
-    rdfs:label "is_class_field" ;
-    rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range xsd:boolean .
-
-bioentity:license a owl:DataProperty ;
-    rdfs:label "license" ;
-    obo:IAO_0000115 "license for the schema" ;
-    rdfs:domain bioentity:SchemaDefinition ;
-    rdfs:range xsd:string .
-
-bioentity:local_names a owl:DataProperty ;
-    rdfs:label "local_names" ;
-    obo:IAO_0000115 "map from local identifier to slot" ;
-    rdfs:domain bioentity:Definition ;
-    rdfs:range xsd:string .
-
-bioentity:mappings a owl:DataProperty ;
-    rdfs:label "mappings" ;
-    obo:IAO_0000115 "list of equivalent or skos exact mappings to an ontology class" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:metamodel_version a owl:DataProperty ;
-    rdfs:label "metamodel_version" ;
-    obo:IAO_0000115 "Version of the metamodel used to load the schema. Supplied by the loader" ;
-    rdfs:domain bioentity:SchemaDefinition ;
-    rdfs:range xsd:string .
-
-bioentity:mixin a owl:DataProperty ;
-    rdfs:label "mixin" ;
-    obo:IAO_0000115 "Used only as a mixin -- cannot be instantiated on its own." ;
-    rdfs:domain bioentity:Definition ;
-    rdfs:range xsd:boolean .
-
-bioentity:mixins a owl:ObjectProperty ;
-    rdfs:label "mixins" ;
+bioentity:class_definition_mixins a owl:AnnotationProperty ;
+    rdfs:label "class definition mixins" ;
     obo:IAO_0000115 "List of definitions to be mixed in. Targets may be any definition of the same type" ;
-    rdfs:domain bioentity:Definition ;
-    rdfs:range bioentity:Definition .
+    rdfs:domain bioentity:ClassDefinition ;
+    rdfs:range bioentity:ClassDefinition ;
+    rdfs:subPropertyOf bioentity:mixins .
 
-bioentity:multivalued a owl:DataProperty ;
-    rdfs:label "multivalued" ;
-    obo:IAO_0000115 "If true slot can have many values" ;
+bioentity:class_definition_union_of a owl:AnnotationProperty ;
+    rdfs:label "class definition union_of" ;
+    obo:IAO_0000115 "list of class or slot definitions that are combined to create the union class" ;
+    rdfs:domain bioentity:ClassDefinition ;
+    rdfs:range bioentity:ClassDefinition ;
+    rdfs:subPropertyOf bioentity:union_of .
+
+bioentity:slot_definition_is_a a owl:AnnotationProperty ;
+    rdfs:label "slot definition is_a" ;
+    obo:IAO_0000115 "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" ;
     rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range xsd:boolean .
+    rdfs:range bioentity:SlotDefinition ;
+    rdfs:subPropertyOf bioentity:is_a .
 
-bioentity:name a owl:DataProperty ;
-    rdfs:label "name" ;
-    obo:IAO_0000115 "a unique key that identifies a slot, type or class in a schema" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:not_inherited a owl:DataProperty ;
-    rdfs:label "not_inherited" ;
-    obo:IAO_0000115 "True means that the slot is local and is not_inherited across is_a or slot_usage paths" ;
+bioentity:slot_definition_mixins a owl:AnnotationProperty ;
+    rdfs:label "slot definition mixins" ;
+    obo:IAO_0000115 "List of definitions to be mixed in. Targets may be any definition of the same type" ;
     rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range xsd:boolean .
+    rdfs:range bioentity:SlotDefinition ;
+    rdfs:subPropertyOf bioentity:mixins .
 
-bioentity:note a owl:DataProperty ;
-    rdfs:label "note" ;
-    obo:IAO_0000115 "Notes about an element" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:path a owl:DataProperty ;
-    rdfs:label "path" ;
-    obo:IAO_0000115 "For any denormalized slot, this represents the tree or graph path used to generate the denormalized form" ;
+bioentity:slot_definition_union_of a owl:AnnotationProperty ;
+    rdfs:label "slot definition union_of" ;
+    obo:IAO_0000115 "list of class or slot definitions that are combined to create the union class" ;
     rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range xsd:string .
+    rdfs:range bioentity:SlotDefinition ;
+    rdfs:subPropertyOf bioentity:union_of .
 
-bioentity:prefixes a owl:DataProperty ;
-    rdfs:label "prefixes" ;
-    obo:IAO_0000115 "list of ID/CURIE prefixes applicable to that element" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:primary_key a owl:DataProperty ;
-    rdfs:label "primary_key" ;
-    obo:IAO_0000115 "True means that this serves as a unique identifier" ;
-    rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range xsd:boolean .
-
-bioentity:range a owl:ObjectProperty ;
-    rdfs:label "range" ;
-    obo:IAO_0000115 "The slot type.  If absent, it is the builtin type 'string'" ;
-    rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range bioentity:Element .
-
-bioentity:required a owl:DataProperty ;
-    rdfs:label "required" ;
-    obo:IAO_0000115 "If true slot must have at least one value" ;
-    rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range xsd:boolean .
-
-bioentity:role a owl:DataProperty ;
-    rdfs:label "role" ;
-    rdfs:domain bioentity:SlotDefinition ;
-    rdfs:range xsd:string .
-
-bioentity:see_also a owl:DataProperty ;
-    rdfs:label "see_also" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:singular_name a owl:DataProperty ;
-    rdfs:label "singular_name" ;
-    obo:IAO_0000115 "a name that is used in the singular form" ;
-    rdfs:domain bioentity:Element ;
-    rdfs:range xsd:string .
-
-bioentity:slot_definitions a owl:ObjectProperty ;
+bioentity:slot_definitions a owl:AnnotationProperty ;
     rdfs:label "slot definitions" ;
     obo:IAO_0000115 "collection of slot definitions in a schema" ;
     rdfs:domain bioentity:SchemaDefinition ;
     rdfs:range bioentity:SlotDefinition .
 
-bioentity:slot_usage a owl:ObjectProperty ;
+bioentity:value_description a owl:AnnotationProperty ;
+    rdfs:label "value description" ;
+    rdfs:domain bioentity:Example ;
+    rdfs:range xsd:string .
+
+<https://biolink.github.io/metamodel/ontology/meta.ttl> a owl:Ontology ;
+    rdfs:label "metamodel" ;
+    dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" .
+
+bioentity:abstract a owl:AnnotationProperty ;
+    rdfs:label "abstract" ;
+    obo:IAO_0000115 "An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored" ;
+    rdfs:domain bioentity:Definition ;
+    rdfs:range xsd:boolean .
+
+bioentity:alias a owl:AnnotationProperty ;
+    rdfs:label "alias" ;
+    obo:IAO_0000115 "A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have \"slots\" where one inline and the other a reference" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range xsd:string .
+
+bioentity:aliases a owl:AnnotationProperty ;
+    rdfs:label "aliases" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:alt_descriptions a owl:AnnotationProperty ;
+    rdfs:label "alt_descriptions" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:apply_to a owl:AnnotationProperty ;
+    rdfs:label "apply_to" ;
+    obo:IAO_0000115 "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class." ;
+    rdfs:domain bioentity:ClassDefinition ;
+    rdfs:range bioentity:ClassDefinition .
+
+bioentity:classes a owl:AnnotationProperty ;
+    rdfs:label "classes" ;
+    obo:IAO_0000115 "classes defined in schema" ;
+    rdfs:domain bioentity:SchemaDefinition ;
+    rdfs:range bioentity:ClassDefinition .
+
+bioentity:comment a owl:AnnotationProperty ;
+    rdfs:label "comment" ;
+    obo:IAO_0000115 "Comment about an element" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:default_curi_maps a owl:AnnotationProperty ;
+    rdfs:label "default_curi_maps" ;
+    obo:IAO_0000115 "List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables" ;
+    rdfs:domain bioentity:SchemaDefinition ;
+    rdfs:range xsd:string .
+
+bioentity:default_prefix a owl:AnnotationProperty ;
+    rdfs:label "default_prefix" ;
+    obo:IAO_0000115 "default and base prefix -- used for ':' identifiers, @base and @vocab" ;
+    rdfs:domain bioentity:SchemaDefinition ;
+    rdfs:range xsd:string .
+
+bioentity:defining_slots a owl:AnnotationProperty ;
+    rdfs:label "defining_slots" ;
+    obo:IAO_0000115 "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom" ;
+    rdfs:domain bioentity:ClassDefinition ;
+    rdfs:range bioentity:SlotDefinition .
+
+bioentity:definitional a owl:AnnotationProperty ;
+    rdfs:label "definitional" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range xsd:boolean .
+
+bioentity:domain a owl:AnnotationProperty ;
+    rdfs:label "domain" ;
+    obo:IAO_0000115 "The class to which this slot applies." ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range bioentity:ClassDefinition .
+
+bioentity:entity a owl:AnnotationProperty ;
+    rdfs:label "entity" ;
+    rdfs:domain bioentity:ClassDefinition ;
+    rdfs:range xsd:boolean .
+
+bioentity:examples a owl:AnnotationProperty ;
+    rdfs:label "examples" ;
+    obo:IAO_0000115 "Example of usage for a slot or class" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range bioentity:Example .
+
+bioentity:flags a owl:AnnotationProperty ;
+    rdfs:label "flags" ;
+    obo:IAO_0000115 "State information and other details" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:from_schema a owl:AnnotationProperty ;
+    rdfs:label "from_schema" ;
+    obo:IAO_0000115 "id of the schema that the element was derived from.  Supplied by the loader." ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:generation_date a owl:AnnotationProperty ;
+    rdfs:label "generation_date" ;
+    obo:IAO_0000115 "date that the schema was loaded/generated.  Supplied by the loader" ;
+    rdfs:domain bioentity:SchemaDefinition ;
+    rdfs:range xsd:date .
+
+bioentity:id a owl:AnnotationProperty ;
+    rdfs:label "id" ;
+    obo:IAO_0000115 "a globally unique id or url for a schema" ;
+    rdfs:domain bioentity:SchemaDefinition ;
+    rdfs:range xsd:string .
+
+bioentity:id_prefixes a owl:AnnotationProperty ;
+    rdfs:label "id_prefixes" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:identifier a owl:AnnotationProperty ;
+    rdfs:label "identifier" ;
+    obo:IAO_0000115 "True means that this slot must be unique across the collection of slots" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range xsd:boolean .
+
+bioentity:imports a owl:AnnotationProperty ;
+    rdfs:label "imports" ;
+    obo:IAO_0000115 "A list of modules that are imported into the schema" ;
+    rdfs:domain bioentity:SchemaDefinition ;
+    rdfs:range xsd:string .
+
+bioentity:in_subset a owl:AnnotationProperty ;
+    rdfs:label "in_subset" ;
+    obo:IAO_0000115 "used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:inherited a owl:AnnotationProperty ;
+    rdfs:label "inherited" ;
+    obo:IAO_0000115 "True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range xsd:boolean .
+
+bioentity:inlined a owl:AnnotationProperty ;
+    rdfs:label "inlined" ;
+    obo:IAO_0000115 "if true then the value of this slot is inlined (i.e. a nested object) rather linked by key" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range xsd:boolean .
+
+bioentity:inverse a owl:AnnotationProperty ;
+    rdfs:label "inverse" ;
+    obo:IAO_0000115 "used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range bioentity:SlotDefinition .
+
+bioentity:is_class_field a owl:AnnotationProperty ;
+    rdfs:label "is_class_field" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range xsd:boolean .
+
+bioentity:license a owl:AnnotationProperty ;
+    rdfs:label "license" ;
+    obo:IAO_0000115 "license for the schema" ;
+    rdfs:domain bioentity:SchemaDefinition ;
+    rdfs:range xsd:string .
+
+bioentity:local_name a owl:AnnotationProperty ;
+    rdfs:label "local name" ;
+    obo:IAO_0000115 "the nsname (sans ':' for a given prefix)" ;
+    rdfs:domain bioentity:Prefix ;
+    rdfs:range xsd:string .
+
+bioentity:local_names a owl:AnnotationProperty ;
+    rdfs:label "local_names" ;
+    obo:IAO_0000115 "map from local identifier to slot" ;
+    rdfs:domain bioentity:Definition ;
+    rdfs:range xsd:string .
+
+bioentity:mappings a owl:AnnotationProperty ;
+    rdfs:label "mappings" ;
+    obo:IAO_0000115 "list of equivalent or skos exact mappings to an ontology class" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:metamodel_version a owl:AnnotationProperty ;
+    rdfs:label "metamodel_version" ;
+    obo:IAO_0000115 "Version of the metamodel used to load the schema. Supplied by the loader" ;
+    rdfs:domain bioentity:SchemaDefinition ;
+    rdfs:range xsd:string .
+
+bioentity:mixin a owl:AnnotationProperty ;
+    rdfs:label "mixin" ;
+    obo:IAO_0000115 "Used only as a mixin -- cannot be instantiated on its own." ;
+    rdfs:domain bioentity:Definition ;
+    rdfs:range xsd:boolean .
+
+bioentity:multivalued a owl:AnnotationProperty ;
+    rdfs:label "multivalued" ;
+    obo:IAO_0000115 "If true slot can have many values" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range xsd:boolean .
+
+bioentity:name a owl:AnnotationProperty ;
+    rdfs:label "name" ;
+    obo:IAO_0000115 "a unique key that identifies a slot, type or class in a schema" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:note a owl:AnnotationProperty ;
+    rdfs:label "note" ;
+    obo:IAO_0000115 "Notes about an element" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:object_property a owl:AnnotationProperty ;
+    rdfs:label "object_property" ;
+    obo:IAO_0000115 "true means that this slot is part of the formal definition of a class" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range xsd:boolean .
+
+bioentity:path a owl:AnnotationProperty ;
+    rdfs:label "path" ;
+    obo:IAO_0000115 "For any denormalized slot, this represents the tree or graph path used to generate the denormalized form" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range xsd:string .
+
+bioentity:prefix_uri a owl:AnnotationProperty ;
+    rdfs:label "prefix uri" ;
+    obo:IAO_0000115 "A URI associated with a given prefix" ;
+    rdfs:domain bioentity:Prefix ;
+    rdfs:range xsd:string .
+
+bioentity:prefixes a owl:AnnotationProperty ;
+    rdfs:label "prefixes" ;
+    obo:IAO_0000115 "Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes" ;
+    rdfs:domain bioentity:SchemaDefinition ;
+    rdfs:range bioentity:Prefix .
+
+bioentity:primary_key a owl:AnnotationProperty ;
+    rdfs:label "primary_key" ;
+    obo:IAO_0000115 "True means that this serves as a unique identifier" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range xsd:boolean .
+
+bioentity:range a owl:AnnotationProperty ;
+    rdfs:label "range" ;
+    obo:IAO_0000115 "The slot type.  If absent, it is the builtin type 'string'" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range bioentity:Element .
+
+bioentity:required a owl:AnnotationProperty ;
+    rdfs:label "required" ;
+    obo:IAO_0000115 "If true slot must have at least one value" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range xsd:boolean .
+
+bioentity:role a owl:AnnotationProperty ;
+    rdfs:label "role" ;
+    rdfs:domain bioentity:SlotDefinition ;
+    rdfs:range xsd:string .
+
+bioentity:see_also a owl:AnnotationProperty ;
+    rdfs:label "see_also" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:singular_name a owl:AnnotationProperty ;
+    rdfs:label "singular_name" ;
+    obo:IAO_0000115 "a name that is used in the singular form" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:slot_usage a owl:AnnotationProperty ;
     rdfs:label "slot_usage" ;
     obo:IAO_0000115 "Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints" ;
     rdfs:domain bioentity:ClassDefinition ;
     rdfs:range bioentity:SlotDefinition .
 
-bioentity:slots a owl:ObjectProperty ;
-    rdfs:label "slots" ;
-    obo:IAO_0000115 "list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins." ;
-    rdfs:domain bioentity:ClassDefinition ;
-    rdfs:range bioentity:SlotDefinition .
-
-bioentity:source_file a owl:DataProperty ;
+bioentity:source_file a owl:AnnotationProperty ;
     rdfs:label "source_file" ;
     obo:IAO_0000115 "name, uri or description of the source of the schema.  Supplied by the loader" ;
     rdfs:domain bioentity:SchemaDefinition ;
     rdfs:range xsd:string .
 
-bioentity:source_file_date a owl:DataProperty ;
+bioentity:source_file_date a owl:AnnotationProperty ;
     rdfs:label "source_file_date" ;
     obo:IAO_0000115 "modification date of the source of the schema.  Supplied by the loader" ;
     rdfs:domain bioentity:SchemaDefinition ;
     rdfs:range xsd:string .
 
-bioentity:source_file_size a owl:DataProperty ;
+bioentity:source_file_size a owl:AnnotationProperty ;
     rdfs:label "source_file_size" ;
     obo:IAO_0000115 "size in bytes of the source of the schema.  Supplied by the loader" ;
     rdfs:domain bioentity:SchemaDefinition ;
     rdfs:range xsd:integer .
 
-bioentity:subclass_of a owl:ObjectProperty ;
+bioentity:subclass_of a owl:AnnotationProperty ;
     rdfs:label "subclass_of" ;
     obo:IAO_0000115 "Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes" ;
     rdfs:domain bioentity:Definition ;
-    rdfs:range bioentity:Definition .
+    rdfs:range xsd:anyURI .
 
-bioentity:subproperty_of a owl:ObjectProperty ;
+bioentity:subproperty_of a owl:AnnotationProperty ;
     rdfs:label "subproperty_of" ;
     obo:IAO_0000115 "Ontolgy property which this is a subproperty of" ;
     rdfs:domain bioentity:SlotDefinition ;
     rdfs:range bioentity:SlotDefinition .
 
-bioentity:symmetric a owl:DataProperty ;
+bioentity:symmetric a owl:AnnotationProperty ;
     rdfs:label "symmetric" ;
     obo:IAO_0000115 "Symmetric slot" ;
     rdfs:domain bioentity:Definition ;
     rdfs:range xsd:boolean .
 
-bioentity:typeof a owl:DataProperty ;
+bioentity:typeof a owl:AnnotationProperty ;
     rdfs:label "typeof" ;
-    obo:IAO_0000115 "a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time') or another type definition" ;
+    obo:IAO_0000115 "a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition" ;
     rdfs:domain bioentity:TypeDefinition ;
     rdfs:range xsd:string .
 
-bioentity:types a owl:ObjectProperty ;
+bioentity:types a owl:AnnotationProperty ;
     rdfs:label "types" ;
     obo:IAO_0000115 "types defined in schema" ;
     rdfs:domain bioentity:SchemaDefinition ;
     rdfs:range bioentity:TypeDefinition .
 
-bioentity:union_of a owl:ObjectProperty ;
-    rdfs:label "union_of" ;
-    obo:IAO_0000115 "list of class or slot definitions that are combined to create the union class" ;
-    rdfs:domain bioentity:Definition ;
-    rdfs:range bioentity:Definition .
-
-bioentity:value a owl:DataProperty ;
+bioentity:value a owl:AnnotationProperty ;
     rdfs:label "value" ;
     rdfs:domain bioentity:Example ;
     rdfs:range xsd:string .
 
-bioentity:value_description a owl:DataProperty ;
-    rdfs:label "value description" ;
-    rdfs:domain bioentity:Example ;
-    rdfs:range xsd:string .
-
-bioentity:values_from a owl:DataProperty ;
+bioentity:values_from a owl:AnnotationProperty ;
     rdfs:label "values_from" ;
     obo:IAO_0000115 "identifies the possible uri's of the range" ;
     rdfs:domain bioentity:Definition ;
     rdfs:range xsd:string .
 
-bioentity:version a owl:DataProperty ;
+bioentity:version a owl:AnnotationProperty ;
     rdfs:label "version" ;
     obo:IAO_0000115 "Schema version" ;
     rdfs:domain bioentity:SchemaDefinition ;
     rdfs:range xsd:string .
+
+bioentity:description a owl:AnnotationProperty ;
+    rdfs:label "description" ;
+    obo:IAO_0000115 "a description" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:slots a owl:AnnotationProperty ;
+    rdfs:label "slots" ;
+    obo:IAO_0000115 "list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins." ;
+    rdfs:domain bioentity:ClassDefinition ;
+    rdfs:range bioentity:SlotDefinition .
 
 bioentity:TypeDefinition a owl:Class ;
     rdfs:label "type definition" ;
@@ -371,47 +424,88 @@ bioentity:Example a owl:Class ;
     obo:IAO_0000115 "example of usage" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:value ;
+            owl:onProperty bioentity:description ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:value_description ;
+            owl:onProperty bioentity:value ;
             owl:someValuesFrom xsd:string ] .
 
-bioentity:ClassDefinition a owl:Class ;
-    rdfs:label "class definition" ;
-    obo:IAO_0000115 "A class or interface" ;
+bioentity:Prefix a owl:Class ;
+    rdfs:label "prefix" ;
+    obo:IAO_0000115 "Prefix URI map" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty bioentity:slot_usage ;
-            owl:someValuesFrom bioentity:SlotDefinition ],
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:local_name ;
+            owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:entity ;
-            owl:someValuesFrom xsd:boolean ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:apply_to ;
-            owl:someValuesFrom bioentity:ClassDefinition ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:defining_slots ;
-            owl:someValuesFrom bioentity:SlotDefinition ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:slots ;
-            owl:someValuesFrom bioentity:SlotDefinition ],
-        bioentity:Definition .
+            owl:onProperty bioentity:prefix_uri ;
+            owl:someValuesFrom xsd:string ] .
+
+bioentity:is_a a owl:AnnotationProperty ;
+    rdfs:label "is_a" ;
+    obo:IAO_0000115 "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" ;
+    rdfs:domain bioentity:Definition ;
+    rdfs:range bioentity:Definition .
+
+bioentity:mixins a owl:AnnotationProperty ;
+    rdfs:label "mixins" ;
+    obo:IAO_0000115 "List of definitions to be mixed in. Targets may be any definition of the same type" ;
+    rdfs:domain bioentity:Definition ;
+    rdfs:range bioentity:Definition .
+
+bioentity:union_of a owl:AnnotationProperty ;
+    rdfs:label "union_of" ;
+    obo:IAO_0000115 "list of class or slot definitions that are combined to create the union class" ;
+    rdfs:domain bioentity:Definition ;
+    rdfs:range bioentity:Definition .
 
 bioentity:SchemaDefinition a owl:Class ;
     rdfs:label "schema definition" ;
     obo:IAO_0000115 "A collection of definitions" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty bioentity:types ;
-            owl:someValuesFrom bioentity:TypeDefinition ],
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:generation_date ;
+            owl:someValuesFrom xsd:date ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:slots ;
+            owl:someValuesFrom bioentity:SlotDefinition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:license ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:classes ;
+            owl:someValuesFrom bioentity:ClassDefinition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:version ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:id ;
+            owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:metamodel_version ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
+            owl:onProperty bioentity:types ;
+            owl:someValuesFrom bioentity:TypeDefinition ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:default_curi_maps ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
             owl:onProperty bioentity:imports ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:source_file_date ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:default_prefix ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -419,106 +513,31 @@ bioentity:SchemaDefinition a owl:Class ;
             owl:someValuesFrom xsd:integer ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:license ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:version ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:slot_definitions ;
-            owl:someValuesFrom bioentity:SlotDefinition ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:generation_date ;
-            owl:someValuesFrom xsd:date ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bioentity:source_file ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:id ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:classes ;
-            owl:someValuesFrom bioentity:ClassDefinition ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:source_file_date ;
-            owl:someValuesFrom xsd:string ],
-        bioentity:Definition .
-
-bioentity:Element a owl:Class ;
-    rdfs:label "element" ;
-    obo:IAO_0000115 "root of all described things" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:from_schema ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:mappings ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:id_prefixes ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:flags ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:aliases ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:alt_descriptions ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:name ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:see_also ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:note ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:comment ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:description ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:examples ;
-            owl:someValuesFrom bioentity:Example ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:singular_name ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:in_subset ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
             owl:onProperty bioentity:prefixes ;
-            owl:someValuesFrom xsd:string ],
-        meta:abstract .
+            owl:someValuesFrom bioentity:Prefix ],
+        bioentity:Definition .
 
 bioentity:Definition a owl:Class ;
     rdfs:label "definition" ;
     obo:IAO_0000115 "definition base class" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty bioentity:subclass_of ;
+            owl:someValuesFrom xsd:anyURI ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:symmetric ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty bioentity:is_a ;
             owl:someValuesFrom bioentity:Definition ],
         [ a owl:Restriction ;
             owl:onProperty bioentity:mixins ;
             owl:someValuesFrom bioentity:Definition ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:local_names ;
-            owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:mixin ;
@@ -531,58 +550,120 @@ bioentity:Definition a owl:Class ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:subclass_of ;
-            owl:someValuesFrom bioentity:Definition ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:symmetric ;
-            owl:someValuesFrom xsd:boolean ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bioentity:abstract ;
             owl:someValuesFrom xsd:boolean ],
-        meta:abstract,
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:local_names ;
+            owl:someValuesFrom xsd:string ],
         bioentity:Element .
+
+bioentity:Element a owl:Class ;
+    rdfs:label "element" ;
+    obo:IAO_0000115 "root of all described things" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty bioentity:mappings ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:flags ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:id_prefixes ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:comment ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:examples ;
+            owl:someValuesFrom bioentity:Example ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:name ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:in_subset ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:note ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:alt_descriptions ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:singular_name ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:from_schema ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:description ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:aliases ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:see_also ;
+            owl:someValuesFrom xsd:string ] .
+
+bioentity:ClassDefinition a owl:Class ;
+    rdfs:label "class definition" ;
+    obo:IAO_0000115 "A class or interface" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty bioentity:slot_usage ;
+            owl:someValuesFrom bioentity:SlotDefinition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:apply_to ;
+            owl:someValuesFrom bioentity:ClassDefinition ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:union_of ;
+            owl:someValuesFrom bioentity:ClassDefinition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:entity ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:mixins ;
+            owl:someValuesFrom bioentity:ClassDefinition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:is_a ;
+            owl:someValuesFrom bioentity:ClassDefinition ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:defining_slots ;
+            owl:someValuesFrom bioentity:SlotDefinition ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:slots ;
+            owl:someValuesFrom bioentity:SlotDefinition ],
+        bioentity:Definition .
 
 bioentity:SlotDefinition a owl:Class ;
     rdfs:label "slot definition" ;
     obo:IAO_0000115 "A property or slot" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:range ;
-            owl:someValuesFrom bioentity:Element ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:identifier ;
-            owl:someValuesFrom xsd:boolean ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bioentity:required ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:inverse ;
+            owl:onProperty bioentity:is_a ;
             owl:someValuesFrom bioentity:SlotDefinition ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:inlined ;
-            owl:someValuesFrom xsd:boolean ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:domain ;
-            owl:someValuesFrom bioentity:ClassDefinition ],
+            owl:onProperty bioentity:range ;
+            owl:someValuesFrom bioentity:Element ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:path ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:subproperty_of ;
+            owl:onProperty bioentity:mixins ;
             owl:someValuesFrom bioentity:SlotDefinition ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:multivalued ;
-            owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:role ;
@@ -593,19 +674,50 @@ bioentity:SlotDefinition a owl:Class ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty bioentity:domain ;
+            owl:someValuesFrom bioentity:ClassDefinition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:identifier ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:object_property ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:union_of ;
+            owl:someValuesFrom bioentity:SlotDefinition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty bioentity:alias ;
             owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:inherited ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:inverse ;
+            owl:someValuesFrom bioentity:SlotDefinition ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:definitional ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:not_inherited ;
+            owl:onProperty bioentity:multivalued ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:is_class_field ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:subproperty_of ;
+            owl:someValuesFrom bioentity:SlotDefinition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:inlined ;
             owl:someValuesFrom xsd:boolean ],
         bioentity:Definition .
 

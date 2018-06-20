@@ -18,4 +18,5 @@ URI: [http://bioentity.io/vocab/description](slot_uri)
  *  child: [entity to phenotypic feature association.description](entity_to_phenotypic_feature_association_description.md) *subsets*: (translator_minimal)
 ## Used in
 
+ *  usage: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
  *  usage: [NamedThing](NamedThing.md)

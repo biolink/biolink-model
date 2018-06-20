@@ -3,7 +3,8 @@ from typing import Dict, Set, List, Iterable
 from dataclasses import dataclass, field
 
 from metamodel.utils.builtins import builtin_names
-from metamodel.metamodel import SchemaDefinition, Element, Definition, ClassDefinition, SlotDefinitionName
+from metamodel.metamodel import SchemaDefinition, Element, Definition, ClassDefinition, SlotDefinitionName, \
+    ClassDefinitionName, TypeDefinitionName, DefinitionName
 from metamodel.utils.metamodelcore import empty_dict, empty_set
 from metamodel.utils.typereferences import RefType, ClassType, TypeType, SlotType, References
 
@@ -16,17 +17,17 @@ def empty_references() -> field:
 class SchemaSynopsis:
     schema: SchemaDefinition = field(repr=False, compare=False)
 
-    classes: Set[str] = empty_set()             # List of classes defined in schema
-    slots: Set[str] = empty_set()               # List of slots defined in schema
-    types: Set[str] = empty_set()               # List of types defined in schema
+    classes: Set[ClassDefinitionName] = empty_set()    # List of classes defined in schema
+    slots: Set[SlotDefinitionName] = empty_set()       # List of slots defined in schema
+    types: Set[TypeDefinitionName] = empty_set()       # List of types defined in schema
 
-    slotrefs: Dict[str, References] = empty_dict()     # Slot to referencing entity
-    typerefs: Dict[str, References] = empty_dict()     # Type to referencing entity
-    classrefs: Dict[str, References] = empty_dict()    # Class to referencing entity
+    slotrefs: Dict[SlotDefinitionName, References] = empty_dict()     # Slot to referencing entity
+    typerefs: Dict[TypeDefinitionName, References] = empty_dict()     # Type to referencing entity
+    classrefs: Dict[ClassDefinitionName, References] = empty_dict()    # Class to referencing entity
 
-    unions: Dict[str, References] = empty_dict()        # Entity to union references
-    isarefs: Dict[str, References] = empty_dict()       # Entity to is_a references
-    mixinrefs: Dict[str, References] = empty_dict()     # Entity to mixins references
+    unions: Dict[DefinitionName, References] = empty_dict()        # Entity to union references
+    isarefs: Dict[DefinitionName, References] = empty_dict()       # Entity to is_a references
+    mixinrefs: Dict[DefinitionName, References] = empty_dict()     # Entity to mixins references
 
     roots: References = empty_references()            # Entities with no isa's
     mixins: References = empty_references()           # Entities declared as mixin
@@ -92,7 +93,9 @@ class SchemaSynopsis:
             for ds in v.defining_slots:
                 self.slotrefs.setdefault(ds, References()).addref(ClassType, k)
                 self.definingslots.setdefault(ds, set()).add(k)
-                # TODO: slot usages
+            for slotname, usage in v.slot_usage.items():
+                self.slotusages.setdefault(slotname, set()).add(k)
+                self.slotrefs.setdefault(slotname, References()).addref(ClassType, k)
 
     def add_inherited_classlots(self, classname: str, cls: ClassDefinition) -> None:
         if cls.is_a and cls.is_a in self.schema.classes:
@@ -179,6 +182,12 @@ class SchemaSynopsis:
         for slot in self.schema.slots.values():
             if slot.inlined and not slot.multivalued:
                 rval += [f'\tSlot {slot.name} is declared inline but single valued']
+
+        # Look for slot usages that don't have ancestors
+        # TODO: Get this test working
+        # for slot_name in self.slotusages:
+        #     if len(self.slotusages[slot_name]) == 1 and not self.schema.slots[slot_name].alias:
+        #         rval += [f'"{slot_name}": new slot defined in slot_usage for class "{cls.name}"']
         return rval
 
     def summary(self) -> str:

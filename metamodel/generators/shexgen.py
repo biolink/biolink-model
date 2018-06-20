@@ -6,15 +6,14 @@ from typing import Union, TextIO, Optional
 
 import click
 from ShExJSG import ShExC
-from jsonasobj import as_json
-from pyjsg.jsglib import jsg
-from rdflib import Graph, XSD, OWL
 from ShExJSG.SchemaWithContext import Schema
-from ShExJSG.ShExJ import Shape, IRIREF, shapeExpr, ShapeAnd, EachOf, TripleConstraint, NodeConstraint
+from ShExJSG.ShExJ import Shape, IRIREF, ShapeAnd, EachOf, TripleConstraint, NodeConstraint
+from jsonasobj import as_json
+from rdflib import Graph, XSD, OWL
+from prefixcommons import curie_util as cu
 
-from metamodel.generators.jsonldgen import JSONLDGenerator, biolink_context
 from metamodel.metamodel import SchemaDefinition, ClassDefinition, SlotDefinition, ClassDefinitionName, \
-    SlotDefinitionName, TypeDefinition
+    SlotDefinitionName
 from metamodel.utils.builtins import builtin_names
 from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.generator import Generator
@@ -43,10 +42,13 @@ class ShExGenerator(Generator):
     def _shapeIRI(name: ClassDefinitionName) -> IRIREF:
         return IRIREF(BIOENTITY[camelcase(name)])
 
-    @staticmethod
-    def _predicate(name: SlotDefinitionName) -> IRIREF:
-        # TODO: look at the RDF to figure out what URI's go here
-        return IRIREF(BIOENTITY[underscore(name)])
+    def _predicate(self, name: SlotDefinitionName) -> IRIREF:
+        slot = self.schema.slots[name]
+        if slot.mappings:
+            return IRIREF(cu.expand_uri(slot.mappings[0]))
+        else:
+            # TODO: look at the RDF to figure out what URI's go here
+            return IRIREF(BIOENTITY[underscore(name)])
 
     def visit_class(self, cls: ClassDefinition) -> bool:
         self.shape = Shape()
@@ -83,6 +85,7 @@ class ShExGenerator(Generator):
             self.shape.expression = constraint
         elif isinstance(self.shape.expression, TripleConstraint):
             self.shape.expression = EachOf(expressions=[self.shape.expression])
+            self.shape.expression.expressions.append(constraint)
         else:
             self.shape.expression.expressions.append(constraint)
         constraint.predicate = self._predicate(slot.name)
@@ -92,7 +95,6 @@ class ShExGenerator(Generator):
             constraint.valueExpr = self._type_constraint(slot.range)
         else:
             constraint.valueExpr = self._shapeIRI(slot.range)
-
 
     def end_schema(self, output: Optional[str]) -> None:
         shex = as_json(self.shex)

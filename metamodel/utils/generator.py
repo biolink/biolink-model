@@ -207,13 +207,13 @@ class Generator(metaclass=abc.ABCMeta):
 
         return touches
 
-    def grounded_slot_range(self, slot: Union[SlotDefinition, Optional[str]]) -> str:
+    def grounded_slot_range(self, slot: Optional[Union[SlotDefinition, Optional[str]]]) -> str:
         """ Chase the slot range to its final form
 
         @param slot: slot to check
         @return: name of resolved range
         """
-        if not isinstance(slot, str):
+        if slot is not None and not isinstance(slot, str):
             slot = slot.range
         if slot is None:
             return DEFAULT_BUILTIN_TYPE_NAME         # Default type name

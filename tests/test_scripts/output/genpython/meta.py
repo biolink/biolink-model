@@ -1,5 +1,5 @@
-# Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by pythongen.py version: 0.0.2
-# Generation date: 2018-06-18 18:35
+# Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by pythongen.py version: 0.0.4
+# Generation date: 2018-06-20 11:10
 # Schema: metamodel
 #
 # id: https://biolink.github.io/metamodel/ontology/meta.ttl
@@ -7,27 +7,51 @@
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import datetime
-from typing import Optional, List, Union, Dict, NewType
+from typing import Optional, List, Union, Dict
 from dataclasses import dataclass
 from metamodel.utils.metamodelcore import empty_list, empty_dict
 from metamodel.utils.yamlutils import YAMLRoot
 
-metamodel_version = "0.2.0"
+metamodel_version = "0.3.0"
 
-not_inherited_slots: List[str] = ["name", "note", "comment", "examples", "mappings"]
+inherited_slots: List[str] = ["description", "alt_descriptions", "in_subset", "mappings", "multivalued", "range",
+                              "required", "inlined", "definitional", "object_property", "subproperty_of", "inherited"]
+
+
+# Type names
+
 
 # Class references
-PrefixLocalName = NewType("PrefixLocalName", str)
-ExampleName = NewType("ExampleName", str)
-ElementName = NewType("ElementName", str)
-DefinitionName = NewType("DefinitionName", Union[ElementName, str])
-SlotDefinitionName = NewType("SlotDefinitionName", Union[DefinitionName, str])
-ClassDefinitionName = NewType("ClassDefinitionName", Union[DefinitionName, str])
-TypeDefinitionName = NewType("TypeDefinitionName", Union[ElementName, str])
-SchemaDefinitionName = NewType("SchemaDefinitionName", Union[DefinitionName, str])
-SchemaDefinitionId = NewType("SchemaDefinitionId", str)
+class PrefixLocalName(str):
+    pass
 
-# Type references
+
+class ElementName(str):
+    pass
+
+
+class DefinitionName(ElementName):
+    pass
+
+
+class SlotDefinitionName(DefinitionName):
+    pass
+
+
+class ClassDefinitionName(DefinitionName):
+    pass
+
+
+class TypeDefinitionName(ElementName):
+    pass
+
+
+class SchemaDefinitionName(DefinitionName):
+    pass
+
+
+class SchemaDefinitionId(str):
+    pass
 
 
 @dataclass
@@ -68,10 +92,6 @@ class Element(YAMLRoot):
     from_schema: Optional[str] = None
     alt_descriptions: List[str] = empty_list()
 
-    def _fix_elements(self):
-        super()._fix_elements()
-        self.examples = [v if isinstance(v, Example) else Example(**({} if v is None else v)) for v in self.examples]
-
 
 @dataclass
 class Definition(Element):
@@ -85,9 +105,18 @@ class Definition(Element):
     abstract: bool = False
     local_names: List[str] = empty_list()
     union_of: List[DefinitionName] = empty_list()
-    subclass_of: Optional[DefinitionName] = None
+    subclass_of: Optional[str] = None
     values_from: List[str] = empty_list()
     symmetric: bool = False
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.is_a and not isinstance(self.is_a, DefinitionName):
+            self.is_a = DefinitionName(self.is_a)
+        self.mixins = [v if isinstance(v, DefinitionName)
+                       else DefinitionName(v) for v in self.mixins]
+        self.union_of = [v if isinstance(v, DefinitionName)
+                         else DefinitionName(v) for v in self.union_of]
 
 
 @dataclass
@@ -100,6 +129,7 @@ class SlotDefinition(Definition):
     domain: Optional[ClassDefinitionName] = None
     range: Optional[ElementName] = None
     required: bool = False
+    object_property: bool = False
     inlined: bool = False
     primary_key: bool = False
     identifier: bool = False
@@ -109,8 +139,32 @@ class SlotDefinition(Definition):
     subproperty_of: Optional[SlotDefinitionName] = None
     inverse: Optional[SlotDefinitionName] = None
     is_class_field: bool = False
-    not_inherited: bool = False
     role: Optional[str] = None
+    inherited: bool = False
+    is_a: Optional[SlotDefinitionName] = None
+    mixins: List[SlotDefinitionName] = empty_list()
+    union_of: List[SlotDefinitionName] = empty_list()
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.name is None:
+            raise ValueError(f"name must be supplied")
+        if not isinstance(self.name, SlotDefinitionName):
+            self.name = SlotDefinitionName(self.name)
+        if self.domain and not isinstance(self.domain, ClassDefinitionName):
+            self.domain = ClassDefinitionName(self.domain)
+        if self.range and not isinstance(self.range, ElementName):
+            self.range = ElementName(self.range)
+        if self.subproperty_of and not isinstance(self.subproperty_of, SlotDefinitionName):
+            self.subproperty_of = SlotDefinitionName(self.subproperty_of)
+        if self.inverse and not isinstance(self.inverse, SlotDefinitionName):
+            self.inverse = SlotDefinitionName(self.inverse)
+        if self.is_a and not isinstance(self.is_a, SlotDefinitionName):
+            self.is_a = SlotDefinitionName(self.is_a)
+        self.mixins = [v if isinstance(v, SlotDefinitionName)
+                       else SlotDefinitionName(v) for v in self.mixins]
+        self.union_of = [v if isinstance(v, SlotDefinitionName)
+                         else SlotDefinitionName(v) for v in self.union_of]
 
 
 @dataclass
@@ -125,12 +179,30 @@ class ClassDefinition(Definition):
     apply_to: Optional[ClassDefinitionName] = None
     entity: bool = False
     is_a: Optional[ClassDefinitionName] = None
+    mixins: List[ClassDefinitionName] = empty_list()
+    union_of: List[ClassDefinitionName] = empty_list()
 
     def _fix_elements(self):
         super()._fix_elements()
+        if self.name is None:
+            raise ValueError(f"name must be supplied")
+        if not isinstance(self.name, ClassDefinitionName):
+            self.name = ClassDefinitionName(self.name)
+        self.defining_slots = [v if isinstance(v, SlotDefinitionName)
+                               else SlotDefinitionName(v) for v in self.defining_slots]
+        self.slots = [v if isinstance(v, SlotDefinitionName)
+                      else SlotDefinitionName(v) for v in self.slots]
         for k, v in self.slot_usage.items():
-                if not isinstance(v, SlotDefinition):
-                    self.slot_usage[k] = SlotDefinition(name=k, **({} if v is None else v))
+            if not isinstance(v, SlotDefinition):
+                self.slot_usage[k] = SlotDefinition(name=k, **({} if v is None else v))
+        if self.apply_to and not isinstance(self.apply_to, ClassDefinitionName):
+            self.apply_to = ClassDefinitionName(self.apply_to)
+        if self.is_a and not isinstance(self.is_a, ClassDefinitionName):
+            self.is_a = ClassDefinitionName(self.is_a)
+        self.mixins = [v if isinstance(v, ClassDefinitionName)
+                       else ClassDefinitionName(v) for v in self.mixins]
+        self.union_of = [v if isinstance(v, ClassDefinitionName)
+                         else ClassDefinitionName(v) for v in self.union_of]
 
 
 @dataclass
@@ -140,6 +212,13 @@ class TypeDefinition(Element):
     """
     name: TypeDefinitionName = None
     typeof: Optional[str] = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.name is None:
+            raise ValueError(f"name must be supplied")
+        if not isinstance(self.name, TypeDefinitionName):
+            self.name = TypeDefinitionName(self.name)
 
 
 @dataclass
@@ -162,22 +241,28 @@ class SchemaDefinition(Definition):
     source_file_date: Optional[str] = None
     generation_date: Optional[datetime.date] = None
     default_curi_maps: List[str] = empty_list()
-    default_prefix: Optional[strName] = None
+    default_prefix: Optional[str] = None
 
     def _fix_elements(self):
         super()._fix_elements()
+        if self.name is None:
+            raise ValueError(f"name must be supplied")
+        if not isinstance(self.name, SchemaDefinitionName):
+            self.name = SchemaDefinitionName(self.name)
         if self.id is None:
             raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, SchemaDefinitionId):
+            self.id = SchemaDefinitionId(self.id)
         for k, v in self.prefixes.items():
-                if not isinstance(v, Prefix):
-                    self.prefixes[k] = Prefix(k, v)
+            if not isinstance(v, Prefix):
+                self.prefixes[k] = Prefix(k, v)
         for k, v in self.types.items():
-                if not isinstance(v, TypeDefinition):
-                    self.types[k] = TypeDefinition(name=k, **({} if v is None else v))
+            if not isinstance(v, TypeDefinition):
+                self.types[k] = TypeDefinition(name=k, **({} if v is None else v))
         for k, v in self.slots.items():
-                if not isinstance(v, SlotDefinition):
-                    self.slots[k] = SlotDefinition(name=k, **({} if v is None else v))
+            if not isinstance(v, SlotDefinition):
+                self.slots[k] = SlotDefinition(name=k, **({} if v is None else v))
         for k, v in self.classes.items():
-                if not isinstance(v, ClassDefinition):
-                    self.classes[k] = ClassDefinition(name=k, **({} if v is None else v))
+            if not isinstance(v, ClassDefinition):
+                self.classes[k] = ClassDefinition(name=k, **({} if v is None else v))
 

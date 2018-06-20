@@ -2,13 +2,16 @@
 
 """
 import os
-from typing import Union, TextIO
+from typing import Union, TextIO, Dict, Any, List, Set, Optional
 
 import click
-from jsonasobj import as_json, loads
+from jsonasobj import as_json, loads, JsonObj, as_dict
 
-from metamodel.metamodel import SchemaDefinition
+from metamodel.metamodel import SchemaDefinition, ClassDefinitionName, SlotDefinitionName, TypeDefinitionName, \
+    ElementName
+from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.generator import Generator
+from metamodel.utils.yamlutils import YAMLRoot
 
 biolink_context = "https://github.com/hsolbrig/biolink-model/raw/master/context.jsonld"
 meta_context = "https://raw.githubusercontent.com/hsolbrig/biolink-model/master/metamodel/context.jsonld"
@@ -22,10 +25,44 @@ class JSONLDGenerator(Generator):
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str = 'jsonld') -> None:
         super().__init__(schema, fmt)
 
+    def _visit(self, node: Any) -> Optional[Any]:
+        if isinstance(node, (YAMLRoot, dict)):
+            if isinstance(node, YAMLRoot):
+                node = node.__dict__
+            for k, v in list(node.items()):
+                if v:
+                    new_v = self._visit(v)
+                    if new_v is not None:
+                        node[k] = new_v
+        elif isinstance(node, list):
+            for i in range(0, len(node)):
+                new_v = self._visit(node[i])
+                if new_v is not None:
+                    node[i] = new_v
+        elif isinstance(node, set):
+            for v in list(node):
+                new_v = self._visit(v)
+                if new_v is not None:
+                    node.remove(v)
+                    node.add(new_v)
+        elif isinstance(node, ClassDefinitionName):
+            return ClassDefinitionName(camelcase(node))
+        elif isinstance(node, SlotDefinitionName):
+            return SlotDefinitionName(underscore(node))
+        elif isinstance(node, TypeDefinitionName):
+            return TypeDefinitionName(underscore(node))
+        elif isinstance(node, ElementName):
+            return ClassDefinitionName(camelcase(node)) if node in self.schema.classes else \
+                SlotDefinitionName(underscore(node)) if node in self.schema.slots else \
+                TypeDefinitionName(underscore(node)) if node in self.schema.types else None
+        return None
+
     def end_schema(self, context: str = biolink_context) -> None:
+        self._visit(self.schema)
         json_str = as_json(self.schema)
         json_obj = loads(json_str)
         json_obj["@context"] = context
+        json_obj["@id"] = self.schema.id
         print(as_json(json_obj))
 
 

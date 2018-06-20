@@ -25,11 +25,11 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
 ## Fields
 
  * _[entity to phenotypic feature association.description](entity_to_phenotypic_feature_association_description.md) *subsets*: (translator_minimal)_
-    * _a human-readable description of a thing_
+    * _A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class_
     * range: [NarrativeText](NarrativeText.md)
     * __Local__
  * _[entity to phenotypic feature association.object](entity_to_phenotypic_feature_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _phenotypic class_
     * range: [PhenotypicFeature](PhenotypicFeature.md) [required]
     * __Local__
  * _[sex qualifier](sex_qualifier.md)_

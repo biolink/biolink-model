@@ -14,5 +14,7 @@ URI: [http://bioentity.io/vocab/stage_qualifier](slot_uri)
  *  is_a: [association slot](association_slot.md)
 ## Children
 
+ *  child: [gene to expression site association.stage qualifier](gene_to_expression_site_association_stage_qualifier.md)
 ## Used in
 
+ *  usage: [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)

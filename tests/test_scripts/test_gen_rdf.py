@@ -7,8 +7,10 @@ from metamodel.generators.jsonldgen import meta_context
 from metamodel.generators.rdfgen import cli
 from tests.test_scripts.clicktestcase import ClickTestCase
 
-update_test_files = False
+update_test_files = True
 
+# TODO: Temporary test
+meta_context = "file:///Users/solbrig/git/hsolbrig/biolink-model/tests/test_scripts/output/gencontext/meta.jsonld"
 
 class GenRDFTestCase(ClickTestCase):
     testdir = "genrdf"

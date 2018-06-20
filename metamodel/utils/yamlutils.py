@@ -1,12 +1,8 @@
-from copy import deepcopy
-from typing import Dict
-
 import yaml
 from dataclasses import dataclass
 from jsonasobj import JsonObj
 
 from metamodel.utils.formatutils import camelcase, underscore
-from metamodel.utils.namespaces import BIOENTITY
 
 
 @dataclass(init=False)
@@ -25,7 +21,7 @@ class YAMLRoot(JsonObj):
         :param obj: YAMLRoot object to serialize
         :return: Serialized version of obj
         """
-        from metamodel.metamodel import ClassDefinition, SlotDefinition, TypeDefinition, Element
+        from metamodel.metamodel import ClassDefinition, SlotDefinition, TypeDefinition
 
         if isinstance(obj, JsonObj):
             rval = dict()

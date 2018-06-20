@@ -3,7 +3,7 @@ from typing import Dict, Optional
 
 import dataclasses
 
-from metamodel.metamodel import SchemaDefinition, Element, SlotDefinition, SchemaDefinitionName, not_inherited_slots
+from metamodel.metamodel import SchemaDefinition, Element, SlotDefinition, SchemaDefinitionName, inherited_slots
 
 
 def merge_schemas(target: SchemaDefinition, mergee: SchemaDefinition) -> None:
@@ -34,5 +34,5 @@ def merge_dicts(target: Dict[str, Element],
 
 def merge_slots(target: SlotDefinition, source: SlotDefinition) -> None:
     for k, v in dataclasses.asdict(source).items():
-        if k not in not_inherited_slots and v is not None and not getattr(target, k, None):
+        if k in inherited_slots and v is not None and not getattr(target, k, None):
             setattr(target, k, deepcopy(v))

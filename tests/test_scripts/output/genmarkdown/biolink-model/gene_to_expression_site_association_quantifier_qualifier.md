@@ -8,9 +8,10 @@ URI: [http://bioentity.io/vocab/gene_to_expression_site_association_quantifier_q
 
 ## Domain and Range
 
-[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) -> **string**
+[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) -> [OntologyClass](OntologyClass.md)
 ## Inheritance
 
+ *  is_a: [quantifier qualifier](quantifier_qualifier.md)
 ## Children
 
 ## Used in

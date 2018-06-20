@@ -27,7 +27,7 @@
          "type": "string"
       },
       "anatomical_entity_to_anatomical_entity_ontogenic_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the structure at an earlier time",
          "type": "string"
       },
       "anatomical_entity_to_anatomical_entity_ontogenic_association_relation": {
@@ -35,11 +35,11 @@
          "type": "string"
       },
       "anatomical_entity_to_anatomical_entity_ontogenic_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the structure at a later time",
          "type": "string"
       },
       "anatomical_entity_to_anatomical_entity_part_of_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the whole",
          "type": "string"
       },
       "anatomical_entity_to_anatomical_entity_part_of_association_relation": {
@@ -47,7 +47,7 @@
          "type": "string"
       },
       "anatomical_entity_to_anatomical_entity_part_of_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the part",
          "type": "string"
       },
       "association_slot": {
@@ -63,7 +63,7 @@
          "type": "string"
       },
       "biosample_to_thing_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the biosample being described",
          "type": "string"
       },
       "capable_of": {
@@ -71,7 +71,7 @@
          "type": "string"
       },
       "case_to_thing_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the case (e.g. patient) that has the property",
          "type": "string"
       },
       "category": {
@@ -91,19 +91,19 @@
          "type": "string"
       },
       "chemical_to_disease_or_phenotypic_feature_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the disease or phenotype that is affected by the chemical",
          "type": "string"
       },
       "chemical_to_gene_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the gene or gene product that is affected by the chemical",
          "type": "string"
       },
       "chemical_to_pathway_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the pathway that is affected by the chemical",
          "type": "string"
       },
       "chemical_to_thing_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the chemical substance or entity that is an interactor",
          "type": "string"
       },
       "clinical_modifier_qualifier": {
@@ -143,22 +143,22 @@
          "type": "string"
       },
       "disease_or_phenotypic_feature_association_to_location_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "anatomical entity in which the disease or feature is found",
          "type": "string"
       },
       "disease_or_phenotypic_feature_association_to_thing_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "disease or phenotype",
          "type": "string"
       },
       "disease_to_thing_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "disease class",
          "type": "string"
       },
       "disrupts": {
          "description": "describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.",
          "type": "string"
       },
-      "drug_exposure_drug": {
+      "drug": {
          "items": {
             "type": "string"
          },
@@ -177,11 +177,11 @@
          "type": "string"
       },
       "entity_to_phenotypic_feature_association_description": {
-         "description": "a human-readable description of a thing",
+         "description": "A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class",
          "type": "string"
       },
       "entity_to_phenotypic_feature_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "phenotypic class",
          "type": "string"
       },
       "environment_to_phenotypic_feature_association_subject": {
@@ -217,15 +217,15 @@
          "type": "string"
       },
       "functional_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "class describing the activity, process or localization of the gene product",
          "type": "string"
       },
       "functional_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "gene, product or macromolecular complex that has the function associated with the GO term",
          "type": "string"
       },
       "gene_as_a_model_of_disease_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
          "type": "string"
       },
       "gene_associated_with_condition": {
@@ -233,7 +233,7 @@
          "type": "string"
       },
       "gene_has_variant_that_contributes_to_disease_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
          "type": "string"
       },
       "gene_regulatory_relationship_object": {
@@ -241,7 +241,7 @@
          "type": "string"
       },
       "gene_regulatory_relationship_relation": {
-         "description": "the relationship type by which a subject is connected to an object in an association",
+         "description": "the direction is always from regulator to regulated",
          "type": "string"
       },
       "gene_regulatory_relationship_subject": {
@@ -249,11 +249,11 @@
          "type": "string"
       },
       "gene_to_disease_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model",
          "type": "string"
       },
       "gene_to_expression_site_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "location in which the gene is expressed",
          "type": "string"
       },
       "gene_to_expression_site_association_quantifier_qualifier": {
@@ -261,7 +261,7 @@
          "type": "string"
       },
       "gene_to_expression_site_association_relation": {
-         "description": "the relationship type by which a subject is connected to an object in an association",
+         "description": "expression relationship",
          "type": "string"
       },
       "gene_to_expression_site_association_stage_qualifier": {
@@ -269,19 +269,19 @@
          "type": "string"
       },
       "gene_to_expression_site_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "gene in which variation is correlated with the phenotypic feature",
          "type": "string"
       },
       "gene_to_gene_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
          "type": "string"
       },
       "gene_to_gene_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
          "type": "string"
       },
       "gene_to_gene_homology_association_relation": {
-         "description": "the relationship type by which a subject is connected to an object in an association",
+         "description": "homology relationship type",
          "type": "string"
       },
       "gene_to_gene_product_relationship_object": {
@@ -297,19 +297,19 @@
          "type": "string"
       },
       "gene_to_go_term_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "class describing the activity, process or localization of the gene product",
          "type": "string"
       },
       "gene_to_go_term_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "gene, product or macromolecular complex that has the function associated with the GO term",
          "type": "string"
       },
       "gene_to_phenotypic_feature_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "gene in which variation is correlated with the phenotypic feature",
          "type": "string"
       },
       "gene_to_thing_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "gene that is the subject of the association",
          "type": "string"
       },
       "genetically_interacts_with": {
@@ -329,19 +329,19 @@
          "type": "string"
       },
       "genotype_to_gene_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "gene implicated in genotype",
          "type": "string"
       },
       "genotype_to_gene_association_relation": {
-         "description": "the relationship type by which a subject is connected to an object in an association",
+         "description": "the relationship type used to connect genotype to gene",
          "type": "string"
       },
       "genotype_to_gene_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "parent genotype",
          "type": "string"
       },
       "genotype_to_genotype_part_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "child genotype",
          "type": "string"
       },
       "genotype_to_genotype_part_association_relation": {
@@ -349,7 +349,7 @@
          "type": "string"
       },
       "genotype_to_genotype_part_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "parent genotype",
          "type": "string"
       },
       "genotype_to_phenotypic_feature_association_relation": {
@@ -357,23 +357,23 @@
          "type": "string"
       },
       "genotype_to_phenotypic_feature_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "genotype that is associated with the phenotypic feature",
          "type": "string"
       },
       "genotype_to_thing_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "genotype that is the subject of the association",
          "type": "string"
       },
       "genotype_to_variant_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "gene implicated in genotype",
          "type": "string"
       },
       "genotype_to_variant_association_relation": {
-         "description": "the relationship type by which a subject is connected to an object in an association",
+         "description": "the relationship type used to connect genotype to gene",
          "type": "string"
       },
       "genotype_to_variant_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "parent genotype",
          "type": "string"
       },
       "has_biological_sequence": {
@@ -399,6 +399,12 @@
       "has_evidence": {
          "description": "connects an association to an instance of supporting evidence",
          "type": "string"
+      },
+      "has_exposure_parts": {
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "has_gene": {
          "description": "connects and entity to a single gene",
@@ -468,6 +474,9 @@
          "description": "connects a thing to a class representing a taxon",
          "type": "string"
       },
+      "interacting_molecules_category": {
+         "type": "string"
+      },
       "interacts_with": {
          "description": "holds between any two entities that directly or indirectly interact with each other",
          "type": "string"
@@ -497,19 +506,19 @@
          "type": "string"
       },
       "macromolecular_machine_name": {
-         "description": "A human-readable name for a thing",
+         "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
          "type": "string"
       },
       "macromolecular_machine_to_biological_process_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "class describing the activity, process or localization of the gene product",
          "type": "string"
       },
       "macromolecular_machine_to_cellular_component_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "class describing the activity, process or localization of the gene product",
          "type": "string"
       },
       "macromolecular_machine_to_molecular_activity_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "class describing the activity, process or localization of the gene product",
          "type": "string"
       },
       "manifestation_of": {
@@ -528,15 +537,12 @@
          "description": "The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease",
          "type": "string"
       },
-      "molecular_interaction_interacting_molecules_category": {
-         "type": "string"
-      },
       "molecular_interaction_object": {
          "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
          "type": "string"
       },
       "molecular_interaction_relation": {
-         "description": "the relationship type by which a subject is connected to an object in an association",
+         "description": "interaction relationship type",
          "type": "string"
       },
       "molecular_interaction_subject": {
@@ -592,7 +598,7 @@
          "type": "string"
       },
       "pairwise_gene_or_protein_interaction_association_relation": {
-         "description": "the relationship type by which a subject is connected to an object in an association",
+         "description": "interaction relationship type",
          "type": "string"
       },
       "paralogous_to": {
@@ -616,15 +622,15 @@
          "type": "string"
       },
       "population_to_population_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the population that form the object of the association",
          "type": "string"
       },
       "population_to_population_association_relation": {
-         "description": "the relationship type by which a subject is connected to an object in an association",
+         "description": "A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used",
          "type": "string"
       },
       "population_to_population_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the population that form the subject of the association",
          "type": "string"
       },
       "positively_regulates": {
@@ -710,7 +716,7 @@
          "type": "string"
       },
       "sequence_variant_has_biological_sequence": {
-         "description": "connects a genomic feature to its sequence",
+         "description": "The state of the sequence w.r.t a reference sequence",
          "type": "string"
       },
       "sequence_variant_has_gene": {
@@ -725,11 +731,11 @@
          "type": "string"
       },
       "sequence_variant_modulates_treatment_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "treatment whose efficacy is modulated by the subject variant",
          "type": "string"
       },
       "sequence_variant_modulates_treatment_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "variant that modulates the treatment of some disease",
          "type": "string"
       },
       "sequence_variant_qualifier": {
@@ -765,7 +771,7 @@
          "type": "string"
       },
       "thing_to_disease_or_phenotypic_feature_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "disease or phenotype",
          "type": "string"
       },
       "timepoint": {
@@ -784,13 +790,8 @@
          "description": "holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition ",
          "type": "string"
       },
-      "treatment_has_exposure_parts": {
-         "items": {
-            "type": "string"
-         },
-         "type": "array"
-      },
       "treatment_treats": {
+         "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ",
          "type": "string"
       },
       "treats": {
@@ -802,19 +803,19 @@
          "type": "string"
       },
       "variant_to_disease_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "a disease that is associated with that variant",
          "type": "string"
       },
       "variant_to_disease_association_relation": {
-         "description": "the relationship type by which a subject is connected to an object in an association",
+         "description": "E.g. is pathogenic for",
          "type": "string"
       },
       "variant_to_disease_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "a sequence variant in which the allele state is associated in some way with the disease state",
          "type": "string"
       },
       "variant_to_phenotypic_feature_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "a sequence variant in which the allele state is associated in some way with the phenotype state",
          "type": "string"
       },
       "variant_to_population_association_has_count": {
@@ -830,15 +831,15 @@
          "type": "string"
       },
       "variant_to_population_association_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "the population that is observed to have the frequency",
          "type": "string"
       },
       "variant_to_population_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "an allele that has a certain frequency in a given population",
          "type": "string"
       },
       "variant_to_thing_association_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "description": "a sequence variant in which the allele state is associated with some other entity",
          "type": "string"
       },
       "xenologous_to": {
@@ -892,7 +893,7 @@
          "description": "A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "the structure at an earlier time",
                "type": {
                   "$ref": "#/definitions/anatomical_entity_to_anatomical_entity_ontogenic_association_object"
                }
@@ -904,7 +905,7 @@
                }
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "the structure at a later time",
                "type": {
                   "$ref": "#/definitions/anatomical_entity_to_anatomical_entity_ontogenic_association_subject"
                }
@@ -918,7 +919,7 @@
          "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "the whole",
                "type": {
                   "$ref": "#/definitions/anatomical_entity_to_anatomical_entity_part_of_association_object"
                }
@@ -930,7 +931,7 @@
                }
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "the part",
                "type": {
                   "$ref": "#/definitions/anatomical_entity_to_anatomical_entity_part_of_association_subject"
                }
@@ -1104,7 +1105,7 @@
          "description": "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "the disease or phenotype that is affected by the chemical",
                "type": {
                   "$ref": "#/definitions/chemical_to_disease_or_phenotypic_feature_association_object"
                }
@@ -1118,7 +1119,7 @@
          "description": "An interaction between a chemical entity and a gene or gene product",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "the gene or gene product that is affected by the chemical",
                "type": {
                   "$ref": "#/definitions/chemical_to_gene_association_object"
                }
@@ -1132,7 +1133,7 @@
          "description": "An interaction between a chemical entity and a biological process or pathway",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "the pathway that is affected by the chemical",
                "type": {
                   "$ref": "#/definitions/chemical_to_pathway_association_object"
                }
@@ -1228,7 +1229,7 @@
          "description": "An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "anatomical entity in which the disease or feature is found",
                "type": {
                   "$ref": "#/definitions/disease_or_phenotypic_feature_association_to_location_association_object"
                }
@@ -1257,7 +1258,7 @@
          "properties": {
             "drug": {
                "type": {
-                  "$ref": "#/definitions/drug_exposure_drug"
+                  "$ref": "#/definitions/drug"
                }
             }
          },
@@ -1384,13 +1385,13 @@
          "description": "An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "class describing the activity, process or localization of the gene product",
                "type": {
                   "$ref": "#/definitions/functional_association_object"
                }
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "gene, product or macromolecular complex that has the function associated with the GO term",
                "type": {
                   "$ref": "#/definitions/functional_association_subject"
                }
@@ -1430,7 +1431,7 @@
          "description": "",
          "properties": {
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
                "type": {
                   "$ref": "#/definitions/gene_as_a_model_of_disease_association_subject"
                }
@@ -1457,7 +1458,7 @@
                }
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
                "type": {
                   "$ref": "#/definitions/gene_has_variant_that_contributes_to_disease_association_subject"
                }
@@ -1523,7 +1524,7 @@
                }
             },
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
+               "description": "the direction is always from regulator to regulated",
                "type": {
                   "$ref": "#/definitions/gene_regulatory_relationship_relation"
                }
@@ -1543,7 +1544,7 @@
          "description": "",
          "properties": {
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model",
                "type": {
                   "$ref": "#/definitions/gene_to_disease_association_subject"
                }
@@ -1557,7 +1558,7 @@
          "description": "An association between a gene and an expression site, possibly qualified by stage/timing info.",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "location in which the gene is expressed",
                "type": {
                   "$ref": "#/definitions/gene_to_expression_site_association_object"
                }
@@ -1569,7 +1570,7 @@
                }
             },
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
+               "description": "expression relationship",
                "type": {
                   "$ref": "#/definitions/gene_to_expression_site_association_relation"
                }
@@ -1581,7 +1582,7 @@
                }
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "gene in which variation is correlated with the phenotypic feature",
                "type": {
                   "$ref": "#/definitions/gene_to_expression_site_association_subject"
                }
@@ -1595,7 +1596,7 @@
          "description": "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)",
          "properties": {
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
+               "description": "homology relationship type",
                "type": {
                   "$ref": "#/definitions/gene_to_gene_homology_association_relation"
                }
@@ -1635,13 +1636,13 @@
          "description": "",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "class describing the activity, process or localization of the gene product",
                "type": {
                   "$ref": "#/definitions/gene_to_go_term_association_object"
                }
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "gene, product or macromolecular complex that has the function associated with the GO term",
                "type": {
                   "$ref": "#/definitions/gene_to_go_term_association_subject"
                }
@@ -1655,7 +1656,7 @@
          "description": "",
          "properties": {
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "gene in which variation is correlated with the phenotypic feature",
                "type": {
                   "$ref": "#/definitions/gene_to_phenotypic_feature_association_subject"
                }
@@ -1748,19 +1749,19 @@
          "description": "Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "gene implicated in genotype",
                "type": {
                   "$ref": "#/definitions/genotype_to_gene_association_object"
                }
             },
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
+               "description": "the relationship type used to connect genotype to gene",
                "type": {
                   "$ref": "#/definitions/genotype_to_gene_association_relation"
                }
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "parent genotype",
                "type": {
                   "$ref": "#/definitions/genotype_to_gene_association_subject"
                }
@@ -1774,7 +1775,7 @@
          "description": "Any association between one genotype and a genotypic entity that is a sub-component of it",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "child genotype",
                "type": {
                   "$ref": "#/definitions/genotype_to_genotype_part_association_object"
                }
@@ -1786,7 +1787,7 @@
                }
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "parent genotype",
                "type": {
                   "$ref": "#/definitions/genotype_to_genotype_part_association_subject"
                }
@@ -1806,7 +1807,7 @@
                }
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "genotype that is associated with the phenotypic feature",
                "type": {
                   "$ref": "#/definitions/genotype_to_phenotypic_feature_association_subject"
                }
@@ -1820,19 +1821,19 @@
          "description": "Any association between a genotype and a sequence variant.",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "gene implicated in genotype",
                "type": {
                   "$ref": "#/definitions/genotype_to_variant_association_object"
                }
             },
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
+               "description": "the relationship type used to connect genotype to gene",
                "type": {
                   "$ref": "#/definitions/genotype_to_variant_association_relation"
                }
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "parent genotype",
                "type": {
                   "$ref": "#/definitions/genotype_to_variant_association_subject"
                }
@@ -1922,7 +1923,7 @@
          "description": "A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.",
          "properties": {
             "name": {
-               "description": "A human-readable name for a thing",
+               "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
                "type": {
                   "$ref": "#/definitions/macromolecular_machine_name"
                }
@@ -1936,7 +1937,7 @@
          "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "class describing the activity, process or localization of the gene product",
                "type": {
                   "$ref": "#/definitions/macromolecular_machine_to_biological_process_association_object"
                }
@@ -1950,7 +1951,7 @@
          "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "class describing the activity, process or localization of the gene product",
                "type": {
                   "$ref": "#/definitions/macromolecular_machine_to_cellular_component_association_object"
                }
@@ -1964,7 +1965,7 @@
          "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "class describing the activity, process or localization of the gene product",
                "type": {
                   "$ref": "#/definitions/macromolecular_machine_to_molecular_activity_association_object"
                }
@@ -2154,7 +2155,7 @@
          "description": "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)",
          "properties": {
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
+               "description": "interaction relationship type",
                "type": {
                   "$ref": "#/definitions/pairwise_gene_or_protein_interaction_association_relation"
                }
@@ -2224,19 +2225,19 @@
          "description": "An association between a two populations",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "the population that form the object of the association",
                "type": {
                   "$ref": "#/definitions/population_to_population_association_object"
                }
             },
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
+               "description": "A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used",
                "type": {
                   "$ref": "#/definitions/population_to_population_association_relation"
                }
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "the population that form the subject of the association",
                "type": {
                   "$ref": "#/definitions/population_to_population_association_subject"
                }
@@ -2333,7 +2334,7 @@
          "description": "An allele that varies in its sequence from what is considered the reference allele at that locus.",
          "properties": {
             "has_biological_sequence": {
-               "description": "connects a genomic feature to its sequence",
+               "description": "The state of the sequence w.r.t a reference sequence",
                "type": {
                   "$ref": "#/definitions/sequence_variant_has_biological_sequence"
                }
@@ -2401,10 +2402,11 @@
          "properties": {
             "has_exposure_parts": {
                "type": {
-                  "$ref": "#/definitions/treatment_has_exposure_parts"
+                  "$ref": "#/definitions/has_exposure_parts"
                }
             },
             "treats": {
+               "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ",
                "type": {
                   "$ref": "#/definitions/treatment_treats"
                }
@@ -2418,19 +2420,19 @@
          "description": "",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "a disease that is associated with that variant",
                "type": {
                   "$ref": "#/definitions/variant_to_disease_association_object"
                }
             },
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
+               "description": "E.g. is pathogenic for",
                "type": {
                   "$ref": "#/definitions/variant_to_disease_association_relation"
                }
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "a sequence variant in which the allele state is associated in some way with the disease state",
                "type": {
                   "$ref": "#/definitions/variant_to_disease_association_subject"
                }
@@ -2444,7 +2446,7 @@
          "description": "",
          "properties": {
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "a sequence variant in which the allele state is associated in some way with the phenotype state",
                "type": {
                   "$ref": "#/definitions/variant_to_phenotypic_feature_association_subject"
                }
@@ -2476,13 +2478,13 @@
                }
             },
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "the population that is observed to have the frequency",
                "type": {
                   "$ref": "#/definitions/variant_to_population_association_object"
                }
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "description": "an allele that has a certain frequency in a given population",
                "type": {
                   "$ref": "#/definitions/variant_to_population_association_subject"
                }

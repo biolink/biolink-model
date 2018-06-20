@@ -1,23 +1,19 @@
 """Generate JSON-LD contexts
 
 """
-
-import json
 import logging
-import os
-from typing import Union, TextIO
+import os, re
+import sys
+from typing import Union, TextIO, List, Optional, Dict
 
 import click
+from jsonasobj import JsonObj, as_json, as_dict
 from prefixcommons import curie_util as cu
 
-from metamodel.utils.generator import Generator
-from metamodel.metamodel import SchemaDefinition, SlotDefinition, ClassDefinition
-from metamodel.utils.namespaces import BIOENTITY
+from metamodel.metamodel import SchemaDefinition, SlotDefinition, ClassDefinition, Element, Definition
+from metamodel.utils.builtins import DEFAULT_BUILTIN_TYPE_NAME, builtin_names, builtin_uri
 from metamodel.utils.formatutils import camelcase, underscore, be
-
-# highest to lowest priority
-default_curie_maps = [cu.read_biocontext('obo_context'), cu.read_biocontext('monarch_context'),
-                      cu.read_biocontext('idot_context'), cu.read_biocontext('semweb_context')]
+from metamodel.utils.generator import Generator
 
 
 class ContextGenerator(Generator):
@@ -28,13 +24,32 @@ class ContextGenerator(Generator):
 
     def __init__(self, schema: Union[str, TextIO, SchemaDefinition], fmt: str='json') -> None:
         super().__init__(schema, fmt)
-        self.prefixmap = {
-            "id": "@id",
-            "type": {
-                "@id": "rdf:type",
-                "@type": "@id"
-            }
-        }
+        self.prefixmap = dict()
+        self.slot_class_maps = dict()
+        self.curi_maps: List[Dict[str, str]] = []
+
+    def visit_schema(self):
+        # Add the list of curi maps
+        for curie_map in self.schema.default_curi_maps:
+            self.curi_maps.append(cu.read_biocontext(curie_map))
+
+        # Add any explicitly declared prefixes
+        for prefix in self.schema.prefixes.values():
+            self.prefixmap[prefix.local_name] = prefix.prefix_uri
+
+        # Add any prefixes explicitly declared
+        self.add_id_prefixes(self.schema)
+
+        # Add the default prefix
+        if self.schema.default_prefix:
+            if '://' in self.schema.default_prefix:
+                default_uri = self.schema.default_prefix
+            elif self.schema.default_prefix in self.prefixmap:
+                default_uri = self.prefixmap[self.schema.default_prefix]
+            else:
+                    raise ValueError(f"Default prefix: {self.schema.default_prefix} is not defined")
+            self.prefixmap['@vocab'] = default_uri
+            self.prefixmap['@base'] = default_uri
 
     def end_schema(self) -> None:
         comments = f'''Auto generated from {self.schema.source_file} by {self.generatorname} version: {self.generatorversion}
@@ -45,72 +60,86 @@ id: {self.schema.id}
 description: {be(self.schema.description)}
 license: {be(self.schema.license)}
 '''
-        context = {"@context": self.prefixmap,
-                   "comments": comments
-                   }
-        print(json.dumps(context, sort_keys=True, indent=4))
+        context = JsonObj(comments=comments)
+        for k, v in self.slot_class_maps.items():
+            self.prefixmap[k] = v
+        context['@context'] = self.prefixmap
+        print(as_json(context))
 
     def visit_class(self, cls: ClassDefinition) -> bool:
-        logging.info("Cls: {}".format(cls.name))
-        # subClassOf has highest priority
+        class_def = {}
         cn = camelcase(cls.name)
-        if cls.subclass_of is not None:
-            self.add_mapping(cn, cls.subclass_of)
-        self.tr_element(cls, cn)
-        return True
+        self.add_mappings(cls, class_def)
+        if class_def:
+            self.slot_class_maps[cn] = class_def
+
+        # We don't bother to visit class slots - just all slots
+        return False
 
     def visit_slot(self, aliased_slot_name: str, slot: SlotDefinition) -> None:
+        slot_def = {}
+        sn = underscore(slot.name)
+
         if not slot.alias:
-            self.tr_element(slot, underscore(slot.name))
-        # hold off til we are sure curie_util can handle this
-        # rewrite to be an object with id/type fields
-        # if n in pm:
-        #    iri = pm[n]
-        #    pm[n] = { "@id" : iri, "@type" : "@id" }
+            rng = self.grounded_slot_range(slot)
+            if rng != DEFAULT_BUILTIN_TYPE_NAME:
+                builtin_rng_uri = builtin_uri(rng)
+                slot_def['@type'] = builtin_rng_uri if builtin_rng_uri else "@id"
+            if slot.multivalued:
+                slot_def['@container'] = '@list'
+            self.add_mappings(slot, slot_def)
+        if slot_def:
+            self.prefixmap[sn] = slot_def
 
-    def tr_element(self, e: Union[SlotDefinition, ClassDefinition], n: str):
-        for m in e.mappings:
-            self.add_mapping(n, m)
-        # ensure that all declared ID prefixes have an entry in the context
-        for px in e.id_prefixes:
-            self.add_mapping(px, px+":")
-        # anything else, place in bioentity space
-        if n not in self.prefixmap:
-            self.add_mapping(n, str(BIOENTITY)+n)
+    def add_prefix(self, ncname: str) -> None:
+        """ Look up ncname and add it to the prefix map if necessary
 
-    @staticmethod
-    def get_uri(shorthand):
-        uri = cu.expand_uri(shorthand, default_curie_maps)
-        if not uri.startswith('http'):
-            return None
-        else:
-            return uri
-        
-    def add_mapping(self, shorthand, exp):
-        if shorthand in self.prefixmap:
-            logging.debug("Ignoring {}->{}".format(shorthand, exp))
-            return
-        uri = self.get_uri(exp)
-        if uri is None:
-            logging.error("No expansion for {}".format(exp))
-        else:
-            logging.info("Adding {} -> {} via {}".format(shorthand, uri, exp))
-            self.prefixmap[shorthand] = uri
+        @param ncname: name to add
+        """
+        if ncname not in self.prefixmap:
+            uri = cu.expand_uri(ncname + ':', self.curi_maps)
+            if uri and '://' in uri:
+                self.prefixmap[ncname] = uri
+            else:
+                print(f"No expansion for {ncname}", file=sys.stderr)
+                self.prefixmap[ncname] = f"http://example.org/unknown/{ncname}/"
 
-        # if we expand something like Disease=>MONDO:0000001, ensure MONDO prefix
-        # is also added
-        if uri is not None and uri != exp:
-            parts = exp.split(":", 1)
-            pfx = parts[0]
-            if pfx not in self.prefixmap and not pfx.startswith("http"):
-                pfx_uri = self.get_uri(pfx + ":")
-                if pfx_uri is not None:
-                    self.prefixmap[pfx] = pfx_uri
+    def get_uri(self, ncname: str) -> Optional[str]:
+        """ Get the URI associated with ncname
+
+        @param ncname:
+        """
+        uri = cu.expand_uri(ncname + ':', self.curi_maps)
+        return uri if uri and uri.startswith('http') else None
+
+    def add_id_prefixes(self, element: Element) -> None:
+        for id_prefix in element.id_prefixes:
+            if id_prefix not in self.prefixmap:
+                id_uri = self.get_uri(id_prefix)
+                if id_uri:
+                    self.prefixmap[id_prefix] = id_uri
+
+    def add_mappings(self, defn: Definition, target: Dict) -> None:
+        """ Process any mappings in defn, adding all of the mappings prefixes to the namespace map and
+        add a link to the first mapping to the target
+
+        @param defn: Class or Slot definition
+        @param target: context target
+        """
+        for mapping in defn.mappings:
+            if '://' in mapping:
+                target['@id'] = mapping
+            else:
+                if ':' not in mapping or len(mapping.split(':')) != 2:
+                    raise ValueError(f"Definition {defn.name} = unrecognized mapping: {mapping}")
+                ns = mapping.split(':')[0]
+                self.add_prefix(ns)
+                target['@id'] = defn.mappings[0]
 
 
 @click.command()
 @click.argument("yamlfile", type=click.Path(exists=True, dir_okay=False))
-@click.option("--format", "-f", default='json', type=click.Choice(['json']), help="Output format")
+@click.option("--format", "-f", default='json', type=click.Choice(ContextGenerator.valid_formats), help="Output format")
 def cli(yamlfile, format):
     """ Generate jsonld @context definition from biolink model """
     print(ContextGenerator(yamlfile, format).serialize())

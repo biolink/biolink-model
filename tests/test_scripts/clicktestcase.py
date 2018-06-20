@@ -27,7 +27,8 @@ click.core.Context.exit = no_click_exit
 
 
 def metadata_filter(s: str) -> str:
-    return re.sub(r'Auto generated from.* ', '', re.sub(r'# Generation date: .*\n', '', s, re.MULTILINE), re.MULTILINE)
+    return re.sub(r'(# Auto generated from ).*(\.yaml by pythongen\.py version: ).*', r'\1\2',
+                  re.sub(r'(# Generation date: ).*', r'\1', s)).strip()
 
 
 class ClickTestCase(unittest.TestCase):

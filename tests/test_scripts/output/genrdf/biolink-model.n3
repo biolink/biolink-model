@@ -10,11 +10,9 @@
 @prefix SGD: <http://identifiers.org/sgd/> .
 @prefix UniProtKB: <http://identifiers.org/uniprot/> .
 @prefix ZFIN: <http://zfin.org/> .
-@prefix bioentity: <http://bioentity.io/vocab/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dictyBase: <http://dictybase.org/gene/> .
 @prefix faldo: <http://biohackathon.org/resource/faldo#> .
-@prefix meta: <http://bioentity.io/meta/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pav: <http://purl.org/pav/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -23,7 +21,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://biolink.github.io/biolink-model/ontology/biolink.ttl> rdfs:label "biolink model" ;
-    dcterms:description "A high level datamodel of biological entities (genes, diseases, phenotypes, pathways, individuals, substances, etc) and their associations." .
+    dcterms:description "Entity and association taxonomy and datamodel for life-sciences data" .
 
 
 

@@ -5,7 +5,7 @@ A collection of definitions
 
 URI: [http://bioentity.io/vocab/SchemaDefinition](http://bioentity.io/vocab/SchemaDefinition)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SchemaDefinition|id:string;version:string%20%3F;imports:string%20*;license:string%20%3F;metamodel_version:string%20%3F;source_file:string%20%3F;source_file_size:integer%20%3F;source_file_date:string%20%3F;generation_date:date%20%3F;name(i):string;singular_name(i):string%20%3F;description(i):string%20%3F;note(i):string%20%3F;comment(i):string%20%3F;see_also(i):string%20%3F;flags(i):string%20*;prefixes(i):string%20*;aliases(i):string%20*;mappings(i):string%20*;id_prefixes(i):string%20*;in_subset(i):string%20*;from_schema(i):string%20%3F;alt_descriptions(i):string%20*;mixin(i):boolean%20%3F;abstract(i):boolean%20%3F;local_names(i):string%20*;values_from(i):string%20*;symmetric(i):boolean%20%3F]-%20subclass_of(i)%20%3F>\[Definition],%20\[SchemaDefinition]-%20union_of(i)%20*>\[Definition],%20\[SchemaDefinition]-%20mixins(i)%20*>\[Definition],%20\[SchemaDefinition]-%20is_a(i)%20%3F>\[Definition],%20\[SchemaDefinition]++-%20examples(i)%20*>\[Example],%20\[SchemaDefinition]++-%20classes%20*>\[ClassDefinition],%20\[SchemaDefinition]++-%20slots%20*>\[SlotDefinition],%20\[SchemaDefinition]++-%20types%20*>\[TypeDefinition],%20\[Definition]^-\[SchemaDefinition])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SchemaDefinition|id:string;version:string%20%3F;imports:string%20*;license:string%20%3F;metamodel_version:string%20%3F;source_file:string%20%3F;source_file_size:integer%20%3F;source_file_date:string%20%3F;generation_date:date%20%3F;default_curi_maps:string%20*;default_prefix:string%20%3F;name(i):string;singular_name(i):string%20%3F;description(i):string%20%3F;note(i):string%20%3F;comment(i):string%20%3F;see_also(i):string%20%3F;flags(i):string%20*;aliases(i):string%20*;mappings(i):string%20*;id_prefixes(i):string%20*;in_subset(i):string%20*;from_schema(i):string%20%3F;alt_descriptions(i):string%20*;mixin(i):boolean%20%3F;abstract(i):boolean%20%3F;local_names(i):string%20*;subclass_of(i):uri%20%3F;values_from(i):string%20*;symmetric(i):boolean%20%3F]-%20union_of(i)%20*>\[Definition],%20\[SchemaDefinition]-%20mixins(i)%20*>\[Definition],%20\[SchemaDefinition]-%20is_a(i)%20%3F>\[Definition],%20\[SchemaDefinition]++-%20examples(i)%20*>\[Example],%20\[SchemaDefinition]++-%20classes%20*>\[ClassDefinition],%20\[SchemaDefinition]++-%20slots%20*>\[SlotDefinition],%20\[SchemaDefinition]++-%20types%20*>\[TypeDefinition],%20\[SchemaDefinition]++-%20prefixes%20*>\[Prefix],%20\[Definition]^-\[SchemaDefinition])
 ## Mappings
 
 ## Inheritance
@@ -20,6 +20,14 @@ URI: [http://bioentity.io/vocab/SchemaDefinition](http://bioentity.io/vocab/Sche
  * _[classes](classes.md)_
     * _classes defined in schema_
     * range: [ClassDefinition](ClassDefinition.md)*
+    * __Local__
+ * _[default_curi_maps](default_curi_maps.md)_
+    * _List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables_
+    * range: **string***
+    * __Local__
+ * _[default_prefix](default_prefix.md)_
+    * _default and base prefix -- used for ':' identifiers, @base and @vocab_
+    * range: **string**
     * __Local__
  * _[generation_date](generation_date.md)_
     * _date that the schema was loaded/generated.  Supplied by the loader_
@@ -40,6 +48,10 @@ URI: [http://bioentity.io/vocab/SchemaDefinition](http://bioentity.io/vocab/Sche
  * _[metamodel_version](metamodel_version.md)_
     * _Version of the metamodel used to load the schema. Supplied by the loader_
     * range: **string**
+    * __Local__
+ * _[prefixes](prefixes.md)_
+    * _Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes_
+    * range: [Prefix](Prefix.md)*
     * __Local__
  * _[schema definition.slots](slot_definitions.md)_
     * _collection of slot definitions in a schema_
@@ -130,10 +142,6 @@ URI: [http://bioentity.io/vocab/SchemaDefinition](http://bioentity.io/vocab/Sche
     * _Notes about an element_
     * range: **string**
     * inherited from: [Element](Element.md)
- * _[prefixes](prefixes.md)_
-    * _list of ID/CURIE prefixes applicable to that element_
-    * range: **string***
-    * inherited from: [Element](Element.md)
  * _[see_also](see_also.md)_
     * range: **string**
     * inherited from: [Element](Element.md)
@@ -143,7 +151,7 @@ URI: [http://bioentity.io/vocab/SchemaDefinition](http://bioentity.io/vocab/Sche
     * inherited from: [Element](Element.md)
  * _[subclass_of](subclass_of.md)_
     * _Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes_
-    * range: [Definition](Definition.md)
+    * range: **uri**
     * inherited from: [Definition](Definition.md)
  * _[symmetric](symmetric.md)_
     * _Symmetric slot_

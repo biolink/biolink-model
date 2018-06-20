@@ -13,6 +13,10 @@ URI: [http://bioentity.io/vocab/mixins](slot_uri)
 
 ## Children
 
+ *  child: [slot definition.mixins](slot_definition_mixins.md)
+ *  child: [class definition.mixins](class_definition_mixins.md)
 ## Used in
 
+ *  usage: [SlotDefinition](SlotDefinition.md)
+ *  usage: [ClassDefinition](ClassDefinition.md)
  *  usage: [Definition](Definition.md)

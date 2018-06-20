@@ -1,42 +1,44 @@
 ClassDefinition type
   {
-    defining_Slots: [SlotDefinition]
+    definingSlots: [SlotDefinition]
     slots: [SlotDefinition]
-    slot_Usage: [SlotDefinition]
-    apply_To: ClassDefinition
+    slotUsage: [SlotDefinition]
+    applyTo: ClassDefinition
     entity: String
+    isA: ClassDefinition
+    mixins: [ClassDefinition]
+    unionOf: [ClassDefinition]
   }
 
 Definition interface
   {
-    is_A: Definition
+    isA: Definition
     mixin: String
     mixins: [Definition]
     abstract: String
-    local_Names: [String]
-    union_Of: [Definition]
-    subclass_Of: Definition
-    values_From: [String]
+    localNames: [String]
+    unionOf: [Definition]
+    subclassOf: String
+    valuesFrom: [String]
     symmetric: String
   }
 
 Element interface
   {
     name: String!
-    singular_Name: String
+    singularName: String
     description: String
     note: String
     comment: String
     examples: [Example]
-    see_Also: String
+    seeAlso: String
     flags: [String]
-    prefixes: [String]
     aliases: [String]
     mappings: [String]
-    id_Prefixes: [String]
-    in_Subset: [String]
-    from_Schema: String
-    alt_Descriptions: [String]
+    idPrefixes: [String]
+    inSubset: [String]
+    fromSchema: String
+    altDescriptions: [String]
   }
 
 Example type
@@ -45,20 +47,29 @@ Example type
     description: String
   }
 
+Prefix type
+  {
+    localName: String!
+    prefixUri: String
+  }
+
 SchemaDefinition type
   {
     id: String!
     version: String
     imports: [String]
     license: String
+    prefixes: [Prefix]
     types: [TypeDefinition]
     slots: [SlotDefinition]
     classes: [ClassDefinition]
-    metamodel_Version: String
-    source_File: String
-    source_File_Size: String
-    source_File_Date: String
-    generation_Date: String
+    metamodelVersion: String
+    sourceFile: String
+    sourceFileSize: String
+    sourceFileDate: String
+    generationDate: String
+    defaultCuriMaps: [String]
+    defaultPrefix: String
   }
 
 SlotDefinition type
@@ -67,17 +78,21 @@ SlotDefinition type
     domain: ClassDefinition
     range: Element
     required: String
+    objectProperty: String
     inlined: String
-    primary_Key: String
+    primaryKey: String
     identifier: String
     definitional: String
     alias: String
     path: String
-    subproperty_Of: SlotDefinition
+    subpropertyOf: SlotDefinition
     inverse: SlotDefinition
-    is_Class_Field: String
-    not_Inherited: String
+    isClassField: String
     role: String
+    inherited: String
+    isA: SlotDefinition
+    mixins: [SlotDefinition]
+    unionOf: [SlotDefinition]
   }
 
 TypeDefinition type

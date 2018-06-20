@@ -1,12 +1,29 @@
 id: "https://biolink.github.io/biolink-model/ontology/biolink.ttl"
 name: biolink model
 description: >-
-   A high level datamodel of biological entities (genes, diseases, phenotypes, pathways, individuals, substances, etc) and their associations.
+  Entity and association taxonomy and datamodel for life-sciences data
 license: https://creativecommons.org/publicdomain/zero/1.0/
+
 prefixes:
+  biolink: http://bioentity.io/vocab/
   OBAN: http://purl.org/oban/
   SIO: http://semanticscience.org/resource/SIO_
   wgs: http://www.w3.org/2003/01/geo/wgs84_pos
+
+default_prefix: biolink
+
+default_curi_maps:
+  - obo_context
+  - monarch_context
+  - idot_context
+  - semweb_context
+
+id_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+  - OIO
 
 types:
 
@@ -1894,7 +1911,7 @@ classes:
         range: molecular entity
       relation:
         subproperty_of: molecularly interacts with
-        range: molecularly interacts with
+#        range: molecularly interacts with
         values_from:
           - ro
           - mi

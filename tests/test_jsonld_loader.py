@@ -48,6 +48,7 @@ json_str_2 = f"""{{
 
 ontology_id = URIRef('https://biolink.github.io/metamodel/ontology/meta.ttl')
 
+
 class JSONLDLoaderTestCase(unittest.TestCase):
     def test_basics(self):
         g = Graph()
@@ -91,11 +92,11 @@ class JSONLDLoaderTestCase(unittest.TestCase):
         self.assertTrue(source_graph.isomorphic(g))
 
     def check_size(self, g: Graph) -> None:
-        # Make sure we have 7 classes and 56 slots
-        class_bnode = g.value(URIRef("https://biolink.github.io/metamodel/ontology/meta.ttl"), BIOENTITY.classes)
-        slot_bnode = g.value(URIRef("https://biolink.github.io/metamodel/ontology/meta.ttl"), BIOENTITY.slots)
-        self.assertEqual(7, len([c for c in g.predicate_objects(class_bnode) if c[0] != RDF.rest]))
-        self.assertEqual(56, len([s for s in g.predicate_objects(slot_bnode) if s[0] != RDF.rest]))
+        # Make sure we have 8 classes and 70 slots
+        self.assertEqual(8, len(list(g.objects(URIRef("https://biolink.github.io/metamodel/ontology/meta.ttl"),
+                                               BIOENTITY.classes))))
+        self.assertEqual(70, len(list(g.objects(URIRef("https://biolink.github.io/metamodel/ontology/meta.ttl"),
+                                                BIOENTITY.slots))))
 
     def test_full_meta(self):
         cwd = os.path.abspath(os.path.dirname(__file__))
@@ -113,7 +114,6 @@ class JSONLDLoaderTestCase(unittest.TestCase):
         new_g = Graph()
         new_g.parse(data=new_ttl, format="turtle")
         self.check_size(new_g)
-
 
 
 if __name__ == '__main__':

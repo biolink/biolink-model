@@ -21,7 +21,7 @@ URI: [http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation](ht
 ## Fields
 
  * _[thing to disease or phenotypic feature association.object](thing_to_disease_or_phenotypic_feature_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _disease or phenotype_
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

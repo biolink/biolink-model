@@ -38,7 +38,8 @@ class SchemaLoader:
         # class.slots --> slot.domain
         for cls in self.schema.classes.values():
             if not isinstance(cls, ClassDefinition):
-                raise ValueError(f'File: {self.schema.source_file} Class "{cls} (type: {type(cls)})" definition is peculiar')
+                raise ValueError(
+                    f'File: {self.schema.source_file} Class "{cls} (type: {type(cls)})" definition is peculiar')
             if isinstance(cls.slots, str):
                 print(f"File: {self.schema.source_file} Class: {cls.name} Slots are not an array", file=sys.stderr)
                 cls.slots = [cls.slots]
@@ -56,7 +57,11 @@ class SchemaLoader:
         for cls in self.schema.classes.values():
             for slot_name, slot_usage in cls.slot_usage.items():
                 # Construct a new slot
+                # Follow the ancestry of the class to get the most proximal parent
                 parent_slot = self.slot_definition_for(slot_name, cls)
+                if not parent_slot and slot_name in self.schema.slots:
+                    parent_slot = self.schema.slots[slot_name]
+                # If parent slot is still not defined, it means that we introduced a NEW slot in the slot usages
                 child_name = SlotDefinitionName(cls.name + ' ' + slot_name) if parent_slot else slot_name
                 new_slot = SlotDefinition(name=child_name, alias=slot_name, domain=cls.name)
                 merge_slots(new_slot, slot_usage)
@@ -96,13 +101,23 @@ class SchemaLoader:
         return SchemaSynopsis(self.schema).errors()
 
     def slot_definition_for(self, slotname: SlotDefinitionName, cls: ClassDefinition) -> Optional[SlotDefinition]:
+        """ Find the most proximal definition for slotname in the context of cls"""
         if cls.is_a:
-            parent = self.schema.classes[cls.is_a]
-            if slotname in parent.slots:
-                return self.schema.slots[slotname]
-            else:
-                for s in cls.slots:
-                    if self.schema.slots[s].alias == slotname:
-                        return self.schema.slots[s]
-            return self.slot_definition_for(slotname, parent)
+            for sn in self.schema.classes[cls.is_a].slots:
+                slot = self.schema.slots[sn]
+                if slot.alias and slotname == slot.alias or slotname == slot.name:
+                    return slot
+        for mixin in cls.mixins:
+            for sn in self.schema.classes[mixin].slots:
+                slot = self.schema.slots[sn]
+                if slot.alias and slotname == slot.alias or slotname == slot.name:
+                    return slot
+        if cls.is_a:
+            defn = self.slot_definition_for(slotname, self.schema.classes[cls.is_a])
+            if defn:
+                return defn
+        for mixin in cls.mixins:
+            defn = self.slot_definition_for(slotname, self.schema.classes[mixin])
+            if defn:
+                return defn
         return None

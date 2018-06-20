@@ -2,34 +2,33 @@
 message ClassDefinition
  {
   optional name String = 1
-  optional singular_Name String = 2
+  optional singularName String = 2
   optional description String = 3
   optional note String = 4
   optional comment String = 5
   repeated examples Example = 6
-  optional see_Also String = 7
+  optional seeAlso String = 7
   repeated flags String = 8
-  repeated prefixes String = 9
-  repeated aliases String = 10
-  repeated mappings String = 11
-  repeated id_Prefixes String = 12
-  repeated in_Subset String = 13
-  optional from_Schema String = 14
-  repeated alt_Descriptions String = 15
-  optional is_A Definition = 16
-  optional mixin Boolean = 17
-  repeated mixins Definition = 18
-  optional abstract Boolean = 19
-  repeated local_Names String = 20
-  repeated union_Of Definition = 21
-  optional subclass_Of Definition = 22
-  repeated values_From String = 23
-  optional symmetric Boolean = 24
-  repeated defining_Slots SlotDefinition = 25
-  repeated slots SlotDefinition = 26
-  repeated slot_Usage SlotDefinition = 27
-  optional apply_To ClassDefinition = 28
-  optional entity Boolean = 29
+  repeated aliases String = 9
+  repeated mappings String = 10
+  repeated idPrefixes String = 11
+  repeated inSubset String = 12
+  optional fromSchema String = 13
+  repeated altDescriptions String = 14
+  optional mixin Boolean = 15
+  optional abstract Boolean = 16
+  repeated localNames String = 17
+  optional subclassOf Uri = 18
+  repeated valuesFrom String = 19
+  optional symmetric Boolean = 20
+  repeated definingSlots SlotDefinition = 21
+  repeated slots SlotDefinition = 22
+  repeated slotUsage SlotDefinition = 23
+  optional applyTo ClassDefinition = 24
+  optional entity Boolean = 25
+  optional isA ClassDefinition = 26
+  repeated mixins ClassDefinition = 27
+  repeated unionOf ClassDefinition = 28
  }
 // example of usage
 message Example
@@ -37,107 +36,114 @@ message Example
   optional value String = 1
   optional description String = 2
  }
+// Prefix URI map
+message Prefix
+ {
+  optional localName String = 1
+  optional prefixUri String = 2
+ }
 // A collection of definitions
 message SchemaDefinition
  {
   optional name String = 1
-  optional singular_Name String = 2
+  optional singularName String = 2
   optional description String = 3
   optional note String = 4
   optional comment String = 5
   repeated examples Example = 6
-  optional see_Also String = 7
+  optional seeAlso String = 7
   repeated flags String = 8
-  repeated prefixes String = 9
-  repeated aliases String = 10
-  repeated mappings String = 11
-  repeated id_Prefixes String = 12
-  repeated in_Subset String = 13
-  optional from_Schema String = 14
-  repeated alt_Descriptions String = 15
-  optional is_A Definition = 16
-  optional mixin Boolean = 17
-  repeated mixins Definition = 18
-  optional abstract Boolean = 19
-  repeated local_Names String = 20
-  repeated union_Of Definition = 21
-  optional subclass_Of Definition = 22
-  repeated values_From String = 23
-  optional symmetric Boolean = 24
-  optional id String = 25
-  optional version String = 26
-  repeated imports String = 27
-  optional license String = 28
+  repeated aliases String = 9
+  repeated mappings String = 10
+  repeated idPrefixes String = 11
+  repeated inSubset String = 12
+  optional fromSchema String = 13
+  repeated altDescriptions String = 14
+  optional isA Definition = 15
+  optional mixin Boolean = 16
+  repeated mixins Definition = 17
+  optional abstract Boolean = 18
+  repeated localNames String = 19
+  repeated unionOf Definition = 20
+  optional subclassOf Uri = 21
+  repeated valuesFrom String = 22
+  optional symmetric Boolean = 23
+  optional id String = 24
+  optional version String = 25
+  repeated imports String = 26
+  optional license String = 27
+  repeated prefixes Prefix = 28
   repeated types TypeDefinition = 29
   repeated slots SlotDefinition = 30
   repeated classes ClassDefinition = 31
-  optional metamodel_Version String = 32
-  optional source_File String = 33
-  optional source_File_Size Integer = 34
-  optional source_File_Date String = 35
-  optional generation_Date Date = 36
+  optional metamodelVersion String = 32
+  optional sourceFile String = 33
+  optional sourceFileSize Integer = 34
+  optional sourceFileDate String = 35
+  optional generationDate Date = 36
+  repeated defaultCuriMaps String = 37
+  optional defaultPrefix String = 38
  }
 // A property or slot
 message SlotDefinition
  {
   optional name String = 1
-  optional singular_Name String = 2
+  optional singularName String = 2
   optional description String = 3
   optional note String = 4
   optional comment String = 5
   repeated examples Example = 6
-  optional see_Also String = 7
+  optional seeAlso String = 7
   repeated flags String = 8
-  repeated prefixes String = 9
-  repeated aliases String = 10
-  repeated mappings String = 11
-  repeated id_Prefixes String = 12
-  repeated in_Subset String = 13
-  optional from_Schema String = 14
-  repeated alt_Descriptions String = 15
-  optional is_A Definition = 16
-  optional mixin Boolean = 17
-  repeated mixins Definition = 18
-  optional abstract Boolean = 19
-  repeated local_Names String = 20
-  repeated union_Of Definition = 21
-  optional subclass_Of Definition = 22
-  repeated values_From String = 23
-  optional symmetric Boolean = 24
-  optional multivalued Boolean = 25
-  optional domain ClassDefinition = 26
-  optional range Element = 27
-  optional required Boolean = 28
-  optional inlined Boolean = 29
-  optional primary_Key Boolean = 30
-  optional identifier Boolean = 31
-  optional definitional Boolean = 32
-  optional alias String = 33
-  optional path String = 34
-  optional subproperty_Of SlotDefinition = 35
-  optional inverse SlotDefinition = 36
-  optional is_Class_Field Boolean = 37
-  optional not_Inherited Boolean = 38
-  optional role String = 39
+  repeated aliases String = 9
+  repeated mappings String = 10
+  repeated idPrefixes String = 11
+  repeated inSubset String = 12
+  optional fromSchema String = 13
+  repeated altDescriptions String = 14
+  optional mixin Boolean = 15
+  optional abstract Boolean = 16
+  repeated localNames String = 17
+  optional subclassOf Uri = 18
+  repeated valuesFrom String = 19
+  optional symmetric Boolean = 20
+  optional multivalued Boolean = 21
+  optional domain ClassDefinition = 22
+  optional range Element = 23
+  optional required Boolean = 24
+  optional objectProperty Boolean = 25
+  optional inlined Boolean = 26
+  optional primaryKey Boolean = 27
+  optional identifier Boolean = 28
+  optional definitional Boolean = 29
+  optional alias String = 30
+  optional path String = 31
+  optional subpropertyOf SlotDefinition = 32
+  optional inverse SlotDefinition = 33
+  optional isClassField Boolean = 34
+  optional role String = 35
+  optional inherited Boolean = 36
+  optional isA SlotDefinition = 37
+  repeated mixins SlotDefinition = 38
+  repeated unionOf SlotDefinition = 39
  }
 // A type definition
 message TypeDefinition
  {
   optional name String = 1
-  optional singular_Name String = 2
+  optional singularName String = 2
   optional description String = 3
   optional note String = 4
   optional comment String = 5
   repeated examples Example = 6
-  optional see_Also String = 7
+  optional seeAlso String = 7
   repeated flags String = 8
-  repeated prefixes String = 9
-  repeated aliases String = 10
-  repeated mappings String = 11
-  repeated id_Prefixes String = 12
-  repeated in_Subset String = 13
-  optional from_Schema String = 14
-  repeated alt_Descriptions String = 15
-  optional typeof String = 16
+  repeated aliases String = 9
+  repeated mappings String = 10
+  repeated idPrefixes String = 11
+  repeated inSubset String = 12
+  optional fromSchema String = 13
+  repeated altDescriptions String = 14
+  optional typeof String = 15
  }
 

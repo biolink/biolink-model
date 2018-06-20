@@ -6,6 +6,7 @@ used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicat
 URI: [http://bioentity.io/vocab/inverse](slot_uri)
 ## Mappings
 
+ * [owl:inverseOf](http://purl.obolibrary.org/obo/owl_inverseOf)
 ## Domain and Range
 
 [SlotDefinition](SlotDefinition.md) -> [SlotDefinition](SlotDefinition.md)

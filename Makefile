@@ -14,14 +14,18 @@ imgflags?="-i"
 # ----------------------------------------
 all: build test
 test: pytests
+
 build: metamodel/context.jsonld context.jsonld build_core contrib_build_monarch contrib_build_translator contrib_build_go
-build_core: metamodel/metamodel.py metamodel/docs/index.md biolinkmodel/datamodel.py docs/index.md gen-golr-views \
+build_core: metamodel/docs/index.md biolinkmodel/datamodel.py docs/index.md gen-golr-views \
 ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql proto/biolink-model.proto \
 gen-graphviz shex/meta.ttl shex/biolink-model.ttl
 
 contrib_build_%: contrib-dir-% contrib/%/docs/index.md contrib/%/datamodel.py contrib-golr-% contrib/%/ontology.ttl \
 contrib/%/schema.json contrib-java-% contrib/%/%.graphql contrib/%/shex
 	echo
+
+install:
+	pip install -e . --upgrade
 
 
 # ----------------------------------------
@@ -99,9 +103,6 @@ contrib-golr-%: contrib/%.yaml
 # ~~~~~~~~~~~~~~~~~~~~
 # Python
 # ~~~~~~~~~~~~~~~~~~~~
-metamodel/metamodel.py: meta.yaml
-	gen-py-classes $< > $@
-
 biolinkmodel/datamodel.py: biolink-model.yaml
 	gen-py-classes $< > $@
 
@@ -156,6 +157,13 @@ ontology/%.tree: ontology/%.json
 
 ontology/%.png: ontology/%.json
 	ogr-tree -t png -o $@ -r $< %
+
+# ~~~~~~~~~~~~~~~~~~~~
+# Update the metamodel - not part of the main build.  Use this method when meta.yaml has changed
+# ~~~~~~~~~~~~~~~~~~~~
+MM = metamodel/metamodel.py
+regen-mm:
+	gen-py-classes meta.yaml > tmp.py && python tmp.py && cp $(MM) $(MM)-PREV && mv tmp.py $(MM)
 
 # ----------------------------------------
 # TESTS

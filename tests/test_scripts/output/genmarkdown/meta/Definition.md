@@ -5,7 +5,7 @@ definition base class
 
 URI: [http://bioentity.io/vocab/Definition](http://bioentity.io/vocab/Definition)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Definition|mixin:boolean%20%3F;abstract:boolean%20%3F;local_names:string%20*;values_from:string%20*;symmetric:boolean%20%3F;name(i):string;singular_name(i):string%20%3F;description(i):string%20%3F;note(i):string%20%3F;comment(i):string%20%3F;see_also(i):string%20%3F;flags(i):string%20*;prefixes(i):string%20*;aliases(i):string%20*;mappings(i):string%20*;id_prefixes(i):string%20*;in_subset(i):string%20*;from_schema(i):string%20%3F;alt_descriptions(i):string%20*]++-%20examples(i)%20*>\[Example],%20\[Definition]-%20subclass_of%20%3F>\[Definition],%20\[Definition]-%20union_of%20*>\[Definition],%20\[Definition]-%20mixins%20*>\[Definition],%20\[Definition]-%20is_a%20%3F>\[Definition],%20\[Definition]-%20is_a%20%3F>\[Definition],%20\[Definition]-%20mixins%20*>\[Definition],%20\[Definition]-%20subclass_of%20%3F>\[Definition],%20\[Definition]-%20union_of%20*>\[Definition],%20\[Definition]^-\[SlotDefinition],%20\[Definition]^-\[SchemaDefinition],%20\[Definition]^-\[ClassDefinition],%20\[Element]^-\[Definition])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Definition|mixin:boolean%20%3F;abstract:boolean%20%3F;local_names:string%20*;subclass_of:uri%20%3F;values_from:string%20*;symmetric:boolean%20%3F;name(i):string;singular_name(i):string%20%3F;description(i):string%20%3F;note(i):string%20%3F;comment(i):string%20%3F;see_also(i):string%20%3F;flags(i):string%20*;aliases(i):string%20*;mappings(i):string%20*;id_prefixes(i):string%20*;in_subset(i):string%20*;from_schema(i):string%20%3F;alt_descriptions(i):string%20*]++-%20examples(i)%20*>\[Example],%20\[Definition]-%20union_of%20*>\[Definition],%20\[Definition]-%20mixins%20*>\[Definition],%20\[Definition]-%20is_a%20%3F>\[Definition],%20\[Definition]-%20is_a%20%3F>\[Definition],%20\[Definition]-%20mixins%20*>\[Definition],%20\[Definition]-%20union_of%20*>\[Definition],%20\[Definition]^-\[SlotDefinition],%20\[Definition]^-\[SchemaDefinition],%20\[Definition]^-\[ClassDefinition],%20\[Element]^-\[Definition])
 ## Mappings
 
 ## Inheritance
@@ -20,7 +20,6 @@ URI: [http://bioentity.io/vocab/Definition](http://bioentity.io/vocab/Definition
 
  *  class: **[Definition](Definition.md)** *[is_a](is_a.md)* **[Definition](Definition.md)**
  *  class: **[Definition](Definition.md)** *[mixins](mixins.md)* **[Definition](Definition.md)**
- *  class: **[Definition](Definition.md)** *[subclass_of](subclass_of.md)* **[Definition](Definition.md)**
  *  class: **[Definition](Definition.md)** *[union_of](union_of.md)* **[Definition](Definition.md)**
 ## Fields
 
@@ -46,7 +45,7 @@ URI: [http://bioentity.io/vocab/Definition](http://bioentity.io/vocab/Definition
     * __Local__
  * _[subclass_of](subclass_of.md)_
     * _Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes_
-    * range: [Definition](Definition.md)
+    * range: **uri**
     * __Local__
  * _[symmetric](symmetric.md)_
     * _Symmetric slot_
@@ -104,10 +103,6 @@ URI: [http://bioentity.io/vocab/Definition](http://bioentity.io/vocab/Definition
  * _[note](note.md)_
     * _Notes about an element_
     * range: **string**
-    * inherited from: [Element](Element.md)
- * _[prefixes](prefixes.md)_
-    * _list of ID/CURIE prefixes applicable to that element_
-    * range: **string***
     * inherited from: [Element](Element.md)
  * _[see_also](see_also.md)_
     * range: **string**

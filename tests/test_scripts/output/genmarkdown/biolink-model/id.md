@@ -6,6 +6,7 @@ A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a
 URI: [http://bioentity.io/vocab/id](slot_uri)
 ## Mappings
 
+ * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) -> [IdentifierType](IdentifierType.md)
@@ -17,4 +18,5 @@ URI: [http://bioentity.io/vocab/id](slot_uri)
  *  child: [sequence variant.id](sequence_variant_id.md) *subsets*: (translator_minimal)
 ## Used in
 
+ *  usage: [SequenceVariant](SequenceVariant.md)
  *  usage: [NamedThing](NamedThing.md)

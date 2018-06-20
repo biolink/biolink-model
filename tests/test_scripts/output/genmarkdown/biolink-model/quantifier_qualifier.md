@@ -14,5 +14,7 @@ URI: [http://bioentity.io/vocab/quantifier_qualifier](slot_uri)
  *  is_a: [association slot](association_slot.md)
 ## Children
 
+ *  child: [gene to expression site association.quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)
 ## Used in
 
+ *  usage: [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)

@@ -9,12 +9,12 @@ from typing import Union, TextIO, Optional
 import click
 from rdflib import Graph, URIRef, RDF, OWL, Literal, BNode
 from rdflib.collection import Collection
-from rdflib.namespace import DCTERMS, RDFS, XSD
+from rdflib.namespace import DCTERMS, RDFS
 from rdflib.plugin import plugins as rdflib_plugins, Parser as rdflib_Parser
 
 from metamodel.metamodel import ClassDefinitionName, SchemaDefinition, ClassDefinition, SlotDefinitionName, \
     TypeDefinitionName, SlotDefinition
-from metamodel.utils.builtins import builtin_names
+from metamodel.utils.builtins import builtin_names, builtin_uri
 from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.generator import Generator
 from metamodel.utils.namespaces import BIOENTITY, OBO, META
@@ -64,8 +64,6 @@ class OwlSchemaGenerator(Generator):
         # Parent classes
         if cls.is_a and not cls.defining_slots:
             self.graph.add((cls_uri, RDFS.subClassOf, self.class_uri(cls.is_a)))
-        if cls.abstract:
-            self.graph.add((cls_uri, RDFS.subClassOf, META.abstract))
         if cls.mixin:
             self.graph.add((cls_uri, RDFS.subClassOf, META.mixin))
         for mixin in cls.mixins:
@@ -105,8 +103,9 @@ class OwlSchemaGenerator(Generator):
             if slotname not in cls.defining_slots:
                 subc_node = BNode()
                 slot = self.schema.slots[slotname]
+                slot_alias = slot.alias if slot.alias else slot.name
                 self.graph.add((subc_node, RDF.type, OWL.Restriction))
-                self.graph.add((subc_node, OWL.onProperty, self.prop_uri(slotname)))
+                self.graph.add((subc_node, OWL.onProperty, self.prop_uri(slot_alias)))
                 self.add_cardinality(subc_node, slot)
                 self.graph.add((subc_node, OWL.someValuesFrom, self.build_range(slot)))
                 self.graph.add((cls_uri, RDFS.subClassOf, subc_node))
@@ -133,7 +132,7 @@ class OwlSchemaGenerator(Generator):
 
     def range_uri(self, slot: SlotDefinition) -> URIRef:
         if slot.range in builtin_names or not slot.range:
-            return XSD[slot.range]
+            return URIRef(builtin_uri(slot.range, expand=True))
         elif slot.range in self.schema.types:
             return self.type_uri(slot.range)
         else:
@@ -163,23 +162,21 @@ class OwlSchemaGenerator(Generator):
 
         # Parent slots
         if slot.is_a:
-            self.graph.add((slot_uri, RDFS.subPropertyOf, self.class_uri(slot.is_a)))
-        if slot.abstract:
-            self.graph.add((slot_uri, RDFS.subPropertyOf, META.abstract))
-        if slot.mixin:
-            self.graph.add((slot_uri, RDFS.subPropertyOf, META.mixin))
+            self.graph.add((slot_uri, RDFS.subPropertyOf, self.prop_uri(slot.is_a)))
         for mixin in slot.mixins:
-            self.graph.add((slot_uri, RDFS.subPropertyOf, self.class_uri(mixin)))
+            self.graph.add((slot_uri, RDFS.subPropertyOf, self.prop_uri(mixin)))
 
         # Slot range
         if not slot.range or slot.range in builtin_names:
-            self.graph.add((slot_uri, RDF.type, OWL.DataProperty))
-            self.graph.add((slot_uri, RDFS.range, XSD[slot.range if slot.range else 'string']))
+            self.graph.add((slot_uri, RDF.type,
+                            OWL.DatatypeProperty if slot.object_property else OWL.AnnotationProperty))
+            self.graph.add((slot_uri, RDFS.range, URIRef(builtin_uri(slot.range, expand=True))))
         elif slot.range in self.schema.types:
-            self.graph.add((slot_uri, RDF.type, OWL.DataProperty))
+            self.graph.add((slot_uri, RDF.type,
+                            OWL.DatatypeProperty if slot.object_property else OWL.AnnotationProperty))
             self.graph.add((slot_uri, RDFS.range, self.type_uri(slot.range)))
         else:
-            self.graph.add((slot_uri, RDF.type, OWL.ObjectProperty))
+            self.graph.add((slot_uri, RDF.type, OWL.ObjectProperty if slot.object_property else OWL.AnnotationProperty))
             self.graph.add((slot_uri, RDFS.range, self.class_uri(slot.range)))
 
         # Slot domain

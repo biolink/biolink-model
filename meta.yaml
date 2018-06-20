@@ -2,7 +2,7 @@ metamodel:
     id: "https://biolink.github.io/metamodel/ontology/meta.ttl"
     description: Metamodel for biolink schema
     license: https://creativecommons.org/publicdomain/zero/1.0/
-    version: 0.2.1
+    version: 0.3.0
 
     prefixes:
       biolink: http://bioentity.io/vocab/
@@ -34,7 +34,6 @@ metamodel:
       name:
           domain: element
           primary_key: true
-          not_inherited: true
           description: >-
             a unique key that identifies a slot, type or class in a schema
           mappings:
@@ -47,6 +46,7 @@ metamodel:
 
       description:
           domain: element
+          inherited: true
           description: >-
             a description
           mappings:
@@ -54,13 +54,13 @@ metamodel:
 
       alt_descriptions:
           multivalued: true
+          inherited: true
           domain: element
           note: >-
             Needs description
 
       note:
           domain: element
-          not_inherited: true
           description: >-
             Notes about an element
           mappings:
@@ -68,7 +68,6 @@ metamodel:
 
       comment:
           domain: element
-          not_inherited: true
           description: >-
             Comment about an element
           mappings:
@@ -79,7 +78,6 @@ metamodel:
           domain: element
           range: example
           inlined: true
-          not_inherited: true
           description: >-
             Example of usage for a slot or class
           mappings:
@@ -91,6 +89,7 @@ metamodel:
 
       in_subset:
           multivalued: true
+          inherited: true
           domain: element
           range: string
           description: >-
@@ -130,8 +129,8 @@ metamodel:
       mappings:
           multivalued: true
           domain: element
+          inherited: true
           inlined: false
-          not_inherited: true
           description: >-
             list of equivalent or skos exact mappings to an ontology class
 
@@ -363,6 +362,7 @@ metamodel:
       multivalued:
           domain: slot definition
           range: boolean
+          inherited: true
           description: >-
             If true slot can have many values
 
@@ -375,26 +375,37 @@ metamodel:
       range:
           domain: slot definition
           range: element
+          inherited: true
           description: >-
             The slot type.  If absent, it is the builtin type 'string'
 
       required:
           domain: slot definition
           range: boolean
+          inherited: true
           description: >-
             If true slot must have at least one value
 
       inlined:
           domain: slot definition
           range: boolean
+          inherited: true
           description: >-
             if true then the value of this slot is inlined (i.e. a nested object) rather linked by key
 
       definitional:
           domain: slot definition
           range: boolean
+          inherited: true
+          note:
+            - needs description
+
+      object_property:
+          domain: slot definition
+          range: boolean
+          inherited: true
           description: >-
-            slot is a defining slot -- injection into the defining_slots list
+            true means that this slot is part of the formal definition of a class
 
       primary_key:
           domain: slot definition
@@ -423,6 +434,7 @@ metamodel:
       subproperty_of:
           domain: slot definition
           range: slot definition
+          inherited: true
           description: >-
             Ontolgy property which this is a subproperty of
           mappings:
@@ -446,19 +458,21 @@ metamodel:
           domain: slot definition
           note: >-
             Needs description
-            
-      not_inherited:
+
+      inherited:
           domain: slot definition
           range: boolean
+          inherited: true
           description: >-
-            True means that the slot is local and is not_inherited across is_a or slot_usage paths
+            True means that the slot is an essential attribute of the container -- that the slot is carried across
+            is_a and slot_usage paths
 
       #
       # Slots for type definition
       typeof:
             domain: type definition
             description: >-
-              a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time') or another type definition
+              a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition
 
       #
       # Slots for example type
@@ -536,6 +550,7 @@ metamodel:
             - domain
             - range
             - required
+            - object_property
             - inlined
             - primary_key
             - identifier
@@ -545,7 +560,6 @@ metamodel:
             - subproperty_of
             - inverse
             - is_class_field
-            - not_inherited
           slot_usage:
             is_a:
               range: slot definition

@@ -5,7 +5,7 @@ A gene product that is composed of a chain of amino acid sequences and is produc
 
 URI: [http://bioentity.io/vocab/Protein](http://bioentity.io/vocab/Protein)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Protein|id(i):identifier_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_biological_sequence(i):biological_sequence%20%3F;name(i):label_type%20%3F]-%20expressed%20in(i)%20%3F>\[AnatomicalEntity],%20\[Protein]-%20in%20cell%20population%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[Protein]-%20in%20complex%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[Protein]-%20in%20pathway%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[Protein]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[Protein]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[Protein]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[Protein]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[Protein]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Protein]^-\[ProteinIsoform],%20\[GeneProduct]^-\[Protein])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Protein|id(i):identifier_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_biological_sequence(i):biological_sequence%20%3F;name(i):symbol_type%20%3F]-%20expressed%20in(i)%20%3F>\[AnatomicalEntity],%20\[Protein]-%20in%20cell%20population%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[Protein]-%20in%20complex%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[Protein]-%20in%20pathway%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[Protein]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[Protein]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[Protein]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[Protein]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[Protein]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Protein]^-\[ProteinIsoform],%20\[GeneProduct]^-\[Protein])
 ## Mappings
 
  * [PR:000000001](http://purl.obolibrary.org/obo/PR_000000001)
@@ -74,8 +74,8 @@ URI: [http://bioentity.io/vocab/Protein](http://bioentity.io/vocab/Protein)
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
  * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
-    * _A human-readable name for a thing_
-    * range: [LabelType](LabelType.md)
+    * _genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name_
+    * range: [SymbolType](SymbolType.md)
     * inherited from: [MacromolecularMachine](MacromolecularMachine.md)
  * _[molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)_
     * _holds between two entities that make physical contact as part of some interaction_

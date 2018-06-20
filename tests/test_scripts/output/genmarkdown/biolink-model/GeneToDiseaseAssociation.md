@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vocab/GeneToDiseaseAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToDiseaseAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToDiseaseAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToDiseaseAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToDiseaseAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneToDiseaseAssociation]-%20object(i)%20%3F>\[Disease],%20\[GeneToDiseaseAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[GeneToDiseaseAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[GeneToDiseaseAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneToDiseaseAssociation]uses%20-.->\[GeneToThingAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneHasVariantThatContributesToDiseaseAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneAsAModelOfDiseaseAssociation],%20\[Association]^-\[GeneToDiseaseAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToDiseaseAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToDiseaseAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToDiseaseAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToDiseaseAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneToDiseaseAssociation]-%20object(i)>\[Disease],%20\[GeneToDiseaseAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[GeneToDiseaseAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[GeneToDiseaseAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneToDiseaseAssociation]uses%20-.->\[GeneToThingAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneHasVariantThatContributesToDiseaseAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneAsAModelOfDiseaseAssociation],%20\[Association]^-\[GeneToDiseaseAssociation])
 ## Mappings
 
  * [SIO:000983](http://semanticscience.org/resource/SIO_000983)
@@ -23,7 +23,7 @@ URI: [http://bioentity.io/vocab/GeneToDiseaseAssociation](http://bioentity.io/vo
 ## Fields
 
  * _[gene to disease association.subject](gene_to_disease_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model_
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

@@ -20,7 +20,7 @@ URI: [http://bioentity.io/vocab/VariantToPhenotypicFeatureAssociation](http://bi
 ## Fields
 
  * _[variant to phenotypic feature association.subject](variant_to_phenotypic_feature_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _a sequence variant in which the allele state is associated in some way with the phenotype state_
     * range: [SequenceVariant](SequenceVariant.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

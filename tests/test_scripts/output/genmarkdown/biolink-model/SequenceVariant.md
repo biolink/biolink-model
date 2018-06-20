@@ -5,7 +5,7 @@ An allele that varies in its sequence from what is considered the reference alle
 
 URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/SequenceVariant)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SequenceVariant|has_gene:string%20*;has_biological_sequence:biological_sequence%20%3F;id:identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[SequenceVariant]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[SequenceVariant]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[SequenceVariant]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[SequenceVariant]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GenotypeToVariantAssociation]-%20object(i)>\[SequenceVariant],%20\[SequenceVariantModulatesTreatmentAssociation]-%20subject(i)>\[SequenceVariant],%20\[GeneHasVariantThatContributesToDiseaseAssociation]-%20sequence%20variant%20qualifier(i)%20%3F>\[SequenceVariant],%20\[VariantToPhenotypicFeatureAssociation]-%20subject(i)>\[SequenceVariant],%20\[VariantToPopulationAssociation]-%20subject(i)>\[SequenceVariant],%20\[VariantToThingAssociation]-%20subject(i)>\[SequenceVariant],%20\[GenomicEntity]^-\[SequenceVariant])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SequenceVariant|has_biological_sequence:biological_sequence%20%3F;id:identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[SequenceVariant]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[SequenceVariant]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[SequenceVariant]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[SequenceVariant]-%20related%20to(i)%20%3F>\[NamedThing],%20\[SequenceVariant]-%20has%20gene%20*>\[Gene],%20\[GenotypeToVariantAssociation]-%20object(i)>\[SequenceVariant],%20\[SequenceVariantModulatesTreatmentAssociation]-%20subject(i)>\[SequenceVariant],%20\[GeneHasVariantThatContributesToDiseaseAssociation]-%20sequence%20variant%20qualifier(i)%20%3F>\[SequenceVariant],%20\[VariantToPhenotypicFeatureAssociation]-%20subject(i)>\[SequenceVariant],%20\[VariantToPopulationAssociation]-%20subject(i)>\[SequenceVariant],%20\[VariantToThingAssociation]-%20subject(i)>\[SequenceVariant],%20\[GenomicEntity]^-\[SequenceVariant])
 ## Mappings
 
  * [GENO:0000002](http://purl.obolibrary.org/obo/GENO_0000002)
@@ -28,12 +28,12 @@ URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/Seque
 ## Fields
 
  * _[sequence variant.has biological sequence](sequence_variant_has_biological_sequence.md)_
-    * _connects a genomic feature to its sequence_
+    * _The state of the sequence w.r.t a reference sequence_
     * range: [BiologicalSequence](BiologicalSequence.md)
     * __Local__
  * _[sequence variant.has gene](sequence_variant_has_gene.md)_
     * _Each allele can be associated with any number of genes_
-    * range: **string***
+    * range: [Gene](Gene.md)*
     * __Local__
  * _[sequence variant.id](sequence_variant_id.md) *subsets*: (translator_minimal)_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
