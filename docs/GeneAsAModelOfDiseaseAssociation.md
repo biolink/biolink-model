@@ -20,7 +20,8 @@ URI: [http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation](http://bioenti
 ## Fields
 
  * _[gene as a model of disease association.subject](gene_as_a_model_of_disease_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.
+  _
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

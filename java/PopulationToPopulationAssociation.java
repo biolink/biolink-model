@@ -22,29 +22,29 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class PopulationToPopulationAssociation {
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the population that form the object of the association
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("the population that form the object of the association")
     private String object;
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
+    @JsonPropertyDescription("A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used")
     private String relation;
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the population that form the subject of the association
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("the population that form the subject of the association")
     private String subject;
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the population that form the object of the association
      * 
      */
     @JsonProperty("object")
@@ -53,7 +53,7 @@ public class PopulationToPopulationAssociation {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the population that form the object of the association
      * 
      */
     @JsonProperty("object")
@@ -62,7 +62,7 @@ public class PopulationToPopulationAssociation {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
      * 
      */
     @JsonProperty("relation")
@@ -71,7 +71,7 @@ public class PopulationToPopulationAssociation {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
      * 
      */
     @JsonProperty("relation")
@@ -80,7 +80,7 @@ public class PopulationToPopulationAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the population that form the subject of the association
      * 
      */
     @JsonProperty("subject")
@@ -89,7 +89,7 @@ public class PopulationToPopulationAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the population that form the subject of the association
      * 
      */
     @JsonProperty("subject")

@@ -1,74 +1,175 @@
 {
-    "@context": {
-        "ClassDefinition": "http://bioentity.io/vocab/ClassDefinition",
-        "Definition": "http://bioentity.io/vocab/Definition",
-        "Element": "http://bioentity.io/vocab/Element",
-        "Example": "http://bioentity.io/vocab/Example",
-        "SchemaDefinition": "http://bioentity.io/vocab/SchemaDefinition",
-        "SlotDefinition": "http://bioentity.io/vocab/SlotDefinition",
-        "TypeDefinition": "http://bioentity.io/vocab/TypeDefinition",
-        "abstract": "http://bioentity.io/vocab/abstract",
-        "alias": "http://bioentity.io/vocab/alias",
-        "aliases": "http://bioentity.io/vocab/aliases",
-        "alt_descriptions": "http://bioentity.io/vocab/alt_descriptions",
-        "apply_to": "http://bioentity.io/vocab/apply_to",
-        "classes": "http://bioentity.io/vocab/classes",
-        "comment": "http://bioentity.io/vocab/comment",
-        "defining_slots": "http://bioentity.io/vocab/defining_slots",
-        "definitional": "http://bioentity.io/vocab/definitional",
-        "description": "http://bioentity.io/vocab/description",
-        "domain": "http://bioentity.io/vocab/domain",
-        "entity": "http://bioentity.io/vocab/entity",
-        "examples": "http://bioentity.io/vocab/examples",
-        "flags": "http://bioentity.io/vocab/flags",
-        "from_schema": "http://bioentity.io/vocab/from_schema",
-        "generation_date": "http://bioentity.io/vocab/generation_date",
-        "id": "@id",
-        "id_prefixes": "http://bioentity.io/vocab/id_prefixes",
-        "identifier": "http://bioentity.io/vocab/identifier",
-        "imports": "http://bioentity.io/vocab/imports",
-        "in_subset": "http://bioentity.io/vocab/in_subset",
-        "inlined": "http://bioentity.io/vocab/inlined",
-        "inverse": "http://bioentity.io/vocab/inverse",
-        "is_a": "http://bioentity.io/vocab/is_a",
-        "is_class_field": "http://bioentity.io/vocab/is_class_field",
-        "license": "http://bioentity.io/vocab/license",
-        "local_names": "http://bioentity.io/vocab/local_names",
-        "mappings": "http://bioentity.io/vocab/mappings",
-        "metamodel_version": "http://bioentity.io/vocab/metamodel_version",
-        "mixin": "http://bioentity.io/vocab/mixin",
-        "mixins": "http://bioentity.io/vocab/mixins",
-        "multivalued": "http://bioentity.io/vocab/multivalued",
-        "name": "http://bioentity.io/vocab/name",
-        "not_inherited": "http://bioentity.io/vocab/not_inherited",
-        "note": "http://bioentity.io/vocab/note",
-        "path": "http://bioentity.io/vocab/path",
-        "prefixes": "http://bioentity.io/vocab/prefixes",
-        "primary_key": "http://bioentity.io/vocab/primary_key",
-        "range": "http://bioentity.io/vocab/range",
-        "required": "http://bioentity.io/vocab/required",
-        "role": "http://bioentity.io/vocab/role",
-        "see_also": "http://bioentity.io/vocab/see_also",
-        "singular_name": "http://bioentity.io/vocab/singular_name",
-        "slot_usage": "http://bioentity.io/vocab/slot_usage",
-        "slots": "http://bioentity.io/vocab/slots",
-        "source_file": "http://bioentity.io/vocab/source_file",
-        "source_file_date": "http://bioentity.io/vocab/source_file_date",
-        "source_file_size": "http://bioentity.io/vocab/source_file_size",
-        "subclass_of": "http://bioentity.io/vocab/subclass_of",
-        "subproperty_of": "http://bioentity.io/vocab/subproperty_of",
-        "symmetric": "http://bioentity.io/vocab/symmetric",
-        "type": {
-            "@id": "rdf:type",
-            "@type": "@id"
-        },
-        "typeof": "http://bioentity.io/vocab/typeof",
-        "types": "http://bioentity.io/vocab/types",
-        "union_of": "http://bioentity.io/vocab/union_of",
-        "value": "http://bioentity.io/vocab/value",
-        "values_from": "http://bioentity.io/vocab/values_from",
-        "version": "http://bioentity.io/vocab/version"
-    },
-    "comments": "Auto generated from meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-06-12 17:47\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n"
+   "comments": "Auto generated from meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-06-22 13:31\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "@context": {
+      "biolink": "http://bioentity.io/vocab/",
+      "meta": "http://bioentity.io/meta/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "OIO": "http://www.geneontology.org/formats/oboInOwl#",
+      "@vocab": "http://bioentity.io/vocab/",
+      "@base": "http://bioentity.io/vocab/",
+      "abstract": {
+         "@type": "xsd:boolean"
+      },
+      "aliases": {
+         "@container": "@list"
+      },
+      "alt_descriptions": {
+         "@container": "@list"
+      },
+      "apply_to": {
+         "@type": "@id"
+      },
+      "classes": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "comment": {
+         "@id": "skos:editorialNote"
+      },
+      "default_curi_maps": {
+         "@container": "@list"
+      },
+      "default_type": {
+         "@type": "@id"
+      },
+      "defining_slots": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "definitional": {
+         "@type": "xsd:boolean"
+      },
+      "description": {
+         "@id": "skos:definition"
+      },
+      "domain": {
+         "@type": "@id"
+      },
+      "entity": {
+         "@type": "xsd:boolean"
+      },
+      "examples": {
+         "@type": "@id",
+         "@container": "@list",
+         "@id": "skos:example"
+      },
+      "flags": {
+         "@container": "@list"
+      },
+      "from_schema": {
+         "@id": "skos:inScheme"
+      },
+      "generation_date": {
+         "@type": "xsd:date"
+      },
+      "id_prefixes": {
+         "@container": "@list"
+      },
+      "identifier": {
+         "@type": "xsd:boolean"
+      },
+      "imports": {
+         "@container": "@list"
+      },
+      "in_subset": {
+         "@container": "@list",
+         "@id": "OIO:inSubset"
+      },
+      "inherited": {
+         "@type": "xsd:boolean"
+      },
+      "inlined": {
+         "@type": "xsd:boolean"
+      },
+      "inverse": {
+         "@type": "@id",
+         "@id": "owl:inverseOf"
+      },
+      "is_a": {
+         "@type": "@id",
+         "@id": "rdf:type"
+      },
+      "is_class_field": {
+         "@type": "xsd:boolean"
+      },
+      "local_names": {
+         "@container": "@list"
+      },
+      "mappings": {
+         "@container": "@list"
+      },
+      "mixin": {
+         "@type": "xsd:boolean"
+      },
+      "mixins": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "multivalued": {
+         "@type": "xsd:boolean"
+      },
+      "name": {
+         "@id": "rdfs:label"
+      },
+      "note": {
+         "@id": "skos:note"
+      },
+      "object_property": {
+         "@type": "xsd:boolean"
+      },
+      "prefixes": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "primary_key": {
+         "@type": "xsd:boolean"
+      },
+      "range": {
+         "@type": "biolink:anytype"
+      },
+      "required": {
+         "@type": "xsd:boolean"
+      },
+      "see_also": {
+         "@id": "skos:related"
+      },
+      "slot_usage": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "slots": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "source_file_size": {
+         "@type": "xsd:integer"
+      },
+      "subclass_of": {
+         "@type": "xsd:anyURI",
+         "@id": "rdfs:subClassOf"
+      },
+      "subproperty_of": {
+         "@type": "@id",
+         "@id": "rdfs:subPropertyOf"
+      },
+      "symmetric": {
+         "@type": "xsd:boolean"
+      },
+      "types": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "union_of": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "values_from": {
+         "@container": "@list"
+      }
+   }
 }
 

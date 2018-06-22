@@ -21,7 +21,7 @@ URI: [http://bioentity.io/vocab/ChemicalToThingAssociation](http://bioentity.io/
 ## Fields
 
  * _[chemical to thing association.subject](chemical_to_thing_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the chemical substance or entity that is an interactor_
     * range: [ChemicalSubstance](ChemicalSubstance.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

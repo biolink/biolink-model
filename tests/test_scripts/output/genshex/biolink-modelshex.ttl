@@ -7,6 +7,9 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+meta:SlotRangeTypes a shex:ShapeOr ;
+    shex:shapeExprs ( biolink:TypeDefinition biolink:ClassDefinition meta:Builtins ) .
+
 biolink:ActivityAndBehavior a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Occurrent [ a shex:Shape ] ) .
 
@@ -543,6 +546,9 @@ biolink:VariantToPopulationAssociation a shex:ShapeAnd ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:integer ] ] ) ] ] ) .
 
+meta:Builtins a shex:NodeConstraint ;
+    shex:values ( xsd:string xsd:integer xsd:float xsd:double xsd:boolean xsd:time xsd:date xsd:anyURI biolink:anytype biolink:anytype ) .
+
 biolink:AdministrativeEntity a shex:Shape .
 
 biolink:BiosampleToThingAssociation a shex:ShapeAnd ;
@@ -597,10 +603,10 @@ biolink:DiseaseToThingAssociation a shex:ShapeAnd ;
 biolink:DrugExposure a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Environment [ a shex:Shape ;
                 shex:expression [ a shex:TripleConstraint ;
-                        shex:max -1 ;
+                        shex:max 1 ;
                         shex:min 1 ;
                         shex:predicate biolink:drug ;
-                        shex:valueExpr biolink:ChemicalSubstance ] ] ) .
+                        shex:valueExpr biolink:ChemicalSubstance__List ] ] ) .
 
 biolink:Exon a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ] ) .
@@ -736,10 +742,10 @@ biolink:Treatment a shex:ShapeAnd ;
                                     shex:min 1 ;
                                     shex:predicate <http://purl.obolibrary.org/obo/RO_0002606> ;
                                     shex:valueExpr biolink:DiseaseOrPhenotypicFeature ] [ a shex:TripleConstraint ;
-                                    shex:max -1 ;
+                                    shex:max 1 ;
                                     shex:min 1 ;
                                     shex:predicate biolink:has_exposure_parts ;
-                                    shex:valueExpr biolink:DrugExposure ] ) ] ] ) .
+                                    shex:valueExpr biolink:DrugExposure__List ] ) ] ] ) .
 
 biolink:Zygosity a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Attribute [ a shex:Shape ] ) .
@@ -763,11 +769,37 @@ biolink:BiologicalProcessOrActivity a shex:ShapeAnd ;
 biolink:Biosample a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:OrganismalEntity biolink:ThingWithTaxon [ a shex:Shape ] ) .
 
+biolink:ChemicalSubstance__List a shex:Shape ;
+    shex:closed true ;
+    shex:expression [ a shex:EachOf ;
+            shex:expressions ( [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate rdf:first ;
+                        shex:valueExpr biolink:ChemicalSubstance ] [ a shex:TripleConstraint ;
+                        shex:predicate rdf:rest ;
+                        shex:valueExpr [ a shex:ShapeOr ;
+                                shex:shapeExprs ( [ a shex:NodeConstraint ;
+                                            shex:values ( () ) ] biolink:ChemicalSubstance__List ) ] ] ) ] .
+
 biolink:ClinicalEntity a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:NamedThing [ a shex:Shape ] ) .
 
 biolink:Disease a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:DiseaseOrPhenotypicFeature [ a shex:Shape ] ) .
+
+biolink:DrugExposure__List a shex:Shape ;
+    shex:closed true ;
+    shex:expression [ a shex:EachOf ;
+            shex:expressions ( [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate rdf:first ;
+                        shex:valueExpr biolink:DrugExposure ] [ a shex:TripleConstraint ;
+                        shex:predicate rdf:rest ;
+                        shex:valueExpr [ a shex:ShapeOr ;
+                                shex:shapeExprs ( [ a shex:NodeConstraint ;
+                                            shex:values ( () ) ] biolink:DrugExposure__List ) ] ] ) ] .
 
 biolink:EntityToFeatureOrDiseaseQualifiers a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:FrequencyQualifier [ a shex:Shape ;
@@ -818,6 +850,45 @@ biolink:GeneToThingAssociation a shex:ShapeAnd ;
                         shex:min 1 ;
                         shex:predicate rdf:subject ;
                         shex:valueExpr biolink:GeneOrGeneProduct ] ] ) .
+
+biolink:Gene__List a shex:Shape ;
+    shex:closed true ;
+    shex:expression [ a shex:EachOf ;
+            shex:expressions ( [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate rdf:first ;
+                        shex:valueExpr biolink:Gene ] [ a shex:TripleConstraint ;
+                        shex:predicate rdf:rest ;
+                        shex:valueExpr [ a shex:ShapeOr ;
+                                shex:shapeExprs ( [ a shex:NodeConstraint ;
+                                            shex:values ( () ) ] biolink:Gene__List ) ] ] ) ] .
+
+biolink:OntologyClass__List a shex:Shape ;
+    shex:closed true ;
+    shex:expression [ a shex:EachOf ;
+            shex:expressions ( [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate rdf:first ;
+                        shex:valueExpr biolink:OntologyClass ] [ a shex:TripleConstraint ;
+                        shex:predicate rdf:rest ;
+                        shex:valueExpr [ a shex:ShapeOr ;
+                                shex:shapeExprs ( [ a shex:NodeConstraint ;
+                                            shex:values ( () ) ] biolink:OntologyClass__List ) ] ] ) ] .
+
+biolink:Publication__List a shex:Shape ;
+    shex:closed true ;
+    shex:expression [ a shex:EachOf ;
+            shex:expressions ( [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate rdf:first ;
+                        shex:valueExpr biolink:Publication ] [ a shex:TripleConstraint ;
+                        shex:predicate rdf:rest ;
+                        shex:valueExpr [ a shex:ShapeOr ;
+                                shex:shapeExprs ( [ a shex:NodeConstraint ;
+                                            shex:values ( () ) ] biolink:Publication__List ) ] ] ) ] .
 
 biolink:RNAProduct a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GeneProduct [ a shex:Shape ] ) .
@@ -979,10 +1050,10 @@ biolink:SequenceVariant a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
-                                    shex:max -1 ;
+                                    shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate owl:topAnnotationProperty ;
-                                    shex:valueExpr biolink:Gene ] [ a shex:TripleConstraint ;
+                                    shex:valueExpr biolink:Gene__List ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate owl:topAnnotationProperty ;
@@ -1182,14 +1253,14 @@ biolink:Association a shex:ShapeAnd ;
                                     shex:predicate rdf:object ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
-                                    shex:max -1 ;
+                                    shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:qualifiers ;
-                                    shex:valueExpr biolink:OntologyClass ] [ a shex:TripleConstraint ;
-                                    shex:max -1 ;
+                                    shex:valueExpr biolink:OntologyClass__List ] [ a shex:TripleConstraint ;
+                                    shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:publications ;
-                                    shex:valueExpr biolink:Publication ] [ a shex:TripleConstraint ;
+                                    shex:valueExpr biolink:Publication__List ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate <http://purl.org/pav/providedBy> ;
@@ -1201,7 +1272,9 @@ biolink:Association a shex:ShapeAnd ;
                                             shex:datatype xsd:string ] ] ) ] ] ) .
 
 [] a shex:Schema ;
-    shex:shapes biolink:ActivityAndBehavior,
+    shex:shapes meta:Builtins,
+        meta:SlotRangeTypes,
+        biolink:ActivityAndBehavior,
         biolink:AdministrativeEntity,
         biolink:AnatomicalEntity,
         biolink:AnatomicalEntityToAnatomicalEntityAssociation,
@@ -1225,6 +1298,7 @@ biolink:Association a shex:ShapeAnd ;
         biolink:CellLineToThingAssociation,
         biolink:CellularComponent,
         biolink:ChemicalSubstance,
+        biolink:ChemicalSubstance__List,
         biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation,
         biolink:ChemicalToGeneAssociation,
         biolink:ChemicalToPathwayAssociation,
@@ -1244,6 +1318,7 @@ biolink:Association a shex:ShapeAnd ;
         biolink:DiseaseToThingAssociation,
         biolink:Drug,
         biolink:DrugExposure,
+        biolink:DrugExposure__List,
         biolink:EntityToDiseaseAssociation,
         biolink:EntityToFeatureOrDiseaseQualifiers,
         biolink:EntityToPhenotypicFeatureAssociation,
@@ -1276,6 +1351,7 @@ biolink:Association a shex:ShapeAnd ;
         biolink:GeneToGoTermAssociation,
         biolink:GeneToPhenotypicFeatureAssociation,
         biolink:GeneToThingAssociation,
+        biolink:Gene__List,
         biolink:Genome,
         biolink:GenomicEntity,
         biolink:GenomicSequenceLocalization,
@@ -1309,6 +1385,7 @@ biolink:Association a shex:ShapeAnd ;
         biolink:Occurrent,
         biolink:Onset,
         biolink:OntologyClass,
+        biolink:OntologyClass__List,
         biolink:OrganismTaxon,
         biolink:OrganismalEntity,
         biolink:PairwiseGeneOrProteinInteractionAssociation,
@@ -1326,6 +1403,7 @@ biolink:Association a shex:ShapeAnd ;
         biolink:ProteinIsoform,
         biolink:Provider,
         biolink:Publication,
+        biolink:Publication__List,
         biolink:RNAProduct,
         biolink:RNAProductIsoform,
         biolink:RelationshipQuantifier,

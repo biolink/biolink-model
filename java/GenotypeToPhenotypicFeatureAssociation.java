@@ -28,11 +28,11 @@ public class GenotypeToPhenotypicFeatureAssociation {
     @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
     private String relation;
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * genotype that is associated with the phenotypic feature
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("genotype that is associated with the phenotypic feature")
     private String subject;
 
     /**
@@ -54,7 +54,7 @@ public class GenotypeToPhenotypicFeatureAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * genotype that is associated with the phenotypic feature
      * 
      */
     @JsonProperty("subject")
@@ -63,7 +63,7 @@ public class GenotypeToPhenotypicFeatureAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * genotype that is associated with the phenotypic feature
      * 
      */
     @JsonProperty("subject")

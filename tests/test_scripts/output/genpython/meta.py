@@ -1,5 +1,5 @@
 # Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-06-20 11:10
+# Generation date: 2018-06-22 12:54
 # Schema: metamodel
 #
 # id: https://biolink.github.io/metamodel/ontology/meta.ttl
@@ -7,12 +7,12 @@
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import datetime
-from typing import Optional, List, Union, Dict
+from typing import Optional, List, Union, Dict, Any
 from dataclasses import dataclass
 from metamodel.utils.metamodelcore import empty_list, empty_dict
 from metamodel.utils.yamlutils import YAMLRoot
 
-metamodel_version = "0.3.0"
+metamodel_version = "0.3.1"
 
 inherited_slots: List[str] = ["description", "alt_descriptions", "in_subset", "mappings", "multivalued", "range",
                               "required", "inlined", "definitional", "object_property", "subproperty_of", "inherited"]
@@ -127,7 +127,7 @@ class SlotDefinition(Definition):
     name: SlotDefinitionName = None
     multivalued: bool = False
     domain: Optional[ClassDefinitionName] = None
-    range: Optional[ElementName] = None
+    range: Optional[Any] = None
     required: bool = False
     object_property: bool = False
     inlined: bool = False
@@ -153,8 +153,6 @@ class SlotDefinition(Definition):
             self.name = SlotDefinitionName(self.name)
         if self.domain and not isinstance(self.domain, ClassDefinitionName):
             self.domain = ClassDefinitionName(self.domain)
-        if self.range and not isinstance(self.range, ElementName):
-            self.range = ElementName(self.range)
         if self.subproperty_of and not isinstance(self.subproperty_of, SlotDefinitionName):
             self.subproperty_of = SlotDefinitionName(self.subproperty_of)
         if self.inverse and not isinstance(self.inverse, SlotDefinitionName):
@@ -232,6 +230,9 @@ class SchemaDefinition(Definition):
     imports: List[str] = empty_list()
     license: Optional[str] = None
     prefixes: Dict[PrefixLocalName, Union[str, Prefix]] = empty_dict()
+    default_prefix: Optional[str] = None
+    default_type: Optional[TypeDefinitionName] = None
+    default_curi_maps: List[str] = empty_list()
     types: Dict[TypeDefinitionName, Union[dict, TypeDefinition]] = empty_dict()
     slots: Dict[SlotDefinitionName, Union[dict, SlotDefinition]] = empty_dict()
     classes: Dict[ClassDefinitionName, Union[dict, ClassDefinition]] = empty_dict()
@@ -240,8 +241,6 @@ class SchemaDefinition(Definition):
     source_file_size: Optional[int] = None
     source_file_date: Optional[str] = None
     generation_date: Optional[datetime.date] = None
-    default_curi_maps: List[str] = empty_list()
-    default_prefix: Optional[str] = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -256,6 +255,8 @@ class SchemaDefinition(Definition):
         for k, v in self.prefixes.items():
             if not isinstance(v, Prefix):
                 self.prefixes[k] = Prefix(k, v)
+        if self.default_type and not isinstance(self.default_type, TypeDefinitionName):
+            self.default_type = TypeDefinitionName(self.default_type)
         for k, v in self.types.items():
             if not isinstance(v, TypeDefinition):
                 self.types[k] = TypeDefinition(name=k, **({} if v is None else v))

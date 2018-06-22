@@ -6,6 +6,7 @@ holds between two genes or gene products that are part of in the same biological
 URI: [http://bioentity.io/vocab/in_pathway_with](slot_uri)
 ## Mappings
 
+ * [SEMMEDDB:COEXISTS_WITH](http://purl.obolibrary.org/obo/SEMMEDDB_COEXISTS_WITH)
 ## Domain and Range
 
 [GeneOrGeneProduct](GeneOrGeneProduct.md) -> [GeneOrGeneProduct](GeneOrGeneProduct.md)

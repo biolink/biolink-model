@@ -8,11 +8,11 @@ URI: [http://bioentity.io/vocab/generation_date](slot_uri)
 
 ## Domain and Range
 
-schema definition -> **date**
+[SchemaDefinition](SchemaDefinition.md) -> **date**
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: schema definition
+ *  usage: [SchemaDefinition](SchemaDefinition.md)

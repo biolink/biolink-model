@@ -2,6 +2,31 @@
    "@context": "http://www.w3.org/ns/shex.jsonld",
    "shapes": [
       {
+         "id": "http://bioentity.io/meta/Builtins",
+         "values": [
+            "http://www.w3.org/2001/XMLSchema#string",
+            "http://www.w3.org/2001/XMLSchema#integer",
+            "http://www.w3.org/2001/XMLSchema#float",
+            "http://www.w3.org/2001/XMLSchema#double",
+            "http://www.w3.org/2001/XMLSchema#boolean",
+            "http://www.w3.org/2001/XMLSchema#time",
+            "http://www.w3.org/2001/XMLSchema#date",
+            "http://www.w3.org/2001/XMLSchema#anyURI",
+            "http://bioentity.io/vocab/anytype",
+            "http://bioentity.io/vocab/anytype"
+         ],
+         "type": "NodeConstraint"
+      },
+      {
+         "id": "http://bioentity.io/meta/SlotRangeTypes",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/TypeDefinition",
+            "http://bioentity.io/vocab/ClassDefinition",
+            "http://bioentity.io/meta/Builtins"
+         ],
+         "type": "ShapeOr"
+      },
+      {
          "id": "http://bioentity.io/vocab/ActivityAndBehavior",
          "shapeExprs": [
             "http://bioentity.io/vocab/Occurrent",
@@ -135,6 +160,72 @@
          "type": "ShapeAnd"
       },
       {
+         "id": "http://bioentity.io/vocab/OntologyClass__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/OntologyClass",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/OntologyClass__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Publication__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/Publication",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/Publication__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
          "id": "http://bioentity.io/vocab/Association",
          "shapeExprs": [
             "http://bioentity.io/vocab/InformationContentEntity",
@@ -187,16 +278,16 @@
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/qualifiers",
-                        "valueExpr": "http://bioentity.io/vocab/OntologyClass",
+                        "valueExpr": "http://bioentity.io/vocab/OntologyClass__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/publications",
-                        "valueExpr": "http://bioentity.io/vocab/Publication",
+                        "valueExpr": "http://bioentity.io/vocab/Publication__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
@@ -705,15 +796,48 @@
          "type": "ShapeAnd"
       },
       {
+         "id": "http://bioentity.io/vocab/ChemicalSubstance__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/ChemicalSubstance",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/ChemicalSubstance__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
          "id": "http://bioentity.io/vocab/DrugExposure",
          "shapeExprs": [
             "http://bioentity.io/vocab/Environment",
             {
                "expression": {
                   "predicate": "http://bioentity.io/vocab/drug",
-                  "valueExpr": "http://bioentity.io/vocab/ChemicalSubstance",
+                  "valueExpr": "http://bioentity.io/vocab/ChemicalSubstance__List",
                   "min": 1,
-                  "max": -1,
+                  "max": 1,
                   "type": "TripleConstraint"
                },
                "type": "Shape"
@@ -2491,6 +2615,39 @@
          "type": "ShapeAnd"
       },
       {
+         "id": "http://bioentity.io/vocab/Gene__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/Gene",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/Gene__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
          "id": "http://bioentity.io/vocab/SequenceVariant",
          "shapeExprs": [
             "http://bioentity.io/vocab/GenomicEntity",
@@ -2499,9 +2656,9 @@
                   "expressions": [
                      {
                         "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
-                        "valueExpr": "http://bioentity.io/vocab/Gene",
+                        "valueExpr": "http://bioentity.io/vocab/Gene__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
@@ -2649,6 +2806,39 @@
          "type": "ShapeAnd"
       },
       {
+         "id": "http://bioentity.io/vocab/DrugExposure__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/DrugExposure",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/DrugExposure__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
          "id": "http://bioentity.io/vocab/Treatment",
          "shapeExprs": [
             "http://bioentity.io/vocab/Environment",
@@ -2664,9 +2854,9 @@
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/has_exposure_parts",
-                        "valueExpr": "http://bioentity.io/vocab/DrugExposure",
+                        "valueExpr": "http://bioentity.io/vocab/DrugExposure__List",
                         "min": 1,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      }
                   ],

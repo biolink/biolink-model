@@ -22,7 +22,7 @@ URI: [http://bioentity.io/vocab/GeneRegulatoryRelationship](http://bioentity.io/
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__
  * _[gene regulatory relationship.relation](gene_regulatory_relationship_relation.md)_
-    * _the relationship type by which a subject is connected to an object in an association_
+    * _the direction is always from regulator to regulated_
     * range: [RelationshipType](RelationshipType.md) [required]
     * __Local__
  * _[gene regulatory relationship.subject](gene_regulatory_relationship_subject.md)_

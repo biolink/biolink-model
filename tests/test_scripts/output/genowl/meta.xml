@@ -6,939 +6,239 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdf:Description rdf:about="http://bioentity.io/vocab/domain">
-    <obo:IAO_0000115>The class to which this slot applies.</obo:IAO_0000115>
-    <rdfs:label>domain</rdfs:label>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N227d0812b25a476d86c4f27f062d9a2e">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/singular_name"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdf:Description rdf:nodeID="N08b03745ca3d474888dbe362d78e1a8b">
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/source_file_size">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <obo:IAO_0000115>size in bytes of the source of the schema.  Supplied by the loader</obo:IAO_0000115>
-    <rdfs:label>source_file_size</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/see_also">
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-    <rdfs:label>see_also</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/version">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>Schema version</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
-    <rdfs:label>version</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nca9e4a1b2a314ebe8261e59668f12525">
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/domain"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N74cdedf18f0f45e88431aeba9697e94e">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/object_property"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0747425e5e8b4cc7ba1236ea3c6a3b7d">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/inverse"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/is_class_field">
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdfs:label>is_class_field</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6d68f8a1f724497dbf8129e99f5a2bf9">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/description"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/inlined">
-    <obo:IAO_0000115>if true then the value of this slot is inlined (i.e. a nested object) rather linked by key</obo:IAO_0000115>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>inlined</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9f77434ecb4049f8b83535e0e51e59c1">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/multivalued"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7d5c9873d811478d8004d913baa03350">
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/Definition"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/mixins"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5059d51d29164803935dc198134e9b27">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/generation_date"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4be2e594538648e283bcfd3a61394a06">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/Definition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/is_a"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/slot_definition_mixins">
-    <rdfs:subPropertyOf rdf:resource="http://bioentity.io/vocab/mixins"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdfs:label>slot definition mixins</rdfs:label>
-    <obo:IAO_0000115>List of definitions to be mixed in. Targets may be any definition of the same type</obo:IAO_0000115>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/subproperty_of">
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <obo:IAO_0000115>Ontolgy property which this is a subproperty of</obo:IAO_0000115>
-    <rdfs:label>subproperty_of</rdfs:label>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/range">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/Element"/>
-    <rdfs:label>range</rdfs:label>
-    <obo:IAO_0000115>The slot type.  If absent, it is the builtin type 'string'</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb764abbf59d646cfb426c0f79d5666e5">
     <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/id_prefixes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/local_name">
-    <obo:IAO_0000115>the nsname (sans ':' for a given prefix)</obo:IAO_0000115>
-    <rdfs:label>local name</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Prefix"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncdeba5229f404baaa8d362c33bdfef67">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/is_class_field"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/SlotDefinition">
-    <rdfs:subClassOf rdf:nodeID="N9a09c7602b6e4dff92b14fe16a76746f"/>
-    <rdfs:subClassOf rdf:nodeID="Ne5237a206b714d9c8d50e7914e550834"/>
-    <rdfs:subClassOf rdf:nodeID="Nbc7726e7c9ab4fe79334f80dfb6eead4"/>
-    <rdfs:subClassOf rdf:nodeID="Nf9d60054e4bf4f2495d12f465cb0c4dc"/>
-    <rdfs:subClassOf rdf:nodeID="N0747425e5e8b4cc7ba1236ea3c6a3b7d"/>
-    <obo:IAO_0000115>A property or slot</obo:IAO_0000115>
-    <rdfs:subClassOf rdf:resource="http://bioentity.io/vocab/Definition"/>
-    <rdfs:subClassOf rdf:nodeID="N9f77434ecb4049f8b83535e0e51e59c1"/>
-    <rdfs:subClassOf rdf:nodeID="N44216807d35f4bf6a64f7a2f1d82baf3"/>
-    <rdfs:subClassOf rdf:nodeID="N119faf494fec42749806eecdc3003a2d"/>
-    <rdfs:subClassOf rdf:nodeID="N7bc3f952abff4899b50c4307a5ebf146"/>
-    <rdfs:subClassOf rdf:nodeID="N5d2386fa431f49a0b629cfc9e1897956"/>
-    <rdfs:subClassOf rdf:nodeID="Ncdeba5229f404baaa8d362c33bdfef67"/>
-    <rdfs:label>slot definition</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:nodeID="N2341bd6a716d45a9b115720f233bda62"/>
-    <rdfs:subClassOf rdf:nodeID="N8b238d3ec7b8461398abd169b3c36b64"/>
-    <rdfs:subClassOf rdf:nodeID="N1748f010b59e4c3abf2e6321ca1ba902"/>
-    <rdfs:subClassOf rdf:nodeID="N538eede95de84656b0d5bf337ddb8c35"/>
-    <rdfs:subClassOf rdf:nodeID="Ne8cdfb6743724f25af46417d7dbaf8f9"/>
-    <rdfs:subClassOf rdf:nodeID="Nca9e4a1b2a314ebe8261e59668f12525"/>
-    <rdfs:subClassOf rdf:nodeID="N74cdedf18f0f45e88431aeba9697e94e"/>
-    <rdfs:subClassOf rdf:nodeID="N1d1996a3d97346dcb0616bfacf3b2396"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4513dfd5cf9849df98f59c925e2a80dc">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/slot_usage"/>
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne6f6705f5d934d45b8731a210ee16ef2">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/typeof"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/prefixes">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>prefixes</rdfs:label>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
-    <obo:IAO_0000115>Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes</obo:IAO_0000115>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/Prefix"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/Definition">
-    <rdfs:subClassOf rdf:nodeID="N5a7a75451b9a4cd59b85b1a381d3ad5e"/>
-    <rdfs:subClassOf rdf:nodeID="N6edf4ed2c70c426da9ca7d3cabd36166"/>
-    <rdfs:subClassOf rdf:resource="http://bioentity.io/vocab/Element"/>
-    <rdfs:subClassOf rdf:nodeID="Nbe94395ede504b818b37f595721d8966"/>
-    <obo:IAO_0000115>definition base class</obo:IAO_0000115>
-    <rdfs:subClassOf rdf:nodeID="N4be2e594538648e283bcfd3a61394a06"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label>definition</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="N940290b43b3e49e49ad0402b9fac1ef4"/>
-    <rdfs:subClassOf rdf:nodeID="N7d5c9873d811478d8004d913baa03350"/>
-    <rdfs:subClassOf rdf:nodeID="N452d895a35ea4b17b75537f9d27e3b6e"/>
-    <rdfs:subClassOf rdf:nodeID="N1e2ec3471fa3458a9d50dbb148b5ac43"/>
-    <rdfs:subClassOf rdf:nodeID="N429a2151b87a49d49eda72aa12be14a6"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbe94395ede504b818b37f595721d8966">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/subclass_of"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N01b9070439554fdf8b380772a9dc9bc1">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
     <owl:onProperty rdf:resource="http://bioentity.io/vocab/see_also"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncf7d4d47197c49fdba96c5baa5fc0de4">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/source_file"/>
+  <rdf:Description rdf:nodeID="Nf9b83b8e807c4b99854686331d1d639e">
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/role"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/default_curi_maps">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <obo:IAO_0000115>List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables</obo:IAO_0000115>
+    <rdfs:label>default_curi_maps</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/examples">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/Example"/>
+    <obo:IAO_0000115>Example of usage for a slot or class</obo:IAO_0000115>
+    <rdfs:label>examples</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://bioentity.io/vocab/abstract">
     <rdfs:label>abstract</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
     <obo:IAO_0000115>An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/TypeDefinition">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label>type definition</rdfs:label>
-    <obo:IAO_0000115>A type definition</obo:IAO_0000115>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/Definition">
+    <rdfs:subClassOf rdf:nodeID="Nb332fb6c61714dda83f038da24fc4bc2"/>
     <rdfs:subClassOf rdf:resource="http://bioentity.io/vocab/Element"/>
-    <rdfs:subClassOf rdf:nodeID="Ne6f6705f5d934d45b8731a210ee16ef2"/>
+    <rdfs:subClassOf rdf:nodeID="N41d9f4fbe3a24ba1852e830ab27659b2"/>
+    <rdfs:subClassOf rdf:nodeID="N7aa0ee49c17f4058821c3282235aa120"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="N0590aafca80d4363af2701ada54fc72f"/>
+    <rdfs:subClassOf rdf:nodeID="N28687361da634507a4fd665a62716578"/>
+    <rdfs:subClassOf rdf:nodeID="Ndabe02a925804199bd0eb565ee9897d2"/>
+    <rdfs:subClassOf rdf:nodeID="Nf4d063c492a14ae9abffa0a3e5a08690"/>
+    <rdfs:label>definition</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="Nc113453571ac4b5fa93d73caba3d2c63"/>
+    <obo:IAO_0000115>definition base class</obo:IAO_0000115>
+    <rdfs:subClassOf rdf:nodeID="N94956e2eb8e74ff7b162e7a4ba4fdc29"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N9a09c7602b6e4dff92b14fe16a76746f">
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/is_a"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfb07351f4c83428a9677f445ce9a491c">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/flags"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/mappings">
-    <obo:IAO_0000115>list of equivalent or skos exact mappings to an ontology class</obo:IAO_0000115>
-    <rdfs:label>mappings</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N57a63ab0436e4248937afe3ab978d30f">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/defining_slots"/>
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/class_definition_mixins">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>class definition mixins</rdfs:label>
-    <obo:IAO_0000115>List of definitions to be mixed in. Targets may be any definition of the same type</obo:IAO_0000115>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <rdfs:subPropertyOf rdf:resource="http://bioentity.io/vocab/mixins"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/id">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/default_type">
+    <obo:IAO_0000115>the default type if range is omitted</obo:IAO_0000115>
+    <rdfs:label>default_type</rdfs:label>
     <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
-    <rdfs:label>id</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <obo:IAO_0000115>a globally unique id or url for a schema</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne8cdfb6743724f25af46417d7dbaf8f9">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/alias"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/union_of">
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/TypeDefinition"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>union_of</rdfs:label>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
-    <obo:IAO_0000115>list of class or slot definitions that are combined to create the union class</obo:IAO_0000115>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/Definition"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/inherited">
-    <obo:IAO_0000115>True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths</obo:IAO_0000115>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/required">
+    <obo:IAO_0000115>If true slot must have at least one value</obo:IAO_0000115>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:label>inherited</rdfs:label>
+    <rdfs:label>required</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N76229b05b0944175ad62c193307923f6">
+  <rdf:Description rdf:nodeID="Nda337879cc3d4e169664d31f19cfca70">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
     <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/metamodel_version"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/singular_name"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/defining_slots">
-    <obo:IAO_0000115>The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom</obo:IAO_0000115>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <rdfs:label>defining_slots</rdfs:label>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/slot_definition_union_of">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/in_subset">
-    <rdfs:label>in_subset</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/path">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>slot definition union_of</rdfs:label>
     <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <obo:IAO_0000115>For any denormalized slot, this represents the tree or graph path used to generate the denormalized form</obo:IAO_0000115>
-    <rdfs:label>path</rdfs:label>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <obo:IAO_0000115>list of class or slot definitions that are combined to create the union class</obo:IAO_0000115>
+    <rdfs:subPropertyOf rdf:resource="http://bioentity.io/vocab/union_of"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N119faf494fec42749806eecdc3003a2d">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/identifier"/>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/types">
+    <rdfs:label>types</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>types defined in schema</obo:IAO_0000115>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/TypeDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/SchemaDefinition">
+    <rdfs:subClassOf rdf:nodeID="Ncbc858e4939440ea9fd5a10350b59e9d"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="N87a8e17e3c4c461792ca25f13b60a5f8"/>
+    <rdfs:subClassOf rdf:nodeID="Nc9616f6076644d5680409805699e48a7"/>
+    <rdfs:subClassOf rdf:nodeID="N0f4dc00e8f0a43be8a63965d5a281192"/>
+    <rdfs:subClassOf rdf:nodeID="N31c02008bf8443c59f06c4ca60bf63ff"/>
+    <rdfs:subClassOf rdf:nodeID="Ne3dcac461dfe42fe993bc48a78f4656d"/>
+    <rdfs:subClassOf rdf:nodeID="N3baa54adc84b405db812c2a1589c03cc"/>
+    <rdfs:subClassOf rdf:nodeID="N66cf112bf19e464eb4b94b0c1447c0f2"/>
+    <rdfs:subClassOf rdf:nodeID="Nf51b769771e6462f88e6e446442c1a53"/>
+    <rdfs:subClassOf rdf:nodeID="N596dff8603fe4681b0f7afb6fb843c4a"/>
+    <rdfs:subClassOf rdf:nodeID="Na89aca847139491bbc6e38aced6c79e9"/>
+    <rdfs:subClassOf rdf:nodeID="Nf0c44c5c2ca44b978b5cd45b92716b70"/>
+    <rdfs:subClassOf rdf:nodeID="N751d9119ad17433bb13eff9968f5f0b7"/>
+    <rdfs:label>schema definition</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://bioentity.io/vocab/Definition"/>
+    <rdfs:subClassOf rdf:nodeID="N396f62b706cc402497b079b386eee0ce"/>
+    <obo:IAO_0000115>A collection of definitions</obo:IAO_0000115>
+    <rdfs:subClassOf rdf:nodeID="Nebcbf4841c5b4b3398157e3e1baa662f"/>
+    <rdfs:subClassOf rdf:nodeID="N131e0a36768043e6b64c755f07a7cffc"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6db4ab067ff94816af6bea700660b154">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/from_schema"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N72557c2c39e747b08cab6eaa286e9e89">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/inlined"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/local_names">
+    <obo:IAO_0000115>map from local identifier to slot</obo:IAO_0000115>
+    <rdfs:label>local_names</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/mixins">
+    <obo:IAO_0000115>List of definitions to be mixed in. Targets may be any definition of the same type</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/Definition"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
+    <rdfs:label>mixins</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N73ef7c75c9a1457e8977c5c7ebe44540">
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/union_of"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2e8d94107a1f41c19ef0316968b367e7">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/primary_key"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/entity">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label>entity</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbe32df6ab0344a2d87202052592a7b2a">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/subproperty_of"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N58bac8364a5f4e1fa557716ab8bd172e">
+  <rdf:Description rdf:nodeID="Nf4d063c492a14ae9abffa0a3e5a08690">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/subclass_of"/>
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/entity"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://bioentity.io/vocab/slot_usage">
     <rdfs:label>slot_usage</rdfs:label>
-    <obo:IAO_0000115>Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints</obo:IAO_0000115>
     <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
     <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/class_definition_is_a">
-    <obo:IAO_0000115>specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</obo:IAO_0000115>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <rdfs:subPropertyOf rdf:resource="http://bioentity.io/vocab/is_a"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>class definition is_a</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N538eede95de84656b0d5bf337ddb8c35">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/inherited"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N209493bb9c2c4014bdb9e45f02ffa9b6">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/comment"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nff29b0a623c24026a94364978729c8e8">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/slots"/>
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://biolink.github.io/metamodel/ontology/meta.ttl">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <dcterms:license>https://creativecommons.org/publicdomain/zero/1.0/</dcterms:license>
-    <rdfs:label>metamodel</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7bc3f952abff4899b50c4307a5ebf146">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/subproperty_of"/>
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/value_description">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>value description</rdfs:label>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Example"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/id_prefixes">
-    <rdfs:label>id_prefixes</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncb19ee74f2564ea39f3f6dcee1d221de">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/value"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/Element">
-    <rdfs:subClassOf rdf:nodeID="N01b9070439554fdf8b380772a9dc9bc1"/>
-    <rdfs:subClassOf rdf:nodeID="N227d0812b25a476d86c4f27f062d9a2e"/>
-    <rdfs:subClassOf rdf:nodeID="Ne73ebe216fb44b7c80efe405a3f60cac"/>
-    <rdfs:subClassOf rdf:nodeID="N88f59ecd782c40f3acc5d7a8560aa86f"/>
-    <rdfs:subClassOf rdf:nodeID="Nb0ba189256394531855a30ed655e7c09"/>
-    <rdfs:label>element</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="N1c1ea5481aee4d1e809620f86cab3e65"/>
-    <rdfs:subClassOf rdf:nodeID="N51b20b697ded456493d61248351b85fb"/>
-    <rdfs:subClassOf rdf:nodeID="N266577b082f2462cbca03cbf44f6846a"/>
-    <rdfs:subClassOf rdf:nodeID="N209493bb9c2c4014bdb9e45f02ffa9b6"/>
-    <rdfs:subClassOf rdf:nodeID="N40b1554a8874458b81fdcc83e1f857ed"/>
-    <rdfs:subClassOf rdf:nodeID="Nfb07351f4c83428a9677f445ce9a491c"/>
-    <rdfs:subClassOf rdf:nodeID="N5c7434714de542b9b08a5057e1adfa29"/>
-    <rdfs:subClassOf rdf:nodeID="Nb539e9bb7fcc414a8ec074b3e79ba0d0"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:nodeID="Nb764abbf59d646cfb426c0f79d5666e5"/>
-    <obo:IAO_0000115>root of all described things</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/source_file_date">
-    <obo:IAO_0000115>modification date of the source of the schema.  Supplied by the loader</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>source_file_date</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N44216807d35f4bf6a64f7a2f1d82baf3">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/role"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N429a2151b87a49d49eda72aa12be14a6">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/mixin"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb0ba189256394531855a30ed655e7c09">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/name"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N531ffcaafa38498e837f35fb30f3153f">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/source_file_date"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/description">
-    <rdfs:label>description</rdfs:label>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-    <obo:IAO_0000115>a description</obo:IAO_0000115>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfa73a1089842454891cb81b631f5fa4b">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/source_file_size"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/local_names">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>map from local identifier to slot</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
-    <rdfs:label>local_names</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4a8387f869ba485da9d403a884ee14c7">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/local_name"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N44492a709edc497ea787dd9109fc88a8">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/types"/>
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/TypeDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8b238d3ec7b8461398abd169b3c36b64">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/union_of"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/types">
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/TypeDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>types defined in schema</obo:IAO_0000115>
-    <rdfs:label>types</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1c1ea5481aee4d1e809620f86cab3e65">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/from_schema"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/apply_to">
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <rdfs:label>apply_to</rdfs:label>
-    <obo:IAO_0000115>Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class.</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb539e9bb7fcc414a8ec074b3e79ba0d0">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/in_subset"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/SchemaDefinition">
-    <rdfs:subClassOf rdf:nodeID="N8e6659c9eb844061bac43a9f467be6dd"/>
-    <obo:IAO_0000115>A collection of definitions</obo:IAO_0000115>
-    <rdfs:subClassOf rdf:nodeID="Ncf7d4d47197c49fdba96c5baa5fc0de4"/>
-    <rdfs:subClassOf rdf:nodeID="Nfa73a1089842454891cb81b631f5fa4b"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:nodeID="N5059d51d29164803935dc198134e9b27"/>
-    <rdfs:subClassOf rdf:nodeID="N2969e1b5276a41f59b12ce07c5719f23"/>
-    <rdfs:subClassOf rdf:resource="http://bioentity.io/vocab/Definition"/>
-    <rdfs:subClassOf rdf:nodeID="N35e3329221aa48b4aa173ca1cb586c89"/>
-    <rdfs:subClassOf rdf:nodeID="N44492a709edc497ea787dd9109fc88a8"/>
-    <rdfs:subClassOf rdf:nodeID="N92bd24ac243544108cbf8b4e4850245a"/>
-    <rdfs:subClassOf rdf:nodeID="N76229b05b0944175ad62c193307923f6"/>
-    <rdfs:subClassOf rdf:nodeID="N6a54626db3894604ae170c12816913db"/>
-    <rdfs:subClassOf rdf:nodeID="N76c6700f98454e3fb425b59729b8da53"/>
-    <rdfs:subClassOf rdf:nodeID="N531ffcaafa38498e837f35fb30f3153f"/>
-    <rdfs:label>schema definition</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="N8d0bf90d06fd48718dada019919bd8f9"/>
-    <rdfs:subClassOf rdf:nodeID="N23e002417a734bd5bf9c8012e1b2bebf"/>
-    <rdfs:subClassOf rdf:nodeID="N8611e8222a3049f48b99b6d45c92555b"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/value">
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Example"/>
-    <rdfs:label>value</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6edf4ed2c70c426da9ca7d3cabd36166">
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/Definition"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/union_of"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/definitional">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:label>definitional</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N26cf4d9430c445a1ade09fb221a0e561">
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/union_of"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/imports">
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
-    <rdfs:label>imports</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>A list of modules that are imported into the schema</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N23e002417a734bd5bf9c8012e1b2bebf">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/default_prefix"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/examples">
-    <rdfs:label>examples</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>Example of usage for a slot or class</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/Example"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/generation_date">
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>generation_date</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-    <obo:IAO_0000115>date that the schema was loaded/generated.  Supplied by the loader</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/ClassDefinition">
-    <rdfs:subClassOf rdf:nodeID="N84790b04ea034b6785a70491a4870c25"/>
-    <rdfs:subClassOf rdf:nodeID="N26cf4d9430c445a1ade09fb221a0e561"/>
-    <rdfs:subClassOf rdf:nodeID="Nec483674cff74bf4a4004725d04eed4d"/>
-    <rdfs:subClassOf rdf:nodeID="N58bac8364a5f4e1fa557716ab8bd172e"/>
-    <rdfs:subClassOf rdf:nodeID="N57a63ab0436e4248937afe3ab978d30f"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://bioentity.io/vocab/Definition"/>
-    <rdfs:subClassOf rdf:nodeID="N9b18dd24628648c1956a093426390475"/>
-    <rdfs:label>class definition</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="N4513dfd5cf9849df98f59c925e2a80dc"/>
-    <obo:IAO_0000115>A class or interface</obo:IAO_0000115>
-    <rdfs:subClassOf rdf:nodeID="Nff29b0a623c24026a94364978729c8e8"/>
+    <obo:IAO_0000115>Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints</obo:IAO_0000115>
   </rdf:Description>
   <rdf:Description rdf:about="http://bioentity.io/vocab/primary_key">
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdfs:label>primary_key</rdfs:label>
     <obo:IAO_0000115>True means that this serves as a unique identifier</obo:IAO_0000115>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/inverse">
-    <rdfs:label>inverse</rdfs:label>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <obo:IAO_0000115>used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')</obo:IAO_0000115>
+    <rdfs:label>primary_key</rdfs:label>
     <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne73ebe216fb44b7c80efe405a3f60cac">
+  <rdf:Description rdf:about="http://bioentity.io/vocab/classes">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <rdfs:label>classes</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>classes defined in schema</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/generation_date">
+    <rdfs:label>generation_date</rdfs:label>
+    <obo:IAO_0000115>date that the schema was loaded/generated.  Supplied by the loader</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/Element">
+    <obo:IAO_0000115>root of all described things</obo:IAO_0000115>
+    <rdfs:subClassOf rdf:nodeID="N5108babed2a54b8ab37ee171bfc0c5be"/>
+    <rdfs:subClassOf rdf:nodeID="N10bbb022dc1447a0bad7b048a357f0ac"/>
+    <rdfs:subClassOf rdf:nodeID="N7be1951355d84bc585b1bfea9b978676"/>
+    <rdfs:subClassOf rdf:nodeID="N05a180e282a74bc793c8fa6ba81db75c"/>
+    <rdfs:subClassOf rdf:nodeID="N111a19ba1d17418c95a98eed3d5c6bff"/>
+    <rdfs:subClassOf rdf:nodeID="Ne3826a97939840e7ba044ffe254ecf65"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="N08b03745ca3d474888dbe362d78e1a8b"/>
+    <rdfs:label>element</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="Nda337879cc3d4e169664d31f19cfca70"/>
+    <rdfs:subClassOf rdf:nodeID="N6db4ab067ff94816af6bea700660b154"/>
+    <rdfs:subClassOf rdf:nodeID="Ncfd2745c5e8f410abcaaa79c0a0da47d"/>
+    <rdfs:subClassOf rdf:nodeID="N9d229f814d5d4c769a66bdeb5eb1f7ed"/>
+    <rdfs:subClassOf rdf:nodeID="N0778c39f2e434b7cb3194c2fce06f252"/>
+    <rdfs:subClassOf rdf:nodeID="Nf0fd59074fa341b18a41fbf8adef16c1"/>
+    <rdfs:subClassOf rdf:nodeID="N52ff43ad7cb443b5be3dff76a0aeca2a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na89aca847139491bbc6e38aced6c79e9">
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/description"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/metamodel_version"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/multivalued">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>If true slot can have many values</obo:IAO_0000115>
-    <rdfs:label>multivalued</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+  <rdf:Description rdf:nodeID="N5108babed2a54b8ab37ee171bfc0c5be">
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/Example"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/examples"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N2969e1b5276a41f59b12ce07c5719f23">
+  <rdf:Description rdf:nodeID="N131e0a36768043e6b64c755f07a7cffc">
     <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/Prefix"/>
     <owl:onProperty rdf:resource="http://bioentity.io/vocab/prefixes"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/note">
+  <rdf:Description rdf:about="http://bioentity.io/vocab/see_also">
+    <rdfs:label>see_also</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
     <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-    <rdfs:label>note</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>Notes about an element</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N8d0bf90d06fd48718dada019919bd8f9">
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+  <rdf:Description rdf:nodeID="Ndc86c6158c96475cb848a74afe32bb6a">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncade33000d76499a9c7995d84aec42e7">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/prefix_uri"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/mixin">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:label>mixin</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
-    <obo:IAO_0000115>Used only as a mixin -- cannot be instantiated on its own.</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1d1996a3d97346dcb0616bfacf3b2396">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/definitional"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/subclass_of">
-    <obo:IAO_0000115>Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes</obo:IAO_0000115>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    <rdfs:label>subclass_of</rdfs:label>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/class_definition_union_of">
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://bioentity.io/vocab/union_of"/>
-    <obo:IAO_0000115>list of class or slot definitions that are combined to create the union class</obo:IAO_0000115>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <rdfs:label>class definition union_of</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/Prefix">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:nodeID="N4a8387f869ba485da9d403a884ee14c7"/>
-    <rdfs:subClassOf rdf:nodeID="Ncade33000d76499a9c7995d84aec42e7"/>
-    <obo:IAO_0000115>Prefix URI map</obo:IAO_0000115>
-    <rdfs:label>prefix</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/role">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>role</rdfs:label>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N76c6700f98454e3fb425b59729b8da53">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/default_curi_maps"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N88f59ecd782c40f3acc5d7a8560aa86f">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/note"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/object_property">
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdfs:label>object_property</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <obo:IAO_0000115>true means that this slot is part of the formal definition of a class</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N35e3329221aa48b4aa173ca1cb586c89">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/slots"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/defining_slots"/>
     <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/flags">
-    <obo:IAO_0000115>State information and other details</obo:IAO_0000115>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-    <rdfs:label>flags</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbc7726e7c9ab4fe79334f80dfb6eead4">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/required"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9b18dd24628648c1956a093426390475">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/is_a"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5d2386fa431f49a0b629cfc9e1897956">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/mixins"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/prefix_uri">
-    <obo:IAO_0000115>A URI associated with a given prefix</obo:IAO_0000115>
-    <rdfs:label>prefix uri</rdfs:label>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Prefix"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1748f010b59e4c3abf2e6321ca1ba902">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/path"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/source_file">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
-    <obo:IAO_0000115>name, uri or description of the source of the schema.  Supplied by the loader</obo:IAO_0000115>
-    <rdfs:label>source_file</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/aliases">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-    <rdfs:label>aliases</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/values_from">
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
-    <rdfs:label>values_from</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>identifies the possible uri's of the range</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/singular_name">
-    <obo:IAO_0000115>a name that is used in the singular form</obo:IAO_0000115>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>singular_name</rdfs:label>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/name">
-    <obo:IAO_0000115>a unique key that identifies a slot, type or class in a schema</obo:IAO_0000115>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label>name</rdfs:label>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/required">
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdfs:label>required</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <obo:IAO_0000115>If true slot must have at least one value</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N940290b43b3e49e49ad0402b9fac1ef4">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/values_from"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/classes">
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
-    <rdfs:label>classes</rdfs:label>
-    <obo:IAO_0000115>classes defined in schema</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf9d60054e4bf4f2495d12f465cb0c4dc">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/primary_key"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1e2ec3471fa3458a9d50dbb148b5ac43">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/abstract"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/is_a">
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
-    <obo:IAO_0000115>specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</obo:IAO_0000115>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/Definition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>is_a</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N266577b082f2462cbca03cbf44f6846a">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/mappings"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/entity">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>entity</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2341bd6a716d45a9b115720f233bda62">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/range"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/Element"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/slot_definition_is_a">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>slot definition is_a</rdfs:label>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdfs:subPropertyOf rdf:resource="http://bioentity.io/vocab/is_a"/>
-    <obo:IAO_0000115>specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/slots">
-    <rdfs:label>slots</rdfs:label>
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <obo:IAO_0000115>list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins.</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/slot_definitions">
-    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdfs:label>slot definitions</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>collection of slot definitions in a schema</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/typeof">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/TypeDefinition"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label>typeof</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nec483674cff74bf4a4004725d04eed4d">
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/apply_to"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/identifier">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>True means that this slot must be unique across the collection of slots</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:label>identifier</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/symmetric">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>Symmetric slot</obo:IAO_0000115>
-    <rdfs:label>symmetric</rdfs:label>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8e6659c9eb844061bac43a9f467be6dd">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/imports"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6a54626db3894604ae170c12816913db">
-    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/id"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5a7a75451b9a4cd59b85b1a381d3ad5e">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/symmetric"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5c7434714de542b9b08a5057e1adfa29">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/alt_descriptions"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/alt_descriptions">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>alt_descriptions</rdfs:label>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/license">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>license</rdfs:label>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
-    <obo:IAO_0000115>license for the schema</obo:IAO_0000115>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8611e8222a3049f48b99b6d45c92555b">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/license"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/alias">
-    <rdfs:label>alias</rdfs:label>
-    <obo:IAO_0000115>A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have "slots" where one inline and the other a reference</obo:IAO_0000115>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/from_schema">
-    <obo:IAO_0000115>id of the schema that the element was derived from.  Supplied by the loader.</obo:IAO_0000115>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label>from_schema</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/comment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>Comment about an element</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
-    <rdfs:label>comment</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/Example">
-    <rdfs:subClassOf rdf:nodeID="N6d68f8a1f724497dbf8129e99f5a2bf9"/>
-    <rdfs:subClassOf rdf:nodeID="Ncb19ee74f2564ea39f3f6dcee1d221de"/>
-    <rdfs:label>example</rdfs:label>
-    <obo:IAO_0000115>example of usage</obo:IAO_0000115>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://bioentity.io/vocab/metamodel_version">
     <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
@@ -947,66 +247,780 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N452d895a35ea4b17b75537f9d27e3b6e">
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/local_names"/>
+  <rdf:Description rdf:nodeID="Nebcbf4841c5b4b3398157e3e1baa662f">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/version"/>
     <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne5237a206b714d9c8d50e7914e550834">
-    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/inlined"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/default_curi_maps">
+  <rdf:Description rdf:about="http://bioentity.io/vocab/alias">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <rdfs:label>default_curi_maps</rdfs:label>
-    <obo:IAO_0000115>List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <rdfs:label>alias</rdfs:label>
+    <obo:IAO_0000115>A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have "slots" where one inline and the other a reference</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/mixins">
-    <rdfs:label>mixins</rdfs:label>
-    <obo:IAO_0000115>List of definitions to be mixed in. Targets may be any definition of the same type</obo:IAO_0000115>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/mappings">
+    <rdfs:label>mappings</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <obo:IAO_0000115>list of equivalent or skos exact mappings to an ontology class</obo:IAO_0000115>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc9ccf656f3564a79ab8b79268ad12363">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/identifier"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N28687361da634507a4fd665a62716578">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/mixins"/>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/Definition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/object_property">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label>object_property</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>true means that this slot is part of the formal definition of a class</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://biolink.github.io/metamodel/ontology/meta.ttl">
+    <rdfs:label>metamodel</rdfs:label>
+    <dcterms:license>https://creativecommons.org/publicdomain/zero/1.0/</dcterms:license>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/apply_to">
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <rdfs:label>apply_to</rdfs:label>
+    <obo:IAO_0000115>Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class.</obo:IAO_0000115>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/values_from">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
+    <rdfs:label>values_from</rdfs:label>
+    <obo:IAO_0000115>identifies the possible uri's of the range</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/union_of">
+    <rdfs:label>union_of</rdfs:label>
     <rdfs:range rdf:resource="http://bioentity.io/vocab/Definition"/>
     <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>list of class or slot definitions that are combined to create the union class</obo:IAO_0000115>
   </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/default_prefix">
-    <rdfs:label>default_prefix</rdfs:label>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
-    <obo:IAO_0000115>default and base prefix -- used for ':' identifiers, @base and @vocab</obo:IAO_0000115>
-    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N40b1554a8874458b81fdcc83e1f857ed">
-    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/Example"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/examples"/>
+  <rdf:Description rdf:nodeID="N9d229f814d5d4c769a66bdeb5eb1f7ed">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/alt_descriptions"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N92bd24ac243544108cbf8b4e4850245a">
+  <rdf:Description rdf:about="http://bioentity.io/vocab/license">
+    <obo:IAO_0000115>license for the schema</obo:IAO_0000115>
+    <rdfs:label>license</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5e4f004bec17477889e6b7bdd3682c9b">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/local_name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N041bc657c6804212bd4a034b545a6229">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/range"/>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/anytype"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N55b04fd45b314d9a8f1b008039e16226">
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/mixins"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/name">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>name</rdfs:label>
+    <obo:IAO_0000115>a unique key that identifies a slot, type or class in a schema</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/definitional">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>definitional</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3155ac886eed4788995692ce7a515508">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/definitional"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/is_a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/Definition"/>
+    <rdfs:label>is_a</rdfs:label>
+    <obo:IAO_0000115>specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/comment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <obo:IAO_0000115>Comment about an element</obo:IAO_0000115>
+    <rdfs:label>comment</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne3826a97939840e7ba044ffe254ecf65">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/name"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/class_definition_is_a">
+    <rdfs:subPropertyOf rdf:resource="http://bioentity.io/vocab/is_a"/>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</obo:IAO_0000115>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <rdfs:label>class definition is_a</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/source_file">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <obo:IAO_0000115>name, uri or description of the source of the schema.  Supplied by the loader</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>source_file</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na6da5910c15246398f53e80f39d4f81e">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/apply_to"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/in_subset">
+    <rdfs:label>in_subset</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N596dff8603fe4681b0f7afb6fb843c4a">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/source_file_date"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N111a19ba1d17418c95a98eed3d5c6bff">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/description"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N91792a4cc21e4fd7811ed3b7f349c96c">
     <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/version"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/alias"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://bioentity.io/vocab/slot_definition_union_of">
-    <rdfs:label>slot definition union_of</rdfs:label>
-    <obo:IAO_0000115>list of class or slot definitions that are combined to create the union class</obo:IAO_0000115>
+  <rdf:Description rdf:nodeID="N9a4ba5d3766c44a8a342e8abb1e6eacb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/prefix_uri"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N10bbb022dc1447a0bad7b048a357f0ac">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/note"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd846ed23275f4f5dbb0eefd8d777607a">
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/is_a"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N05a180e282a74bc793c8fa6ba81db75c">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/comment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/ClassDefinition">
+    <rdfs:subClassOf rdf:nodeID="N801c68ba912146c988d7a4e2542b5129"/>
+    <rdfs:subClassOf rdf:resource="http://bioentity.io/vocab/Definition"/>
+    <rdfs:label>class definition</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="N4d81d6ea325b43ebaa85acf99582fcf3"/>
+    <rdfs:subClassOf rdf:nodeID="Ndc86c6158c96475cb848a74afe32bb6a"/>
+    <rdfs:subClassOf rdf:nodeID="N4d6a1c3f038b4bc3a9cc5884c8aa8209"/>
+    <rdfs:subClassOf rdf:nodeID="Na6da5910c15246398f53e80f39d4f81e"/>
+    <rdfs:subClassOf rdf:nodeID="N35cbfa89ca1c4e3c9c7f2f65326630a8"/>
+    <rdfs:subClassOf rdf:nodeID="Nd846ed23275f4f5dbb0eefd8d777607a"/>
+    <rdfs:subClassOf rdf:nodeID="N1bd16d9c02fd46d7b26d464929bb9e3f"/>
+    <obo:IAO_0000115>A class or interface</obo:IAO_0000115>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/inherited">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths</obo:IAO_0000115>
+    <rdfs:label>inherited</rdfs:label>
     <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
-    <rdfs:subPropertyOf rdf:resource="http://bioentity.io/vocab/union_of"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf51b769771e6462f88e6e446442c1a53">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/default_prefix"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7f73565ac9644974849f2c403e1893d7">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/required"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/TypeDefinition">
+    <rdfs:label>type definition</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="Ne0435a90c9a3471cb3409fcfc97838a8"/>
+    <rdfs:subClassOf rdf:resource="http://bioentity.io/vocab/Element"/>
+    <obo:IAO_0000115>A type definition</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf0fd59074fa341b18a41fbf8adef16c1">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/flags"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nadaf63485d064faa8d5e5ecf9ae1f71a">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/path"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7be1951355d84bc585b1bfea9b978676">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/mappings"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/value_description">
+    <rdfs:label>value description</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Example"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/prefix_uri">
+    <rdfs:label>prefix uri</rdfs:label>
+    <obo:IAO_0000115>A URI associated with a given prefix</obo:IAO_0000115>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Prefix"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N87a8e17e3c4c461792ca25f13b60a5f8">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/default_type"/>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/TypeDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/id">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <obo:IAO_0000115>a globally unique id or url for a schema</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>id</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/from_schema">
+    <obo:IAO_0000115>id of the schema that the element was derived from.  Supplied by the loader.</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>from_schema</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncfd2745c5e8f410abcaaa79c0a0da47d">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/aliases"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/local_name">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Prefix"/>
+    <rdfs:label>local name</rdfs:label>
+    <obo:IAO_0000115>the nsname (sans ':' for a given prefix)</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/value">
+    <rdfs:label>value</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Example"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/imports">
+    <obo:IAO_0000115>A list of modules that are imported into the schema</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <rdfs:label>imports</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1bd16d9c02fd46d7b26d464929bb9e3f">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/union_of"/>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9b5c819cb35543fd9bb9d4ebd7a5bc6a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/inverse"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne3dcac461dfe42fe993bc48a78f4656d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/types"/>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/TypeDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/defining_slots">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:label>defining_slots</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7aa0ee49c17f4058821c3282235aa120">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/symmetric"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0f4dc00e8f0a43be8a63965d5a281192">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/source_file"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/subproperty_of">
+    <obo:IAO_0000115>Ontolgy property which this is a subproperty of</obo:IAO_0000115>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:label>subproperty_of</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
     <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N51b20b697ded456493d61248351b85fb">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://bioentity.io/vocab/aliases"/>
+  <rdf:Description rdf:nodeID="N5e2104cb61fb4245893fcccf4e2d9335">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/object_property"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb332fb6c61714dda83f038da24fc4bc2">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/abstract"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncef8cab0071849b8a4858590a773d4aa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/is_a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N801c68ba912146c988d7a4e2542b5129">
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/slot_usage"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N84790b04ea034b6785a70491a4870c25">
+  <rdf:Description rdf:nodeID="N64c16a898a6f4afca07f3ffe90d083ee">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/is_class_field"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0590aafca80d4363af2701ada54fc72f">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/union_of"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/Definition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/range">
+    <obo:IAO_0000115>The slot type.  Can be any class or type</obo:IAO_0000115>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/anytype"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:label>range</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/version">
+    <obo:IAO_0000115>Schema version</obo:IAO_0000115>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>version</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/mixin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <obo:IAO_0000115>Used only as a mixin -- cannot be instantiated on its own.</obo:IAO_0000115>
+    <rdfs:label>mixin</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/description">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
+    <obo:IAO_0000115>a description</obo:IAO_0000115>
+    <rdfs:label>description</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N73fd9c15e38541c2a5c0cf9925d22ea2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/domain"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/Example">
+    <rdfs:subClassOf rdf:nodeID="N3e082eed45c74aec804e9378820813cb"/>
+    <obo:IAO_0000115>example of usage</obo:IAO_0000115>
+    <rdfs:subClassOf rdf:nodeID="N3535fcbb240e479bb3772eb44e7e3d49"/>
+    <rdfs:label>example</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/class_definition_mixins">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <obo:IAO_0000115>List of definitions to be mixed in. Targets may be any definition of the same type</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <rdfs:label>class definition mixins</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://bioentity.io/vocab/mixins"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/symmetric">
+    <rdfs:label>symmetric</rdfs:label>
+    <obo:IAO_0000115>Symmetric slot</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/SlotDefinition">
+    <rdfs:subClassOf rdf:nodeID="Nadaf63485d064faa8d5e5ecf9ae1f71a"/>
+    <rdfs:subClassOf rdf:nodeID="Nc9ccf656f3564a79ab8b79268ad12363"/>
+    <rdfs:subClassOf rdf:nodeID="N91792a4cc21e4fd7811ed3b7f349c96c"/>
+    <rdfs:subClassOf rdf:nodeID="Nbe32df6ab0344a2d87202052592a7b2a"/>
+    <rdfs:subClassOf rdf:nodeID="N0d462fdec4ae464b911bf43a22b75a50"/>
+    <rdfs:subClassOf rdf:nodeID="N2e8d94107a1f41c19ef0316968b367e7"/>
+    <rdfs:subClassOf rdf:nodeID="N041bc657c6804212bd4a034b545a6229"/>
+    <rdfs:subClassOf rdf:nodeID="N4c9c5b4d048c4ce2bb5bf390e152590f"/>
+    <rdfs:subClassOf rdf:nodeID="N9b5c819cb35543fd9bb9d4ebd7a5bc6a"/>
+    <rdfs:subClassOf rdf:nodeID="Nf9b83b8e807c4b99854686331d1d639e"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>slot definition</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://bioentity.io/vocab/Definition"/>
+    <rdfs:subClassOf rdf:nodeID="N5e2104cb61fb4245893fcccf4e2d9335"/>
+    <rdfs:subClassOf rdf:nodeID="Ncef8cab0071849b8a4858590a773d4aa"/>
+    <rdfs:subClassOf rdf:nodeID="N73fd9c15e38541c2a5c0cf9925d22ea2"/>
+    <rdfs:subClassOf rdf:nodeID="N73ef7c75c9a1457e8977c5c7ebe44540"/>
+    <rdfs:subClassOf rdf:nodeID="N72557c2c39e747b08cab6eaa286e9e89"/>
+    <obo:IAO_0000115>A property or slot</obo:IAO_0000115>
+    <rdfs:subClassOf rdf:nodeID="N55b04fd45b314d9a8f1b008039e16226"/>
+    <rdfs:subClassOf rdf:nodeID="N64c16a898a6f4afca07f3ffe90d083ee"/>
+    <rdfs:subClassOf rdf:nodeID="N3155ac886eed4788995692ce7a515508"/>
+    <rdfs:subClassOf rdf:nodeID="N7f73565ac9644974849f2c403e1893d7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndabe02a925804199bd0eb565ee9897d2">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/values_from"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/Prefix">
+    <obo:IAO_0000115>Prefix URI map</obo:IAO_0000115>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>prefix</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="N5e4f004bec17477889e6b7bdd3682c9b"/>
+    <rdfs:subClassOf rdf:nodeID="N9a4ba5d3766c44a8a342e8abb1e6eacb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/default_prefix">
+    <obo:IAO_0000115>default and base prefix -- used for ':' identifiers, @base and @vocab</obo:IAO_0000115>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>default_prefix</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/id_prefixes">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>id_prefixes</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/singular_name">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
+    <rdfs:label>singular_name</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <obo:IAO_0000115>a name that is used in the singular form</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3baa54adc84b405db812c2a1589c03cc">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/license"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/subclass_of">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Definition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>subclass_of</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <obo:IAO_0000115>Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf0c44c5c2ca44b978b5cd45b92716b70">
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/generation_date"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/note">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>note</rdfs:label>
+    <obo:IAO_0000115>Notes about an element</obo:IAO_0000115>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/path">
+    <rdfs:label>path</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>For any denormalized slot, this represents the tree or graph path used to generate the denormalized form</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N35cbfa89ca1c4e3c9c7f2f65326630a8">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/entity"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N31c02008bf8443c59f06c4ca60bf63ff">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/slots">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <obo:IAO_0000115>list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins.</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:label>slots</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/domain">
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>The class to which this slot applies.</obo:IAO_0000115>
+    <rdfs:label>domain</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3535fcbb240e479bb3772eb44e7e3d49">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/description"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne0435a90c9a3471cb3409fcfc97838a8">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/typeof"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4c9c5b4d048c4ce2bb5bf390e152590f">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/inherited"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/inverse">
+    <obo:IAO_0000115>used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:label>inverse</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/source_file_size">
+    <rdfs:label>source_file_size</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <obo:IAO_0000115>size in bytes of the source of the schema.  Supplied by the loader</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/slot_definition_is_a">
+    <obo:IAO_0000115>specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:label>slot definition is_a</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://bioentity.io/vocab/is_a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/slot_definition_mixins">
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:label>slot definition mixins</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://bioentity.io/vocab/mixins"/>
+    <obo:IAO_0000115>List of definitions to be mixed in. Targets may be any definition of the same type</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/identifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:label>identifier</rdfs:label>
+    <obo:IAO_0000115>True means that this slot must be unique across the collection of slots</obo:IAO_0000115>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/class_definition_union_of">
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>list of class or slot definitions that are combined to create the union class</obo:IAO_0000115>
+    <rdfs:subPropertyOf rdf:resource="http://bioentity.io/vocab/union_of"/>
+    <rdfs:label>class definition union_of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N41d9f4fbe3a24ba1852e830ab27659b2">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/mixin"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/flags">
+    <rdfs:label>flags</rdfs:label>
+    <obo:IAO_0000115>State information and other details</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc9616f6076644d5680409805699e48a7">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/source_file_size"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N66cf112bf19e464eb4b94b0c1447c0f2">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/slots"/>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/prefixes">
+    <rdfs:label>prefixes</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/Prefix"/>
+    <obo:IAO_0000115>Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes</obo:IAO_0000115>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/typeof">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/TypeDefinition"/>
+    <rdfs:label>typeof</rdfs:label>
+    <obo:IAO_0000115>a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition</obo:IAO_0000115>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/alt_descriptions">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>alt_descriptions</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N751d9119ad17433bb13eff9968f5f0b7">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/id"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/multivalued">
+    <rdfs:label>multivalued</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <obo:IAO_0000115>If true slot can have many values</obo:IAO_0000115>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N94956e2eb8e74ff7b162e7a4ba4fdc29">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/local_names"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3e082eed45c74aec804e9378820813cb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/value"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N52ff43ad7cb443b5be3dff76a0aeca2a">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/in_subset"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N396f62b706cc402497b079b386eee0ce">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/imports"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/is_class_field">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label>is_class_field</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/slot_definitions">
+    <rdfs:label>slot definitions</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <obo:IAO_0000115>collection of slot definitions in a schema</obo:IAO_0000115>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <rdfs:range rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0778c39f2e434b7cb3194c2fce06f252">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/id_prefixes"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc113453571ac4b5fa93d73caba3d2c63">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/is_a"/>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/Definition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/inlined">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:label>inlined</rdfs:label>
+    <obo:IAO_0000115>if true then the value of this slot is inlined (i.e. a nested object) rather linked by key</obo:IAO_0000115>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/aliases">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>aliases</rdfs:label>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/Element"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0d462fdec4ae464b911bf43a22b75a50">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:maxCardinality>
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/multivalued"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4d6a1c3f038b4bc3a9cc5884c8aa8209">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/slots"/>
+    <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/role">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    <rdfs:label>role</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://bioentity.io/vocab/source_file_date">
+    <rdfs:domain rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+    <obo:IAO_0000115>modification date of the source of the schema.  Supplied by the loader</obo:IAO_0000115>
+    <rdfs:label>source_file_date</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4d81d6ea325b43ebaa85acf99582fcf3">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:someValuesFrom rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
     <owl:onProperty rdf:resource="http://bioentity.io/vocab/mixins"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncbc858e4939440ea9fd5a10350b59e9d">
+    <owl:onProperty rdf:resource="http://bioentity.io/vocab/default_curi_maps"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
 </rdf:RDF>
 

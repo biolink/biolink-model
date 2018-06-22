@@ -2,19 +2,19 @@
 
 """
 import os
-from typing import Union, TextIO, Optional
+from typing import Union, TextIO, Optional, List
 
 import click
 from ShExJSG import ShExC
 from ShExJSG.SchemaWithContext import Schema
-from ShExJSG.ShExJ import Shape, IRIREF, ShapeAnd, EachOf, TripleConstraint, NodeConstraint
+from ShExJSG.ShExJ import Shape, IRIREF, ShapeAnd, EachOf, TripleConstraint, NodeConstraint, shapeExpr, ShapeOr
 from jsonasobj import as_json
-from rdflib import Graph, XSD, OWL
+from rdflib import Graph, XSD, OWL, RDF
 from prefixcommons import curie_util as cu
 
 from metamodel.metamodel import SchemaDefinition, ClassDefinition, SlotDefinition, ClassDefinitionName, \
     SlotDefinitionName
-from metamodel.utils.builtins import builtin_names
+from metamodel.utils.builtins import builtin_names, builtin_uri
 from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.generator import Generator
 from metamodel.utils.namespaces import BIOENTITY, META
@@ -30,12 +30,15 @@ class ShExGenerator(Generator):
         super().__init__(schema, fmt)
         self.shex: Schema = None
         self.shape: Shape = None                # Shape being defined
+        self.list_shapes: List[IRIREF] = None
 
     def visit_schema(self, **_):
         self.shex = Schema()
         self.shex.shapes = []
+        self.list_shapes = []
         if self.format == 'shex':
             raise NotImplementedError("ShExC format is not yet implemented")
+        self.add_builtins()
         # TODO: Imports
 
     @staticmethod
@@ -81,6 +84,7 @@ class ShExGenerator(Generator):
 
     def visit_class_slot(self, cls: ClassDefinition, aliased_slot_name: str, slot: SlotDefinition) -> None:
         constraint = TripleConstraint()
+        # Juggling to get the constraint to be either a single triple constraint or an eachof construct
         if not self.shape.expression:
             self.shape.expression = constraint
         elif isinstance(self.shape.expression, TripleConstraint):
@@ -88,13 +92,38 @@ class ShExGenerator(Generator):
             self.shape.expression.expressions.append(constraint)
         else:
             self.shape.expression.expressions.append(constraint)
+
         constraint.predicate = self._predicate(slot.name)
+        # JSON-LD generates multi-valued entries as lists
         constraint.min = 1 if slot.primary_key or slot.required else 0
-        constraint.max = -1 if slot.multivalued else 1
-        if slot.range and slot.range not in self.schema.classes:
-            constraint.valueExpr = self._type_constraint(slot.range)
-        else:
-            constraint.valueExpr = self._shapeIRI(slot.range)
+        constraint.max = 1
+        # TODO: This should not be hard coded -- figure out where to go with it
+        rng = IRIREF(META.SlotRangeTypes) if slot.range == 'anytype' else\
+              self._type_constraint(slot.range) if slot.range and slot.range not in self.schema.classes else\
+              self._shapeIRI(slot.range)
+        name_base = ("XSD_" + slot.range) if isinstance(rng, NodeConstraint) else str(rng)
+        constraint.valueExpr = self.gen_multivalued_slot(name_base, rng) if slot.multivalued else rng
+
+    def gen_multivalued_slot(self, target_name_base: str, target_type: IRIREF) -> IRIREF:
+        """ Generate a shape that represents an RDF list of target_type
+
+        @param target_name_base:
+        @param target_type:
+        @return:
+        """
+        list_shape_id = IRIREF(target_name_base + "__List")
+        if list_shape_id not in self.list_shapes:
+            list_shape = Shape(id=list_shape_id, closed=True)
+            list_shape.expression = EachOf()
+            list_shape.expression.expressions = [TripleConstraint(predicate=RDF.first, valueExpr=target_type, min=0, max=1)]
+            targets = ShapeOr()
+            targets.shapeExprs = [(NodeConstraint(values=[RDF.nil]))]
+            targets.shapeExprs.append(list_shape_id)
+            list_shape.expression.expressions.append(
+                TripleConstraint(predicate=RDF.rest, valueExpr=targets))
+            self.shex.shapes.append(list_shape)
+            self.list_shapes.append(list_shape_id)
+        return list_shape_id
 
     def end_schema(self, output: Optional[str]) -> None:
         shex = as_json(self.shex)
@@ -113,6 +142,17 @@ class ShExGenerator(Generator):
                 outf.write(shex)
         else:
             print(shex)
+
+    def add_builtins(self):
+        # TODO:  At some point we should get rid of the hard-coded builtins and add a set of TypeDefinitions for
+        builtin_valueset = NodeConstraint(id=META.Builtins,
+                                          values=[IRIREF(builtin_uri(name, expand=True)) for name in builtin_names] +
+                                                 [BIOENTITY.anytype])
+        self.shex.shapes.append(builtin_valueset)
+        range_type_choices = ShapeOr(id=META.SlotRangeTypes,
+                                     shapeExprs=[BIOENTITY.TypeDefinition, BIOENTITY.ClassDefinition, META.Builtins])
+        self.shex.shapes.append(range_type_choices)
+
 
 
 @click.command()

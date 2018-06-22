@@ -80,7 +80,7 @@ fields:
 - description: The class to which this slot applies.
   display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [domain]
   id: domain
-- description: The slot type.  If absent, it is the builtin type 'string'
+- description: The slot type.  Can be any class or type
   display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [range]
   id: range
 - description: If true slot must have at least one value

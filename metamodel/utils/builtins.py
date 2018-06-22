@@ -3,6 +3,8 @@ from typing import Dict, Optional
 
 from rdflib import XSD, URIRef
 
+from metamodel.utils.namespaces import BIOENTITY
+
 """ Built in types """
 
 
@@ -15,6 +17,7 @@ class Builtin(Enum):
     time = 5
     date = 6
     uri = 7
+    anytype = 8
 
 
 builtin_names: Dict[str, Builtin] = {
@@ -25,7 +28,8 @@ builtin_names: Dict[str, Builtin] = {
     'boolean': Builtin.boolean,
     'time': Builtin.time,
     'date': Builtin.date,
-    'uri' : Builtin.uri
+    'uri': Builtin.uri,
+    'anytype': Builtin.anytype
 }
 
 
@@ -34,6 +38,8 @@ def builtin_uri(name: Optional[str], expand: bool = False) -> Optional[str]:
         name = DEFAULT_BUILTIN_TYPE_NAME
     elif name not in builtin_names:
         return None
+    elif name == 'anytype':
+        return BIOENTITY.anytype if expand else f'biolink:{name}'
     elif name == 'uri':
         name = 'anyURI'
     return XSD[name] if expand else f'xsd:{name}'
@@ -49,5 +55,6 @@ python_builtins: Dict[Builtin, str] = {
     Builtin.boolean: 'bool',
     Builtin.time: 'datetime.time',
     Builtin.date: 'datetime.date',
-    Builtin.uri: 'str'
+    Builtin.uri: 'str',
+    Builtin.anytype: 'Any'
 }

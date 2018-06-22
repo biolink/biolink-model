@@ -6,11 +6,11 @@ Metamodel for biolink schema
 ### Classes
 
  * [Element](Element.md) - root of all described things
-    * [TypeDefinition](TypeDefinition.md) - A type definition
     * [Definition](Definition.md) - definition base class
+       * [SchemaDefinition](SchemaDefinition.md) - A collection of definitions
        * [SlotDefinition](SlotDefinition.md) - A property or slot
        * [ClassDefinition](ClassDefinition.md) - A class or interface
-       * [SchemaDefinition](SchemaDefinition.md) - A collection of definitions
+    * [TypeDefinition](TypeDefinition.md) - A type definition
  * [Example](Example.md) - example of usage
  * [Prefix](Prefix.md) - Prefix URI map
 ### Mixins
@@ -26,6 +26,7 @@ Metamodel for biolink schema
  * [comment](comment.md) - Comment about an element
  * [default_curi_maps](default_curi_maps.md) - List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables
  * [default_prefix](default_prefix.md) - default and base prefix -- used for ':' identifiers, @base and @vocab
+ * [default_type](default_type.md) - the default type if range is omitted
  * [defining_slots](defining_slots.md) - The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom
  * [definitional](definitional.md)
  * [description](description.md) - a description
@@ -54,8 +55,8 @@ Metamodel for biolink schema
  * [metamodel_version](metamodel_version.md) - Version of the metamodel used to load the schema. Supplied by the loader
  * [mixin](mixin.md) - Used only as a mixin -- cannot be instantiated on its own.
  * [mixins](mixins.md) - List of definitions to be mixed in. Targets may be any definition of the same type
-    * [slot definition.mixins](slot_definition_mixins.md)
     * [class definition.mixins](class_definition_mixins.md)
+    * [slot definition.mixins](slot_definition_mixins.md)
  * [multivalued](multivalued.md) - If true slot can have many values
  * [name](name.md) - a unique key that identifies a slot, type or class in a schema
  * [note](note.md) - Notes about an element
@@ -64,7 +65,7 @@ Metamodel for biolink schema
  * [prefix uri](prefix_uri.md) - A URI associated with a given prefix
  * [prefixes](prefixes.md) - Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes
  * [primary_key](primary_key.md) - True means that this serves as a unique identifier
- * [range](range.md) - The slot type.  If absent, it is the builtin type 'string'
+ * [range](range.md) - The slot type.  Can be any class or type
  * [required](required.md) - If true slot must have at least one value
  * [role](role.md)
  * [see_also](see_also.md)
@@ -91,6 +92,7 @@ Metamodel for biolink schema
 
 #### Built in
 
+ * **anytype**
  * **boolean**
  * **date**
  * **double**

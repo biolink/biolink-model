@@ -5,7 +5,7 @@ from typing import Optional, Tuple, List, Union, TextIO, cast
 import click
 
 from metamodel.metamodel import SchemaDefinition, SlotDefinition, ClassDefinition, ClassDefinitionName, \
-    SlotDefinitionName, metamodel_version
+    SlotDefinitionName
 from metamodel.utils.builtins import builtin_names, python_builtins, DEFAULT_BUILTIN_TYPE_NAME
 from metamodel.utils.formatutils import camelcase, underscore, be, wrapped_annotation, split_line
 from metamodel.utils.generator import Generator
@@ -34,7 +34,7 @@ class PythonGenerator(Generator):
 # license: {be(self.schema.license)}
 
 import datetime
-from typing import Optional, List, Union, Dict
+from typing import Optional, List, Union, Dict, Any
 from dataclasses import dataclass
 from metamodel.utils.metamodelcore import empty_list, empty_dict
 from metamodel.utils.yamlutils import YAMLRoot

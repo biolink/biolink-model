@@ -66,6 +66,10 @@
          "description": "default and base prefix -- used for ':' identifiers, @base and @vocab",
          "type": "string"
       },
+      "default_type": {
+         "description": "the default type if range is omitted",
+         "type": "string"
+      },
       "defining_slots": {
          "description": "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom",
          "items": {
@@ -229,7 +233,7 @@
          "type": "string"
       },
       "range": {
-         "description": "The slot type.  If absent, it is the builtin type 'string'",
+         "description": "The slot type.  Can be any class or type",
          "type": "string"
       },
       "required": {
@@ -460,6 +464,12 @@
                   "$ref": "#/definitions/default_prefix"
                }
             },
+            "default_type": {
+               "description": "the default type if range is omitted",
+               "type": {
+                  "$ref": "#/definitions/default_type"
+               }
+            },
             "generation_date": {
                "description": "date that the schema was loaded/generated.  Supplied by the loader",
                "type": {
@@ -623,7 +633,7 @@
                }
             },
             "range": {
-               "description": "The slot type.  If absent, it is the builtin type 'string'",
+               "description": "The slot type.  Can be any class or type",
                "type": {
                   "$ref": "#/definitions/range"
                }

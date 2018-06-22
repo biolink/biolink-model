@@ -24,11 +24,11 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class GeneToExpressionSiteAssociation {
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * location in which the gene is expressed
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("location in which the gene is expressed")
     private String object;
     /**
      * can be used to indicate magnitude, or also ranking
@@ -38,11 +38,11 @@ public class GeneToExpressionSiteAssociation {
     @JsonPropertyDescription("can be used to indicate magnitude, or also ranking")
     private String quantifierQualifier;
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * expression relationship
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
+    @JsonPropertyDescription("expression relationship")
     private String relation;
     /**
      * stage at which the gene is expressed in the site
@@ -52,15 +52,15 @@ public class GeneToExpressionSiteAssociation {
     @JsonPropertyDescription("stage at which the gene is expressed in the site")
     private String stageQualifier;
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * gene in which variation is correlated with the phenotypic feature
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("gene in which variation is correlated with the phenotypic feature")
     private String subject;
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * location in which the gene is expressed
      * 
      */
     @JsonProperty("object")
@@ -69,7 +69,7 @@ public class GeneToExpressionSiteAssociation {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * location in which the gene is expressed
      * 
      */
     @JsonProperty("object")
@@ -96,7 +96,7 @@ public class GeneToExpressionSiteAssociation {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * expression relationship
      * 
      */
     @JsonProperty("relation")
@@ -105,7 +105,7 @@ public class GeneToExpressionSiteAssociation {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * expression relationship
      * 
      */
     @JsonProperty("relation")
@@ -132,7 +132,7 @@ public class GeneToExpressionSiteAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * gene in which variation is correlated with the phenotypic feature
      * 
      */
     @JsonProperty("subject")
@@ -141,7 +141,7 @@ public class GeneToExpressionSiteAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * gene in which variation is correlated with the phenotypic feature
      * 
      */
     @JsonProperty("subject")

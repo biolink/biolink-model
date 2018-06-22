@@ -20,10 +20,10 @@ class GenShExTestCase(ClickTestCase):
 
     def test_meta(self):
         self.maxDiff = None
-        self.do_test(self.metamodel_file + ' -f json', 'meta.json', update_test_file=update_test_files)
-        self.do_test(self.metamodel_file + ' -f rdf', 'meta.ttl', update_test_file=update_test_files)
-        self.do_test(self.metamodel_file, 'meta.shex', update_test_file=update_test_files, error=NotImplementedError)
-        self.do_test(self.metamodel_file + ' -f shex', 'meta.shex', update_test_file=update_test_files,
+        self.do_test(self.metamodel_file + ' -f json', 'metashex.json', update_test_file=update_test_files)
+        self.do_test(self.metamodel_file + ' -f rdf', 'metashex.ttl', update_test_file=update_test_files)
+        self.do_test(self.metamodel_file, 'metashex.shex', update_test_file=update_test_files, error=NotImplementedError)
+        self.do_test(self.metamodel_file + ' -f shex', 'metashex.shex', update_test_file=update_test_files,
                      error=NotImplementedError)
         self.do_test(self.metamodel_file + f' -f xsv', 'meta_error',
                      update_test_file=update_test_files, error=click.exceptions.BadParameter)
@@ -31,10 +31,10 @@ class GenShExTestCase(ClickTestCase):
 
     # TODO: Need to add RDF difference or cannonical representation to do this test
     def test_biolink(self):
-        self.do_test(self.biolink_file, "biolink-model.shex", update_test_file=update_test_files,
+        self.do_test(self.biolink_file, "biolink-modelshex.shex", update_test_file=update_test_files,
                      error=NotImplementedError)
-        self.do_test(self.biolink_file + " -f json", "biolink-model.json", update_test_file=update_test_files)
-        self.do_test(self.biolink_file + " -f rdf", "biolink-model.ttl", update_test_file=update_test_files)
+        self.do_test(self.biolink_file + " -f json", "biolink-modelshex.json", update_test_file=update_test_files)
+        self.do_test(self.biolink_file + " -f rdf", "biolink-modelshex.ttl", update_test_file=update_test_files)
         self.assertFalse(update_test_files, "Updating test files")
 
 

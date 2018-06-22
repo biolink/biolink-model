@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/GeneToGeneHomologyAssociation](http://bioentity.
 ## Fields
 
  * _[gene to gene homology association.relation](gene_to_gene_homology_association_relation.md)_
-    * _the relationship type by which a subject is connected to an object in an association_
+    * _homology relationship type_
     * range: [RelationshipType](RelationshipType.md) [required]
     * edge label: [homologous to](homologous_to.md) *subsets*: (translator_minimal)
     * __Local__
@@ -43,11 +43,11 @@ URI: [http://bioentity.io/vocab/GeneToGeneHomologyAssociation](http://bioentity.
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
  * _[gene to gene association.object](gene_to_gene_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa_
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * inherited from: [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * _[gene to gene association.subject](gene_to_gene_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa_
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * inherited from: [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * _[id](id.md) *subsets*: (translator_minimal)_

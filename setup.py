@@ -2,7 +2,7 @@ import sys
 
 from setuptools import setup, find_packages
 
-version = '0.0.3'
+version = '0.1.0'
 
 requires = [
     "click>=6.7",
@@ -29,10 +29,6 @@ setup(
     install_requires = requires,
     python_requires='>=3.6',
     description='Schema and generated objects for biolink data model and upper ontology',
-    # scripts=['bin/gen-csv.py', 'bin/gen-golr-views.py', 'bin/gen-graphql.py', 'bin/gen-graphviz.py',
-    #          'bin/gen-json-schema-via-mm.py', 'bin/gen-json-schema.py', 'bin/gen-jsonld-context.py',
-    #          'bin/gen-markdown.py', 'bin/gen-mm-schema.py', 'bin/gen-proto.py', 'bin/gen-py-classes.py',
-    #          'bin/gen-rdf.py', 'bin/gen-shex.py', 'bin/gen-yuml.py'],
     entry_points={
         'console_scripts': [
             'gen-jsonld-context = metamodel.generators.contextgen:cli',

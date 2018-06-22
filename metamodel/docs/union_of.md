@@ -8,11 +8,15 @@ URI: [http://bioentity.io/vocab/union_of](slot_uri)
 
 ## Domain and Range
 
-definition -> definition
+[Definition](Definition.md) -> [Definition](Definition.md)
 ## Inheritance
 
 ## Children
 
+ *  child: [class definition.union_of](class_definition_union_of.md)
+ *  child: [slot definition.union_of](slot_definition_union_of.md)
 ## Used in
 
- *  usage: definition
+ *  usage: [SlotDefinition](SlotDefinition.md)
+ *  usage: [ClassDefinition](ClassDefinition.md)
+ *  usage: [Definition](Definition.md)

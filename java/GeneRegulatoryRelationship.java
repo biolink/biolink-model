@@ -29,11 +29,11 @@ public class GeneRegulatoryRelationship {
     @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
     private String object;
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * the direction is always from regulator to regulated
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
+    @JsonPropertyDescription("the direction is always from regulator to regulated")
     private String relation;
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
@@ -62,7 +62,7 @@ public class GeneRegulatoryRelationship {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * the direction is always from regulator to regulated
      * 
      */
     @JsonProperty("relation")
@@ -71,7 +71,7 @@ public class GeneRegulatoryRelationship {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * the direction is always from regulator to regulated
      * 
      */
     @JsonProperty("relation")

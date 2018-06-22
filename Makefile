@@ -103,9 +103,6 @@ contrib-golr-%: contrib/%.yaml
 # ~~~~~~~~~~~~~~~~~~~~
 # Python
 # ~~~~~~~~~~~~~~~~~~~~
-biolinkmodel/datamodel.py: biolink-model.yaml
-	gen-py-classes $< > $@
-
 contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml
 	gen-py-classes contrib/$*.yaml > $@
 
@@ -162,8 +159,11 @@ ontology/%.png: ontology/%.json
 # Update the metamodel - not part of the main build.  Use this method when meta.yaml has changed
 # ~~~~~~~~~~~~~~~~~~~~
 MM = metamodel/metamodel.py
+BMM = biolinkmodel/datamodel.py
+
 regen-mm:
 	gen-py-classes meta.yaml > tmp.py && python tmp.py && cp $(MM) $(MM)-PREV && mv tmp.py $(MM)
+	gen-py-classes biolink-model.yaml > tmp.py && python tmp.py && cp $(BMM) $(BMM)-PREV && mv tmp.py $(BMM)
 
 # ----------------------------------------
 # TESTS

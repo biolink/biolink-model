@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-06-20 12:19
+# Generation date: 2018-06-22 13:29
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -7,7 +7,7 @@
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import datetime
-from typing import Optional, List, Union, Dict
+from typing import Optional, List, Union, Dict, Any
 from dataclasses import dataclass
 from metamodel.utils.metamodelcore import empty_list, empty_dict
 from metamodel.utils.yamlutils import YAMLRoot

@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from rdflib import Graph, URIRef, Literal, XSD, RDF
+from rdflib import Graph, URIRef
 
 from metamodel.generators.jsonldgen import JSONLDGenerator, meta_context
 from metamodel.utils.namespaces import BIOENTITY
@@ -50,52 +50,12 @@ ontology_id = URIRef('https://biolink.github.io/metamodel/ontology/meta.ttl')
 
 
 class JSONLDLoaderTestCase(unittest.TestCase):
-    def test_basics(self):
-        g = Graph()
-        g.parse(data=json_str, format="json-ld")
-
-        target = [
-            (ontology_id, BIOENTITY.license, Literal('https://creativecommons.org/publicdomain/zero/1.0/')),
-            (ontology_id, BIOENTITY.source_file_size, Literal('14901', datatype=XSD.integer)),
-             (ontology_id,
-              BIOENTITY.name,
-              Literal('metamodel')),
-             (ontology_id,
-              BIOENTITY.source_file,
-              Literal('/Users/solbrig/git/hsolbrig/biolink-model/meta.yaml')),
-             (ontology_id,
-              BIOENTITY.metamodel_version,
-              Literal('0.2.0')),
-             (ontology_id,
-              BIOENTITY.source_file_date,
-              Literal('Mon Jun 11 13:48:39 2018')),
-             (ontology_id,
-              BIOENTITY.description,
-              Literal('Metamodel for biolink schema')),
-             (ontology_id,
-              BIOENTITY.generation_date,
-              Literal('2018-06-12 12:23')),
-             (ontology_id,
-              BIOENTITY.version,
-              Literal('0.2.0'))]
-        self.assertEqual(sorted(target), sorted(list(g)))
-
-    def test_slot(self):
-        cwd = os.path.abspath(os.path.dirname(__file__))
-        source = os.path.abspath(os.path.join(cwd, 'source', 'test_slot.ttl'))
-        target = os.path.abspath(os.path.join(cwd, 'target', 'test_slot.ttl'))
-        g = Graph()
-        g.parse(data=json_str_2, format="json-ld")
-        g.serialize(destination=target, format="turtle")
-        source_graph = Graph()
-        source_graph.load(source, format="turtle")
-        self.assertTrue(source_graph.isomorphic(g))
 
     def check_size(self, g: Graph) -> None:
-        # Make sure we have 8 classes and 70 slots
+        # Make sure we have 8 classes and 71 slots
         self.assertEqual(8, len(list(g.objects(URIRef("https://biolink.github.io/metamodel/ontology/meta.ttl"),
                                                BIOENTITY.classes))))
-        self.assertEqual(70, len(list(g.objects(URIRef("https://biolink.github.io/metamodel/ontology/meta.ttl"),
+        self.assertEqual(71, len(list(g.objects(URIRef("https://biolink.github.io/metamodel/ontology/meta.ttl"),
                                                 BIOENTITY.slots))))
 
     def test_full_meta(self):

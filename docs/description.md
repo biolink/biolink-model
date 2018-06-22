@@ -19,3 +19,4 @@ URI: [http://bioentity.io/vocab/description](slot_uri)
 ## Used in
 
  *  usage: [NamedThing](NamedThing.md)
+ *  usage: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)

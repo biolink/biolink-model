@@ -21,8 +21,8 @@ URI: [http://bioentity.io/vocab/MacromolecularMachine](http://bioentity.io/vocab
 ## Fields
 
  * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
-    * _A human-readable name for a thing_
-    * range: [LabelType](LabelType.md)
+    * _genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name_
+    * range: [SymbolType](SymbolType.md)
     * __Local__
  * _[biomarker for](biomarker_for.md) *subsets*: (translator_minimal)_
     * _holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature._

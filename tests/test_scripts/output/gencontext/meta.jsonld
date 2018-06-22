@@ -1,5 +1,5 @@
 {
-   "comments": "Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-06-20 12:16\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "comments": "Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-06-22 12:51\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "biolink": "http://bioentity.io/vocab/",
       "meta": "http://bioentity.io/meta/",
@@ -32,6 +32,9 @@
       },
       "default_curi_maps": {
          "@container": "@list"
+      },
+      "default_type": {
+         "@type": "@id"
       },
       "defining_slots": {
          "@type": "@id",
@@ -110,7 +113,7 @@
          "@type": "xsd:boolean"
       },
       "name": {
-         "@id": "rdf:label"
+         "@id": "rdfs:label"
       },
       "note": {
          "@id": "skos:note"
@@ -126,7 +129,7 @@
          "@type": "xsd:boolean"
       },
       "range": {
-         "@type": "@id"
+         "@type": "biolink:anytype"
       },
       "required": {
          "@type": "xsd:boolean"

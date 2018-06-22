@@ -6,13 +6,14 @@ Example of usage for a slot or class
 URI: [http://bioentity.io/vocab/examples](slot_uri)
 ## Mappings
 
+ * [skos:example](http://purl.obolibrary.org/obo/skos_example)
 ## Domain and Range
 
-element -> example
+[Element](Element.md) -> [Example](Example.md)
 ## Inheritance
 
 ## Children
 
 ## Used in
 
- *  usage: element
+ *  usage: [Element](Element.md)

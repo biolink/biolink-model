@@ -22,11 +22,11 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class GenotypeToGenotypePartAssociation {
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * child genotype
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("child genotype")
     private String object;
     /**
      * the relationship type by which a subject is connected to an object in an association
@@ -36,15 +36,15 @@ public class GenotypeToGenotypePartAssociation {
     @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
     private String relation;
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * parent genotype
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("parent genotype")
     private String subject;
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * child genotype
      * 
      */
     @JsonProperty("object")
@@ -53,7 +53,7 @@ public class GenotypeToGenotypePartAssociation {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * child genotype
      * 
      */
     @JsonProperty("object")
@@ -80,7 +80,7 @@ public class GenotypeToGenotypePartAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * parent genotype
      * 
      */
     @JsonProperty("subject")
@@ -89,7 +89,7 @@ public class GenotypeToGenotypePartAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * parent genotype
      * 
      */
     @JsonProperty("subject")

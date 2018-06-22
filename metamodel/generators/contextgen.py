@@ -29,6 +29,7 @@ class ContextGenerator(Generator):
         self.curi_maps: List[Dict[str, str]] = []
 
     def visit_schema(self):
+
         # Add the list of curi maps
         for curie_map in self.schema.default_curi_maps:
             self.curi_maps.append(cu.read_biocontext(curie_map))

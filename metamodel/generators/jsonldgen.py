@@ -9,6 +9,7 @@ from jsonasobj import as_json, loads, JsonObj, as_dict
 
 from metamodel.metamodel import SchemaDefinition, ClassDefinitionName, SlotDefinitionName, TypeDefinitionName, \
     ElementName
+from metamodel.utils.builtins import builtin_names, builtin_uri
 from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.generator import Generator
 from metamodel.utils.yamlutils import YAMLRoot
@@ -26,6 +27,12 @@ class JSONLDGenerator(Generator):
         super().__init__(schema, fmt)
 
     def _visit(self, node: Any) -> Optional[Any]:
+        """ Traverse the schema looking for Class / Slot / Type definition references, converting the names
+        to the RDF format
+
+        @param node: Any node in a schema
+        @return: Replacement node if required
+        """
         if isinstance(node, (YAMLRoot, dict)):
             if isinstance(node, YAMLRoot):
                 node = node.__dict__
@@ -54,7 +61,10 @@ class JSONLDGenerator(Generator):
         elif isinstance(node, ElementName):
             return ClassDefinitionName(camelcase(node)) if node in self.schema.classes else \
                 SlotDefinitionName(underscore(node)) if node in self.schema.slots else \
-                TypeDefinitionName(underscore(node)) if node in self.schema.types else None
+                TypeDefinitionName(underscore(node)) if node in self.schema.types else \
+                builtin_uri(str(node)) if str(node) in builtin_names else None
+        elif str(node) in builtin_names:
+            return builtin_uri(str(node))
         return None
 
     def end_schema(self, context: str = biolink_context) -> None:

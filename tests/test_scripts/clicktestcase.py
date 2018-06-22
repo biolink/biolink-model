@@ -34,7 +34,8 @@ def metadata_filter(s: str) -> str:
 class ClickTestCase(unittest.TestCase):
     testdir: str = None
     click_ep = None
-    prog_name = None
+    prog_name: str = None
+    soft_compare: Optional[str] = None
     test_base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), 'output'))
     metamodel_file = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'meta.yaml'))
     biolink_file = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'biolink-model.yaml'))
@@ -44,9 +45,26 @@ class ClickTestCase(unittest.TestCase):
         cls.testdir_path = os.path.join(cls.test_base_dir, cls.testdir)
         os.makedirs(cls.testdir_path, exist_ok=True)
 
+    @staticmethod
+    def closein_comparison(old_txt: str, new_txt: str) -> None:
+        """ Assist with testing comparison -- zero in on the first difference in a big string
+
+        @param old_txt:
+        @param new_txt:
+        """
+        nt = new_txt.strip()
+        ot = old_txt.strip()
+        if ot != nt:
+            while nt and ot and nt[:20] == ot[:20]:
+                nt = nt[20:]
+                ot = ot[20:]
+            print(nt[:80])
+            print(ot[:80])
+
     def do_test(self, args: Union[str, List[str]], testfile: Optional[str]="",
                 update_test_file: bool=False, error: type(Exception)=None,
-                filtr: Optional[Callable[[str], str]]=None, tox_wrap_fix: bool=False) -> None:
+                filtr: Optional[Callable[[str], str]]=None, tox_wrap_fix: bool=False,
+                bypass_soft_compare: bool=False) -> None:
         """ Execute a command test
 
         @param args: Argument string or list to command
@@ -55,7 +73,8 @@ class ClickTestCase(unittest.TestCase):
         @param error: If present, we expect this error
         @param filtr: Filter to remove date and app specific information from text
         @param tox_wrap_fix: tox seems to wrap redirected output at 60 columns.  If true, try wrapping the test
-        file before failing
+        file before failint
+        @param bypass_soft_compare: True means not to use the class level soft compare
         """
         testfile_path = os.path.join(self.testdir_path, testfile)
 
@@ -72,34 +91,31 @@ class ClickTestCase(unittest.TestCase):
             except CLIExitException:
                 pass
 
-        if testfile and (update_test_file or refresh_files):
-            with open(testfile_path, 'w') as f:
-                f.write(outf.getvalue())
-            if refresh_files:
-                print(f'refresh_files is True: {testfile_path} updated')
-
-        if testfile:
+        if not testfile:
+            print("Directory comparison needs to be added", file=sys.stderr)
+        else:
+            new_txt = outf.getvalue().replace('\r\n', '\n').strip()
+            if filtr:
+                new_txt = filtr(new_txt)
             with open(testfile_path) as f:
-                new_txt = outf.getvalue().replace('\r\n', '\n').strip()
-                if filtr:
-                    new_txt = filtr(new_txt)
                 old_txt = f.read().replace('\r\n', '\n').strip()
                 if filtr:
                     old_txt = filtr(old_txt)
-                if old_txt != new_txt and tox_wrap_fix:
-                    old_txt = textwrap.fill(old_txt, 60)
-                    new_txt = textwrap.fill(new_txt, 60)
+            if old_txt != new_txt and tox_wrap_fix:
+                old_txt = textwrap.fill(old_txt, 60)
+                new_txt = textwrap.fill(new_txt, 60)
+            compare_result = old_txt == new_txt
 
-                # nt = new_txt.strip()
-                # ot = old_txt.strip()
-                # while nt and ot and nt[:20] == ot[:20]:
-                #     nt = nt[20:]
-                #     ot = ot[20:]
-                # print(nt)
-                # print(ot)
-                self.assertEqual(old_txt, new_txt)
-        else:
-            print("Directory comparison needs to be added", file=sys.stderr)
+            # If necessary, update the test file
+            if not compare_result:
+                if update_test_file or refresh_files:
+                    with open(testfile_path, 'w') as f:
+                        f.write(outf.getvalue())
+                    if refresh_files:
+                        print(f'refresh_files is True: {testfile_path} updated')
+            else:
+                print(f"{self.id()}: {self.soft_compare}") if self.soft_compare and not bypass_soft_compare\
+                    else self.assertEqual(old_txt, new_txt)
 
     @staticmethod
     def clear_dir(folder: str) -> None:

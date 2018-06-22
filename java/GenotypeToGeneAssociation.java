@@ -22,29 +22,29 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class GenotypeToGeneAssociation {
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * gene implicated in genotype
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("gene implicated in genotype")
     private String object;
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * the relationship type used to connect genotype to gene
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
+    @JsonPropertyDescription("the relationship type used to connect genotype to gene")
     private String relation;
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * parent genotype
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("parent genotype")
     private String subject;
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * gene implicated in genotype
      * 
      */
     @JsonProperty("object")
@@ -53,7 +53,7 @@ public class GenotypeToGeneAssociation {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * gene implicated in genotype
      * 
      */
     @JsonProperty("object")
@@ -62,7 +62,7 @@ public class GenotypeToGeneAssociation {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * the relationship type used to connect genotype to gene
      * 
      */
     @JsonProperty("relation")
@@ -71,7 +71,7 @@ public class GenotypeToGeneAssociation {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * the relationship type used to connect genotype to gene
      * 
      */
     @JsonProperty("relation")
@@ -80,7 +80,7 @@ public class GenotypeToGeneAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * parent genotype
      * 
      */
     @JsonProperty("subject")
@@ -89,7 +89,7 @@ public class GenotypeToGeneAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * parent genotype
      * 
      */
     @JsonProperty("subject")

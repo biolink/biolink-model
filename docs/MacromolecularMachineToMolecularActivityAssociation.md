@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/MacromolecularMachineToMolecularActivityAssociat
 ## Fields
 
  * _[macromolecular machine to molecular activity association.object](macromolecular_machine_to_molecular_activity_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _class describing the activity, process or localization of the gene product_
     * range: [MolecularActivity](MolecularActivity.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_
@@ -42,7 +42,7 @@ URI: [http://bioentity.io/vocab/MacromolecularMachineToMolecularActivityAssociat
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
  * _[functional association.subject](functional_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _gene, product or macromolecular complex that has the function associated with the GO term_
     * range: [MacromolecularMachine](MacromolecularMachine.md) [required]
     * inherited from: [FunctionalAssociation](FunctionalAssociation.md)
  * _[id](id.md) *subsets*: (translator_minimal)_

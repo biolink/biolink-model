@@ -2,7 +2,7 @@ metamodel:
     id: "https://biolink.github.io/metamodel/ontology/meta.ttl"
     description: Metamodel for biolink schema
     license: https://creativecommons.org/publicdomain/zero/1.0/
-    version: 0.3.0
+    version: 0.3.1
 
     prefixes:
       biolink: http://bioentity.io/vocab/
@@ -28,6 +28,40 @@ metamodel:
     note:
       - OIO prefix is not correct -- where IS "inSubset" derived from?
 
+#    types:
+#      string:
+#        mappings:
+#          - xsd:string
+#
+#      integer:
+#        mappings:
+#          - xsd:integer
+#
+#      float:
+#        mappings:
+#          - xsd:float
+#
+#      double:
+#        mappings:
+#          - xsd:double
+#
+#      boolean:
+#        mappings:
+#          - xsd:boolean
+#
+#      time:
+#        mappings:
+#          - xsd:time
+#
+#      date:
+#        mappings:
+#          - xsd:date
+#
+#      uri:
+#        mappings:
+#          - xsd:anyURI
+#
+
     slots:
       #
       # Slots for apply to all classes
@@ -37,7 +71,7 @@ metamodel:
           description: >-
             a unique key that identifies a slot, type or class in a schema
           mappings:
-            - rdf:label
+            - rdfs:label
 
       singular_name:
           domain: element
@@ -176,7 +210,6 @@ metamodel:
       local_names:
           multivalued: true
           domain: definition
-          inlined: True
           description: >-
             map from local identifier to slot
 
@@ -257,6 +290,12 @@ metamodel:
           range: string
           description: >-
             default and base prefix -- used for ':' identifiers, @base and @vocab
+
+      default_type:
+          domain: schema definition
+          range: type definition
+          description: >-
+            the default type if range is omitted
 
       types:
           domain: schema definition
@@ -374,10 +413,10 @@ metamodel:
 
       range:
           domain: slot definition
-          range: element
+          range: anytype
           inherited: true
           description: >-
-            The slot type.  If absent, it is the builtin type 'string'
+            The slot type.  Can be any class or type
 
       required:
           domain: slot definition
@@ -602,6 +641,9 @@ metamodel:
             - imports
             - license
             - prefixes
+            - default_prefix
+            - default_type
+            - default_curi_maps
             - types
             - slot definitions
             - classes

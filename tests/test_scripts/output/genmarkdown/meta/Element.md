@@ -5,7 +5,7 @@ root of all described things
 
 URI: [http://bioentity.io/vocab/Element](http://bioentity.io/vocab/Element)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Element|name:string;singular_name:string%20%3F;description:string%20%3F;note:string%20%3F;comment:string%20%3F;see_also:string%20%3F;flags:string%20*;aliases:string%20*;mappings:string%20*;id_prefixes:string%20*;in_subset:string%20*;from_schema:string%20%3F;alt_descriptions:string%20*]++-%20examples%20*>\[Example],%20\[SlotDefinition]-%20range(i)%20%3F>\[Element],%20\[Element]^-\[TypeDefinition],%20\[Element]^-\[Definition])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Element|name:string;singular_name:string%20%3F;description:string%20%3F;note:string%20%3F;comment:string%20%3F;see_also:string%20%3F;flags:string%20*;aliases:string%20*;mappings:string%20*;id_prefixes:string%20*;in_subset:string%20*;from_schema:string%20%3F;alt_descriptions:string%20*]++-%20examples%20*>\[Example],%20\[Element]^-\[TypeDefinition],%20\[Element]^-\[Definition])
 ## Mappings
 
 ## Inheritance
@@ -16,7 +16,6 @@ URI: [http://bioentity.io/vocab/Element](http://bioentity.io/vocab/Element)
  * [TypeDefinition](TypeDefinition.md) - A type definition
 ## Used in
 
- *  class: **[SlotDefinition](SlotDefinition.md)** *[range](range.md)* **[Element](Element.md)**
 ## Fields
 
  * _[aliases](aliases.md)_

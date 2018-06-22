@@ -22,11 +22,11 @@ URI: [http://bioentity.io/vocab/FunctionalAssociation](http://bioentity.io/vocab
 ## Fields
 
  * _[functional association.object](functional_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _class describing the activity, process or localization of the gene product_
     * range: [GeneOntologyClass](GeneOntologyClass.md) [required]
     * __Local__
  * _[functional association.subject](functional_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _gene, product or macromolecular complex that has the function associated with the GO term_
     * range: [MacromolecularMachine](MacromolecularMachine.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

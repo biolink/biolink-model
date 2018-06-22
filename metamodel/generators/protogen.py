@@ -4,6 +4,7 @@ from typing import Union, TextIO
 import click
 
 from metamodel.metamodel import ClassDefinition, SlotDefinition, SchemaDefinition
+from metamodel.utils.builtins import DEFAULT_BUILTIN_TYPE_NAME
 from metamodel.utils.formatutils import camelcase, lcamelcase
 from metamodel.utils.generator import Generator
 

@@ -73,16 +73,17 @@ message SchemaDefinition
   repeated imports String = 26
   optional license String = 27
   repeated prefixes Prefix = 28
-  repeated types TypeDefinition = 29
-  repeated slots SlotDefinition = 30
-  repeated classes ClassDefinition = 31
-  optional metamodelVersion String = 32
-  optional sourceFile String = 33
-  optional sourceFileSize Integer = 34
-  optional sourceFileDate String = 35
-  optional generationDate Date = 36
-  repeated defaultCuriMaps String = 37
-  optional defaultPrefix String = 38
+  optional defaultPrefix String = 29
+  optional defaultType TypeDefinition = 30
+  repeated defaultCuriMaps String = 31
+  repeated types TypeDefinition = 32
+  repeated slots SlotDefinition = 33
+  repeated classes ClassDefinition = 34
+  optional metamodelVersion String = 35
+  optional sourceFile String = 36
+  optional sourceFileSize Integer = 37
+  optional sourceFileDate String = 38
+  optional generationDate Date = 39
  }
 // A property or slot
 message SlotDefinition
@@ -109,7 +110,7 @@ message SlotDefinition
   optional symmetric Boolean = 20
   optional multivalued Boolean = 21
   optional domain ClassDefinition = 22
-  optional range Element = 23
+  optional range Anytype = 23
   optional required Boolean = 24
   optional objectProperty Boolean = 25
   optional inlined Boolean = 26

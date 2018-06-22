@@ -60,6 +60,9 @@ SchemaDefinition type
     imports: [String]
     license: String
     prefixes: [Prefix]
+    defaultPrefix: String
+    defaultType: TypeDefinition
+    defaultCuriMaps: [String]
     types: [TypeDefinition]
     slots: [SlotDefinition]
     classes: [ClassDefinition]
@@ -68,15 +71,13 @@ SchemaDefinition type
     sourceFileSize: String
     sourceFileDate: String
     generationDate: String
-    defaultCuriMaps: [String]
-    defaultPrefix: String
   }
 
 SlotDefinition type
   {
     multivalued: String
     domain: ClassDefinition
-    range: Element
+    range: String
     required: String
     objectProperty: String
     inlined: String

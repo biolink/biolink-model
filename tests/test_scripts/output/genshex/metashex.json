@@ -2,6 +2,97 @@
    "@context": "http://www.w3.org/ns/shex.jsonld",
    "shapes": [
       {
+         "id": "http://bioentity.io/meta/Builtins",
+         "values": [
+            "http://www.w3.org/2001/XMLSchema#string",
+            "http://www.w3.org/2001/XMLSchema#integer",
+            "http://www.w3.org/2001/XMLSchema#float",
+            "http://www.w3.org/2001/XMLSchema#double",
+            "http://www.w3.org/2001/XMLSchema#boolean",
+            "http://www.w3.org/2001/XMLSchema#time",
+            "http://www.w3.org/2001/XMLSchema#date",
+            "http://www.w3.org/2001/XMLSchema#anyURI",
+            "http://bioentity.io/vocab/anytype",
+            "http://bioentity.io/vocab/anytype"
+         ],
+         "type": "NodeConstraint"
+      },
+      {
+         "id": "http://bioentity.io/meta/SlotRangeTypes",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/TypeDefinition",
+            "http://bioentity.io/vocab/ClassDefinition",
+            "http://bioentity.io/meta/Builtins"
+         ],
+         "type": "ShapeOr"
+      },
+      {
+         "id": "http://bioentity.io/vocab/SlotDefinition__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/SlotDefinition",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/SlotDefinition__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/ClassDefinition__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/ClassDefinition",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/ClassDefinition__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
          "id": "http://bioentity.io/vocab/ClassDefinition",
          "shapeExprs": [
             "http://bioentity.io/vocab/Definition",
@@ -10,23 +101,23 @@
                   "expressions": [
                      {
                         "predicate": "http://bioentity.io/vocab/defining_slots",
-                        "valueExpr": "http://bioentity.io/vocab/SlotDefinition",
+                        "valueExpr": "http://bioentity.io/vocab/SlotDefinition__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/slots",
-                        "valueExpr": "http://bioentity.io/vocab/SlotDefinition",
+                        "valueExpr": "http://bioentity.io/vocab/SlotDefinition__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/slot_usage",
-                        "valueExpr": "http://bioentity.io/vocab/SlotDefinition",
+                        "valueExpr": "http://bioentity.io/vocab/SlotDefinition__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
@@ -55,16 +146,16 @@
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/class_definition_mixins",
-                        "valueExpr": "http://bioentity.io/vocab/ClassDefinition",
+                        "valueExpr": "http://bioentity.io/vocab/ClassDefinition__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/class_definition_union_of",
-                        "valueExpr": "http://bioentity.io/vocab/ClassDefinition",
+                        "valueExpr": "http://bioentity.io/vocab/ClassDefinition__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      }
                   ],
@@ -74,6 +165,75 @@
             }
          ],
          "type": "ShapeAnd"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Definition__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/Definition",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/Definition__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
+         "id": "XSD_string__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "XSD_string__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
       },
       {
          "id": "http://bioentity.io/vocab/Definition",
@@ -101,9 +261,9 @@
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/mixins",
-                        "valueExpr": "http://bioentity.io/vocab/Definition",
+                        "valueExpr": "http://bioentity.io/vocab/Definition__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
@@ -118,19 +278,16 @@
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/local_names",
-                        "valueExpr": {
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
-                           "type": "NodeConstraint"
-                        },
+                        "valueExpr": "XSD_string__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/union_of",
-                        "valueExpr": "http://bioentity.io/vocab/Definition",
+                        "valueExpr": "http://bioentity.io/vocab/Definition__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
@@ -145,12 +302,9 @@
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/values_from",
-                        "valueExpr": {
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
-                           "type": "NodeConstraint"
-                        },
+                        "valueExpr": "XSD_string__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
@@ -172,11 +326,44 @@
          "type": "ShapeAnd"
       },
       {
+         "id": "http://bioentity.io/vocab/Example__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/Example",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/Example__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
          "id": "http://bioentity.io/vocab/Element",
          "expression": {
             "expressions": [
                {
-                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
@@ -227,9 +414,9 @@
                },
                {
                   "predicate": "https://www.w3.org/TR/skos-reference/#example",
-                  "valueExpr": "http://bioentity.io/vocab/Example",
+                  "valueExpr": "http://bioentity.io/vocab/Example__List",
                   "min": 0,
-                  "max": -1,
+                  "max": 1,
                   "type": "TripleConstraint"
                },
                {
@@ -244,52 +431,37 @@
                },
                {
                   "predicate": "http://bioentity.io/vocab/flags",
-                  "valueExpr": {
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
-                     "type": "NodeConstraint"
-                  },
+                  "valueExpr": "XSD_string__List",
                   "min": 0,
-                  "max": -1,
+                  "max": 1,
                   "type": "TripleConstraint"
                },
                {
                   "predicate": "http://bioentity.io/vocab/aliases",
-                  "valueExpr": {
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
-                     "type": "NodeConstraint"
-                  },
+                  "valueExpr": "XSD_string__List",
                   "min": 0,
-                  "max": -1,
+                  "max": 1,
                   "type": "TripleConstraint"
                },
                {
                   "predicate": "http://bioentity.io/vocab/mappings",
-                  "valueExpr": {
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
-                     "type": "NodeConstraint"
-                  },
+                  "valueExpr": "XSD_string__List",
                   "min": 0,
-                  "max": -1,
+                  "max": 1,
                   "type": "TripleConstraint"
                },
                {
                   "predicate": "http://bioentity.io/vocab/id_prefixes",
-                  "valueExpr": {
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
-                     "type": "NodeConstraint"
-                  },
+                  "valueExpr": "XSD_string__List",
                   "min": 0,
-                  "max": -1,
+                  "max": 1,
                   "type": "TripleConstraint"
                },
                {
                   "predicate": "http://www.geneontology.org/formats/oboInOwl#inSubset",
-                  "valueExpr": {
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
-                     "type": "NodeConstraint"
-                  },
+                  "valueExpr": "XSD_string__List",
                   "min": 0,
-                  "max": -1,
+                  "max": 1,
                   "type": "TripleConstraint"
                },
                {
@@ -304,12 +476,9 @@
                },
                {
                   "predicate": "http://bioentity.io/vocab/alt_descriptions",
-                  "valueExpr": {
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
-                     "type": "NodeConstraint"
-                  },
+                  "valueExpr": "XSD_string__List",
                   "min": 0,
-                  "max": -1,
+                  "max": 1,
                   "type": "TripleConstraint"
                }
             ],
@@ -376,6 +545,72 @@
          "type": "Shape"
       },
       {
+         "id": "http://bioentity.io/vocab/Prefix__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/Prefix",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/Prefix__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/TypeDefinition__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/TypeDefinition",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/TypeDefinition__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
          "id": "http://bioentity.io/vocab/SchemaDefinition",
          "shapeExprs": [
             "http://bioentity.io/vocab/Definition",
@@ -404,12 +639,9 @@
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/imports",
-                        "valueExpr": {
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
-                           "type": "NodeConstraint"
-                        },
+                        "valueExpr": "XSD_string__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
@@ -424,30 +656,54 @@
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/prefixes",
-                        "valueExpr": "http://bioentity.io/vocab/Prefix",
+                        "valueExpr": "http://bioentity.io/vocab/Prefix__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/default_prefix",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/default_type",
+                        "valueExpr": "http://bioentity.io/vocab/TypeDefinition",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/default_curi_maps",
+                        "valueExpr": "XSD_string__List",
+                        "min": 0,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/types",
-                        "valueExpr": "http://bioentity.io/vocab/TypeDefinition",
+                        "valueExpr": "http://bioentity.io/vocab/TypeDefinition__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/slot_definitions",
-                        "valueExpr": "http://bioentity.io/vocab/SlotDefinition",
+                        "valueExpr": "http://bioentity.io/vocab/SlotDefinition__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/classes",
-                        "valueExpr": "http://bioentity.io/vocab/ClassDefinition",
+                        "valueExpr": "http://bioentity.io/vocab/ClassDefinition__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
@@ -499,26 +755,6 @@
                         "min": 0,
                         "max": 1,
                         "type": "TripleConstraint"
-                     },
-                     {
-                        "predicate": "http://bioentity.io/vocab/default_curi_maps",
-                        "valueExpr": {
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
-                           "type": "NodeConstraint"
-                        },
-                        "min": 0,
-                        "max": -1,
-                        "type": "TripleConstraint"
-                     },
-                     {
-                        "predicate": "http://bioentity.io/vocab/default_prefix",
-                        "valueExpr": {
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
-                           "type": "NodeConstraint"
-                        },
-                        "min": 0,
-                        "max": 1,
-                        "type": "TripleConstraint"
                      }
                   ],
                   "type": "EachOf"
@@ -554,7 +790,7 @@
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/range",
-                        "valueExpr": "http://bioentity.io/vocab/Element",
+                        "valueExpr": "http://bioentity.io/meta/SlotRangeTypes",
                         "min": 0,
                         "max": 1,
                         "type": "TripleConstraint"
@@ -692,16 +928,16 @@
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/slot_definition_mixins",
-                        "valueExpr": "http://bioentity.io/vocab/SlotDefinition",
+                        "valueExpr": "http://bioentity.io/vocab/SlotDefinition__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/slot_definition_union_of",
-                        "valueExpr": "http://bioentity.io/vocab/SlotDefinition",
+                        "valueExpr": "http://bioentity.io/vocab/SlotDefinition__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      }
                   ],

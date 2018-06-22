@@ -31,11 +31,10 @@ class YAMLRoot(JsonObj):
                         itemslist = []
                         for vk, vv in v.items():
                             if isinstance(vv, ClassDefinition):
-                                vk = camelcase(vk)
-                                vv['@id'] = vk
+                                vv['@id'] = camelcase(vk)
                             elif isinstance(vv, (SlotDefinition, TypeDefinition)):
-                                vk = underscore(vk)
-                                vv['@id'] = vk
+                                if k != 'slot_usage':
+                                    vv['@id'] = underscore(vk)
                             itemslist.append(vv)
                         rval[k] = itemslist
                     else:

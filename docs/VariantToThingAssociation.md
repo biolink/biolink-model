@@ -21,7 +21,7 @@ URI: [http://bioentity.io/vocab/VariantToThingAssociation](http://bioentity.io/v
 ## Fields
 
  * _[variant to thing association.subject](variant_to_thing_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _a sequence variant in which the allele state is associated with some other entity_
     * range: [SequenceVariant](SequenceVariant.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

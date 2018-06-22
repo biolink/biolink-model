@@ -112,6 +112,17 @@ fields:
     from prefixcommons in id_prefixes
   display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [prefixes]
   id: prefixes
+- description: default and base prefix -- used for ':' identifiers, @base and @vocab
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [default_prefix]
+  id: default_prefix
+- description: the default type if range is omitted
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [default_type]
+  id: default_type
+- cardinality: multi
+  description: List of prefixcommon biocontexts to be fetched to resolve id_prefixes
+    and inline prefix variables
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [default_curi_maps]
+  id: default_curi_maps
 - cardinality: multi
   description: types defined in schema
   display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [types]
@@ -140,14 +151,6 @@ fields:
 - description: date that the schema was loaded/generated.  Supplied by the loader
   display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [generation_date]
   id: generation_date
-- cardinality: multi
-  description: List of prefixcommon biocontexts to be fetched to resolve id_prefixes
-    and inline prefix variables
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [default_curi_maps]
-  id: default_curi_maps
-- description: default and base prefix -- used for ':' identifiers, @base and @vocab
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [default_prefix]
-  id: default_prefix
 id: schema_definition
 schema_generating: true
 weight: 20
