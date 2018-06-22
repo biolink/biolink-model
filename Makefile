@@ -92,8 +92,8 @@ contrib/%/ontology.ttl: contrib-dir-% contrib/%.yaml
 # ~~~~~~~~~~~~~~~~~~~~
 # RDF
 # ~~~~~~~~~~~~~~~~~~~~
-rdf/%.ttl: dir-rdf context.jsonld meta.yaml
-	gen-rdf $*.yaml -f ttl --context context.jsonld > rdf/$*.ttl
+rdf/%.ttl: dir-rdf metamodel/context.jsonld meta.yaml
+	gen-rdf $*.yaml -f ttl --context metamodel/context.jsonld > rdf/$*.ttl
 
 
 contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml
@@ -117,10 +117,6 @@ contrib-golr-%: contrib/%.yaml
 # ~~~~~~~~~~~~~~~~~~~~
 contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml
 	gen-py-classes contrib/$*.yaml > $@
-
-gen-graphviz: dir-graphviz biolink-model.yaml
-	gen-graphviz  -d graphviz biolink-model.yaml
-
 
 # ~~~~~~~~~~~~~~~~~~~~
 # ShEx

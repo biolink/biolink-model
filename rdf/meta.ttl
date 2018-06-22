@@ -1,674 +1,510 @@
 @prefix : <http://bioentity.io/vocab/> .
-@prefix ECTO: <http://example.org/unknown/ECTO/> .
-@prefix GMODChado: <http://example.org/unknown/GMODChado/> .
-@prefix OBAN: <http://purl.org/oban/> .
 @prefix OIO: <http://www.geneontology.org/formats/oboInOwl#> .
-@prefix SEMMEDDB: <http://example.org/unknown/SEMMEDDB/> .
-@prefix UMLSSG: <http://example.org/unknown/UMLSSG/> .
-@prefix VMC: <http://example.org/unknown/VMC/> .
-@prefix WD: <http://example.org/unknown/WD/> .
 @prefix biolink: <http://bioentity.io/vocab/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix faldo: <http://biohackathon.org/resource/faldo#> .
-@prefix oban: <http://example.org/unknown/oban/> .
+@prefix meta: <http://bioentity.io/meta/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix pav: <http://purl.org/pav/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <https://www.w3.org/TR/skos-reference/#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://biolink.github.io/metamodel/ontology/meta.ttl> rdfs:label "metamodel" ;
-    biolink:classes biolink:ClassDefinition,
-        biolink:Definition,
-        biolink:Element,
-        biolink:Example,
-        biolink:Prefix,
-        biolink:SchemaDefinition,
-        biolink:SlotDefinition,
-        biolink:TypeDefinition ;
-    biolink:default_curi_maps "idot_context",
-        "monarch_context",
-        "obo_context",
-        "semweb_context" ;
+    biolink:classes ( biolink:Prefix biolink:Example biolink:Element biolink:Definition biolink:SlotDefinition biolink:ClassDefinition biolink:TypeDefinition biolink:SchemaDefinition ) ;
+    biolink:default_curi_maps ( "obo_context" "monarch_context" "idot_context" "semweb_context" ) ;
     biolink:default_prefix "biolink" ;
-    biolink:generation_date "2018-06-22 16:23" ;
-    biolink:id_prefixes "OIO",
-        "rdf",
-        "rdfs",
-        "skos",
-        "xsd" ;
+    biolink:generation_date "2018-06-22"^^xsd:date ;
+    biolink:id "https://biolink.github.io/metamodel/ontology/meta.ttl" ;
+    biolink:id_prefixes ( "rdf" "rdfs" "xsd" "skos" "OIO" ) ;
     biolink:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     biolink:metamodel_version "0.3.1" ;
-    biolink:note "OIO prefix is not correct -- where IS \"inSubset\" derived from?" ;
-    biolink:prefixes [ biolink:local_name "biolink" ;
-            biolink:prefix_uri "http://bioentity.io/vocab/" ],
-        [ biolink:local_name "meta" ;
-            biolink:prefix_uri "http://bioentity.io/meta/" ],
-        [ biolink:local_name "skos" ;
-            biolink:prefix_uri "http://www.w3.org/2004/02/skos/core#" ],
-        [ biolink:local_name "owl" ;
-            biolink:prefix_uri "http://www.w3.org/2002/07/owl#" ] ;
-    biolink:slots biolink:abstract,
-        biolink:alias,
-        biolink:aliases,
-        biolink:alt_descriptions,
-        biolink:apply_to,
-        biolink:class_definition_is_a,
-        biolink:class_definition_mixins,
-        biolink:class_definition_union_of,
-        biolink:classes,
-        biolink:comment,
-        biolink:default_curi_maps,
-        biolink:default_prefix,
-        biolink:default_type,
-        biolink:defining_slots,
-        biolink:definitional,
-        biolink:description,
-        biolink:domain,
-        biolink:entity,
-        biolink:examples,
-        biolink:flags,
-        biolink:from_schema,
-        biolink:generation_date,
-        biolink:id,
-        biolink:id_prefixes,
-        biolink:identifier,
-        biolink:imports,
-        biolink:in_subset,
-        biolink:inherited,
-        biolink:inlined,
-        biolink:inverse,
-        biolink:is_a,
-        biolink:is_class_field,
-        biolink:license,
-        biolink:local_name,
-        biolink:local_names,
-        biolink:mappings,
-        biolink:metamodel_version,
-        biolink:mixin,
-        biolink:mixins,
-        biolink:multivalued,
-        biolink:name,
-        biolink:note,
-        biolink:object_property,
-        biolink:path,
-        biolink:prefix_uri,
-        biolink:prefixes,
-        biolink:primary_key,
-        biolink:range,
-        biolink:required,
-        biolink:role,
-        biolink:see_also,
-        biolink:singular_name,
-        biolink:slot_definition_is_a,
-        biolink:slot_definition_mixins,
-        biolink:slot_definition_union_of,
-        biolink:slot_definitions,
-        biolink:slot_usage,
-        biolink:slots,
-        biolink:source_file,
-        biolink:source_file_date,
-        biolink:source_file_size,
-        biolink:subclass_of,
-        biolink:subproperty_of,
-        biolink:symmetric,
-        biolink:typeof,
-        biolink:types,
-        biolink:union_of,
-        biolink:value,
-        biolink:value_description,
-        biolink:values_from,
-        biolink:version ;
+    biolink:prefixes ( [ biolink:local_name "biolink" ;
+                biolink:prefix_uri "http://bioentity.io/vocab/" ] [ biolink:local_name "meta" ;
+                biolink:prefix_uri "http://bioentity.io/meta/" ] [ biolink:local_name "skos" ;
+                biolink:prefix_uri "http://www.w3.org/2004/02/skos/core#" ] [ biolink:local_name "owl" ;
+                biolink:prefix_uri "http://www.w3.org/2002/07/owl#" ] ) ;
+    biolink:slots ( biolink:name biolink:singular_name biolink:description biolink:alt_descriptions biolink:note biolink:comment biolink:examples biolink:aliases biolink:in_subset biolink:from_schema biolink:flags biolink:see_also biolink:id_prefixes biolink:mappings biolink:is_a biolink:mixin biolink:mixins biolink:abstract biolink:local_names biolink:union_of biolink:values_from biolink:subclass_of biolink:symmetric biolink:id biolink:version biolink:imports biolink:license biolink:prefixes biolink:default_curi_maps biolink:default_prefix biolink:default_type biolink:types biolink:slot_definitions biolink:classes biolink:metamodel_version biolink:source_file biolink:source_file_date biolink:source_file_size biolink:generation_date biolink:defining_slots biolink:slots biolink:slot_usage biolink:apply_to biolink:entity biolink:multivalued biolink:domain biolink:range biolink:required biolink:inlined biolink:definitional biolink:object_property biolink:primary_key biolink:identifier biolink:alias biolink:path biolink:subproperty_of biolink:inverse biolink:is_class_field biolink:role biolink:inherited biolink:typeof biolink:value biolink:value_description biolink:local_name biolink:prefix_uri biolink:slot_definition_is_a biolink:slot_definition_mixins biolink:slot_definition_union_of biolink:class_definition_is_a biolink:class_definition_mixins biolink:class_definition_union_of ) ;
     biolink:source_file "meta.yaml" ;
     biolink:source_file_date "Fri Jun 22 11:47:08 2018" ;
     biolink:source_file_size 18545 ;
     biolink:version "0.3.1" ;
-    dcterms:description "Metamodel for biolink schema" ;
-    owl:topAnnotationProperty "https://biolink.github.io/metamodel/ontology/meta.ttl" .
+    skos:definition "Metamodel for biolink schema" ;
+    skos:note "OIO prefix is not correct -- where IS \"inSubset\" derived from?" .
 
-biolink:ClassDefinition rdfs:label "ClassDefinition" ;
-    biolink:is_a "Definition" ;
-    biolink:slot_usage [ rdfs:label "is_a" ;
-            biolink:range "class definition" ],
-        [ rdfs:label "mixins" ;
-            biolink:domain "ClassDefinition" ;
-            biolink:range "class definition" ],
-        [ rdfs:label "union_of" ;
-            biolink:domain "ClassDefinition" ;
-            biolink:range "class definition" ] ;
-    biolink:slots "apply_to",
-        "class_definition_is_a",
-        "class_definition_mixins",
-        "class_definition_union_of",
-        "defining_slots",
-        "entity",
-        "slot_usage",
-        "slots" ;
-    dcterms:description "A class or interface" .
-
-biolink:Definition rdfs:label "Definition" ;
-    biolink:abstract true ;
-    biolink:is_a "Element" ;
-    biolink:slots "abstract",
-        "is_a",
-        "local_names",
-        "mixin",
-        "mixins",
-        "subclass_of",
-        "symmetric",
-        "union_of",
-        "values_from" ;
-    dcterms:description "definition base class" .
-
-biolink:Element rdfs:label "Element" ;
-    biolink:abstract true ;
-    biolink:slots "aliases",
-        "alt_descriptions",
-        "comment",
-        "description",
-        "examples",
-        "flags",
-        "from_schema",
-        "id_prefixes",
-        "in_subset",
-        "mappings",
-        "name",
-        "note",
-        "see_also",
-        "singular_name" ;
-    dcterms:description "root of all described things" .
-
-biolink:Example rdfs:label "Example" ;
-    biolink:slots "value",
-        "value_description" ;
-    dcterms:description "example of usage" .
-
-biolink:Prefix rdfs:label "Prefix" ;
-    biolink:slots "local_name",
-        "prefix_uri" ;
-    dcterms:description "Prefix URI map" .
-
-biolink:SchemaDefinition rdfs:label "SchemaDefinition" ;
-    biolink:is_a "Definition" ;
-    biolink:slots "classes",
-        "default_curi_maps",
-        "default_prefix",
-        "default_type",
-        "generation_date",
-        "id",
-        "imports",
-        "license",
-        "metamodel_version",
-        "prefixes",
-        "slot_definitions",
-        "source_file",
-        "source_file_date",
-        "source_file_size",
-        "types",
-        "version" ;
-    dcterms:description "A collection of definitions" .
-
-biolink:SlotDefinition rdfs:label "SlotDefinition" ;
-    biolink:is_a "Definition" ;
-    biolink:slot_usage [ rdfs:label "is_a" ;
-            biolink:range "slot definition" ],
-        [ rdfs:label "mixins" ;
-            biolink:range "slot definition" ],
-        [ rdfs:label "union_of" ;
-            biolink:range "slot definition" ] ;
-    biolink:slots "alias",
-        "definitional",
-        "domain",
-        "identifier",
-        "inherited",
-        "inlined",
-        "inverse",
-        "is_class_field",
-        "multivalued",
-        "object_property",
-        "path",
-        "primary_key",
-        "range",
-        "required",
-        "role",
-        "slot_definition_is_a",
-        "slot_definition_mixins",
-        "slot_definition_union_of",
-        "subproperty_of" ;
-    dcterms:description "A property or slot" .
-
-biolink:TypeDefinition rdfs:label "TypeDefinition" ;
-    biolink:is_a "Element" ;
-    biolink:slots "typeof" ;
-    dcterms:description "A type definition" .
+biolink:TypeDefinition a biolink:Element ;
+    rdfs:label "TypeDefinition" ;
+    biolink:slots ( biolink:typeof ) ;
+    skos:definition "A type definition" .
 
 biolink:abstract rdfs:label "abstract" ;
-    biolink:domain "Definition" ;
-    biolink:range "xsd:boolean" ;
-    dcterms:description "An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored" .
+    biolink:domain biolink:Definition ;
+    biolink:range "xsd:boolean"^^biolink:anytype ;
+    skos:definition "An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored" .
 
 biolink:alias rdfs:label "alias" ;
-    biolink:domain "SlotDefinition" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have \"slots\" where one inline and the other a reference" .
+    biolink:domain biolink:SlotDefinition ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have \"slots\" where one inline and the other a reference" .
 
 biolink:aliases rdfs:label "aliases" ;
-    biolink:domain "Element" ;
+    biolink:domain biolink:Element ;
     biolink:multivalued true ;
-    biolink:range "xsd:string" .
+    biolink:range "xsd:string"^^biolink:anytype .
 
 biolink:alt_descriptions rdfs:label "alt_descriptions" ;
-    biolink:domain "Element" ;
+    biolink:domain biolink:Element ;
     biolink:inherited true ;
     biolink:multivalued true ;
-    biolink:note "Needs description" ;
-    biolink:range "xsd:string" .
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:note "Needs description" .
 
 biolink:apply_to rdfs:label "apply_to" ;
-    biolink:domain "ClassDefinition" ;
-    biolink:range "class definition" ;
-    dcterms:description "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class." .
+    biolink:domain biolink:ClassDefinition ;
+    biolink:range "class definition"^^biolink:anytype ;
+    skos:definition "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class." .
 
-biolink:class_definition_is_a rdfs:label "class_definition_is_a" ;
+biolink:class_definition_is_a a biolink:is_a ;
+    rdfs:label "class_definition_is_a" ;
     biolink:alias "is_a" ;
-    biolink:domain "ClassDefinition" ;
-    biolink:is_a "is_a" ;
-    biolink:mappings "rdf:type" ;
-    biolink:range "class definition" ;
-    dcterms:description "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" .
+    biolink:domain biolink:ClassDefinition ;
+    biolink:mappings ( "rdf:type" ) ;
+    biolink:range "class definition"^^biolink:anytype ;
+    skos:definition "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" .
 
-biolink:class_definition_mixins rdfs:label "class_definition_mixins" ;
+biolink:class_definition_mixins a biolink:mixins ;
+    rdfs:label "class_definition_mixins" ;
     biolink:alias "mixins" ;
-    biolink:domain "ClassDefinition" ;
-    biolink:is_a "mixins" ;
+    biolink:domain biolink:ClassDefinition ;
     biolink:multivalued true ;
-    biolink:range "class definition" ;
-    dcterms:description "List of definitions to be mixed in. Targets may be any definition of the same type" .
+    biolink:range "class definition"^^biolink:anytype ;
+    skos:definition "List of definitions to be mixed in. Targets may be any definition of the same type" .
 
-biolink:class_definition_union_of rdfs:label "class_definition_union_of" ;
+biolink:class_definition_union_of a biolink:union_of ;
+    rdfs:label "class_definition_union_of" ;
     biolink:alias "union_of" ;
-    biolink:domain "ClassDefinition" ;
-    biolink:is_a "union_of" ;
+    biolink:domain biolink:ClassDefinition ;
     biolink:multivalued true ;
-    biolink:range "class definition" ;
-    dcterms:description "list of class or slot definitions that are combined to create the union class" .
+    biolink:range "class definition"^^biolink:anytype ;
+    skos:definition "list of class or slot definitions that are combined to create the union class" .
 
 biolink:classes rdfs:label "classes" ;
-    biolink:domain "SchemaDefinition" ;
+    biolink:domain biolink:SchemaDefinition ;
     biolink:inlined true ;
     biolink:multivalued true ;
-    biolink:range "class definition" ;
-    dcterms:description "classes defined in schema" .
+    biolink:range "class definition"^^biolink:anytype ;
+    skos:definition "classes defined in schema" .
 
 biolink:comment rdfs:label "comment" ;
-    biolink:domain "Element" ;
-    biolink:mappings "skos:editorialNote" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "Comment about an element" .
+    biolink:domain biolink:Element ;
+    biolink:mappings ( "skos:editorialNote" ) ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "Comment about an element" .
 
 biolink:default_curi_maps rdfs:label "default_curi_maps" ;
-    biolink:domain "SchemaDefinition" ;
+    biolink:domain biolink:SchemaDefinition ;
     biolink:multivalued true ;
-    biolink:range "xsd:string" ;
-    dcterms:description "List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables" .
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables" .
 
 biolink:default_prefix rdfs:label "default_prefix" ;
-    biolink:domain "SchemaDefinition" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "default and base prefix -- used for ':' identifiers, @base and @vocab" .
+    biolink:domain biolink:SchemaDefinition ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "default and base prefix -- used for ':' identifiers, @base and @vocab" .
 
 biolink:default_type rdfs:label "default_type" ;
-    biolink:domain "SchemaDefinition" ;
-    biolink:range "type definition" ;
-    dcterms:description "the default type if range is omitted" .
+    biolink:domain biolink:SchemaDefinition ;
+    biolink:range "type definition"^^biolink:anytype ;
+    skos:definition "the default type if range is omitted" .
 
 biolink:defining_slots rdfs:label "defining_slots" ;
-    biolink:domain "ClassDefinition" ;
+    biolink:domain biolink:ClassDefinition ;
     biolink:multivalued true ;
-    biolink:range "slot definition" ;
-    dcterms:description "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom" .
+    biolink:range "slot definition"^^biolink:anytype ;
+    skos:definition "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom" .
 
 biolink:definitional rdfs:label "definitional" ;
-    biolink:domain "SlotDefinition" ;
+    biolink:domain biolink:SlotDefinition ;
     biolink:inherited true ;
-    biolink:note "needs description" ;
-    biolink:range "xsd:boolean" .
+    biolink:range "xsd:boolean"^^biolink:anytype ;
+    skos:note "needs description" .
 
 biolink:description rdfs:label "description" ;
-    biolink:domain "Element" ;
+    biolink:domain biolink:Element ;
     biolink:inherited true ;
-    biolink:mappings "skos:definition" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "a description" .
+    biolink:mappings ( "skos:definition" ) ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "a description" .
 
 biolink:domain rdfs:label "domain" ;
-    biolink:domain "SlotDefinition" ;
-    biolink:range "class definition" ;
-    dcterms:description "The class to which this slot applies." .
+    biolink:domain biolink:SlotDefinition ;
+    biolink:range "class definition"^^biolink:anytype ;
+    skos:definition "The class to which this slot applies." .
 
 biolink:entity rdfs:label "entity" ;
-    biolink:domain "ClassDefinition" ;
-    biolink:note "needs description" ;
-    biolink:range "xsd:boolean" .
+    biolink:domain biolink:ClassDefinition ;
+    biolink:range "xsd:boolean"^^biolink:anytype ;
+    skos:note "needs description" .
 
 biolink:examples rdfs:label "examples" ;
-    biolink:domain "Element" ;
+    biolink:domain biolink:Element ;
     biolink:inlined true ;
-    biolink:mappings "skos:example" ;
+    biolink:mappings ( "skos:example" ) ;
     biolink:multivalued true ;
-    biolink:range "example" ;
-    dcterms:description "Example of usage for a slot or class" .
+    biolink:range "example"^^biolink:anytype ;
+    skos:definition "Example of usage for a slot or class" .
 
 biolink:flags rdfs:label "flags" ;
-    biolink:domain "Element" ;
+    biolink:domain biolink:Element ;
     biolink:multivalued true ;
-    biolink:range "xsd:string" ;
-    dcterms:description "State information and other details" .
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "State information and other details" .
 
 biolink:from_schema rdfs:label "from_schema" ;
-    biolink:domain "Element" ;
-    biolink:mappings "skos:inScheme" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "id of the schema that the element was derived from.  Supplied by the loader." .
+    biolink:domain biolink:Element ;
+    biolink:mappings ( "skos:inScheme" ) ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "id of the schema that the element was derived from.  Supplied by the loader." .
 
 biolink:generation_date rdfs:label "generation_date" ;
-    biolink:domain "SchemaDefinition" ;
-    biolink:range "xsd:date" ;
-    dcterms:description "date that the schema was loaded/generated.  Supplied by the loader" .
+    biolink:domain biolink:SchemaDefinition ;
+    biolink:range "xsd:date"^^biolink:anytype ;
+    skos:definition "date that the schema was loaded/generated.  Supplied by the loader" .
 
 biolink:id rdfs:label "id" ;
-    biolink:domain "SchemaDefinition" ;
+    biolink:domain biolink:SchemaDefinition ;
     biolink:primary_key true ;
-    biolink:range "xsd:string" ;
-    dcterms:description "a globally unique id or url for a schema" .
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "a globally unique id or url for a schema" .
 
 biolink:id_prefixes rdfs:label "id_prefixes" ;
-    biolink:domain "Element" ;
+    biolink:domain biolink:Element ;
     biolink:multivalued true ;
-    biolink:note "A list of CURI prefixes that are used in the representation of instances of the model.  All prefixes in this list are added to the prefix sections of the target models.  These prefixes are fetched from" ;
-    biolink:range "xsd:string" .
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:note "A list of CURI prefixes that are used in the representation of instances of the model.  All prefixes in this list are added to the prefix sections of the target models.  These prefixes are fetched from" .
 
 biolink:identifier rdfs:label "identifier" ;
-    biolink:domain "SlotDefinition" ;
-    biolink:range "xsd:boolean" ;
-    dcterms:description "True means that this slot must be unique across the collection of slots" .
+    biolink:domain biolink:SlotDefinition ;
+    biolink:range "xsd:boolean"^^biolink:anytype ;
+    skos:definition "True means that this slot must be unique across the collection of slots" .
 
 biolink:imports rdfs:label "imports" ;
-    biolink:domain "SchemaDefinition" ;
+    biolink:domain biolink:SchemaDefinition ;
     biolink:multivalued true ;
-    biolink:range "xsd:string" ;
-    dcterms:description "A list of modules that are imported into the schema" .
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "A list of modules that are imported into the schema" .
 
 biolink:in_subset rdfs:label "in_subset" ;
-    biolink:domain "Element" ;
+    biolink:domain biolink:Element ;
     biolink:inherited true ;
-    biolink:mappings "OIO:inSubset" ;
+    biolink:mappings ( "OIO:inSubset" ) ;
     biolink:multivalued true ;
-    biolink:range "xsd:string" ;
-    dcterms:description "used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)" .
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)" .
 
 biolink:inherited rdfs:label "inherited" ;
-    biolink:domain "SlotDefinition" ;
+    biolink:domain biolink:SlotDefinition ;
     biolink:inherited true ;
-    biolink:range "xsd:boolean" ;
-    dcterms:description "True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths" .
+    biolink:range "xsd:boolean"^^biolink:anytype ;
+    skos:definition "True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths" .
 
 biolink:inlined rdfs:label "inlined" ;
-    biolink:domain "SlotDefinition" ;
+    biolink:domain biolink:SlotDefinition ;
     biolink:inherited true ;
-    biolink:range "xsd:boolean" ;
-    dcterms:description "if true then the value of this slot is inlined (i.e. a nested object) rather linked by key" .
+    biolink:range "xsd:boolean"^^biolink:anytype ;
+    skos:definition "if true then the value of this slot is inlined (i.e. a nested object) rather linked by key" .
 
 biolink:inverse rdfs:label "inverse" ;
-    biolink:domain "SlotDefinition" ;
-    biolink:mappings "owl:inverseOf" ;
-    biolink:range "slot definition" ;
-    dcterms:description "used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')" .
-
-biolink:is_a rdfs:label "is_a" ;
-    biolink:domain "Definition" ;
-    biolink:mappings "rdf:type" ;
-    biolink:range "definition" ;
-    dcterms:description "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" .
+    biolink:domain biolink:SlotDefinition ;
+    biolink:mappings ( "owl:inverseOf" ) ;
+    biolink:range "slot definition"^^biolink:anytype ;
+    skos:definition "used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')" .
 
 biolink:is_class_field rdfs:label "is_class_field" ;
-    biolink:domain "SlotDefinition" ;
-    biolink:note "Needs description" ;
-    biolink:range "xsd:boolean" .
+    biolink:domain biolink:SlotDefinition ;
+    biolink:range "xsd:boolean"^^biolink:anytype ;
+    skos:note "Needs description" .
 
 biolink:license rdfs:label "license" ;
-    biolink:domain "SchemaDefinition" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "license for the schema" .
+    biolink:domain biolink:SchemaDefinition ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "license for the schema" .
 
 biolink:local_name rdfs:label "local_name" ;
-    biolink:domain "Prefix" ;
+    biolink:domain biolink:Prefix ;
     biolink:primary_key true ;
-    biolink:range "xsd:string" ;
-    dcterms:description "the nsname (sans ':' for a given prefix)" .
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "the nsname (sans ':' for a given prefix)" .
 
 biolink:local_names rdfs:label "local_names" ;
-    biolink:domain "Definition" ;
+    biolink:domain biolink:Definition ;
     biolink:multivalued true ;
-    biolink:range "xsd:string" ;
-    dcterms:description "map from local identifier to slot" .
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "map from local identifier to slot" .
 
 biolink:mappings rdfs:label "mappings" ;
-    biolink:domain "Element" ;
+    biolink:domain biolink:Element ;
     biolink:inherited true ;
     biolink:multivalued true ;
-    biolink:range "xsd:string" ;
-    dcterms:description "list of equivalent or skos exact mappings to an ontology class" .
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "list of equivalent or skos exact mappings to an ontology class" .
 
 biolink:metamodel_version rdfs:label "metamodel_version" ;
-    biolink:domain "SchemaDefinition" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "Version of the metamodel used to load the schema. Supplied by the loader" .
+    biolink:domain biolink:SchemaDefinition ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "Version of the metamodel used to load the schema. Supplied by the loader" .
 
 biolink:mixin rdfs:label "mixin" ;
-    biolink:domain "Definition" ;
-    biolink:range "xsd:boolean" ;
-    dcterms:description "Used only as a mixin -- cannot be instantiated on its own." .
-
-biolink:mixins rdfs:label "mixins" ;
-    biolink:domain "Definition" ;
-    biolink:multivalued true ;
-    biolink:range "definition" ;
-    dcterms:description "List of definitions to be mixed in. Targets may be any definition of the same type" .
+    biolink:domain biolink:Definition ;
+    biolink:range "xsd:boolean"^^biolink:anytype ;
+    skos:definition "Used only as a mixin -- cannot be instantiated on its own." .
 
 biolink:multivalued rdfs:label "multivalued" ;
-    biolink:domain "SlotDefinition" ;
+    biolink:domain biolink:SlotDefinition ;
     biolink:inherited true ;
-    biolink:range "xsd:boolean" ;
-    dcterms:description "If true slot can have many values" .
+    biolink:range "xsd:boolean"^^biolink:anytype ;
+    skos:definition "If true slot can have many values" .
 
 biolink:name rdfs:label "name" ;
-    biolink:domain "Element" ;
-    biolink:mappings "rdfs:label" ;
+    biolink:domain biolink:Element ;
+    biolink:mappings ( "rdfs:label" ) ;
     biolink:primary_key true ;
-    biolink:range "xsd:string" ;
-    dcterms:description "a unique key that identifies a slot, type or class in a schema" .
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "a unique key that identifies a slot, type or class in a schema" .
 
 biolink:note rdfs:label "note" ;
-    biolink:domain "Element" ;
-    biolink:mappings "skos:note" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "Notes about an element" .
+    biolink:domain biolink:Element ;
+    biolink:mappings ( "skos:note" ) ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "Notes about an element" .
 
 biolink:object_property rdfs:label "object_property" ;
-    biolink:domain "SlotDefinition" ;
+    biolink:domain biolink:SlotDefinition ;
     biolink:inherited true ;
-    biolink:range "xsd:boolean" ;
-    dcterms:description "true means that this slot is part of the formal definition of a class" .
+    biolink:range "xsd:boolean"^^biolink:anytype ;
+    skos:definition "true means that this slot is part of the formal definition of a class" .
 
 biolink:path rdfs:label "path" ;
-    biolink:domain "SlotDefinition" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "For any denormalized slot, this represents the tree or graph path used to generate the denormalized form" .
+    biolink:domain biolink:SlotDefinition ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "For any denormalized slot, this represents the tree or graph path used to generate the denormalized form" .
 
 biolink:prefix_uri rdfs:label "prefix_uri" ;
-    biolink:domain "Prefix" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "A URI associated with a given prefix" .
+    biolink:domain biolink:Prefix ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "A URI associated with a given prefix" .
 
 biolink:prefixes rdfs:label "prefixes" ;
-    biolink:domain "SchemaDefinition" ;
+    biolink:domain biolink:SchemaDefinition ;
     biolink:inlined true ;
     biolink:multivalued true ;
-    biolink:range "prefix" ;
-    dcterms:description "Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes" .
+    biolink:range "prefix"^^biolink:anytype ;
+    skos:definition "Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes" .
 
 biolink:primary_key rdfs:label "primary_key" ;
-    biolink:domain "SlotDefinition" ;
-    biolink:range "xsd:boolean" ;
-    dcterms:description "True means that this serves as a unique identifier" .
+    biolink:domain biolink:SlotDefinition ;
+    biolink:range "xsd:boolean"^^biolink:anytype ;
+    skos:definition "True means that this serves as a unique identifier" .
 
 biolink:range rdfs:label "range" ;
-    biolink:domain "SlotDefinition" ;
+    biolink:domain biolink:SlotDefinition ;
     biolink:inherited true ;
-    biolink:range "biolink:anytype" ;
-    dcterms:description "The slot type.  Can be any class or type" .
+    biolink:range "biolink:anytype"^^biolink:anytype ;
+    skos:definition "The slot type.  Can be any class or type" .
 
 biolink:required rdfs:label "required" ;
-    biolink:domain "SlotDefinition" ;
+    biolink:domain biolink:SlotDefinition ;
     biolink:inherited true ;
-    biolink:range "xsd:boolean" ;
-    dcterms:description "If true slot must have at least one value" .
+    biolink:range "xsd:boolean"^^biolink:anytype ;
+    skos:definition "If true slot must have at least one value" .
 
 biolink:role rdfs:label "role" ;
-    biolink:domain "SlotDefinition" ;
-    biolink:note "Needs description" ;
-    biolink:range "xsd:string" .
+    biolink:domain biolink:SlotDefinition ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:note "Needs description" .
 
 biolink:see_also rdfs:label "see_also" ;
-    biolink:domain "Element" ;
-    biolink:mappings "skos:related" ;
-    biolink:note "needs description" ;
-    biolink:range "xsd:string" .
+    biolink:domain biolink:Element ;
+    biolink:mappings ( "skos:related" ) ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:note "needs description" .
 
 biolink:singular_name rdfs:label "singular_name" ;
-    biolink:domain "Element" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "a name that is used in the singular form" .
+    biolink:domain biolink:Element ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "a name that is used in the singular form" .
 
-biolink:slot_definition_is_a rdfs:label "slot_definition_is_a" ;
+biolink:slot_definition_is_a a biolink:is_a ;
+    rdfs:label "slot_definition_is_a" ;
     biolink:alias "is_a" ;
-    biolink:domain "SlotDefinition" ;
-    biolink:is_a "is_a" ;
-    biolink:mappings "rdf:type" ;
-    biolink:range "slot definition" ;
-    dcterms:description "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" .
+    biolink:domain biolink:SlotDefinition ;
+    biolink:mappings ( "rdf:type" ) ;
+    biolink:range "slot definition"^^biolink:anytype ;
+    skos:definition "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" .
 
-biolink:slot_definition_mixins rdfs:label "slot_definition_mixins" ;
+biolink:slot_definition_mixins a biolink:mixins ;
+    rdfs:label "slot_definition_mixins" ;
     biolink:alias "mixins" ;
-    biolink:domain "SlotDefinition" ;
-    biolink:is_a "mixins" ;
+    biolink:domain biolink:SlotDefinition ;
     biolink:multivalued true ;
-    biolink:range "slot definition" ;
-    dcterms:description "List of definitions to be mixed in. Targets may be any definition of the same type" .
+    biolink:range "slot definition"^^biolink:anytype ;
+    skos:definition "List of definitions to be mixed in. Targets may be any definition of the same type" .
 
-biolink:slot_definition_union_of rdfs:label "slot_definition_union_of" ;
+biolink:slot_definition_union_of a biolink:union_of ;
+    rdfs:label "slot_definition_union_of" ;
     biolink:alias "union_of" ;
-    biolink:domain "SlotDefinition" ;
-    biolink:is_a "union_of" ;
+    biolink:domain biolink:SlotDefinition ;
     biolink:multivalued true ;
-    biolink:range "slot definition" ;
-    dcterms:description "list of class or slot definitions that are combined to create the union class" .
+    biolink:range "slot definition"^^biolink:anytype ;
+    skos:definition "list of class or slot definitions that are combined to create the union class" .
 
 biolink:slot_definitions rdfs:label "slot_definitions" ;
     biolink:alias "slots" ;
-    biolink:domain "SchemaDefinition" ;
+    biolink:domain biolink:SchemaDefinition ;
     biolink:inlined true ;
     biolink:multivalued true ;
-    biolink:range "slot definition" ;
-    dcterms:description "collection of slot definitions in a schema" .
+    biolink:range "slot definition"^^biolink:anytype ;
+    skos:definition "collection of slot definitions in a schema" .
 
 biolink:slot_usage rdfs:label "slot_usage" ;
-    biolink:domain "ClassDefinition" ;
+    biolink:domain biolink:ClassDefinition ;
     biolink:inlined true ;
     biolink:multivalued true ;
-    biolink:range "slot definition" ;
-    dcterms:description "Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints" .
+    biolink:range "slot definition"^^biolink:anytype ;
+    skos:definition "Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints" .
 
 biolink:slots rdfs:label "slots" ;
-    biolink:domain "ClassDefinition" ;
+    biolink:domain biolink:ClassDefinition ;
     biolink:multivalued true ;
-    biolink:range "slot definition" ;
-    dcterms:description "list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins." .
+    biolink:range "slot definition"^^biolink:anytype ;
+    skos:definition "list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins." .
 
 biolink:source_file rdfs:label "source_file" ;
-    biolink:domain "SchemaDefinition" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "name, uri or description of the source of the schema.  Supplied by the loader" .
+    biolink:domain biolink:SchemaDefinition ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "name, uri or description of the source of the schema.  Supplied by the loader" .
 
 biolink:source_file_date rdfs:label "source_file_date" ;
-    biolink:domain "SchemaDefinition" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "modification date of the source of the schema.  Supplied by the loader" .
+    biolink:domain biolink:SchemaDefinition ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "modification date of the source of the schema.  Supplied by the loader" .
 
 biolink:source_file_size rdfs:label "source_file_size" ;
-    biolink:domain "SchemaDefinition" ;
-    biolink:range "xsd:integer" ;
-    dcterms:description "size in bytes of the source of the schema.  Supplied by the loader" .
+    biolink:domain biolink:SchemaDefinition ;
+    biolink:range "xsd:integer"^^biolink:anytype ;
+    skos:definition "size in bytes of the source of the schema.  Supplied by the loader" .
 
 biolink:subclass_of rdfs:label "subclass_of" ;
-    biolink:domain "Definition" ;
-    biolink:mappings "rdfs:subClassOf" ;
-    biolink:range "xsd:anyURI" ;
-    dcterms:description "Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes" .
+    biolink:domain biolink:Definition ;
+    biolink:mappings ( "rdfs:subClassOf" ) ;
+    biolink:range "xsd:anyURI"^^biolink:anytype ;
+    skos:definition "Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes" .
 
 biolink:subproperty_of rdfs:label "subproperty_of" ;
-    biolink:domain "SlotDefinition" ;
+    biolink:domain biolink:SlotDefinition ;
     biolink:inherited true ;
-    biolink:mappings "rdfs:subPropertyOf" ;
-    biolink:range "slot definition" ;
-    dcterms:description "Ontolgy property which this is a subproperty of" .
+    biolink:mappings ( "rdfs:subPropertyOf" ) ;
+    biolink:range "slot definition"^^biolink:anytype ;
+    skos:definition "Ontolgy property which this is a subproperty of" .
 
 biolink:symmetric rdfs:label "symmetric" ;
-    biolink:domain "Definition" ;
-    biolink:note "Indications that a slot or reified association is symmetric" ;
-    biolink:range "xsd:boolean" ;
-    dcterms:description "Symmetric slot" .
+    biolink:domain biolink:Definition ;
+    biolink:range "xsd:boolean"^^biolink:anytype ;
+    skos:definition "Symmetric slot" ;
+    skos:note "Indications that a slot or reified association is symmetric" .
 
 biolink:typeof rdfs:label "typeof" ;
-    biolink:domain "TypeDefinition" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition" .
+    biolink:domain biolink:TypeDefinition ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition" .
 
 biolink:types rdfs:label "types" ;
-    biolink:domain "SchemaDefinition" ;
+    biolink:domain biolink:SchemaDefinition ;
     biolink:inlined true ;
     biolink:multivalued true ;
-    biolink:range "type definition" ;
-    dcterms:description "types defined in schema" .
-
-biolink:union_of rdfs:label "union_of" ;
-    biolink:domain "Definition" ;
-    biolink:multivalued true ;
-    biolink:range "definition" ;
-    dcterms:description "list of class or slot definitions that are combined to create the union class" .
+    biolink:range "type definition"^^biolink:anytype ;
+    skos:definition "types defined in schema" .
 
 biolink:value rdfs:label "value" ;
-    biolink:domain "Example" ;
-    biolink:range "xsd:string" .
+    biolink:domain biolink:Example ;
+    biolink:range "xsd:string"^^biolink:anytype .
 
 biolink:value_description rdfs:label "value_description" ;
     biolink:alias "description" ;
-    biolink:domain "Example" ;
-    biolink:range "xsd:string" .
+    biolink:domain biolink:Example ;
+    biolink:range "xsd:string"^^biolink:anytype .
 
 biolink:values_from rdfs:label "values_from" ;
-    biolink:domain "Definition" ;
+    biolink:domain biolink:Definition ;
     biolink:multivalued true ;
-    biolink:range "xsd:string" ;
-    dcterms:description "identifies the possible uri's of the range" .
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "identifies the possible uri's of the range" .
 
 biolink:version rdfs:label "version" ;
-    biolink:domain "SchemaDefinition" ;
-    biolink:range "xsd:string" ;
-    dcterms:description "Schema version" .
+    biolink:domain biolink:SchemaDefinition ;
+    biolink:range "xsd:string"^^biolink:anytype ;
+    skos:definition "Schema version" .
+
+biolink:Example rdfs:label "Example" ;
+    biolink:slots ( biolink:value biolink:value_description ) ;
+    skos:definition "example of usage" .
+
+biolink:Prefix rdfs:label "Prefix" ;
+    biolink:slots ( biolink:local_name biolink:prefix_uri ) ;
+    skos:definition "Prefix URI map" .
+
+biolink:is_a rdfs:label "is_a" ;
+    biolink:domain biolink:Definition ;
+    biolink:mappings ( "rdf:type" ) ;
+    biolink:range "definition"^^biolink:anytype ;
+    skos:definition "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" .
+
+biolink:mixins rdfs:label "mixins" ;
+    biolink:domain biolink:Definition ;
+    biolink:multivalued true ;
+    biolink:range "definition"^^biolink:anytype ;
+    skos:definition "List of definitions to be mixed in. Targets may be any definition of the same type" .
+
+biolink:union_of rdfs:label "union_of" ;
+    biolink:domain biolink:Definition ;
+    biolink:multivalued true ;
+    biolink:range "definition"^^biolink:anytype ;
+    skos:definition "list of class or slot definitions that are combined to create the union class" .
+
+biolink:ClassDefinition a biolink:Definition ;
+    rdfs:label "ClassDefinition" ;
+    biolink:slot_usage ( [ rdfs:label "is_a" ;
+                biolink:range "class definition"^^biolink:anytype ] [ rdfs:label "mixins" ;
+                biolink:domain biolink:ClassDefinition ;
+                biolink:range "class definition"^^biolink:anytype ] [ rdfs:label "union_of" ;
+                biolink:domain biolink:ClassDefinition ;
+                biolink:range "class definition"^^biolink:anytype ] ) ;
+    biolink:slots ( biolink:defining_slots biolink:slots biolink:slot_usage biolink:apply_to biolink:entity biolink:class_definition_is_a biolink:class_definition_mixins biolink:class_definition_union_of ) ;
+    skos:definition "A class or interface" .
+
+biolink:Definition a biolink:Element ;
+    rdfs:label "Definition" ;
+    biolink:abstract true ;
+    biolink:slots ( biolink:is_a biolink:mixin biolink:mixins biolink:abstract biolink:local_names biolink:union_of biolink:subclass_of biolink:values_from biolink:symmetric ) ;
+    skos:definition "definition base class" .
+
+biolink:Element rdfs:label "Element" ;
+    biolink:abstract true ;
+    biolink:slots ( biolink:name biolink:singular_name biolink:description biolink:note biolink:comment biolink:examples biolink:see_also biolink:flags biolink:aliases biolink:mappings biolink:id_prefixes biolink:in_subset biolink:from_schema biolink:alt_descriptions ) ;
+    skos:definition "root of all described things" .
+
+biolink:SchemaDefinition a biolink:Definition ;
+    rdfs:label "SchemaDefinition" ;
+    biolink:slots ( biolink:id biolink:version biolink:imports biolink:license biolink:prefixes biolink:default_prefix biolink:default_type biolink:default_curi_maps biolink:types biolink:slot_definitions biolink:classes biolink:metamodel_version biolink:source_file biolink:source_file_size biolink:source_file_date biolink:generation_date ) ;
+    skos:definition "A collection of definitions" .
+
+biolink:SlotDefinition a biolink:Definition ;
+    rdfs:label "SlotDefinition" ;
+    biolink:slot_usage ( [ rdfs:label "is_a" ;
+                biolink:range "slot definition"^^biolink:anytype ] [ rdfs:label "mixins" ;
+                biolink:range "slot definition"^^biolink:anytype ] [ rdfs:label "union_of" ;
+                biolink:range "slot definition"^^biolink:anytype ] ) ;
+    biolink:slots ( biolink:multivalued biolink:domain biolink:range biolink:required biolink:object_property biolink:inlined biolink:primary_key biolink:identifier biolink:definitional biolink:alias biolink:path biolink:subproperty_of biolink:inverse biolink:is_class_field biolink:role biolink:inherited biolink:slot_definition_is_a biolink:slot_definition_mixins biolink:slot_definition_union_of ) ;
+    skos:definition "A property or slot" .
 
 
 
