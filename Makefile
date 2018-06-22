@@ -18,7 +18,7 @@ test: pytests
 build: metamodel/context.jsonld context.jsonld build_core contrib_build_monarch contrib_build_translator contrib_build_go
 build_core: metamodel/docs/index.md biolinkmodel/datamodel.py docs/index.md gen-golr-views \
 ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql proto/biolink-model.proto \
-gen-graphviz shex/meta.ttl shex/biolink-model.ttl
+gen-graphviz rdf/meta.ttl shex/meta.ttl rdf/biolink-model.ttl shex/biolink-model.ttl
 
 contrib_build_%: contrib-dir-% contrib/%/docs/index.md contrib/%/datamodel.py contrib-golr-% contrib/%/ontology.ttl \
 contrib/%/schema.json contrib-java-% contrib/%/%.graphql contrib/%/shex
@@ -89,6 +89,18 @@ ontology/biolink.ttl: dir-ontology biolink-model.yaml
 contrib/%/ontology.ttl: contrib-dir-% contrib/%.yaml
 	gen-owl -o $@ contrib/$*.yaml
 
+# ~~~~~~~~~~~~~~~~~~~~
+# RDF
+# ~~~~~~~~~~~~~~~~~~~~
+rdf/%.ttl: dir-rdf context.jsonld meta.yaml
+	gen-rdf $*.yaml -f ttl --context context.jsonld > rdf/$*.ttl
+
+
+contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml
+	gen-py-classes contrib/$*.yaml > $@
+
+gen-graphviz: dir-graphviz biolink-model.yaml
+	gen-graphviz  -d graphviz biolink-model.yaml
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Solr

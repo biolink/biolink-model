@@ -2,6 +2,8 @@
 
 """
 import os
+from urllib.parse import urljoin
+from urllib.request import pathname2url
 from typing import Union, TextIO, Dict, Any, List, Set, Optional
 
 import click
@@ -71,6 +73,8 @@ class JSONLDGenerator(Generator):
         self._visit(self.schema)
         json_str = as_json(self.schema)
         json_obj = loads(json_str)
+        if '://' not in context:
+            context = urljoin('file:', pathname2url(os.path.abspath(context)))
         json_obj["@context"] = context
         json_obj["@id"] = self.schema.id
         print(as_json(json_obj))

@@ -1,3 +1,4 @@
+import os
 import unittest
 
 # This has to occur post ClickTestCase
@@ -9,9 +10,8 @@ from tests.test_scripts.clicktestcase import ClickTestCase
 
 update_test_files = False
 
-# TODO: Temporary test
-meta_context = "file:///Users/solbrig/git/hsolbrig/biolink-model/tests/test_scripts/output/gencontext/meta.jsonld"
-# biolink_context = "file:///Users/solbrig/git/hsolbrig/biolink-model/tests/test_scripts/output/gencontext/biolink-model.jsonld"
+cwd = os.path.dirname(__file__)
+meta_context = os.path.join(cwd, 'output', 'gencontext', 'meta.jsonld')
 
 
 class GenRDFTestCase(ClickTestCase):

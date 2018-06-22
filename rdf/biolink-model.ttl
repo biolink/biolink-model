@@ -1,0 +1,3891 @@
+@prefix : <http://bioentity.io/vocab/> .
+@prefix ECTO: <http://example.org/unknown/ECTO/> .
+@prefix GMODChado: <http://example.org/unknown/GMODChado/> .
+@prefix OBAN: <http://purl.org/oban/> .
+@prefix OIO: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix SEMMEDDB: <http://example.org/unknown/SEMMEDDB/> .
+@prefix UMLSSG: <http://example.org/unknown/UMLSSG/> .
+@prefix VMC: <http://example.org/unknown/VMC/> .
+@prefix WD: <http://example.org/unknown/WD/> .
+@prefix biolink: <http://bioentity.io/vocab/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix faldo: <http://biohackathon.org/resource/faldo#> .
+@prefix oban: <http://example.org/unknown/oban/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <https://www.w3.org/TR/skos-reference/#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://biolink.github.io/biolink-model/ontology/biolink.ttl> rdfs:label "biolink model" ;
+    biolink:classes biolink:ActivityAndBehavior,
+        biolink:AdministrativeEntity,
+        biolink:AnatomicalEntity,
+        biolink:AnatomicalEntityToAnatomicalEntityAssociation,
+        biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation,
+        biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation,
+        biolink:Association,
+        biolink:Attribute,
+        biolink:BiologicalEntity,
+        biolink:BiologicalProcess,
+        biolink:BiologicalProcessOrActivity,
+        biolink:BiologicalSex,
+        biolink:Biosample,
+        biolink:BiosampleToDiseaseOrPhenotypicFeatureAssociation,
+        biolink:BiosampleToThingAssociation,
+        biolink:Case,
+        biolink:CaseToPhenotypicFeatureAssociation,
+        biolink:CaseToThingAssociation,
+        biolink:Cell,
+        biolink:CellLine,
+        biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation,
+        biolink:CellLineToThingAssociation,
+        biolink:CellularComponent,
+        biolink:ChemicalSubstance,
+        biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation,
+        biolink:ChemicalToGeneAssociation,
+        biolink:ChemicalToPathwayAssociation,
+        biolink:ChemicalToThingAssociation,
+        biolink:ClinicalEntity,
+        biolink:ClinicalIntervention,
+        biolink:ClinicalModifier,
+        biolink:ClinicalTrial,
+        biolink:CodingSequence,
+        biolink:ConfidenceLevel,
+        biolink:Device,
+        biolink:Disease,
+        biolink:DiseaseOrPhenotypicFeature,
+        biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation,
+        biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation,
+        biolink:DiseaseToPhenotypicFeatureAssociation,
+        biolink:DiseaseToThingAssociation,
+        biolink:Drug,
+        biolink:DrugExposure,
+        biolink:EntityToDiseaseAssociation,
+        biolink:EntityToFeatureOrDiseaseQualifiers,
+        biolink:EntityToPhenotypicFeatureAssociation,
+        biolink:Environment,
+        biolink:EnvironmentToPhenotypicFeatureAssociation,
+        biolink:EnvironmentalFeature,
+        biolink:EnvironmentalProcess,
+        biolink:EvidenceType,
+        biolink:Exon,
+        biolink:ExonToTranscriptRelationship,
+        biolink:FrequencyQualifier,
+        biolink:FrequencyQuantifier,
+        biolink:FrequencyValue,
+        biolink:FunctionalAssociation,
+        biolink:Gene,
+        biolink:GeneAsAModelOfDiseaseAssociation,
+        biolink:GeneFamily,
+        biolink:GeneGrouping,
+        biolink:GeneHasVariantThatContributesToDiseaseAssociation,
+        biolink:GeneOntologyClass,
+        biolink:GeneOrGeneProduct,
+        biolink:GeneProduct,
+        biolink:GeneProductIsoform,
+        biolink:GeneRegulatoryRelationship,
+        biolink:GeneToDiseaseAssociation,
+        biolink:GeneToExpressionSiteAssociation,
+        biolink:GeneToGeneAssociation,
+        biolink:GeneToGeneHomologyAssociation,
+        biolink:GeneToGeneProductRelationship,
+        biolink:GeneToGoTermAssociation,
+        biolink:GeneToPhenotypicFeatureAssociation,
+        biolink:GeneToThingAssociation,
+        biolink:Genome,
+        biolink:GenomicEntity,
+        biolink:GenomicSequenceLocalization,
+        biolink:Genotype,
+        biolink:GenotypeToGeneAssociation,
+        biolink:GenotypeToGenotypePartAssociation,
+        biolink:GenotypeToPhenotypicFeatureAssociation,
+        biolink:GenotypeToThingAssociation,
+        biolink:GenotypeToVariantAssociation,
+        biolink:GenotypicSex,
+        biolink:GeographicLocation,
+        biolink:GeographicLocationAtTime,
+        biolink:GrossAnatomicalStructure,
+        biolink:Haplotype,
+        biolink:IndividualOrganism,
+        biolink:InformationContentEntity,
+        biolink:LifeStage,
+        biolink:MacromolecularComplex,
+        biolink:MacromolecularMachine,
+        biolink:MacromolecularMachineToBiologicalProcessAssociation,
+        biolink:MacromolecularMachineToCellularComponentAssociation,
+        biolink:MacromolecularMachineToMolecularActivityAssociation,
+        biolink:Metabolite,
+        biolink:MicroRNA,
+        biolink:ModelToDiseaseMixin,
+        biolink:MolecularActivity,
+        biolink:MolecularEntity,
+        biolink:MolecularInteraction,
+        biolink:NamedThing,
+        biolink:NoncodingRNAProduct,
+        biolink:Occurrent,
+        biolink:Onset,
+        biolink:OntologyClass,
+        biolink:OrganismTaxon,
+        biolink:OrganismalEntity,
+        biolink:PairwiseGeneOrProteinInteractionAssociation,
+        biolink:PathognomonicityQuantifier,
+        biolink:Pathway,
+        biolink:Phenomenon,
+        biolink:PhenotypicFeature,
+        biolink:PhenotypicSex,
+        biolink:PhysiologicalProcess,
+        biolink:PlanetaryEntity,
+        biolink:PopulationOfIndividualOrganisms,
+        biolink:PopulationToPopulationAssociation,
+        biolink:Procedure,
+        biolink:Protein,
+        biolink:ProteinIsoform,
+        biolink:Provider,
+        biolink:Publication,
+        biolink:RNAProduct,
+        biolink:RNAProductIsoform,
+        biolink:RelationshipQuantifier,
+        biolink:RelationshipType,
+        biolink:SenstivityQuantifier,
+        biolink:SequenceFeatureRelationship,
+        biolink:SequenceVariant,
+        biolink:SequenceVariantModulatesTreatmentAssociation,
+        biolink:SeverityValue,
+        biolink:SpecificityQuantifier,
+        biolink:ThingToDiseaseOrPhenotypicFeatureAssociation,
+        biolink:ThingWithTaxon,
+        biolink:Transcript,
+        biolink:TranscriptToGeneRelationship,
+        biolink:Treatment,
+        biolink:VariantToDiseaseAssociation,
+        biolink:VariantToPhenotypicFeatureAssociation,
+        biolink:VariantToPopulationAssociation,
+        biolink:VariantToThingAssociation,
+        biolink:Zygosity ;
+    biolink:default_curi_maps "idot_context",
+        "monarch_context",
+        "obo_context",
+        "semweb_context" ;
+    biolink:default_prefix "biolink" ;
+    biolink:generation_date "2018-06-22 16:23" ;
+    biolink:id_prefixes "OIO",
+        "rdf",
+        "rdfs",
+        "skos",
+        "xsd" ;
+    biolink:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    biolink:metamodel_version "0.3.1" ;
+    biolink:prefixes [ biolink:local_name "SIO" ;
+            biolink:prefix_uri "http://semanticscience.org/resource/SIO_" ],
+        [ biolink:local_name "biolink" ;
+            biolink:prefix_uri "http://bioentity.io/vocab/" ],
+        [ biolink:local_name "OBAN" ;
+            biolink:prefix_uri "http://purl.org/oban/" ],
+        [ biolink:local_name "wgs" ;
+            biolink:prefix_uri "http://www.w3.org/2003/01/geo/wgs84_pos" ] ;
+    biolink:slots biolink:actively_involved_in,
+        biolink:affects,
+        biolink:affects_risk_for,
+        biolink:aggregate_statistic,
+        biolink:anatomical_entity_to_anatomical_entity_association_object,
+        biolink:anatomical_entity_to_anatomical_entity_association_subject,
+        biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_object,
+        biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_relation,
+        biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_subject,
+        biolink:anatomical_entity_to_anatomical_entity_part_of_association_object,
+        biolink:anatomical_entity_to_anatomical_entity_part_of_association_relation,
+        biolink:anatomical_entity_to_anatomical_entity_part_of_association_subject,
+        biolink:association_slot,
+        biolink:association_type,
+        biolink:biomarker_for,
+        biolink:biosample_to_thing_association_subject,
+        biolink:capable_of,
+        biolink:case_to_thing_association_subject,
+        biolink:category,
+        biolink:causes,
+        biolink:cell_line_to_disease_or_phenotypic_feature_association_subject,
+        biolink:cell_line_to_thing_association_subject,
+        biolink:chemical_to_disease_or_phenotypic_feature_association_object,
+        biolink:chemical_to_gene_association_object,
+        biolink:chemical_to_pathway_association_object,
+        biolink:chemical_to_thing_association_subject,
+        biolink:clinical_modifier_qualifier,
+        biolink:co-localizes_with,
+        biolink:coexists_with,
+        biolink:contributes_to,
+        biolink:correlated_with,
+        biolink:creation_date,
+        biolink:derives_from,
+        biolink:derives_into,
+        biolink:description,
+        biolink:disease_or_phenotypic_feature_association_to_location_association_object,
+        biolink:disease_or_phenotypic_feature_association_to_thing_association_subject,
+        biolink:disease_to_thing_association_subject,
+        biolink:disrupts,
+        biolink:drug,
+        biolink:edge_label,
+        biolink:end_interbase_coordinate,
+        biolink:entity_to_disease_association_object,
+        biolink:entity_to_phenotypic_feature_association_description,
+        biolink:entity_to_phenotypic_feature_association_object,
+        biolink:environment_to_phenotypic_feature_association_subject,
+        biolink:exon_to_transcript_relationship_object,
+        biolink:exon_to_transcript_relationship_subject,
+        biolink:expressed_in,
+        biolink:expresses,
+        biolink:filler,
+        biolink:frequency_qualifier,
+        biolink:full_name,
+        biolink:functional_association_object,
+        biolink:functional_association_subject,
+        biolink:gene_as_a_model_of_disease_association_subject,
+        biolink:gene_associated_with_condition,
+        biolink:gene_has_variant_that_contributes_to_disease_association_subject,
+        biolink:gene_regulatory_relationship_object,
+        biolink:gene_regulatory_relationship_relation,
+        biolink:gene_regulatory_relationship_subject,
+        biolink:gene_to_disease_association_subject,
+        biolink:gene_to_expression_site_association_object,
+        biolink:gene_to_expression_site_association_quantifier_qualifier,
+        biolink:gene_to_expression_site_association_relation,
+        biolink:gene_to_expression_site_association_stage_qualifier,
+        biolink:gene_to_expression_site_association_subject,
+        biolink:gene_to_gene_association_object,
+        biolink:gene_to_gene_association_subject,
+        biolink:gene_to_gene_homology_association_relation,
+        biolink:gene_to_gene_product_relationship_object,
+        biolink:gene_to_gene_product_relationship_relation,
+        biolink:gene_to_gene_product_relationship_subject,
+        biolink:gene_to_go_term_association_object,
+        biolink:gene_to_go_term_association_subject,
+        biolink:gene_to_phenotypic_feature_association_subject,
+        biolink:gene_to_thing_association_subject,
+        biolink:genetically_interacts_with,
+        biolink:genome_build,
+        biolink:genomic_sequence_localization_object,
+        biolink:genomic_sequence_localization_subject,
+        biolink:genotype_to_gene_association_object,
+        biolink:genotype_to_gene_association_relation,
+        biolink:genotype_to_gene_association_subject,
+        biolink:genotype_to_genotype_part_association_object,
+        biolink:genotype_to_genotype_part_association_relation,
+        biolink:genotype_to_genotype_part_association_subject,
+        biolink:genotype_to_phenotypic_feature_association_relation,
+        biolink:genotype_to_phenotypic_feature_association_subject,
+        biolink:genotype_to_thing_association_subject,
+        biolink:genotype_to_variant_association_object,
+        biolink:genotype_to_variant_association_relation,
+        biolink:genotype_to_variant_association_subject,
+        biolink:has_biological_sequence,
+        biolink:has_biomarker,
+        biolink:has_chemical_formula,
+        biolink:has_confidence_level,
+        biolink:has_count,
+        biolink:has_evidence,
+        biolink:has_exposure_parts,
+        biolink:has_gene,
+        biolink:has_gene_product,
+        biolink:has_input,
+        biolink:has_molecular_consequence,
+        biolink:has_part,
+        biolink:has_participant,
+        biolink:has_percentage,
+        biolink:has_phenotype,
+        biolink:has_quotient,
+        biolink:has_total,
+        biolink:has_zygosity,
+        biolink:homologous_to,
+        biolink:id,
+        biolink:in_cell_population_with,
+        biolink:in_complex_with,
+        biolink:in_pathway_with,
+        biolink:in_taxon,
+        biolink:interacting_molecules_category,
+        biolink:interacts_with,
+        biolink:interbase_coordinate,
+        biolink:iri,
+        biolink:latitude,
+        biolink:located_in,
+        biolink:location_of,
+        biolink:longitude,
+        biolink:macromolecular_machine_name,
+        biolink:macromolecular_machine_to_biological_process_association_object,
+        biolink:macromolecular_machine_to_cellular_component_association_object,
+        biolink:macromolecular_machine_to_molecular_activity_association_object,
+        biolink:manifestation_of,
+        biolink:model_of,
+        biolink:model_to_disease_mixin_relation,
+        biolink:model_to_disease_mixin_subject,
+        biolink:molecular_interaction_object,
+        biolink:molecular_interaction_relation,
+        biolink:molecular_interaction_subject,
+        biolink:molecularly_interacts_with,
+        biolink:name,
+        biolink:negated,
+        biolink:negatively_regulates,
+        biolink:negatively_regulates_entity_to_entity,
+        biolink:negatively_regulates_process_to_process,
+        biolink:node_property,
+        biolink:object,
+        biolink:occurs_in,
+        biolink:onset_qualifier,
+        biolink:orthologous_to,
+        biolink:overlaps,
+        biolink:pairwise_gene_or_protein_interaction_association_relation,
+        biolink:paralogous_to,
+        biolink:part_of,
+        biolink:participates_in,
+        biolink:phase,
+        biolink:physically_interacts_with,
+        biolink:population_to_population_association_object,
+        biolink:population_to_population_association_relation,
+        biolink:population_to_population_association_subject,
+        biolink:positively_regulates,
+        biolink:positively_regulates_entity_to_entity,
+        biolink:positively_regulates_process_to_process,
+        biolink:precedes,
+        biolink:predisposes,
+        biolink:prevents,
+        biolink:produces,
+        biolink:provided_by,
+        biolink:publications,
+        biolink:qualifiers,
+        biolink:quantifier_qualifier,
+        biolink:regulates,
+        biolink:regulates_entity_to_entity,
+        biolink:regulates_process_to_process,
+        biolink:related_to,
+        biolink:relation,
+        biolink:same_as,
+        biolink:sequence_feature_relationship_object,
+        biolink:sequence_feature_relationship_subject,
+        biolink:sequence_variant_has_biological_sequence,
+        biolink:sequence_variant_has_gene,
+        biolink:sequence_variant_id,
+        biolink:sequence_variant_modulates_treatment_association_object,
+        biolink:sequence_variant_modulates_treatment_association_subject,
+        biolink:sequence_variant_qualifier,
+        biolink:severity_qualifier,
+        biolink:sex_qualifier,
+        biolink:stage_qualifier,
+        biolink:start_interbase_coordinate,
+        biolink:subclass_of,
+        biolink:subject,
+        biolink:systematic_synonym,
+        biolink:thing_to_disease_or_phenotypic_feature_association_object,
+        biolink:timepoint,
+        biolink:transcript_to_gene_relationship_object,
+        biolink:transcript_to_gene_relationship_subject,
+        biolink:treated_by,
+        biolink:treatment_treats,
+        biolink:treats,
+        biolink:update_date,
+        biolink:variant_to_disease_association_object,
+        biolink:variant_to_disease_association_relation,
+        biolink:variant_to_disease_association_subject,
+        biolink:variant_to_phenotypic_feature_association_subject,
+        biolink:variant_to_population_association_has_count,
+        biolink:variant_to_population_association_has_quotient,
+        biolink:variant_to_population_association_has_total,
+        biolink:variant_to_population_association_object,
+        biolink:variant_to_population_association_subject,
+        biolink:variant_to_thing_association_subject,
+        biolink:xenologous_to ;
+    biolink:source_file "biolink-model.yaml" ;
+    biolink:source_file_date "Wed Jun 20 12:15:08 2018" ;
+    biolink:source_file_size 81314 ;
+    biolink:types biolink:biological_sequence,
+        biolink:chemical_formula_type,
+        biolink:chemical_formula_value,
+        biolink:evidence_instance,
+        biolink:frequency_value,
+        biolink:identifier_type,
+        biolink:iri_type,
+        biolink:label_type,
+        biolink:narrative_text,
+        biolink:perecentage_frequency_value,
+        biolink:phenotype,
+        biolink:quotient,
+        biolink:symbol_type,
+        biolink:time_type,
+        biolink:unit ;
+    dcterms:description "Entity and association taxonomy and datamodel for life-sciences data" ;
+    owl:topAnnotationProperty "https://biolink.github.io/biolink-model/ontology/biolink.ttl" .
+
+biolink:ActivityAndBehavior rdfs:label "ActivityAndBehavior" ;
+    biolink:is_a "Occurrent" ;
+    biolink:mappings "UMLSSG:ACTI" ;
+    dcterms:description "Activity or behavior of any independent integral living, organization or mechanical actor in the world" .
+
+biolink:AdministrativeEntity rdfs:label "AdministrativeEntity" ;
+    biolink:abstract true .
+
+biolink:AnatomicalEntity rdfs:label "AnatomicalEntity" ;
+    biolink:is_a "OrganismalEntity" ;
+    biolink:mappings "SIO:010046",
+        "UMLSSG:ANAT",
+        "WD:Q4936952" ;
+    biolink:mixins "ThingWithTaxon" ;
+    biolink:slots "expresses" ;
+    dcterms:description "A subcellular location, cell type or gross anatomical part" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0001062> .
+
+biolink:AnatomicalEntityToAnatomicalEntityAssociation rdfs:label "AnatomicalEntityToAnatomicalEntityAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "anatomical entity" ],
+        [ rdfs:label "object" ;
+            biolink:range "anatomical entity" ] ;
+    biolink:slots "anatomical_entity_to_anatomical_entity_association_object",
+        "anatomical_entity_to_anatomical_entity_association_subject" .
+
+biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation rdfs:label "AnatomicalEntityToAnatomicalEntityOntogenicAssociation" ;
+    biolink:defining_slots "relation" ;
+    biolink:is_a "AnatomicalEntityToAnatomicalEntityAssociation" ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:range "anatomical entity" ;
+            dcterms:description "the structure at an earlier time" ],
+        [ rdfs:label "relation" ;
+            biolink:subproperty_of "develops_from" ],
+        [ rdfs:label "subject" ;
+            biolink:range "anatomical entity" ;
+            dcterms:description "the structure at a later time" ] ;
+    biolink:slots "anatomical_entity_to_anatomical_entity_ontogenic_association_object",
+        "anatomical_entity_to_anatomical_entity_ontogenic_association_relation",
+        "anatomical_entity_to_anatomical_entity_ontogenic_association_subject" ;
+    dcterms:description "A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship" .
+
+biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation rdfs:label "AnatomicalEntityToAnatomicalEntityPartOfAssociation" ;
+    biolink:defining_slots "relation" ;
+    biolink:is_a "AnatomicalEntityToAnatomicalEntityAssociation" ;
+    biolink:slot_usage [ rdfs:label "relation" ;
+            biolink:subproperty_of "part_of" ],
+        [ rdfs:label "subject" ;
+            biolink:range "anatomical entity" ;
+            dcterms:description "the part" ],
+        [ rdfs:label "object" ;
+            biolink:range "anatomical entity" ;
+            dcterms:description "the whole" ] ;
+    biolink:slots "anatomical_entity_to_anatomical_entity_part_of_association_object",
+        "anatomical_entity_to_anatomical_entity_part_of_association_relation",
+        "anatomical_entity_to_anatomical_entity_part_of_association_subject" ;
+    dcterms:description "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms" .
+
+biolink:Association rdfs:label "Association" ;
+    biolink:comment "This is roughly the model used by biolink and ontobio at the moment" ;
+    biolink:is_a "InformationContentEntity" ;
+    biolink:mappings "OBAN:association",
+        "owl:Axiom",
+        "rdf:Statement" ;
+    biolink:slots "association_slot",
+        "association_type",
+        "negated",
+        "object",
+        "provided_by",
+        "publications",
+        "qualifiers",
+        "relation",
+        "subject" ;
+    dcterms:description "A typed association between two entities, supported by evidence" .
+
+biolink:Attribute rdfs:label "Attribute" ;
+    biolink:mixins "OntologyClass" ;
+    dcterms:description "A property or characteristic of an entity" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/PATO:0000001> .
+
+biolink:BiologicalEntity rdfs:label "BiologicalEntity" ;
+    biolink:abstract true ;
+    biolink:is_a "NamedThing" ;
+    biolink:mappings "WD:Q28845870" ;
+    biolink:slots "has_phenotype" .
+
+biolink:BiologicalProcess rdfs:label "BiologicalProcess" ;
+    biolink:id_prefixes "GO",
+        "Reactome" ;
+    biolink:is_a "BiologicalProcessOrActivity" ;
+    biolink:mappings "GO:0008150",
+        "SIO:000006",
+        "WD:Q2996394" ;
+    biolink:mixins "Occurrent" ;
+    dcterms:description "One or more causally connected executions of molecular functions" .
+
+biolink:BiologicalProcessOrActivity rdfs:label "BiologicalProcessOrActivity" ;
+    biolink:id_prefixes "GO",
+        "Reactome" ;
+    biolink:is_a "BiologicalEntity" ;
+    biolink:union_of "BiologicalProcess",
+        "MolecularActivity" ;
+    dcterms:description "Either an individual molecular activity, or a collection of causally connected molecular activities" .
+
+biolink:BiologicalSex rdfs:label "BiologicalSex" ;
+    biolink:is_a "Attribute" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/PATO:0000047> .
+
+biolink:Biosample rdfs:label "Biosample" ;
+    biolink:aliases "biospecimen",
+        "sample" ;
+    biolink:is_a "OrganismalEntity" ;
+    biolink:mappings "SIO:001050" ;
+    biolink:mixins "ThingWithTaxon" .
+
+biolink:BiosampleToDiseaseOrPhenotypicFeatureAssociation rdfs:label "BiosampleToDiseaseOrPhenotypicFeatureAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mixins "BiosampleToThingAssociation",
+        "ThingToDiseaseOrPhenotypicFeatureAssociation" ;
+    dcterms:description """An association between a biosample and a disease or phenotype
+  definitional: true""" .
+
+biolink:BiosampleToThingAssociation rdfs:label "BiosampleToThingAssociation" ;
+    biolink:abstract true ;
+    biolink:defining_slots "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:definitional true ;
+            biolink:range "biosample" ;
+            dcterms:description "the biosample being described" ] ;
+    biolink:slots "biosample_to_thing_association_subject" ;
+    dcterms:description "An association between a biosample and something" .
+
+biolink:Case rdfs:label "Case" ;
+    biolink:aliases "patient",
+        "proband" ;
+    biolink:is_a "IndividualOrganism" ;
+    dcterms:description "An individual organism that has a patient role in some clinical context." .
+
+biolink:CaseToPhenotypicFeatureAssociation rdfs:label "CaseToPhenotypicFeatureAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mixins "CaseToThingAssociation",
+        "EntityToPhenotypicFeatureAssociation" ;
+    dcterms:description "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype" .
+
+biolink:CaseToThingAssociation rdfs:label "CaseToThingAssociation" ;
+    biolink:abstract true ;
+    biolink:defining_slots "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:definitional true ;
+            biolink:range "case" ;
+            dcterms:description "the case (e.g. patient) that has the property" ] ;
+    biolink:slots "case_to_thing_association_subject" ;
+    dcterms:description "An abstract association for use where the case is the subject" .
+
+biolink:Cell rdfs:label "Cell" ;
+    biolink:id_prefixes "CL",
+        "PO" ;
+    biolink:is_a "AnatomicalEntity" ;
+    biolink:mappings "CL:0000000",
+        "GO:0005623",
+        "SIO:010001",
+        "WD:Q7868" .
+
+biolink:CellLine rdfs:label "CellLine" ;
+    biolink:id_prefixes "CLO" ;
+    biolink:is_a "Biosample" ;
+    biolink:mappings "CLO:0000031" .
+
+biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation rdfs:label "CellLineToDiseaseOrPhenotypicFeatureAssociation" ;
+    biolink:is_a "Association" ;
+    biolink:mixins "CellLineToThingAssociation",
+        "ThingToDiseaseOrPhenotypicFeatureAssociation" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "disease or phenotypic feature" ] ;
+    biolink:slots "cell_line_to_disease_or_phenotypic_feature_association_subject" ;
+    dcterms:description "An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype" .
+
+biolink:CellLineToThingAssociation rdfs:label "CellLineToThingAssociation" ;
+    biolink:abstract true ;
+    biolink:defining_slots "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:definitional true ;
+            biolink:range "cell line" ] ;
+    biolink:slots "cell_line_to_thing_association_subject" ;
+    dcterms:description "An relationship between a cell line and another entity" .
+
+biolink:CellularComponent rdfs:label "CellularComponent" ;
+    biolink:id_prefixes "GO" ;
+    biolink:is_a "AnatomicalEntity" ;
+    biolink:mappings "GO:0005575",
+        "SIO:001400",
+        "WD:Q5058355" ;
+    dcterms:description "A location in or around a cell" .
+
+biolink:ChemicalSubstance rdfs:label "ChemicalSubstance" ;
+    biolink:id_prefixes "CHEMBL.TARGET" ;
+    biolink:is_a "MolecularEntity" ;
+    biolink:mappings "SIO:010004",
+        "UMLSSG:CHEM",
+        "WD:Q79529" ;
+    dcterms:description "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/CHEBI_24431> .
+
+biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation rdfs:label "ChemicalToDiseaseOrPhenotypicFeatureAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mappings "SIO:000993" ;
+    biolink:mixins "ChemicalToThingAssociation",
+        "ThingToDiseaseOrPhenotypicFeatureAssociation" ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:definitional true ;
+            biolink:range "disease or phenotypic feature" ;
+            dcterms:description "the disease or phenotype that is affected by the chemical" ] ;
+    biolink:slots "chemical_to_disease_or_phenotypic_feature_association_object" ;
+    dcterms:description "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype" .
+
+biolink:ChemicalToGeneAssociation rdfs:label "ChemicalToGeneAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mappings "SIO:001257" ;
+    biolink:mixins "ChemicalToThingAssociation" ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:definitional true ;
+            biolink:range "gene or gene product" ;
+            dcterms:description "the gene or gene product that is affected by the chemical" ] ;
+    biolink:slots "chemical_to_gene_association_object" ;
+    dcterms:description "An interaction between a chemical entity and a gene or gene product" .
+
+biolink:ChemicalToPathwayAssociation rdfs:label "ChemicalToPathwayAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mappings "SIO:001250" ;
+    biolink:mixins "ChemicalToThingAssociation" ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:definitional true ;
+            biolink:range "pathway" ;
+            dcterms:description "the pathway that is affected by the chemical" ] ;
+    biolink:slots "chemical_to_pathway_association_object" ;
+    dcterms:description "An interaction between a chemical entity and a biological process or pathway" .
+
+biolink:ChemicalToThingAssociation rdfs:label "ChemicalToThingAssociation" ;
+    biolink:abstract true ;
+    biolink:defining_slots "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:definitional true ;
+            biolink:range "chemical substance" ;
+            dcterms:description "the chemical substance or entity that is an interactor" ] ;
+    biolink:slots "chemical_to_thing_association_subject" ;
+    dcterms:description "An interaction between a chemical entity and another entity" .
+
+biolink:ClinicalEntity rdfs:label "ClinicalEntity" ;
+    biolink:is_a "NamedThing" ;
+    dcterms:description "Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities" .
+
+biolink:ClinicalIntervention rdfs:label "ClinicalIntervention" ;
+    biolink:is_a "ClinicalEntity" .
+
+biolink:ClinicalModifier rdfs:label "ClinicalModifier" ;
+    biolink:is_a "Attribute" ;
+    dcterms:description "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/HP_0012823> .
+
+biolink:ClinicalTrial rdfs:label "ClinicalTrial" ;
+    biolink:is_a "ClinicalEntity" .
+
+biolink:CodingSequence rdfs:label "CodingSequence" ;
+    biolink:is_a "GenomicEntity" ;
+    biolink:mappings "SIO:001390",
+        "SO:0000316" .
+
+biolink:ConfidenceLevel rdfs:label "ConfidenceLevel" ;
+    biolink:is_a "InformationContentEntity" ;
+    biolink:mappings "CIO:0000028" ;
+    biolink:values_from "cio" ;
+    dcterms:description "Level of confidence in a statement" .
+
+biolink:Device rdfs:label "Device" ;
+    biolink:is_a "NamedThing" ;
+    biolink:mappings "UMLSSG:DEVI" ;
+    dcterms:description "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment" .
+
+biolink:Disease rdfs:label "Disease" ;
+    biolink:aliases "condition",
+        "disorder",
+        "medical condition" ;
+    biolink:is_a "DiseaseOrPhenotypicFeature" ;
+    biolink:mappings "MONDO:0000001",
+        "SIO:010299",
+        "UMLSSG:DISO",
+        "WD:Q12136" .
+
+biolink:DiseaseOrPhenotypicFeature rdfs:label "DiseaseOrPhenotypicFeature" ;
+    biolink:aliases "phenome" ;
+    biolink:is_a "BiologicalEntity" ;
+    biolink:mixins "ThingWithTaxon" ;
+    biolink:slots "correlated_with",
+        "has_biomarker",
+        "treated_by" ;
+    biolink:union_of "Disease",
+        "PhenotypicFeature" ;
+    dcterms:description "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate." .
+
+biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation rdfs:label "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation" ;
+    biolink:is_a "DiseaseOrPhenotypicFeatureAssociationToThingAssociation" ;
+    biolink:mappings "NCIT:R100" ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:examples [ biolink:value "UBERON:0002048" ;
+                    dcterms:description "lung" ] ;
+            biolink:range "anatomical entity" ;
+            dcterms:description "anatomical entity in which the disease or feature is found" ] ;
+    biolink:slots "disease_or_phenotypic_feature_association_to_location_association_object" ;
+    dcterms:description "An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site." .
+
+biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation rdfs:label "DiseaseOrPhenotypicFeatureAssociationToThingAssociation" ;
+    biolink:abstract true ;
+    biolink:defining_slots "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:definitional true ;
+            biolink:examples [ biolink:value "MONDO:0017314" ;
+                    dcterms:description "Ehlers-Danlos syndrome, vascular type" ],
+                [ biolink:value "MP:0013229" ;
+                    dcterms:description "abnormal brain ventricle size" ] ;
+            biolink:range "disease or phenotypic feature" ;
+            dcterms:description "disease or phenotype" ] ;
+    biolink:slots "disease_or_phenotypic_feature_association_to_thing_association_subject" .
+
+biolink:DiseaseToPhenotypicFeatureAssociation rdfs:label "DiseaseToPhenotypicFeatureAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mixins "DiseaseToThingAssociation",
+        "EntityToPhenotypicFeatureAssociation" ;
+    dcterms:description "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way" .
+
+biolink:DiseaseToThingAssociation rdfs:label "DiseaseToThingAssociation" ;
+    biolink:abstract true ;
+    biolink:defining_slots "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:definitional true ;
+            biolink:examples [ biolink:value "MONDO:0017314" ;
+                    dcterms:description "Ehlers-Danlos syndrome, vascular type" ] ;
+            biolink:range "disease" ;
+            biolink:values_from "doid",
+                "mondo",
+                "ncit",
+                "omim",
+                "orphanet" ;
+            dcterms:description "disease class" ;
+            rdfs:subClassOf <http://purl.obolibrary.org/obo/MONDO_0000001> ] ;
+    biolink:slots "disease_to_thing_association_subject" .
+
+biolink:Drug rdfs:label "Drug" ;
+    biolink:comment "The CHEBI ID represents a role rather than a substance" ;
+    biolink:is_a "ChemicalSubstance" ;
+    biolink:mappings "CHEBI:23888",
+        "WD:Q12140" ;
+    dcterms:description "A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease" .
+
+biolink:DrugExposure rdfs:label "DrugExposure" ;
+    biolink:aliases "drug dose",
+        "drug intake" ;
+    biolink:is_a "Environment" ;
+    biolink:mappings "ECTO:0000509",
+        "SIO:001005" ;
+    biolink:slot_usage [ rdfs:label "drug" ;
+            biolink:multivalued true ;
+            biolink:range "chemical substance" ;
+            biolink:required true ] ;
+    biolink:slots "drug" ;
+    dcterms:description "A drug exposure is an intake of a particular chemical substance" .
+
+biolink:EntityToDiseaseAssociation rdfs:label "EntityToDiseaseAssociation" ;
+    biolink:abstract true ;
+    biolink:defining_slots "object" ;
+    biolink:is_a "EntityToFeatureOrDiseaseQualifiers" ;
+    biolink:mixin true ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:definitional true ;
+            biolink:examples [ biolink:value "MONDO:0020066" ;
+                    dcterms:description "Ehlers-Danlos syndrome" ] ;
+            biolink:range "disease" ;
+            dcterms:description "disease" ;
+            rdfs:subClassOf <http://purl.obolibrary.org/obo/MONDO_0000001> ] ;
+    biolink:slots "entity_to_disease_association_object" ;
+    dcterms:description "mixin class for any association whose object (target node) is a disease" .
+
+biolink:EntityToFeatureOrDiseaseQualifiers rdfs:label "EntityToFeatureOrDiseaseQualifiers" ;
+    biolink:abstract true ;
+    biolink:is_a "FrequencyQualifier" ;
+    biolink:mixin true ;
+    biolink:slots "onset_qualifier",
+        "severity_qualifier" ;
+    dcterms:description "Qualifiers for entity to disease or phenotype associations" .
+
+biolink:EntityToPhenotypicFeatureAssociation rdfs:label "EntityToPhenotypicFeatureAssociation" ;
+    biolink:abstract true ;
+    biolink:defining_slots "object" ;
+    biolink:is_a "Association" ;
+    biolink:mixins "EntityToFeatureOrDiseaseQualifiers" ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:definitional true ;
+            biolink:examples [ biolink:value "MP:0001569" ;
+                    dcterms:description "abnormal circulating bilirubin level" ],
+                [ biolink:value "HP:0002487" ;
+                    dcterms:description "Hyperkinesis" ],
+                [ biolink:value "WBPhenotype:0000180" ;
+                    dcterms:description "axon morphology variant" ] ;
+            biolink:range "phenotypic feature" ;
+            biolink:values_from "hp",
+                "mp",
+                "upheno",
+                "wbphenotypic feature" ;
+            dcterms:description "phenotypic class" ;
+            rdfs:subClassOf <http://purl.obolibrary.org/obo/UPHENO_0001001> ],
+        [ rdfs:label "description" ;
+            dcterms:description "A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class" ] ;
+    biolink:slots "entity_to_phenotypic_feature_association_description",
+        "entity_to_phenotypic_feature_association_object",
+        "sex_qualifier" .
+
+biolink:Environment rdfs:label "Environment" ;
+    biolink:aliases "environment",
+        "experimental condition",
+        "exposure" ;
+    biolink:is_a "BiologicalEntity" ;
+    biolink:mappings "SIO:000955" ;
+    dcterms:description "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes" .
+
+biolink:EnvironmentToPhenotypicFeatureAssociation rdfs:label "EnvironmentToPhenotypicFeatureAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mixins "EntityToPhenotypicFeatureAssociation" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:definitional true ;
+            biolink:range "environment" ] ;
+    biolink:slots "environment_to_phenotypic_feature_association_subject" ;
+    dcterms:description "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype" .
+
+biolink:EnvironmentalFeature rdfs:label "EnvironmentalFeature" ;
+    biolink:is_a "PlanetaryEntity" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/ENVO:00002297> .
+
+biolink:EnvironmentalProcess rdfs:label "EnvironmentalProcess" ;
+    biolink:is_a "PlanetaryEntity" ;
+    biolink:mixins "Occurrent" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/ENVO:02500000> .
+
+biolink:EvidenceType rdfs:label "EvidenceType" ;
+    biolink:aliases "evidence code" ;
+    biolink:is_a "InformationContentEntity" ;
+    biolink:mappings "ECO:0000000" ;
+    biolink:values_from "eco" ;
+    dcterms:description "Class of evidence that supports an association" .
+
+biolink:Exon rdfs:label "Exon" ;
+    biolink:is_a "GenomicEntity" ;
+    biolink:mappings "SIO:010445",
+        "SO:0000147",
+        "WD:Q373027" ;
+    dcterms:description "A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing" .
+
+biolink:ExonToTranscriptRelationship rdfs:label "ExonToTranscriptRelationship" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "SequenceFeatureRelationship" ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:range "transcript" ],
+        [ rdfs:label "subject" ;
+            biolink:range "exon" ] ;
+    biolink:slots "exon_to_transcript_relationship_object",
+        "exon_to_transcript_relationship_subject" ;
+    dcterms:description "A transcript is formed from multiple exons" .
+
+biolink:FrequencyQualifier rdfs:label "FrequencyQualifier" ;
+    biolink:mixin true ;
+    dcterms:description "Qualifier for freqency type associations" .
+
+biolink:FrequencyQuantifier rdfs:label "FrequencyQuantifier" ;
+    biolink:is_a "RelationshipQuantifier" ;
+    biolink:mixin true ;
+    biolink:slots "has_count",
+        "has_percentage",
+        "has_quotient",
+        "has_total" .
+
+biolink:FrequencyValue rdfs:label "FrequencyValue" ;
+    biolink:is_a "Attribute" ;
+    dcterms:description "describes the frequency of occurrence of an event or condition" .
+
+biolink:FunctionalAssociation rdfs:label "FunctionalAssociation" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:examples [ biolink:value "ZFIN:ZDB-GENE-050417-357" ;
+                    dcterms:description "twist1b" ] ;
+            biolink:range "macromolecular machine" ;
+            dcterms:description "gene, product or macromolecular complex that has the function associated with the GO term" ],
+        [ rdfs:label "object" ;
+            biolink:examples [ biolink:value "GO:0045211" ;
+                    dcterms:description "postsynaptic membrane" ],
+                [ biolink:value "GO:0016301" ;
+                    dcterms:description "kinase activity" ] ;
+            biolink:range "gene ontology class" ;
+            biolink:values_from "go" ;
+            dcterms:description "class describing the activity, process or localization of the gene product" ] ;
+    biolink:slots "functional_association_object",
+        "functional_association_subject" ;
+    dcterms:description "An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed" .
+
+biolink:Gene rdfs:label "Gene" ;
+    biolink:aliases "locus" ;
+    biolink:id_prefixes "ENSEMBL",
+        "HGNC",
+        "MGI",
+        "NCBIGene",
+        "PomBase",
+        "SGD",
+        "WB",
+        "ZFIN",
+        "dictyBase" ;
+    biolink:is_a "GeneOrGeneProduct" ;
+    biolink:mappings "SIO:010035",
+        "SO:0000704",
+        "UMLSSG:GENE",
+        "WD:Q7187" ;
+    biolink:slots "gene_associated_with_condition",
+        "genetically_interacts_with",
+        "has_gene_product" .
+
+biolink:GeneAsAModelOfDiseaseAssociation rdfs:label "GeneAsAModelOfDiseaseAssociation" ;
+    biolink:defining_slots "object",
+        "relation",
+        "subject" ;
+    biolink:is_a "GeneToDiseaseAssociation" ;
+    biolink:mixins "EntityToDiseaseAssociation",
+        "ModelToDiseaseMixin" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "gene or gene product" ;
+            dcterms:description """A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.
+  """ ] ;
+    biolink:slots "gene_as_a_model_of_disease_association_subject" .
+
+biolink:GeneFamily rdfs:label "GeneFamily" ;
+    biolink:id_prefixes "PANTHER" ;
+    biolink:is_a "MolecularEntity" ;
+    biolink:mappings "NCIT:C20130",
+        "SIO:001380",
+        "WD:Q417841" ;
+    biolink:mixins "GeneGrouping" ;
+    dcterms:description "any grouping of multiple genes or gene products related by common descent" .
+
+biolink:GeneGrouping rdfs:label "GeneGrouping" ;
+    biolink:abstract true ;
+    biolink:mixin true ;
+    dcterms:description "any grouping of multiple genes or gene products" .
+
+biolink:GeneHasVariantThatContributesToDiseaseAssociation rdfs:label "GeneHasVariantThatContributesToDiseaseAssociation" ;
+    biolink:defining_slots "object",
+        "relation",
+        "subject" ;
+    biolink:is_a "GeneToDiseaseAssociation" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "gene or gene product" ;
+            dcterms:description "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease." ] ;
+    biolink:slots "gene_has_variant_that_contributes_to_disease_association_subject",
+        "sequence_variant_qualifier" .
+
+biolink:GeneOntologyClass rdfs:label "GeneOntologyClass" ;
+    biolink:flags "testing" ;
+    biolink:is_a "OntologyClass" ;
+    dcterms:description "an ontology class that describes a functional aspect of a gene, gene prodoct or complex" .
+
+biolink:GeneOrGeneProduct rdfs:label "GeneOrGeneProduct" ;
+    biolink:is_a "MacromolecularMachine" ;
+    biolink:slots "expressed_in",
+        "in_cell_population_with",
+        "in_complex_with",
+        "in_pathway_with" ;
+    biolink:union_of "Gene",
+        "GeneProduct" ;
+    dcterms:description "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another" .
+
+biolink:GeneProduct rdfs:label "GeneProduct" ;
+    biolink:is_a "GeneOrGeneProduct" ;
+    biolink:mappings "WD:Q424689" ;
+    biolink:union_of "Protein",
+        "RNAProduct" ;
+    dcterms:description "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules" .
+
+biolink:GeneProductIsoform rdfs:label "GeneProductIsoform" ;
+    biolink:abstract true ;
+    biolink:entity true ;
+    biolink:is_a "GeneProduct" ;
+    dcterms:description "This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms." .
+
+biolink:GeneRegulatoryRelationship rdfs:label "GeneRegulatoryRelationship" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "gene or gene product" ;
+            biolink:role "regulatory gene" ],
+        [ rdfs:label "object" ;
+            biolink:range "gene or gene product" ;
+            biolink:role "regulated gene" ],
+        [ rdfs:label "relation" ;
+            dcterms:description "the direction is always from regulator to regulated" ] ;
+    biolink:slots "gene_regulatory_relationship_object",
+        "gene_regulatory_relationship_relation",
+        "gene_regulatory_relationship_subject" ;
+    dcterms:description "A regulatory relationship between two genes" .
+
+biolink:GeneToDiseaseAssociation rdfs:label "GeneToDiseaseAssociation" ;
+    biolink:comment "NCIT:R176 refers to the inverse relationship" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mappings "SIO:000983" ;
+    biolink:mixins "EntityToDiseaseAssociation",
+        "GeneToThingAssociation" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "gene or gene product" ;
+            dcterms:description "gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model" ] ;
+    biolink:slots "gene_to_disease_association_subject" .
+
+biolink:GeneToExpressionSiteAssociation rdfs:label "GeneToExpressionSiteAssociation" ;
+    biolink:defining_slots "object",
+        "relation",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:note "TBD: introduce subclasses for distinction between wild-type and experimental conditions?" ;
+    biolink:see_also "https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "gene or gene product" ;
+            dcterms:description "gene in which variation is correlated with the phenotypic feature" ],
+        [ rdfs:label "quantifier_qualifier" ;
+            dcterms:description "can be used to indicate magnitude, or also ranking" ],
+        [ rdfs:label "object" ;
+            biolink:examples [ biolink:value "UBERON:0002037" ;
+                    dcterms:description "cerebellum" ] ;
+            biolink:range "anatomical entity" ;
+            dcterms:description "location in which the gene is expressed" ;
+            rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0001062> ],
+        [ rdfs:label "relation" ;
+            biolink:subproperty_of "expressed_in" ;
+            dcterms:description "expression relationship" ],
+        [ rdfs:label "stage_qualifier" ;
+            biolink:examples [ biolink:value "UBERON:0000069" ;
+                    dcterms:description "larval stage" ] ;
+            biolink:range "life stage" ;
+            dcterms:description "stage at which the gene is expressed in the site" ] ;
+    biolink:slots "gene_to_expression_site_association_object",
+        "gene_to_expression_site_association_quantifier_qualifier",
+        "gene_to_expression_site_association_relation",
+        "gene_to_expression_site_association_stage_qualifier",
+        "gene_to_expression_site_association_subject" ;
+    dcterms:description "An association between a gene and an expression site, possibly qualified by stage/timing info." .
+
+biolink:GeneToGeneAssociation rdfs:label "GeneToGeneAssociation" ;
+    biolink:abstract true ;
+    biolink:aliases "molecular or genetic interaction" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:definitional true ;
+            biolink:range "gene or gene product" ;
+            dcterms:description "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa" ],
+        [ rdfs:label "object" ;
+            biolink:definitional true ;
+            biolink:range "gene or gene product" ;
+            dcterms:description "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa" ] ;
+    biolink:slots "gene_to_gene_association_object",
+        "gene_to_gene_association_subject" ;
+    dcterms:description "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction." .
+
+biolink:GeneToGeneHomologyAssociation rdfs:label "GeneToGeneHomologyAssociation" ;
+    biolink:defining_slots "object",
+        "relation",
+        "subject" ;
+    biolink:is_a "GeneToGeneAssociation" ;
+    biolink:slot_usage [ rdfs:label "relation" ;
+            biolink:definitional true ;
+            biolink:subproperty_of "homologous_to" ;
+            dcterms:description "homology relationship type" ] ;
+    biolink:slots "gene_to_gene_homology_association_relation" ;
+    biolink:symmetric true ;
+    dcterms:description "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)" .
+
+biolink:GeneToGeneProductRelationship rdfs:label "GeneToGeneProductRelationship" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "SequenceFeatureRelationship" ;
+    biolink:slot_usage [ rdfs:label "relation" ;
+            biolink:subproperty_of "has_gene_product" ],
+        [ rdfs:label "object" ;
+            biolink:range "gene product" ],
+        [ rdfs:label "subject" ;
+            biolink:range "gene" ] ;
+    biolink:slots "gene_to_gene_product_relationship_object",
+        "gene_to_gene_product_relationship_relation",
+        "gene_to_gene_product_relationship_subject" ;
+    dcterms:description "A gene is transcribed and potentially translated to a gene product" .
+
+biolink:GeneToGoTermAssociation rdfs:label "GeneToGoTermAssociation" ;
+    biolink:aliases "functional association" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "FunctionalAssociation" ;
+    biolink:mappings "http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:examples [ biolink:value "ZFIN:ZDB-GENE-050417-357" ;
+                    dcterms:description "twist1b" ] ;
+            biolink:range "molecular entity" ;
+            dcterms:description "gene, product or macromolecular complex that has the function associated with the GO term" ],
+        [ rdfs:label "object" ;
+            biolink:examples [ biolink:value "GO:0016301" ;
+                    dcterms:description "kinase activity" ] ;
+            biolink:range "gene ontology class" ;
+            biolink:values_from "go" ;
+            dcterms:description "class describing the activity, process or localization of the gene product" ] ;
+    biolink:slots "gene_to_go_term_association_object",
+        "gene_to_go_term_association_subject" .
+
+biolink:GeneToPhenotypicFeatureAssociation rdfs:label "GeneToPhenotypicFeatureAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mappings "http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association" ;
+    biolink:mixins "EntityToPhenotypicFeatureAssociation",
+        "GeneToThingAssociation" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:examples [ biolink:value "HGNC:2197" ;
+                    dcterms:description "COL1A1 (Human)" ] ;
+            biolink:range "gene or gene product" ;
+            dcterms:description "gene in which variation is correlated with the phenotypic feature" ] ;
+    biolink:slots "gene_to_phenotypic_feature_association_subject" .
+
+biolink:GeneToThingAssociation rdfs:label "GeneToThingAssociation" ;
+    biolink:abstract true ;
+    biolink:defining_slots "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "gene or gene product" ;
+            dcterms:description "gene that is the subject of the association" ] ;
+    biolink:slots "gene_to_thing_association_subject" .
+
+biolink:Genome rdfs:label "Genome" ;
+    biolink:is_a "GenomicEntity" ;
+    biolink:mappings "SIO:000984",
+        "SO:0001026",
+        "WD:Q7020" ;
+    dcterms:description "A genome is the sum of genetic material within a cell or virion." .
+
+biolink:GenomicEntity rdfs:label "GenomicEntity" ;
+    biolink:aliases "sequence feature" ;
+    biolink:is_a "MolecularEntity" ;
+    biolink:mappings "SO:0000110",
+        "UMLSSG:GENE" ;
+    biolink:slots "has_biological_sequence" ;
+    dcterms:description "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)" .
+
+biolink:GenomicSequenceLocalization rdfs:label "GenomicSequenceLocalization" ;
+    biolink:is_a "Association" ;
+    biolink:mappings "faldo:location" ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:aliases "reference" ;
+            biolink:range "genomic entity" ],
+        [ rdfs:label "subject" ;
+            biolink:aliases "sequence feature" ;
+            biolink:range "genomic entity" ] ;
+    biolink:slots "end_interbase_coordinate",
+        "genome_build",
+        "genomic_sequence_localization_object",
+        "genomic_sequence_localization_subject",
+        "phase",
+        "start_interbase_coordinate" ;
+    dcterms:description "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig" .
+
+biolink:Genotype rdfs:label "Genotype" ;
+    biolink:comment "Consider renaming as genotypic entity" ;
+    biolink:is_a "GenomicEntity" ;
+    biolink:mappings "GENO:0000536",
+        "SIO:001079" ;
+    biolink:slots "has_zygosity" ;
+    dcterms:description "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background" .
+
+biolink:GenotypeToGeneAssociation rdfs:label "GenotypeToGeneAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:definitional true ;
+            biolink:range "gene" ;
+            dcterms:description "gene implicated in genotype" ],
+        [ rdfs:label "subject" ;
+            biolink:definitional true ;
+            biolink:range "genotype" ;
+            dcterms:description "parent genotype" ],
+        [ rdfs:label "relation" ;
+            dcterms:description "the relationship type used to connect genotype to gene" ] ;
+    biolink:slots "genotype_to_gene_association_object",
+        "genotype_to_gene_association_relation",
+        "genotype_to_gene_association_subject" ;
+    dcterms:description "Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality" .
+
+biolink:GenotypeToGenotypePartAssociation rdfs:label "GenotypeToGenotypePartAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "relation" ;
+            biolink:subproperty_of "has_variant_part" ],
+        [ rdfs:label "object" ;
+            biolink:definitional true ;
+            biolink:range "genotype" ;
+            dcterms:description "child genotype" ],
+        [ rdfs:label "subject" ;
+            biolink:definitional true ;
+            biolink:range "genotype" ;
+            dcterms:description "parent genotype" ] ;
+    biolink:slots "genotype_to_genotype_part_association_object",
+        "genotype_to_genotype_part_association_relation",
+        "genotype_to_genotype_part_association_subject" ;
+    dcterms:description "Any association between one genotype and a genotypic entity that is a sub-component of it" .
+
+biolink:GenotypeToPhenotypicFeatureAssociation rdfs:label "GenotypeToPhenotypicFeatureAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mixins "EntityToPhenotypicFeatureAssociation",
+        "GenotypeToThingAssociation" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "genotype" ;
+            dcterms:description "genotype that is associated with the phenotypic feature" ],
+        [ rdfs:label "relation" ;
+            biolink:subproperty_of "has_phenotype" ] ;
+    biolink:slots "genotype_to_phenotypic_feature_association_relation",
+        "genotype_to_phenotypic_feature_association_subject" ;
+    dcterms:description "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment" .
+
+biolink:GenotypeToThingAssociation rdfs:label "GenotypeToThingAssociation" ;
+    biolink:abstract true ;
+    biolink:defining_slots "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "genotype" ;
+            dcterms:description "genotype that is the subject of the association" ] ;
+    biolink:slots "genotype_to_thing_association_subject" .
+
+biolink:GenotypeToVariantAssociation rdfs:label "GenotypeToVariantAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "relation" ;
+            dcterms:description "the relationship type used to connect genotype to gene" ],
+        [ rdfs:label "object" ;
+            biolink:definitional true ;
+            biolink:range "sequence variant" ;
+            dcterms:description "gene implicated in genotype" ],
+        [ rdfs:label "subject" ;
+            biolink:definitional true ;
+            biolink:range "genotype" ;
+            dcterms:description "parent genotype" ] ;
+    biolink:slots "genotype_to_variant_association_object",
+        "genotype_to_variant_association_relation",
+        "genotype_to_variant_association_subject" ;
+    dcterms:description "Any association between a genotype and a sequence variant." .
+
+biolink:GenotypicSex rdfs:label "GenotypicSex" ;
+    biolink:is_a "BiologicalSex" ;
+    dcterms:description "An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes." ;
+    rdfs:subClassOf <http://bioentity.io/vocab/PATO:0020000> .
+
+biolink:GeographicLocation rdfs:label "GeographicLocation" ;
+    biolink:is_a "PlanetaryEntity" ;
+    biolink:mappings "UMLSSG:GEOG" ;
+    biolink:slots "latitude",
+        "longitude" ;
+    dcterms:description "a location that can be described in lat/long coordinates" .
+
+biolink:GeographicLocationAtTime rdfs:label "GeographicLocationAtTime" ;
+    biolink:is_a "GeographicLocation" ;
+    biolink:slots "timepoint" ;
+    dcterms:description "a location that can be described in lat/long coordinates, for a particular time" .
+
+biolink:GrossAnatomicalStructure rdfs:label "GrossAnatomicalStructure" ;
+    biolink:aliases "organ",
+        "tissue" ;
+    biolink:id_prefixes "FAO",
+        "PO",
+        "UBERON" ;
+    biolink:is_a "AnatomicalEntity" ;
+    biolink:mappings "SIO:010046",
+        "UBERON:0010000",
+        "WD:Q4936952" .
+
+biolink:Haplotype rdfs:label "Haplotype" ;
+    biolink:is_a "GenomicEntity" ;
+    biolink:mappings "GENO:0000871",
+        "VMC:Haplotype" ;
+    dcterms:description "A set of zero or more Alleles on a single instance of a Sequence[VMC]" .
+
+biolink:IndividualOrganism rdfs:label "IndividualOrganism" ;
+    biolink:is_a "OrganismalEntity" ;
+    biolink:mappings "SIO:010000",
+        "WD:Q795052" ;
+    biolink:mixins "ThingWithTaxon" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/NCBITaxon:1> .
+
+biolink:InformationContentEntity rdfs:label "InformationContentEntity" ;
+    biolink:abstract true ;
+    biolink:aliases "information",
+        "information artefact",
+        "information entity" ;
+    biolink:is_a "NamedThing" ;
+    biolink:mappings "IAO:0000030",
+        "UMLSSG:CONC" ;
+    dcterms:description "a piece of information that typically describes some piece of biology or is used as support." .
+
+biolink:LifeStage rdfs:label "LifeStage" ;
+    biolink:is_a "OrganismalEntity" ;
+    biolink:mixins "ThingWithTaxon" ;
+    dcterms:description "A stage of development or growth of an organism, including post-natal adult stages" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000105> .
+
+biolink:MacromolecularComplex rdfs:label "MacromolecularComplex" ;
+    biolink:id_prefixes "GO",
+        "IntAct",
+        "PR",
+        "Reactome" ;
+    biolink:is_a "MacromolecularMachine" ;
+    biolink:mappings "SIO:010046",
+        "WD:Q22325163" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0032991> .
+
+biolink:MacromolecularMachine rdfs:label "MacromolecularMachine" ;
+    biolink:is_a "GenomicEntity" ;
+    biolink:slot_usage [ rdfs:label "name" ;
+            biolink:range "symbol type" ;
+            dcterms:description "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name" ] ;
+    biolink:slots "macromolecular_machine_name" ;
+    biolink:union_of "Gene",
+        "GeneProduct",
+        "MacromolecularComplex" ;
+    dcterms:description "A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this." .
+
+biolink:MacromolecularMachineToBiologicalProcessAssociation rdfs:label "MacromolecularMachineToBiologicalProcessAssociation" ;
+    biolink:is_a "FunctionalAssociation" ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:range "biological process" ] ;
+    biolink:slots "macromolecular_machine_to_biological_process_association_object" ;
+    dcterms:description "A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it" .
+
+biolink:MacromolecularMachineToCellularComponentAssociation rdfs:label "MacromolecularMachineToCellularComponentAssociation" ;
+    biolink:is_a "FunctionalAssociation" ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:range "cellular component" ] ;
+    biolink:slots "macromolecular_machine_to_cellular_component_association_object" ;
+    dcterms:description "A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component" .
+
+biolink:MacromolecularMachineToMolecularActivityAssociation rdfs:label "MacromolecularMachineToMolecularActivityAssociation" ;
+    biolink:is_a "FunctionalAssociation" ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:range "molecular activity" ] ;
+    biolink:slots "macromolecular_machine_to_molecular_activity_association_object" ;
+    dcterms:description "A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution" .
+
+biolink:Metabolite rdfs:label "Metabolite" ;
+    biolink:comment "The CHEBI ID represents a role rather than a substance" ;
+    biolink:is_a "ChemicalSubstance" ;
+    biolink:mappings "CHEBI:25212" ;
+    dcterms:description "Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites." .
+
+biolink:MicroRNA rdfs:label "MicroRNA" ;
+    biolink:id_prefixes "MIR" ;
+    biolink:is_a "NoncodingRNAProduct" ;
+    biolink:mappings "SIO:001397",
+        "WD:Q310899" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/SO_0000276> .
+
+biolink:ModelToDiseaseMixin rdfs:label "ModelToDiseaseMixin" ;
+    biolink:abstract true ;
+    biolink:mixin true ;
+    biolink:slot_usage [ rdfs:label "relation" ;
+            biolink:subproperty_of "model_of" ;
+            dcterms:description """The relationship to the disease
+  """ ],
+        [ rdfs:label "subject" ;
+            dcterms:description "The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease" ] ;
+    biolink:slots "model_to_disease_mixin_relation",
+        "model_to_disease_mixin_subject" ;
+    dcterms:description "This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease" .
+
+biolink:MolecularActivity rdfs:label "MolecularActivity" ;
+    biolink:aliases "molecular event",
+        "molecular function",
+        "reaction" ;
+    biolink:id_prefixes "GO",
+        "Reactome" ;
+    biolink:is_a "BiologicalProcessOrActivity" ;
+    biolink:mappings "GO:0003674" ;
+    biolink:mixins "Occurrent" ;
+    dcterms:description "An execution of a molecular function carried out by a gene product or macromolecular complex." .
+
+biolink:MolecularEntity rdfs:label "MolecularEntity" ;
+    biolink:aliases "bioentity" ;
+    biolink:comment "Check SIO mapping - also mapped to chemical substance." ;
+    biolink:is_a "BiologicalEntity" ;
+    biolink:mappings "SIO:010004",
+        "WD:Q43460564" ;
+    biolink:mixins "ThingWithTaxon" ;
+    biolink:slots "biomarker_for",
+        "molecularly_interacts_with",
+        "regulates_entity_to_entity" ;
+    dcterms:description "A gene, gene product, small molecule or macromolecule (including protein complex)" .
+
+biolink:MolecularInteraction rdfs:label "MolecularInteraction" ;
+    biolink:abstract true ;
+    biolink:is_a "Association" ;
+    biolink:mixin true ;
+    biolink:slot_usage [ rdfs:label "interacting_molecules_category" ;
+            biolink:examples [ biolink:value "MI:1048" ;
+                    dcterms:description "smallmolecule-protein" ] ;
+            biolink:range "ontology class" ;
+            rdfs:subClassOf <http://bioentity.io/vocab/MI:1046> ],
+        [ rdfs:label "object" ;
+            biolink:range "molecular entity" ],
+        [ rdfs:label "relation" ;
+            biolink:definitional true ;
+            biolink:examples [ biolink:value "RO:0002447" ;
+                    dcterms:description "the subject molecular phosphorylates the object molecule" ] ;
+            biolink:subproperty_of "molecularly_interacts_with" ;
+            biolink:values_from "mi",
+                "ro" ;
+            dcterms:description "interaction relationship type" ],
+        [ rdfs:label "subject" ;
+            biolink:range "molecular entity" ] ;
+    biolink:slots "interacting_molecules_category",
+        "molecular_interaction_object",
+        "molecular_interaction_relation",
+        "molecular_interaction_subject" ;
+    dcterms:description "An interaction at the molecular level between two physical entities" .
+
+biolink:NamedThing rdfs:label "NamedThing" ;
+    biolink:mappings "UMLSSG:OBJC",
+        "WD:Q35120" ;
+    biolink:slots "category",
+        "description",
+        "full_name",
+        "id",
+        "iri",
+        "name",
+        "node_property",
+        "related_to",
+        "systematic_synonym" ;
+    dcterms:description "a databased entity or concept/class" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000001> .
+
+biolink:NoncodingRNAProduct rdfs:label "NoncodingRNAProduct" ;
+    biolink:id_prefixes "ENSEMBL",
+        "NCBIGene",
+        "RNAcentral" ;
+    biolink:is_a "RNAProduct" ;
+    biolink:mappings "SIO:001235" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/SO_0000655> .
+
+biolink:Occurrent rdfs:label "Occurrent" ;
+    biolink:is_a "NamedThing" ;
+    biolink:mappings "BFO:0000003" ;
+    biolink:slots "has_input",
+        "has_participant",
+        "precedes",
+        "regulates_process_to_process" ;
+    dcterms:description "A processual entity" .
+
+biolink:Onset rdfs:label "Onset" ;
+    biolink:is_a "Attribute" ;
+    biolink:mappings "HP:0003674" ;
+    dcterms:description "The age group in which manifestations appear" .
+
+biolink:OntologyClass rdfs:label "OntologyClass" ;
+    biolink:is_a "NamedThing" ;
+    biolink:slots "subclass_of" ;
+    dcterms:description "a concept or class in an ontology, vocabulary or thesaurus" .
+
+biolink:OrganismTaxon rdfs:label "OrganismTaxon" ;
+    biolink:is_a "OntologyClass" ;
+    biolink:mappings "WD:Q16521" ;
+    biolink:values_from "NCBITaxon" .
+
+biolink:OrganismalEntity rdfs:label "OrganismalEntity" ;
+    biolink:abstract true ;
+    biolink:is_a "BiologicalEntity" ;
+    biolink:mappings "WD:Q7239" ;
+    dcterms:description "A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities" .
+
+biolink:PairwiseGeneOrProteinInteractionAssociation rdfs:label "PairwiseGeneOrProteinInteractionAssociation" ;
+    biolink:defining_slots "object",
+        "relation",
+        "subject" ;
+    biolink:is_a "GeneToGeneAssociation" ;
+    biolink:mixins "MolecularInteraction" ;
+    biolink:slot_usage [ rdfs:label "relation" ;
+            biolink:definitional true ;
+            biolink:subproperty_of "molecularly_interacts_with" ;
+            biolink:values_from "mi",
+                "ro" ;
+            dcterms:description "interaction relationship type" ] ;
+    biolink:slots "pairwise_gene_or_protein_interaction_association_relation" ;
+    biolink:symmetric true ;
+    dcterms:description "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)" .
+
+biolink:PathognomonicityQuantifier rdfs:label "PathognomonicityQuantifier" ;
+    biolink:is_a "SpecificityQuantifier" ;
+    biolink:mixin true ;
+    dcterms:description "A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease" .
+
+biolink:Pathway rdfs:label "Pathway" ;
+    biolink:id_prefixes "GO",
+        "Reactome" ;
+    biolink:is_a "BiologicalProcess" ;
+    biolink:mappings "GO:0007165",
+        "PW:0000001",
+        "SIO:010526",
+        "WD:Q4915012" .
+
+biolink:Phenomenon rdfs:label "Phenomenon" ;
+    biolink:is_a "Occurrent" ;
+    biolink:mappings "UMLSSG:PHEN" ;
+    dcterms:description "a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question" .
+
+biolink:PhenotypicFeature rdfs:label "PhenotypicFeature" ;
+    biolink:aliases "endophenotype",
+        "phenotype",
+        "sign",
+        "symptom",
+        "trait" ;
+    biolink:is_a "DiseaseOrPhenotypicFeature" ;
+    biolink:mappings "SIO:010056",
+        "UPHENO:0001001",
+        "WD:Q169872" .
+
+biolink:PhenotypicSex rdfs:label "PhenotypicSex" ;
+    biolink:is_a "BiologicalSex" ;
+    dcterms:description "An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present." ;
+    rdfs:subClassOf <http://bioentity.io/vocab/PATO:0001894> .
+
+biolink:PhysiologicalProcess rdfs:label "PhysiologicalProcess" ;
+    biolink:aliases "physiology" ;
+    biolink:is_a "BiologicalProcess" ;
+    biolink:mappings "UMLSSG:PHYS" .
+
+biolink:PlanetaryEntity rdfs:label "PlanetaryEntity" ;
+    biolink:is_a "NamedThing" ;
+    dcterms:description "Any entity or process that exists at the level of the whole planet" .
+
+biolink:PopulationOfIndividualOrganisms rdfs:label "PopulationOfIndividualOrganisms" ;
+    biolink:id_prefixes "ANCESTRO" ;
+    biolink:is_a "OrganismalEntity" ;
+    biolink:local_names "population" ;
+    biolink:mappings "SIO:001061" ;
+    biolink:mixins "ThingWithTaxon" ;
+    rdfs:subClassOf <http://bioentity.io/vocab/PCO:0000001> .
+
+biolink:PopulationToPopulationAssociation rdfs:label "PopulationToPopulationAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "population of individual organisms" ;
+            dcterms:description "the population that form the subject of the association" ],
+        [ rdfs:label "object" ;
+            biolink:range "population of individual organisms" ;
+            dcterms:description "the population that form the object of the association" ],
+        [ rdfs:label "relation" ;
+            dcterms:description "A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used" ] ;
+    biolink:slots "population_to_population_association_object",
+        "population_to_population_association_relation",
+        "population_to_population_association_subject" ;
+    dcterms:description "An association between a two populations" .
+
+biolink:Procedure rdfs:label "Procedure" ;
+    biolink:is_a "Occurrent" ;
+    biolink:mappings "UMLSSG:PROC" ;
+    dcterms:description "A series of actions conducted in a certain order or manner" .
+
+biolink:Protein rdfs:label "Protein" ;
+    biolink:aliases "polypeptide" ;
+    biolink:id_prefixes "ENSEMBL",
+        "PR",
+        "UniProtKB" ;
+    biolink:is_a "GeneProduct" ;
+    biolink:mappings "PR:000000001",
+        "SIO:010043",
+        "WD:Q8054" ;
+    dcterms:description "A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA" .
+
+biolink:ProteinIsoform rdfs:label "ProteinIsoform" ;
+    biolink:aliases "proteoform" ;
+    biolink:id_prefixes "ENSEMBL",
+        "PR",
+        "UniProtKB" ;
+    biolink:is_a "Protein" ;
+    biolink:mixins "GeneProductIsoform" ;
+    dcterms:description "Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/" .
+
+biolink:Provider rdfs:label "Provider" ;
+    biolink:aliases "agent",
+        "group" ;
+    biolink:is_a "AdministrativeEntity" ;
+    biolink:mappings "UMLSSG:ORGA" ;
+    dcterms:description "person, group, organization or project that provides a piece of information" .
+
+biolink:Publication rdfs:label "Publication" ;
+    biolink:aliases "reference" ;
+    biolink:is_a "InformationContentEntity" ;
+    biolink:mappings "IAO:0000311" ;
+    dcterms:description "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals." .
+
+biolink:RNAProduct rdfs:label "RNAProduct" ;
+    biolink:id_prefixes "RNAcentral" ;
+    biolink:is_a "GeneProduct" ;
+    biolink:mappings "CHEBI:33697",
+        "SIO:010450",
+        "WD:Q11053" .
+
+biolink:RNAProductIsoform rdfs:label "RNAProductIsoform" ;
+    biolink:id_prefixes "RNAcentral" ;
+    biolink:is_a "RNAProduct" ;
+    biolink:mixins "GeneProductIsoform" ;
+    dcterms:description "Represents a protein that is a specific isoform of the canonical or reference RNA" .
+
+biolink:RelationshipQuantifier rdfs:label "RelationshipQuantifier" ;
+    biolink:abstract true ;
+    biolink:mixin true .
+
+biolink:RelationshipType rdfs:label "RelationshipType" ;
+    dcterms:description "An OWL property used as an edge label" .
+
+biolink:SenstivityQuantifier rdfs:label "SenstivityQuantifier" ;
+    biolink:is_a "RelationshipQuantifier" ;
+    biolink:mixin true .
+
+biolink:SequenceFeatureRelationship rdfs:label "SequenceFeatureRelationship" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mappings "GMODChado:feature_relationship" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "genomic entity" ],
+        [ rdfs:label "object" ;
+            biolink:range "genomic entity" ] ;
+    biolink:slots "sequence_feature_relationship_object",
+        "sequence_feature_relationship_subject" ;
+    dcterms:description "For example, a particular exon is part of a particular transcript or gene" .
+
+biolink:SequenceVariant rdfs:label "SequenceVariant" ;
+    biolink:aliases "allele" ;
+    biolink:alt_descriptions [ biolink:source "AGR" ;
+            dcterms:description "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition" ],
+        [ biolink:source "VMC" ;
+            dcterms:description "A contiguous change at a Location" ] ;
+    biolink:comment "This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)" ;
+    biolink:id_prefixes "CIViC",
+        "ClinVar",
+        "WD" ;
+    biolink:is_a "GenomicEntity" ;
+    biolink:local_names "allele" ;
+    biolink:mappings "GENO:0000002",
+        "SIO:010277",
+        "VMC:Allele",
+        "WD:Q15304597" ;
+    biolink:slot_usage [ rdfs:label "id" ;
+            biolink:examples [ biolink:value "ClinVarVariant:17681" ;
+                    dcterms:description "NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)" ],
+                [ biolink:value "ZFIN:ZDB-ALT-980203-1091" ;
+                    dcterms:description "ti282a allele from ZFIN" ] ],
+        [ rdfs:label "has_gene" ;
+            biolink:multivalued true ;
+            dcterms:description "Each allele can be associated with any number of genes" ],
+        [ rdfs:label "has_biological_sequence" ;
+            dcterms:description "The state of the sequence w.r.t a reference sequence" ] ;
+    biolink:slots "sequence_variant_has_biological_sequence",
+        "sequence_variant_has_gene",
+        "sequence_variant_id" ;
+    dcterms:description "An allele that varies in its sequence from what is considered the reference allele at that locus." .
+
+biolink:SequenceVariantModulatesTreatmentAssociation rdfs:label "SequenceVariantModulatesTreatmentAssociation" ;
+    biolink:abstract true ;
+    biolink:comment "An alternate way to model the same information could be via a qualifier" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "sequence variant" ;
+            dcterms:description "variant that modulates the treatment of some disease" ],
+        [ rdfs:label "object" ;
+            biolink:range "treatment" ;
+            dcterms:description "treatment whose efficacy is modulated by the subject variant" ] ;
+    biolink:slots "sequence_variant_modulates_treatment_association_object",
+        "sequence_variant_modulates_treatment_association_subject" ;
+    dcterms:description "An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used." .
+
+biolink:SeverityValue rdfs:label "SeverityValue" ;
+    biolink:is_a "Attribute" ;
+    dcterms:description "describes the severity of a phenotypic feature or disease" .
+
+biolink:SpecificityQuantifier rdfs:label "SpecificityQuantifier" ;
+    biolink:is_a "RelationshipQuantifier" ;
+    biolink:mixin true .
+
+biolink:ThingToDiseaseOrPhenotypicFeatureAssociation rdfs:label "ThingToDiseaseOrPhenotypicFeatureAssociation" ;
+    biolink:abstract true ;
+    biolink:defining_slots "object" ;
+    biolink:is_a "Association" ;
+    biolink:slot_usage [ rdfs:label "object" ;
+            biolink:definitional true ;
+            biolink:examples [ biolink:value "MP:0013229" ;
+                    dcterms:description "abnormal brain ventricle size" ],
+                [ biolink:value "MONDO:0017314" ;
+                    dcterms:description "Ehlers-Danlos syndrome, vascular type" ] ;
+            biolink:range "disease or phenotypic feature" ;
+            dcterms:description "disease or phenotype" ] ;
+    biolink:slots "thing_to_disease_or_phenotypic_feature_association_object" .
+
+biolink:ThingWithTaxon rdfs:label "ThingWithTaxon" ;
+    biolink:abstract true ;
+    biolink:mixin true ;
+    biolink:slots "in_taxon" ;
+    dcterms:description "A mixin that can be used on any entity with a taxon" .
+
+biolink:Transcript rdfs:label "Transcript" ;
+    biolink:is_a "GenomicEntity" ;
+    biolink:mappings "SIO:010450",
+        "SO:0000673" ;
+    dcterms:description "An RNA synthesized on a DNA or RNA template by an RNA polymerase" .
+
+biolink:TranscriptToGeneRelationship rdfs:label "TranscriptToGeneRelationship" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "SequenceFeatureRelationship" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "transcript" ],
+        [ rdfs:label "object" ;
+            biolink:range "gene" ] ;
+    biolink:slots "transcript_to_gene_relationship_object",
+        "transcript_to_gene_relationship_subject" ;
+    dcterms:description "A gene is a collection of transcripts" .
+
+biolink:Treatment rdfs:label "Treatment" ;
+    biolink:aliases "medical action" ;
+    biolink:is_a "Environment" ;
+    biolink:mappings "OGMS:0000090",
+        "SIO:001398" ;
+    biolink:slot_usage [ rdfs:label "has_exposure_parts" ;
+            biolink:multivalued true ;
+            biolink:range "drug exposure" ;
+            biolink:required true ],
+        [ rdfs:label "treats" ;
+            biolink:range "disease or phenotypic feature" ;
+            biolink:required true ] ;
+    biolink:slots "has_exposure_parts",
+        "treatment_treats" ;
+    dcterms:description "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'" .
+
+biolink:VariantToDiseaseAssociation rdfs:label "VariantToDiseaseAssociation" ;
+    biolink:comment "TODO decide no how to model pathogenicity" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mixins "EntityToDiseaseAssociation",
+        "VariantToThingAssociation" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:examples [ biolink:value "ClinVar:52241" ;
+                    dcterms:description "NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)" ] ;
+            dcterms:description "a sequence variant in which the allele state is associated in some way with the disease state" ],
+        [ rdfs:label "object" ;
+            biolink:examples [ biolink:value "MONDO:0016419" ;
+                    dcterms:description "hereditary breast cancer" ] ;
+            dcterms:description "a disease that is associated with that variant" ],
+        [ rdfs:label "relation" ;
+            biolink:subproperty_of "related_condition" ;
+            dcterms:description "E.g. is pathogenic for" ] ;
+    biolink:slots "variant_to_disease_association_object",
+        "variant_to_disease_association_relation",
+        "variant_to_disease_association_subject" .
+
+biolink:VariantToPhenotypicFeatureAssociation rdfs:label "VariantToPhenotypicFeatureAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mixins "EntityToPhenotypicFeatureAssociation",
+        "VariantToThingAssociation" ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:range "sequence variant" ;
+            dcterms:description "a sequence variant in which the allele state is associated in some way with the phenotype state" ] ;
+    biolink:slots "variant_to_phenotypic_feature_association_subject" .
+
+biolink:VariantToPopulationAssociation rdfs:label "VariantToPopulationAssociation" ;
+    biolink:defining_slots "object",
+        "subject" ;
+    biolink:is_a "Association" ;
+    biolink:mixins "FrequencyQualifier",
+        "FrequencyQuantifier",
+        "VariantToThingAssociation" ;
+    biolink:slot_usage [ rdfs:label "has_quotient" ;
+            biolink:examples [ biolink:value "0.0001666" ] ;
+            dcterms:description "frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency" ],
+        [ rdfs:label "has_count" ;
+            biolink:examples [ biolink:value "4" ;
+                    dcterms:description "4 individuals in gnomad set" ] ;
+            dcterms:description "number in object population that carry a particular allele, aka allele count" ],
+        [ rdfs:label "object" ;
+            biolink:examples [ biolink:value "ANCESTRO:0010" ;
+                    dcterms:description "African" ] ;
+            biolink:range "population of individual organisms" ;
+            dcterms:description "the population that is observed to have the frequency" ],
+        [ rdfs:label "subject" ;
+            biolink:examples [ biolink:value "NC_000017.11:g.43051071A>T" ;
+                    dcterms:description "17:41203088 A/C in gnomad" ] ;
+            biolink:range "sequence variant" ;
+            dcterms:description "an allele that has a certain frequency in a given population" ],
+        [ rdfs:label "has_total" ;
+            biolink:examples [ biolink:value "24014" ;
+                    dcterms:description "24014 individuals in gnomad set" ] ;
+            dcterms:description "number all populations that carry a particular allele, aka allele number" ] ;
+    biolink:slots "variant_to_population_association_has_count",
+        "variant_to_population_association_has_quotient",
+        "variant_to_population_association_has_total",
+        "variant_to_population_association_object",
+        "variant_to_population_association_subject" ;
+    dcterms:description "An association between a variant and a population, where the variant has particular frequency in the population" .
+
+biolink:VariantToThingAssociation rdfs:label "VariantToThingAssociation" ;
+    biolink:abstract true ;
+    biolink:defining_slots "subject" ;
+    biolink:is_a "Association" ;
+    biolink:local_names "variant annotation" ;
+    biolink:mixin true ;
+    biolink:slot_usage [ rdfs:label "subject" ;
+            biolink:examples [ biolink:value "ClinGen:CA024716" ;
+                    dcterms:description "chr13:g.32921033G>C (hg19) in ClinGen" ],
+                [ biolink:value "ClinVar:38077" ;
+                    dcterms:description "ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)" ] ;
+            biolink:range "sequence variant" ;
+            dcterms:description "a sequence variant in which the allele state is associated with some other entity" ] ;
+    biolink:slots "variant_to_thing_association_subject" .
+
+biolink:Zygosity rdfs:label "Zygosity" ;
+    biolink:is_a "Attribute" ;
+    biolink:mappings "GENO:0000133" .
+
+biolink:actively_involved_in rdfs:label "actively_involved_in" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "participates_in" ;
+    biolink:mappings "RO:0002331" ;
+    biolink:range "occurrent" ;
+    dcterms:description "holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes" .
+
+biolink:affects rdfs:label "affects" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "SEMMEDDB:AFFECTS" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
+
+biolink:affects_risk_for rdfs:label "affects_risk_for" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "SEMMEDDB:ASSOCIATED_WITH",
+        "owl:topObjectProperty" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between two entities where exposure to one entity alters the chance of developing the other " .
+
+biolink:aggregate_statistic rdfs:label "aggregate_statistic" ;
+    biolink:abstract true ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "A grouping for any property that holds between a node and a value" .
+
+biolink:anatomical_entity_to_anatomical_entity_association_object rdfs:label "anatomical_entity_to_anatomical_entity_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "AnatomicalEntityToAnatomicalEntityAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "anatomical entity" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:anatomical_entity_to_anatomical_entity_association_subject rdfs:label "anatomical_entity_to_anatomical_entity_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "AnatomicalEntityToAnatomicalEntityAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "anatomical entity" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_object rdfs:label "anatomical_entity_to_anatomical_entity_ontogenic_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "AnatomicalEntityToAnatomicalEntityOntogenicAssociation" ;
+    biolink:is_a "anatomical_entity_to_anatomical_entity_association_object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "anatomical entity" ;
+    biolink:required true ;
+    dcterms:description "the structure at an earlier time" .
+
+biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_relation rdfs:label "anatomical_entity_to_anatomical_entity_ontogenic_association_relation" ;
+    biolink:alias "relation" ;
+    biolink:domain "AnatomicalEntityToAnatomicalEntityOntogenicAssociation" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    biolink:subproperty_of "develops_from" ;
+    dcterms:description "the relationship type by which a subject is connected to an object in an association" .
+
+biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_subject rdfs:label "anatomical_entity_to_anatomical_entity_ontogenic_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "AnatomicalEntityToAnatomicalEntityOntogenicAssociation" ;
+    biolink:is_a "anatomical_entity_to_anatomical_entity_association_subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "anatomical entity" ;
+    biolink:required true ;
+    dcterms:description "the structure at a later time" .
+
+biolink:anatomical_entity_to_anatomical_entity_part_of_association_object rdfs:label "anatomical_entity_to_anatomical_entity_part_of_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "AnatomicalEntityToAnatomicalEntityPartOfAssociation" ;
+    biolink:is_a "anatomical_entity_to_anatomical_entity_association_object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "anatomical entity" ;
+    biolink:required true ;
+    dcterms:description "the whole" .
+
+biolink:anatomical_entity_to_anatomical_entity_part_of_association_relation rdfs:label "anatomical_entity_to_anatomical_entity_part_of_association_relation" ;
+    biolink:alias "relation" ;
+    biolink:domain "AnatomicalEntityToAnatomicalEntityPartOfAssociation" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    biolink:subproperty_of "part_of" ;
+    dcterms:description "the relationship type by which a subject is connected to an object in an association" .
+
+biolink:anatomical_entity_to_anatomical_entity_part_of_association_subject rdfs:label "anatomical_entity_to_anatomical_entity_part_of_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "AnatomicalEntityToAnatomicalEntityPartOfAssociation" ;
+    biolink:is_a "anatomical_entity_to_anatomical_entity_association_subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "anatomical entity" ;
+    biolink:required true ;
+    dcterms:description "the part" .
+
+biolink:association_slot rdfs:label "association_slot" ;
+    biolink:abstract true ;
+    biolink:aliases "edge property",
+        "statement property" ;
+    biolink:domain "Association" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "any slot that relates an association to another entity" .
+
+biolink:association_type rdfs:label "association_type" ;
+    biolink:domain "Association" ;
+    biolink:is_a "association_slot" ;
+    biolink:mappings "rdf:type" ;
+    biolink:range "ontology class" ;
+    dcterms:description "connects an association to the type of association (e.g. gene to phenotype)" .
+
+biolink:biological_sequence rdfs:label "biological_sequence" ;
+    biolink:typeof "xsd:string" .
+
+biolink:biomarker_for rdfs:label "biomarker_for" ;
+    biolink:domain "MolecularEntity" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "has_biomarker" ;
+    biolink:is_a "correlated_with" ;
+    biolink:mappings "RO:0002607" ;
+    biolink:range "disease or phenotypic feature" ;
+    dcterms:description "holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature." .
+
+biolink:biosample_to_thing_association_subject rdfs:label "biosample_to_thing_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:definitional true ;
+    biolink:domain "BiosampleToThingAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "biosample" ;
+    biolink:required true ;
+    dcterms:description "the biosample being described" .
+
+biolink:capable_of rdfs:label "capable_of" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "actively_involved_in" ;
+    biolink:mappings "RO:0002215" ;
+    biolink:range "occurrent" ;
+    dcterms:description "holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function. " .
+
+biolink:case_to_thing_association_subject rdfs:label "case_to_thing_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:definitional true ;
+    biolink:domain "CaseToThingAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "case" ;
+    biolink:required true ;
+    dcterms:description "the case (e.g. patient) that has the property" .
+
+biolink:category rdfs:label "category" ;
+    biolink:domain "NamedThing" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "node_property" ;
+    biolink:is_class_field true ;
+    biolink:mappings "rdf:type" ;
+    biolink:range "label type" ;
+    dcterms:description "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag" .
+
+biolink:causes rdfs:label "causes" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "contributes_to" ;
+    biolink:mappings "RO:0002410",
+        "SEMMEDDB:CAUSES",
+        "WD:P1542" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other" .
+
+biolink:cell_line_to_disease_or_phenotypic_feature_association_subject rdfs:label "cell_line_to_disease_or_phenotypic_feature_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "CellLineToDiseaseOrPhenotypicFeatureAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "disease or phenotypic feature" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:cell_line_to_thing_association_subject rdfs:label "cell_line_to_thing_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:definitional true ;
+    biolink:domain "CellLineToThingAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "cell line" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:chemical_formula_type rdfs:label "chemical_formula_type" ;
+    biolink:typeof "xsd:string" .
+
+biolink:chemical_formula_value rdfs:label "chemical_formula_value" .
+
+biolink:chemical_to_disease_or_phenotypic_feature_association_object rdfs:label "chemical_to_disease_or_phenotypic_feature_association_object" ;
+    biolink:alias "object" ;
+    biolink:definitional true ;
+    biolink:domain "ChemicalToDiseaseOrPhenotypicFeatureAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "disease or phenotypic feature" ;
+    biolink:required true ;
+    dcterms:description "the disease or phenotype that is affected by the chemical" .
+
+biolink:chemical_to_gene_association_object rdfs:label "chemical_to_gene_association_object" ;
+    biolink:alias "object" ;
+    biolink:definitional true ;
+    biolink:domain "ChemicalToGeneAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "gene or gene product" ;
+    biolink:required true ;
+    dcterms:description "the gene or gene product that is affected by the chemical" .
+
+biolink:chemical_to_pathway_association_object rdfs:label "chemical_to_pathway_association_object" ;
+    biolink:alias "object" ;
+    biolink:definitional true ;
+    biolink:domain "ChemicalToPathwayAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "pathway" ;
+    biolink:required true ;
+    dcterms:description "the pathway that is affected by the chemical" .
+
+biolink:chemical_to_thing_association_subject rdfs:label "chemical_to_thing_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:definitional true ;
+    biolink:domain "ChemicalToThingAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "chemical substance" ;
+    biolink:required true ;
+    dcterms:description "the chemical substance or entity that is an interactor" .
+
+biolink:clinical_modifier_qualifier rdfs:label "clinical_modifier_qualifier" ;
+    biolink:is_a "association_slot" ;
+    biolink:range "clinical modifier" ;
+    dcterms:description "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects" .
+
+biolink:co-localizes_with rdfs:label "co-localizes_with" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "coexists_with" ;
+    biolink:mappings "RO:00002325" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between two entities that are observed to be located in the same place." .
+
+biolink:coexists_with rdfs:label "coexists_with" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "SEMMEDDB:COEXISTS_WITH" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region" .
+
+biolink:contributes_to rdfs:label "contributes_to" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0002326" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other" .
+
+biolink:correlated_with rdfs:label "correlated_with" ;
+    biolink:domain "DiseaseOrPhenotypicFeature" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0002610" ;
+    biolink:range "molecular entity" ;
+    dcterms:description "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature." .
+
+biolink:creation_date rdfs:label "creation_date" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "dcterms:created" ;
+    biolink:range "xsd:date" ;
+    dcterms:description "date on which thing was created. This can be applied to nodes or edges" .
+
+biolink:derives_from rdfs:label "derives_from" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "derives_into" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0001000" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" .
+
+biolink:derives_into rdfs:label "derives_into" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "derives_from" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0001001",
+        "SEMMEDDB:CONVERTS_TO" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" .
+
+biolink:description rdfs:label "description" ;
+    biolink:domain "NamedThing" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "dcterms:description" ;
+    biolink:range "narrative text" ;
+    dcterms:description "a human-readable description of a thing" .
+
+biolink:disease_or_phenotypic_feature_association_to_location_association_object rdfs:label "disease_or_phenotypic_feature_association_to_location_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "anatomical entity" ;
+    biolink:required true ;
+    dcterms:description "anatomical entity in which the disease or feature is found" .
+
+biolink:disease_or_phenotypic_feature_association_to_thing_association_subject rdfs:label "disease_or_phenotypic_feature_association_to_thing_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:definitional true ;
+    biolink:domain "DiseaseOrPhenotypicFeatureAssociationToThingAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "disease or phenotypic feature" ;
+    biolink:required true ;
+    dcterms:description "disease or phenotype" .
+
+biolink:disease_to_thing_association_subject rdfs:label "disease_to_thing_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:definitional true ;
+    biolink:domain "DiseaseToThingAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "disease" ;
+    biolink:required true ;
+    dcterms:description "disease class" .
+
+biolink:disrupts rdfs:label "disrupts" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "affects" ;
+    biolink:mappings "SEMMEDDB:DISRUPTS" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another." .
+
+biolink:drug rdfs:label "drug" ;
+    biolink:alias "drug" ;
+    biolink:domain "DrugExposure" ;
+    biolink:multivalued true ;
+    biolink:range "chemical substance" ;
+    biolink:required true .
+
+biolink:edge_label rdfs:label "edge_label" ;
+    biolink:is_a "association_slot" ;
+    biolink:note "in neo4j this corresponds to the relationship type and the convention is for a snake_case label" ;
+    biolink:range "label type" ;
+    dcterms:description "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. " .
+
+biolink:end_interbase_coordinate rdfs:label "end_interbase_coordinate" ;
+    biolink:domain "GenomicSequenceLocalization" ;
+    biolink:is_a "interbase_coordinate" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "TODO" .
+
+biolink:entity_to_disease_association_object rdfs:label "entity_to_disease_association_object" ;
+    biolink:alias "object" ;
+    biolink:definitional true ;
+    biolink:domain "EntityToDiseaseAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "disease" ;
+    biolink:required true ;
+    dcterms:description "disease" .
+
+biolink:entity_to_phenotypic_feature_association_description rdfs:label "entity_to_phenotypic_feature_association_description" ;
+    biolink:alias "description" ;
+    biolink:domain "EntityToPhenotypicFeatureAssociation" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "description" ;
+    biolink:mappings "dcterms:description" ;
+    biolink:range "narrative text" ;
+    dcterms:description "A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class" .
+
+biolink:entity_to_phenotypic_feature_association_object rdfs:label "entity_to_phenotypic_feature_association_object" ;
+    biolink:alias "object" ;
+    biolink:definitional true ;
+    biolink:domain "EntityToPhenotypicFeatureAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "phenotypic feature" ;
+    biolink:required true ;
+    dcterms:description "phenotypic class" .
+
+biolink:environment_to_phenotypic_feature_association_subject rdfs:label "environment_to_phenotypic_feature_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:definitional true ;
+    biolink:domain "EnvironmentToPhenotypicFeatureAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "environment" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:evidence_instance rdfs:label "evidence_instance" .
+
+biolink:exon_to_transcript_relationship_object rdfs:label "exon_to_transcript_relationship_object" ;
+    biolink:alias "object" ;
+    biolink:domain "ExonToTranscriptRelationship" ;
+    biolink:is_a "sequence_feature_relationship_object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "transcript" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:exon_to_transcript_relationship_subject rdfs:label "exon_to_transcript_relationship_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "ExonToTranscriptRelationship" ;
+    biolink:is_a "sequence_feature_relationship_subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "exon" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:expressed_in rdfs:label "expressed_in" ;
+    biolink:domain "GeneOrGeneProduct" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "expresses" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0002206" ;
+    biolink:range "anatomical entity" ;
+    dcterms:description "holds between a gene or gene product and an anatomical entity in which it is expressed" .
+
+biolink:expresses rdfs:label "expresses" ;
+    biolink:domain "AnatomicalEntity" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "expressed_in" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0002292" ;
+    biolink:range "gene or gene product" ;
+    dcterms:description "holds between an anatomical entity and gene or gene product that is expressed there" .
+
+biolink:filler rdfs:label "filler" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "named thing" ;
+    dcterms:description "The value in a property-value tuple" .
+
+biolink:frequency_qualifier rdfs:label "frequency_qualifier" ;
+    biolink:is_a "association_slot" ;
+    biolink:range "frequency value" ;
+    dcterms:description "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject" .
+
+biolink:frequency_value rdfs:label "frequency_value" ;
+    biolink:mappings "UO:0000105" .
+
+biolink:full_name rdfs:label "full_name" ;
+    biolink:domain "NamedThing" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "label type" ;
+    dcterms:description "a long-form human readable name for a thing" .
+
+biolink:functional_association_object rdfs:label "functional_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "FunctionalAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "gene ontology class" ;
+    biolink:required true ;
+    dcterms:description "class describing the activity, process or localization of the gene product" .
+
+biolink:functional_association_subject rdfs:label "functional_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "FunctionalAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "macromolecular machine" ;
+    biolink:required true ;
+    dcterms:description "gene, product or macromolecular complex that has the function associated with the GO term" .
+
+biolink:gene_as_a_model_of_disease_association_subject rdfs:label "gene_as_a_model_of_disease_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "GeneAsAModelOfDiseaseAssociation" ;
+    biolink:is_a "gene_to_disease_association_subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "gene or gene product" ;
+    biolink:required true ;
+    dcterms:description """A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.
+  """ .
+
+biolink:gene_associated_with_condition rdfs:label "gene_associated_with_condition" ;
+    biolink:domain "Gene" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "WD:P2293" ;
+    biolink:range "disease or phenotypic feature" ;
+    dcterms:description "holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with" .
+
+biolink:gene_has_variant_that_contributes_to_disease_association_subject rdfs:label "gene_has_variant_that_contributes_to_disease_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "GeneHasVariantThatContributesToDiseaseAssociation" ;
+    biolink:is_a "gene_to_disease_association_subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "gene or gene product" ;
+    biolink:required true ;
+    dcterms:description "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease." .
+
+biolink:gene_regulatory_relationship_object rdfs:label "gene_regulatory_relationship_object" ;
+    biolink:alias "object" ;
+    biolink:domain "GeneRegulatoryRelationship" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "gene or gene product" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:gene_regulatory_relationship_relation rdfs:label "gene_regulatory_relationship_relation" ;
+    biolink:alias "relation" ;
+    biolink:domain "GeneRegulatoryRelationship" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    dcterms:description "the direction is always from regulator to regulated" .
+
+biolink:gene_regulatory_relationship_subject rdfs:label "gene_regulatory_relationship_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "GeneRegulatoryRelationship" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "gene or gene product" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:gene_to_disease_association_subject rdfs:label "gene_to_disease_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "GeneToDiseaseAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "gene or gene product" ;
+    biolink:required true ;
+    dcterms:description "gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model" .
+
+biolink:gene_to_expression_site_association_object rdfs:label "gene_to_expression_site_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "GeneToExpressionSiteAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "anatomical entity" ;
+    biolink:required true ;
+    dcterms:description "location in which the gene is expressed" .
+
+biolink:gene_to_expression_site_association_quantifier_qualifier rdfs:label "gene_to_expression_site_association_quantifier_qualifier" ;
+    biolink:alias "quantifier qualifier" ;
+    biolink:domain "GeneToExpressionSiteAssociation" ;
+    biolink:is_a "quantifier_qualifier" ;
+    biolink:range "ontology class" ;
+    dcterms:description "can be used to indicate magnitude, or also ranking" .
+
+biolink:gene_to_expression_site_association_relation rdfs:label "gene_to_expression_site_association_relation" ;
+    biolink:alias "relation" ;
+    biolink:domain "GeneToExpressionSiteAssociation" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    biolink:subproperty_of "expressed_in" ;
+    dcterms:description "expression relationship" .
+
+biolink:gene_to_expression_site_association_stage_qualifier rdfs:label "gene_to_expression_site_association_stage_qualifier" ;
+    biolink:alias "stage qualifier" ;
+    biolink:domain "GeneToExpressionSiteAssociation" ;
+    biolink:is_a "stage_qualifier" ;
+    biolink:range "life stage" ;
+    dcterms:description "stage at which the gene is expressed in the site" .
+
+biolink:gene_to_expression_site_association_subject rdfs:label "gene_to_expression_site_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "GeneToExpressionSiteAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "gene or gene product" ;
+    biolink:required true ;
+    dcterms:description "gene in which variation is correlated with the phenotypic feature" .
+
+biolink:gene_to_gene_association_object rdfs:label "gene_to_gene_association_object" ;
+    biolink:alias "object" ;
+    biolink:definitional true ;
+    biolink:domain "GeneToGeneAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "gene or gene product" ;
+    biolink:required true ;
+    dcterms:description "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa" .
+
+biolink:gene_to_gene_association_subject rdfs:label "gene_to_gene_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:definitional true ;
+    biolink:domain "GeneToGeneAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "gene or gene product" ;
+    biolink:required true ;
+    dcterms:description "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa" .
+
+biolink:gene_to_gene_homology_association_relation rdfs:label "gene_to_gene_homology_association_relation" ;
+    biolink:alias "relation" ;
+    biolink:definitional true ;
+    biolink:domain "GeneToGeneHomologyAssociation" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    biolink:subproperty_of "homologous_to" ;
+    dcterms:description "homology relationship type" .
+
+biolink:gene_to_gene_product_relationship_object rdfs:label "gene_to_gene_product_relationship_object" ;
+    biolink:alias "object" ;
+    biolink:domain "GeneToGeneProductRelationship" ;
+    biolink:is_a "sequence_feature_relationship_object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "gene product" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:gene_to_gene_product_relationship_relation rdfs:label "gene_to_gene_product_relationship_relation" ;
+    biolink:alias "relation" ;
+    biolink:domain "GeneToGeneProductRelationship" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    biolink:subproperty_of "has_gene_product" ;
+    dcterms:description "the relationship type by which a subject is connected to an object in an association" .
+
+biolink:gene_to_gene_product_relationship_subject rdfs:label "gene_to_gene_product_relationship_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "GeneToGeneProductRelationship" ;
+    biolink:is_a "sequence_feature_relationship_subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "gene" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:gene_to_go_term_association_object rdfs:label "gene_to_go_term_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "GeneToGoTermAssociation" ;
+    biolink:is_a "functional_association_object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "gene ontology class" ;
+    biolink:required true ;
+    dcterms:description "class describing the activity, process or localization of the gene product" .
+
+biolink:gene_to_go_term_association_subject rdfs:label "gene_to_go_term_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "GeneToGoTermAssociation" ;
+    biolink:is_a "functional_association_subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "molecular entity" ;
+    biolink:required true ;
+    dcterms:description "gene, product or macromolecular complex that has the function associated with the GO term" .
+
+biolink:gene_to_phenotypic_feature_association_subject rdfs:label "gene_to_phenotypic_feature_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "GeneToPhenotypicFeatureAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "gene or gene product" ;
+    biolink:required true ;
+    dcterms:description "gene in which variation is correlated with the phenotypic feature" .
+
+biolink:gene_to_thing_association_subject rdfs:label "gene_to_thing_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "GeneToThingAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "gene or gene product" ;
+    biolink:required true ;
+    dcterms:description "gene that is the subject of the association" .
+
+biolink:genetically_interacts_with rdfs:label "genetically_interacts_with" ;
+    biolink:domain "Gene" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "interacts_with" ;
+    biolink:mappings "RO:0002435" ;
+    biolink:range "gene" ;
+    dcterms:description "holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality." .
+
+biolink:genome_build rdfs:label "genome_build" ;
+    biolink:domain "GenomicSequenceLocalization" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "TODO" .
+
+biolink:genomic_sequence_localization_object rdfs:label "genomic_sequence_localization_object" ;
+    biolink:alias "object" ;
+    biolink:domain "GenomicSequenceLocalization" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "genomic entity" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:genomic_sequence_localization_subject rdfs:label "genomic_sequence_localization_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "GenomicSequenceLocalization" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "genomic entity" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:genotype_to_gene_association_object rdfs:label "genotype_to_gene_association_object" ;
+    biolink:alias "object" ;
+    biolink:definitional true ;
+    biolink:domain "GenotypeToGeneAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "gene" ;
+    biolink:required true ;
+    dcterms:description "gene implicated in genotype" .
+
+biolink:genotype_to_gene_association_relation rdfs:label "genotype_to_gene_association_relation" ;
+    biolink:alias "relation" ;
+    biolink:domain "GenotypeToGeneAssociation" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    dcterms:description "the relationship type used to connect genotype to gene" .
+
+biolink:genotype_to_gene_association_subject rdfs:label "genotype_to_gene_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:definitional true ;
+    biolink:domain "GenotypeToGeneAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "genotype" ;
+    biolink:required true ;
+    dcterms:description "parent genotype" .
+
+biolink:genotype_to_genotype_part_association_object rdfs:label "genotype_to_genotype_part_association_object" ;
+    biolink:alias "object" ;
+    biolink:definitional true ;
+    biolink:domain "GenotypeToGenotypePartAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "genotype" ;
+    biolink:required true ;
+    dcterms:description "child genotype" .
+
+biolink:genotype_to_genotype_part_association_relation rdfs:label "genotype_to_genotype_part_association_relation" ;
+    biolink:alias "relation" ;
+    biolink:domain "GenotypeToGenotypePartAssociation" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    biolink:subproperty_of "has_variant_part" ;
+    dcterms:description "the relationship type by which a subject is connected to an object in an association" .
+
+biolink:genotype_to_genotype_part_association_subject rdfs:label "genotype_to_genotype_part_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:definitional true ;
+    biolink:domain "GenotypeToGenotypePartAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "genotype" ;
+    biolink:required true ;
+    dcterms:description "parent genotype" .
+
+biolink:genotype_to_phenotypic_feature_association_relation rdfs:label "genotype_to_phenotypic_feature_association_relation" ;
+    biolink:alias "relation" ;
+    biolink:domain "GenotypeToPhenotypicFeatureAssociation" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    biolink:subproperty_of "has_phenotype" ;
+    dcterms:description "the relationship type by which a subject is connected to an object in an association" .
+
+biolink:genotype_to_phenotypic_feature_association_subject rdfs:label "genotype_to_phenotypic_feature_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "GenotypeToPhenotypicFeatureAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "genotype" ;
+    biolink:required true ;
+    dcterms:description "genotype that is associated with the phenotypic feature" .
+
+biolink:genotype_to_thing_association_subject rdfs:label "genotype_to_thing_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "GenotypeToThingAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "genotype" ;
+    biolink:required true ;
+    dcterms:description "genotype that is the subject of the association" .
+
+biolink:genotype_to_variant_association_object rdfs:label "genotype_to_variant_association_object" ;
+    biolink:alias "object" ;
+    biolink:definitional true ;
+    biolink:domain "GenotypeToVariantAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "sequence variant" ;
+    biolink:required true ;
+    dcterms:description "gene implicated in genotype" .
+
+biolink:genotype_to_variant_association_relation rdfs:label "genotype_to_variant_association_relation" ;
+    biolink:alias "relation" ;
+    biolink:domain "GenotypeToVariantAssociation" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    dcterms:description "the relationship type used to connect genotype to gene" .
+
+biolink:genotype_to_variant_association_subject rdfs:label "genotype_to_variant_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:definitional true ;
+    biolink:domain "GenotypeToVariantAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "genotype" ;
+    biolink:required true ;
+    dcterms:description "parent genotype" .
+
+biolink:has_biological_sequence rdfs:label "has_biological_sequence" ;
+    biolink:domain "GenomicEntity" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "biological sequence" ;
+    dcterms:description "connects a genomic feature to its sequence" .
+
+biolink:has_biomarker rdfs:label "has_biomarker" ;
+    biolink:domain "DiseaseOrPhenotypicFeature" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "biomarker_for" ;
+    biolink:is_a "correlated_with" ;
+    biolink:mappings "RO:0002610" ;
+    biolink:range "molecular entity" ;
+    dcterms:description "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature." .
+
+biolink:has_chemical_formula rdfs:label "has_chemical_formula" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "WD:P274" ;
+    biolink:range "chemical formula value" ;
+    dcterms:description "description of chemical compound based on element symbols" .
+
+biolink:has_confidence_level rdfs:label "has_confidence_level" ;
+    biolink:is_a "association_slot" ;
+    biolink:range "confidence level" ;
+    dcterms:description "connects an association to a qualitative term denoting the level of confidence" .
+
+biolink:has_count rdfs:label "has_count" ;
+    biolink:domain "FrequencyQuantifier" ;
+    biolink:is_a "aggregate_statistic" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:integer" ;
+    dcterms:description "number of things with a particular property" .
+
+biolink:has_evidence rdfs:label "has_evidence" ;
+    biolink:is_a "association_slot" ;
+    biolink:mappings "RO:0002558" ;
+    biolink:range "evidence instance" ;
+    dcterms:description "connects an association to an instance of supporting evidence" .
+
+biolink:has_exposure_parts rdfs:label "has_exposure_parts" ;
+    biolink:alias "has exposure parts" ;
+    biolink:domain "Treatment" ;
+    biolink:multivalued true ;
+    biolink:range "drug exposure" ;
+    biolink:required true .
+
+biolink:has_gene rdfs:label "has_gene" ;
+    biolink:domain "SequenceVariant" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "gene" ;
+    dcterms:description "connects and entity to a single gene" .
+
+biolink:has_gene_product rdfs:label "has_gene_product" ;
+    biolink:domain "Gene" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0002205",
+        "WD:P688" ;
+    biolink:range "gene product" ;
+    dcterms:description "holds between a gene and a transcribed and/or translated product generated from it" .
+
+biolink:has_input rdfs:label "has_input" ;
+    biolink:domain "Occurrent" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "has_participant" ;
+    biolink:mappings "RO:0002233",
+        "SEMMEDDB:USES" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between a process and a continuant, where the continuant is an input into the process" .
+
+biolink:has_molecular_consequence rdfs:label "has_molecular_consequence" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "SEMMEDDB:ASSOCIATED_WITH",
+        "owl:topObjectProperty" ;
+    biolink:range "ontology class" ;
+    dcterms:description "connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583" .
+
+biolink:has_part rdfs:label "has_part" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "part_of" ;
+    biolink:is_a "overlaps" ;
+    biolink:mappings "BFO:0000051",
+        "WD:P527" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between wholes and their parts (material entities or processes)" .
+
+biolink:has_participant rdfs:label "has_participant" ;
+    biolink:domain "Occurrent" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "participates_in" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0000057",
+        "WD:P2283" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between a process and a continuant, where the continuant is somehow involved in the process " .
+
+biolink:has_percentage rdfs:label "has_percentage" ;
+    biolink:domain "FrequencyQuantifier" ;
+    biolink:is_a "aggregate_statistic" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:double" ;
+    dcterms:description "equivalent to has quotient multiplied by 100" .
+
+biolink:has_phenotype rdfs:label "has_phenotype" ;
+    biolink:domain "BiologicalEntity" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0002200" ;
+    biolink:range "phenotype" ;
+    dcterms:description "holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). " .
+
+biolink:has_quotient rdfs:label "has_quotient" ;
+    biolink:domain "FrequencyQuantifier" ;
+    biolink:is_a "aggregate_statistic" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:double" ;
+    dcterms:description "A grouping for any property that holds between a node and a value" .
+
+biolink:has_total rdfs:label "has_total" ;
+    biolink:domain "FrequencyQuantifier" ;
+    biolink:is_a "aggregate_statistic" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:integer" ;
+    dcterms:description "total number of things in a particular reference set" .
+
+biolink:has_zygosity rdfs:label "has_zygosity" ;
+    biolink:domain "Genotype" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "zygosity" ;
+    dcterms:description "A grouping for any property that holds between a node and a value" .
+
+biolink:homologous_to rdfs:label "homologous_to" ;
+    biolink:aliases "in homology relationship with" ;
+    biolink:comment "typically used to describe homology relationships between genes or gene products" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:HOM0000001",
+        "SIO:010302" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between two biological entities that have common evolutionary origin" .
+
+biolink:id rdfs:label "id" ;
+    biolink:domain "NamedThing" ;
+    biolink:identifier true ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "identifier type" ;
+    dcterms:description "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI" .
+
+biolink:identifier_type rdfs:label "identifier_type" ;
+    biolink:typeof "xsd:string" ;
+    dcterms:description "A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form" .
+
+biolink:in_cell_population_with rdfs:label "in_cell_population_with" ;
+    biolink:domain "GeneOrGeneProduct" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "coexists_with" ;
+    biolink:mappings "SEMMEDDB:COEXISTS_WITH" ;
+    biolink:range "gene or gene product" ;
+    dcterms:description "holds between two genes or gene products that are expressed in the same cell type or population " .
+
+biolink:in_complex_with rdfs:label "in_complex_with" ;
+    biolink:domain "GeneOrGeneProduct" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "coexists_with" ;
+    biolink:mappings "SEMMEDDB:COEXISTS_WITH" ;
+    biolink:range "gene or gene product" ;
+    dcterms:description "holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex" .
+
+biolink:in_pathway_with rdfs:label "in_pathway_with" ;
+    biolink:domain "GeneOrGeneProduct" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "coexists_with" ;
+    biolink:mappings "SEMMEDDB:COEXISTS_WITH" ;
+    biolink:range "gene or gene product" ;
+    dcterms:description "holds between two genes or gene products that are part of in the same biological pathway" .
+
+biolink:in_taxon rdfs:label "in_taxon" ;
+    biolink:domain "ThingWithTaxon" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0002162",
+        "WD:P703" ;
+    biolink:range "organism taxon" ;
+    dcterms:description "connects a thing to a class representing a taxon" .
+
+biolink:interacting_molecules_category rdfs:label "interacting_molecules_category" ;
+    biolink:alias "interacting molecules category" ;
+    biolink:domain "MolecularInteraction" ;
+    biolink:range "ontology class" .
+
+biolink:interacts_with rdfs:label "interacts_with" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0002434" ;
+    biolink:range "xsd:string" ;
+    biolink:symmetric true ;
+    dcterms:description "holds between any two entities that directly or indirectly interact with each other" .
+
+biolink:interbase_coordinate rdfs:label "interbase_coordinate" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "TODO" .
+
+biolink:iri rdfs:label "iri" ;
+    biolink:domain "NamedThing" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "iri type" ;
+    dcterms:description "An IRI for the node. This is determined by the id using expansion rules." .
+
+biolink:iri_type rdfs:label "iri_type" ;
+    biolink:typeof "xsd:string" ;
+    dcterms:description "An IRI" .
+
+biolink:label_type rdfs:label "label_type" ;
+    biolink:typeof "xsd:string" ;
+    dcterms:description "A string that provides a human-readable name for a thing" .
+
+biolink:latitude rdfs:label "latitude" ;
+    biolink:domain "GeographicLocation" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "wgs:lat" ;
+    biolink:range "xsd:float" ;
+    dcterms:description "latitude" .
+
+biolink:located_in rdfs:label "located_in" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "location_of" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "BFO:0000066",
+        "WD:276" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)" .
+
+biolink:location_of rdfs:label "location_of" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "located_in" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0001015",
+        "SEMMEDDB:LOCATION_OF" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between material entity or site and a material entity that is located within it (but not considered a part of it) " .
+
+biolink:longitude rdfs:label "longitude" ;
+    biolink:domain "GeographicLocation" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "wgs:long" ;
+    biolink:range "xsd:float" ;
+    dcterms:description "longitude" .
+
+biolink:macromolecular_machine_name rdfs:label "macromolecular_machine_name" ;
+    biolink:alias "name" ;
+    biolink:domain "MacromolecularMachine" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "name" ;
+    biolink:mappings "rdfs:label" ;
+    biolink:range "symbol type" ;
+    dcterms:description "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name" .
+
+biolink:macromolecular_machine_to_biological_process_association_object rdfs:label "macromolecular_machine_to_biological_process_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "MacromolecularMachineToBiologicalProcessAssociation" ;
+    biolink:is_a "functional_association_object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "biological process" ;
+    biolink:required true ;
+    dcterms:description "class describing the activity, process or localization of the gene product" .
+
+biolink:macromolecular_machine_to_cellular_component_association_object rdfs:label "macromolecular_machine_to_cellular_component_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "MacromolecularMachineToCellularComponentAssociation" ;
+    biolink:is_a "functional_association_object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "cellular component" ;
+    biolink:required true ;
+    dcterms:description "class describing the activity, process or localization of the gene product" .
+
+biolink:macromolecular_machine_to_molecular_activity_association_object rdfs:label "macromolecular_machine_to_molecular_activity_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "MacromolecularMachineToMolecularActivityAssociation" ;
+    biolink:is_a "functional_association_object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "molecular activity" ;
+    biolink:required true ;
+    dcterms:description "class describing the activity, process or localization of the gene product" .
+
+biolink:manifestation_of rdfs:label "manifestation_of" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "SEMMEDDB:MANIFESTATION_OF",
+        "WD:P1557" ;
+    biolink:range "disease" ;
+    dcterms:description "used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome" .
+
+biolink:model_of rdfs:label "model_of" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0003301" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.    " .
+
+biolink:model_to_disease_mixin_relation rdfs:label "model_to_disease_mixin_relation" ;
+    biolink:alias "relation" ;
+    biolink:domain "ModelToDiseaseMixin" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    biolink:subproperty_of "model_of" ;
+    dcterms:description """The relationship to the disease
+  """ .
+
+biolink:model_to_disease_mixin_subject rdfs:label "model_to_disease_mixin_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "ModelToDiseaseMixin" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "xsd:string" ;
+    biolink:required true ;
+    dcterms:description "The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease" .
+
+biolink:molecular_interaction_object rdfs:label "molecular_interaction_object" ;
+    biolink:alias "object" ;
+    biolink:domain "MolecularInteraction" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "molecular entity" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:molecular_interaction_relation rdfs:label "molecular_interaction_relation" ;
+    biolink:alias "relation" ;
+    biolink:definitional true ;
+    biolink:domain "MolecularInteraction" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    biolink:subproperty_of "molecularly_interacts_with" ;
+    dcterms:description "interaction relationship type" .
+
+biolink:molecular_interaction_subject rdfs:label "molecular_interaction_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "MolecularInteraction" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "molecular entity" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:molecularly_interacts_with rdfs:label "molecularly_interacts_with" ;
+    biolink:domain "MolecularEntity" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "physically_interacts_with" ;
+    biolink:mappings "RO:0002436" ;
+    biolink:range "molecular entity" ;
+    dcterms:description "holds between two entities that make physical contact as part of some interaction" .
+
+biolink:name rdfs:label "name" ;
+    biolink:aliases "display name",
+        "label" ;
+    biolink:domain "NamedThing" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "rdfs:label" ;
+    biolink:range "label type" ;
+    dcterms:description "A human-readable name for a thing" .
+
+biolink:narrative_text rdfs:label "narrative_text" ;
+    biolink:typeof "xsd:string" ;
+    dcterms:description "A string that provides a human-readable description of something" .
+
+biolink:negated rdfs:label "negated" ;
+    biolink:domain "Association" ;
+    biolink:is_a "association_slot" ;
+    biolink:range "xsd:boolean" ;
+    dcterms:description "if set to true, then the association is negated i.e. is not true" .
+
+biolink:negatively_regulates rdfs:label "negatively_regulates" ;
+    biolink:abstract true ;
+    biolink:comment "This is a grouping for process-process and entity-entity relations" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "regulates" ;
+    biolink:mappings "WD:P128" ;
+    biolink:mixin true ;
+    biolink:range "xsd:string" ;
+    dcterms:description "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
+
+biolink:negatively_regulates_entity_to_entity rdfs:label "negatively_regulates_entity_to_entity" ;
+    biolink:aliases "activity directly negatively regulates activity of" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "regulates_entity_to_entity" ;
+    biolink:local_names "activity directly negatively regulates activity of",
+        "negatively regulates" ;
+    biolink:mappings "RO:0002449",
+        "SEMMEDDB:INHIBITS" ;
+    biolink:mixins "negatively_regulates" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
+
+biolink:negatively_regulates_process_to_process rdfs:label "negatively_regulates_process_to_process" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "regulates_process_to_process" ;
+    biolink:mappings "RO:0002212" ;
+    biolink:mixins "negatively_regulates" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
+
+biolink:node_property rdfs:label "node_property" ;
+    biolink:domain "NamedThing" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "A grouping for any property that holds between a node and a value" .
+
+biolink:object rdfs:label "object" ;
+    biolink:domain "Association" ;
+    biolink:is_a "association_slot" ;
+    biolink:local_names "descriptor",
+        "node with incoming relationship" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "xsd:string" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:occurs_in rdfs:label "occurs_in" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "BFO:0000066",
+        "SEMMEDDB:OCCURS_IN",
+        "SEMMEDDB:PROCESS_OF" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between a process and a material entity or site within which the process occurs" .
+
+biolink:onset_qualifier rdfs:label "onset_qualifier" ;
+    biolink:domain "EntityToFeatureOrDiseaseQualifiers" ;
+    biolink:is_a "association_slot" ;
+    biolink:range "onset" ;
+    dcterms:description "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject" .
+
+biolink:orthologous_to rdfs:label "orthologous_to" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "homologous_to" ;
+    biolink:mappings "RO:HOM0000017",
+        "WD:P684" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "a homology relationship between entities (typically genes) that diverged after a speciation event." .
+
+biolink:overlaps rdfs:label "overlaps" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0002131" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between entties that overlap in their extents (materials or processes)" .
+
+biolink:pairwise_gene_or_protein_interaction_association_relation rdfs:label "pairwise_gene_or_protein_interaction_association_relation" ;
+    biolink:alias "relation" ;
+    biolink:definitional true ;
+    biolink:domain "PairwiseGeneOrProteinInteractionAssociation" ;
+    biolink:is_a "molecular_interaction_relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    biolink:subproperty_of "molecularly_interacts_with" ;
+    dcterms:description "interaction relationship type" .
+
+biolink:paralogous_to rdfs:label "paralogous_to" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "homologous_to" ;
+    biolink:mappings "RO:HOM0000011" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "a homology relationship that holds between entities (typically genes) that diverged after a duplication event." .
+
+biolink:part_of rdfs:label "part_of" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "has_part" ;
+    biolink:is_a "overlaps" ;
+    biolink:mappings "BFO:0000050",
+        "SEMMEDDB:PART_OF",
+        "WD:P361" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between parts and wholes (material entities or processes)" .
+
+biolink:participates_in rdfs:label "participates_in" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "has_participant" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0000056" ;
+    biolink:range "occurrent" ;
+    dcterms:description "holds between a continuant and a process, where the continuant is somehow involved in the process" .
+
+biolink:perecentage_frequency_value rdfs:label "perecentage_frequency_value" ;
+    biolink:mappings "UO:0000187" ;
+    biolink:typeof "xsd:double" .
+
+biolink:phase rdfs:label "phase" ;
+    biolink:domain "GenomicSequenceLocalization" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "TODO" .
+
+biolink:phenotype rdfs:label "phenotype" .
+
+biolink:physically_interacts_with rdfs:label "physically_interacts_with" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "interacts_with" ;
+    biolink:mappings "SEMMEDDB:INTERACTS_WITH",
+        "WD:P129" ;
+    biolink:range "xsd:string" ;
+    biolink:symmetric true ;
+    dcterms:description "holds between two entities that make physical contact as part of some interaction" .
+
+biolink:population_to_population_association_object rdfs:label "population_to_population_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "PopulationToPopulationAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "population of individual organisms" ;
+    biolink:required true ;
+    dcterms:description "the population that form the object of the association" .
+
+biolink:population_to_population_association_relation rdfs:label "population_to_population_association_relation" ;
+    biolink:alias "relation" ;
+    biolink:domain "PopulationToPopulationAssociation" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    dcterms:description "A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used" .
+
+biolink:population_to_population_association_subject rdfs:label "population_to_population_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "PopulationToPopulationAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "population of individual organisms" ;
+    biolink:required true ;
+    dcterms:description "the population that form the subject of the association" .
+
+biolink:positively_regulates rdfs:label "positively_regulates" ;
+    biolink:abstract true ;
+    biolink:comment "This is a grouping for process-process and entity-entity relations" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "regulates" ;
+    biolink:mappings "WD:P128" ;
+    biolink:mixin true ;
+    biolink:range "xsd:string" ;
+    dcterms:description "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
+
+biolink:positively_regulates_entity_to_entity rdfs:label "positively_regulates_entity_to_entity" ;
+    biolink:aliases "activity directly positively regulates activity of" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "regulates_entity_to_entity" ;
+    biolink:local_names "activity directly positively regulates activity of",
+        "positively regulates" ;
+    biolink:mappings "RO:0002450",
+        "SEMMEDDB:STIMULATES" ;
+    biolink:mixins "positively_regulates" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
+
+biolink:positively_regulates_process_to_process rdfs:label "positively_regulates_process_to_process" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "regulates_process_to_process" ;
+    biolink:mappings "RO:0002213" ;
+    biolink:mixins "positively_regulates" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
+
+biolink:precedes rdfs:label "precedes" ;
+    biolink:domain "Occurrent" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "BFO:0000063",
+        "SEMMEDDB:PRECEDES",
+        "WD:P156" ;
+    biolink:range "occurrent" ;
+    dcterms:description "holds between two processes, where one completes before the other begins" .
+
+biolink:predisposes rdfs:label "predisposes" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "affects_risk_for" ;
+    biolink:mappings "SEMMEDDB:PREDISPOSES" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between two entities where exposure to one entity increases the chance of developing the other " .
+
+biolink:prevents rdfs:label "prevents" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "affects_risk_for" ;
+    biolink:mappings "RO:0002559",
+        "SEMMEDDB:PREVENTS" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between an entity whose application or use reduces the likelihood of a potential outcome.  Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature." .
+
+biolink:produces rdfs:label "produces" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0003000",
+        "SEMMEDDB:PRODUCES",
+        "WD:P1056" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity" .
+
+biolink:provided_by rdfs:label "provided_by" ;
+    biolink:domain "Association" ;
+    biolink:is_a "association_slot" ;
+    biolink:mappings "pav:providedBy" ;
+    biolink:range "provider" ;
+    dcterms:description "connects an association to the agent (person, organization or group) that provided it" .
+
+biolink:publications rdfs:label "publications" ;
+    biolink:domain "Association" ;
+    biolink:is_a "association_slot" ;
+    biolink:multivalued true ;
+    biolink:range "publication" ;
+    biolink:singular_name "publication" ;
+    dcterms:description "connects an association to publications supporting the association" .
+
+biolink:qualifiers rdfs:label "qualifiers" ;
+    biolink:domain "Association" ;
+    biolink:is_a "association_slot" ;
+    biolink:local_names "annotation qualifier" ;
+    biolink:multivalued true ;
+    biolink:range "ontology class" ;
+    biolink:singular_name "qualifier" ;
+    dcterms:description "connects an association to qualifiers that modify or qualify the meaning of that association" .
+
+biolink:quantifier_qualifier rdfs:label "quantifier_qualifier" ;
+    biolink:domain "GeneToExpressionSiteAssociation" ;
+    biolink:is_a "association_slot" ;
+    biolink:range "ontology class" ;
+    dcterms:description "A measurable quantity for the object of the association" .
+
+biolink:quotient rdfs:label "quotient" ;
+    biolink:aliases "ratio" ;
+    biolink:mappings "UO:0010006" ;
+    biolink:typeof "xsd:double" .
+
+biolink:regulates rdfs:label "regulates" ;
+    biolink:abstract true ;
+    biolink:comment "This is a grouping for process-process and entity-entity relations" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "affects" ;
+    biolink:mappings "WD:P128" ;
+    biolink:mixin true ;
+    biolink:range "xsd:string" ;
+    dcterms:description "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
+
+biolink:regulates_entity_to_entity rdfs:label "regulates_entity_to_entity" ;
+    biolink:aliases "activity directly regulates activity of" ;
+    biolink:domain "MolecularEntity" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "regulates" ;
+    biolink:local_names "activity directly regulates activity of",
+        "regulates" ;
+    biolink:mappings "RO:0002448" ;
+    biolink:range "molecular entity" ;
+    dcterms:description "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
+
+biolink:regulates_process_to_process rdfs:label "regulates_process_to_process" ;
+    biolink:domain "Occurrent" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "regulates" ;
+    biolink:mappings "RO:0002211" ;
+    biolink:range "occurrent" ;
+    dcterms:description "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
+
+biolink:related_to rdfs:label "related_to" ;
+    biolink:domain "NamedThing" ;
+    biolink:mappings "SEMMEDDB:ASSOCIATED_WITH",
+        "owl:topObjectProperty" ;
+    biolink:range "named thing" ;
+    dcterms:description "A grouping for any relationship type that holds between any two things" .
+
+biolink:relation rdfs:label "relation" ;
+    biolink:domain "Association" ;
+    biolink:is_a "association_slot" ;
+    biolink:local_names "annotation predicate",
+        "predicate" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    dcterms:description "the relationship type by which a subject is connected to an object in an association" .
+
+biolink:same_as rdfs:label "same_as" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "WD:P2888",
+        "owl:equivalentClass",
+        "owl:sameAs",
+        "skos:exactMatch" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between two entities that are considered equivalent to each other" .
+
+biolink:sequence_feature_relationship_object rdfs:label "sequence_feature_relationship_object" ;
+    biolink:alias "object" ;
+    biolink:domain "SequenceFeatureRelationship" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "genomic entity" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:sequence_feature_relationship_subject rdfs:label "sequence_feature_relationship_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "SequenceFeatureRelationship" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "genomic entity" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:sequence_variant_has_biological_sequence rdfs:label "sequence_variant_has_biological_sequence" ;
+    biolink:alias "has biological sequence" ;
+    biolink:domain "SequenceVariant" ;
+    biolink:is_a "has_biological_sequence" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "biological sequence" ;
+    dcterms:description "The state of the sequence w.r.t a reference sequence" .
+
+biolink:sequence_variant_has_gene rdfs:label "sequence_variant_has_gene" ;
+    biolink:alias "has gene" ;
+    biolink:domain "SequenceVariant" ;
+    biolink:is_a "has_gene" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:multivalued true ;
+    biolink:range "gene" ;
+    dcterms:description "Each allele can be associated with any number of genes" .
+
+biolink:sequence_variant_id rdfs:label "sequence_variant_id" ;
+    biolink:alias "id" ;
+    biolink:domain "SequenceVariant" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "id" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "identifier type" ;
+    dcterms:description "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI" .
+
+biolink:sequence_variant_modulates_treatment_association_object rdfs:label "sequence_variant_modulates_treatment_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "SequenceVariantModulatesTreatmentAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "treatment" ;
+    biolink:required true ;
+    dcterms:description "treatment whose efficacy is modulated by the subject variant" .
+
+biolink:sequence_variant_modulates_treatment_association_subject rdfs:label "sequence_variant_modulates_treatment_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "SequenceVariantModulatesTreatmentAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "sequence variant" ;
+    biolink:required true ;
+    dcterms:description "variant that modulates the treatment of some disease" .
+
+biolink:sequence_variant_qualifier rdfs:label "sequence_variant_qualifier" ;
+    biolink:domain "GeneHasVariantThatContributesToDiseaseAssociation" ;
+    biolink:is_a "association_slot" ;
+    biolink:range "sequence variant" ;
+    dcterms:description "a qualifier used in an association where the variant" .
+
+biolink:severity_qualifier rdfs:label "severity_qualifier" ;
+    biolink:domain "EntityToFeatureOrDiseaseQualifiers" ;
+    biolink:is_a "association_slot" ;
+    biolink:range "severity value" ;
+    dcterms:description "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject" .
+
+biolink:sex_qualifier rdfs:label "sex_qualifier" ;
+    biolink:domain "EntityToPhenotypicFeatureAssociation" ;
+    biolink:is_a "association_slot" ;
+    biolink:range "biological sex" ;
+    dcterms:description "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex." .
+
+biolink:stage_qualifier rdfs:label "stage_qualifier" ;
+    biolink:domain "GeneToExpressionSiteAssociation" ;
+    biolink:is_a "association_slot" ;
+    biolink:path "object/during" ;
+    biolink:range "life stage" ;
+    dcterms:description "stage at which expression takes place" .
+
+biolink:start_interbase_coordinate rdfs:label "start_interbase_coordinate" ;
+    biolink:domain "GenomicSequenceLocalization" ;
+    biolink:is_a "interbase_coordinate" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "TODO" .
+
+biolink:subclass_of rdfs:label "subclass_of" ;
+    biolink:domain "OntologyClass" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "SEMMEDDB:IS_A",
+        "WD:P279",
+        "rdfs:subClassOf" ;
+    biolink:range "ontology class" ;
+    dcterms:description "holds between two classes where the domain class is a specialization of the range class" .
+
+biolink:subject rdfs:label "subject" ;
+    biolink:domain "Association" ;
+    biolink:is_a "association_slot" ;
+    biolink:local_names "annotation subject",
+        "node with outgoing relationship" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "xsd:string" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:symbol_type rdfs:label "symbol_type" ;
+    biolink:typeof "xsd:string" .
+
+biolink:systematic_synonym rdfs:label "systematic_synonym" ;
+    biolink:domain "NamedThing" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "label type" ;
+    dcterms:description "more commonly used for gene symbols in yeast" .
+
+biolink:thing_to_disease_or_phenotypic_feature_association_object rdfs:label "thing_to_disease_or_phenotypic_feature_association_object" ;
+    biolink:alias "object" ;
+    biolink:definitional true ;
+    biolink:domain "ThingToDiseaseOrPhenotypicFeatureAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "disease or phenotypic feature" ;
+    biolink:required true ;
+    dcterms:description "disease or phenotype" .
+
+biolink:time_type rdfs:label "time_type" ;
+    biolink:typeof "xsd:time" .
+
+biolink:timepoint rdfs:label "timepoint" ;
+    biolink:domain "GeographicLocationAtTime" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "time type" ;
+    dcterms:description "a point in time" .
+
+biolink:transcript_to_gene_relationship_object rdfs:label "transcript_to_gene_relationship_object" ;
+    biolink:alias "object" ;
+    biolink:domain "TranscriptToGeneRelationship" ;
+    biolink:is_a "sequence_feature_relationship_object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "gene" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:transcript_to_gene_relationship_subject rdfs:label "transcript_to_gene_relationship_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "TranscriptToGeneRelationship" ;
+    biolink:is_a "sequence_feature_relationship_subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "transcript" ;
+    biolink:required true ;
+    dcterms:description "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:treated_by rdfs:label "treated_by" ;
+    biolink:domain "DiseaseOrPhenotypicFeature" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "treats" ;
+    biolink:is_a "related_to" ;
+    biolink:mappings "RO:0002302",
+        "WD:P2176" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition " .
+
+biolink:treatment_treats rdfs:label "treatment_treats" ;
+    biolink:alias "treats" ;
+    biolink:domain "Treatment" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "treats" ;
+    biolink:mappings "RO:0002606",
+        "RO:0003307",
+        "SEMMEDDB:TREATS",
+        "WD:P2175" ;
+    biolink:range "disease or phenotypic feature" ;
+    biolink:required true ;
+    dcterms:description "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat " .
+
+biolink:treats rdfs:label "treats" ;
+    biolink:aliases "is substance that treats" ;
+    biolink:domain "Treatment" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:inverse "treated_by" ;
+    biolink:is_a "affects" ;
+    biolink:mappings "RO:0002606",
+        "RO:0003307",
+        "SEMMEDDB:TREATS",
+        "WD:P2175" ;
+    biolink:range "disease or phenotypic feature" ;
+    dcterms:description "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat " .
+
+biolink:unit rdfs:label "unit" ;
+    biolink:id_prefixes "UO" ;
+    biolink:mappings "UO:0000000" ;
+    biolink:typeof "xsd:string" .
+
+biolink:update_date rdfs:label "update_date" ;
+    biolink:is_a "node_property" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:date" ;
+    dcterms:description "date on which thing was updated. This can be applied to nodes or edges" .
+
+biolink:variant_to_disease_association_object rdfs:label "variant_to_disease_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "VariantToDiseaseAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "xsd:string" ;
+    biolink:required true ;
+    dcterms:description "a disease that is associated with that variant" .
+
+biolink:variant_to_disease_association_relation rdfs:label "variant_to_disease_association_relation" ;
+    biolink:alias "relation" ;
+    biolink:domain "VariantToDiseaseAssociation" ;
+    biolink:is_a "relation" ;
+    biolink:mappings "oban:association_has_predicate",
+        "owl:annotatedProperty",
+        "rdf:predicate" ;
+    biolink:range "relationship type" ;
+    biolink:required true ;
+    biolink:subproperty_of "related_condition" ;
+    dcterms:description "E.g. is pathogenic for" .
+
+biolink:variant_to_disease_association_subject rdfs:label "variant_to_disease_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "VariantToDiseaseAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "xsd:string" ;
+    biolink:required true ;
+    dcterms:description "a sequence variant in which the allele state is associated in some way with the disease state" .
+
+biolink:variant_to_phenotypic_feature_association_subject rdfs:label "variant_to_phenotypic_feature_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "VariantToPhenotypicFeatureAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "sequence variant" ;
+    biolink:required true ;
+    dcterms:description "a sequence variant in which the allele state is associated in some way with the phenotype state" .
+
+biolink:variant_to_population_association_has_count rdfs:label "variant_to_population_association_has_count" ;
+    biolink:alias "has count" ;
+    biolink:domain "VariantToPopulationAssociation" ;
+    biolink:is_a "has_count" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:integer" ;
+    dcterms:description "number in object population that carry a particular allele, aka allele count" .
+
+biolink:variant_to_population_association_has_quotient rdfs:label "variant_to_population_association_has_quotient" ;
+    biolink:alias "has quotient" ;
+    biolink:domain "VariantToPopulationAssociation" ;
+    biolink:is_a "has_quotient" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:double" ;
+    dcterms:description "frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency" .
+
+biolink:variant_to_population_association_has_total rdfs:label "variant_to_population_association_has_total" ;
+    biolink:alias "has total" ;
+    biolink:domain "VariantToPopulationAssociation" ;
+    biolink:is_a "has_total" ;
+    biolink:mappings "owl:topAnnotationProperty" ;
+    biolink:range "xsd:integer" ;
+    dcterms:description "number all populations that carry a particular allele, aka allele number" .
+
+biolink:variant_to_population_association_object rdfs:label "variant_to_population_association_object" ;
+    biolink:alias "object" ;
+    biolink:domain "VariantToPopulationAssociation" ;
+    biolink:is_a "object" ;
+    biolink:mappings "oban:association_has_object",
+        "owl:annotatedTarget",
+        "rdf:object" ;
+    biolink:range "population of individual organisms" ;
+    biolink:required true ;
+    dcterms:description "the population that is observed to have the frequency" .
+
+biolink:variant_to_population_association_subject rdfs:label "variant_to_population_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "VariantToPopulationAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "sequence variant" ;
+    biolink:required true ;
+    dcterms:description "an allele that has a certain frequency in a given population" .
+
+biolink:variant_to_thing_association_subject rdfs:label "variant_to_thing_association_subject" ;
+    biolink:alias "subject" ;
+    biolink:domain "VariantToThingAssociation" ;
+    biolink:is_a "subject" ;
+    biolink:mappings "oban:association_has_subject",
+        "owl:annotatedSource",
+        "rdf:subject" ;
+    biolink:range "sequence variant" ;
+    biolink:required true ;
+    dcterms:description "a sequence variant in which the allele state is associated with some other entity" .
+
+biolink:xenologous_to rdfs:label "xenologous_to" ;
+    biolink:in_subset "translator_minimal" ;
+    biolink:is_a "homologous_to" ;
+    biolink:mappings "RO:HOM0000018" ;
+    biolink:range "xsd:string" ;
+    dcterms:description "a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor." .
+
+
+
