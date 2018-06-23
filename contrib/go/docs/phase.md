@@ -6,6 +6,7 @@ TODO
 URI: [http://bioentity.io/vocab/phase](slot_uri)
 ## Mappings
 
+ * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [GenomicSequenceLocalization](GenomicSequenceLocalization.md) -> **string**

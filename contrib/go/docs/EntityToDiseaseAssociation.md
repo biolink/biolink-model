@@ -22,7 +22,7 @@ URI: [http://bioentity.io/vocab/EntityToDiseaseAssociation](http://bioentity.io/
 
  * _[entity to disease association.object](entity_to_disease_association_object.md)_
     * _disease_
-    * range: [Disease](Disease.md)
+    * range: [Disease](Disease.md) [required]
     * __Local__
  * _[onset qualifier](onset_qualifier.md)_
     * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_

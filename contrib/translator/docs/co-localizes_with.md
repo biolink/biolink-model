@@ -9,7 +9,7 @@ URI: [http://bioentity.io/vocab/co-localizes_with](slot_uri)
  * [RO:00002325](http://purl.obolibrary.org/obo/RO_00002325)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> **string**
+None -> **string**
 ## Inheritance
 
  *  is_a: [coexists with](coexists_with.md) *subsets*: (translator_minimal)

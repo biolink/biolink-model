@@ -20,16 +20,16 @@ URI: [http://bioentity.io/vocab/VariantToDiseaseAssociation](http://bioentity.io
 ## Fields
 
  * _[variant to disease association.object](variant_to_disease_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _a disease that is associated with that variant_
     * range: **string** [required]
     * __Local__
  * _[variant to disease association.relation](variant_to_disease_association_relation.md)_
-    * _the relationship type by which a subject is connected to an object in an association_
+    * _E.g. is pathogenic for_
     * range: [RelationshipType](RelationshipType.md) [required]
     * edge label: related condition
     * __Local__
  * _[variant to disease association.subject](variant_to_disease_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _a sequence variant in which the allele state is associated in some way with the disease state_
     * range: **string** [required]
     * __Local__
  * _[association slot](association_slot.md)_

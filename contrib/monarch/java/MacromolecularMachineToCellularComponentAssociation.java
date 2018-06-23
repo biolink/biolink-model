@@ -20,15 +20,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class MacromolecularMachineToCellularComponentAssociation {
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * class describing the activity, process or localization of the gene product
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("class describing the activity, process or localization of the gene product")
     private String object;
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * class describing the activity, process or localization of the gene product
      * 
      */
     @JsonProperty("object")
@@ -37,7 +37,7 @@ public class MacromolecularMachineToCellularComponentAssociation {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * class describing the activity, process or localization of the gene product
      * 
      */
     @JsonProperty("object")

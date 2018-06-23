@@ -20,15 +20,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class MacromolecularMachine {
 
     /**
-     * A human-readable name for a thing
+     * genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * 
      */
     @JsonProperty("name")
-    @JsonPropertyDescription("A human-readable name for a thing")
+    @JsonPropertyDescription("genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name")
     private String name;
 
     /**
-     * A human-readable name for a thing
+     * genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * 
      */
     @JsonProperty("name")
@@ -37,7 +37,7 @@ public class MacromolecularMachine {
     }
 
     /**
-     * A human-readable name for a thing
+     * genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
      * 
      */
     @JsonProperty("name")

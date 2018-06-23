@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/has_alternate_identifier](slot_uri)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [IdentifierType](IdentifierType.md)
+[NamedThing](NamedThing.md) -> identifier
 ## Inheritance
 
 ## Children

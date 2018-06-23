@@ -1,17 +1,20 @@
 # Slot: object
 
 
-connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+class describing the activity, process or localization of the gene product
 
 URI: [http://bioentity.io/vocab/macromolecular_machine_to_molecular_activity_association_object](slot_uri)
 ## Mappings
 
+ * [rdf:object](http://purl.obolibrary.org/obo/rdf_object)
+ * [owl:annotatedTarget](http://purl.obolibrary.org/obo/owl_annotatedTarget)
+ * [oban:association_has_object](http://purl.obolibrary.org/obo/oban_association_has_object)
 ## Domain and Range
 
 [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) -> [MolecularActivity](MolecularActivity.md)
 ## Inheritance
 
- *  is_a: [object](object.md)
+ *  is_a: [functional association.object](functional_association_object.md)
 ## Children
 
 ## Used in

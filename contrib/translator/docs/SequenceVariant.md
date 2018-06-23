@@ -28,12 +28,12 @@ URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/Seque
 ## Fields
 
  * _[sequence variant.has biological sequence](sequence_variant_has_biological_sequence.md)_
-    * _connects a genomic feature to its sequence_
+    * _The state of the sequence w.r.t a reference sequence_
     * range: [BiologicalSequence](BiologicalSequence.md)
     * __Local__
  * _[sequence variant.has gene](sequence_variant_has_gene.md)_
     * _Each allele can be associated with any number of genes_
-    * range: **string***
+    * range: [Gene](Gene.md)*
     * __Local__
  * _[sequence variant.id](sequence_variant_id.md) *subsets*: (translator_minimal)_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_

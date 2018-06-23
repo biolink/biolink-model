@@ -20,11 +20,11 @@ URI: [http://bioentity.io/vocab/GeneToGeneAssociation](http://bioentity.io/vocab
 ## Fields
 
  * _[gene to gene association.object](gene_to_gene_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa_
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__
  * _[gene to gene association.subject](gene_to_gene_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa_
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

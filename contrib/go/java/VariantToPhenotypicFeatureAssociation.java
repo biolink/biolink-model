@@ -20,15 +20,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class VariantToPhenotypicFeatureAssociation {
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * a sequence variant in which the allele state is associated in some way with the phenotype state
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("a sequence variant in which the allele state is associated in some way with the phenotype state")
     private String subject;
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * a sequence variant in which the allele state is associated in some way with the phenotype state
      * 
      */
     @JsonProperty("subject")
@@ -37,7 +37,7 @@ public class VariantToPhenotypicFeatureAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * a sequence variant in which the allele state is associated in some way with the phenotype state
      * 
      */
     @JsonProperty("subject")

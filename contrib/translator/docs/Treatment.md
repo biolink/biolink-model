@@ -20,10 +20,11 @@ URI: [http://bioentity.io/vocab/Treatment](http://bioentity.io/vocab/Treatment)
  *  class: **[SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md)** *[sequence variant modulates treatment association.object](sequence_variant_modulates_treatment_association_object.md)* **[Treatment](Treatment.md)**
 ## Fields
 
- * _[treatment.has exposure parts](treatment_has_exposure_parts.md)_
+ * _[treatment.has exposure parts](has_exposure_parts.md)_
     * range: [DrugExposure](DrugExposure.md)* [required]
     * __Local__
- * _[treatment.treats](treatment_treats.md)_
+ * _[treatment.treats](treatment_treats.md) *subsets*: (translator_minimal)_
+    * _holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat _
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) [required]
     * __Local__
  * _[category](category.md) *subsets*: (translator_minimal)_

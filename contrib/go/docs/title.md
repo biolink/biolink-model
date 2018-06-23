@@ -14,8 +14,10 @@ URI: [http://bioentity.io/vocab/title](slot_uri)
 
 ## Children
 
- *  child: [named graph.title](named_graph_title.md)
  *  child: [causal activity model.title](causal_activity_model_title.md)
+ *  child: [named graph.title](named_graph_title.md)
 ## Used in
 
+ *  usage: [NamedGraph](NamedGraph.md)
  *  usage: [InformationContentEntity](InformationContentEntity.md)
+ *  usage: [CausalActivityModel](CausalActivityModel.md)

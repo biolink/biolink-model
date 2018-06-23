@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/CausalActivityModel](http://bioentity.io/vocab/C
 ## Fields
 
  * _[causal activity model.title](causal_activity_model_title.md)_
-    * _Narrative text describing the entity_
+    * _title describing the contents of the GO-CAM_
     * range: [LabelType](LabelType.md)
     * __Local__
  * _[category](category.md) *subsets*: (translator_minimal)_

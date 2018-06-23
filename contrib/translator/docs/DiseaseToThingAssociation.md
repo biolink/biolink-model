@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/DiseaseToThingAssociation](http://bioentity.io/v
 ## Fields
 
  * _[disease to thing association.subject](disease_to_thing_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _disease class_
     * range: [Disease](Disease.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

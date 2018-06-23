@@ -1,0 +1,5793 @@
+{
+  "name": "biolink model",
+  "description": "Entity and association taxonomy and datamodel for life-sciences data",
+  "id_prefixes": [
+    "rdf",
+    "rdfs",
+    "xsd",
+    "skos",
+    "OIO"
+  ],
+  "id": "https://biolink.github.io/biolink-model/ontology/biolink.ttl",
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "prefixes": [
+    {
+      "local_name": "biolink",
+      "prefix_uri": "http://bioentity.io/vocab/"
+    },
+    {
+      "local_name": "OBAN",
+      "prefix_uri": "http://purl.org/oban/"
+    },
+    {
+      "local_name": "SIO",
+      "prefix_uri": "http://semanticscience.org/resource/SIO_"
+    },
+    {
+      "local_name": "wgs",
+      "prefix_uri": "http://www.w3.org/2003/01/geo/wgs84_pos"
+    }
+  ],
+  "default_prefix": "biolink",
+  "default_curi_maps": [
+    "obo_context",
+    "monarch_context",
+    "idot_context",
+    "semweb_context"
+  ],
+  "types": [
+    {
+      "name": "phenotype",
+      "@id": "phenotype"
+    },
+    {
+      "name": "evidence instance",
+      "@id": "evidence_instance"
+    },
+    {
+      "name": "chemical formula value",
+      "@id": "chemical_formula_value"
+    },
+    {
+      "name": "identifier type",
+      "description": "A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form",
+      "typeof": "string",
+      "@id": "identifier_type"
+    },
+    {
+      "name": "iri type",
+      "description": "An IRI",
+      "typeof": "string",
+      "@id": "iri_type"
+    },
+    {
+      "name": "label type",
+      "description": "A string that provides a human-readable name for a thing",
+      "typeof": "string",
+      "@id": "label_type"
+    },
+    {
+      "name": "narrative text",
+      "description": "A string that provides a human-readable description of something",
+      "typeof": "string",
+      "@id": "narrative_text"
+    },
+    {
+      "name": "symbol type",
+      "typeof": "string",
+      "@id": "symbol_type"
+    },
+    {
+      "name": "chemical formula type",
+      "typeof": "string",
+      "@id": "chemical_formula_type"
+    },
+    {
+      "name": "frequency value",
+      "mappings": [
+        "UO:0000105"
+      ],
+      "@id": "frequency_value"
+    },
+    {
+      "name": "perecentage frequency value",
+      "mappings": [
+        "UO:0000187"
+      ],
+      "typeof": "double",
+      "@id": "perecentage_frequency_value"
+    },
+    {
+      "name": "quotient",
+      "aliases": [
+        "ratio"
+      ],
+      "mappings": [
+        "UO:0010006"
+      ],
+      "typeof": "double",
+      "@id": "quotient"
+    },
+    {
+      "name": "unit",
+      "mappings": [
+        "UO:0000000"
+      ],
+      "id_prefixes": [
+        "UO"
+      ],
+      "typeof": "string",
+      "@id": "unit"
+    },
+    {
+      "name": "time type",
+      "typeof": "time",
+      "@id": "time_type"
+    },
+    {
+      "name": "biological sequence",
+      "typeof": "string",
+      "@id": "biological_sequence"
+    }
+  ],
+  "slots": [
+    {
+      "name": "related_to",
+      "description": "A grouping for any relationship type that holds between any two things",
+      "mappings": [
+        "owl:topObjectProperty",
+        "SEMMEDDB:ASSOCIATED_WITH"
+      ],
+      "domain": "NamedThing",
+      "range": "NamedThing",
+      "@id": "related_to"
+    },
+    {
+      "name": "interacts_with",
+      "description": "holds between any two entities that directly or indirectly interact with each other",
+      "mappings": [
+        "RO:0002434"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "symmetric": true,
+      "range": "xsd:string",
+      "@id": "interacts_with"
+    },
+    {
+      "name": "physically_interacts_with",
+      "description": "holds between two entities that make physical contact as part of some interaction",
+      "mappings": [
+        "WD:P129",
+        "SEMMEDDB:INTERACTS_WITH"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "interacts_with",
+      "symmetric": true,
+      "range": "xsd:string",
+      "@id": "physically_interacts_with"
+    },
+    {
+      "name": "molecularly_interacts_with",
+      "description": "holds between two entities that make physical contact as part of some interaction",
+      "mappings": [
+        "RO:0002436"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "physically_interacts_with",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "molecularly_interacts_with"
+    },
+    {
+      "name": "genetically_interacts_with",
+      "description": "holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.",
+      "mappings": [
+        "RO:0002435"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "interacts_with",
+      "domain": "Gene",
+      "range": "Gene",
+      "@id": "genetically_interacts_with"
+    },
+    {
+      "name": "affects",
+      "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "@id": "affects"
+    },
+    {
+      "name": "regulates",
+      "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
+      "comment": "This is a grouping for process-process and entity-entity relations",
+      "mappings": [
+        "WD:P128"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "mixin": true,
+      "abstract": true,
+      "range": "xsd:string",
+      "@id": "regulates"
+    },
+    {
+      "name": "positively_regulates",
+      "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
+      "comment": "This is a grouping for process-process and entity-entity relations",
+      "mappings": [
+        "WD:P128"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "regulates",
+      "mixin": true,
+      "abstract": true,
+      "range": "xsd:string",
+      "@id": "positively_regulates"
+    },
+    {
+      "name": "negatively_regulates",
+      "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
+      "comment": "This is a grouping for process-process and entity-entity relations",
+      "mappings": [
+        "WD:P128"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "regulates",
+      "mixin": true,
+      "abstract": true,
+      "range": "xsd:string",
+      "@id": "negatively_regulates"
+    },
+    {
+      "name": "regulates_process_to_process",
+      "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
+      "mappings": [
+        "RO:0002211"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "regulates",
+      "domain": "Occurrent",
+      "range": "Occurrent",
+      "@id": "regulates_process_to_process"
+    },
+    {
+      "name": "positively_regulates_process_to_process",
+      "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
+      "mappings": [
+        "RO:0002213"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "regulates_process_to_process",
+      "mixins": [
+        "positively_regulates"
+      ],
+      "range": "xsd:string",
+      "@id": "positively_regulates_process_to_process"
+    },
+    {
+      "name": "negatively_regulates_process_to_process",
+      "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
+      "mappings": [
+        "RO:0002212"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "regulates_process_to_process",
+      "mixins": [
+        "negatively_regulates"
+      ],
+      "range": "xsd:string",
+      "@id": "negatively_regulates_process_to_process"
+    },
+    {
+      "name": "regulates_entity_to_entity",
+      "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
+      "aliases": [
+        "activity directly regulates activity of"
+      ],
+      "mappings": [
+        "RO:0002448"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "regulates",
+      "local_names": [
+        "regulates",
+        "activity directly regulates activity of"
+      ],
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "regulates_entity_to_entity"
+    },
+    {
+      "name": "positively_regulates_entity_to_entity",
+      "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
+      "aliases": [
+        "activity directly positively regulates activity of"
+      ],
+      "mappings": [
+        "RO:0002450",
+        "SEMMEDDB:STIMULATES"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "regulates_entity_to_entity",
+      "mixins": [
+        "positively_regulates"
+      ],
+      "local_names": [
+        "positively regulates",
+        "activity directly positively regulates activity of"
+      ],
+      "range": "xsd:string",
+      "@id": "positively_regulates_entity_to_entity"
+    },
+    {
+      "name": "negatively_regulates_entity_to_entity",
+      "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
+      "aliases": [
+        "activity directly negatively regulates activity of"
+      ],
+      "mappings": [
+        "RO:0002449",
+        "SEMMEDDB:INHIBITS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "regulates_entity_to_entity",
+      "mixins": [
+        "negatively_regulates"
+      ],
+      "local_names": [
+        "negatively regulates",
+        "activity directly negatively regulates activity of"
+      ],
+      "range": "xsd:string",
+      "@id": "negatively_regulates_entity_to_entity"
+    },
+    {
+      "name": "disrupts",
+      "description": "describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.",
+      "mappings": [
+        "SEMMEDDB:DISRUPTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "range": "xsd:string",
+      "@id": "disrupts"
+    },
+    {
+      "name": "has_gene_product",
+      "description": "holds between a gene and a transcribed and/or translated product generated from it",
+      "mappings": [
+        "RO:0002205",
+        "WD:P688"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "domain": "Gene",
+      "range": "GeneProduct",
+      "@id": "has_gene_product"
+    },
+    {
+      "name": "homologous_to",
+      "description": "holds between two biological entities that have common evolutionary origin",
+      "comment": "typically used to describe homology relationships between genes or gene products",
+      "aliases": [
+        "in homology relationship with"
+      ],
+      "mappings": [
+        "RO:HOM0000001",
+        "SIO:010302"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "@id": "homologous_to"
+    },
+    {
+      "name": "paralogous_to",
+      "description": "a homology relationship that holds between entities (typically genes) that diverged after a duplication event.",
+      "mappings": [
+        "RO:HOM0000011"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "homologous_to",
+      "range": "xsd:string",
+      "@id": "paralogous_to"
+    },
+    {
+      "name": "orthologous_to",
+      "description": "a homology relationship between entities (typically genes) that diverged after a speciation event.",
+      "mappings": [
+        "RO:HOM0000017",
+        "WD:P684"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "homologous_to",
+      "range": "xsd:string",
+      "@id": "orthologous_to"
+    },
+    {
+      "name": "xenologous_to",
+      "description": "a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.",
+      "mappings": [
+        "RO:HOM0000018"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "homologous_to",
+      "range": "xsd:string",
+      "@id": "xenologous_to"
+    },
+    {
+      "name": "coexists_with",
+      "description": "holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region",
+      "mappings": [
+        "SEMMEDDB:COEXISTS_WITH"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "@id": "coexists_with"
+    },
+    {
+      "name": "in_pathway_with",
+      "description": "holds between two genes or gene products that are part of in the same biological pathway",
+      "mappings": [
+        "SEMMEDDB:COEXISTS_WITH"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "coexists_with",
+      "domain": "GeneOrGeneProduct",
+      "range": "GeneOrGeneProduct",
+      "@id": "in_pathway_with"
+    },
+    {
+      "name": "in_complex_with",
+      "description": "holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex",
+      "mappings": [
+        "SEMMEDDB:COEXISTS_WITH"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "coexists_with",
+      "domain": "GeneOrGeneProduct",
+      "range": "GeneOrGeneProduct",
+      "@id": "in_complex_with"
+    },
+    {
+      "name": "in_cell_population_with",
+      "description": "holds between two genes or gene products that are expressed in the same cell type or population ",
+      "mappings": [
+        "SEMMEDDB:COEXISTS_WITH"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "coexists_with",
+      "domain": "GeneOrGeneProduct",
+      "range": "GeneOrGeneProduct",
+      "@id": "in_cell_population_with"
+    },
+    {
+      "name": "co-localizes_with",
+      "description": "holds between two entities that are observed to be located in the same place.",
+      "mappings": [
+        "RO:00002325"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "coexists_with",
+      "range": "xsd:string",
+      "@id": "co-localizes_with"
+    },
+    {
+      "name": "gene_associated_with_condition",
+      "description": "holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with",
+      "mappings": [
+        "WD:P2293"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "domain": "Gene",
+      "range": "DiseaseOrPhenotypicFeature",
+      "@id": "gene_associated_with_condition"
+    },
+    {
+      "name": "affects_risk_for",
+      "description": "holds between two entities where exposure to one entity alters the chance of developing the other ",
+      "mappings": [
+        "owl:topObjectProperty",
+        "SEMMEDDB:ASSOCIATED_WITH"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "@id": "affects_risk_for"
+    },
+    {
+      "name": "predisposes",
+      "description": "holds between two entities where exposure to one entity increases the chance of developing the other ",
+      "mappings": [
+        "SEMMEDDB:PREDISPOSES"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_risk_for",
+      "range": "xsd:string",
+      "@id": "predisposes"
+    },
+    {
+      "name": "contributes_to",
+      "description": "holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other",
+      "mappings": [
+        "RO:0002326"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "@id": "contributes_to"
+    },
+    {
+      "name": "causes",
+      "description": "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other",
+      "mappings": [
+        "RO:0002410",
+        "SEMMEDDB:CAUSES",
+        "WD:P1542"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "contributes_to",
+      "range": "xsd:string",
+      "@id": "causes"
+    },
+    {
+      "name": "treats",
+      "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ",
+      "aliases": [
+        "is substance that treats"
+      ],
+      "mappings": [
+        "RO:0002606",
+        "RO:0003307",
+        "SEMMEDDB:TREATS",
+        "WD:P2175"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "Treatment",
+      "range": "DiseaseOrPhenotypicFeature",
+      "inverse": "treated_by",
+      "@id": "treats"
+    },
+    {
+      "name": "prevents",
+      "description": "holds between an entity whose application or use reduces the likelihood of a potential outcome.  Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.",
+      "mappings": [
+        "RO:0002559",
+        "SEMMEDDB:PREVENTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_risk_for",
+      "range": "xsd:string",
+      "@id": "prevents"
+    },
+    {
+      "name": "correlated_with",
+      "description": "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
+      "mappings": [
+        "RO:0002610"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "domain": "DiseaseOrPhenotypicFeature",
+      "range": "MolecularEntity",
+      "@id": "correlated_with"
+    },
+    {
+      "name": "has_biomarker",
+      "description": "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
+      "mappings": [
+        "RO:0002610"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "correlated_with",
+      "domain": "DiseaseOrPhenotypicFeature",
+      "range": "MolecularEntity",
+      "inverse": "biomarker_for",
+      "@id": "has_biomarker"
+    },
+    {
+      "name": "biomarker_for",
+      "description": "holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.",
+      "mappings": [
+        "RO:0002607"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "correlated_with",
+      "domain": "MolecularEntity",
+      "range": "DiseaseOrPhenotypicFeature",
+      "inverse": "has_biomarker",
+      "@id": "biomarker_for"
+    },
+    {
+      "name": "treated_by",
+      "description": "holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition ",
+      "mappings": [
+        "RO:0002302",
+        "WD:P2176"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "domain": "DiseaseOrPhenotypicFeature",
+      "range": "xsd:string",
+      "inverse": "treats",
+      "@id": "treated_by"
+    },
+    {
+      "name": "expressed_in",
+      "description": "holds between a gene or gene product and an anatomical entity in which it is expressed",
+      "mappings": [
+        "RO:0002206"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "domain": "GeneOrGeneProduct",
+      "range": "AnatomicalEntity",
+      "inverse": "expresses",
+      "@id": "expressed_in"
+    },
+    {
+      "name": "expresses",
+      "description": "holds between an anatomical entity and gene or gene product that is expressed there",
+      "mappings": [
+        "RO:0002292"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "domain": "AnatomicalEntity",
+      "range": "GeneOrGeneProduct",
+      "inverse": "expressed_in",
+      "@id": "expresses"
+    },
+    {
+      "name": "has_phenotype",
+      "description": "holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). ",
+      "mappings": [
+        "RO:0002200"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "domain": "BiologicalEntity",
+      "range": "phenotype",
+      "@id": "has_phenotype"
+    },
+    {
+      "name": "occurs_in",
+      "description": "holds between a process and a material entity or site within which the process occurs",
+      "mappings": [
+        "BFO:0000066",
+        "SEMMEDDB:OCCURS_IN",
+        "SEMMEDDB:PROCESS_OF"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "@id": "occurs_in"
+    },
+    {
+      "name": "located_in",
+      "description": "holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)",
+      "mappings": [
+        "BFO:0000066",
+        "WD:276"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "inverse": "location_of",
+      "@id": "located_in"
+    },
+    {
+      "name": "location_of",
+      "description": "holds between material entity or site and a material entity that is located within it (but not considered a part of it) ",
+      "mappings": [
+        "RO:0001015",
+        "SEMMEDDB:LOCATION_OF"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "inverse": "located_in",
+      "@id": "location_of"
+    },
+    {
+      "name": "model_of",
+      "description": "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.    ",
+      "mappings": [
+        "RO:0003301"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "@id": "model_of"
+    },
+    {
+      "name": "overlaps",
+      "description": "holds between entties that overlap in their extents (materials or processes)",
+      "mappings": [
+        "RO:0002131"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "@id": "overlaps"
+    },
+    {
+      "name": "has_part",
+      "description": "holds between wholes and their parts (material entities or processes)",
+      "mappings": [
+        "BFO:0000051",
+        "WD:P527"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "overlaps",
+      "range": "xsd:string",
+      "inverse": "part_of",
+      "@id": "has_part"
+    },
+    {
+      "name": "part_of",
+      "description": "holds between parts and wholes (material entities or processes)",
+      "mappings": [
+        "BFO:0000050",
+        "SEMMEDDB:PART_OF",
+        "WD:P361"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "overlaps",
+      "range": "xsd:string",
+      "inverse": "has_part",
+      "@id": "part_of"
+    },
+    {
+      "name": "has_participant",
+      "description": "holds between a process and a continuant, where the continuant is somehow involved in the process ",
+      "mappings": [
+        "RO:0000057",
+        "WD:P2283"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "domain": "Occurrent",
+      "range": "xsd:string",
+      "inverse": "participates_in",
+      "@id": "has_participant"
+    },
+    {
+      "name": "has_input",
+      "description": "holds between a process and a continuant, where the continuant is an input into the process",
+      "mappings": [
+        "RO:0002233",
+        "SEMMEDDB:USES"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "has_participant",
+      "domain": "Occurrent",
+      "range": "xsd:string",
+      "@id": "has_input"
+    },
+    {
+      "name": "participates_in",
+      "description": "holds between a continuant and a process, where the continuant is somehow involved in the process",
+      "mappings": [
+        "RO:0000056"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "Occurrent",
+      "inverse": "has_participant",
+      "@id": "participates_in"
+    },
+    {
+      "name": "actively_involved_in",
+      "description": "holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes",
+      "mappings": [
+        "RO:0002331"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "participates_in",
+      "range": "Occurrent",
+      "@id": "actively_involved_in"
+    },
+    {
+      "name": "capable_of",
+      "description": "holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function. ",
+      "mappings": [
+        "RO:0002215"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "actively_involved_in",
+      "range": "Occurrent",
+      "@id": "capable_of"
+    },
+    {
+      "name": "derives_into",
+      "description": "holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity",
+      "mappings": [
+        "RO:0001001",
+        "SEMMEDDB:CONVERTS_TO"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "inverse": "derives_from",
+      "@id": "derives_into"
+    },
+    {
+      "name": "derives_from",
+      "description": "holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity",
+      "mappings": [
+        "RO:0001000"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "inverse": "derives_into",
+      "@id": "derives_from"
+    },
+    {
+      "name": "manifestation_of",
+      "description": "used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome",
+      "mappings": [
+        "SEMMEDDB:MANIFESTATION_OF",
+        "WD:P1557"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "Disease",
+      "@id": "manifestation_of"
+    },
+    {
+      "name": "produces",
+      "description": "holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity",
+      "mappings": [
+        "RO:0003000",
+        "WD:P1056",
+        "SEMMEDDB:PRODUCES"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "@id": "produces"
+    },
+    {
+      "name": "precedes",
+      "description": "holds between two processes, where one completes before the other begins",
+      "mappings": [
+        "BFO:0000063",
+        "SEMMEDDB:PRECEDES",
+        "WD:P156"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "domain": "Occurrent",
+      "range": "Occurrent",
+      "@id": "precedes"
+    },
+    {
+      "name": "same_as",
+      "description": "holds between two entities that are considered equivalent to each other",
+      "mappings": [
+        "owl:equivalentClass",
+        "owl:sameAs",
+        "skos:exactMatch",
+        "WD:P2888"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "range": "xsd:string",
+      "@id": "same_as"
+    },
+    {
+      "name": "subclass_of",
+      "description": "holds between two classes where the domain class is a specialization of the range class",
+      "mappings": [
+        "rdfs:subClassOf",
+        "SEMMEDDB:IS_A",
+        "WD:P279"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "domain": "OntologyClass",
+      "range": "OntologyClass",
+      "@id": "subclass_of"
+    },
+    {
+      "name": "node_property",
+      "description": "A grouping for any property that holds between a node and a value",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "domain": "NamedThing",
+      "range": "xsd:string",
+      "@id": "node_property"
+    },
+    {
+      "name": "id",
+      "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "range": "identifier_type",
+      "identifier": true,
+      "@id": "id"
+    },
+    {
+      "name": "iri",
+      "description": "An IRI for the node. This is determined by the id using expansion rules.",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "range": "iri_type",
+      "@id": "iri"
+    },
+    {
+      "name": "name",
+      "description": "A human-readable name for a thing",
+      "aliases": [
+        "label",
+        "display name"
+      ],
+      "mappings": [
+        "rdfs:label"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "range": "label_type",
+      "@id": "name"
+    },
+    {
+      "name": "category",
+      "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+      "mappings": [
+        "rdf:type"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "range": "label_type",
+      "is_class_field": true,
+      "@id": "category"
+    },
+    {
+      "name": "full_name",
+      "description": "a long-form human readable name for a thing",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "range": "label_type",
+      "@id": "full_name"
+    },
+    {
+      "name": "description",
+      "description": "a human-readable description of a thing",
+      "mappings": [
+        "dcterms:description"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "range": "narrative_text",
+      "@id": "description"
+    },
+    {
+      "name": "systematic_synonym",
+      "description": "more commonly used for gene symbols in yeast",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "node_property",
+      "domain": "NamedThing",
+      "range": "label_type",
+      "@id": "systematic_synonym"
+    },
+    {
+      "name": "association_slot",
+      "description": "any slot that relates an association to another entity",
+      "aliases": [
+        "edge property",
+        "statement property"
+      ],
+      "abstract": true,
+      "domain": "Association",
+      "range": "xsd:string",
+      "@id": "association_slot"
+    },
+    {
+      "name": "subject",
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "association_slot",
+      "local_names": [
+        "annotation subject",
+        "node with outgoing relationship"
+      ],
+      "domain": "Association",
+      "range": "xsd:string",
+      "required": true,
+      "@id": "subject"
+    },
+    {
+      "name": "object",
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "association_slot",
+      "local_names": [
+        "descriptor",
+        "node with incoming relationship"
+      ],
+      "domain": "Association",
+      "range": "xsd:string",
+      "required": true,
+      "@id": "object"
+    },
+    {
+      "name": "edge_label",
+      "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. ",
+      "note": "in neo4j this corresponds to the relationship type and the convention is for a snake_case label",
+      "is_a": "association_slot",
+      "range": "label_type",
+      "@id": "edge_label"
+    },
+    {
+      "name": "relation",
+      "description": "the relationship type by which a subject is connected to an object in an association",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "association_slot",
+      "local_names": [
+        "annotation predicate",
+        "predicate"
+      ],
+      "domain": "Association",
+      "range": "RelationshipType",
+      "required": true,
+      "@id": "relation"
+    },
+    {
+      "name": "negated",
+      "description": "if set to true, then the association is negated i.e. is not true",
+      "is_a": "association_slot",
+      "domain": "Association",
+      "range": "xsd:boolean",
+      "@id": "negated"
+    },
+    {
+      "name": "has_confidence_level",
+      "description": "connects an association to a qualitative term denoting the level of confidence",
+      "is_a": "association_slot",
+      "range": "ConfidenceLevel",
+      "@id": "has_confidence_level"
+    },
+    {
+      "name": "has_evidence",
+      "description": "connects an association to an instance of supporting evidence",
+      "mappings": [
+        "RO:0002558"
+      ],
+      "is_a": "association_slot",
+      "range": "evidence_instance",
+      "@id": "has_evidence"
+    },
+    {
+      "name": "provided_by",
+      "description": "connects an association to the agent (person, organization or group) that provided it",
+      "mappings": [
+        "pav:providedBy"
+      ],
+      "is_a": "association_slot",
+      "domain": "Association",
+      "range": "Provider",
+      "@id": "provided_by"
+    },
+    {
+      "name": "association_type",
+      "description": "connects an association to the type of association (e.g. gene to phenotype)",
+      "mappings": [
+        "rdf:type"
+      ],
+      "is_a": "association_slot",
+      "domain": "Association",
+      "range": "OntologyClass",
+      "@id": "association_type"
+    },
+    {
+      "name": "creation_date",
+      "description": "date on which thing was created. This can be applied to nodes or edges",
+      "mappings": [
+        "dcterms:created"
+      ],
+      "is_a": "node_property",
+      "range": "xsd:date",
+      "@id": "creation_date"
+    },
+    {
+      "name": "update_date",
+      "description": "date on which thing was updated. This can be applied to nodes or edges",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "node_property",
+      "range": "xsd:date",
+      "@id": "update_date"
+    },
+    {
+      "name": "in_taxon",
+      "description": "connects a thing to a class representing a taxon",
+      "mappings": [
+        "RO:0002162",
+        "WD:P703"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "related_to",
+      "domain": "ThingWithTaxon",
+      "range": "OrganismTaxon",
+      "@id": "in_taxon"
+    },
+    {
+      "name": "latitude",
+      "description": "latitude",
+      "mappings": [
+        "wgs:lat"
+      ],
+      "is_a": "node_property",
+      "domain": "GeographicLocation",
+      "range": "xsd:float",
+      "@id": "latitude"
+    },
+    {
+      "name": "longitude",
+      "description": "longitude",
+      "mappings": [
+        "wgs:long"
+      ],
+      "is_a": "node_property",
+      "domain": "GeographicLocation",
+      "range": "xsd:float",
+      "@id": "longitude"
+    },
+    {
+      "name": "has_chemical_formula",
+      "description": "description of chemical compound based on element symbols",
+      "mappings": [
+        "WD:P274"
+      ],
+      "is_a": "node_property",
+      "range": "chemical_formula_value",
+      "@id": "has_chemical_formula"
+    },
+    {
+      "name": "aggregate_statistic",
+      "description": "A grouping for any property that holds between a node and a value",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "node_property",
+      "abstract": true,
+      "range": "xsd:string",
+      "@id": "aggregate_statistic"
+    },
+    {
+      "name": "has_count",
+      "description": "number of things with a particular property",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "aggregate_statistic",
+      "domain": "FrequencyQuantifier",
+      "range": "xsd:integer",
+      "@id": "has_count"
+    },
+    {
+      "name": "has_total",
+      "description": "total number of things in a particular reference set",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "aggregate_statistic",
+      "domain": "FrequencyQuantifier",
+      "range": "xsd:integer",
+      "@id": "has_total"
+    },
+    {
+      "name": "has_quotient",
+      "description": "A grouping for any property that holds between a node and a value",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "aggregate_statistic",
+      "domain": "FrequencyQuantifier",
+      "range": "xsd:double",
+      "@id": "has_quotient"
+    },
+    {
+      "name": "has_percentage",
+      "description": "equivalent to has quotient multiplied by 100",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "aggregate_statistic",
+      "domain": "FrequencyQuantifier",
+      "range": "xsd:double",
+      "@id": "has_percentage"
+    },
+    {
+      "name": "timepoint",
+      "description": "a point in time",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "node_property",
+      "domain": "GeographicLocationAtTime",
+      "range": "time_type",
+      "@id": "timepoint"
+    },
+    {
+      "name": "stage_qualifier",
+      "description": "stage at which expression takes place",
+      "is_a": "association_slot",
+      "domain": "GeneToExpressionSiteAssociation",
+      "range": "LifeStage",
+      "path": "object/during",
+      "@id": "stage_qualifier"
+    },
+    {
+      "name": "quantifier_qualifier",
+      "description": "A measurable quantity for the object of the association",
+      "is_a": "association_slot",
+      "domain": "GeneToExpressionSiteAssociation",
+      "range": "OntologyClass",
+      "@id": "quantifier_qualifier"
+    },
+    {
+      "name": "qualifiers",
+      "singular_name": "qualifier",
+      "description": "connects an association to qualifiers that modify or qualify the meaning of that association",
+      "is_a": "association_slot",
+      "local_names": [
+        "annotation qualifier"
+      ],
+      "multivalued": true,
+      "domain": "Association",
+      "range": "OntologyClass",
+      "@id": "qualifiers"
+    },
+    {
+      "name": "frequency_qualifier",
+      "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+      "is_a": "association_slot",
+      "range": "FrequencyValue",
+      "@id": "frequency_qualifier"
+    },
+    {
+      "name": "severity_qualifier",
+      "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+      "is_a": "association_slot",
+      "domain": "EntityToFeatureOrDiseaseQualifiers",
+      "range": "SeverityValue",
+      "@id": "severity_qualifier"
+    },
+    {
+      "name": "sex_qualifier",
+      "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+      "is_a": "association_slot",
+      "domain": "EntityToPhenotypicFeatureAssociation",
+      "range": "BiologicalSex",
+      "@id": "sex_qualifier"
+    },
+    {
+      "name": "onset_qualifier",
+      "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+      "is_a": "association_slot",
+      "domain": "EntityToFeatureOrDiseaseQualifiers",
+      "range": "Onset",
+      "@id": "onset_qualifier"
+    },
+    {
+      "name": "clinical_modifier_qualifier",
+      "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
+      "is_a": "association_slot",
+      "range": "ClinicalModifier",
+      "@id": "clinical_modifier_qualifier"
+    },
+    {
+      "name": "sequence_variant_qualifier",
+      "description": "a qualifier used in an association where the variant",
+      "is_a": "association_slot",
+      "domain": "GeneHasVariantThatContributesToDiseaseAssociation",
+      "range": "SequenceVariant",
+      "@id": "sequence_variant_qualifier"
+    },
+    {
+      "name": "publications",
+      "singular_name": "publication",
+      "description": "connects an association to publications supporting the association",
+      "is_a": "association_slot",
+      "multivalued": true,
+      "domain": "Association",
+      "range": "Publication",
+      "@id": "publications"
+    },
+    {
+      "name": "has_biological_sequence",
+      "description": "connects a genomic feature to its sequence",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "node_property",
+      "domain": "GenomicEntity",
+      "range": "biological_sequence",
+      "@id": "has_biological_sequence"
+    },
+    {
+      "name": "has_molecular_consequence",
+      "description": "connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583",
+      "mappings": [
+        "owl:topObjectProperty",
+        "SEMMEDDB:ASSOCIATED_WITH"
+      ],
+      "is_a": "related_to",
+      "range": "OntologyClass",
+      "@id": "has_molecular_consequence"
+    },
+    {
+      "name": "has_gene",
+      "description": "connects and entity to a single gene",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "node_property",
+      "domain": "SequenceVariant",
+      "range": "Gene",
+      "@id": "has_gene"
+    },
+    {
+      "name": "has_zygosity",
+      "description": "A grouping for any property that holds between a node and a value",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "node_property",
+      "domain": "Genotype",
+      "range": "Zygosity",
+      "@id": "has_zygosity"
+    },
+    {
+      "name": "filler",
+      "description": "The value in a property-value tuple",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "node_property",
+      "range": "NamedThing",
+      "@id": "filler"
+    },
+    {
+      "name": "phase",
+      "description": "TODO",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "node_property",
+      "domain": "GenomicSequenceLocalization",
+      "range": "xsd:string",
+      "@id": "phase"
+    },
+    {
+      "name": "genome_build",
+      "description": "TODO",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "node_property",
+      "domain": "GenomicSequenceLocalization",
+      "range": "xsd:string",
+      "@id": "genome_build"
+    },
+    {
+      "name": "interbase_coordinate",
+      "description": "TODO",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "node_property",
+      "range": "xsd:string",
+      "@id": "interbase_coordinate"
+    },
+    {
+      "name": "start_interbase_coordinate",
+      "description": "TODO",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "interbase_coordinate",
+      "domain": "GenomicSequenceLocalization",
+      "range": "xsd:string",
+      "@id": "start_interbase_coordinate"
+    },
+    {
+      "name": "end_interbase_coordinate",
+      "description": "TODO",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "interbase_coordinate",
+      "domain": "GenomicSequenceLocalization",
+      "range": "xsd:string",
+      "@id": "end_interbase_coordinate"
+    },
+    {
+      "name": "macromolecular_machine_name",
+      "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+      "mappings": [
+        "rdfs:label"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "name",
+      "domain": "MacromolecularMachine",
+      "range": "symbol_type",
+      "alias": "name",
+      "@id": "macromolecular_machine_name"
+    },
+    {
+      "name": "sequence_variant_has_gene",
+      "description": "Each allele can be associated with any number of genes",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "has_gene",
+      "multivalued": true,
+      "domain": "SequenceVariant",
+      "range": "Gene",
+      "alias": "has gene",
+      "@id": "sequence_variant_has_gene"
+    },
+    {
+      "name": "sequence_variant_has_biological_sequence",
+      "description": "The state of the sequence w.r.t a reference sequence",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "has_biological_sequence",
+      "domain": "SequenceVariant",
+      "range": "biological_sequence",
+      "alias": "has biological sequence",
+      "@id": "sequence_variant_has_biological_sequence"
+    },
+    {
+      "name": "sequence_variant_id",
+      "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "id",
+      "domain": "SequenceVariant",
+      "range": "identifier_type",
+      "alias": "id",
+      "@id": "sequence_variant_id"
+    },
+    {
+      "name": "drug",
+      "multivalued": true,
+      "domain": "DrugExposure",
+      "range": "ChemicalSubstance",
+      "required": true,
+      "alias": "drug",
+      "@id": "drug"
+    },
+    {
+      "name": "treatment_treats",
+      "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ",
+      "mappings": [
+        "RO:0002606",
+        "RO:0003307",
+        "SEMMEDDB:TREATS",
+        "WD:P2175"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "treats",
+      "domain": "Treatment",
+      "range": "DiseaseOrPhenotypicFeature",
+      "required": true,
+      "alias": "treats",
+      "@id": "treatment_treats"
+    },
+    {
+      "name": "has_exposure_parts",
+      "multivalued": true,
+      "domain": "Treatment",
+      "range": "DrugExposure",
+      "required": true,
+      "alias": "has exposure parts",
+      "@id": "has_exposure_parts"
+    },
+    {
+      "name": "genotype_to_genotype_part_association_relation",
+      "description": "the relationship type by which a subject is connected to an object in an association",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "GenotypeToGenotypePartAssociation",
+      "range": "RelationshipType",
+      "required": true,
+      "alias": "relation",
+      "subproperty_of": "has_variant_part",
+      "@id": "genotype_to_genotype_part_association_relation"
+    },
+    {
+      "name": "genotype_to_genotype_part_association_subject",
+      "description": "parent genotype",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GenotypeToGenotypePartAssociation",
+      "range": "Genotype",
+      "required": true,
+      "definitional": true,
+      "alias": "subject",
+      "@id": "genotype_to_genotype_part_association_subject"
+    },
+    {
+      "name": "genotype_to_genotype_part_association_object",
+      "description": "child genotype",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "GenotypeToGenotypePartAssociation",
+      "range": "Genotype",
+      "required": true,
+      "definitional": true,
+      "alias": "object",
+      "@id": "genotype_to_genotype_part_association_object"
+    },
+    {
+      "name": "genotype_to_gene_association_relation",
+      "description": "the relationship type used to connect genotype to gene",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "GenotypeToGeneAssociation",
+      "range": "RelationshipType",
+      "required": true,
+      "alias": "relation",
+      "@id": "genotype_to_gene_association_relation"
+    },
+    {
+      "name": "genotype_to_gene_association_subject",
+      "description": "parent genotype",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GenotypeToGeneAssociation",
+      "range": "Genotype",
+      "required": true,
+      "definitional": true,
+      "alias": "subject",
+      "@id": "genotype_to_gene_association_subject"
+    },
+    {
+      "name": "genotype_to_gene_association_object",
+      "description": "gene implicated in genotype",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "GenotypeToGeneAssociation",
+      "range": "Gene",
+      "required": true,
+      "definitional": true,
+      "alias": "object",
+      "@id": "genotype_to_gene_association_object"
+    },
+    {
+      "name": "genotype_to_variant_association_relation",
+      "description": "the relationship type used to connect genotype to gene",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "GenotypeToVariantAssociation",
+      "range": "RelationshipType",
+      "required": true,
+      "alias": "relation",
+      "@id": "genotype_to_variant_association_relation"
+    },
+    {
+      "name": "genotype_to_variant_association_subject",
+      "description": "parent genotype",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GenotypeToVariantAssociation",
+      "range": "Genotype",
+      "required": true,
+      "definitional": true,
+      "alias": "subject",
+      "@id": "genotype_to_variant_association_subject"
+    },
+    {
+      "name": "genotype_to_variant_association_object",
+      "description": "gene implicated in genotype",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "GenotypeToVariantAssociation",
+      "range": "SequenceVariant",
+      "required": true,
+      "definitional": true,
+      "alias": "object",
+      "@id": "genotype_to_variant_association_object"
+    },
+    {
+      "name": "gene_to_gene_association_subject",
+      "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GeneToGeneAssociation",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "definitional": true,
+      "alias": "subject",
+      "@id": "gene_to_gene_association_subject"
+    },
+    {
+      "name": "gene_to_gene_association_object",
+      "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "GeneToGeneAssociation",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "definitional": true,
+      "alias": "object",
+      "@id": "gene_to_gene_association_object"
+    },
+    {
+      "name": "gene_to_gene_homology_association_relation",
+      "description": "homology relationship type",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "GeneToGeneHomologyAssociation",
+      "range": "RelationshipType",
+      "required": true,
+      "definitional": true,
+      "alias": "relation",
+      "subproperty_of": "homologous_to",
+      "@id": "gene_to_gene_homology_association_relation"
+    },
+    {
+      "name": "molecular_interaction_subject",
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "MolecularInteraction",
+      "range": "MolecularEntity",
+      "required": true,
+      "alias": "subject",
+      "@id": "molecular_interaction_subject"
+    },
+    {
+      "name": "molecular_interaction_relation",
+      "description": "interaction relationship type",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "MolecularInteraction",
+      "range": "RelationshipType",
+      "required": true,
+      "definitional": true,
+      "alias": "relation",
+      "subproperty_of": "molecularly_interacts_with",
+      "@id": "molecular_interaction_relation"
+    },
+    {
+      "name": "molecular_interaction_object",
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "MolecularInteraction",
+      "range": "MolecularEntity",
+      "required": true,
+      "alias": "object",
+      "@id": "molecular_interaction_object"
+    },
+    {
+      "name": "interacting_molecules_category",
+      "domain": "MolecularInteraction",
+      "range": "OntologyClass",
+      "alias": "interacting molecules category",
+      "@id": "interacting_molecules_category"
+    },
+    {
+      "name": "pairwise_gene_or_protein_interaction_association_relation",
+      "description": "interaction relationship type",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "molecular_interaction_relation",
+      "domain": "PairwiseGeneOrProteinInteractionAssociation",
+      "range": "RelationshipType",
+      "required": true,
+      "definitional": true,
+      "alias": "relation",
+      "subproperty_of": "molecularly_interacts_with",
+      "@id": "pairwise_gene_or_protein_interaction_association_relation"
+    },
+    {
+      "name": "cell_line_to_thing_association_subject",
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "CellLineToThingAssociation",
+      "range": "CellLine",
+      "required": true,
+      "definitional": true,
+      "alias": "subject",
+      "@id": "cell_line_to_thing_association_subject"
+    },
+    {
+      "name": "cell_line_to_disease_or_phenotypic_feature_association_subject",
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
+      "range": "DiseaseOrPhenotypicFeature",
+      "required": true,
+      "alias": "subject",
+      "@id": "cell_line_to_disease_or_phenotypic_feature_association_subject"
+    },
+    {
+      "name": "chemical_to_thing_association_subject",
+      "description": "the chemical substance or entity that is an interactor",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "ChemicalToThingAssociation",
+      "range": "ChemicalSubstance",
+      "required": true,
+      "definitional": true,
+      "alias": "subject",
+      "@id": "chemical_to_thing_association_subject"
+    },
+    {
+      "name": "case_to_thing_association_subject",
+      "description": "the case (e.g. patient) that has the property",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "CaseToThingAssociation",
+      "range": "Case",
+      "required": true,
+      "definitional": true,
+      "alias": "subject",
+      "@id": "case_to_thing_association_subject"
+    },
+    {
+      "name": "chemical_to_disease_or_phenotypic_feature_association_object",
+      "description": "the disease or phenotype that is affected by the chemical",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
+      "range": "DiseaseOrPhenotypicFeature",
+      "required": true,
+      "definitional": true,
+      "alias": "object",
+      "@id": "chemical_to_disease_or_phenotypic_feature_association_object"
+    },
+    {
+      "name": "chemical_to_pathway_association_object",
+      "description": "the pathway that is affected by the chemical",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "ChemicalToPathwayAssociation",
+      "range": "Pathway",
+      "required": true,
+      "definitional": true,
+      "alias": "object",
+      "@id": "chemical_to_pathway_association_object"
+    },
+    {
+      "name": "chemical_to_gene_association_object",
+      "description": "the gene or gene product that is affected by the chemical",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "ChemicalToGeneAssociation",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "definitional": true,
+      "alias": "object",
+      "@id": "chemical_to_gene_association_object"
+    },
+    {
+      "name": "biosample_to_thing_association_subject",
+      "description": "the biosample being described",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "BiosampleToThingAssociation",
+      "range": "Biosample",
+      "required": true,
+      "definitional": true,
+      "alias": "subject",
+      "@id": "biosample_to_thing_association_subject"
+    },
+    {
+      "name": "entity_to_phenotypic_feature_association_description",
+      "description": "A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class",
+      "mappings": [
+        "dcterms:description"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "description",
+      "domain": "EntityToPhenotypicFeatureAssociation",
+      "range": "narrative_text",
+      "alias": "description",
+      "@id": "entity_to_phenotypic_feature_association_description"
+    },
+    {
+      "name": "entity_to_phenotypic_feature_association_object",
+      "description": "phenotypic class",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "EntityToPhenotypicFeatureAssociation",
+      "range": "PhenotypicFeature",
+      "required": true,
+      "definitional": true,
+      "alias": "object",
+      "@id": "entity_to_phenotypic_feature_association_object"
+    },
+    {
+      "name": "entity_to_disease_association_object",
+      "description": "disease",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "EntityToDiseaseAssociation",
+      "range": "Disease",
+      "required": true,
+      "definitional": true,
+      "alias": "object",
+      "@id": "entity_to_disease_association_object"
+    },
+    {
+      "name": "disease_or_phenotypic_feature_association_to_thing_association_subject",
+      "description": "disease or phenotype",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "DiseaseOrPhenotypicFeatureAssociationToThingAssociation",
+      "range": "DiseaseOrPhenotypicFeature",
+      "required": true,
+      "definitional": true,
+      "alias": "subject",
+      "@id": "disease_or_phenotypic_feature_association_to_thing_association_subject"
+    },
+    {
+      "name": "disease_or_phenotypic_feature_association_to_location_association_object",
+      "description": "anatomical entity in which the disease or feature is found",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "alias": "object",
+      "@id": "disease_or_phenotypic_feature_association_to_location_association_object"
+    },
+    {
+      "name": "thing_to_disease_or_phenotypic_feature_association_object",
+      "description": "disease or phenotype",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "ThingToDiseaseOrPhenotypicFeatureAssociation",
+      "range": "DiseaseOrPhenotypicFeature",
+      "required": true,
+      "definitional": true,
+      "alias": "object",
+      "@id": "thing_to_disease_or_phenotypic_feature_association_object"
+    },
+    {
+      "name": "disease_to_thing_association_subject",
+      "description": "disease class",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "DiseaseToThingAssociation",
+      "range": "Disease",
+      "required": true,
+      "definitional": true,
+      "alias": "subject",
+      "@id": "disease_to_thing_association_subject"
+    },
+    {
+      "name": "genotype_to_phenotypic_feature_association_relation",
+      "description": "the relationship type by which a subject is connected to an object in an association",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "GenotypeToPhenotypicFeatureAssociation",
+      "range": "RelationshipType",
+      "required": true,
+      "alias": "relation",
+      "subproperty_of": "has_phenotype",
+      "@id": "genotype_to_phenotypic_feature_association_relation"
+    },
+    {
+      "name": "genotype_to_phenotypic_feature_association_subject",
+      "description": "genotype that is associated with the phenotypic feature",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GenotypeToPhenotypicFeatureAssociation",
+      "range": "Genotype",
+      "required": true,
+      "alias": "subject",
+      "@id": "genotype_to_phenotypic_feature_association_subject"
+    },
+    {
+      "name": "environment_to_phenotypic_feature_association_subject",
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "EnvironmentToPhenotypicFeatureAssociation",
+      "range": "Environment",
+      "required": true,
+      "definitional": true,
+      "alias": "subject",
+      "@id": "environment_to_phenotypic_feature_association_subject"
+    },
+    {
+      "name": "gene_to_thing_association_subject",
+      "description": "gene that is the subject of the association",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GeneToThingAssociation",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "alias": "subject",
+      "@id": "gene_to_thing_association_subject"
+    },
+    {
+      "name": "variant_to_thing_association_subject",
+      "description": "a sequence variant in which the allele state is associated with some other entity",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "VariantToThingAssociation",
+      "range": "SequenceVariant",
+      "required": true,
+      "alias": "subject",
+      "@id": "variant_to_thing_association_subject"
+    },
+    {
+      "name": "gene_to_phenotypic_feature_association_subject",
+      "description": "gene in which variation is correlated with the phenotypic feature",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GeneToPhenotypicFeatureAssociation",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "alias": "subject",
+      "@id": "gene_to_phenotypic_feature_association_subject"
+    },
+    {
+      "name": "gene_to_disease_association_subject",
+      "description": "gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GeneToDiseaseAssociation",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "alias": "subject",
+      "@id": "gene_to_disease_association_subject"
+    },
+    {
+      "name": "variant_to_population_association_subject",
+      "description": "an allele that has a certain frequency in a given population",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "VariantToPopulationAssociation",
+      "range": "SequenceVariant",
+      "required": true,
+      "alias": "subject",
+      "@id": "variant_to_population_association_subject"
+    },
+    {
+      "name": "variant_to_population_association_object",
+      "description": "the population that is observed to have the frequency",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "VariantToPopulationAssociation",
+      "range": "PopulationOfIndividualOrganisms",
+      "required": true,
+      "alias": "object",
+      "@id": "variant_to_population_association_object"
+    },
+    {
+      "name": "variant_to_population_association_has_quotient",
+      "description": "frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "has_quotient",
+      "domain": "VariantToPopulationAssociation",
+      "range": "xsd:double",
+      "alias": "has quotient",
+      "@id": "variant_to_population_association_has_quotient"
+    },
+    {
+      "name": "variant_to_population_association_has_count",
+      "description": "number in object population that carry a particular allele, aka allele count",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "has_count",
+      "domain": "VariantToPopulationAssociation",
+      "range": "xsd:integer",
+      "alias": "has count",
+      "@id": "variant_to_population_association_has_count"
+    },
+    {
+      "name": "variant_to_population_association_has_total",
+      "description": "number all populations that carry a particular allele, aka allele number",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "is_a": "has_total",
+      "domain": "VariantToPopulationAssociation",
+      "range": "xsd:integer",
+      "alias": "has total",
+      "@id": "variant_to_population_association_has_total"
+    },
+    {
+      "name": "population_to_population_association_subject",
+      "description": "the population that form the subject of the association",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "PopulationToPopulationAssociation",
+      "range": "PopulationOfIndividualOrganisms",
+      "required": true,
+      "alias": "subject",
+      "@id": "population_to_population_association_subject"
+    },
+    {
+      "name": "population_to_population_association_object",
+      "description": "the population that form the object of the association",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "PopulationToPopulationAssociation",
+      "range": "PopulationOfIndividualOrganisms",
+      "required": true,
+      "alias": "object",
+      "@id": "population_to_population_association_object"
+    },
+    {
+      "name": "population_to_population_association_relation",
+      "description": "A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "PopulationToPopulationAssociation",
+      "range": "RelationshipType",
+      "required": true,
+      "alias": "relation",
+      "@id": "population_to_population_association_relation"
+    },
+    {
+      "name": "variant_to_phenotypic_feature_association_subject",
+      "description": "a sequence variant in which the allele state is associated in some way with the phenotype state",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "VariantToPhenotypicFeatureAssociation",
+      "range": "SequenceVariant",
+      "required": true,
+      "alias": "subject",
+      "@id": "variant_to_phenotypic_feature_association_subject"
+    },
+    {
+      "name": "variant_to_disease_association_subject",
+      "description": "a sequence variant in which the allele state is associated in some way with the disease state",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "VariantToDiseaseAssociation",
+      "range": "xsd:string",
+      "required": true,
+      "alias": "subject",
+      "@id": "variant_to_disease_association_subject"
+    },
+    {
+      "name": "variant_to_disease_association_relation",
+      "description": "E.g. is pathogenic for",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "VariantToDiseaseAssociation",
+      "range": "RelationshipType",
+      "required": true,
+      "alias": "relation",
+      "subproperty_of": "related_condition",
+      "@id": "variant_to_disease_association_relation"
+    },
+    {
+      "name": "variant_to_disease_association_object",
+      "description": "a disease that is associated with that variant",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "VariantToDiseaseAssociation",
+      "range": "xsd:string",
+      "required": true,
+      "alias": "object",
+      "@id": "variant_to_disease_association_object"
+    },
+    {
+      "name": "model_to_disease_mixin_subject",
+      "description": "The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "ModelToDiseaseMixin",
+      "range": "xsd:string",
+      "required": true,
+      "alias": "subject",
+      "@id": "model_to_disease_mixin_subject"
+    },
+    {
+      "name": "model_to_disease_mixin_relation",
+      "description": "The relationship to the disease\n  ",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "ModelToDiseaseMixin",
+      "range": "RelationshipType",
+      "required": true,
+      "alias": "relation",
+      "subproperty_of": "model_of",
+      "@id": "model_to_disease_mixin_relation"
+    },
+    {
+      "name": "gene_as_a_model_of_disease_association_subject",
+      "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "gene_to_disease_association_subject",
+      "domain": "GeneAsAModelOfDiseaseAssociation",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "alias": "subject",
+      "@id": "gene_as_a_model_of_disease_association_subject"
+    },
+    {
+      "name": "gene_has_variant_that_contributes_to_disease_association_subject",
+      "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "gene_to_disease_association_subject",
+      "domain": "GeneHasVariantThatContributesToDiseaseAssociation",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "alias": "subject",
+      "@id": "gene_has_variant_that_contributes_to_disease_association_subject"
+    },
+    {
+      "name": "genotype_to_thing_association_subject",
+      "description": "genotype that is the subject of the association",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GenotypeToThingAssociation",
+      "range": "Genotype",
+      "required": true,
+      "alias": "subject",
+      "@id": "genotype_to_thing_association_subject"
+    },
+    {
+      "name": "gene_to_expression_site_association_subject",
+      "description": "gene in which variation is correlated with the phenotypic feature",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GeneToExpressionSiteAssociation",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "alias": "subject",
+      "@id": "gene_to_expression_site_association_subject"
+    },
+    {
+      "name": "gene_to_expression_site_association_object",
+      "description": "location in which the gene is expressed",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "GeneToExpressionSiteAssociation",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "alias": "object",
+      "@id": "gene_to_expression_site_association_object"
+    },
+    {
+      "name": "gene_to_expression_site_association_relation",
+      "description": "expression relationship",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "GeneToExpressionSiteAssociation",
+      "range": "RelationshipType",
+      "required": true,
+      "alias": "relation",
+      "subproperty_of": "expressed_in",
+      "@id": "gene_to_expression_site_association_relation"
+    },
+    {
+      "name": "gene_to_expression_site_association_stage_qualifier",
+      "description": "stage at which the gene is expressed in the site",
+      "is_a": "stage_qualifier",
+      "domain": "GeneToExpressionSiteAssociation",
+      "range": "LifeStage",
+      "alias": "stage qualifier",
+      "@id": "gene_to_expression_site_association_stage_qualifier"
+    },
+    {
+      "name": "gene_to_expression_site_association_quantifier_qualifier",
+      "description": "can be used to indicate magnitude, or also ranking",
+      "is_a": "quantifier_qualifier",
+      "domain": "GeneToExpressionSiteAssociation",
+      "range": "OntologyClass",
+      "alias": "quantifier qualifier",
+      "@id": "gene_to_expression_site_association_quantifier_qualifier"
+    },
+    {
+      "name": "sequence_variant_modulates_treatment_association_subject",
+      "description": "variant that modulates the treatment of some disease",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "SequenceVariantModulatesTreatmentAssociation",
+      "range": "SequenceVariant",
+      "required": true,
+      "alias": "subject",
+      "@id": "sequence_variant_modulates_treatment_association_subject"
+    },
+    {
+      "name": "sequence_variant_modulates_treatment_association_object",
+      "description": "treatment whose efficacy is modulated by the subject variant",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "SequenceVariantModulatesTreatmentAssociation",
+      "range": "Treatment",
+      "required": true,
+      "alias": "object",
+      "@id": "sequence_variant_modulates_treatment_association_object"
+    },
+    {
+      "name": "functional_association_subject",
+      "description": "gene, product or macromolecular complex that has the function associated with the GO term",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "FunctionalAssociation",
+      "range": "MacromolecularMachine",
+      "required": true,
+      "alias": "subject",
+      "@id": "functional_association_subject"
+    },
+    {
+      "name": "functional_association_object",
+      "description": "class describing the activity, process or localization of the gene product",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "FunctionalAssociation",
+      "range": "GeneOntologyClass",
+      "required": true,
+      "alias": "object",
+      "@id": "functional_association_object"
+    },
+    {
+      "name": "macromolecular_machine_to_molecular_activity_association_object",
+      "description": "class describing the activity, process or localization of the gene product",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "functional_association_object",
+      "domain": "MacromolecularMachineToMolecularActivityAssociation",
+      "range": "MolecularActivity",
+      "required": true,
+      "alias": "object",
+      "@id": "macromolecular_machine_to_molecular_activity_association_object"
+    },
+    {
+      "name": "macromolecular_machine_to_biological_process_association_object",
+      "description": "class describing the activity, process or localization of the gene product",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "functional_association_object",
+      "domain": "MacromolecularMachineToBiologicalProcessAssociation",
+      "range": "BiologicalProcess",
+      "required": true,
+      "alias": "object",
+      "@id": "macromolecular_machine_to_biological_process_association_object"
+    },
+    {
+      "name": "macromolecular_machine_to_cellular_component_association_object",
+      "description": "class describing the activity, process or localization of the gene product",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "functional_association_object",
+      "domain": "MacromolecularMachineToCellularComponentAssociation",
+      "range": "CellularComponent",
+      "required": true,
+      "alias": "object",
+      "@id": "macromolecular_machine_to_cellular_component_association_object"
+    },
+    {
+      "name": "gene_to_go_term_association_subject",
+      "description": "gene, product or macromolecular complex that has the function associated with the GO term",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "functional_association_subject",
+      "domain": "GeneToGoTermAssociation",
+      "range": "MolecularEntity",
+      "required": true,
+      "alias": "subject",
+      "@id": "gene_to_go_term_association_subject"
+    },
+    {
+      "name": "gene_to_go_term_association_object",
+      "description": "class describing the activity, process or localization of the gene product",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "functional_association_object",
+      "domain": "GeneToGoTermAssociation",
+      "range": "GeneOntologyClass",
+      "required": true,
+      "alias": "object",
+      "@id": "gene_to_go_term_association_object"
+    },
+    {
+      "name": "genomic_sequence_localization_subject",
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GenomicSequenceLocalization",
+      "range": "GenomicEntity",
+      "required": true,
+      "alias": "subject",
+      "@id": "genomic_sequence_localization_subject"
+    },
+    {
+      "name": "genomic_sequence_localization_object",
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "GenomicSequenceLocalization",
+      "range": "GenomicEntity",
+      "required": true,
+      "alias": "object",
+      "@id": "genomic_sequence_localization_object"
+    },
+    {
+      "name": "sequence_feature_relationship_subject",
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "SequenceFeatureRelationship",
+      "range": "GenomicEntity",
+      "required": true,
+      "alias": "subject",
+      "@id": "sequence_feature_relationship_subject"
+    },
+    {
+      "name": "sequence_feature_relationship_object",
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "SequenceFeatureRelationship",
+      "range": "GenomicEntity",
+      "required": true,
+      "alias": "object",
+      "@id": "sequence_feature_relationship_object"
+    },
+    {
+      "name": "transcript_to_gene_relationship_subject",
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "sequence_feature_relationship_subject",
+      "domain": "TranscriptToGeneRelationship",
+      "range": "Transcript",
+      "required": true,
+      "alias": "subject",
+      "@id": "transcript_to_gene_relationship_subject"
+    },
+    {
+      "name": "transcript_to_gene_relationship_object",
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "sequence_feature_relationship_object",
+      "domain": "TranscriptToGeneRelationship",
+      "range": "Gene",
+      "required": true,
+      "alias": "object",
+      "@id": "transcript_to_gene_relationship_object"
+    },
+    {
+      "name": "gene_to_gene_product_relationship_subject",
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "sequence_feature_relationship_subject",
+      "domain": "GeneToGeneProductRelationship",
+      "range": "Gene",
+      "required": true,
+      "alias": "subject",
+      "@id": "gene_to_gene_product_relationship_subject"
+    },
+    {
+      "name": "gene_to_gene_product_relationship_object",
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "sequence_feature_relationship_object",
+      "domain": "GeneToGeneProductRelationship",
+      "range": "GeneProduct",
+      "required": true,
+      "alias": "object",
+      "@id": "gene_to_gene_product_relationship_object"
+    },
+    {
+      "name": "gene_to_gene_product_relationship_relation",
+      "description": "the relationship type by which a subject is connected to an object in an association",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "GeneToGeneProductRelationship",
+      "range": "RelationshipType",
+      "required": true,
+      "alias": "relation",
+      "subproperty_of": "has_gene_product",
+      "@id": "gene_to_gene_product_relationship_relation"
+    },
+    {
+      "name": "exon_to_transcript_relationship_subject",
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "sequence_feature_relationship_subject",
+      "domain": "ExonToTranscriptRelationship",
+      "range": "Exon",
+      "required": true,
+      "alias": "subject",
+      "@id": "exon_to_transcript_relationship_subject"
+    },
+    {
+      "name": "exon_to_transcript_relationship_object",
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "sequence_feature_relationship_object",
+      "domain": "ExonToTranscriptRelationship",
+      "range": "Transcript",
+      "required": true,
+      "alias": "object",
+      "@id": "exon_to_transcript_relationship_object"
+    },
+    {
+      "name": "gene_regulatory_relationship_relation",
+      "description": "the direction is always from regulator to regulated",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "GeneRegulatoryRelationship",
+      "range": "RelationshipType",
+      "required": true,
+      "alias": "relation",
+      "@id": "gene_regulatory_relationship_relation"
+    },
+    {
+      "name": "gene_regulatory_relationship_subject",
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "GeneRegulatoryRelationship",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "alias": "subject",
+      "@id": "gene_regulatory_relationship_subject"
+    },
+    {
+      "name": "gene_regulatory_relationship_object",
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "GeneRegulatoryRelationship",
+      "range": "GeneOrGeneProduct",
+      "required": true,
+      "alias": "object",
+      "@id": "gene_regulatory_relationship_object"
+    },
+    {
+      "name": "anatomical_entity_to_anatomical_entity_association_subject",
+      "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "subject",
+      "domain": "AnatomicalEntityToAnatomicalEntityAssociation",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "alias": "subject",
+      "@id": "anatomical_entity_to_anatomical_entity_association_subject"
+    },
+    {
+      "name": "anatomical_entity_to_anatomical_entity_association_object",
+      "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "object",
+      "domain": "AnatomicalEntityToAnatomicalEntityAssociation",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "alias": "object",
+      "@id": "anatomical_entity_to_anatomical_entity_association_object"
+    },
+    {
+      "name": "anatomical_entity_to_anatomical_entity_part_of_association_subject",
+      "description": "the part",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "anatomical_entity_to_anatomical_entity_association_subject",
+      "domain": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "alias": "subject",
+      "@id": "anatomical_entity_to_anatomical_entity_part_of_association_subject"
+    },
+    {
+      "name": "anatomical_entity_to_anatomical_entity_part_of_association_object",
+      "description": "the whole",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "anatomical_entity_to_anatomical_entity_association_object",
+      "domain": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "alias": "object",
+      "@id": "anatomical_entity_to_anatomical_entity_part_of_association_object"
+    },
+    {
+      "name": "anatomical_entity_to_anatomical_entity_part_of_association_relation",
+      "description": "the relationship type by which a subject is connected to an object in an association",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "range": "RelationshipType",
+      "required": true,
+      "alias": "relation",
+      "subproperty_of": "part_of",
+      "@id": "anatomical_entity_to_anatomical_entity_part_of_association_relation"
+    },
+    {
+      "name": "anatomical_entity_to_anatomical_entity_ontogenic_association_subject",
+      "description": "the structure at a later time",
+      "mappings": [
+        "rdf:subject",
+        "owl:annotatedSource",
+        "oban:association_has_subject"
+      ],
+      "is_a": "anatomical_entity_to_anatomical_entity_association_subject",
+      "domain": "AnatomicalEntityToAnatomicalEntityOntogenicAssociation",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "alias": "subject",
+      "@id": "anatomical_entity_to_anatomical_entity_ontogenic_association_subject"
+    },
+    {
+      "name": "anatomical_entity_to_anatomical_entity_ontogenic_association_object",
+      "description": "the structure at an earlier time",
+      "mappings": [
+        "rdf:object",
+        "owl:annotatedTarget",
+        "oban:association_has_object"
+      ],
+      "is_a": "anatomical_entity_to_anatomical_entity_association_object",
+      "domain": "AnatomicalEntityToAnatomicalEntityOntogenicAssociation",
+      "range": "AnatomicalEntity",
+      "required": true,
+      "alias": "object",
+      "@id": "anatomical_entity_to_anatomical_entity_ontogenic_association_object"
+    },
+    {
+      "name": "anatomical_entity_to_anatomical_entity_ontogenic_association_relation",
+      "description": "the relationship type by which a subject is connected to an object in an association",
+      "mappings": [
+        "rdf:predicate",
+        "owl:annotatedProperty",
+        "oban:association_has_predicate"
+      ],
+      "is_a": "relation",
+      "domain": "AnatomicalEntityToAnatomicalEntityOntogenicAssociation",
+      "range": "RelationshipType",
+      "required": true,
+      "alias": "relation",
+      "subproperty_of": "develops_from",
+      "@id": "anatomical_entity_to_anatomical_entity_ontogenic_association_relation"
+    }
+  ],
+  "classes": [
+    {
+      "name": "RelationshipType",
+      "description": "An OWL property used as an edge label",
+      "@id": "RelationshipType"
+    },
+    {
+      "name": "Attribute",
+      "description": "A property or characteristic of an entity",
+      "mixins": [
+        "OntologyClass"
+      ],
+      "subclass_of": "PATO:0000001",
+      "@id": "Attribute"
+    },
+    {
+      "name": "BiologicalSex",
+      "is_a": "Attribute",
+      "subclass_of": "PATO:0000047",
+      "@id": "BiologicalSex"
+    },
+    {
+      "name": "PhenotypicSex",
+      "description": "An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.",
+      "is_a": "BiologicalSex",
+      "subclass_of": "PATO:0001894",
+      "@id": "PhenotypicSex"
+    },
+    {
+      "name": "GenotypicSex",
+      "description": "An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.",
+      "is_a": "BiologicalSex",
+      "subclass_of": "PATO:0020000",
+      "@id": "GenotypicSex"
+    },
+    {
+      "name": "SeverityValue",
+      "description": "describes the severity of a phenotypic feature or disease",
+      "is_a": "Attribute",
+      "@id": "SeverityValue"
+    },
+    {
+      "name": "FrequencyValue",
+      "description": "describes the frequency of occurrence of an event or condition",
+      "is_a": "Attribute",
+      "@id": "FrequencyValue"
+    },
+    {
+      "name": "ClinicalModifier",
+      "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
+      "is_a": "Attribute",
+      "subclass_of": "HP:0012823",
+      "@id": "ClinicalModifier"
+    },
+    {
+      "name": "Onset",
+      "description": "The age group in which manifestations appear",
+      "mappings": [
+        "HP:0003674"
+      ],
+      "is_a": "Attribute",
+      "@id": "Onset"
+    },
+    {
+      "name": "RelationshipQuantifier",
+      "mixin": true,
+      "abstract": true,
+      "@id": "RelationshipQuantifier"
+    },
+    {
+      "name": "SenstivityQuantifier",
+      "is_a": "RelationshipQuantifier",
+      "mixin": true,
+      "@id": "SenstivityQuantifier"
+    },
+    {
+      "name": "SpecificityQuantifier",
+      "is_a": "RelationshipQuantifier",
+      "mixin": true,
+      "@id": "SpecificityQuantifier"
+    },
+    {
+      "name": "PathognomonicityQuantifier",
+      "description": "A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease",
+      "is_a": "SpecificityQuantifier",
+      "mixin": true,
+      "@id": "PathognomonicityQuantifier"
+    },
+    {
+      "name": "FrequencyQuantifier",
+      "is_a": "RelationshipQuantifier",
+      "mixin": true,
+      "slots": [
+        "has_count",
+        "has_total",
+        "has_quotient",
+        "has_percentage"
+      ],
+      "@id": "FrequencyQuantifier"
+    },
+    {
+      "name": "NamedThing",
+      "description": "a databased entity or concept/class",
+      "mappings": [
+        "UMLSSG:OBJC",
+        "WD:Q35120"
+      ],
+      "subclass_of": "BFO:0000001",
+      "slots": [
+        "id",
+        "name",
+        "category",
+        "related_to",
+        "node_property",
+        "iri",
+        "full_name",
+        "description",
+        "systematic_synonym"
+      ],
+      "@id": "NamedThing"
+    },
+    {
+      "name": "BiologicalEntity",
+      "mappings": [
+        "WD:Q28845870"
+      ],
+      "is_a": "NamedThing",
+      "abstract": true,
+      "slots": [
+        "has_phenotype"
+      ],
+      "@id": "BiologicalEntity"
+    },
+    {
+      "name": "OntologyClass",
+      "description": "a concept or class in an ontology, vocabulary or thesaurus",
+      "is_a": "NamedThing",
+      "slots": [
+        "subclass_of"
+      ],
+      "@id": "OntologyClass"
+    },
+    {
+      "name": "GeneOntologyClass",
+      "description": "an ontology class that describes a functional aspect of a gene, gene prodoct or complex",
+      "flags": [
+        "testing"
+      ],
+      "is_a": "OntologyClass",
+      "@id": "GeneOntologyClass"
+    },
+    {
+      "name": "ThingWithTaxon",
+      "description": "A mixin that can be used on any entity with a taxon",
+      "mixin": true,
+      "abstract": true,
+      "slots": [
+        "in_taxon"
+      ],
+      "@id": "ThingWithTaxon"
+    },
+    {
+      "name": "OrganismTaxon",
+      "mappings": [
+        "WD:Q16521"
+      ],
+      "is_a": "OntologyClass",
+      "values_from": [
+        "NCBITaxon"
+      ],
+      "@id": "OrganismTaxon"
+    },
+    {
+      "name": "OrganismalEntity",
+      "description": "A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities",
+      "mappings": [
+        "WD:Q7239"
+      ],
+      "is_a": "BiologicalEntity",
+      "abstract": true,
+      "@id": "OrganismalEntity"
+    },
+    {
+      "name": "IndividualOrganism",
+      "mappings": [
+        "SIO:010000",
+        "WD:Q795052"
+      ],
+      "is_a": "OrganismalEntity",
+      "mixins": [
+        "ThingWithTaxon"
+      ],
+      "subclass_of": "NCBITaxon:1",
+      "@id": "IndividualOrganism"
+    },
+    {
+      "name": "Case",
+      "description": "An individual organism that has a patient role in some clinical context.",
+      "aliases": [
+        "patient",
+        "proband"
+      ],
+      "is_a": "IndividualOrganism",
+      "@id": "Case"
+    },
+    {
+      "name": "PopulationOfIndividualOrganisms",
+      "mappings": [
+        "SIO:001061"
+      ],
+      "id_prefixes": [
+        "ANCESTRO"
+      ],
+      "is_a": "OrganismalEntity",
+      "mixins": [
+        "ThingWithTaxon"
+      ],
+      "local_names": [
+        "population"
+      ],
+      "subclass_of": "PCO:0000001",
+      "@id": "PopulationOfIndividualOrganisms"
+    },
+    {
+      "name": "Biosample",
+      "aliases": [
+        "biospecimen",
+        "sample"
+      ],
+      "mappings": [
+        "SIO:001050"
+      ],
+      "is_a": "OrganismalEntity",
+      "mixins": [
+        "ThingWithTaxon"
+      ],
+      "@id": "Biosample"
+    },
+    {
+      "name": "DiseaseOrPhenotypicFeature",
+      "description": "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.",
+      "aliases": [
+        "phenome"
+      ],
+      "is_a": "BiologicalEntity",
+      "mixins": [
+        "ThingWithTaxon"
+      ],
+      "union_of": [
+        "Disease",
+        "PhenotypicFeature"
+      ],
+      "slots": [
+        "correlated_with",
+        "has_biomarker",
+        "treated_by"
+      ],
+      "@id": "DiseaseOrPhenotypicFeature"
+    },
+    {
+      "name": "Disease",
+      "aliases": [
+        "condition",
+        "disorder",
+        "medical condition"
+      ],
+      "mappings": [
+        "MONDO:0000001",
+        "WD:Q12136",
+        "SIO:010299",
+        "UMLSSG:DISO"
+      ],
+      "is_a": "DiseaseOrPhenotypicFeature",
+      "@id": "Disease"
+    },
+    {
+      "name": "PhenotypicFeature",
+      "aliases": [
+        "sign",
+        "symptom",
+        "phenotype",
+        "trait",
+        "endophenotype"
+      ],
+      "mappings": [
+        "UPHENO:0001001",
+        "SIO:010056",
+        "WD:Q169872"
+      ],
+      "is_a": "DiseaseOrPhenotypicFeature",
+      "@id": "PhenotypicFeature"
+    },
+    {
+      "name": "Environment",
+      "description": "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes",
+      "aliases": [
+        "environment",
+        "exposure",
+        "experimental condition"
+      ],
+      "mappings": [
+        "SIO:000955"
+      ],
+      "is_a": "BiologicalEntity",
+      "@id": "Environment"
+    },
+    {
+      "name": "InformationContentEntity",
+      "description": "a piece of information that typically describes some piece of biology or is used as support.",
+      "aliases": [
+        "information",
+        "information artefact",
+        "information entity"
+      ],
+      "mappings": [
+        "IAO:0000030",
+        "UMLSSG:CONC"
+      ],
+      "is_a": "NamedThing",
+      "abstract": true,
+      "@id": "InformationContentEntity"
+    },
+    {
+      "name": "ConfidenceLevel",
+      "description": "Level of confidence in a statement",
+      "mappings": [
+        "CIO:0000028"
+      ],
+      "is_a": "InformationContentEntity",
+      "values_from": [
+        "cio"
+      ],
+      "@id": "ConfidenceLevel"
+    },
+    {
+      "name": "EvidenceType",
+      "description": "Class of evidence that supports an association",
+      "aliases": [
+        "evidence code"
+      ],
+      "mappings": [
+        "ECO:0000000"
+      ],
+      "is_a": "InformationContentEntity",
+      "values_from": [
+        "eco"
+      ],
+      "@id": "EvidenceType"
+    },
+    {
+      "name": "Publication",
+      "description": "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.",
+      "aliases": [
+        "reference"
+      ],
+      "mappings": [
+        "IAO:0000311"
+      ],
+      "is_a": "InformationContentEntity",
+      "@id": "Publication"
+    },
+    {
+      "name": "AdministrativeEntity",
+      "abstract": true,
+      "@id": "AdministrativeEntity"
+    },
+    {
+      "name": "Provider",
+      "description": "person, group, organization or project that provides a piece of information",
+      "aliases": [
+        "agent",
+        "group"
+      ],
+      "mappings": [
+        "UMLSSG:ORGA"
+      ],
+      "is_a": "AdministrativeEntity",
+      "@id": "Provider"
+    },
+    {
+      "name": "MolecularEntity",
+      "description": "A gene, gene product, small molecule or macromolecule (including protein complex)",
+      "comment": "Check SIO mapping - also mapped to chemical substance.",
+      "aliases": [
+        "bioentity"
+      ],
+      "mappings": [
+        "SIO:010004",
+        "WD:Q43460564"
+      ],
+      "is_a": "BiologicalEntity",
+      "mixins": [
+        "ThingWithTaxon"
+      ],
+      "slots": [
+        "molecularly_interacts_with",
+        "regulates_entity_to_entity",
+        "biomarker_for"
+      ],
+      "@id": "MolecularEntity"
+    },
+    {
+      "name": "ChemicalSubstance",
+      "description": "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part",
+      "mappings": [
+        "SIO:010004",
+        "UMLSSG:CHEM",
+        "WD:Q79529"
+      ],
+      "id_prefixes": [
+        "CHEMBL.TARGET"
+      ],
+      "is_a": "MolecularEntity",
+      "subclass_of": "CHEBI:24431",
+      "@id": "ChemicalSubstance"
+    },
+    {
+      "name": "Drug",
+      "description": "A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease",
+      "comment": "The CHEBI ID represents a role rather than a substance",
+      "mappings": [
+        "WD:Q12140",
+        "CHEBI:23888"
+      ],
+      "is_a": "ChemicalSubstance",
+      "@id": "Drug"
+    },
+    {
+      "name": "Metabolite",
+      "description": "Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.",
+      "comment": "The CHEBI ID represents a role rather than a substance",
+      "mappings": [
+        "CHEBI:25212"
+      ],
+      "is_a": "ChemicalSubstance",
+      "@id": "Metabolite"
+    },
+    {
+      "name": "AnatomicalEntity",
+      "description": "A subcellular location, cell type or gross anatomical part",
+      "mappings": [
+        "UMLSSG:ANAT",
+        "SIO:010046",
+        "WD:Q4936952"
+      ],
+      "is_a": "OrganismalEntity",
+      "mixins": [
+        "ThingWithTaxon"
+      ],
+      "subclass_of": "UBERON:0001062",
+      "slots": [
+        "expresses"
+      ],
+      "@id": "AnatomicalEntity"
+    },
+    {
+      "name": "LifeStage",
+      "description": "A stage of development or growth of an organism, including post-natal adult stages",
+      "is_a": "OrganismalEntity",
+      "mixins": [
+        "ThingWithTaxon"
+      ],
+      "subclass_of": "UBERON:0000105",
+      "@id": "LifeStage"
+    },
+    {
+      "name": "PlanetaryEntity",
+      "description": "Any entity or process that exists at the level of the whole planet",
+      "is_a": "NamedThing",
+      "@id": "PlanetaryEntity"
+    },
+    {
+      "name": "EnvironmentalProcess",
+      "is_a": "PlanetaryEntity",
+      "mixins": [
+        "Occurrent"
+      ],
+      "subclass_of": "ENVO:02500000",
+      "@id": "EnvironmentalProcess"
+    },
+    {
+      "name": "EnvironmentalFeature",
+      "is_a": "PlanetaryEntity",
+      "subclass_of": "ENVO:00002297",
+      "@id": "EnvironmentalFeature"
+    },
+    {
+      "name": "ClinicalEntity",
+      "description": "Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities",
+      "is_a": "NamedThing",
+      "@id": "ClinicalEntity"
+    },
+    {
+      "name": "ClinicalTrial",
+      "is_a": "ClinicalEntity",
+      "@id": "ClinicalTrial"
+    },
+    {
+      "name": "ClinicalIntervention",
+      "is_a": "ClinicalEntity",
+      "@id": "ClinicalIntervention"
+    },
+    {
+      "name": "Device",
+      "description": "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment",
+      "mappings": [
+        "UMLSSG:DEVI"
+      ],
+      "is_a": "NamedThing",
+      "@id": "Device"
+    },
+    {
+      "name": "GenomicEntity",
+      "description": "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)",
+      "aliases": [
+        "sequence feature"
+      ],
+      "mappings": [
+        "SO:0000110",
+        "UMLSSG:GENE"
+      ],
+      "is_a": "MolecularEntity",
+      "slots": [
+        "has_biological_sequence"
+      ],
+      "@id": "GenomicEntity"
+    },
+    {
+      "name": "Genome",
+      "description": "A genome is the sum of genetic material within a cell or virion.",
+      "mappings": [
+        "SO:0001026",
+        "SIO:000984",
+        "WD:Q7020"
+      ],
+      "is_a": "GenomicEntity",
+      "@id": "Genome"
+    },
+    {
+      "name": "Transcript",
+      "description": "An RNA synthesized on a DNA or RNA template by an RNA polymerase",
+      "mappings": [
+        "SO:0000673",
+        "SIO:010450"
+      ],
+      "is_a": "GenomicEntity",
+      "@id": "Transcript"
+    },
+    {
+      "name": "Exon",
+      "description": "A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing",
+      "mappings": [
+        "SO:0000147",
+        "SIO:010445",
+        "WD:Q373027"
+      ],
+      "is_a": "GenomicEntity",
+      "@id": "Exon"
+    },
+    {
+      "name": "CodingSequence",
+      "mappings": [
+        "SO:0000316",
+        "SIO:001390"
+      ],
+      "is_a": "GenomicEntity",
+      "@id": "CodingSequence"
+    },
+    {
+      "name": "MacromolecularMachine",
+      "description": "A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.",
+      "is_a": "GenomicEntity",
+      "union_of": [
+        "Gene",
+        "GeneProduct",
+        "MacromolecularComplex"
+      ],
+      "slots": [
+        "macromolecular_machine_name"
+      ],
+      "slot_usage": [
+        {
+          "name": "name",
+          "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
+          "range": "symbol_type"
+        }
+      ],
+      "@id": "MacromolecularMachine"
+    },
+    {
+      "name": "GeneOrGeneProduct",
+      "description": "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another",
+      "is_a": "MacromolecularMachine",
+      "union_of": [
+        "Gene",
+        "GeneProduct"
+      ],
+      "slots": [
+        "in_pathway_with",
+        "in_complex_with",
+        "in_cell_population_with",
+        "expressed_in"
+      ],
+      "@id": "GeneOrGeneProduct"
+    },
+    {
+      "name": "Gene",
+      "aliases": [
+        "locus"
+      ],
+      "mappings": [
+        "SO:0000704",
+        "SIO:010035",
+        "WD:Q7187",
+        "UMLSSG:GENE"
+      ],
+      "id_prefixes": [
+        "NCBIGene",
+        "ENSEMBL",
+        "HGNC",
+        "MGI",
+        "ZFIN",
+        "dictyBase",
+        "WB",
+        "SGD",
+        "PomBase"
+      ],
+      "is_a": "GeneOrGeneProduct",
+      "slots": [
+        "genetically_interacts_with",
+        "has_gene_product",
+        "gene_associated_with_condition"
+      ],
+      "@id": "Gene"
+    },
+    {
+      "name": "GeneProduct",
+      "description": "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules",
+      "mappings": [
+        "WD:Q424689"
+      ],
+      "is_a": "GeneOrGeneProduct",
+      "union_of": [
+        "Protein",
+        "RNAProduct"
+      ],
+      "@id": "GeneProduct"
+    },
+    {
+      "name": "Protein",
+      "description": "A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA",
+      "aliases": [
+        "polypeptide"
+      ],
+      "mappings": [
+        "PR:000000001",
+        "SIO:010043",
+        "WD:Q8054"
+      ],
+      "id_prefixes": [
+        "UniProtKB",
+        "PR",
+        "ENSEMBL"
+      ],
+      "is_a": "GeneProduct",
+      "@id": "Protein"
+    },
+    {
+      "name": "GeneProductIsoform",
+      "description": "This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.",
+      "is_a": "GeneProduct",
+      "abstract": true,
+      "entity": true,
+      "@id": "GeneProductIsoform"
+    },
+    {
+      "name": "ProteinIsoform",
+      "description": "Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/",
+      "aliases": [
+        "proteoform"
+      ],
+      "id_prefixes": [
+        "UniProtKB",
+        "PR",
+        "ENSEMBL"
+      ],
+      "is_a": "Protein",
+      "mixins": [
+        "GeneProductIsoform"
+      ],
+      "@id": "ProteinIsoform"
+    },
+    {
+      "name": "RNAProduct",
+      "mappings": [
+        "CHEBI:33697",
+        "SIO:010450",
+        "WD:Q11053"
+      ],
+      "id_prefixes": [
+        "RNAcentral"
+      ],
+      "is_a": "GeneProduct",
+      "@id": "RNAProduct"
+    },
+    {
+      "name": "RNAProductIsoform",
+      "description": "Represents a protein that is a specific isoform of the canonical or reference RNA",
+      "id_prefixes": [
+        "RNAcentral"
+      ],
+      "is_a": "RNAProduct",
+      "mixins": [
+        "GeneProductIsoform"
+      ],
+      "@id": "RNAProductIsoform"
+    },
+    {
+      "name": "NoncodingRNAProduct",
+      "mappings": [
+        "SIO:001235"
+      ],
+      "id_prefixes": [
+        "RNAcentral",
+        "NCBIGene",
+        "ENSEMBL"
+      ],
+      "is_a": "RNAProduct",
+      "subclass_of": "SO:0000655",
+      "@id": "NoncodingRNAProduct"
+    },
+    {
+      "name": "MicroRNA",
+      "mappings": [
+        "SIO:001397",
+        "WD:Q310899"
+      ],
+      "id_prefixes": [
+        "MIR"
+      ],
+      "is_a": "NoncodingRNAProduct",
+      "subclass_of": "SO:0000276",
+      "@id": "MicroRNA"
+    },
+    {
+      "name": "MacromolecularComplex",
+      "mappings": [
+        "SIO:010046",
+        "WD:Q22325163"
+      ],
+      "id_prefixes": [
+        "IntAct",
+        "GO",
+        "PR",
+        "Reactome"
+      ],
+      "is_a": "MacromolecularMachine",
+      "subclass_of": "GO:0032991",
+      "@id": "MacromolecularComplex"
+    },
+    {
+      "name": "GeneGrouping",
+      "description": "any grouping of multiple genes or gene products",
+      "mixin": true,
+      "abstract": true,
+      "@id": "GeneGrouping"
+    },
+    {
+      "name": "GeneFamily",
+      "description": "any grouping of multiple genes or gene products related by common descent",
+      "mappings": [
+        "SIO:001380",
+        "NCIT:C20130",
+        "WD:Q417841"
+      ],
+      "id_prefixes": [
+        "PANTHER"
+      ],
+      "is_a": "MolecularEntity",
+      "mixins": [
+        "GeneGrouping"
+      ],
+      "@id": "GeneFamily"
+    },
+    {
+      "name": "Zygosity",
+      "mappings": [
+        "GENO:0000133"
+      ],
+      "is_a": "Attribute",
+      "@id": "Zygosity"
+    },
+    {
+      "name": "Genotype",
+      "description": "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background",
+      "comment": "Consider renaming as genotypic entity",
+      "mappings": [
+        "GENO:0000536",
+        "SIO:001079"
+      ],
+      "is_a": "GenomicEntity",
+      "slots": [
+        "has_zygosity"
+      ],
+      "@id": "Genotype"
+    },
+    {
+      "name": "Haplotype",
+      "description": "A set of zero or more Alleles on a single instance of a Sequence[VMC]",
+      "mappings": [
+        "GENO:0000871",
+        "VMC:Haplotype"
+      ],
+      "is_a": "GenomicEntity",
+      "@id": "Haplotype"
+    },
+    {
+      "name": "SequenceVariant",
+      "description": "An allele that varies in its sequence from what is considered the reference allele at that locus.",
+      "comment": "This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)",
+      "aliases": [
+        "allele"
+      ],
+      "mappings": [
+        "GENO:0000002",
+        "WD:Q15304597",
+        "SIO:010277",
+        "VMC:Allele"
+      ],
+      "id_prefixes": [
+        "ClinVar",
+        "WD",
+        "CIViC"
+      ],
+      "alt_descriptions": [
+        {
+          "description": "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition",
+          "source": "AGR"
+        },
+        {
+          "description": "A contiguous change at a Location",
+          "source": "VMC"
+        }
+      ],
+      "is_a": "GenomicEntity",
+      "local_names": [
+        "allele"
+      ],
+      "slots": [
+        "sequence_variant_has_gene",
+        "sequence_variant_has_biological_sequence",
+        "sequence_variant_id"
+      ],
+      "slot_usage": [
+        {
+          "name": "has_gene",
+          "description": "Each allele can be associated with any number of genes",
+          "multivalued": true
+        },
+        {
+          "name": "has_biological_sequence",
+          "description": "The state of the sequence w.r.t a reference sequence"
+        },
+        {
+          "name": "id",
+          "examples": [
+            {
+              "value": "ZFIN:ZDB-ALT-980203-1091",
+              "description": "ti282a allele from ZFIN"
+            },
+            {
+              "value": "ClinVarVariant:17681",
+              "description": "NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)"
+            }
+          ]
+        }
+      ],
+      "@id": "SequenceVariant"
+    },
+    {
+      "name": "DrugExposure",
+      "description": "A drug exposure is an intake of a particular chemical substance",
+      "aliases": [
+        "drug intake",
+        "drug dose"
+      ],
+      "mappings": [
+        "ECTO:0000509",
+        "SIO:001005"
+      ],
+      "is_a": "Environment",
+      "slots": [
+        "drug"
+      ],
+      "slot_usage": [
+        {
+          "name": "drug",
+          "multivalued": true,
+          "range": "ChemicalSubstance",
+          "required": true
+        }
+      ],
+      "@id": "DrugExposure"
+    },
+    {
+      "name": "Treatment",
+      "description": "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'",
+      "aliases": [
+        "medical action"
+      ],
+      "mappings": [
+        "OGMS:0000090",
+        "SIO:001398"
+      ],
+      "is_a": "Environment",
+      "slots": [
+        "treatment_treats",
+        "has_exposure_parts"
+      ],
+      "slot_usage": [
+        {
+          "name": "treats",
+          "range": "DiseaseOrPhenotypicFeature",
+          "required": true
+        },
+        {
+          "name": "has_exposure_parts",
+          "multivalued": true,
+          "range": "DrugExposure",
+          "required": true
+        }
+      ],
+      "@id": "Treatment"
+    },
+    {
+      "name": "GeographicLocation",
+      "description": "a location that can be described in lat/long coordinates",
+      "mappings": [
+        "UMLSSG:GEOG"
+      ],
+      "is_a": "PlanetaryEntity",
+      "slots": [
+        "latitude",
+        "longitude"
+      ],
+      "@id": "GeographicLocation"
+    },
+    {
+      "name": "GeographicLocationAtTime",
+      "description": "a location that can be described in lat/long coordinates, for a particular time",
+      "is_a": "GeographicLocation",
+      "slots": [
+        "timepoint"
+      ],
+      "@id": "GeographicLocationAtTime"
+    },
+    {
+      "name": "Association",
+      "description": "A typed association between two entities, supported by evidence",
+      "comment": "This is roughly the model used by biolink and ontobio at the moment",
+      "mappings": [
+        "OBAN:association",
+        "rdf:Statement",
+        "owl:Axiom"
+      ],
+      "is_a": "InformationContentEntity",
+      "slots": [
+        "association_type",
+        "subject",
+        "negated",
+        "relation",
+        "object",
+        "qualifiers",
+        "publications",
+        "provided_by",
+        "association_slot"
+      ],
+      "@id": "Association"
+    },
+    {
+      "name": "GenotypeToGenotypePartAssociation",
+      "description": "Any association between one genotype and a genotypic entity that is a sub-component of it",
+      "is_a": "Association",
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "genotype_to_genotype_part_association_relation",
+        "genotype_to_genotype_part_association_subject",
+        "genotype_to_genotype_part_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "relation",
+          "subproperty_of": "has_variant_part"
+        },
+        {
+          "name": "subject",
+          "description": "parent genotype",
+          "range": "Genotype",
+          "definitional": true
+        },
+        {
+          "name": "object",
+          "description": "child genotype",
+          "range": "Genotype",
+          "definitional": true
+        }
+      ],
+      "@id": "GenotypeToGenotypePartAssociation"
+    },
+    {
+      "name": "GenotypeToGeneAssociation",
+      "description": "Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality",
+      "is_a": "Association",
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "genotype_to_gene_association_relation",
+        "genotype_to_gene_association_subject",
+        "genotype_to_gene_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "relation",
+          "description": "the relationship type used to connect genotype to gene"
+        },
+        {
+          "name": "subject",
+          "description": "parent genotype",
+          "range": "Genotype",
+          "definitional": true
+        },
+        {
+          "name": "object",
+          "description": "gene implicated in genotype",
+          "range": "Gene",
+          "definitional": true
+        }
+      ],
+      "@id": "GenotypeToGeneAssociation"
+    },
+    {
+      "name": "GenotypeToVariantAssociation",
+      "description": "Any association between a genotype and a sequence variant.",
+      "is_a": "Association",
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "genotype_to_variant_association_relation",
+        "genotype_to_variant_association_subject",
+        "genotype_to_variant_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "relation",
+          "description": "the relationship type used to connect genotype to gene"
+        },
+        {
+          "name": "subject",
+          "description": "parent genotype",
+          "range": "Genotype",
+          "definitional": true
+        },
+        {
+          "name": "object",
+          "description": "gene implicated in genotype",
+          "range": "SequenceVariant",
+          "definitional": true
+        }
+      ],
+      "@id": "GenotypeToVariantAssociation"
+    },
+    {
+      "name": "GeneToGeneAssociation",
+      "description": "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.",
+      "aliases": [
+        "molecular or genetic interaction"
+      ],
+      "is_a": "Association",
+      "abstract": true,
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "gene_to_gene_association_subject",
+        "gene_to_gene_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
+          "range": "GeneOrGeneProduct",
+          "definitional": true
+        },
+        {
+          "name": "object",
+          "description": "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa",
+          "range": "GeneOrGeneProduct",
+          "definitional": true
+        }
+      ],
+      "@id": "GeneToGeneAssociation"
+    },
+    {
+      "name": "GeneToGeneHomologyAssociation",
+      "description": "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)",
+      "is_a": "GeneToGeneAssociation",
+      "symmetric": true,
+      "defining_slots": [
+        "subject",
+        "object",
+        "relation"
+      ],
+      "slots": [
+        "gene_to_gene_homology_association_relation"
+      ],
+      "slot_usage": [
+        {
+          "name": "relation",
+          "description": "homology relationship type",
+          "definitional": true,
+          "subproperty_of": "homologous_to"
+        }
+      ],
+      "@id": "GeneToGeneHomologyAssociation"
+    },
+    {
+      "name": "MolecularInteraction",
+      "description": "An interaction at the molecular level between two physical entities",
+      "is_a": "Association",
+      "mixin": true,
+      "abstract": true,
+      "slots": [
+        "molecular_interaction_subject",
+        "molecular_interaction_relation",
+        "molecular_interaction_object",
+        "interacting_molecules_category"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "range": "MolecularEntity"
+        },
+        {
+          "name": "relation",
+          "description": "interaction relationship type",
+          "examples": [
+            {
+              "value": "RO:0002447",
+              "description": "the subject molecular phosphorylates the object molecule"
+            }
+          ],
+          "values_from": [
+            "ro",
+            "mi"
+          ],
+          "definitional": true,
+          "subproperty_of": "molecularly_interacts_with"
+        },
+        {
+          "name": "object",
+          "range": "MolecularEntity"
+        },
+        {
+          "name": "interacting_molecules_category",
+          "examples": [
+            {
+              "value": "MI:1048",
+              "description": "smallmolecule-protein"
+            }
+          ],
+          "subclass_of": "MI:1046",
+          "range": "OntologyClass"
+        }
+      ],
+      "@id": "MolecularInteraction"
+    },
+    {
+      "name": "PairwiseGeneOrProteinInteractionAssociation",
+      "description": "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)",
+      "is_a": "GeneToGeneAssociation",
+      "mixins": [
+        "MolecularInteraction"
+      ],
+      "symmetric": true,
+      "defining_slots": [
+        "subject",
+        "object",
+        "relation"
+      ],
+      "slots": [
+        "pairwise_gene_or_protein_interaction_association_relation"
+      ],
+      "slot_usage": [
+        {
+          "name": "relation",
+          "description": "interaction relationship type",
+          "values_from": [
+            "ro",
+            "mi"
+          ],
+          "definitional": true,
+          "subproperty_of": "molecularly_interacts_with"
+        }
+      ],
+      "@id": "PairwiseGeneOrProteinInteractionAssociation"
+    },
+    {
+      "name": "CellLineToThingAssociation",
+      "description": "An relationship between a cell line and another entity",
+      "is_a": "Association",
+      "abstract": true,
+      "defining_slots": [
+        "subject"
+      ],
+      "slots": [
+        "cell_line_to_thing_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "range": "CellLine",
+          "definitional": true
+        }
+      ],
+      "@id": "CellLineToThingAssociation"
+    },
+    {
+      "name": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
+      "description": "An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype",
+      "is_a": "Association",
+      "mixins": [
+        "CellLineToThingAssociation",
+        "ThingToDiseaseOrPhenotypicFeatureAssociation"
+      ],
+      "slots": [
+        "cell_line_to_disease_or_phenotypic_feature_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "range": "DiseaseOrPhenotypicFeature"
+        }
+      ],
+      "@id": "CellLineToDiseaseOrPhenotypicFeatureAssociation"
+    },
+    {
+      "name": "ChemicalToThingAssociation",
+      "description": "An interaction between a chemical entity and another entity",
+      "is_a": "Association",
+      "abstract": true,
+      "defining_slots": [
+        "subject"
+      ],
+      "slots": [
+        "chemical_to_thing_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "the chemical substance or entity that is an interactor",
+          "range": "ChemicalSubstance",
+          "definitional": true
+        }
+      ],
+      "@id": "ChemicalToThingAssociation"
+    },
+    {
+      "name": "CaseToThingAssociation",
+      "description": "An abstract association for use where the case is the subject",
+      "is_a": "Association",
+      "abstract": true,
+      "defining_slots": [
+        "subject"
+      ],
+      "slots": [
+        "case_to_thing_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "the case (e.g. patient) that has the property",
+          "range": "Case",
+          "definitional": true
+        }
+      ],
+      "@id": "CaseToThingAssociation"
+    },
+    {
+      "name": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
+      "description": "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype",
+      "mappings": [
+        "SIO:000993"
+      ],
+      "is_a": "Association",
+      "mixins": [
+        "ChemicalToThingAssociation",
+        "ThingToDiseaseOrPhenotypicFeatureAssociation"
+      ],
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "chemical_to_disease_or_phenotypic_feature_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "object",
+          "description": "the disease or phenotype that is affected by the chemical",
+          "range": "DiseaseOrPhenotypicFeature",
+          "definitional": true
+        }
+      ],
+      "@id": "ChemicalToDiseaseOrPhenotypicFeatureAssociation"
+    },
+    {
+      "name": "ChemicalToPathwayAssociation",
+      "description": "An interaction between a chemical entity and a biological process or pathway",
+      "mappings": [
+        "SIO:001250"
+      ],
+      "is_a": "Association",
+      "mixins": [
+        "ChemicalToThingAssociation"
+      ],
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "chemical_to_pathway_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "object",
+          "description": "the pathway that is affected by the chemical",
+          "range": "Pathway",
+          "definitional": true
+        }
+      ],
+      "@id": "ChemicalToPathwayAssociation"
+    },
+    {
+      "name": "ChemicalToGeneAssociation",
+      "description": "An interaction between a chemical entity and a gene or gene product",
+      "mappings": [
+        "SIO:001257"
+      ],
+      "is_a": "Association",
+      "mixins": [
+        "ChemicalToThingAssociation"
+      ],
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "chemical_to_gene_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "object",
+          "description": "the gene or gene product that is affected by the chemical",
+          "range": "GeneOrGeneProduct",
+          "definitional": true
+        }
+      ],
+      "@id": "ChemicalToGeneAssociation"
+    },
+    {
+      "name": "BiosampleToThingAssociation",
+      "description": "An association between a biosample and something",
+      "is_a": "Association",
+      "abstract": true,
+      "defining_slots": [
+        "subject"
+      ],
+      "slots": [
+        "biosample_to_thing_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "the biosample being described",
+          "range": "Biosample",
+          "definitional": true
+        }
+      ],
+      "@id": "BiosampleToThingAssociation"
+    },
+    {
+      "name": "BiosampleToDiseaseOrPhenotypicFeatureAssociation",
+      "description": "An association between a biosample and a disease or phenotype\n  definitional: true",
+      "is_a": "Association",
+      "mixins": [
+        "BiosampleToThingAssociation",
+        "ThingToDiseaseOrPhenotypicFeatureAssociation"
+      ],
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "@id": "BiosampleToDiseaseOrPhenotypicFeatureAssociation"
+    },
+    {
+      "name": "FrequencyQualifier",
+      "description": "Qualifier for freqency type associations",
+      "mixin": true,
+      "@id": "FrequencyQualifier"
+    },
+    {
+      "name": "EntityToFeatureOrDiseaseQualifiers",
+      "description": "Qualifiers for entity to disease or phenotype associations",
+      "is_a": "FrequencyQualifier",
+      "mixin": true,
+      "abstract": true,
+      "slots": [
+        "severity_qualifier",
+        "onset_qualifier"
+      ],
+      "@id": "EntityToFeatureOrDiseaseQualifiers"
+    },
+    {
+      "name": "EntityToPhenotypicFeatureAssociation",
+      "is_a": "Association",
+      "mixins": [
+        "EntityToFeatureOrDiseaseQualifiers"
+      ],
+      "abstract": true,
+      "defining_slots": [
+        "object"
+      ],
+      "slots": [
+        "sex_qualifier",
+        "entity_to_phenotypic_feature_association_description",
+        "entity_to_phenotypic_feature_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "description",
+          "description": "A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class"
+        },
+        {
+          "name": "object",
+          "description": "phenotypic class",
+          "examples": [
+            {
+              "value": "HP:0002487",
+              "description": "Hyperkinesis"
+            },
+            {
+              "value": "WBPhenotype:0000180",
+              "description": "axon morphology variant"
+            },
+            {
+              "value": "MP:0001569",
+              "description": "abnormal circulating bilirubin level"
+            }
+          ],
+          "subclass_of": "UPHENO:0001001",
+          "values_from": [
+            "upheno",
+            "hp",
+            "mp",
+            "wbphenotypic feature"
+          ],
+          "range": "PhenotypicFeature",
+          "definitional": true
+        }
+      ],
+      "@id": "EntityToPhenotypicFeatureAssociation"
+    },
+    {
+      "name": "EntityToDiseaseAssociation",
+      "description": "mixin class for any association whose object (target node) is a disease",
+      "is_a": "EntityToFeatureOrDiseaseQualifiers",
+      "mixin": true,
+      "abstract": true,
+      "defining_slots": [
+        "object"
+      ],
+      "slots": [
+        "entity_to_disease_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "object",
+          "description": "disease",
+          "examples": [
+            {
+              "value": "MONDO:0020066",
+              "description": "Ehlers-Danlos syndrome"
+            }
+          ],
+          "subclass_of": "MONDO:0000001",
+          "range": "Disease",
+          "definitional": true
+        }
+      ],
+      "@id": "EntityToDiseaseAssociation"
+    },
+    {
+      "name": "DiseaseOrPhenotypicFeatureAssociationToThingAssociation",
+      "is_a": "Association",
+      "abstract": true,
+      "defining_slots": [
+        "subject"
+      ],
+      "slots": [
+        "disease_or_phenotypic_feature_association_to_thing_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "disease or phenotype",
+          "examples": [
+            {
+              "value": "MONDO:0017314",
+              "description": "Ehlers-Danlos syndrome, vascular type"
+            },
+            {
+              "value": "MP:0013229",
+              "description": "abnormal brain ventricle size"
+            }
+          ],
+          "range": "DiseaseOrPhenotypicFeature",
+          "definitional": true
+        }
+      ],
+      "@id": "DiseaseOrPhenotypicFeatureAssociationToThingAssociation"
+    },
+    {
+      "name": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
+      "description": "An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.",
+      "mappings": [
+        "NCIT:R100"
+      ],
+      "is_a": "DiseaseOrPhenotypicFeatureAssociationToThingAssociation",
+      "slots": [
+        "disease_or_phenotypic_feature_association_to_location_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "object",
+          "description": "anatomical entity in which the disease or feature is found",
+          "examples": [
+            {
+              "value": "UBERON:0002048",
+              "description": "lung"
+            }
+          ],
+          "range": "AnatomicalEntity"
+        }
+      ],
+      "@id": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation"
+    },
+    {
+      "name": "ThingToDiseaseOrPhenotypicFeatureAssociation",
+      "is_a": "Association",
+      "abstract": true,
+      "defining_slots": [
+        "object"
+      ],
+      "slots": [
+        "thing_to_disease_or_phenotypic_feature_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "object",
+          "description": "disease or phenotype",
+          "examples": [
+            {
+              "value": "MONDO:0017314",
+              "description": "Ehlers-Danlos syndrome, vascular type"
+            },
+            {
+              "value": "MP:0013229",
+              "description": "abnormal brain ventricle size"
+            }
+          ],
+          "range": "DiseaseOrPhenotypicFeature",
+          "definitional": true
+        }
+      ],
+      "@id": "ThingToDiseaseOrPhenotypicFeatureAssociation"
+    },
+    {
+      "name": "DiseaseToThingAssociation",
+      "is_a": "Association",
+      "abstract": true,
+      "defining_slots": [
+        "subject"
+      ],
+      "slots": [
+        "disease_to_thing_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "disease class",
+          "examples": [
+            {
+              "value": "MONDO:0017314",
+              "description": "Ehlers-Danlos syndrome, vascular type"
+            }
+          ],
+          "subclass_of": "MONDO:0000001",
+          "values_from": [
+            "mondo",
+            "omim",
+            "orphanet",
+            "ncit",
+            "doid"
+          ],
+          "range": "Disease",
+          "definitional": true
+        }
+      ],
+      "@id": "DiseaseToThingAssociation"
+    },
+    {
+      "name": "GenotypeToPhenotypicFeatureAssociation",
+      "description": "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment",
+      "is_a": "Association",
+      "mixins": [
+        "EntityToPhenotypicFeatureAssociation",
+        "GenotypeToThingAssociation"
+      ],
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "genotype_to_phenotypic_feature_association_relation",
+        "genotype_to_phenotypic_feature_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "relation",
+          "subproperty_of": "has_phenotype"
+        },
+        {
+          "name": "subject",
+          "description": "genotype that is associated with the phenotypic feature",
+          "range": "Genotype"
+        }
+      ],
+      "@id": "GenotypeToPhenotypicFeatureAssociation"
+    },
+    {
+      "name": "EnvironmentToPhenotypicFeatureAssociation",
+      "description": "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype",
+      "is_a": "Association",
+      "mixins": [
+        "EntityToPhenotypicFeatureAssociation"
+      ],
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "environment_to_phenotypic_feature_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "range": "Environment",
+          "definitional": true
+        }
+      ],
+      "@id": "EnvironmentToPhenotypicFeatureAssociation"
+    },
+    {
+      "name": "DiseaseToPhenotypicFeatureAssociation",
+      "description": "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way",
+      "is_a": "Association",
+      "mixins": [
+        "EntityToPhenotypicFeatureAssociation",
+        "DiseaseToThingAssociation"
+      ],
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "@id": "DiseaseToPhenotypicFeatureAssociation"
+    },
+    {
+      "name": "CaseToPhenotypicFeatureAssociation",
+      "description": "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype",
+      "is_a": "Association",
+      "mixins": [
+        "EntityToPhenotypicFeatureAssociation",
+        "CaseToThingAssociation"
+      ],
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "@id": "CaseToPhenotypicFeatureAssociation"
+    },
+    {
+      "name": "GeneToThingAssociation",
+      "is_a": "Association",
+      "abstract": true,
+      "defining_slots": [
+        "subject"
+      ],
+      "slots": [
+        "gene_to_thing_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "gene that is the subject of the association",
+          "range": "GeneOrGeneProduct"
+        }
+      ],
+      "@id": "GeneToThingAssociation"
+    },
+    {
+      "name": "VariantToThingAssociation",
+      "is_a": "Association",
+      "mixin": true,
+      "abstract": true,
+      "local_names": [
+        "variant annotation"
+      ],
+      "defining_slots": [
+        "subject"
+      ],
+      "slots": [
+        "variant_to_thing_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "a sequence variant in which the allele state is associated with some other entity",
+          "examples": [
+            {
+              "value": "ClinVar:38077",
+              "description": "ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)"
+            },
+            {
+              "value": "ClinGen:CA024716",
+              "description": "chr13:g.32921033G>C (hg19) in ClinGen"
+            }
+          ],
+          "range": "SequenceVariant"
+        }
+      ],
+      "@id": "VariantToThingAssociation"
+    },
+    {
+      "name": "GeneToPhenotypicFeatureAssociation",
+      "mappings": [
+        "http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association"
+      ],
+      "is_a": "Association",
+      "mixins": [
+        "EntityToPhenotypicFeatureAssociation",
+        "GeneToThingAssociation"
+      ],
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "gene_to_phenotypic_feature_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "gene in which variation is correlated with the phenotypic feature",
+          "examples": [
+            {
+              "value": "HGNC:2197",
+              "description": "COL1A1 (Human)"
+            }
+          ],
+          "range": "GeneOrGeneProduct"
+        }
+      ],
+      "@id": "GeneToPhenotypicFeatureAssociation"
+    },
+    {
+      "name": "GeneToDiseaseAssociation",
+      "comment": "NCIT:R176 refers to the inverse relationship",
+      "mappings": [
+        "SIO:000983"
+      ],
+      "is_a": "Association",
+      "mixins": [
+        "EntityToDiseaseAssociation",
+        "GeneToThingAssociation"
+      ],
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "gene_to_disease_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model",
+          "range": "GeneOrGeneProduct"
+        }
+      ],
+      "@id": "GeneToDiseaseAssociation"
+    },
+    {
+      "name": "VariantToPopulationAssociation",
+      "description": "An association between a variant and a population, where the variant has particular frequency in the population",
+      "is_a": "Association",
+      "mixins": [
+        "VariantToThingAssociation",
+        "FrequencyQuantifier",
+        "FrequencyQualifier"
+      ],
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "variant_to_population_association_subject",
+        "variant_to_population_association_object",
+        "variant_to_population_association_has_quotient",
+        "variant_to_population_association_has_count",
+        "variant_to_population_association_has_total"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "an allele that has a certain frequency in a given population",
+          "examples": [
+            {
+              "value": "NC_000017.11:g.43051071A>T",
+              "description": "17:41203088 A/C in gnomad"
+            }
+          ],
+          "range": "SequenceVariant"
+        },
+        {
+          "name": "object",
+          "description": "the population that is observed to have the frequency",
+          "examples": [
+            {
+              "value": "ANCESTRO:0010",
+              "description": "African"
+            }
+          ],
+          "range": "PopulationOfIndividualOrganisms"
+        },
+        {
+          "name": "has_quotient",
+          "description": "frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency",
+          "examples": [
+            {
+              "value": "0.0001666"
+            }
+          ]
+        },
+        {
+          "name": "has_count",
+          "description": "number in object population that carry a particular allele, aka allele count",
+          "examples": [
+            {
+              "value": "4",
+              "description": "4 individuals in gnomad set"
+            }
+          ]
+        },
+        {
+          "name": "has_total",
+          "description": "number all populations that carry a particular allele, aka allele number",
+          "examples": [
+            {
+              "value": "24014",
+              "description": "24014 individuals in gnomad set"
+            }
+          ]
+        }
+      ],
+      "@id": "VariantToPopulationAssociation"
+    },
+    {
+      "name": "PopulationToPopulationAssociation",
+      "description": "An association between a two populations",
+      "is_a": "Association",
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "population_to_population_association_subject",
+        "population_to_population_association_object",
+        "population_to_population_association_relation"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "the population that form the subject of the association",
+          "range": "PopulationOfIndividualOrganisms"
+        },
+        {
+          "name": "object",
+          "description": "the population that form the object of the association",
+          "range": "PopulationOfIndividualOrganisms"
+        },
+        {
+          "name": "relation",
+          "description": "A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used"
+        }
+      ],
+      "@id": "PopulationToPopulationAssociation"
+    },
+    {
+      "name": "VariantToPhenotypicFeatureAssociation",
+      "is_a": "Association",
+      "mixins": [
+        "VariantToThingAssociation",
+        "EntityToPhenotypicFeatureAssociation"
+      ],
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "variant_to_phenotypic_feature_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "a sequence variant in which the allele state is associated in some way with the phenotype state",
+          "range": "SequenceVariant"
+        }
+      ],
+      "@id": "VariantToPhenotypicFeatureAssociation"
+    },
+    {
+      "name": "VariantToDiseaseAssociation",
+      "comment": "TODO decide no how to model pathogenicity",
+      "is_a": "Association",
+      "mixins": [
+        "VariantToThingAssociation",
+        "EntityToDiseaseAssociation"
+      ],
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "variant_to_disease_association_subject",
+        "variant_to_disease_association_relation",
+        "variant_to_disease_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "a sequence variant in which the allele state is associated in some way with the disease state",
+          "examples": [
+            {
+              "value": "ClinVar:52241",
+              "description": "NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)"
+            }
+          ]
+        },
+        {
+          "name": "relation",
+          "description": "E.g. is pathogenic for",
+          "subproperty_of": "related_condition"
+        },
+        {
+          "name": "object",
+          "description": "a disease that is associated with that variant",
+          "examples": [
+            {
+              "value": "MONDO:0016419",
+              "description": "hereditary breast cancer"
+            }
+          ]
+        }
+      ],
+      "@id": "VariantToDiseaseAssociation"
+    },
+    {
+      "name": "ModelToDiseaseMixin",
+      "description": "This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease",
+      "mixin": true,
+      "abstract": true,
+      "slots": [
+        "model_to_disease_mixin_subject",
+        "model_to_disease_mixin_relation"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease"
+        },
+        {
+          "name": "relation",
+          "description": "The relationship to the disease\n  ",
+          "subproperty_of": "model_of"
+        }
+      ],
+      "@id": "ModelToDiseaseMixin"
+    },
+    {
+      "name": "GeneAsAModelOfDiseaseAssociation",
+      "is_a": "GeneToDiseaseAssociation",
+      "mixins": [
+        "ModelToDiseaseMixin",
+        "EntityToDiseaseAssociation"
+      ],
+      "defining_slots": [
+        "subject",
+        "object",
+        "relation"
+      ],
+      "slots": [
+        "gene_as_a_model_of_disease_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
+          "range": "GeneOrGeneProduct"
+        }
+      ],
+      "@id": "GeneAsAModelOfDiseaseAssociation"
+    },
+    {
+      "name": "GeneHasVariantThatContributesToDiseaseAssociation",
+      "is_a": "GeneToDiseaseAssociation",
+      "defining_slots": [
+        "subject",
+        "object",
+        "relation"
+      ],
+      "slots": [
+        "sequence_variant_qualifier",
+        "gene_has_variant_that_contributes_to_disease_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
+          "range": "GeneOrGeneProduct"
+        }
+      ],
+      "@id": "GeneHasVariantThatContributesToDiseaseAssociation"
+    },
+    {
+      "name": "GenotypeToThingAssociation",
+      "is_a": "Association",
+      "abstract": true,
+      "defining_slots": [
+        "subject"
+      ],
+      "slots": [
+        "genotype_to_thing_association_subject"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "genotype that is the subject of the association",
+          "range": "Genotype"
+        }
+      ],
+      "@id": "GenotypeToThingAssociation"
+    },
+    {
+      "name": "GeneToExpressionSiteAssociation",
+      "description": "An association between a gene and an expression site, possibly qualified by stage/timing info.",
+      "note": "TBD: introduce subclasses for distinction between wild-type and experimental conditions?",
+      "see_also": "https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee",
+      "is_a": "Association",
+      "defining_slots": [
+        "subject",
+        "object",
+        "relation"
+      ],
+      "slots": [
+        "gene_to_expression_site_association_stage_qualifier",
+        "gene_to_expression_site_association_quantifier_qualifier",
+        "gene_to_expression_site_association_subject",
+        "gene_to_expression_site_association_object",
+        "gene_to_expression_site_association_relation"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "gene in which variation is correlated with the phenotypic feature",
+          "range": "GeneOrGeneProduct"
+        },
+        {
+          "name": "object",
+          "description": "location in which the gene is expressed",
+          "examples": [
+            {
+              "value": "UBERON:0002037",
+              "description": "cerebellum"
+            }
+          ],
+          "subclass_of": "UBERON:0001062",
+          "range": "AnatomicalEntity"
+        },
+        {
+          "name": "relation",
+          "description": "expression relationship",
+          "subproperty_of": "expressed_in"
+        },
+        {
+          "name": "stage_qualifier",
+          "description": "stage at which the gene is expressed in the site",
+          "examples": [
+            {
+              "value": "UBERON:0000069",
+              "description": "larval stage"
+            }
+          ],
+          "range": "LifeStage"
+        },
+        {
+          "name": "quantifier_qualifier",
+          "description": "can be used to indicate magnitude, or also ranking"
+        }
+      ],
+      "@id": "GeneToExpressionSiteAssociation"
+    },
+    {
+      "name": "SequenceVariantModulatesTreatmentAssociation",
+      "description": "An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.",
+      "comment": "An alternate way to model the same information could be via a qualifier",
+      "is_a": "Association",
+      "abstract": true,
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "sequence_variant_modulates_treatment_association_subject",
+        "sequence_variant_modulates_treatment_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "variant that modulates the treatment of some disease",
+          "range": "SequenceVariant"
+        },
+        {
+          "name": "object",
+          "description": "treatment whose efficacy is modulated by the subject variant",
+          "range": "Treatment"
+        }
+      ],
+      "@id": "SequenceVariantModulatesTreatmentAssociation"
+    },
+    {
+      "name": "FunctionalAssociation",
+      "description": "An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed",
+      "is_a": "Association",
+      "slots": [
+        "functional_association_subject",
+        "functional_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "gene, product or macromolecular complex that has the function associated with the GO term",
+          "examples": [
+            {
+              "value": "ZFIN:ZDB-GENE-050417-357",
+              "description": "twist1b"
+            }
+          ],
+          "range": "MacromolecularMachine"
+        },
+        {
+          "name": "object",
+          "description": "class describing the activity, process or localization of the gene product",
+          "examples": [
+            {
+              "value": "GO:0016301",
+              "description": "kinase activity"
+            },
+            {
+              "value": "GO:0045211",
+              "description": "postsynaptic membrane"
+            }
+          ],
+          "values_from": [
+            "go"
+          ],
+          "range": "GeneOntologyClass"
+        }
+      ],
+      "@id": "FunctionalAssociation"
+    },
+    {
+      "name": "MacromolecularMachineToMolecularActivityAssociation",
+      "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution",
+      "is_a": "FunctionalAssociation",
+      "slots": [
+        "macromolecular_machine_to_molecular_activity_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "object",
+          "range": "MolecularActivity"
+        }
+      ],
+      "@id": "MacromolecularMachineToMolecularActivityAssociation"
+    },
+    {
+      "name": "MacromolecularMachineToBiologicalProcessAssociation",
+      "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it",
+      "is_a": "FunctionalAssociation",
+      "slots": [
+        "macromolecular_machine_to_biological_process_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "object",
+          "range": "BiologicalProcess"
+        }
+      ],
+      "@id": "MacromolecularMachineToBiologicalProcessAssociation"
+    },
+    {
+      "name": "MacromolecularMachineToCellularComponentAssociation",
+      "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component",
+      "is_a": "FunctionalAssociation",
+      "slots": [
+        "macromolecular_machine_to_cellular_component_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "object",
+          "range": "CellularComponent"
+        }
+      ],
+      "@id": "MacromolecularMachineToCellularComponentAssociation"
+    },
+    {
+      "name": "GeneToGoTermAssociation",
+      "aliases": [
+        "functional association"
+      ],
+      "mappings": [
+        "http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association"
+      ],
+      "is_a": "FunctionalAssociation",
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "gene_to_go_term_association_subject",
+        "gene_to_go_term_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "gene, product or macromolecular complex that has the function associated with the GO term",
+          "examples": [
+            {
+              "value": "ZFIN:ZDB-GENE-050417-357",
+              "description": "twist1b"
+            }
+          ],
+          "range": "MolecularEntity"
+        },
+        {
+          "name": "object",
+          "description": "class describing the activity, process or localization of the gene product",
+          "examples": [
+            {
+              "value": "GO:0016301",
+              "description": "kinase activity"
+            }
+          ],
+          "values_from": [
+            "go"
+          ],
+          "range": "GeneOntologyClass"
+        }
+      ],
+      "@id": "GeneToGoTermAssociation"
+    },
+    {
+      "name": "GenomicSequenceLocalization",
+      "description": "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig",
+      "mappings": [
+        "faldo:location"
+      ],
+      "is_a": "Association",
+      "slots": [
+        "start_interbase_coordinate",
+        "end_interbase_coordinate",
+        "genome_build",
+        "phase",
+        "genomic_sequence_localization_subject",
+        "genomic_sequence_localization_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "aliases": [
+            "sequence feature"
+          ],
+          "range": "GenomicEntity"
+        },
+        {
+          "name": "object",
+          "aliases": [
+            "reference"
+          ],
+          "range": "GenomicEntity"
+        }
+      ],
+      "@id": "GenomicSequenceLocalization"
+    },
+    {
+      "name": "SequenceFeatureRelationship",
+      "description": "For example, a particular exon is part of a particular transcript or gene",
+      "mappings": [
+        "GMODChado:feature_relationship"
+      ],
+      "is_a": "Association",
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "sequence_feature_relationship_subject",
+        "sequence_feature_relationship_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "range": "GenomicEntity"
+        },
+        {
+          "name": "object",
+          "range": "GenomicEntity"
+        }
+      ],
+      "@id": "SequenceFeatureRelationship"
+    },
+    {
+      "name": "TranscriptToGeneRelationship",
+      "description": "A gene is a collection of transcripts",
+      "is_a": "SequenceFeatureRelationship",
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "transcript_to_gene_relationship_subject",
+        "transcript_to_gene_relationship_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "range": "Transcript"
+        },
+        {
+          "name": "object",
+          "range": "Gene"
+        }
+      ],
+      "@id": "TranscriptToGeneRelationship"
+    },
+    {
+      "name": "GeneToGeneProductRelationship",
+      "description": "A gene is transcribed and potentially translated to a gene product",
+      "is_a": "SequenceFeatureRelationship",
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "gene_to_gene_product_relationship_subject",
+        "gene_to_gene_product_relationship_object",
+        "gene_to_gene_product_relationship_relation"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "range": "Gene"
+        },
+        {
+          "name": "object",
+          "range": "GeneProduct"
+        },
+        {
+          "name": "relation",
+          "subproperty_of": "has_gene_product"
+        }
+      ],
+      "@id": "GeneToGeneProductRelationship"
+    },
+    {
+      "name": "ExonToTranscriptRelationship",
+      "description": "A transcript is formed from multiple exons",
+      "is_a": "SequenceFeatureRelationship",
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "exon_to_transcript_relationship_subject",
+        "exon_to_transcript_relationship_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "range": "Exon"
+        },
+        {
+          "name": "object",
+          "range": "Transcript"
+        }
+      ],
+      "@id": "ExonToTranscriptRelationship"
+    },
+    {
+      "name": "GeneRegulatoryRelationship",
+      "description": "A regulatory relationship between two genes",
+      "is_a": "Association",
+      "slots": [
+        "gene_regulatory_relationship_relation",
+        "gene_regulatory_relationship_subject",
+        "gene_regulatory_relationship_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "relation",
+          "description": "the direction is always from regulator to regulated"
+        },
+        {
+          "name": "subject",
+          "range": "GeneOrGeneProduct",
+          "role": "regulatory gene"
+        },
+        {
+          "name": "object",
+          "range": "GeneOrGeneProduct",
+          "role": "regulated gene"
+        }
+      ],
+      "@id": "GeneRegulatoryRelationship"
+    },
+    {
+      "name": "AnatomicalEntityToAnatomicalEntityAssociation",
+      "is_a": "Association",
+      "defining_slots": [
+        "subject",
+        "object"
+      ],
+      "slots": [
+        "anatomical_entity_to_anatomical_entity_association_subject",
+        "anatomical_entity_to_anatomical_entity_association_object"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "range": "AnatomicalEntity"
+        },
+        {
+          "name": "object",
+          "range": "AnatomicalEntity"
+        }
+      ],
+      "@id": "AnatomicalEntityToAnatomicalEntityAssociation"
+    },
+    {
+      "name": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
+      "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms",
+      "is_a": "AnatomicalEntityToAnatomicalEntityAssociation",
+      "defining_slots": [
+        "relation"
+      ],
+      "slots": [
+        "anatomical_entity_to_anatomical_entity_part_of_association_subject",
+        "anatomical_entity_to_anatomical_entity_part_of_association_object",
+        "anatomical_entity_to_anatomical_entity_part_of_association_relation"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "the part",
+          "range": "AnatomicalEntity"
+        },
+        {
+          "name": "object",
+          "description": "the whole",
+          "range": "AnatomicalEntity"
+        },
+        {
+          "name": "relation",
+          "subproperty_of": "part_of"
+        }
+      ],
+      "@id": "AnatomicalEntityToAnatomicalEntityPartOfAssociation"
+    },
+    {
+      "name": "AnatomicalEntityToAnatomicalEntityOntogenicAssociation",
+      "description": "A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship",
+      "is_a": "AnatomicalEntityToAnatomicalEntityAssociation",
+      "defining_slots": [
+        "relation"
+      ],
+      "slots": [
+        "anatomical_entity_to_anatomical_entity_ontogenic_association_subject",
+        "anatomical_entity_to_anatomical_entity_ontogenic_association_object",
+        "anatomical_entity_to_anatomical_entity_ontogenic_association_relation"
+      ],
+      "slot_usage": [
+        {
+          "name": "subject",
+          "description": "the structure at a later time",
+          "range": "AnatomicalEntity"
+        },
+        {
+          "name": "object",
+          "description": "the structure at an earlier time",
+          "range": "AnatomicalEntity"
+        },
+        {
+          "name": "relation",
+          "subproperty_of": "develops_from"
+        }
+      ],
+      "@id": "AnatomicalEntityToAnatomicalEntityOntogenicAssociation"
+    },
+    {
+      "name": "Occurrent",
+      "description": "A processual entity",
+      "mappings": [
+        "BFO:0000003"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "regulates_process_to_process",
+        "has_participant",
+        "has_input",
+        "precedes"
+      ],
+      "@id": "Occurrent"
+    },
+    {
+      "name": "BiologicalProcessOrActivity",
+      "description": "Either an individual molecular activity, or a collection of causally connected molecular activities",
+      "id_prefixes": [
+        "GO",
+        "Reactome"
+      ],
+      "is_a": "BiologicalEntity",
+      "union_of": [
+        "MolecularActivity",
+        "BiologicalProcess"
+      ],
+      "@id": "BiologicalProcessOrActivity"
+    },
+    {
+      "name": "MolecularActivity",
+      "description": "An execution of a molecular function carried out by a gene product or macromolecular complex.",
+      "aliases": [
+        "molecular function",
+        "molecular event",
+        "reaction"
+      ],
+      "mappings": [
+        "GO:0003674"
+      ],
+      "id_prefixes": [
+        "GO",
+        "Reactome"
+      ],
+      "is_a": "BiologicalProcessOrActivity",
+      "mixins": [
+        "Occurrent"
+      ],
+      "@id": "MolecularActivity"
+    },
+    {
+      "name": "ActivityAndBehavior",
+      "description": "Activity or behavior of any independent integral living, organization or mechanical actor in the world",
+      "mappings": [
+        "UMLSSG:ACTI"
+      ],
+      "is_a": "Occurrent",
+      "@id": "ActivityAndBehavior"
+    },
+    {
+      "name": "Procedure",
+      "description": "A series of actions conducted in a certain order or manner",
+      "mappings": [
+        "UMLSSG:PROC"
+      ],
+      "is_a": "Occurrent",
+      "@id": "Procedure"
+    },
+    {
+      "name": "Phenomenon",
+      "description": "a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question",
+      "mappings": [
+        "UMLSSG:PHEN"
+      ],
+      "is_a": "Occurrent",
+      "@id": "Phenomenon"
+    },
+    {
+      "name": "BiologicalProcess",
+      "description": "One or more causally connected executions of molecular functions",
+      "mappings": [
+        "GO:0008150",
+        "SIO:000006",
+        "WD:Q2996394"
+      ],
+      "id_prefixes": [
+        "GO",
+        "Reactome"
+      ],
+      "is_a": "BiologicalProcessOrActivity",
+      "mixins": [
+        "Occurrent"
+      ],
+      "@id": "BiologicalProcess"
+    },
+    {
+      "name": "Pathway",
+      "mappings": [
+        "GO:0007165",
+        "SIO:010526",
+        "PW:0000001",
+        "WD:Q4915012"
+      ],
+      "id_prefixes": [
+        "GO",
+        "Reactome"
+      ],
+      "is_a": "BiologicalProcess",
+      "@id": "Pathway"
+    },
+    {
+      "name": "PhysiologicalProcess",
+      "aliases": [
+        "physiology"
+      ],
+      "mappings": [
+        "UMLSSG:PHYS"
+      ],
+      "is_a": "BiologicalProcess",
+      "@id": "PhysiologicalProcess"
+    },
+    {
+      "name": "CellularComponent",
+      "description": "A location in or around a cell",
+      "mappings": [
+        "GO:0005575",
+        "SIO:001400",
+        "WD:Q5058355"
+      ],
+      "id_prefixes": [
+        "GO"
+      ],
+      "is_a": "AnatomicalEntity",
+      "@id": "CellularComponent"
+    },
+    {
+      "name": "Cell",
+      "mappings": [
+        "GO:0005623",
+        "CL:0000000",
+        "SIO:010001",
+        "WD:Q7868"
+      ],
+      "id_prefixes": [
+        "CL",
+        "PO"
+      ],
+      "is_a": "AnatomicalEntity",
+      "@id": "Cell"
+    },
+    {
+      "name": "CellLine",
+      "mappings": [
+        "CLO:0000031"
+      ],
+      "id_prefixes": [
+        "CLO"
+      ],
+      "is_a": "Biosample",
+      "@id": "CellLine"
+    },
+    {
+      "name": "GrossAnatomicalStructure",
+      "aliases": [
+        "tissue",
+        "organ"
+      ],
+      "mappings": [
+        "UBERON:0010000",
+        "SIO:010046",
+        "WD:Q4936952"
+      ],
+      "id_prefixes": [
+        "UBERON",
+        "PO",
+        "FAO"
+      ],
+      "is_a": "AnatomicalEntity",
+      "@id": "GrossAnatomicalStructure"
+    }
+  ],
+  "metamodel_version": "0.3.1",
+  "source_file": "/Users/solbrig/git/hsolbrig/biolink-model/biolink-model.yaml",
+  "source_file_size": 81314,
+  "source_file_date": "Wed Jun 20 12:15:08 2018",
+  "generation_date": "2018-06-23 13:55",
+  "@context": [
+    "file:///Users/solbrig/git/hsolbrig/biolink-model/tests/test_scripts/output/genjsonld/metacontext.jsonld",
+    {
+      "@base": "http://bioentity.io/vocab/"
+    }
+  ],
+  "@id": "https://biolink.github.io/biolink-model/ontology/biolink.ttl"
+}

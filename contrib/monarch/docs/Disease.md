@@ -21,7 +21,7 @@ URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
 
  *  class: **[DiseaseToThingAssociation](DiseaseToThingAssociation.md)** *[disease to thing association.subject](disease_to_thing_association_subject.md)* **[Disease](Disease.md)**
  *  class: **[EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)** *[entity to disease association.object](entity_to_disease_association_object.md)* **[Disease](Disease.md)**
- *  class: **[NamedThing](NamedThing.md)** *[manifestation of](manifestation_of.md)* **[Disease](Disease.md)**
+ *  class: **None** *[manifestation of](manifestation_of.md)* **[Disease](Disease.md)**
 ## Fields
 
  * _[category](category.md) *subsets*: (translator_minimal)_
@@ -42,7 +42,7 @@ URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
     * inherited from: [NamedThing](NamedThing.md)
  * _[has alternate identifier](has_alternate_identifier.md)_
     * _An alternate identifier for the entity, provided by the source database_
-    * range: [IdentifierType](IdentifierType.md)*
+    * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
  * _[has biomarker](has_biomarker.md) *subsets*: (translator_minimal)_
     * _holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature._
@@ -54,11 +54,11 @@ URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
     * inherited from: [BiologicalEntity](BiologicalEntity.md)
  * _[has synonym](has_synonym.md)_
     * _Alternate labels for an entity_
-    * range: [LabelType](LabelType.md)*
+    * range: [name](name.md) *subsets*: (translator_minimal)*
     * inherited from: [NamedThing](NamedThing.md)
  * _[has xref](has_xref.md)_
     * _A database cross-reference for the entity, provided by a separate database_
-    * range: [IdentifierType](IdentifierType.md)*
+    * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
  * _[id](id.md) *subsets*: (translator_minimal)_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_

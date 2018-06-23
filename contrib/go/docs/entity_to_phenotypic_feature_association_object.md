@@ -1,12 +1,14 @@
 # Slot: object
 
 
-connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+phenotypic class
 
 URI: [http://bioentity.io/vocab/entity_to_phenotypic_feature_association_object](slot_uri)
 ## Mappings
 
- * [UPHENO:0001001](http://purl.obolibrary.org/obo/UPHENO_0001001)
+ * [rdf:object](http://purl.obolibrary.org/obo/rdf_object)
+ * [owl:annotatedTarget](http://purl.obolibrary.org/obo/owl_annotatedTarget)
+ * [oban:association_has_object](http://purl.obolibrary.org/obo/oban_association_has_object)
 ## Domain and Range
 
 [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) -> [PhenotypicFeature](PhenotypicFeature.md)

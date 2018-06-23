@@ -10,7 +10,7 @@ URI: [http://bioentity.io/vocab/homologous_to](slot_uri)
  * [SIO:010302](http://semanticscience.org/resource/SIO_010302)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> **string**
+None -> **string**
 ## Inheritance
 
  *  is_a: [related to](related_to.md)

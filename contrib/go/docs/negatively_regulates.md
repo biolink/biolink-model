@@ -6,9 +6,10 @@ describes an entity that has a direct affect on the state or quality of another 
 URI: [http://bioentity.io/vocab/negatively_regulates](slot_uri)
 ## Mappings
 
+ * [WD:P128](http://purl.obolibrary.org/obo/WD_P128)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> **string**
+None -> **string**
 ## Inheritance
 
  *  is_a: [regulates](regulates.md) *subsets*: (translator_minimal)

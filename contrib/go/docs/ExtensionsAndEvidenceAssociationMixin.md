@@ -19,7 +19,8 @@ URI: [http://bioentity.io/vocab/ExtensionsAndEvidenceAssociationMixin](http://bi
 ## Fields
 
  * _[extensions and evidence association mixin.subject](extensions_and_evidence_association_mixin_subject.md)_
-    * range: **string**
+    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * range: **string** [required]
     * __Local__
  * _[has evidence](has_evidence.md)_
     * _connects an association to an instance of supporting evidence_

@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/
 
 ## Fields
 
- * _[molecular interaction.interacting molecules category](molecular_interaction_interacting_molecules_category.md)_
+ * _[molecular interaction.interacting molecules category](interacting_molecules_category.md)_
     * range: [OntologyClass](OntologyClass.md)
     * __Local__
  * _[molecular interaction.object](molecular_interaction_object.md)_
@@ -26,7 +26,7 @@ URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/
     * range: [MolecularEntity](MolecularEntity.md) [required]
     * __Local__
  * _[molecular interaction.relation](molecular_interaction_relation.md)_
-    * _the relationship type by which a subject is connected to an object in an association_
+    * _interaction relationship type_
     * range: [RelationshipType](RelationshipType.md) [required]
     * edge label: [molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)
     * __Local__

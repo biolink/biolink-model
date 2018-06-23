@@ -20,15 +20,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class CausalActivityModel {
 
     /**
-     * Narrative text describing the entity
+     * title describing the contents of the GO-CAM
      * 
      */
     @JsonProperty("title")
-    @JsonPropertyDescription("Narrative text describing the entity")
+    @JsonPropertyDescription("title describing the contents of the GO-CAM")
     private String title;
 
     /**
-     * Narrative text describing the entity
+     * title describing the contents of the GO-CAM
      * 
      */
     @JsonProperty("title")
@@ -37,7 +37,7 @@ public class CausalActivityModel {
     }
 
     /**
-     * Narrative text describing the entity
+     * title describing the contents of the GO-CAM
      * 
      */
     @JsonProperty("title")

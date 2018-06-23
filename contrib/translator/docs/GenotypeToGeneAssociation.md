@@ -18,15 +18,15 @@ URI: [http://bioentity.io/vocab/GenotypeToGeneAssociation](http://bioentity.io/v
 ## Fields
 
  * _[genotype to gene association.object](genotype_to_gene_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _gene implicated in genotype_
     * range: [Gene](Gene.md) [required]
     * __Local__
  * _[genotype to gene association.relation](genotype_to_gene_association_relation.md)_
-    * _the relationship type by which a subject is connected to an object in an association_
+    * _the relationship type used to connect genotype to gene_
     * range: [RelationshipType](RelationshipType.md) [required]
     * __Local__
  * _[genotype to gene association.subject](genotype_to_gene_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _parent genotype_
     * range: [Genotype](Genotype.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

@@ -10,7 +10,7 @@ URI: [http://bioentity.io/vocab/positively_regulates_entity_to_entity](slot_uri)
  * [SEMMEDDB:STIMULATES](http://purl.obolibrary.org/obo/SEMMEDDB_STIMULATES)
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) -> **string**
+None -> **string**
 ## Inheritance
 
  *  is_a: [regulates, entity to entity](regulates_entity_to_entity.md) *subsets*: (translator_minimal)

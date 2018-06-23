@@ -24,11 +24,11 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class SequenceVariant {
 
     /**
-     * connects a genomic feature to its sequence
+     * The state of the sequence w.r.t a reference sequence
      * 
      */
     @JsonProperty("has_biological_sequence")
-    @JsonPropertyDescription("connects a genomic feature to its sequence")
+    @JsonPropertyDescription("The state of the sequence w.r.t a reference sequence")
     private String hasBiologicalSequence;
     /**
      * Each allele can be associated with any number of genes
@@ -46,7 +46,7 @@ public class SequenceVariant {
     private String id;
 
     /**
-     * connects a genomic feature to its sequence
+     * The state of the sequence w.r.t a reference sequence
      * 
      */
     @JsonProperty("has_biological_sequence")
@@ -55,7 +55,7 @@ public class SequenceVariant {
     }
 
     /**
-     * connects a genomic feature to its sequence
+     * The state of the sequence w.r.t a reference sequence
      * 
      */
     @JsonProperty("has_biological_sequence")

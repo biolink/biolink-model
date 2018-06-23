@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/frequency_qualifier](slot_uri)
 
 ## Domain and Range
 
-[Association](Association.md) -> [FrequencyValue](FrequencyValue.md)
+None -> [FrequencyValue](FrequencyValue.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)

@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationA
 ## Fields
 
  * _[disease or phenotypic feature association to location association.object](disease_or_phenotypic_feature_association_to_location_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _anatomical entity in which the disease or feature is found_
     * range: [AnatomicalEntity](AnatomicalEntity.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_
@@ -39,7 +39,7 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationA
     * range: [NarrativeText](NarrativeText.md)
     * inherited from: [NamedThing](NamedThing.md)
  * _[disease or phenotypic feature association to thing association.subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _disease or phenotype_
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) [required]
     * inherited from: [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
  * _[full name](full_name.md)_

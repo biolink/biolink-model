@@ -20,15 +20,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation {
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * anatomical entity in which the disease or feature is found
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("anatomical entity in which the disease or feature is found")
     private String object;
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * anatomical entity in which the disease or feature is found
      * 
      */
     @JsonProperty("object")
@@ -37,7 +37,7 @@ public class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * anatomical entity in which the disease or feature is found
      * 
      */
     @JsonProperty("object")

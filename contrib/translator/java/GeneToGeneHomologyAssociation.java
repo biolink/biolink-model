@@ -20,15 +20,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class GeneToGeneHomologyAssociation {
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * homology relationship type
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
+    @JsonPropertyDescription("homology relationship type")
     private String relation;
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * homology relationship type
      * 
      */
     @JsonProperty("relation")
@@ -37,7 +37,7 @@ public class GeneToGeneHomologyAssociation {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * homology relationship type
      * 
      */
     @JsonProperty("relation")

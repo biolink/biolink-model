@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](htt
 ## Fields
 
  * _[pairwise gene or protein interaction association.relation](pairwise_gene_or_protein_interaction_association_relation.md)_
-    * _the relationship type by which a subject is connected to an object in an association_
+    * _interaction relationship type_
     * range: [RelationshipType](RelationshipType.md) [required]
     * edge label: [molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)
     * __Local__
@@ -44,11 +44,11 @@ URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](htt
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
  * _[gene to gene association.object](gene_to_gene_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa_
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * inherited from: [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * _[gene to gene association.subject](gene_to_gene_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa_
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * inherited from: [GeneToGeneAssociation](GeneToGeneAssociation.md)
  * _[has evidence](has_evidence.md)_
@@ -63,13 +63,13 @@ URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](htt
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
     * range: [IdentifierType](IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
+ * _[molecular interaction.interacting molecules category](interacting_molecules_category.md)_
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [MolecularInteraction](MolecularInteraction.md)
  * _[iri](iri.md) *subsets*: (translator_minimal)_
     * _An IRI for the node. This is determined by the id using expansion rules._
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[molecular interaction.interacting molecules category](molecular_interaction_interacting_molecules_category.md)_
-    * range: [OntologyClass](OntologyClass.md)
-    * inherited from: [MolecularInteraction](MolecularInteraction.md)
  * _[name](name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
     * range: [LabelType](LabelType.md)

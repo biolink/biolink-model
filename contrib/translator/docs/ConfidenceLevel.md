@@ -16,7 +16,7 @@ URI: [http://bioentity.io/vocab/ConfidenceLevel](http://bioentity.io/vocab/Confi
 
 ## Used in
 
- *  class: **[Association](Association.md)** *[has confidence level](has_confidence_level.md)* **[ConfidenceLevel](ConfidenceLevel.md)**
+ *  class: **None** *[has confidence level](has_confidence_level.md)* **[ConfidenceLevel](ConfidenceLevel.md)**
 ## Fields
 
  * _[category](category.md) *subsets*: (translator_minimal)_

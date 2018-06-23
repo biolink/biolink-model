@@ -20,15 +20,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class GeneToDiseaseAssociation {
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model")
     private String subject;
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
      * 
      */
     @JsonProperty("subject")
@@ -37,7 +37,7 @@ public class GeneToDiseaseAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
      * 
      */
     @JsonProperty("subject")

@@ -21,7 +21,7 @@ URI: [http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation](http://bioen
 ## Fields
 
  * _[gene to phenotypic feature association.subject](gene_to_phenotypic_feature_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _gene in which variation is correlated with the phenotypic feature_
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_

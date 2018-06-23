@@ -21,22 +21,22 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class FunctionalAssociation {
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * class describing the activity, process or localization of the gene product
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("class describing the activity, process or localization of the gene product")
     private String object;
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * gene, product or macromolecular complex that has the function associated with the GO term
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("gene, product or macromolecular complex that has the function associated with the GO term")
     private String subject;
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * class describing the activity, process or localization of the gene product
      * 
      */
     @JsonProperty("object")
@@ -45,7 +45,7 @@ public class FunctionalAssociation {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * class describing the activity, process or localization of the gene product
      * 
      */
     @JsonProperty("object")
@@ -54,7 +54,7 @@ public class FunctionalAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * gene, product or macromolecular complex that has the function associated with the GO term
      * 
      */
     @JsonProperty("subject")
@@ -63,7 +63,7 @@ public class FunctionalAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * gene, product or macromolecular complex that has the function associated with the GO term
      * 
      */
     @JsonProperty("subject")

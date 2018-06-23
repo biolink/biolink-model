@@ -23,6 +23,7 @@ URI: [http://bioentity.io/vocab/Gene](http://bioentity.io/vocab/Gene)
  *  class: **[Gene](Gene.md)** *[genetically interacts with](genetically_interacts_with.md)* **[Gene](Gene.md)**
  *  class: **[GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)** *[genotype to gene association.object](genotype_to_gene_association_object.md)* **[Gene](Gene.md)**
  *  class: **[SequenceVariant](SequenceVariant.md)** *[has gene](has_gene.md)* **[Gene](Gene.md)**
+ *  class: **[SequenceVariant](SequenceVariant.md)** *[sequence variant.has gene](sequence_variant_has_gene.md)* **[Gene](Gene.md)**
  *  class: **[TranscriptToGeneRelationship](TranscriptToGeneRelationship.md)** *[transcript to gene relationship.object](transcript_to_gene_relationship_object.md)* **[Gene](Gene.md)**
 ## Fields
 
@@ -99,8 +100,8 @@ URI: [http://bioentity.io/vocab/Gene](http://bioentity.io/vocab/Gene)
     * range: **string***
     * inherited from: [GoTermBioentityMixin](GoTermBioentityMixin.md)
  * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
-    * _A human-readable name for a thing_
-    * range: [LabelType](LabelType.md)
+    * _genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name_
+    * range: [SymbolType](SymbolType.md)
     * inherited from: [MacromolecularMachine](MacromolecularMachine.md)
  * _[molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)_
     * _holds between two entities that make physical contact as part of some interaction_

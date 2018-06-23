@@ -1,5 +1,10 @@
 {
-   "@context": "http://www.w3.org/ns/shex.jsonld",
+   "@context": [
+      "http://www.w3.org/ns/shex.jsonld",
+      {
+         "@base": "http://bioentity.io/vocab/"
+      }
+   ],
    "shapes": [
       {
          "id": "http://bioentity.io/meta/Builtins",
@@ -10,10 +15,7 @@
             "http://www.w3.org/2001/XMLSchema#double",
             "http://www.w3.org/2001/XMLSchema#boolean",
             "http://www.w3.org/2001/XMLSchema#time",
-            "http://www.w3.org/2001/XMLSchema#date",
-            "http://www.w3.org/2001/XMLSchema#anyURI",
-            "http://bioentity.io/vocab/anytype",
-            "http://bioentity.io/vocab/anytype"
+            "http://www.w3.org/2001/XMLSchema#date"
          ],
          "type": "NodeConstraint"
       },

@@ -10,7 +10,7 @@ URI: [http://bioentity.io/vocab/has_part](slot_uri)
  * [WD:P527](http://purl.obolibrary.org/obo/WD_P527)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> **string**
+None -> **string**
 ## Inheritance
 
  *  is_a: [overlaps](overlaps.md) *subsets*: (translator_minimal)

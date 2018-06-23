@@ -22,22 +22,22 @@ URI: [http://bioentity.io/vocab/VariantToPopulationAssociation](http://bioentity
 
  * _[variant to population association.has count](variant_to_population_association_has_count.md)_
     * _number in object population that carry a particular allele, aka allele count_
-    * range: **string**
+    * range: **integer**
     * __Local__
  * _[variant to population association.has quotient](variant_to_population_association_has_quotient.md)_
     * _frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency_
-    * range: **string**
+    * range: **double**
     * __Local__
  * _[variant to population association.has total](variant_to_population_association_has_total.md)_
     * _number all populations that carry a particular allele, aka allele number_
-    * range: **string**
+    * range: **integer**
     * __Local__
  * _[variant to population association.object](variant_to_population_association_object.md)_
-    * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _the population that is observed to have the frequency_
     * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) [required]
     * __Local__
  * _[variant to population association.subject](variant_to_population_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _an allele that has a certain frequency in a given population_
     * range: [SequenceVariant](SequenceVariant.md) [required]
     * __Local__
  * _[association slot](association_slot.md)_
@@ -62,7 +62,7 @@ URI: [http://bioentity.io/vocab/VariantToPopulationAssociation](http://bioentity
     * inherited from: [NamedThing](NamedThing.md)
  * _[has alternate identifier](has_alternate_identifier.md)_
     * _An alternate identifier for the entity, provided by the source database_
-    * range: [IdentifierType](IdentifierType.md)*
+    * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
  * _[has evidence](has_evidence.md)_
     * _connects an association to an instance of supporting evidence_
@@ -82,11 +82,11 @@ URI: [http://bioentity.io/vocab/VariantToPopulationAssociation](http://bioentity
     * inherited from: [FrequencyQuantifier](FrequencyQuantifier.md)
  * _[has synonym](has_synonym.md)_
     * _Alternate labels for an entity_
-    * range: [LabelType](LabelType.md)*
+    * range: [name](name.md) *subsets*: (translator_minimal)*
     * inherited from: [NamedThing](NamedThing.md)
  * _[has xref](has_xref.md)_
     * _A database cross-reference for the entity, provided by a separate database_
-    * range: [IdentifierType](IdentifierType.md)*
+    * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
  * _[id](id.md) *subsets*: (translator_minimal)_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_

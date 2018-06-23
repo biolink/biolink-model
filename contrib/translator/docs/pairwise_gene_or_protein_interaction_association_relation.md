@@ -1,17 +1,20 @@
 # Slot: relation
 
 
-the relationship type by which a subject is connected to an object in an association
+interaction relationship type
 
 URI: [http://bioentity.io/vocab/pairwise_gene_or_protein_interaction_association_relation](slot_uri)
 ## Mappings
 
+ * [rdf:predicate](http://purl.obolibrary.org/obo/rdf_predicate)
+ * [owl:annotatedProperty](http://purl.obolibrary.org/obo/owl_annotatedProperty)
+ * [oban:association_has_predicate](http://purl.obolibrary.org/obo/oban_association_has_predicate)
 ## Domain and Range
 
 [PairwiseGeneOrProteinInteractionAssociation](PairwiseGeneOrProteinInteractionAssociation.md) -> [RelationshipType](RelationshipType.md)
 ## Inheritance
 
- *  is_a: [relation](relation.md)
+ *  is_a: [molecular interaction.relation](molecular_interaction_relation.md)
 ## Children
 
 ## Used in

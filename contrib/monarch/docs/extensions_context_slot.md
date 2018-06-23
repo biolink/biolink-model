@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/extensions_context_slot](slot_uri)
 
 ## Domain and Range
 
-[Association](Association.md) -> [PropertyValuePair](PropertyValuePair.md)
+None -> [PropertyValuePair](PropertyValuePair.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)

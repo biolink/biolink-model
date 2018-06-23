@@ -19,3 +19,4 @@ URI: [http://bioentity.io/vocab/name](slot_uri)
 ## Used in
 
  *  usage: [NamedThing](NamedThing.md)
+ *  usage: [MacromolecularMachine](MacromolecularMachine.md)

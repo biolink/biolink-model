@@ -2,6 +2,25 @@
    "@context": "http://www.w3.org/ns/shex.jsonld",
    "shapes": [
       {
+         "id": "http://bioentity.io/meta/Builtins",
+         "values": [
+            {
+               "stem": "http://www.w3.org/2001/XMLSchema#",
+               "type": "IriStem"
+            }
+         ],
+         "type": "NodeConstraint"
+      },
+      {
+         "id": "http://bioentity.io/meta/SlotRangeTypes",
+         "shapeExprs": [
+            "http://bioentity.io/vocab/TypeDefinition",
+            "http://bioentity.io/vocab/ClassDefinition",
+            "http://bioentity.io/meta/Builtins"
+         ],
+         "type": "ShapeOr"
+      },
+      {
          "id": "http://bioentity.io/vocab/ActivityAndBehavior",
          "shapeExprs": [
             "http://bioentity.io/vocab/Occurrent",
@@ -22,7 +41,7 @@
             "http://bioentity.io/vocab/ThingWithTaxon",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/expresses",
+                  "predicate": "http://purl.obolibrary.org/obo/RO_0002292",
                   "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
                   "min": 0,
                   "max": 1,
@@ -41,7 +60,14 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+                        "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
                         "min": 1,
                         "max": 1,
@@ -63,14 +89,21 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_relation",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                        "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
                         "valueExpr": "http://bioentity.io/vocab/RelationshipType",
                         "min": 1,
                         "max": 1,
@@ -92,14 +125,21 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_part_of_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_part_of_association_relation",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                        "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
                         "valueExpr": "http://bioentity.io/vocab/RelationshipType",
                         "min": 1,
                         "max": 1,
@@ -114,6 +154,72 @@
          "type": "ShapeAnd"
       },
       {
+         "id": "http://bioentity.io/vocab/OntologyClass__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/OntologyClass",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/OntologyClass__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
+         "id": "http://bioentity.io/vocab/Publication__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/Publication",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/Publication__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
          "id": "http://bioentity.io/vocab/Association",
          "shapeExprs": [
             "http://bioentity.io/vocab/InformationContentEntity",
@@ -121,9 +227,19 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/association_type",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                         "valueExpr": "http://bioentity.io/vocab/OntologyClass",
                         "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
@@ -138,14 +254,14 @@
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/relation",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
                         "valueExpr": "http://bioentity.io/vocab/RelationshipType",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": {
                            "datatype": "http://www.w3.org/2001/XMLSchema#string",
                            "type": "NodeConstraint"
@@ -156,20 +272,20 @@
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/qualifiers",
-                        "valueExpr": "http://bioentity.io/vocab/OntologyClass",
+                        "valueExpr": "http://bioentity.io/vocab/OntologyClass__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
                         "predicate": "http://bioentity.io/vocab/publications",
-                        "valueExpr": "http://bioentity.io/vocab/Publication",
+                        "valueExpr": "http://bioentity.io/vocab/Publication__List",
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/provided_by",
+                        "predicate": "http://purl.org/pav/providedBy",
                         "valueExpr": "http://bioentity.io/vocab/Provider",
                         "min": 0,
                         "max": 1,
@@ -209,7 +325,7 @@
             "http://bioentity.io/vocab/NamedThing",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/has_phenotype",
+                  "predicate": "http://purl.obolibrary.org/obo/RO_0002200",
                   "valueExpr": {
                      "type": "NodeConstraint"
                   },
@@ -282,7 +398,7 @@
             "http://bioentity.io/vocab/Association",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/biosample_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/Biosample",
                   "min": 1,
                   "max": 1,
@@ -321,7 +437,7 @@
             "http://bioentity.io/vocab/Association",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/case_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/Case",
                   "min": 1,
                   "max": 1,
@@ -360,7 +476,7 @@
             "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/cell_line_to_disease_or_phenotypic_feature_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
                   "min": 1,
                   "max": 1,
@@ -377,7 +493,7 @@
             "http://bioentity.io/vocab/Association",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/cell_line_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/CellLine",
                   "min": 1,
                   "max": 1,
@@ -416,7 +532,7 @@
             "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/chemical_to_disease_or_phenotypic_feature_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
                   "min": 1,
                   "max": 1,
@@ -434,7 +550,7 @@
             "http://bioentity.io/vocab/ChemicalToThingAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/chemical_to_gene_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
                   "min": 1,
                   "max": 1,
@@ -452,7 +568,7 @@
             "http://bioentity.io/vocab/ChemicalToThingAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/chemical_to_pathway_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://bioentity.io/vocab/Pathway",
                   "min": 1,
                   "max": 1,
@@ -469,7 +585,7 @@
             "http://bioentity.io/vocab/Association",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/chemical_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/ChemicalSubstance",
                   "min": 1,
                   "max": 1,
@@ -569,14 +685,21 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/correlated_with",
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0002610",
                         "valueExpr": "http://bioentity.io/vocab/MolecularEntity",
                         "min": 0,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/treated_by",
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0002610",
+                        "valueExpr": "http://bioentity.io/vocab/MolecularEntity",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0002302",
                         "valueExpr": {
                            "datatype": "http://www.w3.org/2001/XMLSchema#string",
                            "type": "NodeConstraint"
@@ -599,7 +722,7 @@
             "http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/disease_or_phenotypic_feature_association_to_location_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
                   "min": 1,
                   "max": 1,
@@ -616,7 +739,7 @@
             "http://bioentity.io/vocab/Association",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/disease_or_phenotypic_feature_association_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
                   "min": 1,
                   "max": 1,
@@ -645,7 +768,7 @@
             "http://bioentity.io/vocab/Association",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/disease_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/Disease",
                   "min": 1,
                   "max": 1,
@@ -667,15 +790,48 @@
          "type": "ShapeAnd"
       },
       {
+         "id": "http://bioentity.io/vocab/ChemicalSubstance__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/ChemicalSubstance",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/ChemicalSubstance__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
          "id": "http://bioentity.io/vocab/DrugExposure",
          "shapeExprs": [
             "http://bioentity.io/vocab/Environment",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/drug_exposure_drug",
-                  "valueExpr": "http://bioentity.io/vocab/ChemicalSubstance",
+                  "predicate": "http://bioentity.io/vocab/drug",
+                  "valueExpr": "http://bioentity.io/vocab/ChemicalSubstance__List",
                   "min": 1,
-                  "max": -1,
+                  "max": 1,
                   "type": "TripleConstraint"
                },
                "type": "Shape"
@@ -689,9 +845,9 @@
             "http://bioentity.io/vocab/EntityToFeatureOrDiseaseQualifiers",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/entity_to_disease_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://bioentity.io/vocab/Disease",
-                  "min": 0,
+                  "min": 1,
                   "max": 1,
                   "type": "TripleConstraint"
                },
@@ -710,6 +866,13 @@
                      {
                         "predicate": "http://bioentity.io/vocab/severity_qualifier",
                         "valueExpr": "http://bioentity.io/vocab/SeverityValue",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/onset_qualifier",
+                        "valueExpr": "http://bioentity.io/vocab/Onset",
                         "min": 0,
                         "max": 1,
                         "type": "TripleConstraint"
@@ -738,7 +901,17 @@
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/entity_to_phenotypic_feature_association_object",
+                        "predicate": "dcterms:description",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://bioentity.io/vocab/PhenotypicFeature",
                         "min": 1,
                         "max": 1,
@@ -769,7 +942,7 @@
             "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/environment_to_phenotypic_feature_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/Environment",
                   "min": 1,
                   "max": 1,
@@ -829,8 +1002,15 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/exon_to_transcript_relationship_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://bioentity.io/vocab/Exon",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                        "valueExpr": "http://bioentity.io/vocab/Transcript",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
@@ -855,7 +1035,7 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/has_count",
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                         "valueExpr": {
                            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
                            "type": "NodeConstraint"
@@ -865,7 +1045,17 @@
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/has_quotient",
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                         "valueExpr": {
                            "datatype": "http://www.w3.org/2001/XMLSchema#double",
                            "type": "NodeConstraint"
@@ -875,7 +1065,7 @@
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/has_percentage",
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                         "valueExpr": {
                            "datatype": "http://www.w3.org/2001/XMLSchema#double",
                            "type": "NodeConstraint"
@@ -910,8 +1100,15 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/functional_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://bioentity.io/vocab/MacromolecularMachine",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                        "valueExpr": "http://bioentity.io/vocab/GeneOntologyClass",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
@@ -932,14 +1129,21 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/genetically_interacts_with",
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0002435",
                         "valueExpr": "http://bioentity.io/vocab/Gene",
                         "min": 0,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/gene_associated_with_condition",
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0002205",
+                        "valueExpr": "http://bioentity.io/vocab/GeneProduct",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "WD:P2293",
                         "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
                         "min": 0,
                         "max": 1,
@@ -961,7 +1165,7 @@
             "http://bioentity.io/vocab/EntityToDiseaseAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/gene_as_a_model_of_disease_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
                   "min": 1,
                   "max": 1,
@@ -1000,6 +1204,13 @@
                         "min": 0,
                         "max": 1,
                         "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+                        "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
                      }
                   ],
                   "type": "EachOf"
@@ -1027,21 +1238,28 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/in_pathway_with",
+                        "predicate": "SEMMEDDB:COEXISTS_WITH",
                         "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
                         "min": 0,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/in_cell_population_with",
+                        "predicate": "SEMMEDDB:COEXISTS_WITH",
                         "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
                         "min": 0,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/expressed_in",
+                        "predicate": "SEMMEDDB:COEXISTS_WITH",
+                        "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0002206",
                         "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
                         "min": 0,
                         "max": 1,
@@ -1083,14 +1301,21 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/gene_regulatory_relationship_relation",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
                         "valueExpr": "http://bioentity.io/vocab/RelationshipType",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/gene_regulatory_relationship_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+                        "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
                         "min": 1,
                         "max": 1,
@@ -1112,7 +1337,7 @@
             "http://bioentity.io/vocab/GeneToThingAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/gene_to_disease_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
                   "min": 1,
                   "max": 1,
@@ -1138,21 +1363,28 @@
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/gene_to_expression_site_association_subject",
+                        "predicate": "http://bioentity.io/vocab/gene_to_expression_site_association_quantifier_qualifier",
+                        "valueExpr": "http://bioentity.io/vocab/OntologyClass",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/gene_to_expression_site_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://bioentity.io/vocab/AnatomicalEntity",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/gene_to_expression_site_association_relation",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
                         "valueExpr": "http://bioentity.io/vocab/RelationshipType",
                         "min": 1,
                         "max": 1,
@@ -1174,7 +1406,14 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/gene_to_gene_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+                        "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
                         "min": 1,
                         "max": 1,
@@ -1194,7 +1433,7 @@
             "http://bioentity.io/vocab/GeneToGeneAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/gene_to_gene_homology_association_relation",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
                   "valueExpr": "http://bioentity.io/vocab/RelationshipType",
                   "min": 1,
                   "max": 1,
@@ -1213,14 +1452,21 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/gene_to_gene_product_relationship_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://bioentity.io/vocab/Gene",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/gene_to_gene_product_relationship_relation",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                        "valueExpr": "http://bioentity.io/vocab/GeneProduct",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
                         "valueExpr": "http://bioentity.io/vocab/RelationshipType",
                         "min": 1,
                         "max": 1,
@@ -1242,8 +1488,15 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/gene_to_go_term_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://bioentity.io/vocab/MolecularEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                        "valueExpr": "http://bioentity.io/vocab/GeneOntologyClass",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
@@ -1264,7 +1517,7 @@
             "http://bioentity.io/vocab/GeneToThingAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/gene_to_phenotypic_feature_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
                   "min": 1,
                   "max": 1,
@@ -1281,7 +1534,7 @@
             "http://bioentity.io/vocab/Association",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/gene_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/GeneOrGeneProduct",
                   "min": 1,
                   "max": 1,
@@ -1308,7 +1561,7 @@
             "http://bioentity.io/vocab/MolecularEntity",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/has_biological_sequence",
+                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
@@ -1330,7 +1583,7 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/start_interbase_coordinate",
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                         "valueExpr": {
                            "datatype": "http://www.w3.org/2001/XMLSchema#string",
                            "type": "NodeConstraint"
@@ -1340,7 +1593,7 @@
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/genome_build",
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                         "valueExpr": {
                            "datatype": "http://www.w3.org/2001/XMLSchema#string",
                            "type": "NodeConstraint"
@@ -1350,7 +1603,7 @@
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/phase",
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                         "valueExpr": {
                            "datatype": "http://www.w3.org/2001/XMLSchema#string",
                            "type": "NodeConstraint"
@@ -1360,14 +1613,24 @@
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/genomic_sequence_localization_subject",
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://bioentity.io/vocab/GenomicEntity",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/genomic_sequence_localization_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://bioentity.io/vocab/GenomicEntity",
                         "min": 1,
                         "max": 1,
@@ -1387,7 +1650,7 @@
             "http://bioentity.io/vocab/GenomicEntity",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/has_zygosity",
+                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                   "valueExpr": "http://bioentity.io/vocab/Zygosity",
                   "min": 0,
                   "max": 1,
@@ -1406,14 +1669,21 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/genotype_to_gene_association_relation",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
                         "valueExpr": "http://bioentity.io/vocab/RelationshipType",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/genotype_to_gene_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+                        "valueExpr": "http://bioentity.io/vocab/Genotype",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://bioentity.io/vocab/Gene",
                         "min": 1,
                         "max": 1,
@@ -1435,14 +1705,21 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/genotype_to_genotype_part_association_relation",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
                         "valueExpr": "http://bioentity.io/vocab/RelationshipType",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/genotype_to_genotype_part_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+                        "valueExpr": "http://bioentity.io/vocab/Genotype",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://bioentity.io/vocab/Genotype",
                         "min": 1,
                         "max": 1,
@@ -1466,8 +1743,15 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/genotype_to_phenotypic_feature_association_relation",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
                         "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+                        "valueExpr": "http://bioentity.io/vocab/Genotype",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
@@ -1486,7 +1770,7 @@
             "http://bioentity.io/vocab/Association",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/genotype_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/Genotype",
                   "min": 1,
                   "max": 1,
@@ -1505,14 +1789,21 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/genotype_to_variant_association_relation",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
                         "valueExpr": "http://bioentity.io/vocab/RelationshipType",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/genotype_to_variant_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+                        "valueExpr": "http://bioentity.io/vocab/Genotype",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://bioentity.io/vocab/SequenceVariant",
                         "min": 1,
                         "max": 1,
@@ -1544,7 +1835,17 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/latitude",
+                        "predicate": "wgs:lat",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#float",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "wgs:long",
                         "valueExpr": {
                            "datatype": "http://www.w3.org/2001/XMLSchema#float",
                            "type": "NodeConstraint"
@@ -1567,7 +1868,7 @@
             "http://bioentity.io/vocab/GeographicLocation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/timepoint",
+                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#time",
                      "type": "NodeConstraint"
@@ -1618,7 +1919,7 @@
             "http://bioentity.io/vocab/NamedThing",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/title",
+                  "predicate": "http://purl.org/dc/elements/1.1/title",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
@@ -1659,7 +1960,7 @@
             "http://bioentity.io/vocab/GenomicEntity",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/macromolecular_machine_name",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
@@ -1679,7 +1980,7 @@
             "http://bioentity.io/vocab/FunctionalAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/macromolecular_machine_to_biological_process_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://bioentity.io/vocab/BiologicalProcess",
                   "min": 1,
                   "max": 1,
@@ -1696,7 +1997,7 @@
             "http://bioentity.io/vocab/FunctionalAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/macromolecular_machine_to_cellular_component_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://bioentity.io/vocab/CellularComponent",
                   "min": 1,
                   "max": 1,
@@ -1713,7 +2014,7 @@
             "http://bioentity.io/vocab/FunctionalAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/macromolecular_machine_to_molecular_activity_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://bioentity.io/vocab/MolecularActivity",
                   "min": 1,
                   "max": 1,
@@ -1749,12 +2050,19 @@
          "expression": {
             "expressions": [
                {
-                  "predicate": "http://bioentity.io/vocab/model_to_disease_mixin_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
                   },
-                  "min": 0,
+                  "min": 1,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                  "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                  "min": 1,
                   "max": 1,
                   "type": "TripleConstraint"
                }
@@ -1783,14 +2091,21 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/molecularly_interacts_with",
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0002436",
                         "valueExpr": "http://bioentity.io/vocab/MolecularEntity",
                         "min": 0,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/biomarker_for",
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0002448",
+                        "valueExpr": "http://bioentity.io/vocab/MolecularEntity",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0002607",
                         "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
                         "min": 0,
                         "max": 1,
@@ -1812,21 +2127,28 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/molecular_interaction_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://bioentity.io/vocab/MolecularEntity",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/molecular_interaction_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://bioentity.io/vocab/MolecularEntity",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/molecular_interaction_interacting_molecules_category",
+                        "predicate": "http://bioentity.io/vocab/interacting_molecules_category",
                         "valueExpr": "http://bioentity.io/vocab/OntologyClass",
                         "min": 0,
                         "max": 1,
@@ -1846,7 +2168,7 @@
             "http://bioentity.io/vocab/InformationContentEntity",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/named_graph_title",
+                  "predicate": "http://purl.org/dc/elements/1.1/title",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
@@ -1865,7 +2187,7 @@
          "expression": {
             "expressions": [
                {
-                  "predicate": "http://bioentity.io/vocab/id",
+                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
@@ -1875,7 +2197,7 @@
                   "type": "TripleConstraint"
                },
                {
-                  "predicate": "http://bioentity.io/vocab/category",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
@@ -1885,8 +2207,9 @@
                   "type": "TripleConstraint"
                },
                {
-                  "predicate": "http://bioentity.io/vocab/uri",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                   "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
                   },
                   "min": 0,
@@ -1894,14 +2217,24 @@
                   "type": "TripleConstraint"
                },
                {
-                  "predicate": "http://bioentity.io/vocab/related_to",
+                  "predicate": "@id",
+                  "valueExpr": {
+                     "datatype": "http://www.w3.org/2001/XMLSchema#uri",
+                     "type": "NodeConstraint"
+                  },
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/2002/07/owl#topObjectProperty",
                   "valueExpr": "http://bioentity.io/vocab/NamedThing",
                   "min": 0,
                   "max": 1,
                   "type": "TripleConstraint"
                },
                {
-                  "predicate": "http://bioentity.io/vocab/node_property",
+                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
@@ -1911,7 +2244,7 @@
                   "type": "TripleConstraint"
                },
                {
-                  "predicate": "http://bioentity.io/vocab/iri",
+                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
@@ -1921,7 +2254,7 @@
                   "type": "TripleConstraint"
                },
                {
-                  "predicate": "http://bioentity.io/vocab/full_name",
+                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
@@ -1931,7 +2264,7 @@
                   "type": "TripleConstraint"
                },
                {
-                  "predicate": "http://bioentity.io/vocab/description",
+                  "predicate": "dcterms:description",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
@@ -1941,7 +2274,7 @@
                   "type": "TripleConstraint"
                },
                {
-                  "predicate": "http://bioentity.io/vocab/systematic_synonym",
+                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                   "valueExpr": {
                      "datatype": "http://www.w3.org/2001/XMLSchema#string",
                      "type": "NodeConstraint"
@@ -1967,36 +2300,52 @@
       },
       {
          "id": "http://bioentity.io/vocab/Occurrent",
-         "expression": {
-            "expressions": [
-               {
-                  "predicate": "http://bioentity.io/vocab/regulates_process_to_process",
-                  "valueExpr": "http://bioentity.io/vocab/Occurrent",
-                  "min": 0,
-                  "max": 1,
-                  "type": "TripleConstraint"
+         "shapeExprs": [
+            "http://bioentity.io/vocab/NamedThing",
+            {
+               "expression": {
+                  "expressions": [
+                     {
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0002211",
+                        "valueExpr": "http://bioentity.io/vocab/Occurrent",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0000057",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0002233",
+                        "valueExpr": {
+                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "type": "NodeConstraint"
+                        },
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://purl.obolibrary.org/obo/BFO_0000063",
+                        "valueExpr": "http://bioentity.io/vocab/Occurrent",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     }
+                  ],
+                  "type": "EachOf"
                },
-               {
-                  "predicate": "http://bioentity.io/vocab/has_input",
-                  "valueExpr": {
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string",
-                     "type": "NodeConstraint"
-                  },
-                  "min": 0,
-                  "max": 1,
-                  "type": "TripleConstraint"
-               },
-               {
-                  "predicate": "http://bioentity.io/vocab/precedes",
-                  "valueExpr": "http://bioentity.io/vocab/Occurrent",
-                  "min": 0,
-                  "max": 1,
-                  "type": "TripleConstraint"
-               }
-            ],
-            "type": "EachOf"
-         },
-         "type": "Shape"
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
       },
       {
          "id": "http://bioentity.io/vocab/Onset",
@@ -2010,14 +2359,20 @@
       },
       {
          "id": "http://bioentity.io/vocab/OntologyClass",
-         "expression": {
-            "predicate": "http://bioentity.io/vocab/subclass_of",
-            "valueExpr": "http://bioentity.io/vocab/OntologyClass",
-            "min": 0,
-            "max": 1,
-            "type": "TripleConstraint"
-         },
-         "type": "Shape"
+         "shapeExprs": [
+            "http://bioentity.io/vocab/NamedThing",
+            {
+               "expression": {
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+                  "valueExpr": "http://bioentity.io/vocab/OntologyClass",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               "type": "Shape"
+            }
+         ],
+         "type": "ShapeAnd"
       },
       {
          "id": "http://bioentity.io/vocab/OrganismTaxon",
@@ -2046,7 +2401,7 @@
             "http://bioentity.io/vocab/MolecularInteraction",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/pairwise_gene_or_protein_interaction_association_relation",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
                   "valueExpr": "http://bioentity.io/vocab/RelationshipType",
                   "min": 1,
                   "max": 1,
@@ -2146,14 +2501,21 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/population_to_population_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://bioentity.io/vocab/PopulationOfIndividualOrganisms",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/population_to_population_association_relation",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                        "valueExpr": "http://bioentity.io/vocab/PopulationOfIndividualOrganisms",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
                         "valueExpr": "http://bioentity.io/vocab/RelationshipType",
                         "min": 1,
                         "max": 1,
@@ -2265,7 +2627,14 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/sequence_feature_relationship_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+                        "valueExpr": "http://bioentity.io/vocab/GenomicEntity",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://bioentity.io/vocab/GenomicEntity",
                         "min": 1,
                         "max": 1,
@@ -2280,6 +2649,39 @@
          "type": "ShapeAnd"
       },
       {
+         "id": "http://bioentity.io/vocab/Gene__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/Gene",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/Gene__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
          "id": "http://bioentity.io/vocab/SequenceVariant",
          "shapeExprs": [
             "http://bioentity.io/vocab/GenomicEntity",
@@ -2287,17 +2689,24 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/sequence_variant_has_gene",
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "valueExpr": "http://bioentity.io/vocab/Gene__List",
+                        "min": 0,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                         "valueExpr": {
                            "datatype": "http://www.w3.org/2001/XMLSchema#string",
                            "type": "NodeConstraint"
                         },
                         "min": 0,
-                        "max": -1,
+                        "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/sequence_variant_id",
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                         "valueExpr": {
                            "datatype": "http://www.w3.org/2001/XMLSchema#string",
                            "type": "NodeConstraint"
@@ -2322,8 +2731,15 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/sequence_variant_modulates_treatment_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://bioentity.io/vocab/SequenceVariant",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                        "valueExpr": "http://bioentity.io/vocab/Treatment",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
@@ -2362,7 +2778,7 @@
             "http://bioentity.io/vocab/Association",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/thing_to_disease_or_phenotypic_feature_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
                   "min": 1,
                   "max": 1,
@@ -2376,7 +2792,7 @@
       {
          "id": "http://bioentity.io/vocab/ThingWithTaxon",
          "expression": {
-            "predicate": "http://bioentity.io/vocab/in_taxon",
+            "predicate": "http://purl.obolibrary.org/obo/RO_0002162",
             "valueExpr": "http://bioentity.io/vocab/OrganismTaxon",
             "min": 0,
             "max": 1,
@@ -2402,8 +2818,15 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/transcript_to_gene_relationship_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://bioentity.io/vocab/Transcript",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                        "valueExpr": "http://bioentity.io/vocab/Gene",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
@@ -2417,6 +2840,39 @@
          "type": "ShapeAnd"
       },
       {
+         "id": "http://bioentity.io/vocab/DrugExposure__List",
+         "closed": true,
+         "expression": {
+            "expressions": [
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+                  "valueExpr": "http://bioentity.io/vocab/DrugExposure",
+                  "min": 0,
+                  "max": 1,
+                  "type": "TripleConstraint"
+               },
+               {
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+                  "valueExpr": {
+                     "shapeExprs": [
+                        {
+                           "values": [
+                              "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                           ],
+                           "type": "NodeConstraint"
+                        },
+                        "http://bioentity.io/vocab/DrugExposure__List"
+                     ],
+                     "type": "ShapeOr"
+                  },
+                  "type": "TripleConstraint"
+               }
+            ],
+            "type": "EachOf"
+         },
+         "type": "Shape"
+      },
+      {
          "id": "http://bioentity.io/vocab/Treatment",
          "shapeExprs": [
             "http://bioentity.io/vocab/Environment",
@@ -2424,8 +2880,15 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/treatment_treats",
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0002606",
                         "valueExpr": "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://bioentity.io/vocab/has_exposure_parts",
+                        "valueExpr": "http://bioentity.io/vocab/DrugExposure__List",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
@@ -2448,7 +2911,7 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/variant_to_disease_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": {
                            "datatype": "http://www.w3.org/2001/XMLSchema#string",
                            "type": "NodeConstraint"
@@ -2458,7 +2921,14 @@
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/variant_to_disease_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": "http://bioentity.io/vocab/RelationshipType",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": {
                            "datatype": "http://www.w3.org/2001/XMLSchema#string",
                            "type": "NodeConstraint"
@@ -2483,7 +2953,7 @@
             "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/variant_to_phenotypic_feature_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/SequenceVariant",
                   "min": 1,
                   "max": 1,
@@ -2505,16 +2975,23 @@
                "expression": {
                   "expressions": [
                      {
-                        "predicate": "http://bioentity.io/vocab/variant_to_population_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://bioentity.io/vocab/SequenceVariant",
                         "min": 1,
                         "max": 1,
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/variant_to_population_association_has_quotient",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                        "valueExpr": "http://bioentity.io/vocab/PopulationOfIndividualOrganisms",
+                        "min": 1,
+                        "max": 1,
+                        "type": "TripleConstraint"
+                     },
+                     {
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                         "valueExpr": {
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "datatype": "http://www.w3.org/2001/XMLSchema#double",
                            "type": "NodeConstraint"
                         },
                         "min": 0,
@@ -2522,9 +2999,9 @@
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/variant_to_population_association_has_count",
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                         "valueExpr": {
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "datatype": "http://www.w3.org/2001/XMLSchema#integer",
                            "type": "NodeConstraint"
                         },
                         "min": 0,
@@ -2532,9 +3009,9 @@
                         "type": "TripleConstraint"
                      },
                      {
-                        "predicate": "http://bioentity.io/vocab/variant_to_population_association_has_total",
+                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
                         "valueExpr": {
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string",
+                           "datatype": "http://www.w3.org/2001/XMLSchema#integer",
                            "type": "NodeConstraint"
                         },
                         "min": 0,
@@ -2555,7 +3032,7 @@
             "http://bioentity.io/vocab/Association",
             {
                "expression": {
-                  "predicate": "http://bioentity.io/vocab/variant_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://bioentity.io/vocab/SequenceVariant",
                   "min": 1,
                   "max": 1,

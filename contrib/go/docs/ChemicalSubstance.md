@@ -22,7 +22,7 @@ URI: [http://bioentity.io/vocab/ChemicalSubstance](http://bioentity.io/vocab/Che
 ## Used in
 
  *  class: **[ChemicalToThingAssociation](ChemicalToThingAssociation.md)** *[chemical to thing association.subject](chemical_to_thing_association_subject.md)* **[ChemicalSubstance](ChemicalSubstance.md)**
- *  class: **[DrugExposure](DrugExposure.md)** *[drug exposure.drug](drug_exposure_drug.md)* **[ChemicalSubstance](ChemicalSubstance.md)**
+ *  class: **[DrugExposure](DrugExposure.md)** *[Drug](Drug.md)* **[ChemicalSubstance](ChemicalSubstance.md)**
 ## Fields
 
  * _[biomarker for](biomarker_for.md) *subsets*: (translator_minimal)_

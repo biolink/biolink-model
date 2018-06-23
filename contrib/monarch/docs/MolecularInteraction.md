@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/
 
 ## Fields
 
- * _[molecular interaction.interacting molecules category](molecular_interaction_interacting_molecules_category.md)_
+ * _[molecular interaction.interacting molecules category](interacting_molecules_category.md)_
     * range: [OntologyClass](OntologyClass.md)
     * __Local__
  * _[molecular interaction.object](molecular_interaction_object.md)_
@@ -26,7 +26,7 @@ URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/
     * range: [MolecularEntity](MolecularEntity.md) [required]
     * __Local__
  * _[molecular interaction.relation](molecular_interaction_relation.md)_
-    * _the relationship type by which a subject is connected to an object in an association_
+    * _interaction relationship type_
     * range: [RelationshipType](RelationshipType.md) [required]
     * edge label: [molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)
     * __Local__
@@ -56,7 +56,7 @@ URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/
     * inherited from: [NamedThing](NamedThing.md)
  * _[has alternate identifier](has_alternate_identifier.md)_
     * _An alternate identifier for the entity, provided by the source database_
-    * range: [IdentifierType](IdentifierType.md)*
+    * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
  * _[has evidence](has_evidence.md)_
     * _connects an association to an instance of supporting evidence_
@@ -72,11 +72,11 @@ URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/
     * inherited from: [ExtensionsAndEvidenceAssociationMixin](ExtensionsAndEvidenceAssociationMixin.md)
  * _[has synonym](has_synonym.md)_
     * _Alternate labels for an entity_
-    * range: [LabelType](LabelType.md)*
+    * range: [name](name.md) *subsets*: (translator_minimal)*
     * inherited from: [NamedThing](NamedThing.md)
  * _[has xref](has_xref.md)_
     * _A database cross-reference for the entity, provided by a separate database_
-    * range: [IdentifierType](IdentifierType.md)*
+    * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
  * _[id](id.md) *subsets*: (translator_minimal)_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_

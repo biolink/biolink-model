@@ -24,7 +24,7 @@ biolink:SchemaDefinition a shex:ShapeAnd ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:imports ;
-                                    shex:valueExpr <file:///Users/solbrig/git/hsolbrig/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                                    shex:valueExpr biolink:XSD_string__List ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:license ;
@@ -46,7 +46,7 @@ biolink:SchemaDefinition a shex:ShapeAnd ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:default_curi_maps ;
-                                    shex:valueExpr <file:///Users/solbrig/git/hsolbrig/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                                    shex:valueExpr biolink:XSD_string__List ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:types ;
@@ -86,7 +86,7 @@ biolink:SchemaDefinition a shex:ShapeAnd ;
                                             shex:datatype xsd:date ] ] ) ] ] ) .
 
 meta:Builtins a shex:NodeConstraint ;
-    shex:values ( xsd:string xsd:integer xsd:float xsd:double xsd:boolean xsd:time xsd:date xsd:anyURI biolink:anytype biolink:anytype ) .
+    shex:values ( xsd:string xsd:integer xsd:float xsd:double xsd:boolean xsd:time xsd:date ) .
 
 meta:SlotRangeTypes a shex:ShapeOr ;
     shex:shapeExprs ( biolink:TypeDefinition biolink:ClassDefinition meta:Builtins ) .
@@ -159,23 +159,23 @@ biolink:Element a shex:Shape ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate biolink:flags ;
-                        shex:valueExpr <file:///Users/solbrig/git/hsolbrig/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                        shex:valueExpr biolink:XSD_string__List ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate biolink:aliases ;
-                        shex:valueExpr <file:///Users/solbrig/git/hsolbrig/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                        shex:valueExpr biolink:XSD_string__List ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate biolink:mappings ;
-                        shex:valueExpr <file:///Users/solbrig/git/hsolbrig/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                        shex:valueExpr biolink:XSD_string__List ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate biolink:id_prefixes ;
-                        shex:valueExpr <file:///Users/solbrig/git/hsolbrig/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                        shex:valueExpr biolink:XSD_string__List ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate <http://www.geneontology.org/formats/oboInOwl#inSubset> ;
-                        shex:valueExpr <file:///Users/solbrig/git/hsolbrig/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                        shex:valueExpr biolink:XSD_string__List ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate <https://www.w3.org/TR/skos-reference/#inScheme> ;
@@ -184,7 +184,7 @@ biolink:Element a shex:Shape ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate biolink:alt_descriptions ;
-                        shex:valueExpr <file:///Users/solbrig/git/hsolbrig/biolink-model/XSD_string__List> ] ) ] .
+                        shex:valueExpr biolink:XSD_string__List ] ) ] .
 
 biolink:Example__List a shex:Shape ;
     shex:closed true ;
@@ -416,7 +416,7 @@ biolink:Definition a shex:ShapeAnd ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:local_names ;
-                                    shex:valueExpr <file:///Users/solbrig/git/hsolbrig/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                                    shex:valueExpr biolink:XSD_string__List ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:union_of ;
@@ -429,7 +429,7 @@ biolink:Definition a shex:ShapeAnd ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:values_from ;
-                                    shex:valueExpr <file:///Users/solbrig/git/hsolbrig/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                                    shex:valueExpr biolink:XSD_string__List ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:symmetric ;
@@ -449,7 +449,7 @@ biolink:SlotDefinition__List a shex:Shape ;
                                 shex:shapeExprs ( [ a shex:NodeConstraint ;
                                             shex:values ( () ) ] biolink:SlotDefinition__List ) ] ] ) ] .
 
-<file:///Users/solbrig/git/hsolbrig/biolink-model/XSD_string__List> a shex:Shape ;
+biolink:XSD_string__List a shex:Shape ;
     shex:closed true ;
     shex:expression [ a shex:EachOf ;
             shex:expressions ( [ a shex:TripleConstraint ;
@@ -461,11 +461,10 @@ biolink:SlotDefinition__List a shex:Shape ;
                         shex:predicate rdf:rest ;
                         shex:valueExpr [ a shex:ShapeOr ;
                                 shex:shapeExprs ( [ a shex:NodeConstraint ;
-                                            shex:values ( () ) ] <file:///Users/solbrig/git/hsolbrig/biolink-model/XSD_string__List> ) ] ] ) ] .
+                                            shex:values ( () ) ] biolink:XSD_string__List ) ] ] ) ] .
 
 [] a shex:Schema ;
-    shex:shapes <file:///Users/solbrig/git/hsolbrig/biolink-model/XSD_string__List>,
-        meta:Builtins,
+    shex:shapes meta:Builtins,
         meta:SlotRangeTypes,
         biolink:ClassDefinition,
         biolink:ClassDefinition__List,
@@ -480,7 +479,8 @@ biolink:SlotDefinition__List a shex:Shape ;
         biolink:SlotDefinition,
         biolink:SlotDefinition__List,
         biolink:TypeDefinition,
-        biolink:TypeDefinition__List .
+        biolink:TypeDefinition__List,
+        biolink:XSD_string__List .
 
 
 

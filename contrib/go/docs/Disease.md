@@ -21,7 +21,7 @@ URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
 
  *  class: **[DiseaseToThingAssociation](DiseaseToThingAssociation.md)** *[disease to thing association.subject](disease_to_thing_association_subject.md)* **[Disease](Disease.md)**
  *  class: **[EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)** *[entity to disease association.object](entity_to_disease_association_object.md)* **[Disease](Disease.md)**
- *  class: **[NamedThing](NamedThing.md)** *[manifestation of](manifestation_of.md)* **[Disease](Disease.md)**
+ *  class: **None** *[manifestation of](manifestation_of.md)* **[Disease](Disease.md)**
 ## Fields
 
  * _[category](category.md) *subsets*: (translator_minimal)_

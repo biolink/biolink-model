@@ -39,7 +39,7 @@ URI: [http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation](http://bioen
     * inherited from: [NamedThing](NamedThing.md)
  * _[has alternate identifier](has_alternate_identifier.md)_
     * _An alternate identifier for the entity, provided by the source database_
-    * range: [IdentifierType](IdentifierType.md)*
+    * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
  * _[has evidence](has_evidence.md)_
     * _connects an association to an instance of supporting evidence_
@@ -55,11 +55,11 @@ URI: [http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation](http://bioen
     * inherited from: [ExtensionsAndEvidenceAssociationMixin](ExtensionsAndEvidenceAssociationMixin.md)
  * _[has synonym](has_synonym.md)_
     * _Alternate labels for an entity_
-    * range: [LabelType](LabelType.md)*
+    * range: [name](name.md) *subsets*: (translator_minimal)*
     * inherited from: [NamedThing](NamedThing.md)
  * _[has xref](has_xref.md)_
     * _A database cross-reference for the entity, provided by a separate database_
-    * range: [IdentifierType](IdentifierType.md)*
+    * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
  * _[id](id.md) *subsets*: (translator_minimal)_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_

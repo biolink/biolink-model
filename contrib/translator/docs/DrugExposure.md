@@ -17,10 +17,10 @@ URI: [http://bioentity.io/vocab/DrugExposure](http://bioentity.io/vocab/DrugExpo
 
 ## Used in
 
- *  class: **[Treatment](Treatment.md)** *[treatment.has exposure parts](treatment_has_exposure_parts.md)* **[DrugExposure](DrugExposure.md)**
+ *  class: **[Treatment](Treatment.md)** *[treatment.has exposure parts](has_exposure_parts.md)* **[DrugExposure](DrugExposure.md)**
 ## Fields
 
- * _[drug exposure.drug](drug_exposure_drug.md)_
+ * _[drug exposure.drug](drug.md)_
     * range: [ChemicalSubstance](ChemicalSubstance.md)* [required]
     * __Local__
  * _[category](category.md) *subsets*: (translator_minimal)_

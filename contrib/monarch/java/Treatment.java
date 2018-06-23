@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -23,7 +24,12 @@ public class Treatment {
 
     @JsonProperty("has_exposure_parts")
     private List<String> hasExposureParts = new ArrayList<String>();
+    /**
+     * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+     * 
+     */
     @JsonProperty("treats")
+    @JsonPropertyDescription("holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ")
     private String treats;
 
     @JsonProperty("has_exposure_parts")
@@ -36,11 +42,19 @@ public class Treatment {
         this.hasExposureParts = hasExposureParts;
     }
 
+    /**
+     * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+     * 
+     */
     @JsonProperty("treats")
     public String getTreats() {
         return treats;
     }
 
+    /**
+     * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+     * 
+     */
     @JsonProperty("treats")
     public void setTreats(String treats) {
         this.treats = treats;

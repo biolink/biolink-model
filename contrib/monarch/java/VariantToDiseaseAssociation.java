@@ -22,29 +22,29 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class VariantToDiseaseAssociation {
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * a disease that is associated with that variant
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("a disease that is associated with that variant")
     private String object;
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * E.g. is pathogenic for
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
+    @JsonPropertyDescription("E.g. is pathogenic for")
     private String relation;
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * a sequence variant in which the allele state is associated in some way with the disease state
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("a sequence variant in which the allele state is associated in some way with the disease state")
     private String subject;
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * a disease that is associated with that variant
      * 
      */
     @JsonProperty("object")
@@ -53,7 +53,7 @@ public class VariantToDiseaseAssociation {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * a disease that is associated with that variant
      * 
      */
     @JsonProperty("object")
@@ -62,7 +62,7 @@ public class VariantToDiseaseAssociation {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * E.g. is pathogenic for
      * 
      */
     @JsonProperty("relation")
@@ -71,7 +71,7 @@ public class VariantToDiseaseAssociation {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * E.g. is pathogenic for
      * 
      */
     @JsonProperty("relation")
@@ -80,7 +80,7 @@ public class VariantToDiseaseAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * a sequence variant in which the allele state is associated in some way with the disease state
      * 
      */
     @JsonProperty("subject")
@@ -89,7 +89,7 @@ public class VariantToDiseaseAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * a sequence variant in which the allele state is associated in some way with the disease state
      * 
      */
     @JsonProperty("subject")

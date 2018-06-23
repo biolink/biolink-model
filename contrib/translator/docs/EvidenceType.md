@@ -16,7 +16,7 @@ URI: [http://bioentity.io/vocab/EvidenceType](http://bioentity.io/vocab/Evidence
 
 ## Used in
 
- *  class: **[Association](Association.md)** *[has evidence type](has_evidence_type.md)* **[EvidenceType](EvidenceType.md)**
+ *  class: **None** *[has evidence type](has_evidence_type.md)* **[EvidenceType](EvidenceType.md)**
 ## Fields
 
  * _[category](category.md) *subsets*: (translator_minimal)_

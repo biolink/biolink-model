@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/NamedGraph](http://bioentity.io/vocab/NamedGraph
 ## Fields
 
  * _[named graph.title](named_graph_title.md)_
-    * _Narrative text describing the entity_
+    * _descriptive textual title_
     * range: [LabelType](LabelType.md)
     * __Local__
  * _[category](category.md) *subsets*: (translator_minimal)_

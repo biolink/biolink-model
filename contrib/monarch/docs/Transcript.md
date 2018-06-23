@@ -39,7 +39,7 @@ URI: [http://bioentity.io/vocab/Transcript](http://bioentity.io/vocab/Transcript
     * inherited from: [NamedThing](NamedThing.md)
  * _[has alternate identifier](has_alternate_identifier.md)_
     * _An alternate identifier for the entity, provided by the source database_
-    * range: [IdentifierType](IdentifierType.md)*
+    * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
  * _[has biological sequence](has_biological_sequence.md)_
     * _connects a genomic feature to its sequence_
@@ -51,11 +51,11 @@ URI: [http://bioentity.io/vocab/Transcript](http://bioentity.io/vocab/Transcript
     * inherited from: [BiologicalEntity](BiologicalEntity.md)
  * _[has synonym](has_synonym.md)_
     * _Alternate labels for an entity_
-    * range: [LabelType](LabelType.md)*
+    * range: [name](name.md) *subsets*: (translator_minimal)*
     * inherited from: [NamedThing](NamedThing.md)
  * _[has xref](has_xref.md)_
     * _A database cross-reference for the entity, provided by a separate database_
-    * range: [IdentifierType](IdentifierType.md)*
+    * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
  * _[id](id.md) *subsets*: (translator_minimal)_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_

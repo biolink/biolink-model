@@ -11,7 +11,7 @@ URI: [http://bioentity.io/vocab/occurs_in](slot_uri)
  * [SEMMEDDB:PROCESS_OF](http://purl.obolibrary.org/obo/SEMMEDDB_PROCESS_OF)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> **string**
+None -> **string**
 ## Inheritance
 
  *  is_a: [related to](related_to.md)

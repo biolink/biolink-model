@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
 ## Fields
 
  * _[gene has variant that contributes to disease association.subject](gene_has_variant_that_contributes_to_disease_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease._
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__
  * _[sequence variant qualifier](sequence_variant_qualifier.md)_

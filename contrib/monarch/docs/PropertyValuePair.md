@@ -14,7 +14,7 @@ URI: [http://bioentity.io/vocab/PropertyValuePair](http://bioentity.io/vocab/Pro
 
 ## Used in
 
- *  class: **[Association](Association.md)** *[extensions context slot](extensions_context_slot.md)* **[PropertyValuePair](PropertyValuePair.md)**
+ *  class: **None** *[extensions context slot](extensions_context_slot.md)* **[PropertyValuePair](PropertyValuePair.md)**
  *  class: **[ExtensionsAndEvidenceAssociationMixin](ExtensionsAndEvidenceAssociationMixin.md)** *[object extensions](object_extensions.md)* **[PropertyValuePair](PropertyValuePair.md)**
 ## Fields
 

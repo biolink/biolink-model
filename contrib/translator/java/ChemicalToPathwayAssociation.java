@@ -20,15 +20,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class ChemicalToPathwayAssociation {
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the pathway that is affected by the chemical
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("the pathway that is affected by the chemical")
     private String object;
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the pathway that is affected by the chemical
      * 
      */
     @JsonProperty("object")
@@ -37,7 +37,7 @@ public class ChemicalToPathwayAssociation {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the pathway that is affected by the chemical
      * 
      */
     @JsonProperty("object")

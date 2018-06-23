@@ -1,0 +1,820 @@
+{
+  "name": "metamodel",
+  "description": "Metamodel for biolink schema",
+  "note": [
+    "OIO prefix is not correct -- where IS \"inSubset\" derived from?"
+  ],
+  "id_prefixes": [
+    "rdf",
+    "rdfs",
+    "xsd",
+    "skos",
+    "OIO"
+  ],
+  "id": "https://biolink.github.io/metamodel/ontology/meta.ttl",
+  "version": "0.3.1",
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "prefixes": [
+    {
+      "local_name": "biolink",
+      "prefix_uri": "http://bioentity.io/vocab/"
+    },
+    {
+      "local_name": "meta",
+      "prefix_uri": "http://bioentity.io/meta/"
+    },
+    {
+      "local_name": "skos",
+      "prefix_uri": "http://www.w3.org/2004/02/skos/core#"
+    },
+    {
+      "local_name": "owl",
+      "prefix_uri": "http://www.w3.org/2002/07/owl#"
+    }
+  ],
+  "default_prefix": "biolink",
+  "default_curi_maps": [
+    "obo_context",
+    "monarch_context",
+    "idot_context",
+    "semweb_context"
+  ],
+  "slots": [
+    {
+      "name": "name",
+      "description": "a unique key that identifies a slot, type or class in a schema",
+      "mappings": [
+        "rdfs:label"
+      ],
+      "domain": "Element",
+      "range": "xsd:string",
+      "primary_key": true,
+      "@id": "name"
+    },
+    {
+      "name": "singular_name",
+      "description": "a name that is used in the singular form",
+      "domain": "Element",
+      "range": "xsd:string",
+      "@id": "singular_name"
+    },
+    {
+      "name": "description",
+      "description": "a description",
+      "mappings": [
+        "skos:definition"
+      ],
+      "domain": "Element",
+      "range": "xsd:string",
+      "inherited": true,
+      "@id": "description"
+    },
+    {
+      "name": "alt_descriptions",
+      "note": "Needs description",
+      "multivalued": true,
+      "domain": "Element",
+      "range": "xsd:string",
+      "inherited": true,
+      "@id": "alt_descriptions"
+    },
+    {
+      "name": "note",
+      "description": "Notes about an element",
+      "mappings": [
+        "skos:note"
+      ],
+      "domain": "Element",
+      "range": "xsd:string",
+      "@id": "note"
+    },
+    {
+      "name": "comment",
+      "description": "Comment about an element",
+      "mappings": [
+        "skos:editorialNote"
+      ],
+      "domain": "Element",
+      "range": "xsd:string",
+      "@id": "comment"
+    },
+    {
+      "name": "examples",
+      "description": "Example of usage for a slot or class",
+      "mappings": [
+        "skos:example"
+      ],
+      "multivalued": true,
+      "domain": "Element",
+      "range": "Example",
+      "inlined": true,
+      "@id": "examples"
+    },
+    {
+      "name": "aliases",
+      "multivalued": true,
+      "domain": "Element",
+      "range": "xsd:string",
+      "@id": "aliases"
+    },
+    {
+      "name": "in_subset",
+      "description": "used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)",
+      "mappings": [
+        "OIO:inSubset"
+      ],
+      "multivalued": true,
+      "domain": "Element",
+      "range": "xsd:string",
+      "inherited": true,
+      "@id": "in_subset"
+    },
+    {
+      "name": "from_schema",
+      "description": "id of the schema that the element was derived from.  Supplied by the loader.",
+      "mappings": [
+        "skos:inScheme"
+      ],
+      "domain": "Element",
+      "range": "xsd:string",
+      "@id": "from_schema"
+    },
+    {
+      "name": "flags",
+      "description": "State information and other details",
+      "multivalued": true,
+      "domain": "Element",
+      "range": "xsd:string",
+      "@id": "flags"
+    },
+    {
+      "name": "see_also",
+      "note": "needs description",
+      "mappings": [
+        "skos:related"
+      ],
+      "domain": "Element",
+      "range": "xsd:string",
+      "@id": "see_also"
+    },
+    {
+      "name": "id_prefixes",
+      "note": "A list of CURI prefixes that are used in the representation of instances of the model.  All prefixes in this list are added to the prefix sections of the target models.  These prefixes are fetched from",
+      "multivalued": true,
+      "domain": "Element",
+      "range": "xsd:string",
+      "@id": "id_prefixes"
+    },
+    {
+      "name": "mappings",
+      "description": "list of equivalent or skos exact mappings to an ontology class",
+      "multivalued": true,
+      "domain": "Element",
+      "range": "xsd:string",
+      "inherited": true,
+      "@id": "mappings"
+    },
+    {
+      "name": "is_a",
+      "description": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded",
+      "mappings": [
+        "rdf:type"
+      ],
+      "domain": "Definition",
+      "range": "Definition",
+      "@id": "is_a"
+    },
+    {
+      "name": "mixin",
+      "description": "Used only as a mixin -- cannot be instantiated on its own.",
+      "domain": "Definition",
+      "range": "xsd:boolean",
+      "@id": "mixin"
+    },
+    {
+      "name": "mixins",
+      "description": "List of definitions to be mixed in. Targets may be any definition of the same type",
+      "multivalued": true,
+      "domain": "Definition",
+      "range": "Definition",
+      "@id": "mixins"
+    },
+    {
+      "name": "abstract",
+      "description": "An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored",
+      "domain": "Definition",
+      "range": "xsd:boolean",
+      "@id": "abstract"
+    },
+    {
+      "name": "local_names",
+      "description": "map from local identifier to slot",
+      "multivalued": true,
+      "domain": "Definition",
+      "range": "xsd:string",
+      "@id": "local_names"
+    },
+    {
+      "name": "union_of",
+      "description": "list of class or slot definitions that are combined to create the union class",
+      "multivalued": true,
+      "domain": "Definition",
+      "range": "Definition",
+      "@id": "union_of"
+    },
+    {
+      "name": "values_from",
+      "description": "identifies the possible uri's of the range",
+      "multivalued": true,
+      "domain": "Definition",
+      "range": "xsd:string",
+      "@id": "values_from"
+    },
+    {
+      "name": "subclass_of",
+      "description": "Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes",
+      "mappings": [
+        "rdfs:subClassOf"
+      ],
+      "domain": "Definition",
+      "range": "xsd:anyURI",
+      "@id": "subclass_of"
+    },
+    {
+      "name": "symmetric",
+      "description": "Symmetric slot",
+      "note": "Indications that a slot or reified association is symmetric",
+      "domain": "Definition",
+      "range": "xsd:boolean",
+      "@id": "symmetric"
+    },
+    {
+      "name": "id",
+      "description": "a globally unique id or url for a schema",
+      "domain": "SchemaDefinition",
+      "range": "xsd:string",
+      "primary_key": true,
+      "@id": "id"
+    },
+    {
+      "name": "version",
+      "description": "Schema version",
+      "domain": "SchemaDefinition",
+      "range": "xsd:string",
+      "@id": "version"
+    },
+    {
+      "name": "imports",
+      "description": "A list of modules that are imported into the schema",
+      "multivalued": true,
+      "domain": "SchemaDefinition",
+      "range": "xsd:string",
+      "@id": "imports"
+    },
+    {
+      "name": "license",
+      "description": "license for the schema",
+      "domain": "SchemaDefinition",
+      "range": "xsd:string",
+      "@id": "license"
+    },
+    {
+      "name": "prefixes",
+      "description": "Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes",
+      "multivalued": true,
+      "domain": "SchemaDefinition",
+      "range": "Prefix",
+      "inlined": true,
+      "@id": "prefixes"
+    },
+    {
+      "name": "default_curi_maps",
+      "description": "List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables",
+      "multivalued": true,
+      "domain": "SchemaDefinition",
+      "range": "xsd:string",
+      "@id": "default_curi_maps"
+    },
+    {
+      "name": "default_prefix",
+      "description": "default and base prefix -- used for ':' identifiers, @base and @vocab",
+      "domain": "SchemaDefinition",
+      "range": "xsd:string",
+      "@id": "default_prefix"
+    },
+    {
+      "name": "default_type",
+      "description": "the default type if range is omitted",
+      "domain": "SchemaDefinition",
+      "range": "TypeDefinition",
+      "@id": "default_type"
+    },
+    {
+      "name": "types",
+      "description": "types defined in schema",
+      "multivalued": true,
+      "domain": "SchemaDefinition",
+      "range": "TypeDefinition",
+      "inlined": true,
+      "@id": "types"
+    },
+    {
+      "name": "slot_definitions",
+      "description": "collection of slot definitions in a schema",
+      "multivalued": true,
+      "domain": "SchemaDefinition",
+      "range": "SlotDefinition",
+      "inlined": true,
+      "alias": "slots",
+      "@id": "slot_definitions"
+    },
+    {
+      "name": "classes",
+      "description": "classes defined in schema",
+      "multivalued": true,
+      "domain": "SchemaDefinition",
+      "range": "ClassDefinition",
+      "inlined": true,
+      "@id": "classes"
+    },
+    {
+      "name": "metamodel_version",
+      "description": "Version of the metamodel used to load the schema. Supplied by the loader",
+      "domain": "SchemaDefinition",
+      "range": "xsd:string",
+      "@id": "metamodel_version"
+    },
+    {
+      "name": "source_file",
+      "description": "name, uri or description of the source of the schema.  Supplied by the loader",
+      "domain": "SchemaDefinition",
+      "range": "xsd:string",
+      "@id": "source_file"
+    },
+    {
+      "name": "source_file_date",
+      "description": "modification date of the source of the schema.  Supplied by the loader",
+      "domain": "SchemaDefinition",
+      "range": "xsd:string",
+      "@id": "source_file_date"
+    },
+    {
+      "name": "source_file_size",
+      "description": "size in bytes of the source of the schema.  Supplied by the loader",
+      "domain": "SchemaDefinition",
+      "range": "xsd:integer",
+      "@id": "source_file_size"
+    },
+    {
+      "name": "generation_date",
+      "description": "date that the schema was loaded/generated.  Supplied by the loader",
+      "domain": "SchemaDefinition",
+      "range": "xsd:date",
+      "@id": "generation_date"
+    },
+    {
+      "name": "defining_slots",
+      "description": "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom",
+      "multivalued": true,
+      "domain": "ClassDefinition",
+      "range": "SlotDefinition",
+      "@id": "defining_slots"
+    },
+    {
+      "name": "slots",
+      "description": "list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins.",
+      "multivalued": true,
+      "domain": "ClassDefinition",
+      "range": "SlotDefinition",
+      "@id": "slots"
+    },
+    {
+      "name": "slot_usage",
+      "description": "Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints",
+      "multivalued": true,
+      "domain": "ClassDefinition",
+      "range": "SlotDefinition",
+      "inlined": true,
+      "@id": "slot_usage"
+    },
+    {
+      "name": "apply_to",
+      "description": "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class.",
+      "domain": "ClassDefinition",
+      "range": "ClassDefinition",
+      "@id": "apply_to"
+    },
+    {
+      "name": "entity",
+      "note": "needs description",
+      "domain": "ClassDefinition",
+      "range": "xsd:boolean",
+      "@id": "entity"
+    },
+    {
+      "name": "multivalued",
+      "description": "If true slot can have many values",
+      "domain": "SlotDefinition",
+      "range": "xsd:boolean",
+      "inherited": true,
+      "@id": "multivalued"
+    },
+    {
+      "name": "domain",
+      "description": "The class to which this slot applies.",
+      "domain": "SlotDefinition",
+      "range": "ClassDefinition",
+      "@id": "domain"
+    },
+    {
+      "name": "range",
+      "description": "The slot type.  Can be any class or type",
+      "domain": "SlotDefinition",
+      "range": "xsd:anytype",
+      "inherited": true,
+      "@id": "range"
+    },
+    {
+      "name": "required",
+      "description": "If true slot must have at least one value",
+      "domain": "SlotDefinition",
+      "range": "xsd:boolean",
+      "inherited": true,
+      "@id": "required"
+    },
+    {
+      "name": "inlined",
+      "description": "if true then the value of this slot is inlined (i.e. a nested object) rather linked by key",
+      "domain": "SlotDefinition",
+      "range": "xsd:boolean",
+      "inherited": true,
+      "@id": "inlined"
+    },
+    {
+      "name": "definitional",
+      "note": [
+        "needs description"
+      ],
+      "domain": "SlotDefinition",
+      "range": "xsd:boolean",
+      "inherited": true,
+      "@id": "definitional"
+    },
+    {
+      "name": "object_property",
+      "description": "true means that this slot is part of the formal definition of a class",
+      "domain": "SlotDefinition",
+      "range": "xsd:boolean",
+      "inherited": true,
+      "@id": "object_property"
+    },
+    {
+      "name": "primary_key",
+      "description": "True means that this serves as a unique identifier",
+      "domain": "SlotDefinition",
+      "range": "xsd:boolean",
+      "@id": "primary_key"
+    },
+    {
+      "name": "identifier",
+      "description": "True means that this slot must be unique across the collection of slots",
+      "domain": "SlotDefinition",
+      "range": "xsd:boolean",
+      "@id": "identifier"
+    },
+    {
+      "name": "alias",
+      "description": "A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have \"slots\" where one inline and the other a reference",
+      "domain": "SlotDefinition",
+      "range": "xsd:string",
+      "@id": "alias"
+    },
+    {
+      "name": "path",
+      "description": "For any denormalized slot, this represents the tree or graph path used to generate the denormalized form",
+      "domain": "SlotDefinition",
+      "range": "xsd:string",
+      "@id": "path"
+    },
+    {
+      "name": "subproperty_of",
+      "description": "Ontolgy property which this is a subproperty of",
+      "mappings": [
+        "rdfs:subPropertyOf"
+      ],
+      "domain": "SlotDefinition",
+      "range": "SlotDefinition",
+      "inherited": true,
+      "@id": "subproperty_of"
+    },
+    {
+      "name": "inverse",
+      "description": "used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')",
+      "mappings": [
+        "owl:inverseOf"
+      ],
+      "domain": "SlotDefinition",
+      "range": "SlotDefinition",
+      "@id": "inverse"
+    },
+    {
+      "name": "is_class_field",
+      "note": "Needs description",
+      "domain": "SlotDefinition",
+      "range": "xsd:boolean",
+      "@id": "is_class_field"
+    },
+    {
+      "name": "role",
+      "note": "Needs description",
+      "domain": "SlotDefinition",
+      "range": "xsd:string",
+      "@id": "role"
+    },
+    {
+      "name": "inherited",
+      "description": "True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths",
+      "domain": "SlotDefinition",
+      "range": "xsd:boolean",
+      "inherited": true,
+      "@id": "inherited"
+    },
+    {
+      "name": "typeof",
+      "description": "a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition",
+      "domain": "TypeDefinition",
+      "range": "xsd:string",
+      "@id": "typeof"
+    },
+    {
+      "name": "value",
+      "domain": "Example",
+      "range": "xsd:string",
+      "@id": "value"
+    },
+    {
+      "name": "value_description",
+      "domain": "Example",
+      "range": "xsd:string",
+      "alias": "description",
+      "@id": "value_description"
+    },
+    {
+      "name": "local_name",
+      "description": "the nsname (sans ':' for a given prefix)",
+      "domain": "Prefix",
+      "range": "xsd:string",
+      "primary_key": true,
+      "@id": "local_name"
+    },
+    {
+      "name": "prefix_uri",
+      "description": "A URI associated with a given prefix",
+      "domain": "Prefix",
+      "range": "xsd:string",
+      "@id": "prefix_uri"
+    },
+    {
+      "name": "slot_definition_is_a",
+      "description": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded",
+      "mappings": [
+        "rdf:type"
+      ],
+      "is_a": "is_a",
+      "domain": "SlotDefinition",
+      "range": "SlotDefinition",
+      "alias": "is_a",
+      "@id": "slot_definition_is_a"
+    },
+    {
+      "name": "slot_definition_mixins",
+      "description": "List of definitions to be mixed in. Targets may be any definition of the same type",
+      "is_a": "mixins",
+      "multivalued": true,
+      "domain": "SlotDefinition",
+      "range": "SlotDefinition",
+      "alias": "mixins",
+      "@id": "slot_definition_mixins"
+    },
+    {
+      "name": "slot_definition_union_of",
+      "description": "list of class or slot definitions that are combined to create the union class",
+      "is_a": "union_of",
+      "multivalued": true,
+      "domain": "SlotDefinition",
+      "range": "SlotDefinition",
+      "alias": "union_of",
+      "@id": "slot_definition_union_of"
+    },
+    {
+      "name": "class_definition_is_a",
+      "description": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded",
+      "mappings": [
+        "rdf:type"
+      ],
+      "is_a": "is_a",
+      "domain": "ClassDefinition",
+      "range": "ClassDefinition",
+      "alias": "is_a",
+      "@id": "class_definition_is_a"
+    },
+    {
+      "name": "class_definition_mixins",
+      "description": "List of definitions to be mixed in. Targets may be any definition of the same type",
+      "is_a": "mixins",
+      "multivalued": true,
+      "domain": "ClassDefinition",
+      "range": "ClassDefinition",
+      "alias": "mixins",
+      "@id": "class_definition_mixins"
+    },
+    {
+      "name": "class_definition_union_of",
+      "description": "list of class or slot definitions that are combined to create the union class",
+      "is_a": "union_of",
+      "multivalued": true,
+      "domain": "ClassDefinition",
+      "range": "ClassDefinition",
+      "alias": "union_of",
+      "@id": "class_definition_union_of"
+    }
+  ],
+  "classes": [
+    {
+      "name": "Prefix",
+      "description": "Prefix URI map",
+      "slots": [
+        "local_name",
+        "prefix_uri"
+      ],
+      "@id": "Prefix"
+    },
+    {
+      "name": "Example",
+      "description": "example of usage",
+      "slots": [
+        "value",
+        "value_description"
+      ],
+      "@id": "Example"
+    },
+    {
+      "name": "Element",
+      "description": "root of all described things",
+      "abstract": true,
+      "slots": [
+        "name",
+        "singular_name",
+        "description",
+        "note",
+        "comment",
+        "examples",
+        "see_also",
+        "flags",
+        "aliases",
+        "mappings",
+        "id_prefixes",
+        "in_subset",
+        "from_schema",
+        "alt_descriptions"
+      ],
+      "@id": "Element"
+    },
+    {
+      "name": "Definition",
+      "description": "definition base class",
+      "is_a": "Element",
+      "abstract": true,
+      "slots": [
+        "is_a",
+        "mixin",
+        "mixins",
+        "abstract",
+        "local_names",
+        "union_of",
+        "subclass_of",
+        "values_from",
+        "symmetric"
+      ],
+      "@id": "Definition"
+    },
+    {
+      "name": "SlotDefinition",
+      "description": "A property or slot",
+      "is_a": "Definition",
+      "slots": [
+        "multivalued",
+        "domain",
+        "range",
+        "required",
+        "object_property",
+        "inlined",
+        "primary_key",
+        "identifier",
+        "definitional",
+        "alias",
+        "path",
+        "subproperty_of",
+        "inverse",
+        "is_class_field",
+        "role",
+        "inherited",
+        "slot_definition_is_a",
+        "slot_definition_mixins",
+        "slot_definition_union_of"
+      ],
+      "slot_usage": [
+        {
+          "name": "is_a",
+          "range": "SlotDefinition"
+        },
+        {
+          "name": "mixins",
+          "range": "SlotDefinition"
+        },
+        {
+          "name": "union_of",
+          "range": "SlotDefinition"
+        }
+      ],
+      "@id": "SlotDefinition"
+    },
+    {
+      "name": "ClassDefinition",
+      "description": "A class or interface",
+      "is_a": "Definition",
+      "slots": [
+        "defining_slots",
+        "slots",
+        "slot_usage",
+        "apply_to",
+        "entity",
+        "class_definition_is_a",
+        "class_definition_mixins",
+        "class_definition_union_of"
+      ],
+      "slot_usage": [
+        {
+          "name": "is_a",
+          "range": "ClassDefinition"
+        },
+        {
+          "name": "mixins",
+          "domain": "ClassDefinition",
+          "range": "ClassDefinition"
+        },
+        {
+          "name": "union_of",
+          "domain": "ClassDefinition",
+          "range": "ClassDefinition"
+        }
+      ],
+      "@id": "ClassDefinition"
+    },
+    {
+      "name": "TypeDefinition",
+      "description": "A type definition",
+      "is_a": "Element",
+      "slots": [
+        "typeof"
+      ],
+      "@id": "TypeDefinition"
+    },
+    {
+      "name": "SchemaDefinition",
+      "description": "A collection of definitions",
+      "is_a": "Definition",
+      "slots": [
+        "id",
+        "version",
+        "imports",
+        "license",
+        "prefixes",
+        "default_prefix",
+        "default_type",
+        "default_curi_maps",
+        "types",
+        "slot_definitions",
+        "classes",
+        "metamodel_version",
+        "source_file",
+        "source_file_size",
+        "source_file_date",
+        "generation_date"
+      ],
+      "@id": "SchemaDefinition"
+    }
+  ],
+  "metamodel_version": "0.3.1",
+  "source_file": "/Users/solbrig/git/hsolbrig/biolink-model/meta.yaml",
+  "source_file_size": 18545,
+  "source_file_date": "Fri Jun 22 11:47:08 2018",
+  "generation_date": "2018-06-23 13:55",
+  "@context": [
+    "file:///Users/solbrig/git/hsolbrig/biolink-model/tests/test_scripts/output/genjsonld/metacontext.jsonld",
+    {
+      "@base": "http://bioentity.io/vocab/"
+    }
+  ],
+  "@id": "https://biolink.github.io/metamodel/ontology/meta.ttl"
+}

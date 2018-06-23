@@ -69,8 +69,8 @@ URI: [http://bioentity.io/vocab/RNAProductIsoform](http://bioentity.io/vocab/RNA
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
  * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
-    * _A human-readable name for a thing_
-    * range: [LabelType](LabelType.md)
+    * _genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name_
+    * range: [SymbolType](SymbolType.md)
     * inherited from: [MacromolecularMachine](MacromolecularMachine.md)
  * _[molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)_
     * _holds between two entities that make physical contact as part of some interaction_

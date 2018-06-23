@@ -1,11 +1,14 @@
 # Slot: object
 
 
-connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+treatment whose efficacy is modulated by the subject variant
 
 URI: [http://bioentity.io/vocab/sequence_variant_modulates_treatment_association_object](slot_uri)
 ## Mappings
 
+ * [rdf:object](http://purl.obolibrary.org/obo/rdf_object)
+ * [owl:annotatedTarget](http://purl.obolibrary.org/obo/owl_annotatedTarget)
+ * [oban:association_has_object](http://purl.obolibrary.org/obo/oban_association_has_object)
 ## Domain and Range
 
 [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) -> [Treatment](Treatment.md)

@@ -45,18 +45,18 @@ public class VariantToPopulationAssociation {
     @JsonPropertyDescription("number all populations that carry a particular allele, aka allele number")
     private String hasTotal;
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the population that is observed to have the frequency
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("the population that is observed to have the frequency")
     private String object;
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * an allele that has a certain frequency in a given population
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("an allele that has a certain frequency in a given population")
     private String subject;
 
     /**
@@ -114,7 +114,7 @@ public class VariantToPopulationAssociation {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the population that is observed to have the frequency
      * 
      */
     @JsonProperty("object")
@@ -123,7 +123,7 @@ public class VariantToPopulationAssociation {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the population that is observed to have the frequency
      * 
      */
     @JsonProperty("object")
@@ -132,7 +132,7 @@ public class VariantToPopulationAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * an allele that has a certain frequency in a given population
      * 
      */
     @JsonProperty("subject")
@@ -141,7 +141,7 @@ public class VariantToPopulationAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * an allele that has a certain frequency in a given population
      * 
      */
     @JsonProperty("subject")

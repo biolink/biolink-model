@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
 ## Fields
 
  * _[gene has variant that contributes to disease association.subject](gene_has_variant_that_contributes_to_disease_association_subject.md)_
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * _A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease._
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__
  * _[sequence variant qualifier](sequence_variant_qualifier.md)_
@@ -47,7 +47,7 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
     * inherited from: [NamedThing](NamedThing.md)
  * _[has alternate identifier](has_alternate_identifier.md)_
     * _An alternate identifier for the entity, provided by the source database_
-    * range: [IdentifierType](IdentifierType.md)*
+    * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
  * _[has evidence](has_evidence.md)_
     * _connects an association to an instance of supporting evidence_
@@ -63,11 +63,11 @@ URI: [http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociatio
     * inherited from: [ExtensionsAndEvidenceAssociationMixin](ExtensionsAndEvidenceAssociationMixin.md)
  * _[has synonym](has_synonym.md)_
     * _Alternate labels for an entity_
-    * range: [LabelType](LabelType.md)*
+    * range: [name](name.md) *subsets*: (translator_minimal)*
     * inherited from: [NamedThing](NamedThing.md)
  * _[has xref](has_xref.md)_
     * _A database cross-reference for the entity, provided by a separate database_
-    * range: [IdentifierType](IdentifierType.md)*
+    * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
  * _[id](id.md) *subsets*: (translator_minimal)_
     * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_

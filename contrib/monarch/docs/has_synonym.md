@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/has_synonym](slot_uri)
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [LabelType](LabelType.md)
+[NamedThing](NamedThing.md) -> [name](name.md) *subsets*: (translator_minimal)
 ## Inheritance
 
 ## Children

@@ -22,11 +22,11 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class AnatomicalEntityToAnatomicalEntityOntogenicAssociation {
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the structure at an earlier time
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("the structure at an earlier time")
     private String object;
     /**
      * the relationship type by which a subject is connected to an object in an association
@@ -36,15 +36,15 @@ public class AnatomicalEntityToAnatomicalEntityOntogenicAssociation {
     @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
     private String relation;
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the structure at a later time
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
+    @JsonPropertyDescription("the structure at a later time")
     private String subject;
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the structure at an earlier time
      * 
      */
     @JsonProperty("object")
@@ -53,7 +53,7 @@ public class AnatomicalEntityToAnatomicalEntityOntogenicAssociation {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the structure at an earlier time
      * 
      */
     @JsonProperty("object")
@@ -80,7 +80,7 @@ public class AnatomicalEntityToAnatomicalEntityOntogenicAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the structure at a later time
      * 
      */
     @JsonProperty("subject")
@@ -89,7 +89,7 @@ public class AnatomicalEntityToAnatomicalEntityOntogenicAssociation {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * the structure at a later time
      * 
      */
     @JsonProperty("subject")

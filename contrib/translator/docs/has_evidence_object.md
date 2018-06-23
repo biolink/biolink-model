@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/has_evidence_object](slot_uri)
 
 ## Domain and Range
 
-[Association](Association.md) -> [NamedThing](NamedThing.md)
+None -> [NamedThing](NamedThing.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)

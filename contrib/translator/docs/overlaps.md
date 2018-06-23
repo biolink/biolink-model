@@ -9,7 +9,7 @@ URI: [http://bioentity.io/vocab/overlaps](slot_uri)
  * [RO:0002131](http://purl.obolibrary.org/obo/RO_0002131)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> **string**
+None -> **string**
 ## Inheritance
 
  *  is_a: [related to](related_to.md)

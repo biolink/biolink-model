@@ -18,3 +18,4 @@ URI: [http://bioentity.io/vocab/title](slot_uri)
 ## Used in
 
  *  usage: [InformationContentEntity](InformationContentEntity.md)
+ *  usage: [NamedGraph](NamedGraph.md)

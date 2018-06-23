@@ -20,15 +20,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class NamedGraph {
 
     /**
-     * Narrative text describing the entity
+     * descriptive textual title
      * 
      */
     @JsonProperty("title")
-    @JsonPropertyDescription("Narrative text describing the entity")
+    @JsonPropertyDescription("descriptive textual title")
     private String title;
 
     /**
-     * Narrative text describing the entity
+     * descriptive textual title
      * 
      */
     @JsonProperty("title")
@@ -37,7 +37,7 @@ public class NamedGraph {
     }
 
     /**
-     * Narrative text describing the entity
+     * descriptive textual title
      * 
      */
     @JsonProperty("title")
