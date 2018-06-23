@@ -34,6 +34,7 @@ class GenYUMLTestCase(ClickTestCase):
                      error=ValueError)
 
         self.do_test([self.metamodel_file, '-c', 'schema definition', '-d', meta_dir])
+        self.do_test([self.metamodel_file, '-c', 'definition', '-d', meta_dir])
         # Directory tests
         for fmt in YumlGenerator.valid_formats:
             if fmt != 'yuml':

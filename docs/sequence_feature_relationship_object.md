@@ -18,8 +18,8 @@ URI: [http://bioentity.io/vocab/sequence_feature_relationship_object](slot_uri)
 ## Children
 
  *  child: [transcript to gene relationship.object](transcript_to_gene_relationship_object.md)
- *  child: [gene to gene product relationship.object](gene_to_gene_product_relationship_object.md)
  *  child: [exon to transcript relationship.object](exon_to_transcript_relationship_object.md)
+ *  child: [gene to gene product relationship.object](gene_to_gene_product_relationship_object.md)
 ## Used in
 
  *  usage: [SequenceFeatureRelationship](SequenceFeatureRelationship.md)

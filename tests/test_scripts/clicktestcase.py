@@ -113,9 +113,10 @@ class ClickTestCase(unittest.TestCase):
                         f.write(outf.getvalue())
                     if refresh_files:
                         print(f'refresh_files is True: {testfile_path} updated')
-            else:
-                print(f"{self.id()}: {self.soft_compare}") if self.soft_compare and not bypass_soft_compare\
-                    else self.assertEqual(old_txt, new_txt)
+                else:
+                    print(f"{self.id()}: {self.soft_compare}") if self.soft_compare and not bypass_soft_compare\
+                        else self.assertEqual(old_txt, new_txt)
+
 
     @staticmethod
     def clear_dir(folder: str) -> None:

@@ -4,7 +4,7 @@ from io import StringIO
 from typing import List, Set, Union, TextIO, Optional, TypeVar
 
 from metamodel.metamodel import SchemaDefinition, ClassDefinition, SlotDefinition, ClassDefinitionName, \
-    TypeDefinition, Element, SlotDefinitionName, TypeDefinitionName
+    TypeDefinition, Element, SlotDefinitionName, TypeDefinitionName, PrefixLocalName
 from metamodel.utils.builtins import builtin_names, DEFAULT_BUILTIN_TYPE_NAME
 from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.schemaloader import SchemaLoader
@@ -277,3 +277,13 @@ class Generator(metaclass=abc.ABCMeta):
                 base = 'http://purl.obolibrary.org/obo/'
                 uri = base+frag
         return uri
+
+    def default_uri(self) -> Optional[str]:
+        if self.schema.default_prefix:
+            if '://' in self.schema.default_prefix:
+                return self.schema.default_prefix
+            elif self.schema.default_prefix in self.schema.prefixes:
+                return self.schema.prefixes[PrefixLocalName(self.schema.default_prefix)].prefix_uri
+            else:
+                raise ValueError(f"Default prefix: {self.schema.default_prefix} is not defined")
+        return None

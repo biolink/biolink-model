@@ -133,7 +133,7 @@ class YumlGenerator(Generator):
             if cn in self.synopsis.rangerefs:
                 for slotname in sorted(self.synopsis.rangerefs[cn]):
                     slot = self.schema.slots[slotname]
-                    if slot.domain in self.schema.classes:
+                    if slot.domain in self.schema.classes and slot.range != cls.name:
                         assocs.append(self.class_box(slot.domain) + (yuml_inline if slot.inlined else yuml_ref) +
                                       self.aliased_slot_name(slot) + self.prop_modifier(cls, slot) +
                                       self.cardinality(slot) + '>' + self.class_box(cn))

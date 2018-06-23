@@ -1,5 +1,5 @@
 {
-   "comments": "Auto generated from meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-06-22 16:34\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "comments": "Auto generated from meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-06-23 16:14\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "biolink": "http://bioentity.io/vocab/",
       "meta": "http://bioentity.io/meta/",
@@ -129,7 +129,7 @@
          "@type": "xsd:boolean"
       },
       "range": {
-         "@type": "biolink:anytype"
+         "@type": "@id"
       },
       "required": {
          "@type": "xsd:boolean"
@@ -149,7 +149,7 @@
          "@type": "xsd:integer"
       },
       "subclass_of": {
-         "@type": "xsd:anyURI",
+         "@type": "@id",
          "@id": "rdfs:subClassOf"
       },
       "subproperty_of": {

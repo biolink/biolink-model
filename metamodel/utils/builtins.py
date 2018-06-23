@@ -38,9 +38,7 @@ def builtin_uri(name: Optional[str], expand: bool = False) -> Optional[str]:
         name = DEFAULT_BUILTIN_TYPE_NAME
     elif name not in builtin_names:
         return None
-    elif name == 'anytype':
-        return BIOENTITY.anytype if expand else f'biolink:{name}'
-    elif name == 'uri':
+    elif name in (Builtin.uri, Builtin.anytype):
         name = 'anyURI'
     return XSD[name] if expand else f'xsd:{name}'
 

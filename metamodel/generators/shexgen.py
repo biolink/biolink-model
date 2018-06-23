@@ -7,14 +7,14 @@ from typing import Union, TextIO, Optional, List
 import click
 from ShExJSG import ShExC
 from ShExJSG.SchemaWithContext import Schema
-from ShExJSG.ShExJ import Shape, IRIREF, ShapeAnd, EachOf, TripleConstraint, NodeConstraint, shapeExpr, ShapeOr
+from ShExJSG.ShExJ import Shape, IRIREF, ShapeAnd, EachOf, TripleConstraint, NodeConstraint, ShapeOr, IriStem
 from jsonasobj import as_json
-from rdflib import Graph, XSD, OWL, RDF
 from prefixcommons import curie_util as cu
+from rdflib import Graph, XSD, OWL, RDF
 
 from metamodel.metamodel import SchemaDefinition, ClassDefinition, SlotDefinition, ClassDefinitionName, \
     SlotDefinitionName
-from metamodel.utils.builtins import builtin_names, builtin_uri
+from metamodel.utils.builtins import builtin_names, builtin_uri, Builtin
 from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.generator import Generator
 from metamodel.utils.namespaces import BIOENTITY, META
@@ -34,6 +34,10 @@ class ShExGenerator(Generator):
 
     def visit_schema(self, **_):
         self.shex = Schema()
+        base_uri = self.default_uri()
+        if base_uri:
+            context = self.shex['@context']
+            self.shex['@context'] = [context, {'@base': base_uri}]
         self.shex.shapes = []
         self.list_shapes = []
         if self.format == 'shex':
@@ -146,13 +150,11 @@ class ShExGenerator(Generator):
     def add_builtins(self):
         # TODO:  At some point we should get rid of the hard-coded builtins and add a set of TypeDefinitions for
         builtin_valueset = NodeConstraint(id=META.Builtins,
-                                          values=[IRIREF(builtin_uri(name, expand=True)) for name in builtin_names] +
-                                                 [BIOENTITY.anytype])
+                                          values=[IriStem(IRIREF(XSD))])
         self.shex.shapes.append(builtin_valueset)
         range_type_choices = ShapeOr(id=META.SlotRangeTypes,
                                      shapeExprs=[BIOENTITY.TypeDefinition, BIOENTITY.ClassDefinition, META.Builtins])
         self.shex.shapes.append(range_type_choices)
-
 
 
 @click.command()

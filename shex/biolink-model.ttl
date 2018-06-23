@@ -547,7 +547,8 @@ biolink:VariantToPopulationAssociation a shex:ShapeAnd ;
                                             shex:datatype xsd:integer ] ] ) ] ] ) .
 
 meta:Builtins a shex:NodeConstraint ;
-    shex:values ( xsd:string xsd:integer xsd:float xsd:double xsd:boolean xsd:time xsd:date xsd:anyURI biolink:anytype biolink:anytype ) .
+    shex:values ( [ a shex:IriStem ;
+                shex:stem "http://www.w3.org/2001/XMLSchema#"^^xsd:string ] ) .
 
 biolink:AdministrativeEntity a shex:Shape .
 

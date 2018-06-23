@@ -12,21 +12,21 @@ slots:
 
   has alternate identifier:
     domain: named thing
-    range: identifier type
+    range: identifier
     multivalued: true
     description: >-
       An alternate identifier for the entity, provided by the source database
 
   has xref:
     domain: named thing
-    range: identifier type
+    range: identifier
     multivalued: true
     description: >-
       A database cross-reference for the entity, provided by a separate database
 
   has synonym:
     domain: named thing
-    range: label type
+    range: name
     multivalued: true
     description: >-
       Alternate labels for an entity

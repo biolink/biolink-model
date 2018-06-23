@@ -10,8 +10,9 @@ import click
 from jsonasobj import JsonObj, as_json, as_dict
 from prefixcommons import curie_util as cu
 
-from metamodel.metamodel import SchemaDefinition, SlotDefinition, ClassDefinition, Element, Definition
-from metamodel.utils.builtins import DEFAULT_BUILTIN_TYPE_NAME, builtin_names, builtin_uri
+from metamodel.metamodel import SchemaDefinition, SlotDefinition, ClassDefinition, Element, Definition, \
+    ClassDefinitionName, SlotDefinitionName, TypeDefinitionName
+from metamodel.utils.builtins import DEFAULT_BUILTIN_TYPE_NAME, builtin_names, builtin_uri, Builtin
 from metamodel.utils.formatutils import camelcase, underscore, be
 from metamodel.utils.generator import Generator
 
@@ -42,15 +43,10 @@ class ContextGenerator(Generator):
         self.add_id_prefixes(self.schema)
 
         # Add the default prefix
-        if self.schema.default_prefix:
-            if '://' in self.schema.default_prefix:
-                default_uri = self.schema.default_prefix
-            elif self.schema.default_prefix in self.prefixmap:
-                default_uri = self.prefixmap[self.schema.default_prefix]
-            else:
-                    raise ValueError(f"Default prefix: {self.schema.default_prefix} is not defined")
-            self.prefixmap['@vocab'] = default_uri
-            self.prefixmap['@base'] = default_uri
+        base_prefix = self.default_uri()
+        if base_prefix:
+            self.prefixmap['@vocab'] = base_prefix
+            self.prefixmap['@base'] = base_prefix
 
     def end_schema(self) -> None:
         comments = f'''Auto generated from {self.schema.source_file} by {self.generatorname} version: {self.generatorversion}
@@ -85,7 +81,8 @@ license: {be(self.schema.license)}
             rng = self.grounded_slot_range(slot)
             if rng != DEFAULT_BUILTIN_TYPE_NAME:
                 builtin_rng_uri = builtin_uri(rng)
-                slot_def['@type'] = builtin_rng_uri if builtin_rng_uri else "@id"
+                slot_def['@type'] = builtin_rng_uri \
+                    if builtin_rng_uri and builtin_names.get(rng, None) not in (Builtin.uri, Builtin.anytype) else "@id"
             if slot.multivalued:
                 slot_def['@container'] = '@list'
             self.add_mappings(slot, slot_def)
