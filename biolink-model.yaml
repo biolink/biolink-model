@@ -1874,13 +1874,21 @@ classes:
           homology relationship type
         definitional: true
 
-  - name: molecular interaction
+  - name: pairwise interaction association
     is_a: association
     mixin: true
     abstract: true
     description: >-
       An interaction at the molecular level between two physical entities
     slot_usage:
+      - name: id
+        description: >-
+          identifier for the interaction. This may come from an interaction database such as IMEX.
+        examples:
+          - value: WB:WBInteraction000538741
+        values_from:
+          - IMEX
+          - BioGRID
       - name: subject
         range: molecular entity
       - name: relation
@@ -1903,14 +1911,14 @@ classes:
           - value: MI:1048
             description: smallmolecule-protein
         
-  - name: pairwise gene or protein interaction association
+  - name: pairwise gene to gene interaction
     is_a: gene to gene association
     defining_slots:
       - subject
       - object
       - relation
     mixins:
-      - molecular interaction
+      - pairwise interaction association
     description: >-
       An interaction between two genes or two gene products.
       May be physical (e.g. protein binding) or genetic (between genes).
