@@ -17,8 +17,8 @@ URI: [http://bioentity.io/vocab/gene_to_disease_association_subject](slot_uri)
  *  is_a: [subject](subject.md)
 ## Children
 
- *  child: [gene has variant that contributes to disease association.subject](gene_has_variant_that_contributes_to_disease_association_subject.md)
  *  child: [gene as a model of disease association.subject](gene_as_a_model_of_disease_association_subject.md)
+ *  child: [gene has variant that contributes to disease association.subject](gene_has_variant_that_contributes_to_disease_association_subject.md)
 ## Used in
 
  *  usage: [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)

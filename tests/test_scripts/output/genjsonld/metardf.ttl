@@ -13,7 +13,7 @@
     biolink:classes ( biolink:Prefix biolink:Example biolink:Element biolink:Definition biolink:SlotDefinition biolink:ClassDefinition biolink:TypeDefinition biolink:SchemaDefinition ) ;
     biolink:default_curi_maps ( "obo_context" "monarch_context" "idot_context" "semweb_context" ) ;
     biolink:default_prefix "biolink" ;
-    biolink:generation_date "2018-06-23"^^xsd:date ;
+    biolink:generation_date "2018-07-06"^^xsd:date ;
     biolink:id "https://biolink.github.io/metamodel/ontology/meta.ttl" ;
     biolink:id_prefixes ( "rdf" "rdfs" "xsd" "skos" "OIO" ) ;
     biolink:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
@@ -303,7 +303,7 @@ biolink:primary_key rdfs:label "primary_key" ;
 biolink:range rdfs:label "range" ;
     biolink:domain biolink:SlotDefinition ;
     biolink:inherited true ;
-    biolink:range xsd:anytype ;
+    biolink:range xsd:anyType ;
     skos:definition "The slot type.  Can be any class or type" .
 
 biolink:required rdfs:label "required" ;

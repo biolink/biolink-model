@@ -38,8 +38,10 @@ def builtin_uri(name: Optional[str], expand: bool = False) -> Optional[str]:
         name = DEFAULT_BUILTIN_TYPE_NAME
     elif name not in builtin_names:
         return None
-    elif name in (Builtin.uri, Builtin.anytype):
+    elif builtin_names[name] is Builtin.uri:
         name = 'anyURI'
+    elif builtin_names[name] is Builtin.anytype:
+        name = 'anyType'
     return XSD[name] if expand else f'xsd:{name}'
 
 

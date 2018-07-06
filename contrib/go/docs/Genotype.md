@@ -5,7 +5,7 @@ An information content entity that describes a genome by specifying the total va
 
 URI: [http://bioentity.io/vocab/Genotype](http://bioentity.io/vocab/Genotype)
 
-![img](images/Genotype.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Genotype|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;isa_partof_closure_label(i):string%20*;regulates_closure_label(i):string%20*;has_biological_sequence(i):biological_sequence%20%3F]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[Genotype]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[Genotype]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[Genotype]-%20regulates%20closure(i)%20*>\[RelationshipType],%20\[Genotype]-%20isa%20partof%20closure(i)%20*>\[OntologyClass],%20\[Genotype]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[Genotype]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Genotype]-%20has%20zygosity%20%3F>\[Zygosity],%20\[GenomicEntity]^-\[Genotype])
 ## Mappings
 
  * [GENO:0000536](http://purl.obolibrary.org/obo/GENO_0000536)

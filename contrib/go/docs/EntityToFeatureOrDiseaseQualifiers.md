@@ -5,7 +5,7 @@ Qualifiers for entity to disease or phenotype associations
 
 URI: [http://bioentity.io/vocab/EntityToFeatureOrDiseaseQualifiers](http://bioentity.io/vocab/EntityToFeatureOrDiseaseQualifiers)
 
-![img](images/EntityToFeatureOrDiseaseQualifiers.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EntityToFeatureOrDiseaseQualifiers]-%20onset%20qualifier%20%3F>\[Onset],%20\[EntityToFeatureOrDiseaseQualifiers]-%20severity%20qualifier%20%3F>\[SeverityValue],%20\[EntityToPhenotypicFeatureAssociation]uses%20-.->\[EntityToFeatureOrDiseaseQualifiers],%20\[EntityToFeatureOrDiseaseQualifiers]^-\[EntityToDiseaseAssociation],%20\[FrequencyQualifier]^-\[EntityToFeatureOrDiseaseQualifiers])
 ## Mappings
 
 ## Inheritance

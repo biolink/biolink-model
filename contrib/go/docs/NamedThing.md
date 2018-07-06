@@ -5,7 +5,7 @@ a databased entity or concept/class
 
 URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing)
 
-![img](images/NamedThing.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing|id:identifier_type%20%3F;name:label_type%20%3F;category:label_type%20%3F;node_property:string%20%3F;iri:iri_type%20%3F;full_name:label_type%20%3F;description:narrative_text%20%3F;systematic_synonym:label_type%20%3F]-%20related%20to%20%3F>\[NamedThing],%20\[NamedThing]^-\[PlanetaryEntity],%20\[NamedThing]^-\[OntologyClass],%20\[NamedThing]^-\[Occurrent],%20\[NamedThing]^-\[InformationContentEntity],%20\[NamedThing]^-\[Device],%20\[NamedThing]^-\[ClinicalEntity],%20\[NamedThing]^-\[BiologicalEntity])
 ## Mappings
 
  * [UMLSSG:OBJC](http://purl.obolibrary.org/obo/UMLSSG_OBJC)

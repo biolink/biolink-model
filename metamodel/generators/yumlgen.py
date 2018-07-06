@@ -67,7 +67,7 @@ class YumlGenerator(Generator):
         while self.referenced.difference(self.generated):
             cn = sorted(list(self.referenced.difference(self.generated)), reverse=True)[0]
             self.generated.add(cn)
-            assocs = self.class_associations(cn)
+            assocs = self.class_associations(ClassDefinitionName(cn), cn in self.referenced)
             if assocs:
                 yumlclassdef.append(assocs)
 
@@ -108,10 +108,11 @@ class YumlGenerator(Generator):
         self.referenced.add(cn)
         return '[' + camelcase(cn) + ('|' + ';'.join(slot_defs) if slot_defs else '') + ']'
 
-    def class_associations(self, cn: ClassDefinitionName) -> str:
+    def class_associations(self, cn: ClassDefinitionName, must_render: bool=False) -> str:
         """ Emit all associations for a focus class.  If none are specified, all classes are generated
 
         @param cn: Name of class to be emitted
+        @param must_render: True means render even if this is a target (class is specifically requested)
         @return: YUML representation of the association
         """
 
@@ -133,7 +134,7 @@ class YumlGenerator(Generator):
             if cn in self.synopsis.rangerefs:
                 for slotname in sorted(self.synopsis.rangerefs[cn]):
                     slot = self.schema.slots[slotname]
-                    if slot.domain in self.schema.classes and slot.range != cls.name:
+                    if slot.domain in self.schema.classes and (slot.range != cls.name or must_render):
                         assocs.append(self.class_box(slot.domain) + (yuml_inline if slot.inlined else yuml_ref) +
                                       self.aliased_slot_name(slot) + self.prop_modifier(cls, slot) +
                                       self.cardinality(slot) + '>' + self.class_box(cn))
@@ -145,18 +146,18 @@ class YumlGenerator(Generator):
             # Classes that use the class as a mixin
             if cls.name in self.synopsis.mixinrefs:
                 for mixin in sorted(self.synopsis.mixinrefs[cls.name].classrefs, reverse=True):
-                    assocs.append(self.class_box(mixin) + yuml_uses + self.class_box(cn))
+                    assocs.append(self.class_box(ClassDefinitionName(mixin)) + yuml_uses + self.class_box(cn))
 
             # Classes that inject information
             if cn in self.synopsis.applytos:
                 for injector in sorted(self.synopsis.applytos[cn].classrefs, reverse=True):
-                    assocs.append(self.class_box(cn) + yuml_injected + self.class_box(injector))
+                    assocs.append(self.class_box(cn) + yuml_injected + self.class_box(ClassDefinitionName(injector)))
             self.associations_generated.add(cn)
 
             # Children
             if cn in self.synopsis.isarefs:
                 for is_a_cls in sorted(self.synopsis.isarefs[cn].classrefs, reverse=True):
-                    assocs.append(self.class_box(cn) + yuml_is_a + self.class_box(is_a_cls))
+                    assocs.append(self.class_box(cn) + yuml_is_a + self.class_box(ClassDefinitionName(is_a_cls)))
 
             # Parent
             if cls.is_a:

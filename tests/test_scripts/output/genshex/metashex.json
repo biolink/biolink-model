@@ -9,13 +9,10 @@
       {
          "id": "http://bioentity.io/meta/Builtins",
          "values": [
-            "http://www.w3.org/2001/XMLSchema#string",
-            "http://www.w3.org/2001/XMLSchema#integer",
-            "http://www.w3.org/2001/XMLSchema#float",
-            "http://www.w3.org/2001/XMLSchema#double",
-            "http://www.w3.org/2001/XMLSchema#boolean",
-            "http://www.w3.org/2001/XMLSchema#time",
-            "http://www.w3.org/2001/XMLSchema#date"
+            {
+               "stem": "http://www.w3.org/2001/XMLSchema#",
+               "type": "IriStem"
+            }
          ],
          "type": "NodeConstraint"
       },

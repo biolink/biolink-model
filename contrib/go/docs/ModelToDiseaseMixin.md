@@ -5,7 +5,7 @@ This mixin is used for any association class for which the subject (source node)
 
 URI: [http://bioentity.io/vocab/ModelToDiseaseMixin](http://bioentity.io/vocab/ModelToDiseaseMixin)
 
-![img](images/ModelToDiseaseMixin.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ModelToDiseaseMixin|subject:string]-%20relation>\[RelationshipType],%20\[GeneAsAModelOfDiseaseAssociation]uses%20-.->\[ModelToDiseaseMixin])
 ## Mappings
 
 ## Inheritance

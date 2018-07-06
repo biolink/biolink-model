@@ -5,7 +5,7 @@ The functional molecular product of a single gene. Gene products are either prot
 
 URI: [http://bioentity.io/vocab/GeneProduct](http://bioentity.io/vocab/GeneProduct)
 
-![img](images/GeneProduct.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneProduct|id(i):identifier_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;isa_partof_closure_label(i):string%20*;regulates_closure_label(i):string%20*;has_biological_sequence(i):biological_sequence%20%3F;name(i):symbol_type%20%3F]-%20expressed%20in(i)%20%3F>\[AnatomicalEntity],%20\[GeneProduct]-%20in%20cell%20population%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[GeneProduct]-%20in%20complex%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[GeneProduct]-%20in%20pathway%20with(i)%20%3F>\[GeneOrGeneProduct],%20\[GeneProduct]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[GeneProduct]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[GeneProduct]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[GeneProduct]-%20regulates%20closure(i)%20*>\[RelationshipType],%20\[GeneProduct]-%20isa%20partof%20closure(i)%20*>\[OntologyClass],%20\[GeneProduct]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneProduct]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneProduct]^-\[Protein],%20\[GeneProduct]^-\[GeneProductIsoform],%20\[GeneProduct]^-\[RNAProduct],%20\[GeneOrGeneProduct]^-\[GeneProduct])
 ## Mappings
 
  * [WD:Q424689](http://purl.obolibrary.org/obo/WD_Q424689)

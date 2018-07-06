@@ -5,7 +5,7 @@ A relationship quantifier between a variant or symptom and a disease, which is h
 
 URI: [http://bioentity.io/vocab/PathognomonicityQuantifier](http://bioentity.io/vocab/PathognomonicityQuantifier)
 
-![img](images/PathognomonicityQuantifier.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SpecificityQuantifier]^-\[PathognomonicityQuantifier])
 ## Mappings
 
 ## Inheritance

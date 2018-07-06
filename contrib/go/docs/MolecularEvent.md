@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/MolecularEvent](http://bioentity.io/vocab/MolecularEvent)
 
-![img](images/MolecularEvent.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MolecularEvent|part_of:string%20%3F;occurs_in:string%20%3F;upstream_causal_relationship:string%20%3F;downstream_causal_relationship:string%20%3F]-%20enabled%20by%20%3F>\[GeneOrGeneProduct])
 ## Mappings
 
 ## Inheritance

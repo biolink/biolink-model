@@ -5,7 +5,7 @@ A location in or around a cell
 
 URI: [http://bioentity.io/vocab/CellularComponent](http://bioentity.io/vocab/CellularComponent)
 
-![img](images/CellularComponent.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[CellularComponent|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20expresses(i)%20%3F>\[GeneOrGeneProduct],%20\[CellularComponent]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[CellularComponent]-%20related%20to(i)%20%3F>\[NamedThing],%20\[AnatomicalEntity]^-\[CellularComponent])
 ## Mappings
 
  * [GO:0005575](http://purl.obolibrary.org/obo/GO_0005575)

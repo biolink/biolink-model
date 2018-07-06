@@ -78,7 +78,7 @@ metamodel/docs/index.md: meta.yaml
 	gen-markdown --dir metamodel/docs $(imgflags) $<
 
 contrib/%/docs/index.md: contrib/%.yaml
-	gen-markdown --dir contrib/$*/docs $(imgflags) $<
+	gen-markdown --dir contrib/$*/docs $<
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology

@@ -5,7 +5,7 @@ a union of genes or gene products. Frequently an identifier for one will be used
 
 URI: [http://bioentity.io/vocab/GeneOrGeneProduct](http://bioentity.io/vocab/GeneOrGeneProduct)
 
-![img](images/GeneOrGeneProduct.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneOrGeneProduct|id(i):identifier_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;isa_partof_closure_label(i):string%20*;regulates_closure_label(i):string%20*;has_biological_sequence(i):biological_sequence%20%3F;name(i):symbol_type%20%3F]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[GeneOrGeneProduct]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[GeneOrGeneProduct]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[GeneOrGeneProduct]-%20regulates%20closure(i)%20*>\[RelationshipType],%20\[GeneOrGeneProduct]-%20isa%20partof%20closure(i)%20*>\[OntologyClass],%20\[GeneOrGeneProduct]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneOrGeneProduct]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneOrGeneProduct]-%20expressed%20in%20%3F>\[AnatomicalEntity],%20\[GeneOrGeneProduct]-%20in%20cell%20population%20with%20%3F>\[GeneOrGeneProduct],%20\[GeneOrGeneProduct]-%20in%20complex%20with%20%3F>\[GeneOrGeneProduct],%20\[GeneOrGeneProduct]-%20in%20pathway%20with%20%3F>\[GeneOrGeneProduct],%20\[GeneOrGeneProduct]^-\[GeneProduct],%20\[GeneOrGeneProduct]^-\[Gene],%20\[MacromolecularMachine]^-\[GeneOrGeneProduct])
 ## Mappings
 
 ## Inheritance

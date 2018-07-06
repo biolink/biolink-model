@@ -5,7 +5,7 @@ An association that includes flattened inlined objects, such as subject_taxon_cl
 
 URI: [http://bioentity.io/vocab/TaxonClosureMixin](http://bioentity.io/vocab/TaxonClosureMixin)
 
-![img](images/TaxonClosureMixin.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[TaxonClosureMixin|subject_taxon_closure_label:string%20*;object_taxon_closure_label:string%20*]-%20object%20taxon%20closure%20*>\[OntologyClass],%20\[TaxonClosureMixin]-%20object%20taxon%20%3F>\[OrganismTaxon],%20\[TaxonClosureMixin]-%20subject%20taxon%20closure%20*>\[OntologyClass],%20\[TaxonClosureMixin]-%20subject%20taxon%20%3F>\[OrganismTaxon],%20\[ExtensionsAndEvidenceAssociationMixin]uses%20-.->\[TaxonClosureMixin])
 ## Mappings
 
 ## Inheritance

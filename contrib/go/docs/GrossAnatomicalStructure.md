@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/GrossAnatomicalStructure](http://bioentity.io/vocab/GrossAnatomicalStructure)
 
-![img](images/GrossAnatomicalStructure.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GrossAnatomicalStructure|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20expresses(i)%20%3F>\[GeneOrGeneProduct],%20\[GrossAnatomicalStructure]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GrossAnatomicalStructure]-%20related%20to(i)%20%3F>\[NamedThing],%20\[AnatomicalEntity]^-\[GrossAnatomicalStructure])
 ## Mappings
 
  * [UBERON:0010000](http://purl.obolibrary.org/obo/UBERON_0010000)

@@ -5,7 +5,7 @@ An individual organism that has a patient role in some clinical context.
 
 URI: [http://bioentity.io/vocab/Case](http://bioentity.io/vocab/Case)
 
-![img](images/Case.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Case|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[Case]-%20related%20to(i)%20%3F>\[NamedThing],%20\[IndividualOrganism]^-\[Case])
 ## Mappings
 
 ## Inheritance

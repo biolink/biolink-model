@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/PropertyValuePair](http://bioentity.io/vocab/PropertyValuePair)
 
-![img](images/PropertyValuePair.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PropertyValuePair]-%20filler%20%3F>\[NamedThing],%20\[PropertyValuePair]-%20relation>\[RelationshipType])
 ## Mappings
 
 ## Inheritance

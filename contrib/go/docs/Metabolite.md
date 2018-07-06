@@ -5,7 +5,7 @@ Any intermediate or product resulting from metabolism. Includes primary and seco
 
 URI: [http://bioentity.io/vocab/Metabolite](http://bioentity.io/vocab/Metabolite)
 
-![img](images/Metabolite.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Metabolite|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;isa_partof_closure_label(i):string%20*;regulates_closure_label(i):string%20*]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[Metabolite]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[Metabolite]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[Metabolite]-%20regulates%20closure(i)%20*>\[RelationshipType],%20\[Metabolite]-%20isa%20partof%20closure(i)%20*>\[OntologyClass],%20\[Metabolite]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[Metabolite]-%20related%20to(i)%20%3F>\[NamedThing],%20\[ChemicalSubstance]^-\[Metabolite])
 ## Mappings
 
  * [CHEBI:25212](http://purl.obolibrary.org/obo/CHEBI_25212)

@@ -5,7 +5,7 @@ an entity that can either be directly located on a genome (gene, transcript, exo
 
 URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/GenomicEntity)
 
-![img](images/GenomicEntity.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenomicEntity|has_biological_sequence:biological_sequence%20%3F;id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;isa_partof_closure_label(i):string%20*;regulates_closure_label(i):string%20*]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[GenomicEntity]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[GenomicEntity]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[GenomicEntity]-%20regulates%20closure(i)%20*>\[RelationshipType],%20\[GenomicEntity]-%20isa%20partof%20closure(i)%20*>\[OntologyClass],%20\[GenomicEntity]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GenomicEntity]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GenomicEntity]^-\[Transcript],%20\[GenomicEntity]^-\[SequenceVariant],%20\[GenomicEntity]^-\[MacromolecularMachine],%20\[GenomicEntity]^-\[Haplotype],%20\[GenomicEntity]^-\[Genotype],%20\[GenomicEntity]^-\[Genome],%20\[GenomicEntity]^-\[Exon],%20\[GenomicEntity]^-\[CodingSequence],%20\[MolecularEntity]^-\[GenomicEntity])
 ## Mappings
 
  * [SO:0000110](http://purl.obolibrary.org/obo/SO_0000110)

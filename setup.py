@@ -21,7 +21,7 @@ if sys.version_info < (3, 7):
     requires.append("dataclasses")
 
 setup(
-    name='Biolink Model Generator',
+    name='BiolinkMG',
     version= version,
     packages=find_packages(exclude=['about', 'contrib', 'docs', 'graphql', 'graphviz', 'images', 'tests']),
     url='https://github.com/biolink/biolink-model',
@@ -52,7 +52,7 @@ setup(
         "Environment :: Console",
         "Intended Audience :: Developers",
         "Intended Audience :: Science/Research",
-        "Intended Audience :: Healthcare Industry"
+        "Intended Audience :: Healthcare Industry",
         "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
         "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: 3.6",

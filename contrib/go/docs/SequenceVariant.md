@@ -5,7 +5,7 @@ An allele that varies in its sequence from what is considered the reference alle
 
 URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/SequenceVariant)
 
-![img](images/SequenceVariant.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SequenceVariant|has_biological_sequence:biological_sequence%20%3F;id:identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;isa_partof_closure_label(i):string%20*;regulates_closure_label(i):string%20*]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[SequenceVariant]-%20regulates,%20entity%20to%20entity(i)%20%3F>\[MolecularEntity],%20\[SequenceVariant]-%20molecularly%20interacts%20with(i)%20%3F>\[MolecularEntity],%20\[SequenceVariant]-%20regulates%20closure(i)%20*>\[RelationshipType],%20\[SequenceVariant]-%20isa%20partof%20closure(i)%20*>\[OntologyClass],%20\[SequenceVariant]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[SequenceVariant]-%20related%20to(i)%20%3F>\[NamedThing],%20\[SequenceVariant]-%20has%20gene%20*>\[Gene],%20\[GenomicEntity]^-\[SequenceVariant])
 ## Mappings
 
  * [GENO:0000002](http://purl.obolibrary.org/obo/GENO_0000002)
