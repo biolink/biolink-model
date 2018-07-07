@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-06-23 14:08
+# Generation date: 2018-07-07 15:07
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -323,11 +323,11 @@ class GeneToGeneHomologyAssociationId(IdentifierType):
     pass
 
 
-class MolecularInteractionId(IdentifierType):
+class PairwiseInteractionAssociationId(IdentifierType):
     pass
 
 
-class PairwiseGeneOrProteinInteractionAssociationId(IdentifierType):
+class PairwiseGeneToGeneInteractionId(IdentifierType):
     pass
 
 
@@ -1707,20 +1707,20 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
 
 
 @dataclass
-class PairwiseGeneOrProteinInteractionAssociation(GeneToGeneAssociation):
+class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     """
     An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between
     genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
     """
-    id: PairwiseGeneOrProteinInteractionAssociationId = None
+    id: PairwiseGeneToGeneInteractionId = None
     relation: RelationshipType = None
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, PairwiseGeneOrProteinInteractionAssociationId):
-            self.id = PairwiseGeneOrProteinInteractionAssociationId(self.id)
+        if not isinstance(self.id, PairwiseGeneToGeneInteractionId):
+            self.id = PairwiseGeneToGeneInteractionId(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
         if not isinstance(self.relation, RelationshipType):

@@ -1,0 +1,87 @@
+description: An interaction between two genes or two gene products. May be physical
+  (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein
+  interaction) or directed (e.g. phosphorylation)
+display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [pairwise
+    gene to gene interaction]
+document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [pairwise
+    gene to gene interaction]
+fields:
+- description: A unique identifier for a thing. Must be either a CURIE shorthand for
+    a URI or a complete URI
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [id]
+  id: id
+- description: A human-readable name for a thing
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [name]
+  id: name
+- description: Name of the high level ontology class in which this entity is categorized.
+    Corresponds to the label for the biolink entity type class. In a neo4j database
+    this MAY correspond to the neo4j label tag
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [category]
+  id: category
+- description: A grouping for any relationship type that holds between any two things
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [related
+      to]
+  id: related_to
+- description: A grouping for any property that holds between a node and a value
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [node property]
+  id: node_property
+- description: An IRI for the node. This is determined by the id using expansion rules.
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [iri]
+  id: iri
+- description: a long-form human readable name for a thing
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [full name]
+  id: full_name
+- description: a human-readable description of a thing
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [description]
+  id: description
+- description: more commonly used for gene symbols in yeast
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [systematic
+      synonym]
+  id: systematic_synonym
+- description: connects an association to the type of association (e.g. gene to phenotype)
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association
+      type]
+  id: association_type
+- description: if set to true, then the association is negated i.e. is not true
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [negated]
+  id: negated
+- cardinality: multi
+  description: connects an association to qualifiers that modify or qualify the meaning
+    of that association
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [qualifiers]
+  id: qualifiers
+- cardinality: multi
+  description: connects an association to publications supporting the association
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [publications]
+  id: publications
+- description: connects an association to the agent (person, organization or group)
+    that provided it
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [provided
+      by]
+  id: provided_by
+- description: any slot that relates an association to another entity
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association
+      slot]
+  id: association_slot
+- description: the subject gene in the association. If the relation is symmetric,
+    subject vs object is arbitrary. We allow a gene product to stand as proxy for
+    the gene or vice versa
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [gene to
+      gene association subject]
+  id: subject
+- description: the object gene in the association. If the relation is symmetric, subject
+    vs object is arbitrary. We allow a gene product to stand as proxy for the gene
+    or vice versa
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [gene to
+      gene association object]
+  id: object
+- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [interacting
+      molecules category]
+  id: interacting_molecules_category
+- description: interaction relationship type
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [pairwise
+      gene to gene interaction relation]
+  id: relation
+id: pairwise_gene_to_gene_interaction
+schema_generating: true
+weight: 20

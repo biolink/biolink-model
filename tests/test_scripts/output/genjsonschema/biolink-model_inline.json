@@ -537,18 +537,6 @@
          "description": "The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease",
          "type": "string"
       },
-      "molecular_interaction_object": {
-         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-         "type": "string"
-      },
-      "molecular_interaction_relation": {
-         "description": "interaction relationship type",
-         "type": "string"
-      },
-      "molecular_interaction_subject": {
-         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
-         "type": "string"
-      },
       "molecularly_interacts_with": {
          "description": "holds between two entities that make physical contact as part of some interaction",
          "type": "string"
@@ -597,8 +585,20 @@
          "description": "holds between entties that overlap in their extents (materials or processes)",
          "type": "string"
       },
-      "pairwise_gene_or_protein_interaction_association_relation": {
+      "pairwise_gene_to_gene_interaction_relation": {
          "description": "interaction relationship type",
+         "type": "string"
+      },
+      "pairwise_interaction_association_object": {
+         "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+         "type": "string"
+      },
+      "pairwise_interaction_association_relation": {
+         "description": "interaction relationship type",
+         "type": "string"
+      },
+      "pairwise_interaction_association_subject": {
+         "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
          "type": "string"
       },
       "paralogous_to": {
@@ -2151,18 +2151,18 @@
          "title": "OrganismTaxon",
          "type": "object"
       },
-      "PairwiseGeneOrProteinInteractionAssociation": {
+      "PairwiseGeneToGeneInteraction": {
          "description": "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)",
          "properties": {
             "relation": {
                "description": "interaction relationship type",
                "type": {
-                  "$ref": "#/definitions/pairwise_gene_or_protein_interaction_association_relation"
+                  "$ref": "#/definitions/pairwise_gene_to_gene_interaction_relation"
                }
             }
          },
          "required": [],
-         "title": "PairwiseGeneOrProteinInteractionAssociation",
+         "title": "PairwiseGeneToGeneInteraction",
          "type": "object"
       },
       "PathognomonicityQuantifier": {

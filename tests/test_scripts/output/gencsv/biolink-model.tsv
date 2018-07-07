@@ -102,7 +102,6 @@ microRNA	SIO:001397|WD:Q310899
 model_to_disease_mixin		This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
 molecular_activity	GO:0003674	An execution of a molecular function carried out by a gene product or macromolecular complex.
 molecular_entity	SIO:010004|WD:Q43460564	A gene, gene product, small molecule or macromolecule (including protein complex)
-molecular_interaction		An interaction at the molecular level between two physical entities
 named_thing	UMLSSG:OBJC|WD:Q35120	a databased entity or concept/class
 noncoding_RNA_product	SIO:001235	
 occurrent	BFO:0000003	A processual entity
@@ -110,7 +109,8 @@ onset	HP:0003674	The age group in which manifestations appear
 ontology_class		a concept or class in an ontology, vocabulary or thesaurus
 organism_taxon	WD:Q16521	
 organismal_entity	WD:Q7239	A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
-pairwise_gene_or_protein_interaction_association		An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+pairwise_gene_to_gene_interaction		An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+pairwise_interaction_association		An interaction at the molecular level between two physical entities
 pathognomonicity_quantifier		A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
 pathway	GO:0007165|SIO:010526|PW:0000001|WD:Q4915012	
 phenomenon	UMLSSG:PHEN	a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question

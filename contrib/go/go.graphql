@@ -579,14 +579,6 @@ MolecularEvent type
     downstreamCausalRelationship: String
   }
 
-MolecularInteraction interface
-  {
-    subject: MolecularEntity!
-    relation: RelationshipType!
-    object: MolecularEntity!
-    interactingMoleculesCategory: OntologyClass
-  }
-
 NamedGraph type
   {
     title: String
@@ -634,9 +626,17 @@ OrganismalEntity interface
   {
   }
 
-PairwiseGeneOrProteinInteractionAssociation typeimplements MolecularInteraction
+PairwiseGeneToGeneInteraction typeimplements PairwiseInteractionAssociation
   {
     relation: RelationshipType!
+  }
+
+PairwiseInteractionAssociation interface
+  {
+    subject: MolecularEntity!
+    relation: RelationshipType!
+    object: MolecularEntity!
+    interactingMoleculesCategory: OntologyClass
   }
 
 PathognomonicityQuantifier interface

@@ -45,7 +45,7 @@ URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Associati
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
  * [GenotypeToThingAssociation](GenotypeToThingAssociation.md)
  * [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) - Any association between a genotype and a sequence variant.
- * [MolecularInteraction](MolecularInteraction.md) - An interaction at the molecular level between two physical entities
+ * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) - An interaction at the molecular level between two physical entities
  * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) - An association between a two populations
  * [SequenceFeatureRelationship](SequenceFeatureRelationship.md) - For example, a particular exon is part of a particular transcript or gene
  * [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) - An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.

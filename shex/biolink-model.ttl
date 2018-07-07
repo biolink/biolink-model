@@ -416,8 +416,8 @@ biolink:Metabolite a shex:ShapeAnd ;
 biolink:MicroRNA a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:NoncodingRNAProduct [ a shex:Shape ] ) .
 
-biolink:PairwiseGeneOrProteinInteractionAssociation a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:GeneToGeneAssociation biolink:MolecularInteraction [ a shex:Shape ;
+biolink:PairwiseGeneToGeneInteraction a shex:ShapeAnd ;
+    shex:shapeExprs ( biolink:GeneToGeneAssociation biolink:PairwiseInteractionAssociation [ a shex:Shape ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -684,7 +684,16 @@ biolink:ModelToDiseaseMixin a shex:Shape ;
 biolink:MolecularActivity a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:BiologicalProcessOrActivity biolink:Occurrent [ a shex:Shape ] ) .
 
-biolink:MolecularInteraction a shex:ShapeAnd ;
+biolink:NoncodingRNAProduct a shex:ShapeAnd ;
+    shex:shapeExprs ( biolink:RNAProduct [ a shex:Shape ] ) .
+
+biolink:Onset a shex:ShapeAnd ;
+    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ] ) .
+
+biolink:OrganismTaxon a shex:ShapeAnd ;
+    shex:shapeExprs ( biolink:OntologyClass [ a shex:Shape ] ) .
+
+biolink:PairwiseInteractionAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
@@ -704,15 +713,6 @@ biolink:MolecularInteraction a shex:ShapeAnd ;
                                     shex:min 0 ;
                                     shex:predicate biolink:interacting_molecules_category ;
                                     shex:valueExpr biolink:OntologyClass ] ) ] ] ) .
-
-biolink:NoncodingRNAProduct a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:RNAProduct [ a shex:Shape ] ) .
-
-biolink:Onset a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ] ) .
-
-biolink:OrganismTaxon a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:OntologyClass [ a shex:Shape ] ) .
 
 biolink:Pathway a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:BiologicalProcess [ a shex:Shape ] ) .
@@ -1380,7 +1380,6 @@ biolink:Association a shex:ShapeAnd ;
         biolink:ModelToDiseaseMixin,
         biolink:MolecularActivity,
         biolink:MolecularEntity,
-        biolink:MolecularInteraction,
         biolink:NamedThing,
         biolink:NoncodingRNAProduct,
         biolink:Occurrent,
@@ -1389,7 +1388,8 @@ biolink:Association a shex:ShapeAnd ;
         biolink:OntologyClass__List,
         biolink:OrganismTaxon,
         biolink:OrganismalEntity,
-        biolink:PairwiseGeneOrProteinInteractionAssociation,
+        biolink:PairwiseGeneToGeneInteraction,
+        biolink:PairwiseInteractionAssociation,
         biolink:PathognomonicityQuantifier,
         biolink:Pathway,
         biolink:Phenomenon,

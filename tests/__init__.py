@@ -1,1 +1,1 @@
-refresh_files = False
+refresh_files = True

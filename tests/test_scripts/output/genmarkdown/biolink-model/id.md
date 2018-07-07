@@ -18,5 +18,5 @@ URI: [http://bioentity.io/vocab/id](slot_uri)
  *  child: [sequence variant.id](sequence_variant_id.md) *subsets*: (translator_minimal)
 ## Used in
 
- *  usage: [SequenceVariant](SequenceVariant.md)
  *  usage: [NamedThing](NamedThing.md)
+ *  usage: [SequenceVariant](SequenceVariant.md)

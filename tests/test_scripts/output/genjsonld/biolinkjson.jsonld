@@ -1856,7 +1856,7 @@
       "@id": "gene_to_gene_homology_association_relation"
     },
     {
-      "name": "molecular_interaction_subject",
+      "name": "pairwise_interaction_association_subject",
       "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
       "mappings": [
         "rdf:subject",
@@ -1864,14 +1864,14 @@
         "oban:association_has_subject"
       ],
       "is_a": "subject",
-      "domain": "MolecularInteraction",
+      "domain": "PairwiseInteractionAssociation",
       "range": "MolecularEntity",
       "required": true,
       "alias": "subject",
-      "@id": "molecular_interaction_subject"
+      "@id": "pairwise_interaction_association_subject"
     },
     {
-      "name": "molecular_interaction_relation",
+      "name": "pairwise_interaction_association_relation",
       "description": "interaction relationship type",
       "mappings": [
         "rdf:predicate",
@@ -1879,16 +1879,16 @@
         "oban:association_has_predicate"
       ],
       "is_a": "relation",
-      "domain": "MolecularInteraction",
+      "domain": "PairwiseInteractionAssociation",
       "range": "RelationshipType",
       "required": true,
       "definitional": true,
       "alias": "relation",
       "subproperty_of": "molecularly_interacts_with",
-      "@id": "molecular_interaction_relation"
+      "@id": "pairwise_interaction_association_relation"
     },
     {
-      "name": "molecular_interaction_object",
+      "name": "pairwise_interaction_association_object",
       "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
       "mappings": [
         "rdf:object",
@@ -1896,35 +1896,35 @@
         "oban:association_has_object"
       ],
       "is_a": "object",
-      "domain": "MolecularInteraction",
+      "domain": "PairwiseInteractionAssociation",
       "range": "MolecularEntity",
       "required": true,
       "alias": "object",
-      "@id": "molecular_interaction_object"
+      "@id": "pairwise_interaction_association_object"
     },
     {
       "name": "interacting_molecules_category",
-      "domain": "MolecularInteraction",
+      "domain": "PairwiseInteractionAssociation",
       "range": "OntologyClass",
       "alias": "interacting molecules category",
       "@id": "interacting_molecules_category"
     },
     {
-      "name": "pairwise_gene_or_protein_interaction_association_relation",
+      "name": "pairwise_gene_to_gene_interaction_relation",
       "description": "interaction relationship type",
       "mappings": [
         "rdf:predicate",
         "owl:annotatedProperty",
         "oban:association_has_predicate"
       ],
-      "is_a": "molecular_interaction_relation",
-      "domain": "PairwiseGeneOrProteinInteractionAssociation",
+      "is_a": "pairwise_interaction_association_relation",
+      "domain": "PairwiseGeneToGeneInteraction",
       "range": "RelationshipType",
       "required": true,
       "definitional": true,
       "alias": "relation",
       "subproperty_of": "molecularly_interacts_with",
-      "@id": "pairwise_gene_or_protein_interaction_association_relation"
+      "@id": "pairwise_gene_to_gene_interaction_relation"
     },
     {
       "name": "cell_line_to_thing_association_subject",
@@ -4185,15 +4185,15 @@
       "@id": "GeneToGeneHomologyAssociation"
     },
     {
-      "name": "MolecularInteraction",
+      "name": "PairwiseInteractionAssociation",
       "description": "An interaction at the molecular level between two physical entities",
       "is_a": "Association",
       "mixin": true,
       "abstract": true,
       "slots": [
-        "molecular_interaction_subject",
-        "molecular_interaction_relation",
-        "molecular_interaction_object",
+        "pairwise_interaction_association_subject",
+        "pairwise_interaction_association_relation",
+        "pairwise_interaction_association_object",
         "interacting_molecules_category"
       ],
       "slot_usage": [
@@ -4233,14 +4233,14 @@
           "range": "OntologyClass"
         }
       ],
-      "@id": "MolecularInteraction"
+      "@id": "PairwiseInteractionAssociation"
     },
     {
-      "name": "PairwiseGeneOrProteinInteractionAssociation",
+      "name": "PairwiseGeneToGeneInteraction",
       "description": "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)",
       "is_a": "GeneToGeneAssociation",
       "mixins": [
-        "MolecularInteraction"
+        "PairwiseInteractionAssociation"
       ],
       "symmetric": true,
       "defining_slots": [
@@ -4249,7 +4249,7 @@
         "relation"
       ],
       "slots": [
-        "pairwise_gene_or_protein_interaction_association_relation"
+        "pairwise_gene_to_gene_interaction_relation"
       ],
       "slot_usage": [
         {
@@ -4263,7 +4263,7 @@
           "subproperty_of": "molecularly_interacts_with"
         }
       ],
-      "@id": "PairwiseGeneOrProteinInteractionAssociation"
+      "@id": "PairwiseGeneToGeneInteraction"
     },
     {
       "name": "CellLineToThingAssociation",
@@ -5780,9 +5780,9 @@
   ],
   "metamodel_version": "0.3.1",
   "source_file": "/Users/solbrig/git/hsolbrig/biolink-model/biolink-model.yaml",
-  "source_file_size": 81314,
-  "source_file_date": "Wed Jun 20 12:15:08 2018",
-  "generation_date": "2018-07-06 17:09",
+  "source_file_size": 81321,
+  "source_file_date": "Sat Jul  7 15:07:08 2018",
+  "generation_date": "2018-07-07 15:25",
   "@context": [
     "file:///Users/solbrig/git/hsolbrig/biolink-model/tests/test_scripts/output/genjsonld/metacontext.jsonld",
     {
