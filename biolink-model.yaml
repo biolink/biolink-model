@@ -1900,14 +1900,30 @@ classes:
           homology relationship type
         definitional: true
 
+<<<<<<< HEAD
   pairwise interaction association:
+=======
+  - name: pairwise interaction association
+>>>>>>> bf5863363e6e1f97c57be4bd11eaadb0672706a7
     is_a: association
     mixin: true
     abstract: true
     description: >-
       An interaction at the molecular level between two physical entities
     slot_usage:
+<<<<<<< HEAD
       subject:
+=======
+      - name: id
+        description: >-
+          identifier for the interaction. This may come from an interaction database such as IMEX.
+        examples:
+          - value: WB:WBInteraction000538741
+        values_from:
+          - IMEX
+          - BioGRID
+      - name: subject
+>>>>>>> bf5863363e6e1f97c57be4bd11eaadb0672706a7
         range: molecular entity
       relation:
         subproperty_of: molecularly interacts with
@@ -1930,7 +1946,11 @@ classes:
           - value: MI:1048
             description: smallmolecule-protein
         
+<<<<<<< HEAD
   pairwise gene to gene interaction:
+=======
+  - name: pairwise gene to gene interaction
+>>>>>>> bf5863363e6e1f97c57be4bd11eaadb0672706a7
     is_a: gene to gene association
     defining_slots:
       - subject
