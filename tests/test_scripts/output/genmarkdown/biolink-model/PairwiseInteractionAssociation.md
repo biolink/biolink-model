@@ -5,7 +5,7 @@ An interaction at the molecular level between two physical entities
 
 URI: [http://bioentity.io/vocab/PairwiseInteractionAssociation](http://bioentity.io/vocab/PairwiseInteractionAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PairwiseInteractionAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[PairwiseInteractionAssociation]-%20publications(i)%20*>\[Publication],%20\[PairwiseInteractionAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[PairwiseInteractionAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[PairwiseInteractionAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[PairwiseInteractionAssociation]-%20interacting%20molecules%20category%20%3F>\[OntologyClass],%20\[PairwiseInteractionAssociation]-%20object>\[MolecularEntity],%20\[PairwiseInteractionAssociation]-%20relation>\[RelationshipType],%20\[PairwiseInteractionAssociation]-%20subject>\[MolecularEntity],%20\[PairwiseGeneToGeneInteraction]uses%20-.->\[PairwiseInteractionAssociation],%20\[Association]^-\[PairwiseInteractionAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PairwiseInteractionAssociation|id:identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[PairwiseInteractionAssociation]-%20publications(i)%20*>\[Publication],%20\[PairwiseInteractionAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[PairwiseInteractionAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[PairwiseInteractionAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[PairwiseInteractionAssociation]-%20interacting%20molecules%20category%20%3F>\[OntologyClass],%20\[PairwiseInteractionAssociation]-%20object>\[MolecularEntity],%20\[PairwiseInteractionAssociation]-%20relation>\[RelationshipType],%20\[PairwiseInteractionAssociation]-%20subject>\[MolecularEntity],%20\[PairwiseGeneToGeneInteraction]uses%20-.->\[PairwiseInteractionAssociation],%20\[Association]^-\[PairwiseInteractionAssociation])
 ## Mappings
 
 ## Inheritance
@@ -20,6 +20,10 @@ URI: [http://bioentity.io/vocab/PairwiseInteractionAssociation](http://bioentity
 
  * _[pairwise interaction association.interacting molecules category](interacting_molecules_category.md)_
     * range: [OntologyClass](OntologyClass.md)
+    * __Local__
+ * _[pairwise interaction association.id](pairwise_interaction_association_id.md) *subsets*: (translator_minimal)_
+    * _identifier for the interaction. This may come from an interaction database such as IMEX._
+    * range: [IdentifierType](IdentifierType.md)
     * __Local__
  * _[pairwise interaction association.object](pairwise_interaction_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
@@ -53,10 +57,6 @@ URI: [http://bioentity.io/vocab/PairwiseInteractionAssociation](http://bioentity
  * _[full name](full_name.md)_
     * _a long-form human readable name for a thing_
     * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * _[id](id.md) *subsets*: (translator_minimal)_
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * range: [IdentifierType](IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
  * _[iri](iri.md) *subsets*: (translator_minimal)_
     * _An IRI for the node. This is determined by the id using expansion rules._

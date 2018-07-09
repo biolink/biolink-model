@@ -18,5 +18,5 @@ URI: [http://bioentity.io/vocab/has_biological_sequence](slot_uri)
  *  child: [sequence variant.has biological sequence](sequence_variant_has_biological_sequence.md)
 ## Used in
 
- *  usage: [GenomicEntity](GenomicEntity.md)
  *  usage: [SequenceVariant](SequenceVariant.md)
+ *  usage: [GenomicEntity](GenomicEntity.md)

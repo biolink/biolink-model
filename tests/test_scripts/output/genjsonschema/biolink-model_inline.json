@@ -589,6 +589,10 @@
          "description": "interaction relationship type",
          "type": "string"
       },
+      "pairwise_interaction_association_id": {
+         "description": "identifier for the interaction. This may come from an interaction database such as IMEX.",
+         "type": "string"
+      },
       "pairwise_interaction_association_object": {
          "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
          "type": "string"

@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-07-07 15:07
+# Generation date: 2018-07-09 18:41
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -320,10 +320,6 @@ class GeneToGeneAssociationId(IdentifierType):
 
 
 class GeneToGeneHomologyAssociationId(IdentifierType):
-    pass
-
-
-class PairwiseInteractionAssociationId(IdentifierType):
     pass
 
 

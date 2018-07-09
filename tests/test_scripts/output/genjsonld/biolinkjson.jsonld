@@ -1871,6 +1871,21 @@
       "@id": "pairwise_interaction_association_subject"
     },
     {
+      "name": "pairwise_interaction_association_id",
+      "description": "identifier for the interaction. This may come from an interaction database such as IMEX.",
+      "mappings": [
+        "owl:topAnnotationProperty"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "id",
+      "domain": "PairwiseInteractionAssociation",
+      "range": "identifier_type",
+      "alias": "id",
+      "@id": "pairwise_interaction_association_id"
+    },
+    {
       "name": "pairwise_interaction_association_relation",
       "description": "interaction relationship type",
       "mappings": [
@@ -4192,6 +4207,7 @@
       "abstract": true,
       "slots": [
         "pairwise_interaction_association_subject",
+        "pairwise_interaction_association_id",
         "pairwise_interaction_association_relation",
         "pairwise_interaction_association_object",
         "interacting_molecules_category"
@@ -4200,6 +4216,19 @@
         {
           "name": "subject",
           "range": "MolecularEntity"
+        },
+        {
+          "name": "id",
+          "description": "identifier for the interaction. This may come from an interaction database such as IMEX.",
+          "examples": [
+            {
+              "value": "WB:WBInteraction000538741"
+            }
+          ],
+          "values_from": [
+            "IMEX",
+            "BioGRID"
+          ]
         },
         {
           "name": "relation",
@@ -5779,12 +5808,12 @@
     }
   ],
   "metamodel_version": "0.3.1",
-  "source_file": "/Users/solbrig/git/hsolbrig/biolink-model/biolink-model.yaml",
-  "source_file_size": 81321,
-  "source_file_date": "Sat Jul  7 15:07:08 2018",
-  "generation_date": "2018-07-07 15:25",
+  "source_file": "/Users/solbrig/git/biolink/biolink-model/biolink-model.yaml",
+  "source_file_size": 81568,
+  "source_file_date": "Mon Jul  9 18:37:24 2018",
+  "generation_date": "2018-07-09 18:43",
   "@context": [
-    "file:///Users/solbrig/git/hsolbrig/biolink-model/tests/test_scripts/output/genjsonld/metacontext.jsonld",
+    "file:///Users/solbrig/git/biolink/biolink-model/tests/test_scripts/output/genjsonld/metacontext.jsonld",
     {
       "@base": "http://bioentity.io/vocab/"
     }
