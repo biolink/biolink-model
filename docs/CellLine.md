@@ -1,47 +1,65 @@
----
-layout: default
----
-
-## cell line
+# Class: cell line
 
 
-None
+
 
 URI: [http://bioentity.io/vocab/CellLine](http://bioentity.io/vocab/CellLine)
 
-
-![img](http://yuml.me/diagram/nofunky/class/[biosample|in taxon]^-[cell line|], [cell line|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
+![img](images/CellLine.png)
 ## Mappings
 
  * [CLO:0000031](http://purl.obolibrary.org/obo/CLO_0000031)
-
 ## Inheritance
 
- *  is_a: [biosample](Biosample.html)
-
+ *  is_a: [Biosample](Biosample.md)
 ## Children
-
 
 ## Used in
 
- *  class: [cell line to thing association](CellLineToThingAssociation.html) references: [cell line](CellLine.html)
- *  class: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html) references: [cell line](CellLine.html)
-
+ *  class: **[CellLineToThingAssociation](CellLineToThingAssociation.md)** *[cell line to thing association.subject](cell_line_to_thing_association_subject.md)* **[CellLine](CellLine.md)**
 ## Fields
 
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
+ * _[category](category.md) *subsets*: (translator_minimal)_
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [in taxon](in_taxon.html) *subsets: translator_minimal*
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[description](description.md) *subsets*: (translator_minimal)_
+    * _a human-readable description of a thing_
+    * range: [NarrativeText](NarrativeText.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[full name](full_name.md)_
+    * _a long-form human readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[has phenotype](has_phenotype.md) *subsets*: (translator_minimal)_
+    * _holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). _
+    * range: [Phenotype](Phenotype.md)
+    * inherited from: [BiologicalEntity](BiologicalEntity.md)
+ * _[id](id.md) *subsets*: (translator_minimal)_
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+    * range: [IdentifierType](IdentifierType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[in taxon](in_taxon.md) *subsets*: (translator_minimal)_
     * _connects a thing to a class representing a taxon_
-    * __range__: [organism taxon](OrganismTaxon.html)
-    * inherited from: [thing with taxon](ThingWithTaxon.html)
+    * range: [OrganismTaxon](OrganismTaxon.md)
+    * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
+ * _[iri](iri.md) *subsets*: (translator_minimal)_
+    * _An IRI for the node. This is determined by the id using expansion rules._
+    * range: [IriType](IriType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[name](name.md) *subsets*: (translator_minimal)_
+    * _A human-readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[node property](node_property.md)_
+    * _A grouping for any property that holds between a node and a value_
+    * range: **string**
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[related to](related_to.md)_
+    * _A grouping for any relationship type that holds between any two things_
+    * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[systematic synonym](systematic_synonym.md)_
+    * _more commonly used for gene symbols in yeast_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)

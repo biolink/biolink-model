@@ -1,0 +1,584 @@
+{
+   "$id": "https://biolink.github.io/metamodel/ontology/meta.ttl",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "definitions": {
+      "abstract": {
+         "description": "An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored",
+         "type": "string"
+      },
+      "alias": {
+         "description": "A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have \"slots\" where one inline and the other a reference",
+         "type": "string"
+      },
+      "aliases": {
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "alt_descriptions": {
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "apply_to": {
+         "description": "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class.",
+         "type": "string"
+      },
+      "classes": {
+         "description": "classes defined in schema",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "comment": {
+         "description": "Comment about an element",
+         "type": "string"
+      },
+      "default_curi_maps": {
+         "description": "List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "default_prefix": {
+         "description": "default and base prefix -- used for ':' identifiers, @base and @vocab",
+         "type": "string"
+      },
+      "default_type": {
+         "description": "the default type if range is omitted",
+         "type": "string"
+      },
+      "defining_slots": {
+         "description": "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "definitional": {
+         "type": "string"
+      },
+      "description": {
+         "description": "a description",
+         "type": "string"
+      },
+      "domain": {
+         "description": "The class to which this slot applies.",
+         "type": "string"
+      },
+      "entity": {
+         "type": "string"
+      },
+      "examples": {
+         "description": "Example of usage for a slot or class",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "flags": {
+         "description": "State information and other details",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "from_schema": {
+         "description": "id of the schema that the element was derived from.  Supplied by the loader.",
+         "type": "string"
+      },
+      "generation_date": {
+         "description": "date that the schema was loaded/generated.  Supplied by the loader",
+         "type": "string"
+      },
+      "id": {
+         "description": "a globally unique id or url for a schema",
+         "type": "string"
+      },
+      "id_prefixes": {
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "identifier": {
+         "description": "True means that this slot must be unique across the collection of slots",
+         "type": "string"
+      },
+      "imports": {
+         "description": "A list of modules that are imported into the schema",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "in_subset": {
+         "description": "used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "inherited": {
+         "description": "True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths",
+         "type": "string"
+      },
+      "inlined": {
+         "description": "if true then the value of this slot is inlined (i.e. a nested object) rather linked by key",
+         "type": "string"
+      },
+      "inverse": {
+         "description": "used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')",
+         "type": "string"
+      },
+      "is_a": {
+         "description": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded",
+         "type": "string"
+      },
+      "is_class_field": {
+         "type": "string"
+      },
+      "license": {
+         "description": "license for the schema",
+         "type": "string"
+      },
+      "local_name": {
+         "description": "the nsname (sans ':' for a given prefix)",
+         "type": "string"
+      },
+      "local_names": {
+         "description": "map from local identifier to slot",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "mappings": {
+         "description": "list of equivalent or skos exact mappings to an ontology class",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "metamodel_version": {
+         "description": "Version of the metamodel used to load the schema. Supplied by the loader",
+         "type": "string"
+      },
+      "mixin": {
+         "description": "Used only as a mixin -- cannot be instantiated on its own.",
+         "type": "string"
+      },
+      "mixins": {
+         "description": "List of definitions to be mixed in. Targets may be any definition of the same type",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "multivalued": {
+         "description": "If true slot can have many values",
+         "type": "string"
+      },
+      "name": {
+         "description": "a unique key that identifies a slot, type or class in a schema",
+         "type": "string"
+      },
+      "note": {
+         "description": "Notes about an element",
+         "type": "string"
+      },
+      "object_property": {
+         "description": "true means that this slot is part of the formal definition of a class",
+         "type": "string"
+      },
+      "path": {
+         "description": "For any denormalized slot, this represents the tree or graph path used to generate the denormalized form",
+         "type": "string"
+      },
+      "prefix_uri": {
+         "description": "A URI associated with a given prefix",
+         "type": "string"
+      },
+      "prefixes": {
+         "description": "Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "primary_key": {
+         "description": "True means that this serves as a unique identifier",
+         "type": "string"
+      },
+      "range": {
+         "description": "The slot type.  Can be any class or type",
+         "type": "string"
+      },
+      "required": {
+         "description": "If true slot must have at least one value",
+         "type": "string"
+      },
+      "role": {
+         "type": "string"
+      },
+      "see_also": {
+         "type": "string"
+      },
+      "singular_name": {
+         "description": "a name that is used in the singular form",
+         "type": "string"
+      },
+      "slot_usage": {
+         "description": "Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "slots": {
+         "description": "list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "source_file": {
+         "description": "name, uri or description of the source of the schema.  Supplied by the loader",
+         "type": "string"
+      },
+      "source_file_date": {
+         "description": "modification date of the source of the schema.  Supplied by the loader",
+         "type": "string"
+      },
+      "source_file_size": {
+         "description": "size in bytes of the source of the schema.  Supplied by the loader",
+         "type": "string"
+      },
+      "subclass_of": {
+         "description": "Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes",
+         "type": "string"
+      },
+      "subproperty_of": {
+         "description": "Ontolgy property which this is a subproperty of",
+         "type": "string"
+      },
+      "symmetric": {
+         "description": "Symmetric slot",
+         "type": "string"
+      },
+      "typeof": {
+         "description": "a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition",
+         "type": "string"
+      },
+      "types": {
+         "description": "types defined in schema",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "union_of": {
+         "description": "list of class or slot definitions that are combined to create the union class",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "value": {
+         "type": "string"
+      },
+      "values_from": {
+         "description": "identifies the possible uri's of the range",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "version": {
+         "description": "Schema version",
+         "type": "string"
+      }
+   },
+   "properties": {
+      "ClassDefinition": {
+         "description": "A class or interface",
+         "properties": {
+            "apply_to": {
+               "description": "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class.",
+               "type": "string"
+            },
+            "defining_slots": {
+               "description": "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "entity": {
+               "type": "string"
+            },
+            "is_a": {
+               "description": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded",
+               "type": "string"
+            },
+            "mixins": {
+               "description": "List of definitions to be mixed in. Targets may be any definition of the same type",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "slot_usage": {
+               "description": "Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "slots": {
+               "description": "list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "union_of": {
+               "description": "list of class or slot definitions that are combined to create the union class",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "ClassDefinition",
+         "type": "object"
+      },
+      "Example": {
+         "description": "example of usage",
+         "properties": {
+            "description": {
+               "type": "string"
+            },
+            "value": {
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Example",
+         "type": "object"
+      },
+      "Prefix": {
+         "description": "Prefix URI map",
+         "properties": {
+            "local_name": {
+               "description": "the nsname (sans ':' for a given prefix)",
+               "type": "string"
+            },
+            "prefix_uri": {
+               "description": "A URI associated with a given prefix",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Prefix",
+         "type": "object"
+      },
+      "SchemaDefinition": {
+         "description": "A collection of definitions",
+         "properties": {
+            "classes": {
+               "description": "classes defined in schema",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "default_curi_maps": {
+               "description": "List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "default_prefix": {
+               "description": "default and base prefix -- used for ':' identifiers, @base and @vocab",
+               "type": "string"
+            },
+            "default_type": {
+               "description": "the default type if range is omitted",
+               "type": "string"
+            },
+            "generation_date": {
+               "description": "date that the schema was loaded/generated.  Supplied by the loader",
+               "type": "string"
+            },
+            "id": {
+               "description": "a globally unique id or url for a schema",
+               "type": "string"
+            },
+            "imports": {
+               "description": "A list of modules that are imported into the schema",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "license": {
+               "description": "license for the schema",
+               "type": "string"
+            },
+            "metamodel_version": {
+               "description": "Version of the metamodel used to load the schema. Supplied by the loader",
+               "type": "string"
+            },
+            "prefixes": {
+               "description": "Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "slots": {
+               "description": "collection of slot definitions in a schema",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "source_file": {
+               "description": "name, uri or description of the source of the schema.  Supplied by the loader",
+               "type": "string"
+            },
+            "source_file_date": {
+               "description": "modification date of the source of the schema.  Supplied by the loader",
+               "type": "string"
+            },
+            "source_file_size": {
+               "description": "size in bytes of the source of the schema.  Supplied by the loader",
+               "type": "string"
+            },
+            "types": {
+               "description": "types defined in schema",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "version": {
+               "description": "Schema version",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "SchemaDefinition",
+         "type": "object"
+      },
+      "SlotDefinition": {
+         "description": "A property or slot",
+         "properties": {
+            "alias": {
+               "description": "A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have \"slots\" where one inline and the other a reference",
+               "type": "string"
+            },
+            "definitional": {
+               "type": "string"
+            },
+            "domain": {
+               "description": "The class to which this slot applies.",
+               "type": "string"
+            },
+            "identifier": {
+               "description": "True means that this slot must be unique across the collection of slots",
+               "type": "string"
+            },
+            "inherited": {
+               "description": "True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths",
+               "type": "string"
+            },
+            "inlined": {
+               "description": "if true then the value of this slot is inlined (i.e. a nested object) rather linked by key",
+               "type": "string"
+            },
+            "inverse": {
+               "description": "used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')",
+               "type": "string"
+            },
+            "is_a": {
+               "description": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded",
+               "type": "string"
+            },
+            "is_class_field": {
+               "type": "string"
+            },
+            "mixins": {
+               "description": "List of definitions to be mixed in. Targets may be any definition of the same type",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "multivalued": {
+               "description": "If true slot can have many values",
+               "type": "string"
+            },
+            "object_property": {
+               "description": "true means that this slot is part of the formal definition of a class",
+               "type": "string"
+            },
+            "path": {
+               "description": "For any denormalized slot, this represents the tree or graph path used to generate the denormalized form",
+               "type": "string"
+            },
+            "primary_key": {
+               "description": "True means that this serves as a unique identifier",
+               "type": "string"
+            },
+            "range": {
+               "description": "The slot type.  Can be any class or type",
+               "type": "string"
+            },
+            "required": {
+               "description": "If true slot must have at least one value",
+               "type": "string"
+            },
+            "role": {
+               "type": "string"
+            },
+            "subproperty_of": {
+               "description": "Ontolgy property which this is a subproperty of",
+               "type": "string"
+            },
+            "union_of": {
+               "description": "list of class or slot definitions that are combined to create the union class",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "required": [],
+         "title": "SlotDefinition",
+         "type": "object"
+      },
+      "TypeDefinition": {
+         "description": "A type definition",
+         "properties": {
+            "typeof": {
+               "description": "a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "TypeDefinition",
+         "type": "object"
+      }
+   },
+   "title": "metamodel",
+   "type": "object"
+}
+

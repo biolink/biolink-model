@@ -1,87 +1,108 @@
----
-layout: default
----
-
-## genomic sequence localization
+# Class: genomic sequence localization
 
 
 A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
 
 URI: [http://bioentity.io/vocab/GenomicSequenceLocalization](http://bioentity.io/vocab/GenomicSequenceLocalization)
 
-
-![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-association type >[ontology class|], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-subject >[genomic entity|has biological sequence], [molecular entity|in taxon]^-[genomic entity|has biological sequence], [genomic entity|has biological sequence]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-relation >[relationship type|], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-object >[genomic entity|has biological sequence], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-qualifiers >[ontology class|], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-publications >[publication|], [information content entity|]^-[publication|], [genomic sequence localization|start interbase coordinate;end interbase coordinate;genome build;phase]-provided by >[provider|], [administrative entity|]^-[provider|])
+![img](images/GenomicSequenceLocalization.png)
 ## Mappings
 
  * [faldo:location](http://purl.obolibrary.org/obo/faldo_location)
-
 ## Inheritance
 
- *  is_a: [association](Association.html)
-
+ *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
 ## Children
 
-
+## Used in
 
 ## Fields
 
- * [start interbase coordinate](start_interbase_coordinate.html)
+ * _[end interbase coordinate](end_interbase_coordinate.md)_
     * _TODO_
-    * __range__: None
+    * range: **string**
     * __Local__
- * [end interbase coordinate](end_interbase_coordinate.html)
+ * _[genome build](genome_build.md)_
     * _TODO_
-    * __range__: None
+    * range: **string**
     * __Local__
- * [genome build](genome_build.html)
-    * _TODO_
-    * __range__: None
-    * __Local__
- * [phase](phase.html)
-    * _TODO_
-    * __range__: None
-    * __Local__
- * [association type](association_type.html)
-    * _connects an association to the type of association (e.g. gene to phenotype)_
-    * __range__: [ontology class](OntologyClass.html)
-    * inherited from: [association](Association.html)
- * [subject](subject.html)
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [genomic entity](GenomicEntity.html) [required]
-    * inherited from: [association](Association.html)
- * [negated](negated.html)
-    * _if set to true, then the association is negated i.e. is not true_
-    * __range__: xsd:boolean
-    * inherited from: [association](Association.html)
- * [relation](relation.html)
-    * _the relationship type by which a subject is connected to an object in an association_
-    * __range__: [relationship type](RelationshipType.html) [required]
-    * inherited from: [association](Association.html)
- * [object](object.html)
+ * _[genomic sequence localization.object](genomic_sequence_localization_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [genomic entity](GenomicEntity.html) [required]
-    * inherited from: [association](Association.html)
- * [qualifiers](qualifiers.html)
-    * _connects an association to qualifiers that modify or qualify the meaning of that association_
-    * __range__: [ontology class](OntologyClass.html)*
-    * inherited from: [association](Association.html)
- * [publications](publications.html)
-    * _connects an association to publications supporting the association_
-    * __range__: [publication](Publication.html)*
-    * inherited from: [association](Association.html)
- * [provided by](provided_by.html)
-    * _connects an association to the agent (person, organization or group) that provided it_
-    * __range__: [provider](Provider.html)
-    * inherited from: [association](Association.html)
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type [required]
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
+    * range: [GenomicEntity](GenomicEntity.md) [required]
+    * __Local__
+ * _[genomic sequence localization.subject](genomic_sequence_localization_subject.md)_
+    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * range: [GenomicEntity](GenomicEntity.md) [required]
+    * __Local__
+ * _[phase](phase.md)_
+    * _TODO_
+    * range: **string**
+    * __Local__
+ * _[start interbase coordinate](start_interbase_coordinate.md)_
+    * _TODO_
+    * range: **string**
+    * __Local__
+ * _[association slot](association_slot.md)_
+    * _any slot that relates an association to another entity_
+    * range: **string**
+    * inherited from: [Association](Association.md)
+ * _[association type](association_type.md)_
+    * _connects an association to the type of association (e.g. gene to phenotype)_
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [Association](Association.md)
+ * _[category](category.md) *subsets*: (translator_minimal)_
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[description](description.md) *subsets*: (translator_minimal)_
+    * _a human-readable description of a thing_
+    * range: [NarrativeText](NarrativeText.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[full name](full_name.md)_
+    * _a long-form human readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[id](id.md) *subsets*: (translator_minimal)_
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+    * range: [IdentifierType](IdentifierType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[iri](iri.md) *subsets*: (translator_minimal)_
+    * _An IRI for the node. This is determined by the id using expansion rules._
+    * range: [IriType](IriType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[name](name.md) *subsets*: (translator_minimal)_
+    * _A human-readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[negated](negated.md)_
+    * _if set to true, then the association is negated i.e. is not true_
+    * range: **boolean**
+    * inherited from: [Association](Association.md)
+ * _[node property](node_property.md)_
+    * _A grouping for any property that holds between a node and a value_
+    * range: **string**
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[provided by](provided_by.md)_
+    * _connects an association to the agent (person, organization or group) that provided it_
+    * range: [Provider](Provider.md)
+    * inherited from: [Association](Association.md)
+ * _[publications](publications.md)_
+    * _connects an association to publications supporting the association_
+    * range: [Publication](Publication.md)*
+    * inherited from: [Association](Association.md)
+ * _[qualifiers](qualifiers.md)_
+    * _connects an association to qualifiers that modify or qualify the meaning of that association_
+    * range: [OntologyClass](OntologyClass.md)*
+    * inherited from: [Association](Association.md)
+ * _[related to](related_to.md)_
+    * _A grouping for any relationship type that holds between any two things_
+    * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[relation](relation.md)_
+    * _the relationship type by which a subject is connected to an object in an association_
+    * range: [RelationshipType](RelationshipType.md) [required]
+    * inherited from: [Association](Association.md)
+ * _[systematic synonym](systematic_synonym.md)_
+    * _more commonly used for gene symbols in yeast_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)

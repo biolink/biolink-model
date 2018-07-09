@@ -1,0 +1,156 @@
+description: A collection of definitions
+display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [schema
+    definition]
+document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [schema
+    definition]
+fields:
+- description: a unique key that identifies a slot, type or class in a schema
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [name]
+  id: name
+- description: a name that is used in the singular form
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [singular_name]
+  id: singular_name
+- description: a description
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [description]
+  id: description
+- description: Notes about an element
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [note]
+  id: note
+- description: Comment about an element
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [comment]
+  id: comment
+- cardinality: multi
+  description: Example of usage for a slot or class
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [examples]
+  id: examples
+- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [see_also]
+  id: see_also
+- cardinality: multi
+  description: State information and other details
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [flags]
+  id: flags
+- cardinality: multi
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [aliases]
+  id: aliases
+- cardinality: multi
+  description: list of equivalent or skos exact mappings to an ontology class
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [mappings]
+  id: mappings
+- cardinality: multi
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [id_prefixes]
+  id: id_prefixes
+- cardinality: multi
+  description: used to indicate membership of a term in a defined subset of biolink
+    terms used for a particular domain or application (e.g. the translator_minimal
+    subset holding the minimal set of predicates used in a translator knowledge graph)
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [in_subset]
+  id: in_subset
+- description: id of the schema that the element was derived from.  Supplied by the
+    loader.
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [from_schema]
+  id: from_schema
+- cardinality: multi
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [alt_descriptions]
+  id: alt_descriptions
+- description: specifies single-inheritance between classes and slots. While multiple
+    inheritance is not allowed, mixins can be provided effectively providing the same
+    thing. The semantics are the same when translated to formalisms that allow MI
+    (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python
+    classes) then is_a is used. When translating a framework without polymorphism
+    (e.g. json-schema, solr document schema) then is_a and mixins are recursively
+    unfolded
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [is_a]
+  id: is_a
+- description: Used only as a mixin -- cannot be instantiated on its own.
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [mixin]
+  id: mixin
+- cardinality: multi
+  description: List of definitions to be mixed in. Targets may be any definition of
+    the same type
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [mixins]
+  id: mixins
+- description: An abstract class is a high level class or slot that is typically used
+    to group common slots together and is generally not instantiated. When generating
+    golr-views, abstract classes are ignored
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [abstract]
+  id: abstract
+- cardinality: multi
+  description: map from local identifier to slot
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [local_names]
+  id: local_names
+- cardinality: multi
+  description: list of class or slot definitions that are combined to create the union
+    class
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [union_of]
+  id: union_of
+- description: Ontolgy property which this is a subclass of. Not to be confused with
+    is_a which links datamodel classes
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [subclass_of]
+  id: subclass_of
+- cardinality: multi
+  description: identifies the possible uri's of the range
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [values_from]
+  id: values_from
+- description: Symmetric slot
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [symmetric]
+  id: symmetric
+- description: a globally unique id or url for a schema
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [id]
+  id: id
+- description: Schema version
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [version]
+  id: version
+- cardinality: multi
+  description: A list of modules that are imported into the schema
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [imports]
+  id: imports
+- description: license for the schema
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [license]
+  id: license
+- cardinality: multi
+  description: Additional prefixes to be added to the context beyond those fetched
+    from prefixcommons in id_prefixes
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [prefixes]
+  id: prefixes
+- description: default and base prefix -- used for ':' identifiers, @base and @vocab
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [default_prefix]
+  id: default_prefix
+- description: the default type if range is omitted
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [default_type]
+  id: default_type
+- cardinality: multi
+  description: List of prefixcommon biocontexts to be fetched to resolve id_prefixes
+    and inline prefix variables
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [default_curi_maps]
+  id: default_curi_maps
+- cardinality: multi
+  description: types defined in schema
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [types]
+  id: types
+- cardinality: multi
+  description: collection of slot definitions in a schema
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [slot definitions]
+  id: slots
+- cardinality: multi
+  description: classes defined in schema
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [classes]
+  id: classes
+- description: Version of the metamodel used to load the schema. Supplied by the loader
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [metamodel_version]
+  id: metamodel_version
+- description: name, uri or description of the source of the schema.  Supplied by
+    the loader
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [source_file]
+  id: source_file
+- description: size in bytes of the source of the schema.  Supplied by the loader
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [source_file_size]
+  id: source_file_size
+- description: modification date of the source of the schema.  Supplied by the loader
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [source_file_date]
+  id: source_file_date
+- description: date that the schema was loaded/generated.  Supplied by the loader
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [generation_date]
+  id: generation_date
+id: schema_definition
+schema_generating: true
+weight: 20

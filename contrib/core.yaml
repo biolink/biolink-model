@@ -4,7 +4,7 @@ description: core
 
 slots:
 
-  - name: title
+  title:
     domain: information content entity
     range: label type
     description: >-
@@ -13,21 +13,21 @@ slots:
       - "dc:title"
 
 
-  - name: has evidence object
+  has evidence object:
     is_a: association slot
     range: named thing
     description: >-
       connects an association to an supporting entity. May be a gene/product (if evidence is homology or protein interaction).
       Same as WITH/FROM column in GO/GAFs
 
-  - name: has evidence type
+  has evidence type:
     is_a: association slot
     range: evidence type
     path: evidence/type
     description: >-
       connects an association to the class of evidence used
 
-  - name: has evidence graph
+  has evidence graph:
     is_a: association slot
     range: evidence graph
     path: evidence/type
@@ -36,8 +36,8 @@ slots:
       
 classes:
 
-  - name: named graph
+  named graph:
     is_a: information content entity
     slot_usage:
-      - name: title
+      title:
         description: descriptive textual title

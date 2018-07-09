@@ -1,25 +1,20 @@
----
-layout: default
----
-
-## full name
+# Slot: full name
 
 
 a long-form human readable name for a thing
 
-URI: [http://bioentity.io/vocab/full_name](http://bioentity.io/vocab/full_name)
+URI: [http://bioentity.io/vocab/full_name](slot_uri)
 ## Mappings
 
-
+ * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
-[named thing](NamedThing.html) -> 
-
+[NamedThing](NamedThing.md) -> [LabelType](LabelType.md)
 ## Inheritance
 
-
+ *  is_a: [node property](node_property.md)
 ## Children
-
 
 ## Used in
 
+ *  usage: [NamedThing](NamedThing.md)

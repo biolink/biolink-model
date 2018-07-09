@@ -1,68 +1,61 @@
----
-layout: default
----
-
-## organism taxon
+# Class: organism taxon
 
 
-None
+
 
 URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/OrganismTaxon)
 
-
-![img](http://yuml.me/diagram/nofunky/class/[ontology class|]^-[organism taxon|])
+![img](images/OrganismTaxon.png)
 ## Mappings
 
  * [WD:Q16521](http://purl.obolibrary.org/obo/WD_Q16521)
-
 ## Inheritance
 
- *  is_a: [ontology class](OntologyClass.html)
-
+ *  is_a: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
 ## Children
-
 
 ## Used in
 
- *  class: [thing with taxon](ThingWithTaxon.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [individual organism](IndividualOrganism.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [case](Case.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [population of individual organisms](PopulationOfIndividualOrganisms.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [biosample](Biosample.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [disease](Disease.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [phenotypic feature](PhenotypicFeature.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [molecular entity](MolecularEntity.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [chemical substance](ChemicalSubstance.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [drug](Drug.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [metabolite](Metabolite.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [anatomical entity](AnatomicalEntity.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [life stage](LifeStage.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genomic entity](GenomicEntity.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genome](Genome.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [transcript](Transcript.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [exon](Exon.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [coding sequence](CodingSequence.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [macromolecular machine](MacromolecularMachine.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene or gene product](GeneOrGeneProduct.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene](Gene.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene product](GeneProduct.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [protein](Protein.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene product isoform](GeneProductIsoform.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [protein isoform](ProteinIsoform.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [RNA product](RnaProduct.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [RNA product isoform](RnaProductIsoform.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [noncoding RNA product](NoncodingRnaProduct.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [microRNA](Microrna.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [macromolecular complex](MacromolecularComplex.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene family](GeneFamily.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype](Genotype.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [haplotype](Haplotype.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [sequence variant](SequenceVariant.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [cellular component](CellularComponent.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [cell](Cell.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [cell line](CellLine.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gross anatomical structure](GrossAnatomicalStructure.html) references: [organism taxon](OrganismTaxon.html)
-
+ *  class: **[ThingWithTaxon](ThingWithTaxon.md)** *[in taxon](in_taxon.md)* **[OrganismTaxon](OrganismTaxon.md)**
 ## Fields
 
+ * _[category](category.md) *subsets*: (translator_minimal)_
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[description](description.md) *subsets*: (translator_minimal)_
+    * _a human-readable description of a thing_
+    * range: [NarrativeText](NarrativeText.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[full name](full_name.md)_
+    * _a long-form human readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[id](id.md) *subsets*: (translator_minimal)_
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+    * range: [IdentifierType](IdentifierType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[iri](iri.md) *subsets*: (translator_minimal)_
+    * _An IRI for the node. This is determined by the id using expansion rules._
+    * range: [IriType](IriType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[name](name.md) *subsets*: (translator_minimal)_
+    * _A human-readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[node property](node_property.md)_
+    * _A grouping for any property that holds between a node and a value_
+    * range: **string**
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[related to](related_to.md)_
+    * _A grouping for any relationship type that holds between any two things_
+    * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[subclass of](subclass_of.md) *subsets*: (translator_minimal)_
+    * _holds between two classes where the domain class is a specialization of the range class_
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [OntologyClass](OntologyClass.md)
+ * _[systematic synonym](systematic_synonym.md)_
+    * _more commonly used for gene symbols in yeast_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)

@@ -8,14 +8,14 @@ slots:
   ## CLOSURES
   ## ------
     
-  - name: closure concept slot
+  closure concept slot:
     abstract: true
     multivalued: true
     description: >-
       parent field for fields used for storing inferred relationships to a class or relation
     range: ontology class
     
-  - name: closure label slot
+  closure label slot:
     abstract: true
     multivalued: true
     description: >-
@@ -23,46 +23,46 @@ slots:
       See also: closure concept field
     range: label type
     
-  - name: taxon closure slot
+  taxon closure slot:
     is_a: closure concept slot
     description: >-
       a closure slot that includes a taxon and all ancestral taxa
     range: organism taxon
     
-  - name: taxon closure label slot
+  taxon closure label slot:
     is_a: closure label slot
     description: >-
       label for taxon closure slot
     range: label type
     
-  - name: subject taxon closure
+  subject taxon closure:
     is_a: taxon closure slot
     description: >-
       The taxon class or ancestor class for the subject
     range: ontology class
     path: subject/in_taxon*
     
-  - name: subject taxon closure label
+  subject taxon closure label:
     is_a: taxon closure label slot
     description: >-
       The label for the taxon class or ancestor class for the subject
     multivalued: true
     path: subject/in_taxon*/label
     
-  - name: object taxon closure
+  object taxon closure:
     is_a: taxon closure slot
     description: >-
       The taxon class or ancestor class for the object
     range: ontology class
     path: object/in_taxon*
     
-  - name: object taxon closure label
+  object taxon closure label:
     is_a: taxon closure label slot
     description: >-
       The label for the taxon class or ancestor class for the object
     path: object/in_taxon*/label
     
-  - name: isa partof closure
+  isa partof closure:
     is_a: closure concept slot
     range: ontology class
     description: >-
@@ -73,11 +73,11 @@ slots:
       or in GO queries (in any of the three branches of GO)
     path: "object/{rdfs:subClassOf|BFO:0000050}*"
     
-  - name: isa partof closure label
+  isa partof closure label:
     is_a: closure label slot
     path: "object/{rdfs:subClassOf|BFO:0000050}*/label"
 
-  - name: regulates closure
+  regulates closure:
     is_a: closure concept slot
     range: relationship type
     description: >-
@@ -87,12 +87,12 @@ slots:
       a biological process
     path: "object/{rdfs:subClassOf|BFO:0000050}*"
 
-  - name: regulates closure label
+  regulates closure label:
     is_a: closure label slot
     path: "object/{rdfs:subClassOf|BFO:0000050|RO:0002211}*/label"
     
     
-  - name: evidence object closure
+  evidence object closure:
     is_a: closure concept slot
     range: evidence type
     description: >-

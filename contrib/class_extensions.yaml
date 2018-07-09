@@ -8,7 +8,7 @@ slots:
 
   ## Extensions slot
   
-  - name: extensions context slot
+  extensions context slot:
     is_a: association slot
     abstract: true
     range: property value pair
@@ -17,14 +17,14 @@ slots:
       A parent slot for subject and object extension. Extensions are a way to provide additional context
       or subtyping (aka post-composition or post-coordination) on a class.
       
-  - name: subject extensions
+  subject extensions:
     is_a: extensions context slot
     description: >-
       Additional relationships that are true of the subject in the context of the association.
       For example, if the subject is a gene product in a functional association,
       the subject extensions may represent  an isoform or a specific post-translational state
       
-  - name: object extensions
+  object extensions:
     is_a: extensions context slot
     range: property value pair
     description: >-
@@ -38,7 +38,7 @@ classes:
   ## GENERIC
   ## ------
 
-  - name: property value pair
+  property value pair:
     slots:
       - relation
       - filler

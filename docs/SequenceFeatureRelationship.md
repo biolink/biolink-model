@@ -1,74 +1,95 @@
----
-layout: default
----
-
-## sequence feature relationship
+# Class: sequence feature relationship
 
 
 For example, a particular exon is part of a particular transcript or gene
 
 URI: [http://bioentity.io/vocab/SequenceFeatureRelationship](http://bioentity.io/vocab/SequenceFeatureRelationship)
 
-
-![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[sequence feature relationship|], [sequence feature relationship|]-association type >[ontology class|], [sequence feature relationship|]-subject >[genomic entity|has biological sequence], [molecular entity|in taxon]^-[genomic entity|has biological sequence], [genomic entity|has biological sequence]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [sequence feature relationship|]-relation >[relationship type|], [sequence feature relationship|]-object >[genomic entity|has biological sequence], [sequence feature relationship|]-qualifiers >[ontology class|], [sequence feature relationship|]-publications >[publication|], [information content entity|]^-[publication|], [sequence feature relationship|]-provided by >[provider|], [administrative entity|]^-[provider|])
+![img](images/SequenceFeatureRelationship.png)
 ## Mappings
 
  * [GMODChado:feature_relationship](http://purl.obolibrary.org/obo/GMODChado_feature_relationship)
-
 ## Inheritance
 
- *  is_a: [association](Association.html)
-
+ *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
 ## Children
 
- *  child: [transcript to gene relationship](TranscriptToGeneRelationship.html)
- *  child: [gene to gene product relationship](GeneToGeneProductRelationship.html)
- *  child: [exon to transcript relationship](ExonToTranscriptRelationship.html)
-
+ * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) - A transcript is formed from multiple exons
+ * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) - A gene is transcribed and potentially translated to a gene product
+ * [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) - A gene is a collection of transcripts
+## Used in
 
 ## Fields
 
- * [association type](association_type.html)
-    * _connects an association to the type of association (e.g. gene to phenotype)_
-    * __range__: [ontology class](OntologyClass.html)
-    * inherited from: [association](Association.html)
- * [subject](subject.html)
-    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [genomic entity](GenomicEntity.html) [required]
-    * inherited from: [association](Association.html)
- * [negated](negated.html)
-    * _if set to true, then the association is negated i.e. is not true_
-    * __range__: xsd:boolean
-    * inherited from: [association](Association.html)
- * [relation](relation.html)
-    * _the relationship type by which a subject is connected to an object in an association_
-    * __range__: [relationship type](RelationshipType.html) [required]
-    * inherited from: [association](Association.html)
- * [object](object.html)
+ * _[sequence feature relationship.object](sequence_feature_relationship_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
-    * __range__: [genomic entity](GenomicEntity.html) [required]
-    * inherited from: [association](Association.html)
- * [qualifiers](qualifiers.html)
-    * _connects an association to qualifiers that modify or qualify the meaning of that association_
-    * __range__: [ontology class](OntologyClass.html)*
-    * inherited from: [association](Association.html)
- * [publications](publications.html)
-    * _connects an association to publications supporting the association_
-    * __range__: [publication](Publication.html)*
-    * inherited from: [association](Association.html)
- * [provided by](provided_by.html)
-    * _connects an association to the agent (person, organization or group) that provided it_
-    * __range__: [provider](Provider.html)
-    * inherited from: [association](Association.html)
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type [required]
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
+    * range: [GenomicEntity](GenomicEntity.md) [required]
+    * __Local__
+ * _[sequence feature relationship.subject](sequence_feature_relationship_subject.md)_
+    * _connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
+    * range: [GenomicEntity](GenomicEntity.md) [required]
+    * __Local__
+ * _[association slot](association_slot.md)_
+    * _any slot that relates an association to another entity_
+    * range: **string**
+    * inherited from: [Association](Association.md)
+ * _[association type](association_type.md)_
+    * _connects an association to the type of association (e.g. gene to phenotype)_
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [Association](Association.md)
+ * _[category](category.md) *subsets*: (translator_minimal)_
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[description](description.md) *subsets*: (translator_minimal)_
+    * _a human-readable description of a thing_
+    * range: [NarrativeText](NarrativeText.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[full name](full_name.md)_
+    * _a long-form human readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[id](id.md) *subsets*: (translator_minimal)_
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+    * range: [IdentifierType](IdentifierType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[iri](iri.md) *subsets*: (translator_minimal)_
+    * _An IRI for the node. This is determined by the id using expansion rules._
+    * range: [IriType](IriType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[name](name.md) *subsets*: (translator_minimal)_
+    * _A human-readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[negated](negated.md)_
+    * _if set to true, then the association is negated i.e. is not true_
+    * range: **boolean**
+    * inherited from: [Association](Association.md)
+ * _[node property](node_property.md)_
+    * _A grouping for any property that holds between a node and a value_
+    * range: **string**
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[provided by](provided_by.md)_
+    * _connects an association to the agent (person, organization or group) that provided it_
+    * range: [Provider](Provider.md)
+    * inherited from: [Association](Association.md)
+ * _[publications](publications.md)_
+    * _connects an association to publications supporting the association_
+    * range: [Publication](Publication.md)*
+    * inherited from: [Association](Association.md)
+ * _[qualifiers](qualifiers.md)_
+    * _connects an association to qualifiers that modify or qualify the meaning of that association_
+    * range: [OntologyClass](OntologyClass.md)*
+    * inherited from: [Association](Association.md)
+ * _[related to](related_to.md)_
+    * _A grouping for any relationship type that holds between any two things_
+    * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[relation](relation.md)_
+    * _the relationship type by which a subject is connected to an object in an association_
+    * range: [RelationshipType](RelationshipType.md) [required]
+    * inherited from: [Association](Association.md)
+ * _[systematic synonym](systematic_synonym.md)_
+    * _more commonly used for gene symbols in yeast_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)

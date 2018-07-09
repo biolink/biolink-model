@@ -1,74 +1,99 @@
 id: "https://biolink.github.io/biolink-model/ontology/biolink.ttl"
 name: biolink model
-description: Entity and association taxonomy and datamodel for life-sciences data
+description: >-
+  Entity and association taxonomy and datamodel for life-sciences data
 license: https://creativecommons.org/publicdomain/zero/1.0/
+
 prefixes:
+  biolink: http://bioentity.io/vocab/
   OBAN: http://purl.org/oban/
   SIO: http://semanticscience.org/resource/SIO_
   wgs: http://www.w3.org/2003/01/geo/wgs84_pos
 
+default_prefix: biolink
+
+default_curi_maps:
+  - obo_context
+  - monarch_context
+  - idot_context
+  - semweb_context
+
+id_prefixes:
+  - rdf
+  - rdfs
+  - xsd
+  - skos
+  - OIO
+
 types:
 
-  - name: identifier type
+## Still neeed definition
+  phenotype:
+
+  evidence instance:
+
+  chemical formula value:
+
+  identifier type:
     typeof: string
     description: >-
       A string that is intended to uniquely identify a thing
       May be URI in full or compact (CURIE) form
 
-  - name: iri type
+  iri type:
     typeof: string
     description: >-
       An IRI
 
-  - name: label type
+  label type:
     typeof: string
     description: >-
       A string that provides a human-readable name for a thing
 
-  - name: narrative text
+  narrative text:
     typeof: string
     description: >-
       A string that provides a human-readable description of something
 
-  - name: symbol type
+  symbol type:
     typeof: string
 
-  - name: chemical formula type
+  chemical formula type:
     typeof: string
 
-  - name: frequency value
+  frequency value:
     mappings:
       - UO:0000105
 
-  - name: perecentage frequency value
+  perecentage frequency value:
     typeof: double
     mappings:
       - UO:0000187
 
-  - name: quotient
+  quotient:
     aliases: ['ratio']
     typeof: double
     mappings:
       - UO:0010006
 
-  - name: unit
+  unit:
     typeof: string
     mappings:
       - UO:0000000
     id_prefixes:
       - UO
       
-  - name: time type
+  time type:
     typeof: time
 
-  - name: biological sequence
+  biological sequence:
     typeof: string
 
 slots:
 
 ## predicates/relations 
 
-  - name: related to
+  related to:
     description: >-
       A grouping for any relationship type that holds between any two things
     domain: named thing
@@ -77,7 +102,7 @@ slots:
       - owl:topObjectProperty
       - SEMMEDDB:ASSOCIATED_WITH
       
-  - name: interacts with
+  interacts with:
     description: >-
       holds between any two entities that directly or indirectly interact with each other
     is_a: related to
@@ -87,7 +112,7 @@ slots:
     mappings:
       - RO:0002434  
       
-  - name: physically interacts with
+  physically interacts with:
     is_a: interacts with
     description: >-
       holds between two entities that make physical contact as part of some interaction
@@ -98,7 +123,7 @@ slots:
       - WD:P129
       - SEMMEDDB:INTERACTS_WITH  
       
-  - name: molecularly interacts with
+  molecularly interacts with:
     is_a: physically interacts with
     domain: molecular entity
     range: molecular entity
@@ -107,7 +132,7 @@ slots:
     mappings:
       - RO:0002436
   
-  - name: genetically interacts with
+  genetically interacts with:
     is_a: interacts with
     description: >-
       holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
@@ -118,7 +143,7 @@ slots:
     mappings:
       - RO:0002435
   
-  - name: affects
+  affects:
     is_a: related to
     description: >-
       describes an entity that has a direct affect on the state or quality of another existing entity.
@@ -128,7 +153,7 @@ slots:
     mappings:
       - SEMMEDDB:AFFECTS
   
-  - name: regulates
+  regulates:
     is_a: affects
     comment: This is a grouping for process-process and entity-entity relations
     mixin: true
@@ -136,38 +161,40 @@ slots:
     mappings:
       - WD:P128
     
-  - name: positively regulates
+  positively regulates:
     comment: This is a grouping for process-process and entity-entity relations
     is_a: regulates
     mixin: true
     abstract: true
     
-  - name: negatively regulates
+  negatively regulates:
     comment: This is a grouping for process-process and entity-entity relations
     is_a: regulates
     mixin: true
     abstract: true
   
-  - name: regulates, process to process
+  regulates, process to process:
     is_a: regulates
     domain: occurrent
     range: occurrent
     mappings:
       - RO:0002211
   
-  - name: positively regulates, process to process
+  positively regulates, process to process:
     is_a: regulates, process to process
-    mixins: positively regulates
+    mixins:
+      - positively regulates
     mappings:
       - RO:0002213
 
-  - name: negatively regulates, process to process
+  negatively regulates, process to process:
     is_a: regulates, process to process
-    mixins: negatively regulates
+    mixins:
+      - negatively regulates
     mappings:
       - RO:0002212
 
-  - name: regulates, entity to entity
+  regulates, entity to entity:
     aliases: ['activity directly regulates activity of']
     is_a: regulates
     domain: molecular entity
@@ -180,10 +207,11 @@ slots:
     mappings:
       - RO:0002448
 
-  - name: positively regulates, entity to entity
+  positively regulates, entity to entity:
     aliases: ['activity directly positively regulates activity of']
     is_a: regulates, entity to entity
-    mixins: positively regulates
+    mixins:
+      - positively regulates
     local_names:
       translator: positively regulates
       ro: activity directly positively regulates activity of
@@ -193,10 +221,11 @@ slots:
       - RO:0002450
       - SEMMEDDB:STIMULATES
 
-  - name: negatively regulates, entity to entity
+  negatively regulates, entity to entity:
     aliases: ['activity directly negatively regulates activity of']
     is_a: regulates, entity to entity
-    mixins: negatively regulates
+    mixins:
+      - negatively regulates
     local_names:
       translator: negatively regulates
       ro: activity directly negatively regulates activity of
@@ -206,7 +235,7 @@ slots:
       - RO:0002449
       - SEMMEDDB:INHIBITS
 
-  - name: disrupts
+  disrupts:
     is_a: affects
     description: >-
       describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
@@ -215,7 +244,7 @@ slots:
     mappings:
       - SEMMEDDB:DISRUPTS
       
-  - name: has gene product
+  has gene product:
     is_a: related to
     description: >-
       holds between a gene and a transcribed and/or translated product generated from it
@@ -227,7 +256,7 @@ slots:
       - RO:0002205
       - WD:P688
 
-  - name: homologous to
+  homologous to:
     is_a: related to
     aliases: ['in homology relationship with']
     description: >-
@@ -239,7 +268,7 @@ slots:
       - RO:HOM0000001
       - SIO:010302
 
-  - name: paralogous to
+  paralogous to:
     is_a: homologous to
     description: >-
       a homology relationship that holds between entities (typically genes) that diverged after a duplication event.
@@ -248,7 +277,7 @@ slots:
     mappings:
       - RO:HOM0000011
 
-  - name: orthologous to
+  orthologous to:
     is_a: homologous to
     description: >-
       a homology relationship between entities (typically genes) that diverged after a speciation event.
@@ -258,7 +287,7 @@ slots:
       - RO:HOM0000017
       - WD:P684
 
-  - name: xenologous to
+  xenologous to:
     is_a: homologous to
     description: >-
       a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
@@ -267,7 +296,7 @@ slots:
     mappings:
       - RO:HOM0000018
 
-  - name: coexists with
+  coexists with:
     is_a: related to
     description: >-
       holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
@@ -276,7 +305,7 @@ slots:
     mappings:
       - SEMMEDDB:COEXISTS_WITH
 
-  - name: in pathway with
+  in pathway with:
     description: >-
       holds between two genes or gene products that are part of in the same biological pathway
     is_a: coexists with
@@ -285,7 +314,7 @@ slots:
     in_subset:
       - translator_minimal
 
-  - name: in complex with
+  in complex with:
     description: >-
       holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
     is_a: coexists with
@@ -294,7 +323,7 @@ slots:
     in_subset:
       - translator_minimal
 
-  - name: in cell population with
+  in cell population with:
     description: >-
       holds between two genes or gene products that are expressed in the same cell type or population 
     is_a: coexists with
@@ -303,7 +332,7 @@ slots:
     in_subset:
       - translator_minimal
 
-  - name: co-localizes with
+  co-localizes with:
     description: >-
       holds between two entities that are observed to be located in the same place.
     is_a: coexists with
@@ -312,7 +341,7 @@ slots:
     mappings:
       - RO:00002325
 
-  - name: gene associated with condition
+  gene associated with condition:
     is_a: related to
     description: >-
       holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
@@ -323,14 +352,14 @@ slots:
     mappings:
       - WD:P2293
 
-  - name: affects risk for
+  affects risk for:
     is_a: related to
     description: >-
       holds between two entities where exposure to one entity alters the chance of developing the other 
     in_subset:
       - translator_minimal
 
-  - name: predisposes
+  predisposes:
     is_a: affects risk for
     description: >-
       holds between two entities where exposure to one entity increases the chance of developing the other 
@@ -339,7 +368,7 @@ slots:
     mappings:
       - SEMMEDDB:PREDISPOSES
 
-  - name: contributes to
+  contributes to:
     is_a: related to
     description: >-
       holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
@@ -348,7 +377,7 @@ slots:
     mappings:
       - RO:0002326
       
-  - name: causes
+  causes:
     description: >-
       holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other
     is_a: contributes to
@@ -359,7 +388,7 @@ slots:
       - SEMMEDDB:CAUSES
       - WD:P1542
 
-  - name: treats 
+  treats :
     aliases: ['is substance that treats']
     is_a: affects
     description: >-
@@ -374,7 +403,7 @@ slots:
       - SEMMEDDB:TREATS
       - WD:P2175
 
-  - name: prevents 
+  prevents :
     is_a: affects risk for
     description: >-
       holds between an entity whose application or use reduces the likelihood of a potential outcome. 
@@ -386,7 +415,7 @@ slots:
       - RO:0002559
       - SEMMEDDB:PREVENTS
 
-  - name: correlated with
+  correlated with:
     is_a: related to
     description: >-
       holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
@@ -397,7 +426,7 @@ slots:
     mappings:
       - RO:0002610
 
-  - name: has biomarker
+  has biomarker:
     is_a: correlated with
     description: >-
       holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
@@ -407,7 +436,7 @@ slots:
       - translator_minimal
     inverse: biomarker for
 
-  - name: biomarker for
+  biomarker for:
     is_a: correlated with
     description: >-
       holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
@@ -419,7 +448,7 @@ slots:
     mappings:
       - RO:0002607
 
-  - name: treated by
+  treated by:
     is_a: related to
     description: >-
       holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition 
@@ -431,7 +460,7 @@ slots:
       - RO:0002302
       - WD:P2176
 
-  - name: expressed in
+  expressed in:
     is_a: related to
     description: >-
       holds between a gene or gene product and an anatomical entity in which it is expressed
@@ -443,7 +472,7 @@ slots:
     mappings:
       - RO:0002206
 
-  - name: expresses
+  expresses:
     is_a: related to
     description: >-
       holds between an anatomical entity and gene or gene product that is expressed there
@@ -455,7 +484,7 @@ slots:
     mappings:
       - RO:0002292
 
-  - name: has phenotype
+  has phenotype:
     is_a: related to
     description: >-
       holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). 
@@ -466,7 +495,7 @@ slots:
     mappings:
       - RO:0002200
 
-  - name: occurs in
+  occurs in:
     is_a: related to
     description: >-
       holds between a process and a material entity or site within which the process occurs
@@ -477,7 +506,7 @@ slots:
       - SEMMEDDB:OCCURS_IN
       - SEMMEDDB:PROCESS_OF
 
-  - name: located in
+  located in:
     is_a: related to
     description: >-
       holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
@@ -488,7 +517,7 @@ slots:
       - BFO:0000066
       - WD:276
 
-  - name: location of
+  location of:
     is_a: related to
     description: >-
       holds between material entity or site and a material entity that is located within it (but not considered a part of it) 
@@ -499,7 +528,7 @@ slots:
       - RO:0001015
       - SEMMEDDB:LOCATION_OF
 
-  - name: model of
+  model of:
     is_a: related to
     description: >-
       holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.    
@@ -508,7 +537,7 @@ slots:
     mappings:  
       - RO:0003301
 
-  - name: overlaps
+  overlaps:
     is_a: related to
     description: >-
       holds between entties that overlap in their extents (materials or processes)
@@ -517,7 +546,7 @@ slots:
     mappings:
       - RO:0002131
 
-  - name: has part
+  has part:
     is_a: overlaps
     description: >-
       holds between wholes and their parts (material entities or processes)
@@ -528,7 +557,7 @@ slots:
       - BFO:0000051
       - WD:P527
 
-  - name: part of
+  part of:
     is_a: overlaps
     description: >-
       holds between parts and wholes (material entities or processes)
@@ -540,7 +569,7 @@ slots:
       - SEMMEDDB:PART_OF      
       - WD:P361
 
-  - name: has participant
+  has participant:
     is_a: related to
     description: >-
       holds between a process and a continuant, where the continuant is somehow involved in the process 
@@ -552,7 +581,7 @@ slots:
      - RO:0000057
      - WD:P2283
 
-  - name: has input
+  has input:
     is_a: has participant
     description: >-
       holds between a process and a continuant, where the continuant is an input into the process
@@ -563,7 +592,7 @@ slots:
       - RO:0002233
       - SEMMEDDB:USES
 
-  - name: participates in
+  participates in:
     is_a: related to
     description: >-
       holds between a continuant and a process, where the continuant is somehow involved in the process
@@ -574,7 +603,7 @@ slots:
     mappings:
       - RO:0000056
 
-  - name: actively involved in
+  actively involved in:
     is_a: participates in
     description: >-
       holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
@@ -584,7 +613,7 @@ slots:
     mappings:
       - RO:0002331
 
-  - name: capable of
+  capable of:
     is_a: actively involved in
     description: >-
       holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function. 
@@ -594,7 +623,7 @@ slots:
     mappings:
       - RO:0002215
 
-  - name: derives into
+  derives into:
     is_a: related to
     description: >-
       holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
@@ -605,7 +634,7 @@ slots:
       - RO:0001001
       - SEMMEDDB:CONVERTS_TO
 
-  - name: derives from
+  derives from:
     is_a: related to
     description: >-
       holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
@@ -615,7 +644,7 @@ slots:
     mappings:
       - RO:0001000
 
-  - name: manifestation of
+  manifestation of:
     is_a: related to
     description: >-
       used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
@@ -626,7 +655,7 @@ slots:
       - SEMMEDDB:MANIFESTATION_OF
       - WD:P1557
 
-  - name: produces
+  produces:
     is_a: related to
     description: >-
       holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
@@ -637,7 +666,7 @@ slots:
       - WD:P1056
       - SEMMEDDB:PRODUCES
 
-  - name: precedes
+  precedes:
     is_a: related to
     description: >-
       holds between two processes, where one completes before the other begins
@@ -650,7 +679,7 @@ slots:
       - SEMMEDDB:PRECEDES
       - WD:P156
 
-  - name: same as
+  same as:
     is_a: related to
     description: >-
       holds between two entities that are considered equivalent to each other
@@ -662,12 +691,12 @@ slots:
       - skos:exactMatch
       - WD:P2888
 
-  - name: subclass of
+  subclass of:
     is_a: related to
     description: >-
       holds between two classes where the domain class is a specialization of the range class
-    domain: class
-    range: class
+    domain: ontology class
+    range: ontology class
     in_subset:
       - translator_minimal
     mappings:
@@ -677,14 +706,14 @@ slots:
  
 ## property slots
 
-  - name: node property
+  node property:
     description: >-
       A grouping for any property that holds between a node and a value
     domain: named thing
     mappings:
       - owl:topAnnotationProperty
 
-  - name: id
+  id:
     is_a: node property
     identifier: true
     description: >-
@@ -695,9 +724,8 @@ slots:
     domain: named thing
     range: identifier type
       
-  - name: iri
+  iri:
     is_a: node property
-    identifier: true
     description: >-
       An IRI for the node. This is determined by the id using expansion rules.
     in_subset:
@@ -705,7 +733,7 @@ slots:
     domain: named thing
     range: iri type
   
-  - name: name
+  name:
     is_a: node property
     aliases: ['label', 'display name']
     domain: named thing
@@ -717,7 +745,7 @@ slots:
     mappings:
       - "rdfs:label"
   
-  - name: category
+  category:
     is_a: node property
     domain: named thing
     range: label type
@@ -730,14 +758,14 @@ slots:
     mappings:
       - "rdf:type"
   
-  - name: full name
+  full name:
     is_a: node property
     domain: named thing
     range: label type
     description: >-
       a long-form human readable name for a thing
   
-  - name: description
+  description:
     is_a: node property
     domain: named thing
     range: narrative text
@@ -748,21 +776,21 @@ slots:
     mappings:
       - dcterms:description
   
-  - name: systematic synonym
+  systematic synonym:
     is_a: node property
     domain: named thing
     range: label type
     description: >-
       more commonly used for gene symbols in yeast
     
-  - name: association slot
+  association slot:
     abstract: true
     domain: association
     aliases: ['edge property', 'statement property']
     description: >-
       any slot that relates an association to another entity
     
-  - name: subject
+  subject:
     is_a: association slot
     local_names:
       ga4gh: annotation subject
@@ -777,7 +805,7 @@ slots:
       - owl:annotatedSource
       - oban:association_has_subject
       
-  - name: object
+  object:
     is_a: association slot
     description: >-
       connects an association to the object of the association.
@@ -792,16 +820,16 @@ slots:
       - owl:annotatedTarget
       - oban:association_has_object
 
-  - name: edge label
+  edge label:
     is_a: association slot
     description: >-
       A high-level grouping for the relationship type. AKA minimal predicate.
       This is analogous to category for nodes. 
-    notes: in neo4j this corresponds to the relationship type and the convention is for a snake_case label
+    note: in neo4j this corresponds to the relationship type and the convention is for a snake_case label
     range: label type
     required: false
 
-  - name: relation
+  relation:
     is_a: association slot
     description: >-
       the relationship type by which a subject is connected to an object in an association
@@ -815,19 +843,19 @@ slots:
       - "owl:annotatedProperty"
       - "oban:association_has_predicate"
       
-  - name: negated
+  negated:
     is_a: association slot
-    range: xsd:boolean
+    range: boolean
     description: >-
       if set to true, then the association is negated i.e. is not true
 
-  - name: has confidence level
+  has confidence level:
     is_a: association slot
     range: confidence level
     description: >-
       connects an association to a qualitative term denoting the level of confidence
 
-  - name: has evidence
+  has evidence:
     is_a: association slot
     range: evidence instance
     description: >-
@@ -835,7 +863,7 @@ slots:
     mappings:
       - RO:0002558
       
-  - name: provided by
+  provided by:
     is_a: association slot
     range: provider
     description: >-
@@ -843,7 +871,7 @@ slots:
     mappings:
       - pav:providedBy
 
-  - name: association type
+  association type:
     is_a: association slot
     range: ontology class
     description: >-
@@ -851,21 +879,21 @@ slots:
     mappings:
       - rdf:type
 
-  - name: creation date
+  creation date:
     is_a: node property
-    range: xsd:date
+    range: date
     description: >-
       date on which thing was created. This can be applied to nodes or edges
     mappings:
       - dcterms:created
 
-  - name: update date
+  update date:
     is_a: node property
-    range: xsd:date
+    range: date
     description: >-
       date on which thing was updated. This can be applied to nodes or edges
   
-  - name: in taxon
+  in taxon:
     is_a: related to
     domain: thing with taxon
     range: organism taxon
@@ -877,23 +905,23 @@ slots:
       - RO:0002162
       - WD:P703
       
-  - name: latitude
+  latitude:
     is_a: node property
-    range: xsd:float
+    range: float
     description: >-
       latitude
     mappings:
       - wgs:lat
 
-  - name: longitude
+  longitude:
     is_a: node property
-    range: xsd:float
+    range: float
     description: >-
       longitude
     mappings:
       - wgs:long
 
-  - name: has chemical formula
+  has chemical formula:
     is_a: node property
     range: chemical formula value
     description: >-
@@ -901,52 +929,52 @@ slots:
     mappings:
       - WD:P274
 
-  - name: aggregate statistic
+  aggregate statistic:
     is_a: node property
     abstract: true
       
-  - name: has count
+  has count:
     description: >-
       number of things with a particular property
     is_a: aggregate statistic
     range: integer
 
-  - name: has total
+  has total:
     description: >-
       total number of things in a particular reference set
     is_a: aggregate statistic
     range: integer
 
-  - name: has quotient
+  has quotient:
     is_a: aggregate statistic
     range: double
 
-  - name: has percentage
+  has percentage:
     description: >-
       equivalent to has quotient multiplied by 100
     is_a: aggregate statistic
     range: double
 
-  - name: timepoint
+  timepoint:
     is_a: node property
     range: time type
     description: >-
       a point in time
 
-  - name: stage qualifier
+  stage qualifier:
     is_a: association slot
     range: life stage
     path: "object/during"
     description: >-
       stage at which expression takes place
 
-  - name: quantifier qualifier
+  quantifier qualifier:
     is_a: association slot
     range: ontology class
     description: >-
       A measurable quantity for the object of the association
 
-  - name: qualifiers
+  qualifiers:
     singular_name: qualifier
     description: >-
       connects an association to qualifiers that modify or qualify the meaning of that association
@@ -956,44 +984,44 @@ slots:
     multivalued: true
     range: ontology class
 
-  - name: frequency qualifier
+  frequency qualifier:
     description: >-
       a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     is_a: association slot
     range: frequency value
 
-  - name: severity qualifier
+  severity qualifier:
     description: >-
       a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
     is_a: association slot
     range: severity value
 
-  - name: sex qualifier
+  sex qualifier:
     description: >-
       a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
     is_a: association slot
     range: biological sex
 
-  - name: onset qualifier
+  onset qualifier:
     description: >-
       a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
     is_a: association slot
     range: onset
 
-  - name: clinical modifier qualifier
+  clinical modifier qualifier:
     description: >-
       Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
       with respect to severity, laterality, age of onset, and other aspects
     is_a: association slot
     range: clinical modifier
 
-  - name: sequence variant qualifier
+  sequence variant qualifier:
     description: >-
       a qualifier used in an association where the variant
     is_a: association slot
     range: sequence variant
     
-  - name: publications
+  publications:
     singular_name: publication
     description: >-
       connects an association to publications supporting the association
@@ -1001,13 +1029,13 @@ slots:
     multivalued: true
     range: publication
 
-  - name: has biological sequence
+  has biological sequence:
     is_a: node property
     description: >-
       connects a genomic feature to its sequence
     range: biological sequence
 
-  - name: has molecular consequence
+  has molecular consequence:
     is_a: related to
     description: >-
       connects a sequence variant to a class describing the molecular
@@ -1016,42 +1044,42 @@ slots:
 
     ## genotypes
 
-  - name: has gene
+  has gene:
     is_a: node property
     description: >-
       connects and entity to a single gene
     range: gene
     
-  - name: has zygosity
+  has zygosity:
     is_a: node property
-    domain: single locus feature complement
+#    domain: single locus feature complement
     range: zygosity
 
-  - name: filler
+  filler:
     is_a: node property
     range: named thing
     description: >-
       The value in a property-value tuple
 
-  - name: phase
+  phase:
     is_a: node property
     description: >-
       TODO
 
-  - name: genome build
+  genome build:
     is_a: node property
     description: >-
       TODO
 
-  - name: interbase coordinate
+  interbase coordinate:
     is_a: node property
     description: >-
       TODO
 
-  - name: start interbase coordinate
+  start interbase coordinate:
     is_a: interbase coordinate
 
-  - name: end interbase coordinate
+  end interbase coordinate:
     is_a: interbase coordinate
     
 classes:
@@ -1060,74 +1088,82 @@ classes:
   ## RELATIONSHIP TYPES
   ## ------
 
-  - name: relationship type
+  relationship type:
     description: >-
       An OWL property used as an edge label
   
+
+  attribute:
+    subclass_of: PATO:0000001
+    mixins:
+      - ontology class
+    description: >-
+      A property or characteristic of an entity
+
   ## ------
   ## THINGS
   ## ------
 
-  - name: biological sex
+  biological sex:
     subclass_of: "PATO:0000047"
     is_a: attribute
 
-  - name: phenotypic sex
+  phenotypic sex:
     description: >-
       An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
     subclass_of: "PATO:0001894"
     is_a: biological sex
 
-  - name: genotypic sex
+  genotypic sex:
     description: >-
       An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
     subclass_of: "PATO:0020000"
     is_a: biological sex
 
-  - name: severity value
+  severity value:
     description: >-
       describes the severity of a phenotypic feature or disease
     is_a: attribute
   
-  - name: frequency value
+  frequency value:
     description: >-
       describes the frequency of occurrence of an event or condition
     is_a: attribute
   
-  - name: clinical modifier
+  clinical modifier:
     description: >-
       Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology,
       with respect to severity, laterality, age of onset, and other aspects
     subclass_of: "HP:0012823"
     is_a: attribute
   
-  - name: onset
+  onset:
     description: >-
       The age group in which manifestations appear
     mappings:
       - "HP:0003674"
     is_a: attribute
   
-  - name: relationship quantifier
+  relationship quantifier:
     abstract: true
     mixin: true
     
-  - name: senstivity quantifier
+  senstivity quantifier:
     is_a: relationship quantifier
     mixin: true
     
-  - name: specificity quantifier
+  specificity quantifier:
     is_a: relationship quantifier
     mixin: true
     
-  - name: pathognomonicity quantifier
+  pathognomonicity quantifier:
     is_a: specificity quantifier
     description: >-
       A relationship quantifier between a variant or symptom and a disease, which is
       high when the presence of the feature implies the existence of the disease
     mixin: true
   
-  - name: frequency quantifier
+  frequency quantifier:
     is_a: relationship quantifier
     mixin: true
     slots:
@@ -1136,39 +1172,35 @@ classes:
       - has quotient
       - has percentage
   
-  - name: named thing
+  named thing:
     description: "a databased entity or concept/class"
     slots:
       - id
       - name
       - category
-    slot_usage:
-      - name: id
-        required: true
     subclass_of: BFO:0000001
     mappings:
       - "UMLSSG:OBJC"
       - WD:Q35120
 
-  - name: biological entity
+  biological entity:
     is_a: named thing
     abstract: true
     mappings:
       - WD:Q28845870
         
-  - name: ontology class
+  ontology class:
+    is_a: named thing
     description: "a concept or class in an ontology, vocabulary or thesaurus"
-    mixin: true
       
-  - name: gene ontology class
+  gene ontology class:
     description: >-
       an ontology class that describes a functional aspect of a gene, gene prodoct or complex
-    mixin: true
     is_a: ontology class
     flags:
       - testing
       
-  - name: thing with taxon
+  thing with taxon:
     abstract: true
     mixin: true
     description: >-
@@ -1176,14 +1208,14 @@ classes:
     slots:
       - in taxon
       
-  - name: organism taxon
+  organism taxon:
     is_a: ontology class
     values_from:
       - NCBITaxon
     mappings:
       - WD:Q16521
       
-  - name: organismal entity
+  organismal entity:
     description: >-
       A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
     abstract: true
@@ -1191,7 +1223,7 @@ classes:
     mappings:
       - WD:Q7239
       
-  - name: individual organism
+  individual organism:
     mixins:
       - thing with taxon
     is_a: organismal entity
@@ -1200,13 +1232,13 @@ classes:
       - SIO:010000
       - WD:Q795052
 
-  - name: case
+  case:
     aliases: ['patient', 'proband']
     is_a: individual organism
     description: >-
       An individual organism that has a patient role in some clinical context.
     
-  - name: population of individual organisms
+  population of individual organisms:
     local_names:
       ga4gh: population
     mixins:
@@ -1218,7 +1250,7 @@ classes:
     id_prefixes:
       - ANCESTRO
       
-  - name: biosample
+  biosample:
     aliases: ['biospecimen', 'sample']
     mixins:
       - thing with taxon
@@ -1226,7 +1258,7 @@ classes:
     mappings:
       - SIO:001050
       
-  - name: disease or phenotypic feature
+  disease or phenotypic feature:
     aliases: ['phenome']
     is_a: biological entity
     description: >-
@@ -1237,7 +1269,7 @@ classes:
       - disease
       - phenotypic feature
       
-  - name: disease
+  disease:
     aliases: ['condition', 'disorder', 'medical condition']
     is_a: disease or phenotypic feature
     mappings:
@@ -1246,7 +1278,7 @@ classes:
       - SIO:010299
       - UMLSSG:DISO
       
-  - name: phenotypic feature
+  phenotypic feature:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
     mappings:
@@ -1254,7 +1286,7 @@ classes:
       - SIO:010056
       - WD:Q169872
       
-  - name: environment
+  environment:
     aliases: ['environment', 'exposure', 'experimental condition']
     is_a: biological entity
     description: >-
@@ -1263,7 +1295,7 @@ classes:
     mappings:
       - SIO:000955
 
-  - name: information content entity
+  information content entity:
     aliases: ['information', 'information artefact', 'information entity']
     abstract: true
     is_a: named thing
@@ -1273,7 +1305,7 @@ classes:
       - "IAO:0000030"
       - "UMLSSG:CONC"
       
-  - name: confidence level
+  confidence level:
     is_a: information content entity
     description: >-
       Level of confidence in a statement
@@ -1282,7 +1314,7 @@ classes:
     mappings:
       - "CIO:0000028"
       
-  - name: evidence type
+  evidence type:
     is_a: information content entity
     aliases: ['evidence code']
     description: >-
@@ -1292,7 +1324,7 @@ classes:
     mappings:
       - "ECO:0000000"
       
-  - name: publication
+  publication:
     is_a: information content entity
     aliases: ['reference']
     description: >-
@@ -1302,10 +1334,10 @@ classes:
     mappings:
       - "IAO:0000311"
 
-  - name: administrative entity
+  administrative entity:
     abstract: true
     
-  - name: provider
+  provider:
     is_a: administrative entity
     aliases: ['agent', 'group']
     description: >-
@@ -1313,7 +1345,7 @@ classes:
     mappings:
       - UMLSSG:ORGA
       
-  - name: molecular entity
+  molecular entity:
     is_a: biological entity
     mixins:
       - thing with taxon
@@ -1325,7 +1357,7 @@ classes:
       - SIO:010004
       - WD:Q43460564
 
-  - name: chemical substance
+  chemical substance:
     is_a: molecular entity
     description: >-
       May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex
@@ -1338,7 +1370,7 @@ classes:
     id_prefixes:
       - CHEMBL.TARGET
       
-  - name: drug
+  drug:
     is_a: chemical substance
     description: >-
       A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
@@ -1348,7 +1380,7 @@ classes:
       - WD:Q12140
       - CHEBI:23888
       
-  - name: metabolite
+  metabolite:
     is_a: chemical substance
     description: >-
       Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
@@ -1356,15 +1388,15 @@ classes:
       The CHEBI ID represents a role rather than a substance
     mappings:
       - CHEBI:25212
-      
-  - name: attribute
-    subclass_of: PATO:0000001
-    mixins:
-      - ontology class
-    description: >-
-      A property or characteristic of an entity
+#
+#    attribute:
+#      subclass_of: PATO:0000001
+#      mixins:
+#        - ontology class
+#      description: >-
+#        A property or characteristic of an entity
     
-  - name: anatomical entity
+  anatomical entity:
     is_a: organismal entity
     mixins:
       - thing with taxon
@@ -1376,7 +1408,7 @@ classes:
       - SIO:010046
       - WD:Q4936952
 
-  - name: life stage
+  life stage:
     is_a: organismal entity
     mixins:
       - thing with taxon
@@ -1384,40 +1416,40 @@ classes:
     description: >-
       A stage of development or growth of an organism, including post-natal adult stages
 
-  - name: planetary entity
+  planetary entity:
     is_a: named thing
     description: >-
       Any entity or process that exists at the level of the whole planet
       
-  - name: environmental process
+  environmental process:
     is_a: planetary entity
     mixins:
       - occurrent
     subclass_of: ENVO:02500000
       
-  - name: environmental feature
+  environmental feature:
     is_a: planetary entity
     subclass_of: ENVO:00002297
       
-  - name: clinical entity
+  clinical entity:
     is_a: named thing
     description: >-
       Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
       
-  - name: clinical trial
+  clinical trial:
     is_a: clinical entity
       
-  - name: clinical intervention
+  clinical intervention:
     is_a: clinical entity
       
-  - name: device
+  device:
     is_a: named thing
     description: >-
       A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
     mappings:
       - "UMLSSG:DEVI"
 
-  - name: genomic entity
+  genomic entity:
     is_a: molecular entity
     aliases: ['sequence feature']
     description: >-
@@ -1428,7 +1460,7 @@ classes:
       - "SO:0000110"
       - "UMLSSG:GENE"
 
-  - name: genome
+  genome:
     is_a: genomic entity
     description: >-
       A genome is the sum of genetic material within a cell or virion.
@@ -1437,7 +1469,7 @@ classes:
       - SIO:000984
       - WD:Q7020
 
-  - name: transcript
+  transcript:
     is_a: genomic entity
     description: >-
       An RNA synthesized on a DNA or RNA template by an RNA polymerase
@@ -1445,7 +1477,7 @@ classes:
       - SO:0000673
       - SIO:010450
 
-  - name: exon
+  exon:
     is_a: genomic entity
     description: >-
       A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
@@ -1454,13 +1486,13 @@ classes:
       - SIO:010445
       - WD:Q373027
 
-  - name: coding sequence
+  coding sequence:
     is_a: genomic entity
     mappings:
       - SO:0000316
       - SIO:001390
       
-  - name: macromolecular machine
+  macromolecular machine:
     is_a: genomic entity
     union_of:
       - gene
@@ -1471,13 +1503,13 @@ classes:
       These are the basic units of function in a cell. They either carry out individual
       biological activities, or they encode molecules which do this.
     slot_usage:
-      - name: name
+      name:
         range: symbol type
         description: >-
           genes are typically designated by a short symbol and a full name. We map the symbol to the default display name
           and use an additional slot for full name
       
-  - name: gene or gene product
+  gene or gene product:
     is_a: macromolecular machine
     union_of:
       - gene
@@ -1486,7 +1518,7 @@ classes:
       a union of genes or gene products.
       Frequently an identifier for one will be used as proxy for another
       
-  - name: gene
+  gene:
     is_a: gene or gene product
     aliases: ['locus']
     mappings:
@@ -1505,7 +1537,7 @@ classes:
       - SGD
       - PomBase
       
-  - name: gene product
+  gene product:
     is_a: gene or gene product
     description: >-
       The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
@@ -1515,7 +1547,7 @@ classes:
     mappings:
       - WD:Q424689
     
-  - name: protein
+  protein:
     is_a: gene product
     aliases: ['polypeptide']
     description: >-
@@ -1529,7 +1561,7 @@ classes:
       - PR
       - ENSEMBL
     
-  - name: gene product isoform
+  gene product isoform:
     is_a: gene product
     description: >-
       This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to
@@ -1538,7 +1570,7 @@ classes:
     entity: true
     abstract: true
     
-  - name: protein isoform
+  protein isoform:
     aliases: ['proteoform']
     is_a: protein
     description: >-
@@ -1550,7 +1582,7 @@ classes:
       - PR
       - ENSEMBL
     
-  - name: RNA product
+  RNA product:
     is_a: gene product
     mappings:
       - "CHEBI:33697"
@@ -1559,7 +1591,7 @@ classes:
     id_prefixes:
       - RNAcentral
     
-  - name: RNA product isoform
+  RNA product isoform:
     is_a: RNA product
     description: >-
       Represents a protein that is a specific isoform of the canonical or reference RNA
@@ -1568,7 +1600,7 @@ classes:
     id_prefixes:
       - RNAcentral
       
-  - name: noncoding RNA product
+  noncoding RNA product:
     is_a: RNA product
     id_prefixes:
       - RNAcentral
@@ -1578,7 +1610,7 @@ classes:
     mappings:
       - SIO:001235
       
-  - name: microRNA
+  microRNA:
     is_a: noncoding RNA product
     subclass_of: SO:0000276
     mappings:
@@ -1587,7 +1619,7 @@ classes:
     id_prefixes:
       - MIR
         
-  - name: macromolecular complex
+  macromolecular complex:
     is_a: macromolecular machine
     subclass_of: "GO:0032991"
     mappings:
@@ -1599,13 +1631,13 @@ classes:
       - PR
       - Reactome
       
-  - name: gene grouping
+  gene grouping:
     abstract: true
     mixin: true
     description: >-
       any grouping of multiple genes or gene products
 
-  - name: gene family
+  gene family:
     is_a: molecular entity
     mappings:
       - SIO:001380
@@ -1618,12 +1650,12 @@ classes:
     id_prefixes:
       - PANTHER
       
-  - name: zygosity
+  zygosity:
     is_a: attribute
     mappings:
       - "GENO:0000133"
 
-  - name: genotype
+  genotype:
     is_a: genomic entity
     description: >-
       An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
@@ -1635,7 +1667,7 @@ classes:
       - "GENO:0000536"
       - SIO:001079
 
-  - name: haplotype
+  haplotype:
     is_a: genomic entity
     description: >-
       A set of zero or more Alleles on a single instance of a Sequence[VMC]
@@ -1645,7 +1677,7 @@ classes:
       - GENO:0000871
       - VMC:Haplotype
 
-  - name: sequence variant
+  sequence variant:
     aliases: ['allele']
     local_names:
       agr: allele
@@ -1667,28 +1699,25 @@ classes:
     alt_descriptions:
       - description: "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition"
         source: AGR
-    alt_descriptions:
       - description: "A contiguous change at a Location"
         source: VMC
     slots:
       - has gene
     slot_usage:
-      - slot: has gene
+      has gene:
         multivalued: true
         description: Each allele can be associated with any number of genes
-      - slot: has biological sequence
+      has biological sequence:
         description: >-
           The state of the sequence w.r.t a reference sequence
-      - slot: id
+      id:
         examples:
           - value: ZFIN:ZDB-ALT-980203-1091
             description: ti282a allele from ZFIN
-      - slot: id
-        examples:
           - value: ClinVarVariant:17681
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
 
-  - name: drug exposure
+  drug exposure:
     aliases: ['drug intake', 'drug dose']
     is_a: environment
     description: >-
@@ -1696,7 +1725,7 @@ classes:
 #    slots:
 #      - has input
     slot_usage:
-      - name: drug
+      drug:
         range: chemical substance
         required: true
         multivalued: true
@@ -1704,19 +1733,18 @@ classes:
       - "ECTO:0000509"
       - SIO:001005
 
-  - name: treatment
+  treatment:
     aliases: ['medical action']
     is_a: environment
     description: >-
       A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
     slots:
       - treats
-      - has exposure parts
     slot_usage:
-      - name: treats
+      treats:
         range: disease or phenotypic feature
         required: true
-      - name: has exposure parts
+      has exposure parts:
         multivalued: true
         range: drug exposure
         required: true
@@ -1724,7 +1752,7 @@ classes:
       - "OGMS:0000090"
       - SIO:001398
 
-  - name: geographic location
+  geographic location:
     is_a: planetary entity
     description: >-
       a location that can be described in lat/long coordinates
@@ -1734,20 +1762,18 @@ classes:
     mappings:
       - "UMLSSG:GEOG"
       
-  - name: geographic location at time
-    is_a: planetary entity
+  geographic location at time:
+    is_a: geographic location
     description: >-
       a location that can be described in lat/long coordinates, for a particular time
     slots:
-      - latitude
-      - longitude
       - timepoint
       
   ## ------
   ## ASSOCIATIONS
   ## ------
       
-  - name: association
+  association:
     is_a: information content entity
     description: >-
       A typed association between two entities, supported by evidence
@@ -1766,7 +1792,7 @@ classes:
       - "rdf:Statement"
       - "owl:Axiom"
 
-  - name: genotype to genotype part association
+  genotype to genotype part association:
     is_a: association
     defining_slots:
       - subject
@@ -1774,20 +1800,20 @@ classes:
     description: >-
       Any association between one genotype and a genotypic entity that is a sub-component of it
     slot_usage:
-      - name: relation
+      relation:
         subproperty_of: has variant part
-      - name: subject
+      subject:
         range: genotype
         description: >-
           parent genotype
         definitional: true
-      - name: object
+      object:
         range: genotype
         description: >-
           child genotype
         definitional: true
 
-  - name: genotype to gene association
+  genotype to gene association:
     is_a: association
     defining_slots:
       - subject
@@ -1796,21 +1822,21 @@ classes:
       Any association between a genotype and a gene.
       The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
     slot_usage:
-      - name: relation
+      relation:
         description: >-
           the relationship type used to connect genotype to gene
-      - name: subject
+      subject:
         range: genotype
         description: >-
           parent genotype
         definitional: true
-      - name: object
+      object:
         range: gene
         description: >-
           gene implicated in genotype
         definitional: true
 
-  - name: genotype to variant association
+  genotype to variant association:
     is_a: association
     defining_slots:
       - subject
@@ -1818,21 +1844,21 @@ classes:
     description: >-
       Any association between a genotype and a sequence variant.
     slot_usage:
-      - name: relation
+      relation:
         description: >-
           the relationship type used to connect genotype to gene
-      - name: subject
+      subject:
         range: genotype
         description: >-
           parent genotype
         definitional: true
-      - name: object
+      object:
         range: sequence variant
         description: >-
           gene implicated in genotype
         definitional: true
 
-  - name: gene to gene association
+  gene to gene association:
     aliases: ['molecular or genetic interaction']
     abstract: true
     is_a: association
@@ -1843,13 +1869,13 @@ classes:
       abstract parent class for different kinds of gene-gene or gene product to gene product relationships.
       Includes homology and interaction.
     slot_usage:
-      - name: subject
+      subject:
         range: gene or gene product
         description: >-
           the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary.
           We allow a gene product to stand as proxy for the gene or vice versa
         definitional: true
-      - name: object
+      object:
         range: gene or gene product
         description: >-
           the object gene in the association. If the relation is symmetric, subject vs object is arbitrary.
@@ -1857,7 +1883,7 @@ classes:
         definitional: true
 
 
-  - name: gene to gene homology association
+  gene to gene homology association:
     is_a: gene to gene association
     defining_slots:
       - subject
@@ -1868,24 +1894,24 @@ classes:
       should differ) or paralogy (in which case the species may be the same)
     symmetric: true
     slot_usage:
-      - name: relation
+      relation:
         subproperty_of: homologous to
         description: >-
           homology relationship type
         definitional: true
 
-  - name: molecular interaction
+  pairwise interaction association:
     is_a: association
     mixin: true
     abstract: true
     description: >-
       An interaction at the molecular level between two physical entities
     slot_usage:
-      - name: subject
+      subject:
         range: molecular entity
-      - name: relation
+      relation:
         subproperty_of: molecularly interacts with
-        range: molecularly interacts with
+#        range: molecularly interacts with
         values_from:
           - ro
           - mi
@@ -1894,30 +1920,31 @@ classes:
         examples:
           - value: RO:0002447
             description: the subject molecular phosphorylates the object molecule
-      - name: object
+      object:
         range: molecular entity
-      - slot: interacting molecules category
-        range: class
+      interacting molecules category:
+        # TODO: Is this correct?
+        range: ontology class
         subclass_of: "MI:1046"
         examples:
           - value: MI:1048
             description: smallmolecule-protein
         
-  - name: pairwise gene or protein interaction association
+  pairwise gene to gene interaction:
     is_a: gene to gene association
     defining_slots:
       - subject
       - object
       - relation
     mixins:
-      - molecular interaction
+      - pairwise interaction association
     description: >-
       An interaction between two genes or two gene products.
       May be physical (e.g. protein binding) or genetic (between genes).
       May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
     symmetric: true
     slot_usage:
-      - name: relation
+      relation:
         subproperty_of: molecularly interacts with
         values_from:
           - ro
@@ -1925,7 +1952,7 @@ classes:
         description: "interaction relationship type"
         definitional: true
 
-  - name: cell line to thing association
+  cell line to thing association:
     is_a: association
     defining_slots:
       - subject
@@ -1933,11 +1960,12 @@ classes:
     description: >-
       An relationship between a cell line and another entity
     slot_usage:
-      - name: subject
+      subject:
         range: cell line
         definitional: true
 
-  - name: cell line to disease or phenotypic feature association
+  # TODO: figure out what gives with subject ange
+  cell line to disease or phenotypic feature association:
     is_a: association
     mixins:
       - cell line to thing association
@@ -1945,12 +1973,12 @@ classes:
     description: >-
       An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
     slot_usage:
-      - name: subject
-        range: cell line
-      - name: subject
+      subject:
+#        - range: cell line
+#        - range: disease or phenotypic feature
         range: disease or phenotypic feature
         
-  - name: chemical to thing association
+  chemical to thing association:
     is_a: association
     defining_slots:
       - subject
@@ -1958,12 +1986,12 @@ classes:
     description: >-
       An interaction between a chemical entity and another entity
     slot_usage:
-      - name: subject
+      subject:
         range: chemical substance
         description: "the chemical substance or entity that is an interactor"
         definitional: true
 
-  - name: case to thing association
+  case to thing association:
     is_a: association
     defining_slots:
       - subject
@@ -1971,28 +1999,12 @@ classes:
     description: >-
       An abstract association for use where the case is the subject
     slot_usage:
-      - name: subject
+      subject:
         range: case
         description: "the case (e.g. patient) that has the property"
         definitional: true
 
-  - name: chemical to gene association
-    is_a: association
-    defining_slots:
-      - subject
-      - object
-    mixins:
-      - chemical to thing association
-    description: >-
-      An interaction between a chemical entity or substance and a gene or gene product. The chemical substance may
-      be a drug with the gene being a target of the drug.
-    slot_usage:
-      - name: object
-        range: gene product
-        description: "the gene or gene product with which the chemical interacts"
-        definitional: true
-
-  - name: chemical to disease or phenotypic feature association
+  chemical to disease or phenotypic feature association:
     is_a: association
     mappings:
       - SIO:000993
@@ -2006,12 +2018,12 @@ classes:
       An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to
       or exacerbates the phenotype
     slot_usage:
-      - name: object
+      object:
         range: disease or phenotypic feature
         description: "the disease or phenotype that is affected by the chemical"
         definitional: true
         
-  - name: chemical to pathway association
+  chemical to pathway association:
     is_a: association
     mappings:
       - SIO:001250
@@ -2023,12 +2035,12 @@ classes:
     description: >-
       An interaction between a chemical entity and a biological process or pathway
     slot_usage:
-      - name: object
+      object:
         range: pathway
         description: "the pathway that is affected by the chemical"
         definitional: true
         
-  - name: chemical to gene association
+  chemical to gene association:
     is_a: association
     mappings:
       - SIO:001257
@@ -2040,12 +2052,12 @@ classes:
     description: >-
       An interaction between a chemical entity and a gene or gene product
     slot_usage:
-      - name: object
+      object:
         range: gene or gene product
         description: "the gene or gene product that is affected by the chemical"
         definitional: true
         
-  - name: biosample to thing association
+  biosample to thing association:
     is_a: association
     defining_slots:
       - subject
@@ -2053,13 +2065,13 @@ classes:
     description: >-
       An association between a biosample and something
     slot_usage:
-      - name: subject
+      subject:
         range: biosample
         description: >-
           the biosample being described
         definitional: true
         
-  - name: biosample to disease or phenotypic feature association
+  biosample to disease or phenotypic feature association:
     is_a: association
     defining_slots:
       - subject
@@ -2070,18 +2082,35 @@ classes:
     description: >-
       An association between a biosample and a disease or phenotype
         definitional: true
-        
-  - name: entity to phenotypic feature association
+
+  frequency qualifier:
+    mixin: true
+    description: >-
+      Qualifier for freqency type associations
+
+  entity to feature or disease qualifiers:
+    abstract: true
+    mixin: true
+    is_a: frequency qualifier
+    description: >-
+      Qualifiers for entity to disease or phenotype associations
+    slots:
+      - severity qualifier
+      - onset qualifier
+
+  entity to phenotypic feature association:
     abstract: true
     defining_slots:
       - object
     is_a: association
+    mixins:
+      - entity to feature or disease qualifiers
     slot_usage:
-      - name: description
+      description:
         description: >-
           A description of specific aspects of this phenotype, not otherwise
           covered by the phenotype ontology class
-      - name: object
+      object:
         range: phenotypic feature
         description: "phenotypic class"
         definitional: true
@@ -2095,20 +2124,18 @@ classes:
           - value: MP:0001569
             description: abnormal circulating bilirubin level
     slots:
-      - frequency qualifier
-      - severity qualifier
-      - onset qualifier
       - sex qualifier
 
-  - name: entity to disease association
+  entity to disease association:
     description: >-
       mixin class for any association whose object (target node) is a disease
     abstract: true
     mixin: true
+    is_a: entity to feature or disease qualifiers
     defining_slots:
       - object
     slot_usage:
-      - name: object
+      object:
         range: disease
         description: "disease"
         definitional: true
@@ -2116,19 +2143,15 @@ classes:
         examples:
           - value: MONDO:0020066
             description: "Ehlers-Danlos syndrome"
-    slots:
-      - frequency qualifier
-      - severity qualifier
-      - onset qualifier
       
 
-  - name: disease or phenotypic feature association to thing association
+  disease or phenotypic feature association to thing association:
     abstract: true
     is_a: association
     defining_slots:
       - subject
     slot_usage:
-      - name: subject
+      subject:
         range: disease or phenotypic feature
         description: "disease or phenotype"
         definitional: true
@@ -2138,7 +2161,7 @@ classes:
           - value: MP:0013229
             description: "abnormal brain ventricle size"
 
-  - name: disease or phenotypic feature association to location association
+  disease or phenotypic feature association to location association:
     is_a: disease or phenotypic feature association to thing association
     description: >-
       An association between either a disease or a phenotypic feature and an anatomical entity,
@@ -2146,20 +2169,20 @@ classes:
     mappings:
       - NCIT:R100
     slot_usage:
-      - name: object
+      object:
         range: anatomical entity
         description: "anatomical entity in which the disease or feature is found"
         examples:
           - value: UBERON:0002048
             description: "lung"
 
-  - name: thing to disease or phenotypic feature association
+  thing to disease or phenotypic feature association:
     abstract: true
     is_a: association
     defining_slots:
       - object
     slot_usage:
-      - name: object
+      object:
         range: disease or phenotypic feature
         description: "disease or phenotype"
         definitional: true
@@ -2169,13 +2192,13 @@ classes:
           - value: MP:0013229
             description: "abnormal brain ventricle size"
 
-  - name: disease to thing association
+  disease to thing association:
     abstract: true
     is_a: association
     defining_slots:
       - subject
     slot_usage:
-      - name: subject
+      subject:
         range: disease
         description: "disease class"
         definitional: true
@@ -2186,7 +2209,7 @@ classes:
             description: "Ehlers-Danlos syndrome, vascular type"
 
 
-  - name: genotype to phenotypic feature association
+  genotype to phenotypic feature association:
     is_a: association
     defining_slots:
       - subject
@@ -2198,14 +2221,14 @@ classes:
       - entity to phenotypic feature association
       - genotype to thing association
     slot_usage:
-      - name: relation
+      relation:
         subproperty_of: has phenotype
-      - name: subject
+      subject:
         range: genotype
         description: >-
           genotype that is associated with the phenotypic feature
           
-  - name: environment to phenotypic feature association
+  environment to phenotypic feature association:
     is_a: association
     defining_slots:
       - subject
@@ -2215,11 +2238,11 @@ classes:
     mixins:
       - entity to phenotypic feature association
     slot_usage:
-      - name: subject
+      subject:
         range: environment
         definitional: true
           
-  - name: disease to phenotypic feature association
+  disease to phenotypic feature association:
     is_a: association
     defining_slots:
       - subject
@@ -2229,7 +2252,7 @@ classes:
       - entity to phenotypic feature association
       - disease to thing association
       
-  - name: case to phenotypic feature association
+  case to phenotypic feature association:
     is_a: association
     defining_slots:
       - subject
@@ -2239,17 +2262,17 @@ classes:
       - entity to phenotypic feature association
       - case to thing association
       
-  - name: gene to thing association
+  gene to thing association:
     is_a: association
     defining_slots:
       - subject
     abstract: true
     slot_usage:
-      - name: subject
+      subject:
         range: gene or gene product
         description: "gene that is the subject of the association"
 
-  - name: variant to thing association
+  variant to thing association:
     is_a: association
     local_names:
       ga4gh: variant annotation
@@ -2258,17 +2281,17 @@ classes:
     abstract: true
     mixin: true
     slot_usage:
-      - name: subject
+      subject:
         range: sequence variant
         description: >-
           a sequence variant in which the allele state is associated with some other entity
-        example:
+        examples:
           - value: ClinVar:38077
             description: "ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)"
           - value: ClinGen:CA024716
             description: "chr13:g.32921033G>C (hg19) in ClinGen"
         
-  - name: gene to phenotypic feature association
+  gene to phenotypic feature association:
     is_a: association
     mappings:
       - "http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association"
@@ -2279,14 +2302,14 @@ classes:
       - entity to phenotypic feature association
       - gene to thing association
     slot_usage:
-      - name: subject
+      subject:
         range: gene or gene product
         description: "gene in which variation is correlated with the phenotypic feature"
-        example:
+        examples:
           - value: HGNC:2197
             description: "COL1A1 (Human)"
             
-  - name: gene to disease association
+  gene to disease association:
     is_a: association
     comment: >-
       NCIT:R176 refers to the inverse relationship
@@ -2299,12 +2322,12 @@ classes:
       - entity to disease association
       - gene to thing association
     slot_usage:
-      - name: subject
+      subject:
         range: gene or gene product
         description: >-
           gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
 
-  - name: variant to population association
+  variant to population association:
     description: >-
       An association between a variant and a population, where the variant has particular frequency in the population
     is_a: association
@@ -2314,8 +2337,9 @@ classes:
     mixins:
       - variant to thing association
       - frequency quantifier
+      - frequency qualifier
     slot_usage:
-      - name: subject
+      subject:
         range: sequence variant
         description: >-
           an allele that has a certain frequency in a given population
@@ -2323,36 +2347,32 @@ classes:
           - value: "NC_000017.11:g.43051071A>T"
             description: >-
               17:41203088 A/C in gnomad
-      - name: object
+      object:
         range: population of individual organisms
         description: >-
           the population that is observed to have the frequency
         examples:
           - value: ANCESTRO:0010
             description: African
-      - name: has quotient
+      has quotient:
         description: >-
           frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
         examples:
           - value: "0.0001666"
-      - name: has count
+      has count:
         description: >-
           number in object population that carry a particular allele, aka allele count
         examples:
           - value: "4"
             description: 4 individuals in gnomad set
-      - name: has total
+      has total:
         description: >-
           number all populations that carry a particular allele, aka allele number
         examples:
           - value: "24014"
             description: 24014 individuals in gnomad set
-    slots:
-      - frequency qualifier
-    slots:
-      - frequency qualifier
 
-  - name: population to population association
+  population to population association:
     description: >-
       An association between a two populations
     is_a: association
@@ -2360,21 +2380,21 @@ classes:
       - subject
       - object
     slot_usage:
-      - name: subject
+      subject:
         range: population of individual organisms
         description: >-
           the population that form the subject of the association
-      - name: object
+      object:
         range: population of individual organisms
         description: >-
           the population that form the object of the association
-      - name: relation
+      relation:
         description: >-
           A relationship type that holds between the subject and object populations. Standard mereological
           relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships
           can also be used
       
-  - name: variant to phenotypic feature association
+  variant to phenotypic feature association:
     is_a: association
     defining_slots:
       - subject
@@ -2383,12 +2403,12 @@ classes:
       - variant to thing association
       - entity to phenotypic feature association
     slot_usage:
-      - name: subject
+      subject:
         range: sequence variant
         description: >-
           a sequence variant in which the allele state is associated in some way with the phenotype state
 
-  - name: variant to disease association
+  variant to disease association:
     is_a: association
     comment: TODO decide no how to model pathogenicity
     defining_slots:
@@ -2398,40 +2418,40 @@ classes:
       - variant to thing association
       - entity to disease association
     slot_usage:
-      - name: subject
+      subject:
         description: >-
           a sequence variant in which the allele state is associated in some way with the disease state
-        example:
-          value: ClinVar:52241
-          description: "NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)"
-      - name: relation
+        examples:
+          - value: ClinVar:52241
+            description: "NM_000059.3(BRCA2):c.7007G>C (p.Arg2336Pro)"
+      relation:
         description: >-
           E.g. is pathogenic for
         subproperty_of: related condition
-      - name: object
+      object:
         description: >-
           a disease that is associated with that variant
-        example:
-          value: MONDO:0016419
-          description: hereditary breast cancer
+        examples:
+          - value: MONDO:0016419
+            description: hereditary breast cancer
           
-  - name: model to disease mixin
+  model to disease mixin:
     mixin: true
     abstract: true
     description: >-
       This mixin is used for any association class for which the subject (source node) plays the role of a 'model', in that it recapitulates some
       features of the disease in a way that is useful for studying the disease outside a patient carrying the disease
     slot_usage:
-      - name: subject
+      subject:
         description: >-
           The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits
           similar features, or a gene that when mutated exhibits features of the disease
-      - name: relation
+      relation:
         subproperty_of: model of
         description: >-
           The relationship to the disease
             
-  - name: gene as a model of disease association
+  gene as a model of disease association:
     is_a: gene to disease association
     defining_slots:
       - subject
@@ -2441,13 +2461,13 @@ classes:
       - model to disease mixin
       - entity to disease association
     slot_usage:
-      - name: subject
+      subject:
         range: gene or gene product
         description: >-
           A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene,
           or it may be a gene whose mutants recapitulate core features of the disease.
             
-  - name: gene has variant that contributes to disease association
+  gene has variant that contributes to disease association:
     is_a: gene to disease association
     defining_slots:
       - subject
@@ -2456,23 +2476,23 @@ classes:
     slots:
       - sequence variant qualifier
     slot_usage:
-      - name: subject
+      subject:
         range: gene or gene product
         description: >-
           A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene,
           or it may be a gene whose mutants recapitulate core features of the disease.
 
-  - name: genotype to thing association
+  genotype to thing association:
     is_a: association
     defining_slots:
       - subject
     abstract: true
     slot_usage:
-      - name: subject
+      subject:
         range: genotype
         description: "genotype that is the subject of the association"
         
-  - name: gene to expression site association
+  gene to expression site association:
     is_a: association
     defining_slots:
       - subject
@@ -2480,37 +2500,37 @@ classes:
       - relation
     description: >-
       An association between a gene and an expression site, possibly qualified by stage/timing info.
-    notes: >-
+    note: >-
       TBD: introduce subclasses for distinction between wild-type and experimental conditions?
     see_also: "https://github.com/monarch-initiative/ingest-artifacts/tree/master/sources/BGee"
     slots:
       - stage qualifier
       - quantifier qualifier
     slot_usage:
-      - name: subject
+      subject:
         range: gene or gene product
         description: "gene in which variation is correlated with the phenotypic feature"
-      - name: object
+      object:
         range: anatomical entity
         description: "location in which the gene is expressed"
         subclass_of: UBERON:0001062
         examples:
           - value: UBERON:0002037
             description: cerebellum
-      - name: relation
+      relation:
         description: "expression relationship"
         subproperty_of: expressed in
-      - name: stage qualifier
+      stage qualifier:
         range: life stage
         description: "stage at which the gene is expressed in the site"
         examples:
           - value: UBERON:0000069
             description: larval stage
-      - name: quantifier qualifier
+      quantifier qualifier:
         description: >-
           can be used to indicate magnitude, or also ranking
 
-  - name: sequence variant modulates treatment association
+  sequence variant modulates treatment association:
     is_a: association
     description: >-
       An association between a sequence variant and a treatment or health intervention.
@@ -2522,33 +2542,33 @@ classes:
       - object
     abstract: true
     slot_usage:
-      - name: subject
+      subject:
         range: sequence variant
         description: "variant that modulates the treatment of some disease"
-      - name: object
+      object:
         range: treatment
         description: "treatment whose efficacy is modulated by the subject variant"
 
-  - name: functional association
+  functional association:
     is_a: association
     description: >-
       An association between a macromolecular machine (gene, gene product or complex of gene products) and
       either a molecular activity, a biological process or a cellular location in which a function is executed
     slot_usage:
-      - name: subject
+      subject:
         range: macromolecular machine
-        aliases:
-          - name: bioentity
-            schema: amigo
+#          aliases:
+#            bioentity:
+#              schema: amigo
         description: "gene, product or macromolecular complex that has the function associated with the GO term"
         examples:
           - value: ZFIN:ZDB-GENE-050417-357
             description: twist1b
-      - name: object
+      object:
         range: gene ontology class
-        aliases:
-          - name: class
-            schema: amigo
+#          aliases:
+#            class:
+#              schema: amigo
         description: "class describing the activity, process or localization of the gene product"
         values_from:
           - go
@@ -2558,37 +2578,37 @@ classes:
           - value: GO:0045211
             description: postsynaptic membrane
     
-  - name: macromolecular machine to molecular activity association
+  macromolecular machine to molecular activity association:
     is_a: functional association
     description: >-
       A functional association between a macromolecular machine (gene, gene product or complex) and
       a molecular activity (as represented in the GO molecular function branch), where the entity
       carries out the activity, or contributes to its execution
     slot_usage:
-      - name: object
+      object:
         range: molecular activity
           
-  - name: macromolecular machine to biological process association
+  macromolecular machine to biological process association:
     is_a: functional association
     description: >-
       A functional association between a macromolecular machine (gene, gene product or complex) and
       a biological process or pathway (as represented in the GO biological process branch), where the entity
       carries out some part of the process, regulates it, or acts upstream of it
     slot_usage:
-      - name: object
+      object:
         range: biological process
 
-  - name: macromolecular machine to cellular component association
+  macromolecular machine to cellular component association:
     is_a: functional association
     description: >-
       A functional association between a macromolecular machine (gene, gene product or complex) and
       a cellular component (as represented in the GO cellular component branch), where the entity
       carries out its function in the cellular component
     slot_usage:
-      - name: object
+      object:
         range: cellular component
         
-  - name: gene to go term association
+  gene to go term association:
     aliases: ['functional association']
     is_a: functional association
     mappings:
@@ -2597,20 +2617,20 @@ classes:
       - subject
       - object
     slot_usage:
-      - name: subject
+      subject:
         range: molecular entity
-        aliases:
-          - name: bioentity
-            schema: amigo
+#          aliases:
+#            bioentity:
+#              schema: amigo
         description: "gene, product or macromolecular complex that has the function associated with the GO term"
         examples:
           - value: ZFIN:ZDB-GENE-050417-357
             description: twist1b
-      - name: object
+      object:
         range: gene ontology class
-        aliases:
-          - name: class
-            schema: amigo
+#          aliases:
+#            class:
+#              schema: amigo
         description: "class describing the activity, process or localization of the gene product"
         values_from:
           - go
@@ -2622,16 +2642,16 @@ classes:
   ## SEQUENCE FEATURES
   ## ------
 
-  - name: genomic sequence localization
+  genomic sequence localization:
     is_a: association
     description: >-
       A relationship between a sequence feature and an entity it is localized to. The reference entity may be
       a chromosome, chromosome region or information entity such as a contig
     slot_usage:
-      - name: subject
+      subject:
         aliases: ['sequence feature']
         range: genomic entity  ## todo protein
-      - name: object
+      object:
         aliases: ['reference']
         range: genomic entity ## typically a chromosomel use monochrom
     slots:
@@ -2642,7 +2662,7 @@ classes:
     mappings:
       - faldo:location
 
-  - name: sequence feature relationship
+  sequence feature relationship:
     is_a: association
     defining_slots:
       - subject
@@ -2650,14 +2670,14 @@ classes:
     description: >-
       For example, a particular exon is part of a particular transcript or gene
     slot_usage:
-      - name: subject
+      subject:
         range: genomic entity  ## todo protein
-      - name: object
+      object:
         range: genomic entity ## typically a chromosome
     mappings:
       - GMODChado:feature_relationship
 
-  - name: transcript to gene relationship
+  transcript to gene relationship:
     is_a: sequence feature relationship
     defining_slots:
       - subject
@@ -2665,12 +2685,12 @@ classes:
     description: >-
       A gene is a collection of transcripts
     slot_usage:
-      - name: subject
+      subject:
         range: transcript
-      - name: object
+      object:
         range: gene
 
-  - name: gene to gene product relationship
+  gene to gene product relationship:
     is_a: sequence feature relationship
     defining_slots:
       - subject
@@ -2678,14 +2698,14 @@ classes:
     description: >-
       A gene is transcribed and potentially translated to a gene product
     slot_usage:
-      - name: subject
+      subject:
         range: gene
-      - name: object
+      object:
         range: gene product
-      - name: relation
+      relation:
         subproperty_of: has gene product
 
-  - name: exon to transcript relationship
+  exon to transcript relationship:
     is_a: sequence feature relationship
     defining_slots:
       - subject
@@ -2693,40 +2713,40 @@ classes:
     description: >-
       A transcript is formed from multiple exons
     slot_usage:
-      - name: subject
+      subject:
         range: exon
-      - name: object
+      object:
         range: transcript
 
-  - name: gene regulatory relationship
+  gene regulatory relationship:
     is_a: association
     description: >-
       A regulatory relationship between two genes
     slot_usage:
-      - name: relation
+      relation:
         description: >-
           the direction is always from regulator to regulated
-      - name: subject
+      subject:
         range: gene or gene product
         role: regulatory gene
-      - name: object
+      object:
         range: gene or gene product
         role: regulated gene
   
-  - name: anatomical entity to anatomical entity association
-    schema: gocam
+  anatomical entity to anatomical entity association:
+#      schema: gocam
     is_a: association
     defining_slots:
       - subject
       - object
     slot_usage:
-      - name: subject
+      subject:
         range: anatomical entity
-      - name: object
+      object:
         range: anatomical entity
   
-  - name: anatomical entity to anatomical entity part of association
-    schema: gocam
+  anatomical entity to anatomical entity part of association:
+#      schema: gocam
     is_a: anatomical entity to anatomical entity association
     description: >-
       A relationship between two anatomical entities where the relationship is mereological, i.e
@@ -2735,18 +2755,18 @@ classes:
     defining_slots:
       - relation
     slot_usage:
-      - name: subject
+      subject:
         range: anatomical entity
         description: >-
           the part
-      - name: object
+      object:
         range: anatomical entity
         description: >-
           the whole
-      - name: relation
+      relation:
         subproperty_of: part of
   
-  - name: anatomical entity to anatomical entity ontogenic association
+  anatomical entity to anatomical entity ontogenic association:
     is_a: anatomical entity to anatomical entity association
     description: >-
       A relationship between two anatomical entities where the relationship is ontogenic, i.e
@@ -2755,24 +2775,25 @@ classes:
     defining_slots:
       - relation
     slot_usage:
-      - name: subject
+      subject:
         range: anatomical entity
         description: >-
           the structure at a later time
-      - name: object
+      object:
         range: anatomical entity
         description: >-
           the structure at an earlier time
-      - name: relation
+      relation:
         subproperty_of: develops from
 
-  - name: occurrent
+  occurrent:
     description: >-
       A processual entity
+    is_a: named thing
     mappings:
       - "BFO:0000003"
 
-  - name: biological process or activity
+  biological process or activity:
     is_a: biological entity
     description: >-
       Either an individual molecular activity, or a collection of causally connected molecular activities
@@ -2783,7 +2804,7 @@ classes:
       - GO
       - Reactome
 
-  - name: molecular activity
+  molecular activity:
     is_a: biological process or activity
     aliases: ['molecular function', 'molecular event', 'reaction']
     mixins:
@@ -2796,28 +2817,28 @@ classes:
       - GO
       - Reactome
 
-  - name: activity and behavior
+  activity and behavior:
     is_a: occurrent
     description: >-
       Activity or behavior of any independent integral living, organization or mechanical actor in the world
     mappings:
       - "UMLSSG:ACTI"
 
-  - name: procedure
+  procedure:
     is_a: occurrent
     description: >-
       A series of actions conducted in a certain order or manner
     mappings:
       - "UMLSSG:PROC"
 
-  - name: phenomenon
+  phenomenon:
     is_a: occurrent
     description: >-
       a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
     mappings:
       - "UMLSSG:PHEN"
 
-  - name: biological process
+  biological process:
     is_a: biological process or activity
     mixins:
       - occurrent
@@ -2831,7 +2852,7 @@ classes:
       - GO
       - Reactome
 
-  - name: pathway
+  pathway:
     is_a: biological process
     mappings:
       - GO:0007165
@@ -2842,13 +2863,13 @@ classes:
       - GO
       - Reactome
 
-  - name: physiological process
+  physiological process:
     aliases: ['physiology']
     is_a: biological process
     mappings:
       - "UMLSSG:PHYS"
       
-  - name: cellular component
+  cellular component:
     is_a: anatomical entity
     description: >-
       A location in or around a cell
@@ -2859,7 +2880,7 @@ classes:
     id_prefixes:
       - GO
       
-  - name: cell
+  cell:
     is_a: anatomical entity
     mappings:
       - "GO:0005623"
@@ -2870,14 +2891,14 @@ classes:
       - CL
       - PO
 
-  - name: cell line
+  cell line:
     is_a: biosample
     mappings:
       - "CLO:0000031"
     id_prefixes:
       - CLO
       
-  - name: gross anatomical structure
+  gross anatomical structure:
     aliases: ['tissue', 'organ']
     is_a: anatomical entity
     mappings:

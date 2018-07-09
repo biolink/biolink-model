@@ -1,30 +1,20 @@
----
-layout: default
----
-
-## latitude
+# Slot: latitude
 
 
 latitude
 
-URI: [http://bioentity.io/vocab/latitude](http://bioentity.io/vocab/latitude)
+URI: [http://bioentity.io/vocab/latitude](slot_uri)
 ## Mappings
 
  * [wgs:lat](http://purl.obolibrary.org/obo/wgs_lat)
-
 ## Domain and Range
 
- -> 
-
+[GeographicLocation](GeographicLocation.md) -> **float**
 ## Inheritance
 
-
+ *  is_a: [node property](node_property.md)
 ## Children
-
 
 ## Used in
 
- *  usage: [geographic location](GeographicLocation.html)
- *  usage: [geographic location at time](GeographicLocationAtTime.html)
- *  usage: [geographic location](GeographicLocation.html)
- *  usage: [geographic location at time](GeographicLocationAtTime.html)
+ *  usage: [GeographicLocation](GeographicLocation.md)

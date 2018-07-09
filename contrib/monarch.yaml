@@ -10,33 +10,33 @@ description: Monarch specific extensions
 
 slots:
 
-  - name: has alternate identifier
+  has alternate identifier:
     domain: named thing
-    range: identifier type
+    range: identifier
     multivalued: true
     description: >-
       An alternate identifier for the entity, provided by the source database
 
-  - name: has xref
+  has xref:
     domain: named thing
-    range: identifier type
+    range: identifier
     multivalued: true
     description: >-
       A database cross-reference for the entity, provided by a separate database
 
-  - name: has synonym
+  has synonym:
     domain: named thing
-    range: label type
+    range: name
     multivalued: true
     description: >-
       Alternate labels for an entity
   
 classes:
 
-  - name: cohort
+  cohort:
     is_a: population of individual organisms
   
-  - name: extensions and evidence association mixin
+  extensions and evidence association mixin:
     description: >-
       An injected mixing that adds additional fields to association objects.
       This is a mixture of (a) closures for denormalization (b) evidence
@@ -53,7 +53,7 @@ classes:
       - has evidence type
       - has evidence
 
-  - name: taxon closure mixin
+  taxon closure mixin:
     mixin: true
     description: "An association that includes flattened inlined objects, such as subject_taxon_closure"
     slots:

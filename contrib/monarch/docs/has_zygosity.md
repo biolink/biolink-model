@@ -1,29 +1,20 @@
----
-layout: default
----
-
-## has zygosity
+# Slot: has zygosity
 
 
-None
+A grouping for any property that holds between a node and a value
 
-URI: [http://bioentity.io/vocab/has_zygosity](http://bioentity.io/vocab/has_zygosity)
+URI: [http://bioentity.io/vocab/has_zygosity](slot_uri)
 ## Mappings
 
-
+ * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
- -> [zygosity](Zygosity.html)
-
+[Genotype](Genotype.md) -> [Zygosity](Zygosity.md)
 ## Inheritance
 
-
+ *  is_a: [node property](node_property.md)
 ## Children
-
 
 ## Used in
 
- *  usage: [genotype](Genotype.html)
- *  usage: [allele](Allele.html)
- *  usage: [genotype](Genotype.html)
- *  usage: [allele](Allele.html)
+ *  usage: [Genotype](Genotype.md)

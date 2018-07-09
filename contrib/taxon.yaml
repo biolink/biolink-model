@@ -5,23 +5,23 @@ description: taxon info
 slots:
   
 
-  - name: object taxon
+  object taxon:
     range: organism taxon
     path: object/in_taxon
     description: >-
       the taxonomic class of the entity in the object slot
 
-  - name: object taxon label
+  object taxon label:
     range: label
     path: object/in_taxon/label
 
-  - name: subject taxon
+  subject taxon:
     range: organism taxon
     path: subject/in_taxon
     description: >-
       the taxonomic class of the entity in the object slot
 
-  - name: subject taxon label
+  subject taxon label:
     path: subject/in_taxon/label
     range: label
       

@@ -1,192 +1,77 @@
----
-layout: default
----
-
-## organismal entity
+# Class: organismal entity
 
 
 A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
 
 URI: [http://bioentity.io/vocab/OrganismalEntity](http://bioentity.io/vocab/OrganismalEntity)
+
+![img](images/OrganismalEntity.png)
 ## Mappings
 
-
+ * [WD:Q7239](http://purl.obolibrary.org/obo/WD_Q7239)
 ## Inheritance
 
- *  is_a: [biological entity](BiologicalEntity.html)
-
+ *  is_a: [BiologicalEntity](BiologicalEntity.md)
 ## Children
 
- *  child: [organism taxon](OrganismTaxon.html)
- *  child: [individual organism](IndividualOrganism.html)
- *  child: [population of individual organisms](PopulationOfIndividualOrganisms.html)
- *  child: [biosample](Biosample.html)
- *  child: [anatomical entity](AnatomicalEntity.html)
- *  child: [life stage](LifeStage.html)
- *  child: [organism taxon](OrganismTaxon.html)
- *  child: [individual organism](IndividualOrganism.html)
- *  child: [population of individual organisms](PopulationOfIndividualOrganisms.html)
- *  child: [biosample](Biosample.html)
- *  child: [anatomical entity](AnatomicalEntity.html)
- *  child: [life stage](LifeStage.html)
-
+ * [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part
+ * [Biosample](Biosample.md)
+ * [IndividualOrganism](IndividualOrganism.md)
+ * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
+ * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
 ## Used in
-
- *  class: [cohort](Cohort.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [extensions and evidence association mixin](ExtensionsAndEvidenceAssociationMixin.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [taxon closure mixin](TaxonClosureMixin.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [thing with taxon](ThingWithTaxon.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [individual organism](IndividualOrganism.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [case](Case.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [population of individual organisms](PopulationOfIndividualOrganisms.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [biosample](Biosample.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [disease](Disease.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [phenotypic feature](PhenotypicFeature.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [molecular entity](MolecularEntity.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [chemical substance](ChemicalSubstance.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [anatomical entity](AnatomicalEntity.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [life stage](LifeStage.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genomic entity](GenomicEntity.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genome](Genome.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [transcript](Transcript.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [exon](Exon.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [coding sequence](CodingSequence.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene or gene product](GeneOrGeneProduct.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene](Gene.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene product](GeneProduct.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [protein](Protein.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [RNA product](RnaProduct.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [noncoding RNA product](NoncodingRnaProduct.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [microRNA](Microrna.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [macromolecular complex](MacromolecularComplex.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene family](GeneFamily.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype](Genotype.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [allele](Allele.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [sequence variant](SequenceVariant.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [association](Association.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to gene association](GeneToGeneAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [molecular interaction](MolecularInteraction.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [case to thing association](CaseToThingAssociation.html) references: [case](Case.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [chemical to pathway association](ChemicalToPathwayAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [biosample](Biosample.html)
- *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [biosample](Biosample.html)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [case](Case.html)
- *  class: [gene to thing association](GeneToThingAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [life stage](LifeStage.html)
- *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [cellular component](CellularComponent.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [cell](Cell.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gross anatomical structure](GrossAnatomicalStructure.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [thing with taxon](ThingWithTaxon.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [individual organism](IndividualOrganism.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [case](Case.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [population of individual organisms](PopulationOfIndividualOrganisms.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [biosample](Biosample.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [disease or phenotypic feature](DiseaseOrPhenotypicFeature.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [disease](Disease.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [phenotypic feature](PhenotypicFeature.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [molecular entity](MolecularEntity.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [chemical substance](ChemicalSubstance.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [anatomical entity](AnatomicalEntity.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [life stage](LifeStage.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genomic entity](GenomicEntity.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genome](Genome.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [transcript](Transcript.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [exon](Exon.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [coding sequence](CodingSequence.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene or gene product](GeneOrGeneProduct.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene](Gene.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene product](GeneProduct.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [protein](Protein.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [RNA product](RnaProduct.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [noncoding RNA product](NoncodingRnaProduct.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [microRNA](Microrna.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [macromolecular complex](MacromolecularComplex.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene family](GeneFamily.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype](Genotype.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [allele](Allele.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [sequence variant](SequenceVariant.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to gene association](GeneToGeneAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [molecular interaction](MolecularInteraction.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [pairwise gene or protein interaction association](PairwiseGeneOrProteinInteractionAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [case to thing association](CaseToThingAssociation.html) references: [case](Case.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [chemical to pathway association](ChemicalToPathwayAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [biosample](Biosample.html)
- *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [biosample](Biosample.html)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [case](Case.html)
- *  class: [gene to thing association](GeneToThingAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [life stage](LifeStage.html)
- *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [sequence feature to sequence relationship](SequenceFeatureToSequenceRelationship.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [anatomical entity part of anatomical entity association](AnatomicalEntityPartOfAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [cellular component](CellularComponent.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [cell](Cell.html) references: [organism taxon](OrganismTaxon.html)
- *  class: [gross anatomical structure](GrossAnatomicalStructure.html) references: [organism taxon](OrganismTaxon.html)
 
 ## Fields
 
- * [id](id.html)
-    * __range__: identifier type [required]
-    * inherited from: [named thing](NamedThing.html)
- * [label](label.html)
+ * _[category](category.md) *subsets*: (translator_minimal)_
+    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[description](description.md) *subsets*: (translator_minimal)_
+    * _a human-readable description of a thing_
+    * range: [NarrativeText](NarrativeText.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[full name](full_name.md)_
+    * _a long-form human readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[has alternate identifier](has_alternate_identifier.md)_
+    * _An alternate identifier for the entity, provided by the source database_
+    * range: identifier*
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[has phenotype](has_phenotype.md) *subsets*: (translator_minimal)_
+    * _holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). _
+    * range: [Phenotype](Phenotype.md)
+    * inherited from: [BiologicalEntity](BiologicalEntity.md)
+ * _[has synonym](has_synonym.md)_
+    * _Alternate labels for an entity_
+    * range: [name](name.md) *subsets*: (translator_minimal)*
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[has xref](has_xref.md)_
+    * _A database cross-reference for the entity, provided by a separate database_
+    * range: identifier*
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[id](id.md) *subsets*: (translator_minimal)_
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+    * range: [IdentifierType](IdentifierType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[iri](iri.md) *subsets*: (translator_minimal)_
+    * _An IRI for the node. This is determined by the id using expansion rules._
+    * range: [IriType](IriType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[name](name.md) *subsets*: (translator_minimal)_
     * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[node property](node_property.md)_
+    * _A grouping for any property that holds between a node and a value_
+    * range: **string**
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[related to](related_to.md)_
+    * _A grouping for any relationship type that holds between any two things_
+    * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[systematic synonym](systematic_synonym.md)_
+    * _more commonly used for gene symbols in yeast_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)

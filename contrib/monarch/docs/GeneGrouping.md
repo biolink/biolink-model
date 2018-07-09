@@ -1,24 +1,19 @@
----
-layout: default
----
-
-## gene grouping
+# Class: gene grouping
 
 
 any grouping of multiple genes or gene products
 
 URI: [http://bioentity.io/vocab/GeneGrouping](http://bioentity.io/vocab/GeneGrouping)
-## Mappings
 
+![img](images/GeneGrouping.png)
+## Mappings
 
 ## Inheritance
 
-
 ## Children
 
- *  mixin: [gene family](GeneFamily.html)
- *  mixin: [gene family](GeneFamily.html)
-
+ * [GeneFamily](GeneFamily.md) (mixin)  - any grouping of multiple genes or gene products related by common descent
+## Used in
 
 ## Fields
 

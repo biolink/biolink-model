@@ -1,70 +1,91 @@
----
-layout: default
----
-
-## population to population association
+# Class: population to population association
 
 
 An association between a two populations
 
 URI: [http://bioentity.io/vocab/PopulationToPopulationAssociation](http://bioentity.io/vocab/PopulationToPopulationAssociation)
 
-
-![img](http://yuml.me/diagram/nofunky/class/[association|association type;subject;negated;relation;object;qualifiers;publications;provided by]^-[population to population association|], [population to population association|]-association type >[ontology class|], [population to population association|]-subject >[population of individual organisms|in taxon], [organismal entity|]^-[population of individual organisms|in taxon], [population of individual organisms|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|], [population to population association|]-relation >[relationship type|], [population to population association|]-object >[population of individual organisms|in taxon], [population to population association|]-qualifiers >[ontology class|], [population to population association|]-publications >[publication|], [information content entity|]^-[publication|], [population to population association|]-provided by >[provider|], [administrative entity|]^-[provider|])
+![img](images/PopulationToPopulationAssociation.png)
 ## Mappings
-
 
 ## Inheritance
 
- *  is_a: [association](Association.html)
-
+ *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
 ## Children
 
-
+## Used in
 
 ## Fields
 
- * [association type](association_type.html)
-    * _connects an association to the type of association (e.g. gene to phenotype)_
-    * __range__: [ontology class](OntologyClass.html)
-    * inherited from: [association](Association.html)
- * [subject](subject.html)
-    * _the population that form the subject of the association_
-    * __range__: [population of individual organisms](PopulationOfIndividualOrganisms.html) [required]
-    * inherited from: [association](Association.html)
- * [negated](negated.html)
-    * _if set to true, then the association is negated i.e. is not true_
-    * __range__: xsd:boolean
-    * inherited from: [association](Association.html)
- * [relation](relation.html)
-    * _A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used_
-    * __range__: [relationship type](RelationshipType.html) [required]
-    * inherited from: [association](Association.html)
- * [object](object.html)
+ * _[population to population association.object](population_to_population_association_object.md)_
     * _the population that form the object of the association_
-    * __range__: [population of individual organisms](PopulationOfIndividualOrganisms.html) [required]
-    * inherited from: [association](Association.html)
- * [qualifiers](qualifiers.html)
-    * _connects an association to qualifiers that modify or qualify the meaning of that association_
-    * __range__: [ontology class](OntologyClass.html)*
-    * inherited from: [association](Association.html)
- * [publications](publications.html)
-    * _connects an association to publications supporting the association_
-    * __range__: [publication](Publication.html)*
-    * inherited from: [association](Association.html)
- * [provided by](provided_by.html)
-    * _connects an association to the agent (person, organization or group) that provided it_
-    * __range__: [provider](Provider.html)
-    * inherited from: [association](Association.html)
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type [required]
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
+    * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) [required]
+    * __Local__
+ * _[population to population association.relation](population_to_population_association_relation.md)_
+    * _A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used_
+    * range: [RelationshipType](RelationshipType.md) [required]
+    * __Local__
+ * _[population to population association.subject](population_to_population_association_subject.md)_
+    * _the population that form the subject of the association_
+    * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) [required]
+    * __Local__
+ * _[association slot](association_slot.md)_
+    * _any slot that relates an association to another entity_
+    * range: **string**
+    * inherited from: [Association](Association.md)
+ * _[association type](association_type.md)_
+    * _connects an association to the type of association (e.g. gene to phenotype)_
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [Association](Association.md)
+ * _[category](category.md) *subsets*: (translator_minimal)_
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[description](description.md) *subsets*: (translator_minimal)_
+    * _a human-readable description of a thing_
+    * range: [NarrativeText](NarrativeText.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[full name](full_name.md)_
+    * _a long-form human readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[id](id.md) *subsets*: (translator_minimal)_
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+    * range: [IdentifierType](IdentifierType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[iri](iri.md) *subsets*: (translator_minimal)_
+    * _An IRI for the node. This is determined by the id using expansion rules._
+    * range: [IriType](IriType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[name](name.md) *subsets*: (translator_minimal)_
+    * _A human-readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[negated](negated.md)_
+    * _if set to true, then the association is negated i.e. is not true_
+    * range: **boolean**
+    * inherited from: [Association](Association.md)
+ * _[node property](node_property.md)_
+    * _A grouping for any property that holds between a node and a value_
+    * range: **string**
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[provided by](provided_by.md)_
+    * _connects an association to the agent (person, organization or group) that provided it_
+    * range: [Provider](Provider.md)
+    * inherited from: [Association](Association.md)
+ * _[publications](publications.md)_
+    * _connects an association to publications supporting the association_
+    * range: [Publication](Publication.md)*
+    * inherited from: [Association](Association.md)
+ * _[qualifiers](qualifiers.md)_
+    * _connects an association to qualifiers that modify or qualify the meaning of that association_
+    * range: [OntologyClass](OntologyClass.md)*
+    * inherited from: [Association](Association.md)
+ * _[related to](related_to.md)_
+    * _A grouping for any relationship type that holds between any two things_
+    * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[systematic synonym](systematic_synonym.md)_
+    * _more commonly used for gene symbols in yeast_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)

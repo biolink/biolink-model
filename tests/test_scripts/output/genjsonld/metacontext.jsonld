@@ -1,0 +1,174 @@
+{
+   "comments": "Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-07-07 15:25\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "@context": {
+      "biolink": "http://bioentity.io/vocab/",
+      "meta": "http://bioentity.io/meta/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "OIO": "http://www.geneontology.org/formats/oboInOwl#",
+      "@vocab": "http://bioentity.io/vocab/",
+      "@base": "http://bioentity.io/vocab/",
+      "abstract": {
+         "@type": "xsd:boolean"
+      },
+      "aliases": {
+         "@container": "@list"
+      },
+      "alt_descriptions": {
+         "@container": "@list"
+      },
+      "apply_to": {
+         "@type": "@id"
+      },
+      "classes": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "comment": {
+         "@id": "skos:editorialNote"
+      },
+      "default_curi_maps": {
+         "@container": "@list"
+      },
+      "default_type": {
+         "@type": "@id"
+      },
+      "defining_slots": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "definitional": {
+         "@type": "xsd:boolean"
+      },
+      "description": {
+         "@id": "skos:definition"
+      },
+      "domain": {
+         "@type": "@id"
+      },
+      "entity": {
+         "@type": "xsd:boolean"
+      },
+      "examples": {
+         "@type": "@id",
+         "@container": "@list",
+         "@id": "skos:example"
+      },
+      "flags": {
+         "@container": "@list"
+      },
+      "from_schema": {
+         "@id": "skos:inScheme"
+      },
+      "generation_date": {
+         "@type": "xsd:date"
+      },
+      "id_prefixes": {
+         "@container": "@list"
+      },
+      "identifier": {
+         "@type": "xsd:boolean"
+      },
+      "imports": {
+         "@container": "@list"
+      },
+      "in_subset": {
+         "@container": "@list",
+         "@id": "OIO:inSubset"
+      },
+      "inherited": {
+         "@type": "xsd:boolean"
+      },
+      "inlined": {
+         "@type": "xsd:boolean"
+      },
+      "inverse": {
+         "@type": "@id",
+         "@id": "owl:inverseOf"
+      },
+      "is_a": {
+         "@type": "@id",
+         "@id": "rdf:type"
+      },
+      "is_class_field": {
+         "@type": "xsd:boolean"
+      },
+      "local_names": {
+         "@container": "@list"
+      },
+      "mappings": {
+         "@container": "@list"
+      },
+      "mixin": {
+         "@type": "xsd:boolean"
+      },
+      "mixins": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "multivalued": {
+         "@type": "xsd:boolean"
+      },
+      "name": {
+         "@id": "rdfs:label"
+      },
+      "note": {
+         "@id": "skos:note"
+      },
+      "object_property": {
+         "@type": "xsd:boolean"
+      },
+      "prefixes": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "primary_key": {
+         "@type": "xsd:boolean"
+      },
+      "range": {
+         "@type": "@id"
+      },
+      "required": {
+         "@type": "xsd:boolean"
+      },
+      "see_also": {
+         "@id": "skos:related"
+      },
+      "slot_usage": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "slots": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "source_file_size": {
+         "@type": "xsd:integer"
+      },
+      "subclass_of": {
+         "@type": "@id",
+         "@id": "rdfs:subClassOf"
+      },
+      "subproperty_of": {
+         "@type": "@id",
+         "@id": "rdfs:subPropertyOf"
+      },
+      "symmetric": {
+         "@type": "xsd:boolean"
+      },
+      "types": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "union_of": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "values_from": {
+         "@container": "@list"
+      }
+   }
+}

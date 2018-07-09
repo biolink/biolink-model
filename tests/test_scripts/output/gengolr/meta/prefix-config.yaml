@@ -1,0 +1,15 @@
+description: Prefix URI map
+display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [prefix]
+document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [prefix]
+fields:
+- description: the nsname (sans ':' for a given prefix)
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [local
+      name]
+  id: local_name
+- description: A URI associated with a given prefix
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [prefix
+      uri]
+  id: prefix_uri
+id: prefix
+schema_generating: true
+weight: 20

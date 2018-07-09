@@ -1,79 +1,34 @@
----
-layout: default
----
-
-## relationship type
+# Class: relationship type
 
 
 An OWL property used as an edge label
 
 URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/RelationshipType)
 
-
-![img](http://yuml.me/diagram/nofunky/class/)
+![img](images/RelationshipType.png)
 ## Mappings
-
 
 ## Inheritance
 
-
 ## Children
-
 
 ## Used in
 
- *  class: [association](Association.html) references: [relationship type](RelationshipType.html)
- *  class: [genotype to genotype part association](GenotypeToGenotypePartAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [genotype to variant association](GenotypeToVariantAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [gene to gene association](GeneToGeneAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [cell line to thing association](CellLineToThingAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [cell line to disease or phenotypic feature association](CellLineToDiseaseOrPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [chemical to thing association](ChemicalToThingAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [case to thing association](CaseToThingAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [chemical to disease or phenotypic feature association](ChemicalToDiseaseOrPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [chemical to pathway association](ChemicalToPathwayAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [biosample to thing association](BiosampleToThingAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [biosample to disease or phenotypic feature association](BiosampleToDiseaseOrPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [entity to phenotypic feature association](EntityToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [disease or phenotypic feature association to thing association](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [disease or phenotypic feature association to location association](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [thing to disease or phenotypic feature association](ThingToDiseaseOrPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [disease to thing association](DiseaseToThingAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [genotype to phenotypic feature association](GenotypeToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [environment to phenotypic feature association](EnvironmentToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [disease to phenotypic feature association](DiseaseToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [case to phenotypic feature association](CaseToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [gene to thing association](GeneToThingAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [variant to thing association](VariantToThingAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [variant to population association](VariantToPopulationAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [population to population association](PopulationToPopulationAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [variant to phenotypic feature association](VariantToPhenotypicFeatureAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [variant to disease association](VariantToDiseaseAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [genotype to thing association](GenotypeToThingAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [sequence variant modulates treatment association](SequenceVariantModulatesTreatmentAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [functional association](FunctionalAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [gene to go term association](GeneToGoTermAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [genomic sequence localization](GenomicSequenceLocalization.html) references: [relationship type](RelationshipType.html)
- *  class: [sequence feature relationship](SequenceFeatureRelationship.html) references: [relationship type](RelationshipType.html)
- *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [relationship type](RelationshipType.html)
- *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [relationship type](RelationshipType.html)
- *  class: [exon to transcript relationship](ExonToTranscriptRelationship.html) references: [relationship type](RelationshipType.html)
- *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [relationship type](RelationshipType.html)
- *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [anatomical entity to anatomical entity part of association](AnatomicalEntityToAnatomicalEntityPartOfAssociation.html) references: [relationship type](RelationshipType.html)
- *  class: [anatomical entity to anatomical entity ontogenic association](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.html) references: [relationship type](RelationshipType.html)
-
+ *  class: **[AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md)** *[anatomical entity to anatomical entity ontogenic association.relation](anatomical_entity_to_anatomical_entity_ontogenic_association_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md)** *[anatomical entity to anatomical entity part of association.relation](anatomical_entity_to_anatomical_entity_part_of_association_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md)** *[gene regulatory relationship.relation](gene_regulatory_relationship_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[gene to expression site association.relation](gene_to_expression_site_association_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md)** *[gene to gene homology association.relation](gene_to_gene_homology_association_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)** *[gene to gene product relationship.relation](gene_to_gene_product_relationship_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)** *[genotype to gene association.relation](genotype_to_gene_association_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)** *[genotype to genotype part association.relation](genotype_to_genotype_part_association_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)** *[genotype to phenotypic feature association.relation](genotype_to_phenotypic_feature_association_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)** *[genotype to variant association.relation](genotype_to_variant_association_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[ModelToDiseaseMixin](ModelToDiseaseMixin.md)** *[model to disease mixin.relation](model_to_disease_mixin_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md)** *[pairwise gene to gene interaction.relation](pairwise_gene_to_gene_interaction_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)** *[pairwise interaction association.relation](pairwise_interaction_association_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)** *[population to population association.relation](population_to_population_association_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[Association](Association.md)** *[relation](relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)** *[variant to disease association.relation](variant_to_disease_association_relation.md)* **[RelationshipType](RelationshipType.md)**
 ## Fields
 

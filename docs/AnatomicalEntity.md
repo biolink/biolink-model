@@ -1,58 +1,84 @@
----
-layout: default
----
-
-## anatomical entity
+# Class: anatomical entity
 
 
 A subcellular location, cell type or gross anatomical part
 
 URI: [http://bioentity.io/vocab/AnatomicalEntity](http://bioentity.io/vocab/AnatomicalEntity)
 
-
-![img](http://yuml.me/diagram/nofunky/class/[organismal entity|]^-[anatomical entity|in taxon], [anatomical entity|in taxon]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
+![img](images/AnatomicalEntity.png)
 ## Mappings
 
  * [UMLSSG:ANAT](http://purl.obolibrary.org/obo/UMLSSG_ANAT)
  * [SIO:010046](http://semanticscience.org/resource/SIO_010046)
  * [WD:Q4936952](http://purl.obolibrary.org/obo/WD_Q4936952)
  * [UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062)
-
 ## Inheritance
 
- *  is_a: [organismal entity](OrganismalEntity.html)
- *  mixin: [thing with taxon](ThingWithTaxon.html)
-
+ *  is_a: [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
+ *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
 ## Children
 
- *  child: [cellular component](CellularComponent.html)
- *  child: [cell](Cell.html)
- *  child: [gross anatomical structure](GrossAnatomicalStructure.html)
-
+ * [Cell](Cell.md)
+ * [CellularComponent](CellularComponent.md) - A location in or around a cell
+ * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
 ## Used in
 
- *  class: [disease or phenotypic feature association to location association](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.html) references: [cellular component](CellularComponent.html)
- *  class: [anatomical entity to anatomical entity association](AnatomicalEntityToAnatomicalEntityAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [anatomical entity to anatomical entity part of association](AnatomicalEntityToAnatomicalEntityPartOfAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
- *  class: [anatomical entity to anatomical entity ontogenic association](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.html) references: [anatomical entity](AnatomicalEntity.html)
-
+ *  class: **[AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)** *[anatomical entity to anatomical entity association.object](anatomical_entity_to_anatomical_entity_association_object.md)* **[AnatomicalEntity](AnatomicalEntity.md)**
+ *  class: **[AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)** *[anatomical entity to anatomical entity association.subject](anatomical_entity_to_anatomical_entity_association_subject.md)* **[AnatomicalEntity](AnatomicalEntity.md)**
+ *  class: **[AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md)** *[anatomical entity to anatomical entity ontogenic association.object](anatomical_entity_to_anatomical_entity_ontogenic_association_object.md)* **[AnatomicalEntity](AnatomicalEntity.md)**
+ *  class: **[AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md)** *[anatomical entity to anatomical entity ontogenic association.subject](anatomical_entity_to_anatomical_entity_ontogenic_association_subject.md)* **[AnatomicalEntity](AnatomicalEntity.md)**
+ *  class: **[AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md)** *[anatomical entity to anatomical entity part of association.object](anatomical_entity_to_anatomical_entity_part_of_association_object.md)* **[AnatomicalEntity](AnatomicalEntity.md)**
+ *  class: **[AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md)** *[anatomical entity to anatomical entity part of association.subject](anatomical_entity_to_anatomical_entity_part_of_association_subject.md)* **[AnatomicalEntity](AnatomicalEntity.md)**
+ *  class: **[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md)** *[disease or phenotypic feature association to location association.object](disease_or_phenotypic_feature_association_to_location_association_object.md)* **[AnatomicalEntity](AnatomicalEntity.md)**
+ *  class: **[GeneOrGeneProduct](GeneOrGeneProduct.md)** *[expressed in](expressed_in.md)* **[AnatomicalEntity](AnatomicalEntity.md)**
+ *  class: **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[gene to expression site association.object](gene_to_expression_site_association_object.md)* **[AnatomicalEntity](AnatomicalEntity.md)**
 ## Fields
 
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
-    * _A human-readable name for a thing_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
+ * _[expresses](expresses.md) *subsets*: (translator_minimal)_
+    * _holds between an anatomical entity and gene or gene product that is expressed there_
+    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+    * __Local__
+ * _[category](category.md) *subsets*: (translator_minimal)_
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [in taxon](in_taxon.html) *subsets: translator_minimal*
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[description](description.md) *subsets*: (translator_minimal)_
+    * _a human-readable description of a thing_
+    * range: [NarrativeText](NarrativeText.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[full name](full_name.md)_
+    * _a long-form human readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[has phenotype](has_phenotype.md) *subsets*: (translator_minimal)_
+    * _holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). _
+    * range: [Phenotype](Phenotype.md)
+    * inherited from: [BiologicalEntity](BiologicalEntity.md)
+ * _[id](id.md) *subsets*: (translator_minimal)_
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+    * range: [IdentifierType](IdentifierType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[in taxon](in_taxon.md) *subsets*: (translator_minimal)_
     * _connects a thing to a class representing a taxon_
-    * __range__: [organism taxon](OrganismTaxon.html)
-    * inherited from: [thing with taxon](ThingWithTaxon.html)
+    * range: [OrganismTaxon](OrganismTaxon.md)
+    * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
+ * _[iri](iri.md) *subsets*: (translator_minimal)_
+    * _An IRI for the node. This is determined by the id using expansion rules._
+    * range: [IriType](IriType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[name](name.md) *subsets*: (translator_minimal)_
+    * _A human-readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[node property](node_property.md)_
+    * _A grouping for any property that holds between a node and a value_
+    * range: **string**
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[related to](related_to.md)_
+    * _A grouping for any relationship type that holds between any two things_
+    * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[systematic synonym](systematic_synonym.md)_
+    * _more commonly used for gene symbols in yeast_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)

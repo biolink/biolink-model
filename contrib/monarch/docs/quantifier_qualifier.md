@@ -1,28 +1,20 @@
----
-layout: default
----
-
-## quantifier qualifier
+# Slot: quantifier qualifier
 
 
 A measurable quantity for the object of the association
 
-URI: [http://bioentity.io/vocab/quantifier_qualifier](http://bioentity.io/vocab/quantifier_qualifier)
+URI: [http://bioentity.io/vocab/quantifier_qualifier](slot_uri)
 ## Mappings
-
 
 ## Domain and Range
 
- -> 
-
+[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) -> [OntologyClass](OntologyClass.md)
 ## Inheritance
 
- *  is_a: [association slot](association_slot.html)
-
+ *  is_a: [association slot](association_slot.md)
 ## Children
 
-
+ *  child: [gene to expression site association.quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)
 ## Used in
 
- *  usage: [gene to expression site association](GeneToExpressionSiteAssociation.html)
- *  usage: [gene to expression site association](GeneToExpressionSiteAssociation.html)
+ *  usage: [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)

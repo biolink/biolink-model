@@ -1,0 +1,96 @@
+description: An association between a variant and a population, where the variant
+  has particular frequency in the population
+display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [variant
+    to population association]
+document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [variant
+    to population association]
+fields:
+- description: A unique identifier for a thing. Must be either a CURIE shorthand for
+    a URI or a complete URI
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [id]
+  id: id
+- description: A human-readable name for a thing
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [name]
+  id: name
+- description: Name of the high level ontology class in which this entity is categorized.
+    Corresponds to the label for the biolink entity type class. In a neo4j database
+    this MAY correspond to the neo4j label tag
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [category]
+  id: category
+- description: A grouping for any relationship type that holds between any two things
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [related
+      to]
+  id: related_to
+- description: A grouping for any property that holds between a node and a value
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [node property]
+  id: node_property
+- description: An IRI for the node. This is determined by the id using expansion rules.
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [iri]
+  id: iri
+- description: a long-form human readable name for a thing
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [full name]
+  id: full_name
+- description: a human-readable description of a thing
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [description]
+  id: description
+- description: more commonly used for gene symbols in yeast
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [systematic
+      synonym]
+  id: systematic_synonym
+- description: connects an association to the type of association (e.g. gene to phenotype)
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association
+      type]
+  id: association_type
+- description: if set to true, then the association is negated i.e. is not true
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [negated]
+  id: negated
+- description: the relationship type by which a subject is connected to an object
+    in an association
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [relation]
+  id: relation
+- cardinality: multi
+  description: connects an association to qualifiers that modify or qualify the meaning
+    of that association
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [qualifiers]
+  id: qualifiers
+- cardinality: multi
+  description: connects an association to publications supporting the association
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [publications]
+  id: publications
+- description: connects an association to the agent (person, organization or group)
+    that provided it
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [provided
+      by]
+  id: provided_by
+- description: any slot that relates an association to another entity
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association
+      slot]
+  id: association_slot
+- description: equivalent to has quotient multiplied by 100
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [has percentage]
+  id: has_percentage
+- description: an allele that has a certain frequency in a given population
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [variant
+      to population association subject]
+  id: subject
+- description: the population that is observed to have the frequency
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [variant
+      to population association object]
+  id: object
+- description: frequency of allele in population, expressed as a number with allele
+    divided by number in reference population, aka allele frequency
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [variant
+      to population association has quotient]
+  id: has_quotient
+- description: number in object population that carry a particular allele, aka allele
+    count
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [variant
+      to population association has count]
+  id: has_count
+- description: number all populations that carry a particular allele, aka allele number
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [variant
+      to population association has total]
+  id: has_total
+id: variant_to_population_association
+schema_generating: true
+weight: 20

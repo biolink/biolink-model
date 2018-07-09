@@ -1,69 +1,82 @@
----
-layout: default
----
-
-## macromolecular machine
+# Class: macromolecular machine
 
 
 A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
 
 URI: [http://bioentity.io/vocab/MacromolecularMachine](http://bioentity.io/vocab/MacromolecularMachine)
 
-
-![img](http://yuml.me/diagram/nofunky/class/[genomic entity|has biological sequence]^-[macromolecular machine|], [macromolecular machine|]-in taxon >[organism taxon|], [ontology class|]^-[organism taxon|])
+![img](images/MacromolecularMachine.png)
 ## Mappings
-
 
 ## Inheritance
 
- *  is_a: [genomic entity](GenomicEntity.html)
-
+ *  is_a: [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
 ## Children
 
- *  child: [gene or gene product](GeneOrGeneProduct.html)
- *  child: [macromolecular complex](MacromolecularComplex.html)
-
+ * [GeneOrGeneProduct](GeneOrGeneProduct.md) - a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
+ * [MacromolecularComplex](MacromolecularComplex.md)
 ## Used in
 
- *  class: [sequence variant](SequenceVariant.html) references: [gene](Gene.html)
- *  class: [genotype to gene association](GenotypeToGeneAssociation.html) references: [gene](Gene.html)
- *  class: [gene to gene association](GeneToGeneAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene to gene homology association](GeneToGeneHomologyAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [gene product](GeneProduct.html)
- *  class: [chemical to gene association](ChemicalToGeneAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene to thing association](GeneToThingAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene to phenotypic feature association](GeneToPhenotypicFeatureAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene to disease association](GeneToDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene as a model of disease association](GeneAsAModelOfDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene has variant that contributes to disease association](GeneHasVariantThatContributesToDiseaseAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [gene to expression site association](GeneToExpressionSiteAssociation.html) references: [gene or gene product](GeneOrGeneProduct.html)
- *  class: [functional association](FunctionalAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
- *  class: [macromolecular machine to molecular activity association](MacromolecularMachineToMolecularActivityAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
- *  class: [macromolecular machine to biological process association](MacromolecularMachineToBiologicalProcessAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
- *  class: [macromolecular machine to cellular component association](MacromolecularMachineToCellularComponentAssociation.html) references: [macromolecular machine](MacromolecularMachine.html)
- *  class: [transcript to gene relationship](TranscriptToGeneRelationship.html) references: [gene](Gene.html)
- *  class: [gene to gene product relationship](GeneToGeneProductRelationship.html) references: [gene](Gene.html)
- *  class: [gene regulatory relationship](GeneRegulatoryRelationship.html) references: [gene or gene product](GeneOrGeneProduct.html)
-
+ *  class: **[FunctionalAssociation](FunctionalAssociation.md)** *[functional association.subject](functional_association_subject.md)* **[MacromolecularMachine](MacromolecularMachine.md)**
 ## Fields
 
- * [has biological sequence](has_biological_sequence.html)
-    * _connects a genomic feature to its sequence_
-    * __range__: biological sequence
-    * inherited from: [genomic entity](GenomicEntity.html)
- * [id](id.html) *subsets: translator_minimal*
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * __range__: identifier type
-    * inherited from: [named thing](NamedThing.html)
- * [name](name.html) *subsets: translator_minimal*
+ * _[macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)_
     * _genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name_
-    * __range__: symbol type
-    * inherited from: [named thing](NamedThing.html)
- * [category](category.html) *subsets: translator_minimal*
+    * range: [SymbolType](SymbolType.md)
+    * __Local__
+ * _[biomarker for](biomarker_for.md) *subsets*: (translator_minimal)_
+    * _holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature._
+    * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+    * inherited from: [MolecularEntity](MolecularEntity.md)
+ * _[category](category.md) *subsets*: (translator_minimal)_
     * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
-    * __range__: label type
-    * inherited from: [named thing](NamedThing.html)
- * [in taxon](in_taxon.html) *subsets: translator_minimal*
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[description](description.md) *subsets*: (translator_minimal)_
+    * _a human-readable description of a thing_
+    * range: [NarrativeText](NarrativeText.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[full name](full_name.md)_
+    * _a long-form human readable name for a thing_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[has biological sequence](has_biological_sequence.md)_
+    * _connects a genomic feature to its sequence_
+    * range: [BiologicalSequence](BiologicalSequence.md)
+    * inherited from: [GenomicEntity](GenomicEntity.md)
+ * _[has phenotype](has_phenotype.md) *subsets*: (translator_minimal)_
+    * _holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). _
+    * range: [Phenotype](Phenotype.md)
+    * inherited from: [BiologicalEntity](BiologicalEntity.md)
+ * _[id](id.md) *subsets*: (translator_minimal)_
+    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+    * range: [IdentifierType](IdentifierType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[in taxon](in_taxon.md) *subsets*: (translator_minimal)_
     * _connects a thing to a class representing a taxon_
-    * __range__: [organism taxon](OrganismTaxon.html)
-    * inherited from: [thing with taxon](ThingWithTaxon.html)
+    * range: [OrganismTaxon](OrganismTaxon.md)
+    * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
+ * _[iri](iri.md) *subsets*: (translator_minimal)_
+    * _An IRI for the node. This is determined by the id using expansion rules._
+    * range: [IriType](IriType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)_
+    * _holds between two entities that make physical contact as part of some interaction_
+    * range: [MolecularEntity](MolecularEntity.md)
+    * inherited from: [MolecularEntity](MolecularEntity.md)
+ * _[node property](node_property.md)_
+    * _A grouping for any property that holds between a node and a value_
+    * range: **string**
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[regulates, entity to entity](regulates_entity_to_entity.md) *subsets*: (translator_minimal)_
+    * _describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be._
+    * range: [MolecularEntity](MolecularEntity.md)
+    * inherited from: [MolecularEntity](MolecularEntity.md)
+ * _[related to](related_to.md)_
+    * _A grouping for any relationship type that holds between any two things_
+    * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * _[systematic synonym](systematic_synonym.md)_
+    * _more commonly used for gene symbols in yeast_
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)

@@ -1,0 +1,9 @@
+Usage: gen-owl [OPTIONS] YAMLFILE
+
+  Generate an OWL representation of a biolink model
+
+Options:
+  -f, --format [json-ld|xml|n3|turtle|ttl|ntriples|nt|nt11|nquads|trix|trig|hturtle|rdfa|mdata|microdata|rdfa1.0|rdfa1.1|html]
+                                  Output format
+  -o, --output TEXT               Output file name
+  --help                          Show this message and exit.
