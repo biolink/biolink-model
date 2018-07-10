@@ -573,6 +573,7 @@ PairwiseGeneToGeneInteraction typeimplements PairwiseInteractionAssociation
 PairwiseInteractionAssociation interface
   {
     subject: MolecularEntity!
+    id: String
     relation: RelationshipType!
     object: MolecularEntity!
     interactingMoleculesCategory: OntologyClass

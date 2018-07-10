@@ -48,7 +48,7 @@ URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing
     * _An IRI for the node. This is determined by the id using expansion rules._
     * range: [IriType](IriType.md)
     * __Local__
- * _[name](name.md) *subsets*: (translator_minimal)_
+ * [name](name.md) _subsets_: (translator_minimal)
     * _A human-readable name for a thing_
     * range: [LabelType](LabelType.md)
     * __Local__

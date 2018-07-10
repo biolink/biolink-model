@@ -21,6 +21,10 @@ URI: [http://bioentity.io/vocab/PairwiseInteractionAssociation](http://bioentity
  * _[pairwise interaction association.interacting molecules category](interacting_molecules_category.md)_
     * range: [OntologyClass](OntologyClass.md)
     * __Local__
+ * _[pairwise interaction association.id](pairwise_interaction_association_id.md) *subsets*: (translator_minimal)_
+    * _identifier for the interaction. This may come from an interaction database such as IMEX._
+    * range: [IdentifierType](IdentifierType.md)
+    * __Local__
  * _[pairwise interaction association.object](pairwise_interaction_association_object.md)_
     * _connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object._
     * range: [MolecularEntity](MolecularEntity.md) [required]
@@ -53,10 +57,6 @@ URI: [http://bioentity.io/vocab/PairwiseInteractionAssociation](http://bioentity
  * _[full name](full_name.md)_
     * _a long-form human readable name for a thing_
     * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * _[id](id.md) *subsets*: (translator_minimal)_
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
-    * range: [IdentifierType](IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
  * _[iri](iri.md) *subsets*: (translator_minimal)_
     * _An IRI for the node. This is determined by the id using expansion rules._

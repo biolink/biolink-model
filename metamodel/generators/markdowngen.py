@@ -207,9 +207,9 @@ class MarkdownGenerator(Generator):
             return True
 
     def slot_field(self, cls: ClassDefinition, slot: SlotDefinition) -> None:
-        self.bullet(f'_{self.link(slot)}_')
+        self.bullet(f'{self.link(slot)}')
         if slot.description:
-            self.bullet(f'_{slot.description}_', level=1)
+            self.bullet(f'Description: {slot.description}', level=1)
         qual = '*' if slot.multivalued else ''
         qual += ' [required]' if slot.required else ''
         self.bullet(f'range: {self.link(slot.range) if slot.range else ""}{qual}', level=1)
@@ -275,7 +275,6 @@ class MarkdownGenerator(Generator):
                 parent = None
             return '' if parent and obj.description == parent.description else obj.description
         return ''
-
 
     def link(self, ref: Optional[Union[str, Element]], *, after_link: str = None, use_desc: bool=False,
              add_subset: bool=True) -> str:

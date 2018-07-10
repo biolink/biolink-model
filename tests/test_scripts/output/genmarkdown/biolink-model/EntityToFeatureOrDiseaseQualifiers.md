@@ -19,11 +19,11 @@ URI: [http://bioentity.io/vocab/EntityToFeatureOrDiseaseQualifiers](http://bioen
 
 ## Fields
 
- * _[onset qualifier](onset_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
+ * [onset qualifier](onset_qualifier.md)
+    * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
     * range: [Onset](Onset.md)
     * __Local__
- * _[severity qualifier](severity_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
+ * [severity qualifier](severity_qualifier.md)
+    * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
     * range: [SeverityValue](SeverityValue.md)
     * __Local__

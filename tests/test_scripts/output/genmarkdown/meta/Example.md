@@ -17,9 +17,9 @@ URI: [http://bioentity.io/vocab/Example](http://bioentity.io/vocab/Example)
  *  class: **[Element](Element.md)** *[examples](examples.md)* **[Example](Example.md)**
 ## Fields
 
- * _[value](value.md)_
+ * [value](value.md)
     * range: **string**
     * __Local__
- * _[example.description](value_description.md)_
+ * [example.description](value_description.md)
     * range: **string**
     * __Local__

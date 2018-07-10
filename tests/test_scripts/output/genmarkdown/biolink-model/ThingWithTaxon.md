@@ -23,7 +23,7 @@ URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingW
 
 ## Fields
 
- * _[in taxon](in_taxon.md) *subsets*: (translator_minimal)_
-    * _connects a thing to a class representing a taxon_
+ * [in taxon](in_taxon.md) *subsets*: (translator_minimal)
+    * Description: connects a thing to a class representing a taxon
     * range: [OrganismTaxon](OrganismTaxon.md)
     * __Local__

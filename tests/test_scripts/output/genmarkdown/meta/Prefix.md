@@ -17,11 +17,11 @@ URI: [http://bioentity.io/vocab/Prefix](http://bioentity.io/vocab/Prefix)
  *  class: **[SchemaDefinition](SchemaDefinition.md)** *[prefixes](prefixes.md)* **[Prefix](Prefix.md)**
 ## Fields
 
- * _[local name](local_name.md)_
-    * _the nsname (sans ':' for a given prefix)_
+ * [local name](local_name.md)
+    * Description: the nsname (sans ':' for a given prefix)
     * range: **string**
     * __Local__
- * _[prefix uri](prefix_uri.md)_
-    * _A URI associated with a given prefix_
+ * [prefix uri](prefix_uri.md)
+    * Description: A URI associated with a given prefix
     * range: **string**
     * __Local__

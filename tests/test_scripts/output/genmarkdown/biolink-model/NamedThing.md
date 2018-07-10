@@ -28,39 +28,39 @@ URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing
  *  class: **[NamedThing](NamedThing.md)** *[related to](related_to.md)* **[NamedThing](NamedThing.md)**
 ## Fields
 
- * _[category](category.md) *subsets*: (translator_minimal)_
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
+ * [category](category.md) *subsets*: (translator_minimal)
+    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * range: [LabelType](LabelType.md)
     * __Local__
- * _[description](description.md) *subsets*: (translator_minimal)_
-    * _a human-readable description of a thing_
+ * [description](description.md) *subsets*: (translator_minimal)
+    * Description: a human-readable description of a thing
     * range: [NarrativeText](NarrativeText.md)
     * __Local__
- * _[full name](full_name.md)_
-    * _a long-form human readable name for a thing_
+ * [full name](full_name.md)
+    * Description: a long-form human readable name for a thing
     * range: [LabelType](LabelType.md)
     * __Local__
- * _[id](id.md) *subsets*: (translator_minimal)_
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+ * [id](id.md) *subsets*: (translator_minimal)
+    * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [IdentifierType](IdentifierType.md)
     * __Local__
- * _[iri](iri.md) *subsets*: (translator_minimal)_
-    * _An IRI for the node. This is determined by the id using expansion rules._
+ * [iri](iri.md) *subsets*: (translator_minimal)
+    * Description: An IRI for the node. This is determined by the id using expansion rules.
     * range: [IriType](IriType.md)
     * __Local__
- * _[name](name.md) *subsets*: (translator_minimal)_
-    * _A human-readable name for a thing_
+ * [name](name.md) *subsets*: (translator_minimal)
+    * Description: A human-readable name for a thing
     * range: [LabelType](LabelType.md)
     * __Local__
- * _[node property](node_property.md)_
-    * _A grouping for any property that holds between a node and a value_
+ * [node property](node_property.md)
+    * Description: A grouping for any property that holds between a node and a value
     * range: **string**
     * __Local__
- * _[related to](related_to.md)_
-    * _A grouping for any relationship type that holds between any two things_
+ * [related to](related_to.md)
+    * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
     * __Local__
- * _[systematic synonym](systematic_synonym.md)_
-    * _more commonly used for gene symbols in yeast_
+ * [systematic synonym](systematic_synonym.md)
+    * Description: more commonly used for gene symbols in yeast
     * range: [LabelType](LabelType.md)
     * __Local__
