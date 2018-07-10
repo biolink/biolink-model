@@ -15,9 +15,9 @@ None -> **string**
  *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [positively regulates](positively_regulates.md) *subsets*: (translator_minimal)
- *  child: [regulates, entity to entity](regulates_entity_to_entity.md) *subsets*: (translator_minimal)
- *  child: [regulates, process to process](regulates_process_to_process.md) *subsets*: (translator_minimal)
  *  child: [negatively regulates](negatively_regulates.md) *subsets*: (translator_minimal)
+ *  child: [positively regulates](positively_regulates.md) *subsets*: (translator_minimal)
+ *  child: [regulates, process to process](regulates_process_to_process.md) *subsets*: (translator_minimal)
+ *  child: [regulates, entity to entity](regulates_entity_to_entity.md) *subsets*: (translator_minimal)
 ## Used in
 

@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/FrequencyQuantifier](http://bioentity.io/vocab/FrequencyQuantifier)
 
-![img](images/FrequencyQuantifier.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[VariantToPopulationAssociation]uses%20-.->\[FrequencyQuantifier|has_count:integer%20%3F;has_total:integer%20%3F;has_quotient:double%20%3F;has_percentage:double%20%3F],%20\[RelationshipQuantifier]^-\[FrequencyQuantifier])
 ## Mappings
 
 ## Inheritance
@@ -18,19 +18,19 @@ URI: [http://bioentity.io/vocab/FrequencyQuantifier](http://bioentity.io/vocab/F
 
 ## Fields
 
- * _[has count](has_count.md)_
-    * _number of things with a particular property_
+ * [has count](has_count.md)
+    * Description: number of things with a particular property
     * range: **integer**
     * __Local__
- * _[has percentage](has_percentage.md)_
-    * _equivalent to has quotient multiplied by 100_
+ * [has percentage](has_percentage.md)
+    * Description: equivalent to has quotient multiplied by 100
     * range: **double**
     * __Local__
- * _[has quotient](has_quotient.md)_
-    * _A grouping for any property that holds between a node and a value_
+ * [has quotient](has_quotient.md)
+    * Description: A grouping for any property that holds between a node and a value
     * range: **double**
     * __Local__
- * _[has total](has_total.md)_
-    * _total number of things in a particular reference set_
+ * [has total](has_total.md)
+    * Description: total number of things in a particular reference set
     * range: **integer**
     * __Local__

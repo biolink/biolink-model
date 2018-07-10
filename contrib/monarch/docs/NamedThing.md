@@ -5,7 +5,7 @@ a databased entity or concept/class
 
 URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing)
 
-![img](images/NamedThing.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing|id:identifier_type%20%3F;name:label_type%20%3F;category:label_type%20%3F;node_property:string%20%3F;iri:iri_type%20%3F;full_name:label_type%20%3F;description:narrative_text%20%3F;systematic_synonym:label_type%20%3F]-%20related%20to%20%3F>\[NamedThing],%20\[PropertyValuePair]-%20filler(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20related%20to%20%3F>\[NamedThing],%20\[NamedThing]^-\[PlanetaryEntity],%20\[NamedThing]^-\[OntologyClass],%20\[NamedThing]^-\[Occurrent],%20\[NamedThing]^-\[InformationContentEntity],%20\[NamedThing]^-\[Device],%20\[NamedThing]^-\[ClinicalEntity],%20\[NamedThing]^-\[BiologicalEntity])
 ## Mappings
 
  * [UMLSSG:OBJC](http://purl.obolibrary.org/obo/UMLSSG_OBJC)
@@ -29,51 +29,51 @@ URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing
  *  class: **[NamedThing](NamedThing.md)** *[related to](related_to.md)* **[NamedThing](NamedThing.md)**
 ## Fields
 
- * _[category](category.md) *subsets*: (translator_minimal)_
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
+ * [category](category.md) *subsets*: (translator_minimal)
+    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * range: [LabelType](LabelType.md)
     * __Local__
- * _[description](description.md) *subsets*: (translator_minimal)_
-    * _a human-readable description of a thing_
+ * [description](description.md) *subsets*: (translator_minimal)
+    * Description: a human-readable description of a thing
     * range: [NarrativeText](NarrativeText.md)
     * __Local__
- * _[full name](full_name.md)_
-    * _a long-form human readable name for a thing_
+ * [full name](full_name.md)
+    * Description: a long-form human readable name for a thing
     * range: [LabelType](LabelType.md)
     * __Local__
- * _[has alternate identifier](has_alternate_identifier.md)_
-    * _An alternate identifier for the entity, provided by the source database_
+ * [has alternate identifier](has_alternate_identifier.md)
+    * Description: An alternate identifier for the entity, provided by the source database
     * range: identifier*
     * __Local__
- * _[has synonym](has_synonym.md)_
-    * _Alternate labels for an entity_
+ * [has synonym](has_synonym.md)
+    * Description: Alternate labels for an entity
     * range: [name](name.md) *subsets*: (translator_minimal)*
     * __Local__
- * _[has xref](has_xref.md)_
-    * _A database cross-reference for the entity, provided by a separate database_
+ * [has xref](has_xref.md)
+    * Description: A database cross-reference for the entity, provided by a separate database
     * range: identifier*
     * __Local__
- * _[id](id.md) *subsets*: (translator_minimal)_
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+ * [id](id.md) *subsets*: (translator_minimal)
+    * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [IdentifierType](IdentifierType.md)
     * __Local__
- * _[iri](iri.md) *subsets*: (translator_minimal)_
-    * _An IRI for the node. This is determined by the id using expansion rules._
+ * [iri](iri.md) *subsets*: (translator_minimal)
+    * Description: An IRI for the node. This is determined by the id using expansion rules.
     * range: [IriType](IriType.md)
     * __Local__
- * _[name](name.md) *subsets*: (translator_minimal)_
-    * _A human-readable name for a thing_
+ * [name](name.md) *subsets*: (translator_minimal)
+    * Description: A human-readable name for a thing
     * range: [LabelType](LabelType.md)
     * __Local__
- * _[node property](node_property.md)_
-    * _A grouping for any property that holds between a node and a value_
+ * [node property](node_property.md)
+    * Description: A grouping for any property that holds between a node and a value
     * range: **string**
     * __Local__
- * _[related to](related_to.md)_
-    * _A grouping for any relationship type that holds between any two things_
+ * [related to](related_to.md)
+    * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
     * __Local__
- * _[systematic synonym](systematic_synonym.md)_
-    * _more commonly used for gene symbols in yeast_
+ * [systematic synonym](systematic_synonym.md)
+    * Description: more commonly used for gene symbols in yeast
     * range: [LabelType](LabelType.md)
     * __Local__

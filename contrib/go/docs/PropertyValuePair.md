@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/PropertyValuePair](http://bioentity.io/vocab/PropertyValuePair)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PropertyValuePair]-%20filler%20%3F>\[NamedThing],%20\[PropertyValuePair]-%20relation>\[RelationshipType])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PropertyValuePair]-%20filler%20%3F>\[NamedThing],%20\[PropertyValuePair]-%20relation>\[RelationshipType],%20\[ExtensionsAndEvidenceAssociationMixin]-%20object%20extensions(i)%20*>\[PropertyValuePair])
 ## Mappings
 
 ## Inheritance
@@ -18,11 +18,11 @@ URI: [http://bioentity.io/vocab/PropertyValuePair](http://bioentity.io/vocab/Pro
  *  class: **[ExtensionsAndEvidenceAssociationMixin](ExtensionsAndEvidenceAssociationMixin.md)** *[object extensions](object_extensions.md)* **[PropertyValuePair](PropertyValuePair.md)**
 ## Fields
 
- * _[filler](filler.md)_
-    * _The value in a property-value tuple_
+ * [filler](filler.md)
+    * Description: The value in a property-value tuple
     * range: [NamedThing](NamedThing.md)
     * __Local__
- * _[relation](relation.md)_
-    * _the relationship type by which a subject is connected to an object in an association_
+ * [relation](relation.md)
+    * Description: the relationship type by which a subject is connected to an object in an association
     * range: [RelationshipType](RelationshipType.md) [required]
     * __Local__

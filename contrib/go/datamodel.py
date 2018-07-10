@@ -1,5 +1,5 @@
 # Auto generated from contrib/go.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-07-06 15:09
+# Generation date: 2018-07-10 09:37
 # Schema: go biolink extensions
 #
 # id: http://bioentity.io/json-schema/biolink/contrib/go.json
@@ -343,11 +343,7 @@ class GeneToGeneHomologyAssociationId(IdentifierType):
     pass
 
 
-class MolecularInteractionId(IdentifierType):
-    pass
-
-
-class PairwiseGeneOrProteinInteractionAssociationId(IdentifierType):
+class PairwiseGeneToGeneInteractionId(IdentifierType):
     pass
 
 
@@ -1882,20 +1878,20 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
 
 
 @dataclass
-class PairwiseGeneOrProteinInteractionAssociation(GeneToGeneAssociation):
+class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     """
     An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between
     genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
     """
-    id: PairwiseGeneOrProteinInteractionAssociationId = None
+    id: PairwiseGeneToGeneInteractionId = None
     relation: RelationshipType = None
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, PairwiseGeneOrProteinInteractionAssociationId):
-            self.id = PairwiseGeneOrProteinInteractionAssociationId(self.id)
+        if not isinstance(self.id, PairwiseGeneToGeneInteractionId):
+            self.id = PairwiseGeneToGeneInteractionId(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
         if not isinstance(self.relation, RelationshipType):

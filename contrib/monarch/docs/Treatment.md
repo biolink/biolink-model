@@ -5,7 +5,7 @@ A treatment is targeted at a disease or phenotype and may involve multiple drug 
 
 URI: [http://bioentity.io/vocab/Treatment](http://bioentity.io/vocab/Treatment)
 
-![img](images/Treatment.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Treatment|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Treatment]-%20has%20exposure%20parts%20+>\[DrugExposure],%20\[Treatment]-%20treats>\[DiseaseOrPhenotypicFeature],%20\[SequenceVariantModulatesTreatmentAssociation]-%20object(i)>\[Treatment],%20\[Environment]^-\[Treatment])
 ## Mappings
 
  * [OGMS:0000090](http://purl.obolibrary.org/obo/OGMS_0000090)
@@ -20,62 +20,62 @@ URI: [http://bioentity.io/vocab/Treatment](http://bioentity.io/vocab/Treatment)
  *  class: **[SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md)** *[sequence variant modulates treatment association.object](sequence_variant_modulates_treatment_association_object.md)* **[Treatment](Treatment.md)**
 ## Fields
 
- * _[treatment.has exposure parts](has_exposure_parts.md)_
+ * [treatment.has exposure parts](has_exposure_parts.md)
     * range: [DrugExposure](DrugExposure.md)* [required]
     * __Local__
- * _[treatment.treats](treatment_treats.md) *subsets*: (translator_minimal)_
-    * _holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat _
+ * [treatment.treats](treatment_treats.md) *subsets*: (translator_minimal)
+    * Description: holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) [required]
     * __Local__
- * _[category](category.md) *subsets*: (translator_minimal)_
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
+ * [category](category.md) *subsets*: (translator_minimal)
+    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[description](description.md) *subsets*: (translator_minimal)_
-    * _a human-readable description of a thing_
+ * [description](description.md) *subsets*: (translator_minimal)
+    * Description: a human-readable description of a thing
     * range: [NarrativeText](NarrativeText.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[full name](full_name.md)_
-    * _a long-form human readable name for a thing_
+ * [full name](full_name.md)
+    * Description: a long-form human readable name for a thing
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[has alternate identifier](has_alternate_identifier.md)_
-    * _An alternate identifier for the entity, provided by the source database_
+ * [has alternate identifier](has_alternate_identifier.md)
+    * Description: An alternate identifier for the entity, provided by the source database
     * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
- * _[has phenotype](has_phenotype.md) *subsets*: (translator_minimal)_
-    * _holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). _
+ * [has phenotype](has_phenotype.md) *subsets*: (translator_minimal)
+    * Description: holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). 
     * range: [Phenotype](Phenotype.md)
     * inherited from: [BiologicalEntity](BiologicalEntity.md)
- * _[has synonym](has_synonym.md)_
-    * _Alternate labels for an entity_
+ * [has synonym](has_synonym.md)
+    * Description: Alternate labels for an entity
     * range: [name](name.md) *subsets*: (translator_minimal)*
     * inherited from: [NamedThing](NamedThing.md)
- * _[has xref](has_xref.md)_
-    * _A database cross-reference for the entity, provided by a separate database_
+ * [has xref](has_xref.md)
+    * Description: A database cross-reference for the entity, provided by a separate database
     * range: identifier*
     * inherited from: [NamedThing](NamedThing.md)
- * _[id](id.md) *subsets*: (translator_minimal)_
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+ * [id](id.md) *subsets*: (translator_minimal)
+    * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [IdentifierType](IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[iri](iri.md) *subsets*: (translator_minimal)_
-    * _An IRI for the node. This is determined by the id using expansion rules._
+ * [iri](iri.md) *subsets*: (translator_minimal)
+    * Description: An IRI for the node. This is determined by the id using expansion rules.
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[name](name.md) *subsets*: (translator_minimal)_
-    * _A human-readable name for a thing_
+ * [name](name.md) *subsets*: (translator_minimal)
+    * Description: A human-readable name for a thing
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[node property](node_property.md)_
-    * _A grouping for any property that holds between a node and a value_
+ * [node property](node_property.md)
+    * Description: A grouping for any property that holds between a node and a value
     * range: **string**
     * inherited from: [NamedThing](NamedThing.md)
- * _[related to](related_to.md)_
-    * _A grouping for any relationship type that holds between any two things_
+ * [related to](related_to.md)
+    * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[systematic synonym](systematic_synonym.md)_
-    * _more commonly used for gene symbols in yeast_
+ * [systematic synonym](systematic_synonym.md)
+    * Description: more commonly used for gene symbols in yeast
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)

@@ -15,7 +15,7 @@ None -> **string**
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [physically interacts with](physically_interacts_with.md) *subsets*: (translator_minimal)
  *  child: [genetically interacts with](genetically_interacts_with.md) *subsets*: (translator_minimal)
+ *  child: [physically interacts with](physically_interacts_with.md) *subsets*: (translator_minimal)
 ## Used in
 

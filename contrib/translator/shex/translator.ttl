@@ -425,8 +425,8 @@ biolink:NamedGraph a shex:ShapeAnd ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] ] ) .
 
-biolink:PairwiseGeneOrProteinInteractionAssociation a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:GeneToGeneAssociation biolink:MolecularInteraction [ a shex:Shape ;
+biolink:PairwiseGeneToGeneInteraction a shex:ShapeAnd ;
+    shex:shapeExprs ( biolink:GeneToGeneAssociation biolink:PairwiseInteractionAssociation [ a shex:Shape ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -693,7 +693,16 @@ biolink:ModelToDiseaseMixin a shex:Shape ;
 biolink:MolecularActivity a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:BiologicalProcessOrActivity biolink:Occurrent [ a shex:Shape ] ) .
 
-biolink:MolecularInteraction a shex:ShapeAnd ;
+biolink:NoncodingRNAProduct a shex:ShapeAnd ;
+    shex:shapeExprs ( biolink:RNAProduct [ a shex:Shape ] ) .
+
+biolink:Onset a shex:ShapeAnd ;
+    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ] ) .
+
+biolink:OrganismTaxon a shex:ShapeAnd ;
+    shex:shapeExprs ( biolink:OntologyClass [ a shex:Shape ] ) .
+
+biolink:PairwiseInteractionAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
@@ -701,6 +710,11 @@ biolink:MolecularInteraction a shex:ShapeAnd ;
                                     shex:min 1 ;
                                     shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:MolecularEntity ] [ a shex:TripleConstraint ;
+                                    shex:max 1 ;
+                                    shex:min 0 ;
+                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:valueExpr [ a shex:NodeConstraint ;
+                                            shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
                                     shex:predicate rdf:predicate ;
@@ -713,15 +727,6 @@ biolink:MolecularInteraction a shex:ShapeAnd ;
                                     shex:min 0 ;
                                     shex:predicate biolink:interacting_molecules_category ;
                                     shex:valueExpr biolink:OntologyClass ] ) ] ] ) .
-
-biolink:NoncodingRNAProduct a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:RNAProduct [ a shex:Shape ] ) .
-
-biolink:Onset a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ] ) .
-
-biolink:OrganismTaxon a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:OntologyClass [ a shex:Shape ] ) .
 
 biolink:Pathway a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:BiologicalProcess [ a shex:Shape ] ) .
@@ -1108,7 +1113,7 @@ biolink:NamedThing a shex:Shape ;
                                 shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate <file:///Users/solbrig/git/hsolbrig/biolink-model/@id> ;
+                        shex:predicate <file:///Users/solbrig/git/biolink/biolink-model/@id> ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:uri ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
@@ -1400,7 +1405,6 @@ biolink:Association a shex:ShapeAnd ;
         biolink:ModelToDiseaseMixin,
         biolink:MolecularActivity,
         biolink:MolecularEntity,
-        biolink:MolecularInteraction,
         biolink:NamedGraph,
         biolink:NamedThing,
         biolink:NoncodingRNAProduct,
@@ -1410,7 +1414,8 @@ biolink:Association a shex:ShapeAnd ;
         biolink:OntologyClass__List,
         biolink:OrganismTaxon,
         biolink:OrganismalEntity,
-        biolink:PairwiseGeneOrProteinInteractionAssociation,
+        biolink:PairwiseGeneToGeneInteraction,
+        biolink:PairwiseInteractionAssociation,
         biolink:PathognomonicityQuantifier,
         biolink:Pathway,
         biolink:Phenomenon,

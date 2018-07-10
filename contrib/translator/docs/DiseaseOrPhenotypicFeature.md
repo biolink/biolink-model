@@ -5,7 +5,7 @@ Either one of a disease or an individual phenotypic feature. Some knowledge reso
 
 URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeature](http://bioentity.io/vocab/DiseaseOrPhenotypicFeature)
 
-![img](images/DiseaseOrPhenotypicFeature.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[DiseaseOrPhenotypicFeature|treated_by:string%20%3F;id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[DiseaseOrPhenotypicFeature]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[DiseaseOrPhenotypicFeature]-%20has%20biomarker%20%3F>\[MolecularEntity],%20\[DiseaseOrPhenotypicFeature]-%20correlated%20with%20%3F>\[MolecularEntity],%20\[MolecularEntity]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20subject(i)>\[DiseaseOrPhenotypicFeature],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20object(i)>\[DiseaseOrPhenotypicFeature],%20\[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]-%20subject(i)>\[DiseaseOrPhenotypicFeature],%20\[Gene]-%20gene%20associated%20with%20condition(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[ThingToDiseaseOrPhenotypicFeatureAssociation]-%20object(i)>\[DiseaseOrPhenotypicFeature],%20\[Treatment]-%20treats(i)>\[DiseaseOrPhenotypicFeature],%20\[Treatment]-%20treats(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[DiseaseOrPhenotypicFeature]uses%20-.->\[ThingWithTaxon],%20\[DiseaseOrPhenotypicFeature]^-\[PhenotypicFeature],%20\[DiseaseOrPhenotypicFeature]^-\[Disease],%20\[BiologicalEntity]^-\[DiseaseOrPhenotypicFeature])
 ## Mappings
 
 ## Inheritance
@@ -28,63 +28,63 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeature](http://bioentity.io/
  *  class: **[Treatment](Treatment.md)** *[treats](treats.md)* **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
 ## Fields
 
- * _[correlated with](correlated_with.md) *subsets*: (translator_minimal)_
-    * _holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature._
+ * [correlated with](correlated_with.md) *subsets*: (translator_minimal)
+    * Description: holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
     * range: [MolecularEntity](MolecularEntity.md)
     * __Local__
- * _[has biomarker](has_biomarker.md) *subsets*: (translator_minimal)_
-    * _holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature._
+ * [has biomarker](has_biomarker.md) *subsets*: (translator_minimal)
+    * Description: holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
     * range: [MolecularEntity](MolecularEntity.md)
     * __Local__
- * _[treated by](treated_by.md) *subsets*: (translator_minimal)_
-    * _holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition _
+ * [treated by](treated_by.md) *subsets*: (translator_minimal)
+    * Description: holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition 
     * range: **string**
     * __Local__
- * _[category](category.md) *subsets*: (translator_minimal)_
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
+ * [category](category.md) *subsets*: (translator_minimal)
+    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[description](description.md) *subsets*: (translator_minimal)_
-    * _a human-readable description of a thing_
+ * [description](description.md) *subsets*: (translator_minimal)
+    * Description: a human-readable description of a thing
     * range: [NarrativeText](NarrativeText.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[full name](full_name.md)_
-    * _a long-form human readable name for a thing_
+ * [full name](full_name.md)
+    * Description: a long-form human readable name for a thing
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[has phenotype](has_phenotype.md) *subsets*: (translator_minimal)_
-    * _holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). _
+ * [has phenotype](has_phenotype.md) *subsets*: (translator_minimal)
+    * Description: holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). 
     * range: [Phenotype](Phenotype.md)
     * inherited from: [BiologicalEntity](BiologicalEntity.md)
- * _[id](id.md) *subsets*: (translator_minimal)_
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+ * [id](id.md) *subsets*: (translator_minimal)
+    * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [IdentifierType](IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[in taxon](in_taxon.md) *subsets*: (translator_minimal)_
-    * _connects a thing to a class representing a taxon_
+ * [in taxon](in_taxon.md) *subsets*: (translator_minimal)
+    * Description: connects a thing to a class representing a taxon
     * range: [OrganismTaxon](OrganismTaxon.md)
     * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
- * _[iri](iri.md) *subsets*: (translator_minimal)_
-    * _An IRI for the node. This is determined by the id using expansion rules._
+ * [iri](iri.md) *subsets*: (translator_minimal)
+    * Description: An IRI for the node. This is determined by the id using expansion rules.
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[name](name.md) *subsets*: (translator_minimal)_
-    * _A human-readable name for a thing_
+ * [name](name.md) *subsets*: (translator_minimal)
+    * Description: A human-readable name for a thing
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[node property](node_property.md)_
-    * _A grouping for any property that holds between a node and a value_
+ * [node property](node_property.md)
+    * Description: A grouping for any property that holds between a node and a value
     * range: **string**
     * inherited from: [NamedThing](NamedThing.md)
- * _[related to](related_to.md)_
-    * _A grouping for any relationship type that holds between any two things_
+ * [related to](related_to.md)
+    * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[systematic synonym](systematic_synonym.md)_
-    * _more commonly used for gene symbols in yeast_
+ * [systematic synonym](systematic_synonym.md)
+    * Description: more commonly used for gene symbols in yeast
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[uri](uri.md)_
-    * _URI expansion of CURIE_
+ * [uri](uri.md)
+    * Description: URI expansion of CURIE
     * range: [uri](uri.md)
     * inherited from: [NamedThing](NamedThing.md)

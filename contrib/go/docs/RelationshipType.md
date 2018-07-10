@@ -5,7 +5,7 @@ An OWL property used as an edge label
 
 URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/RelationshipType)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20relation(i)>\[RelationshipType],%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneRegulatoryRelationship]-%20relation(i)>\[RelationshipType],%20\[GeneToExpressionSiteAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToGeneHomologyAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToGeneProductRelationship]-%20relation(i)>\[RelationshipType],%20\[GenotypeToGeneAssociation]-%20relation(i)>\[RelationshipType],%20\[GenotypeToGenotypePartAssociation]-%20relation(i)>\[RelationshipType],%20\[GenotypeToPhenotypicFeatureAssociation]-%20relation(i)>\[RelationshipType],%20\[GenotypeToVariantAssociation]-%20relation(i)>\[RelationshipType],%20\[ModelToDiseaseMixin]-%20relation(i)>\[RelationshipType],%20\[MolecularActivityToDownstreamMolecularActivityAssociation]-%20relation(i)>\[RelationshipType],%20\[PairwiseGeneToGeneInteraction]-%20relation(i)>\[RelationshipType],%20\[PairwiseInteractionAssociation]-%20relation(i)>\[RelationshipType],%20\[PopulationToPopulationAssociation]-%20relation(i)>\[RelationshipType],%20\[GoTermBioentityMixin]-%20regulates%20closure(i)%20*>\[RelationshipType],%20\[Association]-%20relation(i)>\[RelationshipType],%20\[VariantToDiseaseAssociation]-%20relation(i)>\[RelationshipType])
 ## Mappings
 
 ## Inheritance
@@ -26,8 +26,8 @@ URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/Rela
  *  class: **[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)** *[genotype to variant association.relation](genotype_to_variant_association_relation.md)* **[RelationshipType](RelationshipType.md)**
  *  class: **[ModelToDiseaseMixin](ModelToDiseaseMixin.md)** *[model to disease mixin.relation](model_to_disease_mixin_relation.md)* **[RelationshipType](RelationshipType.md)**
  *  class: **[MolecularActivityToDownstreamMolecularActivityAssociation](MolecularActivityToDownstreamMolecularActivityAssociation.md)** *[molecular activity to downstream molecular activity association.relation](molecular_activity_to_downstream_molecular_activity_association_relation.md)* **[RelationshipType](RelationshipType.md)**
- *  class: **[MolecularInteraction](MolecularInteraction.md)** *[molecular interaction.relation](molecular_interaction_relation.md)* **[RelationshipType](RelationshipType.md)**
- *  class: **[PairwiseGeneOrProteinInteractionAssociation](PairwiseGeneOrProteinInteractionAssociation.md)** *[pairwise gene or protein interaction association.relation](pairwise_gene_or_protein_interaction_association_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md)** *[pairwise gene to gene interaction.relation](pairwise_gene_to_gene_interaction_relation.md)* **[RelationshipType](RelationshipType.md)**
+ *  class: **[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)** *[pairwise interaction association.relation](pairwise_interaction_association_relation.md)* **[RelationshipType](RelationshipType.md)**
  *  class: **[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)** *[population to population association.relation](population_to_population_association_relation.md)* **[RelationshipType](RelationshipType.md)**
  *  class: **[GoTermBioentityMixin](GoTermBioentityMixin.md)** *[regulates closure](regulates_closure.md)* **[RelationshipType](RelationshipType.md)**
  *  class: **[Association](Association.md)** *[relation](relation.md)* **[RelationshipType](RelationshipType.md)**

@@ -17,13 +17,13 @@ URI: [http://bioentity.io/vocab/ModelToDiseaseMixin](http://bioentity.io/vocab/M
 
 ## Fields
 
- * _[model to disease mixin.relation](model_to_disease_mixin_relation.md)_
-    * _The relationship to the disease
-  _
+ * [model to disease mixin.relation](model_to_disease_mixin_relation.md)
+    * Description: The relationship to the disease
+  
     * range: [RelationshipType](RelationshipType.md) [required]
     * edge label: [model of](model_of.md) *subsets*: (translator_minimal)
     * __Local__
- * _[model to disease mixin.subject](model_to_disease_mixin_subject.md)_
-    * _The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease_
+ * [model to disease mixin.subject](model_to_disease_mixin_subject.md)
+    * Description: The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease
     * range: **string** [required]
     * __Local__

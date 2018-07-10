@@ -5,7 +5,7 @@ A mixin that can be used on any entity with a taxon
 
 URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingWithTaxon)
 
-![img](images/ThingWithTaxon.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ThingWithTaxon]-%20in%20taxon%20%3F>\[OrganismTaxon],%20\[PopulationOfIndividualOrganisms]uses%20-.->\[ThingWithTaxon],%20\[MolecularEntity]uses%20-.->\[ThingWithTaxon],%20\[LifeStage]uses%20-.->\[ThingWithTaxon],%20\[IndividualOrganism]uses%20-.->\[ThingWithTaxon],%20\[DiseaseOrPhenotypicFeature]uses%20-.->\[ThingWithTaxon],%20\[Biosample]uses%20-.->\[ThingWithTaxon],%20\[AnatomicalEntity]uses%20-.->\[ThingWithTaxon])
 ## Mappings
 
 ## Inheritance
@@ -23,7 +23,7 @@ URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingW
 
 ## Fields
 
- * _[in taxon](in_taxon.md) *subsets*: (translator_minimal)_
-    * _connects a thing to a class representing a taxon_
+ * [in taxon](in_taxon.md) *subsets*: (translator_minimal)
+    * Description: connects a thing to a class representing a taxon
     * range: [OrganismTaxon](OrganismTaxon.md)
     * __Local__

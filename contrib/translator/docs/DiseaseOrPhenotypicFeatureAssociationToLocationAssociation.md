@@ -5,7 +5,7 @@ An association between either a disease or a phenotypic feature and an anatomica
 
 URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation)
 
-![img](images/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20subject(i)>\[DiseaseOrPhenotypicFeature],%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]-%20publications(i)%20*>\[Publication],%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]-%20relation(i)>\[RelationshipType],%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]-%20object>\[AnatomicalEntity],%20\[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]^-\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation])
 ## Mappings
 
  * [NCIT:R100](http://purl.obolibrary.org/obo/NCIT_R100)
@@ -18,83 +18,83 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationA
 
 ## Fields
 
- * _[disease or phenotypic feature association to location association.object](disease_or_phenotypic_feature_association_to_location_association_object.md)_
-    * _anatomical entity in which the disease or feature is found_
+ * [disease or phenotypic feature association to location association.object](disease_or_phenotypic_feature_association_to_location_association_object.md)
+    * Description: anatomical entity in which the disease or feature is found
     * range: [AnatomicalEntity](AnatomicalEntity.md) [required]
     * __Local__
- * _[association slot](association_slot.md)_
-    * _any slot that relates an association to another entity_
+ * [association slot](association_slot.md)
+    * Description: any slot that relates an association to another entity
     * range: **string**
     * inherited from: [Association](Association.md)
- * _[association type](association_type.md)_
-    * _connects an association to the type of association (e.g. gene to phenotype)_
+ * [association type](association_type.md)
+    * Description: connects an association to the type of association (e.g. gene to phenotype)
     * range: [OntologyClass](OntologyClass.md)
     * inherited from: [Association](Association.md)
- * _[category](category.md) *subsets*: (translator_minimal)_
-    * _Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag_
+ * [category](category.md) *subsets*: (translator_minimal)
+    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[description](description.md) *subsets*: (translator_minimal)_
-    * _a human-readable description of a thing_
+ * [description](description.md) *subsets*: (translator_minimal)
+    * Description: a human-readable description of a thing
     * range: [NarrativeText](NarrativeText.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[disease or phenotypic feature association to thing association.subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)_
-    * _disease or phenotype_
+ * [disease or phenotypic feature association to thing association.subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)
+    * Description: disease or phenotype
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) [required]
     * inherited from: [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
- * _[full name](full_name.md)_
-    * _a long-form human readable name for a thing_
+ * [full name](full_name.md)
+    * Description: a long-form human readable name for a thing
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[id](id.md) *subsets*: (translator_minimal)_
-    * _A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI_
+ * [id](id.md) *subsets*: (translator_minimal)
+    * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [IdentifierType](IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[iri](iri.md) *subsets*: (translator_minimal)_
-    * _An IRI for the node. This is determined by the id using expansion rules._
+ * [iri](iri.md) *subsets*: (translator_minimal)
+    * Description: An IRI for the node. This is determined by the id using expansion rules.
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[name](name.md) *subsets*: (translator_minimal)_
-    * _A human-readable name for a thing_
+ * [name](name.md) *subsets*: (translator_minimal)
+    * Description: A human-readable name for a thing
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[negated](negated.md)_
-    * _if set to true, then the association is negated i.e. is not true_
+ * [negated](negated.md)
+    * Description: if set to true, then the association is negated i.e. is not true
     * range: **boolean**
     * inherited from: [Association](Association.md)
- * _[node property](node_property.md)_
-    * _A grouping for any property that holds between a node and a value_
+ * [node property](node_property.md)
+    * Description: A grouping for any property that holds between a node and a value
     * range: **string**
     * inherited from: [NamedThing](NamedThing.md)
- * _[provided by](provided_by.md)_
-    * _connects an association to the agent (person, organization or group) that provided it_
+ * [provided by](provided_by.md)
+    * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
- * _[publications](publications.md)_
-    * _connects an association to publications supporting the association_
+ * [publications](publications.md)
+    * Description: connects an association to publications supporting the association
     * range: [Publication](Publication.md)*
     * inherited from: [Association](Association.md)
- * _[qualifiers](qualifiers.md)_
-    * _connects an association to qualifiers that modify or qualify the meaning of that association_
+ * [qualifiers](qualifiers.md)
+    * Description: connects an association to qualifiers that modify or qualify the meaning of that association
     * range: [OntologyClass](OntologyClass.md)*
     * inherited from: [Association](Association.md)
- * _[related to](related_to.md)_
-    * _A grouping for any relationship type that holds between any two things_
+ * [related to](related_to.md)
+    * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[relation](relation.md)_
-    * _the relationship type by which a subject is connected to an object in an association_
+ * [relation](relation.md)
+    * Description: the relationship type by which a subject is connected to an object in an association
     * range: [RelationshipType](RelationshipType.md) [required]
     * inherited from: [Association](Association.md)
- * _[systematic synonym](systematic_synonym.md)_
-    * _more commonly used for gene symbols in yeast_
+ * [systematic synonym](systematic_synonym.md)
+    * Description: more commonly used for gene symbols in yeast
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * _[title](title.md)_
-    * _Narrative text describing the entity_
+ * [title](title.md)
+    * Description: Narrative text describing the entity
     * range: [LabelType](LabelType.md)
     * inherited from: [InformationContentEntity](InformationContentEntity.md)
- * _[uri](uri.md)_
-    * _URI expansion of CURIE_
+ * [uri](uri.md)
+    * Description: URI expansion of CURIE
     * range: [uri](uri.md)
     * inherited from: [NamedThing](NamedThing.md)

@@ -23,91 +23,91 @@ URI: [http://bioentity.io/vocab/Definition](http://bioentity.io/vocab/Definition
  *  class: **[Definition](Definition.md)** *[union_of](union_of.md)* **[Definition](Definition.md)**
 ## Fields
 
- * _[abstract](abstract.md)_
-    * _An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored_
+ * [abstract](abstract.md)
+    * Description: An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored
     * range: **boolean**
     * __Local__
- * _[is_a](is_a.md)_
-    * _specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded_
+ * [is_a](is_a.md)
+    * Description: specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded
     * range: [Definition](Definition.md)
     * __Local__
- * _[local_names](local_names.md)_
-    * _map from local identifier to slot_
+ * [local_names](local_names.md)
+    * Description: map from local identifier to slot
     * range: **string***
     * __Local__
- * _[mixin](mixin.md)_
-    * _Used only as a mixin -- cannot be instantiated on its own._
+ * [mixin](mixin.md)
+    * Description: Used only as a mixin -- cannot be instantiated on its own.
     * range: **boolean**
     * __Local__
- * _[mixins](mixins.md)_
-    * _List of definitions to be mixed in. Targets may be any definition of the same type_
+ * [mixins](mixins.md)
+    * Description: List of definitions to be mixed in. Targets may be any definition of the same type
     * range: [Definition](Definition.md)*
     * __Local__
- * _[subclass_of](subclass_of.md)_
-    * _Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes_
+ * [subclass_of](subclass_of.md)
+    * Description: Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes
     * range: **uri**
     * __Local__
- * _[symmetric](symmetric.md)_
-    * _Symmetric slot_
+ * [symmetric](symmetric.md)
+    * Description: Symmetric slot
     * range: **boolean**
     * __Local__
- * _[union_of](union_of.md)_
-    * _list of class or slot definitions that are combined to create the union class_
+ * [union_of](union_of.md)
+    * Description: list of class or slot definitions that are combined to create the union class
     * range: [Definition](Definition.md)*
     * __Local__
- * _[values_from](values_from.md)_
-    * _identifies the possible uri's of the range_
+ * [values_from](values_from.md)
+    * Description: identifies the possible uri's of the range
     * range: **string***
     * __Local__
- * _[aliases](aliases.md)_
+ * [aliases](aliases.md)
     * range: **string***
     * inherited from: [Element](Element.md)
- * _[alt_descriptions](alt_descriptions.md)_
+ * [alt_descriptions](alt_descriptions.md)
     * range: **string***
     * inherited from: [Element](Element.md)
- * _[comment](comment.md)_
-    * _Comment about an element_
+ * [comment](comment.md)
+    * Description: Comment about an element
     * range: **string**
     * inherited from: [Element](Element.md)
- * _[description](description.md)_
-    * _a description_
+ * [description](description.md)
+    * Description: a description
     * range: **string**
     * inherited from: [Element](Element.md)
- * _[examples](examples.md)_
-    * _Example of usage for a slot or class_
+ * [examples](examples.md)
+    * Description: Example of usage for a slot or class
     * range: [Example](Example.md)*
     * inherited from: [Element](Element.md)
- * _[flags](flags.md)_
-    * _State information and other details_
+ * [flags](flags.md)
+    * Description: State information and other details
     * range: **string***
     * inherited from: [Element](Element.md)
- * _[from_schema](from_schema.md)_
-    * _id of the schema that the element was derived from.  Supplied by the loader._
+ * [from_schema](from_schema.md)
+    * Description: id of the schema that the element was derived from.  Supplied by the loader.
     * range: **string**
     * inherited from: [Element](Element.md)
- * _[id_prefixes](id_prefixes.md)_
+ * [id_prefixes](id_prefixes.md)
     * range: **string***
     * inherited from: [Element](Element.md)
- * _[in_subset](in_subset.md)_
-    * _used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)_
+ * [in_subset](in_subset.md)
+    * Description: used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)
     * range: **string***
     * inherited from: [Element](Element.md)
- * _[mappings](mappings.md)_
-    * _list of equivalent or skos exact mappings to an ontology class_
+ * [mappings](mappings.md)
+    * Description: list of equivalent or skos exact mappings to an ontology class
     * range: **string***
     * inherited from: [Element](Element.md)
- * _[name](name.md)_
-    * _a unique key that identifies a slot, type or class in a schema_
+ * [name](name.md)
+    * Description: a unique key that identifies a slot, type or class in a schema
     * range: **string**
     * inherited from: [Element](Element.md)
- * _[note](note.md)_
-    * _Notes about an element_
+ * [note](note.md)
+    * Description: Notes about an element
     * range: **string**
     * inherited from: [Element](Element.md)
- * _[see_also](see_also.md)_
+ * [see_also](see_also.md)
     * range: **string**
     * inherited from: [Element](Element.md)
- * _[singular_name](singular_name.md)_
-    * _a name that is used in the singular form_
+ * [singular_name](singular_name.md)
+    * Description: a name that is used in the singular form
     * range: **string**
     * inherited from: [Element](Element.md)

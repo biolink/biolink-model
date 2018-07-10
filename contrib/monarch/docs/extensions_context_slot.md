@@ -14,7 +14,7 @@ None -> [PropertyValuePair](PropertyValuePair.md)
  *  is_a: [association slot](association_slot.md)
 ## Children
 
- *  child: [subject extensions](subject_extensions.md)
  *  child: [object extensions](object_extensions.md)
+ *  child: [subject extensions](subject_extensions.md)
 ## Used in
 

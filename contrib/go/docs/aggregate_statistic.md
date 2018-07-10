@@ -16,8 +16,8 @@ None -> **string**
 ## Children
 
  *  child: [has quotient](has_quotient.md)
- *  child: [has total](has_total.md)
- *  child: [has percentage](has_percentage.md)
  *  child: [has count](has_count.md)
+ *  child: [has percentage](has_percentage.md)
+ *  child: [has total](has_total.md)
 ## Used in
 

@@ -16,20 +16,20 @@ URI: [http://bioentity.io/vocab/MolecularEvent](http://bioentity.io/vocab/Molecu
 
 ## Fields
 
- * _[downstream causal relationship](downstream_causal_relationship.md)_
+ * [downstream causal relationship](downstream_causal_relationship.md)
     * range: **string**
     * __Local__
- * _[enabled by](enabled_by.md)_
+ * [enabled by](enabled_by.md)
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
     * __Local__
- * _[occurs in](occurs_in.md) *subsets*: (translator_minimal)_
-    * _holds between a process and a material entity or site within which the process occurs_
+ * [occurs in](occurs_in.md) *subsets*: (translator_minimal)
+    * Description: holds between a process and a material entity or site within which the process occurs
     * range: **string**
     * __Local__
- * _[part of](part_of.md) *subsets*: (translator_minimal)_
-    * _holds between parts and wholes (material entities or processes)_
+ * [part of](part_of.md) *subsets*: (translator_minimal)
+    * Description: holds between parts and wholes (material entities or processes)
     * range: **string**
     * __Local__
- * _[upstream causal relationship](upstream_causal_relationship.md)_
+ * [upstream causal relationship](upstream_causal_relationship.md)
     * range: **string**
     * __Local__

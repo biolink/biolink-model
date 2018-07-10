@@ -18,5 +18,5 @@ URI: [http://bioentity.io/vocab/union_of](slot_uri)
 ## Used in
 
  *  usage: [Definition](Definition.md)
- *  usage: [ClassDefinition](ClassDefinition.md)
  *  usage: [SlotDefinition](SlotDefinition.md)
+ *  usage: [ClassDefinition](ClassDefinition.md)

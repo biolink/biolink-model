@@ -16,7 +16,7 @@ None -> **string**
 ## Children
 
  *  child: [disrupts](disrupts.md) *subsets*: (translator_minimal)
- *  child: [regulates](regulates.md) *subsets*: (translator_minimal)
  *  child: [treats](treats.md) *subsets*: (translator_minimal)
+ *  child: [regulates](regulates.md) *subsets*: (translator_minimal)
 ## Used in
 

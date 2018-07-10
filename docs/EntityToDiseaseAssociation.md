@@ -20,15 +20,15 @@ URI: [http://bioentity.io/vocab/EntityToDiseaseAssociation](http://bioentity.io/
 
 ## Fields
 
- * _[entity to disease association.object](entity_to_disease_association_object.md)_
-    * _disease_
+ * [entity to disease association.object](entity_to_disease_association_object.md)
+    * Description: disease
     * range: [Disease](Disease.md) [required]
     * __Local__
- * _[onset qualifier](onset_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state when the phenotype appears is in the subject_
+ * [onset qualifier](onset_qualifier.md)
+    * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
     * range: [Onset](Onset.md)
     * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
- * _[severity qualifier](severity_qualifier.md)_
-    * _a qualifier used in a phenotypic association to state how severe the phenotype is in the subject_
+ * [severity qualifier](severity_qualifier.md)
+    * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
     * range: [SeverityValue](SeverityValue.md)
     * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
