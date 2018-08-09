@@ -1,0 +1,1394 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:shex="http://www.w3.org/ns/shex#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/ns/shex#closed -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shex#closed"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#datatype -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shex#datatype"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#expression -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shex#expression"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#expressions -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shex#expressions"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#max -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shex#max"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#min -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shex#min"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#predicate -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shex#predicate"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#shapeExprs -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shex#shapeExprs"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#shapes -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shex#shapes"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#stem -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shex#stem"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#valueExpr -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shex#valueExpr"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#values -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/ns/shex#values"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/ns/shex#EachOf -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shex#EachOf"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#IriStem -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shex#IriStem"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#NodeConstraint -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shex#NodeConstraint"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#Schema -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shex#Schema"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#Shape -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shex#Shape"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#ShapeAnd -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shex#ShapeAnd"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#ShapeOr -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shex#ShapeOr"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shex#TripleConstraint -->
+
+
+    <Class rdf:about="http://www.w3.org/ns/shex#TripleConstraint"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://bioentity.io/meta/Builtins -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/meta/Builtins">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+        <shex:values>
+            <rdf:Description/>
+        </shex:values>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/meta/SlotRangeTypes -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/meta/SlotRangeTypes">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#ShapeOr"/>
+        <shex:shapeExprs>
+            <rdf:Description/>
+        </shex:shapeExprs>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/ClassDefinition -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/ClassDefinition">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#ShapeAnd"/>
+        <shex:shapeExprs>
+            <rdf:Description/>
+        </shex:shapeExprs>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/ClassDefinition__List -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/ClassDefinition__List">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:closed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</shex:closed>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid5">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/Definition -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/Definition">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#ShapeAnd"/>
+        <shex:shapeExprs>
+            <rdf:Description/>
+        </shex:shapeExprs>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/Definition__List -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/Definition__List">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:closed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</shex:closed>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid8">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/Element -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/Element">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid10">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/Example -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/Example">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid12">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/Example__List -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/Example__List">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:closed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</shex:closed>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid14">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/Prefix -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/Prefix">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid16">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/Prefix__List -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/Prefix__List">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:closed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</shex:closed>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid18">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/SchemaDefinition -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/SchemaDefinition">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#ShapeAnd"/>
+        <shex:shapeExprs>
+            <rdf:Description/>
+        </shex:shapeExprs>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/SlotDefinition -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/SlotDefinition">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#ShapeAnd"/>
+        <shex:shapeExprs>
+            <rdf:Description/>
+        </shex:shapeExprs>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/SlotDefinition__List -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/SlotDefinition__List">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:closed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</shex:closed>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid22">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/TypeDefinition -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/TypeDefinition">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#ShapeAnd"/>
+        <shex:shapeExprs>
+            <rdf:Description/>
+        </shex:shapeExprs>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/TypeDefinition__List -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/TypeDefinition__List">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:closed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</shex:closed>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid25">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </NamedIndividual>
+    
+
+
+    <!-- http://bioentity.io/vocab/XSD_string__List -->
+
+
+    <NamedIndividual rdf:about="http://bioentity.io/vocab/XSD_string__List">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:closed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</shex:closed>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid27">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </NamedIndividual>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid30">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid32">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/prefixes"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/Prefix__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid33">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/primary_key"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid34">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid35">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/identifier"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid36">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid37">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/definitional"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid38">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid39">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/alias"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid40">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid41">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/path"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid42">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid43">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/default_prefix"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid44">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid45">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid46">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/2002/07/owl#inverseOf"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid47">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/is_class_field"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid48">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid49">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/role"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid50">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid51">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/inherited"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid52">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid53">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid54">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/slot_definition_mixins"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/SlotDefinition__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid55">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/slot_definition_union_of"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/SlotDefinition__List"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid57">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid59">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/defining_slots"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/SlotDefinition__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid60">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/slots"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/SlotDefinition__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid61">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/slot_usage"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/SlotDefinition__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid62">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/apply_to"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid63">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/entity"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid64">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid65">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/default_type"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/TypeDefinition"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid66">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid67">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/class_definition_mixins"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/ClassDefinition__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid68">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/class_definition_union_of"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/ClassDefinition__List"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid70">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid72">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/Definition"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid73">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/mixin"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid74">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid75">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/mixins"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/Definition__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid76">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/abstract"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid77">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid78">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/default_curi_maps"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/XSD_string__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid79">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/local_names"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/XSD_string__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid80">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/union_of"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/Definition__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid81">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid82">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#uri"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid83">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/values_from"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/XSD_string__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid84">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/symmetric"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid85">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid86">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid87">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/types"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/TypeDefinition__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid88">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid89">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#ShapeOr"/>
+                <shex:shapeExprs>
+                    <rdf:Description/>
+                </shex:shapeExprs>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+        <shex:values>
+            <rdf:Description/>
+        </shex:values>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid93">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid94">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid95">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid96">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#ShapeOr"/>
+                <shex:shapeExprs>
+                    <rdf:Description/>
+                </shex:shapeExprs>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+        <shex:values>
+            <rdf:Description/>
+        </shex:values>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid100">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Schema"/>
+        <shex:shapes rdf:resource="http://bioentity.io/meta/Builtins"/>
+        <shex:shapes rdf:resource="http://bioentity.io/meta/SlotRangeTypes"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/ClassDefinition__List"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/Definition"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/Definition__List"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/Element"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/Example"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/Example__List"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/Prefix"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/Prefix__List"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/SchemaDefinition"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/SlotDefinition"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/SlotDefinition__List"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/TypeDefinition"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/TypeDefinition__List"/>
+        <shex:shapes rdf:resource="http://bioentity.io/vocab/XSD_string__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid101">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/slot_definitions"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/SlotDefinition__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid102">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/classes"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/ClassDefinition__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid103">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/metamodel_version"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid104">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid105">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/source_file"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid106">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid107">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/source_file_size"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid108">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid109">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/source_file_date"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid110">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid111">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/generation_date"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid112">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#IriStem"/>
+        <shex:stem rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2001/XMLSchema#</shex:stem>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid114">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/id"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid115">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid116">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/value"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid117">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid118">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/value_description"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid119">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid120">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/local_name"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid121">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid122">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/prefix_uri"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid123">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid124">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid125">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid126">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/singular_name"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid127">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid128">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="https://www.w3.org/TR/skos-reference/#definition"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid129">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid130">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="https://www.w3.org/TR/skos-reference/#note"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid131">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid132">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="https://www.w3.org/TR/skos-reference/#editorialNote"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid133">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid134">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/version"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid135">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid136">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="https://www.w3.org/TR/skos-reference/#example"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/Example__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid137">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="https://www.w3.org/TR/skos-reference/#related"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid138">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid139">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/flags"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/XSD_string__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid140">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/aliases"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/XSD_string__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid141">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/mappings"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/XSD_string__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid142">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/id_prefixes"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/XSD_string__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid143">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.geneontology.org/formats/oboInOwl#inSubset"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/XSD_string__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid144">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="https://www.w3.org/TR/skos-reference/#inScheme"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid145">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid146">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/alt_descriptions"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/XSD_string__List"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid147">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/Example"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid148">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid149">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#ShapeOr"/>
+                <shex:shapeExprs>
+                    <rdf:Description/>
+                </shex:shapeExprs>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+        <shex:values>
+            <rdf:Description/>
+        </shex:values>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid153">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/Prefix"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid154">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid155">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#ShapeOr"/>
+                <shex:shapeExprs>
+                    <rdf:Description/>
+                </shex:shapeExprs>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid157">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/imports"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/XSD_string__List"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+        <shex:values>
+            <rdf:Description/>
+        </shex:values>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid160">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/TypeDefinition"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid161">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid162">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#ShapeOr"/>
+                <shex:shapeExprs>
+                    <rdf:Description/>
+                </shex:shapeExprs>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+        <shex:values>
+            <rdf:Description/>
+        </shex:values>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid166">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/Definition"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid167">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid168">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#ShapeOr"/>
+                <shex:shapeExprs>
+                    <rdf:Description/>
+                </shex:shapeExprs>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid170">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/license"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid171">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+        <shex:values>
+            <rdf:Description/>
+        </shex:values>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid175">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+                <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+                <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+                <shex:predicate rdf:resource="http://bioentity.io/vocab/typeof"/>
+                <shex:valueExpr>
+                    <rdf:Description rdf:nodeID="_:genid176">
+                        <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                        <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </rdf:Description>
+                </shex:valueExpr>
+            </rdf:Description>
+        </shex:expression>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid177">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#first"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid178">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid179">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#ShapeOr"/>
+                <shex:shapeExprs>
+                    <rdf:Description/>
+                </shex:shapeExprs>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+        <shex:values>
+            <rdf:Description/>
+        </shex:values>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#Shape"/>
+        <shex:expression>
+            <rdf:Description rdf:nodeID="_:genid184">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#EachOf"/>
+                <shex:expressions>
+                    <rdf:Description/>
+                </shex:expressions>
+            </rdf:Description>
+        </shex:expression>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid186">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/multivalued"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid187">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid188">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/domain"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/vocab/ClassDefinition"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid189">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/range"/>
+        <shex:valueExpr rdf:resource="http://bioentity.io/meta/SlotRangeTypes"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid190">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/required"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid191">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid192">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/object_property"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid193">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="_:genid194">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shex#TripleConstraint"/>
+        <shex:max rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shex:max>
+        <shex:min rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shex:min>
+        <shex:predicate rdf:resource="http://bioentity.io/vocab/inlined"/>
+        <shex:valueExpr>
+            <rdf:Description rdf:nodeID="_:genid195">
+                <rdf:type rdf:resource="http://www.w3.org/ns/shex#NodeConstraint"/>
+                <shex:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </rdf:Description>
+        </shex:valueExpr>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/ -->
+
+

@@ -1,0 +1,3225 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/ns/shex#closed
+<http://www.w3.org/ns/shex#closed> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shex#datatype
+<http://www.w3.org/ns/shex#datatype> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shex#expression
+<http://www.w3.org/ns/shex#expression> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shex#expressions
+<http://www.w3.org/ns/shex#expressions> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shex#max
+<http://www.w3.org/ns/shex#max> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shex#min
+<http://www.w3.org/ns/shex#min> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shex#predicate
+<http://www.w3.org/ns/shex#predicate> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shex#shapeExprs
+<http://www.w3.org/ns/shex#shapeExprs> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shex#shapes
+<http://www.w3.org/ns/shex#shapes> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shex#stem
+<http://www.w3.org/ns/shex#stem> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shex#valueExpr
+<http://www.w3.org/ns/shex#valueExpr> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shex#values
+<http://www.w3.org/ns/shex#values> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/ns/shex#EachOf
+<http://www.w3.org/ns/shex#EachOf> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/shex#IriStem
+<http://www.w3.org/ns/shex#IriStem> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/shex#NodeConstraint
+<http://www.w3.org/ns/shex#NodeConstraint> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/shex#Schema
+<http://www.w3.org/ns/shex#Schema> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/shex#Shape
+<http://www.w3.org/ns/shex#Shape> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/shex#ShapeAnd
+<http://www.w3.org/ns/shex#ShapeAnd> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/shex#ShapeOr
+<http://www.w3.org/ns/shex#ShapeOr> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/shex#TripleConstraint
+<http://www.w3.org/ns/shex#TripleConstraint> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  file:///Users/solbrig/git/biolink/biolink-model/XSD_identifier__List
+<file:///Users/solbrig/git/biolink/biolink-model/XSD_identifier__List> rdf:type owl:NamedIndividual ,
+                                                                                <http://www.w3.org/ns/shex#Shape> ;
+                                                                       <http://www.w3.org/ns/shex#closed> "true"^^xsd:boolean ;
+                                                                       <http://www.w3.org/ns/shex#expression> _:genid2 .
+
+_:genid2 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+          <http://www.w3.org/ns/shex#expressions> [ ] .
+
+
+###  file:///Users/solbrig/git/biolink/biolink-model/XSD_name__List
+<file:///Users/solbrig/git/biolink/biolink-model/XSD_name__List> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.w3.org/ns/shex#Shape> ;
+                                                                 <http://www.w3.org/ns/shex#closed> "true"^^xsd:boolean ;
+                                                                 <http://www.w3.org/ns/shex#expression> _:genid4 .
+
+_:genid4 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+          <http://www.w3.org/ns/shex#expressions> [ ] .
+
+
+###  file:///Users/solbrig/git/biolink/biolink-model/XSD_string__List
+<file:///Users/solbrig/git/biolink/biolink-model/XSD_string__List> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/ns/shex#Shape> ;
+                                                                   <http://www.w3.org/ns/shex#closed> "true"^^xsd:boolean ;
+                                                                   <http://www.w3.org/ns/shex#expression> _:genid6 .
+
+_:genid6 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+          <http://www.w3.org/ns/shex#expressions> [ ] .
+
+
+###  http://bioentity.io/meta/Builtins
+<http://bioentity.io/meta/Builtins> rdf:type owl:NamedIndividual ,
+                                             <http://www.w3.org/ns/shex#NodeConstraint> ;
+                                    <http://www.w3.org/ns/shex#values> [ ] .
+
+
+###  http://bioentity.io/meta/SlotRangeTypes
+<http://bioentity.io/meta/SlotRangeTypes> rdf:type owl:NamedIndividual ,
+                                                   <http://www.w3.org/ns/shex#ShapeOr> ;
+                                          <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ActivityAndBehavior
+<http://bioentity.io/vocab/ActivityAndBehavior> rdf:type owl:NamedIndividual ,
+                                                         <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/AdministrativeEntity
+<http://bioentity.io/vocab/AdministrativeEntity> rdf:type owl:NamedIndividual ,
+                                                          <http://www.w3.org/ns/shex#Shape> .
+
+
+###  http://bioentity.io/vocab/AnatomicalEntity
+<http://bioentity.io/vocab/AnatomicalEntity> rdf:type owl:NamedIndividual ,
+                                                      <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                             <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation
+<http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation> rdf:type owl:NamedIndividual ,
+                                                                                   <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                          <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityOntogenicAssociation
+<http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityOntogenicAssociation> rdf:type owl:NamedIndividual ,
+                                                                                            <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                                   <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation
+<http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation> rdf:type owl:NamedIndividual ,
+                                                                                         <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                                <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Association
+<http://bioentity.io/vocab/Association> rdf:type owl:NamedIndividual ,
+                                                 <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                        <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Attribute
+<http://bioentity.io/vocab/Attribute> rdf:type owl:NamedIndividual ,
+                                               <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                      <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/BiologicalEntity
+<http://bioentity.io/vocab/BiologicalEntity> rdf:type owl:NamedIndividual ,
+                                                      <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                             <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/BiologicalProcess
+<http://bioentity.io/vocab/BiologicalProcess> rdf:type owl:NamedIndividual ,
+                                                       <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                              <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/BiologicalProcessOrActivity
+<http://bioentity.io/vocab/BiologicalProcessOrActivity> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                        <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/BiologicalSex
+<http://bioentity.io/vocab/BiologicalSex> rdf:type owl:NamedIndividual ,
+                                                   <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                          <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Biosample
+<http://bioentity.io/vocab/Biosample> rdf:type owl:NamedIndividual ,
+                                               <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                      <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation
+<http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation> rdf:type owl:NamedIndividual ,
+                                                                                      <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                             <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/BiosampleToThingAssociation
+<http://bioentity.io/vocab/BiosampleToThingAssociation> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                        <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Case
+<http://bioentity.io/vocab/Case> rdf:type owl:NamedIndividual ,
+                                          <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                 <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation
+<http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                               <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/CaseToThingAssociation
+<http://bioentity.io/vocab/CaseToThingAssociation> rdf:type owl:NamedIndividual ,
+                                                            <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                   <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Cell
+<http://bioentity.io/vocab/Cell> rdf:type owl:NamedIndividual ,
+                                          <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                 <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/CellLine
+<http://bioentity.io/vocab/CellLine> rdf:type owl:NamedIndividual ,
+                                              <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                     <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation
+<http://bioentity.io/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation> rdf:type owl:NamedIndividual ,
+                                                                                     <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/CellLineToThingAssociation
+<http://bioentity.io/vocab/CellLineToThingAssociation> rdf:type owl:NamedIndividual ,
+                                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/CellularComponent
+<http://bioentity.io/vocab/CellularComponent> rdf:type owl:NamedIndividual ,
+                                                       <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                              <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ChemicalSubstance
+<http://bioentity.io/vocab/ChemicalSubstance> rdf:type owl:NamedIndividual ,
+                                                       <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                              <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ChemicalSubstance__List
+<http://bioentity.io/vocab/ChemicalSubstance__List> rdf:type owl:NamedIndividual ,
+                                                             <http://www.w3.org/ns/shex#Shape> ;
+                                                    <http://www.w3.org/ns/shex#closed> "true"^^xsd:boolean ;
+                                                    <http://www.w3.org/ns/shex#expression> _:genid33 .
+
+_:genid33 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+           <http://www.w3.org/ns/shex#expressions> [ ] .
+
+
+###  http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation
+<http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation> rdf:type owl:NamedIndividual ,
+                                                                                     <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ChemicalToGeneAssociation
+<http://bioentity.io/vocab/ChemicalToGeneAssociation> rdf:type owl:NamedIndividual ,
+                                                               <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                      <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ChemicalToPathwayAssociation
+<http://bioentity.io/vocab/ChemicalToPathwayAssociation> rdf:type owl:NamedIndividual ,
+                                                                  <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                         <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ChemicalToThingAssociation
+<http://bioentity.io/vocab/ChemicalToThingAssociation> rdf:type owl:NamedIndividual ,
+                                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ClinicalEntity
+<http://bioentity.io/vocab/ClinicalEntity> rdf:type owl:NamedIndividual ,
+                                                    <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                           <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ClinicalIntervention
+<http://bioentity.io/vocab/ClinicalIntervention> rdf:type owl:NamedIndividual ,
+                                                          <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                 <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ClinicalModifier
+<http://bioentity.io/vocab/ClinicalModifier> rdf:type owl:NamedIndividual ,
+                                                      <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                             <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ClinicalTrial
+<http://bioentity.io/vocab/ClinicalTrial> rdf:type owl:NamedIndividual ,
+                                                   <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                          <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/CodingSequence
+<http://bioentity.io/vocab/CodingSequence> rdf:type owl:NamedIndividual ,
+                                                    <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                           <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Cohort
+<http://bioentity.io/vocab/Cohort> rdf:type owl:NamedIndividual ,
+                                            <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                   <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ConfidenceLevel
+<http://bioentity.io/vocab/ConfidenceLevel> rdf:type owl:NamedIndividual ,
+                                                     <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Device
+<http://bioentity.io/vocab/Device> rdf:type owl:NamedIndividual ,
+                                            <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                   <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Disease
+<http://bioentity.io/vocab/Disease> rdf:type owl:NamedIndividual ,
+                                             <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                    <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/DiseaseOrPhenotypicFeature
+<http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> rdf:type owl:NamedIndividual ,
+                                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
+<http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation> rdf:type owl:NamedIndividual ,
+                                                                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation
+<http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation> rdf:type owl:NamedIndividual ,
+                                                                                             <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                                    <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation
+<http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation> rdf:type owl:NamedIndividual ,
+                                                                           <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                  <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/DiseaseToThingAssociation
+<http://bioentity.io/vocab/DiseaseToThingAssociation> rdf:type owl:NamedIndividual ,
+                                                               <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                      <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Drug
+<http://bioentity.io/vocab/Drug> rdf:type owl:NamedIndividual ,
+                                          <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                 <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/DrugExposure
+<http://bioentity.io/vocab/DrugExposure> rdf:type owl:NamedIndividual ,
+                                                  <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                         <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/DrugExposure__List
+<http://bioentity.io/vocab/DrugExposure__List> rdf:type owl:NamedIndividual ,
+                                                        <http://www.w3.org/ns/shex#Shape> ;
+                                               <http://www.w3.org/ns/shex#closed> "true"^^xsd:boolean ;
+                                               <http://www.w3.org/ns/shex#expression> _:genid55 .
+
+_:genid55 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+           <http://www.w3.org/ns/shex#expressions> [ ] .
+
+
+###  http://bioentity.io/vocab/EntityToDiseaseAssociation
+<http://bioentity.io/vocab/EntityToDiseaseAssociation> rdf:type owl:NamedIndividual ,
+                                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/EntityToFeatureOrDiseaseQualifiers
+<http://bioentity.io/vocab/EntityToFeatureOrDiseaseQualifiers> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                               <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation
+<http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation> rdf:type owl:NamedIndividual ,
+                                                                          <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                 <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Environment
+<http://bioentity.io/vocab/Environment> rdf:type owl:NamedIndividual ,
+                                                 <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                        <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation
+<http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation> rdf:type owl:NamedIndividual ,
+                                                                               <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                      <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/EnvironmentalFeature
+<http://bioentity.io/vocab/EnvironmentalFeature> rdf:type owl:NamedIndividual ,
+                                                          <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                 <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/EnvironmentalProcess
+<http://bioentity.io/vocab/EnvironmentalProcess> rdf:type owl:NamedIndividual ,
+                                                          <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                 <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/EvidenceType
+<http://bioentity.io/vocab/EvidenceType> rdf:type owl:NamedIndividual ,
+                                                  <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                         <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Exon
+<http://bioentity.io/vocab/Exon> rdf:type owl:NamedIndividual ,
+                                          <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                 <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ExonToTranscriptRelationship
+<http://bioentity.io/vocab/ExonToTranscriptRelationship> rdf:type owl:NamedIndividual ,
+                                                                  <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                         <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ExtensionsAndEvidenceAssociationMixin
+<http://bioentity.io/vocab/ExtensionsAndEvidenceAssociationMixin> rdf:type owl:NamedIndividual ,
+                                                                           <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                  <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/FrequencyQualifier
+<http://bioentity.io/vocab/FrequencyQualifier> rdf:type owl:NamedIndividual ,
+                                                        <http://www.w3.org/ns/shex#Shape> .
+
+
+###  http://bioentity.io/vocab/FrequencyQuantifier
+<http://bioentity.io/vocab/FrequencyQuantifier> rdf:type owl:NamedIndividual ,
+                                                         <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/FrequencyValue
+<http://bioentity.io/vocab/FrequencyValue> rdf:type owl:NamedIndividual ,
+                                                    <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                           <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/FunctionalAssociation
+<http://bioentity.io/vocab/FunctionalAssociation> rdf:type owl:NamedIndividual ,
+                                                           <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                  <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Gene
+<http://bioentity.io/vocab/Gene> rdf:type owl:NamedIndividual ,
+                                          <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                 <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation
+<http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation> rdf:type owl:NamedIndividual ,
+                                                                      <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                             <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneFamily
+<http://bioentity.io/vocab/GeneFamily> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneGrouping
+<http://bioentity.io/vocab/GeneGrouping> rdf:type owl:NamedIndividual ,
+                                                  <http://www.w3.org/ns/shex#Shape> .
+
+
+###  http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociation
+<http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociation> rdf:type owl:NamedIndividual ,
+                                                                                       <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                              <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneOntologyClass
+<http://bioentity.io/vocab/GeneOntologyClass> rdf:type owl:NamedIndividual ,
+                                                       <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                              <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneOrGeneProduct
+<http://bioentity.io/vocab/GeneOrGeneProduct> rdf:type owl:NamedIndividual ,
+                                                       <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                              <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneProduct
+<http://bioentity.io/vocab/GeneProduct> rdf:type owl:NamedIndividual ,
+                                                 <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                        <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneProductIsoform
+<http://bioentity.io/vocab/GeneProductIsoform> rdf:type owl:NamedIndividual ,
+                                                        <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                               <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneRegulatoryRelationship
+<http://bioentity.io/vocab/GeneRegulatoryRelationship> rdf:type owl:NamedIndividual ,
+                                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneToDiseaseAssociation
+<http://bioentity.io/vocab/GeneToDiseaseAssociation> rdf:type owl:NamedIndividual ,
+                                                              <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                     <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneToExpressionSiteAssociation
+<http://bioentity.io/vocab/GeneToExpressionSiteAssociation> rdf:type owl:NamedIndividual ,
+                                                                     <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneToGeneAssociation
+<http://bioentity.io/vocab/GeneToGeneAssociation> rdf:type owl:NamedIndividual ,
+                                                           <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                  <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneToGeneHomologyAssociation
+<http://bioentity.io/vocab/GeneToGeneHomologyAssociation> rdf:type owl:NamedIndividual ,
+                                                                   <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                          <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneToGeneProductRelationship
+<http://bioentity.io/vocab/GeneToGeneProductRelationship> rdf:type owl:NamedIndividual ,
+                                                                   <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                          <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneToGoTermAssociation
+<http://bioentity.io/vocab/GeneToGoTermAssociation> rdf:type owl:NamedIndividual ,
+                                                             <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                    <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation
+<http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation> rdf:type owl:NamedIndividual ,
+                                                                        <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                               <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeneToThingAssociation
+<http://bioentity.io/vocab/GeneToThingAssociation> rdf:type owl:NamedIndividual ,
+                                                            <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                   <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Gene__List
+<http://bioentity.io/vocab/Gene__List> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/ns/shex#Shape> ;
+                                       <http://www.w3.org/ns/shex#closed> "true"^^xsd:boolean ;
+                                       <http://www.w3.org/ns/shex#expression> _:genid88 .
+
+_:genid88 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+           <http://www.w3.org/ns/shex#expressions> [ ] .
+
+
+###  http://bioentity.io/vocab/Genome
+<http://bioentity.io/vocab/Genome> rdf:type owl:NamedIndividual ,
+                                            <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                   <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GenomicEntity
+<http://bioentity.io/vocab/GenomicEntity> rdf:type owl:NamedIndividual ,
+                                                   <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                          <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GenomicSequenceLocalization
+<http://bioentity.io/vocab/GenomicSequenceLocalization> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                        <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Genotype
+<http://bioentity.io/vocab/Genotype> rdf:type owl:NamedIndividual ,
+                                              <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                     <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GenotypeToGeneAssociation
+<http://bioentity.io/vocab/GenotypeToGeneAssociation> rdf:type owl:NamedIndividual ,
+                                                               <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                      <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GenotypeToGenotypePartAssociation
+<http://bioentity.io/vocab/GenotypeToGenotypePartAssociation> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                              <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation
+<http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation> rdf:type owl:NamedIndividual ,
+                                                                            <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                   <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GenotypeToThingAssociation
+<http://bioentity.io/vocab/GenotypeToThingAssociation> rdf:type owl:NamedIndividual ,
+                                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GenotypeToVariantAssociation
+<http://bioentity.io/vocab/GenotypeToVariantAssociation> rdf:type owl:NamedIndividual ,
+                                                                  <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                         <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GenotypicSex
+<http://bioentity.io/vocab/GenotypicSex> rdf:type owl:NamedIndividual ,
+                                                  <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                         <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeographicLocation
+<http://bioentity.io/vocab/GeographicLocation> rdf:type owl:NamedIndividual ,
+                                                        <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                               <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GeographicLocationAtTime
+<http://bioentity.io/vocab/GeographicLocationAtTime> rdf:type owl:NamedIndividual ,
+                                                              <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                     <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/GrossAnatomicalStructure
+<http://bioentity.io/vocab/GrossAnatomicalStructure> rdf:type owl:NamedIndividual ,
+                                                              <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                     <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Haplotype
+<http://bioentity.io/vocab/Haplotype> rdf:type owl:NamedIndividual ,
+                                               <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                      <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/IndividualOrganism
+<http://bioentity.io/vocab/IndividualOrganism> rdf:type owl:NamedIndividual ,
+                                                        <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                               <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/InformationContentEntity
+<http://bioentity.io/vocab/InformationContentEntity> rdf:type owl:NamedIndividual ,
+                                                              <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                     <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/LifeStage
+<http://bioentity.io/vocab/LifeStage> rdf:type owl:NamedIndividual ,
+                                               <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                      <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/MacromolecularComplex
+<http://bioentity.io/vocab/MacromolecularComplex> rdf:type owl:NamedIndividual ,
+                                                           <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                  <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/MacromolecularMachine
+<http://bioentity.io/vocab/MacromolecularMachine> rdf:type owl:NamedIndividual ,
+                                                           <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                  <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/MacromolecularMachineToBiologicalProcessAssociation
+<http://bioentity.io/vocab/MacromolecularMachineToBiologicalProcessAssociation> rdf:type owl:NamedIndividual ,
+                                                                                         <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                                <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/MacromolecularMachineToCellularComponentAssociation
+<http://bioentity.io/vocab/MacromolecularMachineToCellularComponentAssociation> rdf:type owl:NamedIndividual ,
+                                                                                         <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                                <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/MacromolecularMachineToMolecularActivityAssociation
+<http://bioentity.io/vocab/MacromolecularMachineToMolecularActivityAssociation> rdf:type owl:NamedIndividual ,
+                                                                                         <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                                <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Metabolite
+<http://bioentity.io/vocab/Metabolite> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/MicroRNA
+<http://bioentity.io/vocab/MicroRNA> rdf:type owl:NamedIndividual ,
+                                              <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                     <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ModelToDiseaseMixin
+<http://bioentity.io/vocab/ModelToDiseaseMixin> rdf:type owl:NamedIndividual ,
+                                                         <http://www.w3.org/ns/shex#Shape> ;
+                                                <http://www.w3.org/ns/shex#expression> _:genid114 .
+
+_:genid114 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+
+###  http://bioentity.io/vocab/MolecularActivity
+<http://bioentity.io/vocab/MolecularActivity> rdf:type owl:NamedIndividual ,
+                                                       <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                              <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/MolecularEntity
+<http://bioentity.io/vocab/MolecularEntity> rdf:type owl:NamedIndividual ,
+                                                     <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/NamedGraph
+<http://bioentity.io/vocab/NamedGraph> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/NamedThing
+<http://bioentity.io/vocab/NamedThing> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/ns/shex#Shape> ;
+                                       <http://www.w3.org/ns/shex#expression> _:genid119 .
+
+_:genid119 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+
+###  http://bioentity.io/vocab/NoncodingRNAProduct
+<http://bioentity.io/vocab/NoncodingRNAProduct> rdf:type owl:NamedIndividual ,
+                                                         <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Occurrent
+<http://bioentity.io/vocab/Occurrent> rdf:type owl:NamedIndividual ,
+                                               <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                      <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Onset
+<http://bioentity.io/vocab/Onset> rdf:type owl:NamedIndividual ,
+                                           <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                  <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/OntologyClass
+<http://bioentity.io/vocab/OntologyClass> rdf:type owl:NamedIndividual ,
+                                                   <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                          <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/OntologyClass__List
+<http://bioentity.io/vocab/OntologyClass__List> rdf:type owl:NamedIndividual ,
+                                                         <http://www.w3.org/ns/shex#Shape> ;
+                                                <http://www.w3.org/ns/shex#closed> "true"^^xsd:boolean ;
+                                                <http://www.w3.org/ns/shex#expression> _:genid125 .
+
+_:genid125 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+
+###  http://bioentity.io/vocab/OrganismTaxon
+<http://bioentity.io/vocab/OrganismTaxon> rdf:type owl:NamedIndividual ,
+                                                   <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                          <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/OrganismalEntity
+<http://bioentity.io/vocab/OrganismalEntity> rdf:type owl:NamedIndividual ,
+                                                      <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                             <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/PairwiseGeneToGeneInteraction
+<http://bioentity.io/vocab/PairwiseGeneToGeneInteraction> rdf:type owl:NamedIndividual ,
+                                                                   <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                          <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/PairwiseInteractionAssociation
+<http://bioentity.io/vocab/PairwiseInteractionAssociation> rdf:type owl:NamedIndividual ,
+                                                                    <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                           <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/PathognomonicityQuantifier
+<http://bioentity.io/vocab/PathognomonicityQuantifier> rdf:type owl:NamedIndividual ,
+                                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Pathway
+<http://bioentity.io/vocab/Pathway> rdf:type owl:NamedIndividual ,
+                                             <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                    <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Phenomenon
+<http://bioentity.io/vocab/Phenomenon> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/PhenotypicFeature
+<http://bioentity.io/vocab/PhenotypicFeature> rdf:type owl:NamedIndividual ,
+                                                       <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                              <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/PhenotypicSex
+<http://bioentity.io/vocab/PhenotypicSex> rdf:type owl:NamedIndividual ,
+                                                   <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                          <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/PhysiologicalProcess
+<http://bioentity.io/vocab/PhysiologicalProcess> rdf:type owl:NamedIndividual ,
+                                                          <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                 <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/PlanetaryEntity
+<http://bioentity.io/vocab/PlanetaryEntity> rdf:type owl:NamedIndividual ,
+                                                     <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/PopulationOfIndividualOrganisms
+<http://bioentity.io/vocab/PopulationOfIndividualOrganisms> rdf:type owl:NamedIndividual ,
+                                                                     <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/PopulationToPopulationAssociation
+<http://bioentity.io/vocab/PopulationToPopulationAssociation> rdf:type owl:NamedIndividual ,
+                                                                       <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                              <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Procedure
+<http://bioentity.io/vocab/Procedure> rdf:type owl:NamedIndividual ,
+                                               <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                      <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/PropertyValuePair
+<http://bioentity.io/vocab/PropertyValuePair> rdf:type owl:NamedIndividual ,
+                                                       <http://www.w3.org/ns/shex#Shape> ;
+                                              <http://www.w3.org/ns/shex#expression> _:genid141 .
+
+_:genid141 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+
+###  http://bioentity.io/vocab/PropertyValuePair__List
+<http://bioentity.io/vocab/PropertyValuePair__List> rdf:type owl:NamedIndividual ,
+                                                             <http://www.w3.org/ns/shex#Shape> ;
+                                                    <http://www.w3.org/ns/shex#closed> "true"^^xsd:boolean ;
+                                                    <http://www.w3.org/ns/shex#expression> _:genid143 .
+
+_:genid143 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+
+###  http://bioentity.io/vocab/Protein
+<http://bioentity.io/vocab/Protein> rdf:type owl:NamedIndividual ,
+                                             <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                    <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ProteinIsoform
+<http://bioentity.io/vocab/ProteinIsoform> rdf:type owl:NamedIndividual ,
+                                                    <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                           <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Provider
+<http://bioentity.io/vocab/Provider> rdf:type owl:NamedIndividual ,
+                                              <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                     <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Publication
+<http://bioentity.io/vocab/Publication> rdf:type owl:NamedIndividual ,
+                                                 <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                        <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Publication__List
+<http://bioentity.io/vocab/Publication__List> rdf:type owl:NamedIndividual ,
+                                                       <http://www.w3.org/ns/shex#Shape> ;
+                                              <http://www.w3.org/ns/shex#closed> "true"^^xsd:boolean ;
+                                              <http://www.w3.org/ns/shex#expression> _:genid149 .
+
+_:genid149 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+
+###  http://bioentity.io/vocab/RNAProduct
+<http://bioentity.io/vocab/RNAProduct> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/RNAProductIsoform
+<http://bioentity.io/vocab/RNAProductIsoform> rdf:type owl:NamedIndividual ,
+                                                       <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                              <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/RelationshipQuantifier
+<http://bioentity.io/vocab/RelationshipQuantifier> rdf:type owl:NamedIndividual ,
+                                                            <http://www.w3.org/ns/shex#Shape> .
+
+
+###  http://bioentity.io/vocab/RelationshipType
+<http://bioentity.io/vocab/RelationshipType> rdf:type owl:NamedIndividual ,
+                                                      <http://www.w3.org/ns/shex#Shape> .
+
+
+###  http://bioentity.io/vocab/SenstivityQuantifier
+<http://bioentity.io/vocab/SenstivityQuantifier> rdf:type owl:NamedIndividual ,
+                                                          <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                 <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/SequenceFeatureRelationship
+<http://bioentity.io/vocab/SequenceFeatureRelationship> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                        <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/SequenceVariant
+<http://bioentity.io/vocab/SequenceVariant> rdf:type owl:NamedIndividual ,
+                                                     <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/SequenceVariantModulatesTreatmentAssociation
+<http://bioentity.io/vocab/SequenceVariantModulatesTreatmentAssociation> rdf:type owl:NamedIndividual ,
+                                                                                  <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                         <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/SeverityValue
+<http://bioentity.io/vocab/SeverityValue> rdf:type owl:NamedIndividual ,
+                                                   <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                          <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/SpecificityQuantifier
+<http://bioentity.io/vocab/SpecificityQuantifier> rdf:type owl:NamedIndividual ,
+                                                           <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                  <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/TaxonClosureMixin
+<http://bioentity.io/vocab/TaxonClosureMixin> rdf:type owl:NamedIndividual ,
+                                                       <http://www.w3.org/ns/shex#Shape> ;
+                                              <http://www.w3.org/ns/shex#expression> _:genid159 .
+
+_:genid159 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+
+###  http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation
+<http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation> rdf:type owl:NamedIndividual ,
+                                                                                  <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                         <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/ThingWithTaxon
+<http://bioentity.io/vocab/ThingWithTaxon> rdf:type owl:NamedIndividual ,
+                                                    <http://www.w3.org/ns/shex#Shape> ;
+                                           <http://www.w3.org/ns/shex#expression> _:genid162 .
+
+_:genid162 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002162> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/OrganismTaxon> .
+
+
+###  http://bioentity.io/vocab/Transcript
+<http://bioentity.io/vocab/Transcript> rdf:type owl:NamedIndividual ,
+                                                <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                       <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/TranscriptToGeneRelationship
+<http://bioentity.io/vocab/TranscriptToGeneRelationship> rdf:type owl:NamedIndividual ,
+                                                                  <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                         <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Treatment
+<http://bioentity.io/vocab/Treatment> rdf:type owl:NamedIndividual ,
+                                               <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                      <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/VariantToDiseaseAssociation
+<http://bioentity.io/vocab/VariantToDiseaseAssociation> rdf:type owl:NamedIndividual ,
+                                                                 <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                        <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/VariantToPhenotypicFeatureAssociation
+<http://bioentity.io/vocab/VariantToPhenotypicFeatureAssociation> rdf:type owl:NamedIndividual ,
+                                                                           <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                                  <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/VariantToPopulationAssociation
+<http://bioentity.io/vocab/VariantToPopulationAssociation> rdf:type owl:NamedIndividual ,
+                                                                    <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                           <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/VariantToThingAssociation
+<http://bioentity.io/vocab/VariantToThingAssociation> rdf:type owl:NamedIndividual ,
+                                                               <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                                      <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+###  http://bioentity.io/vocab/Zygosity
+<http://bioentity.io/vocab/Zygosity> rdf:type owl:NamedIndividual ,
+                                              <http://www.w3.org/ns/shex#ShapeAnd> ;
+                                     <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+] .
+
+_:genid172 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/AnatomicalEntity> .
+
+_:genid173 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+_:genid174 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Genotype> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid176
+ ] .
+
+_:genid176 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid178 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+_:genid179 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Genotype> .
+
+_:genid180 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/SequenceVariant> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid183
+ ] .
+
+_:genid183 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid184 .
+
+_:genid184 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:time .
+
+_:genid185 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid190
+ ] .
+
+_:genid190 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/BiologicalProcess> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid192
+ ] .
+
+_:genid192 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/CellularComponent> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid194
+ ] .
+
+_:genid194 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/MolecularActivity> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid199
+ ] .
+
+_:genid199 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.org/dc/elements/1.1/title> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid200 .
+
+_:genid200 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid202
+ ] .
+
+_:genid202 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid209
+ ] .
+
+_:genid209 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid211 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/PopulationOfIndividualOrganisms> .
+
+_:genid212 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/PopulationOfIndividualOrganisms> .
+
+_:genid213 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid220
+ ] .
+
+_:genid220 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid222 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/SequenceVariant> .
+
+_:genid223 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Treatment> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid225
+ ] .
+
+_:genid225 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid227 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Transcript> .
+
+_:genid228 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Gene> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid230
+ ] .
+
+_:genid230 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid233
+ ] .
+
+_:genid233 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> .
+
+_:genid234 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid235 .
+
+_:genid235 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid236 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+_:genid237 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid238 .
+
+_:genid238 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid240
+ ] .
+
+_:genid240 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/SequenceVariant> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid242
+ ] .
+
+_:genid242 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid244 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/SequenceVariant> .
+
+_:genid245 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/PopulationOfIndividualOrganisms> .
+
+_:genid246 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid247 .
+
+_:genid247 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:double .
+
+_:genid248 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid249 .
+
+_:genid249 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:integer .
+
+_:genid250 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid251 .
+
+_:genid251 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:integer .
+
+[ rdf:type <http://www.w3.org/ns/shex#IriStem> ;
+   <http://www.w3.org/ns/shex#stem> "http://www.w3.org/2001/XMLSchema#"^^xsd:string
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid254
+ ] .
+
+_:genid254 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Biosample> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid256
+ ] .
+
+_:genid256 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid259
+ ] .
+
+_:genid259 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Case> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid262
+ ] .
+
+_:genid262 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/CellLine> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid265
+ ] .
+
+_:genid265 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid267
+ ] .
+
+_:genid267 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Disease> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid269
+ ] .
+
+_:genid269 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/drug> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/ChemicalSubstance__List> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid273
+ ] .
+
+_:genid273 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid275 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/subject_extensions> ;
+            <http://www.w3.org/ns/shex#valueExpr> <file:///Users/solbrig/git/biolink/biolink-model/XSD_string__List> .
+
+_:genid276 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/object_extensions> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/PropertyValuePair__List> .
+
+_:genid277 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/has_evidence_graph> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid278 .
+
+_:genid278 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid280
+ ] .
+
+_:genid280 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:genid281 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/has_evidence_type> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/EvidenceType> .
+
+_:genid282 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002558> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid283 .
+
+_:genid283 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid285
+ ] .
+
+_:genid285 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid287 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid288 .
+
+_:genid288 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:integer .
+
+_:genid289 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid290 .
+
+_:genid290 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:integer .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid292
+ ] .
+
+_:genid292 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid294 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid295 .
+
+_:genid295 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:double .
+
+_:genid296 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid297 .
+
+_:genid297 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:double .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid299
+ ] .
+
+_:genid299 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Genotype> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid301
+ ] .
+
+_:genid301 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid303 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <wgs:lat> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid304 .
+
+_:genid304 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:float .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid306
+ ] .
+
+_:genid306 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Pathway> .
+
+_:genid307 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <wgs:long> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid308 .
+
+_:genid308 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:float .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+_:genid311 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid312 .
+
+_:genid312 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid313 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid318
+ ] .
+
+_:genid318 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid320 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/MolecularEntity> .
+
+_:genid321 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid322 .
+
+_:genid322 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid323 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+_:genid324 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/MolecularEntity> .
+
+_:genid325 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/interacting_molecules_category> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/OntologyClass> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+_:genid329 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+_:genid330 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/NamedThing> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+_:genid337 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/subject_taxon> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/OrganismTaxon> .
+
+_:genid338 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/subject_taxon_label> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid339 .
+
+_:genid339 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> .
+
+_:genid340 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/subject_taxon_closure> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/OntologyClass__List> .
+
+_:genid341 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/subject_taxon_closure_label> ;
+            <http://www.w3.org/ns/shex#valueExpr> <file:///Users/solbrig/git/biolink/biolink-model/XSD_string__List> .
+
+_:genid342 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/object_taxon> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/OrganismTaxon> .
+
+_:genid343 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/object_taxon_label> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid344 .
+
+_:genid344 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> .
+
+_:genid345 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/object_taxon_closure> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/OntologyClass__List> .
+
+_:genid346 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/object_taxon_closure_label> ;
+            <http://www.w3.org/ns/shex#valueExpr> <file:///Users/solbrig/git/biolink/biolink-model/XSD_string__List> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid349
+ ] .
+
+_:genid349 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid351 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002606> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> .
+
+_:genid352 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/has_exposure_parts> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/DrugExposure__List> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+_:genid354 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:first ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid355 .
+
+_:genid355 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> .
+
+_:genid356 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#predicate> rdf:rest ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid357 .
+
+_:genid357 rdf:type <http://www.w3.org/ns/shex#ShapeOr> ;
+            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+   <http://www.w3.org/ns/shex#values> [ ]
+] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid363
+ ] .
+
+_:genid363 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid365 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/AnatomicalEntity> .
+
+_:genid366 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/AnatomicalEntity> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+_:genid369 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:first ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/ChemicalSubstance> .
+
+_:genid370 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#predicate> rdf:rest ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid371 .
+
+_:genid371 rdf:type <http://www.w3.org/ns/shex#ShapeOr> ;
+            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+   <http://www.w3.org/ns/shex#values> [ ]
+] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+_:genid378 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:first ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/DrugExposure> .
+
+_:genid379 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#predicate> rdf:rest ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid380 .
+
+_:genid380 rdf:type <http://www.w3.org/ns/shex#ShapeOr> ;
+            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+   <http://www.w3.org/ns/shex#values> [ ]
+] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid385
+ ] .
+
+_:genid385 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+_:genid388 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/severity_qualifier> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/SeverityValue> .
+
+_:genid389 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/onset_qualifier> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Onset> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid393
+ ] .
+
+_:genid393 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid395
+ ] .
+
+_:genid395 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid397 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+_:genid399 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid401
+ ] .
+
+_:genid401 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:genid402 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:first ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Gene> .
+
+_:genid403 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#predicate> rdf:rest ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid404 .
+
+_:genid404 rdf:type <http://www.w3.org/ns/shex#ShapeOr> ;
+            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+   <http://www.w3.org/ns/shex#values> [ ]
+] .
+
+_:genid408 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:first ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/PropertyValuePair> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid410
+ ] .
+
+_:genid410 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/AnatomicalEntity> .
+
+_:genid411 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#predicate> rdf:rest ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid412 .
+
+_:genid412 rdf:type <http://www.w3.org/ns/shex#ShapeOr> ;
+            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+   <http://www.w3.org/ns/shex#values> [ ]
+] .
+
+_:genid416 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:first ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Publication> .
+
+_:genid417 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#predicate> rdf:rest ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid418 .
+
+_:genid418 rdf:type <http://www.w3.org/ns/shex#ShapeOr> ;
+            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+   <http://www.w3.org/ns/shex#values> [ ]
+] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+_:genid424 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:first ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid425 .
+
+_:genid425 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> .
+
+_:genid426 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#predicate> rdf:rest ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid427 .
+
+_:genid427 rdf:type <http://www.w3.org/ns/shex#ShapeOr> ;
+            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+   <http://www.w3.org/ns/shex#values> [ ]
+] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid434
+ ] .
+
+_:genid434 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/ChemicalSubstance> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid437
+ ] .
+
+_:genid437 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Disease> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid440
+ ] .
+
+_:genid440 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdfs:label ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid441 .
+
+_:genid441 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid445
+ ] .
+
+_:genid445 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+_:genid448 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GenomicEntity> .
+
+_:genid449 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GenomicEntity> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid451
+ ] .
+
+_:genid451 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid453
+ ] .
+
+_:genid453 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/SequenceVariant> .
+
+_:genid454 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:first ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid455 .
+
+_:genid455 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid456 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#predicate> rdf:rest ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid457 .
+
+_:genid457 rdf:type <http://www.w3.org/ns/shex#ShapeOr> ;
+            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid460
+ ] .
+
+_:genid460 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Environment> .
+
+[ rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+   <http://www.w3.org/ns/shex#values> [ ]
+] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid465
+ ] .
+
+_:genid465 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid467 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/MacromolecularMachine> .
+
+_:genid468 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOntologyClass> .
+
+_:genid469 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:first ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/OntologyClass> .
+
+_:genid470 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#predicate> rdf:rest ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid471 .
+
+_:genid471 rdf:type <http://www.w3.org/ns/shex#ShapeOr> ;
+            <http://www.w3.org/ns/shex#shapeExprs> [ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+   <http://www.w3.org/ns/shex#values> [ ]
+] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid477
+ ] .
+
+_:genid477 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002200> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid478 .
+
+_:genid478 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid480
+ ] .
+
+_:genid480 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid482 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002435> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Gene> .
+
+_:genid483 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002205> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneProduct> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+_:genid485 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <wd:P2293> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid488
+ ] .
+
+_:genid488 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.org/dc/elements/1.1/title> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid489 .
+
+_:genid489 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid493
+ ] .
+
+_:genid493 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid495 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/sex_qualifier> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/BiologicalSex> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+_:genid497 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <dcterms:description> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid498 .
+
+_:genid498 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid499 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/PhenotypicFeature> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid501
+ ] .
+
+_:genid501 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Zygosity> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid503
+ ] .
+
+_:genid503 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid505 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Gene__List> .
+
+_:genid506 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid507 .
+
+_:genid507 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid509
+ ] .
+
+_:genid509 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid511 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid512 .
+
+_:genid512 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid514
+ ] .
+
+_:genid514 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid516 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002211> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Occurrent> .
+
+_:genid517 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0000057> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid518 .
+
+_:genid518 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid519 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002233> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid520 .
+
+_:genid520 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid521 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/BFO_0000063> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Occurrent> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid523
+ ] .
+
+_:genid523 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdfs:subClassOf ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/OntologyClass> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid525
+ ] .
+
+_:genid525 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid527 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002610> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/MolecularEntity> .
+
+_:genid528 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002610> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/MolecularEntity> .
+
+_:genid529 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002302> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid530 .
+
+_:genid530 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid531 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/AnatomicalEntity> .
+
+_:genid532 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Exon> .
+
+_:genid533 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid534 .
+
+_:genid534 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid535 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdfs:label ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid536 .
+
+_:genid536 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid537 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:type ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid538 .
+
+_:genid538 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid539 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/has_alternate_identifier> ;
+            <http://www.w3.org/ns/shex#valueExpr> <file:///Users/solbrig/git/biolink/biolink-model/XSD_identifier__List> .
+
+_:genid540 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/has_xref> ;
+            <http://www.w3.org/ns/shex#valueExpr> <file:///Users/solbrig/git/biolink/biolink-model/XSD_identifier__List> .
+
+_:genid541 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/has_synonym> ;
+            <http://www.w3.org/ns/shex#valueExpr> <file:///Users/solbrig/git/biolink/biolink-model/XSD_name__List> .
+
+_:genid542 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topObjectProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/NamedThing> .
+
+_:genid543 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Transcript> .
+
+_:genid544 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid545 .
+
+_:genid545 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid546 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid547 .
+
+_:genid547 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid548 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid549 .
+
+_:genid549 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid550 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <dcterms:description> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid551 .
+
+_:genid551 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid552 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid553 .
+
+_:genid553 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid556
+ ] .
+
+_:genid556 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid558 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002436> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/MolecularEntity> .
+
+_:genid559 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002448> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/MolecularEntity> .
+
+_:genid560 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002607> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid562
+ ] .
+
+_:genid562 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002292> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid564
+ ] .
+
+_:genid564 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid565 .
+
+_:genid565 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid567
+ ] .
+
+_:genid567 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid569
+ ] .
+
+_:genid569 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid571 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <semmeddb:COEXISTS_WITH> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:genid572 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <semmeddb:COEXISTS_WITH> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:genid573 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <semmeddb:COEXISTS_WITH> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:genid574 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.obolibrary.org/obo/RO_0002206> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/AnatomicalEntity> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid576
+ ] .
+
+_:genid576 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid578 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:type ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/OntologyClass> .
+
+_:genid579 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid580 .
+
+_:genid580 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid581 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/negated> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid582 .
+
+_:genid582 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:boolean .
+
+_:genid583 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+_:genid584 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid585 .
+
+_:genid585 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid586 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/qualifiers> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/OntologyClass__List> .
+
+_:genid587 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/publications> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Publication__List> .
+
+_:genid588 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://purl.org/pav/providedBy> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Provider> .
+
+_:genid589 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/association_slot> ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid590 .
+
+_:genid590 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+_:genid592 rdf:type <http://www.w3.org/ns/shex#Schema> ;
+            <http://www.w3.org/ns/shex#shapes> <file:///Users/solbrig/git/biolink/biolink-model/XSD_identifier__List> ,
+                                               <file:///Users/solbrig/git/biolink/biolink-model/XSD_name__List> ,
+                                               <file:///Users/solbrig/git/biolink/biolink-model/XSD_string__List> ,
+                                               <http://bioentity.io/meta/Builtins> ,
+                                               <http://bioentity.io/meta/SlotRangeTypes> ,
+                                               <http://bioentity.io/vocab/ActivityAndBehavior> ,
+                                               <http://bioentity.io/vocab/AdministrativeEntity> ,
+                                               <http://bioentity.io/vocab/AnatomicalEntity> ,
+                                               <http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation> ,
+                                               <http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityOntogenicAssociation> ,
+                                               <http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation> ,
+                                               <http://bioentity.io/vocab/Association> ,
+                                               <http://bioentity.io/vocab/Attribute> ,
+                                               <http://bioentity.io/vocab/BiologicalEntity> ,
+                                               <http://bioentity.io/vocab/BiologicalProcess> ,
+                                               <http://bioentity.io/vocab/BiologicalProcessOrActivity> ,
+                                               <http://bioentity.io/vocab/BiologicalSex> ,
+                                               <http://bioentity.io/vocab/Biosample> ,
+                                               <http://bioentity.io/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation> ,
+                                               <http://bioentity.io/vocab/BiosampleToThingAssociation> ,
+                                               <http://bioentity.io/vocab/Case> ,
+                                               <http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation> ,
+                                               <http://bioentity.io/vocab/CaseToThingAssociation> ,
+                                               <http://bioentity.io/vocab/Cell> ,
+                                               <http://bioentity.io/vocab/CellLine> ,
+                                               <http://bioentity.io/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation> ,
+                                               <http://bioentity.io/vocab/CellLineToThingAssociation> ,
+                                               <http://bioentity.io/vocab/CellularComponent> ,
+                                               <http://bioentity.io/vocab/ChemicalSubstance> ,
+                                               <http://bioentity.io/vocab/ChemicalSubstance__List> ,
+                                               <http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation> ,
+                                               <http://bioentity.io/vocab/ChemicalToGeneAssociation> ,
+                                               <http://bioentity.io/vocab/ChemicalToPathwayAssociation> ,
+                                               <http://bioentity.io/vocab/ChemicalToThingAssociation> ,
+                                               <http://bioentity.io/vocab/ClinicalEntity> ,
+                                               <http://bioentity.io/vocab/ClinicalIntervention> ,
+                                               <http://bioentity.io/vocab/ClinicalModifier> ,
+                                               <http://bioentity.io/vocab/ClinicalTrial> ,
+                                               <http://bioentity.io/vocab/CodingSequence> ,
+                                               <http://bioentity.io/vocab/Cohort> ,
+                                               <http://bioentity.io/vocab/ConfidenceLevel> ,
+                                               <http://bioentity.io/vocab/Device> ,
+                                               <http://bioentity.io/vocab/Disease> ,
+                                               <http://bioentity.io/vocab/DiseaseOrPhenotypicFeature> ,
+                                               <http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation> ,
+                                               <http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation> ,
+                                               <http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation> ,
+                                               <http://bioentity.io/vocab/DiseaseToThingAssociation> ,
+                                               <http://bioentity.io/vocab/Drug> ,
+                                               <http://bioentity.io/vocab/DrugExposure> ,
+                                               <http://bioentity.io/vocab/DrugExposure__List> ,
+                                               <http://bioentity.io/vocab/EntityToDiseaseAssociation> ,
+                                               <http://bioentity.io/vocab/EntityToFeatureOrDiseaseQualifiers> ,
+                                               <http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation> ,
+                                               <http://bioentity.io/vocab/Environment> ,
+                                               <http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation> ,
+                                               <http://bioentity.io/vocab/EnvironmentalFeature> ,
+                                               <http://bioentity.io/vocab/EnvironmentalProcess> ,
+                                               <http://bioentity.io/vocab/EvidenceType> ,
+                                               <http://bioentity.io/vocab/Exon> ,
+                                               <http://bioentity.io/vocab/ExonToTranscriptRelationship> ,
+                                               <http://bioentity.io/vocab/ExtensionsAndEvidenceAssociationMixin> ,
+                                               <http://bioentity.io/vocab/FrequencyQualifier> ,
+                                               <http://bioentity.io/vocab/FrequencyQuantifier> ,
+                                               <http://bioentity.io/vocab/FrequencyValue> ,
+                                               <http://bioentity.io/vocab/FunctionalAssociation> ,
+                                               <http://bioentity.io/vocab/Gene> ,
+                                               <http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation> ,
+                                               <http://bioentity.io/vocab/GeneFamily> ,
+                                               <http://bioentity.io/vocab/GeneGrouping> ,
+                                               <http://bioentity.io/vocab/GeneHasVariantThatContributesToDiseaseAssociation> ,
+                                               <http://bioentity.io/vocab/GeneOntologyClass> ,
+                                               <http://bioentity.io/vocab/GeneOrGeneProduct> ,
+                                               <http://bioentity.io/vocab/GeneProduct> ,
+                                               <http://bioentity.io/vocab/GeneProductIsoform> ,
+                                               <http://bioentity.io/vocab/GeneRegulatoryRelationship> ,
+                                               <http://bioentity.io/vocab/GeneToDiseaseAssociation> ,
+                                               <http://bioentity.io/vocab/GeneToExpressionSiteAssociation> ,
+                                               <http://bioentity.io/vocab/GeneToGeneAssociation> ,
+                                               <http://bioentity.io/vocab/GeneToGeneHomologyAssociation> ,
+                                               <http://bioentity.io/vocab/GeneToGeneProductRelationship> ,
+                                               <http://bioentity.io/vocab/GeneToGoTermAssociation> ,
+                                               <http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation> ,
+                                               <http://bioentity.io/vocab/GeneToThingAssociation> ,
+                                               <http://bioentity.io/vocab/Gene__List> ,
+                                               <http://bioentity.io/vocab/Genome> ,
+                                               <http://bioentity.io/vocab/GenomicEntity> ,
+                                               <http://bioentity.io/vocab/GenomicSequenceLocalization> ,
+                                               <http://bioentity.io/vocab/Genotype> ,
+                                               <http://bioentity.io/vocab/GenotypeToGeneAssociation> ,
+                                               <http://bioentity.io/vocab/GenotypeToGenotypePartAssociation> ,
+                                               <http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation> ,
+                                               <http://bioentity.io/vocab/GenotypeToThingAssociation> ,
+                                               <http://bioentity.io/vocab/GenotypeToVariantAssociation> ,
+                                               <http://bioentity.io/vocab/GenotypicSex> ,
+                                               <http://bioentity.io/vocab/GeographicLocation> ,
+                                               <http://bioentity.io/vocab/GeographicLocationAtTime> ,
+                                               <http://bioentity.io/vocab/GrossAnatomicalStructure> ,
+                                               <http://bioentity.io/vocab/Haplotype> ,
+                                               <http://bioentity.io/vocab/IndividualOrganism> ,
+                                               <http://bioentity.io/vocab/InformationContentEntity> ,
+                                               <http://bioentity.io/vocab/LifeStage> ,
+                                               <http://bioentity.io/vocab/MacromolecularComplex> ,
+                                               <http://bioentity.io/vocab/MacromolecularMachine> ,
+                                               <http://bioentity.io/vocab/MacromolecularMachineToBiologicalProcessAssociation> ,
+                                               <http://bioentity.io/vocab/MacromolecularMachineToCellularComponentAssociation> ,
+                                               <http://bioentity.io/vocab/MacromolecularMachineToMolecularActivityAssociation> ,
+                                               <http://bioentity.io/vocab/Metabolite> ,
+                                               <http://bioentity.io/vocab/MicroRNA> ,
+                                               <http://bioentity.io/vocab/ModelToDiseaseMixin> ,
+                                               <http://bioentity.io/vocab/MolecularActivity> ,
+                                               <http://bioentity.io/vocab/MolecularEntity> ,
+                                               <http://bioentity.io/vocab/NamedGraph> ,
+                                               <http://bioentity.io/vocab/NamedThing> ,
+                                               <http://bioentity.io/vocab/NoncodingRNAProduct> ,
+                                               <http://bioentity.io/vocab/Occurrent> ,
+                                               <http://bioentity.io/vocab/Onset> ,
+                                               <http://bioentity.io/vocab/OntologyClass> ,
+                                               <http://bioentity.io/vocab/OntologyClass__List> ,
+                                               <http://bioentity.io/vocab/OrganismTaxon> ,
+                                               <http://bioentity.io/vocab/OrganismalEntity> ,
+                                               <http://bioentity.io/vocab/PairwiseGeneToGeneInteraction> ,
+                                               <http://bioentity.io/vocab/PairwiseInteractionAssociation> ,
+                                               <http://bioentity.io/vocab/PathognomonicityQuantifier> ,
+                                               <http://bioentity.io/vocab/Pathway> ,
+                                               <http://bioentity.io/vocab/Phenomenon> ,
+                                               <http://bioentity.io/vocab/PhenotypicFeature> ,
+                                               <http://bioentity.io/vocab/PhenotypicSex> ,
+                                               <http://bioentity.io/vocab/PhysiologicalProcess> ,
+                                               <http://bioentity.io/vocab/PlanetaryEntity> ,
+                                               <http://bioentity.io/vocab/PopulationOfIndividualOrganisms> ,
+                                               <http://bioentity.io/vocab/PopulationToPopulationAssociation> ,
+                                               <http://bioentity.io/vocab/Procedure> ,
+                                               <http://bioentity.io/vocab/PropertyValuePair> ,
+                                               <http://bioentity.io/vocab/PropertyValuePair__List> ,
+                                               <http://bioentity.io/vocab/Protein> ,
+                                               <http://bioentity.io/vocab/ProteinIsoform> ,
+                                               <http://bioentity.io/vocab/Provider> ,
+                                               <http://bioentity.io/vocab/Publication> ,
+                                               <http://bioentity.io/vocab/Publication__List> ,
+                                               <http://bioentity.io/vocab/RNAProduct> ,
+                                               <http://bioentity.io/vocab/RNAProductIsoform> ,
+                                               <http://bioentity.io/vocab/RelationshipQuantifier> ,
+                                               <http://bioentity.io/vocab/RelationshipType> ,
+                                               <http://bioentity.io/vocab/SenstivityQuantifier> ,
+                                               <http://bioentity.io/vocab/SequenceFeatureRelationship> ,
+                                               <http://bioentity.io/vocab/SequenceVariant> ,
+                                               <http://bioentity.io/vocab/SequenceVariantModulatesTreatmentAssociation> ,
+                                               <http://bioentity.io/vocab/SeverityValue> ,
+                                               <http://bioentity.io/vocab/SpecificityQuantifier> ,
+                                               <http://bioentity.io/vocab/TaxonClosureMixin> ,
+                                               <http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation> ,
+                                               <http://bioentity.io/vocab/ThingWithTaxon> ,
+                                               <http://bioentity.io/vocab/Transcript> ,
+                                               <http://bioentity.io/vocab/TranscriptToGeneRelationship> ,
+                                               <http://bioentity.io/vocab/Treatment> ,
+                                               <http://bioentity.io/vocab/VariantToDiseaseAssociation> ,
+                                               <http://bioentity.io/vocab/VariantToPhenotypicFeatureAssociation> ,
+                                               <http://bioentity.io/vocab/VariantToPopulationAssociation> ,
+                                               <http://bioentity.io/vocab/VariantToThingAssociation> ,
+                                               <http://bioentity.io/vocab/Zygosity> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid594
+ ] .
+
+_:genid594 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid596 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/sequence_variant_qualifier> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/SequenceVariant> .
+
+_:genid597 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:genid598 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/AnatomicalEntity> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid600
+ ] .
+
+_:genid600 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid602 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+_:genid603 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:genid604 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid606
+ ] .
+
+_:genid606 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid608 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/gene_to_expression_site_association_stage_qualifier> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/LifeStage> .
+
+_:genid609 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> <http://bioentity.io/vocab/gene_to_expression_site_association_quantifier_qualifier> ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/OntologyClass> .
+
+_:genid610 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+_:genid611 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+_:genid612 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/AnatomicalEntity> .
+
+_:genid613 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid615
+ ] .
+
+_:genid615 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid617
+ ] .
+
+_:genid617 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid619 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Gene> .
+
+_:genid620 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneProduct> .
+
+_:genid621 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid623
+ ] .
+
+_:genid623 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid626
+ ] .
+
+_:genid626 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid628 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/MolecularEntity> .
+
+_:genid629 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOntologyClass> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid631
+ ] .
+
+_:genid631 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GeneOrGeneProduct> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape>
+ ] .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid634
+ ] .
+
+_:genid634 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid636 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid637 .
+
+_:genid637 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid638 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid639 .
+
+_:genid639 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid640 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid641 .
+
+_:genid641 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid642 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 0 ;
+            <http://www.w3.org/ns/shex#predicate> owl:topAnnotationProperty ;
+            <http://www.w3.org/ns/shex#valueExpr> _:genid643 .
+
+_:genid643 rdf:type <http://www.w3.org/ns/shex#NodeConstraint> ;
+            <http://www.w3.org/ns/shex#datatype> xsd:string .
+
+_:genid644 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GenomicEntity> .
+
+_:genid645 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/GenomicEntity> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid647
+ ] .
+
+_:genid647 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid649 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/AnatomicalEntity> .
+
+_:genid650 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+_:genid651 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Genotype> .
+
+_:genid652 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Gene> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid654
+ ] .
+
+_:genid654 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+_:genid656 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:predicate ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/RelationshipType> .
+
+_:genid657 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:subject ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Genotype> .
+
+_:genid658 rdf:type <http://www.w3.org/ns/shex#TripleConstraint> ;
+            <http://www.w3.org/ns/shex#max> 1 ;
+            <http://www.w3.org/ns/shex#min> 1 ;
+            <http://www.w3.org/ns/shex#predicate> rdf:object ;
+            <http://www.w3.org/ns/shex#valueExpr> <http://bioentity.io/vocab/Genotype> .
+
+[ rdf:type <http://www.w3.org/ns/shex#Shape> ;
+   <http://www.w3.org/ns/shex#expression> _:genid660
+ ] .
+
+_:genid660 rdf:type <http://www.w3.org/ns/shex#EachOf> ;
+            <http://www.w3.org/ns/shex#expressions> [ ] .
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

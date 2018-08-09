@@ -1,0 +1,728 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://bioentity.io/vocab/abstract
+<http://bioentity.io/vocab/abstract> rdf:type owl:AnnotationProperty ;
+                                     <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> ;
+                                     <http://bioentity.io/vocab/range> xsd:boolean ;
+                                     rdfs:label "abstract"^^xsd:string ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/alias
+<http://bioentity.io/vocab/alias> rdf:type owl:AnnotationProperty ;
+                                  <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                  <http://bioentity.io/vocab/range> xsd:string ;
+                                  rdfs:label "alias"^^xsd:string ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have \"slots\" where one inline and the other a reference"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/classes
+<http://bioentity.io/vocab/classes> rdf:type owl:AnnotationProperty ;
+                                    <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                    <http://bioentity.io/vocab/inlined> "true"^^xsd:boolean ;
+                                    <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                    <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> ;
+                                    rdfs:label "classes"^^xsd:string ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "classes defined in schema"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/default_curi_maps
+<http://bioentity.io/vocab/default_curi_maps> rdf:type owl:AnnotationProperty ;
+                                              <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                              <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                              <http://bioentity.io/vocab/range> xsd:string ;
+                                              rdfs:label "default_curi_maps"^^xsd:string ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/default_prefix
+<http://bioentity.io/vocab/default_prefix> rdf:type owl:AnnotationProperty ;
+                                           <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                           <http://bioentity.io/vocab/range> xsd:string ;
+                                           rdfs:label "default_prefix"^^xsd:string ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "default and base prefix -- used for ':' identifiers, @base and @vocab"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/domain
+<http://bioentity.io/vocab/domain> rdf:type owl:AnnotationProperty ;
+                                   <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                   <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> ;
+                                   rdfs:label "domain"^^xsd:string ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "The class to which this slot applies."^^xsd:string .
+
+
+###  http://bioentity.io/vocab/generation_date
+<http://bioentity.io/vocab/generation_date> rdf:type owl:AnnotationProperty ;
+                                            <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                            <http://bioentity.io/vocab/range> xsd:date ;
+                                            rdfs:label "generation_date"^^xsd:string ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "date that the schema was loaded/generated.  Supplied by the loader"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/id
+<http://bioentity.io/vocab/id> rdf:type owl:AnnotationProperty ;
+                               <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                               <http://bioentity.io/vocab/primary_key> "true"^^xsd:boolean ;
+                               <http://bioentity.io/vocab/range> xsd:string ;
+                               rdfs:label "id"^^xsd:string ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "a globally unique id or url for a schema"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/id_prefixes
+<http://bioentity.io/vocab/id_prefixes> rdf:type owl:AnnotationProperty ;
+                                        <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                        <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                        <http://bioentity.io/vocab/range> xsd:string ;
+                                        rdfs:label "id_prefixes"^^xsd:string ;
+                                        <http://www.w3.org/2004/02/skos/core#note> "A list of CURI prefixes that are used in the representation of instances of the model.  All prefixes in this list are added to the prefix sections of the target models.  These prefixes are fetched from"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/inherited
+<http://bioentity.io/vocab/inherited> rdf:type owl:AnnotationProperty ;
+                                      <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                      <http://bioentity.io/vocab/inherited> "true"^^xsd:boolean ;
+                                      <http://bioentity.io/vocab/range> xsd:boolean ;
+                                      rdfs:label "inherited"^^xsd:string ;
+                                      <http://www.w3.org/2004/02/skos/core#definition> "True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/inlined
+<http://bioentity.io/vocab/inlined> rdf:type owl:AnnotationProperty ;
+                                    <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                    <http://bioentity.io/vocab/inherited> "true"^^xsd:boolean ;
+                                    <http://bioentity.io/vocab/range> xsd:boolean ;
+                                    rdfs:label "inlined"^^xsd:string ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "if true then the value of this slot is inlined (i.e. a nested object) rather linked by key"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/license
+<http://bioentity.io/vocab/license> rdf:type owl:AnnotationProperty ;
+                                    <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                    <http://bioentity.io/vocab/range> xsd:string ;
+                                    rdfs:label "license"^^xsd:string ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "license for the schema"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/local_name
+<http://bioentity.io/vocab/local_name> rdf:type owl:AnnotationProperty ;
+                                       <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Prefix> ;
+                                       <http://bioentity.io/vocab/primary_key> "true"^^xsd:boolean ;
+                                       <http://bioentity.io/vocab/range> xsd:string ;
+                                       rdfs:label "local_name"^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "the nsname (sans ':' for a given prefix)"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/mappings
+<http://bioentity.io/vocab/mappings> rdf:type owl:AnnotationProperty ;
+                                     <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                     <http://bioentity.io/vocab/inherited> "true"^^xsd:boolean ;
+                                     <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                     <http://bioentity.io/vocab/range> xsd:string ;
+                                     rdfs:label "mappings"^^xsd:string ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "list of equivalent or skos exact mappings to an ontology class"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/metamodel_version
+<http://bioentity.io/vocab/metamodel_version> rdf:type owl:AnnotationProperty ;
+                                              <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                              <http://bioentity.io/vocab/range> xsd:string ;
+                                              rdfs:label "metamodel_version"^^xsd:string ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "Version of the metamodel used to load the schema. Supplied by the loader"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/multivalued
+<http://bioentity.io/vocab/multivalued> rdf:type owl:AnnotationProperty ;
+                                        <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                        <http://bioentity.io/vocab/inherited> "true"^^xsd:boolean ;
+                                        <http://bioentity.io/vocab/range> xsd:boolean ;
+                                        rdfs:label "multivalued"^^xsd:string ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "If true slot can have many values"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/prefix_uri
+<http://bioentity.io/vocab/prefix_uri> rdf:type owl:AnnotationProperty ;
+                                       <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Prefix> ;
+                                       <http://bioentity.io/vocab/range> xsd:string ;
+                                       rdfs:label "prefix_uri"^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "A URI associated with a given prefix"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/prefixes
+<http://bioentity.io/vocab/prefixes> rdf:type owl:AnnotationProperty ;
+                                     <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                     <http://bioentity.io/vocab/inlined> "true"^^xsd:boolean ;
+                                     <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                     <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/Prefix> ;
+                                     rdfs:label "prefixes"^^xsd:string ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/primary_key
+<http://bioentity.io/vocab/primary_key> rdf:type owl:AnnotationProperty ;
+                                        <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                        <http://bioentity.io/vocab/range> xsd:boolean ;
+                                        rdfs:label "primary_key"^^xsd:string ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "True means that this serves as a unique identifier"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/range
+<http://bioentity.io/vocab/range> rdf:type owl:AnnotationProperty ;
+                                  <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                  <http://bioentity.io/vocab/inherited> "true"^^xsd:boolean ;
+                                  <http://bioentity.io/vocab/range> xsd:anyType ;
+                                  rdfs:label "range"^^xsd:string ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "The slot type.  Can be any class or type"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/slot_usage
+<http://bioentity.io/vocab/slot_usage> rdf:type owl:AnnotationProperty ;
+                                       <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> ;
+                                       <http://bioentity.io/vocab/inlined> "true"^^xsd:boolean ;
+                                       <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                       <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> ;
+                                       rdfs:label "slot_usage"^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/slots
+<http://bioentity.io/vocab/slots> rdf:type owl:AnnotationProperty ;
+                                  <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> ;
+                                  <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                  <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> ;
+                                  rdfs:label "slots"^^xsd:string ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins."^^xsd:string .
+
+
+###  http://bioentity.io/vocab/source_file
+<http://bioentity.io/vocab/source_file> rdf:type owl:AnnotationProperty ;
+                                        <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                        <http://bioentity.io/vocab/range> xsd:string ;
+                                        rdfs:label "source_file"^^xsd:string ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "name, uri or description of the source of the schema.  Supplied by the loader"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/source_file_date
+<http://bioentity.io/vocab/source_file_date> rdf:type owl:AnnotationProperty ;
+                                             <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                             <http://bioentity.io/vocab/range> xsd:string ;
+                                             rdfs:label "source_file_date"^^xsd:string ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "modification date of the source of the schema.  Supplied by the loader"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/source_file_size
+<http://bioentity.io/vocab/source_file_size> rdf:type owl:AnnotationProperty ;
+                                             <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                             <http://bioentity.io/vocab/range> xsd:integer ;
+                                             rdfs:label "source_file_size"^^xsd:string ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "size in bytes of the source of the schema.  Supplied by the loader"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/version
+<http://bioentity.io/vocab/version> rdf:type owl:AnnotationProperty ;
+                                    <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                    <http://bioentity.io/vocab/range> xsd:string ;
+                                    rdfs:label "version"^^xsd:string ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "Schema version"^^xsd:string .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://bioentity.io/vocab/Definition
+<http://bioentity.io/vocab/Definition> rdf:type owl:Class .
+
+
+###  http://bioentity.io/vocab/Element
+<http://bioentity.io/vocab/Element> rdf:type owl:Class ;
+                                    <http://bioentity.io/vocab/abstract> "true"^^xsd:boolean ;
+                                    <http://bioentity.io/vocab/slots> [ ] ;
+rdfs:label "Element"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "root of all described things"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/is_a
+<http://bioentity.io/vocab/is_a> rdf:type owl:Class ;
+                                 <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> ;
+                                 <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/range> <http://bioentity.io/vocab/Definition> ;
+rdfs:label "is_a"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/mixins
+<http://bioentity.io/vocab/mixins> rdf:type owl:Class ;
+                                   <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> ;
+                                   <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                   <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/Definition> ;
+                                   rdfs:label "mixins"^^xsd:string ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "List of definitions to be mixed in. Targets may be any definition of the same type"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/union_of
+<http://bioentity.io/vocab/union_of> rdf:type owl:Class ;
+                                     <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> ;
+                                     <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                     <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/Definition> ;
+                                     rdfs:label "union_of"^^xsd:string ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "list of class or slot definitions that are combined to create the union class"^^xsd:string .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://bioentity.io/vocab/ClassDefinition
+<http://bioentity.io/vocab/ClassDefinition> rdf:type owl:NamedIndividual ,
+                                                     <http://bioentity.io/vocab/Definition> ;
+                                            <http://bioentity.io/vocab/slot_usage> [ ] ;
+<http://bioentity.io/vocab/slots> [ ] ;
+rdfs:label "ClassDefinition"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "A class or interface"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/Definition
+<http://bioentity.io/vocab/Definition> rdf:type owl:NamedIndividual ,
+                                                <http://bioentity.io/vocab/Element> .
+
+
+###  http://bioentity.io/vocab/SchemaDefinition
+<http://bioentity.io/vocab/SchemaDefinition> rdf:type owl:NamedIndividual ,
+                                                      <http://bioentity.io/vocab/Definition> ;
+                                             <http://bioentity.io/vocab/slots> [ ] ;
+rdfs:label "SchemaDefinition"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "A collection of definitions"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/SlotDefinition
+<http://bioentity.io/vocab/SlotDefinition> rdf:type owl:NamedIndividual ,
+                                                    <http://bioentity.io/vocab/Definition> ;
+                                           <http://bioentity.io/vocab/slot_usage> [ ] ;
+<http://bioentity.io/vocab/slots> [ ] ;
+rdfs:label "SlotDefinition"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "A property or slot"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/TypeDefinition
+<http://bioentity.io/vocab/TypeDefinition> rdf:type owl:NamedIndividual ,
+                                                    <http://bioentity.io/vocab/Element> ;
+                                           <http://bioentity.io/vocab/slots> [ ] ;
+rdfs:label "TypeDefinition"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "A type definition"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/class_definition_is_a
+<http://bioentity.io/vocab/class_definition_is_a> rdf:type owl:NamedIndividual ,
+                                                           <http://bioentity.io/vocab/is_a> ;
+                                                  <http://bioentity.io/vocab/alias> "is_a"^^xsd:string ;
+                                                  <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> ;
+                                                  <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> ;
+rdfs:label "class_definition_is_a"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/class_definition_mixins
+<http://bioentity.io/vocab/class_definition_mixins> rdf:type owl:NamedIndividual ,
+                                                             <http://bioentity.io/vocab/mixins> ;
+                                                    <http://bioentity.io/vocab/alias> "mixins"^^xsd:string ;
+                                                    <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> ;
+                                                    <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                                    <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> ;
+                                                    rdfs:label "class_definition_mixins"^^xsd:string ;
+                                                    <http://www.w3.org/2004/02/skos/core#definition> "List of definitions to be mixed in. Targets may be any definition of the same type"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/class_definition_union_of
+<http://bioentity.io/vocab/class_definition_union_of> rdf:type owl:NamedIndividual ,
+                                                               <http://bioentity.io/vocab/union_of> ;
+                                                      <http://bioentity.io/vocab/alias> "union_of"^^xsd:string ;
+                                                      <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> ;
+                                                      <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                                      <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> ;
+                                                      rdfs:label "class_definition_union_of"^^xsd:string ;
+                                                      <http://www.w3.org/2004/02/skos/core#definition> "list of class or slot definitions that are combined to create the union class"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/slot_definition_is_a
+<http://bioentity.io/vocab/slot_definition_is_a> rdf:type owl:NamedIndividual ,
+                                                          <http://bioentity.io/vocab/is_a> ;
+                                                 <http://bioentity.io/vocab/alias> "is_a"^^xsd:string ;
+                                                 <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                                 <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> ;
+rdfs:label "slot_definition_is_a"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/slot_definition_mixins
+<http://bioentity.io/vocab/slot_definition_mixins> rdf:type owl:NamedIndividual ,
+                                                            <http://bioentity.io/vocab/mixins> ;
+                                                   <http://bioentity.io/vocab/alias> "mixins"^^xsd:string ;
+                                                   <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                                   <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                                   <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> ;
+                                                   rdfs:label "slot_definition_mixins"^^xsd:string ;
+                                                   <http://www.w3.org/2004/02/skos/core#definition> "List of definitions to be mixed in. Targets may be any definition of the same type"^^xsd:string .
+
+
+###  http://bioentity.io/vocab/slot_definition_union_of
+<http://bioentity.io/vocab/slot_definition_union_of> rdf:type owl:NamedIndividual ,
+                                                              <http://bioentity.io/vocab/union_of> ;
+                                                     <http://bioentity.io/vocab/alias> "union_of"^^xsd:string ;
+                                                     <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                                     <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                                     <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> ;
+                                                     rdfs:label "slot_definition_union_of"^^xsd:string ;
+                                                     <http://www.w3.org/2004/02/skos/core#definition> "list of class or slot definitions that are combined to create the union class"^^xsd:string .
+
+
+_:genid12 <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> ;
+          <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> ;
+          rdfs:label "union_of"^^xsd:string .
+
+_:genid13 <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> ;
+           rdfs:label "union_of"^^xsd:string .
+
+_:genid14 <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> ;
+           rdfs:label "mixins"^^xsd:string .
+
+_:genid15 <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> ;
+           rdfs:label "is_a"^^xsd:string .
+
+_:genid16 <http://bioentity.io/vocab/local_name> "biolink"^^xsd:string ;
+           <http://bioentity.io/vocab/prefix_uri> "http://bioentity.io/vocab/"^^xsd:string .
+
+_:genid17 <http://bioentity.io/vocab/local_name> "meta"^^xsd:string ;
+           <http://bioentity.io/vocab/prefix_uri> "http://bioentity.io/meta/"^^xsd:string .
+
+_:genid18 <http://bioentity.io/vocab/local_name> "skos"^^xsd:string ;
+           <http://bioentity.io/vocab/prefix_uri> "http://www.w3.org/2004/02/skos/core#"^^xsd:string .
+
+_:genid19 <http://bioentity.io/vocab/local_name> "owl"^^xsd:string ;
+           <http://bioentity.io/vocab/prefix_uri> "http://www.w3.org/2002/07/owl#"^^xsd:string .
+
+_:genid20 <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> ;
+           <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> ;
+           rdfs:label "mixins"^^xsd:string .
+
+_:genid21 <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> ;
+           rdfs:label "is_a"^^xsd:string .
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://bioentity.io/vocab/Definition> <http://bioentity.io/vocab/abstract> "true"^^xsd:boolean ;
+                                        <http://bioentity.io/vocab/slots> [ ] ;
+rdfs:label "Definition"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "definition base class"^^xsd:string .
+
+
+<http://bioentity.io/vocab/Example> <http://bioentity.io/vocab/slots> [ ] ;
+rdfs:label "Example"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "example of usage"^^xsd:string .
+
+
+<http://bioentity.io/vocab/Prefix> <http://bioentity.io/vocab/slots> [ ] ;
+rdfs:label "Prefix"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "Prefix URI map"^^xsd:string .
+
+
+<http://bioentity.io/vocab/aliases> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                    <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                    <http://bioentity.io/vocab/range> xsd:string ;
+                                    rdfs:label "aliases"^^xsd:string .
+
+
+<http://bioentity.io/vocab/alt_descriptions> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                             <http://bioentity.io/vocab/inherited> "true"^^xsd:boolean ;
+                                             <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                             <http://bioentity.io/vocab/range> xsd:string ;
+                                             rdfs:label "alt_descriptions"^^xsd:string ;
+                                             <http://www.w3.org/2004/02/skos/core#note> "Needs description"^^xsd:string .
+
+
+<http://bioentity.io/vocab/apply_to> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> ;
+                                     <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> ;
+                                     rdfs:label "apply_to"^^xsd:string ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class."^^xsd:string .
+
+
+<http://bioentity.io/vocab/comment> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                    <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/range> xsd:string ;
+rdfs:label "comment"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "Comment about an element"^^xsd:string .
+
+
+<http://bioentity.io/vocab/default_type> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                         <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/TypeDefinition> ;
+                                         rdfs:label "default_type"^^xsd:string ;
+                                         <http://www.w3.org/2004/02/skos/core#definition> "the default type if range is omitted"^^xsd:string .
+
+
+<http://bioentity.io/vocab/defining_slots> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> ;
+                                           <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                           <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> ;
+                                           rdfs:label "defining_slots"^^xsd:string ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom"^^xsd:string .
+
+
+<http://bioentity.io/vocab/definitional> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                         <http://bioentity.io/vocab/inherited> "true"^^xsd:boolean ;
+                                         <http://bioentity.io/vocab/range> xsd:boolean ;
+                                         rdfs:label "definitional"^^xsd:string ;
+                                         <http://www.w3.org/2004/02/skos/core#note> "needs description"^^xsd:string .
+
+
+<http://bioentity.io/vocab/description> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                        <http://bioentity.io/vocab/inherited> "true"^^xsd:boolean ;
+                                        <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/range> xsd:string ;
+rdfs:label "description"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "a description"^^xsd:string .
+
+
+<http://bioentity.io/vocab/entity> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> ;
+                                   <http://bioentity.io/vocab/range> xsd:boolean ;
+                                   rdfs:label "entity"^^xsd:string ;
+                                   <http://www.w3.org/2004/02/skos/core#note> "needs description"^^xsd:string .
+
+
+<http://bioentity.io/vocab/examples> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                     <http://bioentity.io/vocab/inlined> "true"^^xsd:boolean ;
+                                     <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+<http://bioentity.io/vocab/range> <http://bioentity.io/vocab/Example> ;
+rdfs:label "examples"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "Example of usage for a slot or class"^^xsd:string .
+
+
+<http://bioentity.io/vocab/flags> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                  <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                  <http://bioentity.io/vocab/range> xsd:string ;
+                                  rdfs:label "flags"^^xsd:string ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "State information and other details"^^xsd:string .
+
+
+<http://bioentity.io/vocab/from_schema> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                        <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/range> xsd:string ;
+rdfs:label "from_schema"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "id of the schema that the element was derived from.  Supplied by the loader."^^xsd:string .
+
+
+<http://bioentity.io/vocab/identifier> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                       <http://bioentity.io/vocab/range> xsd:boolean ;
+                                       rdfs:label "identifier"^^xsd:string ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "True means that this slot must be unique across the collection of slots"^^xsd:string .
+
+
+<http://bioentity.io/vocab/imports> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                    <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                    <http://bioentity.io/vocab/range> xsd:string ;
+                                    rdfs:label "imports"^^xsd:string ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "A list of modules that are imported into the schema"^^xsd:string .
+
+
+<http://bioentity.io/vocab/in_subset> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                      <http://bioentity.io/vocab/inherited> "true"^^xsd:boolean ;
+                                      <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+<http://bioentity.io/vocab/range> xsd:string ;
+rdfs:label "in_subset"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)"^^xsd:string .
+
+
+<http://bioentity.io/vocab/inverse> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                    <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> ;
+rdfs:label "inverse"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')"^^xsd:string .
+
+
+<http://bioentity.io/vocab/is_class_field> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                           <http://bioentity.io/vocab/range> xsd:boolean ;
+                                           rdfs:label "is_class_field"^^xsd:string ;
+                                           <http://www.w3.org/2004/02/skos/core#note> "Needs description"^^xsd:string .
+
+
+<http://bioentity.io/vocab/local_names> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> ;
+                                        <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                        <http://bioentity.io/vocab/range> xsd:string ;
+                                        rdfs:label "local_names"^^xsd:string ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "map from local identifier to slot"^^xsd:string .
+
+
+<http://bioentity.io/vocab/mixin> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> ;
+                                  <http://bioentity.io/vocab/range> xsd:boolean ;
+                                  rdfs:label "mixin"^^xsd:string ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "Used only as a mixin -- cannot be instantiated on its own."^^xsd:string .
+
+
+<http://bioentity.io/vocab/name> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                 <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/primary_key> "true"^^xsd:boolean ;
+<http://bioentity.io/vocab/range> xsd:string ;
+rdfs:label "name"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "a unique key that identifies a slot, type or class in a schema"^^xsd:string .
+
+
+<http://bioentity.io/vocab/note> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                 <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/range> xsd:string ;
+rdfs:label "note"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "Notes about an element"^^xsd:string .
+
+
+<http://bioentity.io/vocab/object_property> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                            <http://bioentity.io/vocab/inherited> "true"^^xsd:boolean ;
+                                            <http://bioentity.io/vocab/range> xsd:boolean ;
+                                            rdfs:label "object_property"^^xsd:string ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "true means that this slot is part of the formal definition of a class"^^xsd:string .
+
+
+<http://bioentity.io/vocab/path> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                 <http://bioentity.io/vocab/range> xsd:string ;
+                                 rdfs:label "path"^^xsd:string ;
+                                 <http://www.w3.org/2004/02/skos/core#definition> "For any denormalized slot, this represents the tree or graph path used to generate the denormalized form"^^xsd:string .
+
+
+<http://bioentity.io/vocab/required> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                     <http://bioentity.io/vocab/inherited> "true"^^xsd:boolean ;
+                                     <http://bioentity.io/vocab/range> xsd:boolean ;
+                                     rdfs:label "required"^^xsd:string ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "If true slot must have at least one value"^^xsd:string .
+
+
+<http://bioentity.io/vocab/role> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                 <http://bioentity.io/vocab/range> xsd:string ;
+                                 rdfs:label "role"^^xsd:string ;
+                                 <http://www.w3.org/2004/02/skos/core#note> "Needs description"^^xsd:string .
+
+
+<http://bioentity.io/vocab/see_also> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                     <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/range> xsd:string ;
+rdfs:label "see_also"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#note> "needs description"^^xsd:string .
+
+
+<http://bioentity.io/vocab/singular_name> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> ;
+                                          <http://bioentity.io/vocab/range> xsd:string ;
+                                          rdfs:label "singular_name"^^xsd:string ;
+                                          <http://www.w3.org/2004/02/skos/core#definition> "a name that is used in the singular form"^^xsd:string .
+
+
+<http://bioentity.io/vocab/slot_definitions> <http://bioentity.io/vocab/alias> "slots"^^xsd:string ;
+                                             <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                             <http://bioentity.io/vocab/inlined> "true"^^xsd:boolean ;
+                                             <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                             <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> ;
+                                             rdfs:label "slot_definitions"^^xsd:string ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "collection of slot definitions in a schema"^^xsd:string .
+
+
+<http://bioentity.io/vocab/subclass_of> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> ;
+                                        <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/range> xsd:anyURI ;
+rdfs:label "subclass_of"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes"^^xsd:string .
+
+
+<http://bioentity.io/vocab/subproperty_of> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> ;
+                                           <http://bioentity.io/vocab/inherited> "true"^^xsd:boolean ;
+                                           <http://bioentity.io/vocab/mappings> [ ] ;
+<http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> ;
+rdfs:label "subproperty_of"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "Ontolgy property which this is a subproperty of"^^xsd:string .
+
+
+<http://bioentity.io/vocab/symmetric> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> ;
+                                      <http://bioentity.io/vocab/range> xsd:boolean ;
+                                      rdfs:label "symmetric"^^xsd:string ;
+                                      <http://www.w3.org/2004/02/skos/core#definition> "Symmetric slot"^^xsd:string ;
+                                      <http://www.w3.org/2004/02/skos/core#note> "Indications that a slot or reified association is symmetric"^^xsd:string .
+
+
+<http://bioentity.io/vocab/typeof> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/TypeDefinition> ;
+                                   <http://bioentity.io/vocab/range> xsd:string ;
+                                   rdfs:label "typeof"^^xsd:string ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition"^^xsd:string .
+
+
+<http://bioentity.io/vocab/types> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> ;
+                                  <http://bioentity.io/vocab/inlined> "true"^^xsd:boolean ;
+                                  <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                  <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/TypeDefinition> ;
+                                  rdfs:label "types"^^xsd:string ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "types defined in schema"^^xsd:string .
+
+
+<http://bioentity.io/vocab/value> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Example> ;
+                                  <http://bioentity.io/vocab/range> xsd:string ;
+                                  rdfs:label "value"^^xsd:string .
+
+
+<http://bioentity.io/vocab/value_description> <http://bioentity.io/vocab/alias> "description"^^xsd:string ;
+                                              <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Example> ;
+                                              <http://bioentity.io/vocab/range> xsd:string ;
+                                              rdfs:label "value_description"^^xsd:string .
+
+
+<http://bioentity.io/vocab/values_from> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> ;
+                                        <http://bioentity.io/vocab/multivalued> "true"^^xsd:boolean ;
+                                        <http://bioentity.io/vocab/range> xsd:string ;
+                                        rdfs:label "values_from"^^xsd:string ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "identifies the possible uri's of the range"^^xsd:string .
+
+
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/classes> [ ] ;
+<http://bioentity.io/vocab/default_curi_maps> [ ] ;
+<http://bioentity.io/vocab/default_prefix> "biolink"^^xsd:string ;
+<http://bioentity.io/vocab/generation_date> "2018-07-10"^^xsd:date ;
+<http://bioentity.io/vocab/id> "https://biolink.github.io/metamodel/ontology/meta.ttl"^^xsd:string ;
+<http://bioentity.io/vocab/id_prefixes> [ ] ;
+<http://bioentity.io/vocab/license> "https://creativecommons.org/publicdomain/zero/1.0/"^^xsd:string ;
+<http://bioentity.io/vocab/metamodel_version> "0.3.1"^^xsd:string ;
+<http://bioentity.io/vocab/prefixes> [ ] ;
+<http://bioentity.io/vocab/slots> [ ] ;
+<http://bioentity.io/vocab/source_file> "meta.yaml"^^xsd:string ;
+<http://bioentity.io/vocab/source_file_date> "Mon Jul  9 17:39:55 2018"^^xsd:string ;
+<http://bioentity.io/vocab/source_file_size> 18545 ;
+<http://bioentity.io/vocab/version> "0.3.1"^^xsd:string ;
+rdfs:label "metamodel"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#definition> "Metamodel for biolink schema"^^xsd:string ;
+<http://www.w3.org/2004/02/skos/core#note> "OIO prefix is not correct -- where IS \"inSubset\" derived from?"^^xsd:string .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

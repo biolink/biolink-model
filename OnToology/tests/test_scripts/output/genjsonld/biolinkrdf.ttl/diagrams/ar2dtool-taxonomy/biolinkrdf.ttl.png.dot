@@ -1,0 +1,25 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+	"biolink:BiologicalSex" -> "http://bioentity.io/vocab/PATO:0000047" [ label = "rdfs:subClassOf" ];
+	"biolink:Attribute" -> "http://bioentity.io/vocab/PATO:0000001" [ label = "rdfs:subClassOf" ];
+	"biolink:ClinicalModifier" -> "http://bioentity.io/vocab/HP:0012823" [ label = "rdfs:subClassOf" ];
+	"biolink:ChemicalSubstance" -> "http://bioentity.io/vocab/CHEBI:24431" [ label = "rdfs:subClassOf" ];
+	"biolink:LifeStage" -> "http://bioentity.io/vocab/UBERON:0000105" [ label = "rdfs:subClassOf" ];
+	"biolink:AnatomicalEntity" -> "http://bioentity.io/vocab/UBERON:0001062" [ label = "rdfs:subClassOf" ];
+	"biolink:NoncodingRNAProduct" -> "http://bioentity.io/vocab/SO:0000655" [ label = "rdfs:subClassOf" ];
+	"biolink:EnvironmentalProcess" -> "http://bioentity.io/vocab/ENVO:02500000" [ label = "rdfs:subClassOf" ];
+	"biolink:MicroRNA" -> "http://bioentity.io/vocab/SO:0000276" [ label = "rdfs:subClassOf" ];
+	"biolink:GenotypicSex" -> "http://bioentity.io/vocab/PATO:0020000" [ label = "rdfs:subClassOf" ];
+	"biolink:MacromolecularComplex" -> "http://bioentity.io/vocab/GO:0032991" [ label = "rdfs:subClassOf" ];
+	"biolink:PhenotypicSex" -> "http://bioentity.io/vocab/PATO:0001894" [ label = "rdfs:subClassOf" ];
+	"biolink:NamedThing" -> "http://bioentity.io/vocab/BFO:0000001" [ label = "rdfs:subClassOf" ];
+	"biolink:EnvironmentalFeature" -> "http://bioentity.io/vocab/ENVO:00002297" [ label = "rdfs:subClassOf" ];
+	"NULL" -> "http://bioentity.io/vocab/MONDO:0000001" [ label = "rdfs:subClassOf" ];
+	"NULL" -> "http://bioentity.io/vocab/MI:1046" [ label = "rdfs:subClassOf" ];
+	"NULL" -> "http://bioentity.io/vocab/UPHENO:0001001" [ label = "rdfs:subClassOf" ];
+	"NULL" -> "http://bioentity.io/vocab/UBERON:0001062" [ label = "rdfs:subClassOf" ];
+	"biolink:PopulationOfIndividualOrganisms" -> "http://bioentity.io/vocab/PCO:0000001" [ label = "rdfs:subClassOf" ];
+	"biolink:IndividualOrganism" -> "http://bioentity.io/vocab/NCBITaxon:1" [ label = "rdfs:subClassOf" ];
+
+}

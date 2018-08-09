@@ -1,0 +1,649 @@
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://bioentity.io/vocab/abstract
+<http://bioentity.io/vocab/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/abstract> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/abstract> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/abstract> <http://www.w3.org/2000/01/rdf-schema#label> "abstract" .
+<http://bioentity.io/vocab/abstract> <http://www.w3.org/2004/02/skos/core#definition> "An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored" .
+# 
+# http://bioentity.io/vocab/alias
+<http://bioentity.io/vocab/alias> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/alias> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/alias> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/alias> <http://www.w3.org/2000/01/rdf-schema#label> "alias" .
+<http://bioentity.io/vocab/alias> <http://www.w3.org/2004/02/skos/core#definition> "A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have \"slots\" where one inline and the other a reference" .
+# 
+# http://bioentity.io/vocab/classes
+<http://bioentity.io/vocab/classes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/classes> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/classes> <http://bioentity.io/vocab/inlined> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/classes> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/classes> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/classes> <http://www.w3.org/2000/01/rdf-schema#label> "classes" .
+<http://bioentity.io/vocab/classes> <http://www.w3.org/2004/02/skos/core#definition> "classes defined in schema" .
+# 
+# http://bioentity.io/vocab/default_curi_maps
+<http://bioentity.io/vocab/default_curi_maps> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/default_curi_maps> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/default_curi_maps> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/default_curi_maps> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/default_curi_maps> <http://www.w3.org/2000/01/rdf-schema#label> "default_curi_maps" .
+<http://bioentity.io/vocab/default_curi_maps> <http://www.w3.org/2004/02/skos/core#definition> "List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables" .
+# 
+# http://bioentity.io/vocab/default_prefix
+<http://bioentity.io/vocab/default_prefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/default_prefix> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/default_prefix> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/default_prefix> <http://www.w3.org/2000/01/rdf-schema#label> "default_prefix" .
+<http://bioentity.io/vocab/default_prefix> <http://www.w3.org/2004/02/skos/core#definition> "default and base prefix -- used for ':' identifiers, @base and @vocab" .
+# 
+# http://bioentity.io/vocab/domain
+<http://bioentity.io/vocab/domain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/domain> <http://www.w3.org/2000/01/rdf-schema#label> "domain" .
+<http://bioentity.io/vocab/domain> <http://www.w3.org/2004/02/skos/core#definition> "The class to which this slot applies." .
+# 
+# http://bioentity.io/vocab/generation_date
+<http://bioentity.io/vocab/generation_date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/generation_date> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/generation_date> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://bioentity.io/vocab/generation_date> <http://www.w3.org/2000/01/rdf-schema#label> "generation_date" .
+<http://bioentity.io/vocab/generation_date> <http://www.w3.org/2004/02/skos/core#definition> "date that the schema was loaded/generated.  Supplied by the loader" .
+# 
+# http://bioentity.io/vocab/id
+<http://bioentity.io/vocab/id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/id> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/id> <http://bioentity.io/vocab/primary_key> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/id> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/id> <http://www.w3.org/2000/01/rdf-schema#label> "id" .
+<http://bioentity.io/vocab/id> <http://www.w3.org/2004/02/skos/core#definition> "a globally unique id or url for a schema" .
+# 
+# http://bioentity.io/vocab/id_prefixes
+<http://bioentity.io/vocab/id_prefixes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/id_prefixes> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/id_prefixes> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/id_prefixes> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/id_prefixes> <http://www.w3.org/2000/01/rdf-schema#label> "id_prefixes" .
+<http://bioentity.io/vocab/id_prefixes> <http://www.w3.org/2004/02/skos/core#note> "A list of CURI prefixes that are used in the representation of instances of the model.  All prefixes in this list are added to the prefix sections of the target models.  These prefixes are fetched from" .
+# 
+# http://bioentity.io/vocab/inherited
+<http://bioentity.io/vocab/inherited> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/inherited> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/inherited> <http://bioentity.io/vocab/inherited> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/inherited> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/inherited> <http://www.w3.org/2000/01/rdf-schema#label> "inherited" .
+<http://bioentity.io/vocab/inherited> <http://www.w3.org/2004/02/skos/core#definition> "True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths" .
+# 
+# http://bioentity.io/vocab/inlined
+<http://bioentity.io/vocab/inlined> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/inlined> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/inlined> <http://bioentity.io/vocab/inherited> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/inlined> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/inlined> <http://www.w3.org/2000/01/rdf-schema#label> "inlined" .
+<http://bioentity.io/vocab/inlined> <http://www.w3.org/2004/02/skos/core#definition> "if true then the value of this slot is inlined (i.e. a nested object) rather linked by key" .
+# 
+# http://bioentity.io/vocab/license
+<http://bioentity.io/vocab/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/license> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/license> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/license> <http://www.w3.org/2000/01/rdf-schema#label> "license" .
+<http://bioentity.io/vocab/license> <http://www.w3.org/2004/02/skos/core#definition> "license for the schema" .
+# 
+# http://bioentity.io/vocab/local_name
+<http://bioentity.io/vocab/local_name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/local_name> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Prefix> .
+<http://bioentity.io/vocab/local_name> <http://bioentity.io/vocab/primary_key> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/local_name> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/local_name> <http://www.w3.org/2000/01/rdf-schema#label> "local_name" .
+<http://bioentity.io/vocab/local_name> <http://www.w3.org/2004/02/skos/core#definition> "the nsname (sans ':' for a given prefix)" .
+# 
+# http://bioentity.io/vocab/mappings
+<http://bioentity.io/vocab/mappings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/mappings> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/mappings> <http://bioentity.io/vocab/inherited> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/mappings> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/mappings> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/mappings> <http://www.w3.org/2000/01/rdf-schema#label> "mappings" .
+<http://bioentity.io/vocab/mappings> <http://www.w3.org/2004/02/skos/core#definition> "list of equivalent or skos exact mappings to an ontology class" .
+# 
+# http://bioentity.io/vocab/metamodel_version
+<http://bioentity.io/vocab/metamodel_version> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/metamodel_version> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/metamodel_version> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/metamodel_version> <http://www.w3.org/2000/01/rdf-schema#label> "metamodel_version" .
+<http://bioentity.io/vocab/metamodel_version> <http://www.w3.org/2004/02/skos/core#definition> "Version of the metamodel used to load the schema. Supplied by the loader" .
+# 
+# http://bioentity.io/vocab/multivalued
+<http://bioentity.io/vocab/multivalued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/multivalued> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/multivalued> <http://bioentity.io/vocab/inherited> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/multivalued> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/multivalued> <http://www.w3.org/2000/01/rdf-schema#label> "multivalued" .
+<http://bioentity.io/vocab/multivalued> <http://www.w3.org/2004/02/skos/core#definition> "If true slot can have many values" .
+# 
+# http://bioentity.io/vocab/prefix_uri
+<http://bioentity.io/vocab/prefix_uri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/prefix_uri> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Prefix> .
+<http://bioentity.io/vocab/prefix_uri> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/prefix_uri> <http://www.w3.org/2000/01/rdf-schema#label> "prefix_uri" .
+<http://bioentity.io/vocab/prefix_uri> <http://www.w3.org/2004/02/skos/core#definition> "A URI associated with a given prefix" .
+# 
+# http://bioentity.io/vocab/prefixes
+<http://bioentity.io/vocab/prefixes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/prefixes> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/prefixes> <http://bioentity.io/vocab/inlined> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/prefixes> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/prefixes> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/Prefix> .
+<http://bioentity.io/vocab/prefixes> <http://www.w3.org/2000/01/rdf-schema#label> "prefixes" .
+<http://bioentity.io/vocab/prefixes> <http://www.w3.org/2004/02/skos/core#definition> "Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes" .
+# 
+# http://bioentity.io/vocab/primary_key
+<http://bioentity.io/vocab/primary_key> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/primary_key> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/primary_key> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/primary_key> <http://www.w3.org/2000/01/rdf-schema#label> "primary_key" .
+<http://bioentity.io/vocab/primary_key> <http://www.w3.org/2004/02/skos/core#definition> "True means that this serves as a unique identifier" .
+# 
+# http://bioentity.io/vocab/range
+<http://bioentity.io/vocab/range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/range> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/range> <http://bioentity.io/vocab/inherited> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/range> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#anyType> .
+<http://bioentity.io/vocab/range> <http://www.w3.org/2000/01/rdf-schema#label> "range" .
+<http://bioentity.io/vocab/range> <http://www.w3.org/2004/02/skos/core#definition> "The slot type.  Can be any class or type" .
+# 
+# http://bioentity.io/vocab/slot_usage
+<http://bioentity.io/vocab/slot_usage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/slot_usage> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/slot_usage> <http://bioentity.io/vocab/inlined> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/slot_usage> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/slot_usage> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/slot_usage> <http://www.w3.org/2000/01/rdf-schema#label> "slot_usage" .
+<http://bioentity.io/vocab/slot_usage> <http://www.w3.org/2004/02/skos/core#definition> "Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints" .
+# 
+# http://bioentity.io/vocab/slots
+<http://bioentity.io/vocab/slots> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/slots> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/slots> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/slots> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/slots> <http://www.w3.org/2000/01/rdf-schema#label> "slots" .
+<http://bioentity.io/vocab/slots> <http://www.w3.org/2004/02/skos/core#definition> "list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins." .
+# 
+# http://bioentity.io/vocab/source_file
+<http://bioentity.io/vocab/source_file> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/source_file> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/source_file> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/source_file> <http://www.w3.org/2000/01/rdf-schema#label> "source_file" .
+<http://bioentity.io/vocab/source_file> <http://www.w3.org/2004/02/skos/core#definition> "name, uri or description of the source of the schema.  Supplied by the loader" .
+# 
+# http://bioentity.io/vocab/source_file_date
+<http://bioentity.io/vocab/source_file_date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/source_file_date> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/source_file_date> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/source_file_date> <http://www.w3.org/2000/01/rdf-schema#label> "source_file_date" .
+<http://bioentity.io/vocab/source_file_date> <http://www.w3.org/2004/02/skos/core#definition> "modification date of the source of the schema.  Supplied by the loader" .
+# 
+# http://bioentity.io/vocab/source_file_size
+<http://bioentity.io/vocab/source_file_size> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/source_file_size> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/source_file_size> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://bioentity.io/vocab/source_file_size> <http://www.w3.org/2000/01/rdf-schema#label> "source_file_size" .
+<http://bioentity.io/vocab/source_file_size> <http://www.w3.org/2004/02/skos/core#definition> "size in bytes of the source of the schema.  Supplied by the loader" .
+# 
+# http://bioentity.io/vocab/version
+<http://bioentity.io/vocab/version> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://bioentity.io/vocab/version> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/version> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/version> <http://www.w3.org/2000/01/rdf-schema#label> "version" .
+<http://bioentity.io/vocab/version> <http://www.w3.org/2004/02/skos/core#definition> "Schema version" .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://bioentity.io/vocab/Definition
+<http://bioentity.io/vocab/Definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://bioentity.io/vocab/Element
+<http://bioentity.io/vocab/Element> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://bioentity.io/vocab/Element> <http://bioentity.io/vocab/abstract> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/Element> <http://bioentity.io/vocab/slots> _:genid2 .
+<http://bioentity.io/vocab/Element> <http://www.w3.org/2000/01/rdf-schema#label> "Element" .
+<http://bioentity.io/vocab/Element> <http://www.w3.org/2004/02/skos/core#definition> "root of all described things" .
+# 
+# http://bioentity.io/vocab/is_a
+<http://bioentity.io/vocab/is_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://bioentity.io/vocab/is_a> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/is_a> <http://bioentity.io/vocab/mappings> _:genid3 .
+<http://bioentity.io/vocab/is_a> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/is_a> <http://www.w3.org/2000/01/rdf-schema#label> "is_a" .
+<http://bioentity.io/vocab/is_a> <http://www.w3.org/2004/02/skos/core#definition> "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" .
+# 
+# http://bioentity.io/vocab/mixins
+<http://bioentity.io/vocab/mixins> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://bioentity.io/vocab/mixins> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/mixins> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/mixins> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/mixins> <http://www.w3.org/2000/01/rdf-schema#label> "mixins" .
+<http://bioentity.io/vocab/mixins> <http://www.w3.org/2004/02/skos/core#definition> "List of definitions to be mixed in. Targets may be any definition of the same type" .
+# 
+# http://bioentity.io/vocab/union_of
+<http://bioentity.io/vocab/union_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://bioentity.io/vocab/union_of> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/union_of> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/union_of> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/union_of> <http://www.w3.org/2000/01/rdf-schema#label> "union_of" .
+<http://bioentity.io/vocab/union_of> <http://www.w3.org/2004/02/skos/core#definition> "list of class or slot definitions that are combined to create the union class" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://bioentity.io/vocab/ClassDefinition
+<http://bioentity.io/vocab/ClassDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://bioentity.io/vocab/ClassDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/ClassDefinition> <http://bioentity.io/vocab/slot_usage> _:genid4 .
+<http://bioentity.io/vocab/ClassDefinition> <http://bioentity.io/vocab/slots> _:genid5 .
+<http://bioentity.io/vocab/ClassDefinition> <http://www.w3.org/2000/01/rdf-schema#label> "ClassDefinition" .
+<http://bioentity.io/vocab/ClassDefinition> <http://www.w3.org/2004/02/skos/core#definition> "A class or interface" .
+# 
+# http://bioentity.io/vocab/Definition
+<http://bioentity.io/vocab/Definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://bioentity.io/vocab/Definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bioentity.io/vocab/Element> .
+# 
+# http://bioentity.io/vocab/SchemaDefinition
+<http://bioentity.io/vocab/SchemaDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://bioentity.io/vocab/SchemaDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/SchemaDefinition> <http://bioentity.io/vocab/slots> _:genid6 .
+<http://bioentity.io/vocab/SchemaDefinition> <http://www.w3.org/2000/01/rdf-schema#label> "SchemaDefinition" .
+<http://bioentity.io/vocab/SchemaDefinition> <http://www.w3.org/2004/02/skos/core#definition> "A collection of definitions" .
+# 
+# http://bioentity.io/vocab/SlotDefinition
+<http://bioentity.io/vocab/SlotDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://bioentity.io/vocab/SlotDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/SlotDefinition> <http://bioentity.io/vocab/slot_usage> _:genid7 .
+<http://bioentity.io/vocab/SlotDefinition> <http://bioentity.io/vocab/slots> _:genid8 .
+<http://bioentity.io/vocab/SlotDefinition> <http://www.w3.org/2000/01/rdf-schema#label> "SlotDefinition" .
+<http://bioentity.io/vocab/SlotDefinition> <http://www.w3.org/2004/02/skos/core#definition> "A property or slot" .
+# 
+# http://bioentity.io/vocab/TypeDefinition
+<http://bioentity.io/vocab/TypeDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://bioentity.io/vocab/TypeDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/TypeDefinition> <http://bioentity.io/vocab/slots> _:genid9 .
+<http://bioentity.io/vocab/TypeDefinition> <http://www.w3.org/2000/01/rdf-schema#label> "TypeDefinition" .
+<http://bioentity.io/vocab/TypeDefinition> <http://www.w3.org/2004/02/skos/core#definition> "A type definition" .
+# 
+# http://bioentity.io/vocab/class_definition_is_a
+<http://bioentity.io/vocab/class_definition_is_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://bioentity.io/vocab/class_definition_is_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bioentity.io/vocab/is_a> .
+<http://bioentity.io/vocab/class_definition_is_a> <http://bioentity.io/vocab/alias> "is_a" .
+<http://bioentity.io/vocab/class_definition_is_a> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/class_definition_is_a> <http://bioentity.io/vocab/mappings> _:genid10 .
+<http://bioentity.io/vocab/class_definition_is_a> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/class_definition_is_a> <http://www.w3.org/2000/01/rdf-schema#label> "class_definition_is_a" .
+<http://bioentity.io/vocab/class_definition_is_a> <http://www.w3.org/2004/02/skos/core#definition> "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" .
+# 
+# http://bioentity.io/vocab/class_definition_mixins
+<http://bioentity.io/vocab/class_definition_mixins> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://bioentity.io/vocab/class_definition_mixins> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bioentity.io/vocab/mixins> .
+<http://bioentity.io/vocab/class_definition_mixins> <http://bioentity.io/vocab/alias> "mixins" .
+<http://bioentity.io/vocab/class_definition_mixins> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/class_definition_mixins> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/class_definition_mixins> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/class_definition_mixins> <http://www.w3.org/2000/01/rdf-schema#label> "class_definition_mixins" .
+<http://bioentity.io/vocab/class_definition_mixins> <http://www.w3.org/2004/02/skos/core#definition> "List of definitions to be mixed in. Targets may be any definition of the same type" .
+# 
+# http://bioentity.io/vocab/class_definition_union_of
+<http://bioentity.io/vocab/class_definition_union_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://bioentity.io/vocab/class_definition_union_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bioentity.io/vocab/union_of> .
+<http://bioentity.io/vocab/class_definition_union_of> <http://bioentity.io/vocab/alias> "union_of" .
+<http://bioentity.io/vocab/class_definition_union_of> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/class_definition_union_of> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/class_definition_union_of> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/class_definition_union_of> <http://www.w3.org/2000/01/rdf-schema#label> "class_definition_union_of" .
+<http://bioentity.io/vocab/class_definition_union_of> <http://www.w3.org/2004/02/skos/core#definition> "list of class or slot definitions that are combined to create the union class" .
+# 
+# http://bioentity.io/vocab/slot_definition_is_a
+<http://bioentity.io/vocab/slot_definition_is_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://bioentity.io/vocab/slot_definition_is_a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bioentity.io/vocab/is_a> .
+<http://bioentity.io/vocab/slot_definition_is_a> <http://bioentity.io/vocab/alias> "is_a" .
+<http://bioentity.io/vocab/slot_definition_is_a> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/slot_definition_is_a> <http://bioentity.io/vocab/mappings> _:genid11 .
+<http://bioentity.io/vocab/slot_definition_is_a> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/slot_definition_is_a> <http://www.w3.org/2000/01/rdf-schema#label> "slot_definition_is_a" .
+<http://bioentity.io/vocab/slot_definition_is_a> <http://www.w3.org/2004/02/skos/core#definition> "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" .
+# 
+# http://bioentity.io/vocab/slot_definition_mixins
+<http://bioentity.io/vocab/slot_definition_mixins> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://bioentity.io/vocab/slot_definition_mixins> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bioentity.io/vocab/mixins> .
+<http://bioentity.io/vocab/slot_definition_mixins> <http://bioentity.io/vocab/alias> "mixins" .
+<http://bioentity.io/vocab/slot_definition_mixins> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/slot_definition_mixins> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/slot_definition_mixins> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/slot_definition_mixins> <http://www.w3.org/2000/01/rdf-schema#label> "slot_definition_mixins" .
+<http://bioentity.io/vocab/slot_definition_mixins> <http://www.w3.org/2004/02/skos/core#definition> "List of definitions to be mixed in. Targets may be any definition of the same type" .
+# 
+# http://bioentity.io/vocab/slot_definition_union_of
+<http://bioentity.io/vocab/slot_definition_union_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://bioentity.io/vocab/slot_definition_union_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://bioentity.io/vocab/union_of> .
+<http://bioentity.io/vocab/slot_definition_union_of> <http://bioentity.io/vocab/alias> "union_of" .
+<http://bioentity.io/vocab/slot_definition_union_of> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/slot_definition_union_of> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/slot_definition_union_of> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/slot_definition_union_of> <http://www.w3.org/2000/01/rdf-schema#label> "slot_definition_union_of" .
+<http://bioentity.io/vocab/slot_definition_union_of> <http://www.w3.org/2004/02/skos/core#definition> "list of class or slot definitions that are combined to create the union class" .
+# 
+_:genid12 <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> .
+_:genid12 <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> .
+_:genid12 <http://www.w3.org/2000/01/rdf-schema#label> "union_of" .
+_:genid13 <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> .
+_:genid13 <http://www.w3.org/2000/01/rdf-schema#label> "union_of" .
+_:genid14 <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> .
+_:genid14 <http://www.w3.org/2000/01/rdf-schema#label> "mixins" .
+_:genid15 <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> .
+_:genid15 <http://www.w3.org/2000/01/rdf-schema#label> "is_a" .
+_:genid16 <http://bioentity.io/vocab/local_name> "biolink" .
+_:genid16 <http://bioentity.io/vocab/prefix_uri> "http://bioentity.io/vocab/" .
+_:genid17 <http://bioentity.io/vocab/local_name> "meta" .
+_:genid17 <http://bioentity.io/vocab/prefix_uri> "http://bioentity.io/meta/" .
+_:genid18 <http://bioentity.io/vocab/local_name> "skos" .
+_:genid18 <http://bioentity.io/vocab/prefix_uri> "http://www.w3.org/2004/02/skos/core#" .
+_:genid19 <http://bioentity.io/vocab/local_name> "owl" .
+_:genid19 <http://bioentity.io/vocab/prefix_uri> "http://www.w3.org/2002/07/owl#" .
+_:genid20 <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> .
+_:genid20 <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> .
+_:genid20 <http://www.w3.org/2000/01/rdf-schema#label> "mixins" .
+_:genid21 <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> .
+_:genid21 <http://www.w3.org/2000/01/rdf-schema#label> "is_a" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://bioentity.io/vocab/Definition> <http://bioentity.io/vocab/abstract> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/Definition> <http://bioentity.io/vocab/slots> _:genid22 .
+<http://bioentity.io/vocab/Definition> <http://www.w3.org/2000/01/rdf-schema#label> "Definition" .
+<http://bioentity.io/vocab/Definition> <http://www.w3.org/2004/02/skos/core#definition> "definition base class" .
+# 
+<http://bioentity.io/vocab/Example> <http://bioentity.io/vocab/slots> _:genid23 .
+<http://bioentity.io/vocab/Example> <http://www.w3.org/2000/01/rdf-schema#label> "Example" .
+<http://bioentity.io/vocab/Example> <http://www.w3.org/2004/02/skos/core#definition> "example of usage" .
+# 
+<http://bioentity.io/vocab/Prefix> <http://bioentity.io/vocab/slots> _:genid24 .
+<http://bioentity.io/vocab/Prefix> <http://www.w3.org/2000/01/rdf-schema#label> "Prefix" .
+<http://bioentity.io/vocab/Prefix> <http://www.w3.org/2004/02/skos/core#definition> "Prefix URI map" .
+# 
+<http://bioentity.io/vocab/aliases> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/aliases> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/aliases> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/aliases> <http://www.w3.org/2000/01/rdf-schema#label> "aliases" .
+# 
+<http://bioentity.io/vocab/alt_descriptions> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/alt_descriptions> <http://bioentity.io/vocab/inherited> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/alt_descriptions> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/alt_descriptions> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/alt_descriptions> <http://www.w3.org/2000/01/rdf-schema#label> "alt_descriptions" .
+<http://bioentity.io/vocab/alt_descriptions> <http://www.w3.org/2004/02/skos/core#note> "Needs description" .
+# 
+<http://bioentity.io/vocab/apply_to> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/apply_to> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/apply_to> <http://www.w3.org/2000/01/rdf-schema#label> "apply_to" .
+<http://bioentity.io/vocab/apply_to> <http://www.w3.org/2004/02/skos/core#definition> "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class." .
+# 
+<http://bioentity.io/vocab/comment> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/comment> <http://bioentity.io/vocab/mappings> _:genid25 .
+<http://bioentity.io/vocab/comment> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/comment> <http://www.w3.org/2000/01/rdf-schema#label> "comment" .
+<http://bioentity.io/vocab/comment> <http://www.w3.org/2004/02/skos/core#definition> "Comment about an element" .
+# 
+<http://bioentity.io/vocab/default_type> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/default_type> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/TypeDefinition> .
+<http://bioentity.io/vocab/default_type> <http://www.w3.org/2000/01/rdf-schema#label> "default_type" .
+<http://bioentity.io/vocab/default_type> <http://www.w3.org/2004/02/skos/core#definition> "the default type if range is omitted" .
+# 
+<http://bioentity.io/vocab/defining_slots> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/defining_slots> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/defining_slots> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/defining_slots> <http://www.w3.org/2000/01/rdf-schema#label> "defining_slots" .
+<http://bioentity.io/vocab/defining_slots> <http://www.w3.org/2004/02/skos/core#definition> "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom" .
+# 
+<http://bioentity.io/vocab/definitional> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/definitional> <http://bioentity.io/vocab/inherited> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/definitional> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/definitional> <http://www.w3.org/2000/01/rdf-schema#label> "definitional" .
+<http://bioentity.io/vocab/definitional> <http://www.w3.org/2004/02/skos/core#note> "needs description" .
+# 
+<http://bioentity.io/vocab/description> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/description> <http://bioentity.io/vocab/inherited> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/description> <http://bioentity.io/vocab/mappings> _:genid26 .
+<http://bioentity.io/vocab/description> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/description> <http://www.w3.org/2000/01/rdf-schema#label> "description" .
+<http://bioentity.io/vocab/description> <http://www.w3.org/2004/02/skos/core#definition> "a description" .
+# 
+<http://bioentity.io/vocab/entity> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/ClassDefinition> .
+<http://bioentity.io/vocab/entity> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/entity> <http://www.w3.org/2000/01/rdf-schema#label> "entity" .
+<http://bioentity.io/vocab/entity> <http://www.w3.org/2004/02/skos/core#note> "needs description" .
+# 
+<http://bioentity.io/vocab/examples> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/examples> <http://bioentity.io/vocab/inlined> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/examples> <http://bioentity.io/vocab/mappings> _:genid27 .
+<http://bioentity.io/vocab/examples> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/examples> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/Example> .
+<http://bioentity.io/vocab/examples> <http://www.w3.org/2000/01/rdf-schema#label> "examples" .
+<http://bioentity.io/vocab/examples> <http://www.w3.org/2004/02/skos/core#definition> "Example of usage for a slot or class" .
+# 
+<http://bioentity.io/vocab/flags> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/flags> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/flags> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/flags> <http://www.w3.org/2000/01/rdf-schema#label> "flags" .
+<http://bioentity.io/vocab/flags> <http://www.w3.org/2004/02/skos/core#definition> "State information and other details" .
+# 
+<http://bioentity.io/vocab/from_schema> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/from_schema> <http://bioentity.io/vocab/mappings> _:genid28 .
+<http://bioentity.io/vocab/from_schema> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/from_schema> <http://www.w3.org/2000/01/rdf-schema#label> "from_schema" .
+<http://bioentity.io/vocab/from_schema> <http://www.w3.org/2004/02/skos/core#definition> "id of the schema that the element was derived from.  Supplied by the loader." .
+# 
+<http://bioentity.io/vocab/identifier> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/identifier> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/identifier> <http://www.w3.org/2000/01/rdf-schema#label> "identifier" .
+<http://bioentity.io/vocab/identifier> <http://www.w3.org/2004/02/skos/core#definition> "True means that this slot must be unique across the collection of slots" .
+# 
+<http://bioentity.io/vocab/imports> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/imports> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/imports> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/imports> <http://www.w3.org/2000/01/rdf-schema#label> "imports" .
+<http://bioentity.io/vocab/imports> <http://www.w3.org/2004/02/skos/core#definition> "A list of modules that are imported into the schema" .
+# 
+<http://bioentity.io/vocab/in_subset> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/in_subset> <http://bioentity.io/vocab/inherited> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/in_subset> <http://bioentity.io/vocab/mappings> _:genid29 .
+<http://bioentity.io/vocab/in_subset> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/in_subset> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/in_subset> <http://www.w3.org/2000/01/rdf-schema#label> "in_subset" .
+<http://bioentity.io/vocab/in_subset> <http://www.w3.org/2004/02/skos/core#definition> "used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)" .
+# 
+<http://bioentity.io/vocab/inverse> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/inverse> <http://bioentity.io/vocab/mappings> _:genid30 .
+<http://bioentity.io/vocab/inverse> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/inverse> <http://www.w3.org/2000/01/rdf-schema#label> "inverse" .
+<http://bioentity.io/vocab/inverse> <http://www.w3.org/2004/02/skos/core#definition> "used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')" .
+# 
+<http://bioentity.io/vocab/is_class_field> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/is_class_field> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/is_class_field> <http://www.w3.org/2000/01/rdf-schema#label> "is_class_field" .
+<http://bioentity.io/vocab/is_class_field> <http://www.w3.org/2004/02/skos/core#note> "Needs description" .
+# 
+<http://bioentity.io/vocab/local_names> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/local_names> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/local_names> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/local_names> <http://www.w3.org/2000/01/rdf-schema#label> "local_names" .
+<http://bioentity.io/vocab/local_names> <http://www.w3.org/2004/02/skos/core#definition> "map from local identifier to slot" .
+# 
+<http://bioentity.io/vocab/mixin> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/mixin> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/mixin> <http://www.w3.org/2000/01/rdf-schema#label> "mixin" .
+<http://bioentity.io/vocab/mixin> <http://www.w3.org/2004/02/skos/core#definition> "Used only as a mixin -- cannot be instantiated on its own." .
+# 
+<http://bioentity.io/vocab/name> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/name> <http://bioentity.io/vocab/mappings> _:genid31 .
+<http://bioentity.io/vocab/name> <http://bioentity.io/vocab/primary_key> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/name> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
+<http://bioentity.io/vocab/name> <http://www.w3.org/2004/02/skos/core#definition> "a unique key that identifies a slot, type or class in a schema" .
+# 
+<http://bioentity.io/vocab/note> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/note> <http://bioentity.io/vocab/mappings> _:genid32 .
+<http://bioentity.io/vocab/note> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/note> <http://www.w3.org/2000/01/rdf-schema#label> "note" .
+<http://bioentity.io/vocab/note> <http://www.w3.org/2004/02/skos/core#definition> "Notes about an element" .
+# 
+<http://bioentity.io/vocab/object_property> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/object_property> <http://bioentity.io/vocab/inherited> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/object_property> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/object_property> <http://www.w3.org/2000/01/rdf-schema#label> "object_property" .
+<http://bioentity.io/vocab/object_property> <http://www.w3.org/2004/02/skos/core#definition> "true means that this slot is part of the formal definition of a class" .
+# 
+<http://bioentity.io/vocab/path> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/path> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/path> <http://www.w3.org/2000/01/rdf-schema#label> "path" .
+<http://bioentity.io/vocab/path> <http://www.w3.org/2004/02/skos/core#definition> "For any denormalized slot, this represents the tree or graph path used to generate the denormalized form" .
+# 
+<http://bioentity.io/vocab/required> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/required> <http://bioentity.io/vocab/inherited> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/required> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/required> <http://www.w3.org/2000/01/rdf-schema#label> "required" .
+<http://bioentity.io/vocab/required> <http://www.w3.org/2004/02/skos/core#definition> "If true slot must have at least one value" .
+# 
+<http://bioentity.io/vocab/role> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/role> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/role> <http://www.w3.org/2000/01/rdf-schema#label> "role" .
+<http://bioentity.io/vocab/role> <http://www.w3.org/2004/02/skos/core#note> "Needs description" .
+# 
+<http://bioentity.io/vocab/see_also> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/see_also> <http://bioentity.io/vocab/mappings> _:genid33 .
+<http://bioentity.io/vocab/see_also> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/see_also> <http://www.w3.org/2000/01/rdf-schema#label> "see_also" .
+<http://bioentity.io/vocab/see_also> <http://www.w3.org/2004/02/skos/core#note> "needs description" .
+# 
+<http://bioentity.io/vocab/singular_name> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Element> .
+<http://bioentity.io/vocab/singular_name> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/singular_name> <http://www.w3.org/2000/01/rdf-schema#label> "singular_name" .
+<http://bioentity.io/vocab/singular_name> <http://www.w3.org/2004/02/skos/core#definition> "a name that is used in the singular form" .
+# 
+<http://bioentity.io/vocab/slot_definitions> <http://bioentity.io/vocab/alias> "slots" .
+<http://bioentity.io/vocab/slot_definitions> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/slot_definitions> <http://bioentity.io/vocab/inlined> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/slot_definitions> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/slot_definitions> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/slot_definitions> <http://www.w3.org/2000/01/rdf-schema#label> "slot_definitions" .
+<http://bioentity.io/vocab/slot_definitions> <http://www.w3.org/2004/02/skos/core#definition> "collection of slot definitions in a schema" .
+# 
+<http://bioentity.io/vocab/subclass_of> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/subclass_of> <http://bioentity.io/vocab/mappings> _:genid34 .
+<http://bioentity.io/vocab/subclass_of> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://bioentity.io/vocab/subclass_of> <http://www.w3.org/2000/01/rdf-schema#label> "subclass_of" .
+<http://bioentity.io/vocab/subclass_of> <http://www.w3.org/2004/02/skos/core#definition> "Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes" .
+# 
+<http://bioentity.io/vocab/subproperty_of> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/subproperty_of> <http://bioentity.io/vocab/inherited> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/subproperty_of> <http://bioentity.io/vocab/mappings> _:genid35 .
+<http://bioentity.io/vocab/subproperty_of> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/SlotDefinition> .
+<http://bioentity.io/vocab/subproperty_of> <http://www.w3.org/2000/01/rdf-schema#label> "subproperty_of" .
+<http://bioentity.io/vocab/subproperty_of> <http://www.w3.org/2004/02/skos/core#definition> "Ontolgy property which this is a subproperty of" .
+# 
+<http://bioentity.io/vocab/symmetric> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/symmetric> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/symmetric> <http://www.w3.org/2000/01/rdf-schema#label> "symmetric" .
+<http://bioentity.io/vocab/symmetric> <http://www.w3.org/2004/02/skos/core#definition> "Symmetric slot" .
+<http://bioentity.io/vocab/symmetric> <http://www.w3.org/2004/02/skos/core#note> "Indications that a slot or reified association is symmetric" .
+# 
+<http://bioentity.io/vocab/typeof> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/TypeDefinition> .
+<http://bioentity.io/vocab/typeof> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/typeof> <http://www.w3.org/2000/01/rdf-schema#label> "typeof" .
+<http://bioentity.io/vocab/typeof> <http://www.w3.org/2004/02/skos/core#definition> "a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition" .
+# 
+<http://bioentity.io/vocab/types> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/SchemaDefinition> .
+<http://bioentity.io/vocab/types> <http://bioentity.io/vocab/inlined> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/types> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/types> <http://bioentity.io/vocab/range> <http://bioentity.io/vocab/TypeDefinition> .
+<http://bioentity.io/vocab/types> <http://www.w3.org/2000/01/rdf-schema#label> "types" .
+<http://bioentity.io/vocab/types> <http://www.w3.org/2004/02/skos/core#definition> "types defined in schema" .
+# 
+<http://bioentity.io/vocab/value> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Example> .
+<http://bioentity.io/vocab/value> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/value> <http://www.w3.org/2000/01/rdf-schema#label> "value" .
+# 
+<http://bioentity.io/vocab/value_description> <http://bioentity.io/vocab/alias> "description" .
+<http://bioentity.io/vocab/value_description> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Example> .
+<http://bioentity.io/vocab/value_description> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/value_description> <http://www.w3.org/2000/01/rdf-schema#label> "value_description" .
+# 
+<http://bioentity.io/vocab/values_from> <http://bioentity.io/vocab/domain> <http://bioentity.io/vocab/Definition> .
+<http://bioentity.io/vocab/values_from> <http://bioentity.io/vocab/multivalued> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://bioentity.io/vocab/values_from> <http://bioentity.io/vocab/range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://bioentity.io/vocab/values_from> <http://www.w3.org/2000/01/rdf-schema#label> "values_from" .
+<http://bioentity.io/vocab/values_from> <http://www.w3.org/2004/02/skos/core#definition> "identifies the possible uri's of the range" .
+# 
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/classes> _:genid36 .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/default_curi_maps> _:genid37 .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/default_prefix> "biolink" .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/generation_date> "2018-07-10"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/id> "https://biolink.github.io/metamodel/ontology/meta.ttl" .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/id_prefixes> _:genid38 .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/license> "https://creativecommons.org/publicdomain/zero/1.0/" .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/metamodel_version> "0.3.1" .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/prefixes> _:genid39 .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/slots> _:genid40 .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/source_file> "meta.yaml" .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/source_file_date> "Mon Jul  9 17:39:55 2018" .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/source_file_size> "18545"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://bioentity.io/vocab/version> "0.3.1" .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://www.w3.org/2000/01/rdf-schema#label> "metamodel" .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://www.w3.org/2004/02/skos/core#definition> "Metamodel for biolink schema" .
+<https://biolink.github.io/metamodel/ontology/meta.ttl> <http://www.w3.org/2004/02/skos/core#note> "OIO prefix is not correct -- where IS \"inSubset\" derived from?" .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

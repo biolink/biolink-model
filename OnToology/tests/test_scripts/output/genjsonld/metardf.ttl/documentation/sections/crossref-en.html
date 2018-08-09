@@ -1,0 +1,345 @@
+<h2  id="crossreference" class="list">Cross reference for [Ontology Name] classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by [Ontology Name].
+<div id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://bioentity.io/vocab/Element" title="http://bioentity.io/vocab/Element">Element</a>
+      </li>
+      <li>
+         <a href="#http://bioentity.io/vocab/is_a" title="http://bioentity.io/vocab/is_a">is_a</a>
+      </li>
+      <li>
+         <a href="#http://bioentity.io/vocab/mixins" title="http://bioentity.io/vocab/mixins">mixins</a>
+      </li>
+      <li>
+         <a href="#http://bioentity.io/vocab/union_of" title="http://bioentity.io/vocab/union_of">union_of</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://bioentity.io/vocab/Element">
+      <h3>Element<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/Element</p>
+      <div class="comment">
+         <span class="markdown">root of all described things</span>
+      </div>
+      <dl class="description">
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://bioentity.io/vocab/Definition" title="http://bioentity.io/vocab/Definition">Definition</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://bioentity.io/vocab/TypeDefinition" title="http://bioentity.io/vocab/TypeDefinition">TypeDefinition</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://bioentity.io/vocab/is_a">
+      <h3>is_a<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/is_a</p>
+      <div class="comment">
+         <span class="markdown">specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</span>
+      </div>
+      <dl class="description">
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://bioentity.io/vocab/class_definition_is_a" title="http://bioentity.io/vocab/class_definition_is_a">class_definition_is_a</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://bioentity.io/vocab/slot_definition_is_a" title="http://bioentity.io/vocab/slot_definition_is_a">slot_definition_is_a</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://bioentity.io/vocab/mixins">
+      <h3>mixins<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/mixins</p>
+      <div class="comment">
+         <span class="markdown">List of definitions to be mixed in. Targets may be any definition of the same type</span>
+      </div>
+      <dl class="description">
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://bioentity.io/vocab/class_definition_mixins"
+               title="http://bioentity.io/vocab/class_definition_mixins">class_definition_mixins</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://bioentity.io/vocab/slot_definition_mixins" title="http://bioentity.io/vocab/slot_definition_mixins">slot_definition_mixins</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://bioentity.io/vocab/union_of">
+      <h3>union_of<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/union_of</p>
+      <div class="comment">
+         <span class="markdown">list of class or slot definitions that are combined to create the union class</span>
+      </div>
+      <dl class="description">
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://bioentity.io/vocab/class_definition_union_of"
+               title="http://bioentity.io/vocab/class_definition_union_of">class_definition_union_of</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://bioentity.io/vocab/slot_definition_union_of"
+               title="http://bioentity.io/vocab/slot_definition_union_of">slot_definition_union_of</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="namedindividuals">
+   <h3 id="namedindividuals" class="list">Named Individuals</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#http://bioentity.io/vocab/class_definition_is_a" title="http://bioentity.io/vocab/class_definition_is_a">class_definition_is_a</a>
+      </li>
+      <li>
+         <a href="#http://bioentity.io/vocab/class_definition_mixins"
+            title="http://bioentity.io/vocab/class_definition_mixins">class_definition_mixins</a>
+      </li>
+      <li>
+         <a href="#http://bioentity.io/vocab/class_definition_union_of"
+            title="http://bioentity.io/vocab/class_definition_union_of">class_definition_union_of</a>
+      </li>
+      <li>
+         <a href="#http://bioentity.io/vocab/ClassDefinition" title="http://bioentity.io/vocab/ClassDefinition">ClassDefinition</a>
+      </li>
+      <li>
+         <a href="#http://bioentity.io/vocab/Definition" title="http://bioentity.io/vocab/Definition">
+            <span>Definition</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://bioentity.io/vocab/SchemaDefinition" title="http://bioentity.io/vocab/SchemaDefinition">SchemaDefinition</a>
+      </li>
+      <li>
+         <a href="#http://bioentity.io/vocab/slot_definition_is_a" title="http://bioentity.io/vocab/slot_definition_is_a">slot_definition_is_a</a>
+      </li>
+      <li>
+         <a href="#http://bioentity.io/vocab/slot_definition_mixins" title="http://bioentity.io/vocab/slot_definition_mixins">slot_definition_mixins</a>
+      </li>
+      <li>
+         <a href="#http://bioentity.io/vocab/slot_definition_union_of"
+            title="http://bioentity.io/vocab/slot_definition_union_of">slot_definition_union_of</a>
+      </li>
+      <li>
+         <a href="#http://bioentity.io/vocab/SlotDefinition" title="http://bioentity.io/vocab/SlotDefinition">SlotDefinition</a>
+      </li>
+      <li>
+         <a href="#http://bioentity.io/vocab/TypeDefinition" title="http://bioentity.io/vocab/TypeDefinition">TypeDefinition</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://bioentity.io/vocab/class_definition_is_a">
+      <h3>class_definition_is_a<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/class_definition_is_a</p>
+      <div class="comment">
+         <span class="markdown">specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://bioentity.io/vocab/is_a" title="http://bioentity.io/vocab/is_a">is_a</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://bioentity.io/vocab/class_definition_mixins">
+      <h3>class_definition_mixins<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/class_definition_mixins</p>
+      <div class="comment">
+         <span class="markdown">List of definitions to be mixed in. Targets may be any definition of the same type</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://bioentity.io/vocab/mixins" title="http://bioentity.io/vocab/mixins">mixins</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://bioentity.io/vocab/class_definition_union_of">
+      <h3>class_definition_union_of<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/class_definition_union_of</p>
+      <div class="comment">
+         <span class="markdown">list of class or slot definitions that are combined to create the union class</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://bioentity.io/vocab/union_of" title="http://bioentity.io/vocab/union_of">union_of</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://bioentity.io/vocab/ClassDefinition">
+      <h3>ClassDefinition<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/ClassDefinition</p>
+      <div class="comment">
+         <span class="markdown">A class or interface</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <span class="dotted" title="http://bioentity.io/vocab/Definition">Definition</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://bioentity.io/vocab/Definition">
+      <h3>Definition<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/Definition</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://bioentity.io/vocab/Element" title="http://bioentity.io/vocab/Element">Element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>class</dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://bioentity.io/vocab/SchemaDefinition">
+      <h3>SchemaDefinition<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/SchemaDefinition</p>
+      <div class="comment">
+         <span class="markdown">A collection of definitions</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <span class="dotted" title="http://bioentity.io/vocab/Definition">Definition</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://bioentity.io/vocab/slot_definition_is_a">
+      <h3>slot_definition_is_a<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/slot_definition_is_a</p>
+      <div class="comment">
+         <span class="markdown">specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://bioentity.io/vocab/is_a" title="http://bioentity.io/vocab/is_a">is_a</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://bioentity.io/vocab/slot_definition_mixins">
+      <h3>slot_definition_mixins<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/slot_definition_mixins</p>
+      <div class="comment">
+         <span class="markdown">List of definitions to be mixed in. Targets may be any definition of the same type</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://bioentity.io/vocab/mixins" title="http://bioentity.io/vocab/mixins">mixins</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://bioentity.io/vocab/slot_definition_union_of">
+      <h3>slot_definition_union_of<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/slot_definition_union_of</p>
+      <div class="comment">
+         <span class="markdown">list of class or slot definitions that are combined to create the union class</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://bioentity.io/vocab/union_of" title="http://bioentity.io/vocab/union_of">union_of</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://bioentity.io/vocab/SlotDefinition">
+      <h3>SlotDefinition<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/SlotDefinition</p>
+      <div class="comment">
+         <span class="markdown">A property or slot</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <span class="dotted" title="http://bioentity.io/vocab/Definition">Definition</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://bioentity.io/vocab/TypeDefinition">
+      <h3>TypeDefinition<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://bioentity.io/vocab/TypeDefinition</p>
+      <div class="comment">
+         <span class="markdown">A type definition</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://bioentity.io/vocab/Element" title="http://bioentity.io/vocab/Element">Element</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>

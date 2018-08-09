@@ -1,0 +1,310 @@
+{
+  "@context" : {
+    "typeof" : {
+      "@id" : "http://bioentity.io/vocab/typeof",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "id_prefixes" : {
+      "@id" : "http://bioentity.io/vocab/id_prefixes",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "abstract" : {
+      "@id" : "http://bioentity.io/vocab/abstract",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "class_definition_mixins" : {
+      "@id" : "http://bioentity.io/vocab/class_definition_mixins"
+    },
+    "role" : {
+      "@id" : "http://bioentity.io/vocab/role",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "see_also" : {
+      "@id" : "http://bioentity.io/vocab/see_also",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "slot_definitions" : {
+      "@id" : "http://bioentity.io/vocab/slot_definitions"
+    },
+    "subclass_of" : {
+      "@id" : "http://bioentity.io/vocab/subclass_of",
+      "@type" : "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "range" : {
+      "@id" : "http://bioentity.io/vocab/range",
+      "@type" : "http://www.w3.org/2001/XMLSchema#anyType"
+    },
+    "mappings" : {
+      "@id" : "http://bioentity.io/vocab/mappings",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "license" : {
+      "@id" : "http://bioentity.io/vocab/license",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "in_subset" : {
+      "@id" : "http://bioentity.io/vocab/in_subset",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "symmetric" : {
+      "@id" : "http://bioentity.io/vocab/symmetric",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "aliases" : {
+      "@id" : "http://bioentity.io/vocab/aliases",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Example" : {
+      "@id" : "http://bioentity.io/vocab/Example"
+    },
+    "Prefix" : {
+      "@id" : "http://bioentity.io/vocab/Prefix"
+    },
+    "prefixes" : {
+      "@id" : "http://bioentity.io/vocab/prefixes",
+      "@type" : "@id"
+    },
+    "slots" : {
+      "@id" : "http://bioentity.io/vocab/slots",
+      "@type" : "@id"
+    },
+    "local_names" : {
+      "@id" : "http://bioentity.io/vocab/local_names",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "defining_slots" : {
+      "@id" : "http://bioentity.io/vocab/defining_slots",
+      "@type" : "@id"
+    },
+    "class_definition_union_of" : {
+      "@id" : "http://bioentity.io/vocab/class_definition_union_of"
+    },
+    "is_class_field" : {
+      "@id" : "http://bioentity.io/vocab/is_class_field",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "mixins" : {
+      "@id" : "http://bioentity.io/vocab/mixins",
+      "@type" : "@id"
+    },
+    "metamodel_version" : {
+      "@id" : "http://bioentity.io/vocab/metamodel_version",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "default_type" : {
+      "@id" : "http://bioentity.io/vocab/default_type",
+      "@type" : "@id"
+    },
+    "prefix_uri" : {
+      "@id" : "http://bioentity.io/vocab/prefix_uri",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "class_definition_is_a" : {
+      "@id" : "http://bioentity.io/vocab/class_definition_is_a"
+    },
+    "is_a" : {
+      "@id" : "http://bioentity.io/vocab/is_a",
+      "@type" : "@id"
+    },
+    "path" : {
+      "@id" : "http://bioentity.io/vocab/path",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "SlotDefinition" : {
+      "@id" : "http://bioentity.io/vocab/SlotDefinition"
+    },
+    "subproperty_of" : {
+      "@id" : "http://bioentity.io/vocab/subproperty_of",
+      "@type" : "@id"
+    },
+    "source_file_size" : {
+      "@id" : "http://bioentity.io/vocab/source_file_size",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "slot_definition_union_of" : {
+      "@id" : "http://bioentity.io/vocab/slot_definition_union_of"
+    },
+    "id" : {
+      "@id" : "http://bioentity.io/vocab/id",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "flags" : {
+      "@id" : "http://bioentity.io/vocab/flags",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "types" : {
+      "@id" : "http://bioentity.io/vocab/types",
+      "@type" : "@id"
+    },
+    "inherited" : {
+      "@id" : "http://bioentity.io/vocab/inherited",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "alt_descriptions" : {
+      "@id" : "http://bioentity.io/vocab/alt_descriptions",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "note" : {
+      "@id" : "http://bioentity.io/vocab/note",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "generation_date" : {
+      "@id" : "http://bioentity.io/vocab/generation_date",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "default_prefix" : {
+      "@id" : "http://bioentity.io/vocab/default_prefix",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "name" : {
+      "@id" : "http://bioentity.io/vocab/name",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "value" : {
+      "@id" : "http://bioentity.io/vocab/value",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "source_file_date" : {
+      "@id" : "http://bioentity.io/vocab/source_file_date",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "identifier" : {
+      "@id" : "http://bioentity.io/vocab/identifier",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "local_name" : {
+      "@id" : "http://bioentity.io/vocab/local_name",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "slot_definition_is_a" : {
+      "@id" : "http://bioentity.io/vocab/slot_definition_is_a"
+    },
+    "classes" : {
+      "@id" : "http://bioentity.io/vocab/classes",
+      "@type" : "@id"
+    },
+    "domain" : {
+      "@id" : "http://bioentity.io/vocab/domain",
+      "@type" : "@id"
+    },
+    "inverse" : {
+      "@id" : "http://bioentity.io/vocab/inverse",
+      "@type" : "@id"
+    },
+    "slot_definition_mixins" : {
+      "@id" : "http://bioentity.io/vocab/slot_definition_mixins"
+    },
+    "value_description" : {
+      "@id" : "http://bioentity.io/vocab/value_description"
+    },
+    "apply_to" : {
+      "@id" : "http://bioentity.io/vocab/apply_to",
+      "@type" : "@id"
+    },
+    "multivalued" : {
+      "@id" : "http://bioentity.io/vocab/multivalued",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "union_of" : {
+      "@id" : "http://bioentity.io/vocab/union_of",
+      "@type" : "@id"
+    },
+    "ClassDefinition" : {
+      "@id" : "http://bioentity.io/vocab/ClassDefinition"
+    },
+    "required" : {
+      "@id" : "http://bioentity.io/vocab/required",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "slot_usage" : {
+      "@id" : "http://bioentity.io/vocab/slot_usage",
+      "@type" : "@id"
+    },
+    "Definition" : {
+      "@id" : "http://bioentity.io/vocab/Definition"
+    },
+    "definitional" : {
+      "@id" : "http://bioentity.io/vocab/definitional",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "source_file" : {
+      "@id" : "http://bioentity.io/vocab/source_file",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "default_curi_maps" : {
+      "@id" : "http://bioentity.io/vocab/default_curi_maps",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "version" : {
+      "@id" : "http://bioentity.io/vocab/version",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "object_property" : {
+      "@id" : "http://bioentity.io/vocab/object_property",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "inlined" : {
+      "@id" : "http://bioentity.io/vocab/inlined",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "alias" : {
+      "@id" : "http://bioentity.io/vocab/alias",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "mixin" : {
+      "@id" : "http://bioentity.io/vocab/mixin",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "from_schema" : {
+      "@id" : "http://bioentity.io/vocab/from_schema",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "TypeDefinition" : {
+      "@id" : "http://bioentity.io/vocab/TypeDefinition"
+    },
+    "comment" : {
+      "@id" : "http://bioentity.io/vocab/comment",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "values_from" : {
+      "@id" : "http://bioentity.io/vocab/values_from",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "examples" : {
+      "@id" : "http://bioentity.io/vocab/examples",
+      "@type" : "@id"
+    },
+    "entity" : {
+      "@id" : "http://bioentity.io/vocab/entity",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "imports" : {
+      "@id" : "http://bioentity.io/vocab/imports",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Element" : {
+      "@id" : "http://bioentity.io/vocab/Element"
+    },
+    "SchemaDefinition" : {
+      "@id" : "http://bioentity.io/vocab/SchemaDefinition"
+    },
+    "primary_key" : {
+      "@id" : "http://bioentity.io/vocab/primary_key",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "description" : {
+      "@id" : "http://bioentity.io/vocab/description",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "singular_name" : {
+      "@id" : "http://bioentity.io/vocab/singular_name",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "IAO_0000115" : {
+      "@id" : "http://purl.obolibrary.org/obo/IAO_0000115"
+    }
+  }
+}

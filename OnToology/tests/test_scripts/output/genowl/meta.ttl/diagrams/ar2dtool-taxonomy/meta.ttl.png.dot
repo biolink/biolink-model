@@ -1,0 +1,11 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "bioentity:SlotDefinition" "bioentity:ClassDefinition" "bioentity:Definition" "bioentity:SchemaDefinition" "bioentity:Element" "bioentity:TypeDefinition" ; /*classes style*/
+	"bioentity:SlotDefinition" -> "bioentity:Definition" [ label = "rdfs:subClassOf" ];
+	"bioentity:ClassDefinition" -> "bioentity:Definition" [ label = "rdfs:subClassOf" ];
+	"bioentity:Definition" -> "bioentity:Element" [ label = "rdfs:subClassOf" ];
+	"bioentity:TypeDefinition" -> "bioentity:Element" [ label = "rdfs:subClassOf" ];
+	"bioentity:SchemaDefinition" -> "bioentity:Definition" [ label = "rdfs:subClassOf" ];
+
+}

@@ -1,0 +1,526 @@
+{
+  "@context" : {
+    "" : {
+      "@id" : "_:genid1127",
+      "@type" : "@id"
+    },
+    "typeof" : {
+      "@id" : "http://bioentity.io/vocab/typeof"
+    },
+    "id_prefixes" : {
+      "@id" : "http://bioentity.io/vocab/id_prefixes"
+    },
+    "abstract" : {
+      "@id" : "http://bioentity.io/vocab/abstract"
+    },
+    "Error4" : {
+      "@id" : "http://org.semanticweb.owlapi/error#Error4"
+    },
+    "object" : {
+      "@id" : "http://bioentity.io/vocab/object"
+    },
+    "range" : {
+      "@id" : "http://bioentity.io/vocab/range"
+    },
+    "Occurrent" : {
+      "@id" : "http://bioentity.io/vocab/Occurrent"
+    },
+    "actively_involved_in" : {
+      "@id" : "http://bioentity.io/vocab/actively_involved_in"
+    },
+    "pairwise_gene_to_gene_interaction_relation" : {
+      "@id" : "http://bioentity.io/vocab/pairwise_gene_to_gene_interaction_relation"
+    },
+    "regulates_entity_to_entity" : {
+      "@id" : "http://bioentity.io/vocab/regulates_entity_to_entity"
+    },
+    "aggregate_statistic" : {
+      "@id" : "http://bioentity.io/vocab/aggregate_statistic"
+    },
+    "anatomical_entity_to_anatomical_entity_association_subject" : {
+      "@id" : "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_association_subject"
+    },
+    "example" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#example"
+    },
+    "mappings" : {
+      "@id" : "http://bioentity.io/vocab/mappings"
+    },
+    "license" : {
+      "@id" : "http://bioentity.io/vocab/license"
+    },
+    "related_condition" : {
+      "@id" : "http://bioentity.io/vocab/related_condition"
+    },
+    "symmetric" : {
+      "@id" : "http://bioentity.io/vocab/symmetric"
+    },
+    "contributes_to" : {
+      "@id" : "http://bioentity.io/vocab/contributes_to"
+    },
+    "aliases" : {
+      "@id" : "http://bioentity.io/vocab/aliases"
+    },
+    "IndividualOrganism" : {
+      "@id" : "http://bioentity.io/vocab/IndividualOrganism"
+    },
+    "FunctionalAssociation" : {
+      "@id" : "http://bioentity.io/vocab/FunctionalAssociation"
+    },
+    "correlated_with" : {
+      "@id" : "http://bioentity.io/vocab/correlated_with"
+    },
+    "prefixes" : {
+      "@id" : "http://bioentity.io/vocab/prefixes"
+    },
+    "slots" : {
+      "@id" : "http://bioentity.io/vocab/slots"
+    },
+    "local_names" : {
+      "@id" : "http://bioentity.io/vocab/local_names"
+    },
+    "anatomical_entity_to_anatomical_entity_ontogenic_association_relation" : {
+      "@id" : "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_relation"
+    },
+    "part_of" : {
+      "@id" : "http://bioentity.io/vocab/part_of",
+      "@type" : "@id"
+    },
+    "ClinicalModifier" : {
+      "@id" : "http://bioentity.io/vocab/ClinicalModifier"
+    },
+    "defining_slots" : {
+      "@id" : "http://bioentity.io/vocab/defining_slots"
+    },
+    "EnvironmentalProcess" : {
+      "@id" : "http://bioentity.io/vocab/EnvironmentalProcess"
+    },
+    "participates_in" : {
+      "@id" : "http://bioentity.io/vocab/participates_in",
+      "@type" : "@id"
+    },
+    "has_biomarker" : {
+      "@id" : "http://bioentity.io/vocab/has_biomarker",
+      "@type" : "@id"
+    },
+    "quantifier_qualifier" : {
+      "@id" : "http://bioentity.io/vocab/quantifier_qualifier"
+    },
+    "stage_qualifier" : {
+      "@id" : "http://bioentity.io/vocab/stage_qualifier"
+    },
+    "is_class_field" : {
+      "@id" : "http://bioentity.io/vocab/is_class_field"
+    },
+    "derives_from" : {
+      "@id" : "http://bioentity.io/vocab/derives_from",
+      "@type" : "@id"
+    },
+    "mixins" : {
+      "@id" : "http://bioentity.io/vocab/mixins"
+    },
+    "functional_association_subject" : {
+      "@id" : "http://bioentity.io/vocab/functional_association_subject"
+    },
+    "GeneToGeneAssociation" : {
+      "@id" : "http://bioentity.io/vocab/GeneToGeneAssociation"
+    },
+    "model_to_disease_mixin_relation" : {
+      "@id" : "http://bioentity.io/vocab/model_to_disease_mixin_relation"
+    },
+    "coexists_with" : {
+      "@id" : "http://bioentity.io/vocab/coexists_with"
+    },
+    "metamodel_version" : {
+      "@id" : "http://bioentity.io/vocab/metamodel_version"
+    },
+    "expressed_in" : {
+      "@id" : "http://bioentity.io/vocab/expressed_in",
+      "@type" : "@id"
+    },
+    "affects_risk_for" : {
+      "@id" : "http://bioentity.io/vocab/affects_risk_for"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "association_slot" : {
+      "@id" : "http://bioentity.io/vocab/association_slot"
+    },
+    "molecularly_interacts_with" : {
+      "@id" : "http://bioentity.io/vocab/molecularly_interacts_with"
+    },
+    "related" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#related"
+    },
+    "gene_to_disease_association_subject" : {
+      "@id" : "http://bioentity.io/vocab/gene_to_disease_association_subject"
+    },
+    "path" : {
+      "@id" : "http://bioentity.io/vocab/path"
+    },
+    "has_variant_part" : {
+      "@id" : "http://bioentity.io/vocab/has_variant_part"
+    },
+    "source_file_size" : {
+      "@id" : "http://bioentity.io/vocab/source_file_size"
+    },
+    "id" : {
+      "@id" : "http://bioentity.io/vocab/id"
+    },
+    "DiseaseOrPhenotypicFeature" : {
+      "@id" : "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature"
+    },
+    "inSubset" : {
+      "@id" : "http://www.geneontology.org/formats/oboInOwl#inSubset"
+    },
+    "flags" : {
+      "@id" : "http://bioentity.io/vocab/flags"
+    },
+    "overlaps" : {
+      "@id" : "http://bioentity.io/vocab/overlaps"
+    },
+    "affects" : {
+      "@id" : "http://bioentity.io/vocab/affects"
+    },
+    "types" : {
+      "@id" : "http://bioentity.io/vocab/types"
+    },
+    "biomarker_for" : {
+      "@id" : "http://bioentity.io/vocab/biomarker_for",
+      "@type" : "@id"
+    },
+    "alt_descriptions" : {
+      "@id" : "http://bioentity.io/vocab/alt_descriptions"
+    },
+    "note" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#note"
+    },
+    "RNAProduct" : {
+      "@id" : "http://bioentity.io/vocab/RNAProduct"
+    },
+    "generation_date" : {
+      "@id" : "http://bioentity.io/vocab/generation_date"
+    },
+    "Attribute" : {
+      "@id" : "http://bioentity.io/vocab/Attribute"
+    },
+    "Error3" : {
+      "@id" : "http://org.semanticweb.owlapi/error#Error3"
+    },
+    "pairwise_interaction_association_relation" : {
+      "@id" : "http://bioentity.io/vocab/pairwise_interaction_association_relation"
+    },
+    "ClinicalEntity" : {
+      "@id" : "http://bioentity.io/vocab/ClinicalEntity"
+    },
+    "default_prefix" : {
+      "@id" : "http://bioentity.io/vocab/default_prefix"
+    },
+    "GeneOrGeneProduct" : {
+      "@id" : "http://bioentity.io/vocab/GeneOrGeneProduct"
+    },
+    "AnatomicalEntityToAnatomicalEntityAssociation" : {
+      "@id" : "http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation"
+    },
+    "interbase_coordinate" : {
+      "@id" : "http://bioentity.io/vocab/interbase_coordinate"
+    },
+    "expresses" : {
+      "@id" : "http://bioentity.io/vocab/expresses",
+      "@type" : "@id"
+    },
+    "RelationshipQuantifier" : {
+      "@id" : "http://bioentity.io/vocab/RelationshipQuantifier"
+    },
+    "name" : {
+      "@id" : "http://bioentity.io/vocab/name"
+    },
+    "SequenceFeatureRelationship" : {
+      "@id" : "http://bioentity.io/vocab/SequenceFeatureRelationship"
+    },
+    "gene_to_gene_homology_association_relation" : {
+      "@id" : "http://bioentity.io/vocab/gene_to_gene_homology_association_relation"
+    },
+    "GeneToDiseaseAssociation" : {
+      "@id" : "http://bioentity.io/vocab/GeneToDiseaseAssociation"
+    },
+    "sequence_feature_relationship_subject" : {
+      "@id" : "http://bioentity.io/vocab/sequence_feature_relationship_subject"
+    },
+    "treats" : {
+      "@id" : "http://bioentity.io/vocab/treats",
+      "@type" : "@id"
+    },
+    "gene_to_expression_site_association_relation" : {
+      "@id" : "http://bioentity.io/vocab/gene_to_expression_site_association_relation"
+    },
+    "PlanetaryEntity" : {
+      "@id" : "http://bioentity.io/vocab/PlanetaryEntity"
+    },
+    "BiologicalProcessOrActivity" : {
+      "@id" : "http://bioentity.io/vocab/BiologicalProcessOrActivity"
+    },
+    "Error5" : {
+      "@id" : "http://org.semanticweb.owlapi/error#Error5"
+    },
+    "AdministrativeEntity" : {
+      "@id" : "http://bioentity.io/vocab/AdministrativeEntity"
+    },
+    "MacromolecularComplex" : {
+      "@id" : "http://bioentity.io/vocab/MacromolecularComplex"
+    },
+    "interacts_with" : {
+      "@id" : "http://bioentity.io/vocab/interacts_with"
+    },
+    "Error1" : {
+      "@id" : "http://org.semanticweb.owlapi/error#Error1"
+    },
+    "BiologicalEntity" : {
+      "@id" : "http://bioentity.io/vocab/BiologicalEntity"
+    },
+    "SpecificityQuantifier" : {
+      "@id" : "http://bioentity.io/vocab/SpecificityQuantifier"
+    },
+    "model_of" : {
+      "@id" : "http://bioentity.io/vocab/model_of"
+    },
+    "source_file_date" : {
+      "@id" : "http://bioentity.io/vocab/source_file_date"
+    },
+    "identifier" : {
+      "@id" : "http://bioentity.io/vocab/identifier"
+    },
+    "has_gene" : {
+      "@id" : "http://bioentity.io/vocab/has_gene"
+    },
+    "BiologicalSex" : {
+      "@id" : "http://bioentity.io/vocab/BiologicalSex"
+    },
+    "EnvironmentalFeature" : {
+      "@id" : "http://bioentity.io/vocab/EnvironmentalFeature"
+    },
+    "has_phenotype" : {
+      "@id" : "http://bioentity.io/vocab/has_phenotype"
+    },
+    "derives_into" : {
+      "@id" : "http://bioentity.io/vocab/derives_into",
+      "@type" : "@id"
+    },
+    "classes" : {
+      "@id" : "http://bioentity.io/vocab/classes"
+    },
+    "has_participant" : {
+      "@id" : "http://bioentity.io/vocab/has_participant",
+      "@type" : "@id"
+    },
+    "subject" : {
+      "@id" : "http://bioentity.io/vocab/subject"
+    },
+    "domain" : {
+      "@id" : "http://bioentity.io/vocab/domain"
+    },
+    "PhenotypicSex" : {
+      "@id" : "http://bioentity.io/vocab/PhenotypicSex"
+    },
+    "has_count" : {
+      "@id" : "http://bioentity.io/vocab/has_count"
+    },
+    "PopulationOfIndividualOrganisms" : {
+      "@id" : "http://bioentity.io/vocab/PopulationOfIndividualOrganisms"
+    },
+    "related_to" : {
+      "@id" : "http://bioentity.io/vocab/related_to"
+    },
+    "treated_by" : {
+      "@id" : "http://bioentity.io/vocab/treated_by",
+      "@type" : "@id"
+    },
+    "has_biological_sequence" : {
+      "@id" : "http://bioentity.io/vocab/has_biological_sequence"
+    },
+    "definition" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#definition"
+    },
+    "GenomicEntity" : {
+      "@id" : "http://bioentity.io/vocab/GenomicEntity"
+    },
+    "EntityToFeatureOrDiseaseQualifiers" : {
+      "@id" : "http://bioentity.io/vocab/EntityToFeatureOrDiseaseQualifiers"
+    },
+    "regulates" : {
+      "@id" : "http://bioentity.io/vocab/regulates"
+    },
+    "editorialNote" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#editorialNote"
+    },
+    "variant_to_disease_association_relation" : {
+      "@id" : "http://bioentity.io/vocab/variant_to_disease_association_relation"
+    },
+    "GeographicLocation" : {
+      "@id" : "http://bioentity.io/vocab/GeographicLocation"
+    },
+    "has_gene_product" : {
+      "@id" : "http://bioentity.io/vocab/has_gene_product"
+    },
+    "multivalued" : {
+      "@id" : "http://bioentity.io/vocab/multivalued"
+    },
+    "union_of" : {
+      "@id" : "http://bioentity.io/vocab/union_of"
+    },
+    "ChemicalSubstance" : {
+      "@id" : "http://bioentity.io/vocab/ChemicalSubstance"
+    },
+    "Environment" : {
+      "@id" : "http://bioentity.io/vocab/Environment"
+    },
+    "required" : {
+      "@id" : "http://bioentity.io/vocab/required"
+    },
+    "OrganismalEntity" : {
+      "@id" : "http://bioentity.io/vocab/OrganismalEntity"
+    },
+    "slot_usage" : {
+      "@id" : "http://bioentity.io/vocab/slot_usage"
+    },
+    "GeneProduct" : {
+      "@id" : "http://bioentity.io/vocab/GeneProduct"
+    },
+    "LifeStage" : {
+      "@id" : "http://bioentity.io/vocab/LifeStage"
+    },
+    "definitional" : {
+      "@id" : "http://bioentity.io/vocab/definitional"
+    },
+    "source_file" : {
+      "@id" : "http://bioentity.io/vocab/source_file"
+    },
+    "develops_from" : {
+      "@id" : "http://bioentity.io/vocab/develops_from"
+    },
+    "default_curi_maps" : {
+      "@id" : "http://bioentity.io/vocab/default_curi_maps"
+    },
+    "Biosample" : {
+      "@id" : "http://bioentity.io/vocab/Biosample"
+    },
+    "Error2" : {
+      "@id" : "http://org.semanticweb.owlapi/error#Error2"
+    },
+    "functional_association_object" : {
+      "@id" : "http://bioentity.io/vocab/functional_association_object"
+    },
+    "DiseaseOrPhenotypicFeatureAssociationToThingAssociation" : {
+      "@id" : "http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation"
+    },
+    "has_total" : {
+      "@id" : "http://bioentity.io/vocab/has_total"
+    },
+    "GenotypicSex" : {
+      "@id" : "http://bioentity.io/vocab/GenotypicSex"
+    },
+    "located_in" : {
+      "@id" : "http://bioentity.io/vocab/located_in",
+      "@type" : "@id"
+    },
+    "NamedThing" : {
+      "@id" : "http://bioentity.io/vocab/NamedThing"
+    },
+    "alias" : {
+      "@id" : "http://bioentity.io/vocab/alias"
+    },
+    "physically_interacts_with" : {
+      "@id" : "http://bioentity.io/vocab/physically_interacts_with"
+    },
+    "mixin" : {
+      "@id" : "http://bioentity.io/vocab/mixin"
+    },
+    "has_part" : {
+      "@id" : "http://bioentity.io/vocab/has_part",
+      "@type" : "@id"
+    },
+    "InformationContentEntity" : {
+      "@id" : "http://bioentity.io/vocab/InformationContentEntity"
+    },
+    "anatomical_entity_to_anatomical_entity_part_of_association_relation" : {
+      "@id" : "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_part_of_association_relation"
+    },
+    "location_of" : {
+      "@id" : "http://bioentity.io/vocab/location_of",
+      "@type" : "@id"
+    },
+    "values_from" : {
+      "@id" : "http://bioentity.io/vocab/values_from"
+    },
+    "homologous_to" : {
+      "@id" : "http://bioentity.io/vocab/homologous_to"
+    },
+    "BiologicalProcess" : {
+      "@id" : "http://bioentity.io/vocab/BiologicalProcess"
+    },
+    "Association" : {
+      "@id" : "http://bioentity.io/vocab/Association"
+    },
+    "genotype_to_phenotypic_feature_association_relation" : {
+      "@id" : "http://bioentity.io/vocab/genotype_to_phenotypic_feature_association_relation"
+    },
+    "entity" : {
+      "@id" : "http://bioentity.io/vocab/entity"
+    },
+    "node_property" : {
+      "@id" : "http://bioentity.io/vocab/node_property"
+    },
+    "genotype_to_genotype_part_association_relation" : {
+      "@id" : "http://bioentity.io/vocab/genotype_to_genotype_part_association_relation"
+    },
+    "MicroRNA" : {
+      "@id" : "http://bioentity.io/vocab/MicroRNA"
+    },
+    "NoncodingRNAProduct" : {
+      "@id" : "http://bioentity.io/vocab/NoncodingRNAProduct"
+    },
+    "MacromolecularMachine" : {
+      "@id" : "http://bioentity.io/vocab/MacromolecularMachine"
+    },
+    "anatomical_entity_to_anatomical_entity_association_object" : {
+      "@id" : "http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_association_object"
+    },
+    "OntologyClass" : {
+      "@id" : "http://bioentity.io/vocab/OntologyClass"
+    },
+    "MolecularEntity" : {
+      "@id" : "http://bioentity.io/vocab/MolecularEntity"
+    },
+    "gene_to_gene_product_relationship_relation" : {
+      "@id" : "http://bioentity.io/vocab/gene_to_gene_product_relationship_relation"
+    },
+    "description" : {
+      "@id" : "http://bioentity.io/vocab/description"
+    },
+    "AnatomicalEntity" : {
+      "@id" : "http://bioentity.io/vocab/AnatomicalEntity"
+    },
+    "regulates_process_to_process" : {
+      "@id" : "http://bioentity.io/vocab/regulates_process_to_process"
+    },
+    "relation" : {
+      "@id" : "http://bioentity.io/vocab/relation"
+    },
+    "FrequencyQualifier" : {
+      "@id" : "http://bioentity.io/vocab/FrequencyQualifier"
+    },
+    "has_quotient" : {
+      "@id" : "http://bioentity.io/vocab/has_quotient"
+    },
+    "singular_name" : {
+      "@id" : "http://bioentity.io/vocab/singular_name"
+    },
+    "sequence_feature_relationship_object" : {
+      "@id" : "http://bioentity.io/vocab/sequence_feature_relationship_object"
+    },
+    "Protein" : {
+      "@id" : "http://bioentity.io/vocab/Protein"
+    }
+  }
+}
