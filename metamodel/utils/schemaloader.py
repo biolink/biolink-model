@@ -19,10 +19,10 @@ class SchemaLoader:
         """
 
         if not isinstance(self.schema.slots, dict):
-            raise ValueError(f"File: {self.schema.source_file} Slots are not not a dictionary")
+            raise ValueError(f"File: {self.schema.source_file} Slots are not a dictionary")
 
         if not isinstance(self.schema.classes, dict):
-            raise ValueError(f"File: {self.schema.source_file} Classes are not not a dictionary")
+            raise ValueError(f"File: {self.schema.source_file} Classes are not a dictionary")
 
         # Process imports
         for sname in self.schema.imports:
