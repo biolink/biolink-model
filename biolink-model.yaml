@@ -153,6 +153,438 @@ slots:
     mappings:
       - SEMMEDDB:AFFECTS
   
+  affects abundance of:
+    description: >-
+      holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+
+  increases abundance of:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest
+    is_a: affects abundance of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  decreases abundance of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest
+    is_a: affects abundance of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity  
+    
+  affects activity of:
+    description: >-
+      holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+
+  increases activity of:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest
+    is_a: affects activity of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  decreases activity of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest
+    is_a: affects activity of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  affects expression of:
+    description: >-
+      holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: genomic entity
+
+  increases expression of:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest
+    is_a: affects expression of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: genomic entity
+    
+  decreases expression of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest
+    is_a: affects expression of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: genomic entity  
+    
+  affects folding of:
+    description: >-
+      holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other 
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+
+  increases folding of:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other 
+    is_a: affects folding of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+
+  decreases folding of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other 
+    is_a: affects folding of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  affects localization of:
+    description: >-
+      holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  increases localization of:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest
+    is_a: affects localization of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  decreases localization of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest
+    is_a: affects localization of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  affects metabolic processing of:
+    description: >-
+      holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  increases metabolic processing of:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
+    is_a: affects metabolic processing of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+
+  decreases metabolic processing of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest
+    is_a: affects metabolic processing of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  affects molecular modification of:
+    description: >-
+      holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  increases molecular modification of:
+    description: >-
+      holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+    is_a: affects molecular modification of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  decreases molecular modification of:
+    description: >-
+      holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
+    is_a: affects molecular modification of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  affects synthesis of:
+    description: >-
+      holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  increases synthesis of:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other
+    is_a: affects synthesis of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  decreases synthesis of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other
+    is_a: affects synthesis of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+ 
+  affects degradation of:
+    description: >-
+      holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  increases degradation of:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest
+    is_a: affects degradation of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  decreases degradation of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
+    is_a: affects degradation of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  affects mutation rate of:
+    description: >-
+      holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: genomic entity
+    
+  increases mutation rate of:
+    description: >-
+      holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest
+    is_a: affects mutation rate of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: genomic entity
+    
+  decreases mutation rate of:
+    description: >-
+      holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest
+    is_a: affects mutation rate of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: genomic entity
+    
+  affects response to:
+    description: >-
+      holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  increases response to:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
+    is_a: affects response to
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  decreases response to:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
+    is_a: affects response to
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  affects splicing of:
+    description: >-
+      holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: transcript
+
+  increases splicing of:
+    description: >-
+      holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA
+    is_a: affects splicing of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: transcript
+    
+  decreases splicing of:
+    description: >-
+      holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA
+    is_a: affects splicing of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: transcript
+    
+  affects stability of:
+    description: >-
+      holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  increases stability of:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest
+    is_a: affects stability of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  decreases stability of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest
+    is_a: affects stability of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  affects transport of:
+    description: >-
+      holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  increases transport of:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
+    is_a: affects transport of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  decreases transport of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
+    is_a: affects transport of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  affects secretion of:
+    description: >-
+      holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  increases secretion of:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
+    is_a: affects secretion of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  decreases secretion of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
+    is_a: affects secretion of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  affects uptake of:
+    description: >-
+      holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
+    is_a: affects
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+
+  increases uptake of:
+    description: >-
+      holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
+    is_a: affects uptake of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity
+    
+  decreases uptake of:
+    description: >-
+      holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
+    is_a: affects uptake of
+    in_subset:
+      - translator_minimal
+    domain: molecular entity
+    range: molecular entity  
+  
   regulates:
     is_a: affects
     comment: This is a grouping for process-process and entity-entity relations
