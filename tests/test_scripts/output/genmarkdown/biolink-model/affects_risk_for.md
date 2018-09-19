@@ -16,7 +16,7 @@ None -> **string**
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [predisposes](predisposes.md) *subsets*: (translator_minimal)
  *  child: [prevents](prevents.md) *subsets*: (translator_minimal)
+ *  child: [predisposes](predisposes.md) *subsets*: (translator_minimal)
 ## Used in
 

@@ -1,5 +1,5 @@
 {
-   "comments": "Auto generated from /Users/solbrig/git/biolink/biolink-model/biolink-model.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-07-10 09:44\nSchema: biolink model\n\nid: https://biolink.github.io/biolink-model/ontology/biolink.ttl\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "comments": "Auto generated from /Users/hsolbri1/git/biolink/biolink-model/biolink-model.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-09-19 13:57\nSchema: biolink model\n\nid: https://biolink.github.io/biolink-model/ontology/biolink.ttl\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "biolink": "http://bioentity.io/vocab/",
       "OBAN": "http://purl.org/oban/",
@@ -46,8 +46,72 @@
       "affects": {
          "@id": "SEMMEDDB:AFFECTS"
       },
+      "affects_abundance_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_activity_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_degradation_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_expression_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_folding_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_localization_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_metabolic_processing_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_molecular_modification_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_mutation_rate_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_response_to": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
       "affects_risk_for": {
          "@id": "owl:topObjectProperty"
+      },
+      "affects_secretion_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_splicing_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_stability_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_synthesis_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_transport_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_uptake_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
       },
       "aggregate_statistic": {
          "@id": "owl:topAnnotationProperty"
@@ -90,6 +154,70 @@
       "creation_date": {
          "@type": "xsd:date",
          "@id": "dcterms:created"
+      },
+      "decreases_abundance_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_activity_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_degradation_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_expression_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_folding_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_localization_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_metabolic_processing_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_molecular_modification_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_mutation_rate_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_response_to": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_secretion_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_splicing_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_stability_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_synthesis_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_transport_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_uptake_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
       },
       "derives_from": {
          "@id": "RO:0001000"
@@ -214,6 +342,70 @@
          "@type": "@id",
          "@id": "RO:0002162"
       },
+      "increases_abundance_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_activity_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_degradation_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_expression_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_folding_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_localization_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_metabolic_processing_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_molecular_modification_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_mutation_rate_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_response_to": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_secretion_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_splicing_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_stability_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_synthesis_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_transport_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_uptake_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
       "interacts_with": {
          "@id": "RO:0002434"
       },
@@ -228,7 +420,7 @@
          "@id": "wgs:lat"
       },
       "located_in": {
-         "@id": "BFO:0000066"
+         "@id": "RO:0001025"
       },
       "location_of": {
          "@id": "RO:0001015"

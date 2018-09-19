@@ -10,8 +10,72 @@
          "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
          "type": "string"
       },
+      "affects_abundance_of": {
+         "description": "holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest",
+         "type": "string"
+      },
+      "affects_activity_of": {
+         "description": "holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest",
+         "type": "string"
+      },
+      "affects_degradation_of": {
+         "description": "holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest",
+         "type": "string"
+      },
+      "affects_expression_of": {
+         "description": "holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest",
+         "type": "string"
+      },
+      "affects_folding_of": {
+         "description": "holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other ",
+         "type": "string"
+      },
+      "affects_localization_of": {
+         "description": "holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest",
+         "type": "string"
+      },
+      "affects_metabolic_processing_of": {
+         "description": "holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest",
+         "type": "string"
+      },
+      "affects_molecular_modification_of": {
+         "description": "holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
+         "type": "string"
+      },
+      "affects_mutation_rate_of": {
+         "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest",
+         "type": "string"
+      },
+      "affects_response_to": {
+         "description": "holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
+         "type": "string"
+      },
       "affects_risk_for": {
          "description": "holds between two entities where exposure to one entity alters the chance of developing the other ",
+         "type": "string"
+      },
+      "affects_secretion_of": {
+         "description": "holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ",
+         "type": "string"
+      },
+      "affects_splicing_of": {
+         "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA",
+         "type": "string"
+      },
+      "affects_stability_of": {
+         "description": "holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest",
+         "type": "string"
+      },
+      "affects_synthesis_of": {
+         "description": "holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other",
+         "type": "string"
+      },
+      "affects_transport_of": {
+         "description": "holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest",
+         "type": "string"
+      },
+      "affects_uptake_of": {
+         "description": "holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ",
          "type": "string"
       },
       "aggregate_statistic": {
@@ -128,6 +192,70 @@
       },
       "creation_date": {
          "description": "date on which thing was created. This can be applied to nodes or edges",
+         "type": "string"
+      },
+      "decreases_abundance_of": {
+         "description": "holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest",
+         "type": "string"
+      },
+      "decreases_activity_of": {
+         "description": "holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest",
+         "type": "string"
+      },
+      "decreases_degradation_of": {
+         "description": "holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest",
+         "type": "string"
+      },
+      "decreases_expression_of": {
+         "description": "holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest",
+         "type": "string"
+      },
+      "decreases_folding_of": {
+         "description": "holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other ",
+         "type": "string"
+      },
+      "decreases_localization_of": {
+         "description": "holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest",
+         "type": "string"
+      },
+      "decreases_metabolic_processing_of": {
+         "description": "holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest",
+         "type": "string"
+      },
+      "decreases_molecular_modification_of": {
+         "description": "holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
+         "type": "string"
+      },
+      "decreases_mutation_rate_of": {
+         "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest",
+         "type": "string"
+      },
+      "decreases_response_to": {
+         "description": "holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
+         "type": "string"
+      },
+      "decreases_secretion_of": {
+         "description": "holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ",
+         "type": "string"
+      },
+      "decreases_splicing_of": {
+         "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA",
+         "type": "string"
+      },
+      "decreases_stability_of": {
+         "description": "holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest",
+         "type": "string"
+      },
+      "decreases_synthesis_of": {
+         "description": "holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other",
+         "type": "string"
+      },
+      "decreases_transport_of": {
+         "description": "holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest",
+         "type": "string"
+      },
+      "decreases_uptake_of": {
+         "description": "holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ",
          "type": "string"
       },
       "derives_from": {
@@ -472,6 +600,70 @@
       },
       "in_taxon": {
          "description": "connects a thing to a class representing a taxon",
+         "type": "string"
+      },
+      "increases_abundance_of": {
+         "description": "holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest",
+         "type": "string"
+      },
+      "increases_activity_of": {
+         "description": "holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest",
+         "type": "string"
+      },
+      "increases_degradation_of": {
+         "description": "holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest",
+         "type": "string"
+      },
+      "increases_expression_of": {
+         "description": "holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest",
+         "type": "string"
+      },
+      "increases_folding_of": {
+         "description": "holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other ",
+         "type": "string"
+      },
+      "increases_localization_of": {
+         "description": "holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest",
+         "type": "string"
+      },
+      "increases_metabolic_processing_of": {
+         "description": "holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest",
+         "type": "string"
+      },
+      "increases_molecular_modification_of": {
+         "description": "holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
+         "type": "string"
+      },
+      "increases_mutation_rate_of": {
+         "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest",
+         "type": "string"
+      },
+      "increases_response_to": {
+         "description": "holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
+         "type": "string"
+      },
+      "increases_secretion_of": {
+         "description": "holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ",
+         "type": "string"
+      },
+      "increases_splicing_of": {
+         "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA",
+         "type": "string"
+      },
+      "increases_stability_of": {
+         "description": "holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest",
+         "type": "string"
+      },
+      "increases_synthesis_of": {
+         "description": "holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other",
+         "type": "string"
+      },
+      "increases_transport_of": {
+         "description": "holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest",
+         "type": "string"
+      },
+      "increases_uptake_of": {
+         "description": "holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ",
          "type": "string"
       },
       "interacting_molecules_category": {
@@ -2003,10 +2195,298 @@
       "MolecularEntity": {
          "description": "A gene, gene product, small molecule or macromolecule (including protein complex)",
          "properties": {
+            "affects_abundance_of": {
+               "description": "holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/affects_abundance_of"
+               }
+            },
+            "affects_activity_of": {
+               "description": "holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/affects_activity_of"
+               }
+            },
+            "affects_degradation_of": {
+               "description": "holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/affects_degradation_of"
+               }
+            },
+            "affects_expression_of": {
+               "description": "holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/affects_expression_of"
+               }
+            },
+            "affects_folding_of": {
+               "description": "holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other ",
+               "type": {
+                  "$ref": "#/definitions/affects_folding_of"
+               }
+            },
+            "affects_localization_of": {
+               "description": "holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/affects_localization_of"
+               }
+            },
+            "affects_metabolic_processing_of": {
+               "description": "holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/affects_metabolic_processing_of"
+               }
+            },
+            "affects_molecular_modification_of": {
+               "description": "holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
+               "type": {
+                  "$ref": "#/definitions/affects_molecular_modification_of"
+               }
+            },
+            "affects_mutation_rate_of": {
+               "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/affects_mutation_rate_of"
+               }
+            },
+            "affects_response_to": {
+               "description": "holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
+               "type": {
+                  "$ref": "#/definitions/affects_response_to"
+               }
+            },
+            "affects_secretion_of": {
+               "description": "holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ",
+               "type": {
+                  "$ref": "#/definitions/affects_secretion_of"
+               }
+            },
+            "affects_splicing_of": {
+               "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA",
+               "type": {
+                  "$ref": "#/definitions/affects_splicing_of"
+               }
+            },
+            "affects_stability_of": {
+               "description": "holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/affects_stability_of"
+               }
+            },
+            "affects_synthesis_of": {
+               "description": "holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other",
+               "type": {
+                  "$ref": "#/definitions/affects_synthesis_of"
+               }
+            },
+            "affects_transport_of": {
+               "description": "holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest",
+               "type": {
+                  "$ref": "#/definitions/affects_transport_of"
+               }
+            },
+            "affects_uptake_of": {
+               "description": "holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ",
+               "type": {
+                  "$ref": "#/definitions/affects_uptake_of"
+               }
+            },
             "biomarker_for": {
                "description": "holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.",
                "type": {
                   "$ref": "#/definitions/biomarker_for"
+               }
+            },
+            "decreases_abundance_of": {
+               "description": "holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/decreases_abundance_of"
+               }
+            },
+            "decreases_activity_of": {
+               "description": "holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/decreases_activity_of"
+               }
+            },
+            "decreases_degradation_of": {
+               "description": "holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/decreases_degradation_of"
+               }
+            },
+            "decreases_expression_of": {
+               "description": "holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/decreases_expression_of"
+               }
+            },
+            "decreases_folding_of": {
+               "description": "holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other ",
+               "type": {
+                  "$ref": "#/definitions/decreases_folding_of"
+               }
+            },
+            "decreases_localization_of": {
+               "description": "holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/decreases_localization_of"
+               }
+            },
+            "decreases_metabolic_processing_of": {
+               "description": "holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/decreases_metabolic_processing_of"
+               }
+            },
+            "decreases_molecular_modification_of": {
+               "description": "holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
+               "type": {
+                  "$ref": "#/definitions/decreases_molecular_modification_of"
+               }
+            },
+            "decreases_mutation_rate_of": {
+               "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/decreases_mutation_rate_of"
+               }
+            },
+            "decreases_response_to": {
+               "description": "holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
+               "type": {
+                  "$ref": "#/definitions/decreases_response_to"
+               }
+            },
+            "decreases_secretion_of": {
+               "description": "holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ",
+               "type": {
+                  "$ref": "#/definitions/decreases_secretion_of"
+               }
+            },
+            "decreases_splicing_of": {
+               "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA",
+               "type": {
+                  "$ref": "#/definitions/decreases_splicing_of"
+               }
+            },
+            "decreases_stability_of": {
+               "description": "holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/decreases_stability_of"
+               }
+            },
+            "decreases_synthesis_of": {
+               "description": "holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other",
+               "type": {
+                  "$ref": "#/definitions/decreases_synthesis_of"
+               }
+            },
+            "decreases_transport_of": {
+               "description": "holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest",
+               "type": {
+                  "$ref": "#/definitions/decreases_transport_of"
+               }
+            },
+            "decreases_uptake_of": {
+               "description": "holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ",
+               "type": {
+                  "$ref": "#/definitions/decreases_uptake_of"
+               }
+            },
+            "increases_abundance_of": {
+               "description": "holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/increases_abundance_of"
+               }
+            },
+            "increases_activity_of": {
+               "description": "holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/increases_activity_of"
+               }
+            },
+            "increases_degradation_of": {
+               "description": "holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/increases_degradation_of"
+               }
+            },
+            "increases_expression_of": {
+               "description": "holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/increases_expression_of"
+               }
+            },
+            "increases_folding_of": {
+               "description": "holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other ",
+               "type": {
+                  "$ref": "#/definitions/increases_folding_of"
+               }
+            },
+            "increases_localization_of": {
+               "description": "holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/increases_localization_of"
+               }
+            },
+            "increases_metabolic_processing_of": {
+               "description": "holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/increases_metabolic_processing_of"
+               }
+            },
+            "increases_molecular_modification_of": {
+               "description": "holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
+               "type": {
+                  "$ref": "#/definitions/increases_molecular_modification_of"
+               }
+            },
+            "increases_mutation_rate_of": {
+               "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/increases_mutation_rate_of"
+               }
+            },
+            "increases_response_to": {
+               "description": "holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
+               "type": {
+                  "$ref": "#/definitions/increases_response_to"
+               }
+            },
+            "increases_secretion_of": {
+               "description": "holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ",
+               "type": {
+                  "$ref": "#/definitions/increases_secretion_of"
+               }
+            },
+            "increases_splicing_of": {
+               "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA",
+               "type": {
+                  "$ref": "#/definitions/increases_splicing_of"
+               }
+            },
+            "increases_stability_of": {
+               "description": "holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest",
+               "type": {
+                  "$ref": "#/definitions/increases_stability_of"
+               }
+            },
+            "increases_synthesis_of": {
+               "description": "holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other",
+               "type": {
+                  "$ref": "#/definitions/increases_synthesis_of"
+               }
+            },
+            "increases_transport_of": {
+               "description": "holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest",
+               "type": {
+                  "$ref": "#/definitions/increases_transport_of"
+               }
+            },
+            "increases_uptake_of": {
+               "description": "holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ",
+               "type": {
+                  "$ref": "#/definitions/increases_uptake_of"
                }
             },
             "molecularly_interacts_with": {

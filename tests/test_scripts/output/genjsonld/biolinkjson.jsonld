@@ -213,6 +213,678 @@
       "@id": "affects"
     },
     {
+      "name": "affects_abundance_of",
+      "description": "holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "affects_abundance_of"
+    },
+    {
+      "name": "increases_abundance_of",
+      "description": "holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_abundance_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "increases_abundance_of"
+    },
+    {
+      "name": "decreases_abundance_of",
+      "description": "holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_abundance_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "decreases_abundance_of"
+    },
+    {
+      "name": "affects_activity_of",
+      "description": "holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "affects_activity_of"
+    },
+    {
+      "name": "increases_activity_of",
+      "description": "holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_activity_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "increases_activity_of"
+    },
+    {
+      "name": "decreases_activity_of",
+      "description": "holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_activity_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "decreases_activity_of"
+    },
+    {
+      "name": "affects_expression_of",
+      "description": "holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "GenomicEntity",
+      "@id": "affects_expression_of"
+    },
+    {
+      "name": "increases_expression_of",
+      "description": "holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_expression_of",
+      "domain": "MolecularEntity",
+      "range": "GenomicEntity",
+      "@id": "increases_expression_of"
+    },
+    {
+      "name": "decreases_expression_of",
+      "description": "holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_expression_of",
+      "domain": "MolecularEntity",
+      "range": "GenomicEntity",
+      "@id": "decreases_expression_of"
+    },
+    {
+      "name": "affects_folding_of",
+      "description": "holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other ",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "affects_folding_of"
+    },
+    {
+      "name": "increases_folding_of",
+      "description": "holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other ",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_folding_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "increases_folding_of"
+    },
+    {
+      "name": "decreases_folding_of",
+      "description": "holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other ",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_folding_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "decreases_folding_of"
+    },
+    {
+      "name": "affects_localization_of",
+      "description": "holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "affects_localization_of"
+    },
+    {
+      "name": "increases_localization_of",
+      "description": "holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_localization_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "increases_localization_of"
+    },
+    {
+      "name": "decreases_localization_of",
+      "description": "holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_localization_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "decreases_localization_of"
+    },
+    {
+      "name": "affects_metabolic_processing_of",
+      "description": "holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "affects_metabolic_processing_of"
+    },
+    {
+      "name": "increases_metabolic_processing_of",
+      "description": "holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_metabolic_processing_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "increases_metabolic_processing_of"
+    },
+    {
+      "name": "decreases_metabolic_processing_of",
+      "description": "holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_metabolic_processing_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "decreases_metabolic_processing_of"
+    },
+    {
+      "name": "affects_molecular_modification_of",
+      "description": "holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "affects_molecular_modification_of"
+    },
+    {
+      "name": "increases_molecular_modification_of",
+      "description": "holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_molecular_modification_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "increases_molecular_modification_of"
+    },
+    {
+      "name": "decreases_molecular_modification_of",
+      "description": "holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_molecular_modification_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "decreases_molecular_modification_of"
+    },
+    {
+      "name": "affects_synthesis_of",
+      "description": "holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "affects_synthesis_of"
+    },
+    {
+      "name": "increases_synthesis_of",
+      "description": "holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_synthesis_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "increases_synthesis_of"
+    },
+    {
+      "name": "decreases_synthesis_of",
+      "description": "holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_synthesis_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "decreases_synthesis_of"
+    },
+    {
+      "name": "affects_degradation_of",
+      "description": "holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "affects_degradation_of"
+    },
+    {
+      "name": "increases_degradation_of",
+      "description": "holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_degradation_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "increases_degradation_of"
+    },
+    {
+      "name": "decreases_degradation_of",
+      "description": "holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_degradation_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "decreases_degradation_of"
+    },
+    {
+      "name": "affects_mutation_rate_of",
+      "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "GenomicEntity",
+      "@id": "affects_mutation_rate_of"
+    },
+    {
+      "name": "increases_mutation_rate_of",
+      "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_mutation_rate_of",
+      "domain": "MolecularEntity",
+      "range": "GenomicEntity",
+      "@id": "increases_mutation_rate_of"
+    },
+    {
+      "name": "decreases_mutation_rate_of",
+      "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_mutation_rate_of",
+      "domain": "MolecularEntity",
+      "range": "GenomicEntity",
+      "@id": "decreases_mutation_rate_of"
+    },
+    {
+      "name": "affects_response_to",
+      "description": "holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "affects_response_to"
+    },
+    {
+      "name": "increases_response_to",
+      "description": "holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_response_to",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "increases_response_to"
+    },
+    {
+      "name": "decreases_response_to",
+      "description": "holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_response_to",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "decreases_response_to"
+    },
+    {
+      "name": "affects_splicing_of",
+      "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "Transcript",
+      "@id": "affects_splicing_of"
+    },
+    {
+      "name": "increases_splicing_of",
+      "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_splicing_of",
+      "domain": "MolecularEntity",
+      "range": "Transcript",
+      "@id": "increases_splicing_of"
+    },
+    {
+      "name": "decreases_splicing_of",
+      "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_splicing_of",
+      "domain": "MolecularEntity",
+      "range": "Transcript",
+      "@id": "decreases_splicing_of"
+    },
+    {
+      "name": "affects_stability_of",
+      "description": "holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "affects_stability_of"
+    },
+    {
+      "name": "increases_stability_of",
+      "description": "holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_stability_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "increases_stability_of"
+    },
+    {
+      "name": "decreases_stability_of",
+      "description": "holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_stability_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "decreases_stability_of"
+    },
+    {
+      "name": "affects_transport_of",
+      "description": "holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "affects_transport_of"
+    },
+    {
+      "name": "increases_transport_of",
+      "description": "holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_transport_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "increases_transport_of"
+    },
+    {
+      "name": "decreases_transport_of",
+      "description": "holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_transport_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "decreases_transport_of"
+    },
+    {
+      "name": "affects_secretion_of",
+      "description": "holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "affects_secretion_of"
+    },
+    {
+      "name": "increases_secretion_of",
+      "description": "holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_secretion_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "increases_secretion_of"
+    },
+    {
+      "name": "decreases_secretion_of",
+      "description": "holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_secretion_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "decreases_secretion_of"
+    },
+    {
+      "name": "affects_uptake_of",
+      "description": "holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "affects_uptake_of"
+    },
+    {
+      "name": "increases_uptake_of",
+      "description": "holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_uptake_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "increases_uptake_of"
+    },
+    {
+      "name": "decreases_uptake_of",
+      "description": "holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ",
+      "mappings": [
+        "SEMMEDDB:AFFECTS"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "affects_uptake_of",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
+      "@id": "decreases_uptake_of"
+    },
+    {
       "name": "regulates",
       "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
       "comment": "This is a grouping for process-process and entity-entity relations",
@@ -756,8 +1428,7 @@
       "name": "located_in",
       "description": "holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)",
       "mappings": [
-        "BFO:0000066",
-        "WD:276"
+        "RO:0001025"
       ],
       "in_subset": [
         "translator_minimal"
@@ -772,7 +1443,8 @@
       "description": "holds between material entity or site and a material entity that is located within it (but not considered a part of it) ",
       "mappings": [
         "RO:0001015",
-        "SEMMEDDB:LOCATION_OF"
+        "SEMMEDDB:LOCATION_OF",
+        "WD:276"
       ],
       "in_subset": [
         "translator_minimal"
@@ -3462,6 +4134,54 @@
       ],
       "slots": [
         "molecularly_interacts_with",
+        "affects_abundance_of",
+        "increases_abundance_of",
+        "decreases_abundance_of",
+        "affects_activity_of",
+        "increases_activity_of",
+        "decreases_activity_of",
+        "affects_expression_of",
+        "increases_expression_of",
+        "decreases_expression_of",
+        "affects_folding_of",
+        "increases_folding_of",
+        "decreases_folding_of",
+        "affects_localization_of",
+        "increases_localization_of",
+        "decreases_localization_of",
+        "affects_metabolic_processing_of",
+        "increases_metabolic_processing_of",
+        "decreases_metabolic_processing_of",
+        "affects_molecular_modification_of",
+        "increases_molecular_modification_of",
+        "decreases_molecular_modification_of",
+        "affects_synthesis_of",
+        "increases_synthesis_of",
+        "decreases_synthesis_of",
+        "affects_degradation_of",
+        "increases_degradation_of",
+        "decreases_degradation_of",
+        "affects_mutation_rate_of",
+        "increases_mutation_rate_of",
+        "decreases_mutation_rate_of",
+        "affects_response_to",
+        "increases_response_to",
+        "decreases_response_to",
+        "affects_splicing_of",
+        "increases_splicing_of",
+        "decreases_splicing_of",
+        "affects_stability_of",
+        "increases_stability_of",
+        "decreases_stability_of",
+        "affects_transport_of",
+        "increases_transport_of",
+        "decreases_transport_of",
+        "affects_secretion_of",
+        "increases_secretion_of",
+        "decreases_secretion_of",
+        "affects_uptake_of",
+        "increases_uptake_of",
+        "decreases_uptake_of",
         "regulates_entity_to_entity",
         "biomarker_for"
       ],
@@ -5808,12 +6528,12 @@
     }
   ],
   "metamodel_version": "0.3.1",
-  "source_file": "/Users/solbrig/git/biolink/biolink-model/biolink-model.yaml",
-  "source_file_size": 81568,
-  "source_file_date": "Mon Jul  9 18:37:24 2018",
-  "generation_date": "2018-07-10 09:44",
+  "source_file": "/Users/hsolbri1/git/biolink/biolink-model/biolink-model.yaml",
+  "source_file_size": 97996,
+  "source_file_date": "Wed Sep 19 10:47:11 2018",
+  "generation_date": "2018-09-19 13:57",
   "@context": [
-    "file:///Users/solbrig/git/biolink/biolink-model/tests/test_scripts/output/genjsonld/metacontext.jsonld",
+    "file:///Users/hsolbri1/git/biolink/biolink-model/tests/test_scripts/output/genjsonld/metacontext.jsonld",
     {
       "@base": "http://bioentity.io/vocab/"
     }

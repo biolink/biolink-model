@@ -512,6 +512,54 @@ MolecularActivity typeimplements Occurrent
 MolecularEntity typeimplements ThingWithTaxon
   {
     molecularlyInteractsWith: MolecularEntity
+    affectsAbundanceOf: MolecularEntity
+    increasesAbundanceOf: MolecularEntity
+    decreasesAbundanceOf: MolecularEntity
+    affectsActivityOf: MolecularEntity
+    increasesActivityOf: MolecularEntity
+    decreasesActivityOf: MolecularEntity
+    affectsExpressionOf: GenomicEntity
+    increasesExpressionOf: GenomicEntity
+    decreasesExpressionOf: GenomicEntity
+    affectsFoldingOf: MolecularEntity
+    increasesFoldingOf: MolecularEntity
+    decreasesFoldingOf: MolecularEntity
+    affectsLocalizationOf: MolecularEntity
+    increasesLocalizationOf: MolecularEntity
+    decreasesLocalizationOf: MolecularEntity
+    affectsMetabolicProcessingOf: MolecularEntity
+    increasesMetabolicProcessingOf: MolecularEntity
+    decreasesMetabolicProcessingOf: MolecularEntity
+    affectsMolecularModificationOf: MolecularEntity
+    increasesMolecularModificationOf: MolecularEntity
+    decreasesMolecularModificationOf: MolecularEntity
+    affectsSynthesisOf: MolecularEntity
+    increasesSynthesisOf: MolecularEntity
+    decreasesSynthesisOf: MolecularEntity
+    affectsDegradationOf: MolecularEntity
+    increasesDegradationOf: MolecularEntity
+    decreasesDegradationOf: MolecularEntity
+    affectsMutationRateOf: GenomicEntity
+    increasesMutationRateOf: GenomicEntity
+    decreasesMutationRateOf: GenomicEntity
+    affectsResponseTo: MolecularEntity
+    increasesResponseTo: MolecularEntity
+    decreasesResponseTo: MolecularEntity
+    affectsSplicingOf: Transcript
+    increasesSplicingOf: Transcript
+    decreasesSplicingOf: Transcript
+    affectsStabilityOf: MolecularEntity
+    increasesStabilityOf: MolecularEntity
+    decreasesStabilityOf: MolecularEntity
+    affectsTransportOf: MolecularEntity
+    increasesTransportOf: MolecularEntity
+    decreasesTransportOf: MolecularEntity
+    affectsSecretionOf: MolecularEntity
+    increasesSecretionOf: MolecularEntity
+    decreasesSecretionOf: MolecularEntity
+    affectsUptakeOf: MolecularEntity
+    increasesUptakeOf: MolecularEntity
+    decreasesUptakeOf: MolecularEntity
     regulates,EntityToEntity: MolecularEntity
     biomarkerFor: DiseaseOrPhenotypicFeature
   }

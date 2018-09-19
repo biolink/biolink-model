@@ -13,7 +13,7 @@ requires = [
     "graphviz>=0.8.3",
     "prefixcommons>=0.1.7",
     "rdflib-jsonld>=0.4.0",
-    "ShExJSG>=0.2.1",
+    "ShExJSG>=0.4b1",
     "certifi>=2018.4.16"
     ]
 
