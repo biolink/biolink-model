@@ -55,8 +55,8 @@ Metamodel for biolink schema
  * [metamodel_version](metamodel_version.md) - Version of the metamodel used to load the schema. Supplied by the loader
  * [mixin](mixin.md) - Used only as a mixin -- cannot be instantiated on its own.
  * [mixins](mixins.md) - List of definitions to be mixed in. Targets may be any definition of the same type
-    * [slot definition.mixins](slot_definition_mixins.md)
     * [class definition.mixins](class_definition_mixins.md)
+    * [slot definition.mixins](slot_definition_mixins.md)
  * [multivalued](multivalued.md) - If true slot can have many values
  * [name](name.md) - a unique key that identifies a slot, type or class in a schema
  * [note](note.md) - Notes about an element

@@ -307,3 +307,7 @@ an object model.
 Currently as far as we know there is no existing reference datamodel
 that is flexible enough to be used here.
 
+
+### Make and build instructions
+Note: the make file requires jsonschema2pojo -- see https://github.com/joelittlejohn/jsonschema2pojo.  If you
+are on a Mac, it can be installed using `brew`.

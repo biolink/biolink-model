@@ -19,5 +19,5 @@ URI: [http://bioentity.io/vocab/is_a](slot_uri)
 ## Used in
 
  *  usage: [SlotDefinition](SlotDefinition.md)
- *  usage: [ClassDefinition](ClassDefinition.md)
  *  usage: [Definition](Definition.md)
+ *  usage: [ClassDefinition](ClassDefinition.md)

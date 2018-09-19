@@ -14,7 +14,7 @@ from rdflib import Graph, XSD, OWL, RDF
 
 from metamodel.metamodel import SchemaDefinition, ClassDefinition, SlotDefinition, ClassDefinitionName, \
     SlotDefinitionName
-from metamodel.utils.builtins import builtin_names, builtin_uri, Builtin
+from metamodel.utils.builtins import builtin_names
 from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.generator import Generator
 from metamodel.utils.namespaces import BIOENTITY, META
@@ -38,11 +38,12 @@ class ShExGenerator(Generator):
         if base_uri:
             context = self.shex['@context']
             self.shex['@context'] = [context, {'@base': base_uri}]
-        self.shex.shapes = []
+        self.shapes = []
         self.list_shapes = []
         if self.format == 'shex':
             raise NotImplementedError("ShExC format is not yet implemented")
         self.add_builtins()
+        self.shex.shapes = self.shapes
         # TODO: Imports
 
     @staticmethod
@@ -75,7 +76,7 @@ class ShExGenerator(Generator):
         else:
             shapeExpr = self.shape
         shapeExpr.id = self._shapeIRI(cls.name)
-        self.shex.shapes.append(shapeExpr)
+        self.shapes.append(shapeExpr)
 
     def _type_constraint(self, rnge: Optional[str]) -> NodeConstraint:
         # TODO: missing type - string or '.'?
@@ -92,8 +93,8 @@ class ShExGenerator(Generator):
         if not self.shape.expression:
             self.shape.expression = constraint
         elif isinstance(self.shape.expression, TripleConstraint):
-            self.shape.expression = EachOf(expressions=[self.shape.expression])
-            self.shape.expression.expressions.append(constraint)
+            self.shape.expression = EachOf(expressions=[self.shape.expression, constraint])
+            # self.shape.expression.expressions.append(constraint)
         else:
             self.shape.expression.expressions.append(constraint)
 
@@ -119,13 +120,12 @@ class ShExGenerator(Generator):
         if list_shape_id not in self.list_shapes:
             list_shape = Shape(id=list_shape_id, closed=True)
             list_shape.expression = EachOf()
-            list_shape.expression.expressions = [TripleConstraint(predicate=RDF.first, valueExpr=target_type, min=0, max=1)]
+            expressions = [TripleConstraint(predicate=RDF.first, valueExpr=target_type, min=0, max=1)]
             targets = ShapeOr()
-            targets.shapeExprs = [(NodeConstraint(values=[RDF.nil]))]
-            targets.shapeExprs.append(list_shape_id)
-            list_shape.expression.expressions.append(
-                TripleConstraint(predicate=RDF.rest, valueExpr=targets))
-            self.shex.shapes.append(list_shape)
+            targets.shapeExprs = [(NodeConstraint(values=[RDF.nil])), list_shape_id]
+            expressions.append(TripleConstraint(predicate=RDF.rest, valueExpr=targets))
+            list_shape.expression.expressions = expressions
+            self.shapes.append(list_shape)
             self.list_shapes.append(list_shape_id)
         return list_shape_id
 
@@ -151,10 +151,10 @@ class ShExGenerator(Generator):
         # TODO:  At some point we should get rid of the hard-coded builtins and add a set of TypeDefinitions for
         builtin_valueset = NodeConstraint(id=META.Builtins,
                                           values=[IriStem(IRIREF(XSD))])
-        self.shex.shapes.append(builtin_valueset)
+        self.shapes.append(builtin_valueset)
         range_type_choices = ShapeOr(id=META.SlotRangeTypes,
                                      shapeExprs=[BIOENTITY.TypeDefinition, BIOENTITY.ClassDefinition, META.Builtins])
-        self.shex.shapes.append(range_type_choices)
+        self.shapes.append(range_type_choices)
 
 
 @click.command()
