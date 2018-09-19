@@ -13,10 +13,10 @@ URI: [http://bioentity.io/vocab/union_of](slot_uri)
 
 ## Children
 
- *  child: [class definition.union_of](class_definition_union_of.md)
  *  child: [slot definition.union_of](slot_definition_union_of.md)
+ *  child: [class definition.union_of](class_definition_union_of.md)
 ## Used in
 
+ *  usage: [ClassDefinition](ClassDefinition.md)
  *  usage: [Definition](Definition.md)
  *  usage: [SlotDefinition](SlotDefinition.md)
- *  usage: [ClassDefinition](ClassDefinition.md)

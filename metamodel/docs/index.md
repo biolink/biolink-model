@@ -6,11 +6,11 @@ Metamodel for biolink schema
 ### Classes
 
  * [Element](Element.md) - root of all described things
+    * [TypeDefinition](TypeDefinition.md) - A type definition
     * [Definition](Definition.md) - definition base class
-       * [SlotDefinition](SlotDefinition.md) - A property or slot
        * [ClassDefinition](ClassDefinition.md) - A class or interface
        * [SchemaDefinition](SchemaDefinition.md) - A collection of definitions
-    * [TypeDefinition](TypeDefinition.md) - A type definition
+       * [SlotDefinition](SlotDefinition.md) - A property or slot
  * [Example](Example.md) - example of usage
  * [Prefix](Prefix.md) - Prefix URI map
 ### Mixins
@@ -82,8 +82,8 @@ Metamodel for biolink schema
  * [typeof](typeof.md) - a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition
  * [types](types.md) - types defined in schema
  * [union_of](union_of.md) - list of class or slot definitions that are combined to create the union class
-    * [class definition.union_of](class_definition_union_of.md)
     * [slot definition.union_of](slot_definition_union_of.md)
+    * [class definition.union_of](class_definition_union_of.md)
  * [value](value.md)
  * [example.description](value_description.md)
  * [values_from](values_from.md) - identifies the possible uri's of the range
