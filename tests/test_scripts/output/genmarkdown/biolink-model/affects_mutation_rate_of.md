@@ -15,8 +15,8 @@ URI: [http://bioentity.io/vocab/affects_mutation_rate_of](slot_uri)
  *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [increases mutation rate of](increases_mutation_rate_of.md) *subsets*: (translator_minimal)
  *  child: [decreases mutation rate of](decreases_mutation_rate_of.md) *subsets*: (translator_minimal)
+ *  child: [increases mutation rate of](increases_mutation_rate_of.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [MolecularEntity](MolecularEntity.md)
