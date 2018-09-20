@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation](http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToPhenotypicFeatureAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F;subject_taxon_closure_label(i):string%20*;object_taxon_closure_label(i):string%20*;subject_extensions(i):string%20*;has_evidence(i):evidence_instance%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F;description(i):narrative_text%20%3F]-%20object(i)>\[PhenotypicFeature],%20\[GeneToPhenotypicFeatureAssociation]-%20sex%20qualifier(i)%20%3F>\[BiologicalSex],%20\[GeneToPhenotypicFeatureAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[GeneToPhenotypicFeatureAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[GeneToPhenotypicFeatureAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToPhenotypicFeatureAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToPhenotypicFeatureAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[GeneToPhenotypicFeatureAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[GeneToPhenotypicFeatureAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToPhenotypicFeatureAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToPhenotypicFeatureAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToPhenotypicFeatureAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToPhenotypicFeatureAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneToPhenotypicFeatureAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GeneToPhenotypicFeatureAssociation]uses%20-.->\[GeneToThingAssociation],%20\[Association]^-\[GeneToPhenotypicFeatureAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToPhenotypicFeatureAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F;subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*;has_evidence(i):evidence_instance%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F;description(i):narrative_text%20%3F]-%20object(i)>\[PhenotypicFeature],%20\[GeneToPhenotypicFeatureAssociation]-%20sex%20qualifier(i)%20%3F>\[BiologicalSex],%20\[GeneToPhenotypicFeatureAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[GeneToPhenotypicFeatureAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[GeneToPhenotypicFeatureAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToPhenotypicFeatureAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToPhenotypicFeatureAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[GeneToPhenotypicFeatureAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[GeneToPhenotypicFeatureAssociation]-%20subject%20extensions(i)%20*>\[PropertyValuePair],%20\[GeneToPhenotypicFeatureAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToPhenotypicFeatureAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToPhenotypicFeatureAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToPhenotypicFeatureAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToPhenotypicFeatureAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneToPhenotypicFeatureAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GeneToPhenotypicFeatureAssociation]uses%20-.->\[GeneToThingAssociation],%20\[Association]^-\[GeneToPhenotypicFeatureAssociation])
 ## Mappings
 
  * [http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association](http://purl.obolibrary.org/obo/http_//bio2rdf.org/wormbase_vocabulary_Gene-Phenotype-Association)
@@ -106,7 +106,7 @@ URI: [http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation](http://bioen
     * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
  * [object taxon closure label](object_taxon_closure_label.md)
     * Description: The label for the taxon class or ancestor class for the object
-    * range: **string***
+    * range: [LabelType](LabelType.md)*
     * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
  * [object taxon label](object_taxon_label.md)
     * range: label
@@ -145,7 +145,7 @@ URI: [http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation](http://bioen
     * inherited from: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
  * [subject extensions](subject_extensions.md)
     * Description: Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state
-    * range: **string***
+    * range: [PropertyValuePair](PropertyValuePair.md)*
     * inherited from: [ExtensionsAndEvidenceAssociationMixin](ExtensionsAndEvidenceAssociationMixin.md)
  * [subject taxon](subject_taxon.md)
     * Description: the taxonomic class of the entity in the object slot
@@ -157,7 +157,7 @@ URI: [http://bioentity.io/vocab/GeneToPhenotypicFeatureAssociation](http://bioen
     * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
  * [subject taxon closure label](subject_taxon_closure_label.md)
     * Description: The label for the taxon class or ancestor class for the subject
-    * range: **string***
+    * range: [LabelType](LabelType.md)*
     * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
  * [subject taxon label](subject_taxon_label.md)
     * range: label
