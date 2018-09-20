@@ -177,7 +177,7 @@ DiseaseOrPhenotypicFeature typeimplements ThingWithTaxon
   {
     correlatedWith: MolecularEntity
     hasBiomarker: MolecularEntity
-    treatedBy: String
+    treatedBy: NamedThing
   }
 
 DiseaseOrPhenotypicFeatureAssociationToLocationAssociation type
@@ -259,7 +259,7 @@ ExonToTranscriptRelationship type
 
 ExtensionsAndEvidenceAssociationMixin interfaceimplements TaxonClosureMixin
   {
-    subjectExtensions: [String]
+    subjectExtensions: [PropertyValuePair]
     objectExtensions: [PropertyValuePair]
     hasEvidenceGraph: String
     hasEvidenceType: EvidenceType
@@ -606,8 +606,8 @@ NoncodingRNAProduct type
 Occurrent type
   {
     regulates,ProcessToProcess: Occurrent
-    hasParticipant: String
-    hasInput: String
+    hasParticipant: NamedThing
+    hasInput: NamedThing
     precedes: Occurrent
   }
 

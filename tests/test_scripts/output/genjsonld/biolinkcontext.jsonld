@@ -1,5 +1,5 @@
 {
-   "comments": "Auto generated from /Users/hsolbri1/git/biolink/biolink-model/biolink-model.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-09-19 14:04\nSchema: biolink model\n\nid: https://biolink.github.io/biolink-model/ontology/biolink.ttl\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "comments": "Auto generated from /Users/hsolbri1/git/biolink/biolink-model/biolink-model.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-09-19 17:05\nSchema: biolink model\n\nid: https://biolink.github.io/biolink-model/ontology/biolink.ttl\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "biolink": "http://bioentity.io/vocab/",
       "OBAN": "http://purl.org/oban/",
@@ -44,6 +44,7 @@
       },
       "SEMMEDDB": "http://example.org/unknown/SEMMEDDB/",
       "affects": {
+         "@type": "@id",
          "@id": "SEMMEDDB:AFFECTS"
       },
       "affects_abundance_of": {
@@ -87,6 +88,7 @@
          "@id": "SEMMEDDB:AFFECTS"
       },
       "affects_risk_for": {
+         "@type": "@id",
          "@id": "owl:topObjectProperty"
       },
       "affects_secretion_of": {
@@ -132,18 +134,22 @@
          "@id": "rdf:type"
       },
       "causes": {
+         "@type": "@id",
          "@id": "RO:0002410"
       },
       "clinical_modifier_qualifier": {
          "@type": "@id"
       },
       "co-localizes_with": {
+         "@type": "@id",
          "@id": "RO:00002325"
       },
       "coexists_with": {
+         "@type": "@id",
          "@id": "SEMMEDDB:COEXISTS_WITH"
       },
       "contributes_to": {
+         "@type": "@id",
          "@id": "RO:0002326"
       },
       "correlated_with": {
@@ -220,15 +226,18 @@
          "@id": "SEMMEDDB:AFFECTS"
       },
       "derives_from": {
+         "@type": "@id",
          "@id": "RO:0001000"
       },
       "derives_into": {
+         "@type": "@id",
          "@id": "RO:0001001"
       },
       "description": {
          "@id": "dcterms:description"
       },
       "disrupts": {
+         "@type": "@id",
          "@id": "SEMMEDDB:DISRUPTS"
       },
       "end_interbase_coordinate": {
@@ -289,6 +298,7 @@
          "@id": "RO:0002205"
       },
       "has_input": {
+         "@type": "@id",
          "@id": "RO:0002233"
       },
       "has_molecular_consequence": {
@@ -296,9 +306,11 @@
          "@id": "owl:topObjectProperty"
       },
       "has_part": {
+         "@type": "@id",
          "@id": "BFO:0000051"
       },
       "has_participant": {
+         "@type": "@id",
          "@id": "RO:0000057"
       },
       "has_percentage": {
@@ -321,6 +333,7 @@
          "@id": "owl:topAnnotationProperty"
       },
       "homologous_to": {
+         "@type": "@id",
          "@id": "RO:HOM0000001"
       },
       "id": {
@@ -407,6 +420,7 @@
          "@id": "SEMMEDDB:AFFECTS"
       },
       "interacts_with": {
+         "@type": "@id",
          "@id": "RO:0002434"
       },
       "interbase_coordinate": {
@@ -420,9 +434,11 @@
          "@id": "wgs:lat"
       },
       "located_in": {
+         "@type": "@id",
          "@id": "RO:0001025"
       },
       "location_of": {
+         "@type": "@id",
          "@id": "RO:0001015"
       },
       "longitude": {
@@ -434,6 +450,7 @@
          "@id": "SEMMEDDB:MANIFESTATION_OF"
       },
       "model_of": {
+         "@type": "@id",
          "@id": "RO:0003301"
       },
       "molecularly_interacts_with": {
@@ -447,12 +464,15 @@
          "@type": "xsd:boolean"
       },
       "negatively_regulates": {
+         "@type": "@id",
          "@id": "WD:P128"
       },
       "negatively_regulates_entity_to_entity": {
+         "@type": "@id",
          "@id": "RO:0002449"
       },
       "negatively_regulates_process_to_process": {
+         "@type": "@id",
          "@id": "RO:0002212"
       },
       "node_property": {
@@ -463,21 +483,26 @@
          "@id": "rdf:object"
       },
       "occurs_in": {
+         "@type": "@id",
          "@id": "BFO:0000066"
       },
       "onset_qualifier": {
          "@type": "@id"
       },
       "orthologous_to": {
+         "@type": "@id",
          "@id": "RO:HOM0000017"
       },
       "overlaps": {
+         "@type": "@id",
          "@id": "RO:0002131"
       },
       "paralogous_to": {
+         "@type": "@id",
          "@id": "RO:HOM0000011"
       },
       "part_of": {
+         "@type": "@id",
          "@id": "BFO:0000050"
       },
       "participates_in": {
@@ -488,15 +513,19 @@
          "@id": "owl:topAnnotationProperty"
       },
       "physically_interacts_with": {
+         "@type": "@id",
          "@id": "WD:P129"
       },
       "positively_regulates": {
+         "@type": "@id",
          "@id": "WD:P128"
       },
       "positively_regulates_entity_to_entity": {
+         "@type": "@id",
          "@id": "RO:0002450"
       },
       "positively_regulates_process_to_process": {
+         "@type": "@id",
          "@id": "RO:0002213"
       },
       "precedes": {
@@ -504,12 +533,15 @@
          "@id": "BFO:0000063"
       },
       "predisposes": {
+         "@type": "@id",
          "@id": "SEMMEDDB:PREDISPOSES"
       },
       "prevents": {
+         "@type": "@id",
          "@id": "RO:0002559"
       },
       "produces": {
+         "@type": "@id",
          "@id": "RO:0003000"
       },
       "pav": "http://purl.org/pav/",
@@ -529,6 +561,7 @@
          "@type": "@id"
       },
       "regulates": {
+         "@type": "@id",
          "@id": "WD:P128"
       },
       "regulates_entity_to_entity": {
@@ -548,6 +581,7 @@
          "@id": "rdf:predicate"
       },
       "same_as": {
+         "@type": "@id",
          "@id": "owl:equivalentClass"
       },
       "sequence_variant_qualifier": {
@@ -580,6 +614,7 @@
          "@id": "owl:topAnnotationProperty"
       },
       "treated_by": {
+         "@type": "@id",
          "@id": "RO:0002302"
       },
       "treats": {
@@ -591,6 +626,7 @@
          "@id": "owl:topAnnotationProperty"
       },
       "xenologous_to": {
+         "@type": "@id",
          "@id": "RO:HOM0000018"
       },
       "ActivityAndBehavior": {

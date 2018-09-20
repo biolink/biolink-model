@@ -153,7 +153,8 @@
       ],
       "is_a": "related_to",
       "symmetric": true,
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "interacts_with"
     },
     {
@@ -168,7 +169,8 @@
       ],
       "is_a": "interacts_with",
       "symmetric": true,
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "physically_interacts_with"
     },
     {
@@ -209,7 +211,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "affects"
     },
     {
@@ -897,7 +900,8 @@
       "is_a": "affects",
       "mixin": true,
       "abstract": true,
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "regulates"
     },
     {
@@ -913,7 +917,8 @@
       "is_a": "regulates",
       "mixin": true,
       "abstract": true,
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "positively_regulates"
     },
     {
@@ -929,7 +934,8 @@
       "is_a": "regulates",
       "mixin": true,
       "abstract": true,
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "negatively_regulates"
     },
     {
@@ -959,7 +965,8 @@
       "mixins": [
         "positively_regulates"
       ],
-      "range": "xsd:string",
+      "domain": "Occurrent",
+      "range": "Occurrent",
       "@id": "positively_regulates_process_to_process"
     },
     {
@@ -975,7 +982,8 @@
       "mixins": [
         "negatively_regulates"
       ],
-      "range": "xsd:string",
+      "domain": "Occurrent",
+      "range": "Occurrent",
       "@id": "negatively_regulates_process_to_process"
     },
     {
@@ -1020,7 +1028,8 @@
         "positively regulates",
         "activity directly positively regulates activity of"
       ],
-      "range": "xsd:string",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
       "@id": "positively_regulates_entity_to_entity"
     },
     {
@@ -1044,7 +1053,8 @@
         "negatively regulates",
         "activity directly negatively regulates activity of"
       ],
-      "range": "xsd:string",
+      "domain": "MolecularEntity",
+      "range": "MolecularEntity",
       "@id": "negatively_regulates_entity_to_entity"
     },
     {
@@ -1057,7 +1067,8 @@
         "translator_minimal"
       ],
       "is_a": "affects",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "disrupts"
     },
     {
@@ -1090,7 +1101,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "homologous_to"
     },
     {
@@ -1103,7 +1115,8 @@
         "translator_minimal"
       ],
       "is_a": "homologous_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "paralogous_to"
     },
     {
@@ -1117,7 +1130,8 @@
         "translator_minimal"
       ],
       "is_a": "homologous_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "orthologous_to"
     },
     {
@@ -1130,7 +1144,8 @@
         "translator_minimal"
       ],
       "is_a": "homologous_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "xenologous_to"
     },
     {
@@ -1143,7 +1158,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "coexists_with"
     },
     {
@@ -1198,7 +1214,8 @@
         "translator_minimal"
       ],
       "is_a": "coexists_with",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "co-localizes_with"
     },
     {
@@ -1226,7 +1243,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "affects_risk_for"
     },
     {
@@ -1239,7 +1257,8 @@
         "translator_minimal"
       ],
       "is_a": "affects_risk_for",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "predisposes"
     },
     {
@@ -1252,7 +1271,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "contributes_to"
     },
     {
@@ -1267,7 +1287,8 @@
         "translator_minimal"
       ],
       "is_a": "contributes_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "causes"
     },
     {
@@ -1302,7 +1323,8 @@
         "translator_minimal"
       ],
       "is_a": "affects_risk_for",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "prevents"
     },
     {
@@ -1361,7 +1383,7 @@
       ],
       "is_a": "related_to",
       "domain": "DiseaseOrPhenotypicFeature",
-      "range": "xsd:string",
+      "range": "NamedThing",
       "inverse": "treats",
       "@id": "treated_by"
     },
@@ -1421,7 +1443,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "occurs_in"
     },
     {
@@ -1434,7 +1457,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "inverse": "location_of",
       "@id": "located_in"
     },
@@ -1450,7 +1474,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "inverse": "located_in",
       "@id": "location_of"
     },
@@ -1464,7 +1489,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "model_of"
     },
     {
@@ -1477,7 +1503,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "overlaps"
     },
     {
@@ -1491,7 +1518,8 @@
         "translator_minimal"
       ],
       "is_a": "overlaps",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "inverse": "part_of",
       "@id": "has_part"
     },
@@ -1507,7 +1535,8 @@
         "translator_minimal"
       ],
       "is_a": "overlaps",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "inverse": "has_part",
       "@id": "part_of"
     },
@@ -1523,7 +1552,7 @@
       ],
       "is_a": "related_to",
       "domain": "Occurrent",
-      "range": "xsd:string",
+      "range": "NamedThing",
       "inverse": "participates_in",
       "@id": "has_participant"
     },
@@ -1539,7 +1568,7 @@
       ],
       "is_a": "has_participant",
       "domain": "Occurrent",
-      "range": "xsd:string",
+      "range": "NamedThing",
       "@id": "has_input"
     },
     {
@@ -1552,6 +1581,7 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
+      "domain": "NamedThing",
       "range": "Occurrent",
       "inverse": "has_participant",
       "@id": "participates_in"
@@ -1566,6 +1596,7 @@
         "translator_minimal"
       ],
       "is_a": "participates_in",
+      "domain": "NamedThing",
       "range": "Occurrent",
       "@id": "actively_involved_in"
     },
@@ -1579,6 +1610,7 @@
         "translator_minimal"
       ],
       "is_a": "actively_involved_in",
+      "domain": "NamedThing",
       "range": "Occurrent",
       "@id": "capable_of"
     },
@@ -1593,7 +1625,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "inverse": "derives_from",
       "@id": "derives_into"
     },
@@ -1607,7 +1640,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "inverse": "derives_into",
       "@id": "derives_from"
     },
@@ -1622,6 +1656,7 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
+      "domain": "NamedThing",
       "range": "Disease",
       "@id": "manifestation_of"
     },
@@ -1637,7 +1672,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "produces"
     },
     {
@@ -1669,7 +1705,8 @@
         "translator_minimal"
       ],
       "is_a": "related_to",
-      "range": "xsd:string",
+      "domain": "NamedThing",
+      "range": "NamedThing",
       "@id": "same_as"
     },
     {
@@ -1849,6 +1886,7 @@
       "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. ",
       "note": "in neo4j this corresponds to the relationship type and the convention is for a snake_case label",
       "is_a": "association_slot",
+      "domain": "Association",
       "range": "label_type",
       "@id": "edge_label"
     },
@@ -1882,6 +1920,7 @@
       "name": "has_confidence_level",
       "description": "connects an association to a qualitative term denoting the level of confidence",
       "is_a": "association_slot",
+      "domain": "Association",
       "range": "ConfidenceLevel",
       "@id": "has_confidence_level"
     },
@@ -1892,6 +1931,7 @@
         "RO:0002558"
       ],
       "is_a": "association_slot",
+      "domain": "Association",
       "range": "evidence_instance",
       "@id": "has_evidence"
     },
@@ -1924,6 +1964,7 @@
         "dcterms:created"
       ],
       "is_a": "node_property",
+      "domain": "NamedThing",
       "range": "xsd:date",
       "@id": "creation_date"
     },
@@ -1934,6 +1975,7 @@
         "owl:topAnnotationProperty"
       ],
       "is_a": "node_property",
+      "domain": "NamedThing",
       "range": "xsd:date",
       "@id": "update_date"
     },
@@ -1981,6 +2023,7 @@
         "WD:P274"
       ],
       "is_a": "node_property",
+      "domain": "NamedThing",
       "range": "chemical_formula_value",
       "@id": "has_chemical_formula"
     },
@@ -1992,6 +2035,7 @@
       ],
       "is_a": "node_property",
       "abstract": true,
+      "domain": "NamedThing",
       "range": "xsd:string",
       "@id": "aggregate_statistic"
     },
@@ -2084,6 +2128,7 @@
       "name": "frequency_qualifier",
       "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
       "is_a": "association_slot",
+      "domain": "Association",
       "range": "FrequencyValue",
       "@id": "frequency_qualifier"
     },
@@ -2115,6 +2160,7 @@
       "name": "clinical_modifier_qualifier",
       "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
       "is_a": "association_slot",
+      "domain": "Association",
       "range": "ClinicalModifier",
       "@id": "clinical_modifier_qualifier"
     },
@@ -2155,6 +2201,7 @@
         "SEMMEDDB:ASSOCIATED_WITH"
       ],
       "is_a": "related_to",
+      "domain": "NamedThing",
       "range": "OntologyClass",
       "@id": "has_molecular_consequence"
     },
@@ -2187,6 +2234,7 @@
         "owl:topAnnotationProperty"
       ],
       "is_a": "node_property",
+      "domain": "NamedThing",
       "range": "NamedThing",
       "@id": "filler"
     },
@@ -2219,6 +2267,7 @@
         "owl:topAnnotationProperty"
       ],
       "is_a": "node_property",
+      "domain": "NamedThing",
       "range": "xsd:string",
       "@id": "interbase_coordinate"
     },
@@ -6531,7 +6580,7 @@
   "source_file": "/Users/hsolbri1/git/biolink/biolink-model/biolink-model.yaml",
   "source_file_size": 97996,
   "source_file_date": "Wed Sep 19 10:47:11 2018",
-  "generation_date": "2018-09-19 14:04",
+  "generation_date": "2018-09-19 17:05",
   "@context": [
     "file:///Users/hsolbri1/git/biolink/biolink-model/tests/test_scripts/output/genjsonld/metacontext.jsonld",
     {

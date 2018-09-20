@@ -86,16 +86,24 @@ class SchemaLoader:
                 if append:
                     cls.slots.append(SlotDefinitionName(child_name))
 
+        # Update slots with parental information
+        merged_slots: List[SlotDefinition] = []
+        for slot in self.schema.slots.values():
+            self.merge_slot(slot, merged_slots)
+
         # Clean up the slot range defaults
         for slot in self.schema.slots.values():
             if not slot.range:
                 slot.range = 'string'
 
-        # Update slots with parental information
-        for slot in self.schema.slots.values():
-            if slot.is_a:
-                merge_slots(slot, self.schema.slots[slot.is_a])
         return self.schema
+
+    def merge_slot(self, slot: SlotDefinition, merged_slots: List[SlotDefinition]) -> None:
+        if slot not in merged_slots:
+            if slot.is_a:
+                self.merge_slot(self.schema.slots[slot.is_a], merged_slots)
+                merge_slots(slot, self.schema.slots[slot.is_a])
+            merged_slots.append(slot)
 
     def schema_errors(self) -> List[str]:
         return SchemaSynopsis(self.schema).errors()

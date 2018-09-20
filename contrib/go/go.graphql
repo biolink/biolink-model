@@ -178,7 +178,7 @@ DiseaseOrPhenotypicFeature typeimplements ThingWithTaxon
   {
     correlatedWith: MolecularEntity
     hasBiomarker: MolecularEntity
-    treatedBy: String
+    treatedBy: NamedThing
   }
 
 DiseaseOrPhenotypicFeatureAssociationToLocationAssociation type
@@ -621,8 +621,8 @@ MolecularEntity typeimplements ThingWithTaxon, GoTermBioentityMixin
 MolecularEvent type
   {
     enabledBy: GeneOrGeneProduct
-    partOf: String
-    occursIn: String
+    partOf: NamedThing
+    occursIn: NamedThing
     upstreamCausalRelationship: String
     downstreamCausalRelationship: String
   }
@@ -652,8 +652,8 @@ NoncodingRNAProduct type
 Occurrent type
   {
     regulates,ProcessToProcess: Occurrent
-    hasParticipant: String
-    hasInput: String
+    hasParticipant: NamedThing
+    hasInput: NamedThing
     precedes: Occurrent
   }
 
