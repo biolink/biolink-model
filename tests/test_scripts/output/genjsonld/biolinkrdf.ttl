@@ -180,6 +180,7 @@ biolink:SenstivityQuantifier a biolink:RelationshipQuantifier ;
 
 biolink:capable_of a biolink:actively_involved_in ;
     rdfs:label "capable_of" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0002215" ) ;
     biolink:range biolink:Occurrent ;
     OIO:inSubset ( "translator_minimal" ) ;
@@ -187,8 +188,9 @@ biolink:capable_of a biolink:actively_involved_in ;
 
 biolink:causes a biolink:contributes_to ;
     rdfs:label "causes" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0002410" "SEMMEDDB:CAUSES" "WD:P1542" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other" .
 
@@ -197,43 +199,50 @@ biolink:chemical_formula_type rdfs:label "chemical formula type" ;
 
 biolink:clinical_modifier_qualifier a biolink:association_slot ;
     rdfs:label "clinical_modifier_qualifier" ;
+    biolink:domain biolink:Association ;
     biolink:range biolink:ClinicalModifier ;
     skos:definition "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects" .
 
 biolink:co-localizes_with a biolink:coexists_with ;
     rdfs:label "co-localizes_with" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:00002325" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between two entities that are observed to be located in the same place." .
 
 biolink:creation_date a biolink:node_property ;
     rdfs:label "creation_date" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "dcterms:created" ) ;
     biolink:range xsd:date ;
     skos:definition "date on which thing was created. This can be applied to nodes or edges" .
 
 biolink:disrupts a biolink:affects ;
     rdfs:label "disrupts" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "SEMMEDDB:DISRUPTS" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another." .
 
 biolink:edge_label a biolink:association_slot ;
     rdfs:label "edge_label" ;
+    biolink:domain biolink:Association ;
     biolink:range biolink:label_type ;
     skos:definition "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. " ;
     skos:note "in neo4j this corresponds to the relationship type and the convention is for a snake_case label" .
 
 biolink:filler a biolink:node_property ;
     rdfs:label "filler" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range biolink:NamedThing ;
     skos:definition "The value in a property-value tuple" .
 
 biolink:frequency_qualifier a biolink:association_slot ;
     rdfs:label "frequency_qualifier" ;
+    biolink:domain biolink:Association ;
     biolink:range biolink:FrequencyValue ;
     skos:definition "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject" .
 
@@ -242,29 +251,34 @@ biolink:frequency_value rdfs:label "frequency value" ;
 
 biolink:has_chemical_formula a biolink:node_property ;
     rdfs:label "has_chemical_formula" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "WD:P274" ) ;
     biolink:range biolink:chemical_formula_value ;
     skos:definition "description of chemical compound based on element symbols" .
 
 biolink:has_confidence_level a biolink:association_slot ;
     rdfs:label "has_confidence_level" ;
+    biolink:domain biolink:Association ;
     biolink:range biolink:ConfidenceLevel ;
     skos:definition "connects an association to a qualitative term denoting the level of confidence" .
 
 biolink:has_evidence a biolink:association_slot ;
     rdfs:label "has_evidence" ;
+    biolink:domain biolink:Association ;
     biolink:mappings ( "RO:0002558" ) ;
     biolink:range biolink:evidence_instance ;
     skos:definition "connects an association to an instance of supporting evidence" .
 
 biolink:has_molecular_consequence a biolink:related_to ;
     rdfs:label "has_molecular_consequence" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "owl:topObjectProperty" "SEMMEDDB:ASSOCIATED_WITH" ) ;
     biolink:range biolink:OntologyClass ;
     skos:definition "connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583" .
 
 biolink:manifestation_of a biolink:related_to ;
     rdfs:label "manifestation_of" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "SEMMEDDB:MANIFESTATION_OF" "WD:P1557" ) ;
     biolink:range biolink:Disease ;
     OIO:inSubset ( "translator_minimal" ) ;
@@ -273,39 +287,44 @@ biolink:manifestation_of a biolink:related_to ;
 biolink:negatively_regulates_entity_to_entity a biolink:regulates_entity_to_entity ;
     rdfs:label "negatively_regulates_entity_to_entity" ;
     biolink:aliases ( "activity directly negatively regulates activity of" ) ;
+    biolink:domain biolink:MolecularEntity ;
     biolink:local_names ( "negatively regulates" "activity directly negatively regulates activity of" ) ;
     biolink:mappings ( "RO:0002449" "SEMMEDDB:INHIBITS" ) ;
     biolink:mixins ( biolink:negatively_regulates ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
 
 biolink:negatively_regulates_process_to_process a biolink:regulates_process_to_process ;
     rdfs:label "negatively_regulates_process_to_process" ;
+    biolink:domain biolink:Occurrent ;
     biolink:mappings ( "RO:0002212" ) ;
     biolink:mixins ( biolink:negatively_regulates ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:Occurrent ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
 
 biolink:occurs_in a biolink:related_to ;
     rdfs:label "occurs_in" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "BFO:0000066" "SEMMEDDB:OCCURS_IN" "SEMMEDDB:PROCESS_OF" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between a process and a material entity or site within which the process occurs" .
 
 biolink:orthologous_to a biolink:homologous_to ;
     rdfs:label "orthologous_to" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:HOM0000017" "WD:P684" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "a homology relationship between entities (typically genes) that diverged after a speciation event." .
 
 biolink:paralogous_to a biolink:homologous_to ;
     rdfs:label "paralogous_to" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:HOM0000011" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "a homology relationship that holds between entities (typically genes) that diverged after a duplication event." .
 
@@ -316,39 +335,44 @@ biolink:perecentage_frequency_value rdfs:label "perecentage frequency value" ;
 biolink:positively_regulates_entity_to_entity a biolink:regulates_entity_to_entity ;
     rdfs:label "positively_regulates_entity_to_entity" ;
     biolink:aliases ( "activity directly positively regulates activity of" ) ;
+    biolink:domain biolink:MolecularEntity ;
     biolink:local_names ( "positively regulates" "activity directly positively regulates activity of" ) ;
     biolink:mappings ( "RO:0002450" "SEMMEDDB:STIMULATES" ) ;
     biolink:mixins ( biolink:positively_regulates ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
 
 biolink:positively_regulates_process_to_process a biolink:regulates_process_to_process ;
     rdfs:label "positively_regulates_process_to_process" ;
+    biolink:domain biolink:Occurrent ;
     biolink:mappings ( "RO:0002213" ) ;
     biolink:mixins ( biolink:positively_regulates ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:Occurrent ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
 
 biolink:predisposes a biolink:affects_risk_for ;
     rdfs:label "predisposes" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "SEMMEDDB:PREDISPOSES" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between two entities where exposure to one entity increases the chance of developing the other " .
 
 biolink:prevents a biolink:affects_risk_for ;
     rdfs:label "prevents" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0002559" "SEMMEDDB:PREVENTS" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between an entity whose application or use reduces the likelihood of a potential outcome.  Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature." .
 
 biolink:produces a biolink:related_to ;
     rdfs:label "produces" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0003000" "WD:P1056" "SEMMEDDB:PRODUCES" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity" .
 
@@ -359,8 +383,9 @@ biolink:quotient rdfs:label "quotient" ;
 
 biolink:same_as a biolink:related_to ;
     rdfs:label "same_as" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "owl:equivalentClass" "owl:sameAs" "skos:exactMatch" "WD:P2888" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between two entities that are considered equivalent to each other" .
 
@@ -371,14 +396,16 @@ biolink:unit rdfs:label "unit" ;
 
 biolink:update_date a biolink:node_property ;
     rdfs:label "update_date" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:date ;
     skos:definition "date on which thing was updated. This can be applied to nodes or edges" .
 
 biolink:xenologous_to a biolink:homologous_to ;
     rdfs:label "xenologous_to" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:HOM0000018" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor." .
 
@@ -605,6 +632,7 @@ biolink:Zygosity a biolink:Attribute ;
 
 biolink:actively_involved_in a biolink:participates_in ;
     rdfs:label "actively_involved_in" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0002331" ) ;
     biolink:range biolink:Occurrent ;
     OIO:inSubset ( "translator_minimal" ) ;
@@ -765,8 +793,9 @@ biolink:chemical_to_thing_association_subject a biolink:subject ;
 
 biolink:contributes_to a biolink:related_to ;
     rdfs:label "contributes_to" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0002326" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other" .
 
@@ -900,16 +929,18 @@ biolink:decreases_uptake_of a biolink:affects_uptake_of ;
 
 biolink:derives_from a biolink:related_to ;
     rdfs:label "derives_from" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0001000" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     owl:inverseOf biolink:derives_into ;
     skos:definition "holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" .
 
 biolink:derives_into a biolink:related_to ;
     rdfs:label "derives_into" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0001001" "SEMMEDDB:CONVERTS_TO" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     owl:inverseOf biolink:derives_from ;
     skos:definition "holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" .
@@ -1381,14 +1412,15 @@ biolink:has_input a biolink:has_participant ;
     rdfs:label "has_input" ;
     biolink:domain biolink:Occurrent ;
     biolink:mappings ( "RO:0002233" "SEMMEDDB:USES" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between a process and a continuant, where the continuant is an input into the process" .
 
 biolink:has_part a biolink:overlaps ;
     rdfs:label "has_part" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "BFO:0000051" "WD:P527" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     owl:inverseOf biolink:part_of ;
     skos:definition "holds between wholes and their parts (material entities or processes)" .
@@ -1593,16 +1625,18 @@ biolink:latitude a biolink:node_property ;
 
 biolink:located_in a biolink:related_to ;
     rdfs:label "located_in" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0001025" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     owl:inverseOf biolink:location_of ;
     skos:definition "holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)" .
 
 biolink:location_of a biolink:related_to ;
     rdfs:label "location_of" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0001015" "SEMMEDDB:LOCATION_OF" "WD:276" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     owl:inverseOf biolink:located_in ;
     skos:definition "holds between material entity or site and a material entity that is located within it (but not considered a part of it) " .
@@ -1731,8 +1765,9 @@ biolink:phenotype rdfs:label "phenotype" .
 
 biolink:physically_interacts_with a biolink:interacts_with ;
     rdfs:label "physically_interacts_with" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "WD:P129" "SEMMEDDB:INTERACTS_WITH" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     biolink:symmetric true ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between two entities that make physical contact as part of some interaction" .
@@ -2219,8 +2254,9 @@ biolink:TranscriptToGeneRelationship a biolink:SequenceFeatureRelationship ;
 
 biolink:affects_risk_for a biolink:related_to ;
     rdfs:label "affects_risk_for" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "owl:topObjectProperty" "SEMMEDDB:ASSOCIATED_WITH" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between two entities where exposure to one entity alters the chance of developing the other " .
 
@@ -2301,22 +2337,25 @@ biolink:has_total a biolink:aggregate_statistic ;
 
 biolink:interacts_with a biolink:related_to ;
     rdfs:label "interacts_with" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0002434" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     biolink:symmetric true ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between any two entities that directly or indirectly interact with each other" .
 
 biolink:interbase_coordinate a biolink:node_property ;
     rdfs:label "interbase_coordinate" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:string ;
     skos:definition "TODO" .
 
 biolink:model_of a biolink:related_to ;
     rdfs:label "model_of" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0003301" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.    " .
 
@@ -2336,17 +2375,19 @@ biolink:narrative_text rdfs:label "narrative text" ;
 biolink:negatively_regulates a biolink:regulates ;
     rdfs:label "negatively_regulates" ;
     biolink:abstract true ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "WD:P128" ) ;
     biolink:mixin true ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." ;
     skos:editorialNote "This is a grouping for process-process and entity-entity relations" .
 
 biolink:overlaps a biolink:related_to ;
     rdfs:label "overlaps" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0002131" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between entties that overlap in their extents (materials or processes)" .
 
@@ -2363,6 +2404,7 @@ biolink:pairwise_interaction_association_relation a biolink:relation ;
 
 biolink:participates_in a biolink:related_to ;
     rdfs:label "participates_in" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:0000056" ) ;
     biolink:range biolink:Occurrent ;
     OIO:inSubset ( "translator_minimal" ) ;
@@ -2372,9 +2414,10 @@ biolink:participates_in a biolink:related_to ;
 biolink:positively_regulates a biolink:regulates ;
     rdfs:label "positively_regulates" ;
     biolink:abstract true ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "WD:P128" ) ;
     biolink:mixin true ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." ;
     skos:editorialNote "This is a grouping for process-process and entity-entity relations" .
@@ -2386,7 +2429,7 @@ biolink:treated_by a biolink:related_to ;
     rdfs:label "treated_by" ;
     biolink:domain biolink:DiseaseOrPhenotypicFeature ;
     biolink:mappings ( "RO:0002302" "WD:P2176" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     owl:inverseOf biolink:treats ;
     skos:definition "holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition " .
@@ -2781,7 +2824,7 @@ biolink:has_participant a biolink:related_to ;
     rdfs:label "has_participant" ;
     biolink:domain biolink:Occurrent ;
     biolink:mappings ( "RO:0000057" "WD:P2283" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     owl:inverseOf biolink:participates_in ;
     skos:definition "holds between a process and a continuant, where the continuant is somehow involved in the process " .
@@ -2809,8 +2852,9 @@ biolink:identifier_type rdfs:label "identifier type" ;
 
 biolink:part_of a biolink:overlaps ;
     rdfs:label "part_of" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "BFO:0000050" "SEMMEDDB:PART_OF" "WD:P361" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     owl:inverseOf biolink:has_part ;
     skos:definition "holds between parts and wholes (material entities or processes)" .
@@ -2937,14 +2981,16 @@ biolink:VariantToThingAssociation a biolink:Association ;
 biolink:aggregate_statistic a biolink:node_property ;
     rdfs:label "aggregate_statistic" ;
     biolink:abstract true ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:string ;
     skos:definition "A grouping for any property that holds between a node and a value" .
 
 biolink:coexists_with a biolink:related_to ;
     rdfs:label "coexists_with" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "SEMMEDDB:COEXISTS_WITH" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region" .
 
@@ -2960,9 +3006,10 @@ biolink:expressed_in a biolink:related_to ;
 biolink:regulates a biolink:affects ;
     rdfs:label "regulates" ;
     biolink:abstract true ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "WD:P128" ) ;
     biolink:mixin true ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." ;
     skos:editorialNote "This is a grouping for process-process and entity-entity relations" .
@@ -3071,8 +3118,9 @@ biolink:functional_association_object a biolink:object ;
 biolink:homologous_to a biolink:related_to ;
     rdfs:label "homologous_to" ;
     biolink:aliases ( "in homology relationship with" ) ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "RO:HOM0000001" "SIO:010302" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between two biological entities that have common evolutionary origin" ;
     skos:editorialNote "typically used to describe homology relationships between genes or gene products" .
@@ -3247,12 +3295,6 @@ biolink:Gene a biolink:GeneOrGeneProduct ;
     biolink:mappings ( "SO:0000704" "SIO:010035" "WD:Q7187" "UMLSSG:GENE" ) ;
     biolink:slots ( biolink:genetically_interacts_with biolink:has_gene_product biolink:gene_associated_with_condition ) .
 
-biolink:Occurrent a biolink:NamedThing ;
-    rdfs:label "Occurrent" ;
-    biolink:mappings ( "BFO:0000003" ) ;
-    biolink:slots ( biolink:regulates_process_to_process biolink:has_participant biolink:has_input biolink:precedes ) ;
-    skos:definition "A processual entity" .
-
 biolink:SequenceVariant a biolink:GenomicEntity ;
     rdfs:label "SequenceVariant" ;
     biolink:aliases ( "allele" ) ;
@@ -3284,16 +3326,17 @@ biolink:DiseaseOrPhenotypicFeature a biolink:BiologicalEntity ;
     biolink:union_of ( biolink:Disease biolink:PhenotypicFeature ) ;
     skos:definition "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate." .
 
-biolink:NamedThing rdfs:label "NamedThing" ;
-    biolink:mappings ( "UMLSSG:OBJC" "WD:Q35120" ) ;
-    biolink:slots ( biolink:id biolink:name biolink:category biolink:related_to biolink:node_property biolink:iri biolink:full_name biolink:description biolink:systematic_synonym ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/BFO:0000001> ;
-    skos:definition "a databased entity or concept/class" .
+biolink:Occurrent a biolink:NamedThing ;
+    rdfs:label "Occurrent" ;
+    biolink:mappings ( "BFO:0000003" ) ;
+    biolink:slots ( biolink:regulates_process_to_process biolink:has_participant biolink:has_input biolink:precedes ) ;
+    skos:definition "A processual entity" .
 
 biolink:affects a biolink:related_to ;
     rdfs:label "affects" ;
+    biolink:domain biolink:NamedThing ;
     biolink:mappings ( "SEMMEDDB:AFFECTS" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." .
 
@@ -3370,6 +3413,12 @@ biolink:subject a biolink:association_slot ;
     biolink:range xsd:string ;
     biolink:required true ;
     skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
+
+biolink:NamedThing rdfs:label "NamedThing" ;
+    biolink:mappings ( "UMLSSG:OBJC" "WD:Q35120" ) ;
+    biolink:slots ( biolink:id biolink:name biolink:category biolink:related_to biolink:node_property biolink:iri biolink:full_name biolink:description biolink:systematic_synonym ) ;
+    rdfs:subClassOf <http://bioentity.io/vocab/BFO:0000001> ;
+    skos:definition "a databased entity or concept/class" .
 
 biolink:MolecularEntity a biolink:BiologicalEntity ;
     rdfs:label "MolecularEntity" ;

@@ -173,7 +173,7 @@ DiseaseOrPhenotypicFeature typeimplements ThingWithTaxon
   {
     correlatedWith: MolecularEntity
     hasBiomarker: MolecularEntity
-    treatedBy: String
+    treatedBy: NamedThing
   }
 
 DiseaseOrPhenotypicFeatureAssociationToLocationAssociation type
@@ -591,8 +591,8 @@ NoncodingRNAProduct type
 Occurrent type
   {
     regulates,ProcessToProcess: Occurrent
-    hasParticipant: String
-    hasInput: String
+    hasParticipant: NamedThing
+    hasInput: NamedThing
     precedes: Occurrent
   }
 

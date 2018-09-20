@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/Pathway](http://bioentity.io/vocab/Pathway)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Pathway|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F;has_participant(i):string%20%3F;has_input(i):string%20%3F]-%20precedes(i)%20%3F>\[Occurrent],%20\[Pathway]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[Pathway]-%20related%20to(i)%20%3F>\[NamedThing],%20\[ChemicalToPathwayAssociation]-%20object(i)>\[Pathway],%20\[BiologicalProcess]^-\[Pathway])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Pathway|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20precedes(i)%20%3F>\[Occurrent],%20\[Pathway]-%20has%20input(i)%20%3F>\[NamedThing],%20\[Pathway]-%20has%20participant(i)%20%3F>\[NamedThing],%20\[Pathway]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[Pathway]-%20related%20to(i)%20%3F>\[NamedThing],%20\[ChemicalToPathwayAssociation]-%20object(i)>\[Pathway],%20\[BiologicalProcess]^-\[Pathway])
 ## Mappings
 
  * [GO:0007165](http://purl.obolibrary.org/obo/GO_0007165)
@@ -36,11 +36,11 @@ URI: [http://bioentity.io/vocab/Pathway](http://bioentity.io/vocab/Pathway)
     * inherited from: [NamedThing](NamedThing.md)
  * [has input](has_input.md) *subsets*: (translator_minimal)
     * Description: holds between a process and a continuant, where the continuant is an input into the process
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * inherited from: [Occurrent](Occurrent.md)
  * [has participant](has_participant.md) *subsets*: (translator_minimal)
     * Description: holds between a process and a continuant, where the continuant is somehow involved in the process 
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * inherited from: [Occurrent](Occurrent.md)
  * [has phenotype](has_phenotype.md) *subsets*: (translator_minimal)
     * Description: holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). 

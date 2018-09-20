@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-09-19 11:08
+# Generation date: 2018-09-19 16:07
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -788,7 +788,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
     id: DiseaseOrPhenotypicFeatureId = None
     correlated_with: Optional[MolecularEntityId] = None
     has_biomarker: Optional[MolecularEntityId] = None
-    treated_by: Optional[str] = None
+    treated_by: Optional[NamedThingId] = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -800,6 +800,8 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
             self.correlated_with = MolecularEntityId(self.correlated_with)
         if self.has_biomarker and not isinstance(self.has_biomarker, MolecularEntityId):
             self.has_biomarker = MolecularEntityId(self.has_biomarker)
+        if self.treated_by and not isinstance(self.treated_by, NamedThingId):
+            self.treated_by = NamedThingId(self.treated_by)
 
 
 @dataclass
@@ -2816,8 +2818,8 @@ class Occurrent(NamedThing):
     """
     id: OccurrentId = None
     regulates_process_to_process: Optional[OccurrentId] = None
-    has_participant: Optional[str] = None
-    has_input: Optional[str] = None
+    has_participant: Optional[NamedThingId] = None
+    has_input: Optional[NamedThingId] = None
     precedes: Optional[OccurrentId] = None
 
     def _fix_elements(self):
@@ -2828,6 +2830,10 @@ class Occurrent(NamedThing):
             self.id = OccurrentId(self.id)
         if self.regulates_process_to_process and not isinstance(self.regulates_process_to_process, OccurrentId):
             self.regulates_process_to_process = OccurrentId(self.regulates_process_to_process)
+        if self.has_participant and not isinstance(self.has_participant, NamedThingId):
+            self.has_participant = NamedThingId(self.has_participant)
+        if self.has_input and not isinstance(self.has_input, NamedThingId):
+            self.has_input = NamedThingId(self.has_input)
         if self.precedes and not isinstance(self.precedes, OccurrentId):
             self.precedes = OccurrentId(self.precedes)
 

@@ -205,7 +205,7 @@ message DiseaseOrPhenotypicFeature
   optional inTaxon OrganismTaxon = 11
   optional correlatedWith MolecularEntity = 12
   optional hasBiomarker MolecularEntity = 13
-  optional treatedBy String = 14
+  optional treatedBy NamedThing = 14
  }
 // An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
@@ -1170,8 +1170,8 @@ message Occurrent
   optional description NarrativeText = 8
   optional systematicSynonym LabelType = 9
   optional regulates,ProcessToProcess Occurrent = 10
-  optional hasParticipant String = 11
-  optional hasInput String = 12
+  optional hasParticipant NamedThing = 11
+  optional hasInput NamedThing = 12
   optional precedes Occurrent = 13
  }
 // a concept or class in an ontology, vocabulary or thesaurus

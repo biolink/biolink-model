@@ -1,5 +1,5 @@
-# Auto generated from /Users/solbrig/git/hsolbrig/biolink-model/meta.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-06-23 12:08
+# Auto generated from /Users/hsolbri1/git/biolink/biolink-model/meta.yaml by pythongen.py version: 0.0.4
+# Generation date: 2018-09-19 16:09
 # Schema: metamodel
 #
 # id: https://biolink.github.io/metamodel/ontology/meta.ttl
@@ -14,8 +14,9 @@ from metamodel.utils.yamlutils import YAMLRoot
 
 metamodel_version = "0.3.1"
 
-inherited_slots: List[str] = ["description", "alt_descriptions", "in_subset", "mappings", "multivalued", "range",
-                              "required", "inlined", "definitional", "object_property", "subproperty_of", "inherited"]
+inherited_slots: List[str] = ["description", "alt_descriptions", "in_subset", "mappings", "multivalued", "domain",
+                              "range", "required", "inlined", "definitional", "object_property", "subproperty_of",
+                              "inherited"]
 
 
 # Type names
