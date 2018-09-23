@@ -14,7 +14,7 @@ None -> [LabelType](LabelType.md)
  *  is_a: [closure label slot](closure_label_slot.md)
 ## Children
 
- *  child: [object taxon closure label](object_taxon_closure_label.md)
  *  child: [subject taxon closure label](subject_taxon_closure_label.md)
+ *  child: [object taxon closure label](object_taxon_closure_label.md)
 ## Used in
 

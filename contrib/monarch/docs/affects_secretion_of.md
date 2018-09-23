@@ -15,8 +15,8 @@ URI: [http://bioentity.io/vocab/affects_secretion_of](slot_uri)
  *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [decreases secretion of](decreases_secretion_of.md) *subsets*: (translator_minimal)
  *  child: [increases secretion of](increases_secretion_of.md) *subsets*: (translator_minimal)
+ *  child: [decreases secretion of](decreases_secretion_of.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [MolecularEntity](MolecularEntity.md)

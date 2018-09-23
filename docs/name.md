@@ -18,5 +18,5 @@ URI: [http://bioentity.io/vocab/name](slot_uri)
  *  child: [macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal)
 ## Used in
 
- *  usage: [NamedThing](NamedThing.md)
  *  usage: [MacromolecularMachine](MacromolecularMachine.md)
+ *  usage: [NamedThing](NamedThing.md)

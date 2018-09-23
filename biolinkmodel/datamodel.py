@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-09-19 16:07
+# Generation date: 2018-09-23 12:27
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -637,7 +637,7 @@ class NamedThing(YAMLRoot):
     """
     id: NamedThingId
     name: Optional[LabelType] = None
-    category: Optional[LabelType] = None
+    category: List[LabelType] = empty_list()
     related_to: Optional[NamedThingId] = None
     node_property: Optional[str] = None
     iri: Optional[IriType] = None
@@ -649,8 +649,8 @@ class NamedThing(YAMLRoot):
         super()._fix_elements()
         if self.name and not isinstance(self.name, LabelType):
             self.name = LabelType(self.name)
-        if self.category and not isinstance(self.category, LabelType):
-            self.category = LabelType(self.category)
+        self.category = [v if isinstance(v, LabelType)
+                         else LabelType(v) for v in self.category]
         if self.related_to and not isinstance(self.related_to, NamedThingId):
             self.related_to = NamedThingId(self.related_to)
         if self.iri and not isinstance(self.iri, IriType):

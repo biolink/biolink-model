@@ -22,20 +22,22 @@ URI: [http://bioentity.io/vocab/Occurrent](http://bioentity.io/vocab/Occurrent)
  * [MolecularActivity](MolecularActivity.md) (mixin)  - An execution of a molecular function carried out by a gene product or macromolecular complex.
 ## Used in
 
- *  class: **None** *[actively involved in](actively_involved_in.md)* **[Occurrent](Occurrent.md)**
- *  class: **None** *[capable of](capable_of.md)* **[Occurrent](Occurrent.md)**
- *  class: **None** *[participates in](participates_in.md)* **[Occurrent](Occurrent.md)**
+ *  class: **[NamedThing](NamedThing.md)** *[actively involved in](actively_involved_in.md)* **[Occurrent](Occurrent.md)**
+ *  class: **[NamedThing](NamedThing.md)** *[capable of](capable_of.md)* **[Occurrent](Occurrent.md)**
+ *  class: **[Occurrent](Occurrent.md)** *[negatively regulates, process to process](negatively_regulates_process_to_process.md)* **[Occurrent](Occurrent.md)**
+ *  class: **[NamedThing](NamedThing.md)** *[participates in](participates_in.md)* **[Occurrent](Occurrent.md)**
+ *  class: **[Occurrent](Occurrent.md)** *[positively regulates, process to process](positively_regulates_process_to_process.md)* **[Occurrent](Occurrent.md)**
  *  class: **[Occurrent](Occurrent.md)** *[precedes](precedes.md)* **[Occurrent](Occurrent.md)**
  *  class: **[Occurrent](Occurrent.md)** *[regulates, process to process](regulates_process_to_process.md)* **[Occurrent](Occurrent.md)**
 ## Fields
 
  * [has input](has_input.md) *subsets*: (translator_minimal)
     * Description: holds between a process and a continuant, where the continuant is an input into the process
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * __Local__
  * [has participant](has_participant.md) *subsets*: (translator_minimal)
     * Description: holds between a process and a continuant, where the continuant is somehow involved in the process 
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * __Local__
  * [precedes](precedes.md) *subsets*: (translator_minimal)
     * Description: holds between two processes, where one completes before the other begins
@@ -47,7 +49,7 @@ URI: [http://bioentity.io/vocab/Occurrent](http://bioentity.io/vocab/Occurrent)
     * __Local__
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

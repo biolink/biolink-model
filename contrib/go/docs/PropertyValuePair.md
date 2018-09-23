@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/PropertyValuePair](http://bioentity.io/vocab/PropertyValuePair)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PropertyValuePair]-%20filler%20%3F>\[NamedThing],%20\[PropertyValuePair]-%20relation>\[RelationshipType],%20\[ExtensionsAndEvidenceAssociationMixin]-%20object%20extensions(i)%20*>\[PropertyValuePair])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PropertyValuePair]-%20filler%20%3F>\[NamedThing],%20\[PropertyValuePair]-%20relation>\[RelationshipType],%20\[Association]-%20extensions%20context%20slot(i)%20*>\[PropertyValuePair],%20\[ExtensionsAndEvidenceAssociationMixin]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[Association]-%20subject%20extensions(i)%20*>\[PropertyValuePair])
 ## Mappings
 
 ## Inheritance
@@ -14,8 +14,9 @@ URI: [http://bioentity.io/vocab/PropertyValuePair](http://bioentity.io/vocab/Pro
 
 ## Used in
 
- *  class: **None** *[extensions context slot](extensions_context_slot.md)* **[PropertyValuePair](PropertyValuePair.md)**
+ *  class: **[Association](Association.md)** *[extensions context slot](extensions_context_slot.md)* **[PropertyValuePair](PropertyValuePair.md)**
  *  class: **[ExtensionsAndEvidenceAssociationMixin](ExtensionsAndEvidenceAssociationMixin.md)** *[object extensions](object_extensions.md)* **[PropertyValuePair](PropertyValuePair.md)**
+ *  class: **[Association](Association.md)** *[subject extensions](subject_extensions.md)* **[PropertyValuePair](PropertyValuePair.md)**
 ## Fields
 
  * [filler](filler.md)

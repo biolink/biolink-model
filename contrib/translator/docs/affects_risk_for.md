@@ -10,13 +10,13 @@ URI: [http://bioentity.io/vocab/affects_risk_for](slot_uri)
  * [SEMMEDDB:ASSOCIATED_WITH](http://purl.obolibrary.org/obo/SEMMEDDB_ASSOCIATED_WITH)
 ## Domain and Range
 
-None -> **string**
+[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [prevents](prevents.md) *subsets*: (translator_minimal)
  *  child: [predisposes](predisposes.md) *subsets*: (translator_minimal)
+ *  child: [prevents](prevents.md) *subsets*: (translator_minimal)
 ## Used in
 

@@ -587,7 +587,7 @@ NamedThing type
   {
     id: String
     name: String
-    category: String
+    category: [String]
     hasAlternateIdentifier: [String]
     hasXref: [String]
     hasSynonym: [String]

@@ -5,7 +5,7 @@ describes the frequency of occurrence of an event or condition
 
 URI: [http://bioentity.io/vocab/FrequencyValue](http://bioentity.io/vocab/FrequencyValue)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[FrequencyValue|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[FrequencyValue]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Attribute]^-\[FrequencyValue])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[FrequencyValue|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[FrequencyValue]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Association]-%20frequency%20qualifier(i)%20%3F>\[FrequencyValue],%20\[Attribute]^-\[FrequencyValue])
 ## Mappings
 
 ## Inheritance
@@ -15,12 +15,12 @@ URI: [http://bioentity.io/vocab/FrequencyValue](http://bioentity.io/vocab/Freque
 
 ## Used in
 
- *  class: **None** *[FrequencyQualifier](FrequencyQualifier.md)* **[FrequencyValue](FrequencyValue.md)**
+ *  class: **[Association](Association.md)** *[FrequencyQualifier](FrequencyQualifier.md)* **[FrequencyValue](FrequencyValue.md)**
 ## Fields
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

@@ -1,5 +1,5 @@
 # Auto generated from contrib/monarch.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-09-20 08:36
+# Generation date: 2018-09-23 12:31
 # Schema: monarch biolink extensions
 #
 # id: http://bioentity.io/json-schema/biolink/contrib/monarch.json
@@ -657,7 +657,7 @@ class NamedThing(YAMLRoot):
     """
     id: NamedThingId
     name: Optional[LabelType] = None
-    category: Optional[LabelType] = None
+    category: List[LabelType] = empty_list()
     has_alternate_identifier: List[identifier] = empty_list()
     has_xref: List[identifier] = empty_list()
     has_synonym: List[name] = empty_list()
@@ -672,8 +672,8 @@ class NamedThing(YAMLRoot):
         super()._fix_elements()
         if self.name and not isinstance(self.name, LabelType):
             self.name = LabelType(self.name)
-        if self.category and not isinstance(self.category, LabelType):
-            self.category = LabelType(self.category)
+        self.category = [v if isinstance(v, LabelType)
+                         else LabelType(v) for v in self.category]
         if self.related_to and not isinstance(self.related_to, NamedThingId):
             self.related_to = NamedThingId(self.related_to)
         if self.iri and not isinstance(self.iri, IriType):

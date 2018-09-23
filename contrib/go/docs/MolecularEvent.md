@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/MolecularEvent](http://bioentity.io/vocab/MolecularEvent)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MolecularEvent|part_of:string%20%3F;occurs_in:string%20%3F;upstream_causal_relationship:string%20%3F;downstream_causal_relationship:string%20%3F]-%20enabled%20by%20%3F>\[GeneOrGeneProduct])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MolecularEvent|upstream_causal_relationship:string%20%3F;downstream_causal_relationship:string%20%3F]-%20occurs%20in%20%3F>\[NamedThing],%20\[MolecularEvent]-%20part%20of%20%3F>\[NamedThing],%20\[MolecularEvent]-%20enabled%20by%20%3F>\[GeneOrGeneProduct])
 ## Mappings
 
 ## Inheritance
@@ -24,11 +24,11 @@ URI: [http://bioentity.io/vocab/MolecularEvent](http://bioentity.io/vocab/Molecu
     * __Local__
  * [occurs in](occurs_in.md) *subsets*: (translator_minimal)
     * Description: holds between a process and a material entity or site within which the process occurs
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * __Local__
  * [part of](part_of.md) *subsets*: (translator_minimal)
     * Description: holds between parts and wholes (material entities or processes)
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * __Local__
  * [upstream causal relationship](upstream_causal_relationship.md)
     * range: **string**

@@ -15,8 +15,8 @@ URI: [http://bioentity.io/vocab/affects_molecular_modification_of](slot_uri)
  *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [decreases molecular modification of](decreases_molecular_modification_of.md) *subsets*: (translator_minimal)
  *  child: [increases molecular modification of](increases_molecular_modification_of.md) *subsets*: (translator_minimal)
+ *  child: [decreases molecular modification of](decreases_molecular_modification_of.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [MolecularEntity](MolecularEntity.md)

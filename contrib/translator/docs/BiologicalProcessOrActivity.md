@@ -5,7 +5,7 @@ Either an individual molecular activity, or a collection of causally connected m
 
 URI: [http://bioentity.io/vocab/BiologicalProcessOrActivity](http://bioentity.io/vocab/BiologicalProcessOrActivity)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalProcessOrActivity|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[BiologicalProcessOrActivity]^-\[MolecularActivity],%20\[BiologicalProcessOrActivity]^-\[BiologicalProcess],%20\[BiologicalEntity]^-\[BiologicalProcessOrActivity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalProcessOrActivity|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[BiologicalProcessOrActivity]^-\[MolecularActivity],%20\[BiologicalProcessOrActivity]^-\[BiologicalProcess],%20\[BiologicalEntity]^-\[BiologicalProcessOrActivity])
 ## Mappings
 
 ## Inheritance
@@ -21,7 +21,7 @@ URI: [http://bioentity.io/vocab/BiologicalProcessOrActivity](http://bioentity.io
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

@@ -23,7 +23,7 @@ URI: [http://bioentity.io/vocab/PhenotypicFeature](http://bioentity.io/vocab/Phe
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [correlated with](correlated_with.md) *subsets*: (translator_minimal)
     * Description: holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
@@ -75,5 +75,5 @@ URI: [http://bioentity.io/vocab/PhenotypicFeature](http://bioentity.io/vocab/Phe
     * inherited from: [NamedThing](NamedThing.md)
  * [treated by](treated_by.md) *subsets*: (translator_minimal)
     * Description: holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition 
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * inherited from: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)

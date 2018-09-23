@@ -13,7 +13,7 @@
     biolink:classes ( biolink:Prefix biolink:Example biolink:Element biolink:Definition biolink:SlotDefinition biolink:ClassDefinition biolink:TypeDefinition biolink:SchemaDefinition ) ;
     biolink:default_curi_maps ( "obo_context" "monarch_context" "idot_context" "semweb_context" ) ;
     biolink:default_prefix "biolink" ;
-    biolink:generation_date "2018-09-20"^^xsd:date ;
+    biolink:generation_date "2018-09-23"^^xsd:date ;
     biolink:id "https://biolink.github.io/metamodel/ontology/meta.ttl" ;
     biolink:id_prefixes ( "rdf" "rdfs" "xsd" "skos" "OIO" ) ;
     biolink:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
@@ -25,7 +25,7 @@
                 biolink:prefix_uri "http://www.w3.org/2002/07/owl#" ] ) ;
     biolink:slots ( biolink:name biolink:singular_name biolink:description biolink:alt_descriptions biolink:note biolink:comment biolink:examples biolink:aliases biolink:in_subset biolink:from_schema biolink:flags biolink:see_also biolink:id_prefixes biolink:mappings biolink:is_a biolink:mixin biolink:mixins biolink:abstract biolink:local_names biolink:union_of biolink:values_from biolink:subclass_of biolink:symmetric biolink:id biolink:version biolink:imports biolink:license biolink:prefixes biolink:default_curi_maps biolink:default_prefix biolink:default_type biolink:types biolink:slot_definitions biolink:classes biolink:metamodel_version biolink:source_file biolink:source_file_date biolink:source_file_size biolink:generation_date biolink:defining_slots biolink:slots biolink:slot_usage biolink:apply_to biolink:entity biolink:multivalued biolink:domain biolink:range biolink:required biolink:inlined biolink:definitional biolink:object_property biolink:primary_key biolink:identifier biolink:alias biolink:path biolink:subproperty_of biolink:inverse biolink:is_class_field biolink:role biolink:inherited biolink:typeof biolink:value biolink:value_description biolink:local_name biolink:prefix_uri biolink:slot_definition_is_a biolink:slot_definition_mixins biolink:slot_definition_union_of biolink:class_definition_is_a biolink:class_definition_mixins biolink:class_definition_union_of ) ;
     biolink:source_file "/Users/hsolbri1/git/biolink/biolink-model/meta.yaml" ;
-    biolink:source_file_date "Wed Sep 19 16:06:46 2018" ;
+    biolink:source_file_date "Sun Sep 23 12:22:49 2018" ;
     biolink:source_file_size 18571 ;
     biolink:version "0.3.1" ;
     skos:definition "Metamodel for biolink schema" ;

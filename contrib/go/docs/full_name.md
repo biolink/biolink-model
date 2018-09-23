@@ -17,5 +17,5 @@ URI: [http://bioentity.io/vocab/full_name](slot_uri)
 
 ## Used in
 
- *  usage: [HasGenomicName](HasGenomicName.md)
  *  usage: [NamedThing](NamedThing.md)
+ *  usage: [HasGenomicName](HasGenomicName.md)
