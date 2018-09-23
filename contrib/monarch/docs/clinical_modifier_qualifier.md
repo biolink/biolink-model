@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/clinical_modifier_qualifier](slot_uri)
 
 ## Domain and Range
 
-None -> [ClinicalModifier](ClinicalModifier.md)
+[Association](Association.md) -> [ClinicalModifier](ClinicalModifier.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)

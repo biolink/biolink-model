@@ -10,7 +10,7 @@ URI: [http://bioentity.io/vocab/negatively_regulates_entity_to_entity](slot_uri)
  * [SEMMEDDB:INHIBITS](http://purl.obolibrary.org/obo/SEMMEDDB_INHIBITS)
 ## Domain and Range
 
-None -> **string**
+[MolecularEntity](MolecularEntity.md) -> [MolecularEntity](MolecularEntity.md)
 ## Inheritance
 
  *  is_a: [regulates, entity to entity](regulates_entity_to_entity.md) *subsets*: (translator_minimal)

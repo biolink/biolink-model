@@ -124,6 +124,7 @@ license: {be(self.schema.license)}
         @param defn: Class or Slot definition
         @param target: context target
         """
+        self.add_id_prefixes(defn)
         for mapping in defn.mappings:
             if '://' in mapping:
                 target['@id'] = mapping
