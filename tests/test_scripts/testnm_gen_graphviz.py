@@ -22,6 +22,7 @@ class GraphvizTestCase(ClickTestCase):
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_meta(self):
+        self.assertFalse(True)
         outdir = os.path.join(self.testdir_path, 'meta')
         os.makedirs(outdir, exist_ok=True)
         # ALL may be useful, but it is very time consuming

@@ -178,7 +178,7 @@ regen-mm:
 # TESTS
 # ----------------------------------------
 pytests:
-	python -m unittest
+	python -m unittest discover -p 'test_*.py'
 
 
 # ----------------------------------------
