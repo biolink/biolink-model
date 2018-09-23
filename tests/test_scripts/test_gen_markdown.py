@@ -34,11 +34,11 @@ class GenMarkdownTestCase(ClickTestCase):
     def test_issue_2(self):
         outdir = os.path.join(self.testdir_path, 'issue2')
         make_and_clear_directory(outdir)
-        testfile = os.path.join(outdir, 'images', 'example.png')
+        testfile = os.path.join(outdir, 'images', 'Example.png')
         if os.path.exists(testfile):
             os.remove(testfile)
         self.do_test(self.metamodel_file + f" -d {outdir} -c example -i ")
-        self.assertTrue(os.path.exists(os.path.join(outdir, 'images', 'example.png')))
+        self.assertTrue(os.path.exists(testfile))
         make_and_clear_directory(outdir)
 
 
