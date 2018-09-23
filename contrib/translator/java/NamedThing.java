@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -34,7 +36,7 @@ public class NamedThing {
      */
     @JsonProperty("category")
     @JsonPropertyDescription("Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag")
-    private String category;
+    private List<String> category = new ArrayList<String>();
     /**
      * a human-readable description of a thing
      * 
@@ -104,7 +106,7 @@ public class NamedThing {
      * 
      */
     @JsonProperty("category")
-    public String getCategory() {
+    public List<String> getCategory() {
         return category;
     }
 
@@ -113,7 +115,7 @@ public class NamedThing {
      * 
      */
     @JsonProperty("category")
-    public void setCategory(String category) {
+    public void setCategory(List<String> category) {
         this.category = category;
     }
 

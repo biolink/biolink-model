@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/EnvironmentalProcess](http://bioentity.io/vocab/EnvironmentalProcess)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EnvironmentalProcess|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_participant(i):string%20%3F;has_input(i):string%20%3F]-%20precedes(i)%20%3F>\[Occurrent],%20\[EnvironmentalProcess]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[EnvironmentalProcess]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EnvironmentalProcess]uses%20-.->\[Occurrent],%20\[PlanetaryEntity]^-\[EnvironmentalProcess])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EnvironmentalProcess|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20precedes(i)%20%3F>\[Occurrent],%20\[EnvironmentalProcess]-%20has%20input(i)%20%3F>\[NamedThing],%20\[EnvironmentalProcess]-%20has%20participant(i)%20%3F>\[NamedThing],%20\[EnvironmentalProcess]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[EnvironmentalProcess]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EnvironmentalProcess]uses%20-.->\[Occurrent],%20\[PlanetaryEntity]^-\[EnvironmentalProcess])
 ## Mappings
 
  * [ENVO:02500000](http://purl.obolibrary.org/obo/ENVO_02500000)
@@ -19,7 +19,7 @@ URI: [http://bioentity.io/vocab/EnvironmentalProcess](http://bioentity.io/vocab/
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing
@@ -35,11 +35,11 @@ URI: [http://bioentity.io/vocab/EnvironmentalProcess](http://bioentity.io/vocab/
     * inherited from: [NamedThing](NamedThing.md)
  * [has input](has_input.md) *subsets*: (translator_minimal)
     * Description: holds between a process and a continuant, where the continuant is an input into the process
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * inherited from: [Occurrent](Occurrent.md)
  * [has participant](has_participant.md) *subsets*: (translator_minimal)
     * Description: holds between a process and a continuant, where the continuant is somehow involved in the process 
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * inherited from: [Occurrent](Occurrent.md)
  * [has synonym](has_synonym.md)
     * Description: Alternate labels for an entity

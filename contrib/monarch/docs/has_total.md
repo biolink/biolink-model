@@ -18,5 +18,5 @@ URI: [http://bioentity.io/vocab/has_total](slot_uri)
  *  child: [variant to population association.has total](variant_to_population_association_has_total.md)
 ## Used in
 
- *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
  *  usage: [FrequencyQuantifier](FrequencyQuantifier.md)
+ *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

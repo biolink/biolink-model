@@ -21,12 +21,12 @@ URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
 
  *  class: **[DiseaseToThingAssociation](DiseaseToThingAssociation.md)** *[disease to thing association.subject](disease_to_thing_association_subject.md)* **[Disease](Disease.md)**
  *  class: **[EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)** *[entity to disease association.object](entity_to_disease_association_object.md)* **[Disease](Disease.md)**
- *  class: **None** *[manifestation of](manifestation_of.md)* **[Disease](Disease.md)**
+ *  class: **[NamedThing](NamedThing.md)** *[manifestation of](manifestation_of.md)* **[Disease](Disease.md)**
 ## Fields
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [correlated with](correlated_with.md) *subsets*: (translator_minimal)
     * Description: holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
@@ -78,5 +78,5 @@ URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
     * inherited from: [NamedThing](NamedThing.md)
  * [treated by](treated_by.md) *subsets*: (translator_minimal)
     * Description: holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition 
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * inherited from: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)

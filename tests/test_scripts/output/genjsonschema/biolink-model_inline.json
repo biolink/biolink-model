@@ -140,7 +140,10 @@
       },
       "category": {
          "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "causes": {
          "description": "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other",

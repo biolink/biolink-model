@@ -5,7 +5,7 @@ An relationship between a cell line and another entity
 
 URI: [http://bioentity.io/vocab/CellLineToThingAssociation](http://bioentity.io/vocab/CellLineToThingAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[CellLineToThingAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F;subject_taxon_closure_label(i):string%20*;object_taxon_closure_label(i):string%20*;has_evidence(i):evidence_instance%20%3F;negated(i):boolean%20%3F;object(i):string;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[CellLineToThingAssociation]-%20publications(i)%20*>\[Publication],%20\[CellLineToThingAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[CellLineToThingAssociation]-%20relation(i)>\[RelationshipType],%20\[CellLineToThingAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[CellLineToThingAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[CellLineToThingAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[CellLineToThingAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[CellLineToThingAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[CellLineToThingAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[CellLineToThingAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[CellLineToThingAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[CellLineToThingAssociation]-%20subject>\[CellLine],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[CellLineToThingAssociation],%20\[Association]^-\[CellLineToThingAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[CellLineToThingAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F;subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*;has_evidence(i):evidence_instance%20%3F;negated(i):boolean%20%3F;object(i):string;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[CellLineToThingAssociation]-%20publications(i)%20*>\[Publication],%20\[CellLineToThingAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[CellLineToThingAssociation]-%20relation(i)>\[RelationshipType],%20\[CellLineToThingAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[CellLineToThingAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[CellLineToThingAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[CellLineToThingAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[CellLineToThingAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[CellLineToThingAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[CellLineToThingAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[CellLineToThingAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[CellLineToThingAssociation]-%20subject>\[CellLine],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[CellLineToThingAssociation],%20\[Association]^-\[CellLineToThingAssociation])
 ## Mappings
 
 ## Inheritance
@@ -32,7 +32,7 @@ URI: [http://bioentity.io/vocab/CellLineToThingAssociation](http://bioentity.io/
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing
@@ -88,7 +88,7 @@ URI: [http://bioentity.io/vocab/CellLineToThingAssociation](http://bioentity.io/
     * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
  * [object taxon closure label](object_taxon_closure_label.md)
     * Description: The label for the taxon class or ancestor class for the object
-    * range: **string***
+    * range: [LabelType](LabelType.md)*
     * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
  * [object taxon label](object_taxon_label.md)
     * range: label
@@ -123,7 +123,7 @@ URI: [http://bioentity.io/vocab/CellLineToThingAssociation](http://bioentity.io/
     * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
  * [subject taxon closure label](subject_taxon_closure_label.md)
     * Description: The label for the taxon class or ancestor class for the subject
-    * range: **string***
+    * range: [LabelType](LabelType.md)*
     * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
  * [subject taxon label](subject_taxon_label.md)
     * range: label

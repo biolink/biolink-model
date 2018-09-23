@@ -6,11 +6,10 @@ holds between a material entity and a material entity or site within which it is
 URI: [http://bioentity.io/vocab/located_in](slot_uri)
 ## Mappings
 
- * [BFO:0000066](http://purl.obolibrary.org/obo/BFO_0000066)
- * [WD:276](http://purl.obolibrary.org/obo/WD_276)
+ * [RO:0001025](http://purl.obolibrary.org/obo/RO_0001025)
 ## Domain and Range
 
-None -> **string**
+[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)

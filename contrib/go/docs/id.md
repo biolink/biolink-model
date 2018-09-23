@@ -20,5 +20,5 @@ URI: [http://bioentity.io/vocab/id](slot_uri)
 ## Used in
 
  *  usage: [SequenceVariant](SequenceVariant.md)
- *  usage: [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)
  *  usage: [NamedThing](NamedThing.md)
+ *  usage: [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)

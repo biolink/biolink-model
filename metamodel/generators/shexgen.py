@@ -106,7 +106,7 @@ class ShExGenerator(Generator):
         rng = IRIREF(META.SlotRangeTypes) if slot.range == 'anytype' else\
               self._type_constraint(slot.range) if slot.range and slot.range not in self.schema.classes else\
               self._shapeIRI(slot.range)
-        name_base = ("XSD_" + slot.range) if isinstance(rng, NodeConstraint) else str(rng)
+        name_base = ("XSD_" + self.grounded_slot_range(slot.range)) if isinstance(rng, NodeConstraint) else str(rng)
         constraint.valueExpr = self.gen_multivalued_slot(name_base, rng) if slot.multivalued else rng
 
     def gen_multivalued_slot(self, target_name_base: str, target_type: IRIREF) -> IRIREF:

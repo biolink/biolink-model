@@ -15,8 +15,8 @@ URI: [http://bioentity.io/vocab/correlated_with](slot_uri)
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [biomarker for](biomarker_for.md) *subsets*: (translator_minimal)
  *  child: [has biomarker](has_biomarker.md) *subsets*: (translator_minimal)
+ *  child: [biomarker for](biomarker_for.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
