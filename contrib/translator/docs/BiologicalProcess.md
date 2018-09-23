@@ -5,7 +5,7 @@ One or more causally connected executions of molecular functions
 
 URI: [http://bioentity.io/vocab/BiologicalProcess](http://bioentity.io/vocab/BiologicalProcess)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalProcess|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_participant(i):string%20%3F;has_input(i):string%20%3F;has_phenotype(i):phenotype%20%3F]-%20precedes(i)%20%3F>\[Occurrent],%20\[BiologicalProcess]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[BiologicalProcess]-%20related%20to(i)%20%3F>\[NamedThing],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20object(i)>\[BiologicalProcess],%20\[BiologicalProcess]uses%20-.->\[Occurrent],%20\[BiologicalProcess]^-\[PhysiologicalProcess],%20\[BiologicalProcess]^-\[Pathway],%20\[BiologicalProcessOrActivity]^-\[BiologicalProcess])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalProcess|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20precedes(i)%20%3F>\[Occurrent],%20\[BiologicalProcess]-%20has%20input(i)%20%3F>\[NamedThing],%20\[BiologicalProcess]-%20has%20participant(i)%20%3F>\[NamedThing],%20\[BiologicalProcess]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[BiologicalProcess]-%20related%20to(i)%20%3F>\[NamedThing],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20object(i)>\[BiologicalProcess],%20\[BiologicalProcess]uses%20-.->\[Occurrent],%20\[BiologicalProcess]^-\[PhysiologicalProcess],%20\[BiologicalProcess]^-\[Pathway],%20\[BiologicalProcessOrActivity]^-\[BiologicalProcess])
 ## Mappings
 
  * [GO:0008150](http://purl.obolibrary.org/obo/GO_0008150)
@@ -26,7 +26,7 @@ URI: [http://bioentity.io/vocab/BiologicalProcess](http://bioentity.io/vocab/Bio
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing
@@ -38,11 +38,11 @@ URI: [http://bioentity.io/vocab/BiologicalProcess](http://bioentity.io/vocab/Bio
     * inherited from: [NamedThing](NamedThing.md)
  * [has input](has_input.md) *subsets*: (translator_minimal)
     * Description: holds between a process and a continuant, where the continuant is an input into the process
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * inherited from: [Occurrent](Occurrent.md)
  * [has participant](has_participant.md) *subsets*: (translator_minimal)
     * Description: holds between a process and a continuant, where the continuant is somehow involved in the process 
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * inherited from: [Occurrent](Occurrent.md)
  * [has phenotype](has_phenotype.md) *subsets*: (translator_minimal)
     * Description: holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). 

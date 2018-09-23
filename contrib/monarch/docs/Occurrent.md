@@ -5,7 +5,7 @@ A processual entity
 
 URI: [http://bioentity.io/vocab/Occurrent](http://bioentity.io/vocab/Occurrent)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Occurrent]-%20precedes%20%3F>\[Occurrent],%20\[Occurrent]-%20has%20input%20%3F>\[NamedThing],%20\[Occurrent]-%20has%20participant%20%3F>\[NamedThing],%20\[Occurrent]-%20regulates,%20process%20to%20process%20%3F>\[Occurrent],%20\[NamedThing]-%20actively%20involved%20in(i)%20%3F>\[Occurrent],%20\[NamedThing]-%20capable%20of(i)%20%3F>\[Occurrent],%20\[Occurrent]-%20negatively%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[NamedThing]-%20participates%20in(i)%20%3F>\[Occurrent],%20\[Occurrent]-%20positively%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[Occurrent]-%20precedes%20%3F>\[Occurrent],%20\[Occurrent]-%20regulates,%20process%20to%20process%20%3F>\[Occurrent],%20\[MolecularActivity]uses%20-.->\[Occurrent],%20\[EnvironmentalProcess]uses%20-.->\[Occurrent],%20\[BiologicalProcess]uses%20-.->\[Occurrent],%20\[Occurrent]^-\[Procedure],%20\[Occurrent]^-\[Phenomenon],%20\[Occurrent]^-\[ActivityAndBehavior],%20\[NamedThing]^-\[Occurrent])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Occurrent]-%20precedes%20%3F>\[Occurrent],%20\[Occurrent]-%20has%20input%20%3F>\[NamedThing],%20\[Occurrent]-%20has%20participant%20%3F>\[NamedThing],%20\[Occurrent]-%20regulates,%20process%20to%20process%20%3F>\[Occurrent],%20\[NamedThing]-%20actively%20involved%20in(i)%20%3F>\[Occurrent],%20\[NamedThing]-%20capable%20of(i)%20%3F>\[Occurrent],%20\[Occurrent]-%20negatively%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[NamedThing]-%20participates%20in(i)%20%3F>\[Occurrent],%20\[Occurrent]-%20positively%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[Occurrent]-%20precedes%20%3F>\[Occurrent],%20\[Occurrent]-%20regulates,%20process%20to%20process%20%3F>\[Occurrent],%20\[MolecularActivity]uses%20-.->\[Occurrent],%20\[EnvironmentalProcess]uses%20-.->\[Occurrent],%20\[BiologicalProcess]uses%20-.->\[Occurrent],%20\[Occurrent]^-\[Procedure],%20\[Occurrent]^-\[Phenomenon],%20\[Occurrent]^-\[ActivityAndBehavior],%20\[NamedThing]^-\[Occurrent])
 ## Mappings
 
  * [BFO:0000003](http://purl.obolibrary.org/obo/BFO_0000003)
@@ -49,7 +49,7 @@ URI: [http://bioentity.io/vocab/Occurrent](http://bioentity.io/vocab/Occurrent)
     * __Local__
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

@@ -5,7 +5,7 @@ Used to characterize and specify the phenotypic abnormalities defined in the Phe
 
 URI: [http://bioentity.io/vocab/ClinicalModifier](http://bioentity.io/vocab/ClinicalModifier)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ClinicalModifier|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[ClinicalModifier]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Attribute]^-\[ClinicalModifier])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ClinicalModifier|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[ClinicalModifier]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Association]-%20clinical%20modifier%20qualifier(i)%20%3F>\[ClinicalModifier],%20\[Attribute]^-\[ClinicalModifier])
 ## Mappings
 
  * [HP:0012823](http://purl.obolibrary.org/obo/HP_0012823)
@@ -16,12 +16,12 @@ URI: [http://bioentity.io/vocab/ClinicalModifier](http://bioentity.io/vocab/Clin
 
 ## Used in
 
- *  class: **None** *[clinical modifier qualifier](clinical_modifier_qualifier.md)* **[ClinicalModifier](ClinicalModifier.md)**
+ *  class: **[Association](Association.md)** *[clinical modifier qualifier](clinical_modifier_qualifier.md)* **[ClinicalModifier](ClinicalModifier.md)**
 ## Fields
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

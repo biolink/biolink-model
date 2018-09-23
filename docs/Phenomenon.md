@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/Phenomenon](http://bioentity.io/vocab/Phenomenon
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing
@@ -30,11 +30,11 @@ URI: [http://bioentity.io/vocab/Phenomenon](http://bioentity.io/vocab/Phenomenon
     * inherited from: [NamedThing](NamedThing.md)
  * [has input](has_input.md) *subsets*: (translator_minimal)
     * Description: holds between a process and a continuant, where the continuant is an input into the process
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * inherited from: [Occurrent](Occurrent.md)
  * [has participant](has_participant.md) *subsets*: (translator_minimal)
     * Description: holds between a process and a continuant, where the continuant is somehow involved in the process 
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * inherited from: [Occurrent](Occurrent.md)
  * [id](id.md) *subsets*: (translator_minimal)
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI

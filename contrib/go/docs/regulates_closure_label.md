@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/regulates_closure_label](slot_uri)
 
 ## Domain and Range
 
-[GoTermBioentityMixin](GoTermBioentityMixin.md) -> **string**
+[GoTermBioentityMixin](GoTermBioentityMixin.md) -> [LabelType](LabelType.md)
 ## Inheritance
 
  *  is_a: [closure label slot](closure_label_slot.md)

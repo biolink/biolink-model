@@ -9,7 +9,7 @@ URI: [http://bioentity.io/vocab/negatively_regulates](slot_uri)
  * [WD:P128](http://purl.obolibrary.org/obo/WD_P128)
 ## Domain and Range
 
-None -> **string**
+[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
 ## Inheritance
 
  *  is_a: [regulates](regulates.md) *subsets*: (translator_minimal)
