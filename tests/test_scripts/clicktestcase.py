@@ -73,7 +73,7 @@ class ClickTestCase(unittest.TestCase):
         @param error: If present, we expect this error
         @param filtr: Filter to remove date and app specific information from text
         @param tox_wrap_fix: tox seems to wrap redirected output at 60 columns.  If true, try wrapping the test
-        file before failint
+        file before failing
         @param bypass_soft_compare: True means not to use the class level soft compare
         """
         testfile_path = os.path.join(self.testdir_path, testfile)
