@@ -8,9 +8,10 @@ URI: [http://bioentity.io/vocab/location_of](slot_uri)
 
  * [RO:0001015](http://purl.obolibrary.org/obo/RO_0001015)
  * [SEMMEDDB:LOCATION_OF](http://purl.obolibrary.org/obo/SEMMEDDB_LOCATION_OF)
+ * [WD:276](http://purl.obolibrary.org/obo/WD_276)
 ## Domain and Range
 
-None -> **string**
+[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)

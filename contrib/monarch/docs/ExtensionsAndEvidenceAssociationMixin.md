@@ -5,7 +5,7 @@ An injected mixing that adds additional fields to association objects. This is a
 
 URI: [http://bioentity.io/vocab/ExtensionsAndEvidenceAssociationMixin](http://bioentity.io/vocab/ExtensionsAndEvidenceAssociationMixin)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ExtensionsAndEvidenceAssociationMixin|subject_extensions:string%20*;has_evidence:evidence_instance%20%3F;subject_taxon_closure_label(i):string%20*;object_taxon_closure_label(i):string%20*]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[ExtensionsAndEvidenceAssociationMixin]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[ExtensionsAndEvidenceAssociationMixin]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[ExtensionsAndEvidenceAssociationMixin]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[ExtensionsAndEvidenceAssociationMixin]-%20has%20evidence%20type%20%3F>\[EvidenceType],%20\[ExtensionsAndEvidenceAssociationMixin]-%20object%20extensions%20*>\[PropertyValuePair],%20\[ExtensionsAndEvidenceAssociationMixin]uses%20-.->\[TaxonClosureMixin],%20\[Association]uses%20-.->\[ExtensionsAndEvidenceAssociationMixin])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ExtensionsAndEvidenceAssociationMixin|has_evidence:evidence_instance%20%3F;subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[ExtensionsAndEvidenceAssociationMixin]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[ExtensionsAndEvidenceAssociationMixin]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[ExtensionsAndEvidenceAssociationMixin]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[ExtensionsAndEvidenceAssociationMixin]-%20has%20evidence%20type%20%3F>\[EvidenceType],%20\[ExtensionsAndEvidenceAssociationMixin]-%20object%20extensions%20*>\[PropertyValuePair],%20\[ExtensionsAndEvidenceAssociationMixin]-%20subject%20extensions%20*>\[PropertyValuePair],%20\[ExtensionsAndEvidenceAssociationMixin]uses%20-.->\[TaxonClosureMixin],%20\[Association]uses%20-.->\[ExtensionsAndEvidenceAssociationMixin])
 ## Mappings
 
 ## Inheritance
@@ -36,7 +36,7 @@ URI: [http://bioentity.io/vocab/ExtensionsAndEvidenceAssociationMixin](http://bi
     * __Local__
  * [subject extensions](subject_extensions.md)
     * Description: Additional relationships that are true of the subject in the context of the association. For example, if the subject is a gene product in a functional association, the subject extensions may represent  an isoform or a specific post-translational state
-    * range: **string***
+    * range: [PropertyValuePair](PropertyValuePair.md)*
     * __Local__
  * [object taxon](object_taxon.md)
     * Description: the taxonomic class of the entity in the object slot
@@ -48,7 +48,7 @@ URI: [http://bioentity.io/vocab/ExtensionsAndEvidenceAssociationMixin](http://bi
     * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
  * [object taxon closure label](object_taxon_closure_label.md)
     * Description: The label for the taxon class or ancestor class for the object
-    * range: **string***
+    * range: [LabelType](LabelType.md)*
     * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
  * [object taxon label](object_taxon_label.md)
     * range: label
@@ -63,7 +63,7 @@ URI: [http://bioentity.io/vocab/ExtensionsAndEvidenceAssociationMixin](http://bi
     * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
  * [subject taxon closure label](subject_taxon_closure_label.md)
     * Description: The label for the taxon class or ancestor class for the subject
-    * range: **string***
+    * range: [LabelType](LabelType.md)*
     * inherited from: [TaxonClosureMixin](TaxonClosureMixin.md)
  * [subject taxon label](subject_taxon_label.md)
     * range: label

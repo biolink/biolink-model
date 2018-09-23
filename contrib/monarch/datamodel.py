@@ -1,5 +1,5 @@
 # Auto generated from contrib/monarch.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-07-10 09:36
+# Generation date: 2018-09-23 10:49
 # Schema: monarch biolink extensions
 #
 # id: http://bioentity.io/json-schema/biolink/contrib/monarch.json
@@ -657,7 +657,7 @@ class NamedThing(YAMLRoot):
     """
     id: NamedThingId
     name: Optional[LabelType] = None
-    category: Optional[LabelType] = None
+    category: List[LabelType] = empty_list()
     has_alternate_identifier: List[identifier] = empty_list()
     has_xref: List[identifier] = empty_list()
     has_synonym: List[name] = empty_list()
@@ -672,8 +672,8 @@ class NamedThing(YAMLRoot):
         super()._fix_elements()
         if self.name and not isinstance(self.name, LabelType):
             self.name = LabelType(self.name)
-        if self.category and not isinstance(self.category, LabelType):
-            self.category = LabelType(self.category)
+        self.category = [v if isinstance(v, LabelType)
+                         else LabelType(v) for v in self.category]
         if self.related_to and not isinstance(self.related_to, NamedThingId):
             self.related_to = NamedThingId(self.related_to)
         if self.iri and not isinstance(self.iri, IriType):
@@ -811,7 +811,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
     id: DiseaseOrPhenotypicFeatureId = None
     correlated_with: Optional[MolecularEntityId] = None
     has_biomarker: Optional[MolecularEntityId] = None
-    treated_by: Optional[str] = None
+    treated_by: Optional[NamedThingId] = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -823,6 +823,8 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
             self.correlated_with = MolecularEntityId(self.correlated_with)
         if self.has_biomarker and not isinstance(self.has_biomarker, MolecularEntityId):
             self.has_biomarker = MolecularEntityId(self.has_biomarker)
+        if self.treated_by and not isinstance(self.treated_by, NamedThingId):
+            self.treated_by = NamedThingId(self.treated_by)
 
 
 @dataclass
@@ -946,6 +948,54 @@ class MolecularEntity(BiologicalEntity):
     """
     id: MolecularEntityId = None
     molecularly_interacts_with: Optional[MolecularEntityId] = None
+    affects_abundance_of: Optional[MolecularEntityId] = None
+    increases_abundance_of: Optional[MolecularEntityId] = None
+    decreases_abundance_of: Optional[MolecularEntityId] = None
+    affects_activity_of: Optional[MolecularEntityId] = None
+    increases_activity_of: Optional[MolecularEntityId] = None
+    decreases_activity_of: Optional[MolecularEntityId] = None
+    affects_expression_of: Optional[GenomicEntityId] = None
+    increases_expression_of: Optional[GenomicEntityId] = None
+    decreases_expression_of: Optional[GenomicEntityId] = None
+    affects_folding_of: Optional[MolecularEntityId] = None
+    increases_folding_of: Optional[MolecularEntityId] = None
+    decreases_folding_of: Optional[MolecularEntityId] = None
+    affects_localization_of: Optional[MolecularEntityId] = None
+    increases_localization_of: Optional[MolecularEntityId] = None
+    decreases_localization_of: Optional[MolecularEntityId] = None
+    affects_metabolic_processing_of: Optional[MolecularEntityId] = None
+    increases_metabolic_processing_of: Optional[MolecularEntityId] = None
+    decreases_metabolic_processing_of: Optional[MolecularEntityId] = None
+    affects_molecular_modification_of: Optional[MolecularEntityId] = None
+    increases_molecular_modification_of: Optional[MolecularEntityId] = None
+    decreases_molecular_modification_of: Optional[MolecularEntityId] = None
+    affects_synthesis_of: Optional[MolecularEntityId] = None
+    increases_synthesis_of: Optional[MolecularEntityId] = None
+    decreases_synthesis_of: Optional[MolecularEntityId] = None
+    affects_degradation_of: Optional[MolecularEntityId] = None
+    increases_degradation_of: Optional[MolecularEntityId] = None
+    decreases_degradation_of: Optional[MolecularEntityId] = None
+    affects_mutation_rate_of: Optional[GenomicEntityId] = None
+    increases_mutation_rate_of: Optional[GenomicEntityId] = None
+    decreases_mutation_rate_of: Optional[GenomicEntityId] = None
+    affects_response_to: Optional[MolecularEntityId] = None
+    increases_response_to: Optional[MolecularEntityId] = None
+    decreases_response_to: Optional[MolecularEntityId] = None
+    affects_splicing_of: Optional[TranscriptId] = None
+    increases_splicing_of: Optional[TranscriptId] = None
+    decreases_splicing_of: Optional[TranscriptId] = None
+    affects_stability_of: Optional[MolecularEntityId] = None
+    increases_stability_of: Optional[MolecularEntityId] = None
+    decreases_stability_of: Optional[MolecularEntityId] = None
+    affects_transport_of: Optional[MolecularEntityId] = None
+    increases_transport_of: Optional[MolecularEntityId] = None
+    decreases_transport_of: Optional[MolecularEntityId] = None
+    affects_secretion_of: Optional[MolecularEntityId] = None
+    increases_secretion_of: Optional[MolecularEntityId] = None
+    decreases_secretion_of: Optional[MolecularEntityId] = None
+    affects_uptake_of: Optional[MolecularEntityId] = None
+    increases_uptake_of: Optional[MolecularEntityId] = None
+    decreases_uptake_of: Optional[MolecularEntityId] = None
     regulates_entity_to_entity: Optional[MolecularEntityId] = None
     biomarker_for: Optional[DiseaseOrPhenotypicFeatureId] = None
 
@@ -957,6 +1007,102 @@ class MolecularEntity(BiologicalEntity):
             self.id = MolecularEntityId(self.id)
         if self.molecularly_interacts_with and not isinstance(self.molecularly_interacts_with, MolecularEntityId):
             self.molecularly_interacts_with = MolecularEntityId(self.molecularly_interacts_with)
+        if self.affects_abundance_of and not isinstance(self.affects_abundance_of, MolecularEntityId):
+            self.affects_abundance_of = MolecularEntityId(self.affects_abundance_of)
+        if self.increases_abundance_of and not isinstance(self.increases_abundance_of, MolecularEntityId):
+            self.increases_abundance_of = MolecularEntityId(self.increases_abundance_of)
+        if self.decreases_abundance_of and not isinstance(self.decreases_abundance_of, MolecularEntityId):
+            self.decreases_abundance_of = MolecularEntityId(self.decreases_abundance_of)
+        if self.affects_activity_of and not isinstance(self.affects_activity_of, MolecularEntityId):
+            self.affects_activity_of = MolecularEntityId(self.affects_activity_of)
+        if self.increases_activity_of and not isinstance(self.increases_activity_of, MolecularEntityId):
+            self.increases_activity_of = MolecularEntityId(self.increases_activity_of)
+        if self.decreases_activity_of and not isinstance(self.decreases_activity_of, MolecularEntityId):
+            self.decreases_activity_of = MolecularEntityId(self.decreases_activity_of)
+        if self.affects_expression_of and not isinstance(self.affects_expression_of, GenomicEntityId):
+            self.affects_expression_of = GenomicEntityId(self.affects_expression_of)
+        if self.increases_expression_of and not isinstance(self.increases_expression_of, GenomicEntityId):
+            self.increases_expression_of = GenomicEntityId(self.increases_expression_of)
+        if self.decreases_expression_of and not isinstance(self.decreases_expression_of, GenomicEntityId):
+            self.decreases_expression_of = GenomicEntityId(self.decreases_expression_of)
+        if self.affects_folding_of and not isinstance(self.affects_folding_of, MolecularEntityId):
+            self.affects_folding_of = MolecularEntityId(self.affects_folding_of)
+        if self.increases_folding_of and not isinstance(self.increases_folding_of, MolecularEntityId):
+            self.increases_folding_of = MolecularEntityId(self.increases_folding_of)
+        if self.decreases_folding_of and not isinstance(self.decreases_folding_of, MolecularEntityId):
+            self.decreases_folding_of = MolecularEntityId(self.decreases_folding_of)
+        if self.affects_localization_of and not isinstance(self.affects_localization_of, MolecularEntityId):
+            self.affects_localization_of = MolecularEntityId(self.affects_localization_of)
+        if self.increases_localization_of and not isinstance(self.increases_localization_of, MolecularEntityId):
+            self.increases_localization_of = MolecularEntityId(self.increases_localization_of)
+        if self.decreases_localization_of and not isinstance(self.decreases_localization_of, MolecularEntityId):
+            self.decreases_localization_of = MolecularEntityId(self.decreases_localization_of)
+        if self.affects_metabolic_processing_of and not isinstance(self.affects_metabolic_processing_of, MolecularEntityId):
+            self.affects_metabolic_processing_of = MolecularEntityId(self.affects_metabolic_processing_of)
+        if self.increases_metabolic_processing_of and not isinstance(self.increases_metabolic_processing_of, MolecularEntityId):
+            self.increases_metabolic_processing_of = MolecularEntityId(self.increases_metabolic_processing_of)
+        if self.decreases_metabolic_processing_of and not isinstance(self.decreases_metabolic_processing_of, MolecularEntityId):
+            self.decreases_metabolic_processing_of = MolecularEntityId(self.decreases_metabolic_processing_of)
+        if self.affects_molecular_modification_of and not isinstance(self.affects_molecular_modification_of, MolecularEntityId):
+            self.affects_molecular_modification_of = MolecularEntityId(self.affects_molecular_modification_of)
+        if self.increases_molecular_modification_of and not isinstance(self.increases_molecular_modification_of, MolecularEntityId):
+            self.increases_molecular_modification_of = MolecularEntityId(self.increases_molecular_modification_of)
+        if self.decreases_molecular_modification_of and not isinstance(self.decreases_molecular_modification_of, MolecularEntityId):
+            self.decreases_molecular_modification_of = MolecularEntityId(self.decreases_molecular_modification_of)
+        if self.affects_synthesis_of and not isinstance(self.affects_synthesis_of, MolecularEntityId):
+            self.affects_synthesis_of = MolecularEntityId(self.affects_synthesis_of)
+        if self.increases_synthesis_of and not isinstance(self.increases_synthesis_of, MolecularEntityId):
+            self.increases_synthesis_of = MolecularEntityId(self.increases_synthesis_of)
+        if self.decreases_synthesis_of and not isinstance(self.decreases_synthesis_of, MolecularEntityId):
+            self.decreases_synthesis_of = MolecularEntityId(self.decreases_synthesis_of)
+        if self.affects_degradation_of and not isinstance(self.affects_degradation_of, MolecularEntityId):
+            self.affects_degradation_of = MolecularEntityId(self.affects_degradation_of)
+        if self.increases_degradation_of and not isinstance(self.increases_degradation_of, MolecularEntityId):
+            self.increases_degradation_of = MolecularEntityId(self.increases_degradation_of)
+        if self.decreases_degradation_of and not isinstance(self.decreases_degradation_of, MolecularEntityId):
+            self.decreases_degradation_of = MolecularEntityId(self.decreases_degradation_of)
+        if self.affects_mutation_rate_of and not isinstance(self.affects_mutation_rate_of, GenomicEntityId):
+            self.affects_mutation_rate_of = GenomicEntityId(self.affects_mutation_rate_of)
+        if self.increases_mutation_rate_of and not isinstance(self.increases_mutation_rate_of, GenomicEntityId):
+            self.increases_mutation_rate_of = GenomicEntityId(self.increases_mutation_rate_of)
+        if self.decreases_mutation_rate_of and not isinstance(self.decreases_mutation_rate_of, GenomicEntityId):
+            self.decreases_mutation_rate_of = GenomicEntityId(self.decreases_mutation_rate_of)
+        if self.affects_response_to and not isinstance(self.affects_response_to, MolecularEntityId):
+            self.affects_response_to = MolecularEntityId(self.affects_response_to)
+        if self.increases_response_to and not isinstance(self.increases_response_to, MolecularEntityId):
+            self.increases_response_to = MolecularEntityId(self.increases_response_to)
+        if self.decreases_response_to and not isinstance(self.decreases_response_to, MolecularEntityId):
+            self.decreases_response_to = MolecularEntityId(self.decreases_response_to)
+        if self.affects_splicing_of and not isinstance(self.affects_splicing_of, TranscriptId):
+            self.affects_splicing_of = TranscriptId(self.affects_splicing_of)
+        if self.increases_splicing_of and not isinstance(self.increases_splicing_of, TranscriptId):
+            self.increases_splicing_of = TranscriptId(self.increases_splicing_of)
+        if self.decreases_splicing_of and not isinstance(self.decreases_splicing_of, TranscriptId):
+            self.decreases_splicing_of = TranscriptId(self.decreases_splicing_of)
+        if self.affects_stability_of and not isinstance(self.affects_stability_of, MolecularEntityId):
+            self.affects_stability_of = MolecularEntityId(self.affects_stability_of)
+        if self.increases_stability_of and not isinstance(self.increases_stability_of, MolecularEntityId):
+            self.increases_stability_of = MolecularEntityId(self.increases_stability_of)
+        if self.decreases_stability_of and not isinstance(self.decreases_stability_of, MolecularEntityId):
+            self.decreases_stability_of = MolecularEntityId(self.decreases_stability_of)
+        if self.affects_transport_of and not isinstance(self.affects_transport_of, MolecularEntityId):
+            self.affects_transport_of = MolecularEntityId(self.affects_transport_of)
+        if self.increases_transport_of and not isinstance(self.increases_transport_of, MolecularEntityId):
+            self.increases_transport_of = MolecularEntityId(self.increases_transport_of)
+        if self.decreases_transport_of and not isinstance(self.decreases_transport_of, MolecularEntityId):
+            self.decreases_transport_of = MolecularEntityId(self.decreases_transport_of)
+        if self.affects_secretion_of and not isinstance(self.affects_secretion_of, MolecularEntityId):
+            self.affects_secretion_of = MolecularEntityId(self.affects_secretion_of)
+        if self.increases_secretion_of and not isinstance(self.increases_secretion_of, MolecularEntityId):
+            self.increases_secretion_of = MolecularEntityId(self.increases_secretion_of)
+        if self.decreases_secretion_of and not isinstance(self.decreases_secretion_of, MolecularEntityId):
+            self.decreases_secretion_of = MolecularEntityId(self.decreases_secretion_of)
+        if self.affects_uptake_of and not isinstance(self.affects_uptake_of, MolecularEntityId):
+            self.affects_uptake_of = MolecularEntityId(self.affects_uptake_of)
+        if self.increases_uptake_of and not isinstance(self.increases_uptake_of, MolecularEntityId):
+            self.increases_uptake_of = MolecularEntityId(self.increases_uptake_of)
+        if self.decreases_uptake_of and not isinstance(self.decreases_uptake_of, MolecularEntityId):
+            self.decreases_uptake_of = MolecularEntityId(self.decreases_uptake_of)
         if self.regulates_entity_to_entity and not isinstance(self.regulates_entity_to_entity, MolecularEntityId):
             self.regulates_entity_to_entity = MolecularEntityId(self.regulates_entity_to_entity)
         if self.biomarker_for and not isinstance(self.biomarker_for, DiseaseOrPhenotypicFeatureId):
@@ -2701,8 +2847,8 @@ class Occurrent(NamedThing):
     """
     id: OccurrentId = None
     regulates_process_to_process: Optional[OccurrentId] = None
-    has_participant: Optional[str] = None
-    has_input: Optional[str] = None
+    has_participant: Optional[NamedThingId] = None
+    has_input: Optional[NamedThingId] = None
     precedes: Optional[OccurrentId] = None
 
     def _fix_elements(self):
@@ -2713,6 +2859,10 @@ class Occurrent(NamedThing):
             self.id = OccurrentId(self.id)
         if self.regulates_process_to_process and not isinstance(self.regulates_process_to_process, OccurrentId):
             self.regulates_process_to_process = OccurrentId(self.regulates_process_to_process)
+        if self.has_participant and not isinstance(self.has_participant, NamedThingId):
+            self.has_participant = NamedThingId(self.has_participant)
+        if self.has_input and not isinstance(self.has_input, NamedThingId):
+            self.has_input = NamedThingId(self.has_input)
         if self.precedes and not isinstance(self.precedes, OccurrentId):
             self.precedes = OccurrentId(self.precedes)
 

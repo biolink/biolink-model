@@ -14,8 +14,8 @@ None -> [OntologyClass](OntologyClass.md)
 ## Children
 
  *  child: [taxon closure slot](taxon_closure_slot.md)
- *  child: [regulates closure](regulates_closure.md)
- *  child: [isa partof closure](isa_partof_closure.md)
  *  child: [evidence object closure](evidence_object_closure.md)
+ *  child: [isa partof closure](isa_partof_closure.md)
+ *  child: [regulates closure](regulates_closure.md)
 ## Used in
 

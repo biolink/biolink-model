@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/PhysiologicalProcess](http://bioentity.io/vocab/
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing
@@ -30,11 +30,11 @@ URI: [http://bioentity.io/vocab/PhysiologicalProcess](http://bioentity.io/vocab/
     * inherited from: [NamedThing](NamedThing.md)
  * [has input](has_input.md) *subsets*: (translator_minimal)
     * Description: holds between a process and a continuant, where the continuant is an input into the process
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * inherited from: [Occurrent](Occurrent.md)
  * [has participant](has_participant.md) *subsets*: (translator_minimal)
     * Description: holds between a process and a continuant, where the continuant is somehow involved in the process 
-    * range: **string**
+    * range: [NamedThing](NamedThing.md)
     * inherited from: [Occurrent](Occurrent.md)
  * [has phenotype](has_phenotype.md) *subsets*: (translator_minimal)
     * Description: holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). 

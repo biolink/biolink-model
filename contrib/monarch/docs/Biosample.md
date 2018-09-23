@@ -5,7 +5,7 @@
 
 URI: [http://bioentity.io/vocab/Biosample](http://bioentity.io/vocab/Biosample)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Biosample|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Biosample]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[BiosampleToThingAssociation]-%20subject(i)>\[Biosample],%20\[Biosample]uses%20-.->\[ThingWithTaxon],%20\[Biosample]^-\[CellLine],%20\[OrganismalEntity]^-\[Biosample])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Biosample|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Biosample]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[BiosampleToThingAssociation]-%20subject(i)>\[Biosample],%20\[Biosample]uses%20-.->\[ThingWithTaxon],%20\[Biosample]^-\[CellLine],%20\[OrganismalEntity]^-\[Biosample])
 ## Mappings
 
  * [SIO:001050](http://semanticscience.org/resource/SIO_001050)
@@ -23,7 +23,7 @@ URI: [http://bioentity.io/vocab/Biosample](http://bioentity.io/vocab/Biosample)
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

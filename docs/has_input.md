@@ -10,7 +10,7 @@ URI: [http://bioentity.io/vocab/has_input](slot_uri)
  * [SEMMEDDB:USES](http://purl.obolibrary.org/obo/SEMMEDDB_USES)
 ## Domain and Range
 
-[Occurrent](Occurrent.md) -> **string**
+[Occurrent](Occurrent.md) -> [NamedThing](NamedThing.md)
 ## Inheritance
 
  *  is_a: [has participant](has_participant.md) *subsets*: (translator_minimal)

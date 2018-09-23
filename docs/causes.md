@@ -11,7 +11,7 @@ URI: [http://bioentity.io/vocab/causes](slot_uri)
  * [WD:P1542](http://purl.obolibrary.org/obo/WD_P1542)
 ## Domain and Range
 
-None -> **string**
+[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
 ## Inheritance
 
  *  is_a: [contributes to](contributes_to.md) *subsets*: (translator_minimal)

@@ -17,5 +17,5 @@ URI: [http://bioentity.io/vocab/title](slot_uri)
  *  child: [named graph.title](named_graph_title.md)
 ## Used in
 
- *  usage: [NamedGraph](NamedGraph.md)
  *  usage: [InformationContentEntity](InformationContentEntity.md)
+ *  usage: [NamedGraph](NamedGraph.md)

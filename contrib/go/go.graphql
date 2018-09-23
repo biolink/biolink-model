@@ -636,7 +636,7 @@ NamedThing type
   {
     id: String
     name: String
-    category: String
+    category: [String]
     relatedTo: NamedThing
     nodeProperty: String
     iri: String

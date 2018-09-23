@@ -1792,6 +1792,7 @@
         "translator_minimal"
       ],
       "is_a": "node_property",
+      "multivalued": true,
       "domain": "NamedThing",
       "range": "label_type",
       "is_class_field": true,
@@ -3973,6 +3974,7 @@
       "name": "IndividualOrganism",
       "mappings": [
         "SIO:010000",
+        "UMLSSG:LIVB",
         "WD:Q795052"
       ],
       "is_a": "OrganismalEntity",
@@ -6578,9 +6580,9 @@
   ],
   "metamodel_version": "0.3.1",
   "source_file": "/Users/hsolbri1/git/biolink/biolink-model/biolink-model.yaml",
-  "source_file_size": 97996,
-  "source_file_date": "Wed Sep 19 10:47:11 2018",
-  "generation_date": "2018-09-19 17:05",
+  "source_file_size": 98038,
+  "source_file_date": "Thu Sep 20 11:43:05 2018",
+  "generation_date": "2018-09-23 10:51",
   "@context": [
     "file:///Users/hsolbri1/git/biolink/biolink-model/tests/test_scripts/output/genjsonld/metacontext.jsonld",
     {

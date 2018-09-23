@@ -15,8 +15,8 @@ URI: [http://bioentity.io/vocab/regulates_entity_to_entity](slot_uri)
  *  is_a: [regulates](regulates.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [positively regulates, entity to entity](positively_regulates_entity_to_entity.md) *subsets*: (translator_minimal)
  *  child: [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.md) *subsets*: (translator_minimal)
+ *  child: [positively regulates, entity to entity](positively_regulates_entity_to_entity.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [MolecularEntity](MolecularEntity.md)

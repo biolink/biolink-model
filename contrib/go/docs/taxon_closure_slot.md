@@ -14,7 +14,7 @@ None -> [OrganismTaxon](OrganismTaxon.md)
  *  is_a: [closure concept slot](closure_concept_slot.md)
 ## Children
 
- *  child: [subject taxon closure](subject_taxon_closure.md)
  *  child: [object taxon closure](object_taxon_closure.md)
+ *  child: [subject taxon closure](subject_taxon_closure.md)
 ## Used in
 

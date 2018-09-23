@@ -1,0 +1,827 @@
+{
+   "comments": "Auto generated from biolink-model.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-09-23 10:50\nSchema: biolink model\n\nid: https://biolink.github.io/biolink-model/ontology/biolink.ttl\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "@context": {
+      "biolink": "http://bioentity.io/vocab/",
+      "OBAN": "http://purl.org/oban/",
+      "SIO": "http://semanticscience.org/resource/SIO_",
+      "wgs": "http://www.w3.org/2003/01/geo/wgs84_pos",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "skos": "https://www.w3.org/TR/skos-reference/#",
+      "OIO": "http://www.geneontology.org/formats/oboInOwl#",
+      "@vocab": "http://bioentity.io/vocab/",
+      "@base": "http://bioentity.io/vocab/",
+      "UMLSSG": "http://example.org/unknown/UMLSSG/",
+      "WD": "http://example.org/unknown/WD/",
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "GO": "http://purl.obolibrary.org/obo/GO_",
+      "CL": "http://purl.obolibrary.org/obo/CL_",
+      "CLO": "http://purl.obolibrary.org/obo/CLO_",
+      "SO": "http://purl.obolibrary.org/obo/SO_",
+      "CIO": "http://purl.obolibrary.org/obo/CIO_",
+      "MONDO": "http://purl.obolibrary.org/obo/MONDO_",
+      "NCIT": "http://purl.obolibrary.org/obo/NCIT_",
+      "CHEBI": "http://purl.obolibrary.org/obo/CHEBI_",
+      "ECTO": "http://example.org/unknown/ECTO/",
+      "ECO": "http://purl.obolibrary.org/obo/ECO_",
+      "faldo": "http://biohackathon.org/resource/faldo#",
+      "GENO": "http://purl.obolibrary.org/obo/GENO_",
+      "UBERON": "http://purl.obolibrary.org/obo/UBERON_",
+      "VMC": "http://example.org/unknown/VMC/",
+      "IAO": "http://purl.obolibrary.org/obo/IAO_",
+      "BFO": "http://purl.obolibrary.org/obo/BFO_",
+      "HP": "http://purl.obolibrary.org/obo/HP_",
+      "PW": "http://purl.obolibrary.org/obo/PW_",
+      "UPHENO": "http://purl.obolibrary.org/obo/UPHENO_",
+      "PR": "http://purl.obolibrary.org/obo/PR_",
+      "GMODChado": "http://example.org/unknown/GMODChado/",
+      "OGMS": "http://purl.obolibrary.org/obo/OGMS_",
+      "RO": "http://purl.obolibrary.org/obo/RO_",
+      "actively_involved_in": {
+         "@type": "@id",
+         "@id": "RO:0002331"
+      },
+      "SEMMEDDB": "http://example.org/unknown/SEMMEDDB/",
+      "affects": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_abundance_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_activity_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_degradation_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_expression_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_folding_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_localization_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_metabolic_processing_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_molecular_modification_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_mutation_rate_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_response_to": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_risk_for": {
+         "@type": "@id",
+         "@id": "owl:topObjectProperty"
+      },
+      "affects_secretion_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_splicing_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_stability_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_synthesis_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_transport_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "affects_uptake_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "aggregate_statistic": {
+         "@id": "owl:topAnnotationProperty"
+      },
+      "association_type": {
+         "@type": "@id",
+         "@id": "rdf:type"
+      },
+      "biomarker_for": {
+         "@type": "@id",
+         "@id": "RO:0002607"
+      },
+      "capable_of": {
+         "@type": "@id",
+         "@id": "RO:0002215"
+      },
+      "category": {
+         "@container": "@list",
+         "@id": "rdf:type"
+      },
+      "causes": {
+         "@type": "@id",
+         "@id": "RO:0002410"
+      },
+      "clinical_modifier_qualifier": {
+         "@type": "@id"
+      },
+      "co-localizes_with": {
+         "@type": "@id",
+         "@id": "RO:00002325"
+      },
+      "coexists_with": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:COEXISTS_WITH"
+      },
+      "contributes_to": {
+         "@type": "@id",
+         "@id": "RO:0002326"
+      },
+      "correlated_with": {
+         "@type": "@id",
+         "@id": "RO:0002610"
+      },
+      "dcterms": "http://purl.org/dc/terms/",
+      "creation_date": {
+         "@type": "xsd:date",
+         "@id": "dcterms:created"
+      },
+      "decreases_abundance_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_activity_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_degradation_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_expression_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_folding_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_localization_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_metabolic_processing_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_molecular_modification_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_mutation_rate_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_response_to": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_secretion_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_splicing_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_stability_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_synthesis_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_transport_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "decreases_uptake_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "derives_from": {
+         "@type": "@id",
+         "@id": "RO:0001000"
+      },
+      "derives_into": {
+         "@type": "@id",
+         "@id": "RO:0001001"
+      },
+      "description": {
+         "@id": "dcterms:description"
+      },
+      "disrupts": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:DISRUPTS"
+      },
+      "end_interbase_coordinate": {
+         "@id": "owl:topAnnotationProperty"
+      },
+      "expressed_in": {
+         "@type": "@id",
+         "@id": "RO:0002206"
+      },
+      "expresses": {
+         "@type": "@id",
+         "@id": "RO:0002292"
+      },
+      "filler": {
+         "@type": "@id",
+         "@id": "owl:topAnnotationProperty"
+      },
+      "full_name": {
+         "@id": "owl:topAnnotationProperty"
+      },
+      "gene_associated_with_condition": {
+         "@type": "@id",
+         "@id": "WD:P2293"
+      },
+      "genetically_interacts_with": {
+         "@type": "@id",
+         "@id": "RO:0002435"
+      },
+      "genome_build": {
+         "@id": "owl:topAnnotationProperty"
+      },
+      "has_biological_sequence": {
+         "@id": "owl:topAnnotationProperty"
+      },
+      "has_biomarker": {
+         "@type": "@id",
+         "@id": "RO:0002610"
+      },
+      "has_chemical_formula": {
+         "@id": "WD:P274"
+      },
+      "has_confidence_level": {
+         "@type": "@id"
+      },
+      "has_count": {
+         "@type": "xsd:integer",
+         "@id": "owl:topAnnotationProperty"
+      },
+      "has_evidence": {
+         "@id": "RO:0002558"
+      },
+      "has_gene": {
+         "@type": "@id",
+         "@id": "owl:topAnnotationProperty"
+      },
+      "has_gene_product": {
+         "@type": "@id",
+         "@id": "RO:0002205"
+      },
+      "has_input": {
+         "@type": "@id",
+         "@id": "RO:0002233"
+      },
+      "has_molecular_consequence": {
+         "@type": "@id",
+         "@id": "owl:topObjectProperty"
+      },
+      "has_part": {
+         "@type": "@id",
+         "@id": "BFO:0000051"
+      },
+      "has_participant": {
+         "@type": "@id",
+         "@id": "RO:0000057"
+      },
+      "has_percentage": {
+         "@type": "xsd:double",
+         "@id": "owl:topAnnotationProperty"
+      },
+      "has_phenotype": {
+         "@id": "RO:0002200"
+      },
+      "has_quotient": {
+         "@type": "xsd:double",
+         "@id": "owl:topAnnotationProperty"
+      },
+      "has_total": {
+         "@type": "xsd:integer",
+         "@id": "owl:topAnnotationProperty"
+      },
+      "has_zygosity": {
+         "@type": "@id",
+         "@id": "owl:topAnnotationProperty"
+      },
+      "homologous_to": {
+         "@type": "@id",
+         "@id": "RO:HOM0000001"
+      },
+      "id": {
+         "@id": "owl:topAnnotationProperty"
+      },
+      "in_cell_population_with": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:COEXISTS_WITH"
+      },
+      "in_complex_with": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:COEXISTS_WITH"
+      },
+      "in_pathway_with": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:COEXISTS_WITH"
+      },
+      "in_taxon": {
+         "@type": "@id",
+         "@id": "RO:0002162"
+      },
+      "increases_abundance_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_activity_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_degradation_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_expression_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_folding_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_localization_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_metabolic_processing_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_molecular_modification_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_mutation_rate_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_response_to": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_secretion_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_splicing_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_stability_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_synthesis_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_transport_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "increases_uptake_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:AFFECTS"
+      },
+      "interacts_with": {
+         "@type": "@id",
+         "@id": "RO:0002434"
+      },
+      "interbase_coordinate": {
+         "@id": "owl:topAnnotationProperty"
+      },
+      "iri": {
+         "@id": "owl:topAnnotationProperty"
+      },
+      "latitude": {
+         "@type": "xsd:float",
+         "@id": "wgs:lat"
+      },
+      "located_in": {
+         "@type": "@id",
+         "@id": "RO:0001025"
+      },
+      "location_of": {
+         "@type": "@id",
+         "@id": "RO:0001015"
+      },
+      "longitude": {
+         "@type": "xsd:float",
+         "@id": "wgs:long"
+      },
+      "manifestation_of": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:MANIFESTATION_OF"
+      },
+      "model_of": {
+         "@type": "@id",
+         "@id": "RO:0003301"
+      },
+      "molecularly_interacts_with": {
+         "@type": "@id",
+         "@id": "RO:0002436"
+      },
+      "name": {
+         "@id": "rdfs:label"
+      },
+      "negated": {
+         "@type": "xsd:boolean"
+      },
+      "negatively_regulates": {
+         "@type": "@id",
+         "@id": "WD:P128"
+      },
+      "negatively_regulates_entity_to_entity": {
+         "@type": "@id",
+         "@id": "RO:0002449"
+      },
+      "negatively_regulates_process_to_process": {
+         "@type": "@id",
+         "@id": "RO:0002212"
+      },
+      "node_property": {
+         "@id": "owl:topAnnotationProperty"
+      },
+      "oban": "http://example.org/unknown/oban/",
+      "object": {
+         "@id": "rdf:object"
+      },
+      "occurs_in": {
+         "@type": "@id",
+         "@id": "BFO:0000066"
+      },
+      "onset_qualifier": {
+         "@type": "@id"
+      },
+      "orthologous_to": {
+         "@type": "@id",
+         "@id": "RO:HOM0000017"
+      },
+      "overlaps": {
+         "@type": "@id",
+         "@id": "RO:0002131"
+      },
+      "paralogous_to": {
+         "@type": "@id",
+         "@id": "RO:HOM0000011"
+      },
+      "part_of": {
+         "@type": "@id",
+         "@id": "BFO:0000050"
+      },
+      "participates_in": {
+         "@type": "@id",
+         "@id": "RO:0000056"
+      },
+      "phase": {
+         "@id": "owl:topAnnotationProperty"
+      },
+      "physically_interacts_with": {
+         "@type": "@id",
+         "@id": "WD:P129"
+      },
+      "positively_regulates": {
+         "@type": "@id",
+         "@id": "WD:P128"
+      },
+      "positively_regulates_entity_to_entity": {
+         "@type": "@id",
+         "@id": "RO:0002450"
+      },
+      "positively_regulates_process_to_process": {
+         "@type": "@id",
+         "@id": "RO:0002213"
+      },
+      "precedes": {
+         "@type": "@id",
+         "@id": "BFO:0000063"
+      },
+      "predisposes": {
+         "@type": "@id",
+         "@id": "SEMMEDDB:PREDISPOSES"
+      },
+      "prevents": {
+         "@type": "@id",
+         "@id": "RO:0002559"
+      },
+      "produces": {
+         "@type": "@id",
+         "@id": "RO:0003000"
+      },
+      "pav": "http://purl.org/pav/",
+      "provided_by": {
+         "@type": "@id",
+         "@id": "pav:providedBy"
+      },
+      "publications": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "qualifiers": {
+         "@type": "@id",
+         "@container": "@list"
+      },
+      "quantifier_qualifier": {
+         "@type": "@id"
+      },
+      "regulates": {
+         "@type": "@id",
+         "@id": "WD:P128"
+      },
+      "regulates_entity_to_entity": {
+         "@type": "@id",
+         "@id": "RO:0002448"
+      },
+      "regulates_process_to_process": {
+         "@type": "@id",
+         "@id": "RO:0002211"
+      },
+      "related_to": {
+         "@type": "@id",
+         "@id": "owl:topObjectProperty"
+      },
+      "relation": {
+         "@type": "@id",
+         "@id": "rdf:predicate"
+      },
+      "same_as": {
+         "@type": "@id",
+         "@id": "owl:equivalentClass"
+      },
+      "sequence_variant_qualifier": {
+         "@type": "@id"
+      },
+      "severity_qualifier": {
+         "@type": "@id"
+      },
+      "sex_qualifier": {
+         "@type": "@id"
+      },
+      "stage_qualifier": {
+         "@type": "@id"
+      },
+      "start_interbase_coordinate": {
+         "@id": "owl:topAnnotationProperty"
+      },
+      "subclass_of": {
+         "@type": "@id",
+         "@id": "rdfs:subClassOf"
+      },
+      "subject": {
+         "@id": "rdf:subject"
+      },
+      "systematic_synonym": {
+         "@id": "owl:topAnnotationProperty"
+      },
+      "timepoint": {
+         "@type": "xsd:time",
+         "@id": "owl:topAnnotationProperty"
+      },
+      "treated_by": {
+         "@type": "@id",
+         "@id": "RO:0002302"
+      },
+      "treats": {
+         "@type": "@id",
+         "@id": "RO:0002606"
+      },
+      "update_date": {
+         "@type": "xsd:date",
+         "@id": "owl:topAnnotationProperty"
+      },
+      "xenologous_to": {
+         "@type": "@id",
+         "@id": "RO:HOM0000018"
+      },
+      "ActivityAndBehavior": {
+         "@id": "UMLSSG:ACTI"
+      },
+      "AnatomicalEntity": {
+         "@id": "UMLSSG:ANAT"
+      },
+      "Association": {
+         "@id": "OBAN:association"
+      },
+      "BiologicalEntity": {
+         "@id": "WD:Q28845870"
+      },
+      "BiologicalProcess": {
+         "@id": "GO:0008150"
+      },
+      "Biosample": {
+         "@id": "SIO:001050"
+      },
+      "Cell": {
+         "@id": "GO:0005623"
+      },
+      "CellLine": {
+         "@id": "CLO:0000031"
+      },
+      "CellularComponent": {
+         "@id": "GO:0005575"
+      },
+      "ChemicalSubstance": {
+         "@id": "SIO:010004"
+      },
+      "ChemicalToDiseaseOrPhenotypicFeatureAssociation": {
+         "@id": "SIO:000993"
+      },
+      "ChemicalToGeneAssociation": {
+         "@id": "SIO:001257"
+      },
+      "ChemicalToPathwayAssociation": {
+         "@id": "SIO:001250"
+      },
+      "CodingSequence": {
+         "@id": "SO:0000316"
+      },
+      "ConfidenceLevel": {
+         "@id": "CIO:0000028"
+      },
+      "Device": {
+         "@id": "UMLSSG:DEVI"
+      },
+      "Disease": {
+         "@id": "MONDO:0000001"
+      },
+      "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation": {
+         "@id": "NCIT:R100"
+      },
+      "Drug": {
+         "@id": "WD:Q12140"
+      },
+      "DrugExposure": {
+         "@id": "ECTO:0000509"
+      },
+      "Environment": {
+         "@id": "SIO:000955"
+      },
+      "EvidenceType": {
+         "@id": "ECO:0000000"
+      },
+      "Exon": {
+         "@id": "SO:0000147"
+      },
+      "Gene": {
+         "@id": "SO:0000704"
+      },
+      "GeneFamily": {
+         "@id": "SIO:001380"
+      },
+      "GeneProduct": {
+         "@id": "WD:Q424689"
+      },
+      "GeneToDiseaseAssociation": {
+         "@id": "SIO:000983"
+      },
+      "GeneToGoTermAssociation": {
+         "@id": "http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association"
+      },
+      "GeneToPhenotypicFeatureAssociation": {
+         "@id": "http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association"
+      },
+      "Genome": {
+         "@id": "SO:0001026"
+      },
+      "GenomicEntity": {
+         "@id": "SO:0000110"
+      },
+      "GenomicSequenceLocalization": {
+         "@id": "faldo:location"
+      },
+      "Genotype": {
+         "@id": "GENO:0000536"
+      },
+      "GeographicLocation": {
+         "@id": "UMLSSG:GEOG"
+      },
+      "GrossAnatomicalStructure": {
+         "@id": "UBERON:0010000"
+      },
+      "Haplotype": {
+         "@id": "GENO:0000871"
+      },
+      "IndividualOrganism": {
+         "@id": "SIO:010000"
+      },
+      "InformationContentEntity": {
+         "@id": "IAO:0000030"
+      },
+      "MacromolecularComplex": {
+         "@id": "SIO:010046"
+      },
+      "Metabolite": {
+         "@id": "CHEBI:25212"
+      },
+      "MicroRNA": {
+         "@id": "SIO:001397"
+      },
+      "MolecularActivity": {
+         "@id": "GO:0003674"
+      },
+      "MolecularEntity": {
+         "@id": "SIO:010004"
+      },
+      "NamedThing": {
+         "@id": "UMLSSG:OBJC"
+      },
+      "NoncodingRNAProduct": {
+         "@id": "SIO:001235"
+      },
+      "Occurrent": {
+         "@id": "BFO:0000003"
+      },
+      "Onset": {
+         "@id": "HP:0003674"
+      },
+      "OrganismTaxon": {
+         "@id": "WD:Q16521"
+      },
+      "OrganismalEntity": {
+         "@id": "WD:Q7239"
+      },
+      "Pathway": {
+         "@id": "GO:0007165"
+      },
+      "Phenomenon": {
+         "@id": "UMLSSG:PHEN"
+      },
+      "PhenotypicFeature": {
+         "@id": "UPHENO:0001001"
+      },
+      "PhysiologicalProcess": {
+         "@id": "UMLSSG:PHYS"
+      },
+      "PopulationOfIndividualOrganisms": {
+         "@id": "SIO:001061"
+      },
+      "Procedure": {
+         "@id": "UMLSSG:PROC"
+      },
+      "Protein": {
+         "@id": "PR:000000001"
+      },
+      "Provider": {
+         "@id": "UMLSSG:ORGA"
+      },
+      "Publication": {
+         "@id": "IAO:0000311"
+      },
+      "RNAProduct": {
+         "@id": "CHEBI:33697"
+      },
+      "SequenceFeatureRelationship": {
+         "@id": "GMODChado:feature_relationship"
+      },
+      "SequenceVariant": {
+         "@id": "GENO:0000002"
+      },
+      "Transcript": {
+         "@id": "SO:0000673"
+      },
+      "Treatment": {
+         "@id": "OGMS:0000090"
+      },
+      "Zygosity": {
+         "@id": "GENO:0000133"
+      }
+   }
+}
+

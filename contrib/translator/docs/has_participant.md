@@ -10,7 +10,7 @@ URI: [http://bioentity.io/vocab/has_participant](slot_uri)
  * [WD:P2283](http://purl.obolibrary.org/obo/WD_P2283)
 ## Domain and Range
 
-[Occurrent](Occurrent.md) -> **string**
+[Occurrent](Occurrent.md) -> [NamedThing](NamedThing.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
