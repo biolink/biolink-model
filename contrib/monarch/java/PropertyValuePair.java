@@ -29,6 +29,7 @@ public class PropertyValuePair {
     private String filler;
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -55,6 +56,7 @@ public class PropertyValuePair {
 
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -64,6 +66,7 @@ public class PropertyValuePair {
 
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")

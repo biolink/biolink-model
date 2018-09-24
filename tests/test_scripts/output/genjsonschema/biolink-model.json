@@ -659,7 +659,6 @@
       "ActivityAndBehavior": {
          "description": "Activity or behavior of any independent integral living, organization or mechanical actor in the world",
          "properties": {},
-         "required": [],
          "title": "ActivityAndBehavior",
          "type": "object"
       },
@@ -671,7 +670,6 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "AnatomicalEntity",
          "type": "object"
       },
@@ -680,14 +678,15 @@
          "properties": {
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "AnatomicalEntityToAnatomicalEntityAssociation",
          "type": "object"
       },
@@ -696,18 +695,20 @@
          "properties": {
             "object": {
                "description": "the structure at an earlier time",
+               "required": true,
                "type": "string"
             },
             "relation": {
                "description": "the relationship type by which a subject is connected to an object in an association",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "the structure at a later time",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "AnatomicalEntityToAnatomicalEntityOntogenicAssociation",
          "type": "object"
       },
@@ -716,18 +717,20 @@
          "properties": {
             "object": {
                "description": "the whole",
+               "required": true,
                "type": "string"
             },
             "relation": {
                "description": "the relationship type by which a subject is connected to an object in an association",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "the part",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
          "type": "object"
       },
@@ -748,6 +751,7 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             },
             "provided_by": {
@@ -770,84 +774,75 @@
             },
             "relation": {
                "description": "the relationship type by which a subject is connected to an object in an association",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "Association",
          "type": "object"
       },
       "Attribute": {
          "description": "A property or characteristic of an entity",
          "properties": {},
-         "required": [],
          "title": "Attribute",
          "type": "object"
       },
       "BiologicalProcess": {
          "description": "One or more causally connected executions of molecular functions",
          "properties": {},
-         "required": [],
          "title": "BiologicalProcess",
          "type": "object"
       },
       "BiologicalProcessOrActivity": {
          "description": "Either an individual molecular activity, or a collection of causally connected molecular activities",
          "properties": {},
-         "required": [],
          "title": "BiologicalProcessOrActivity",
          "type": "object"
       },
       "BiologicalSex": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "BiologicalSex",
          "type": "object"
       },
       "Biosample": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "Biosample",
          "type": "object"
       },
       "BiosampleToDiseaseOrPhenotypicFeatureAssociation": {
          "description": "An association between a biosample and a disease or phenotype\n  definitional: true",
          "properties": {},
-         "required": [],
          "title": "BiosampleToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
       },
       "Case": {
          "description": "An individual organism that has a patient role in some clinical context.",
          "properties": {},
-         "required": [],
          "title": "Case",
          "type": "object"
       },
       "CaseToPhenotypicFeatureAssociation": {
          "description": "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype",
          "properties": {},
-         "required": [],
          "title": "CaseToPhenotypicFeatureAssociation",
          "type": "object"
       },
       "Cell": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "Cell",
          "type": "object"
       },
       "CellLine": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "CellLine",
          "type": "object"
       },
@@ -856,24 +851,22 @@
          "properties": {
             "subject": {
                "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "CellLineToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
       },
       "CellularComponent": {
          "description": "A location in or around a cell",
          "properties": {},
-         "required": [],
          "title": "CellularComponent",
          "type": "object"
       },
       "ChemicalSubstance": {
          "description": "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part",
          "properties": {},
-         "required": [],
          "title": "ChemicalSubstance",
          "type": "object"
       },
@@ -882,10 +875,10 @@
          "properties": {
             "object": {
                "description": "the disease or phenotype that is affected by the chemical",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
       },
@@ -894,10 +887,10 @@
          "properties": {
             "object": {
                "description": "the gene or gene product that is affected by the chemical",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "ChemicalToGeneAssociation",
          "type": "object"
       },
@@ -906,66 +899,58 @@
          "properties": {
             "object": {
                "description": "the pathway that is affected by the chemical",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "ChemicalToPathwayAssociation",
          "type": "object"
       },
       "ClinicalEntity": {
          "description": "Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities",
          "properties": {},
-         "required": [],
          "title": "ClinicalEntity",
          "type": "object"
       },
       "ClinicalIntervention": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "ClinicalIntervention",
          "type": "object"
       },
       "ClinicalModifier": {
          "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
          "properties": {},
-         "required": [],
          "title": "ClinicalModifier",
          "type": "object"
       },
       "ClinicalTrial": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "ClinicalTrial",
          "type": "object"
       },
       "CodingSequence": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "CodingSequence",
          "type": "object"
       },
       "ConfidenceLevel": {
          "description": "Level of confidence in a statement",
          "properties": {},
-         "required": [],
          "title": "ConfidenceLevel",
          "type": "object"
       },
       "Device": {
          "description": "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment",
          "properties": {},
-         "required": [],
          "title": "Device",
          "type": "object"
       },
       "Disease": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "Disease",
          "type": "object"
       },
@@ -985,7 +970,6 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "DiseaseOrPhenotypicFeature",
          "type": "object"
       },
@@ -994,24 +978,22 @@
          "properties": {
             "object": {
                "description": "anatomical entity in which the disease or feature is found",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
          "type": "object"
       },
       "DiseaseToPhenotypicFeatureAssociation": {
          "description": "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way",
          "properties": {},
-         "required": [],
          "title": "DiseaseToPhenotypicFeatureAssociation",
          "type": "object"
       },
       "Drug": {
          "description": "A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease",
          "properties": {},
-         "required": [],
          "title": "Drug",
          "type": "object"
       },
@@ -1022,17 +1004,16 @@
                "items": {
                   "type": "string"
                },
+               "required": true,
                "type": "array"
             }
          },
-         "required": [],
          "title": "DrugExposure",
          "type": "object"
       },
       "Environment": {
          "description": "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes",
          "properties": {},
-         "required": [],
          "title": "Environment",
          "type": "object"
       },
@@ -1041,38 +1022,34 @@
          "properties": {
             "subject": {
                "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "EnvironmentToPhenotypicFeatureAssociation",
          "type": "object"
       },
       "EnvironmentalFeature": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "EnvironmentalFeature",
          "type": "object"
       },
       "EnvironmentalProcess": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "EnvironmentalProcess",
          "type": "object"
       },
       "EvidenceType": {
          "description": "Class of evidence that supports an association",
          "properties": {},
-         "required": [],
          "title": "EvidenceType",
          "type": "object"
       },
       "Exon": {
          "description": "A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing",
          "properties": {},
-         "required": [],
          "title": "Exon",
          "type": "object"
       },
@@ -1081,21 +1058,21 @@
          "properties": {
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "ExonToTranscriptRelationship",
          "type": "object"
       },
       "FrequencyQualifier": {
          "description": "Qualifier for freqency type associations",
          "properties": {},
-         "required": [],
          "title": "FrequencyQualifier",
          "type": "object"
       },
@@ -1119,14 +1096,12 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "FrequencyQuantifier",
          "type": "object"
       },
       "FrequencyValue": {
          "description": "describes the frequency of occurrence of an event or condition",
          "properties": {},
-         "required": [],
          "title": "FrequencyValue",
          "type": "object"
       },
@@ -1135,14 +1110,15 @@
          "properties": {
             "object": {
                "description": "class describing the activity, process or localization of the gene product",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "gene, product or macromolecular complex that has the function associated with the GO term",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "FunctionalAssociation",
          "type": "object"
       },
@@ -1162,7 +1138,6 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "Gene",
          "type": "object"
       },
@@ -1171,17 +1146,16 @@
          "properties": {
             "subject": {
                "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GeneAsAModelOfDiseaseAssociation",
          "type": "object"
       },
       "GeneFamily": {
          "description": "any grouping of multiple genes or gene products related by common descent",
          "properties": {},
-         "required": [],
          "title": "GeneFamily",
          "type": "object"
       },
@@ -1194,17 +1168,16 @@
             },
             "subject": {
                "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GeneHasVariantThatContributesToDiseaseAssociation",
          "type": "object"
       },
       "GeneOntologyClass": {
          "description": "an ontology class that describes a functional aspect of a gene, gene prodoct or complex",
          "properties": {},
-         "required": [],
          "title": "GeneOntologyClass",
          "type": "object"
       },
@@ -1228,14 +1201,12 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "GeneOrGeneProduct",
          "type": "object"
       },
       "GeneProduct": {
          "description": "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules",
          "properties": {},
-         "required": [],
          "title": "GeneProduct",
          "type": "object"
       },
@@ -1244,18 +1215,20 @@
          "properties": {
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             },
             "relation": {
                "description": "the direction is always from regulator to regulated",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GeneRegulatoryRelationship",
          "type": "object"
       },
@@ -1264,10 +1237,10 @@
          "properties": {
             "subject": {
                "description": "gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GeneToDiseaseAssociation",
          "type": "object"
       },
@@ -1276,6 +1249,7 @@
          "properties": {
             "object": {
                "description": "location in which the gene is expressed",
+               "required": true,
                "type": "string"
             },
             "quantifier_qualifier": {
@@ -1284,6 +1258,7 @@
             },
             "relation": {
                "description": "expression relationship",
+               "required": true,
                "type": "string"
             },
             "stage_qualifier": {
@@ -1292,10 +1267,10 @@
             },
             "subject": {
                "description": "gene in which variation is correlated with the phenotypic feature",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GeneToExpressionSiteAssociation",
          "type": "object"
       },
@@ -1304,10 +1279,10 @@
          "properties": {
             "relation": {
                "description": "homology relationship type",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GeneToGeneHomologyAssociation",
          "type": "object"
       },
@@ -1316,18 +1291,20 @@
          "properties": {
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             },
             "relation": {
                "description": "the relationship type by which a subject is connected to an object in an association",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GeneToGeneProductRelationship",
          "type": "object"
       },
@@ -1336,14 +1313,15 @@
          "properties": {
             "object": {
                "description": "class describing the activity, process or localization of the gene product",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "gene, product or macromolecular complex that has the function associated with the GO term",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GeneToGoTermAssociation",
          "type": "object"
       },
@@ -1352,17 +1330,16 @@
          "properties": {
             "subject": {
                "description": "gene in which variation is correlated with the phenotypic feature",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GeneToPhenotypicFeatureAssociation",
          "type": "object"
       },
       "Genome": {
          "description": "A genome is the sum of genetic material within a cell or virion.",
          "properties": {},
-         "required": [],
          "title": "Genome",
          "type": "object"
       },
@@ -1374,7 +1351,6 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "GenomicEntity",
          "type": "object"
       },
@@ -1391,6 +1367,7 @@
             },
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             },
             "phase": {
@@ -1403,10 +1380,10 @@
             },
             "subject": {
                "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GenomicSequenceLocalization",
          "type": "object"
       },
@@ -1418,7 +1395,6 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "Genotype",
          "type": "object"
       },
@@ -1427,18 +1403,20 @@
          "properties": {
             "object": {
                "description": "gene implicated in genotype",
+               "required": true,
                "type": "string"
             },
             "relation": {
                "description": "the relationship type used to connect genotype to gene",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "parent genotype",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GenotypeToGeneAssociation",
          "type": "object"
       },
@@ -1447,18 +1425,20 @@
          "properties": {
             "object": {
                "description": "child genotype",
+               "required": true,
                "type": "string"
             },
             "relation": {
                "description": "the relationship type by which a subject is connected to an object in an association",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "parent genotype",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GenotypeToGenotypePartAssociation",
          "type": "object"
       },
@@ -1467,14 +1447,15 @@
          "properties": {
             "relation": {
                "description": "the relationship type by which a subject is connected to an object in an association",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "genotype that is associated with the phenotypic feature",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GenotypeToPhenotypicFeatureAssociation",
          "type": "object"
       },
@@ -1483,25 +1464,26 @@
          "properties": {
             "object": {
                "description": "gene implicated in genotype",
+               "required": true,
                "type": "string"
             },
             "relation": {
                "description": "the relationship type used to connect genotype to gene",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "parent genotype",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "GenotypeToVariantAssociation",
          "type": "object"
       },
       "GenotypicSex": {
          "description": "An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.",
          "properties": {},
-         "required": [],
          "title": "GenotypicSex",
          "type": "object"
       },
@@ -1517,7 +1499,6 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "GeographicLocation",
          "type": "object"
       },
@@ -1529,42 +1510,36 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "GeographicLocationAtTime",
          "type": "object"
       },
       "GrossAnatomicalStructure": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "GrossAnatomicalStructure",
          "type": "object"
       },
       "Haplotype": {
          "description": "A set of zero or more Alleles on a single instance of a Sequence[VMC]",
          "properties": {},
-         "required": [],
          "title": "Haplotype",
          "type": "object"
       },
       "IndividualOrganism": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "IndividualOrganism",
          "type": "object"
       },
       "LifeStage": {
          "description": "A stage of development or growth of an organism, including post-natal adult stages",
          "properties": {},
-         "required": [],
          "title": "LifeStage",
          "type": "object"
       },
       "MacromolecularComplex": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "MacromolecularComplex",
          "type": "object"
       },
@@ -1576,7 +1551,6 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "MacromolecularMachine",
          "type": "object"
       },
@@ -1585,10 +1559,10 @@
          "properties": {
             "object": {
                "description": "class describing the activity, process or localization of the gene product",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "MacromolecularMachineToBiologicalProcessAssociation",
          "type": "object"
       },
@@ -1597,10 +1571,10 @@
          "properties": {
             "object": {
                "description": "class describing the activity, process or localization of the gene product",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "MacromolecularMachineToCellularComponentAssociation",
          "type": "object"
       },
@@ -1609,31 +1583,28 @@
          "properties": {
             "object": {
                "description": "class describing the activity, process or localization of the gene product",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "MacromolecularMachineToMolecularActivityAssociation",
          "type": "object"
       },
       "Metabolite": {
          "description": "Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.",
          "properties": {},
-         "required": [],
          "title": "Metabolite",
          "type": "object"
       },
       "MicroRNA": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "MicroRNA",
          "type": "object"
       },
       "MolecularActivity": {
          "description": "An execution of a molecular function carried out by a gene product or macromolecular complex.",
          "properties": {},
-         "required": [],
          "title": "MolecularActivity",
          "type": "object"
       },
@@ -1845,7 +1816,6 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "MolecularEntity",
          "type": "object"
       },
@@ -1892,14 +1862,12 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "NamedThing",
          "type": "object"
       },
       "NoncodingRNAProduct": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "NoncodingRNAProduct",
          "type": "object"
       },
@@ -1923,14 +1891,12 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "Occurrent",
          "type": "object"
       },
       "Onset": {
          "description": "The age group in which manifestations appear",
          "properties": {},
-         "required": [],
          "title": "Onset",
          "type": "object"
       },
@@ -1942,14 +1908,12 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "OntologyClass",
          "type": "object"
       },
       "OrganismTaxon": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "OrganismTaxon",
          "type": "object"
       },
@@ -1958,66 +1922,58 @@
          "properties": {
             "relation": {
                "description": "interaction relationship type",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "PairwiseGeneToGeneInteraction",
          "type": "object"
       },
       "PathognomonicityQuantifier": {
          "description": "A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease",
          "properties": {},
-         "required": [],
          "title": "PathognomonicityQuantifier",
          "type": "object"
       },
       "Pathway": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "Pathway",
          "type": "object"
       },
       "Phenomenon": {
          "description": "a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question",
          "properties": {},
-         "required": [],
          "title": "Phenomenon",
          "type": "object"
       },
       "PhenotypicFeature": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "PhenotypicFeature",
          "type": "object"
       },
       "PhenotypicSex": {
          "description": "An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.",
          "properties": {},
-         "required": [],
          "title": "PhenotypicSex",
          "type": "object"
       },
       "PhysiologicalProcess": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "PhysiologicalProcess",
          "type": "object"
       },
       "PlanetaryEntity": {
          "description": "Any entity or process that exists at the level of the whole planet",
          "properties": {},
-         "required": [],
          "title": "PlanetaryEntity",
          "type": "object"
       },
       "PopulationOfIndividualOrganisms": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "PopulationOfIndividualOrganisms",
          "type": "object"
       },
@@ -2026,81 +1982,74 @@
          "properties": {
             "object": {
                "description": "the population that form the object of the association",
+               "required": true,
                "type": "string"
             },
             "relation": {
                "description": "A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "the population that form the subject of the association",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "PopulationToPopulationAssociation",
          "type": "object"
       },
       "Procedure": {
          "description": "A series of actions conducted in a certain order or manner",
          "properties": {},
-         "required": [],
          "title": "Procedure",
          "type": "object"
       },
       "Protein": {
          "description": "A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA",
          "properties": {},
-         "required": [],
          "title": "Protein",
          "type": "object"
       },
       "ProteinIsoform": {
          "description": "Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/",
          "properties": {},
-         "required": [],
          "title": "ProteinIsoform",
          "type": "object"
       },
       "Provider": {
          "description": "person, group, organization or project that provides a piece of information",
          "properties": {},
-         "required": [],
          "title": "Provider",
          "type": "object"
       },
       "Publication": {
          "description": "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.",
          "properties": {},
-         "required": [],
          "title": "Publication",
          "type": "object"
       },
       "RNAProduct": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "RNAProduct",
          "type": "object"
       },
       "RNAProductIsoform": {
          "description": "Represents a protein that is a specific isoform of the canonical or reference RNA",
          "properties": {},
-         "required": [],
          "title": "RNAProductIsoform",
          "type": "object"
       },
       "RelationshipType": {
          "description": "An OWL property used as an edge label",
          "properties": {},
-         "required": [],
          "title": "RelationshipType",
          "type": "object"
       },
       "SenstivityQuantifier": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "SenstivityQuantifier",
          "type": "object"
       },
@@ -2109,14 +2058,15 @@
          "properties": {
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "SequenceFeatureRelationship",
          "type": "object"
       },
@@ -2139,28 +2089,24 @@
                "type": "string"
             }
          },
-         "required": [],
          "title": "SequenceVariant",
          "type": "object"
       },
       "SeverityValue": {
          "description": "describes the severity of a phenotypic feature or disease",
          "properties": {},
-         "required": [],
          "title": "SeverityValue",
          "type": "object"
       },
       "SpecificityQuantifier": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "SpecificityQuantifier",
          "type": "object"
       },
       "Transcript": {
          "description": "An RNA synthesized on a DNA or RNA template by an RNA polymerase",
          "properties": {},
-         "required": [],
          "title": "Transcript",
          "type": "object"
       },
@@ -2169,14 +2115,15 @@
          "properties": {
             "object": {
                "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "TranscriptToGeneRelationship",
          "type": "object"
       },
@@ -2187,14 +2134,15 @@
                "items": {
                   "type": "string"
                },
+               "required": true,
                "type": "array"
             },
             "treats": {
                "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "Treatment",
          "type": "object"
       },
@@ -2203,18 +2151,20 @@
          "properties": {
             "object": {
                "description": "a disease that is associated with that variant",
+               "required": true,
                "type": "string"
             },
             "relation": {
                "description": "E.g. is pathogenic for",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "a sequence variant in which the allele state is associated in some way with the disease state",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "VariantToDiseaseAssociation",
          "type": "object"
       },
@@ -2223,10 +2173,10 @@
          "properties": {
             "subject": {
                "description": "a sequence variant in which the allele state is associated in some way with the phenotype state",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "VariantToPhenotypicFeatureAssociation",
          "type": "object"
       },
@@ -2247,21 +2197,21 @@
             },
             "object": {
                "description": "the population that is observed to have the frequency",
+               "required": true,
                "type": "string"
             },
             "subject": {
                "description": "an allele that has a certain frequency in a given population",
+               "required": true,
                "type": "string"
             }
          },
-         "required": [],
          "title": "VariantToPopulationAssociation",
          "type": "object"
       },
       "Zygosity": {
          "description": "",
          "properties": {},
-         "required": [],
          "title": "Zygosity",
          "type": "object"
       }

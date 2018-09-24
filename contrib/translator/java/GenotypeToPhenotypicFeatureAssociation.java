@@ -22,6 +22,7 @@ public class GenotypeToPhenotypicFeatureAssociation {
 
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -29,6 +30,7 @@ public class GenotypeToPhenotypicFeatureAssociation {
     private String relation;
     /**
      * genotype that is associated with the phenotypic feature
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -37,6 +39,7 @@ public class GenotypeToPhenotypicFeatureAssociation {
 
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -46,6 +49,7 @@ public class GenotypeToPhenotypicFeatureAssociation {
 
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -55,6 +59,7 @@ public class GenotypeToPhenotypicFeatureAssociation {
 
     /**
      * genotype that is associated with the phenotypic feature
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -64,6 +69,7 @@ public class GenotypeToPhenotypicFeatureAssociation {
 
     /**
      * genotype that is associated with the phenotypic feature
+     * (Required)
      * 
      */
     @JsonProperty("subject")

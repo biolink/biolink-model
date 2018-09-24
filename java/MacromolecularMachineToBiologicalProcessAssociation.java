@@ -21,6 +21,7 @@ public class MacromolecularMachineToBiologicalProcessAssociation {
 
     /**
      * class describing the activity, process or localization of the gene product
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -29,6 +30,7 @@ public class MacromolecularMachineToBiologicalProcessAssociation {
 
     /**
      * class describing the activity, process or localization of the gene product
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -38,6 +40,7 @@ public class MacromolecularMachineToBiologicalProcessAssociation {
 
     /**
      * class describing the activity, process or localization of the gene product
+     * (Required)
      * 
      */
     @JsonProperty("object")

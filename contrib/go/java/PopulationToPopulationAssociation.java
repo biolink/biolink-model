@@ -23,6 +23,7 @@ public class PopulationToPopulationAssociation {
 
     /**
      * the population that form the object of the association
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -30,6 +31,7 @@ public class PopulationToPopulationAssociation {
     private String object;
     /**
      * A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -37,6 +39,7 @@ public class PopulationToPopulationAssociation {
     private String relation;
     /**
      * the population that form the subject of the association
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -45,6 +48,7 @@ public class PopulationToPopulationAssociation {
 
     /**
      * the population that form the object of the association
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -54,6 +58,7 @@ public class PopulationToPopulationAssociation {
 
     /**
      * the population that form the object of the association
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -63,6 +68,7 @@ public class PopulationToPopulationAssociation {
 
     /**
      * A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -72,6 +78,7 @@ public class PopulationToPopulationAssociation {
 
     /**
      * A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -81,6 +88,7 @@ public class PopulationToPopulationAssociation {
 
     /**
      * the population that form the subject of the association
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -90,6 +98,7 @@ public class PopulationToPopulationAssociation {
 
     /**
      * the population that form the subject of the association
+     * (Required)
      * 
      */
     @JsonProperty("subject")

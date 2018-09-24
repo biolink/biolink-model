@@ -21,6 +21,7 @@ public class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation {
 
     /**
      * anatomical entity in which the disease or feature is found
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -29,6 +30,7 @@ public class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation {
 
     /**
      * anatomical entity in which the disease or feature is found
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -38,6 +40,7 @@ public class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation {
 
     /**
      * anatomical entity in which the disease or feature is found
+     * (Required)
      * 
      */
     @JsonProperty("object")

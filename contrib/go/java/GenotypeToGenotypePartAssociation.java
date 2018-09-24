@@ -23,6 +23,7 @@ public class GenotypeToGenotypePartAssociation {
 
     /**
      * child genotype
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -30,6 +31,7 @@ public class GenotypeToGenotypePartAssociation {
     private String object;
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -37,6 +39,7 @@ public class GenotypeToGenotypePartAssociation {
     private String relation;
     /**
      * parent genotype
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -45,6 +48,7 @@ public class GenotypeToGenotypePartAssociation {
 
     /**
      * child genotype
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -54,6 +58,7 @@ public class GenotypeToGenotypePartAssociation {
 
     /**
      * child genotype
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -63,6 +68,7 @@ public class GenotypeToGenotypePartAssociation {
 
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -72,6 +78,7 @@ public class GenotypeToGenotypePartAssociation {
 
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -81,6 +88,7 @@ public class GenotypeToGenotypePartAssociation {
 
     /**
      * parent genotype
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -90,6 +98,7 @@ public class GenotypeToGenotypePartAssociation {
 
     /**
      * parent genotype
+     * (Required)
      * 
      */
     @JsonProperty("subject")

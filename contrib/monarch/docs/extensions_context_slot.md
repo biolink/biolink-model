@@ -14,7 +14,7 @@ URI: [http://bioentity.io/vocab/extensions_context_slot](slot_uri)
  *  is_a: [association slot](association_slot.md)
 ## Children
 
- *  child: [object extensions](object_extensions.md)
  *  child: [subject extensions](subject_extensions.md)
+ *  child: [object extensions](object_extensions.md)
 ## Used in
 

@@ -15,8 +15,8 @@ URI: [http://bioentity.io/vocab/id](slot_uri)
  *  is_a: [node property](node_property.md)
 ## Children
 
- *  child: [pairwise interaction association.id](pairwise_interaction_association_id.md) *subsets*: (translator_minimal)
  *  child: [sequence variant.id](sequence_variant_id.md) *subsets*: (translator_minimal)
+ *  child: [pairwise interaction association.id](pairwise_interaction_association_id.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)

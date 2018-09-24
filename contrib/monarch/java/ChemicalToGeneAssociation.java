@@ -21,6 +21,7 @@ public class ChemicalToGeneAssociation {
 
     /**
      * the gene or gene product that is affected by the chemical
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -29,6 +30,7 @@ public class ChemicalToGeneAssociation {
 
     /**
      * the gene or gene product that is affected by the chemical
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -38,6 +40,7 @@ public class ChemicalToGeneAssociation {
 
     /**
      * the gene or gene product that is affected by the chemical
+     * (Required)
      * 
      */
     @JsonProperty("object")

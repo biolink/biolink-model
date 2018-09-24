@@ -13,8 +13,8 @@ None -> [LabelType](LabelType.md)
 
 ## Children
 
- *  child: [isa partof closure label](isa_partof_closure_label.md)
  *  child: [regulates closure label](regulates_closure_label.md)
+ *  child: [isa partof closure label](isa_partof_closure_label.md)
  *  child: [taxon closure label slot](taxon_closure_label_slot.md)
 ## Used in
 

@@ -17,8 +17,8 @@ URI: [http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_associati
  *  is_a: [subject](subject.md)
 ## Children
 
- *  child: [anatomical entity to anatomical entity ontogenic association.subject](anatomical_entity_to_anatomical_entity_ontogenic_association_subject.md)
  *  child: [anatomical entity to anatomical entity part of association.subject](anatomical_entity_to_anatomical_entity_part_of_association_subject.md)
+ *  child: [anatomical entity to anatomical entity ontogenic association.subject](anatomical_entity_to_anatomical_entity_ontogenic_association_subject.md)
 ## Used in
 
  *  usage: [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)

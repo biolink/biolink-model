@@ -15,8 +15,8 @@ URI: [http://bioentity.io/vocab/affects_degradation_of](slot_uri)
  *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [increases degradation of](increases_degradation_of.md) *subsets*: (translator_minimal)
  *  child: [decreases degradation of](decreases_degradation_of.md) *subsets*: (translator_minimal)
+ *  child: [increases degradation of](increases_degradation_of.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [MolecularEntity](MolecularEntity.md)

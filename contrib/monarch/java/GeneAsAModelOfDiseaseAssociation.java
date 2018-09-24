@@ -22,6 +22,7 @@ public class GeneAsAModelOfDiseaseAssociation {
     /**
      * A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.
      *   
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -31,6 +32,7 @@ public class GeneAsAModelOfDiseaseAssociation {
     /**
      * A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.
      *   
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -41,6 +43,7 @@ public class GeneAsAModelOfDiseaseAssociation {
     /**
      * A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.
      *   
+     * (Required)
      * 
      */
     @JsonProperty("subject")
