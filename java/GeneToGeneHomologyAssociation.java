@@ -21,6 +21,7 @@ public class GeneToGeneHomologyAssociation {
 
     /**
      * homology relationship type
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -29,6 +30,7 @@ public class GeneToGeneHomologyAssociation {
 
     /**
      * homology relationship type
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -38,6 +40,7 @@ public class GeneToGeneHomologyAssociation {
 
     /**
      * homology relationship type
+     * (Required)
      * 
      */
     @JsonProperty("relation")

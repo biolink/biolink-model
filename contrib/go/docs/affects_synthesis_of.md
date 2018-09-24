@@ -15,8 +15,8 @@ URI: [http://bioentity.io/vocab/affects_synthesis_of](slot_uri)
  *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [increases synthesis of](increases_synthesis_of.md) *subsets*: (translator_minimal)
  *  child: [decreases synthesis of](decreases_synthesis_of.md) *subsets*: (translator_minimal)
+ *  child: [increases synthesis of](increases_synthesis_of.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [MolecularEntity](MolecularEntity.md)

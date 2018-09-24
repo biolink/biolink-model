@@ -22,21 +22,37 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 })
 public class Treatment {
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("has_exposure_parts")
     private List<String> hasExposureParts = new ArrayList<String>();
     /**
      * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+     * (Required)
      * 
      */
     @JsonProperty("treats")
     @JsonPropertyDescription("holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ")
     private String treats;
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("has_exposure_parts")
     public List<String> getHasExposureParts() {
         return hasExposureParts;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("has_exposure_parts")
     public void setHasExposureParts(List<String> hasExposureParts) {
         this.hasExposureParts = hasExposureParts;
@@ -44,6 +60,7 @@ public class Treatment {
 
     /**
      * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+     * (Required)
      * 
      */
     @JsonProperty("treats")
@@ -53,6 +70,7 @@ public class Treatment {
 
     /**
      * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+     * (Required)
      * 
      */
     @JsonProperty("treats")

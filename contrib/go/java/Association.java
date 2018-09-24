@@ -52,6 +52,7 @@ public class Association {
     private String negated;
     /**
      * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -80,6 +81,7 @@ public class Association {
     private List<String> qualifiers = new ArrayList<String>();
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -87,6 +89,7 @@ public class Association {
     private String relation;
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -149,6 +152,7 @@ public class Association {
 
     /**
      * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -158,6 +162,7 @@ public class Association {
 
     /**
      * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -221,6 +226,7 @@ public class Association {
 
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -230,6 +236,7 @@ public class Association {
 
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -239,6 +246,7 @@ public class Association {
 
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -248,6 +256,7 @@ public class Association {
 
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("subject")

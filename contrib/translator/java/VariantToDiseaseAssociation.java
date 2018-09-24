@@ -23,6 +23,7 @@ public class VariantToDiseaseAssociation {
 
     /**
      * a disease that is associated with that variant
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -30,6 +31,7 @@ public class VariantToDiseaseAssociation {
     private String object;
     /**
      * E.g. is pathogenic for
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -37,6 +39,7 @@ public class VariantToDiseaseAssociation {
     private String relation;
     /**
      * a sequence variant in which the allele state is associated in some way with the disease state
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -45,6 +48,7 @@ public class VariantToDiseaseAssociation {
 
     /**
      * a disease that is associated with that variant
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -54,6 +58,7 @@ public class VariantToDiseaseAssociation {
 
     /**
      * a disease that is associated with that variant
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -63,6 +68,7 @@ public class VariantToDiseaseAssociation {
 
     /**
      * E.g. is pathogenic for
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -72,6 +78,7 @@ public class VariantToDiseaseAssociation {
 
     /**
      * E.g. is pathogenic for
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -81,6 +88,7 @@ public class VariantToDiseaseAssociation {
 
     /**
      * a sequence variant in which the allele state is associated in some way with the disease state
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -90,6 +98,7 @@ public class VariantToDiseaseAssociation {
 
     /**
      * a sequence variant in which the allele state is associated in some way with the disease state
+     * (Required)
      * 
      */
     @JsonProperty("subject")

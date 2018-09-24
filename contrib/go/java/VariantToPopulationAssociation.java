@@ -46,6 +46,7 @@ public class VariantToPopulationAssociation {
     private String hasTotal;
     /**
      * the population that is observed to have the frequency
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -53,6 +54,7 @@ public class VariantToPopulationAssociation {
     private String object;
     /**
      * an allele that has a certain frequency in a given population
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -115,6 +117,7 @@ public class VariantToPopulationAssociation {
 
     /**
      * the population that is observed to have the frequency
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -124,6 +127,7 @@ public class VariantToPopulationAssociation {
 
     /**
      * the population that is observed to have the frequency
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -133,6 +137,7 @@ public class VariantToPopulationAssociation {
 
     /**
      * an allele that has a certain frequency in a given population
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -142,6 +147,7 @@ public class VariantToPopulationAssociation {
 
     /**
      * an allele that has a certain frequency in a given population
+     * (Required)
      * 
      */
     @JsonProperty("subject")

@@ -23,6 +23,7 @@ public class GeneToGeneProductRelationship {
 
     /**
      * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -30,6 +31,7 @@ public class GeneToGeneProductRelationship {
     private String object;
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -37,6 +39,7 @@ public class GeneToGeneProductRelationship {
     private String relation;
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -45,6 +48,7 @@ public class GeneToGeneProductRelationship {
 
     /**
      * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -54,6 +58,7 @@ public class GeneToGeneProductRelationship {
 
     /**
      * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -63,6 +68,7 @@ public class GeneToGeneProductRelationship {
 
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -72,6 +78,7 @@ public class GeneToGeneProductRelationship {
 
     /**
      * the relationship type by which a subject is connected to an object in an association
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -81,6 +88,7 @@ public class GeneToGeneProductRelationship {
 
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -90,6 +98,7 @@ public class GeneToGeneProductRelationship {
 
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("subject")

@@ -21,6 +21,7 @@ public class GeneToPhenotypicFeatureAssociation {
 
     /**
      * gene in which variation is correlated with the phenotypic feature
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -29,6 +30,7 @@ public class GeneToPhenotypicFeatureAssociation {
 
     /**
      * gene in which variation is correlated with the phenotypic feature
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -38,6 +40,7 @@ public class GeneToPhenotypicFeatureAssociation {
 
     /**
      * gene in which variation is correlated with the phenotypic feature
+     * (Required)
      * 
      */
     @JsonProperty("subject")

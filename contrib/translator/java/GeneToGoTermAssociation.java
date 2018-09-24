@@ -22,6 +22,7 @@ public class GeneToGoTermAssociation {
 
     /**
      * class describing the activity, process or localization of the gene product
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -29,6 +30,7 @@ public class GeneToGoTermAssociation {
     private String object;
     /**
      * gene, product or macromolecular complex that has the function associated with the GO term
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -37,6 +39,7 @@ public class GeneToGoTermAssociation {
 
     /**
      * class describing the activity, process or localization of the gene product
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -46,6 +49,7 @@ public class GeneToGoTermAssociation {
 
     /**
      * class describing the activity, process or localization of the gene product
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -55,6 +59,7 @@ public class GeneToGoTermAssociation {
 
     /**
      * gene, product or macromolecular complex that has the function associated with the GO term
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -64,6 +69,7 @@ public class GeneToGoTermAssociation {
 
     /**
      * gene, product or macromolecular complex that has the function associated with the GO term
+     * (Required)
      * 
      */
     @JsonProperty("subject")

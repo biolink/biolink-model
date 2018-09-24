@@ -6,11 +6,11 @@ Metamodel for biolink schema
 ### Classes
 
  * [Element](Element.md) - root of all described things
-    * [TypeDefinition](TypeDefinition.md) - A type definition
     * [Definition](Definition.md) - definition base class
        * [SchemaDefinition](SchemaDefinition.md) - A collection of definitions
        * [ClassDefinition](ClassDefinition.md) - A class or interface
        * [SlotDefinition](SlotDefinition.md) - A property or slot
+    * [TypeDefinition](TypeDefinition.md) - A type definition
  * [Example](Example.md) - example of usage
  * [Prefix](Prefix.md) - Prefix URI map
 ### Mixins
@@ -55,8 +55,8 @@ Metamodel for biolink schema
  * [metamodel_version](metamodel_version.md) - Version of the metamodel used to load the schema. Supplied by the loader
  * [mixin](mixin.md) - Used only as a mixin -- cannot be instantiated on its own.
  * [mixins](mixins.md) - List of definitions to be mixed in. Targets may be any definition of the same type
-    * [class definition.mixins](class_definition_mixins.md)
     * [slot definition.mixins](slot_definition_mixins.md)
+    * [class definition.mixins](class_definition_mixins.md)
  * [multivalued](multivalued.md) - If true slot can have many values
  * [name](name.md) - a unique key that identifies a slot, type or class in a schema
  * [note](note.md) - Notes about an element

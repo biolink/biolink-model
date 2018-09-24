@@ -21,6 +21,7 @@ public class GeneToDiseaseAssociation {
 
     /**
      * gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -29,6 +30,7 @@ public class GeneToDiseaseAssociation {
 
     /**
      * gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -38,6 +40,7 @@ public class GeneToDiseaseAssociation {
 
     /**
      * gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
+     * (Required)
      * 
      */
     @JsonProperty("subject")

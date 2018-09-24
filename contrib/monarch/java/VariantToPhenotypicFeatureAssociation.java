@@ -21,6 +21,7 @@ public class VariantToPhenotypicFeatureAssociation {
 
     /**
      * a sequence variant in which the allele state is associated in some way with the phenotype state
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -29,6 +30,7 @@ public class VariantToPhenotypicFeatureAssociation {
 
     /**
      * a sequence variant in which the allele state is associated in some way with the phenotype state
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -38,6 +40,7 @@ public class VariantToPhenotypicFeatureAssociation {
 
     /**
      * a sequence variant in which the allele state is associated in some way with the phenotype state
+     * (Required)
      * 
      */
     @JsonProperty("subject")

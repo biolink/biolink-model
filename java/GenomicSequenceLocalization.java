@@ -40,6 +40,7 @@ public class GenomicSequenceLocalization {
     private String genomeBuild;
     /**
      * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -61,6 +62,7 @@ public class GenomicSequenceLocalization {
     private String startInterbaseCoordinate;
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -105,6 +107,7 @@ public class GenomicSequenceLocalization {
 
     /**
      * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -114,6 +117,7 @@ public class GenomicSequenceLocalization {
 
     /**
      * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -159,6 +163,7 @@ public class GenomicSequenceLocalization {
 
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -168,6 +173,7 @@ public class GenomicSequenceLocalization {
 
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("subject")

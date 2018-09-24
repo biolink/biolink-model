@@ -8,9 +8,9 @@ Metamodel for biolink schema
  * [Element](Element.md) - root of all described things
     * [TypeDefinition](TypeDefinition.md) - A type definition
     * [Definition](Definition.md) - definition base class
-       * [SlotDefinition](SlotDefinition.md) - A property or slot
-       * [SchemaDefinition](SchemaDefinition.md) - A collection of definitions
        * [ClassDefinition](ClassDefinition.md) - A class or interface
+       * [SchemaDefinition](SchemaDefinition.md) - A collection of definitions
+       * [SlotDefinition](SlotDefinition.md) - A property or slot
  * [Example](Example.md) - example of usage
  * [Prefix](Prefix.md) - Prefix URI map
 ### Mixins
@@ -45,8 +45,8 @@ Metamodel for biolink schema
  * [inlined](inlined.md) - if true then the value of this slot is inlined (i.e. a nested object) rather linked by key
  * [inverse](inverse.md) - used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')
  * [is_a](is_a.md) - specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded
-    * [slot definition.is_a](slot_definition_is_a.md)
     * [class definition.is_a](class_definition_is_a.md)
+    * [slot definition.is_a](slot_definition_is_a.md)
  * [is_class_field](is_class_field.md)
  * [license](license.md) - license for the schema
  * [local name](local_name.md) - the nsname (sans ':' for a given prefix)
@@ -82,8 +82,8 @@ Metamodel for biolink schema
  * [typeof](typeof.md) - a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition
  * [types](types.md) - types defined in schema
  * [union_of](union_of.md) - list of class or slot definitions that are combined to create the union class
-    * [class definition.union_of](class_definition_union_of.md)
     * [slot definition.union_of](slot_definition_union_of.md)
+    * [class definition.union_of](class_definition_union_of.md)
  * [value](value.md)
  * [example.description](value_description.md)
  * [values_from](values_from.md) - identifies the possible uri's of the range

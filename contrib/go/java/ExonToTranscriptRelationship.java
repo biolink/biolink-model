@@ -22,6 +22,7 @@ public class ExonToTranscriptRelationship {
 
     /**
      * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -29,6 +30,7 @@ public class ExonToTranscriptRelationship {
     private String object;
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -37,6 +39,7 @@ public class ExonToTranscriptRelationship {
 
     /**
      * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -46,6 +49,7 @@ public class ExonToTranscriptRelationship {
 
     /**
      * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -55,6 +59,7 @@ public class ExonToTranscriptRelationship {
 
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -64,6 +69,7 @@ public class ExonToTranscriptRelationship {
 
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * (Required)
      * 
      */
     @JsonProperty("subject")

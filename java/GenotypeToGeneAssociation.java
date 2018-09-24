@@ -23,6 +23,7 @@ public class GenotypeToGeneAssociation {
 
     /**
      * gene implicated in genotype
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -30,6 +31,7 @@ public class GenotypeToGeneAssociation {
     private String object;
     /**
      * the relationship type used to connect genotype to gene
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -37,6 +39,7 @@ public class GenotypeToGeneAssociation {
     private String relation;
     /**
      * parent genotype
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -45,6 +48,7 @@ public class GenotypeToGeneAssociation {
 
     /**
      * gene implicated in genotype
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -54,6 +58,7 @@ public class GenotypeToGeneAssociation {
 
     /**
      * gene implicated in genotype
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -63,6 +68,7 @@ public class GenotypeToGeneAssociation {
 
     /**
      * the relationship type used to connect genotype to gene
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -72,6 +78,7 @@ public class GenotypeToGeneAssociation {
 
     /**
      * the relationship type used to connect genotype to gene
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -81,6 +88,7 @@ public class GenotypeToGeneAssociation {
 
     /**
      * parent genotype
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -90,6 +98,7 @@ public class GenotypeToGeneAssociation {
 
     /**
      * parent genotype
+     * (Required)
      * 
      */
     @JsonProperty("subject")

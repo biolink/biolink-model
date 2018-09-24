@@ -19,6 +19,7 @@ class GenJSONSchemaTestCase(ClickTestCase):
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_meta(self):
+        self.maxDiff = None
         self.do_test(self.metamodel_file, 'meta.json', update_test_file=update_test_files)
         self.do_test(self.metamodel_file + ' -f json', 'meta.json', update_test_file=update_test_files)
         self.do_test(self.metamodel_file + ' -f xsv', 'meta_error', update_test_file=update_test_files,
@@ -27,6 +28,7 @@ class GenJSONSchemaTestCase(ClickTestCase):
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_biolink(self):
+        self.maxDiff = None
         self.do_test(self.biolink_file, "biolink-model.json", update_test_file=update_test_files)
         self.do_test(self.biolink_file + " -i", "biolink-model_inline.json", update_test_file=update_test_files)
         self.assertFalse(update_test_files, "Updating test files")

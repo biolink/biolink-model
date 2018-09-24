@@ -42,8 +42,7 @@ class JsonSchemaGenerator(Generator):
         self.clsobj = JsonObj(title=camelcase(cls.name),
                               type='object',
                               properties=JsonObj(),
-                              description=be(cls.description),
-                              required=[])
+                              description=be(cls.description))
         return True
 
     def end_class(self, cls: ClassDefinition) -> None:
@@ -60,6 +59,8 @@ class JsonSchemaGenerator(Generator):
             prop = JsonObj(type="string")
         if slot.description:
             prop.description = slot.description
+        if slot.required:
+            prop.required = True
         self.clsobj.properties[underscore(aliased_slot_name)] = prop
 
     def visit_slot(self, slot_name: str, slot: SlotDefinition) -> None:

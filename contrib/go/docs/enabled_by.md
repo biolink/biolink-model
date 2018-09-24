@@ -15,5 +15,5 @@ URI: [http://bioentity.io/vocab/enabled_by](slot_uri)
 
 ## Used in
 
- *  usage: [MolecularEvent](MolecularEvent.md)
  *  usage: [MolecularActivity](MolecularActivity.md)
+ *  usage: [MolecularEvent](MolecularEvent.md)

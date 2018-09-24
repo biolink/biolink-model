@@ -21,6 +21,7 @@ public class PairwiseGeneToGeneInteraction {
 
     /**
      * interaction relationship type
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -29,6 +30,7 @@ public class PairwiseGeneToGeneInteraction {
 
     /**
      * interaction relationship type
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -38,6 +40,7 @@ public class PairwiseGeneToGeneInteraction {
 
     /**
      * interaction relationship type
+     * (Required)
      * 
      */
     @JsonProperty("relation")

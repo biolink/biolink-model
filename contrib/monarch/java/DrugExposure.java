@@ -20,14 +20,29 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 })
 public class DrugExposure {
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("drug")
     private List<String> drug = new ArrayList<String>();
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("drug")
     public List<String> getDrug() {
         return drug;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("drug")
     public void setDrug(List<String> drug) {
         this.drug = drug;

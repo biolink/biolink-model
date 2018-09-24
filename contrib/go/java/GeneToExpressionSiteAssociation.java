@@ -25,6 +25,7 @@ public class GeneToExpressionSiteAssociation {
 
     /**
      * location in which the gene is expressed
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -39,6 +40,7 @@ public class GeneToExpressionSiteAssociation {
     private String quantifierQualifier;
     /**
      * expression relationship
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -53,6 +55,7 @@ public class GeneToExpressionSiteAssociation {
     private String stageQualifier;
     /**
      * gene in which variation is correlated with the phenotypic feature
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -61,6 +64,7 @@ public class GeneToExpressionSiteAssociation {
 
     /**
      * location in which the gene is expressed
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -70,6 +74,7 @@ public class GeneToExpressionSiteAssociation {
 
     /**
      * location in which the gene is expressed
+     * (Required)
      * 
      */
     @JsonProperty("object")
@@ -97,6 +102,7 @@ public class GeneToExpressionSiteAssociation {
 
     /**
      * expression relationship
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -106,6 +112,7 @@ public class GeneToExpressionSiteAssociation {
 
     /**
      * expression relationship
+     * (Required)
      * 
      */
     @JsonProperty("relation")
@@ -133,6 +140,7 @@ public class GeneToExpressionSiteAssociation {
 
     /**
      * gene in which variation is correlated with the phenotypic feature
+     * (Required)
      * 
      */
     @JsonProperty("subject")
@@ -142,6 +150,7 @@ public class GeneToExpressionSiteAssociation {
 
     /**
      * gene in which variation is correlated with the phenotypic feature
+     * (Required)
      * 
      */
     @JsonProperty("subject")
