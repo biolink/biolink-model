@@ -1803,6 +1803,13 @@ classes:
       - "WD:Q79529"
     id_prefixes:
       - CHEMBL.TARGET
+
+  enzyme:
+    is_a: molecular entity
+    description: >-
+      A substance produced by a living organism that acts as a catalyst to bring about a specific biochemical reaction.
+    id_prefixes:
+      - EC
       
   drug:
     is_a: chemical substance
