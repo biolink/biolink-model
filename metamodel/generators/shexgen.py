@@ -40,8 +40,8 @@ class ShExGenerator(Generator):
             self.shex['@context'] = [context, {'@base': base_uri}]
         self.shapes = []
         self.list_shapes = []
-        if self.format == 'shex':
-            raise NotImplementedError("ShExC format is not yet implemented")
+        # if self.format == 'shex':
+        #     raise NotImplementedError("ShExC format is not yet implemented")
         self.add_builtins()
         self.shex.shapes = self.shapes
         # TODO: Imports
@@ -60,8 +60,8 @@ class ShExGenerator(Generator):
 
     def visit_class(self, cls: ClassDefinition) -> bool:
         self.shape = Shape()
-        # if not cls.mixin and not cls.name in self.synopsis.mixinrefs and not cls.abstract:
-        #     self.shapeExpr.closed = jsg.Boolean(True)
+        if not cls.mixin and not cls.name in self.synopsis.mixinrefs and not cls.abstract:
+            self.shape.closed = True
         # # TODO: Add this when shex 2.1 is committed
         # if cls.abstract:
         #     self.shapeExpr.abstract = True
@@ -94,7 +94,6 @@ class ShExGenerator(Generator):
             self.shape.expression = constraint
         elif isinstance(self.shape.expression, TripleConstraint):
             self.shape.expression = EachOf(expressions=[self.shape.expression, constraint])
-            # self.shape.expression.expressions.append(constraint)
         else:
             self.shape.expression.expressions.append(constraint)
 
@@ -130,6 +129,7 @@ class ShExGenerator(Generator):
         return list_shape_id
 
     def end_schema(self, output: Optional[str]) -> None:
+        self.shex.shapes = self.shapes
         shex = as_json(self.shex)
         if self.format == 'rdf':
             g = Graph()
@@ -139,7 +139,6 @@ class ShExGenerator(Generator):
             g.bind('meta', META)
             shex = g.serialize(format='turtle').decode()
         elif self.format == 'shex':
-            # TODO: wait until the better ShExC emitter is committed
             shex = str(ShExC(self.shex))
         if output:
             with open(output, 'w') as outf:

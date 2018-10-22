@@ -97,10 +97,13 @@ class ClickTestCase(unittest.TestCase):
             new_txt = outf.getvalue().replace('\r\n', '\n').strip()
             if filtr:
                 new_txt = filtr(new_txt)
-            with open(testfile_path) as f:
-                old_txt = f.read().replace('\r\n', '\n').strip()
+            if os.path.exists(testfile_path):
+                with open(testfile_path) as f:
+                    old_txt = f.read().replace('\r\n', '\n').strip()
                 if filtr:
                     old_txt = filtr(old_txt)
+            else:
+                old_txt = "(Missing File)"
             if old_txt != new_txt and tox_wrap_fix:
                 old_txt = textwrap.fill(old_txt, 60)
                 new_txt = textwrap.fill(new_txt, 60)

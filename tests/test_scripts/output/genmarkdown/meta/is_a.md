@@ -14,10 +14,10 @@ URI: [http://bioentity.io/vocab/is_a](slot_uri)
 
 ## Children
 
- *  child: [slot definition.is_a](slot_definition_is_a.md)
  *  child: [class definition.is_a](class_definition_is_a.md)
+ *  child: [slot definition.is_a](slot_definition_is_a.md)
 ## Used in
 
  *  usage: [Definition](Definition.md)
- *  usage: [ClassDefinition](ClassDefinition.md)
  *  usage: [SlotDefinition](SlotDefinition.md)
+ *  usage: [ClassDefinition](ClassDefinition.md)
