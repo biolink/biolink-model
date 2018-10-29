@@ -14,6 +14,8 @@ imgflags?=-i --noimages
 # ----------------------------------------
 all: build test
 test: pytests
+shex: shex/meta.ttl shex/biolink-model.ttl
+rdf: rdf/meta.ttl rdf/biolink-model.ttl
 docs: metamodel/docs/index.md docs/index.md
 
 build: metamodel/context.jsonld context.jsonld build_core contrib_build_monarch contrib_build_translator contrib_build_go
@@ -124,12 +126,20 @@ contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml
 # ~~~~~~~~~~~~~~~~~~~~
 shex/%.ttl: dir-shex %.yaml
 	gen-shex $*.yaml -f rdf > shex/$*.ttl
+	gen-shex $*.yaml -c -f rdf > shex/$*nc.ttl
+	gen-shex $*.yaml -f shex > shex/$*.shex
+	gen-shex $*.yaml -c -f shex > shex/$*nc.shex
 	gen-shex $*.yaml -f json > shex/$*.json
+	gen-shex $*.yaml -c -f json > shex/$*nc.json
 
 contrib/%/shex:
 	mkdir -p contrib/$*/shex
 	gen-shex contrib/$*.yaml -f rdf > contrib/$*/shex/$*.ttl
+	gen-shex contrib/$*.yaml -c -f rdf > contrib/$*/shex/$*nc.ttl
+	gen-shex contrib/$*.yaml -f shex > contrib/$*/shex/$*.shex
+	gen-shex contrib/$*.yaml -c -f shex > contrib/$*/shex/$*nc.shex
 	gen-shex contrib/$*.yaml -f json > contrib/$*/shex/$*.json
+	gen-shex contrib/$*.yaml -c -f json > contrib/$*/shex/$*nc.json
 
 
 # ~~~~~~~~~~~~~~~~~~~~

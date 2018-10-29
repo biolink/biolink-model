@@ -1,0 +1,14 @@
+description: Attributed description
+display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [alt description]
+document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [alt
+    description]
+fields:
+- description: text of an alternate description
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [alt_description_text]
+  id: description
+- description: the source of description or other element
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [source]
+  id: source
+id: alt_description
+schema_generating: true
+weight: 20

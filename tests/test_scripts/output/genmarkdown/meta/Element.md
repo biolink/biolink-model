@@ -5,7 +5,7 @@ root of all described things
 
 URI: [http://bioentity.io/vocab/Element](http://bioentity.io/vocab/Element)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Element|name:string;singular_name:string%20%3F;description:string%20%3F;note:string%20%3F;comment:string%20%3F;see_also:string%20%3F;flags:string%20*;aliases:string%20*;mappings:string%20*;id_prefixes:string%20*;in_subset:string%20*;from_schema:string%20%3F;alt_descriptions:string%20*]++-%20examples%20*>\[Example],%20\[Element]^-\[TypeDefinition],%20\[Element]^-\[Definition])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Element|name:string;singular_name:string%20%3F;description:string%20%3F;note:string%20%3F;comment:string%20%3F;see_also:string%20%3F;flags:string%20*;aliases:string%20*;mappings:string%20*;id_prefixes:string%20*;in_subset:string%20*;from_schema:string%20%3F]-%20alt_descriptions%20*>\[AltDescription],%20\[Element]++-%20examples%20*>\[Example],%20\[Element]^-\[TypeDefinition],%20\[Element]^-\[Definition])
 ## Mappings
 
 ## Inheritance
@@ -22,7 +22,7 @@ URI: [http://bioentity.io/vocab/Element](http://bioentity.io/vocab/Element)
     * range: **string***
     * __Local__
  * [alt_descriptions](alt_descriptions.md)
-    * range: **string***
+    * range: [AltDescription](AltDescription.md)*
     * __Local__
  * [comment](comment.md)
     * Description: Comment about an element

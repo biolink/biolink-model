@@ -2235,7 +2235,7 @@ classes:
       Any association between one genotype and a genotypic entity that is a sub-component of it
     slot_usage:
       relation:
-        subproperty_of: has variant part
+        # subproperty_of: has variant part
       subject:
         range: genotype
         description: >-
@@ -2870,7 +2870,7 @@ classes:
       relation:
         description: >-
           E.g. is pathogenic for
-        subproperty_of: related condition
+#        subproperty_of: related condition
       object:
         description: >-
           a disease that is associated with that variant
@@ -3227,7 +3227,7 @@ classes:
         description: >-
           the structure at an earlier time
       relation:
-        subproperty_of: develops from
+#        subproperty_of: develops from
 
   occurrent:
     description: >-

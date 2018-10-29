@@ -15,8 +15,8 @@ URI: [http://bioentity.io/vocab/affects_splicing_of](slot_uri)
  *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [decreases splicing of](decreases_splicing_of.md) *subsets*: (translator_minimal)
  *  child: [increases splicing of](increases_splicing_of.md) *subsets*: (translator_minimal)
+ *  child: [decreases splicing of](decreases_splicing_of.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [MolecularEntity](MolecularEntity.md)

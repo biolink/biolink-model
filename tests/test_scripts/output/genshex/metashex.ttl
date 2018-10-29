@@ -9,7 +9,6 @@
 
 biolink:SchemaDefinition a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Definition [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -93,8 +92,21 @@ meta:Builtins a shex:NodeConstraint ;
 meta:SlotRangeTypes a shex:ShapeOr ;
     shex:shapeExprs ( biolink:TypeDefinition biolink:ClassDefinition meta:Builtins ) .
 
+biolink:AltDescription a shex:Shape ;
+    shex:expression [ a shex:EachOf ;
+            shex:expressions ( [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate biolink:alt_description_text ;
+                        shex:valueExpr [ a shex:NodeConstraint ;
+                                shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate biolink:source ;
+                        shex:valueExpr [ a shex:NodeConstraint ;
+                                shex:datatype xsd:string ] ] ) ] .
+
 biolink:Example a shex:Shape ;
-    shex:closed true ;
     shex:expression [ a shex:EachOf ;
             shex:expressions ( [ a shex:TripleConstraint ;
                         shex:max 1 ;
@@ -109,7 +121,6 @@ biolink:Example a shex:Shape ;
                                 shex:datatype xsd:string ] ] ) ] .
 
 biolink:Prefix a shex:Shape ;
-    shex:closed true ;
     shex:expression [ a shex:EachOf ;
             shex:expressions ( [ a shex:TripleConstraint ;
                         shex:max 1 ;
@@ -122,6 +133,19 @@ biolink:Prefix a shex:Shape ;
                         shex:predicate biolink:prefix_uri ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] ) ] .
+
+biolink:AltDescription__List a shex:Shape ;
+    shex:closed true ;
+    shex:expression [ a shex:EachOf ;
+            shex:expressions ( [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate rdf:first ;
+                        shex:valueExpr biolink:AltDescription ] [ a shex:TripleConstraint ;
+                        shex:predicate rdf:rest ;
+                        shex:valueExpr [ a shex:ShapeOr ;
+                                shex:shapeExprs ( [ a shex:NodeConstraint ;
+                                            shex:values ( () ) ] biolink:AltDescription__List ) ] ] ) ] .
 
 biolink:Element a shex:Shape ;
     shex:expression [ a shex:EachOf ;
@@ -188,7 +212,7 @@ biolink:Element a shex:Shape ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate biolink:alt_descriptions ;
-                        shex:valueExpr biolink:XSD_string__List ] ) ] .
+                        shex:valueExpr biolink:AltDescription__List ] ) ] .
 
 biolink:Example__List a shex:Shape ;
     shex:closed true ;
@@ -244,7 +268,6 @@ biolink:Definition__List a shex:Shape ;
 
 biolink:TypeDefinition a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Element [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
@@ -267,7 +290,6 @@ biolink:ClassDefinition__List a shex:Shape ;
 
 biolink:SlotDefinition a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Definition [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -361,7 +383,6 @@ biolink:SlotDefinition a shex:ShapeAnd ;
 
 biolink:ClassDefinition a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Definition [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -432,7 +453,7 @@ biolink:Definition a shex:ShapeAnd ;
                                     shex:min 0 ;
                                     shex:predicate rdfs:subClassOf ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
-                                            shex:datatype xsd:uri ] ] [ a shex:TripleConstraint ;
+                                            shex:nodeKind shex:nonliteral ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:values_from ;
@@ -473,6 +494,8 @@ biolink:XSD_string__List a shex:Shape ;
 [] a shex:Schema ;
     shex:shapes meta:Builtins,
         meta:SlotRangeTypes,
+        biolink:AltDescription,
+        biolink:AltDescription__List,
         biolink:ClassDefinition,
         biolink:ClassDefinition__List,
         biolink:Definition,

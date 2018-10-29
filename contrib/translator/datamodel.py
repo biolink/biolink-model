@@ -1,5 +1,5 @@
 # Auto generated from contrib/translator.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-09-24 12:32
+# Generation date: 2018-10-29 10:32
 # Schema: translator biolink mixins
 #
 # id: http://bioentity.io/json-schema/biolink/contrib/translator.json

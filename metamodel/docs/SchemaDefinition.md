@@ -89,7 +89,7 @@ URI: [http://bioentity.io/vocab/SchemaDefinition](http://bioentity.io/vocab/Sche
     * range: **string***
     * inherited from: [Element](Element.md)
  * [alt_descriptions](alt_descriptions.md)
-    * range: **string***
+    * range: [AltDescription](AltDescription.md)*
     * inherited from: [Element](Element.md)
  * [comment](comment.md)
     * Description: Comment about an element

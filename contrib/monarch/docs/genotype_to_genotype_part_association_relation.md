@@ -20,4 +20,3 @@ URI: [http://bioentity.io/vocab/genotype_to_genotype_part_association_relation](
 ## Used in
 
  *  usage: [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)
- *  reifies: has variant part

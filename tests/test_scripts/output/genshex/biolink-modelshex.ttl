@@ -11,12 +11,10 @@ meta:SlotRangeTypes a shex:ShapeOr ;
     shex:shapeExprs ( biolink:TypeDefinition biolink:ClassDefinition meta:Builtins ) .
 
 biolink:ActivityAndBehavior a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Occurrent [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Occurrent [ a shex:Shape ] ) .
 
 biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:AnatomicalEntityToAnatomicalEntityAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -34,7 +32,6 @@ biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation a shex:ShapeAnd ;
 
 biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:AnatomicalEntityToAnatomicalEntityAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -51,20 +48,16 @@ biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation a shex:ShapeAnd ;
                                     shex:valueExpr biolink:RelationshipType ] ) ] ] ) .
 
 biolink:BiosampleToDiseaseOrPhenotypicFeatureAssociation a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Association biolink:BiosampleToThingAssociation biolink:ThingToDiseaseOrPhenotypicFeatureAssociation [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Association biolink:BiosampleToThingAssociation biolink:ThingToDiseaseOrPhenotypicFeatureAssociation [ a shex:Shape ] ) .
 
 biolink:CaseToPhenotypicFeatureAssociation a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Association biolink:EntityToPhenotypicFeatureAssociation biolink:CaseToThingAssociation [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Association biolink:EntityToPhenotypicFeatureAssociation biolink:CaseToThingAssociation [ a shex:Shape ] ) .
 
 biolink:Cell a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:AnatomicalEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:AnatomicalEntity [ a shex:Shape ] ) .
 
 biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:CellLineToThingAssociation biolink:ThingToDiseaseOrPhenotypicFeatureAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -73,7 +66,6 @@ biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation a shex:ShapeAnd ;
 
 biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:ChemicalToThingAssociation biolink:ThingToDiseaseOrPhenotypicFeatureAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -82,7 +74,6 @@ biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation a shex:ShapeAnd ;
 
 biolink:ChemicalToGeneAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:ChemicalToThingAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -91,7 +82,6 @@ biolink:ChemicalToGeneAssociation a shex:ShapeAnd ;
 
 biolink:ChemicalToPathwayAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:ChemicalToThingAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -99,32 +89,25 @@ biolink:ChemicalToPathwayAssociation a shex:ShapeAnd ;
                         shex:valueExpr biolink:Pathway ] ] ) .
 
 biolink:ClinicalIntervention a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:ClinicalEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:ClinicalEntity [ a shex:Shape ] ) .
 
 biolink:ClinicalModifier a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ] ) .
 
 biolink:ClinicalTrial a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:ClinicalEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:ClinicalEntity [ a shex:Shape ] ) .
 
 biolink:CodingSequence a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ] ) .
 
 biolink:ConfidenceLevel a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:InformationContentEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:InformationContentEntity [ a shex:Shape ] ) .
 
 biolink:Device a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:NamedThing [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:NamedThing [ a shex:Shape ] ) .
 
 biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -132,16 +115,13 @@ biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation a shex:ShapeA
                         shex:valueExpr biolink:AnatomicalEntity ] ] ) .
 
 biolink:DiseaseToPhenotypicFeatureAssociation a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Association biolink:EntityToPhenotypicFeatureAssociation biolink:DiseaseToThingAssociation [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Association biolink:EntityToPhenotypicFeatureAssociation biolink:DiseaseToThingAssociation [ a shex:Shape ] ) .
 
 biolink:Drug a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:ChemicalSubstance [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:ChemicalSubstance [ a shex:Shape ] ) .
 
 biolink:EnvironmentToPhenotypicFeatureAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:EntityToPhenotypicFeatureAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -149,20 +129,16 @@ biolink:EnvironmentToPhenotypicFeatureAssociation a shex:ShapeAnd ;
                         shex:valueExpr biolink:Environment ] ] ) .
 
 biolink:EnvironmentalFeature a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:PlanetaryEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:PlanetaryEntity [ a shex:Shape ] ) .
 
 biolink:EnvironmentalProcess a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:PlanetaryEntity biolink:Occurrent [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:PlanetaryEntity biolink:Occurrent [ a shex:Shape ] ) .
 
 biolink:EvidenceType a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:InformationContentEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:InformationContentEntity [ a shex:Shape ] ) .
 
 biolink:ExonToTranscriptRelationship a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:SequenceFeatureRelationship [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -175,12 +151,10 @@ biolink:ExonToTranscriptRelationship a shex:ShapeAnd ;
                                     shex:valueExpr biolink:Transcript ] ) ] ] ) .
 
 biolink:FrequencyValue a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ] ) .
 
 biolink:GeneAsAModelOfDiseaseAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GeneToDiseaseAssociation biolink:ModelToDiseaseMixin biolink:EntityToDiseaseAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -188,12 +162,10 @@ biolink:GeneAsAModelOfDiseaseAssociation a shex:ShapeAnd ;
                         shex:valueExpr biolink:GeneOrGeneProduct ] ] ) .
 
 biolink:GeneFamily a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:MolecularEntity biolink:GeneGrouping [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:MolecularEntity biolink:GeneGrouping [ a shex:Shape ] ) .
 
 biolink:GeneHasVariantThatContributesToDiseaseAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GeneToDiseaseAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -207,7 +179,6 @@ biolink:GeneHasVariantThatContributesToDiseaseAssociation a shex:ShapeAnd ;
 
 biolink:GeneRegulatoryRelationship a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -225,7 +196,6 @@ biolink:GeneRegulatoryRelationship a shex:ShapeAnd ;
 
 biolink:GeneToExpressionSiteAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -251,7 +221,6 @@ biolink:GeneToExpressionSiteAssociation a shex:ShapeAnd ;
 
 biolink:GeneToGeneHomologyAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GeneToGeneAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -260,7 +229,6 @@ biolink:GeneToGeneHomologyAssociation a shex:ShapeAnd ;
 
 biolink:GeneToGeneProductRelationship a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:SequenceFeatureRelationship [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -278,7 +246,6 @@ biolink:GeneToGeneProductRelationship a shex:ShapeAnd ;
 
 biolink:GeneToGoTermAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:FunctionalAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -292,7 +259,6 @@ biolink:GeneToGoTermAssociation a shex:ShapeAnd ;
 
 biolink:GeneToPhenotypicFeatureAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:EntityToPhenotypicFeatureAssociation biolink:GeneToThingAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -300,12 +266,10 @@ biolink:GeneToPhenotypicFeatureAssociation a shex:ShapeAnd ;
                         shex:valueExpr biolink:GeneOrGeneProduct ] ] ) .
 
 biolink:Genome a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ] ) .
 
 biolink:GenomicSequenceLocalization a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -339,7 +303,6 @@ biolink:GenomicSequenceLocalization a shex:ShapeAnd ;
 
 biolink:GenotypeToGeneAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -357,7 +320,6 @@ biolink:GenotypeToGeneAssociation a shex:ShapeAnd ;
 
 biolink:GenotypeToGenotypePartAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -375,7 +337,6 @@ biolink:GenotypeToGenotypePartAssociation a shex:ShapeAnd ;
 
 biolink:GenotypeToPhenotypicFeatureAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:EntityToPhenotypicFeatureAssociation biolink:GenotypeToThingAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -389,7 +350,6 @@ biolink:GenotypeToPhenotypicFeatureAssociation a shex:ShapeAnd ;
 
 biolink:GenotypeToVariantAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -406,12 +366,10 @@ biolink:GenotypeToVariantAssociation a shex:ShapeAnd ;
                                     shex:valueExpr biolink:SequenceVariant ] ) ] ] ) .
 
 biolink:GenotypicSex a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:BiologicalSex [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:BiologicalSex [ a shex:Shape ] ) .
 
 biolink:GeographicLocationAtTime a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GeographicLocation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
@@ -420,20 +378,16 @@ biolink:GeographicLocationAtTime a shex:ShapeAnd ;
                                 shex:datatype xsd:time ] ] ] ) .
 
 biolink:GrossAnatomicalStructure a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:AnatomicalEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:AnatomicalEntity [ a shex:Shape ] ) .
 
 biolink:Haplotype a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ] ) .
 
 biolink:MacromolecularComplex a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:MacromolecularMachine [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:MacromolecularMachine [ a shex:Shape ] ) .
 
 biolink:MacromolecularMachineToBiologicalProcessAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:FunctionalAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -442,7 +396,6 @@ biolink:MacromolecularMachineToBiologicalProcessAssociation a shex:ShapeAnd ;
 
 biolink:MacromolecularMachineToCellularComponentAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:FunctionalAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -451,7 +404,6 @@ biolink:MacromolecularMachineToCellularComponentAssociation a shex:ShapeAnd ;
 
 biolink:MacromolecularMachineToMolecularActivityAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:FunctionalAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -459,16 +411,13 @@ biolink:MacromolecularMachineToMolecularActivityAssociation a shex:ShapeAnd ;
                         shex:valueExpr biolink:MolecularActivity ] ] ) .
 
 biolink:Metabolite a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:ChemicalSubstance [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:ChemicalSubstance [ a shex:Shape ] ) .
 
 biolink:MicroRNA a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:NoncodingRNAProduct [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:NoncodingRNAProduct [ a shex:Shape ] ) .
 
 biolink:PairwiseGeneToGeneInteraction a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GeneToGeneAssociation biolink:PairwiseInteractionAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -479,20 +428,16 @@ biolink:PathognomonicityQuantifier a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:SpecificityQuantifier [ a shex:Shape ] ) .
 
 biolink:Phenomenon a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Occurrent [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Occurrent [ a shex:Shape ] ) .
 
 biolink:PhenotypicSex a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:BiologicalSex [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:BiologicalSex [ a shex:Shape ] ) .
 
 biolink:PhysiologicalProcess a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:BiologicalProcess [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:BiologicalProcess [ a shex:Shape ] ) .
 
 biolink:PopulationToPopulationAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -509,16 +454,13 @@ biolink:PopulationToPopulationAssociation a shex:ShapeAnd ;
                                     shex:valueExpr biolink:RelationshipType ] ) ] ] ) .
 
 biolink:Procedure a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Occurrent [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Occurrent [ a shex:Shape ] ) .
 
 biolink:ProteinIsoform a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Protein biolink:GeneProductIsoform [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Protein biolink:GeneProductIsoform [ a shex:Shape ] ) .
 
 biolink:RNAProductIsoform a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:RNAProduct biolink:GeneProductIsoform [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:RNAProduct biolink:GeneProductIsoform [ a shex:Shape ] ) .
 
 biolink:SenstivityQuantifier a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:RelationshipQuantifier [ a shex:Shape ] ) .
@@ -538,7 +480,6 @@ biolink:SequenceVariantModulatesTreatmentAssociation a shex:ShapeAnd ;
 
 biolink:TranscriptToGeneRelationship a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:SequenceFeatureRelationship [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -552,7 +493,6 @@ biolink:TranscriptToGeneRelationship a shex:ShapeAnd ;
 
 biolink:VariantToDiseaseAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:VariantToThingAssociation biolink:EntityToDiseaseAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -572,7 +512,6 @@ biolink:VariantToDiseaseAssociation a shex:ShapeAnd ;
 
 biolink:VariantToPhenotypicFeatureAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:VariantToThingAssociation biolink:EntityToPhenotypicFeatureAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -581,7 +520,6 @@ biolink:VariantToPhenotypicFeatureAssociation a shex:ShapeAnd ;
 
 biolink:VariantToPopulationAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:VariantToThingAssociation biolink:FrequencyQuantifier biolink:FrequencyQualifier [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -623,8 +561,7 @@ biolink:BiosampleToThingAssociation a shex:ShapeAnd ;
                         shex:valueExpr biolink:Biosample ] ] ) .
 
 biolink:Case a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:IndividualOrganism [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:IndividualOrganism [ a shex:Shape ] ) .
 
 biolink:CaseToThingAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
@@ -635,8 +572,7 @@ biolink:CaseToThingAssociation a shex:ShapeAnd ;
                         shex:valueExpr biolink:Case ] ] ) .
 
 biolink:CellLine a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Biosample [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Biosample [ a shex:Shape ] ) .
 
 biolink:CellLineToThingAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
@@ -647,8 +583,7 @@ biolink:CellLineToThingAssociation a shex:ShapeAnd ;
                         shex:valueExpr biolink:CellLine ] ] ) .
 
 biolink:CellularComponent a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:AnatomicalEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:AnatomicalEntity [ a shex:Shape ] ) .
 
 biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
@@ -668,7 +603,6 @@ biolink:DiseaseToThingAssociation a shex:ShapeAnd ;
 
 biolink:DrugExposure a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Environment [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -676,8 +610,7 @@ biolink:DrugExposure a shex:ShapeAnd ;
                         shex:valueExpr biolink:ChemicalSubstance__List ] ] ) .
 
 biolink:Exon a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ] ) .
 
 biolink:FrequencyQuantifier a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:RelationshipQuantifier [ a shex:Shape ;
@@ -716,7 +649,6 @@ biolink:GenotypeToThingAssociation a shex:ShapeAnd ;
 
 biolink:GeographicLocation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:PlanetaryEntity [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -731,12 +663,10 @@ biolink:GeographicLocation a shex:ShapeAnd ;
                                             shex:datatype xsd:float ] ] ) ] ] ) .
 
 biolink:IndividualOrganism a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:OrganismalEntity biolink:ThingWithTaxon [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:OrganismalEntity biolink:ThingWithTaxon [ a shex:Shape ] ) .
 
 biolink:LifeStage a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:OrganismalEntity biolink:ThingWithTaxon [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:OrganismalEntity biolink:ThingWithTaxon [ a shex:Shape ] ) .
 
 biolink:ModelToDiseaseMixin a shex:Shape ;
     shex:expression [ a shex:EachOf ;
@@ -752,20 +682,16 @@ biolink:ModelToDiseaseMixin a shex:Shape ;
                         shex:valueExpr biolink:RelationshipType ] ) ] .
 
 biolink:MolecularActivity a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:BiologicalProcessOrActivity biolink:Occurrent [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:BiologicalProcessOrActivity biolink:Occurrent [ a shex:Shape ] ) .
 
 biolink:NoncodingRNAProduct a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:RNAProduct [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:RNAProduct [ a shex:Shape ] ) .
 
 biolink:Onset a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ] ) .
 
 biolink:OrganismTaxon a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:OntologyClass [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:OntologyClass [ a shex:Shape ] ) .
 
 biolink:PairwiseInteractionAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
@@ -794,35 +720,28 @@ biolink:PairwiseInteractionAssociation a shex:ShapeAnd ;
                                     shex:valueExpr biolink:OntologyClass ] ) ] ] ) .
 
 biolink:Pathway a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:BiologicalProcess [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:BiologicalProcess [ a shex:Shape ] ) .
 
 biolink:PhenotypicFeature a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:DiseaseOrPhenotypicFeature [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:DiseaseOrPhenotypicFeature [ a shex:Shape ] ) .
 
 biolink:Protein a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:GeneProduct [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:GeneProduct [ a shex:Shape ] ) .
 
 biolink:Provider a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:AdministrativeEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:AdministrativeEntity [ a shex:Shape ] ) .
 
 biolink:Publication a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:InformationContentEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:InformationContentEntity [ a shex:Shape ] ) .
 
 biolink:SeverityValue a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ] ) .
 
 biolink:SpecificityQuantifier a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:RelationshipQuantifier [ a shex:Shape ] ) .
 
 biolink:Treatment a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Environment [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -835,12 +754,10 @@ biolink:Treatment a shex:ShapeAnd ;
                                     shex:valueExpr biolink:DrugExposure__List ] ) ] ] ) .
 
 biolink:Zygosity a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ] ) .
 
 biolink:AnatomicalEntityToAnatomicalEntityAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -853,12 +770,10 @@ biolink:AnatomicalEntityToAnatomicalEntityAssociation a shex:ShapeAnd ;
                                     shex:valueExpr biolink:AnatomicalEntity ] ) ] ] ) .
 
 biolink:BiologicalProcessOrActivity a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:BiologicalEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:BiologicalEntity [ a shex:Shape ] ) .
 
 biolink:Biosample a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:OrganismalEntity biolink:ThingWithTaxon [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:OrganismalEntity biolink:ThingWithTaxon [ a shex:Shape ] ) .
 
 biolink:ChemicalSubstance__List a shex:Shape ;
     shex:closed true ;
@@ -874,12 +789,10 @@ biolink:ChemicalSubstance__List a shex:Shape ;
                                             shex:values ( () ) ] biolink:ChemicalSubstance__List ) ] ] ) ] .
 
 biolink:ClinicalEntity a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:NamedThing [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:NamedThing [ a shex:Shape ] ) .
 
 biolink:Disease a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:DiseaseOrPhenotypicFeature [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:DiseaseOrPhenotypicFeature [ a shex:Shape ] ) .
 
 biolink:DrugExposure__List a shex:Shape ;
     shex:closed true ;
@@ -910,15 +823,13 @@ biolink:EntityToFeatureOrDiseaseQualifiers a shex:ShapeAnd ;
 biolink:FrequencyQualifier a shex:Shape .
 
 biolink:GeneOntologyClass a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:OntologyClass [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:OntologyClass [ a shex:Shape ] ) .
 
 biolink:GeneProductIsoform a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GeneProduct [ a shex:Shape ] ) .
 
 biolink:GeneToDiseaseAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:EntityToDiseaseAssociation biolink:GeneToThingAssociation [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
@@ -986,8 +897,7 @@ biolink:Publication__List a shex:Shape ;
                                             shex:values ( () ) ] biolink:Publication__List ) ] ] ) ] .
 
 biolink:RNAProduct a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:GeneProduct [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:GeneProduct [ a shex:Shape ] ) .
 
 biolink:XSD_string__List a shex:Shape ;
     shex:closed true ;
@@ -1004,12 +914,10 @@ biolink:XSD_string__List a shex:Shape ;
                                             shex:values ( () ) ] biolink:XSD_string__List ) ] ] ) ] .
 
 biolink:BiologicalProcess a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:BiologicalProcessOrActivity biolink:Occurrent [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:BiologicalProcessOrActivity biolink:Occurrent [ a shex:Shape ] ) .
 
 biolink:BiologicalSex a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:Attribute [ a shex:Shape ] ) .
 
 biolink:ChemicalToThingAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
@@ -1028,12 +936,10 @@ biolink:EntityToDiseaseAssociation a shex:ShapeAnd ;
                         shex:valueExpr biolink:Disease ] ] ) .
 
 biolink:Environment a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:BiologicalEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:BiologicalEntity [ a shex:Shape ] ) .
 
 biolink:MacromolecularMachine a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
@@ -1042,18 +948,15 @@ biolink:MacromolecularMachine a shex:ShapeAnd ;
                                 shex:datatype xsd:string ] ] ] ) .
 
 biolink:PlanetaryEntity a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:NamedThing [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:NamedThing [ a shex:Shape ] ) .
 
 biolink:PopulationOfIndividualOrganisms a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:OrganismalEntity biolink:ThingWithTaxon [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:OrganismalEntity biolink:ThingWithTaxon [ a shex:Shape ] ) .
 
 biolink:RelationshipQuantifier a shex:Shape .
 
 biolink:SequenceFeatureRelationship a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -1082,12 +985,10 @@ biolink:VariantToThingAssociation a shex:ShapeAnd ;
                         shex:valueExpr biolink:SequenceVariant ] ] ) .
 
 biolink:ChemicalSubstance a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:MolecularEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:MolecularEntity [ a shex:Shape ] ) .
 
 biolink:FunctionalAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -1112,7 +1013,6 @@ biolink:BiologicalEntity a shex:ShapeAnd ;
 
 biolink:Gene a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GeneOrGeneProduct [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -1129,19 +1029,16 @@ biolink:Gene a shex:ShapeAnd ;
                                     shex:valueExpr biolink:DiseaseOrPhenotypicFeature ] ) ] ] ) .
 
 biolink:GeneProduct a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:GeneOrGeneProduct [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:GeneOrGeneProduct [ a shex:Shape ] ) .
 
 biolink:OrganismalEntity a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:BiologicalEntity [ a shex:Shape ] ) .
 
 biolink:Transcript a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ] ) .
 
 biolink:Attribute a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:OntologyClass [ a shex:Shape ;
-                shex:closed true ] ) .
+    shex:shapeExprs ( biolink:OntologyClass [ a shex:Shape ] ) .
 
 biolink:EntityToPhenotypicFeatureAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:EntityToFeatureOrDiseaseQualifiers [ a shex:Shape ;
@@ -1163,7 +1060,6 @@ biolink:EntityToPhenotypicFeatureAssociation a shex:ShapeAnd ;
 
 biolink:Genotype a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
@@ -1172,7 +1068,6 @@ biolink:Genotype a shex:ShapeAnd ;
 
 biolink:SequenceVariant a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -1228,7 +1123,6 @@ biolink:OntologyClass a shex:ShapeAnd ;
 
 biolink:DiseaseOrPhenotypicFeature a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:BiologicalEntity biolink:ThingWithTaxon [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -1245,7 +1139,6 @@ biolink:DiseaseOrPhenotypicFeature a shex:ShapeAnd ;
                                     shex:valueExpr biolink:NamedThing ] ) ] ] ) .
 
 biolink:NamedThing a shex:Shape ;
-    shex:closed true ;
     shex:expression [ a shex:EachOf ;
             shex:expressions ( [ a shex:TripleConstraint ;
                         shex:max 1 ;
@@ -1294,19 +1187,16 @@ biolink:NamedThing a shex:Shape ;
 
 biolink:AnatomicalEntity a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:OrganismalEntity biolink:ThingWithTaxon [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate <http://purl.obolibrary.org/obo/RO_0002292> ;
                         shex:valueExpr biolink:GeneOrGeneProduct ] ] ) .
 
-biolink:RelationshipType a shex:Shape ;
-    shex:closed true .
+biolink:RelationshipType a shex:Shape .
 
 biolink:GeneOrGeneProduct a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:MacromolecularMachine [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -1328,7 +1218,6 @@ biolink:GeneOrGeneProduct a shex:ShapeAnd ;
 
 biolink:GenomicEntity a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:MolecularEntity [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
@@ -1338,7 +1227,6 @@ biolink:GenomicEntity a shex:ShapeAnd ;
 
 biolink:Association a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:InformationContentEntity [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -1384,7 +1272,6 @@ biolink:Association a shex:ShapeAnd ;
 
 biolink:MolecularEntity a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:BiologicalEntity biolink:ThingWithTaxon [ a shex:Shape ;
-                shex:closed true ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;

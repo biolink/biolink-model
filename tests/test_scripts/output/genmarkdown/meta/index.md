@@ -5,11 +5,12 @@ Metamodel for biolink schema
 
 ### Classes
 
+ * [AltDescription](AltDescription.md) - Attributed description
  * [Element](Element.md) - root of all described things
     * [Definition](Definition.md) - definition base class
        * [SchemaDefinition](SchemaDefinition.md) - A collection of definitions
-       * [ClassDefinition](ClassDefinition.md) - A class or interface
        * [SlotDefinition](SlotDefinition.md) - A property or slot
+       * [ClassDefinition](ClassDefinition.md) - A class or interface
     * [TypeDefinition](TypeDefinition.md) - A type definition
  * [Example](Example.md) - example of usage
  * [Prefix](Prefix.md) - Prefix URI map
@@ -20,6 +21,7 @@ Metamodel for biolink schema
  * [abstract](abstract.md) - An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored
  * [alias](alias.md) - A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have "slots" where one inline and the other a reference
  * [aliases](aliases.md)
+ * [alt description.description](alt_description_text.md) - text of an alternate description
  * [alt_descriptions](alt_descriptions.md)
  * [apply_to](apply_to.md) - Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class.
  * [classes](classes.md) - classes defined in schema
@@ -73,6 +75,7 @@ Metamodel for biolink schema
  * [schema definition.slots](slot_definitions.md) - collection of slot definitions in a schema
  * [slot_usage](slot_usage.md) - Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints
  * [slots](slots.md) - list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins.
+ * [source](source.md) - the source of description or other element
  * [source_file](source_file.md) - name, uri or description of the source of the schema.  Supplied by the loader
  * [source_file_date](source_file_date.md) - modification date of the source of the schema.  Supplied by the loader
  * [source_file_size](source_file_size.md) - size in bytes of the source of the schema.  Supplied by the loader
@@ -82,8 +85,8 @@ Metamodel for biolink schema
  * [typeof](typeof.md) - a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition
  * [types](types.md) - types defined in schema
  * [union_of](union_of.md) - list of class or slot definitions that are combined to create the union class
-    * [slot definition.union_of](slot_definition_union_of.md)
     * [class definition.union_of](class_definition_union_of.md)
+    * [slot definition.union_of](slot_definition_union_of.md)
  * [value](value.md)
  * [example.description](value_description.md)
  * [values_from](values_from.md) - identifies the possible uri's of the range

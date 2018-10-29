@@ -246,6 +246,10 @@
          },
          "type": "array"
       },
+      "source": {
+         "description": "the source of description or other element",
+         "type": "string"
+      },
       "source_file": {
          "description": "name, uri or description of the source of the schema.  Supplied by the loader",
          "type": "string"
@@ -304,6 +308,21 @@
       }
    },
    "properties": {
+      "AltDescription": {
+         "description": "Attributed description",
+         "properties": {
+            "description": {
+               "description": "text of an alternate description",
+               "type": "string"
+            },
+            "source": {
+               "description": "the source of description or other element",
+               "type": "string"
+            }
+         },
+         "title": "AltDescription",
+         "type": "object"
+      },
       "ClassDefinition": {
          "description": "A class or interface",
          "properties": {

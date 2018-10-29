@@ -24,7 +24,6 @@ URI: [http://bioentity.io/vocab/GenotypeToGenotypePartAssociation](http://bioent
  * [genotype to genotype part association.relation](genotype_to_genotype_part_association_relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
     * range: [RelationshipType](RelationshipType.md) [required]
-    * edge label: has variant part
     * __Local__
  * [genotype to genotype part association.subject](genotype_to_genotype_part_association_subject.md)
     * Description: parent genotype

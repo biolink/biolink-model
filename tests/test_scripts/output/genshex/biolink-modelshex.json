@@ -32,8 +32,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/Occurrent",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -49,7 +48,6 @@
             "http://bioentity.io/vocab/ThingWithTaxon",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://purl.obolibrary.org/obo/RO_0002292",
@@ -67,7 +65,6 @@
             "http://bioentity.io/vocab/Association",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -97,7 +94,6 @@
             "http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -134,7 +130,6 @@
             "http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -237,7 +232,6 @@
             "http://bioentity.io/vocab/InformationContentEntity",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -327,8 +321,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/OntologyClass",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -358,8 +351,7 @@
             "http://bioentity.io/vocab/BiologicalProcessOrActivity",
             "http://bioentity.io/vocab/Occurrent",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -369,8 +361,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/BiologicalEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -380,8 +371,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/Attribute",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -392,8 +382,7 @@
             "http://bioentity.io/vocab/OrganismalEntity",
             "http://bioentity.io/vocab/ThingWithTaxon",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -405,8 +394,7 @@
             "http://bioentity.io/vocab/BiosampleToThingAssociation",
             "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -433,8 +421,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/IndividualOrganism",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -446,8 +433,7 @@
             "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
             "http://bioentity.io/vocab/CaseToThingAssociation",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -474,8 +460,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/AnatomicalEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -485,8 +470,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/Biosample",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -499,7 +483,6 @@
             "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
@@ -533,8 +516,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/AnatomicalEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -544,8 +526,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/MolecularEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -558,7 +539,6 @@
             "http://bioentity.io/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
@@ -577,7 +557,6 @@
             "http://bioentity.io/vocab/ChemicalToThingAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
@@ -596,7 +575,6 @@
             "http://bioentity.io/vocab/ChemicalToThingAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
@@ -630,8 +608,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/NamedThing",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -641,8 +618,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/ClinicalEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -652,8 +628,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/Attribute",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -663,8 +638,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/ClinicalEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -674,8 +648,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/GenomicEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -685,8 +658,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/InformationContentEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -696,8 +668,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/NamedThing",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -707,8 +678,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -720,7 +690,6 @@
             "http://bioentity.io/vocab/ThingWithTaxon",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -757,7 +726,6 @@
             "http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
@@ -793,8 +761,7 @@
             "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
             "http://bioentity.io/vocab/DiseaseToThingAssociation",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -821,8 +788,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/ChemicalSubstance",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -866,7 +832,6 @@
             "http://bioentity.io/vocab/Environment",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://bioentity.io/vocab/drug",
@@ -969,8 +934,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/BiologicalEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -982,7 +946,6 @@
             "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
@@ -999,8 +962,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/PlanetaryEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -1011,8 +973,7 @@
             "http://bioentity.io/vocab/PlanetaryEntity",
             "http://bioentity.io/vocab/Occurrent",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -1022,8 +983,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/InformationContentEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -1033,8 +993,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/GenomicEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -1045,7 +1004,6 @@
             "http://bioentity.io/vocab/SequenceFeatureRelationship",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1133,8 +1091,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/Attribute",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -1145,7 +1102,6 @@
             "http://bioentity.io/vocab/Association",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1175,7 +1131,6 @@
             "http://bioentity.io/vocab/GeneOrGeneProduct",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1214,7 +1169,6 @@
             "http://bioentity.io/vocab/EntityToDiseaseAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
@@ -1232,8 +1186,7 @@
             "http://bioentity.io/vocab/MolecularEntity",
             "http://bioentity.io/vocab/GeneGrouping",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -1248,7 +1201,6 @@
             "http://bioentity.io/vocab/GeneToDiseaseAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1277,8 +1229,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/OntologyClass",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -1289,7 +1240,6 @@
             "http://bioentity.io/vocab/MacromolecularMachine",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1332,8 +1282,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/GeneOrGeneProduct",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -1354,7 +1303,6 @@
             "http://bioentity.io/vocab/Association",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1393,7 +1341,6 @@
             "http://bioentity.io/vocab/GeneToThingAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
@@ -1411,7 +1358,6 @@
             "http://bioentity.io/vocab/Association",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1491,7 +1437,6 @@
             "http://bioentity.io/vocab/GeneToGeneAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
@@ -1509,7 +1454,6 @@
             "http://bioentity.io/vocab/SequenceFeatureRelationship",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1546,7 +1490,6 @@
             "http://bioentity.io/vocab/FunctionalAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1578,7 +1521,6 @@
             "http://bioentity.io/vocab/GeneToThingAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
@@ -1612,8 +1554,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/GenomicEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -1624,7 +1565,6 @@
             "http://bioentity.io/vocab/MolecularEntity",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
@@ -1645,7 +1585,6 @@
             "http://bioentity.io/vocab/Association",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1715,7 +1654,6 @@
             "http://bioentity.io/vocab/GenomicEntity",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
@@ -1733,7 +1671,6 @@
             "http://bioentity.io/vocab/Association",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1770,7 +1707,6 @@
             "http://bioentity.io/vocab/Association",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1809,7 +1745,6 @@
             "http://bioentity.io/vocab/GenotypeToThingAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1856,7 +1791,6 @@
             "http://bioentity.io/vocab/Association",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1892,8 +1826,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/BiologicalSex",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -1904,7 +1837,6 @@
             "http://bioentity.io/vocab/PlanetaryEntity",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -1940,7 +1872,6 @@
             "http://bioentity.io/vocab/GeographicLocation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
@@ -1960,8 +1891,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/AnatomicalEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -1971,8 +1901,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/GenomicEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -1983,8 +1912,7 @@
             "http://bioentity.io/vocab/OrganismalEntity",
             "http://bioentity.io/vocab/ThingWithTaxon",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2005,8 +1933,7 @@
             "http://bioentity.io/vocab/OrganismalEntity",
             "http://bioentity.io/vocab/ThingWithTaxon",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2016,8 +1943,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/MacromolecularMachine",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2028,7 +1954,6 @@
             "http://bioentity.io/vocab/GenomicEntity",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
@@ -2049,7 +1974,6 @@
             "http://bioentity.io/vocab/FunctionalAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
@@ -2067,7 +1991,6 @@
             "http://bioentity.io/vocab/FunctionalAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
@@ -2085,7 +2008,6 @@
             "http://bioentity.io/vocab/FunctionalAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
@@ -2102,8 +2024,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/ChemicalSubstance",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2113,8 +2034,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/NoncodingRNAProduct",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2151,8 +2071,7 @@
             "http://bioentity.io/vocab/BiologicalProcessOrActivity",
             "http://bioentity.io/vocab/Occurrent",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2164,7 +2083,6 @@
             "http://bioentity.io/vocab/ThingWithTaxon",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -2569,7 +2487,6 @@
       {
          "type": "Shape",
          "id": "http://bioentity.io/vocab/NamedThing",
-         "closed": true,
          "expression": {
             "type": "EachOf",
             "expressions": [
@@ -2666,8 +2583,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/RNAProduct",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2720,8 +2636,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/Attribute",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2748,8 +2663,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/OntologyClass",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2771,7 +2685,6 @@
             "http://bioentity.io/vocab/PairwiseInteractionAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
@@ -2851,8 +2764,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/BiologicalProcess",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2862,8 +2774,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/Occurrent",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2873,8 +2784,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/DiseaseOrPhenotypicFeature",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2884,8 +2794,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/BiologicalSex",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2895,8 +2804,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/BiologicalProcess",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2906,8 +2814,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/NamedThing",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2918,8 +2825,7 @@
             "http://bioentity.io/vocab/OrganismalEntity",
             "http://bioentity.io/vocab/ThingWithTaxon",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2930,7 +2836,6 @@
             "http://bioentity.io/vocab/Association",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -2966,8 +2871,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/Occurrent",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2977,8 +2881,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/GeneProduct",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -2989,8 +2892,7 @@
             "http://bioentity.io/vocab/Protein",
             "http://bioentity.io/vocab/GeneProductIsoform",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -3000,8 +2902,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/AdministrativeEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -3011,8 +2912,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/InformationContentEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -3022,8 +2922,7 @@
       },
       {
          "type": "Shape",
-         "id": "http://bioentity.io/vocab/RelationshipType",
-         "closed": true
+         "id": "http://bioentity.io/vocab/RelationshipType"
       },
       {
          "type": "ShapeAnd",
@@ -3031,8 +2930,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/GeneProduct",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -3043,8 +2941,7 @@
             "http://bioentity.io/vocab/RNAProduct",
             "http://bioentity.io/vocab/GeneProductIsoform",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -3065,7 +2962,6 @@
             "http://bioentity.io/vocab/Association",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -3128,7 +3024,6 @@
             "http://bioentity.io/vocab/GenomicEntity",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -3199,8 +3094,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/Attribute",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -3248,8 +3142,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/GenomicEntity",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       },
@@ -3260,7 +3153,6 @@
             "http://bioentity.io/vocab/SequenceFeatureRelationship",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -3323,7 +3215,6 @@
             "http://bioentity.io/vocab/Environment",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -3355,7 +3246,6 @@
             "http://bioentity.io/vocab/EntityToDiseaseAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -3400,7 +3290,6 @@
             "http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
@@ -3421,7 +3310,6 @@
             "http://bioentity.io/vocab/FrequencyQualifier",
             {
                "type": "Shape",
-               "closed": true,
                "expression": {
                   "type": "EachOf",
                   "expressions": [
@@ -3497,8 +3385,7 @@
          "shapeExprs": [
             "http://bioentity.io/vocab/Attribute",
             {
-               "type": "Shape",
-               "closed": true
+               "type": "Shape"
             }
          ]
       }

@@ -17,5 +17,5 @@ URI: [http://bioentity.io/vocab/systematic_synonym](slot_uri)
 
 ## Used in
 
- *  usage: [NamedThing](NamedThing.md)
  *  usage: [HasGenomicName](HasGenomicName.md)
+ *  usage: [NamedThing](NamedThing.md)

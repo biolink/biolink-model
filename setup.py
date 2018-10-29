@@ -5,16 +5,17 @@ from setuptools import setup, find_packages
 version = '0.2.0'
 
 requires = [
-    "click>=6.7",
-    "PyYAML>=3.12",
+    "click>=7.0",
+    "PyYAML>=3.13",
     "jsonasobj>=1.2.1",
     "jsonschema>=2.6.0",
     "rdflib>=4.2.2",
-    "graphviz>=0.8.3",
+    "graphviz>=0.9",
     "prefixcommons>=0.1.7",
     "rdflib-jsonld>=0.4.0",
-    "ShExJSG>=0.4b1",
-    "certifi>=2018.4.16"
+    "ShExJSG>=0.5.5",
+    "CFGraph>=0.2.0",
+    "PyShEx>=0.5.11"
     ]
 
 if sys.version_info < (3, 7):

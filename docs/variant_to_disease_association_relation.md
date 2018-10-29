@@ -20,4 +20,3 @@ URI: [http://bioentity.io/vocab/variant_to_disease_association_relation](slot_ur
 ## Used in
 
  *  usage: [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
- *  reifies: related condition

@@ -1,3 +1,9 @@
+AltDescription type
+  {
+    description: String
+    source: String
+  }
+
 ClassDefinition type
   {
     definingSlots: [SlotDefinition]
@@ -38,7 +44,7 @@ Element interface
     idPrefixes: [String]
     inSubset: [String]
     fromSchema: String
-    altDescriptions: [String]
+    altDescriptions: [AltDescription]
   }
 
 Example type

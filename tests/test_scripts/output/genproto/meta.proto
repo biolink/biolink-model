@@ -1,3 +1,9 @@
+// Attributed description
+message AltDescription
+ {
+  optional description String = 1
+  optional source String = 2
+ }
 // A class or interface
 message ClassDefinition
  {
@@ -14,7 +20,7 @@ message ClassDefinition
   repeated idPrefixes String = 11
   repeated inSubset String = 12
   optional fromSchema String = 13
-  repeated altDescriptions String = 14
+  repeated altDescriptions AltDescription = 14
   optional mixin Boolean = 15
   optional abstract Boolean = 16
   repeated localNames String = 17
@@ -58,7 +64,7 @@ message SchemaDefinition
   repeated idPrefixes String = 11
   repeated inSubset String = 12
   optional fromSchema String = 13
-  repeated altDescriptions String = 14
+  repeated altDescriptions AltDescription = 14
   optional isA Definition = 15
   optional mixin Boolean = 16
   repeated mixins Definition = 17
@@ -101,7 +107,7 @@ message SlotDefinition
   repeated idPrefixes String = 11
   repeated inSubset String = 12
   optional fromSchema String = 13
-  repeated altDescriptions String = 14
+  repeated altDescriptions AltDescription = 14
   optional mixin Boolean = 15
   optional abstract Boolean = 16
   repeated localNames String = 17
@@ -144,7 +150,7 @@ message TypeDefinition
   repeated idPrefixes String = 11
   repeated inSubset String = 12
   optional fromSchema String = 13
-  repeated altDescriptions String = 14
+  repeated altDescriptions AltDescription = 14
   optional typeof String = 15
  }
 

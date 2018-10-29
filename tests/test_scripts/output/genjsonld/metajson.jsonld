@@ -70,11 +70,28 @@
       "@id": "description"
     },
     {
+      "name": "alt_description_text",
+      "description": "text of an alternate description",
+      "domain": "AltDescription",
+      "range": "xsd:string",
+      "alias": "description",
+      "inherited": true,
+      "@id": "alt_description_text"
+    },
+    {
+      "name": "source",
+      "description": "the source of description or other element",
+      "domain": "AltDescription",
+      "range": "xsd:string",
+      "inherited": true,
+      "@id": "source"
+    },
+    {
       "name": "alt_descriptions",
       "note": "Needs description",
       "multivalued": true,
       "domain": "Element",
-      "range": "xsd:string",
+      "range": "AltDescription",
       "inherited": true,
       "@id": "alt_descriptions"
     },
@@ -642,6 +659,15 @@
   ],
   "classes": [
     {
+      "name": "AltDescription",
+      "description": "Attributed description",
+      "slots": [
+        "alt_description_text",
+        "source"
+      ],
+      "@id": "AltDescription"
+    },
+    {
       "name": "Prefix",
       "description": "Prefix URI map",
       "slots": [
@@ -808,9 +834,9 @@
   ],
   "metamodel_version": "0.3.1",
   "source_file": "/Users/hsolbri1/git/biolink/biolink-model/meta.yaml",
-  "source_file_size": 18571,
-  "source_file_date": "Mon Oct 22 17:04:32 2018",
-  "generation_date": "2018-10-22 18:36",
+  "source_file_size": 19095,
+  "source_file_date": "Thu Oct 25 06:56:34 2018",
+  "generation_date": "2018-10-29 10:33",
   "@context": [
     "file:///Users/hsolbri1/git/biolink/biolink-model/tests/test_scripts/output/genjsonld/metacontext.jsonld",
     {

@@ -86,10 +86,24 @@ metamodel:
           mappings:
             - skos:definition
 
+      alt_description_text:
+          domain: alt description
+          inherited: true
+          description: >-
+              text of an alternate description
+          alias: description
+
+      source:
+          domain: alt description
+          inherited: true
+          description:
+            the source of description or other element
+
       alt_descriptions:
           multivalued: true
           inherited: true
           domain: element
+          range: alt description
           note: >-
             Needs description
 
@@ -537,6 +551,12 @@ metamodel:
             A URI associated with a given prefix
 
     classes:
+        alt description:
+          description: "Attributed description"
+          slots:
+            - alt_description_text
+            - source
+
         prefix:
           description: "Prefix URI map"
           slots:

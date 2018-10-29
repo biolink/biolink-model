@@ -15,8 +15,8 @@ URI: [http://bioentity.io/vocab/affects_folding_of](slot_uri)
  *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [decreases folding of](decreases_folding_of.md) *subsets*: (translator_minimal)
  *  child: [increases folding of](increases_folding_of.md) *subsets*: (translator_minimal)
+ *  child: [decreases folding of](decreases_folding_of.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [MolecularEntity](MolecularEntity.md)

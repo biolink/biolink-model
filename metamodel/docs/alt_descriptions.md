@@ -8,7 +8,7 @@ URI: [http://bioentity.io/vocab/alt_descriptions](slot_uri)
 
 ## Domain and Range
 
-[Element](Element.md) -> **string**
+[Element](Element.md) -> [AltDescription](AltDescription.md)
 ## Inheritance
 
 ## Children

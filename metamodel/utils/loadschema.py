@@ -45,6 +45,8 @@ def load_raw_schema(data: Union[str, TextIO],
             schemadefs = {schemadefs.pop('name'): schemadefs}
         elif 'id' in schemadefs:
             schemadefs = {schemadefs['id']: schemadefs}
+        elif len(schemadefs) > 1 or not isinstance(list(schemadefs.values())[0], dict):
+            schemadefs = {'Unnamed Schema': schemadefs}
         schema: SchemaDefinition = None
         for sname, sdef in {k: SchemaDefinition(name=k, **v) for k, v in schemadefs.items()}.items():
             if schema is None:

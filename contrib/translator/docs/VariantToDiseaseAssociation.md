@@ -26,7 +26,6 @@ URI: [http://bioentity.io/vocab/VariantToDiseaseAssociation](http://bioentity.io
  * [variant to disease association.relation](variant_to_disease_association_relation.md)
     * Description: E.g. is pathogenic for
     * range: [RelationshipType](RelationshipType.md) [required]
-    * edge label: related condition
     * __Local__
  * [variant to disease association.subject](variant_to_disease_association_subject.md)
     * Description: a sequence variant in which the allele state is associated in some way with the disease state

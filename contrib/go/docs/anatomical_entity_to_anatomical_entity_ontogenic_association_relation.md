@@ -20,4 +20,3 @@ URI: [http://bioentity.io/vocab/anatomical_entity_to_anatomical_entity_ontogenic
 ## Used in
 
  *  usage: [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md)
- *  reifies: develops from

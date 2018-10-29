@@ -27,7 +27,7 @@ URI: [http://bioentity.io/vocab/TypeDefinition](http://bioentity.io/vocab/TypeDe
     * range: **string***
     * inherited from: [Element](Element.md)
  * [alt_descriptions](alt_descriptions.md)
-    * range: **string***
+    * range: [AltDescription](AltDescription.md)*
     * inherited from: [Element](Element.md)
  * [comment](comment.md)
     * Description: Comment about an element

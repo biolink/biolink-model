@@ -22,7 +22,7 @@ URI: [http://bioentity.io/vocab/Element](http://bioentity.io/vocab/Element)
     * range: **string***
     * __Local__
  * [alt_descriptions](alt_descriptions.md)
-    * range: **string***
+    * range: [AltDescription](AltDescription.md)*
     * __Local__
  * [comment](comment.md)
     * Description: Comment about an element

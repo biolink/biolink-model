@@ -17,7 +17,7 @@ URI: [http://bioentity.io/vocab/homologous_to](slot_uri)
 ## Children
 
  *  child: [xenologous to](xenologous_to.md) *subsets*: (translator_minimal)
- *  child: [orthologous to](orthologous_to.md) *subsets*: (translator_minimal)
  *  child: [paralogous to](paralogous_to.md) *subsets*: (translator_minimal)
+ *  child: [orthologous to](orthologous_to.md) *subsets*: (translator_minimal)
 ## Used in
 

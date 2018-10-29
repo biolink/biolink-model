@@ -1,5 +1,5 @@
 # Auto generated from /Users/hsolbri1/git/biolink/biolink-model/meta.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-09-19 16:09
+# Generation date: 2018-10-25 06:29
 # Schema: metamodel
 #
 # id: https://biolink.github.io/metamodel/ontology/meta.ttl
@@ -14,9 +14,9 @@ from metamodel.utils.yamlutils import YAMLRoot
 
 metamodel_version = "0.3.1"
 
-inherited_slots: List[str] = ["description", "alt_descriptions", "in_subset", "mappings", "multivalued", "domain",
-                              "range", "required", "inlined", "definitional", "object_property", "subproperty_of",
-                              "inherited"]
+inherited_slots: List[str] = ["description", "alt_description_text", "source", "alt_descriptions", "in_subset",
+                              "mappings", "multivalued", "domain", "range", "required", "inlined", "definitional",
+                              "object_property", "subproperty_of", "inherited"]
 
 
 # Type names
@@ -56,6 +56,15 @@ class SchemaDefinitionId(str):
 
 
 @dataclass
+class AltDescription(YAMLRoot):
+    """
+    Attributed description
+    """
+    description: Optional[str] = None
+    source: Optional[str] = None
+
+
+@dataclass
 class Prefix(YAMLRoot):
     """
     Prefix URI map
@@ -91,7 +100,12 @@ class Element(YAMLRoot):
     id_prefixes: List[str] = empty_list()
     in_subset: List[str] = empty_list()
     from_schema: Optional[str] = None
-    alt_descriptions: List[str] = empty_list()
+    alt_descriptions: List[AltDescription] = empty_list()
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        self.alt_descriptions = [v if isinstance(v, AltDescription)
+                                 else AltDescription(v) for v in self.alt_descriptions]
 
 
 @dataclass

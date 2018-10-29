@@ -2399,7 +2399,6 @@
       "range": "RelationshipType",
       "required": true,
       "alias": "relation",
-      "subproperty_of": "has_variant_part",
       "@id": "genotype_to_genotype_part_association_relation"
     },
     {
@@ -3161,7 +3160,6 @@
       "range": "RelationshipType",
       "required": true,
       "alias": "relation",
-      "subproperty_of": "related_condition",
       "@id": "variant_to_disease_association_relation"
     },
     {
@@ -3784,7 +3782,6 @@
       "range": "RelationshipType",
       "required": true,
       "alias": "relation",
-      "subproperty_of": "develops_from",
       "@id": "anatomical_entity_to_anatomical_entity_ontogenic_association_relation"
     }
   ],
@@ -4673,12 +4670,16 @@
       ],
       "alt_descriptions": [
         {
-          "description": "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition",
-          "source": "AGR"
+          "description": [
+            "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition",
+            "AGR"
+          ]
         },
         {
-          "description": "A contiguous change at a Location",
-          "source": "VMC"
+          "description": [
+            "A contiguous change at a Location",
+            "VMC"
+          ]
         }
       ],
       "is_a": "GenomicEntity",
@@ -4831,8 +4832,7 @@
       ],
       "slot_usage": [
         {
-          "name": "relation",
-          "subproperty_of": "has_variant_part"
+          "name": "relation"
         },
         {
           "name": "subject",
@@ -5829,8 +5829,7 @@
         },
         {
           "name": "relation",
-          "description": "E.g. is pathogenic for",
-          "subproperty_of": "related_condition"
+          "description": "E.g. is pathogenic for"
         },
         {
           "name": "object",
@@ -6391,8 +6390,7 @@
           "range": "AnatomicalEntity"
         },
         {
-          "name": "relation",
-          "subproperty_of": "develops_from"
+          "name": "relation"
         }
       ],
       "@id": "AnatomicalEntityToAnatomicalEntityOntogenicAssociation"
@@ -6580,9 +6578,9 @@
   ],
   "metamodel_version": "0.3.1",
   "source_file": "/Users/hsolbri1/git/biolink/biolink-model/biolink-model.yaml",
-  "source_file_size": 98038,
-  "source_file_date": "Sun Sep 23 12:22:48 2018",
-  "generation_date": "2018-09-23 12:29",
+  "source_file_size": 98042,
+  "source_file_date": "Sun Oct 28 14:15:54 2018",
+  "generation_date": "2018-10-29 08:51",
   "@context": [
     "https://github.com/hsolbrig/biolink-model/raw/master/context.jsonld",
     {
