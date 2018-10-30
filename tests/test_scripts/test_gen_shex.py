@@ -31,6 +31,7 @@ class GenShExTestCase(ClickTestCase):
 
     # TODO: Need to add RDF difference or cannonical representation to do this test
     def test_biolink(self):
+        self.maxDiff = None
         self.do_test(self.biolink_file, "biolink-modelshex.shex", update_test_file=update_test_files)
         self.do_test(self.biolink_file + " -f json", "biolink-modelshex.json", update_test_file=update_test_files)
         self.do_test(self.biolink_file + " -f rdf", "biolink-modelshex.ttl", update_test_file=update_test_files)
