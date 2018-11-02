@@ -15,8 +15,8 @@ URI: [http://bioentity.io/vocab/affects_stability_of](slot_uri)
  *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [decreases stability of](decreases_stability_of.md) *subsets*: (translator_minimal)
  *  child: [increases stability of](increases_stability_of.md) *subsets*: (translator_minimal)
+ *  child: [decreases stability of](decreases_stability_of.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [MolecularEntity](MolecularEntity.md)
