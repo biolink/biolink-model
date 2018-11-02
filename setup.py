@@ -25,6 +25,7 @@ setup(
     name='BiolinkMG',
     version= version,
     packages=find_packages(exclude=['about', 'contrib', 'docs', 'graphql', 'graphviz', 'images', 'tests']),
+    include_package_data=True,
     url='https://github.com/biolink/biolink-model',
     license='CC0 1.0 Universal',
     install_requires = requires,
