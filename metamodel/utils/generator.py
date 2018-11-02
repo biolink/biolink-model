@@ -151,7 +151,7 @@ class Generator(metaclass=abc.ABCMeta):
         @return: List of ancestor names
         """
         definition = self.obj_for(definition)
-        return [definition.name] + self.ancestors(definition.is_a) if definition.is_a else []
+        return [definition.name] + (self.ancestors(definition.is_a) if definition.is_a is not None else [])
 
     def neighborhood(self, elements: List[ELEMENT_NAME]) \
             -> References:
