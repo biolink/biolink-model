@@ -86,10 +86,10 @@ contrib/%/docs/index.md: contrib/%.yaml
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
-ontology/biolink.ttl: dir-ontology biolink-model.yaml
+ontology/biolink.ttl: biolink-model.yaml
 	gen-owl -o $@ biolink-model.yaml
 
-contrib/%/ontology.ttl: contrib-dir-% contrib/%.yaml
+contrib/%/ontology.ttl: contrib/%.yaml
 	gen-owl -o $@ contrib/$*.yaml
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +99,7 @@ rdf/%.ttl: dir-rdf metamodel/context.jsonld meta.yaml
 	gen-rdf $*.yaml -f ttl --context metamodel/context.jsonld > rdf/$*.ttl
 
 
-contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml
+contrib/%/datamodel.py: contrib/%.yaml
 	gen-py-classes contrib/$*.yaml > $@
 
 gen-graphviz: dir-graphviz biolink-model.yaml
