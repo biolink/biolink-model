@@ -45,7 +45,8 @@ setup(
             'gen-py-classes = metamodel.generators.pythongen:cli',
             'gen-rdf = metamodel.generators.rdfgen:cli',
             'gen-shex = metamodel.generators.shexgen:cli',
-            'gen-yuml = metamodel.generators.yumlgen:cli'
+            'gen-yuml = metamodel.generators.yumlgen:cli',
+            'comparefiles = metamodel.utils.comparefiles:cli'
         ]
     },
     classifiers=[

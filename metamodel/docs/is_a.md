@@ -18,6 +18,6 @@ URI: [http://bioentity.io/vocab/is_a](slot_uri)
  *  child: [slot definition.is_a](slot_definition_is_a.md)
 ## Used in
 
- *  usage: [SlotDefinition](SlotDefinition.md)
  *  usage: [ClassDefinition](ClassDefinition.md)
  *  usage: [Definition](Definition.md)
+ *  usage: [SlotDefinition](SlotDefinition.md)

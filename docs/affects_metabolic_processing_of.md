@@ -15,8 +15,8 @@ URI: [http://bioentity.io/vocab/affects_metabolic_processing_of](slot_uri)
  *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [increases metabolic processing of](increases_metabolic_processing_of.md) *subsets*: (translator_minimal)
  *  child: [decreases metabolic processing of](decreases_metabolic_processing_of.md) *subsets*: (translator_minimal)
+ *  child: [increases metabolic processing of](increases_metabolic_processing_of.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [MolecularEntity](MolecularEntity.md)

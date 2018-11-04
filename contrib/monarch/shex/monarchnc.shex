@@ -67,7 +67,7 @@
 
 <http://bioentity.io/vocab/BiologicalEntity>  (
     @<http://bioentity.io/vocab/NamedThing> AND {
-       <http://purl.obolibrary.org/obo/RO_0002200> ?
+       <http://purl.obolibrary.org/obo/RO_0002200> . ?
     }
 )
 
@@ -306,9 +306,9 @@
     @<http://bioentity.io/vocab/TaxonClosureMixin> AND {
        (  <http://bioentity.io/vocab/subject_extensions> @<http://bioentity.io/vocab/PropertyValuePair> * ;
           <http://bioentity.io/vocab/object_extensions> @<http://bioentity.io/vocab/PropertyValuePair> * ;
-          <http://bioentity.io/vocab/has_evidence_graph> ? ;
+          <http://bioentity.io/vocab/has_evidence_graph> . ? ;
           <http://bioentity.io/vocab/has_evidence_type> @<http://bioentity.io/vocab/EvidenceType> ? ;
-          <http://purl.obolibrary.org/obo/RO_0002558> ?
+          <http://purl.obolibrary.org/obo/RO_0002558> . ?
        )
     }
 )
@@ -685,9 +685,9 @@
     (  <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2001/XMLSchema#string> * ;
-       <http://bioentity.io/vocab/has_alternate_identifier> * ;
-       <http://bioentity.io/vocab/has_xref> * ;
-       <http://bioentity.io/vocab/has_synonym> * ;
+       <http://bioentity.io/vocab/has_alternate_identifier> . * ;
+       <http://bioentity.io/vocab/has_xref> . * ;
+       <http://bioentity.io/vocab/has_synonym> . * ;
        <http://www.w3.org/2002/07/owl#topObjectProperty> @<http://bioentity.io/vocab/NamedThing> ? ;
        <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ? ;
@@ -864,11 +864,11 @@
 
 <http://bioentity.io/vocab/TaxonClosureMixin> {
     (  <http://bioentity.io/vocab/subject_taxon> @<http://bioentity.io/vocab/OrganismTaxon> ? ;
-       <http://bioentity.io/vocab/subject_taxon_label> ? ;
+       <http://bioentity.io/vocab/subject_taxon_label> . ? ;
        <http://bioentity.io/vocab/subject_taxon_closure> @<http://bioentity.io/vocab/OntologyClass> * ;
        <http://bioentity.io/vocab/subject_taxon_closure_label> <http://www.w3.org/2001/XMLSchema#string> * ;
        <http://bioentity.io/vocab/object_taxon> @<http://bioentity.io/vocab/OrganismTaxon> ? ;
-       <http://bioentity.io/vocab/object_taxon_label> ? ;
+       <http://bioentity.io/vocab/object_taxon_label> . ? ;
        <http://bioentity.io/vocab/object_taxon_closure> @<http://bioentity.io/vocab/OntologyClass> * ;
        <http://bioentity.io/vocab/object_taxon_closure_label> <http://www.w3.org/2001/XMLSchema#string> *
     )

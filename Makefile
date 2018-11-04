@@ -50,10 +50,10 @@ biolink-model.tsv: biolink-model.yaml
 # JSON-LD CONTEXT
 # ~~~~~~~~~~~~~~~~~~~~
 context.jsonld: biolink-model.yaml
-	gen-jsonld-context $< > $@
+	gen-jsonld-context $< > tmp.jsonld && (comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
 
 metamodel/context.jsonld: meta.yaml
-	gen-jsonld-context $< > $@
+	gen-jsonld-context $< > tmp.jsonld && (comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
 
 # ~~~~~~~~~~~~~~~~~~~~
 # JSONSCHEMA -> Java
@@ -119,7 +119,7 @@ contrib-golr-%: contrib/%.yaml
 # Python
 # ~~~~~~~~~~~~~~~~~~~~
 contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml
-	gen-py-classes contrib/$*.yaml > $@
+	gen-py-classes contrib/$*.yaml > tmp.py && (comparefiles tmp.py $@ && cp tmp.py $@); rm tmp.py
 
 # ~~~~~~~~~~~~~~~~~~~~
 # ShEx
@@ -181,8 +181,8 @@ MM = metamodel/metamodel.py
 BMM = biolinkmodel/datamodel.py
 
 regen-mm:
-	gen-py-classes meta.yaml > tmp.py && python tmp.py && cp $(MM) $(MM)-PREV && mv tmp.py $(MM)
-	gen-py-classes biolink-model.yaml > tmp.py && python tmp.py && cp $(BMM) $(BMM)-PREV && mv tmp.py $(BMM)
+	gen-py-classes meta.yaml > tmp.py && python tmp.py && (comparefiles typ.py $(MM) && cp $(MM) $(MM)-PREV && cp tmp.py $(MM)); rm tmp.py
+	gen-py-classes biolink-model.yaml > tmp.py && python tmp.py && c&& (comparefiles typ.py $(BMM) && cp $(BMM) $(BMM)-PREV && cp tmp.py $(BMM)); rm tmp.py
 
 # ----------------------------------------
 # TESTS
