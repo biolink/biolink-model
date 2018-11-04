@@ -167,14 +167,14 @@ class MarkdownGenerator(Generator):
 
     def class_hier(self, cls: ClassDefinition, level=0) -> None:
         self.bullet(self.link(cls, use_desc=True), level)
-        if cls.name in self.synopsis.isarefs:
-            for child in self.synopsis.isarefs[cls.name].classrefs:
+        if cls.name in sorted(self.synopsis.isarefs):
+            for child in sorted(self.synopsis.isarefs[cls.name].classrefs):
                 self.class_hier(self.schema.classes[child], level+1)
         
     def pred_hier(self, slot: SlotDefinition, level=0) -> None:
         self.bullet(self.link(slot, use_desc=True), level)
-        if slot.name in self.synopsis.isarefs:
-            for child in self.synopsis.isarefs[slot.name].slotrefs:
+        if slot.name in sorted(self.synopsis.isarefs):
+            for child in sorted(self.synopsis.isarefs[slot.name].slotrefs):
                 self.pred_hier(self.schema.slots[child], level+1)
 
     def dir_path(self, obj: Union[ClassDefinition, SlotDefinition]) -> str:
