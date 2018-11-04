@@ -9,9 +9,9 @@ Metamodel for biolink schema
  * [Element](Element.md) - root of all described things
     * [TypeDefinition](TypeDefinition.md) - A type definition
     * [Definition](Definition.md) - definition base class
-       * [ClassDefinition](ClassDefinition.md) - A class or interface
        * [SchemaDefinition](SchemaDefinition.md) - A collection of definitions
        * [SlotDefinition](SlotDefinition.md) - A property or slot
+       * [ClassDefinition](ClassDefinition.md) - A class or interface
  * [Example](Example.md) - example of usage
  * [Prefix](Prefix.md) - Prefix URI map
 ### Mixins

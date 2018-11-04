@@ -15,8 +15,8 @@ URI: [http://bioentity.io/vocab/affects_uptake_of](slot_uri)
  *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [increases uptake of](increases_uptake_of.md) *subsets*: (translator_minimal)
  *  child: [decreases uptake of](decreases_uptake_of.md) *subsets*: (translator_minimal)
+ *  child: [increases uptake of](increases_uptake_of.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [MolecularEntity](MolecularEntity.md)
