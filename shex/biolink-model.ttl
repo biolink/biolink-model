@@ -705,7 +705,7 @@ biolink:PairwiseInteractionAssociation a shex:ShapeAnd ;
                                     shex:min 0 ;
                                     shex:predicate biolink:pairwise_interaction_association_id ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
-                                            shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
+                                            shex:nodeKind shex:nonliteral ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
                                     shex:predicate rdf:predicate ;
@@ -1083,7 +1083,7 @@ biolink:SequenceVariant a shex:ShapeAnd ;
                                     shex:min 0 ;
                                     shex:predicate biolink:sequence_variant_id ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
-                                            shex:datatype xsd:string ] ] ) ] ] ) .
+                                            shex:nodeKind shex:nonliteral ] ] ) ] ] ) .
 
 biolink:ThingWithTaxon a shex:Shape ;
     shex:expression [ a shex:TripleConstraint ;
@@ -1145,7 +1145,7 @@ biolink:NamedThing a shex:Shape ;
                         shex:min 0 ;
                         shex:predicate biolink:id ;
                         shex:valueExpr [ a shex:NodeConstraint ;
-                                shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
+                                shex:nodeKind shex:nonliteral ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate rdfs:label ;
@@ -1168,7 +1168,7 @@ biolink:NamedThing a shex:Shape ;
                         shex:min 0 ;
                         shex:predicate biolink:iri ;
                         shex:valueExpr [ a shex:NodeConstraint ;
-                                shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
+                                shex:nodeKind shex:nonliteral ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate biolink:full_name ;

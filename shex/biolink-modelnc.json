@@ -2360,7 +2360,7 @@
                   "predicate": "http://bioentity.io/vocab/id",
                   "valueExpr": {
                      "type": "NodeConstraint",
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                     "nodeKind": "nonliteral"
                   },
                   "min": 0,
                   "max": 1
@@ -2407,7 +2407,7 @@
                   "predicate": "http://bioentity.io/vocab/iri",
                   "valueExpr": {
                      "type": "NodeConstraint",
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                     "nodeKind": "nonliteral"
                   },
                   "min": 0,
                   "max": 1
@@ -2585,7 +2585,7 @@
                         "predicate": "http://bioentity.io/vocab/pairwise_interaction_association_id",
                         "valueExpr": {
                            "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                           "nodeKind": "nonliteral"
                         },
                         "min": 0,
                         "max": 1
@@ -2884,7 +2884,7 @@
                         "predicate": "http://bioentity.io/vocab/sequence_variant_id",
                         "valueExpr": {
                            "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                           "nodeKind": "nonliteral"
                         },
                         "min": 0,
                         "max": 1

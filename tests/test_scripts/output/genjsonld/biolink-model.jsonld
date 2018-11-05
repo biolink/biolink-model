@@ -51,13 +51,13 @@
     {
       "name": "identifier type",
       "description": "A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form",
-      "typeof": "string",
+      "typeof": "uri",
       "@id": "identifier_type"
     },
     {
       "name": "iri type",
       "description": "An IRI",
-      "typeof": "string",
+      "typeof": "uri",
       "@id": "iri_type"
     },
     {
@@ -6493,10 +6493,10 @@
     }
   ],
   "metamodel_version": "0.3.1",
-  "source_file": "/Users/hsolbri1/git/issue163/biolink-model/biolink-model.yaml",
-  "source_file_size": 97994,
-  "source_file_date": "Mon Nov  5 10:32:09 2018",
-  "generation_date": "2018-11-05 10:41",
+  "source_file": "/Users/hsolbri1/git/issue162/biolink-model/biolink-model.yaml",
+  "source_file_size": 97988,
+  "source_file_date": "Mon Nov  5 12:55:03 2018",
+  "generation_date": "2018-11-05 13:01",
   "@context": [
     "https://github.com/hsolbrig/biolink-model/raw/master/context.jsonld",
     {

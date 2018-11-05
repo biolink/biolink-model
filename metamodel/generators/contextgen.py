@@ -74,8 +74,12 @@ license: {be(self.schema.license)}
         return False
 
     def visit_slot(self, aliased_slot_name: str, slot: SlotDefinition) -> None:
-        slot_def = {}
         sn = underscore(slot.name)
+        if (slot.identifier or slot.primary_key) and not slot.mappings:
+            self.prefixmap[sn] = '@id'
+            return
+
+        slot_def = {}
 
         if not slot.alias:
             rng = self.grounded_slot_range(slot)

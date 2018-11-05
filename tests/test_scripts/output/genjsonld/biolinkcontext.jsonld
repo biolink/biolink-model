@@ -1,5 +1,5 @@
 {
-   "comments": "Auto generated from /Users/hsolbri1/git/issue163/biolink-model/biolink-model.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-11-05 10:40\nSchema: biolink model\n\nid: https://biolink.github.io/biolink-model/ontology/biolink.ttl\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "comments": "Auto generated from /Users/hsolbri1/git/issue162/biolink-model/biolink-model.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-11-05 13:31\nSchema: biolink model\n\nid: https://biolink.github.io/biolink-model/ontology/biolink.ttl\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "biolink": "http://bioentity.io/vocab/",
       "OBAN": "http://purl.org/oban/",
@@ -331,6 +331,7 @@
          "@type": "@id",
          "@id": "RO:HOM0000001"
       },
+      "id": "@id",
       "in_cell_population_with": {
          "@type": "@id",
          "@id": "SEMMEDDB:COEXISTS_WITH"
@@ -414,6 +415,9 @@
       "interacts_with": {
          "@type": "@id",
          "@id": "RO:0002434"
+      },
+      "iri": {
+         "@type": "@id"
       },
       "latitude": {
          "@type": "xsd:float",

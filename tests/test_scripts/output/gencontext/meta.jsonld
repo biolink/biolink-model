@@ -1,5 +1,5 @@
 {
-   "comments": "Auto generated from /Users/hsolbri1/git/biolink/biolink-model/meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-10-25 06:57\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "comments": "Auto generated from /Users/hsolbri1/git/issue162/biolink-model/meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-11-05 13:00\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "biolink": "http://bioentity.io/vocab/",
       "meta": "http://bioentity.io/meta/",
@@ -67,6 +67,7 @@
       "generation_date": {
          "@type": "xsd:date"
       },
+      "id": "@id",
       "id_prefixes": {
          "@container": "@list"
       },
@@ -97,6 +98,7 @@
       "is_class_field": {
          "@type": "xsd:boolean"
       },
+      "local_name": "@id",
       "local_names": {
          "@container": "@list"
       },

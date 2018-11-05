@@ -694,12 +694,12 @@
 }
 
 <http://bioentity.io/vocab/NamedThing> {
-    (  <http://bioentity.io/vocab/id> <http://www.w3.org/2001/XMLSchema#string> ? ;
+    (  <http://bioentity.io/vocab/id> NONLITERAL ? ;
        <http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> @<XSD_string__List> ? ;
        <http://www.w3.org/2002/07/owl#topObjectProperty> @<http://bioentity.io/vocab/NamedThing> ? ;
        <http://bioentity.io/vocab/node_property> <http://www.w3.org/2001/XMLSchema#string> ? ;
-       <http://bioentity.io/vocab/iri> <http://www.w3.org/2001/XMLSchema#string> ? ;
+       <http://bioentity.io/vocab/iri> NONLITERAL ? ;
        <http://bioentity.io/vocab/full_name> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://purl.org/dc/terms/description> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://bioentity.io/vocab/systematic_synonym> <http://www.w3.org/2001/XMLSchema#string> ?
@@ -747,7 +747,7 @@
 <http://bioentity.io/vocab/PairwiseInteractionAssociation>  (
     @<http://bioentity.io/vocab/Association> AND {
        (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://bioentity.io/vocab/MolecularEntity> ;
-          <http://bioentity.io/vocab/pairwise_interaction_association_id> <http://www.w3.org/2001/XMLSchema#string> ? ;
+          <http://bioentity.io/vocab/pairwise_interaction_association_id> NONLITERAL ? ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://bioentity.io/vocab/RelationshipType> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://bioentity.io/vocab/MolecularEntity> ;
           <http://bioentity.io/vocab/interacting_molecules_category> @<http://bioentity.io/vocab/OntologyClass> ?
@@ -853,7 +853,7 @@
     @<http://bioentity.io/vocab/GenomicEntity> AND {
        (  <http://bioentity.io/vocab/sequence_variant_has_gene> @<http://bioentity.io/vocab/Gene__List> ? ;
           <http://bioentity.io/vocab/sequence_variant_has_biological_sequence> <http://www.w3.org/2001/XMLSchema#string> ? ;
-          <http://bioentity.io/vocab/sequence_variant_id> <http://www.w3.org/2001/XMLSchema#string> ?
+          <http://bioentity.io/vocab/sequence_variant_id> NONLITERAL ?
        )
     }
 )
