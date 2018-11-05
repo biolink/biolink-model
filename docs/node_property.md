@@ -6,7 +6,6 @@ A grouping for any property that holds between a node and a value
 URI: [http://bioentity.io/vocab/node_property](slot_uri)
 ## Mappings
 
- * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) -> **string**

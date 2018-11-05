@@ -6,7 +6,6 @@ more commonly used for gene symbols in yeast
 URI: [http://bioentity.io/vocab/systematic_synonym](slot_uri)
 ## Mappings
 
- * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) -> [LabelType](LabelType.md)

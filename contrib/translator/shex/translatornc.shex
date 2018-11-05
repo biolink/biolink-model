@@ -301,10 +301,10 @@
 
 <http://bioentity.io/vocab/FrequencyQuantifier>  (
     @<http://bioentity.io/vocab/RelationshipQuantifier> AND {
-       (  <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#integer> ? ;
-          <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#integer> ? ;
-          <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#double> ? ;
-          <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#double> ?
+       (  <http://bioentity.io/vocab/has_count> <http://www.w3.org/2001/XMLSchema#integer> ? ;
+          <http://bioentity.io/vocab/has_total> <http://www.w3.org/2001/XMLSchema#integer> ? ;
+          <http://bioentity.io/vocab/has_quotient> <http://www.w3.org/2001/XMLSchema#double> ? ;
+          <http://bioentity.io/vocab/has_percentage> <http://www.w3.org/2001/XMLSchema#double> ?
        )
     }
 )
@@ -452,16 +452,16 @@
 
 <http://bioentity.io/vocab/GenomicEntity>  (
     @<http://bioentity.io/vocab/MolecularEntity> AND {
-       <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ?
+       <http://bioentity.io/vocab/has_biological_sequence> <http://www.w3.org/2001/XMLSchema#string> ?
     }
 )
 
 <http://bioentity.io/vocab/GenomicSequenceLocalization>  (
     @<http://bioentity.io/vocab/Association> AND {
-       (  <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ? ;
-          <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ? ;
-          <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ? ;
-          <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ? ;
+       (  <http://bioentity.io/vocab/start_interbase_coordinate> <http://www.w3.org/2001/XMLSchema#string> ? ;
+          <http://bioentity.io/vocab/end_interbase_coordinate> <http://www.w3.org/2001/XMLSchema#string> ? ;
+          <http://bioentity.io/vocab/genome_build> <http://www.w3.org/2001/XMLSchema#string> ? ;
+          <http://bioentity.io/vocab/phase> <http://www.w3.org/2001/XMLSchema#string> ? ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://bioentity.io/vocab/GenomicEntity> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://bioentity.io/vocab/GenomicEntity>
        )
@@ -470,7 +470,7 @@
 
 <http://bioentity.io/vocab/Genotype>  (
     @<http://bioentity.io/vocab/GenomicEntity> AND {
-       <http://www.w3.org/2002/07/owl#topAnnotationProperty> @<http://bioentity.io/vocab/Zygosity> ?
+       <http://bioentity.io/vocab/has_zygosity> @<http://bioentity.io/vocab/Zygosity> ?
     }
 )
 
@@ -530,7 +530,7 @@
 
 <http://bioentity.io/vocab/GeographicLocationAtTime>  (
     @<http://bioentity.io/vocab/GeographicLocation> AND {
-       <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#time> ?
+       <http://bioentity.io/vocab/timepoint> <http://www.w3.org/2001/XMLSchema#time> ?
     }
 )
 
@@ -666,16 +666,16 @@
 )
 
 <http://bioentity.io/vocab/NamedThing> {
-    (  <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ? ;
+    (  <http://bioentity.io/vocab/id> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2001/XMLSchema#string> * ;
        <@id> NONLITERAL ? ;
        <http://www.w3.org/2002/07/owl#topObjectProperty> @<http://bioentity.io/vocab/NamedThing> ? ;
-       <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ? ;
-       <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ? ;
-       <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ? ;
+       <http://bioentity.io/vocab/node_property> <http://www.w3.org/2001/XMLSchema#string> ? ;
+       <http://bioentity.io/vocab/iri> <http://www.w3.org/2001/XMLSchema#string> ? ;
+       <http://bioentity.io/vocab/full_name> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://purl.org/dc/terms/description> <http://www.w3.org/2001/XMLSchema#string> ? ;
-       <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ?
+       <http://bioentity.io/vocab/systematic_synonym> <http://www.w3.org/2001/XMLSchema#string> ?
     )
 }
 
@@ -720,7 +720,7 @@
 <http://bioentity.io/vocab/PairwiseInteractionAssociation>  (
     @<http://bioentity.io/vocab/Association> AND {
        (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://bioentity.io/vocab/MolecularEntity> ;
-          <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ? ;
+          <http://bioentity.io/vocab/pairwise_interaction_association_id> <http://www.w3.org/2001/XMLSchema#string> ? ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://bioentity.io/vocab/RelationshipType> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://bioentity.io/vocab/MolecularEntity> ;
           <http://bioentity.io/vocab/interacting_molecules_category> @<http://bioentity.io/vocab/OntologyClass> ?
@@ -815,9 +815,9 @@
 
 <http://bioentity.io/vocab/SequenceVariant>  (
     @<http://bioentity.io/vocab/GenomicEntity> AND {
-       (  <http://www.w3.org/2002/07/owl#topAnnotationProperty> @<http://bioentity.io/vocab/Gene> * ;
-          <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ? ;
-          <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#string> ?
+       (  <http://bioentity.io/vocab/sequence_variant_has_gene> @<http://bioentity.io/vocab/Gene> * ;
+          <http://bioentity.io/vocab/sequence_variant_has_biological_sequence> <http://www.w3.org/2001/XMLSchema#string> ? ;
+          <http://bioentity.io/vocab/sequence_variant_id> <http://www.w3.org/2001/XMLSchema#string> ?
        )
     }
 )
@@ -890,9 +890,9 @@
     @<http://bioentity.io/vocab/FrequencyQuantifier> AND @<http://bioentity.io/vocab/FrequencyQualifier> AND {
        (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://bioentity.io/vocab/SequenceVariant> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://bioentity.io/vocab/PopulationOfIndividualOrganisms> ;
-          <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#double> ? ;
-          <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#integer> ? ;
-          <http://www.w3.org/2002/07/owl#topAnnotationProperty> <http://www.w3.org/2001/XMLSchema#integer> ?
+          <http://bioentity.io/vocab/variant_to_population_association_has_quotient> <http://www.w3.org/2001/XMLSchema#double> ? ;
+          <http://bioentity.io/vocab/variant_to_population_association_has_count> <http://www.w3.org/2001/XMLSchema#integer> ? ;
+          <http://bioentity.io/vocab/variant_to_population_association_has_total> <http://www.w3.org/2001/XMLSchema#integer> ?
        )
     }
 )

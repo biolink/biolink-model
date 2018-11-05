@@ -6,7 +6,6 @@ total number of things in a particular reference set
 URI: [http://bioentity.io/vocab/has_total](slot_uri)
 ## Mappings
 
- * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [FrequencyQuantifier](FrequencyQuantifier.md) -> **integer**

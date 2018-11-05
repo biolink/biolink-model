@@ -6,7 +6,7 @@
 #   1) make imgflags="-i"             -- generate uml images in images subdirectory (default)
 #   2) make imgflags="-i --noimages"  -- assume uml images already exist and generate links to them
 #   3) make imgflags=""               -- genrate uml images as inline url's
-imgflags?=-i --noimages
+imgflags?=-i  --noimages
 
 
 # ----------------------------------------
@@ -181,8 +181,8 @@ MM = metamodel/metamodel.py
 BMM = biolinkmodel/datamodel.py
 
 regen-mm:
-	gen-py-classes meta.yaml > tmp.py && python tmp.py && (comparefiles typ.py $(MM) && cp $(MM) $(MM)-PREV && cp tmp.py $(MM)); rm tmp.py
-	gen-py-classes biolink-model.yaml > tmp.py && python tmp.py && c&& (comparefiles typ.py $(BMM) && cp $(BMM) $(BMM)-PREV && cp tmp.py $(BMM)); rm tmp.py
+	gen-py-classes meta.yaml > tmp.py && python tmp.py && (comparefiles tmp.py $(MM) && cp $(MM) $(MM)-PREV && cp tmp.py $(MM)); rm tmp.py
+	gen-py-classes biolink-model.yaml > tmp.py && python tmp.py &&  (comparefiles tmp.py $(BMM) && cp $(BMM) $(BMM)-PREV && cp tmp.py $(BMM)); rm tmp.py
 
 # ----------------------------------------
 # TESTS

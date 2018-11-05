@@ -84,6 +84,7 @@ class GenJSONLDTestCase(ClickTestCase):
         self.check_size(g, new_g, URIRef("https://biolink.github.io/metamodel/ontology/meta.ttl"), 9, 73, 0, "meta")
 
     def test_biolink(self):
+        self.maxDiff=None
         self.do_test(self.biolink_file, "biolink-model.jsonld", update_test_file=update_test_files, filtr=filtr)
         self.assertFalse(update_test_files, "Updating test files")
 

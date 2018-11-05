@@ -6,7 +6,6 @@ connects and entity to a single gene
 URI: [http://bioentity.io/vocab/has_gene](slot_uri)
 ## Mappings
 
- * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [SequenceVariant](SequenceVariant.md) -> [Gene](Gene.md)

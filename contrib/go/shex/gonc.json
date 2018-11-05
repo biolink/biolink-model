@@ -1007,7 +1007,7 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/has_count",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#integer"
@@ -1017,7 +1017,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/has_total",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#integer"
@@ -1027,7 +1027,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/has_quotient",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#double"
@@ -1037,7 +1037,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/has_percentage",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#double"
@@ -1532,7 +1532,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                  "predicate": "http://bioentity.io/vocab/has_biological_sequence",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -1555,7 +1555,7 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/start_interbase_coordinate",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -1565,7 +1565,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/end_interbase_coordinate",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -1575,7 +1575,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/genome_build",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -1585,7 +1585,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/phase",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -1621,7 +1621,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                  "predicate": "http://bioentity.io/vocab/has_zygosity",
                   "valueExpr": "http://bioentity.io/vocab/Zygosity",
                   "min": 0,
                   "max": 1
@@ -1839,7 +1839,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                  "predicate": "http://bioentity.io/vocab/timepoint",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#time"
@@ -1927,7 +1927,7 @@
             "expressions": [
                {
                   "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                  "predicate": "http://bioentity.io/vocab/full_name",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -1937,7 +1937,7 @@
                },
                {
                   "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                  "predicate": "http://bioentity.io/vocab/systematic_synonym",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -2710,7 +2710,7 @@
             "expressions": [
                {
                   "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                  "predicate": "http://bioentity.io/vocab/id",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -2747,7 +2747,7 @@
                },
                {
                   "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                  "predicate": "http://bioentity.io/vocab/node_property",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -2757,7 +2757,7 @@
                },
                {
                   "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                  "predicate": "http://bioentity.io/vocab/iri",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -2767,7 +2767,7 @@
                },
                {
                   "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                  "predicate": "http://bioentity.io/vocab/full_name",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -2787,7 +2787,7 @@
                },
                {
                   "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                  "predicate": "http://bioentity.io/vocab/systematic_synonym",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -2935,7 +2935,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/pairwise_interaction_association_id",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -3111,7 +3111,7 @@
                },
                {
                   "type": "TripleConstraint",
-                  "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                  "predicate": "http://bioentity.io/vocab/filler",
                   "valueExpr": "http://bioentity.io/vocab/NamedThing",
                   "min": 0,
                   "max": 1
@@ -3240,14 +3240,14 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/sequence_variant_has_gene",
                         "valueExpr": "http://bioentity.io/vocab/Gene",
                         "min": 0,
                         "max": -1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/sequence_variant_has_biological_sequence",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -3257,7 +3257,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/sequence_variant_id",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -3582,7 +3582,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/variant_to_population_association_has_quotient",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#double"
@@ -3592,7 +3592,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/variant_to_population_association_has_count",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#integer"
@@ -3602,7 +3602,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/2002/07/owl#topAnnotationProperty",
+                        "predicate": "http://bioentity.io/vocab/variant_to_population_association_has_total",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#integer"

@@ -1,5 +1,5 @@
 {
-   "comments": "Auto generated from /Users/hsolbri1/git/issue142/biolink-model/biolink-model.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-11-04 10:38\nSchema: biolink model\n\nid: https://biolink.github.io/biolink-model/ontology/biolink.ttl\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "comments": "Auto generated from /Users/hsolbri1/git/issue163/biolink-model/biolink-model.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-11-05 10:40\nSchema: biolink model\n\nid: https://biolink.github.io/biolink-model/ontology/biolink.ttl\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "biolink": "http://bioentity.io/vocab/",
       "OBAN": "http://purl.org/oban/",
@@ -131,9 +131,6 @@
          "@type": "@id",
          "@id": "SEMMEDDB:AFFECTS"
       },
-      "aggregate_statistic": {
-         "@id": "owl:topAnnotationProperty"
-      },
       "association_type": {
          "@type": "@id",
          "@id": "rdf:type"
@@ -257,9 +254,6 @@
          "@type": "@id",
          "@id": "SEMMEDDB:DISRUPTS"
       },
-      "end_interbase_coordinate": {
-         "@id": "owl:topAnnotationProperty"
-      },
       "expressed_in": {
          "@type": "@id",
          "@id": "RO:0002206"
@@ -269,11 +263,7 @@
          "@id": "RO:0002292"
       },
       "filler": {
-         "@type": "@id",
-         "@id": "owl:topAnnotationProperty"
-      },
-      "full_name": {
-         "@id": "owl:topAnnotationProperty"
+         "@type": "@id"
       },
       "gene_associated_with_condition": {
          "@type": "@id",
@@ -282,12 +272,6 @@
       "genetically_interacts_with": {
          "@type": "@id",
          "@id": "RO:0002435"
-      },
-      "genome_build": {
-         "@id": "owl:topAnnotationProperty"
-      },
-      "has_biological_sequence": {
-         "@id": "owl:topAnnotationProperty"
       },
       "has_biomarker": {
          "@type": "@id",
@@ -300,15 +284,13 @@
          "@type": "@id"
       },
       "has_count": {
-         "@type": "xsd:integer",
-         "@id": "owl:topAnnotationProperty"
+         "@type": "xsd:integer"
       },
       "has_evidence": {
          "@id": "RO:0002558"
       },
       "has_gene": {
-         "@type": "@id",
-         "@id": "owl:topAnnotationProperty"
+         "@type": "@id"
       },
       "has_gene_product": {
          "@type": "@id",
@@ -331,30 +313,23 @@
          "@id": "RO:0000057"
       },
       "has_percentage": {
-         "@type": "xsd:double",
-         "@id": "owl:topAnnotationProperty"
+         "@type": "xsd:double"
       },
       "has_phenotype": {
          "@id": "RO:0002200"
       },
       "has_quotient": {
-         "@type": "xsd:double",
-         "@id": "owl:topAnnotationProperty"
+         "@type": "xsd:double"
       },
       "has_total": {
-         "@type": "xsd:integer",
-         "@id": "owl:topAnnotationProperty"
+         "@type": "xsd:integer"
       },
       "has_zygosity": {
-         "@type": "@id",
-         "@id": "owl:topAnnotationProperty"
+         "@type": "@id"
       },
       "homologous_to": {
          "@type": "@id",
          "@id": "RO:HOM0000001"
-      },
-      "id": {
-         "@id": "owl:topAnnotationProperty"
       },
       "in_cell_population_with": {
          "@type": "@id",
@@ -440,12 +415,6 @@
          "@type": "@id",
          "@id": "RO:0002434"
       },
-      "interbase_coordinate": {
-         "@id": "owl:topAnnotationProperty"
-      },
-      "iri": {
-         "@id": "owl:topAnnotationProperty"
-      },
       "latitude": {
          "@type": "xsd:float",
          "@id": "wgs:lat"
@@ -492,9 +461,6 @@
          "@type": "@id",
          "@id": "RO:0002212"
       },
-      "node_property": {
-         "@id": "owl:topAnnotationProperty"
-      },
       "oban": "http://example.org/unknown/oban/",
       "object": {
          "@id": "rdf:object"
@@ -525,9 +491,6 @@
       "participates_in": {
          "@type": "@id",
          "@id": "RO:0000056"
-      },
-      "phase": {
-         "@id": "owl:topAnnotationProperty"
       },
       "physically_interacts_with": {
          "@type": "@id",
@@ -613,9 +576,6 @@
       "stage_qualifier": {
          "@type": "@id"
       },
-      "start_interbase_coordinate": {
-         "@id": "owl:topAnnotationProperty"
-      },
       "subclass_of": {
          "@type": "@id",
          "@id": "rdfs:subClassOf"
@@ -623,12 +583,8 @@
       "subject": {
          "@id": "rdf:subject"
       },
-      "systematic_synonym": {
-         "@id": "owl:topAnnotationProperty"
-      },
       "timepoint": {
-         "@type": "xsd:time",
-         "@id": "owl:topAnnotationProperty"
+         "@type": "xsd:time"
       },
       "treated_by": {
          "@type": "@id",
@@ -639,8 +595,7 @@
          "@id": "RO:0002606"
       },
       "update_date": {
-         "@type": "xsd:date",
-         "@id": "owl:topAnnotationProperty"
+         "@type": "xsd:date"
       },
       "xenologous_to": {
          "@type": "@id",

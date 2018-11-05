@@ -1728,9 +1728,6 @@
     {
       "name": "node_property",
       "description": "A grouping for any property that holds between a node and a value",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "domain": "NamedThing",
       "range": "xsd:string",
       "@id": "node_property"
@@ -1738,9 +1735,6 @@
     {
       "name": "id",
       "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -1753,9 +1747,6 @@
     {
       "name": "iri",
       "description": "An IRI for the node. This is determined by the id using expansion rules.",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -1801,9 +1792,6 @@
     {
       "name": "full_name",
       "description": "a long-form human readable name for a thing",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "node_property",
       "domain": "NamedThing",
       "range": "label_type",
@@ -1826,9 +1814,6 @@
     {
       "name": "systematic_synonym",
       "description": "more commonly used for gene symbols in yeast",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "node_property",
       "domain": "NamedThing",
       "range": "label_type",
@@ -1972,9 +1957,6 @@
     {
       "name": "update_date",
       "description": "date on which thing was updated. This can be applied to nodes or edges",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "node_property",
       "domain": "NamedThing",
       "range": "xsd:date",
@@ -2031,9 +2013,6 @@
     {
       "name": "aggregate_statistic",
       "description": "A grouping for any property that holds between a node and a value",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "node_property",
       "abstract": true,
       "domain": "NamedThing",
@@ -2043,9 +2022,6 @@
     {
       "name": "has_count",
       "description": "number of things with a particular property",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "aggregate_statistic",
       "domain": "FrequencyQuantifier",
       "range": "xsd:integer",
@@ -2054,9 +2030,6 @@
     {
       "name": "has_total",
       "description": "total number of things in a particular reference set",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "aggregate_statistic",
       "domain": "FrequencyQuantifier",
       "range": "xsd:integer",
@@ -2065,9 +2038,6 @@
     {
       "name": "has_quotient",
       "description": "A grouping for any property that holds between a node and a value",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "aggregate_statistic",
       "domain": "FrequencyQuantifier",
       "range": "xsd:double",
@@ -2076,9 +2046,6 @@
     {
       "name": "has_percentage",
       "description": "equivalent to has quotient multiplied by 100",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "aggregate_statistic",
       "domain": "FrequencyQuantifier",
       "range": "xsd:double",
@@ -2087,9 +2054,6 @@
     {
       "name": "timepoint",
       "description": "a point in time",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "node_property",
       "domain": "GeographicLocationAtTime",
       "range": "time_type",
@@ -2186,9 +2150,6 @@
     {
       "name": "has_biological_sequence",
       "description": "connects a genomic feature to its sequence",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "node_property",
       "domain": "GenomicEntity",
       "range": "biological_sequence",
@@ -2209,9 +2170,6 @@
     {
       "name": "has_gene",
       "description": "connects and entity to a single gene",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "node_property",
       "domain": "SequenceVariant",
       "range": "Gene",
@@ -2220,9 +2178,6 @@
     {
       "name": "has_zygosity",
       "description": "A grouping for any property that holds between a node and a value",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "node_property",
       "domain": "Genotype",
       "range": "Zygosity",
@@ -2231,9 +2186,6 @@
     {
       "name": "filler",
       "description": "The value in a property-value tuple",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "node_property",
       "domain": "NamedThing",
       "range": "NamedThing",
@@ -2242,9 +2194,6 @@
     {
       "name": "phase",
       "description": "TODO",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "node_property",
       "domain": "GenomicSequenceLocalization",
       "range": "xsd:string",
@@ -2253,9 +2202,6 @@
     {
       "name": "genome_build",
       "description": "TODO",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "node_property",
       "domain": "GenomicSequenceLocalization",
       "range": "xsd:string",
@@ -2264,9 +2210,6 @@
     {
       "name": "interbase_coordinate",
       "description": "TODO",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "node_property",
       "domain": "NamedThing",
       "range": "xsd:string",
@@ -2275,9 +2218,6 @@
     {
       "name": "start_interbase_coordinate",
       "description": "TODO",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "interbase_coordinate",
       "domain": "GenomicSequenceLocalization",
       "range": "xsd:string",
@@ -2286,9 +2226,6 @@
     {
       "name": "end_interbase_coordinate",
       "description": "TODO",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "interbase_coordinate",
       "domain": "GenomicSequenceLocalization",
       "range": "xsd:string",
@@ -2312,9 +2249,6 @@
     {
       "name": "sequence_variant_has_gene",
       "description": "Each allele can be associated with any number of genes",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "has_gene",
       "multivalued": true,
       "domain": "SequenceVariant",
@@ -2325,9 +2259,6 @@
     {
       "name": "sequence_variant_has_biological_sequence",
       "description": "The state of the sequence w.r.t a reference sequence",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "has_biological_sequence",
       "domain": "SequenceVariant",
       "range": "biological_sequence",
@@ -2337,9 +2268,6 @@
     {
       "name": "sequence_variant_id",
       "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -2594,9 +2522,6 @@
     {
       "name": "pairwise_interaction_association_id",
       "description": "identifier for the interaction. This may come from an interaction database such as IMEX.",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "in_subset": [
         "translator_minimal"
       ],
@@ -3039,9 +2964,6 @@
     {
       "name": "variant_to_population_association_has_quotient",
       "description": "frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "has_quotient",
       "domain": "VariantToPopulationAssociation",
       "range": "xsd:double",
@@ -3051,9 +2973,6 @@
     {
       "name": "variant_to_population_association_has_count",
       "description": "number in object population that carry a particular allele, aka allele count",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "has_count",
       "domain": "VariantToPopulationAssociation",
       "range": "xsd:integer",
@@ -3063,9 +2982,6 @@
     {
       "name": "variant_to_population_association_has_total",
       "description": "number all populations that carry a particular allele, aka allele number",
-      "mappings": [
-        "owl:topAnnotationProperty"
-      ],
       "is_a": "has_total",
       "domain": "VariantToPopulationAssociation",
       "range": "xsd:integer",
@@ -6577,10 +6493,10 @@
     }
   ],
   "metamodel_version": "0.3.1",
-  "source_file": "/Users/hsolbri1/git/biolink/biolink-model/biolink-model.yaml",
-  "source_file_size": 98042,
-  "source_file_date": "Sun Oct 28 14:15:54 2018",
-  "generation_date": "2018-10-29 08:51",
+  "source_file": "/Users/hsolbri1/git/issue163/biolink-model/biolink-model.yaml",
+  "source_file_size": 97994,
+  "source_file_date": "Mon Nov  5 10:32:09 2018",
+  "generation_date": "2018-11-05 10:41",
   "@context": [
     "https://github.com/hsolbrig/biolink-model/raw/master/context.jsonld",
     {
