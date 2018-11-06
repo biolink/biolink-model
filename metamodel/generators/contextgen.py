@@ -99,7 +99,7 @@ license: {be(self.schema.license)}
             if uri and '://' in uri:
                 self.prefixmap[ncname] = uri
             else:
-                print(f"No expansion for {ncname}", file=sys.stderr)
+                print(f"Unrecognized prefix: {ncname}", file=sys.stderr)
                 self.prefixmap[ncname] = f"http://example.org/unknown/{ncname}/"
 
     def get_uri(self, ncname: str) -> Optional[str]:
@@ -112,10 +112,7 @@ license: {be(self.schema.license)}
 
     def add_id_prefixes(self, element: Element) -> None:
         for id_prefix in element.id_prefixes:
-            if id_prefix not in self.prefixmap:
-                id_uri = self.get_uri(id_prefix)
-                if id_uri:
-                    self.prefixmap[id_prefix] = id_uri
+            self.add_prefix(id_prefix)
 
     def add_mappings(self, defn: Definition, target: Dict) -> None:
         """ Process any mappings in defn, adding all of the mappings prefixes to the namespace map and
