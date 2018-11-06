@@ -8,7 +8,6 @@ URI: [http://bioentity.io/vocab/SequenceFeatureRelationship](http://bioentity.io
 ![img](images/SequenceFeatureRelationship.png)
 ## Mappings
 
- * [GMODChado:feature_relationship](http://purl.obolibrary.org/obo/GMODChado_feature_relationship)
 ## Inheritance
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
