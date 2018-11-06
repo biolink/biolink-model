@@ -3115,8 +3115,6 @@ classes:
         range: genomic entity  ## todo protein
       object:
         range: genomic entity ## typically a chromosome
-    mappings:
-      - GMODChado:feature_relationship
 
   transcript to gene relationship:
     is_a: sequence feature relationship
