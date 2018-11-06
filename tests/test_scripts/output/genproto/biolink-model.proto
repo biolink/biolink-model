@@ -3,7 +3,7 @@ message AnatomicalEntity
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -18,7 +18,7 @@ message AnatomicalEntityToAnatomicalEntityAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -40,7 +40,7 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -62,7 +62,7 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -84,7 +84,7 @@ message Association
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -106,7 +106,7 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -128,7 +128,7 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -150,7 +150,7 @@ message ChemicalToGeneAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -172,7 +172,7 @@ message ChemicalToPathwayAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -194,7 +194,7 @@ message DiseaseOrPhenotypicFeature
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -212,7 +212,7 @@ message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -234,7 +234,7 @@ message DrugExposure
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -249,7 +249,7 @@ message EnvironmentToPhenotypicFeatureAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -274,7 +274,7 @@ message ExonToTranscriptRelationship
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -296,7 +296,7 @@ message FunctionalAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -316,7 +316,7 @@ message FunctionalAssociation
 message Gene
  {
   optional id IdentifierType = 1
-  repeated category LabelType = 2
+  repeated category IriType = 2
   optional relatedTo NamedThing = 3
   optional nodeProperty String = 4
   optional iri IriType = 5
@@ -390,7 +390,7 @@ message GeneAsAModelOfDiseaseAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -413,7 +413,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -437,7 +437,7 @@ message GeneHasVariantThatContributesToDiseaseAssociation
 message GeneOrGeneProduct
  {
   optional id IdentifierType = 1
-  repeated category LabelType = 2
+  repeated category IriType = 2
   optional relatedTo NamedThing = 3
   optional nodeProperty String = 4
   optional iri IriType = 5
@@ -509,7 +509,7 @@ message GeneRegulatoryRelationship
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -530,7 +530,7 @@ message GeneToDiseaseAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -554,7 +554,7 @@ message GeneToExpressionSiteAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -578,7 +578,7 @@ message GeneToGeneHomologyAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -600,7 +600,7 @@ message GeneToGeneProductRelationship
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -621,7 +621,7 @@ message GeneToGoTermAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -642,7 +642,7 @@ message GeneToPhenotypicFeatureAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -667,7 +667,7 @@ message GenomicEntity
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -734,7 +734,7 @@ message GenomicSequenceLocalization
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -760,7 +760,7 @@ message Genotype
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -828,7 +828,7 @@ message GenotypeToGeneAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -850,7 +850,7 @@ message GenotypeToGenotypePartAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -872,7 +872,7 @@ message GenotypeToPhenotypicFeatureAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -897,7 +897,7 @@ message GenotypeToVariantAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -919,7 +919,7 @@ message GeographicLocation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -934,7 +934,7 @@ message GeographicLocationAtTime
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -949,7 +949,7 @@ message GeographicLocationAtTime
 message MacromolecularMachine
  {
   optional id IdentifierType = 1
-  repeated category LabelType = 2
+  repeated category IriType = 2
   optional relatedTo NamedThing = 3
   optional nodeProperty String = 4
   optional iri IriType = 5
@@ -1017,7 +1017,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1039,7 +1039,7 @@ message MacromolecularMachineToCellularComponentAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1061,7 +1061,7 @@ message MacromolecularMachineToMolecularActivityAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1083,7 +1083,7 @@ message MolecularEntity
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1149,7 +1149,7 @@ message NamedThing
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1162,7 +1162,7 @@ message Occurrent
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1179,7 +1179,7 @@ message OntologyClass
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1193,7 +1193,7 @@ message PairwiseGeneToGeneInteraction
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1216,7 +1216,7 @@ message PopulationToPopulationAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1238,7 +1238,7 @@ message SequenceFeatureRelationship
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1259,7 +1259,7 @@ message SequenceFeatureRelationship
 message SequenceVariant
  {
   optional name LabelType = 1
-  repeated category LabelType = 2
+  repeated category IriType = 2
   optional relatedTo NamedThing = 3
   optional nodeProperty String = 4
   optional iri IriType = 5
@@ -1328,7 +1328,7 @@ message TranscriptToGeneRelationship
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1350,7 +1350,7 @@ message Treatment
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1365,7 +1365,7 @@ message VariantToDiseaseAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1388,7 +1388,7 @@ message VariantToPhenotypicFeatureAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6
@@ -1413,7 +1413,7 @@ message VariantToPopulationAssociation
  {
   optional id IdentifierType = 1
   optional name LabelType = 2
-  repeated category LabelType = 3
+  repeated category IriType = 3
   optional relatedTo NamedThing = 4
   optional nodeProperty String = 5
   optional iri IriType = 6

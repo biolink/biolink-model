@@ -1178,7 +1178,7 @@ slots:
   category:
     is_a: node property
     domain: named thing
-    range: label type
+    range: iri type
     description: >-
       Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
       In a neo4j database this MAY correspond to the neo4j label tag

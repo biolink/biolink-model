@@ -9,7 +9,7 @@ URI: [http://bioentity.io/vocab/category](slot_uri)
  * [rdf:type](http://purl.obolibrary.org/obo/rdf_type)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [LabelType](LabelType.md)
+[NamedThing](NamedThing.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
