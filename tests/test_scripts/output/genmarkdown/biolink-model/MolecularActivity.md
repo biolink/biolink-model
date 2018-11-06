@@ -5,7 +5,7 @@ An execution of a molecular function carried out by a gene product or macromolec
 
 URI: [http://bioentity.io/vocab/MolecularActivity](http://bioentity.io/vocab/MolecularActivity)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MolecularActivity|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20precedes(i)%20%3F>\[Occurrent],%20\[MolecularActivity]-%20has%20input(i)%20%3F>\[NamedThing],%20\[MolecularActivity]-%20has%20participant(i)%20%3F>\[NamedThing],%20\[MolecularActivity]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[MolecularActivity]-%20related%20to(i)%20%3F>\[NamedThing],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20object(i)>\[MolecularActivity],%20\[MolecularActivity]uses%20-.->\[Occurrent],%20\[BiologicalProcessOrActivity]^-\[MolecularActivity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MolecularActivity|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20precedes(i)%20%3F>\[Occurrent],%20\[MolecularActivity]-%20has%20input(i)%20%3F>\[NamedThing],%20\[MolecularActivity]-%20has%20participant(i)%20%3F>\[NamedThing],%20\[MolecularActivity]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[MolecularActivity]-%20related%20to(i)%20%3F>\[NamedThing],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20object(i)>\[MolecularActivity],%20\[MolecularActivity]uses%20-.->\[Occurrent],%20\[BiologicalProcessOrActivity]^-\[MolecularActivity])
 ## Mappings
 
  * [GO:0003674](http://purl.obolibrary.org/obo/GO_0003674)
@@ -22,7 +22,7 @@ URI: [http://bioentity.io/vocab/MolecularActivity](http://bioentity.io/vocab/Mol
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing
