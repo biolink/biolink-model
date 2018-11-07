@@ -1,14 +1,11 @@
-@prefix biolink: <http://bioentity.io/vocab/> .
-@prefix meta: <http://bioentity.io/meta/> .
+@prefix biolink: <http://w3id.org/biolink/vocab/> .
+@prefix meta: <http://w3id.org/biolink/vocab/meta/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix shex: <http://www.w3.org/ns/shex#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-meta:SlotRangeTypes a shex:ShapeOr ;
-    shex:shapeExprs ( biolink:TypeDefinition biolink:ClassDefinition meta:Builtins ) .
 
 biolink:ActivityAndBehavior a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Occurrent [ a shex:Shape ] ) .
@@ -274,22 +271,22 @@ biolink:GenomicSequenceLocalization a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:start_interbase_coordinate ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:end_interbase_coordinate ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:genome_build ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:phase ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -373,7 +370,7 @@ biolink:GeographicLocationAtTime a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate owl:topAnnotationProperty ;
+                        shex:predicate biolink:timepoint ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:time ] ] ] ) .
 
@@ -541,23 +538,22 @@ biolink:VariantToPopulationAssociation a shex:ShapeAnd ;
                                     shex:valueExpr biolink:PopulationOfIndividualOrganisms ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:variant_to_population_association_has_quotient ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:double ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:variant_to_population_association_has_count ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:integer ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:variant_to_population_association_has_total ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:integer ] ] ) ] ] ) .
 
-meta:Builtins a shex:NodeConstraint ;
-    shex:values ( [ a shex:IriStem ;
-                shex:stem "http://www.w3.org/2001/XMLSchema#"^^xsd:string ] ) .
+meta:SlotRangeTypes a shex:ShapeOr ;
+    shex:shapeExprs ( biolink:TypeDefinition biolink:ClassDefinition meta:Builtins ) .
 
 biolink:AdministrativeEntity a shex:Shape .
 
@@ -627,22 +623,22 @@ biolink:FrequencyQuantifier a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:has_count ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:integer ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:has_total ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:integer ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:has_quotient ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:double ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:has_percentage ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:double ] ] ) ] ] ) .
 
@@ -712,7 +708,7 @@ biolink:PairwiseInteractionAssociation a shex:ShapeAnd ;
                                     shex:valueExpr biolink:MolecularEntity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:pairwise_interaction_association_id ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
@@ -765,7 +761,11 @@ biolink:Treatment a shex:ShapeAnd ;
 biolink:Zygosity a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Attribute [ a shex:Shape ] ) .
 
-<file:///Users/hsolbri1/git/biolink/biolink-model/XSD_string__List> a shex:Shape ;
+meta:Builtins a shex:NodeConstraint ;
+    shex:values ( [ a shex:IriStem ;
+                shex:stem "http://www.w3.org/2001/XMLSchema#"^^xsd:string ] ) .
+
+<file:///Users/hsolbri1/git/hsolbrig/biolink-model/XSD_string__List> a shex:Shape ;
     shex:closed true ;
     shex:expression [ a shex:EachOf ;
             shex:expressions ( [ a shex:TripleConstraint ;
@@ -777,7 +777,7 @@ biolink:Zygosity a shex:ShapeAnd ;
                         shex:predicate rdf:rest ;
                         shex:valueExpr [ a shex:ShapeOr ;
                                 shex:shapeExprs ( [ a shex:NodeConstraint ;
-                                            shex:values ( () ) ] <file:///Users/hsolbri1/git/biolink/biolink-model/XSD_string__List> ) ] ] ) ] .
+                                            shex:values ( () ) ] <file:///Users/hsolbri1/git/hsolbrig/biolink-model/XSD_string__List> ) ] ] ) ] .
 
 biolink:AnatomicalEntityToAnatomicalEntityAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
@@ -1078,7 +1078,7 @@ biolink:Genotype a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate owl:topAnnotationProperty ;
+                        shex:predicate biolink:has_zygosity ;
                         shex:valueExpr biolink:Zygosity ] ] ) .
 
 biolink:SequenceVariant a shex:ShapeAnd ;
@@ -1087,16 +1087,16 @@ biolink:SequenceVariant a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:sequence_variant_has_gene ;
                                     shex:valueExpr biolink:Gene__List ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:sequence_variant_has_biological_sequence ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate owl:topAnnotationProperty ;
+                                    shex:predicate biolink:sequence_variant_id ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] ) ] ] ) .
 
@@ -1158,7 +1158,7 @@ biolink:NamedThing a shex:Shape ;
             shex:expressions ( [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate owl:topAnnotationProperty ;
+                        shex:predicate biolink:id ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
@@ -1169,10 +1169,10 @@ biolink:NamedThing a shex:Shape ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate rdf:type ;
-                        shex:valueExpr <file:///Users/hsolbri1/git/biolink/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                        shex:valueExpr <file:///Users/hsolbri1/git/hsolbrig/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate <file:///Users/hsolbri1/git/biolink/biolink-model/@id> ;
+                        shex:predicate <file:///Users/hsolbri1/git/hsolbrig/biolink-model/@id> ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:nodeKind shex:nonliteral ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
@@ -1181,17 +1181,17 @@ biolink:NamedThing a shex:Shape ;
                         shex:valueExpr biolink:NamedThing ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate owl:topAnnotationProperty ;
+                        shex:predicate biolink:node_property ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate owl:topAnnotationProperty ;
+                        shex:predicate biolink:iri ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate owl:topAnnotationProperty ;
+                        shex:predicate biolink:full_name ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
@@ -1201,7 +1201,7 @@ biolink:NamedThing a shex:Shape ;
                                 shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate owl:topAnnotationProperty ;
+                        shex:predicate biolink:systematic_synonym ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] ) ] .
 
@@ -1241,7 +1241,7 @@ biolink:GenomicEntity a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate owl:topAnnotationProperty ;
+                        shex:predicate biolink:has_biological_sequence ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] ] ) .
 
@@ -1500,9 +1500,7 @@ biolink:MolecularEntity a shex:ShapeAnd ;
                                     shex:valueExpr biolink:DiseaseOrPhenotypicFeature ] ) ] ] ) .
 
 [] a shex:Schema ;
-    shex:shapes <file:///Users/hsolbri1/git/biolink/biolink-model/XSD_string__List>,
-        meta:Builtins,
-        meta:SlotRangeTypes,
+    shex:shapes <file:///Users/hsolbri1/git/hsolbrig/biolink-model/XSD_string__List>,
         biolink:ActivityAndBehavior,
         biolink:AdministrativeEntity,
         biolink:AnatomicalEntity,
@@ -1653,7 +1651,9 @@ biolink:MolecularEntity a shex:ShapeAnd ;
         biolink:VariantToPhenotypicFeatureAssociation,
         biolink:VariantToPopulationAssociation,
         biolink:VariantToThingAssociation,
-        biolink:Zygosity .
+        biolink:Zygosity,
+        meta:Builtins,
+        meta:SlotRangeTypes .
 
 
 

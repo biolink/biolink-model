@@ -3,7 +3,7 @@
 
 An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
 
-URI: [http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation](http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation)
+URI: [http://w3id.org/biolink/vocab/CaseToPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/CaseToPhenotypicFeatureAssociation)
 
 ![img](images/CaseToPhenotypicFeatureAssociation.png)
 ## Mappings
@@ -27,7 +27,7 @@ URI: [http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation](http://bioen
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

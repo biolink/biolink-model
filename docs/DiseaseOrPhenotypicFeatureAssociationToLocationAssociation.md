@@ -3,7 +3,7 @@
 
 An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 
-URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation)
+URI: [http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation)
 
 ![img](images/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.png)
 ## Mappings
@@ -32,7 +32,7 @@ URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationA
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

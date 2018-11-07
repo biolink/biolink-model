@@ -3,7 +3,7 @@
 
 A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
 
-URI: [http://bioentity.io/vocab/OrganismalEntity](http://bioentity.io/vocab/OrganismalEntity)
+URI: [http://w3id.org/biolink/vocab/OrganismalEntity](http://w3id.org/biolink/vocab/OrganismalEntity)
 
 ![img](images/OrganismalEntity.png)
 ## Mappings
@@ -25,7 +25,7 @@ URI: [http://bioentity.io/vocab/OrganismalEntity](http://bioentity.io/vocab/Orga
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

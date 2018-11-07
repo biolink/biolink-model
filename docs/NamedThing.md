@@ -3,7 +3,7 @@
 
 a databased entity or concept/class
 
-URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing)
+URI: [http://w3id.org/biolink/vocab/NamedThing](http://w3id.org/biolink/vocab/NamedThing)
 
 ![img](images/NamedThing.png)
 ## Mappings
@@ -62,7 +62,7 @@ URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * __Local__
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

@@ -3,7 +3,7 @@
 
 a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
 
-URI: [http://bioentity.io/vocab/severity_qualifier](slot_uri)
+URI: [http://w3id.org/biolink/vocab/severity_qualifier](slot_uri)
 ## Mappings
 
 ## Domain and Range

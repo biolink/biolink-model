@@ -3,7 +3,7 @@
 
 the case (e.g. patient) that has the property
 
-URI: [http://bioentity.io/vocab/case_to_thing_association_subject](slot_uri)
+URI: [http://w3id.org/biolink/vocab/case_to_thing_association_subject](slot_uri)
 ## Mappings
 
  * [rdf:subject](http://purl.obolibrary.org/obo/rdf_subject)

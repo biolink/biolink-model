@@ -3,7 +3,7 @@
 
 An OWL property used as an edge label
 
-URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/RelationshipType)
+URI: [http://w3id.org/biolink/vocab/RelationshipType](http://w3id.org/biolink/vocab/RelationshipType)
 
 ![img](images/RelationshipType.png)
 ## Mappings

@@ -3,10 +3,9 @@
 
 frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
 
-URI: [http://bioentity.io/vocab/variant_to_population_association_has_quotient](slot_uri)
+URI: [http://w3id.org/biolink/vocab/variant_to_population_association_has_quotient](slot_uri)
 ## Mappings
 
- * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [VariantToPopulationAssociation](VariantToPopulationAssociation.md) -> **double**

@@ -3,7 +3,7 @@
 
 the relationship type by which a subject is connected to an object in an association
 
-URI: [http://bioentity.io/vocab/gene_to_gene_product_relationship_relation](slot_uri)
+URI: [http://w3id.org/biolink/vocab/gene_to_gene_product_relationship_relation](slot_uri)
 ## Mappings
 
  * [rdf:predicate](http://purl.obolibrary.org/obo/rdf_predicate)

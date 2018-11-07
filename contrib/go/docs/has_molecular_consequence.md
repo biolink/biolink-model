@@ -3,7 +3,7 @@
 
 connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
 
-URI: [http://bioentity.io/vocab/has_molecular_consequence](slot_uri)
+URI: [http://w3id.org/biolink/vocab/has_molecular_consequence](slot_uri)
 ## Mappings
 
  * [owl:topObjectProperty](http://purl.obolibrary.org/obo/owl_topObjectProperty)

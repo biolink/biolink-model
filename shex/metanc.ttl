@@ -1,5 +1,5 @@
-@prefix biolink: <http://bioentity.io/vocab/> .
-@prefix meta: <http://bioentity.io/meta/> .
+@prefix biolink: <http://w3id.org/biolink/vocab/> .
+@prefix meta: <http://w3id.org/biolink/vocab/meta/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -87,13 +87,6 @@ biolink:SchemaDefinition a shex:ShapeAnd ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:date ] ] ) ] ] ) .
 
-meta:Builtins a shex:NodeConstraint ;
-    shex:values ( [ a shex:IriStem ;
-                shex:stem "http://www.w3.org/2001/XMLSchema#"^^xsd:string ] ) .
-
-meta:SlotRangeTypes a shex:ShapeOr ;
-    shex:shapeExprs ( biolink:TypeDefinition biolink:ClassDefinition meta:Builtins ) .
-
 biolink:AltDescription a shex:Shape ;
     shex:expression [ a shex:EachOf ;
             shex:expressions ( [ a shex:TripleConstraint ;
@@ -135,6 +128,13 @@ biolink:Prefix a shex:Shape ;
                         shex:predicate biolink:prefix_uri ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] ) ] .
+
+meta:Builtins a shex:NodeConstraint ;
+    shex:values ( [ a shex:IriStem ;
+                shex:stem "http://www.w3.org/2001/XMLSchema#"^^xsd:string ] ) .
+
+meta:SlotRangeTypes a shex:ShapeOr ;
+    shex:shapeExprs ( biolink:TypeDefinition biolink:ClassDefinition meta:Builtins ) .
 
 biolink:Element a shex:Shape ;
     shex:expression [ a shex:EachOf ;
@@ -396,9 +396,7 @@ biolink:SlotDefinition a shex:ShapeAnd ;
                                     shex:valueExpr biolink:SlotDefinition ] ) ] ] ) .
 
 [] a shex:Schema ;
-    shex:shapes meta:Builtins,
-        meta:SlotRangeTypes,
-        biolink:AltDescription,
+    shex:shapes biolink:AltDescription,
         biolink:ClassDefinition,
         biolink:Definition,
         biolink:Element,
@@ -406,7 +404,9 @@ biolink:SlotDefinition a shex:ShapeAnd ;
         biolink:Prefix,
         biolink:SchemaDefinition,
         biolink:SlotDefinition,
-        biolink:TypeDefinition .
+        biolink:TypeDefinition,
+        meta:Builtins,
+        meta:SlotRangeTypes .
 
 
 

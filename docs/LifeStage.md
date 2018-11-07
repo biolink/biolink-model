@@ -3,7 +3,7 @@
 
 A stage of development or growth of an organism, including post-natal adult stages
 
-URI: [http://bioentity.io/vocab/LifeStage](http://bioentity.io/vocab/LifeStage)
+URI: [http://w3id.org/biolink/vocab/LifeStage](http://w3id.org/biolink/vocab/LifeStage)
 
 ![img](images/LifeStage.png)
 ## Mappings
@@ -23,7 +23,7 @@ URI: [http://bioentity.io/vocab/LifeStage](http://bioentity.io/vocab/LifeStage)
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

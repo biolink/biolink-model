@@ -3,7 +3,7 @@
 
 An individual organism that has a patient role in some clinical context.
 
-URI: [http://bioentity.io/vocab/Case](http://bioentity.io/vocab/Case)
+URI: [http://w3id.org/biolink/vocab/Case](http://w3id.org/biolink/vocab/Case)
 
 ![img](images/Case.png)
 ## Mappings
@@ -20,7 +20,7 @@ URI: [http://bioentity.io/vocab/Case](http://bioentity.io/vocab/Case)
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

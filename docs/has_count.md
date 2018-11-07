@@ -3,10 +3,9 @@
 
 number of things with a particular property
 
-URI: [http://bioentity.io/vocab/has_count](slot_uri)
+URI: [http://w3id.org/biolink/vocab/has_count](slot_uri)
 ## Mappings
 
- * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [FrequencyQuantifier](FrequencyQuantifier.md) -> **integer**
@@ -18,5 +17,5 @@ URI: [http://bioentity.io/vocab/has_count](slot_uri)
  *  child: [variant to population association.has count](variant_to_population_association_has_count.md)
 ## Used in
 
- *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
  *  usage: [FrequencyQuantifier](FrequencyQuantifier.md)
+ *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

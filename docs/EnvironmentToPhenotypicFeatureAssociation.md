@@ -3,7 +3,7 @@
 
 Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
 
-URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation)
+URI: [http://w3id.org/biolink/vocab/EnvironmentToPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/EnvironmentToPhenotypicFeatureAssociation)
 
 ![img](images/EnvironmentToPhenotypicFeatureAssociation.png)
 ## Mappings
@@ -32,7 +32,7 @@ URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http:
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

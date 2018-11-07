@@ -16,7 +16,7 @@ from metamodel.utils.typereferences import References
 
 class MarkdownGenerator(Generator):
     generatorname = os.path.basename(__file__)
-    generatorversion = "0.0.2"
+    generatorversion = "0.0.3"
     valid_formats = ["md"]
     visit_all_class_slots = False
 
@@ -153,13 +153,13 @@ class MarkdownGenerator(Generator):
                     self.bullet(f' is_a: {self.link(slot.is_a)}')
 
                 self.header(2, 'Children')
-                if slot.name in self.synopsis.isarefs:
-                    for child in self.synopsis.isarefs[slot.name].slotrefs:
+                if slot.name in sorted(self.synopsis.isarefs):
+                    for child in sorted(self.synopsis.isarefs[slot.name].slotrefs):
                         self.bullet(f' child: {self.link(child)}')
 
                 self.header(2, 'Used in')
-                if slot.name in self.synopsis.slotrefs:
-                    for rc in self.synopsis.slotrefs[slot.name].classrefs:
+                if slot.name in sorted(self.synopsis.slotrefs):
+                    for rc in sorted(self.synopsis.slotrefs[slot.name].classrefs):
                         self.bullet(f' usage: {self.link(rc)}')
                 if aliased_slot_name == 'relation':
                     if slot.subproperty_of:
@@ -167,14 +167,14 @@ class MarkdownGenerator(Generator):
 
     def class_hier(self, cls: ClassDefinition, level=0) -> None:
         self.bullet(self.link(cls, use_desc=True), level)
-        if cls.name in self.synopsis.isarefs:
-            for child in self.synopsis.isarefs[cls.name].classrefs:
+        if cls.name in sorted(self.synopsis.isarefs):
+            for child in sorted(self.synopsis.isarefs[cls.name].classrefs):
                 self.class_hier(self.schema.classes[child], level+1)
         
     def pred_hier(self, slot: SlotDefinition, level=0) -> None:
         self.bullet(self.link(slot, use_desc=True), level)
-        if slot.name in self.synopsis.isarefs:
-            for child in self.synopsis.isarefs[slot.name].slotrefs:
+        if slot.name in sorted(self.synopsis.isarefs):
+            for child in sorted(self.synopsis.isarefs[slot.name].slotrefs):
                 self.pred_hier(self.schema.slots[child], level+1)
 
     def dir_path(self, obj: Union[ClassDefinition, SlotDefinition]) -> str:

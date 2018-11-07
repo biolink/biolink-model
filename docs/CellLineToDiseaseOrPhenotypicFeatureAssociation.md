@@ -3,7 +3,7 @@
 
 An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
 
-URI: [http://bioentity.io/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation](http://bioentity.io/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation)
+URI: [http://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation)
 
 ![img](images/CellLineToDiseaseOrPhenotypicFeatureAssociation.png)
 ## Mappings
@@ -33,7 +33,7 @@ URI: [http://bioentity.io/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation]
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

@@ -1,7 +1,6 @@
-@prefix : <http://bioentity.io/vocab/> .
+@prefix : <http://w3id.org/biolink/vocab/> .
 @prefix OIO: <http://www.geneontology.org/formats/oboInOwl#> .
-@prefix biolink: <http://bioentity.io/vocab/> .
-@prefix meta: <http://bioentity.io/meta/> .
+@prefix biolink: <http://w3id.org/biolink/vocab/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -13,20 +12,20 @@
     biolink:classes ( biolink:RelationshipType biolink:Attribute biolink:BiologicalSex biolink:PhenotypicSex biolink:GenotypicSex biolink:SeverityValue biolink:FrequencyValue biolink:ClinicalModifier biolink:Onset biolink:RelationshipQuantifier biolink:SenstivityQuantifier biolink:SpecificityQuantifier biolink:PathognomonicityQuantifier biolink:FrequencyQuantifier biolink:NamedThing biolink:BiologicalEntity biolink:OntologyClass biolink:GeneOntologyClass biolink:ThingWithTaxon biolink:OrganismTaxon biolink:OrganismalEntity biolink:IndividualOrganism biolink:Case biolink:PopulationOfIndividualOrganisms biolink:Biosample biolink:DiseaseOrPhenotypicFeature biolink:Disease biolink:PhenotypicFeature biolink:Environment biolink:InformationContentEntity biolink:ConfidenceLevel biolink:EvidenceType biolink:Publication biolink:AdministrativeEntity biolink:Provider biolink:MolecularEntity biolink:ChemicalSubstance biolink:Drug biolink:Metabolite biolink:AnatomicalEntity biolink:LifeStage biolink:PlanetaryEntity biolink:EnvironmentalProcess biolink:EnvironmentalFeature biolink:ClinicalEntity biolink:ClinicalTrial biolink:ClinicalIntervention biolink:Device biolink:GenomicEntity biolink:Genome biolink:Transcript biolink:Exon biolink:CodingSequence biolink:MacromolecularMachine biolink:GeneOrGeneProduct biolink:Gene biolink:GeneProduct biolink:Protein biolink:GeneProductIsoform biolink:ProteinIsoform biolink:RNAProduct biolink:RNAProductIsoform biolink:NoncodingRNAProduct biolink:MicroRNA biolink:MacromolecularComplex biolink:GeneGrouping biolink:GeneFamily biolink:Zygosity biolink:Genotype biolink:Haplotype biolink:SequenceVariant biolink:DrugExposure biolink:Treatment biolink:GeographicLocation biolink:GeographicLocationAtTime biolink:Association biolink:GenotypeToGenotypePartAssociation biolink:GenotypeToGeneAssociation biolink:GenotypeToVariantAssociation biolink:GeneToGeneAssociation biolink:GeneToGeneHomologyAssociation biolink:PairwiseInteractionAssociation biolink:PairwiseGeneToGeneInteraction biolink:CellLineToThingAssociation biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation biolink:ChemicalToThingAssociation biolink:CaseToThingAssociation biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation biolink:ChemicalToPathwayAssociation biolink:ChemicalToGeneAssociation biolink:BiosampleToThingAssociation biolink:BiosampleToDiseaseOrPhenotypicFeatureAssociation biolink:FrequencyQualifier biolink:EntityToFeatureOrDiseaseQualifiers biolink:EntityToPhenotypicFeatureAssociation biolink:EntityToDiseaseAssociation biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation biolink:ThingToDiseaseOrPhenotypicFeatureAssociation biolink:DiseaseToThingAssociation biolink:GenotypeToPhenotypicFeatureAssociation biolink:EnvironmentToPhenotypicFeatureAssociation biolink:DiseaseToPhenotypicFeatureAssociation biolink:CaseToPhenotypicFeatureAssociation biolink:GeneToThingAssociation biolink:VariantToThingAssociation biolink:GeneToPhenotypicFeatureAssociation biolink:GeneToDiseaseAssociation biolink:VariantToPopulationAssociation biolink:PopulationToPopulationAssociation biolink:VariantToPhenotypicFeatureAssociation biolink:VariantToDiseaseAssociation biolink:ModelToDiseaseMixin biolink:GeneAsAModelOfDiseaseAssociation biolink:GeneHasVariantThatContributesToDiseaseAssociation biolink:GenotypeToThingAssociation biolink:GeneToExpressionSiteAssociation biolink:SequenceVariantModulatesTreatmentAssociation biolink:FunctionalAssociation biolink:MacromolecularMachineToMolecularActivityAssociation biolink:MacromolecularMachineToBiologicalProcessAssociation biolink:MacromolecularMachineToCellularComponentAssociation biolink:GeneToGoTermAssociation biolink:GenomicSequenceLocalization biolink:SequenceFeatureRelationship biolink:TranscriptToGeneRelationship biolink:GeneToGeneProductRelationship biolink:ExonToTranscriptRelationship biolink:GeneRegulatoryRelationship biolink:AnatomicalEntityToAnatomicalEntityAssociation biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation biolink:Occurrent biolink:BiologicalProcessOrActivity biolink:MolecularActivity biolink:ActivityAndBehavior biolink:Procedure biolink:Phenomenon biolink:BiologicalProcess biolink:Pathway biolink:PhysiologicalProcess biolink:CellularComponent biolink:Cell biolink:CellLine biolink:GrossAnatomicalStructure ) ;
     biolink:default_curi_maps ( "obo_context" "monarch_context" "idot_context" "semweb_context" ) ;
     biolink:default_prefix "biolink" ;
-    biolink:generation_date "2018-10-29"^^xsd:date ;
+    biolink:generation_date "2018-11-07"^^xsd:date ;
     biolink:id "https://biolink.github.io/biolink-model/ontology/biolink.ttl" ;
     biolink:id_prefixes ( "rdf" "rdfs" "xsd" "skos" "OIO" ) ;
     biolink:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     biolink:metamodel_version "0.3.1" ;
     biolink:prefixes ( [ biolink:local_name "biolink" ;
-                biolink:prefix_uri "http://bioentity.io/vocab/" ] [ biolink:local_name "OBAN" ;
+                biolink:prefix_uri "http://w3id.org/biolink/vocab/" ] [ biolink:local_name "OBAN" ;
                 biolink:prefix_uri "http://purl.org/oban/" ] [ biolink:local_name "SIO" ;
                 biolink:prefix_uri "http://semanticscience.org/resource/SIO_" ] [ biolink:local_name "wgs" ;
                 biolink:prefix_uri "http://www.w3.org/2003/01/geo/wgs84_pos" ] ) ;
     biolink:slots ( biolink:related_to biolink:interacts_with biolink:physically_interacts_with biolink:molecularly_interacts_with biolink:genetically_interacts_with biolink:affects biolink:affects_abundance_of biolink:increases_abundance_of biolink:decreases_abundance_of biolink:affects_activity_of biolink:increases_activity_of biolink:decreases_activity_of biolink:affects_expression_of biolink:increases_expression_of biolink:decreases_expression_of biolink:affects_folding_of biolink:increases_folding_of biolink:decreases_folding_of biolink:affects_localization_of biolink:increases_localization_of biolink:decreases_localization_of biolink:affects_metabolic_processing_of biolink:increases_metabolic_processing_of biolink:decreases_metabolic_processing_of biolink:affects_molecular_modification_of biolink:increases_molecular_modification_of biolink:decreases_molecular_modification_of biolink:affects_synthesis_of biolink:increases_synthesis_of biolink:decreases_synthesis_of biolink:affects_degradation_of biolink:increases_degradation_of biolink:decreases_degradation_of biolink:affects_mutation_rate_of biolink:increases_mutation_rate_of biolink:decreases_mutation_rate_of biolink:affects_response_to biolink:increases_response_to biolink:decreases_response_to biolink:affects_splicing_of biolink:increases_splicing_of biolink:decreases_splicing_of biolink:affects_stability_of biolink:increases_stability_of biolink:decreases_stability_of biolink:affects_transport_of biolink:increases_transport_of biolink:decreases_transport_of biolink:affects_secretion_of biolink:increases_secretion_of biolink:decreases_secretion_of biolink:affects_uptake_of biolink:increases_uptake_of biolink:decreases_uptake_of biolink:regulates biolink:positively_regulates biolink:negatively_regulates biolink:regulates_process_to_process biolink:positively_regulates_process_to_process biolink:negatively_regulates_process_to_process biolink:regulates_entity_to_entity biolink:positively_regulates_entity_to_entity biolink:negatively_regulates_entity_to_entity biolink:disrupts biolink:has_gene_product biolink:homologous_to biolink:paralogous_to biolink:orthologous_to biolink:xenologous_to biolink:coexists_with biolink:in_pathway_with biolink:in_complex_with biolink:in_cell_population_with biolink:co-localizes_with biolink:gene_associated_with_condition biolink:affects_risk_for biolink:predisposes biolink:contributes_to biolink:causes biolink:treats biolink:prevents biolink:correlated_with biolink:has_biomarker biolink:biomarker_for biolink:treated_by biolink:expressed_in biolink:expresses biolink:has_phenotype biolink:occurs_in biolink:located_in biolink:location_of biolink:model_of biolink:overlaps biolink:has_part biolink:part_of biolink:has_participant biolink:has_input biolink:participates_in biolink:actively_involved_in biolink:capable_of biolink:derives_into biolink:derives_from biolink:manifestation_of biolink:produces biolink:precedes biolink:same_as biolink:subclass_of biolink:node_property biolink:id biolink:iri biolink:name biolink:category biolink:full_name biolink:description biolink:systematic_synonym biolink:association_slot biolink:subject biolink:object biolink:edge_label biolink:relation biolink:negated biolink:has_confidence_level biolink:has_evidence biolink:provided_by biolink:association_type biolink:creation_date biolink:update_date biolink:in_taxon biolink:latitude biolink:longitude biolink:has_chemical_formula biolink:aggregate_statistic biolink:has_count biolink:has_total biolink:has_quotient biolink:has_percentage biolink:timepoint biolink:stage_qualifier biolink:quantifier_qualifier biolink:qualifiers biolink:frequency_qualifier biolink:severity_qualifier biolink:sex_qualifier biolink:onset_qualifier biolink:clinical_modifier_qualifier biolink:sequence_variant_qualifier biolink:publications biolink:has_biological_sequence biolink:has_molecular_consequence biolink:has_gene biolink:has_zygosity biolink:filler biolink:phase biolink:genome_build biolink:interbase_coordinate biolink:start_interbase_coordinate biolink:end_interbase_coordinate biolink:macromolecular_machine_name biolink:sequence_variant_has_gene biolink:sequence_variant_has_biological_sequence biolink:sequence_variant_id biolink:drug biolink:treatment_treats biolink:has_exposure_parts biolink:genotype_to_genotype_part_association_relation biolink:genotype_to_genotype_part_association_subject biolink:genotype_to_genotype_part_association_object biolink:genotype_to_gene_association_relation biolink:genotype_to_gene_association_subject biolink:genotype_to_gene_association_object biolink:genotype_to_variant_association_relation biolink:genotype_to_variant_association_subject biolink:genotype_to_variant_association_object biolink:gene_to_gene_association_subject biolink:gene_to_gene_association_object biolink:gene_to_gene_homology_association_relation biolink:pairwise_interaction_association_subject biolink:pairwise_interaction_association_id biolink:pairwise_interaction_association_relation biolink:pairwise_interaction_association_object biolink:interacting_molecules_category biolink:pairwise_gene_to_gene_interaction_relation biolink:cell_line_to_thing_association_subject biolink:cell_line_to_disease_or_phenotypic_feature_association_subject biolink:chemical_to_thing_association_subject biolink:case_to_thing_association_subject biolink:chemical_to_disease_or_phenotypic_feature_association_object biolink:chemical_to_pathway_association_object biolink:chemical_to_gene_association_object biolink:biosample_to_thing_association_subject biolink:entity_to_phenotypic_feature_association_description biolink:entity_to_phenotypic_feature_association_object biolink:entity_to_disease_association_object biolink:disease_or_phenotypic_feature_association_to_thing_association_subject biolink:disease_or_phenotypic_feature_association_to_location_association_object biolink:thing_to_disease_or_phenotypic_feature_association_object biolink:disease_to_thing_association_subject biolink:genotype_to_phenotypic_feature_association_relation biolink:genotype_to_phenotypic_feature_association_subject biolink:environment_to_phenotypic_feature_association_subject biolink:gene_to_thing_association_subject biolink:variant_to_thing_association_subject biolink:gene_to_phenotypic_feature_association_subject biolink:gene_to_disease_association_subject biolink:variant_to_population_association_subject biolink:variant_to_population_association_object biolink:variant_to_population_association_has_quotient biolink:variant_to_population_association_has_count biolink:variant_to_population_association_has_total biolink:population_to_population_association_subject biolink:population_to_population_association_object biolink:population_to_population_association_relation biolink:variant_to_phenotypic_feature_association_subject biolink:variant_to_disease_association_subject biolink:variant_to_disease_association_relation biolink:variant_to_disease_association_object biolink:model_to_disease_mixin_subject biolink:model_to_disease_mixin_relation biolink:gene_as_a_model_of_disease_association_subject biolink:gene_has_variant_that_contributes_to_disease_association_subject biolink:genotype_to_thing_association_subject biolink:gene_to_expression_site_association_subject biolink:gene_to_expression_site_association_object biolink:gene_to_expression_site_association_relation biolink:gene_to_expression_site_association_stage_qualifier biolink:gene_to_expression_site_association_quantifier_qualifier biolink:sequence_variant_modulates_treatment_association_subject biolink:sequence_variant_modulates_treatment_association_object biolink:functional_association_subject biolink:functional_association_object biolink:macromolecular_machine_to_molecular_activity_association_object biolink:macromolecular_machine_to_biological_process_association_object biolink:macromolecular_machine_to_cellular_component_association_object biolink:gene_to_go_term_association_subject biolink:gene_to_go_term_association_object biolink:genomic_sequence_localization_subject biolink:genomic_sequence_localization_object biolink:sequence_feature_relationship_subject biolink:sequence_feature_relationship_object biolink:transcript_to_gene_relationship_subject biolink:transcript_to_gene_relationship_object biolink:gene_to_gene_product_relationship_subject biolink:gene_to_gene_product_relationship_object biolink:gene_to_gene_product_relationship_relation biolink:exon_to_transcript_relationship_subject biolink:exon_to_transcript_relationship_object biolink:gene_regulatory_relationship_relation biolink:gene_regulatory_relationship_subject biolink:gene_regulatory_relationship_object biolink:anatomical_entity_to_anatomical_entity_association_subject biolink:anatomical_entity_to_anatomical_entity_association_object biolink:anatomical_entity_to_anatomical_entity_part_of_association_subject biolink:anatomical_entity_to_anatomical_entity_part_of_association_object biolink:anatomical_entity_to_anatomical_entity_part_of_association_relation biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_subject biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_object biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_relation ) ;
-    biolink:source_file "/Users/hsolbri1/git/biolink/biolink-model/biolink-model.yaml" ;
-    biolink:source_file_date "Sun Oct 28 14:15:54 2018" ;
-    biolink:source_file_size 98042 ;
+    biolink:source_file "/Users/hsolbri1/git/hsolbrig/biolink-model/biolink-model.yaml" ;
+    biolink:source_file_date "Tue Nov  6 18:14:29 2018" ;
+    biolink:source_file_size 97943 ;
     biolink:types ( biolink:phenotype biolink:evidence_instance biolink:chemical_formula_value biolink:identifier_type biolink:iri_type biolink:label_type biolink:narrative_text biolink:symbol_type biolink:chemical_formula_type biolink:frequency_value biolink:perecentage_frequency_value biolink:quotient biolink:unit biolink:time_type biolink:biological_sequence ) ;
     skos:definition "Entity and association taxonomy and datamodel for life-sciences data" .
 
@@ -82,12 +81,12 @@ biolink:Drug a biolink:ChemicalSubstance ;
 
 biolink:EnvironmentalFeature a biolink:PlanetaryEntity ;
     rdfs:label "EnvironmentalFeature" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/ENVO:00002297> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/ENVO:00002297> .
 
 biolink:EnvironmentalProcess a biolink:PlanetaryEntity ;
     rdfs:label "EnvironmentalProcess" ;
     biolink:mixins ( biolink:Occurrent ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/ENVO:02500000> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/ENVO:02500000> .
 
 biolink:EvidenceType a biolink:InformationContentEntity ;
     rdfs:label "EvidenceType" ;
@@ -110,7 +109,7 @@ biolink:Genome a biolink:GenomicEntity ;
 
 biolink:GenotypicSex a biolink:BiologicalSex ;
     rdfs:label "GenotypicSex" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/PATO:0020000> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/PATO:0020000> ;
     skos:definition "An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes." .
 
 biolink:GrossAnatomicalStructure a biolink:AnatomicalEntity ;
@@ -134,7 +133,7 @@ biolink:MicroRNA a biolink:NoncodingRNAProduct ;
     rdfs:label "MicroRNA" ;
     biolink:id_prefixes ( "MIR" ) ;
     biolink:mappings ( "SIO:001397" "WD:Q310899" ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/SO:0000276> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/SO:0000276> .
 
 biolink:PathognomonicityQuantifier a biolink:SpecificityQuantifier ;
     rdfs:label "PathognomonicityQuantifier" ;
@@ -148,7 +147,7 @@ biolink:Phenomenon a biolink:Occurrent ;
 
 biolink:PhenotypicSex a biolink:BiologicalSex ;
     rdfs:label "PhenotypicSex" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/PATO:0001894> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/PATO:0001894> ;
     skos:definition "An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present." .
 
 biolink:PhysiologicalProcess a biolink:BiologicalProcess ;
@@ -236,7 +235,6 @@ biolink:edge_label a biolink:association_slot ;
 biolink:filler a biolink:node_property ;
     rdfs:label "filler" ;
     biolink:domain biolink:NamedThing ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range biolink:NamedThing ;
     skos:definition "The value in a property-value tuple" .
 
@@ -397,7 +395,6 @@ biolink:unit rdfs:label "unit" ;
 biolink:update_date a biolink:node_property ;
     rdfs:label "update_date" ;
     biolink:domain biolink:NamedThing ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:date ;
     skos:definition "date on which thing was updated. This can be applied to nodes or edges" .
 
@@ -458,7 +455,7 @@ biolink:ChemicalToPathwayAssociation a biolink:Association ;
 
 biolink:ClinicalModifier a biolink:Attribute ;
     rdfs:label "ClinicalModifier" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/HP:0012823> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/HP:0012823> ;
     skos:definition "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects" .
 
 biolink:ConfidenceLevel a biolink:InformationContentEntity ;
@@ -539,13 +536,13 @@ biolink:IndividualOrganism a biolink:OrganismalEntity ;
     rdfs:label "IndividualOrganism" ;
     biolink:mappings ( "SIO:010000" "UMLSSG:LIVB" "WD:Q795052" ) ;
     biolink:mixins ( biolink:ThingWithTaxon ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/NCBITaxon:1> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/NCBITaxon:1> .
 
 biolink:MacromolecularComplex a biolink:MacromolecularMachine ;
     rdfs:label "MacromolecularComplex" ;
     biolink:id_prefixes ( "IntAct" "GO" "PR" "Reactome" ) ;
     biolink:mappings ( "SIO:010046" "WD:Q22325163" ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/GO:0032991> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/GO:0032991> .
 
 biolink:MacromolecularMachineToBiologicalProcessAssociation a biolink:FunctionalAssociation ;
     rdfs:label "MacromolecularMachineToBiologicalProcessAssociation" ;
@@ -572,7 +569,7 @@ biolink:NoncodingRNAProduct a biolink:RNAProduct ;
     rdfs:label "NoncodingRNAProduct" ;
     biolink:id_prefixes ( "RNAcentral" "NCBIGene" "ENSEMBL" ) ;
     biolink:mappings ( "SIO:001235" ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/SO:0000655> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/SO:0000655> .
 
 biolink:Onset a biolink:Attribute ;
     rdfs:label "Onset" ;
@@ -726,7 +723,7 @@ biolink:category a biolink:node_property ;
     biolink:is_class_field true ;
     biolink:mappings ( "rdf:type" ) ;
     biolink:multivalued true ;
-    biolink:range biolink:label_type ;
+    biolink:range biolink:iri_type ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag" .
 
@@ -984,7 +981,6 @@ biolink:drug rdfs:label "drug" ;
 biolink:end_interbase_coordinate a biolink:interbase_coordinate ;
     rdfs:label "end_interbase_coordinate" ;
     biolink:domain biolink:GenomicSequenceLocalization ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:string ;
     skos:definition "TODO" .
 
@@ -1050,7 +1046,6 @@ biolink:exon_to_transcript_relationship_subject a biolink:sequence_feature_relat
 biolink:full_name a biolink:node_property ;
     rdfs:label "full_name" ;
     biolink:domain biolink:NamedThing ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range biolink:label_type ;
     skos:definition "a long-form human readable name for a thing" .
 
@@ -1256,7 +1251,6 @@ biolink:genetically_interacts_with a biolink:interacts_with ;
 biolink:genome_build a biolink:node_property ;
     rdfs:label "genome_build" ;
     biolink:domain biolink:GenomicSequenceLocalization ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:string ;
     skos:definition "TODO" .
 
@@ -1403,7 +1397,6 @@ biolink:has_exposure_parts rdfs:label "has_exposure_parts" ;
 biolink:has_gene a biolink:node_property ;
     rdfs:label "has_gene" ;
     biolink:domain biolink:SequenceVariant ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range biolink:Gene ;
     skos:definition "connects and entity to a single gene" .
 
@@ -1427,14 +1420,12 @@ biolink:has_part a biolink:overlaps ;
 biolink:has_percentage a biolink:aggregate_statistic ;
     rdfs:label "has_percentage" ;
     biolink:domain biolink:FrequencyQuantifier ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:double ;
     skos:definition "equivalent to has quotient multiplied by 100" .
 
 biolink:has_zygosity a biolink:node_property ;
     rdfs:label "has_zygosity" ;
     biolink:domain biolink:Genotype ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range biolink:Zygosity ;
     skos:definition "A grouping for any property that holds between a node and a value" .
 
@@ -1606,14 +1597,9 @@ biolink:interacting_molecules_category rdfs:label "interacting_molecules_categor
 biolink:iri a biolink:node_property ;
     rdfs:label "iri" ;
     biolink:domain biolink:NamedThing ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range biolink:iri_type ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "An IRI for the node. This is determined by the id using expansion rules." .
-
-biolink:iri_type rdfs:label "iri type" ;
-    biolink:typeof "string" ;
-    skos:definition "An IRI" .
 
 biolink:latitude a biolink:node_property ;
     rdfs:label "latitude" ;
@@ -1730,7 +1716,6 @@ biolink:pairwise_interaction_association_id a biolink:id ;
     rdfs:label "pairwise_interaction_association_id" ;
     biolink:alias "id" ;
     biolink:domain biolink:PairwiseInteractionAssociation ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range biolink:identifier_type ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "identifier for the interaction. This may come from an interaction database such as IMEX." .
@@ -1756,7 +1741,6 @@ biolink:pairwise_interaction_association_subject a biolink:subject ;
 biolink:phase a biolink:node_property ;
     rdfs:label "phase" ;
     biolink:domain biolink:GenomicSequenceLocalization ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:string ;
     skos:definition "TODO" .
 
@@ -1840,7 +1824,6 @@ biolink:sequence_variant_has_biological_sequence a biolink:has_biological_sequen
     rdfs:label "sequence_variant_has_biological_sequence" ;
     biolink:alias "has biological sequence" ;
     biolink:domain biolink:SequenceVariant ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range biolink:biological_sequence ;
     skos:definition "The state of the sequence w.r.t a reference sequence" .
 
@@ -1848,7 +1831,6 @@ biolink:sequence_variant_has_gene a biolink:has_gene ;
     rdfs:label "sequence_variant_has_gene" ;
     biolink:alias "has gene" ;
     biolink:domain biolink:SequenceVariant ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:multivalued true ;
     biolink:range biolink:Gene ;
     skos:definition "Each allele can be associated with any number of genes" .
@@ -1857,7 +1839,6 @@ biolink:sequence_variant_id a biolink:id ;
     rdfs:label "sequence_variant_id" ;
     biolink:alias "id" ;
     biolink:domain biolink:SequenceVariant ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range biolink:identifier_type ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI" .
@@ -1908,7 +1889,6 @@ biolink:stage_qualifier a biolink:association_slot ;
 biolink:start_interbase_coordinate a biolink:interbase_coordinate ;
     rdfs:label "start_interbase_coordinate" ;
     biolink:domain biolink:GenomicSequenceLocalization ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:string ;
     skos:definition "TODO" .
 
@@ -1923,7 +1903,6 @@ biolink:subclass_of a biolink:related_to ;
 biolink:systematic_synonym a biolink:node_property ;
     rdfs:label "systematic_synonym" ;
     biolink:domain biolink:NamedThing ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range biolink:label_type ;
     skos:definition "more commonly used for gene symbols in yeast" .
 
@@ -1943,7 +1922,6 @@ biolink:time_type rdfs:label "time type" ;
 biolink:timepoint a biolink:node_property ;
     rdfs:label "timepoint" ;
     biolink:domain biolink:GeographicLocationAtTime ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range biolink:time_type ;
     skos:definition "a point in time" .
 
@@ -2015,7 +1993,6 @@ biolink:variant_to_population_association_has_count a biolink:has_count ;
     rdfs:label "variant_to_population_association_has_count" ;
     biolink:alias "has count" ;
     biolink:domain biolink:VariantToPopulationAssociation ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:integer ;
     skos:definition "number in object population that carry a particular allele, aka allele count" .
 
@@ -2023,7 +2000,6 @@ biolink:variant_to_population_association_has_quotient a biolink:has_quotient ;
     rdfs:label "variant_to_population_association_has_quotient" ;
     biolink:alias "has quotient" ;
     biolink:domain biolink:VariantToPopulationAssociation ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:double ;
     skos:definition "frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency" .
 
@@ -2031,7 +2007,6 @@ biolink:variant_to_population_association_has_total a biolink:has_total ;
     rdfs:label "variant_to_population_association_has_total" ;
     biolink:alias "has total" ;
     biolink:domain biolink:VariantToPopulationAssociation ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:integer ;
     skos:definition "number all populations that carry a particular allele, aka allele number" .
 
@@ -2141,7 +2116,7 @@ biolink:DiseaseToThingAssociation a biolink:Association ;
                 biolink:definitional true ;
                 biolink:range biolink:Disease ;
                 biolink:values_from ( "mondo" "omim" "orphanet" "ncit" "doid" ) ;
-                rdfs:subClassOf <http://bioentity.io/vocab/MONDO:0000001> ;
+                rdfs:subClassOf <http://w3id.org/biolink/vocab/MONDO:0000001> ;
                 skos:definition "disease class" ;
                 skos:example ( [ biolink:value "MONDO:0017314" ;
                             skos:definition "Ehlers-Danlos syndrome, vascular type" ] ) ] ) ;
@@ -2299,7 +2274,6 @@ biolink:functional_association_subject a biolink:subject ;
 biolink:has_biological_sequence a biolink:node_property ;
     rdfs:label "has_biological_sequence" ;
     biolink:domain biolink:GenomicEntity ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range biolink:biological_sequence ;
     skos:definition "connects a genomic feature to its sequence" .
 
@@ -2315,21 +2289,18 @@ biolink:has_biomarker a biolink:correlated_with ;
 biolink:has_count a biolink:aggregate_statistic ;
     rdfs:label "has_count" ;
     biolink:domain biolink:FrequencyQuantifier ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:integer ;
     skos:definition "number of things with a particular property" .
 
 biolink:has_quotient a biolink:aggregate_statistic ;
     rdfs:label "has_quotient" ;
     biolink:domain biolink:FrequencyQuantifier ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:double ;
     skos:definition "A grouping for any property that holds between a node and a value" .
 
 biolink:has_total a biolink:aggregate_statistic ;
     rdfs:label "has_total" ;
     biolink:domain biolink:FrequencyQuantifier ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:integer ;
     skos:definition "total number of things in a particular reference set" .
 
@@ -2345,9 +2316,12 @@ biolink:interacts_with a biolink:related_to ;
 biolink:interbase_coordinate a biolink:node_property ;
     rdfs:label "interbase_coordinate" ;
     biolink:domain biolink:NamedThing ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:string ;
     skos:definition "TODO" .
+
+biolink:iri_type rdfs:label "iri type" ;
+    biolink:typeof "string" ;
+    skos:definition "An IRI" .
 
 biolink:model_of a biolink:related_to ;
     rdfs:label "model_of" ;
@@ -2467,7 +2441,7 @@ biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation a biolink:Anatomical
 
 biolink:BiologicalSex a biolink:Attribute ;
     rdfs:label "BiologicalSex" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/PATO:0000047> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/PATO:0000047> .
 
 biolink:Biosample a biolink:OrganismalEntity ;
     rdfs:label "Biosample" ;
@@ -2577,7 +2551,7 @@ biolink:GeographicLocation a biolink:PlanetaryEntity ;
 biolink:LifeStage a biolink:OrganismalEntity ;
     rdfs:label "LifeStage" ;
     biolink:mixins ( biolink:ThingWithTaxon ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/UBERON:0000105> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/UBERON:0000105> ;
     skos:definition "A stage of development or growth of an organism, including post-natal adult stages" .
 
 biolink:ModelToDiseaseMixin rdfs:label "ModelToDiseaseMixin" ;
@@ -2836,7 +2810,6 @@ biolink:id a biolink:node_property ;
     rdfs:label "id" ;
     biolink:domain biolink:NamedThing ;
     biolink:identifier true ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range biolink:identifier_type ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI" .
@@ -2899,7 +2872,7 @@ biolink:EntityToDiseaseAssociation a biolink:EntityToFeatureOrDiseaseQualifiers 
     biolink:slot_usage ( [ rdfs:label "object" ;
                 biolink:definitional true ;
                 biolink:range biolink:Disease ;
-                rdfs:subClassOf <http://bioentity.io/vocab/MONDO:0000001> ;
+                rdfs:subClassOf <http://w3id.org/biolink/vocab/MONDO:0000001> ;
                 skos:definition "disease" ;
                 skos:example ( [ biolink:value "MONDO:0020066" ;
                             skos:definition "Ehlers-Danlos syndrome" ] ) ] ) ;
@@ -2977,7 +2950,6 @@ biolink:aggregate_statistic a biolink:node_property ;
     rdfs:label "aggregate_statistic" ;
     biolink:abstract true ;
     biolink:domain biolink:NamedThing ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:string ;
     skos:definition "A grouping for any property that holds between a node and a value" .
 
@@ -2997,6 +2969,10 @@ biolink:expressed_in a biolink:related_to ;
     OIO:inSubset ( "translator_minimal" ) ;
     owl:inverseOf biolink:expresses ;
     skos:definition "holds between a gene or gene product and an anatomical entity in which it is expressed" .
+
+biolink:label_type rdfs:label "label type" ;
+    biolink:typeof "string" ;
+    skos:definition "A string that provides a human-readable name for a thing" .
 
 biolink:regulates a biolink:affects ;
     rdfs:label "regulates" ;
@@ -3057,7 +3033,6 @@ biolink:OrganismalEntity a biolink:BiologicalEntity ;
 biolink:SequenceFeatureRelationship a biolink:Association ;
     rdfs:label "SequenceFeatureRelationship" ;
     biolink:defining_slots ( biolink:subject biolink:object ) ;
-    biolink:mappings ( "GMODChado:feature_relationship" ) ;
     biolink:slot_usage ( [ rdfs:label "subject" ;
                 biolink:range biolink:GenomicEntity ] [ rdfs:label "object" ;
                 biolink:range biolink:GenomicEntity ] ) ;
@@ -3120,10 +3095,6 @@ biolink:homologous_to a biolink:related_to ;
     skos:definition "holds between two biological entities that have common evolutionary origin" ;
     skos:editorialNote "typically used to describe homology relationships between genes or gene products" .
 
-biolink:label_type rdfs:label "label type" ;
-    biolink:typeof "string" ;
-    skos:definition "A string that provides a human-readable name for a thing" .
-
 biolink:molecularly_interacts_with a biolink:physically_interacts_with ;
     rdfs:label "molecularly_interacts_with" ;
     biolink:domain biolink:MolecularEntity ;
@@ -3134,7 +3105,7 @@ biolink:molecularly_interacts_with a biolink:physically_interacts_with ;
 
 biolink:Attribute rdfs:label "Attribute" ;
     biolink:mixins ( biolink:OntologyClass ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/PATO:0000001> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/PATO:0000001> ;
     skos:definition "A property or characteristic of an entity" .
 
 biolink:BiologicalEntity a biolink:NamedThing ;
@@ -3147,7 +3118,7 @@ biolink:ChemicalSubstance a biolink:MolecularEntity ;
     rdfs:label "ChemicalSubstance" ;
     biolink:id_prefixes ( "CHEMBL.TARGET" ) ;
     biolink:mappings ( "SIO:010004" "UMLSSG:CHEM" "WD:Q79529" ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/CHEBI:24431> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/CHEBI:24431> ;
     skos:definition "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part" .
 
 biolink:Disease a biolink:DiseaseOrPhenotypicFeature ;
@@ -3199,7 +3170,7 @@ biolink:PairwiseInteractionAssociation a biolink:Association ;
                             skos:definition "the subject molecular phosphorylates the object molecule" ] ) ] [ rdfs:label "object" ;
                 biolink:range biolink:MolecularEntity ] [ rdfs:label "interacting_molecules_category" ;
                 biolink:range biolink:OntologyClass ;
-                rdfs:subClassOf <http://bioentity.io/vocab/MI:1046> ;
+                rdfs:subClassOf <http://w3id.org/biolink/vocab/MI:1046> ;
                 skos:example ( [ biolink:value "MI:1048" ;
                             skos:definition "smallmolecule-protein" ] ) ] ) ;
     biolink:slots ( biolink:pairwise_interaction_association_subject biolink:pairwise_interaction_association_id biolink:pairwise_interaction_association_relation biolink:pairwise_interaction_association_object biolink:interacting_molecules_category ) ;
@@ -3211,7 +3182,7 @@ biolink:PopulationOfIndividualOrganisms a biolink:OrganismalEntity ;
     biolink:local_names ( "population" ) ;
     biolink:mappings ( "SIO:001061" ) ;
     biolink:mixins ( biolink:ThingWithTaxon ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/PCO:0000001> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/PCO:0000001> .
 
 biolink:GeneToExpressionSiteAssociation a biolink:Association ;
     rdfs:label "GeneToExpressionSiteAssociation" ;
@@ -3220,7 +3191,7 @@ biolink:GeneToExpressionSiteAssociation a biolink:Association ;
                 biolink:range biolink:GeneOrGeneProduct ;
                 skos:definition "gene in which variation is correlated with the phenotypic feature" ] [ rdfs:label "object" ;
                 biolink:range biolink:AnatomicalEntity ;
-                rdfs:subClassOf <http://bioentity.io/vocab/UBERON:0001062> ;
+                rdfs:subClassOf <http://w3id.org/biolink/vocab/UBERON:0001062> ;
                 skos:definition "location in which the gene is expressed" ;
                 skos:example ( [ biolink:value "UBERON:0002037" ;
                             skos:definition "cerebellum" ] ) ] [ rdfs:label "relation" ;
@@ -3263,7 +3234,7 @@ biolink:EntityToPhenotypicFeatureAssociation a biolink:Association ;
                 biolink:definitional true ;
                 biolink:range biolink:PhenotypicFeature ;
                 biolink:values_from ( "upheno" "hp" "mp" "wbphenotypic feature" ) ;
-                rdfs:subClassOf <http://bioentity.io/vocab/UPHENO:0001001> ;
+                rdfs:subClassOf <http://w3id.org/biolink/vocab/UPHENO:0001001> ;
                 skos:definition "phenotypic class" ;
                 skos:example ( [ biolink:value "HP:0002487" ;
                             skos:definition "Hyperkinesis" ] [ biolink:value "WBPhenotype:0000180" ;
@@ -3347,12 +3318,11 @@ biolink:AnatomicalEntity a biolink:OrganismalEntity ;
     biolink:mappings ( "UMLSSG:ANAT" "SIO:010046" "WD:Q4936952" ) ;
     biolink:mixins ( biolink:ThingWithTaxon ) ;
     biolink:slots ( biolink:expresses ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/UBERON:0001062> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/UBERON:0001062> ;
     skos:definition "A subcellular location, cell type or gross anatomical part" .
 
 biolink:node_property rdfs:label "node_property" ;
     biolink:domain biolink:NamedThing ;
-    biolink:mappings ( "owl:topAnnotationProperty" ) ;
     biolink:range xsd:string ;
     skos:definition "A grouping for any property that holds between a node and a value" .
 
@@ -3412,7 +3382,7 @@ biolink:subject a biolink:association_slot ;
 biolink:NamedThing rdfs:label "NamedThing" ;
     biolink:mappings ( "UMLSSG:OBJC" "WD:Q35120" ) ;
     biolink:slots ( biolink:id biolink:name biolink:category biolink:related_to biolink:node_property biolink:iri biolink:full_name biolink:description biolink:systematic_synonym ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/BFO:0000001> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/BFO:0000001> ;
     skos:definition "a databased entity or concept/class" .
 
 biolink:MolecularEntity a biolink:BiologicalEntity ;

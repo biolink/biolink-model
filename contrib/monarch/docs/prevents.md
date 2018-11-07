@@ -3,7 +3,7 @@
 
 holds between an entity whose application or use reduces the likelihood of a potential outcome.  Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
 
-URI: [http://bioentity.io/vocab/prevents](slot_uri)
+URI: [http://w3id.org/biolink/vocab/prevents](slot_uri)
 ## Mappings
 
  * [RO:0002559](http://purl.obolibrary.org/obo/RO_0002559)

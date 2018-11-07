@@ -3,7 +3,7 @@
 
 Narrative text describing the entity
 
-URI: [http://bioentity.io/vocab/title](slot_uri)
+URI: [http://w3id.org/biolink/vocab/title](slot_uri)
 ## Mappings
 
  * [dc:title](http://purl.obolibrary.org/obo/dc_title)

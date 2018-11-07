@@ -3,12 +3,11 @@
 
 For example, a particular exon is part of a particular transcript or gene
 
-URI: [http://bioentity.io/vocab/SequenceFeatureRelationship](http://bioentity.io/vocab/SequenceFeatureRelationship)
+URI: [http://w3id.org/biolink/vocab/SequenceFeatureRelationship](http://w3id.org/biolink/vocab/SequenceFeatureRelationship)
 
 ![img](images/SequenceFeatureRelationship.png)
 ## Mappings
 
- * [GMODChado:feature_relationship](http://purl.obolibrary.org/obo/GMODChado_feature_relationship)
 ## Inheritance
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
@@ -39,7 +38,7 @@ URI: [http://bioentity.io/vocab/SequenceFeatureRelationship](http://bioentity.io
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

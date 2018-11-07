@@ -3,7 +3,7 @@
 
 Schema version
 
-URI: [http://bioentity.io/vocab/version](slot_uri)
+URI: [http://w3id.org/biolink/vocab/version](slot_uri)
 ## Mappings
 
 ## Domain and Range

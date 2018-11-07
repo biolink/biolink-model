@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/upstream_causal_relationship](slot_uri)
+URI: [http://w3id.org/biolink/vocab/upstream_causal_relationship](slot_uri)
 ## Mappings
 
 ## Domain and Range

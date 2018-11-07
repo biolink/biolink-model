@@ -3,7 +3,7 @@
 
 One or more causally connected executions of molecular functions
 
-URI: [http://bioentity.io/vocab/BiologicalProcess](http://bioentity.io/vocab/BiologicalProcess)
+URI: [http://w3id.org/biolink/vocab/BiologicalProcess](http://w3id.org/biolink/vocab/BiologicalProcess)
 
 ![img](images/BiologicalProcess.png)
 ## Mappings
@@ -26,7 +26,7 @@ URI: [http://bioentity.io/vocab/BiologicalProcess](http://bioentity.io/vocab/Bio
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

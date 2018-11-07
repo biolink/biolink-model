@@ -3,7 +3,7 @@
 
 A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
 
-URI: [http://bioentity.io/vocab/GenomicSequenceLocalization](http://bioentity.io/vocab/GenomicSequenceLocalization)
+URI: [http://w3id.org/biolink/vocab/GenomicSequenceLocalization](http://w3id.org/biolink/vocab/GenomicSequenceLocalization)
 
 ![img](images/GenomicSequenceLocalization.png)
 ## Mappings
@@ -52,7 +52,7 @@ URI: [http://bioentity.io/vocab/GenomicSequenceLocalization](http://bioentity.io
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

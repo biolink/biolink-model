@@ -3,7 +3,7 @@
 
 Narrative text describing the entity
 
-URI: [http://bioentity.io/vocab/title](slot_uri)
+URI: [http://w3id.org/biolink/vocab/title](slot_uri)
 ## Mappings
 
  * [dc:title](http://purl.obolibrary.org/obo/dc_title)
@@ -14,10 +14,10 @@ URI: [http://bioentity.io/vocab/title](slot_uri)
 
 ## Children
 
- *  child: [named graph.title](named_graph_title.md)
  *  child: [causal activity model.title](causal_activity_model_title.md)
+ *  child: [named graph.title](named_graph_title.md)
 ## Used in
 
- *  usage: [NamedGraph](NamedGraph.md)
- *  usage: [InformationContentEntity](InformationContentEntity.md)
  *  usage: [CausalActivityModel](CausalActivityModel.md)
+ *  usage: [InformationContentEntity](InformationContentEntity.md)
+ *  usage: [NamedGraph](NamedGraph.md)

@@ -2,278 +2,7 @@
   {
     "@graph": [
       {
-        "@id": "http://bioentity.io/vocab/domain",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "The class to which this slot applies."
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "domain"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/classes",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "classes defined in schema"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "classes"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/alt_descriptions",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Element"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "alt_descriptions"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/AltDescription"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/flags",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "State information and other details"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Element"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "flags"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/defining_slots",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "defining_slots"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/default_type",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "the default type if range is omitted"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "default_type"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/TypeDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/value_description",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Example"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "value description"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/union_of",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "list of class or slot definitions that are combined to create the union class"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Definition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "union_of"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/Definition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/inlined",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "if true then the value of this slot is inlined (i.e. a nested object) rather linked by key"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "inlined"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/object_property",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "true means that this slot is part of the formal definition of a class"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "object_property"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/aliases",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Element"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "aliases"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/path",
+        "@id": "http://w3id.org/biolink/vocab/path",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
@@ -284,7 +13,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -299,560 +28,7 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/slot_usage",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "slot_usage"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/license",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "license for the schema"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "license"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/comment",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "Comment about an element"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Element"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "comment"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/source",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "the source of description or other element"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/AltDescription"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "source"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/primary_key",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "True means that this serves as a unique identifier"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "primary_key"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/abstract",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Definition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "abstract"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/slot_definition_mixins",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "List of definitions to be mixed in. Targets may be any definition of the same type"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "slot definition mixins"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-          {
-            "@id": "http://bioentity.io/vocab/mixins"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/apply_to",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class."
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "apply_to"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/definitional",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "definitional"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/mappings",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "list of equivalent or skos exact mappings to an ontology class"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Element"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "mappings"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/Example",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Class"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "example of usage"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "example"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-          {
-            "@id": "_:Ne5047f8f7fbe4ca4bf00f625e10cfeaf"
-          },
-          {
-            "@id": "_:Ne50c794595c8424b9bb96e869d56db4c"
-          }
-        ]
-      },
-      {
-        "@id": "_:Ne5047f8f7fbe4ca4bf00f625e10cfeaf",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/description"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:Ne50c794595c8424b9bb96e869d56db4c",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/value"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/AltDescription",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Class"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "Attributed description"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "alt description"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-          {
-            "@id": "_:Nd1139e5cafcd4c19a900171fe81ca42c"
-          },
-          {
-            "@id": "_:N001db1348035425ab87617a2b776a212"
-          }
-        ]
-      },
-      {
-        "@id": "_:Nd1139e5cafcd4c19a900171fe81ca42c",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/description"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:N001db1348035425ab87617a2b776a212",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/source"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/range",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "The slot type.  Can be any class or type"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "range"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#anyType"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/subproperty_of",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "Ontolgy property which this is a subproperty of"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "subproperty_of"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/class_definition_is_a",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "class definition is_a"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-          {
-            "@id": "http://bioentity.io/vocab/is_a"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/id",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "a globally unique id or url for a schema"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "id"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/singular_name",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "a name that is used in the singular form"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Element"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "singular_name"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/name",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "a unique key that identifies a slot, type or class in a schema"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Element"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "name"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/subclass_of",
+        "@id": "http://w3id.org/biolink/vocab/subclass_of",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
@@ -863,7 +39,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/Definition"
+            "@id": "http://w3id.org/biolink/vocab/Definition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -878,44 +54,23 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/imports",
+        "@id": "http://w3id.org/biolink/vocab/inherited",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "A list of modules that are imported into the schema"
+            "@value": "True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "imports"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/entity",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "entity"
+            "@value": "inherited"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -925,7 +80,864 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/Element",
+        "@id": "http://w3id.org/biolink/vocab/SlotDefinition",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Class"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "A property or slot"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "slot definition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+          {
+            "@id": "_:N99e1138f087e4cd4ae3c376e29f9e3a9"
+          },
+          {
+            "@id": "_:Nde23f5434605477e8d93bb0d6574a2ce"
+          },
+          {
+            "@id": "_:N586cd2e041a249d2984b9806e7d1d242"
+          },
+          {
+            "@id": "_:Nf8c2b077ca5241369bff90b511b499ad"
+          },
+          {
+            "@id": "_:N06bca96ad58b404fbcf69c70ebefa498"
+          },
+          {
+            "@id": "_:Nf4de147f8aff4067b0298646ffcb35ef"
+          },
+          {
+            "@id": "_:Nc229bb6a7d7c44d4be3fa661892c7b11"
+          },
+          {
+            "@id": "_:Nc5b3a6a16507499ea7f21f78f994b514"
+          },
+          {
+            "@id": "_:N4c8f30b2dbb14d048d27db52b062c740"
+          },
+          {
+            "@id": "_:Nfff39b4ab144460da9f21b6ea0a097bd"
+          },
+          {
+            "@id": "_:Nc09ca39e84ce4c67add78951a75e9b77"
+          },
+          {
+            "@id": "_:N269f713596df42ca9ea7fe52f79fea80"
+          },
+          {
+            "@id": "_:Nb305307c181a4d7b849d73061efa19cb"
+          },
+          {
+            "@id": "_:N1cf4e6d73a6d4e08a6aed0e44fd49214"
+          },
+          {
+            "@id": "_:N4183533e04db4022b999a14ac45470ff"
+          },
+          {
+            "@id": "_:N1a622d905de041ca9b4cb27dd584f617"
+          },
+          {
+            "@id": "_:Nafdf1fcfe86d4fa588e5626aaf480c3d"
+          },
+          {
+            "@id": "http://w3id.org/biolink/vocab/Definition"
+          },
+          {
+            "@id": "_:Nb3b4d0e924fb48d0970bb8fc0de3cf07"
+          },
+          {
+            "@id": "_:Nd1924a4b3cd04264a703d82d3273003a"
+          }
+        ]
+      },
+      {
+        "@id": "_:N99e1138f087e4cd4ae3c376e29f9e3a9",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/inverse"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nde23f5434605477e8d93bb0d6574a2ce",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/range"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#anyType"
+          }
+        ]
+      },
+      {
+        "@id": "_:N586cd2e041a249d2984b9806e7d1d242",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/primary_key"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nf8c2b077ca5241369bff90b511b499ad",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/is_class_field"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "_:N06bca96ad58b404fbcf69c70ebefa498",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/multivalued"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nf4de147f8aff4067b0298646ffcb35ef",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/domain"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nc229bb6a7d7c44d4be3fa661892c7b11",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/definitional"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nc5b3a6a16507499ea7f21f78f994b514",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/role"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:N4c8f30b2dbb14d048d27db52b062c740",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/inherited"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nfff39b4ab144460da9f21b6ea0a097bd",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/identifier"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nc09ca39e84ce4c67add78951a75e9b77",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/object_property"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "_:N269f713596df42ca9ea7fe52f79fea80",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/is_a"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nb305307c181a4d7b849d73061efa19cb",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/alias"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:N1cf4e6d73a6d4e08a6aed0e44fd49214",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/subproperty_of"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:N4183533e04db4022b999a14ac45470ff",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/union_of"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:N1a622d905de041ca9b4cb27dd584f617",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/mixins"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nafdf1fcfe86d4fa588e5626aaf480c3d",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/inlined"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nb3b4d0e924fb48d0970bb8fc0de3cf07",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/required"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nd1924a4b3cd04264a703d82d3273003a",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/path"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/subproperty_of",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "Ontolgy property which this is a subproperty of"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "subproperty_of"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/role",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "role"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/slot_definitions",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "collection of slot definitions in a schema"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "slot definitions"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/prefix_uri",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "A URI associated with a given prefix"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Prefix"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "prefix uri"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/inlined",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "if true then the value of this slot is inlined (i.e. a nested object) rather linked by key"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "inlined"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/values_from",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "identifies the possible uri's of the range"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Definition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "values_from"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/abstract",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Definition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "abstract"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/metamodel_version",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "Version of the metamodel used to load the schema. Supplied by the loader"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "metamodel_version"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/object_property",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "true means that this slot is part of the formal definition of a class"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "object_property"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/types",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "types defined in schema"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "types"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/TypeDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/is_a",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Definition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "is_a"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Definition"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/class_definition_union_of",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "list of class or slot definitions that are combined to create the union class"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "class definition union_of"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/union_of"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/classes",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "classes defined in schema"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "classes"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/prefixes",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "prefixes"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Prefix"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/name",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "a unique key that identifies a slot, type or class in a schema"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Element"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "name"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/Element",
         "@type": [
           "http://www.w3.org/2002/07/owl#Class"
         ],
@@ -941,51 +953,83 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
           {
-            "@id": "_:N02ee829d8ec646a1bb25c625218aa615"
+            "@id": "_:N49e8ed135397408488dd65824bccc9fd"
           },
           {
-            "@id": "_:Nd2ccbb5166a243d7b2a58e806853272b"
+            "@id": "_:Nff6f44e6a12245dc83c30de674ff8878"
           },
           {
-            "@id": "_:N5f69bfaa6def426383949cca18e01fcb"
+            "@id": "_:Ndadfa84203a64f129cd5242f85ded805"
           },
           {
-            "@id": "_:N71a11d1b24d948889babf5d6069ca2bc"
+            "@id": "_:N21d82a7e79bb454c81232a845a7c1cfa"
           },
           {
-            "@id": "_:N51e73e0ced6840be9c6717babdce49d7"
+            "@id": "_:N51a7552128a748ea92bff9fab32e4622"
           },
           {
-            "@id": "_:N4f8e005a270b44d4afd4ece35be9a511"
+            "@id": "_:N87702ce62f834692b1fd13911285b56f"
           },
           {
-            "@id": "_:Nc9fdfd7303b644beb6616314332590ef"
+            "@id": "_:Nf7922f2b41414eb1a8e5f2ec0fa09b78"
           },
           {
-            "@id": "_:N317f61ba74674b398e125cf56a4bdb7e"
+            "@id": "_:Nc6ea7d09d8dd4127a6faf5bfe3b12367"
           },
           {
-            "@id": "_:Nf63f19d10fe0449cb05411dec7136e49"
+            "@id": "_:N1f5327adc5ba41c29f478818de03b050"
           },
           {
-            "@id": "_:N885fd972751d4902a6328a198441dbbe"
+            "@id": "_:N92f3588252b74cb9bf15eadffb7356c0"
           },
           {
-            "@id": "_:N759ed29682514ab68f67f0aa96f9bb8c"
+            "@id": "_:Na424b986e9ea4b84a888b5cd529472c8"
           },
           {
-            "@id": "_:N013f851979ab46a5b3cbcf67a2eab594"
+            "@id": "_:N6381f4bb1e14424da7e247bd445dadf1"
           },
           {
-            "@id": "_:N7e134f6b4b6a485c892feb280d9cfdb2"
+            "@id": "_:N1bb4d9c78dd44d259b35a4450b79f85f"
           },
           {
-            "@id": "_:N3b9844a241e74a4c9833b575a1ab4818"
+            "@id": "_:N13aca83cf8644b038e1a6585c0277081"
           }
         ]
       },
       {
-        "@id": "_:N02ee829d8ec646a1bb25c625218aa615",
+        "@id": "_:N49e8ed135397408488dd65824bccc9fd",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/mappings"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nff6f44e6a12245dc83c30de674ff8878",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/aliases"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:Ndadfa84203a64f129cd5242f85ded805",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -996,7 +1040,7 @@
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/from_schema"
+            "@id": "http://w3id.org/biolink/vocab/note"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -1006,13 +1050,13 @@
         ]
       },
       {
-        "@id": "_:Nd2ccbb5166a243d7b2a58e806853272b",
+        "@id": "_:N21d82a7e79bb454c81232a845a7c1cfa",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/id_prefixes"
+            "@id": "http://w3id.org/biolink/vocab/flags"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -1022,23 +1066,7 @@
         ]
       },
       {
-        "@id": "_:N5f69bfaa6def426383949cca18e01fcb",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/alt_descriptions"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/AltDescription"
-          }
-        ]
-      },
-      {
-        "@id": "_:N71a11d1b24d948889babf5d6069ca2bc",
+        "@id": "_:N51a7552128a748ea92bff9fab32e4622",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -1049,7 +1077,7 @@
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/comment"
+            "@id": "http://w3id.org/biolink/vocab/description"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -1059,13 +1087,18 @@
         ]
       },
       {
-        "@id": "_:N51e73e0ced6840be9c6717babdce49d7",
+        "@id": "_:N87702ce62f834692b1fd13911285b56f",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/in_subset"
+            "@id": "http://w3id.org/biolink/vocab/see_also"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -1075,29 +1108,18 @@
         ]
       },
       {
-        "@id": "_:N4f8e005a270b44d4afd4ece35be9a511",
+        "@id": "_:Nf7922f2b41414eb1a8e5f2ec0fa09b78",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
           {
-            "@id": "http://bioentity.io/vocab/examples"
+            "@value": 1
           }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/Example"
-          }
-        ]
-      },
-      {
-        "@id": "_:Nc9fdfd7303b644beb6616314332590ef",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/aliases"
+            "@id": "http://w3id.org/biolink/vocab/from_schema"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -1107,13 +1129,13 @@
         ]
       },
       {
-        "@id": "_:N317f61ba74674b398e125cf56a4bdb7e",
+        "@id": "_:Nc6ea7d09d8dd4127a6faf5bfe3b12367",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/flags"
+            "@id": "http://w3id.org/biolink/vocab/id_prefixes"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -1123,7 +1145,7 @@
         ]
       },
       {
-        "@id": "_:Nf63f19d10fe0449cb05411dec7136e49",
+        "@id": "_:N1f5327adc5ba41c29f478818de03b050",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -1134,7 +1156,7 @@
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/name"
+            "@id": "http://w3id.org/biolink/vocab/name"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -1144,7 +1166,7 @@
         ]
       },
       {
-        "@id": "_:N885fd972751d4902a6328a198441dbbe",
+        "@id": "_:N92f3588252b74cb9bf15eadffb7356c0",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -1155,7 +1177,7 @@
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/description"
+            "@id": "http://w3id.org/biolink/vocab/comment"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -1165,7 +1187,39 @@
         ]
       },
       {
-        "@id": "_:N759ed29682514ab68f67f0aa96f9bb8c",
+        "@id": "_:Na424b986e9ea4b84a888b5cd529472c8",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/alt_descriptions"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/AltDescription"
+          }
+        ]
+      },
+      {
+        "@id": "_:N6381f4bb1e14424da7e247bd445dadf1",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/in_subset"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:N1bb4d9c78dd44d259b35a4450b79f85f",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -1176,7 +1230,7 @@
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/see_also"
+            "@id": "http://w3id.org/biolink/vocab/singular_name"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -1186,81 +1240,39 @@
         ]
       },
       {
-        "@id": "_:N013f851979ab46a5b3cbcf67a2eab594",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/singular_name"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:N7e134f6b4b6a485c892feb280d9cfdb2",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/note"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:N3b9844a241e74a4c9833b575a1ab4818",
+        "@id": "_:N13aca83cf8644b038e1a6585c0277081",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/mappings"
+            "@id": "http://w3id.org/biolink/vocab/examples"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
           {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
+            "@id": "http://w3id.org/biolink/vocab/Example"
           }
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/local_name",
+        "@id": "http://w3id.org/biolink/vocab/description",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "the nsname (sans ':' for a given prefix)"
+            "@value": "a description"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/Prefix"
+            "@id": "http://w3id.org/biolink/vocab/Element"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "local name"
+            "@value": "description"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1270,23 +1282,23 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/alias",
+        "@id": "http://w3id.org/biolink/vocab/id",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have \"slots\" where one inline and the other a reference"
+            "@value": "a globally unique id or url for a schema"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "alias"
+            "@value": "id"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1296,38 +1308,7 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/class_definition_union_of",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "list of class or slot definitions that are combined to create the union class"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "class definition union_of"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-          {
-            "@id": "http://bioentity.io/vocab/union_of"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/in_subset",
+        "@id": "http://w3id.org/biolink/vocab/in_subset",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
@@ -1338,7 +1319,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/Element"
+            "@id": "http://w3id.org/biolink/vocab/Element"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1353,7 +1334,620 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/slot_definition_union_of",
+        "@id": "http://w3id.org/biolink/vocab/is_class_field",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "is_class_field"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/source_file_size",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "size in bytes of the source of the schema.  Supplied by the loader"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "source_file_size"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#integer"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/comment",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "Comment about an element"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Element"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "comment"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/value",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Example"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "value"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/SchemaDefinition",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Class"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "A collection of definitions"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "schema definition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Definition"
+          },
+          {
+            "@id": "_:N5ab5eb4b00354766ba2a9768f0b4c283"
+          },
+          {
+            "@id": "_:Nfd090014a47d416d989c1c9b9b7a30ce"
+          },
+          {
+            "@id": "_:Nbd170b9ed8f04f3e8ee57321c8fc73aa"
+          },
+          {
+            "@id": "_:Nc43bc6c4a4df4099b26b740b78e6da7d"
+          },
+          {
+            "@id": "_:N5ea39ff4242341b0b27c7796861ec9bf"
+          },
+          {
+            "@id": "_:N3531e82f567b4bc6b9fa2d4124ecdb08"
+          },
+          {
+            "@id": "_:N295c924c36174bf6baef4c477f2caf70"
+          },
+          {
+            "@id": "_:N48c8efaa59c1405d976cf43000dd2a49"
+          },
+          {
+            "@id": "_:Na3bf8007444a481888079e3a907e0de3"
+          },
+          {
+            "@id": "_:N5c5721eb3ec9457f83abcf5565acf35f"
+          },
+          {
+            "@id": "_:Nb6df461a2a284897a8b45afc60551259"
+          },
+          {
+            "@id": "_:N62c12843659744649335a61956359880"
+          },
+          {
+            "@id": "_:N86491d7a6152414eabe797187af488c7"
+          },
+          {
+            "@id": "_:N766c94dc02f545298114b74f6b5af1c3"
+          },
+          {
+            "@id": "_:N4117b2f224f94fd8aa8dd87f57a6f8cb"
+          },
+          {
+            "@id": "_:Nd601b554e3284ece957c8cd3726a7b28"
+          }
+        ]
+      },
+      {
+        "@id": "_:N5ab5eb4b00354766ba2a9768f0b4c283",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#cardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/id"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nfd090014a47d416d989c1c9b9b7a30ce",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/metamodel_version"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nbd170b9ed8f04f3e8ee57321c8fc73aa",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/default_type"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/TypeDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nc43bc6c4a4df4099b26b740b78e6da7d",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/generation_date"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#date"
+          }
+        ]
+      },
+      {
+        "@id": "_:N5ea39ff4242341b0b27c7796861ec9bf",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/slots"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:N3531e82f567b4bc6b9fa2d4124ecdb08",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/license"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:N295c924c36174bf6baef4c477f2caf70",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/imports"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:N48c8efaa59c1405d976cf43000dd2a49",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/source_file"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:Na3bf8007444a481888079e3a907e0de3",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/classes"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:N5c5721eb3ec9457f83abcf5565acf35f",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/version"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nb6df461a2a284897a8b45afc60551259",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/prefixes"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Prefix"
+          }
+        ]
+      },
+      {
+        "@id": "_:N62c12843659744649335a61956359880",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/types"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/TypeDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:N86491d7a6152414eabe797187af488c7",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/source_file_date"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:N766c94dc02f545298114b74f6b5af1c3",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/default_prefix"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:N4117b2f224f94fd8aa8dd87f57a6f8cb",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/source_file_size"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#integer"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nd601b554e3284ece957c8cd3726a7b28",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/default_curi_maps"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/from_schema",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "id of the schema that the element was derived from.  Supplied by the loader."
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Element"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "from_schema"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/AltDescription",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Class"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "Attributed description"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "alt description"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+          {
+            "@id": "_:N9bcf0227fe674525a70c08b54a61d6c0"
+          },
+          {
+            "@id": "_:Ned1af70913ea416c879e93558f22f36d"
+          }
+        ]
+      },
+      {
+        "@id": "_:N9bcf0227fe674525a70c08b54a61d6c0",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/description"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:Ned1af70913ea416c879e93558f22f36d",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/source"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/identifier",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "True means that this slot must be unique across the collection of slots"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "identifier"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/required",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "If true slot must have at least one value"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "required"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/union_of",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
@@ -1364,27 +1958,265 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
+            "@id": "http://w3id.org/biolink/vocab/Definition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "slot definition union_of"
+            "@value": "union_of"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
           {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-          {
-            "@id": "http://bioentity.io/vocab/union_of"
+            "@id": "http://w3id.org/biolink/vocab/Definition"
           }
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/source_file_date",
+        "@id": "http://w3id.org/biolink/vocab/Definition",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Class"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "definition base class"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "definition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+          {
+            "@id": "_:Ne5bb30de3dd147d6a44246d24e9556e5"
+          },
+          {
+            "@id": "_:Nda6cbf157f934b2cb4be6d2a16a8b7b6"
+          },
+          {
+            "@id": "_:Nf744495bc6794bc9beee473ba94652e9"
+          },
+          {
+            "@id": "_:N13ba6db81b654bd1a0225159381ef193"
+          },
+          {
+            "@id": "_:N84dda3916dae4ae5af62e0b8427105dd"
+          },
+          {
+            "@id": "_:Nd8bd384497f94b2cb7dcb8f1eaeda227"
+          },
+          {
+            "@id": "_:Nc01ba14655c949b39443aed2e1dfab0d"
+          },
+          {
+            "@id": "_:Neee54e0b3349461096bf18722de4a388"
+          },
+          {
+            "@id": "http://w3id.org/biolink/vocab/Element"
+          },
+          {
+            "@id": "_:Nb80a7c712ff940a98627c10a6d34db3c"
+          }
+        ]
+      },
+      {
+        "@id": "_:Ne5bb30de3dd147d6a44246d24e9556e5",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/local_names"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nda6cbf157f934b2cb4be6d2a16a8b7b6",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/mixins"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Definition"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nf744495bc6794bc9beee473ba94652e9",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/is_a"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Definition"
+          }
+        ]
+      },
+      {
+        "@id": "_:N13ba6db81b654bd1a0225159381ef193",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/mixin"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "_:N84dda3916dae4ae5af62e0b8427105dd",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/union_of"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Definition"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nd8bd384497f94b2cb7dcb8f1eaeda227",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/values_from"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nc01ba14655c949b39443aed2e1dfab0d",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/subclass_of"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
+          }
+        ]
+      },
+      {
+        "@id": "_:Neee54e0b3349461096bf18722de4a388",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/abstract"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nb80a7c712ff940a98627c10a6d34db3c",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/symmetric"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/alias",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have \"slots\" where one inline and the other a reference"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "alias"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/source_file_date",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
@@ -1395,7 +2227,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1410,23 +2242,507 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/is_class_field",
+        "@id": "http://w3id.org/biolink/vocab/license",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "license for the schema"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "license"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/slot_definition_is_a",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "slot definition is_a"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/is_a"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/local_names",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "map from local identifier to slot"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Definition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "local_names"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/defining_slots",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "defining_slots"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/slot_usage",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "slot_usage"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/definitional",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "is_class_field"
+            "@value": "definitional"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
           {
             "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/ClassDefinition",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Class"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "A class or interface"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "class definition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+          {
+            "@id": "_:N32c1cc6a93c94389b48c01bbbf014499"
+          },
+          {
+            "@id": "_:Nc85f46aeaab94ce5a5162b54885a9e90"
+          },
+          {
+            "@id": "_:N79c6a51a4b744def89bbd6008b9334e6"
+          },
+          {
+            "@id": "_:Nb0f3cd4633ef432e98b120d04a39687b"
+          },
+          {
+            "@id": "_:Nb9185ff5d91b41de9233c5c4f52f0600"
+          },
+          {
+            "@id": "_:N1bedf852736e4a4d9c19028eee5f6b9d"
+          },
+          {
+            "@id": "http://w3id.org/biolink/vocab/Definition"
+          },
+          {
+            "@id": "_:N7b906406da9d4960a7c89d239ddab5ef"
+          },
+          {
+            "@id": "_:Ne844a8611a0f4690a5ef2866ce12c711"
+          }
+        ]
+      },
+      {
+        "@id": "_:N32c1cc6a93c94389b48c01bbbf014499",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/is_a"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nc85f46aeaab94ce5a5162b54885a9e90",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/mixins"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:N79c6a51a4b744def89bbd6008b9334e6",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/entity"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nb0f3cd4633ef432e98b120d04a39687b",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/slots"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:Nb9185ff5d91b41de9233c5c4f52f0600",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#maxCardinality": [
+          {
+            "@value": 1
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/apply_to"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:N1bedf852736e4a4d9c19028eee5f6b9d",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/defining_slots"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:N7b906406da9d4960a7c89d239ddab5ef",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/slot_usage"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "_:Ne844a8611a0f4690a5ef2866ce12c711",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#Restriction"
+        ],
+        "http://www.w3.org/2002/07/owl#onProperty": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/union_of"
+          }
+        ],
+        "http://www.w3.org/2002/07/owl#someValuesFrom": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/examples",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "Example of usage for a slot or class"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Element"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "examples"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Example"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/primary_key",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "True means that this serves as a unique identifier"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "primary_key"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/version",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "Schema version"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "version"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/slot_definition_union_of",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "list of class or slot definitions that are combined to create the union class"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "slot definition union_of"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/union_of"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/local_name",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "the nsname (sans ':' for a given prefix)"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Prefix"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "local name"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/domain",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "The class to which this slot applies."
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "domain"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
           }
         ]
       },
@@ -1447,127 +2763,80 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/inverse",
+        "@id": "http://w3id.org/biolink/vocab/mixins",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')"
+            "@value": "List of definitions to be mixed in. Targets may be any definition of the same type"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
+            "@id": "http://w3id.org/biolink/vocab/Definition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "inverse"
+            "@value": "mixins"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
           {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
+            "@id": "http://w3id.org/biolink/vocab/Definition"
           }
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/note",
+        "@id": "http://w3id.org/biolink/vocab/class_definition_is_a",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "Notes about an element"
+            "@value": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/Element"
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "note"
+            "@value": "class definition is_a"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
           {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/is_a"
           }
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/inherited",
+        "@id": "http://w3id.org/biolink/vocab/imports",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths"
+            "@value": "A list of modules that are imported into the schema"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "inherited"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/types",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "types defined in schema"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "types"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/TypeDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/description",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "a description"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Element"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "description"
+            "@value": "imports"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1577,23 +2846,70 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/version",
+        "@id": "http://w3id.org/biolink/vocab/apply_to",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "Schema version"
+            "@value": "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class."
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "version"
+            "@value": "apply_to"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/alt_descriptions",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Element"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "alt_descriptions"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/AltDescription"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/source_file",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "name, uri or description of the source of the schema.  Supplied by the loader"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "source_file"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1603,23 +2919,18 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/local_names",
+        "@id": "http://w3id.org/biolink/vocab/see_also",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "map from local identifier to slot"
-          }
-        ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/Definition"
+            "@id": "http://w3id.org/biolink/vocab/Element"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "local_names"
+            "@value": "see_also"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1629,137 +2940,7 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/metamodel_version",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "Version of the metamodel used to load the schema. Supplied by the loader"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "metamodel_version"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/multivalued",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "If true slot can have many values"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "multivalued"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/prefixes",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "prefixes"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/Prefix"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/generation_date",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "date that the schema was loaded/generated.  Supplied by the loader"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "generation_date"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#date"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/typeof",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/TypeDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "typeof"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/TypeDefinition",
+        "@id": "http://w3id.org/biolink/vocab/TypeDefinition",
         "@type": [
           "http://www.w3.org/2002/07/owl#Class"
         ],
@@ -1775,15 +2956,15 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
           {
-            "@id": "_:N371d213714194cb985c6e8bea2520c98"
+            "@id": "_:N8883d5c6714a46a5a814fee3d1ffb1d7"
           },
           {
-            "@id": "http://bioentity.io/vocab/Element"
+            "@id": "http://w3id.org/biolink/vocab/Element"
           }
         ]
       },
       {
-        "@id": "_:N371d213714194cb985c6e8bea2520c98",
+        "@id": "_:N8883d5c6714a46a5a814fee3d1ffb1d7",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -1794,7 +2975,7 @@
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/typeof"
+            "@id": "http://w3id.org/biolink/vocab/typeof"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -1804,49 +2985,23 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/slot_definitions",
+        "@id": "http://w3id.org/biolink/vocab/source",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "collection of slot definitions in a schema"
+            "@value": "the source of description or other element"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
+            "@id": "http://w3id.org/biolink/vocab/AltDescription"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "slot definitions"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/from_schema",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "id of the schema that the element was derived from.  Supplied by the loader."
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Element"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "from_schema"
+            "@value": "source"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1856,7 +3011,142 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/symmetric",
+        "@id": "http://w3id.org/biolink/vocab/typeof",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/TypeDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "typeof"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/default_type",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "the default type if range is omitted"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "default_type"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/TypeDefinition"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/singular_name",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "a name that is used in the singular form"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Element"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "singular_name"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/generation_date",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "date that the schema was loaded/generated.  Supplied by the loader"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "generation_date"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#date"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/slot_definition_mixins",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "List of definitions to be mixed in. Targets may be any definition of the same type"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "slot definition mixins"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/mixins"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/symmetric",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
@@ -1867,7 +3157,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/Definition"
+            "@id": "http://w3id.org/biolink/vocab/Definition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1882,542 +3172,23 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/required",
+        "@id": "http://w3id.org/biolink/vocab/note",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "If true slot must have at least one value"
+            "@value": "Notes about an element"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
+            "@id": "http://w3id.org/biolink/vocab/Element"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "required"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/SlotDefinition",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Class"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "A property or slot"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "slot definition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-          {
-            "@id": "_:N42c48a5119d44fbe83337c1697202f34"
-          },
-          {
-            "@id": "_:Nfb33828deb474510bfaf39c3a3ae165c"
-          },
-          {
-            "@id": "_:N041d448027c84bdebe0e9b6827ab7eb8"
-          },
-          {
-            "@id": "_:N471ff178cf2347bd8b23319dd84d3575"
-          },
-          {
-            "@id": "_:N76c69c3fee594be099d0c73b550d34f2"
-          },
-          {
-            "@id": "_:Nc80e584bdba8418ab0990064701dc7d8"
-          },
-          {
-            "@id": "_:Nf08be0203ff94adeaceea52a760fc5a8"
-          },
-          {
-            "@id": "_:N2d5bbb9ba8c64fe3a0fb3c57e03ea44c"
-          },
-          {
-            "@id": "_:N6983095f19934b4eb4d6248a515baae9"
-          },
-          {
-            "@id": "_:Nadc808be521f448bbe1270cf6ee9108d"
-          },
-          {
-            "@id": "_:N6ec6b32db1504d17ad0d65e75ba522ff"
-          },
-          {
-            "@id": "_:N2df897bd90ee418a891e291fc86184b0"
-          },
-          {
-            "@id": "_:N2b92e35505a541acaf832d450b9e3e4b"
-          },
-          {
-            "@id": "_:N9eefdad34b954be7927cb92065b4ea87"
-          },
-          {
-            "@id": "_:N81388308a0f74d4e9bbcc1368d36062f"
-          },
-          {
-            "@id": "_:N6357e45d256042e5b16c25d4704ed4d6"
-          },
-          {
-            "@id": "_:Ndfbc3b6e771c4ae6b836f33b333baa41"
-          },
-          {
-            "@id": "http://bioentity.io/vocab/Definition"
-          },
-          {
-            "@id": "_:N7989e5db467543bbbb29c99ac31ec72b"
-          },
-          {
-            "@id": "_:N7d7171b8168049bf8d971834adb92f4e"
-          }
-        ]
-      },
-      {
-        "@id": "_:N42c48a5119d44fbe83337c1697202f34",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/subproperty_of"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:Nfb33828deb474510bfaf39c3a3ae165c",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/inverse"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:N041d448027c84bdebe0e9b6827ab7eb8",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/inherited"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "_:N471ff178cf2347bd8b23319dd84d3575",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/mixins"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:N76c69c3fee594be099d0c73b550d34f2",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/identifier"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "_:Nc80e584bdba8418ab0990064701dc7d8",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/required"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "_:Nf08be0203ff94adeaceea52a760fc5a8",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/primary_key"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "_:N2d5bbb9ba8c64fe3a0fb3c57e03ea44c",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/range"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#anyType"
-          }
-        ]
-      },
-      {
-        "@id": "_:N6983095f19934b4eb4d6248a515baae9",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/is_a"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:Nadc808be521f448bbe1270cf6ee9108d",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/multivalued"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "_:N6ec6b32db1504d17ad0d65e75ba522ff",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/domain"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:N2df897bd90ee418a891e291fc86184b0",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/definitional"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "_:N2b92e35505a541acaf832d450b9e3e4b",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/is_class_field"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "_:N9eefdad34b954be7927cb92065b4ea87",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/object_property"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "_:N81388308a0f74d4e9bbcc1368d36062f",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/alias"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:N6357e45d256042e5b16c25d4704ed4d6",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/path"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:Ndfbc3b6e771c4ae6b836f33b333baa41",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/union_of"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:N7989e5db467543bbbb29c99ac31ec72b",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/inlined"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "_:N7d7171b8168049bf8d971834adb92f4e",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/role"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/is_a",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Definition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "is_a"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/Definition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/prefix_uri",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "A URI associated with a given prefix"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Prefix"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "prefix uri"
+            "@value": "note"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -2427,23 +3198,23 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/default_curi_maps",
+        "@id": "http://w3id.org/biolink/vocab/flags",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables"
+            "@value": "State information and other details"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
+            "@id": "http://w3id.org/biolink/vocab/Element"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "default_curi_maps"
+            "@value": "flags"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -2453,90 +3224,106 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/class_definition_mixins",
+        "@id": "http://w3id.org/biolink/vocab/mappings",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "List of definitions to be mixed in. Targets may be any definition of the same type"
+            "@value": "list of equivalent or skos exact mappings to an ontology class"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
+            "@id": "http://w3id.org/biolink/vocab/Element"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "class definition mixins"
+            "@value": "mappings"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
           {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-          {
-            "@id": "http://bioentity.io/vocab/mixins"
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
           }
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/source_file_size",
+        "@id": "http://w3id.org/biolink/vocab/id_prefixes",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Element"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "id_prefixes"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/inverse",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "size in bytes of the source of the schema.  Supplied by the loader"
+            "@value": "used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "source_file_size"
+            "@value": "inverse"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
           {
-            "@id": "http://www.w3.org/2001/XMLSchema#integer"
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
           }
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/mixins",
+        "@id": "http://w3id.org/biolink/vocab/slots",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "List of definitions to be mixed in. Targets may be any definition of the same type"
+            "@value": "list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins."
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/Definition"
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "mixins"
+            "@value": "slots"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
           {
-            "@id": "http://bioentity.io/vocab/Definition"
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
           }
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/mixin",
+        "@id": "http://w3id.org/biolink/vocab/mixin",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
@@ -2547,7 +3334,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/Definition"
+            "@id": "http://w3id.org/biolink/vocab/Definition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -2562,589 +3349,7 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/see_also",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Element"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "see_also"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/ClassDefinition",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Class"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "A class or interface"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "class definition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-          {
-            "@id": "_:Nbeaab3e4953e45d6a86c210ec60aa87c"
-          },
-          {
-            "@id": "_:N9f0c403342f242368d6d5faff94f92de"
-          },
-          {
-            "@id": "http://bioentity.io/vocab/Definition"
-          },
-          {
-            "@id": "_:Ne8009b85677e403f95475fb97fa2374e"
-          },
-          {
-            "@id": "_:N7f2df902808b48e2bb824c87ad5e20fd"
-          },
-          {
-            "@id": "_:N433d1109acde418099e9cd989d42a015"
-          },
-          {
-            "@id": "_:N5e4073569a6a48818ae1907d234a11fa"
-          },
-          {
-            "@id": "_:N9d16692c66ac43ab94e16b1f80884cbd"
-          },
-          {
-            "@id": "_:N4e6b4f413aa74e2aa0fab27788d231ed"
-          }
-        ]
-      },
-      {
-        "@id": "_:Nbeaab3e4953e45d6a86c210ec60aa87c",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/mixins"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:N9f0c403342f242368d6d5faff94f92de",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/union_of"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:Ne8009b85677e403f95475fb97fa2374e",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/is_a"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:N7f2df902808b48e2bb824c87ad5e20fd",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/apply_to"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:N433d1109acde418099e9cd989d42a015",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/slots"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:N5e4073569a6a48818ae1907d234a11fa",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/entity"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "_:N9d16692c66ac43ab94e16b1f80884cbd",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/slot_usage"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:N4e6b4f413aa74e2aa0fab27788d231ed",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/defining_slots"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/Definition",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Class"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "definition base class"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "definition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-          {
-            "@id": "_:Nd20f9b1e233740dc9b4790baa980d501"
-          },
-          {
-            "@id": "http://bioentity.io/vocab/Element"
-          },
-          {
-            "@id": "_:N9538f44f67f1478dbb0e77af8dc80911"
-          },
-          {
-            "@id": "_:N465e15bfaf804fd78cf0816a191ba43d"
-          },
-          {
-            "@id": "_:N356a2c9470234406b017d8332c5070be"
-          },
-          {
-            "@id": "_:N0c5a830af70040d6b56edc8afeb43ee8"
-          },
-          {
-            "@id": "_:N539c128cc7df4c3f80f5a4ea04208cf6"
-          },
-          {
-            "@id": "_:Nb041d66410444ffa8b28c62c0f6257c3"
-          },
-          {
-            "@id": "_:N9a1e5397367b4f458339f3af79e01136"
-          },
-          {
-            "@id": "_:N8dacb3c334f84fbf9055f364fc59ce9c"
-          }
-        ]
-      },
-      {
-        "@id": "_:Nd20f9b1e233740dc9b4790baa980d501",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/mixins"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/Definition"
-          }
-        ]
-      },
-      {
-        "@id": "_:N9538f44f67f1478dbb0e77af8dc80911",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/abstract"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "_:N465e15bfaf804fd78cf0816a191ba43d",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/symmetric"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "_:N356a2c9470234406b017d8332c5070be",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/union_of"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/Definition"
-          }
-        ]
-      },
-      {
-        "@id": "_:N0c5a830af70040d6b56edc8afeb43ee8",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/mixin"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "_:N539c128cc7df4c3f80f5a4ea04208cf6",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/local_names"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:Nb041d66410444ffa8b28c62c0f6257c3",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/subclass_of"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
-          }
-        ]
-      },
-      {
-        "@id": "_:N9a1e5397367b4f458339f3af79e01136",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/values_from"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:N8dacb3c334f84fbf9055f364fc59ce9c",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/is_a"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/Definition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/slots",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins."
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "slots"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/slot_definition_is_a",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "slot definition is_a"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-          {
-            "@id": "http://bioentity.io/vocab/is_a"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/value",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Example"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "value"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/default_prefix",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "default and base prefix -- used for ':' identifiers, @base and @vocab"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "default_prefix"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/identifier",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "True means that this slot must be unique across the collection of slots"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "identifier"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/source_file",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "name, uri or description of the source of the schema.  Supplied by the loader"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/SchemaDefinition"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "source_file"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/Prefix",
+        "@id": "http://w3id.org/biolink/vocab/Prefix",
         "@type": [
           "http://www.w3.org/2002/07/owl#Class"
         ],
@@ -3160,15 +3365,15 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
           {
-            "@id": "_:N6ad163ea18914707a539d2b664027d91"
+            "@id": "_:N76ec159a1df64cc5aef86c1296f8eebd"
           },
           {
-            "@id": "_:N2f39da79f7774d19afbc8f95128be3a5"
+            "@id": "_:N568fe1f11d5b495e8e29804136aae114"
           }
         ]
       },
       {
-        "@id": "_:N6ad163ea18914707a539d2b664027d91",
+        "@id": "_:N76ec159a1df64cc5aef86c1296f8eebd",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -3179,7 +3384,7 @@
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/local_name"
+            "@id": "http://w3id.org/biolink/vocab/local_name"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -3189,7 +3394,7 @@
         ]
       },
       {
-        "@id": "_:N2f39da79f7774d19afbc8f95128be3a5",
+        "@id": "_:N568fe1f11d5b495e8e29804136aae114",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -3200,7 +3405,7 @@
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/prefix_uri"
+            "@id": "http://w3id.org/biolink/vocab/prefix_uri"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -3210,44 +3415,18 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/examples",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#AnnotationProperty"
-        ],
-        "http://purl.obolibrary.org/obo/IAO_0000115": [
-          {
-            "@value": "Example of usage for a slot or class"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#domain": [
-          {
-            "@id": "http://bioentity.io/vocab/Element"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "examples"
-          }
-        ],
-        "http://www.w3.org/2000/01/rdf-schema#range": [
-          {
-            "@id": "http://bioentity.io/vocab/Example"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/id_prefixes",
+        "@id": "http://w3id.org/biolink/vocab/aliases",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/Element"
+            "@id": "http://w3id.org/biolink/vocab/Element"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "id_prefixes"
+            "@value": "aliases"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -3257,102 +3436,62 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/values_from",
+        "@id": "http://w3id.org/biolink/vocab/class_definition_mixins",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "identifies the possible uri's of the range"
+            "@value": "List of definitions to be mixed in. Targets may be any definition of the same type"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/Definition"
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "values_from"
+            "@value": "class definition mixins"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [
           {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/mixins"
           }
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/SchemaDefinition",
+        "@id": "http://w3id.org/biolink/vocab/Example",
         "@type": [
           "http://www.w3.org/2002/07/owl#Class"
         ],
         "http://purl.obolibrary.org/obo/IAO_0000115": [
           {
-            "@value": "A collection of definitions"
+            "@value": "example of usage"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "schema definition"
+            "@value": "example"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
           {
-            "@id": "http://bioentity.io/vocab/Definition"
+            "@id": "_:N4bc48765c9e34b51b18c212072237ac5"
           },
           {
-            "@id": "_:N9086af9450544f13b7b763288c1e00e3"
-          },
-          {
-            "@id": "_:N4f81dd8f45eb45079f2cb9ed29c8e620"
-          },
-          {
-            "@id": "_:N9f1365d9e3464db58bc43ccedcd95139"
-          },
-          {
-            "@id": "_:N0da7fd45b45b4a18ad43ae0518e28359"
-          },
-          {
-            "@id": "_:N2ad94c163e144c048c4b39886ba526dd"
-          },
-          {
-            "@id": "_:N345892e3c98b4a71bb61f3c33bec0b0f"
-          },
-          {
-            "@id": "_:Nd6f3b37dec3446ceb4c26e3e73f5eab9"
-          },
-          {
-            "@id": "_:N9445d2b834d348f9abf6129e4ca05972"
-          },
-          {
-            "@id": "_:N0aee3b8007d240ac81da8dc7b0fca152"
-          },
-          {
-            "@id": "_:N08649ddd5ae149eab0a59b48bcfbfef0"
-          },
-          {
-            "@id": "_:N99359bd9fc3f4488a8d75fc91212164f"
-          },
-          {
-            "@id": "_:Nd4e8b355b031433b910d81c2a0b4c7a4"
-          },
-          {
-            "@id": "_:Ne963616bbc0a4a2b9d664bf07b34a139"
-          },
-          {
-            "@id": "_:Na90c00874a334f19b496e8555f9b8663"
-          },
-          {
-            "@id": "_:N75ad33553778428b9ede2f5f92626de8"
-          },
-          {
-            "@id": "_:Nbe5163693e7443a6bc3ed4597ea7ae0f"
+            "@id": "_:Nfc23521fd5a74d72ae8dffb6423a263f"
           }
         ]
       },
       {
-        "@id": "_:N9086af9450544f13b7b763288c1e00e3",
+        "@id": "_:N4bc48765c9e34b51b18c212072237ac5",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -3363,7 +3502,7 @@
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/version"
+            "@id": "http://w3id.org/biolink/vocab/description"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -3373,23 +3512,7 @@
         ]
       },
       {
-        "@id": "_:N4f81dd8f45eb45079f2cb9ed29c8e620",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/prefixes"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/Prefix"
-          }
-        ]
-      },
-      {
-        "@id": "_:N9f1365d9e3464db58bc43ccedcd95139",
+        "@id": "_:Nfc23521fd5a74d72ae8dffb6423a263f",
         "@type": [
           "http://www.w3.org/2002/07/owl#Restriction"
         ],
@@ -3400,23 +3523,7 @@
         ],
         "http://www.w3.org/2002/07/owl#onProperty": [
           {
-            "@id": "http://bioentity.io/vocab/default_type"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/TypeDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:N0da7fd45b45b4a18ad43ae0518e28359",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/default_curi_maps"
+            "@id": "http://w3id.org/biolink/vocab/value"
           }
         ],
         "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -3426,239 +3533,7 @@
         ]
       },
       {
-        "@id": "_:N2ad94c163e144c048c4b39886ba526dd",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/slots"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:N345892e3c98b4a71bb61f3c33bec0b0f",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/imports"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:Nd6f3b37dec3446ceb4c26e3e73f5eab9",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/metamodel_version"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:N9445d2b834d348f9abf6129e4ca05972",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/source_file_date"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:N0aee3b8007d240ac81da8dc7b0fca152",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/license"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:N08649ddd5ae149eab0a59b48bcfbfef0",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/source_file"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:N99359bd9fc3f4488a8d75fc91212164f",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/types"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/TypeDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "_:Nd4e8b355b031433b910d81c2a0b4c7a4",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/generation_date"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#date"
-          }
-        ]
-      },
-      {
-        "@id": "_:Ne963616bbc0a4a2b9d664bf07b34a139",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#cardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/id"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:Na90c00874a334f19b496e8555f9b8663",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/source_file_size"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#integer"
-          }
-        ]
-      },
-      {
-        "@id": "_:N75ad33553778428b9ede2f5f92626de8",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#maxCardinality": [
-          {
-            "@value": 1
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/default_prefix"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://www.w3.org/2001/XMLSchema#string"
-          }
-        ]
-      },
-      {
-        "@id": "_:Nbe5163693e7443a6bc3ed4597ea7ae0f",
-        "@type": [
-          "http://www.w3.org/2002/07/owl#Restriction"
-        ],
-        "http://www.w3.org/2002/07/owl#onProperty": [
-          {
-            "@id": "http://bioentity.io/vocab/classes"
-          }
-        ],
-        "http://www.w3.org/2002/07/owl#someValuesFrom": [
-          {
-            "@id": "http://bioentity.io/vocab/ClassDefinition"
-          }
-        ]
-      },
-      {
-        "@id": "http://bioentity.io/vocab/alt_description_text",
+        "@id": "http://w3id.org/biolink/vocab/alt_description_text",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
@@ -3669,7 +3544,7 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/AltDescription"
+            "@id": "http://w3id.org/biolink/vocab/AltDescription"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -3684,18 +3559,143 @@
         ]
       },
       {
-        "@id": "http://bioentity.io/vocab/role",
+        "@id": "http://w3id.org/biolink/vocab/default_curi_maps",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "default_curi_maps"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/range",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "The slot type.  Can be any class or type"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "range"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#anyType"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/default_prefix",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "default and base prefix -- used for ':' identifiers, @base and @vocab"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SchemaDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "default_prefix"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/multivalued",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://purl.obolibrary.org/obo/IAO_0000115": [
+          {
+            "@value": "If true slot can have many values"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/SlotDefinition"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "multivalued"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/entity",
         "@type": [
           "http://www.w3.org/2002/07/owl#AnnotationProperty"
         ],
         "http://www.w3.org/2000/01/rdf-schema#domain": [
           {
-            "@id": "http://bioentity.io/vocab/SlotDefinition"
+            "@id": "http://w3id.org/biolink/vocab/ClassDefinition"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "role"
+            "@value": "entity"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+          {
+            "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+          }
+        ]
+      },
+      {
+        "@id": "http://w3id.org/biolink/vocab/value_description",
+        "@type": [
+          "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+          {
+            "@id": "http://w3id.org/biolink/vocab/Example"
+          }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "value description"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#range": [

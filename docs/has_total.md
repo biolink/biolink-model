@@ -3,10 +3,9 @@
 
 total number of things in a particular reference set
 
-URI: [http://bioentity.io/vocab/has_total](slot_uri)
+URI: [http://w3id.org/biolink/vocab/has_total](slot_uri)
 ## Mappings
 
- * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [FrequencyQuantifier](FrequencyQuantifier.md) -> **integer**
@@ -18,5 +17,5 @@ URI: [http://bioentity.io/vocab/has_total](slot_uri)
  *  child: [variant to population association.has total](variant_to_population_association_has_total.md)
 ## Used in
 
- *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
  *  usage: [FrequencyQuantifier](FrequencyQuantifier.md)
+ *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

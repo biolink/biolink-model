@@ -3,7 +3,7 @@
 
 A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
 
-URI: [http://bioentity.io/vocab/MacromolecularMachineToBiologicalProcessAssociation](http://bioentity.io/vocab/MacromolecularMachineToBiologicalProcessAssociation)
+URI: [http://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation](http://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation)
 
 ![img](images/MacromolecularMachineToBiologicalProcessAssociation.png)
 ## Mappings
@@ -31,7 +31,7 @@ URI: [http://bioentity.io/vocab/MacromolecularMachineToBiologicalProcessAssociat
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

@@ -3,10 +3,9 @@
 
 TODO
 
-URI: [http://bioentity.io/vocab/interbase_coordinate](slot_uri)
+URI: [http://w3id.org/biolink/vocab/interbase_coordinate](slot_uri)
 ## Mappings
 
- * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) -> **string**
@@ -15,7 +14,7 @@ URI: [http://bioentity.io/vocab/interbase_coordinate](slot_uri)
  *  is_a: [node property](node_property.md)
 ## Children
 
- *  child: [start interbase coordinate](start_interbase_coordinate.md)
  *  child: [end interbase coordinate](end_interbase_coordinate.md)
+ *  child: [start interbase coordinate](start_interbase_coordinate.md)
 ## Used in
 

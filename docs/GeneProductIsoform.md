@@ -3,7 +3,7 @@
 
 This is an abstract class that can be mixed in with different kinds of gene products to indicate that the gene product is intended to represent a specific isoform rather than a canonical or reference or generic product. The designation of canonical or reference may be arbitrary, or it may represent the superclass of all isoforms.
 
-URI: [http://bioentity.io/vocab/GeneProductIsoform](http://bioentity.io/vocab/GeneProductIsoform)
+URI: [http://w3id.org/biolink/vocab/GeneProductIsoform](http://w3id.org/biolink/vocab/GeneProductIsoform)
 
 ![img](images/GeneProductIsoform.png)
 ## Mappings
@@ -89,7 +89,7 @@ URI: [http://bioentity.io/vocab/GeneProductIsoform](http://bioentity.io/vocab/Ge
     * inherited from: [MolecularEntity](MolecularEntity.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [decreases abundance of](decreases_abundance_of.md) *subsets*: (translator_minimal)
     * Description: holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest

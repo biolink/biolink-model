@@ -3,9 +3,9 @@
 
 Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
 
-URI: [http://bioentity.io/vocab/GenotypeToGeneAssociation](http://bioentity.io/vocab/GenotypeToGeneAssociation)
+URI: [http://w3id.org/biolink/vocab/GenotypeToGeneAssociation](http://w3id.org/biolink/vocab/GenotypeToGeneAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenotypeToGeneAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToGeneAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToGeneAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToGeneAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToGeneAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GenotypeToGeneAssociation]-%20object>\[Gene],%20\[GenotypeToGeneAssociation]-%20subject>\[Genotype],%20\[GenotypeToGeneAssociation]-%20relation>\[RelationshipType],%20\[Association]^-\[GenotypeToGeneAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenotypeToGeneAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToGeneAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToGeneAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToGeneAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToGeneAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GenotypeToGeneAssociation]-%20object>\[Gene],%20\[GenotypeToGeneAssociation]-%20subject>\[Genotype],%20\[GenotypeToGeneAssociation]-%20relation>\[RelationshipType],%20\[Association]^-\[GenotypeToGeneAssociation])
 ## Mappings
 
 ## Inheritance
@@ -39,7 +39,7 @@ URI: [http://bioentity.io/vocab/GenotypeToGeneAssociation](http://bioentity.io/v
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

@@ -3,7 +3,7 @@
 
 holds between two entities that are observed to be located in the same place.
 
-URI: [http://bioentity.io/vocab/co-localizes_with](slot_uri)
+URI: [http://w3id.org/biolink/vocab/co-localizes_with](slot_uri)
 ## Mappings
 
  * [RO:00002325](http://purl.obolibrary.org/obo/RO_00002325)

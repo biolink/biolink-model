@@ -3,10 +3,9 @@
 
 TODO
 
-URI: [http://bioentity.io/vocab/interbase_coordinate](slot_uri)
+URI: [http://w3id.org/biolink/vocab/interbase_coordinate](slot_uri)
 ## Mappings
 
- * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) -> **string**

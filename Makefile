@@ -50,10 +50,10 @@ biolink-model.tsv: biolink-model.yaml
 # JSON-LD CONTEXT
 # ~~~~~~~~~~~~~~~~~~~~
 context.jsonld: biolink-model.yaml
-	gen-jsonld-context $< > $@
+	gen-jsonld-context $< > tmp.jsonld && (comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
 
 metamodel/context.jsonld: meta.yaml
-	gen-jsonld-context $< > $@
+	gen-jsonld-context $< > tmp.jsonld && (comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
 
 # ~~~~~~~~~~~~~~~~~~~~
 # JSONSCHEMA -> Java
@@ -86,10 +86,10 @@ contrib/%/docs/index.md: contrib/%.yaml
 # ~~~~~~~~~~~~~~~~~~~~
 # Ontology
 # ~~~~~~~~~~~~~~~~~~~~
-ontology/biolink.ttl: dir-ontology biolink-model.yaml
+ontology/biolink.ttl: biolink-model.yaml
 	gen-owl -o $@ biolink-model.yaml
 
-contrib/%/ontology.ttl: contrib-dir-% contrib/%.yaml
+contrib/%/ontology.ttl: contrib/%.yaml
 	gen-owl -o $@ contrib/$*.yaml
 
 # ~~~~~~~~~~~~~~~~~~~~
@@ -99,7 +99,7 @@ rdf/%.ttl: dir-rdf metamodel/context.jsonld meta.yaml
 	gen-rdf $*.yaml -f ttl --context metamodel/context.jsonld > rdf/$*.ttl
 
 
-contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml
+contrib/%/datamodel.py: contrib/%.yaml
 	gen-py-classes contrib/$*.yaml > $@
 
 gen-graphviz: dir-graphviz biolink-model.yaml
@@ -119,7 +119,7 @@ contrib-golr-%: contrib/%.yaml
 # Python
 # ~~~~~~~~~~~~~~~~~~~~
 contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml
-	gen-py-classes contrib/$*.yaml > $@
+	gen-py-classes contrib/$*.yaml > tmp.py && (comparefiles tmp.py $@ && cp tmp.py $@); rm tmp.py
 
 # ~~~~~~~~~~~~~~~~~~~~
 # ShEx
@@ -166,7 +166,7 @@ ontology/%.obo: ontology/%.ttl
 	owltools $< -o -f obo --no-check $@
 
 ontology/%.omn: ontology/%.ttl
-	owltools $< -o -f omn --prefix '' http://bioentity.io/vocab/ --prefix def http://purl.obolibrary.org/obo/IAO_0000115 $@
+	owltools $< -o -f omn --prefix '' http://w3id.org/biolink/vocab/ --prefix def http://purl.obolibrary.org/obo/IAO_0000115 $@
 
 ontology/%.tree: ontology/%.json
 	ogr --showdefs -t tree -r $< % > $@
@@ -181,8 +181,8 @@ MM = metamodel/metamodel.py
 BMM = biolinkmodel/datamodel.py
 
 regen-mm:
-	gen-py-classes meta.yaml > tmp.py && python tmp.py && cp $(MM) $(MM)-PREV && mv tmp.py $(MM)
-	gen-py-classes biolink-model.yaml > tmp.py && python tmp.py && cp $(BMM) $(BMM)-PREV && mv tmp.py $(BMM)
+	gen-py-classes meta.yaml > tmp.py && python tmp.py && (comparefiles tmp.py $(MM) && cp $(MM) $(MM)-PREV && cp tmp.py $(MM)); rm tmp.py
+	gen-py-classes biolink-model.yaml > tmp.py && python tmp.py &&  (comparefiles tmp.py $(BMM) && cp $(BMM) $(BMM)-PREV && cp tmp.py $(BMM)); rm tmp.py
 
 # ----------------------------------------
 # TESTS

@@ -3,7 +3,7 @@
 
 A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 
-URI: [http://bioentity.io/vocab/Protein](http://bioentity.io/vocab/Protein)
+URI: [http://w3id.org/biolink/vocab/Protein](http://w3id.org/biolink/vocab/Protein)
 
 ![img](images/Protein.png)
 ## Mappings
@@ -91,7 +91,7 @@ URI: [http://bioentity.io/vocab/Protein](http://bioentity.io/vocab/Protein)
     * inherited from: [MolecularEntity](MolecularEntity.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [decreases abundance of](decreases_abundance_of.md) *subsets*: (translator_minimal)
     * Description: holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest

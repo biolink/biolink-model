@@ -3,7 +3,7 @@
 
 classes defined in schema
 
-URI: [http://bioentity.io/vocab/classes](slot_uri)
+URI: [http://w3id.org/biolink/vocab/classes](slot_uri)
 ## Mappings
 
 ## Domain and Range

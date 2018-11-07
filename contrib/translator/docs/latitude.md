@@ -3,7 +3,7 @@
 
 latitude
 
-URI: [http://bioentity.io/vocab/latitude](slot_uri)
+URI: [http://w3id.org/biolink/vocab/latitude](slot_uri)
 ## Mappings
 
  * [wgs:lat](http://purl.obolibrary.org/obo/wgs_lat)

@@ -3,7 +3,7 @@
 
 homology relationship type
 
-URI: [http://bioentity.io/vocab/gene_to_gene_homology_association_relation](slot_uri)
+URI: [http://w3id.org/biolink/vocab/gene_to_gene_homology_association_relation](slot_uri)
 ## Mappings
 
  * [rdf:predicate](http://purl.obolibrary.org/obo/rdf_predicate)

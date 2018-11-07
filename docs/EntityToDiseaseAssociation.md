@@ -3,7 +3,7 @@
 
 mixin class for any association whose object (target node) is a disease
 
-URI: [http://bioentity.io/vocab/EntityToDiseaseAssociation](http://bioentity.io/vocab/EntityToDiseaseAssociation)
+URI: [http://w3id.org/biolink/vocab/EntityToDiseaseAssociation](http://w3id.org/biolink/vocab/EntityToDiseaseAssociation)
 
 ![img](images/EntityToDiseaseAssociation.png)
 ## Mappings

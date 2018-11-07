@@ -3,7 +3,7 @@
 
 license for the schema
 
-URI: [http://bioentity.io/vocab/license](slot_uri)
+URI: [http://w3id.org/biolink/vocab/license](slot_uri)
 ## Mappings
 
 ## Domain and Range

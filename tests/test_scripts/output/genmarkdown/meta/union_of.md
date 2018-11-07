@@ -3,7 +3,7 @@
 
 list of class or slot definitions that are combined to create the union class
 
-URI: [http://bioentity.io/vocab/union_of](slot_uri)
+URI: [http://w3id.org/biolink/vocab/union_of](slot_uri)
 ## Mappings
 
 ## Domain and Range
@@ -17,6 +17,6 @@ URI: [http://bioentity.io/vocab/union_of](slot_uri)
  *  child: [slot definition.union_of](slot_definition_union_of.md)
 ## Used in
 
- *  usage: [SlotDefinition](SlotDefinition.md)
  *  usage: [ClassDefinition](ClassDefinition.md)
  *  usage: [Definition](Definition.md)
+ *  usage: [SlotDefinition](SlotDefinition.md)

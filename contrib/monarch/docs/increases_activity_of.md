@@ -3,7 +3,7 @@
 
 holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest
 
-URI: [http://bioentity.io/vocab/increases_activity_of](slot_uri)
+URI: [http://w3id.org/biolink/vocab/increases_activity_of](slot_uri)
 ## Mappings
 
  * [SEMMEDDB:AFFECTS](http://purl.obolibrary.org/obo/SEMMEDDB_AFFECTS)

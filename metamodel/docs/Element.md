@@ -3,7 +3,7 @@
 
 root of all described things
 
-URI: [http://bioentity.io/vocab/Element](http://bioentity.io/vocab/Element)
+URI: [http://w3id.org/biolink/vocab/Element](http://w3id.org/biolink/vocab/Element)
 
 ![img](images/Element.png)
 ## Mappings

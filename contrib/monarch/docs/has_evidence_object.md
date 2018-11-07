@@ -3,7 +3,7 @@
 
 connects an association to an supporting entity. May be a gene/product (if evidence is homology or protein interaction). Same as WITH/FROM column in GO/GAFs
 
-URI: [http://bioentity.io/vocab/has_evidence_object](slot_uri)
+URI: [http://w3id.org/biolink/vocab/has_evidence_object](slot_uri)
 ## Mappings
 
 ## Domain and Range

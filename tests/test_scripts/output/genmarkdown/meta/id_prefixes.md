@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/id_prefixes](slot_uri)
+URI: [http://w3id.org/biolink/vocab/id_prefixes](slot_uri)
 ## Mappings
 
 ## Domain and Range

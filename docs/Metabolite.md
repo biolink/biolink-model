@@ -3,7 +3,7 @@
 
 Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
 
-URI: [http://bioentity.io/vocab/Metabolite](http://bioentity.io/vocab/Metabolite)
+URI: [http://w3id.org/biolink/vocab/Metabolite](http://w3id.org/biolink/vocab/Metabolite)
 
 ![img](images/Metabolite.png)
 ## Mappings
@@ -86,7 +86,7 @@ URI: [http://bioentity.io/vocab/Metabolite](http://bioentity.io/vocab/Metabolite
     * inherited from: [MolecularEntity](MolecularEntity.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [decreases abundance of](decreases_abundance_of.md) *subsets*: (translator_minimal)
     * Description: holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest

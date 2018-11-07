@@ -5,7 +5,7 @@ description: >-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  biolink: http://bioentity.io/vocab/
+  biolink: http://w3id.org/biolink/vocab/
   OBAN: http://purl.org/oban/
   SIO: http://semanticscience.org/resource/SIO_
   wgs: http://www.w3.org/2003/01/geo/wgs84_pos
@@ -1142,8 +1142,6 @@ slots:
     description: >-
       A grouping for any property that holds between a node and a value
     domain: named thing
-    mappings:
-      - owl:topAnnotationProperty
 
   id:
     is_a: node property
@@ -1180,7 +1178,7 @@ slots:
   category:
     is_a: node property
     domain: named thing
-    range: label type
+    range: iri type
     description: >-
       Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class.
       In a neo4j database this MAY correspond to the neo4j label tag
@@ -3117,8 +3115,6 @@ classes:
         range: genomic entity  ## todo protein
       object:
         range: genomic entity ## typically a chromosome
-    mappings:
-      - GMODChado:feature_relationship
 
   transcript to gene relationship:
     is_a: sequence feature relationship

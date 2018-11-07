@@ -3,7 +3,7 @@
 
 A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
 
-URI: [http://bioentity.io/vocab/GeneToGeneHomologyAssociation](http://bioentity.io/vocab/GeneToGeneHomologyAssociation)
+URI: [http://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation](http://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation)
 
 ![img](images/GeneToGeneHomologyAssociation.png)
 ## Mappings
@@ -32,7 +32,7 @@ URI: [http://bioentity.io/vocab/GeneToGeneHomologyAssociation](http://bioentity.
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

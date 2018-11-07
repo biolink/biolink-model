@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/SenstivityQuantifier](http://bioentity.io/vocab/SenstivityQuantifier)
+URI: [http://w3id.org/biolink/vocab/SenstivityQuantifier](http://w3id.org/biolink/vocab/SenstivityQuantifier)
 
 ![img](images/SenstivityQuantifier.png)
 ## Mappings

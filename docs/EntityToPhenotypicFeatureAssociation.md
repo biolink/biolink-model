@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation)
+URI: [http://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation)
 
 ![img](images/EntityToPhenotypicFeatureAssociation.png)
 ## Mappings
@@ -46,7 +46,7 @@ URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bio
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [full name](full_name.md)
     * Description: a long-form human readable name for a thing

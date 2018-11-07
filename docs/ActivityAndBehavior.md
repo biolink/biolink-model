@@ -3,7 +3,7 @@
 
 Activity or behavior of any independent integral living, organization or mechanical actor in the world
 
-URI: [http://bioentity.io/vocab/ActivityAndBehavior](http://bioentity.io/vocab/ActivityAndBehavior)
+URI: [http://w3id.org/biolink/vocab/ActivityAndBehavior](http://w3id.org/biolink/vocab/ActivityAndBehavior)
 
 ![img](images/ActivityAndBehavior.png)
 ## Mappings
@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/ActivityAndBehavior](http://bioentity.io/vocab/A
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

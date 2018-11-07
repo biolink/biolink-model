@@ -3,7 +3,7 @@
 
 A collection of definitions
 
-URI: [http://bioentity.io/vocab/SchemaDefinition](http://bioentity.io/vocab/SchemaDefinition)
+URI: [http://w3id.org/biolink/vocab/SchemaDefinition](http://w3id.org/biolink/vocab/SchemaDefinition)
 
 ![img](images/SchemaDefinition.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 A set of zero or more Alleles on a single instance of a Sequence[VMC]
 
-URI: [http://bioentity.io/vocab/Haplotype](http://bioentity.io/vocab/Haplotype)
+URI: [http://w3id.org/biolink/vocab/Haplotype](http://w3id.org/biolink/vocab/Haplotype)
 
 ![img](images/Haplotype.png)
 ## Mappings
@@ -87,7 +87,7 @@ URI: [http://bioentity.io/vocab/Haplotype](http://bioentity.io/vocab/Haplotype)
     * inherited from: [MolecularEntity](MolecularEntity.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [decreases abundance of](decreases_abundance_of.md) *subsets*: (translator_minimal)
     * Description: holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest

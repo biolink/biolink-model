@@ -3,7 +3,7 @@
 
 connects an association to the type of association (e.g. gene to phenotype)
 
-URI: [http://bioentity.io/vocab/association_type](slot_uri)
+URI: [http://w3id.org/biolink/vocab/association_type](slot_uri)
 ## Mappings
 
  * [rdf:type](http://purl.obolibrary.org/obo/rdf_type)

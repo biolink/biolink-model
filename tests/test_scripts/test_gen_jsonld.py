@@ -17,10 +17,10 @@ from tests.test_scripts.clicktestcase import ClickTestCase
 update_test_files = False
 
 repl: List[Tuple[str, str]] = [
-    (r'"source_file_size": [0-9]+', '"source_file_size": 199861'),
-    (r'"source_file_date": "[^"]+"', '"source_file_date": "Mon Jun 11 21:34:50 2018"'),
-    (r'"generation_date": "[^"]+"', '"generation_date": "2018-06-12 13:57"'),
-    (r'"source_file": "[^"]+"', '"source_file": "source.yaml",')
+    (r'"source_file_size": [0-9]+', ''),
+    (r'"source_file_date": "[^"]+"', ''),
+    (r'"generation_date": "[^"]+"', ''),
+    (r'"source_file": "[^"]+"', '')
 ]
 
 
@@ -84,17 +84,20 @@ class GenJSONLDTestCase(ClickTestCase):
         self.check_size(g, new_g, URIRef("https://biolink.github.io/metamodel/ontology/meta.ttl"), 9, 73, 0, "meta")
 
     def test_biolink(self):
+        self.maxDiff=None
         self.do_test(self.biolink_file, "biolink-model.jsonld", update_test_file=update_test_files, filtr=filtr)
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_biolink_output(self):
         """ Generate a context AND a jsonld for the metamodel and make sure it parses as RDF """
         cwd = os.path.abspath(os.path.join(os.path.dirname(__file__)))
-        meta_context_path = os.path.join(self.testdir_path, 'metacontext.jsonld')
+        temp_dir = os.path.join(cwd, 'temp')
+        os.makedirs(temp_dir, exist_ok=True)
+        meta_context_path = os.path.join(temp_dir, 'metacontext.jsonld')
         meta_yaml_path = os.path.abspath(os.path.join(cwd, '..', '..', 'meta.yaml'))
-        context_path = os.path.join(self.testdir_path, 'biolinkcontext.jsonld')
-        jsonld_path = os.path.join(self.testdir_path, 'biolinkjson.jsonld')
-        rdf_path = os.path.join(self.testdir_path, 'biolinkrdf.ttl')
+        context_path = os.path.join(temp_dir, 'biolinkcontext.jsonld')
+        jsonld_path = os.path.join(temp_dir, 'biolinkjson.jsonld')
+        rdf_path = os.path.join(temp_dir, 'biolinkrdf.ttl')
         yaml_path = os.path.abspath(os.path.join(cwd, '..', '..', 'biolink-model.yaml'))
 
         # Generate an image of the metamodel

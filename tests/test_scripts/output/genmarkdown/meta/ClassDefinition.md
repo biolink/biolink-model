@@ -3,7 +3,7 @@
 
 A class or interface
 
-URI: [http://bioentity.io/vocab/ClassDefinition](http://bioentity.io/vocab/ClassDefinition)
+URI: [http://w3id.org/biolink/vocab/ClassDefinition](http://w3id.org/biolink/vocab/ClassDefinition)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ClassDefinition|entity:boolean%20%3F;name(i):string;singular_name(i):string%20%3F;description(i):string%20%3F;note(i):string%20%3F;comment(i):string%20%3F;see_also(i):string%20%3F;flags(i):string%20*;aliases(i):string%20*;mappings(i):string%20*;id_prefixes(i):string%20*;in_subset(i):string%20*;from_schema(i):string%20%3F;mixin(i):boolean%20%3F;abstract(i):boolean%20%3F;local_names(i):string%20*;subclass_of(i):uri%20%3F;values_from(i):string%20*;symmetric(i):boolean%20%3F]-%20alt_descriptions(i)%20*>\[AltDescription],%20\[ClassDefinition]++-%20examples(i)%20*>\[Example],%20\[ClassDefinition]-%20union_of%20*>\[ClassDefinition],%20\[ClassDefinition]-%20mixins%20*>\[ClassDefinition],%20\[ClassDefinition]-%20is_a%20%3F>\[ClassDefinition],%20\[ClassDefinition]-%20apply_to%20%3F>\[ClassDefinition],%20\[ClassDefinition]++-%20slot_usage%20*>\[SlotDefinition],%20\[ClassDefinition]-%20slots%20*>\[SlotDefinition],%20\[ClassDefinition]-%20defining_slots%20*>\[SlotDefinition],%20\[ClassDefinition]-%20apply_to%20%3F>\[ClassDefinition],%20\[ClassDefinition]-%20is_a%20%3F>\[ClassDefinition],%20\[ClassDefinition]-%20mixins%20*>\[ClassDefinition],%20\[ClassDefinition]-%20union_of%20*>\[ClassDefinition],%20\[SchemaDefinition]++-%20classes(i)%20*>\[ClassDefinition],%20\[SlotDefinition]-%20domain(i)%20%3F>\[ClassDefinition],%20\[Definition]^-\[ClassDefinition])
 ## Mappings

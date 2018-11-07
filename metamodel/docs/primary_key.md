@@ -3,7 +3,7 @@
 
 True means that this serves as a unique identifier
 
-URI: [http://bioentity.io/vocab/primary_key](slot_uri)
+URI: [http://w3id.org/biolink/vocab/primary_key](slot_uri)
 ## Mappings
 
 ## Domain and Range

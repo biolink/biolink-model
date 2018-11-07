@@ -3,9 +3,9 @@
 
 Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
 
-URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation)
+URI: [http://w3id.org/biolink/vocab/EnvironmentToPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/EnvironmentToPhenotypicFeatureAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EnvironmentToPhenotypicFeatureAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F;description(i):narrative_text%20%3F]-%20object(i)>\[PhenotypicFeature],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20sex%20qualifier(i)%20%3F>\[BiologicalSex],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20relation(i)>\[RelationshipType],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20subject>\[Environment],%20\[EnvironmentToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[Association]^-\[EnvironmentToPhenotypicFeatureAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EnvironmentToPhenotypicFeatureAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F;description(i):narrative_text%20%3F]-%20object(i)>\[PhenotypicFeature],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20sex%20qualifier(i)%20%3F>\[BiologicalSex],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20relation(i)>\[RelationshipType],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EnvironmentToPhenotypicFeatureAssociation]-%20subject>\[Environment],%20\[EnvironmentToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[Association]^-\[EnvironmentToPhenotypicFeatureAssociation])
 ## Mappings
 
 ## Inheritance
@@ -32,7 +32,7 @@ URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http:
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

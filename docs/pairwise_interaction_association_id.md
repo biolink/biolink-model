@@ -3,10 +3,9 @@
 
 identifier for the interaction. This may come from an interaction database such as IMEX.
 
-URI: [http://bioentity.io/vocab/pairwise_interaction_association_id](slot_uri)
+URI: [http://w3id.org/biolink/vocab/pairwise_interaction_association_id](slot_uri)
 ## Mappings
 
- * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) -> [IdentifierType](IdentifierType.md)

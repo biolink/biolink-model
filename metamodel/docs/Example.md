@@ -3,7 +3,7 @@
 
 example of usage
 
-URI: [http://bioentity.io/vocab/Example](http://bioentity.io/vocab/Example)
+URI: [http://w3id.org/biolink/vocab/Example](http://w3id.org/biolink/vocab/Example)
 
 ![img](images/Example.png)
 ## Mappings

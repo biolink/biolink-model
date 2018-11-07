@@ -3,7 +3,7 @@
 
 holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
 
-URI: [http://bioentity.io/vocab/in_complex_with](slot_uri)
+URI: [http://w3id.org/biolink/vocab/in_complex_with](slot_uri)
 ## Mappings
 
  * [SEMMEDDB:COEXISTS_WITH](http://purl.obolibrary.org/obo/SEMMEDDB_COEXISTS_WITH)

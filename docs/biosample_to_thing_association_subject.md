@@ -3,7 +3,7 @@
 
 the biosample being described
 
-URI: [http://bioentity.io/vocab/biosample_to_thing_association_subject](slot_uri)
+URI: [http://w3id.org/biolink/vocab/biosample_to_thing_association_subject](slot_uri)
 ## Mappings
 
  * [rdf:subject](http://purl.obolibrary.org/obo/rdf_subject)

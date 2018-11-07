@@ -31,7 +31,7 @@ class RDFGenerator(Generator):
         graph = Graph()
         # TODO: retrieve the base out of the JSON_LD (generalize how it is fetched from the schema when generating
         # context
-        graph.parse(data=jsonld_str, format="json-ld", base="http://bioentity.io/vocab/")
+        graph.parse(data=jsonld_str, format="json-ld", base="http://w3id.org/biolink/vocab/")
         if output:
             with open(output, 'w') as outf:
                 outf.write(self._data(graph))

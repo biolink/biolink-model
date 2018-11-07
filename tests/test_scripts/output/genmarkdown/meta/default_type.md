@@ -3,7 +3,7 @@
 
 the default type if range is omitted
 
-URI: [http://bioentity.io/vocab/default_type](slot_uri)
+URI: [http://w3id.org/biolink/vocab/default_type](slot_uri)
 ## Mappings
 
 ## Domain and Range

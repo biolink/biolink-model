@@ -3,10 +3,9 @@
 
 number all populations that carry a particular allele, aka allele number
 
-URI: [http://bioentity.io/vocab/variant_to_population_association_has_total](slot_uri)
+URI: [http://w3id.org/biolink/vocab/variant_to_population_association_has_total](slot_uri)
 ## Mappings
 
- * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [VariantToPopulationAssociation](VariantToPopulationAssociation.md) -> **integer**

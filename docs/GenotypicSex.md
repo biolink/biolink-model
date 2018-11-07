@@ -3,7 +3,7 @@
 
 An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
 
-URI: [http://bioentity.io/vocab/GenotypicSex](http://bioentity.io/vocab/GenotypicSex)
+URI: [http://w3id.org/biolink/vocab/GenotypicSex](http://w3id.org/biolink/vocab/GenotypicSex)
 
 ![img](images/GenotypicSex.png)
 ## Mappings
@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/GenotypicSex](http://bioentity.io/vocab/Genotypi
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

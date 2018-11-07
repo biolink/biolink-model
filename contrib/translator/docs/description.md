@@ -3,7 +3,7 @@
 
 a human-readable description of a thing
 
-URI: [http://bioentity.io/vocab/description](slot_uri)
+URI: [http://w3id.org/biolink/vocab/description](slot_uri)
 ## Mappings
 
  * [dcterms:description](http://purl.obolibrary.org/obo/dcterms_description)
@@ -18,5 +18,5 @@ URI: [http://bioentity.io/vocab/description](slot_uri)
  *  child: [entity to phenotypic feature association.description](entity_to_phenotypic_feature_association_description.md) *subsets*: (translator_minimal)
 ## Used in
 
- *  usage: [NamedThing](NamedThing.md)
  *  usage: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
+ *  usage: [NamedThing](NamedThing.md)

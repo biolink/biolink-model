@@ -5,9 +5,9 @@ from rdflib import Namespace
 SIO = Namespace('http://semanticscience.org/resource/SIO_')
 HGNC = Namespace('https://monarchinitiative.org/gene/')
 OBOID = Namespace('http://purl.obolibrary.org/obo/_')
-BIOENTITY = Namespace("http://bioentity.io/vocab/")
+BIOENTITY = Namespace("http://w3id.org/biolink/vocab/")
 OBO = Namespace("http://purl.obolibrary.org/obo/")
-META = Namespace("http://bioentity.io/meta/")
+META = Namespace("http://w3id.org/biolink/vocab/meta/")
 BIOTOP = Namespace("http://purl.org/biotop/biotop.owl#")
 
 known_namespaces: Dict[str, Namespace] = {

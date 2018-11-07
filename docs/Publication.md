@@ -3,7 +3,7 @@
 
 Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
 
-URI: [http://bioentity.io/vocab/Publication](http://bioentity.io/vocab/Publication)
+URI: [http://w3id.org/biolink/vocab/Publication](http://w3id.org/biolink/vocab/Publication)
 
 ![img](images/Publication.png)
 ## Mappings
@@ -21,7 +21,7 @@ URI: [http://bioentity.io/vocab/Publication](http://bioentity.io/vocab/Publicati
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

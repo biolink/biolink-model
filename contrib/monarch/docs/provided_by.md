@@ -3,7 +3,7 @@
 
 connects an association to the agent (person, organization or group) that provided it
 
-URI: [http://bioentity.io/vocab/provided_by](slot_uri)
+URI: [http://w3id.org/biolink/vocab/provided_by](slot_uri)
 ## Mappings
 
  * [pav:providedBy](http://purl.obolibrary.org/obo/pav_providedBy)

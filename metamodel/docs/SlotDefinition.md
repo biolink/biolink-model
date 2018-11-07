@@ -3,7 +3,7 @@
 
 A property or slot
 
-URI: [http://bioentity.io/vocab/SlotDefinition](http://bioentity.io/vocab/SlotDefinition)
+URI: [http://w3id.org/biolink/vocab/SlotDefinition](http://w3id.org/biolink/vocab/SlotDefinition)
 
 ![img](images/SlotDefinition.png)
 ## Mappings

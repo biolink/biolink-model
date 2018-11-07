@@ -3,10 +3,9 @@
 
 date on which thing was updated. This can be applied to nodes or edges
 
-URI: [http://bioentity.io/vocab/update_date](slot_uri)
+URI: [http://w3id.org/biolink/vocab/update_date](slot_uri)
 ## Mappings
 
- * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) -> **date**

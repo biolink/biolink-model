@@ -3,7 +3,7 @@
 
 An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
 
-URI: [http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation](http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation)
+URI: [http://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation)
 
 ![img](images/ChemicalToDiseaseOrPhenotypicFeatureAssociation.png)
 ## Mappings
@@ -34,7 +34,7 @@ URI: [http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation]
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

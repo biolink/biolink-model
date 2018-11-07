@@ -3,7 +3,7 @@
 
 parent field for fields used for storing the label of the closure concept. See also: closure concept field
 
-URI: [http://bioentity.io/vocab/regulates_closure_label](slot_uri)
+URI: [http://w3id.org/biolink/vocab/regulates_closure_label](slot_uri)
 ## Mappings
 
 ## Domain and Range

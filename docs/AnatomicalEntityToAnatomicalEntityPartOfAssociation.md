@@ -3,7 +3,7 @@
 
 A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
 
-URI: [http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation](http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation)
+URI: [http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation](http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation)
 
 ![img](images/AnatomicalEntityToAnatomicalEntityPartOfAssociation.png)
 ## Mappings
@@ -40,7 +40,7 @@ URI: [http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociat
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

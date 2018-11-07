@@ -3,10 +3,9 @@
 
 A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
 
-URI: [http://bioentity.io/vocab/id](slot_uri)
+URI: [http://w3id.org/biolink/vocab/id](slot_uri)
 ## Mappings
 
- * [owl:topAnnotationProperty](http://purl.obolibrary.org/obo/owl_topAnnotationProperty)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) -> [IdentifierType](IdentifierType.md)
@@ -20,5 +19,5 @@ URI: [http://bioentity.io/vocab/id](slot_uri)
 ## Used in
 
  *  usage: [NamedThing](NamedThing.md)
- *  usage: [SequenceVariant](SequenceVariant.md)
  *  usage: [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)
+ *  usage: [SequenceVariant](SequenceVariant.md)

@@ -3,9 +3,9 @@
 
 An abstract association for use where the case is the subject
 
-URI: [http://bioentity.io/vocab/CaseToThingAssociation](http://bioentity.io/vocab/CaseToThingAssociation)
+URI: [http://w3id.org/biolink/vocab/CaseToThingAssociation](http://w3id.org/biolink/vocab/CaseToThingAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[CaseToThingAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;object(i):string;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[CaseToThingAssociation]-%20publications(i)%20*>\[Publication],%20\[CaseToThingAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[CaseToThingAssociation]-%20relation(i)>\[RelationshipType],%20\[CaseToThingAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[CaseToThingAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[CaseToThingAssociation]-%20subject>\[Case],%20\[CaseToPhenotypicFeatureAssociation]uses%20-.->\[CaseToThingAssociation],%20\[Association]^-\[CaseToThingAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[CaseToThingAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;object(i):string;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[CaseToThingAssociation]-%20publications(i)%20*>\[Publication],%20\[CaseToThingAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[CaseToThingAssociation]-%20relation(i)>\[RelationshipType],%20\[CaseToThingAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[CaseToThingAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[CaseToThingAssociation]-%20subject>\[Case],%20\[CaseToPhenotypicFeatureAssociation]uses%20-.->\[CaseToThingAssociation],%20\[Association]^-\[CaseToThingAssociation])
 ## Mappings
 
 ## Inheritance
@@ -32,7 +32,7 @@ URI: [http://bioentity.io/vocab/CaseToThingAssociation](http://bioentity.io/voca
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

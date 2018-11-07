@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/PopulationOfIndividualOrganisms](http://bioentity.io/vocab/PopulationOfIndividualOrganisms)
+URI: [http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms](http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms)
 
 ![img](images/PopulationOfIndividualOrganisms.png)
 ## Mappings
@@ -25,7 +25,7 @@ URI: [http://bioentity.io/vocab/PopulationOfIndividualOrganisms](http://bioentit
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

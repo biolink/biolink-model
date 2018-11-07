@@ -3,7 +3,7 @@
 
 genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
 
-URI: [http://bioentity.io/vocab/macromolecular_machine_name](slot_uri)
+URI: [http://w3id.org/biolink/vocab/macromolecular_machine_name](slot_uri)
 ## Mappings
 
  * [rdfs:label](http://purl.obolibrary.org/obo/rdfs_label)

@@ -3,7 +3,7 @@
 
 list of equivalent or skos exact mappings to an ontology class
 
-URI: [http://bioentity.io/vocab/mappings](slot_uri)
+URI: [http://w3id.org/biolink/vocab/mappings](slot_uri)
 ## Mappings
 
 ## Domain and Range

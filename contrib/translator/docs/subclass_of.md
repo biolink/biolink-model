@@ -3,7 +3,7 @@
 
 holds between two classes where the domain class is a specialization of the range class
 
-URI: [http://bioentity.io/vocab/subclass_of](slot_uri)
+URI: [http://w3id.org/biolink/vocab/subclass_of](slot_uri)
 ## Mappings
 
  * [rdfs:subClassOf](http://purl.obolibrary.org/obo/rdfs_subClassOf)
