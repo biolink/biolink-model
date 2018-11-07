@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/GeneToGoTermAssociation](http://bioentity.io/vocab/GeneToGoTermAssociation)
+URI: [http://w3id.org/biolink/vocab/GeneToGoTermAssociation](http://w3id.org/biolink/vocab/GeneToGoTermAssociation)
 
 ![img](images/GeneToGoTermAssociation.png)
 ## Mappings

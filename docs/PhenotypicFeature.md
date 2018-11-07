@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/PhenotypicFeature](http://bioentity.io/vocab/PhenotypicFeature)
+URI: [http://w3id.org/biolink/vocab/PhenotypicFeature](http://w3id.org/biolink/vocab/PhenotypicFeature)
 
 ![img](images/PhenotypicFeature.png)
 ## Mappings

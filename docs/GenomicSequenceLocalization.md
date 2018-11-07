@@ -3,7 +3,7 @@
 
 A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
 
-URI: [http://bioentity.io/vocab/GenomicSequenceLocalization](http://bioentity.io/vocab/GenomicSequenceLocalization)
+URI: [http://w3id.org/biolink/vocab/GenomicSequenceLocalization](http://w3id.org/biolink/vocab/GenomicSequenceLocalization)
 
 ![img](images/GenomicSequenceLocalization.png)
 ## Mappings

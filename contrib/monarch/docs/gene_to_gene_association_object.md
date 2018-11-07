@@ -3,7 +3,7 @@
 
 the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa
 
-URI: [http://bioentity.io/vocab/gene_to_gene_association_object](slot_uri)
+URI: [http://w3id.org/biolink/vocab/gene_to_gene_association_object](slot_uri)
 ## Mappings
 
  * [rdf:object](http://purl.obolibrary.org/obo/rdf_object)

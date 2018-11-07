@@ -3,9 +3,9 @@
 
 A graph-based representation of how a collection of gene products operate together to achieve a biological objective. A GO-CAM model is a specialization of a named graph containing instances of GO molecular functions, entities, processes, cellular components etc, connected via causal relationships.
 
-URI: [http://bioentity.io/vocab/CausalActivityModel](http://bioentity.io/vocab/CausalActivityModel)
+URI: [http://w3id.org/biolink/vocab/CausalActivityModel](http://w3id.org/biolink/vocab/CausalActivityModel)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[CausalActivityModel|title:label_type%20%3F;id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[NamedGraph]^-\[CausalActivityModel])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[CausalActivityModel|title:label_type%20%3F;id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[NamedGraph]^-\[CausalActivityModel])
 ## Mappings
 
 ## Inheritance
@@ -23,7 +23,7 @@ URI: [http://bioentity.io/vocab/CausalActivityModel](http://bioentity.io/vocab/C
     * __Local__
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

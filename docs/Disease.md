@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/Disease](http://bioentity.io/vocab/Disease)
+URI: [http://w3id.org/biolink/vocab/Disease](http://w3id.org/biolink/vocab/Disease)
 
 ![img](images/Disease.png)
 ## Mappings

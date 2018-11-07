@@ -3,7 +3,7 @@
 
 One or more causally connected executions of molecular functions
 
-URI: [http://bioentity.io/vocab/BiologicalProcess](http://bioentity.io/vocab/BiologicalProcess)
+URI: [http://w3id.org/biolink/vocab/BiologicalProcess](http://w3id.org/biolink/vocab/BiologicalProcess)
 
 ![img](images/BiologicalProcess.png)
 ## Mappings

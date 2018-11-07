@@ -3,7 +3,7 @@
 
 Any association between a genotype and a sequence variant.
 
-URI: [http://bioentity.io/vocab/GenotypeToVariantAssociation](http://bioentity.io/vocab/GenotypeToVariantAssociation)
+URI: [http://w3id.org/biolink/vocab/GenotypeToVariantAssociation](http://w3id.org/biolink/vocab/GenotypeToVariantAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenotypeToVariantAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToVariantAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToVariantAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GenotypeToVariantAssociation]-%20object>\[SequenceVariant],%20\[GenotypeToVariantAssociation]-%20subject>\[Genotype],%20\[GenotypeToVariantAssociation]-%20relation>\[RelationshipType],%20\[Association]^-\[GenotypeToVariantAssociation])
 ## Mappings

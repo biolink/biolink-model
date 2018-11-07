@@ -3,7 +3,7 @@
 
 mixin class for any association whose object (target node) is a disease
 
-URI: [http://bioentity.io/vocab/EntityToDiseaseAssociation](http://bioentity.io/vocab/EntityToDiseaseAssociation)
+URI: [http://w3id.org/biolink/vocab/EntityToDiseaseAssociation](http://w3id.org/biolink/vocab/EntityToDiseaseAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EntityToDiseaseAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[EntityToDiseaseAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[EntityToDiseaseAssociation]-%20object>\[Disease],%20\[VariantToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneAsAModelOfDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[EntityToFeatureOrDiseaseQualifiers]^-\[EntityToDiseaseAssociation])
 ## Mappings

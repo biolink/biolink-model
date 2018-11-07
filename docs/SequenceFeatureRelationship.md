@@ -3,7 +3,7 @@
 
 For example, a particular exon is part of a particular transcript or gene
 
-URI: [http://bioentity.io/vocab/SequenceFeatureRelationship](http://bioentity.io/vocab/SequenceFeatureRelationship)
+URI: [http://w3id.org/biolink/vocab/SequenceFeatureRelationship](http://w3id.org/biolink/vocab/SequenceFeatureRelationship)
 
 ![img](images/SequenceFeatureRelationship.png)
 ## Mappings

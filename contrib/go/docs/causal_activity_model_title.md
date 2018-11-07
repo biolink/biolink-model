@@ -3,7 +3,7 @@
 
 title describing the contents of the GO-CAM
 
-URI: [http://bioentity.io/vocab/causal_activity_model_title](slot_uri)
+URI: [http://w3id.org/biolink/vocab/causal_activity_model_title](slot_uri)
 ## Mappings
 
  * [dc:title](http://purl.obolibrary.org/obo/dc_title)

@@ -3,7 +3,7 @@
 
 Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
 
-URI: [http://bioentity.io/vocab/ClinicalEntity](http://bioentity.io/vocab/ClinicalEntity)
+URI: [http://w3id.org/biolink/vocab/ClinicalEntity](http://w3id.org/biolink/vocab/ClinicalEntity)
 
 ![img](images/ClinicalEntity.png)
 ## Mappings

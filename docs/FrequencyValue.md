@@ -3,7 +3,7 @@
 
 describes the frequency of occurrence of an event or condition
 
-URI: [http://bioentity.io/vocab/FrequencyValue](http://bioentity.io/vocab/FrequencyValue)
+URI: [http://w3id.org/biolink/vocab/FrequencyValue](http://w3id.org/biolink/vocab/FrequencyValue)
 
 ![img](images/FrequencyValue.png)
 ## Mappings

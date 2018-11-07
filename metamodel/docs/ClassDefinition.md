@@ -3,7 +3,7 @@
 
 A class or interface
 
-URI: [http://bioentity.io/vocab/ClassDefinition](http://bioentity.io/vocab/ClassDefinition)
+URI: [http://w3id.org/biolink/vocab/ClassDefinition](http://w3id.org/biolink/vocab/ClassDefinition)
 
 ![img](images/ClassDefinition.png)
 ## Mappings

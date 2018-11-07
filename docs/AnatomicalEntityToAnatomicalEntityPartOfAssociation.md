@@ -3,7 +3,7 @@
 
 A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
 
-URI: [http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation](http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation)
+URI: [http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation](http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation)
 
 ![img](images/AnatomicalEntityToAnatomicalEntityPartOfAssociation.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 connects a genomic feature to its sequence
 
-URI: [http://bioentity.io/vocab/has_biological_sequence](slot_uri)
+URI: [http://w3id.org/biolink/vocab/has_biological_sequence](slot_uri)
 ## Mappings
 
 ## Domain and Range

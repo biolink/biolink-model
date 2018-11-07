@@ -3,7 +3,7 @@
 
 a concept or class in an ontology, vocabulary or thesaurus
 
-URI: [http://bioentity.io/vocab/OntologyClass](http://bioentity.io/vocab/OntologyClass)
+URI: [http://w3id.org/biolink/vocab/OntologyClass](http://w3id.org/biolink/vocab/OntologyClass)
 
 ![img](images/OntologyClass.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 connects an association to publications supporting the association
 
-URI: [http://bioentity.io/vocab/publications](slot_uri)
+URI: [http://w3id.org/biolink/vocab/publications](slot_uri)
 ## Mappings
 
 ## Domain and Range

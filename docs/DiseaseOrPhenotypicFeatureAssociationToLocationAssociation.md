@@ -3,7 +3,7 @@
 
 An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
 
-URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation)
+URI: [http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation)
 
 ![img](images/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.png)
 ## Mappings

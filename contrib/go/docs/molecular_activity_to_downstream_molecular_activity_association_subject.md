@@ -3,7 +3,7 @@
 
 connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
-URI: [http://bioentity.io/vocab/molecular_activity_to_downstream_molecular_activity_association_subject](slot_uri)
+URI: [http://w3id.org/biolink/vocab/molecular_activity_to_downstream_molecular_activity_association_subject](slot_uri)
 ## Mappings
 
  * [rdf:subject](http://purl.obolibrary.org/obo/rdf_subject)

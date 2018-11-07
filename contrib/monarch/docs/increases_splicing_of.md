@@ -3,7 +3,7 @@
 
 holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA
 
-URI: [http://bioentity.io/vocab/increases_splicing_of](slot_uri)
+URI: [http://w3id.org/biolink/vocab/increases_splicing_of](slot_uri)
 ## Mappings
 
  * [SEMMEDDB:AFFECTS](http://purl.obolibrary.org/obo/SEMMEDDB_AFFECTS)

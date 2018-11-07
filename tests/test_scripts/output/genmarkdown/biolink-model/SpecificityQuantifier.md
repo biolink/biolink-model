@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/SpecificityQuantifier](http://bioentity.io/vocab/SpecificityQuantifier)
+URI: [http://w3id.org/biolink/vocab/SpecificityQuantifier](http://w3id.org/biolink/vocab/SpecificityQuantifier)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SpecificityQuantifier]^-\[PathognomonicityQuantifier],%20\[RelationshipQuantifier]^-\[SpecificityQuantifier])
 ## Mappings

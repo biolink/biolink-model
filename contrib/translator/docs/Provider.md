@@ -3,7 +3,7 @@
 
 person, group, organization or project that provides a piece of information
 
-URI: [http://bioentity.io/vocab/Provider](http://bioentity.io/vocab/Provider)
+URI: [http://w3id.org/biolink/vocab/Provider](http://w3id.org/biolink/vocab/Provider)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]-%20provided%20by(i)%20%3F>\[Provider],%20\[AdministrativeEntity]^-\[Provider])
 ## Mappings

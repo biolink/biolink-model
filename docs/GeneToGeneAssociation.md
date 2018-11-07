@@ -3,7 +3,7 @@
 
 abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
 
-URI: [http://bioentity.io/vocab/GeneToGeneAssociation](http://bioentity.io/vocab/GeneToGeneAssociation)
+URI: [http://w3id.org/biolink/vocab/GeneToGeneAssociation](http://w3id.org/biolink/vocab/GeneToGeneAssociation)
 
 ![img](images/GeneToGeneAssociation.png)
 ## Mappings

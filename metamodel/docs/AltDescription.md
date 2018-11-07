@@ -3,7 +3,7 @@
 
 Attributed description
 
-URI: [http://bioentity.io/vocab/AltDescription](http://bioentity.io/vocab/AltDescription)
+URI: [http://w3id.org/biolink/vocab/AltDescription](http://w3id.org/biolink/vocab/AltDescription)
 
 ![img](images/AltDescription.png)
 ## Mappings

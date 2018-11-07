@@ -3,7 +3,7 @@
 
 gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
 
-URI: [http://bioentity.io/vocab/gene_to_disease_association_subject](slot_uri)
+URI: [http://w3id.org/biolink/vocab/gene_to_disease_association_subject](slot_uri)
 ## Mappings
 
  * [rdf:subject](http://purl.obolibrary.org/obo/rdf_subject)

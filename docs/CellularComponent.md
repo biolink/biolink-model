@@ -3,7 +3,7 @@
 
 A location in or around a cell
 
-URI: [http://bioentity.io/vocab/CellularComponent](http://bioentity.io/vocab/CellularComponent)
+URI: [http://w3id.org/biolink/vocab/CellularComponent](http://w3id.org/biolink/vocab/CellularComponent)
 
 ![img](images/CellularComponent.png)
 ## Mappings

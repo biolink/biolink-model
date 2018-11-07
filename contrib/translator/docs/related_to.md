@@ -3,7 +3,7 @@
 
 A grouping for any relationship type that holds between any two things
 
-URI: [http://bioentity.io/vocab/related_to](slot_uri)
+URI: [http://w3id.org/biolink/vocab/related_to](slot_uri)
 ## Mappings
 
  * [owl:topObjectProperty](http://purl.obolibrary.org/obo/owl_topObjectProperty)

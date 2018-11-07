@@ -1,16 +1,15 @@
 {
-   "comments": "Auto generated from /Users/hsolbri1/git/biolink/biolink-model/meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-10-25 06:57\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "comments": "Auto generated from /Users/hsolbri1/git/hsolbrig/biolink-model/meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-11-06 18:18\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
-      "biolink": "http://bioentity.io/vocab/",
-      "meta": "http://bioentity.io/meta/",
+      "biolink": "http://w3id.org/biolink/vocab/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
       "owl": "http://www.w3.org/2002/07/owl#",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "OIO": "http://www.geneontology.org/formats/oboInOwl#",
-      "@vocab": "http://bioentity.io/vocab/",
-      "@base": "http://bioentity.io/vocab/",
+      "@vocab": "http://w3id.org/biolink/vocab/",
+      "@base": "http://w3id.org/biolink/vocab/",
       "abstract": {
          "@type": "xsd:boolean"
       },

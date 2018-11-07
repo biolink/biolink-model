@@ -3,7 +3,7 @@
 
 Example of usage for a slot or class
 
-URI: [http://bioentity.io/vocab/examples](slot_uri)
+URI: [http://w3id.org/biolink/vocab/examples](slot_uri)
 ## Mappings
 
  * [skos:example](http://purl.obolibrary.org/obo/skos_example)

@@ -3,7 +3,7 @@
 
 A collection of definitions
 
-URI: [http://bioentity.io/vocab/SchemaDefinition](http://bioentity.io/vocab/SchemaDefinition)
+URI: [http://w3id.org/biolink/vocab/SchemaDefinition](http://w3id.org/biolink/vocab/SchemaDefinition)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SchemaDefinition|id:string;version:string%20%3F;imports:string%20*;license:string%20%3F;default_prefix:string%20%3F;default_curi_maps:string%20*;metamodel_version:string%20%3F;source_file:string%20%3F;source_file_size:integer%20%3F;source_file_date:string%20%3F;generation_date:date%20%3F;name(i):string;singular_name(i):string%20%3F;description(i):string%20%3F;note(i):string%20%3F;comment(i):string%20%3F;see_also(i):string%20%3F;flags(i):string%20*;aliases(i):string%20*;mappings(i):string%20*;id_prefixes(i):string%20*;in_subset(i):string%20*;from_schema(i):string%20%3F;mixin(i):boolean%20%3F;abstract(i):boolean%20%3F;local_names(i):string%20*;subclass_of(i):uri%20%3F;values_from(i):string%20*;symmetric(i):boolean%20%3F]-%20union_of(i)%20*>\[Definition],%20\[SchemaDefinition]-%20mixins(i)%20*>\[Definition],%20\[SchemaDefinition]-%20is_a(i)%20%3F>\[Definition],%20\[SchemaDefinition]-%20alt_descriptions(i)%20*>\[AltDescription],%20\[SchemaDefinition]++-%20examples(i)%20*>\[Example],%20\[SchemaDefinition]++-%20classes%20*>\[ClassDefinition],%20\[SchemaDefinition]++-%20slots%20*>\[SlotDefinition],%20\[SchemaDefinition]++-%20types%20*>\[TypeDefinition],%20\[SchemaDefinition]-%20default_type%20%3F>\[TypeDefinition],%20\[SchemaDefinition]++-%20prefixes%20*>\[Prefix],%20\[Definition]^-\[SchemaDefinition])
 ## Mappings

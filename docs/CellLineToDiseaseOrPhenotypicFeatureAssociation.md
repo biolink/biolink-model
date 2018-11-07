@@ -3,7 +3,7 @@
 
 An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
 
-URI: [http://bioentity.io/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation](http://bioentity.io/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation)
+URI: [http://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation)
 
 ![img](images/CellLineToDiseaseOrPhenotypicFeatureAssociation.png)
 ## Mappings

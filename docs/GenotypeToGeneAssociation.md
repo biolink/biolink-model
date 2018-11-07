@@ -3,7 +3,7 @@
 
 Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
 
-URI: [http://bioentity.io/vocab/GenotypeToGeneAssociation](http://bioentity.io/vocab/GenotypeToGeneAssociation)
+URI: [http://w3id.org/biolink/vocab/GenotypeToGeneAssociation](http://w3id.org/biolink/vocab/GenotypeToGeneAssociation)
 
 ![img](images/GenotypeToGeneAssociation.png)
 ## Mappings

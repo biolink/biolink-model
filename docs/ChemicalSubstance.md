@@ -3,7 +3,7 @@
 
 May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
 
-URI: [http://bioentity.io/vocab/ChemicalSubstance](http://bioentity.io/vocab/ChemicalSubstance)
+URI: [http://w3id.org/biolink/vocab/ChemicalSubstance](http://w3id.org/biolink/vocab/ChemicalSubstance)
 
 ![img](images/ChemicalSubstance.png)
 ## Mappings

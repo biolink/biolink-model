@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/FrequencyQuantifier](http://bioentity.io/vocab/FrequencyQuantifier)
+URI: [http://w3id.org/biolink/vocab/FrequencyQuantifier](http://w3id.org/biolink/vocab/FrequencyQuantifier)
 
 ![img](images/FrequencyQuantifier.png)
 ## Mappings

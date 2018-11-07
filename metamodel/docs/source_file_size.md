@@ -3,7 +3,7 @@
 
 size in bytes of the source of the schema.  Supplied by the loader
 
-URI: [http://bioentity.io/vocab/source_file_size](slot_uri)
+URI: [http://w3id.org/biolink/vocab/source_file_size](slot_uri)
 ## Mappings
 
 ## Domain and Range

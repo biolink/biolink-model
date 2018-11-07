@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/ClinicalIntervention](http://bioentity.io/vocab/ClinicalIntervention)
+URI: [http://w3id.org/biolink/vocab/ClinicalIntervention](http://w3id.org/biolink/vocab/ClinicalIntervention)
 
 ![img](images/ClinicalIntervention.png)
 ## Mappings

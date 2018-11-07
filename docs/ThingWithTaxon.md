@@ -3,7 +3,7 @@
 
 A mixin that can be used on any entity with a taxon
 
-URI: [http://bioentity.io/vocab/ThingWithTaxon](http://bioentity.io/vocab/ThingWithTaxon)
+URI: [http://w3id.org/biolink/vocab/ThingWithTaxon](http://w3id.org/biolink/vocab/ThingWithTaxon)
 
 ![img](images/ThingWithTaxon.png)
 ## Mappings

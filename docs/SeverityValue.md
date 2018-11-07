@@ -3,7 +3,7 @@
 
 describes the severity of a phenotypic feature or disease
 
-URI: [http://bioentity.io/vocab/SeverityValue](http://bioentity.io/vocab/SeverityValue)
+URI: [http://w3id.org/biolink/vocab/SeverityValue](http://w3id.org/biolink/vocab/SeverityValue)
 
 ![img](images/SeverityValue.png)
 ## Mappings

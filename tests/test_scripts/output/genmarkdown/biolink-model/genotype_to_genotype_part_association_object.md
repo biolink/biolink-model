@@ -3,7 +3,7 @@
 
 child genotype
 
-URI: [http://bioentity.io/vocab/genotype_to_genotype_part_association_object](slot_uri)
+URI: [http://w3id.org/biolink/vocab/genotype_to_genotype_part_association_object](slot_uri)
 ## Mappings
 
  * [rdf:object](http://purl.obolibrary.org/obo/rdf_object)

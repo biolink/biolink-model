@@ -3,7 +3,7 @@
 
 holds between two entities that make physical contact as part of some interaction
 
-URI: [http://bioentity.io/vocab/physically_interacts_with](slot_uri)
+URI: [http://w3id.org/biolink/vocab/physically_interacts_with](slot_uri)
 ## Mappings
 
  * [WD:P129](http://purl.obolibrary.org/obo/WD_P129)

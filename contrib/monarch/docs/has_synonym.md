@@ -3,7 +3,7 @@
 
 Alternate labels for an entity
 
-URI: [http://bioentity.io/vocab/has_synonym](slot_uri)
+URI: [http://w3id.org/biolink/vocab/has_synonym](slot_uri)
 ## Mappings
 
 ## Domain and Range

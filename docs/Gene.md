@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/Gene](http://bioentity.io/vocab/Gene)
+URI: [http://w3id.org/biolink/vocab/Gene](http://w3id.org/biolink/vocab/Gene)
 
 ![img](images/Gene.png)
 ## Mappings

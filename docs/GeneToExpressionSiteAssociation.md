@@ -3,7 +3,7 @@
 
 An association between a gene and an expression site, possibly qualified by stage/timing info.
 
-URI: [http://bioentity.io/vocab/GeneToExpressionSiteAssociation](http://bioentity.io/vocab/GeneToExpressionSiteAssociation)
+URI: [http://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation](http://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation)
 
 ![img](images/GeneToExpressionSiteAssociation.png)
 ## Mappings

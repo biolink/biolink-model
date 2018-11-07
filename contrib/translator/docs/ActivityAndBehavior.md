@@ -3,9 +3,9 @@
 
 Activity or behavior of any independent integral living, organization or mechanical actor in the world
 
-URI: [http://bioentity.io/vocab/ActivityAndBehavior](http://bioentity.io/vocab/ActivityAndBehavior)
+URI: [http://w3id.org/biolink/vocab/ActivityAndBehavior](http://w3id.org/biolink/vocab/ActivityAndBehavior)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ActivityAndBehavior|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20precedes(i)%20%3F>\[Occurrent],%20\[ActivityAndBehavior]-%20has%20input(i)%20%3F>\[NamedThing],%20\[ActivityAndBehavior]-%20has%20participant(i)%20%3F>\[NamedThing],%20\[ActivityAndBehavior]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[ActivityAndBehavior]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Occurrent]^-\[ActivityAndBehavior])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ActivityAndBehavior|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20precedes(i)%20%3F>\[Occurrent],%20\[ActivityAndBehavior]-%20has%20input(i)%20%3F>\[NamedThing],%20\[ActivityAndBehavior]-%20has%20participant(i)%20%3F>\[NamedThing],%20\[ActivityAndBehavior]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[ActivityAndBehavior]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Occurrent]^-\[ActivityAndBehavior])
 ## Mappings
 
  * [UMLSSG:ACTI](http://purl.obolibrary.org/obo/UMLSSG_ACTI)
@@ -18,7 +18,7 @@ URI: [http://bioentity.io/vocab/ActivityAndBehavior](http://bioentity.io/vocab/A
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

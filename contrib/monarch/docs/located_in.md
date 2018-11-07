@@ -3,7 +3,7 @@
 
 holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
 
-URI: [http://bioentity.io/vocab/located_in](slot_uri)
+URI: [http://w3id.org/biolink/vocab/located_in](slot_uri)
 ## Mappings
 
  * [RO:0001025](http://purl.obolibrary.org/obo/RO_0001025)

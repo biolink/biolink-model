@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/MolecularEvent](http://bioentity.io/vocab/MolecularEvent)
+URI: [http://w3id.org/biolink/vocab/MolecularEvent](http://w3id.org/biolink/vocab/MolecularEvent)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MolecularEvent|upstream_causal_relationship:string%20%3F;downstream_causal_relationship:string%20%3F]-%20occurs%20in%20%3F>\[NamedThing],%20\[MolecularEvent]-%20part%20of%20%3F>\[NamedThing],%20\[MolecularEvent]-%20enabled%20by%20%3F>\[GeneOrGeneProduct])
 ## Mappings

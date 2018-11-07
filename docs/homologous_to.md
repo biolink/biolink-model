@@ -3,7 +3,7 @@
 
 holds between two biological entities that have common evolutionary origin
 
-URI: [http://bioentity.io/vocab/homologous_to](slot_uri)
+URI: [http://w3id.org/biolink/vocab/homologous_to](slot_uri)
 ## Mappings
 
  * [RO:HOM0000001](http://purl.obolibrary.org/obo/RO_HOM0000001)

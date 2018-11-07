@@ -3,7 +3,7 @@
 
 A subcellular location, cell type or gross anatomical part
 
-URI: [http://bioentity.io/vocab/AnatomicalEntity](http://bioentity.io/vocab/AnatomicalEntity)
+URI: [http://w3id.org/biolink/vocab/AnatomicalEntity](http://w3id.org/biolink/vocab/AnatomicalEntity)
 
 ![img](images/AnatomicalEntity.png)
 ## Mappings

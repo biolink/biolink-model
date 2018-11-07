@@ -3,7 +3,7 @@
 
 An RNA synthesized on a DNA or RNA template by an RNA polymerase
 
-URI: [http://bioentity.io/vocab/Transcript](http://bioentity.io/vocab/Transcript)
+URI: [http://w3id.org/biolink/vocab/Transcript](http://w3id.org/biolink/vocab/Transcript)
 
 ![img](images/Transcript.png)
 ## Mappings

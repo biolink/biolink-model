@@ -3,7 +3,7 @@
 
 An association between a two populations
 
-URI: [http://bioentity.io/vocab/PopulationToPopulationAssociation](http://bioentity.io/vocab/PopulationToPopulationAssociation)
+URI: [http://w3id.org/biolink/vocab/PopulationToPopulationAssociation](http://w3id.org/biolink/vocab/PopulationToPopulationAssociation)
 
 ![img](images/PopulationToPopulationAssociation.png)
 ## Mappings

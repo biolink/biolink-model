@@ -3,7 +3,7 @@
 
 connects a thing to a class representing a taxon
 
-URI: [http://bioentity.io/vocab/in_taxon](slot_uri)
+URI: [http://w3id.org/biolink/vocab/in_taxon](slot_uri)
 ## Mappings
 
  * [RO:0002162](http://purl.obolibrary.org/obo/RO_0002162)

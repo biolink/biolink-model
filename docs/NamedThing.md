@@ -3,7 +3,7 @@
 
 a databased entity or concept/class
 
-URI: [http://bioentity.io/vocab/NamedThing](http://bioentity.io/vocab/NamedThing)
+URI: [http://w3id.org/biolink/vocab/NamedThing](http://w3id.org/biolink/vocab/NamedThing)
 
 ![img](images/NamedThing.png)
 ## Mappings

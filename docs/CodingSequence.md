@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/CodingSequence](http://bioentity.io/vocab/CodingSequence)
+URI: [http://w3id.org/biolink/vocab/CodingSequence](http://w3id.org/biolink/vocab/CodingSequence)
 
 ![img](images/CodingSequence.png)
 ## Mappings

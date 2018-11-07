@@ -3,7 +3,7 @@
 
 List of definitions to be mixed in. Targets may be any definition of the same type
 
-URI: [http://bioentity.io/vocab/mixins](slot_uri)
+URI: [http://w3id.org/biolink/vocab/mixins](slot_uri)
 ## Mappings
 
 ## Domain and Range

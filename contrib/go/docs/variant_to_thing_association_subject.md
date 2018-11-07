@@ -3,7 +3,7 @@
 
 a sequence variant in which the allele state is associated with some other entity
 
-URI: [http://bioentity.io/vocab/variant_to_thing_association_subject](slot_uri)
+URI: [http://w3id.org/biolink/vocab/variant_to_thing_association_subject](slot_uri)
 ## Mappings
 
  * [rdf:subject](http://purl.obolibrary.org/obo/rdf_subject)

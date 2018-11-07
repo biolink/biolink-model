@@ -3,7 +3,7 @@
 
 A grouping for any property that holds between a node and a value
 
-URI: [http://bioentity.io/vocab/node_property](slot_uri)
+URI: [http://w3id.org/biolink/vocab/node_property](slot_uri)
 ## Mappings
 
 ## Domain and Range

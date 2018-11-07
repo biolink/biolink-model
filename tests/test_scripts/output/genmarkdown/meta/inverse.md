@@ -3,7 +3,7 @@
 
 used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')
 
-URI: [http://bioentity.io/vocab/inverse](slot_uri)
+URI: [http://w3id.org/biolink/vocab/inverse](slot_uri)
 ## Mappings
 
  * [owl:inverseOf](http://purl.obolibrary.org/obo/owl_inverseOf)

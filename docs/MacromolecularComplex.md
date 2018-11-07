@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/MacromolecularComplex](http://bioentity.io/vocab/MacromolecularComplex)
+URI: [http://w3id.org/biolink/vocab/MacromolecularComplex](http://w3id.org/biolink/vocab/MacromolecularComplex)
 
 ![img](images/MacromolecularComplex.png)
 ## Mappings

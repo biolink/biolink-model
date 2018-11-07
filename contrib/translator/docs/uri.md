@@ -3,7 +3,7 @@
 
 URI expansion of CURIE
 
-URI: [http://bioentity.io/vocab/uri](slot_uri)
+URI: [http://w3id.org/biolink/vocab/uri](slot_uri)
 ## Mappings
 
  * [@id](@id)

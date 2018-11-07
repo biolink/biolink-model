@@ -3,7 +3,7 @@
 
 An interaction between a chemical entity and another entity
 
-URI: [http://bioentity.io/vocab/ChemicalToThingAssociation](http://bioentity.io/vocab/ChemicalToThingAssociation)
+URI: [http://w3id.org/biolink/vocab/ChemicalToThingAssociation](http://w3id.org/biolink/vocab/ChemicalToThingAssociation)
 
 ![img](images/ChemicalToThingAssociation.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
 
-URI: [http://bioentity.io/vocab/population_to_population_association_relation](slot_uri)
+URI: [http://w3id.org/biolink/vocab/population_to_population_association_relation](slot_uri)
 ## Mappings
 
  * [rdf:predicate](http://purl.obolibrary.org/obo/rdf_predicate)

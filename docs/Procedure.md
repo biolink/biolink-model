@@ -3,7 +3,7 @@
 
 A series of actions conducted in a certain order or manner
 
-URI: [http://bioentity.io/vocab/Procedure](http://bioentity.io/vocab/Procedure)
+URI: [http://w3id.org/biolink/vocab/Procedure](http://w3id.org/biolink/vocab/Procedure)
 
 ![img](images/Procedure.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 Any association between one genotype and a genotypic entity that is a sub-component of it
 
-URI: [http://bioentity.io/vocab/GenotypeToGenotypePartAssociation](http://bioentity.io/vocab/GenotypeToGenotypePartAssociation)
+URI: [http://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation](http://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation)
 
 ![img](images/GenotypeToGenotypePartAssociation.png)
 ## Mappings

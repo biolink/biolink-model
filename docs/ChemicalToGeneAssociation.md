@@ -3,7 +3,7 @@
 
 An interaction between a chemical entity and a gene or gene product
 
-URI: [http://bioentity.io/vocab/ChemicalToGeneAssociation](http://bioentity.io/vocab/ChemicalToGeneAssociation)
+URI: [http://w3id.org/biolink/vocab/ChemicalToGeneAssociation](http://w3id.org/biolink/vocab/ChemicalToGeneAssociation)
 
 ![img](images/ChemicalToGeneAssociation.png)
 ## Mappings

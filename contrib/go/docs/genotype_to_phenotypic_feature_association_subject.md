@@ -3,7 +3,7 @@
 
 genotype that is associated with the phenotypic feature
 
-URI: [http://bioentity.io/vocab/genotype_to_phenotypic_feature_association_subject](slot_uri)
+URI: [http://w3id.org/biolink/vocab/genotype_to_phenotypic_feature_association_subject](slot_uri)
 ## Mappings
 
  * [rdf:subject](http://purl.obolibrary.org/obo/rdf_subject)

@@ -3,7 +3,7 @@
 
 holds between entties that overlap in their extents (materials or processes)
 
-URI: [http://bioentity.io/vocab/overlaps](slot_uri)
+URI: [http://w3id.org/biolink/vocab/overlaps](slot_uri)
 ## Mappings
 
  * [RO:0002131](http://purl.obolibrary.org/obo/RO_0002131)

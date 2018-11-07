@@ -3,7 +3,7 @@
 
 A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
 
-URI: [http://bioentity.io/vocab/GeneToGeneHomologyAssociation](http://bioentity.io/vocab/GeneToGeneHomologyAssociation)
+URI: [http://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation](http://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation)
 
 ![img](images/GeneToGeneHomologyAssociation.png)
 ## Mappings

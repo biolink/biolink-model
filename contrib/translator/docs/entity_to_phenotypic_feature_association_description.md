@@ -3,7 +3,7 @@
 
 A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
 
-URI: [http://bioentity.io/vocab/entity_to_phenotypic_feature_association_description](slot_uri)
+URI: [http://w3id.org/biolink/vocab/entity_to_phenotypic_feature_association_description](slot_uri)
 ## Mappings
 
  * [dcterms:description](http://purl.obolibrary.org/obo/dcterms_description)

@@ -3,7 +3,7 @@
 
 An association between a biosample and something
 
-URI: [http://bioentity.io/vocab/BiosampleToThingAssociation](http://bioentity.io/vocab/BiosampleToThingAssociation)
+URI: [http://w3id.org/biolink/vocab/BiosampleToThingAssociation](http://w3id.org/biolink/vocab/BiosampleToThingAssociation)
 
 ![img](images/BiosampleToThingAssociation.png)
 ## Mappings

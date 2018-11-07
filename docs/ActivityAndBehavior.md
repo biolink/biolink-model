@@ -3,7 +3,7 @@
 
 Activity or behavior of any independent integral living, organization or mechanical actor in the world
 
-URI: [http://bioentity.io/vocab/ActivityAndBehavior](http://bioentity.io/vocab/ActivityAndBehavior)
+URI: [http://w3id.org/biolink/vocab/ActivityAndBehavior](http://w3id.org/biolink/vocab/ActivityAndBehavior)
 
 ![img](images/ActivityAndBehavior.png)
 ## Mappings

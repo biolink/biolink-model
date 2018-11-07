@@ -16,7 +16,7 @@ class ShexEvalTestCase(unittest.TestCase):
         evaluator = ShExEvaluator(g,
                                   os.path.join(base_dir, 'shex', shex_file),
                                   focus,
-                                  "http://bioentity.io/vocab/SchemaDefinition")
+                                  "http://w3id.org/biolink/vocab/SchemaDefinition")
         result = evaluator.evaluate(debug=False)
         for rslt in result:
             if not rslt.result:

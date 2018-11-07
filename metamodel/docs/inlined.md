@@ -3,7 +3,7 @@
 
 if true then the value of this slot is inlined (i.e. a nested object) rather linked by key
 
-URI: [http://bioentity.io/vocab/inlined](slot_uri)
+URI: [http://w3id.org/biolink/vocab/inlined](slot_uri)
 ## Mappings
 
 ## Domain and Range

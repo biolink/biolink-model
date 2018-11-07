@@ -3,7 +3,7 @@
 
 A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
 
-URI: [http://bioentity.io/vocab/MacromolecularMachine](http://bioentity.io/vocab/MacromolecularMachine)
+URI: [http://w3id.org/biolink/vocab/MacromolecularMachine](http://w3id.org/biolink/vocab/MacromolecularMachine)
 
 ![img](images/MacromolecularMachine.png)
 ## Mappings

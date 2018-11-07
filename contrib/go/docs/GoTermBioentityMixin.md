@@ -3,7 +3,7 @@
 
 mixes in GO properties to bio-entities
 
-URI: [http://bioentity.io/vocab/GoTermBioentityMixin](http://bioentity.io/vocab/GoTermBioentityMixin)
+URI: [http://w3id.org/biolink/vocab/GoTermBioentityMixin](http://w3id.org/biolink/vocab/GoTermBioentityMixin)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GoTermBioentityMixin|isa_partof_closure_label:label_type%20*;regulates_closure_label:label_type%20*;full_name(i):label_type%20%3F;systematic_synonym(i):label_type%20%3F]-%20regulates%20closure%20*>\[RelationshipType],%20\[GoTermBioentityMixin]-%20isa%20partof%20closure%20*>\[OntologyClass],%20\[GoTermBioentityMixin]uses%20-.->\[HasGenomicName],%20\[MolecularEntity]uses%20-.->\[GoTermBioentityMixin])
 ## Mappings
