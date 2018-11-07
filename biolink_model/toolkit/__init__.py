@@ -1,4 +1,4 @@
-import os
+import os, biolink_model
 
 from metamodel.metamodel import SchemaDefinition, ClassDefinition, SlotDefinition, ClassDefinitionName, \
     TypeDefinition, Element, SlotDefinitionName, TypeDefinitionName, PrefixLocalName
@@ -18,8 +18,7 @@ def load_generator(schema:Union[str, TextIO, SchemaDefinition]=None) -> ToolkitG
 
     if generator is None:
         if schema is None:
-            path = os.path.join(os.path.dirname(__file__), '..', 'biolink-model.yaml')
-            generator = ToolkitGenerator(path)
+            generator = ToolkitGenerator(biolink_model.path)
             generator.serialize()
         else:
             generator = ToolkitGenerator(schema)

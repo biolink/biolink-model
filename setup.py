@@ -1,4 +1,4 @@
-import sys
+import sys, os, shutil
 
 from setuptools import setup, find_packages
 
@@ -21,6 +21,12 @@ requires = [
 if sys.version_info < (3, 7):
     requires.append("dataclasses")
 
+yaml = 'biolink-model.yaml'
+biolink_model = 'biolink_model'
+
+if os.path.exists(yaml):
+    shutil.copy(yaml, os.path.join(biolink_model, yaml))
+
 setup(
     name='BiolinkMG',
     version= version,
@@ -28,6 +34,7 @@ setup(
     include_package_data=True,
     url='https://github.com/biolink/biolink-model',
     license='CC0 1.0 Universal',
+    package_data={biolink_model : [yaml]},
     install_requires = requires,
     python_requires='>=3.6',
     description='Schema and generated objects for biolink data model and upper ontology',
