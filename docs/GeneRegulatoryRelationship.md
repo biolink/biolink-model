@@ -3,7 +3,7 @@
 
 A regulatory relationship between two genes
 
-URI: [http://bioentity.io/vocab/GeneRegulatoryRelationship](http://bioentity.io/vocab/GeneRegulatoryRelationship)
+URI: [http://w3id.org/biolink/vocab/GeneRegulatoryRelationship](http://w3id.org/biolink/vocab/GeneRegulatoryRelationship)
 
 ![img](images/GeneRegulatoryRelationship.png)
 ## Mappings

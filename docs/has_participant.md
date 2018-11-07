@@ -3,7 +3,7 @@
 
 holds between a process and a continuant, where the continuant is somehow involved in the process
 
-URI: [http://bioentity.io/vocab/has_participant](slot_uri)
+URI: [http://w3id.org/biolink/vocab/has_participant](slot_uri)
 ## Mappings
 
  * [RO:0000057](http://purl.obolibrary.org/obo/RO_0000057)

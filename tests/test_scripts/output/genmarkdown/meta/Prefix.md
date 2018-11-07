@@ -3,7 +3,7 @@
 
 Prefix URI map
 
-URI: [http://bioentity.io/vocab/Prefix](http://bioentity.io/vocab/Prefix)
+URI: [http://w3id.org/biolink/vocab/Prefix](http://w3id.org/biolink/vocab/Prefix)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SchemaDefinition]++-%20prefixes(i)%20*>\[Prefix|local_name:string;prefix_uri:string%20%3F])
 ## Mappings

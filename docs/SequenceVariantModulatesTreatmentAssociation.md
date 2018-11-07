@@ -3,7 +3,7 @@
 
 An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.
 
-URI: [http://bioentity.io/vocab/SequenceVariantModulatesTreatmentAssociation](http://bioentity.io/vocab/SequenceVariantModulatesTreatmentAssociation)
+URI: [http://w3id.org/biolink/vocab/SequenceVariantModulatesTreatmentAssociation](http://w3id.org/biolink/vocab/SequenceVariantModulatesTreatmentAssociation)
 
 ![img](images/SequenceVariantModulatesTreatmentAssociation.png)
 ## Mappings

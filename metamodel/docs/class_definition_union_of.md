@@ -3,7 +3,7 @@
 
 list of class or slot definitions that are combined to create the union class
 
-URI: [http://bioentity.io/vocab/class_definition_union_of](slot_uri)
+URI: [http://w3id.org/biolink/vocab/class_definition_union_of](slot_uri)
 ## Mappings
 
 ## Domain and Range

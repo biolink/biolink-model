@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/BiologicalSex](http://bioentity.io/vocab/BiologicalSex)
+URI: [http://w3id.org/biolink/vocab/BiologicalSex](http://w3id.org/biolink/vocab/BiologicalSex)
 
 ![img](images/BiologicalSex.png)
 ## Mappings

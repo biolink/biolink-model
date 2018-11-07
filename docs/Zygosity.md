@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/Zygosity](http://bioentity.io/vocab/Zygosity)
+URI: [http://w3id.org/biolink/vocab/Zygosity](http://w3id.org/biolink/vocab/Zygosity)
 
 ![img](images/Zygosity.png)
 ## Mappings

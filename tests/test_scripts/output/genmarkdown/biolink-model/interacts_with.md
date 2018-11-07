@@ -3,7 +3,7 @@
 
 holds between any two entities that directly or indirectly interact with each other
 
-URI: [http://bioentity.io/vocab/interacts_with](slot_uri)
+URI: [http://w3id.org/biolink/vocab/interacts_with](slot_uri)
 ## Mappings
 
  * [RO:0002434](http://purl.obolibrary.org/obo/RO_0002434)

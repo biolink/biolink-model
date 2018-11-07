@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/Pathway](http://bioentity.io/vocab/Pathway)
+URI: [http://w3id.org/biolink/vocab/Pathway](http://w3id.org/biolink/vocab/Pathway)
 
 ![img](images/Pathway.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 total number of things in a particular reference set
 
-URI: [http://bioentity.io/vocab/has_total](slot_uri)
+URI: [http://w3id.org/biolink/vocab/has_total](slot_uri)
 ## Mappings
 
 ## Domain and Range

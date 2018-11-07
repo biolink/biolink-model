@@ -3,7 +3,7 @@
 
 mixing class for any entity that has a full name and a systematic synonym
 
-URI: [http://bioentity.io/vocab/HasGenomicName](http://bioentity.io/vocab/HasGenomicName)
+URI: [http://w3id.org/biolink/vocab/HasGenomicName](http://w3id.org/biolink/vocab/HasGenomicName)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GoTermBioentityMixin]uses%20-.->\[HasGenomicName|full_name:label_type%20%3F;systematic_synonym:label_type%20%3F])
 ## Mappings

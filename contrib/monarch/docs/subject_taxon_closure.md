@@ -3,7 +3,7 @@
 
 The taxon class or ancestor class for the subject
 
-URI: [http://bioentity.io/vocab/subject_taxon_closure](slot_uri)
+URI: [http://w3id.org/biolink/vocab/subject_taxon_closure](slot_uri)
 ## Mappings
 
 ## Domain and Range

@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/VariantToDiseaseAssociation](http://bioentity.io/vocab/VariantToDiseaseAssociation)
+URI: [http://w3id.org/biolink/vocab/VariantToDiseaseAssociation](http://w3id.org/biolink/vocab/VariantToDiseaseAssociation)
 
 ![img](images/VariantToDiseaseAssociation.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 a name that is used in the singular form
 
-URI: [http://bioentity.io/vocab/singular_name](slot_uri)
+URI: [http://w3id.org/biolink/vocab/singular_name](slot_uri)
 ## Mappings
 
 ## Domain and Range

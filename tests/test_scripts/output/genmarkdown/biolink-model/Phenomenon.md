@@ -3,7 +3,7 @@
 
 a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
 
-URI: [http://bioentity.io/vocab/Phenomenon](http://bioentity.io/vocab/Phenomenon)
+URI: [http://w3id.org/biolink/vocab/Phenomenon](http://w3id.org/biolink/vocab/Phenomenon)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Phenomenon|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20precedes(i)%20%3F>\[Occurrent],%20\[Phenomenon]-%20has%20input(i)%20%3F>\[NamedThing],%20\[Phenomenon]-%20has%20participant(i)%20%3F>\[NamedThing],%20\[Phenomenon]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[Phenomenon]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Occurrent]^-\[Phenomenon])
 ## Mappings

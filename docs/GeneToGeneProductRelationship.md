@@ -3,7 +3,7 @@
 
 A gene is transcribed and potentially translated to a gene product
 
-URI: [http://bioentity.io/vocab/GeneToGeneProductRelationship](http://bioentity.io/vocab/GeneToGeneProductRelationship)
+URI: [http://w3id.org/biolink/vocab/GeneToGeneProductRelationship](http://w3id.org/biolink/vocab/GeneToGeneProductRelationship)
 
 ![img](images/GeneToGeneProductRelationship.png)
 ## Mappings

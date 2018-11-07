@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/OrganismTaxon](http://bioentity.io/vocab/OrganismTaxon)
+URI: [http://w3id.org/biolink/vocab/OrganismTaxon](http://w3id.org/biolink/vocab/OrganismTaxon)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[OrganismTaxon]-%20related%20to(i)%20%3F>\[NamedThing],%20\[ThingWithTaxon]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[OntologyClass]^-\[OrganismTaxon])
 ## Mappings

@@ -3,7 +3,7 @@
 
 A drug exposure is an intake of a particular chemical substance
 
-URI: [http://bioentity.io/vocab/DrugExposure](http://bioentity.io/vocab/DrugExposure)
+URI: [http://w3id.org/biolink/vocab/DrugExposure](http://w3id.org/biolink/vocab/DrugExposure)
 
 ![img](images/DrugExposure.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
 
-URI: [http://bioentity.io/vocab/affects_uptake_of](slot_uri)
+URI: [http://w3id.org/biolink/vocab/affects_uptake_of](slot_uri)
 ## Mappings
 
  * [SEMMEDDB:AFFECTS](http://purl.obolibrary.org/obo/SEMMEDDB_AFFECTS)

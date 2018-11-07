@@ -3,7 +3,7 @@
 
 Each allele can be associated with any number of genes
 
-URI: [http://bioentity.io/vocab/sequence_variant_has_gene](slot_uri)
+URI: [http://w3id.org/biolink/vocab/sequence_variant_has_gene](slot_uri)
 ## Mappings
 
 ## Domain and Range

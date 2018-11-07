@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/RNAProduct](http://bioentity.io/vocab/RNAProduct)
+URI: [http://w3id.org/biolink/vocab/RNAProduct](http://w3id.org/biolink/vocab/RNAProduct)
 
 ![img](images/RNAProduct.png)
 ## Mappings

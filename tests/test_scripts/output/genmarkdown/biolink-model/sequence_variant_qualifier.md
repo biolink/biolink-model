@@ -3,7 +3,7 @@
 
 a qualifier used in an association where the variant
 
-URI: [http://bioentity.io/vocab/sequence_variant_qualifier](slot_uri)
+URI: [http://w3id.org/biolink/vocab/sequence_variant_qualifier](slot_uri)
 ## Mappings
 
 ## Domain and Range

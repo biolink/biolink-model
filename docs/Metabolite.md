@@ -3,7 +3,7 @@
 
 Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
 
-URI: [http://bioentity.io/vocab/Metabolite](http://bioentity.io/vocab/Metabolite)
+URI: [http://w3id.org/biolink/vocab/Metabolite](http://w3id.org/biolink/vocab/Metabolite)
 
 ![img](images/Metabolite.png)
 ## Mappings

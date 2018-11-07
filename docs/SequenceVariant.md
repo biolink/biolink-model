@@ -3,7 +3,7 @@
 
 An allele that varies in its sequence from what is considered the reference allele at that locus.
 
-URI: [http://bioentity.io/vocab/SequenceVariant](http://bioentity.io/vocab/SequenceVariant)
+URI: [http://w3id.org/biolink/vocab/SequenceVariant](http://w3id.org/biolink/vocab/SequenceVariant)
 
 ![img](images/SequenceVariant.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/PhysiologicalProcess](http://bioentity.io/vocab/PhysiologicalProcess)
+URI: [http://w3id.org/biolink/vocab/PhysiologicalProcess](http://w3id.org/biolink/vocab/PhysiologicalProcess)
 
 ![img](images/PhysiologicalProcess.png)
 ## Mappings

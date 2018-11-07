@@ -3,7 +3,7 @@
 
 An relationship between a cell line and another entity
 
-URI: [http://bioentity.io/vocab/CellLineToThingAssociation](http://bioentity.io/vocab/CellLineToThingAssociation)
+URI: [http://w3id.org/biolink/vocab/CellLineToThingAssociation](http://w3id.org/biolink/vocab/CellLineToThingAssociation)
 
 ![img](images/CellLineToThingAssociation.png)
 ## Mappings

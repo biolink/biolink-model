@@ -3,7 +3,7 @@
 
 holds between two entities where exposure to one entity increases the chance of developing the other
 
-URI: [http://bioentity.io/vocab/predisposes](slot_uri)
+URI: [http://w3id.org/biolink/vocab/predisposes](slot_uri)
 ## Mappings
 
  * [SEMMEDDB:PREDISPOSES](http://purl.obolibrary.org/obo/SEMMEDDB_PREDISPOSES)

@@ -3,7 +3,7 @@
 
 The relationship to the disease
 
-URI: [http://bioentity.io/vocab/model_to_disease_mixin_relation](slot_uri)
+URI: [http://w3id.org/biolink/vocab/model_to_disease_mixin_relation](slot_uri)
 ## Mappings
 
  * [rdf:predicate](http://purl.obolibrary.org/obo/rdf_predicate)

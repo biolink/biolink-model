@@ -3,7 +3,7 @@
 
 holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other
 
-URI: [http://bioentity.io/vocab/causes](slot_uri)
+URI: [http://w3id.org/biolink/vocab/causes](slot_uri)
 ## Mappings
 
  * [RO:0002410](http://purl.obolibrary.org/obo/RO_0002410)

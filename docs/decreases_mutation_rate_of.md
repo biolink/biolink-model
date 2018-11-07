@@ -3,7 +3,7 @@
 
 holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest
 
-URI: [http://bioentity.io/vocab/decreases_mutation_rate_of](slot_uri)
+URI: [http://w3id.org/biolink/vocab/decreases_mutation_rate_of](slot_uri)
 ## Mappings
 
  * [SEMMEDDB:AFFECTS](http://purl.obolibrary.org/obo/SEMMEDDB_AFFECTS)

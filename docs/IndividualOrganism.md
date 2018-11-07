@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/IndividualOrganism](http://bioentity.io/vocab/IndividualOrganism)
+URI: [http://w3id.org/biolink/vocab/IndividualOrganism](http://w3id.org/biolink/vocab/IndividualOrganism)
 
 ![img](images/IndividualOrganism.png)
 ## Mappings

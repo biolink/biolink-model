@@ -3,7 +3,7 @@
 
 A list of modules that are imported into the schema
 
-URI: [http://bioentity.io/vocab/imports](slot_uri)
+URI: [http://w3id.org/biolink/vocab/imports](slot_uri)
 ## Mappings
 
 ## Domain and Range

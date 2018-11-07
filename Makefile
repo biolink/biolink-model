@@ -166,7 +166,7 @@ ontology/%.obo: ontology/%.ttl
 	owltools $< -o -f obo --no-check $@
 
 ontology/%.omn: ontology/%.ttl
-	owltools $< -o -f omn --prefix '' http://bioentity.io/vocab/ --prefix def http://purl.obolibrary.org/obo/IAO_0000115 $@
+	owltools $< -o -f omn --prefix '' http://w3id.org/biolink/vocab/ --prefix def http://purl.obolibrary.org/obo/IAO_0000115 $@
 
 ontology/%.tree: ontology/%.json
 	ogr --showdefs -t tree -r $< % > $@

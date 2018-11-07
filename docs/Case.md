@@ -3,7 +3,7 @@
 
 An individual organism that has a patient role in some clinical context.
 
-URI: [http://bioentity.io/vocab/Case](http://bioentity.io/vocab/Case)
+URI: [http://w3id.org/biolink/vocab/Case](http://w3id.org/biolink/vocab/Case)
 
 ![img](images/Case.png)
 ## Mappings

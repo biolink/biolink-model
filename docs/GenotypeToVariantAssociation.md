@@ -3,7 +3,7 @@
 
 Any association between a genotype and a sequence variant.
 
-URI: [http://bioentity.io/vocab/GenotypeToVariantAssociation](http://bioentity.io/vocab/GenotypeToVariantAssociation)
+URI: [http://w3id.org/biolink/vocab/GenotypeToVariantAssociation](http://w3id.org/biolink/vocab/GenotypeToVariantAssociation)
 
 ![img](images/GenotypeToVariantAssociation.png)
 ## Mappings

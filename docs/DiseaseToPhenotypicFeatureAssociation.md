@@ -3,7 +3,7 @@
 
 An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
 
-URI: [http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation](http://bioentity.io/vocab/DiseaseToPhenotypicFeatureAssociation)
+URI: [http://w3id.org/biolink/vocab/DiseaseToPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/DiseaseToPhenotypicFeatureAssociation)
 
 ![img](images/DiseaseToPhenotypicFeatureAssociation.png)
 ## Mappings

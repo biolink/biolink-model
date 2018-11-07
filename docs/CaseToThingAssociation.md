@@ -3,7 +3,7 @@
 
 An abstract association for use where the case is the subject
 
-URI: [http://bioentity.io/vocab/CaseToThingAssociation](http://bioentity.io/vocab/CaseToThingAssociation)
+URI: [http://w3id.org/biolink/vocab/CaseToThingAssociation](http://w3id.org/biolink/vocab/CaseToThingAssociation)
 
 ![img](images/CaseToThingAssociation.png)
 ## Mappings

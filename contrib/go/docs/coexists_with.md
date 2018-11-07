@@ -3,7 +3,7 @@
 
 holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region
 
-URI: [http://bioentity.io/vocab/coexists_with](slot_uri)
+URI: [http://w3id.org/biolink/vocab/coexists_with](slot_uri)
 ## Mappings
 
  * [SEMMEDDB:COEXISTS_WITH](http://purl.obolibrary.org/obo/SEMMEDDB_COEXISTS_WITH)

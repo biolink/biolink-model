@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/MicroRNA](http://bioentity.io/vocab/MicroRNA)
+URI: [http://w3id.org/biolink/vocab/MicroRNA](http://w3id.org/biolink/vocab/MicroRNA)
 
 ![img](images/MicroRNA.png)
 ## Mappings

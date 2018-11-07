@@ -3,7 +3,7 @@
 
 An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
 
-URI: [http://bioentity.io/vocab/PhenotypicSex](http://bioentity.io/vocab/PhenotypicSex)
+URI: [http://w3id.org/biolink/vocab/PhenotypicSex](http://w3id.org/biolink/vocab/PhenotypicSex)
 
 ![img](images/PhenotypicSex.png)
 ## Mappings

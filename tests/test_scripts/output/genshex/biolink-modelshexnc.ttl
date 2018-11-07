@@ -1,14 +1,11 @@
-@prefix biolink: <http://bioentity.io/vocab/> .
-@prefix meta: <http://bioentity.io/meta/> .
+@prefix biolink: <http://w3id.org/biolink/vocab/> .
+@prefix meta: <http://w3id.org/biolink/vocab/meta/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix shex: <http://www.w3.org/ns/shex#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-meta:SlotRangeTypes a shex:ShapeOr ;
-    shex:shapeExprs ( biolink:TypeDefinition biolink:ClassDefinition meta:Builtins ) .
 
 biolink:ActivityAndBehavior a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Occurrent [ a shex:Shape ] ) .
@@ -546,9 +543,8 @@ biolink:VariantToPopulationAssociation a shex:ShapeAnd ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:integer ] ] ) ] ] ) .
 
-meta:Builtins a shex:NodeConstraint ;
-    shex:values ( [ a shex:IriStem ;
-                shex:stem "http://www.w3.org/2001/XMLSchema#"^^xsd:string ] ) .
+meta:SlotRangeTypes a shex:ShapeOr ;
+    shex:shapeExprs ( biolink:TypeDefinition biolink:ClassDefinition meta:Builtins ) .
 
 biolink:AdministrativeEntity a shex:Shape .
 
@@ -755,6 +751,10 @@ biolink:Treatment a shex:ShapeAnd ;
 
 biolink:Zygosity a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Attribute [ a shex:Shape ] ) .
+
+meta:Builtins a shex:NodeConstraint ;
+    shex:values ( [ a shex:IriStem ;
+                shex:stem "http://www.w3.org/2001/XMLSchema#"^^xsd:string ] ) .
 
 biolink:AnatomicalEntityToAnatomicalEntityAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
@@ -1402,9 +1402,7 @@ biolink:MolecularEntity a shex:ShapeAnd ;
                                     shex:valueExpr biolink:DiseaseOrPhenotypicFeature ] ) ] ] ) .
 
 [] a shex:Schema ;
-    shex:shapes meta:Builtins,
-        meta:SlotRangeTypes,
-        biolink:ActivityAndBehavior,
+    shex:shapes biolink:ActivityAndBehavior,
         biolink:AdministrativeEntity,
         biolink:AnatomicalEntity,
         biolink:AnatomicalEntityToAnatomicalEntityAssociation,
@@ -1548,7 +1546,9 @@ biolink:MolecularEntity a shex:ShapeAnd ;
         biolink:VariantToPhenotypicFeatureAssociation,
         biolink:VariantToPopulationAssociation,
         biolink:VariantToThingAssociation,
-        biolink:Zygosity .
+        biolink:Zygosity,
+        meta:Builtins,
+        meta:SlotRangeTypes .
 
 
 

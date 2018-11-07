@@ -3,7 +3,7 @@
 
 any grouping of multiple genes or gene products
 
-URI: [http://bioentity.io/vocab/GeneGrouping](http://bioentity.io/vocab/GeneGrouping)
+URI: [http://w3id.org/biolink/vocab/GeneGrouping](http://w3id.org/biolink/vocab/GeneGrouping)
 
 ![img](images/GeneGrouping.png)
 ## Mappings

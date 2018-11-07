@@ -3,7 +3,7 @@
 
 a closure slot that includes a taxon and all ancestral taxa
 
-URI: [http://bioentity.io/vocab/taxon_closure_slot](slot_uri)
+URI: [http://w3id.org/biolink/vocab/taxon_closure_slot](slot_uri)
 ## Mappings
 
 ## Domain and Range

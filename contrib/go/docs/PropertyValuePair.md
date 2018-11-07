@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/PropertyValuePair](http://bioentity.io/vocab/PropertyValuePair)
+URI: [http://w3id.org/biolink/vocab/PropertyValuePair](http://w3id.org/biolink/vocab/PropertyValuePair)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PropertyValuePair]-%20filler%20%3F>\[NamedThing],%20\[PropertyValuePair]-%20relation>\[RelationshipType],%20\[Association]-%20extensions%20context%20slot(i)%20*>\[PropertyValuePair],%20\[ExtensionsAndEvidenceAssociationMixin]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[Association]-%20subject%20extensions(i)%20*>\[PropertyValuePair])
 ## Mappings

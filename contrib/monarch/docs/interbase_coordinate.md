@@ -3,7 +3,7 @@
 
 TODO
 
-URI: [http://bioentity.io/vocab/interbase_coordinate](slot_uri)
+URI: [http://w3id.org/biolink/vocab/interbase_coordinate](slot_uri)
 ## Mappings
 
 ## Domain and Range

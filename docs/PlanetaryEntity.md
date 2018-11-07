@@ -3,7 +3,7 @@
 
 Any entity or process that exists at the level of the whole planet
 
-URI: [http://bioentity.io/vocab/PlanetaryEntity](http://bioentity.io/vocab/PlanetaryEntity)
+URI: [http://w3id.org/biolink/vocab/PlanetaryEntity](http://w3id.org/biolink/vocab/PlanetaryEntity)
 
 ![img](images/PlanetaryEntity.png)
 ## Mappings

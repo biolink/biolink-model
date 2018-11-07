@@ -3,7 +3,7 @@
 
 Class of evidence that supports an association
 
-URI: [http://bioentity.io/vocab/EvidenceType](http://bioentity.io/vocab/EvidenceType)
+URI: [http://w3id.org/biolink/vocab/EvidenceType](http://w3id.org/biolink/vocab/EvidenceType)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EvidenceType|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[InformationContentEntity]^-\[EvidenceType])
 ## Mappings

@@ -3,7 +3,7 @@
 
 A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
 
-URI: [http://bioentity.io/vocab/Exon](http://bioentity.io/vocab/Exon)
+URI: [http://w3id.org/biolink/vocab/Exon](http://w3id.org/biolink/vocab/Exon)
 
 ![img](images/Exon.png)
 ## Mappings

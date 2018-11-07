@@ -3,7 +3,7 @@
 
 a sequence variant in which the allele state is associated in some way with the disease state
 
-URI: [http://bioentity.io/vocab/variant_to_disease_association_subject](slot_uri)
+URI: [http://w3id.org/biolink/vocab/variant_to_disease_association_subject](slot_uri)
 ## Mappings
 
  * [rdf:subject](http://purl.obolibrary.org/obo/rdf_subject)

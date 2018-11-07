@@ -3,7 +3,7 @@
 
 A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
 
-URI: [http://bioentity.io/vocab/Device](http://bioentity.io/vocab/Device)
+URI: [http://w3id.org/biolink/vocab/Device](http://w3id.org/biolink/vocab/Device)
 
 ![img](images/Device.png)
 ## Mappings

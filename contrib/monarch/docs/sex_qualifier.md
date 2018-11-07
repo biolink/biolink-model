@@ -3,7 +3,7 @@
 
 a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
 
-URI: [http://bioentity.io/vocab/sex_qualifier](slot_uri)
+URI: [http://w3id.org/biolink/vocab/sex_qualifier](slot_uri)
 ## Mappings
 
 ## Domain and Range

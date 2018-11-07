@@ -3,7 +3,7 @@
 
 a disease that is associated with that variant
 
-URI: [http://bioentity.io/vocab/variant_to_disease_association_object](slot_uri)
+URI: [http://w3id.org/biolink/vocab/variant_to_disease_association_object](slot_uri)
 ## Mappings
 
  * [rdf:object](http://purl.obolibrary.org/obo/rdf_object)

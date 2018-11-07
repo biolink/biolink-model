@@ -3,7 +3,7 @@
 
 the direction is always from regulator to regulated
 
-URI: [http://bioentity.io/vocab/gene_regulatory_relationship_relation](slot_uri)
+URI: [http://w3id.org/biolink/vocab/gene_regulatory_relationship_relation](slot_uri)
 ## Mappings
 
  * [rdf:predicate](http://purl.obolibrary.org/obo/rdf_predicate)

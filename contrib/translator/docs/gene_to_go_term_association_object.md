@@ -3,7 +3,7 @@
 
 class describing the activity, process or localization of the gene product
 
-URI: [http://bioentity.io/vocab/gene_to_go_term_association_object](slot_uri)
+URI: [http://w3id.org/biolink/vocab/gene_to_go_term_association_object](slot_uri)
 ## Mappings
 
  * [rdf:object](http://purl.obolibrary.org/obo/rdf_object)

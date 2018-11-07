@@ -3,7 +3,7 @@
 
 longitude
 
-URI: [http://bioentity.io/vocab/longitude](slot_uri)
+URI: [http://w3id.org/biolink/vocab/longitude](slot_uri)
 ## Mappings
 
  * [wgs:long](http://purl.obolibrary.org/obo/wgs_long)

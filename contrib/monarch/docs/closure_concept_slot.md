@@ -3,7 +3,7 @@
 
 parent field for fields used for storing inferred relationships to a class or relation
 
-URI: [http://bioentity.io/vocab/closure_concept_slot](slot_uri)
+URI: [http://w3id.org/biolink/vocab/closure_concept_slot](slot_uri)
 ## Mappings
 
 ## Domain and Range

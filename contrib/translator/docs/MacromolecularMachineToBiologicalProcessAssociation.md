@@ -3,9 +3,9 @@
 
 A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
 
-URI: [http://bioentity.io/vocab/MacromolecularMachineToBiologicalProcessAssociation](http://bioentity.io/vocab/MacromolecularMachineToBiologicalProcessAssociation)
+URI: [http://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation](http://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MacromolecularMachineToBiologicalProcessAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20subject(i)>\[MacromolecularMachine],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20publications(i)%20*>\[Publication],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20relation(i)>\[RelationshipType],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20object>\[BiologicalProcess],%20\[FunctionalAssociation]^-\[MacromolecularMachineToBiologicalProcessAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MacromolecularMachineToBiologicalProcessAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20subject(i)>\[MacromolecularMachine],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20publications(i)%20*>\[Publication],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20relation(i)>\[RelationshipType],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20object>\[BiologicalProcess],%20\[FunctionalAssociation]^-\[MacromolecularMachineToBiologicalProcessAssociation])
 ## Mappings
 
 ## Inheritance
@@ -31,7 +31,7 @@ URI: [http://bioentity.io/vocab/MacromolecularMachineToBiologicalProcessAssociat
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

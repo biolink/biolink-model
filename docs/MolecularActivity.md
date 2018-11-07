@@ -3,7 +3,7 @@
 
 An execution of a molecular function carried out by a gene product or macromolecular complex.
 
-URI: [http://bioentity.io/vocab/MolecularActivity](http://bioentity.io/vocab/MolecularActivity)
+URI: [http://w3id.org/biolink/vocab/MolecularActivity](http://w3id.org/biolink/vocab/MolecularActivity)
 
 ![img](images/MolecularActivity.png)
 ## Mappings

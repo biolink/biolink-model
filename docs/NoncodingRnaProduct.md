@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/NoncodingRNAProduct](http://bioentity.io/vocab/NoncodingRNAProduct)
+URI: [http://w3id.org/biolink/vocab/NoncodingRNAProduct](http://w3id.org/biolink/vocab/NoncodingRNAProduct)
 
 ![img](images/NoncodingRNAProduct.png)
 ## Mappings

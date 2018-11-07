@@ -3,7 +3,7 @@
 
 Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
 
-URI: [http://bioentity.io/vocab/Publication](http://bioentity.io/vocab/Publication)
+URI: [http://w3id.org/biolink/vocab/Publication](http://w3id.org/biolink/vocab/Publication)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Publication|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Association]-%20publications(i)%20*>\[Publication],%20\[InformationContentEntity]^-\[Publication])
 ## Mappings

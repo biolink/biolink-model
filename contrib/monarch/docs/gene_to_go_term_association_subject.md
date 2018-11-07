@@ -3,7 +3,7 @@
 
 gene, product or macromolecular complex that has the function associated with the GO term
 
-URI: [http://bioentity.io/vocab/gene_to_go_term_association_subject](slot_uri)
+URI: [http://w3id.org/biolink/vocab/gene_to_go_term_association_subject](slot_uri)
 ## Mappings
 
  * [rdf:subject](http://purl.obolibrary.org/obo/rdf_subject)

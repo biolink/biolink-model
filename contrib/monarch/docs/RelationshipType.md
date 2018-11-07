@@ -3,7 +3,7 @@
 
 An OWL property used as an edge label
 
-URI: [http://bioentity.io/vocab/RelationshipType](http://bioentity.io/vocab/RelationshipType)
+URI: [http://w3id.org/biolink/vocab/RelationshipType](http://w3id.org/biolink/vocab/RelationshipType)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20relation(i)>\[RelationshipType],%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneRegulatoryRelationship]-%20relation(i)>\[RelationshipType],%20\[GeneToExpressionSiteAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToGeneHomologyAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToGeneProductRelationship]-%20relation(i)>\[RelationshipType],%20\[GenotypeToGeneAssociation]-%20relation(i)>\[RelationshipType],%20\[GenotypeToGenotypePartAssociation]-%20relation(i)>\[RelationshipType],%20\[GenotypeToPhenotypicFeatureAssociation]-%20relation(i)>\[RelationshipType],%20\[GenotypeToVariantAssociation]-%20relation(i)>\[RelationshipType],%20\[ModelToDiseaseMixin]-%20relation(i)>\[RelationshipType],%20\[PairwiseGeneToGeneInteraction]-%20relation(i)>\[RelationshipType],%20\[PairwiseInteractionAssociation]-%20relation(i)>\[RelationshipType],%20\[PopulationToPopulationAssociation]-%20relation(i)>\[RelationshipType],%20\[Association]-%20relation(i)>\[RelationshipType],%20\[VariantToDiseaseAssociation]-%20relation(i)>\[RelationshipType])
 ## Mappings

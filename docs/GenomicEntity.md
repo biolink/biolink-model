@@ -3,7 +3,7 @@
 
 an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
 
-URI: [http://bioentity.io/vocab/GenomicEntity](http://bioentity.io/vocab/GenomicEntity)
+URI: [http://w3id.org/biolink/vocab/GenomicEntity](http://w3id.org/biolink/vocab/GenomicEntity)
 
 ![img](images/GenomicEntity.png)
 ## Mappings

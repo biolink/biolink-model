@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/see_also](slot_uri)
+URI: [http://w3id.org/biolink/vocab/see_also](slot_uri)
 ## Mappings
 
  * [skos:related](http://purl.obolibrary.org/obo/skos_related)
