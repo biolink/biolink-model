@@ -35,14 +35,16 @@ def is_edgelabel(s:str) -> bool:
     if ' ' in s:
         return False
     else:
-        return 'related to' in load_generator().ancestors(s.replace('_', ' '))
+        ancestors = load_generator().ancestors(s.replace('_', ' '))
+        return 'related to' in ancestors
 
 def is_category(s:str) -> bool:
     """
     Takes a string and checks that it is a category: that it inherits
     from "named thing"
     """
-    return 'named thing' in load_generator().ancestors(s)
+    ancestors = load_generator().ancestors(s)
+    return 'named thing' in ancestors and 'association' not in ancestors
 
 def get_element(name:str) -> Optional[Element]:
     return load_generator().obj_for(name.replace('_', ' '))
