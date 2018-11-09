@@ -1619,7 +1619,13 @@ classes:
     abstract: true
     mappings:
       - WD:Q28845870
-        
+
+  food component:
+    is_a: biological entity
+    abstract: true
+    mappings:
+      - CHEBI:78295
+
   ontology class:
     is_a: named thing
     description: "a concept or class in an ontology, vocabulary or thesaurus"
@@ -1638,13 +1644,14 @@ classes:
       A mixin that can be used on any entity with a taxon
     slots:
       - in taxon
-      
+
   organism taxon:
     is_a: ontology class
     values_from:
       - NCBITaxon
     mappings:
       - WD:Q16521
+      - NCBITaxon:1
       
   organismal entity:
     description: >-
@@ -1689,6 +1696,14 @@ classes:
     is_a: organismal entity
     mappings:
       - SIO:001050
+
+  phenotypic quality:
+    aliases: ['phenotypic properties']
+    is_a: named thing
+    description: >-
+      A property of a phenotype
+    mappings:
+      - PATO:0000001
       
   disease or phenotypic feature:
     aliases: ['phenome']
@@ -1706,6 +1721,8 @@ classes:
     is_a: disease or phenotypic feature
     mappings:
       - "MONDO:0000001"
+      - DOID:4
+      - NCIT:C2991
       - "WD:Q12136"
       - SIO:010299
       - UMLSSG:DISO
@@ -1715,6 +1732,7 @@ classes:
     is_a: disease or phenotypic feature
     mappings:
       - "UPHENO:0001001"
+      - HP:0000001
       - SIO:010056
       - WD:Q169872
       
@@ -1799,6 +1817,7 @@ classes:
       - "SIO:010004"
       - "UMLSSG:CHEM"
       - "WD:Q79529"
+      - "CHEBI:24431"
     id_prefixes:
       - CHEMBL.TARGET
       
@@ -1811,7 +1830,7 @@ classes:
     mappings:
       - WD:Q12140
       - CHEBI:23888
-      
+
   metabolite:
     is_a: chemical substance
     description: >-
@@ -1839,6 +1858,17 @@ classes:
       - "UMLSSG:ANAT"
       - SIO:010046
       - WD:Q4936952
+      - UBERON:0001062
+
+  pathological entity:
+    is_a: organismal entity
+    mixins:
+      - thing with taxon
+    subclass_of: UBERON:0001062
+    description: >-
+      A pathological structure or process
+    mappings:
+      - MPATH:0
 
   life stage:
     is_a: organismal entity
@@ -1847,6 +1877,8 @@ classes:
     subclass_of: UBERON:0000105
     description: >-
       A stage of development or growth of an organism, including post-natal adult stages
+    mappings:
+      - OBO:HsapDv_0000000
 
   planetary entity:
     is_a: named thing
@@ -3115,6 +3147,8 @@ classes:
         range: genomic entity  ## todo protein
       object:
         range: genomic entity ## typically a chromosome
+    mappings:
+      - GMODChado:feature_relationship
 
   transcript to gene relationship:
     is_a: sequence feature relationship
@@ -3245,13 +3279,15 @@ classes:
 
   molecular activity:
     is_a: biological process or activity
-    aliases: ['molecular function', 'molecular event', 'reaction']
+    aliases: ['molecular function', 'molecular event', 'reaction', 'biological role', 'chemical role']
     mixins:
       - occurrent
     description: >-
       An execution of a molecular function carried out by a gene product or macromolecular complex.
     mappings:
       - "GO:0003674"
+      - CHEBI:51086
+      - CHEBI:24432
     id_prefixes:
       - GO
       - Reactome
@@ -3262,6 +3298,8 @@ classes:
       Activity or behavior of any independent integral living, organization or mechanical actor in the world
     mappings:
       - "UMLSSG:ACTI"
+      - NBO:0000313
+      - NBO:0000243
 
   procedure:
     is_a: occurrent
