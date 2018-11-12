@@ -176,10 +176,52 @@ metamodel:
       mappings:
           multivalued: true
           domain: element
+          inherited: false
+          inlined: false
+          description: >-
+            a list of terms from different schemas or terminology systems that have comparable meaning. These may include terms that are precisely equivalent, broader or narrower in meaning, or otherwise semantically related but not equivalent from a strict ontological perspective.
+          exact_matches:
+            - skos:mappingRelation
+
+      exact_matches:
+          multivalued: true
+          domain: element
           inherited: true
           inlined: false
           description: >-
-            list of equivalent or skos exact mappings to an ontology class
+            a list of terms from different schemas or terminology systems that have strictly equivalent meanings. 
+          exact_matches:
+            - skos:exactMatch
+
+      broader_matches:
+          multivalued: true
+          domain: element
+          inherited: true
+          inlined: false
+          description: >-
+            a list of terms from different schemas or terminology systems that have a braoder, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
+          exact_matches:
+            - skos:broadMatch
+
+      narrower_matches:
+          multivalued: true
+          domain: element
+          inherited: true
+          inlined: false
+          description: >-
+            a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
+          exact_matches:
+            - skos:narrowMatch
+
+      close_matches:
+          multivalued: true
+          domain: element
+          inherited: false
+          inlined: false
+          description: >-
+            a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
+          exact_matches:
+            - skos:closeMatch
 
       #
       # Slots for all definitions (slot and class)
