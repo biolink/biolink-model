@@ -38,7 +38,7 @@
           <http://w3id.org/biolink/vocab/slot_usage> @<http://w3id.org/biolink/vocab/SlotDefinition__List> ? ;
           <http://w3id.org/biolink/vocab/apply_to> @<http://w3id.org/biolink/vocab/ClassDefinition> ? ;
           <http://w3id.org/biolink/vocab/entity> <http://www.w3.org/2001/XMLSchema#boolean> ? ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> @<http://w3id.org/biolink/vocab/ClassDefinition> ? ;
+          <http://w3id.org/biolink/vocab/class_definition_is_a> @<http://w3id.org/biolink/vocab/ClassDefinition> ? ;
           <http://w3id.org/biolink/vocab/class_definition_mixins> @<http://w3id.org/biolink/vocab/ClassDefinition__List> ? ;
           <http://w3id.org/biolink/vocab/class_definition_union_of> @<http://w3id.org/biolink/vocab/ClassDefinition__List> ?
        )
@@ -106,11 +106,15 @@
        <https://www.w3.org/TR/skos-reference/#related> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://w3id.org/biolink/vocab/flags> @<XSD_string__List> ? ;
        <http://w3id.org/biolink/vocab/aliases> @<XSD_string__List> ? ;
-       <http://w3id.org/biolink/vocab/mappings> @<XSD_string__List> ? ;
+       <https://www.w3.org/TR/skos-reference/#mappingRelation> @<XSD_string__List> ? ;
        <http://w3id.org/biolink/vocab/id_prefixes> @<XSD_string__List> ? ;
        <http://www.geneontology.org/formats/oboInOwl#inSubset> @<XSD_string__List> ? ;
        <https://www.w3.org/TR/skos-reference/#inScheme> <http://www.w3.org/2001/XMLSchema#string> ? ;
-       <http://w3id.org/biolink/vocab/alt_descriptions> @<http://w3id.org/biolink/vocab/AltDescription__List> ?
+       <http://w3id.org/biolink/vocab/alt_descriptions> @<http://w3id.org/biolink/vocab/AltDescription__List> ? ;
+       <https://www.w3.org/TR/skos-reference/#exactMatch> @<XSD_string__List> ? ;
+       <https://www.w3.org/TR/skos-reference/#broadMatch> @<XSD_string__List> ? ;
+       <https://www.w3.org/TR/skos-reference/#narrowMatch> @<XSD_string__List> ? ;
+       <https://www.w3.org/TR/skos-reference/#closeMatch> @<XSD_string__List> ?
     )
 }
 
@@ -184,7 +188,7 @@
           <http://w3id.org/biolink/vocab/is_class_field> <http://www.w3.org/2001/XMLSchema#boolean> ? ;
           <http://w3id.org/biolink/vocab/role> <http://www.w3.org/2001/XMLSchema#string> ? ;
           <http://w3id.org/biolink/vocab/inherited> <http://www.w3.org/2001/XMLSchema#boolean> ? ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> @<http://w3id.org/biolink/vocab/SlotDefinition> ? ;
+          <http://w3id.org/biolink/vocab/slot_definition_is_a> @<http://w3id.org/biolink/vocab/SlotDefinition> ? ;
           <http://w3id.org/biolink/vocab/slot_definition_mixins> @<http://w3id.org/biolink/vocab/SlotDefinition__List> ? ;
           <http://w3id.org/biolink/vocab/slot_definition_union_of> @<http://w3id.org/biolink/vocab/SlotDefinition__List> ?
        )

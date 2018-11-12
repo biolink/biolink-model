@@ -6,7 +6,6 @@ descriptive textual title
 URI: [http://w3id.org/biolink/vocab/named_graph_title](slot_uri)
 ## Mappings
 
- * [dc:title](http://purl.obolibrary.org/obo/dc_title)
 ## Domain and Range
 
 [NamedGraph](NamedGraph.md) -> [LabelType](LabelType.md)

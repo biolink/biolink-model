@@ -99,11 +99,23 @@ bioentity:apply_to a owl:AnnotationProperty ;
     rdfs:domain bioentity:ClassDefinition ;
     rdfs:range bioentity:ClassDefinition .
 
+bioentity:broader_matches a owl:AnnotationProperty ;
+    rdfs:label "broader_matches" ;
+    obo:IAO_0000115 "a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree." ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
 bioentity:classes a owl:AnnotationProperty ;
     rdfs:label "classes" ;
     obo:IAO_0000115 "classes defined in schema" ;
     rdfs:domain bioentity:SchemaDefinition ;
     rdfs:range bioentity:ClassDefinition .
+
+bioentity:close_matches a owl:AnnotationProperty ;
+    rdfs:label "close_matches" ;
+    obo:IAO_0000115 "a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity)." ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
 
 bioentity:comment a owl:AnnotationProperty ;
     rdfs:label "comment" ;
@@ -150,6 +162,12 @@ bioentity:entity a owl:AnnotationProperty ;
     rdfs:label "entity" ;
     rdfs:domain bioentity:ClassDefinition ;
     rdfs:range xsd:boolean .
+
+bioentity:exact_matches a owl:AnnotationProperty ;
+    rdfs:label "exact_matches" ;
+    obo:IAO_0000115 "a list of terms from different schemas or terminology systems that have strictly equivalent meanings. " ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
 
 bioentity:examples a owl:AnnotationProperty ;
     rdfs:label "examples" ;
@@ -247,7 +265,7 @@ bioentity:local_names a owl:AnnotationProperty ;
 
 bioentity:mappings a owl:AnnotationProperty ;
     rdfs:label "mappings" ;
-    obo:IAO_0000115 "list of equivalent or skos exact mappings to an ontology class" ;
+    obo:IAO_0000115 "a list of terms from different schemas or terminology systems that have comparable meaning. These may include terms that are precisely equivalent, broader or narrower in meaning, or otherwise semantically related but not equivalent from a strict ontological perspective." ;
     rdfs:domain bioentity:Element ;
     rdfs:range xsd:string .
 
@@ -272,6 +290,12 @@ bioentity:multivalued a owl:AnnotationProperty ;
 bioentity:name a owl:AnnotationProperty ;
     rdfs:label "name" ;
     obo:IAO_0000115 "a unique key that identifies a slot, type or class in a schema" ;
+    rdfs:domain bioentity:Element ;
+    rdfs:range xsd:string .
+
+bioentity:narrower_matches a owl:AnnotationProperty ;
+    rdfs:label "narrower_matches" ;
+    obo:IAO_0000115 "a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree." ;
     rdfs:domain bioentity:Element ;
     rdfs:range xsd:string .
 
@@ -433,11 +457,11 @@ bioentity:AltDescription a owl:Class ;
     obo:IAO_0000115 "Attributed description" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:description ;
+            owl:onProperty bioentity:source ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:source ;
+            owl:onProperty bioentity:description ;
             owl:someValuesFrom xsd:string ] .
 
 bioentity:Example a owl:Class ;
@@ -445,23 +469,23 @@ bioentity:Example a owl:Class ;
     obo:IAO_0000115 "example of usage" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:value ;
+            owl:onProperty bioentity:description ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:description ;
+            owl:onProperty bioentity:value ;
             owl:someValuesFrom xsd:string ] .
 
 bioentity:Prefix a owl:Class ;
     rdfs:label "prefix" ;
     obo:IAO_0000115 "Prefix URI map" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:local_name ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:prefix_uri ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:local_name ;
             owl:someValuesFrom xsd:string ] .
 
 bioentity:TypeDefinition a owl:Class ;
@@ -491,84 +515,16 @@ bioentity:union_of a owl:AnnotationProperty ;
     rdfs:domain bioentity:Definition ;
     rdfs:range bioentity:Definition .
 
-bioentity:Element a owl:Class ;
-    rdfs:label "element" ;
-    obo:IAO_0000115 "root of all described things" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty bioentity:flags ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:mappings ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:description ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:from_schema ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:comment ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:singular_name ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:in_subset ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:alt_descriptions ;
-            owl:someValuesFrom bioentity:AltDescription ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:name ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:examples ;
-            owl:someValuesFrom bioentity:Example ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:note ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:id_prefixes ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:aliases ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:see_also ;
-            owl:someValuesFrom xsd:string ] .
-
 bioentity:SchemaDefinition a owl:Class ;
     rdfs:label "schema definition" ;
     obo:IAO_0000115 "A collection of definitions" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:default_prefix ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:id ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:source_file_date ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:slots ;
-            owl:someValuesFrom bioentity:SlotDefinition ],
+            owl:onProperty bioentity:source_file_size ;
+            owl:someValuesFrom xsd:integer ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:metamodel_version ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:version ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:onProperty bioentity:classes ;
@@ -579,25 +535,7 @@ bioentity:SchemaDefinition a owl:Class ;
             owl:someValuesFrom bioentity:TypeDefinition ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:source_file_size ;
-            owl:someValuesFrom xsd:integer ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:generation_date ;
-            owl:someValuesFrom xsd:date ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:imports ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:default_curi_maps ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bioentity:source_file ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:license ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:onProperty bioentity:types ;
@@ -605,36 +543,55 @@ bioentity:SchemaDefinition a owl:Class ;
         [ a owl:Restriction ;
             owl:onProperty bioentity:prefixes ;
             owl:someValuesFrom bioentity:Prefix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:generation_date ;
+            owl:someValuesFrom xsd:date ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:id ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:imports ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:default_prefix ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:slots ;
+            owl:someValuesFrom bioentity:SlotDefinition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:source_file_date ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:version ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:license ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:default_curi_maps ;
+            owl:someValuesFrom xsd:string ],
         bioentity:Definition .
 
 bioentity:Definition a owl:Class ;
     rdfs:label "definition" ;
     obo:IAO_0000115 "definition base class" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty bioentity:values_from ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:abstract ;
-            owl:someValuesFrom xsd:boolean ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:mixin ;
-            owl:someValuesFrom xsd:boolean ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:is_a ;
             owl:someValuesFrom bioentity:Definition ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:subclass_of ;
-            owl:someValuesFrom xsd:anyURI ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:union_of ;
-            owl:someValuesFrom bioentity:Definition ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:local_names ;
+            owl:onProperty bioentity:values_from ;
             owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:mixin ;
+            owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:symmetric ;
@@ -642,39 +599,118 @@ bioentity:Definition a owl:Class ;
         [ a owl:Restriction ;
             owl:onProperty bioentity:mixins ;
             owl:someValuesFrom bioentity:Definition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:abstract ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:union_of ;
+            owl:someValuesFrom bioentity:Definition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:subclass_of ;
+            owl:someValuesFrom xsd:anyURI ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:local_names ;
+            owl:someValuesFrom xsd:string ],
         bioentity:Element .
 
 bioentity:ClassDefinition a owl:Class ;
     rdfs:label "class definition" ;
     obo:IAO_0000115 "A class or interface" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty bioentity:slots ;
-            owl:someValuesFrom bioentity:SlotDefinition ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:defining_slots ;
-            owl:someValuesFrom bioentity:SlotDefinition ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:apply_to ;
+            owl:someValuesFrom bioentity:ClassDefinition ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:slot_usage ;
+            owl:someValuesFrom bioentity:SlotDefinition ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:union_of ;
             owl:someValuesFrom bioentity:ClassDefinition ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:is_a ;
             owl:someValuesFrom bioentity:ClassDefinition ],
         [ a owl:Restriction ;
-            owl:onProperty bioentity:mixins ;
-            owl:someValuesFrom bioentity:ClassDefinition ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:entity ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
-            owl:onProperty bioentity:union_of ;
+            owl:onProperty bioentity:mixins ;
             owl:someValuesFrom bioentity:ClassDefinition ],
         [ a owl:Restriction ;
-            owl:onProperty bioentity:slot_usage ;
+            owl:onProperty bioentity:defining_slots ;
+            owl:someValuesFrom bioentity:SlotDefinition ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:slots ;
             owl:someValuesFrom bioentity:SlotDefinition ],
         bioentity:Definition .
+
+bioentity:Element a owl:Class ;
+    rdfs:label "element" ;
+    obo:IAO_0000115 "root of all described things" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:description ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:singular_name ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:examples ;
+            owl:someValuesFrom bioentity:Example ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:exact_matches ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:in_subset ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:broader_matches ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:comment ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:note ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:close_matches ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:aliases ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:name ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:from_schema ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:mappings ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:flags ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:id_prefixes ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:narrower_matches ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:alt_descriptions ;
+            owl:someValuesFrom bioentity:AltDescription ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:see_also ;
+            owl:someValuesFrom xsd:string ] .
 
 bioentity:SlotDefinition a owl:Class ;
     rdfs:label "slot definition" ;
@@ -685,8 +721,24 @@ bioentity:SlotDefinition a owl:Class ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty bioentity:definitional ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:domain ;
+            owl:someValuesFrom bioentity:ClassDefinition ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty bioentity:multivalued ;
             owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:primary_key ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:inverse ;
+            owl:someValuesFrom bioentity:SlotDefinition ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:role ;
@@ -700,22 +752,7 @@ bioentity:SlotDefinition a owl:Class ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:path ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bioentity:subproperty_of ;
-            owl:someValuesFrom bioentity:SlotDefinition ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:range ;
-            owl:someValuesFrom xsd:anyType ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:is_a ;
-            owl:someValuesFrom bioentity:SlotDefinition ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:mixins ;
             owl:someValuesFrom bioentity:SlotDefinition ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -723,36 +760,35 @@ bioentity:SlotDefinition a owl:Class ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:inverse ;
-            owl:someValuesFrom bioentity:SlotDefinition ],
+            owl:onProperty bioentity:alias ;
+            owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:definitional ;
-            owl:someValuesFrom xsd:boolean ],
+            owl:onProperty bioentity:mixins ;
+            owl:someValuesFrom bioentity:SlotDefinition ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:inherited ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty bioentity:path ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty bioentity:identifier ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:primary_key ;
-            owl:someValuesFrom xsd:boolean ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:alias ;
-            owl:someValuesFrom xsd:string ],
+            owl:onProperty bioentity:is_a ;
+            owl:someValuesFrom bioentity:SlotDefinition ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:object_property ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:domain ;
-            owl:someValuesFrom bioentity:ClassDefinition ],
+            owl:onProperty bioentity:range ;
+            owl:someValuesFrom xsd:anyType ],
         bioentity:Definition .
 
 
