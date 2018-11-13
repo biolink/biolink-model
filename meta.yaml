@@ -2,7 +2,7 @@ metamodel:
     id: "https://biolink.github.io/metamodel/ontology/meta.ttl"
     description: Metamodel for biolink schema
     license: https://creativecommons.org/publicdomain/zero/1.0/
-    version: 0.3.1
+    version: 0.3.2
 
     prefixes:
       biolink: http://w3id.org/biolink/vocab/
@@ -176,10 +176,52 @@ metamodel:
       mappings:
           multivalued: true
           domain: element
+          inherited: false
+          inlined: false
+          description: >-
+            a list of terms from different schemas or terminology systems that have comparable meaning. These may include terms that are precisely equivalent, broader or narrower in meaning, or otherwise semantically related but not equivalent from a strict ontological perspective.
+          mappings:
+            - skos:mappingRelation
+
+      exact_matches:
+          multivalued: true
+          domain: element
           inherited: true
           inlined: false
           description: >-
-            list of equivalent or skos exact mappings to an ontology class
+            a list of terms from different schemas or terminology systems that have strictly equivalent meanings. 
+          mappings:
+            - skos:exactMatch
+
+      broader_matches:
+          multivalued: true
+          domain: element
+          inherited: true
+          inlined: false
+          description: >-
+            a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
+          mappings:
+            - skos:broadMatch
+
+      narrower_matches:
+          multivalued: true
+          domain: element
+          inherited: true
+          inlined: false
+          description: >-
+            a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
+          mappings:
+            - skos:narrowMatch
+
+      close_matches:
+          multivalued: true
+          domain: element
+          inherited: false
+          inlined: false
+          description: >-
+            a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
+          mappings:
+            - skos:closeMatch
 
       #
       # Slots for all definitions (slot and class)

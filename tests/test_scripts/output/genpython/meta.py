@@ -1,5 +1,5 @@
 # Auto generated from /Users/hsolbri1/git/biolink/biolink-model/meta.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-10-25 06:29
+# Generation date: 2018-11-12 18:12
 # Schema: metamodel
 #
 # id: https://biolink.github.io/metamodel/ontology/meta.ttl
@@ -12,11 +12,11 @@ from dataclasses import dataclass
 from metamodel.utils.metamodelcore import empty_list, empty_dict
 from metamodel.utils.yamlutils import YAMLRoot
 
-metamodel_version = "0.3.1"
+metamodel_version = "0.3.2"
 
 inherited_slots: List[str] = ["description", "alt_description_text", "source", "alt_descriptions", "in_subset",
-                              "mappings", "multivalued", "domain", "range", "required", "inlined", "definitional",
-                              "object_property", "subproperty_of", "inherited"]
+                              "exact_matches", "broader_matches", "narrower_matches", "multivalued", "domain", "range",
+                              "required", "inlined", "definitional", "object_property", "subproperty_of", "inherited"]
 
 
 # Type names
@@ -101,6 +101,10 @@ class Element(YAMLRoot):
     in_subset: List[str] = empty_list()
     from_schema: Optional[str] = None
     alt_descriptions: List[AltDescription] = empty_list()
+    exact_matches: List[str] = empty_list()
+    broader_matches: List[str] = empty_list()
+    narrower_matches: List[str] = empty_list()
+    close_matches: List[str] = empty_list()
 
     def _fix_elements(self):
         super()._fix_elements()

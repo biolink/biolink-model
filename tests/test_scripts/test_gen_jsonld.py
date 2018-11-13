@@ -64,10 +64,12 @@ class GenJSONLDTestCase(ClickTestCase):
     def test_meta_output(self):
         """ Generate a context AND a jsonld for the metamodel and make sure it parses as RDF """
         cwd = os.path.abspath(os.path.join(os.path.dirname(__file__)))
-        jsonld_path = os.path.join(self.testdir_path, 'metajson.jsonld')
-        rdf_path = os.path.join(self.testdir_path, 'metardf.ttl')
+        temp_dir = os.path.join(cwd, 'temp')
+        os.makedirs(temp_dir, exist_ok=True)
+        jsonld_path = os.path.join(temp_dir, 'metajson.jsonld')
+        rdf_path = os.path.join(temp_dir, 'metardf.ttl')
         yaml_path = os.path.abspath(os.path.join(cwd, '..', '..', 'meta.yaml'))
-        meta_context_path = os.path.join(self.testdir_path, 'metacontext.jsonld')
+        meta_context_path = os.path.join(temp_dir, 'metacontext.jsonld')
 
         # Generate an image of the metamodel
         with open(meta_context_path, 'w') as tfile:
@@ -81,7 +83,7 @@ class GenJSONLDTestCase(ClickTestCase):
         new_ttl = g.serialize(format="turtle").decode()
         new_g = Graph()
         new_g.parse(data=new_ttl, format="turtle")
-        self.check_size(g, new_g, URIRef("https://biolink.github.io/metamodel/ontology/meta.ttl"), 9, 73, 0, "meta")
+        self.check_size(g, new_g, URIRef("https://biolink.github.io/metamodel/ontology/meta.ttl"), 9, 77, 0, "meta")
 
     def test_biolink(self):
         self.maxDiff=None

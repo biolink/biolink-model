@@ -109,6 +109,14 @@ URI: [http://w3id.org/biolink/vocab/SlotDefinition](http://w3id.org/biolink/voca
  * [alt_descriptions](alt_descriptions.md)
     * range: [AltDescription](AltDescription.md)*
     * inherited from: [Element](Element.md)
+ * [broader_matches](broader_matches.md)
+    * Description: a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
+    * range: **string***
+    * inherited from: [Element](Element.md)
+ * [close_matches](close_matches.md)
+    * Description: a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
+    * range: **string***
+    * inherited from: [Element](Element.md)
  * [comment](comment.md)
     * Description: Comment about an element
     * range: **string**
@@ -116,6 +124,10 @@ URI: [http://w3id.org/biolink/vocab/SlotDefinition](http://w3id.org/biolink/voca
  * [description](description.md)
     * Description: a description
     * range: **string**
+    * inherited from: [Element](Element.md)
+ * [exact_matches](exact_matches.md)
+    * Description: a list of terms from different schemas or terminology systems that have strictly equivalent meanings. 
+    * range: **string***
     * inherited from: [Element](Element.md)
  * [examples](examples.md)
     * Description: Example of usage for a slot or class
@@ -141,7 +153,7 @@ URI: [http://w3id.org/biolink/vocab/SlotDefinition](http://w3id.org/biolink/voca
     * range: **string***
     * inherited from: [Definition](Definition.md)
  * [mappings](mappings.md)
-    * Description: list of equivalent or skos exact mappings to an ontology class
+    * Description: a list of terms from different schemas or terminology systems that have comparable meaning. These may include terms that are precisely equivalent, broader or narrower in meaning, or otherwise semantically related but not equivalent from a strict ontological perspective.
     * range: **string***
     * inherited from: [Element](Element.md)
  * [mixin](mixin.md)
@@ -151,6 +163,10 @@ URI: [http://w3id.org/biolink/vocab/SlotDefinition](http://w3id.org/biolink/voca
  * [name](name.md)
     * Description: a unique key that identifies a slot, type or class in a schema
     * range: **string**
+    * inherited from: [Element](Element.md)
+ * [narrower_matches](narrower_matches.md)
+    * Description: a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
+    * range: **string***
     * inherited from: [Element](Element.md)
  * [note](note.md)
     * Description: Notes about an element

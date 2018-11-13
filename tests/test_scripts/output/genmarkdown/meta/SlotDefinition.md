@@ -5,7 +5,7 @@ A property or slot
 
 URI: [http://w3id.org/biolink/vocab/SlotDefinition](http://w3id.org/biolink/vocab/SlotDefinition)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SlotDefinition|multivalued:boolean%20%3F;range:anytype%20%3F;required:boolean%20%3F;object_property:boolean%20%3F;inlined:boolean%20%3F;primary_key:boolean%20%3F;identifier:boolean%20%3F;definitional:boolean%20%3F;alias:string%20%3F;path:string%20%3F;is_class_field:boolean%20%3F;role:string%20%3F;inherited:boolean%20%3F;name(i):string;singular_name(i):string%20%3F;description(i):string%20%3F;note(i):string%20%3F;comment(i):string%20%3F;see_also(i):string%20%3F;flags(i):string%20*;aliases(i):string%20*;mappings(i):string%20*;id_prefixes(i):string%20*;in_subset(i):string%20*;from_schema(i):string%20%3F;mixin(i):boolean%20%3F;abstract(i):boolean%20%3F;local_names(i):string%20*;subclass_of(i):uri%20%3F;values_from(i):string%20*;symmetric(i):boolean%20%3F]-%20alt_descriptions(i)%20*>\[AltDescription],%20\[SlotDefinition]++-%20examples(i)%20*>\[Example],%20\[SlotDefinition]-%20union_of%20*>\[SlotDefinition],%20\[SlotDefinition]-%20mixins%20*>\[SlotDefinition],%20\[SlotDefinition]-%20is_a%20%3F>\[SlotDefinition],%20\[SlotDefinition]-%20inverse%20%3F>\[SlotDefinition],%20\[SlotDefinition]-%20subproperty_of%20%3F>\[SlotDefinition],%20\[SlotDefinition]-%20domain%20%3F>\[ClassDefinition],%20\[ClassDefinition]-%20defining_slots(i)%20*>\[SlotDefinition],%20\[SlotDefinition]-%20inverse%20%3F>\[SlotDefinition],%20\[SlotDefinition]-%20is_a%20%3F>\[SlotDefinition],%20\[SlotDefinition]-%20mixins%20*>\[SlotDefinition],%20\[SlotDefinition]-%20union_of%20*>\[SlotDefinition],%20\[SchemaDefinition]++-%20slots(i)%20*>\[SlotDefinition],%20\[ClassDefinition]++-%20slot_usage(i)%20*>\[SlotDefinition],%20\[ClassDefinition]-%20slots(i)%20*>\[SlotDefinition],%20\[SlotDefinition]-%20subproperty_of%20%3F>\[SlotDefinition],%20\[Definition]^-\[SlotDefinition])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SlotDefinition|multivalued:boolean%20%3F;range:anytype%20%3F;required:boolean%20%3F;object_property:boolean%20%3F;inlined:boolean%20%3F;primary_key:boolean%20%3F;identifier:boolean%20%3F;definitional:boolean%20%3F;alias:string%20%3F;path:string%20%3F;is_class_field:boolean%20%3F;role:string%20%3F;inherited:boolean%20%3F;name(i):string;singular_name(i):string%20%3F;description(i):string%20%3F;note(i):string%20%3F;comment(i):string%20%3F;see_also(i):string%20%3F;flags(i):string%20*;aliases(i):string%20*;mappings(i):string%20*;id_prefixes(i):string%20*;in_subset(i):string%20*;from_schema(i):string%20%3F;exact_matches(i):string%20*;broader_matches(i):string%20*;narrower_matches(i):string%20*;close_matches(i):string%20*;mixin(i):boolean%20%3F;abstract(i):boolean%20%3F;local_names(i):string%20*;subclass_of(i):uri%20%3F;values_from(i):string%20*;symmetric(i):boolean%20%3F]-%20alt_descriptions(i)%20*>\[AltDescription],%20\[SlotDefinition]++-%20examples(i)%20*>\[Example],%20\[SlotDefinition]-%20union_of%20*>\[SlotDefinition],%20\[SlotDefinition]-%20mixins%20*>\[SlotDefinition],%20\[SlotDefinition]-%20is_a%20%3F>\[SlotDefinition],%20\[SlotDefinition]-%20inverse%20%3F>\[SlotDefinition],%20\[SlotDefinition]-%20subproperty_of%20%3F>\[SlotDefinition],%20\[SlotDefinition]-%20domain%20%3F>\[ClassDefinition],%20\[ClassDefinition]-%20defining_slots(i)%20*>\[SlotDefinition],%20\[SlotDefinition]-%20inverse%20%3F>\[SlotDefinition],%20\[SlotDefinition]-%20is_a%20%3F>\[SlotDefinition],%20\[SlotDefinition]-%20mixins%20*>\[SlotDefinition],%20\[SlotDefinition]-%20union_of%20*>\[SlotDefinition],%20\[SchemaDefinition]++-%20slots(i)%20*>\[SlotDefinition],%20\[ClassDefinition]++-%20slot_usage(i)%20*>\[SlotDefinition],%20\[ClassDefinition]-%20slots(i)%20*>\[SlotDefinition],%20\[SlotDefinition]-%20subproperty_of%20%3F>\[SlotDefinition],%20\[Definition]^-\[SlotDefinition])
 ## Mappings
 
 ## Inheritance
@@ -109,6 +109,14 @@ URI: [http://w3id.org/biolink/vocab/SlotDefinition](http://w3id.org/biolink/voca
  * [alt_descriptions](alt_descriptions.md)
     * range: [AltDescription](AltDescription.md)*
     * inherited from: [Element](Element.md)
+ * [broader_matches](broader_matches.md)
+    * Description: a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
+    * range: **string***
+    * inherited from: [Element](Element.md)
+ * [close_matches](close_matches.md)
+    * Description: a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
+    * range: **string***
+    * inherited from: [Element](Element.md)
  * [comment](comment.md)
     * Description: Comment about an element
     * range: **string**
@@ -116,6 +124,10 @@ URI: [http://w3id.org/biolink/vocab/SlotDefinition](http://w3id.org/biolink/voca
  * [description](description.md)
     * Description: a description
     * range: **string**
+    * inherited from: [Element](Element.md)
+ * [exact_matches](exact_matches.md)
+    * Description: a list of terms from different schemas or terminology systems that have strictly equivalent meanings. 
+    * range: **string***
     * inherited from: [Element](Element.md)
  * [examples](examples.md)
     * Description: Example of usage for a slot or class
@@ -141,7 +153,7 @@ URI: [http://w3id.org/biolink/vocab/SlotDefinition](http://w3id.org/biolink/voca
     * range: **string***
     * inherited from: [Definition](Definition.md)
  * [mappings](mappings.md)
-    * Description: list of equivalent or skos exact mappings to an ontology class
+    * Description: a list of terms from different schemas or terminology systems that have comparable meaning. These may include terms that are precisely equivalent, broader or narrower in meaning, or otherwise semantically related but not equivalent from a strict ontological perspective.
     * range: **string***
     * inherited from: [Element](Element.md)
  * [mixin](mixin.md)
@@ -151,6 +163,10 @@ URI: [http://w3id.org/biolink/vocab/SlotDefinition](http://w3id.org/biolink/voca
  * [name](name.md)
     * Description: a unique key that identifies a slot, type or class in a schema
     * range: **string**
+    * inherited from: [Element](Element.md)
+ * [narrower_matches](narrower_matches.md)
+    * Description: a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
+    * range: **string***
     * inherited from: [Element](Element.md)
  * [note](note.md)
     * Description: Notes about an element

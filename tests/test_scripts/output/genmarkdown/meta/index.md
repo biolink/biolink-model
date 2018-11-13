@@ -24,7 +24,9 @@ Metamodel for biolink schema
  * [alt description.description](alt_description_text.md) - text of an alternate description
  * [alt_descriptions](alt_descriptions.md)
  * [apply_to](apply_to.md) - Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class.
+ * [broader_matches](broader_matches.md) - a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
  * [classes](classes.md) - classes defined in schema
+ * [close_matches](close_matches.md) - a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
  * [comment](comment.md) - Comment about an element
  * [default_curi_maps](default_curi_maps.md) - List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables
  * [default_prefix](default_prefix.md) - default and base prefix -- used for ':' identifiers, @base and @vocab
@@ -34,6 +36,7 @@ Metamodel for biolink schema
  * [description](description.md) - a description
  * [domain](domain.md) - The class to which this slot applies.
  * [entity](entity.md)
+ * [exact_matches](exact_matches.md) - a list of terms from different schemas or terminology systems that have strictly equivalent meanings. 
  * [examples](examples.md) - Example of usage for a slot or class
  * [flags](flags.md) - State information and other details
  * [from_schema](from_schema.md) - id of the schema that the element was derived from.  Supplied by the loader.
@@ -53,7 +56,7 @@ Metamodel for biolink schema
  * [license](license.md) - license for the schema
  * [local name](local_name.md) - the nsname (sans ':' for a given prefix)
  * [local_names](local_names.md) - map from local identifier to slot
- * [mappings](mappings.md) - list of equivalent or skos exact mappings to an ontology class
+ * [mappings](mappings.md) - a list of terms from different schemas or terminology systems that have comparable meaning. These may include terms that are precisely equivalent, broader or narrower in meaning, or otherwise semantically related but not equivalent from a strict ontological perspective.
  * [metamodel_version](metamodel_version.md) - Version of the metamodel used to load the schema. Supplied by the loader
  * [mixin](mixin.md) - Used only as a mixin -- cannot be instantiated on its own.
  * [mixins](mixins.md) - List of definitions to be mixed in. Targets may be any definition of the same type
@@ -61,6 +64,7 @@ Metamodel for biolink schema
     * [slot definition.mixins](slot_definition_mixins.md)
  * [multivalued](multivalued.md) - If true slot can have many values
  * [name](name.md) - a unique key that identifies a slot, type or class in a schema
+ * [narrower_matches](narrower_matches.md) - a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
  * [note](note.md) - Notes about an element
  * [object_property](object_property.md) - true means that this slot is part of the formal definition of a class
  * [path](path.md) - For any denormalized slot, this represents the tree or graph path used to generate the denormalized form

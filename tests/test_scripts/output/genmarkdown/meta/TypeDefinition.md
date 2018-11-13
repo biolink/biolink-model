@@ -5,7 +5,7 @@ A type definition
 
 URI: [http://w3id.org/biolink/vocab/TypeDefinition](http://w3id.org/biolink/vocab/TypeDefinition)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[TypeDefinition|typeof:string%20%3F;name(i):string;singular_name(i):string%20%3F;description(i):string%20%3F;note(i):string%20%3F;comment(i):string%20%3F;see_also(i):string%20%3F;flags(i):string%20*;aliases(i):string%20*;mappings(i):string%20*;id_prefixes(i):string%20*;in_subset(i):string%20*;from_schema(i):string%20%3F]-%20alt_descriptions(i)%20*>\[AltDescription],%20\[TypeDefinition]++-%20examples(i)%20*>\[Example],%20\[SchemaDefinition]-%20default_type(i)%20%3F>\[TypeDefinition],%20\[SchemaDefinition]++-%20types(i)%20*>\[TypeDefinition],%20\[Element]^-\[TypeDefinition])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[TypeDefinition|typeof:string%20%3F;name(i):string;singular_name(i):string%20%3F;description(i):string%20%3F;note(i):string%20%3F;comment(i):string%20%3F;see_also(i):string%20%3F;flags(i):string%20*;aliases(i):string%20*;mappings(i):string%20*;id_prefixes(i):string%20*;in_subset(i):string%20*;from_schema(i):string%20%3F;exact_matches(i):string%20*;broader_matches(i):string%20*;narrower_matches(i):string%20*;close_matches(i):string%20*]-%20alt_descriptions(i)%20*>\[AltDescription],%20\[TypeDefinition]++-%20examples(i)%20*>\[Example],%20\[SchemaDefinition]-%20default_type(i)%20%3F>\[TypeDefinition],%20\[SchemaDefinition]++-%20types(i)%20*>\[TypeDefinition],%20\[Element]^-\[TypeDefinition])
 ## Mappings
 
 ## Inheritance
@@ -29,6 +29,14 @@ URI: [http://w3id.org/biolink/vocab/TypeDefinition](http://w3id.org/biolink/voca
  * [alt_descriptions](alt_descriptions.md)
     * range: [AltDescription](AltDescription.md)*
     * inherited from: [Element](Element.md)
+ * [broader_matches](broader_matches.md)
+    * Description: a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.
+    * range: **string***
+    * inherited from: [Element](Element.md)
+ * [close_matches](close_matches.md)
+    * Description: a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).
+    * range: **string***
+    * inherited from: [Element](Element.md)
  * [comment](comment.md)
     * Description: Comment about an element
     * range: **string**
@@ -36,6 +44,10 @@ URI: [http://w3id.org/biolink/vocab/TypeDefinition](http://w3id.org/biolink/voca
  * [description](description.md)
     * Description: a description
     * range: **string**
+    * inherited from: [Element](Element.md)
+ * [exact_matches](exact_matches.md)
+    * Description: a list of terms from different schemas or terminology systems that have strictly equivalent meanings. 
+    * range: **string***
     * inherited from: [Element](Element.md)
  * [examples](examples.md)
     * Description: Example of usage for a slot or class
@@ -57,12 +69,16 @@ URI: [http://w3id.org/biolink/vocab/TypeDefinition](http://w3id.org/biolink/voca
     * range: **string***
     * inherited from: [Element](Element.md)
  * [mappings](mappings.md)
-    * Description: list of equivalent or skos exact mappings to an ontology class
+    * Description: a list of terms from different schemas or terminology systems that have comparable meaning. These may include terms that are precisely equivalent, broader or narrower in meaning, or otherwise semantically related but not equivalent from a strict ontological perspective.
     * range: **string***
     * inherited from: [Element](Element.md)
  * [name](name.md)
     * Description: a unique key that identifies a slot, type or class in a schema
     * range: **string**
+    * inherited from: [Element](Element.md)
+ * [narrower_matches](narrower_matches.md)
+    * Description: a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.
+    * range: **string***
     * inherited from: [Element](Element.md)
  * [note](note.md)
     * Description: Notes about an element

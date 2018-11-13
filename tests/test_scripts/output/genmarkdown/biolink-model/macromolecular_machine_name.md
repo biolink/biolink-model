@@ -6,7 +6,6 @@ genes are typically designated by a short symbol and a full name. We map the sym
 URI: [http://w3id.org/biolink/vocab/macromolecular_machine_name](slot_uri)
 ## Mappings
 
- * [rdfs:label](http://purl.obolibrary.org/obo/rdfs_label)
 ## Domain and Range
 
 [MacromolecularMachine](MacromolecularMachine.md) -> [SymbolType](SymbolType.md)

@@ -6,7 +6,6 @@ holds between a molecular entity and a genomic entity where the action or effect
 URI: [http://w3id.org/biolink/vocab/affects_mutation_rate_of](slot_uri)
 ## Mappings
 
- * [SEMMEDDB:AFFECTS](http://purl.obolibrary.org/obo/SEMMEDDB_AFFECTS)
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) -> [GenomicEntity](GenomicEntity.md)

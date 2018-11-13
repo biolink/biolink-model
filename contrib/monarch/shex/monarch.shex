@@ -21,26 +21,34 @@
 
 <http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/AnatomicalEntity>
+       (  <http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_association_subject>
+          @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
+          <http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_association_object>
+          @<http://w3id.org/biolink/vocab/AnatomicalEntity>
        )
     }
 )
 
 <http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityOntogenicAssociation>  (
     @<http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+       (  <http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_subject>
+          @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
+          <http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_object>
+          @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
+          <http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_relation>
+          @<http://w3id.org/biolink/vocab/RelationshipType>
        )
     }
 )
 
 <http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation>  (
     @<http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+       (  <http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_part_of_association_subject>
+          @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
+          <http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_part_of_association_object>
+          @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
+          <http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_part_of_association_relation>
+          @<http://w3id.org/biolink/vocab/RelationshipType>
        )
     }
 )
@@ -112,7 +120,7 @@
 
 <http://w3id.org/biolink/vocab/BiosampleToThingAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Biosample>
+       <http://w3id.org/biolink/vocab/biosample_to_thing_association_subject> @<http://w3id.org/biolink/vocab/Biosample>
     }
 )
 
@@ -127,7 +135,7 @@
 
 <http://w3id.org/biolink/vocab/CaseToThingAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Case>
+       <http://w3id.org/biolink/vocab/case_to_thing_association_subject> @<http://w3id.org/biolink/vocab/Case>
     }
 )
 
@@ -142,13 +150,14 @@
 <http://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/CellLineToThingAssociation> AND
     @<http://w3id.org/biolink/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature>
+       <http://w3id.org/biolink/vocab/cell_line_to_disease_or_phenotypic_feature_association_subject>
+       @<http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature>
     }
 )
 
 <http://w3id.org/biolink/vocab/CellLineToThingAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/CellLine>
+       <http://w3id.org/biolink/vocab/cell_line_to_thing_association_subject> @<http://w3id.org/biolink/vocab/CellLine>
     }
 )
 
@@ -163,25 +172,26 @@
 <http://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/ChemicalToThingAssociation> AND
     @<http://w3id.org/biolink/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature>
+       <http://w3id.org/biolink/vocab/chemical_to_disease_or_phenotypic_feature_association_object>
+       @<http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature>
     }
 )
 
 <http://w3id.org/biolink/vocab/ChemicalToGeneAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/ChemicalToThingAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
+       <http://w3id.org/biolink/vocab/chemical_to_gene_association_object> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
     }
 )
 
 <http://w3id.org/biolink/vocab/ChemicalToPathwayAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/ChemicalToThingAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/Pathway>
+       <http://w3id.org/biolink/vocab/chemical_to_pathway_association_object> @<http://w3id.org/biolink/vocab/Pathway>
     }
 )
 
 <http://w3id.org/biolink/vocab/ChemicalToThingAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/ChemicalSubstance>
+       <http://w3id.org/biolink/vocab/chemical_to_thing_association_subject> @<http://w3id.org/biolink/vocab/ChemicalSubstance>
     }
 )
 
@@ -224,7 +234,7 @@
 <http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature>  (
     @<http://w3id.org/biolink/vocab/BiologicalEntity> AND @<http://w3id.org/biolink/vocab/ThingWithTaxon> AND {
        (  <http://purl.obolibrary.org/obo/RO_0002610> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <http://purl.obolibrary.org/obo/RO_0002610> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/has_biomarker> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
           <http://purl.obolibrary.org/obo/RO_0002302> @<http://w3id.org/biolink/vocab/NamedThing> ?
        )
     }
@@ -232,13 +242,15 @@
 
 <http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation>  (
     @<http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/AnatomicalEntity>
+       <http://w3id.org/biolink/vocab/disease_or_phenotypic_feature_association_to_location_association_object>
+       @<http://w3id.org/biolink/vocab/AnatomicalEntity>
     }
 )
 
 <http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature>
+       <http://w3id.org/biolink/vocab/disease_or_phenotypic_feature_association_to_thing_association_subject>
+       @<http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature>
     }
 )
 
@@ -249,7 +261,7 @@
 
 <http://w3id.org/biolink/vocab/DiseaseToThingAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Disease>
+       <http://w3id.org/biolink/vocab/disease_to_thing_association_subject> @<http://w3id.org/biolink/vocab/Disease>
     }
 )
 
@@ -274,7 +286,7 @@
 
 <http://w3id.org/biolink/vocab/EntityToDiseaseAssociation>  (
     @<http://w3id.org/biolink/vocab/EntityToFeatureOrDiseaseQualifiers> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/Disease>
+       <http://w3id.org/biolink/vocab/entity_to_disease_association_object> @<http://w3id.org/biolink/vocab/Disease>
     }
 )
 
@@ -289,8 +301,10 @@
 <http://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/EntityToFeatureOrDiseaseQualifiers> AND {
        (  <http://w3id.org/biolink/vocab/sex_qualifier> @<http://w3id.org/biolink/vocab/BiologicalSex> ? ;
-          <http://purl.org/dc/terms/description> <http://www.w3.org/2001/XMLSchema#string> ? ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/PhenotypicFeature>
+          <http://w3id.org/biolink/vocab/entity_to_phenotypic_feature_association_description>
+          <http://www.w3.org/2001/XMLSchema#string> ? ;
+          <http://w3id.org/biolink/vocab/entity_to_phenotypic_feature_association_object>
+          @<http://w3id.org/biolink/vocab/PhenotypicFeature>
        )
     }
 )
@@ -301,7 +315,8 @@
 
 <http://w3id.org/biolink/vocab/EnvironmentToPhenotypicFeatureAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Environment>
+       <http://w3id.org/biolink/vocab/environment_to_phenotypic_feature_association_subject>
+       @<http://w3id.org/biolink/vocab/Environment>
     }
 )
 
@@ -323,8 +338,8 @@
 
 <http://w3id.org/biolink/vocab/ExonToTranscriptRelationship>  (
     @<http://w3id.org/biolink/vocab/SequenceFeatureRelationship> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Exon> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/Transcript>
+       (  <http://w3id.org/biolink/vocab/exon_to_transcript_relationship_subject> @<http://w3id.org/biolink/vocab/Exon> ;
+          <http://w3id.org/biolink/vocab/exon_to_transcript_relationship_object> @<http://w3id.org/biolink/vocab/Transcript>
        )
     }
 )
@@ -367,8 +382,8 @@
 
 <http://w3id.org/biolink/vocab/FunctionalAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/MacromolecularMachine> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/GeneOntologyClass>
+       (  <http://w3id.org/biolink/vocab/functional_association_subject> @<http://w3id.org/biolink/vocab/MacromolecularMachine> ;
+          <http://w3id.org/biolink/vocab/functional_association_object> @<http://w3id.org/biolink/vocab/GeneOntologyClass>
        )
     }
 )
@@ -385,7 +400,8 @@
 <http://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation>  (
     @<http://w3id.org/biolink/vocab/GeneToDiseaseAssociation> AND @<http://w3id.org/biolink/vocab/ModelToDiseaseMixin> AND
     @<http://w3id.org/biolink/vocab/EntityToDiseaseAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
+       <http://w3id.org/biolink/vocab/gene_as_a_model_of_disease_association_subject>
+       @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
     }
 )
 
@@ -398,7 +414,8 @@
 <http://w3id.org/biolink/vocab/GeneHasVariantThatContributesToDiseaseAssociation>  (
     @<http://w3id.org/biolink/vocab/GeneToDiseaseAssociation> AND {
        (  <http://w3id.org/biolink/vocab/sequence_variant_qualifier> @<http://w3id.org/biolink/vocab/SequenceVariant> ? ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
+          <http://w3id.org/biolink/vocab/gene_has_variant_that_contributes_to_disease_association_subject>
+          @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
        )
     }
 )
@@ -409,9 +426,9 @@
 
 <http://w3id.org/biolink/vocab/GeneOrGeneProduct>  (
     @<http://w3id.org/biolink/vocab/MacromolecularMachine> AND {
-       (  <SEMMEDDB:COEXISTS_WITH> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ? ;
-          <SEMMEDDB:COEXISTS_WITH> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ? ;
-          <SEMMEDDB:COEXISTS_WITH> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ? ;
+       (  <http://w3id.org/biolink/vocab/in_pathway_with> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ? ;
+          <http://w3id.org/biolink/vocab/in_complex_with> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ? ;
+          <http://w3id.org/biolink/vocab/in_cell_population_with> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ? ;
           <http://purl.obolibrary.org/obo/RO_0002206> @<http://w3id.org/biolink/vocab/AnatomicalEntity> ?
        )
     }
@@ -427,9 +444,9 @@
 
 <http://w3id.org/biolink/vocab/GeneRegulatoryRelationship>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
+       (  <http://w3id.org/biolink/vocab/gene_regulatory_relationship_relation> @<http://w3id.org/biolink/vocab/RelationshipType> ;
+          <http://w3id.org/biolink/vocab/gene_regulatory_relationship_subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
+          <http://w3id.org/biolink/vocab/gene_regulatory_relationship_object> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
        )
     }
 )
@@ -437,7 +454,7 @@
 <http://w3id.org/biolink/vocab/GeneToDiseaseAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/EntityToDiseaseAssociation> AND
     @<http://w3id.org/biolink/vocab/GeneToThingAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
+       <http://w3id.org/biolink/vocab/gene_to_disease_association_subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
     }
 )
 
@@ -447,40 +464,44 @@
           @<http://w3id.org/biolink/vocab/LifeStage> ? ;
           <http://w3id.org/biolink/vocab/gene_to_expression_site_association_quantifier_qualifier>
           @<http://w3id.org/biolink/vocab/OntologyClass> ? ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+          <http://w3id.org/biolink/vocab/gene_to_expression_site_association_subject>
+          @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
+          <http://w3id.org/biolink/vocab/gene_to_expression_site_association_object>
+          @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
+          <http://w3id.org/biolink/vocab/gene_to_expression_site_association_relation>
+          @<http://w3id.org/biolink/vocab/RelationshipType>
        )
     }
 )
 
 <http://w3id.org/biolink/vocab/GeneToGeneAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
+       (  <http://w3id.org/biolink/vocab/gene_to_gene_association_subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
+          <http://w3id.org/biolink/vocab/gene_to_gene_association_object> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
        )
     }
 )
 
 <http://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation>  (
     @<http://w3id.org/biolink/vocab/GeneToGeneAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+       <http://w3id.org/biolink/vocab/gene_to_gene_homology_association_relation> @<http://w3id.org/biolink/vocab/RelationshipType>
     }
 )
 
 <http://w3id.org/biolink/vocab/GeneToGeneProductRelationship>  (
     @<http://w3id.org/biolink/vocab/SequenceFeatureRelationship> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Gene> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/GeneProduct> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+       (  <http://w3id.org/biolink/vocab/gene_to_gene_product_relationship_subject> @<http://w3id.org/biolink/vocab/Gene> ;
+          <http://w3id.org/biolink/vocab/gene_to_gene_product_relationship_object> @<http://w3id.org/biolink/vocab/GeneProduct> ;
+          <http://w3id.org/biolink/vocab/gene_to_gene_product_relationship_relation>
+          @<http://w3id.org/biolink/vocab/RelationshipType>
        )
     }
 )
 
 <http://w3id.org/biolink/vocab/GeneToGoTermAssociation>  (
     @<http://w3id.org/biolink/vocab/FunctionalAssociation> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/MolecularEntity> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/GeneOntologyClass>
+       (  <http://w3id.org/biolink/vocab/gene_to_go_term_association_subject> @<http://w3id.org/biolink/vocab/MolecularEntity> ;
+          <http://w3id.org/biolink/vocab/gene_to_go_term_association_object> @<http://w3id.org/biolink/vocab/GeneOntologyClass>
        )
     }
 )
@@ -488,13 +509,14 @@
 <http://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation> AND
     @<http://w3id.org/biolink/vocab/GeneToThingAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
+       <http://w3id.org/biolink/vocab/gene_to_phenotypic_feature_association_subject>
+       @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
     }
 )
 
 <http://w3id.org/biolink/vocab/GeneToThingAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
+       <http://w3id.org/biolink/vocab/gene_to_thing_association_subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
     }
 )
 
@@ -514,8 +536,8 @@
           <http://w3id.org/biolink/vocab/end_interbase_coordinate> <http://www.w3.org/2001/XMLSchema#string> ? ;
           <http://w3id.org/biolink/vocab/genome_build> <http://www.w3.org/2001/XMLSchema#string> ? ;
           <http://w3id.org/biolink/vocab/phase> <http://www.w3.org/2001/XMLSchema#string> ? ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/GenomicEntity> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/GenomicEntity>
+          <http://w3id.org/biolink/vocab/genomic_sequence_localization_subject> @<http://w3id.org/biolink/vocab/GenomicEntity> ;
+          <http://w3id.org/biolink/vocab/genomic_sequence_localization_object> @<http://w3id.org/biolink/vocab/GenomicEntity>
        )
     }
 )
@@ -528,18 +550,19 @@
 
 <http://w3id.org/biolink/vocab/GenotypeToGeneAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Genotype> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/Gene>
+       (  <http://w3id.org/biolink/vocab/genotype_to_gene_association_relation> @<http://w3id.org/biolink/vocab/RelationshipType> ;
+          <http://w3id.org/biolink/vocab/genotype_to_gene_association_subject> @<http://w3id.org/biolink/vocab/Genotype> ;
+          <http://w3id.org/biolink/vocab/genotype_to_gene_association_object> @<http://w3id.org/biolink/vocab/Gene>
        )
     }
 )
 
 <http://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Genotype> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/Genotype>
+       (  <http://w3id.org/biolink/vocab/genotype_to_genotype_part_association_relation>
+          @<http://w3id.org/biolink/vocab/RelationshipType> ;
+          <http://w3id.org/biolink/vocab/genotype_to_genotype_part_association_subject> @<http://w3id.org/biolink/vocab/Genotype> ;
+          <http://w3id.org/biolink/vocab/genotype_to_genotype_part_association_object> @<http://w3id.org/biolink/vocab/Genotype>
        )
     }
 )
@@ -547,23 +570,26 @@
 <http://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation> AND
     @<http://w3id.org/biolink/vocab/GenotypeToThingAssociation> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Genotype>
+       (  <http://w3id.org/biolink/vocab/genotype_to_phenotypic_feature_association_relation>
+          @<http://w3id.org/biolink/vocab/RelationshipType> ;
+          <http://w3id.org/biolink/vocab/genotype_to_phenotypic_feature_association_subject>
+          @<http://w3id.org/biolink/vocab/Genotype>
        )
     }
 )
 
 <http://w3id.org/biolink/vocab/GenotypeToThingAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Genotype>
+       <http://w3id.org/biolink/vocab/genotype_to_thing_association_subject> @<http://w3id.org/biolink/vocab/Genotype>
     }
 )
 
 <http://w3id.org/biolink/vocab/GenotypeToVariantAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Genotype> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/SequenceVariant>
+       (  <http://w3id.org/biolink/vocab/genotype_to_variant_association_relation>
+          @<http://w3id.org/biolink/vocab/RelationshipType> ;
+          <http://w3id.org/biolink/vocab/genotype_to_variant_association_subject> @<http://w3id.org/biolink/vocab/Genotype> ;
+          <http://w3id.org/biolink/vocab/genotype_to_variant_association_object> @<http://w3id.org/biolink/vocab/SequenceVariant>
        )
     }
 )
@@ -614,25 +640,28 @@
 
 <http://w3id.org/biolink/vocab/MacromolecularMachine>  (
     @<http://w3id.org/biolink/vocab/GenomicEntity> AND {
-       <http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/2001/XMLSchema#string> ?
+       <http://w3id.org/biolink/vocab/macromolecular_machine_name> <http://www.w3.org/2001/XMLSchema#string> ?
     }
 )
 
 <http://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation>  (
     @<http://w3id.org/biolink/vocab/FunctionalAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/BiologicalProcess>
+       <http://w3id.org/biolink/vocab/macromolecular_machine_to_biological_process_association_object>
+       @<http://w3id.org/biolink/vocab/BiologicalProcess>
     }
 )
 
 <http://w3id.org/biolink/vocab/MacromolecularMachineToCellularComponentAssociation>  (
     @<http://w3id.org/biolink/vocab/FunctionalAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/CellularComponent>
+       <http://w3id.org/biolink/vocab/macromolecular_machine_to_cellular_component_association_object>
+       @<http://w3id.org/biolink/vocab/CellularComponent>
     }
 )
 
 <http://w3id.org/biolink/vocab/MacromolecularMachineToMolecularActivityAssociation>  (
     @<http://w3id.org/biolink/vocab/FunctionalAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/MolecularActivity>
+       <http://w3id.org/biolink/vocab/macromolecular_machine_to_molecular_activity_association_object>
+       @<http://w3id.org/biolink/vocab/MolecularActivity>
     }
 )
 
@@ -645,8 +674,8 @@
 )
 
 <http://w3id.org/biolink/vocab/ModelToDiseaseMixin> {
-    (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.w3.org/2001/XMLSchema#string> ;
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+    (  <http://w3id.org/biolink/vocab/model_to_disease_mixin_subject> <http://www.w3.org/2001/XMLSchema#string> ;
+       <http://w3id.org/biolink/vocab/model_to_disease_mixin_relation> @<http://w3id.org/biolink/vocab/RelationshipType>
     )
 }
 
@@ -657,54 +686,54 @@
 <http://w3id.org/biolink/vocab/MolecularEntity>  (
     @<http://w3id.org/biolink/vocab/BiologicalEntity> AND @<http://w3id.org/biolink/vocab/ThingWithTaxon> AND {
        (  <http://purl.obolibrary.org/obo/RO_0002436> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/GenomicEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/GenomicEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/GenomicEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/GenomicEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/GenomicEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/GenomicEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/Transcript> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/Transcript> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/Transcript> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
-          <SEMMEDDB:AFFECTS> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_abundance_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_abundance_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_abundance_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_activity_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_activity_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_activity_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_expression_of> @<http://w3id.org/biolink/vocab/GenomicEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_expression_of> @<http://w3id.org/biolink/vocab/GenomicEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_expression_of> @<http://w3id.org/biolink/vocab/GenomicEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_folding_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_folding_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_folding_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_localization_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_localization_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_localization_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_metabolic_processing_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_metabolic_processing_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_metabolic_processing_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_molecular_modification_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_molecular_modification_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_molecular_modification_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_synthesis_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_synthesis_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_synthesis_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_degradation_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_degradation_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_degradation_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_mutation_rate_of> @<http://w3id.org/biolink/vocab/GenomicEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_mutation_rate_of> @<http://w3id.org/biolink/vocab/GenomicEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_mutation_rate_of> @<http://w3id.org/biolink/vocab/GenomicEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_response_to> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_response_to> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_response_to> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_splicing_of> @<http://w3id.org/biolink/vocab/Transcript> ? ;
+          <http://w3id.org/biolink/vocab/increases_splicing_of> @<http://w3id.org/biolink/vocab/Transcript> ? ;
+          <http://w3id.org/biolink/vocab/decreases_splicing_of> @<http://w3id.org/biolink/vocab/Transcript> ? ;
+          <http://w3id.org/biolink/vocab/affects_stability_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_stability_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_stability_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_transport_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_transport_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_transport_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_secretion_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_secretion_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_secretion_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/affects_uptake_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/increases_uptake_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
+          <http://w3id.org/biolink/vocab/decreases_uptake_of> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
           <http://purl.obolibrary.org/obo/RO_0002448> @<http://w3id.org/biolink/vocab/MolecularEntity> ? ;
           <http://purl.obolibrary.org/obo/RO_0002607> @<http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature> ?
        )
@@ -713,7 +742,7 @@
 
 <http://w3id.org/biolink/vocab/NamedGraph>  (
     @<http://w3id.org/biolink/vocab/InformationContentEntity> AND {
-       <http://purl.org/dc/elements/1.1/title> <http://www.w3.org/2001/XMLSchema#string> ?
+       <http://w3id.org/biolink/vocab/named_graph_title> <http://www.w3.org/2001/XMLSchema#string> ?
     }
 )
 
@@ -795,16 +824,19 @@
 <http://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction>  (
     @<http://w3id.org/biolink/vocab/GeneToGeneAssociation> AND @<http://w3id.org/biolink/vocab/PairwiseInteractionAssociation> AND
     {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+       <http://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_relation> @<http://w3id.org/biolink/vocab/RelationshipType>
     }
 )
 
 <http://w3id.org/biolink/vocab/PairwiseInteractionAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/MolecularEntity> ;
+       (  <http://w3id.org/biolink/vocab/pairwise_interaction_association_subject> @<http://w3id.org/biolink/vocab/MolecularEntity>
+          ;
           <http://w3id.org/biolink/vocab/pairwise_interaction_association_id> <http://www.w3.org/2001/XMLSchema#string> ? ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/MolecularEntity> ;
+          <http://w3id.org/biolink/vocab/pairwise_interaction_association_relation>
+          @<http://w3id.org/biolink/vocab/RelationshipType> ;
+          <http://w3id.org/biolink/vocab/pairwise_interaction_association_object> @<http://w3id.org/biolink/vocab/MolecularEntity>
+          ;
           <http://w3id.org/biolink/vocab/interacting_molecules_category> @<http://w3id.org/biolink/vocab/OntologyClass> ?
        )
     }
@@ -844,9 +876,12 @@
 
 <http://w3id.org/biolink/vocab/PopulationToPopulationAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+       (  <http://w3id.org/biolink/vocab/population_to_population_association_subject>
+          @<http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
+          <http://w3id.org/biolink/vocab/population_to_population_association_object>
+          @<http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
+          <http://w3id.org/biolink/vocab/population_to_population_association_relation>
+          @<http://w3id.org/biolink/vocab/RelationshipType>
        )
     }
 )
@@ -895,8 +930,8 @@
 
 <http://w3id.org/biolink/vocab/SequenceFeatureRelationship>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/GenomicEntity> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/GenomicEntity>
+       (  <http://w3id.org/biolink/vocab/sequence_feature_relationship_subject> @<http://w3id.org/biolink/vocab/GenomicEntity> ;
+          <http://w3id.org/biolink/vocab/sequence_feature_relationship_object> @<http://w3id.org/biolink/vocab/GenomicEntity>
        )
     }
 )
@@ -921,8 +956,10 @@
 
 <http://w3id.org/biolink/vocab/SequenceVariantModulatesTreatmentAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/SequenceVariant> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/Treatment>
+       (  <http://w3id.org/biolink/vocab/sequence_variant_modulates_treatment_association_subject>
+          @<http://w3id.org/biolink/vocab/SequenceVariant> ;
+          <http://w3id.org/biolink/vocab/sequence_variant_modulates_treatment_association_object>
+          @<http://w3id.org/biolink/vocab/Treatment>
        )
     }
 )
@@ -949,7 +986,8 @@
 
 <http://w3id.org/biolink/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature>
+       <http://w3id.org/biolink/vocab/thing_to_disease_or_phenotypic_feature_association_object>
+       @<http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature>
     }
 )
 
@@ -963,8 +1001,8 @@
 
 <http://w3id.org/biolink/vocab/TranscriptToGeneRelationship>  (
     @<http://w3id.org/biolink/vocab/SequenceFeatureRelationship> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Transcript> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/Gene>
+       (  <http://w3id.org/biolink/vocab/transcript_to_gene_relationship_subject> @<http://w3id.org/biolink/vocab/Transcript> ;
+          <http://w3id.org/biolink/vocab/transcript_to_gene_relationship_object> @<http://w3id.org/biolink/vocab/Gene>
        )
     }
 )
@@ -980,7 +1018,7 @@
 
 <http://w3id.org/biolink/vocab/Treatment>  (
     @<http://w3id.org/biolink/vocab/Environment> AND {
-       (  <http://purl.obolibrary.org/obo/RO_0002606> @<http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature> ;
+       (  <http://w3id.org/biolink/vocab/treatment_treats> @<http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature> ;
           <http://w3id.org/biolink/vocab/has_exposure_parts> @<http://w3id.org/biolink/vocab/DrugExposure__List>
        )
     }
@@ -989,9 +1027,10 @@
 <http://w3id.org/biolink/vocab/VariantToDiseaseAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/VariantToThingAssociation> AND
     @<http://w3id.org/biolink/vocab/EntityToDiseaseAssociation> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.w3.org/2001/XMLSchema#string> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.w3.org/2001/XMLSchema#string>
+       (  <http://w3id.org/biolink/vocab/variant_to_disease_association_subject> <http://www.w3.org/2001/XMLSchema#string> ;
+          <http://w3id.org/biolink/vocab/variant_to_disease_association_relation> @<http://w3id.org/biolink/vocab/RelationshipType>
+          ;
+          <http://w3id.org/biolink/vocab/variant_to_disease_association_object> <http://www.w3.org/2001/XMLSchema#string>
        )
     }
 )
@@ -999,15 +1038,18 @@
 <http://w3id.org/biolink/vocab/VariantToPhenotypicFeatureAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/VariantToThingAssociation> AND
     @<http://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/SequenceVariant>
+       <http://w3id.org/biolink/vocab/variant_to_phenotypic_feature_association_subject>
+       @<http://w3id.org/biolink/vocab/SequenceVariant>
     }
 )
 
 <http://w3id.org/biolink/vocab/VariantToPopulationAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/VariantToThingAssociation> AND
     @<http://w3id.org/biolink/vocab/FrequencyQuantifier> AND @<http://w3id.org/biolink/vocab/FrequencyQualifier> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/SequenceVariant> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
+       (  <http://w3id.org/biolink/vocab/variant_to_population_association_subject>
+          @<http://w3id.org/biolink/vocab/SequenceVariant> ;
+          <http://w3id.org/biolink/vocab/variant_to_population_association_object>
+          @<http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
           <http://w3id.org/biolink/vocab/variant_to_population_association_has_quotient> <http://www.w3.org/2001/XMLSchema#double>
           ? ;
           <http://w3id.org/biolink/vocab/variant_to_population_association_has_count> <http://www.w3.org/2001/XMLSchema#integer> ?
@@ -1019,7 +1061,7 @@
 
 <http://w3id.org/biolink/vocab/VariantToThingAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/SequenceVariant>
+       <http://w3id.org/biolink/vocab/variant_to_thing_association_subject> @<http://w3id.org/biolink/vocab/SequenceVariant>
     }
 )
 
