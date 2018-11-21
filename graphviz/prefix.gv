@@ -1,0 +1,28 @@
+digraph {
+	graph [bb="0,0,146.71,122"];
+	node [label="\N"];
+	prefix	 [height=0.5,
+		label=prefix,
+		pos="69,104",
+		width=0.85385];
+	"local name"	 [color=blue,
+		height=0.5,
+		label="",
+		pos="27,18",
+		width=0.75];
+	prefix -> "local name"	 [color=blue,
+		label="local name",
+		lp="58.512,61",
+		pos="e,23.933,35.911 47.611,90.787 39.97,84.846 32.209,77.109 27.976,68 24.842,61.257 23.696,53.43 23.558,45.999",
+		style=solid];
+	"prefix uri"	 [color=blue,
+		height=0.5,
+		label="",
+		pos="111,18",
+		width=0.75];
+	prefix -> "prefix uri"	 [color=blue,
+		label="prefix uri",
+		lp="120.86,61",
+		pos="e,103.66,35.77 79.095,86.595 82.372,80.747 85.948,74.148 89,68 92.636,60.676 96.318,52.614 99.603,45.142",
+		style=solid];
+}
