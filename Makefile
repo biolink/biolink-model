@@ -103,7 +103,8 @@ contrib/%/datamodel.py: contrib/%.yaml
 	gen-py-classes contrib/$*.yaml > $@
 
 gen-graphviz: dir-graphviz biolink-model.yaml
-	gen-graphviz  -d graphviz biolink-model.yaml
+	gen-graphviz  -d graphviz biolink-model.yaml -f gv
+	gen-graphviz  -d graphviz biolink-model.yaml -f svg
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Solr
