@@ -1800,8 +1800,9 @@ classes:
       - "UMLSSG:CHEM"
       - "WD:Q79529"
     id_prefixes:
-      - CHEMBL.TARGET
-      
+      - CHEBI
+      - CHEMBL.COMPOUND
+        
   drug:
     is_a: chemical substance
     description: >-
@@ -1810,7 +1811,7 @@ classes:
       The CHEBI ID represents a role rather than a substance
     mappings:
       - WD:Q12140
-      - CHEBI:23888
+      - CHEBI:23888       
       
   metabolite:
     is_a: chemical substance
@@ -1949,6 +1950,8 @@ classes:
     description: >-
       a union of genes or gene products.
       Frequently an identifier for one will be used as proxy for another
+    id_prefixes:
+      - CHEMBL.TARGET
       
   gene:
     is_a: gene or gene product
