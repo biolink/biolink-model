@@ -5,1454 +5,1454 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/values_from">
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-    <rdfs:label>values_from</rdfs:label>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <skos:definition>identifies the possible uri's of the range</skos:definition>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/inlined">
-    <skos:definition>if true then the value of this slot is inlined (i.e. a nested object) rather linked by key</skos:definition>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:label>inlined</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8fae5f8967d742c6bc554250053faa33">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/generation_date"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nea12b9cc2e7a420094de0d1347421370">
-    <rdf:rest rdf:nodeID="N46e6d8cb1126432b88be712e9ebaf70d"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/alt_descriptions"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N13a2f1368b67463a94274a4e1c606ce0">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/comment"/>
-    <rdf:rest rdf:nodeID="N60c8f42bbf2a4058a4e19e6bfd3bff07"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/is_a">
-    <skos:mappingRelation rdf:nodeID="N3dd42b3eb11b45e4919597b8bea00843"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-    <rdfs:label>is_a</rdfs:label>
-    <skos:definition>specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/value">
-    <rdfs:label>value</rdfs:label>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Example"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0baed577832d4ca6a82bef83ea2b7a67">
-    <biolink:prefix_uri>http://w3id.org/biolink/vocab/</biolink:prefix_uri>
-    <biolink:local_name>biolink</biolink:local_name>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/in_subset">
-    <skos:mappingRelation rdf:nodeID="N6f6fa19065ea4aab877ca06e3a1da7e7"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <rdfs:label>in_subset</rdfs:label>
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-    <skos:definition>used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)</skos:definition>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/comment">
-    <skos:definition>Comment about an element</skos:definition>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <skos:mappingRelation rdf:nodeID="N4097d6cdf5af4015b42dc1b0d398aedd"/>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label>comment</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na389aa34d0a8411d824cd613d8362086">
-    <rdf:rest rdf:nodeID="Nd2e19094033e4c2796df795389f5cbb6"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/domain"/>
+  <rdf:Description rdf:about="https://biolink.github.io/metamodel/ontology/meta.ttl">
+    <biolink:prefixes rdf:nodeID="N47b84ff234534e3497b07d8136bae300"/>
+    <biolink:version>0.3.2</biolink:version>
+    <biolink:generation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-12-04</biolink:generation_date>
+    <biolink:source_file>/Users/solbrig/git/biolink-continuous/biolink-model/meta.yaml</biolink:source_file>
+    <biolink:default_curi_maps rdf:nodeID="Ne2c15a36f3c6492fa318346cb2ca5ef5"/>
+    <rdfs:label>metamodel</rdfs:label>
+    <biolink:source_file_date>Tue Dec  4 07:40:49 2018</biolink:source_file_date>
+    <biolink:slots rdf:nodeID="Nd8ca9bafb6ad47ed809cb41a8938ff9e"/>
+    <biolink:metamodel_version>0.3.2</biolink:metamodel_version>
+    <biolink:license>https://creativecommons.org/publicdomain/zero/1.0/</biolink:license>
+    <biolink:id_prefixes rdf:nodeID="Nf7df68c4344d4ca8bf78a7667b0c2a08"/>
+    <biolink:id>https://biolink.github.io/metamodel/ontology/meta.ttl</biolink:id>
+    <biolink:classes rdf:nodeID="N1c8ad24639bb4b9fafc995d91be1fcd8"/>
+    <skos:note>OIO prefix is not correct -- where IS "inSubset" derived from?</skos:note>
+    <biolink:default_prefix>biolink</biolink:default_prefix>
+    <biolink:source_file_size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20991</biolink:source_file_size>
+    <skos:definition>Metamodel for biolink schema</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/biolink/vocab/source_file_size">
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
     <skos:definition>size in bytes of the source of the schema.  Supplied by the loader</skos:definition>
-    <rdfs:label>source_file_size</rdfs:label>
     <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf713421536374e18a1077bc741456965">
-    <rdf:first rdf:nodeID="Nff700db6d3b749928bf72e73dda383fd"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfcf99b3df0c6405bbca0440d90cbd96e">
-    <rdf:rest rdf:nodeID="N157531c2a86c4580b2f3e3ea9f7f8767"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/metamodel_version"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/source_file_date">
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <skos:definition>modification date of the source of the schema.  Supplied by the loader</skos:definition>
-    <rdfs:label>source_file_date</rdfs:label>
     <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+    <rdfs:label>source_file_size</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/default_curi_maps">
-    <rdfs:label>default_curi_maps</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <skos:definition>List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables</skos:definition>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6f6fa19065ea4aab877ca06e3a1da7e7">
-    <rdf:first>OIO:inSubset</rdf:first>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd2e19094033e4c2796df795389f5cbb6">
-    <rdf:rest rdf:nodeID="N5a09e940191e4cc89291741a26ff8d13"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/range"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N05e309eed0564ee79d9313979d91da7f">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-    <rdf:rest rdf:nodeID="N3ce3596eba5b4ffba9d8033959ece106"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Naa3ed4ff3eb848a0b3d016a4761d57df">
-    <rdf:rest rdf:nodeID="N78c1afcb25324243874e1f4090a6c730"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/default_type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/AltDescription">
-    <skos:definition>Attributed description</skos:definition>
-    <biolink:slots rdf:nodeID="Ne933d1cdda234318b4e77ad9ab6afee5"/>
-    <rdfs:label>AltDescription</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne47175a5bcb74bc0be553ec2c0c248ff">
-    <rdf:rest rdf:nodeID="Nc823c4054f044cd4aaf13fbd63935c5a"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/mappings"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8475b1797a7b4908bc1508ae1be48b89">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/class_definition_mixins"/>
-    <rdf:rest rdf:nodeID="N0439118be9154cd39a943c694a82d7a2"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/singular_name">
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <skos:definition>a name that is used in the singular form</skos:definition>
-    <rdfs:label>singular_name</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3ce3596eba5b4ffba9d8033959ece106">
-    <rdf:rest rdf:nodeID="N5d3cc5f70f4f4c2f89c2d4e0a4eb8d94"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/TypeDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/types">
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <rdfs:label>types</rdfs:label>
-    <biolink:inlined rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inlined>
-    <skos:definition>types defined in schema</skos:definition>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/TypeDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc5b12ff3e9894cfdba87c03e8db3eaa8">
-    <rdf:first>skos:mappingRelation</rdf:first>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N157531c2a86c4580b2f3e3ea9f7f8767">
-    <rdf:rest rdf:nodeID="N325e135f6ba84b80a819adb88c012485"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source_file"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbcccfbe11c5341eea5da6ab867039960">
-    <rdf:rest rdf:nodeID="N6824f043f12b4a66b0d57613d6b5ab73"/>
+  <rdf:Description rdf:nodeID="N47f7624754d449e5a04e6e8ca2c33b88">
+    <rdf:rest rdf:nodeID="N9da62a6b13c14aefa13f0bbcf8f8583c"/>
     <rdf:first rdf:resource="http://w3id.org/biolink/vocab/defining_slots"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N2b00cb8def9d4e159c7b007c5ed590f9">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/mixin"/>
-    <rdf:rest rdf:nodeID="Ne93fb68bd84d4a78bf48d467f6dd58c0"/>
+  <rdf:Description rdf:nodeID="N2d6ed0afad5946e7b8ca088ff046c4e2">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/entity"/>
+    <rdf:rest rdf:nodeID="N3e5f186c442d4aaebffd9f9e42382e5c"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N452e93bf14e545a3a8e7055aa54432f0">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/description"/>
-    <rdf:rest rdf:nodeID="N24727285ea504d7abce12a8be3dc378f"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/name">
-    <rdfs:label>name</rdfs:label>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:primary_key rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:primary_key>
-    <skos:definition>a unique key that identifies a slot, type or class in a schema</skos:definition>
-    <skos:mappingRelation rdf:nodeID="Ndb8ac468d1b54c97b88aa948ad269d7d"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/SlotDefinition">
-    <biolink:slot_usage rdf:nodeID="N3eaf765443f64670bdd8760bc5d9e1fb"/>
-    <skos:definition>A property or slot</skos:definition>
-    <biolink:slots rdf:nodeID="N8c4ba815c1924e3d8fe67b84fc63a51c"/>
-    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-    <rdfs:label>SlotDefinition</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb5a42ed87b164d3fbbc5f6e0cd51af96">
-    <rdf:rest rdf:nodeID="Ncf3217813b754c2c909b428af97c753b"/>
-    <rdf:first rdf:nodeID="N4a0a39bf62444028ae6eca673a75495d"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na52725c36c3d4e63b762ff19455e444f">
-    <rdf:first>skos:example</rdf:first>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/abstract">
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-    <skos:definition>An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored</skos:definition>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:label>abstract</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/symmetric">
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-    <skos:definition>Symmetric slot</skos:definition>
-    <rdfs:label>symmetric</rdfs:label>
-    <skos:note>Indications that a slot or reified association is symmetric</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc61b69356c254d03842b1b7ae7a86572">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/apply_to"/>
-    <rdf:rest rdf:nodeID="N558fc7bce9f642fb895fe31f6ceecfd7"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/description">
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <skos:mappingRelation rdf:nodeID="Nd5adc0e8f93d49bbb099e1d88a783598"/>
-    <skos:definition>a description</skos:definition>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-    <rdfs:label>description</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N325e135f6ba84b80a819adb88c012485">
-    <rdf:rest rdf:nodeID="N50c2cb511bd54d7d93608941ba3bc6c8"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source_file_date"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://biolink.github.io/metamodel/ontology/meta.ttl">
-    <biolink:source_file>/Users/hsolbri1/git/biolink/biolink-model/meta.yaml</biolink:source_file>
-    <skos:definition>Metamodel for biolink schema</skos:definition>
-    <biolink:id>https://biolink.github.io/metamodel/ontology/meta.ttl</biolink:id>
-    <skos:note>OIO prefix is not correct -- where IS "inSubset" derived from?</skos:note>
-    <biolink:license>https://creativecommons.org/publicdomain/zero/1.0/</biolink:license>
-    <biolink:classes rdf:nodeID="N044857b96ce54a60bb0c809e1d340ad3"/>
-    <biolink:slots rdf:nodeID="N674ad5cdb95a412992edf2e8c54c988a"/>
-    <biolink:default_curi_maps rdf:nodeID="N8b807acfa34743898492a7f215d2c043"/>
-    <biolink:metamodel_version>0.3.2</biolink:metamodel_version>
-    <biolink:generation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-11-12</biolink:generation_date>
-    <biolink:default_prefix>biolink</biolink:default_prefix>
-    <rdfs:label>metamodel</rdfs:label>
-    <biolink:source_file_size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20991</biolink:source_file_size>
-    <biolink:prefixes rdf:nodeID="Nb66540ef109b4d20a9fac749ab881fdd"/>
-    <biolink:id_prefixes rdf:nodeID="N1548f572291646fbb97275178b5434c0"/>
-    <biolink:version>0.3.2</biolink:version>
-    <biolink:source_file_date>Mon Nov 12 17:56:29 2018</biolink:source_file_date>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7fa2befce03441b7bf1e8e3584bd8c28">
-    <rdf:rest rdf:nodeID="Nc833054e0feb4bfaaddf76ade8c47957"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/default_type"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/classes">
-    <rdfs:label>classes</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-    <biolink:inlined rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inlined>
-    <skos:definition>classes defined in schema</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/close_matches">
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <skos:definition>a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).</skos:definition>
-    <skos:mappingRelation rdf:nodeID="N4e2647fb91af4ae09013a57233433cda"/>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <rdfs:label>close_matches</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4097d6cdf5af4015b42dc1b0d398aedd">
-    <rdf:first>skos:editorialNote</rdf:first>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5a09e940191e4cc89291741a26ff8d13">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/required"/>
-    <rdf:rest rdf:nodeID="Ne4952f4895f44f32b0d0999a65c76f32"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N33e7b81d50064171b2740b21a7a82d22">
-    <rdf:rest rdf:nodeID="Nbc646016d26342e0aaa45f285aa7b12b"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slots"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/Element">
-    <skos:definition>root of all described things</skos:definition>
-    <biolink:slots rdf:nodeID="N2f881a51dd7e413fa797a6be1baf4378"/>
-    <rdfs:label>Element</rdfs:label>
-    <biolink:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:abstract>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/mappings">
-    <rdfs:label>mappings</rdfs:label>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <skos:definition>a list of terms from different schemas or terminology systems that have comparable meaning. These may include terms that are precisely equivalent, broader or narrower in meaning, or otherwise semantically related but not equivalent from a strict ontological perspective.</skos:definition>
-    <skos:mappingRelation rdf:nodeID="Nc5b12ff3e9894cfdba87c03e8db3eaa8"/>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf957aeaa4ded49a7b78d37c22fc53fe4">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/default_curi_maps"/>
-    <rdf:rest rdf:nodeID="Ndf839eff893e46aa88d467e0d370852e"/>
+  <rdf:Description rdf:nodeID="N7ef4f6ef21b841dba80731dbc489e663">
+    <rdf:rest rdf:nodeID="N90532891ca87451f98cb541e158e51d6"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/examples"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/biolink/vocab/range">
     <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <skos:definition>The slot type.  Can be any class or type</skos:definition>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyType"/>
     <rdfs:label>range</rdfs:label>
     <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/aliases">
-    <rdfs:label>aliases</rdfs:label>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8aaf192666364e0fb1397a332a019042">
-    <rdf:rest rdf:nodeID="N0f72b76afad84acd871635b48b7ecc25"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/description"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/object_property">
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <skos:definition>true means that this slot is part of the formal definition of a class</skos:definition>
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-    <rdfs:label>object_property</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N558fc7bce9f642fb895fe31f6ceecfd7">
-    <rdf:rest rdf:nodeID="Ncd5eae743b424be7bf1c494363735ddf"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/entity"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N313424f106c3457f93b0b0b87a717821">
-    <rdf:rest rdf:nodeID="N88c4ea73f7fe48bdadc1773bc115a47a"/>
-    <rdf:first>idot_context</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nba1c1efedd574071984bdb08e9e7e1b5">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/id"/>
-    <rdf:rest rdf:nodeID="N1666644138db41d0bdd9ab39e5bffc61"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf43432f54cd54f2bbad2d67f4e238036">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/in_subset"/>
-    <rdf:rest rdf:nodeID="N7d09b5c4e30c4c7788c7d5aa8a3de92b"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N39345bf9c2674fe48be577e3f2c06978">
-    <rdf:first>skos:narrowMatch</rdf:first>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8a6020960e9c4cb2b62573edf58b3c81">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source_file_date"/>
-    <rdf:rest rdf:nodeID="N8fae5f8967d742c6bc554250053faa33"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/from_schema">
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <skos:definition>id of the schema that the element was derived from.  Supplied by the loader.</skos:definition>
-    <skos:mappingRelation rdf:nodeID="N2fb67e6f46af4bfda867e2375770f86b"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <rdfs:label>from_schema</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/typeof">
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/TypeDefinition"/>
-    <rdfs:label>typeof</rdfs:label>
-    <skos:definition>a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4af2587cc366452c909201e5d1f6fd7b">
-    <rdf:rest rdf:nodeID="Na39175457ca445b5b78c2fff1720ba0d"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/id"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Neb26f571f8d44e18bc09d4d7bd4ccc04">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/is_class_field"/>
-    <rdf:rest rdf:nodeID="N364eba7cebf845a3a7b40fa78d3f3aab"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/default_type">
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/TypeDefinition"/>
-    <skos:definition>the default type if range is omitted</skos:definition>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-    <rdfs:label>default_type</rdfs:label>
+    <skos:definition>The slot type.  Can be any class or type</skos:definition>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyType"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/biolink/vocab/see_also">
+    <skos:mappingRelation rdf:nodeID="Ncbec3b5fb21e4a9dba19a70b776bcb4c"/>
     <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <skos:note>needs description</skos:note>
-    <skos:mappingRelation rdf:nodeID="N4f7537077a754e2bb659f5e2638cbd21"/>
     <rdfs:label>see_also</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd2596cb223a549e5985baf5fb2789e24">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/local_name"/>
-    <rdf:rest rdf:nodeID="N8f4fc457f7a3497a93030498124a24d4"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N91ba8a29d3a0475bbb3354a8c5c18ca6">
-    <rdf:rest rdf:nodeID="N8ad168c1b7e64c4db5af144e75ee87e9"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source_file"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/inherited">
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-    <rdfs:label>inherited</rdfs:label>
-    <skos:definition>True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths</skos:definition>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3dd42b3eb11b45e4919597b8bea00843">
-    <rdf:first>rdf:type</rdf:first>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3699185488384800baaf6bfd756e10b1">
-    <rdf:rest rdf:nodeID="N2e638143e8cd48caa2e9fa184bf2161c"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/imports"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4a0a39bf62444028ae6eca673a75495d">
-    <rdfs:label>is_a</rdfs:label>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0b5a783c02c144918d8d79614d67768a">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/value"/>
-    <rdf:rest rdf:nodeID="N9dfaec31ca704c3faae720e18da52c5e"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/slot_definitions">
-    <rdfs:label>slot_definitions</rdfs:label>
-    <skos:definition>collection of slot definitions in a schema</skos:definition>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <biolink:inlined rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inlined>
-    <biolink:alias>slots</biolink:alias>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N372be549ae7b455683ba08322521b4a2">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/is_class_field"/>
-    <rdf:rest rdf:nodeID="Nbf6d9d10ea0c4d57a26b9af74858507b"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7edf762e313b44ef84f8a2f18de3ca75">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/values_from"/>
-    <rdf:rest rdf:nodeID="N6e75745b33ed4f42a22d9f5424cc7043"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N154994e9756943fcbef6c969761cb861">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>rdfs:subPropertyOf</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/is_class_field">
-    <rdfs:label>is_class_field</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <skos:note>Needs description</skos:note>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nff700db6d3b749928bf72e73dda383fd">
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-    <rdfs:label>union_of</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/default_prefix">
-    <skos:definition>default and base prefix -- used for ':' identifiers, @base and @vocab</skos:definition>
-    <rdfs:label>default_prefix</rdfs:label>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/alt_descriptions">
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/AltDescription"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <skos:note>Needs description</skos:note>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <rdfs:label>alt_descriptions</rdfs:label>
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/subproperty_of">
-    <rdfs:label>subproperty_of</rdfs:label>
-    <skos:definition>Ontolgy property which this is a subproperty of</skos:definition>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <skos:mappingRelation rdf:nodeID="N154994e9756943fcbef6c969761cb861"/>
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/local_name">
-    <biolink:primary_key rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:primary_key>
-    <skos:definition>the nsname (sans ':' for a given prefix)</skos:definition>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Prefix"/>
-    <rdfs:label>local_name</rdfs:label>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8b807acfa34743898492a7f215d2c043">
-    <rdf:rest rdf:nodeID="N4a024607304a4c1a86d7d61497742e38"/>
-    <rdf:first>obo_context</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N623fd38d034f4ba7beaacb1e71af7afd">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/note"/>
-    <rdf:rest rdf:nodeID="N13a2f1368b67463a94274a4e1c606ce0"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N30af044789ed45ca86cde96ba839995a">
-    <rdf:rest rdf:nodeID="Nb29f7c431dfa4eb4bcb8aeeacd1b6160"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/subproperty_of"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/Prefix">
-    <skos:definition>Prefix URI map</skos:definition>
-    <biolink:slots rdf:nodeID="Nbe5c06ee21a34489a67ab0d40391efc6"/>
-    <rdfs:label>Prefix</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbe5c06ee21a34489a67ab0d40391efc6">
-    <rdf:rest rdf:nodeID="Nf7dbfe7a9b5a40a0b00db55453d9c6c9"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/local_name"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/examples">
-    <skos:definition>Example of usage for a slot or class</skos:definition>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/Example"/>
-    <biolink:inlined rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inlined>
-    <skos:mappingRelation rdf:nodeID="Na52725c36c3d4e63b762ff19455e444f"/>
-    <rdfs:label>examples</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb66540ef109b4d20a9fac749ab881fdd">
-    <rdf:first rdf:nodeID="N0baed577832d4ca6a82bef83ea2b7a67"/>
-    <rdf:rest rdf:nodeID="N5cee4bfa78b54909969751e470ca5869"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0439118be9154cd39a943c694a82d7a2">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/class_definition_union_of"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N364eba7cebf845a3a7b40fa78d3f3aab">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/role"/>
-    <rdf:rest rdf:nodeID="N80640030f4454104977732e99507e569"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/flags">
-    <skos:definition>State information and other details</skos:definition>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <rdfs:label>flags</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne743d4243d404d00aa983811b28991d5">
-    <rdf:rest rdf:nodeID="N05e309eed0564ee79d9313979d91da7f"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N52e43df4e48f4e968379eb6b65e9291f">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/path"/>
-    <rdf:rest rdf:nodeID="N30af044789ed45ca86cde96ba839995a"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9295447ea6964d5498a26d31ab507b67">
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-    <rdfs:label>mixins</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6e75745b33ed4f42a22d9f5424cc7043">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/subclass_of"/>
-    <rdf:rest rdf:nodeID="Nd0363f8b87614457bb5f62561ac88428"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/ClassDefinition">
-    <rdfs:label>ClassDefinition</rdfs:label>
-    <biolink:slots rdf:nodeID="N10c65fa0f0d746efba9be6c0a9f0837e"/>
-    <skos:definition>A class or interface</skos:definition>
-    <biolink:slot_usage rdf:nodeID="Nb5a42ed87b164d3fbbc5f6e0cd51af96"/>
-    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/apply_to">
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-    <skos:definition>Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class.</skos:definition>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-    <rdfs:label>apply_to</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7bf9671e5f2c46f38fcf322161938b11">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>skos:broadMatch</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/imports">
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label>imports</rdfs:label>
-    <skos:definition>A list of modules that are imported into the schema</skos:definition>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3eaf765443f64670bdd8760bc5d9e1fb">
-    <rdf:first rdf:nodeID="Na69ee6b5fa6a4f6f94a2baf7cae1c373"/>
-    <rdf:rest rdf:nodeID="Nad65806c3f844137819cfa4bee42cf58"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd3c11ef6df76414aad997323733cd366">
-    <rdf:rest rdf:nodeID="N31b3eaea0a214f59b7b0142198008240"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/note">
-    <rdfs:label>note</rdfs:label>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <skos:definition>Notes about an element</skos:definition>
-    <skos:mappingRelation rdf:nodeID="N348e5c3817ed44c890e3ac81e5e19562"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2f2f5234759a4ef29f50aed8974cc3dd">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definition_is_a"/>
-    <rdf:rest rdf:nodeID="N3ffe6824f4aa458f90204d8a25a815af"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2bb48e3d7b6e40038cca996894a20d24">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/multivalued"/>
-    <rdf:rest rdf:nodeID="Na389aa34d0a8411d824cd613d8362086"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/alias">
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label>alias</rdfs:label>
-    <skos:definition>A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have "slots" where one inline and the other a reference</skos:definition>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf91be2e0ade44ad6a29f602eb356f0a1">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>OIO</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncd5eae743b424be7bf1c494363735ddf">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/class_definition_is_a"/>
-    <rdf:rest rdf:nodeID="N8475b1797a7b4908bc1508ae1be48b89"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb29f7c431dfa4eb4bcb8aeeacd1b6160">
-    <rdf:rest rdf:nodeID="Neb26f571f8d44e18bc09d4d7bd4ccc04"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/inverse"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3d92ca55f8464d2faaf6eca882ad6668">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definition_union_of"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/TypeDefinition">
-    <rdfs:label>TypeDefinition</rdfs:label>
-    <biolink:slots rdf:nodeID="N13accc4d7260497fb21f9aa1ecb760f1"/>
-    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <skos:definition>A type definition</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6f430331a5bd44e3b22379249cdb6b14">
-    <rdf:rest rdf:nodeID="N372be549ae7b455683ba08322521b4a2"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/inverse"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/alt_description_text">
-    <skos:definition>text of an alternate description</skos:definition>
-    <biolink:alias>description</biolink:alias>
-    <rdfs:label>alt_description_text</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/AltDescription"/>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/inverse">
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <skos:definition>used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')</skos:definition>
-    <rdfs:label>inverse</rdfs:label>
-    <skos:mappingRelation rdf:nodeID="Nb8c49bb1bbf34e06b880045a7270fc50"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6824f043f12b4a66b0d57613d6b5ab73">
-    <rdf:rest rdf:nodeID="N34ce501653d74a72955285e23f130d19"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slots"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/role">
-    <skos:note>Needs description</skos:note>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label>role</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na39175457ca445b5b78c2fff1720ba0d">
-    <rdf:rest rdf:nodeID="N09f52bc604b142519aadabd7946b704f"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/version"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N30b49f3c5e0d493ba3a51146ccfe678a">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/value_description"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/domain">
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-    <rdfs:label>domain</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <skos:definition>The class to which this slot applies.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/entity">
-    <rdfs:label>entity</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <skos:note>needs description</skos:note>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N346e555228614b91a8dc28cff9184c7d">
-    <rdf:rest rdf:nodeID="Nc712a494c9b94c8aac3f1512e2cfe038"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/alias"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/narrower_matches">
     <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-    <skos:definition>a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.</skos:definition>
-    <skos:mappingRelation rdf:nodeID="N39345bf9c2674fe48be577e3f2c06978"/>
-    <rdfs:label>narrower_matches</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N5acd867174b540f6986cbca25d204d8b">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/types"/>
-    <rdf:rest rdf:nodeID="N09ab2af78e9340f7baad2cee699d2c28"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/primary_key">
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label>primary_key</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <skos:definition>True means that this serves as a unique identifier</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/defining_slots">
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <skos:definition>The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom</skos:definition>
-    <rdfs:label>defining_slots</rdfs:label>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2165990c66b548bfa92f1ad1bf2e6b69">
-    <rdf:rest rdf:nodeID="N7edf762e313b44ef84f8a2f18de3ca75"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/union_of"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nafc0d48dfaa741e9abf740d9126602e2">
-    <rdf:rest rdf:nodeID="N269aba9421e24d3b94d8461771431ef3"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/apply_to"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc7493801592b43948e6623571e769530">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/exact_matches"/>
-    <rdf:rest rdf:nodeID="N2d7d13ea57c84421b5169ca2d45347b6"/>
+  <rdf:Description rdf:nodeID="N55d27ff8a213469295e9745709502d85">
+    <rdf:rest rdf:nodeID="Nd7e2eb8ec27e4098955758c284ffd826"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/values_from"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/biolink/vocab/union_of">
     <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
     <skos:definition>list of class or slot definitions that are combined to create the union class</skos:definition>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
     <rdfs:label>union_of</rdfs:label>
     <biolink:range rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/class_definition_is_a">
-    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/is_a"/>
-    <rdfs:label>class_definition_is_a</rdfs:label>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-    <biolink:alias>is_a</biolink:alias>
-    <skos:definition>specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</skos:definition>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0ea3854bd66047a7bd5f0b59e8b26fe5">
-    <rdf:rest rdf:nodeID="N346e555228614b91a8dc28cff9184c7d"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/identifier"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/multivalued">
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <skos:definition>If true slot can have many values</skos:definition>
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-    <rdfs:label>multivalued</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc9841048862c4c28a110ecfd8ecf3a89">
-    <rdf:rest rdf:nodeID="N57e1bca7007143228745d47b4a94de85"/>
-    <rdf:first>rdfs</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne6debd324ad54bed9d900c62b6d0e791">
-    <rdf:rest rdf:nodeID="Na5eb487c4bb342e7ac08da6616c437fd"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/comment"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N710eb8afa83249a8b2a4cfc9871f78a7">
-    <rdf:rest rdf:nodeID="Nbcccfbe11c5341eea5da6ab867039960"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/generation_date"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2eabacd336114615982abc255904fa0d">
-    <rdf:rest rdf:nodeID="N3c652b9e318540f8878adf6ad48d5613"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/is_a"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/slot_definition_mixins">
-    <biolink:alias>mixins</biolink:alias>
-    <skos:definition>List of definitions to be mixed in. Targets may be any definition of the same type</skos:definition>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <rdfs:label>slot_definition_mixins</rdfs:label>
     <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/mixins"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N50c2cb511bd54d7d93608941ba3bc6c8">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source_file_size"/>
-    <rdf:rest rdf:nodeID="N710eb8afa83249a8b2a4cfc9871f78a7"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/AltDescription">
+    <skos:definition>Attributed description</skos:definition>
+    <biolink:slots rdf:nodeID="N7246a4d3dea141d39695bd73575d0552"/>
+    <rdfs:label>AltDescription</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/license">
-    <skos:definition>license for the schema</skos:definition>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-    <rdfs:label>license</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N10499b22afa44c68822254eb58c90320">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definition_union_of"/>
-    <rdf:rest rdf:nodeID="Nf302e6e9933d4fb59b239db5fd743955"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N09ab2af78e9340f7baad2cee699d2c28">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definitions"/>
-    <rdf:rest rdf:nodeID="N262639f6d1da44cbb6352deb72767099"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N35b0fed3076a4a6c832af6d03287ad8d">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:nodeID="N1c2f666c17a94a4bb8daee2f2ac2aaf6"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N214dafa4fec846ebb16460e450fcfe30">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/symmetric"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd5adc0e8f93d49bbb099e1d88a783598">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>skos:definition</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N370b3b29414147cd94b2502bb08147e3">
-    <rdf:rest rdf:nodeID="Ncd497ecc42f942e08335daac3caf2bee"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/see_also"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2b69b239e4c3464781f425f911fc2ce2">
-    <rdf:rest rdf:nodeID="N370b3b29414147cd94b2502bb08147e3"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/flags"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/id">
-    <skos:definition>a globally unique id or url for a schema</skos:definition>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:primary_key rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:primary_key>
-    <rdfs:label>id</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/source">
-    <rdfs:label>source</rdfs:label>
-    <skos:definition>the source of description or other element</skos:definition>
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/alt_description_text">
+    <biolink:alias>description</biolink:alias>
+    <skos:definition>text of an alternate description</skos:definition>
     <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/AltDescription"/>
+    <rdfs:label>alt_description_text</rdfs:label>
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
     <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf2b0efbdb987414f954412c17a9b9de5">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definition_is_a"/>
-    <rdf:rest rdf:nodeID="N7810c7e87f7a4c9f840203aae1ac160c"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/object_property">
+    <skos:definition>true means that this slot is part of the formal definition of a class</skos:definition>
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <rdfs:label>object_property</rdfs:label>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/class_definition_mixins">
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-    <rdfs:label>class_definition_mixins</rdfs:label>
-    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/mixins"/>
+  <rdf:Description rdf:nodeID="N6e7447be900e4bea8b43f055e8048882">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/value_description"/>
+    <rdf:rest rdf:nodeID="N23d02cf13a604995bcd61d606d5fac7d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/values_from">
+    <skos:definition>identifies the possible uri's of the range</skos:definition>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
     <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <skos:definition>List of definitions to be mixed in. Targets may be any definition of the same type</skos:definition>
-    <biolink:alias>mixins</biolink:alias>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>values_from</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5220f13946b84381a4eb44540435206a">
+    <rdfs:label>is_a</rdfs:label>
     <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N9d047f60d4c2412b803c3a68dd5e7aa9">
-    <rdf:rest rdf:nodeID="Nf536ae7ce7984478b274086a4b04b027"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/identifier"/>
+  <rdf:Description rdf:nodeID="N9da62a6b13c14aefa13f0bbcf8f8583c">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slots"/>
+    <rdf:rest rdf:nodeID="N84c4d6f83ce543ed94bda1baef281ff8"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/prefixes">
-    <skos:definition>Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes</skos:definition>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/Prefix"/>
-    <biolink:inlined rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inlined>
-    <rdfs:label>prefixes</rdfs:label>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7d4898b385264006b52a3a84f544f5ea">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/classes"/>
-    <rdf:rest rdf:nodeID="Nfcf99b3df0c6405bbca0440d90cbd96e"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/identifier">
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:label>identifier</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <skos:definition>True means that this slot must be unique across the collection of slots</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N46e6d8cb1126432b88be712e9ebaf70d">
-    <rdf:rest rdf:nodeID="Nad432755ca1c4873912d7a610e9d7ee3"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/exact_matches"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/definitional">
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <skos:note>needs description</skos:note>
-    <rdfs:label>definitional</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0f72b76afad84acd871635b48b7ecc25">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/alt_description_text"/>
-    <rdf:rest rdf:nodeID="Nd3c11ef6df76414aad997323733cd366"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N94415f342b5c43349a82ee57f7137df3">
-    <rdf:rest rdf:nodeID="Nc7493801592b43948e6623571e769530"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/mappings"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N059dd55e95f14432b04cfea4e2b9972a">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/prefixes"/>
-    <rdf:rest rdf:nodeID="Nb7822163d879459c81ccdfef47bb886e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5d3cc5f70f4f4c2f89c2d4e0a4eb8d94">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N348e5c3817ed44c890e3ac81e5e19562">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>skos:note</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/subclass_of">
-    <rdfs:label>subclass_of</rdfs:label>
-    <skos:mappingRelation rdf:nodeID="Nac6e0b8fd0614b8f98e46d756c17a712"/>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-    <skos:definition>Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes</skos:definition>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+  <rdf:Description rdf:nodeID="Nf789753887154b1ca2d84d6e49829245">
+    <rdf:rest rdf:nodeID="N57f04130473e460389fcc8f574a87f3a"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definition_is_a"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/biolink/vocab/value_description">
+    <rdfs:label>value_description</rdfs:label>
     <biolink:alias>description</biolink:alias>
     <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Example"/>
     <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label>value_description</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/mixin">
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-    <rdfs:label>mixin</rdfs:label>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <skos:definition>Used only as a mixin -- cannot be instantiated on its own.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb1cc7bd6cdff4ee195061bb7341e630e">
-    <rdf:first rdf:nodeID="N9bae4cedd60d4284a8ca58a02f630e51"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N802d5ee64e544dcd9973dd17f7cb6189">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N85f07f2406aa4a5ba9b20e015e42bdb0">
-    <rdf:rest rdf:nodeID="N0545c60a8c3649a5b50137fbb379bed8"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/domain"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/slot_definition_is_a">
-    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/is_a"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <biolink:alias>is_a</biolink:alias>
-    <rdfs:label>slot_definition_is_a</rdfs:label>
-    <skos:definition>specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</skos:definition>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+  <rdf:Description rdf:nodeID="N8028dd6bf01e40abab40f5aafe186e5a">
+    <rdf:rest rdf:nodeID="N81acf86f0cb04d81b7ae51ce7cc33e53"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/inverse"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/biolink/vocab/class_definition_union_of">
-    <biolink:alias>union_of</biolink:alias>
-    <rdfs:label>class_definition_union_of</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
     <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/union_of"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
     <skos:definition>list of class or slot definitions that are combined to create the union class</skos:definition>
+    <biolink:alias>union_of</biolink:alias>
+    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/union_of"/>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <rdfs:label>class_definition_union_of</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/primary_key">
-    <rdfs:label>primary_key</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <skos:definition>True means that this serves as a unique identifier</skos:definition>
+  <rdf:Description rdf:nodeID="N213acd6ad6894f8a828a88d8b6082afc">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source_file"/>
+    <rdf:rest rdf:nodeID="Nc1ec9a9d30924788a6e4864e1137cc2c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/symmetric">
     <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label>symmetric</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+    <skos:definition>Symmetric slot</skos:definition>
+    <skos:note>Indications that a slot or reified association is symmetric</skos:note>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N34ce501653d74a72955285e23f130d19">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_usage"/>
-    <rdf:rest rdf:nodeID="Nafc0d48dfaa741e9abf740d9126602e2"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/metamodel_version">
-    <rdfs:label>metamodel_version</rdfs:label>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/license">
+    <rdfs:label>license</rdfs:label>
     <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <skos:definition>Version of the metamodel used to load the schema. Supplied by the loader</skos:definition>
     <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+    <skos:definition>license for the schema</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nee2f5e011cbb492caebee6d14f475b9e">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/object_property"/>
-    <rdf:rest rdf:nodeID="Nf12a2f6d706a4dfa99335a1fe9353303"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/source_file_date">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+    <rdfs:label>source_file_date</rdfs:label>
+    <skos:definition>modification date of the source of the schema.  Supplied by the loader</skos:definition>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb7822163d879459c81ccdfef47bb886e">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/default_prefix"/>
-    <rdf:rest rdf:nodeID="N7fa2befce03441b7bf1e8e3584bd8c28"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N752071da258241869a00a081d36320d1">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definitions"/>
-    <rdf:rest rdf:nodeID="N7d4898b385264006b52a3a84f544f5ea"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/required">
-    <rdfs:label>required</rdfs:label>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/multivalued">
     <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <skos:definition>If true slot must have at least one value</skos:definition>
+    <rdfs:label>multivalued</rdfs:label>
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
     <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
+    <skos:definition>If true slot can have many values</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/prefix_uri">
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Prefix"/>
-    <skos:definition>A URI associated with a given prefix</skos:definition>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:label>prefix_uri</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nad432755ca1c4873912d7a610e9d7ee3">
-    <rdf:rest rdf:nodeID="Nd7b52c6fac0749009ad46ee78d9789e6"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/broader_matches"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N96a4970bccb04a48998716ed2a9f55d0">
-    <rdf:rest rdf:nodeID="N9d047f60d4c2412b803c3a68dd5e7aa9"/>
+  <rdf:Description rdf:nodeID="N6a5d0445889b4eedb0f268fce58e776f">
     <rdf:first rdf:resource="http://w3id.org/biolink/vocab/primary_key"/>
+    <rdf:rest rdf:nodeID="N02c786b2dfb14a1ea392c74a9ca5d217"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ndb8ac468d1b54c97b88aa948ad269d7d">
-    <rdf:first>rdfs:label</rdf:first>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:nodeID="N3bb9075cdad94b8782f590b3c687ebba">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/singular_name"/>
+    <rdf:rest rdf:nodeID="N3c452c0c2f0d4c82b693bcc81025cd83"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/broader_matches">
-    <skos:mappingRelation rdf:nodeID="N7bf9671e5f2c46f38fcf322161938b11"/>
-    <rdfs:label>broader_matches</rdfs:label>
-    <skos:definition>a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.</skos:definition>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/in_subset">
     <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
+    <skos:definition>used to indicate membership of a term in a defined subset of biolink terms used for a particular domain or application (e.g. the translator_minimal subset holding the minimal set of predicates used in a translator knowledge graph)</skos:definition>
     <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>in_subset</rdfs:label>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <skos:mappingRelation rdf:nodeID="Na8accb712f8046a580429255c373e741"/>
     <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N674ad5cdb95a412992edf2e8c54c988a">
-    <rdf:rest rdf:nodeID="Na325779ce06f43088648a4da36b3d571"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/name"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/biolink/vocab/exact_matches">
-    <skos:definition>a list of terms from different schemas or terminology systems that have strictly equivalent meanings. </skos:definition>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
     <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
-    <skos:mappingRelation rdf:nodeID="Nf9d299bb459d4e679216cb2454741f21"/>
     <rdfs:label>exact_matches</rdfs:label>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb8c49bb1bbf34e06b880045a7270fc50">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>owl:inverseOf</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/local_names">
     <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <rdfs:label>local_names</rdfs:label>
+    <skos:mappingRelation rdf:nodeID="Nc4f7edfa393a4ad0950f98dfbcf411aa"/>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
     <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-    <skos:definition>map from local identifier to slot</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbe80e218edaa4a9d810634698b7418b0">
-    <rdf:rest rdf:nodeID="Ncf79df2aee094cc99318cace985a0b9b"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/flags"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd7b52c6fac0749009ad46ee78d9789e6">
-    <rdf:rest rdf:nodeID="N4845c75969764544be94c14e9d71c561"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/narrower_matches"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N829489a6df3543b292c27efd77bb9e73">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/is_a"/>
-    <rdf:rest rdf:nodeID="N2b00cb8def9d4e159c7b007c5ed590f9"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N60c8f42bbf2a4058a4e19e6bfd3bff07">
-    <rdf:rest rdf:nodeID="N95411c550a514e1db63e6017a8ead259"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/examples"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/slot_definition_union_of">
-    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/union_of"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <biolink:alias>union_of</biolink:alias>
-    <rdfs:label>slot_definition_union_of</rdfs:label>
-    <skos:definition>list of class or slot definitions that are combined to create the union class</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbf6d9d10ea0c4d57a26b9af74858507b">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/role"/>
-    <rdf:rest rdf:nodeID="N165b74e4c06244a9b4ad3faf051d3dd2"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N88c4ea73f7fe48bdadc1773bc115a47a">
-    <rdf:first>semweb_context</rdf:first>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd18ca49a798346a198e592f9426da22b">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/abstract"/>
-    <rdf:rest rdf:nodeID="N4734e6afeeab465c9ebcc7c857d0cf87"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfb7e67b0f5044226a28b108bbc6cbf1e">
-    <rdf:rest rdf:nodeID="Ne743d4243d404d00aa983811b28991d5"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N78c1afcb25324243874e1f4090a6c730">
-    <rdf:rest rdf:nodeID="N752071da258241869a00a081d36320d1"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/types"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbc646016d26342e0aaa45f285aa7b12b">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_usage"/>
-    <rdf:rest rdf:nodeID="Nc61b69356c254d03842b1b7ae7a86572"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc053c72a78d74749806466943cdada99">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/singular_name"/>
-    <rdf:rest rdf:nodeID="N452e93bf14e545a3a8e7055aa54432f0"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/mixins">
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-    <rdfs:label>mixins</rdfs:label>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <skos:definition>List of definitions to be mixed in. Targets may be any definition of the same type</skos:definition>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf536ae7ce7984478b274086a4b04b027">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/definitional"/>
-    <rdf:rest rdf:nodeID="N8aff108c40c7481cb78704c11b4ec870"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf1c9bdc05b834dc98d3bca5dbaddc5f9">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/in_subset"/>
-    <rdf:rest rdf:nodeID="N5a1036cee4c44d8b8b69778cfb907e4c"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf7dbfe7a9b5a40a0b00db55453d9c6c9">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/prefix_uri"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/path">
-    <skos:definition>For any denormalized slot, this represents the tree or graph path used to generate the denormalized form</skos:definition>
-    <rdfs:label>path</rdfs:label>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/version">
-    <skos:definition>Schema version</skos:definition>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-    <rdfs:label>version</rdfs:label>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf302e6e9933d4fb59b239db5fd743955">
-    <rdf:rest rdf:nodeID="Nddfaa96b0a534d92addcfd2fd191e5cd"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/class_definition_is_a"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf9d299bb459d4e679216cb2454741f21">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first>skos:exactMatch</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Na714a56bb40d4995806afd55df294857">
-    <rdf:rest rdf:nodeID="N0b5a783c02c144918d8d79614d67768a"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/typeof"/>
+    <skos:definition>a list of terms from different schemas or terminology systems that have strictly equivalent meanings. </skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="http://w3id.org/biolink/vocab/id_prefixes">
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <skos:note>A list of CURI prefixes that are used in the representation of instances of the model.  All prefixes in this list are added to the prefix sections of the target models.  These prefixes are fetched from</skos:note>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
     <rdfs:label>id_prefixes</rdfs:label>
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nac5c913550624f54ae7bcf8a3ee6481b">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/narrower_matches"/>
-    <rdf:rest rdf:nodeID="Nc9982b4b2b9d41dba0caa0b95c69fa56"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7810c7e87f7a4c9f840203aae1ac160c">
-    <rdf:rest rdf:nodeID="N10499b22afa44c68822254eb58c90320"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definition_mixins"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N82c91c9427e04865ba7c352b9e55d327">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/subproperty_of"/>
-    <rdf:rest rdf:nodeID="N6f430331a5bd44e3b22379249cdb6b14"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1b0ef540af4a4f8f9b4dff074695fa98">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/Example"/>
-    <rdf:rest rdf:nodeID="Ne49421700e42450481a19fc46d556fbf"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N13accc4d7260497fb21f9aa1ecb760f1">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/typeof"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N24727285ea504d7abce12a8be3dc378f">
-    <rdf:rest rdf:nodeID="Ne6debd324ad54bed9d900c62b6d0e791"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/note"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6b75481444c245c5882be03a92d8ac64">
-    <rdf:rest rdf:nodeID="N043d500782ac46e6a44f128452b23789"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/abstract"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N269aba9421e24d3b94d8461771431ef3">
-    <rdf:rest rdf:nodeID="N2bb48e3d7b6e40038cca996894a20d24"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/entity"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N262639f6d1da44cbb6352deb72767099">
-    <rdf:rest rdf:nodeID="N06dbf767ce3a4f79bae3e97c85245837"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N57e1bca7007143228745d47b4a94de85">
-    <rdf:first>xsd</rdf:first>
-    <rdf:rest rdf:nodeID="N42b479840d1e4dab9ae9c7aea97c9336"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N0545c60a8c3649a5b50137fbb379bed8">
-    <rdf:rest rdf:nodeID="N498a053f9257450d83bea1b09b3b8fe4"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/range"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N95411c550a514e1db63e6017a8ead259">
-    <rdf:rest rdf:nodeID="Nf43432f54cd54f2bbad2d67f4e238036"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/aliases"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N691e6d49a56a4c0b9cd2325e7cea46bc">
-    <rdf:rest rdf:nodeID="Nd18ca49a798346a198e592f9426da22b"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/mixins"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8f4fc457f7a3497a93030498124a24d4">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/prefix_uri"/>
-    <rdf:rest rdf:nodeID="Nf2b0efbdb987414f954412c17a9b9de5"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/slot_usage">
-    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <biolink:inlined rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inlined>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
-    <rdfs:label>slot_usage</rdfs:label>
-    <skos:definition>Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N10c65fa0f0d746efba9be6c0a9f0837e">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/defining_slots"/>
-    <rdf:rest rdf:nodeID="N33e7b81d50064171b2740b21a7a82d22"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N00840c56707e4b2f903d40ccdc8e0599">
-    <rdf:rest rdf:nodeID="Nbe80e218edaa4a9d810634698b7418b0"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/see_also"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/source_file">
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-    <rdfs:label>source_file</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
     <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <skos:definition>name, uri or description of the source of the schema.  Supplied by the loader</skos:definition>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb33da3f5d06442fbb70ca9cb62b6c704">
+  <rdf:Description rdf:nodeID="Nb1c48cbf41e840309e240266559f9226">
+    <rdf:rest rdf:nodeID="N6e7447be900e4bea8b43f055e8048882"/>
     <rdf:first rdf:resource="http://w3id.org/biolink/vocab/value"/>
-    <rdf:rest rdf:nodeID="N30b49f3c5e0d493ba3a51146ccfe678a"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/SchemaDefinition">
-    <skos:definition>A collection of definitions</skos:definition>
-    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
-    <biolink:slots rdf:nodeID="N4af2587cc366452c909201e5d1f6fd7b"/>
-    <rdfs:label>SchemaDefinition</rdfs:label>
+  <rdf:Description rdf:nodeID="N6f8f2682c07d4f24844e5cc6abe5a426">
+    <rdf:rest rdf:nodeID="Nc0a02227e5564e2fbbceca7b998fa197"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/object_property"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N1548f572291646fbb97275178b5434c0">
-    <rdf:rest rdf:nodeID="Nc9841048862c4c28a110ecfd8ecf3a89"/>
-    <rdf:first>rdf</rdf:first>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/inherited">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label>inherited</rdfs:label>
+    <skos:definition>True means that the slot is an essential attribute of the container -- that the slot is carried across is_a and slot_usage paths</skos:definition>
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncd497ecc42f942e08335daac3caf2bee">
-    <rdf:rest rdf:nodeID="N94415f342b5c43349a82ee57f7137df3"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/id_prefixes"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/prefixes">
+    <biolink:inlined rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inlined>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <rdfs:label>prefixes</rdfs:label>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/Prefix"/>
+    <skos:definition>Additional prefixes to be added to the context beyond those fetched from prefixcommons in id_prefixes</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc712a494c9b94c8aac3f1512e2cfe038">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/path"/>
-    <rdf:rest rdf:nodeID="N82c91c9427e04865ba7c352b9e55d327"/>
+  <rdf:Description rdf:nodeID="N11bb935cc0494e979586ee82aed85838">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>skos:narrowMatch</rdf:first>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Na69ee6b5fa6a4f6f94a2baf7cae1c373">
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/slot_definition_mixins">
+    <skos:definition>List of definitions to be mixed in. Targets may be any definition of the same type</skos:definition>
+    <biolink:alias>mixins</biolink:alias>
+    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/mixins"/>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <rdfs:label>slot_definition_mixins</rdfs:label>
     <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <rdfs:label>is_a</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N2e638143e8cd48caa2e9fa184bf2161c">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/license"/>
-    <rdf:rest rdf:nodeID="N589fc415c5d344479890656330f6fc91"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/default_type">
+    <rdfs:label>default_type</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/TypeDefinition"/>
+    <skos:definition>the default type if range is omitted</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncf79df2aee094cc99318cace985a0b9b">
-    <rdf:rest rdf:nodeID="Ne47175a5bcb74bc0be553ec2c0c248ff"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/aliases"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8c4ba815c1924e3d8fe67b84fc63a51c">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/multivalued"/>
-    <rdf:rest rdf:nodeID="N85f07f2406aa4a5ba9b20e015e42bdb0"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N165b74e4c06244a9b4ad3faf051d3dd2">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/inherited"/>
-    <rdf:rest rdf:nodeID="Na714a56bb40d4995806afd55df294857"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5cee4bfa78b54909969751e470ca5869">
-    <rdf:first rdf:nodeID="Nd41d14fd87314ed182575d8ac20af94c"/>
-    <rdf:rest rdf:nodeID="Nb1cc7bd6cdff4ee195061bb7341e630e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N043d500782ac46e6a44f128452b23789">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/local_names"/>
-    <rdf:rest rdf:nodeID="Nd3b2b50081e04d6aa0085aba9b83a4f4"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8aff108c40c7481cb78704c11b4ec870">
-    <rdf:rest rdf:nodeID="N52e43df4e48f4e968379eb6b65e9291f"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/alias"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc823c4054f044cd4aaf13fbd63935c5a">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/id_prefixes"/>
-    <rdf:rest rdf:nodeID="Nf1c9bdc05b834dc98d3bca5dbaddc5f9"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne49421700e42450481a19fc46d556fbf">
-    <rdf:rest rdf:nodeID="Nfb7e67b0f5044226a28b108bbc6cbf1e"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4f7537077a754e2bb659f5e2638cbd21">
-    <rdf:first>skos:related</rdf:first>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc833054e0feb4bfaaddf76ade8c47957">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/default_curi_maps"/>
-    <rdf:rest rdf:nodeID="N5acd867174b540f6986cbca25d204d8b"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N4845c75969764544be94c14e9d71c561">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:nodeID="N6707e911010b48ff860b9911ca30bcb6">
+    <rdf:rest rdf:nodeID="N9f90a0ee4aea4a8ebf582975b48ed9cd"/>
     <rdf:first rdf:resource="http://w3id.org/biolink/vocab/close_matches"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc962408a03704855a139cd188ac30d22">
-    <rdf:rest rdf:nodeID="N1b0ef540af4a4f8f9b4dff074695fa98"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/Prefix"/>
+  <rdf:Description rdf:nodeID="Nb78dd69ea7f94dba94a0557a736362fb">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/in_subset"/>
+    <rdf:rest rdf:nodeID="N50e2e1790327403b8ce30be21440c549"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N044857b96ce54a60bb0c809e1d340ad3">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/AltDescription"/>
-    <rdf:rest rdf:nodeID="Nc962408a03704855a139cd188ac30d22"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/metamodel_version">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>metamodel_version</rdfs:label>
+    <skos:definition>Version of the metamodel used to load the schema. Supplied by the loader</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd0363f8b87614457bb5f62561ac88428">
-    <rdf:rest rdf:nodeID="Nba1c1efedd574071984bdb08e9e7e1b5"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/symmetric"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/broader_matches">
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <skos:definition>a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree.</skos:definition>
+    <skos:mappingRelation rdf:nodeID="N2640555d035c4831a8a6916195fe4b73"/>
+    <rdfs:label>broader_matches</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N9dfaec31ca704c3faae720e18da52c5e">
-    <rdf:rest rdf:nodeID="Nd2596cb223a549e5985baf5fb2789e24"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/value_description"/>
+  <rdf:Description rdf:nodeID="Ne6ebf85f00934cf38595bb7bb50dfb29">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/range"/>
+    <rdf:rest rdf:nodeID="Nbc51c7a1679643dc832b78cf8663f95a"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/Example">
-    <skos:definition>example of usage</skos:definition>
-    <biolink:slots rdf:nodeID="Nb33da3f5d06442fbb70ca9cb62b6c704"/>
-    <rdfs:label>Example</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/slots">
-    <skos:definition>list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins.</skos:definition>
+  <rdf:Description rdf:nodeID="N6b02eac1b9e244edb49d9570c685816b">
+    <rdfs:label>mixins</rdfs:label>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
     <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/definitional">
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label>definitional</rdfs:label>
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <skos:note>needs description</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/defining_slots">
+    <skos:definition>The combination of is_a plus defining slots form a genus-differentia definition, or the set of necessary and sufficient conditions that can be transformed into an OWL equivalence axiom</skos:definition>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <rdfs:label>defining_slots</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na8accb712f8046a580429255c373e741">
+    <rdf:first>OIO:inSubset</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/class_definition_is_a">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <biolink:alias>is_a</biolink:alias>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <skos:definition>specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</skos:definition>
+    <rdfs:label>class_definition_is_a</rdfs:label>
+    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/is_a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0bfae2b84a1a45f3a6522816db18eee5">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/is_a"/>
+    <rdf:rest rdf:nodeID="Ne4f5cbb115294d848a5eee437b6f863f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N47b84ff234534e3497b07d8136bae300">
+    <rdf:rest rdf:nodeID="N2cd827755d914b0e99cfc9c2a0d2ddbc"/>
+    <rdf:first rdf:nodeID="N4b03ea184aa64a2f83f5f753719610a5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/slot_definitions">
+    <skos:definition>collection of slot definitions in a schema</skos:definition>
+    <biolink:alias>slots</biolink:alias>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
     <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
     <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
-    <rdfs:label>slots</rdfs:label>
+    <biolink:inlined rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inlined>
+    <rdfs:label>slot_definitions</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N724a49526c5d4e0b8520f0c6e706dccd">
-    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
-    <rdfs:label>mixins</rdfs:label>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/description">
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>description</rdfs:label>
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
+    <skos:mappingRelation rdf:nodeID="Nae88d0b911eb49f898b1080eaea9e9ce"/>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <skos:definition>a description</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N0d6bdabe934b47638d31ad2d74dd257c">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/inlined"/>
-    <rdf:rest rdf:nodeID="N96a4970bccb04a48998716ed2a9f55d0"/>
+  <rdf:Description rdf:nodeID="Ne7df667e94244fa88d5cc4ef69403eba">
+    <rdf:first>owl:inverseOf</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/Definition">
-    <biolink:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:abstract>
-    <skos:definition>definition base class</skos:definition>
-    <rdfs:label>Definition</rdfs:label>
-    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/Element"/>
-    <biolink:slots rdf:nodeID="N829489a6df3543b292c27efd77bb9e73"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/aliases">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <rdfs:label>aliases</rdfs:label>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd5d8c4da321549fabdf2acb7b0577338">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/definitional"/>
-    <rdf:rest rdf:nodeID="Nee2f5e011cbb492caebee6d14f475b9e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne5beecc632534154bc375df0cfcb0ede">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/values_from"/>
-    <rdf:rest rdf:nodeID="N214dafa4fec846ebb16460e450fcfe30"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N09f52bc604b142519aadabd7946b704f">
-    <rdf:rest rdf:nodeID="N7c9ac493933a435d9ef5373ff6266602"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/imports"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9bae4cedd60d4284a8ca58a02f630e51">
-    <biolink:local_name>owl</biolink:local_name>
-    <biolink:prefix_uri>http://www.w3.org/2002/07/owl#</biolink:prefix_uri>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/generation_date">
-    <skos:definition>date that the schema was loaded/generated.  Supplied by the loader</skos:definition>
-    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
-    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
-    <rdfs:label>generation_date</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N62cc43b73bc84b9a801a9131437ad932">
+  <rdf:Description rdf:nodeID="N67e127106605410d9bef9053fc4338ee">
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
     <rdf:first rdf:resource="http://w3id.org/biolink/vocab/class_definition_union_of"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N7d09b5c4e30c4c7788c7d5aa8a3de92b">
-    <rdf:rest rdf:nodeID="N2b69b239e4c3464781f425f911fc2ce2"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/from_schema"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/flags">
+    <rdfs:label>flags</rdfs:label>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <skos:definition>State information and other details</skos:definition>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N4e2647fb91af4ae09013a57233433cda">
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/classes">
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <skos:definition>classes defined in schema</skos:definition>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <rdfs:label>classes</rdfs:label>
+    <biolink:inlined rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inlined>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/Prefix">
+    <rdfs:label>Prefix</rdfs:label>
+    <skos:definition>Prefix URI map</skos:definition>
+    <biolink:slots rdf:nodeID="Nc17626df555d41bda49be5eee2b7e4aa"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc3c07f44582e444eaf1d980ef3984f3d">
+    <rdf:rest rdf:nodeID="N480bf92829ff492baae24020c8a6d6db"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/subproperty_of"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfb265ea295df46c5ac6ec0be91ed9ae7">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/class_definition_union_of"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndb11c3a16dc24e7ba1d6dbbb4cf1407c">
+    <rdf:rest rdf:nodeID="N761790a4776a4372971434a8dd47b877"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/imports"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2b028bf22c404f90809590e4a7f7a7ec">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/singular_name"/>
+    <rdf:rest rdf:nodeID="N278c5f5a0c184af797c9d3eed639ea1f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N793098af03b14284b79996f3b8dd7c99">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/prefix_uri"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/slots">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <rdfs:label>slots</rdfs:label>
+    <skos:definition>list of slot names that are applicable to a class. slots are by default inherited over is_a and mixins.</skos:definition>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/local_name">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Prefix"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <biolink:primary_key rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:primary_key>
+    <rdfs:label>local_name</rdfs:label>
+    <skos:definition>the nsname (sans ':' for a given prefix)</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd2a607c8ce5b481aa25d11aea8147749">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/mixins"/>
+    <rdf:rest rdf:nodeID="Na1e8e4e5d4f04ac4bf20537d7b26b73e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N774df7b1936e465b924476c34eba0a77">
+    <rdf:rest rdf:nodeID="N4eeb9b006cb4499aab1f140163da9f97"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/types"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/alt_descriptions">
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
+    <skos:note>Needs description</skos:note>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/AltDescription"/>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <rdfs:label>alt_descriptions</rdfs:label>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7d134687e1414c2bb45f89dbc9d043ff">
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
     <rdf:first>skos:closeMatch</rdf:first>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N2fb67e6f46af4bfda867e2375770f86b">
-    <rdf:first>skos:inScheme</rdf:first>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:nodeID="N3c05528b8f814fdeba2c90b8844332e9">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/class_definition_mixins"/>
+    <rdf:rest rdf:nodeID="Nfb265ea295df46c5ac6ec0be91ed9ae7"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nac6e0b8fd0614b8f98e46d756c17a712">
-    <rdf:first>rdfs:subClassOf</rdf:first>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:nodeID="Nd0868e2e138049989a8b54ea278ccdb6">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/default_curi_maps"/>
+    <rdf:rest rdf:nodeID="N9e2c24de6dee415f887abb5819315603"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N06dbf767ce3a4f79bae3e97c85245837">
-    <rdf:rest rdf:nodeID="N91ba8a29d3a0475bbb3354a8c5c18ca6"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/slot_usage">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <biolink:inlined rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inlined>
+    <skos:definition>Additional info on how a slot is used in the context of a class. Many slots may be re-used across different classes, but the meaning of the slot may be refined by context. For example, a generic association model may use slots subject/predicate/object with generic semantics and minimal constraints. When this is subclasses, e.g. to disease-phenotype associations then slot_usage may specify both local naming (e.g. subject=disease) and local constraints</skos:definition>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <rdfs:label>slot_usage</rdfs:label>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/mixins">
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+    <skos:definition>List of definitions to be mixed in. Targets may be any definition of the same type</skos:definition>
+    <rdfs:label>mixins</rdfs:label>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/source">
+    <skos:definition>the source of description or other element</skos:definition>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
+    <rdfs:label>source</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/AltDescription"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N79b80cde33e34fc188ebad234493a8a2">
+    <rdf:rest rdf:nodeID="N36b53316f0864d3ebfa864e16e47e962"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/types"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne2c15a36f3c6492fa318346cb2ca5ef5">
+    <rdf:rest rdf:nodeID="N40eb0ccb9eee4f5cad0fb0dffebd0632"/>
+    <rdf:first>obo_context</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/typeof">
+    <rdfs:label>typeof</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/TypeDefinition"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition>a builtin ('string', 'integer', 'float', 'double', 'boolean', 'time', 'uri') or another type definition</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5851c205363845c58960d4b3a8a891bf">
+    <rdf:rest rdf:nodeID="N952461df58014c419bb36f1bcbe22a8d"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/exact_matches"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6e981c9af1604adaad126728ddbcbea2">
+    <rdf:rest rdf:nodeID="N0ee142d6425a499eae82aee795d2b28d"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/local_names"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N04b0f157dbfc49658af034b788691831">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/alt_description_text"/>
+    <rdf:rest rdf:nodeID="Ndabf60bf0e7345588b68d3e7ae0cb94e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N427847b653d34c40b1fe28f59c2b5bd7">
+    <rdf:rest rdf:nodeID="Nd5acf59006fc49f38f8dd536dbed1d50"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/role"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N779d95cbf37f4015bcc3b726a1b1a62f">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/from_schema"/>
+    <rdf:rest rdf:nodeID="N307549b546c040cd89527b64845bfcd9"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7aad331744ec4d9993cf1ea166254d68">
+    <rdf:rest rdf:nodeID="N79b80cde33e34fc188ebad234493a8a2"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/default_type"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5f300e4be35f4c0ba9037c995af97f8d">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/mixin"/>
+    <rdf:rest rdf:nodeID="Nd2a607c8ce5b481aa25d11aea8147749"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N816b922a72754a06804d36d1626a64ee">
+    <rdf:rest rdf:nodeID="N5274297d9b4849d2857bf5e47d3b5e2a"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/default_type"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nca2034cedbe34e928a0591c24f29d5b4">
+    <rdf:rest rdf:nodeID="N213acd6ad6894f8a828a88d8b6082afc"/>
     <rdf:first rdf:resource="http://w3id.org/biolink/vocab/metamodel_version"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ndf839eff893e46aa88d467e0d370852e">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/default_prefix"/>
-    <rdf:rest rdf:nodeID="Naa3ed4ff3eb848a0b3d016a4761d57df"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/required">
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <skos:definition>If true slot must have at least one value</skos:definition>
+    <rdfs:label>required</rdfs:label>
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Na5eb487c4bb342e7ac08da6616c437fd">
-    <rdf:rest rdf:nodeID="N00840c56707e4b2f903d40ccdc8e0599"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/subproperty_of">
+    <skos:definition>Ontolgy property which this is a subproperty of</skos:definition>
+    <skos:mappingRelation rdf:nodeID="N4a46361e6975464a9a366d19d4e12477"/>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <rdfs:label>subproperty_of</rdfs:label>
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N761790a4776a4372971434a8dd47b877">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/license"/>
+    <rdf:rest rdf:nodeID="N3a3959a7b7814742b2f95fdb2129d0e0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/domain">
+    <rdfs:label>domain</rdfs:label>
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
+    <skos:definition>The class to which this slot applies.</skos:definition>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/examples">
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/Example"/>
+    <rdfs:label>examples</rdfs:label>
+    <skos:mappingRelation rdf:nodeID="N9a5a05eae2e944eab64f68d8cb652826"/>
+    <biolink:inlined rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inlined>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <skos:definition>Example of usage for a slot or class</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/types">
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/TypeDefinition"/>
+    <biolink:inlined rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inlined>
+    <skos:definition>types defined in schema</skos:definition>
+    <rdfs:label>types</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N849c16f5fa59475c8e87e5e0f479e109">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/apply_to"/>
+    <rdf:rest rdf:nodeID="Ne43d279537914ea390bc558e665d190b"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N70166a586b09424e8231d140fe55e50b">
+    <rdf:first>skos</rdf:first>
+    <rdf:rest rdf:nodeID="N1c662c9b744e4ea491170bd3ed8cbcfa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/is_class_field">
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label>is_class_field</rdfs:label>
+    <skos:note>Needs description</skos:note>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/source_file">
+    <skos:definition>name, uri or description of the source of the schema.  Supplied by the loader</skos:definition>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>source_file</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na910856176324aa68f444bbf18cd04f0">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/domain"/>
+    <rdf:rest rdf:nodeID="N512e1da3effd4dfbbc6731c83c0a9f7a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nec726ba09344407c94a7c0eed76582e2">
+    <rdf:rest rdf:nodeID="Ne08b62867a184c64a595f934380a0058"/>
     <rdf:first rdf:resource="http://w3id.org/biolink/vocab/examples"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nce95af50c97a417789f91f5b04fd5288">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/object_property"/>
-    <rdf:rest rdf:nodeID="N0d6bdabe934b47638d31ad2d74dd257c"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/identifier">
+    <rdfs:label>identifier</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <skos:definition>True means that this slot must be unique across the collection of slots</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N31b3eaea0a214f59b7b0142198008240">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/alt_descriptions"/>
-    <rdf:rest rdf:nodeID="N623fd38d034f4ba7beaacb1e71af7afd"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1666644138db41d0bdd9ab39e5bffc61">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/version"/>
-    <rdf:rest rdf:nodeID="N3699185488384800baaf6bfd756e10b1"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2f881a51dd7e413fa797a6be1baf4378">
-    <rdf:rest rdf:nodeID="Nc053c72a78d74749806466943cdada99"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/name"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nad65806c3f844137819cfa4bee42cf58">
-    <rdf:rest rdf:nodeID="N35b0fed3076a4a6c832af6d03287ad8d"/>
-    <rdf:first rdf:nodeID="N724a49526c5d4e0b8520f0c6e706dccd"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc9982b4b2b9d41dba0caa0b95c69fa56">
-    <rdf:rest rdf:nodeID="N2eabacd336114615982abc255904fa0d"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/close_matches"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N80640030f4454104977732e99507e569">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/inherited"/>
-    <rdf:rest rdf:nodeID="N2f2f5234759a4ef29f50aed8974cc3dd"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N42b479840d1e4dab9ae9c7aea97c9336">
-    <rdf:rest rdf:nodeID="Nf91be2e0ade44ad6a29f602eb356f0a1"/>
-    <rdf:first>skos</rdf:first>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N589fc415c5d344479890656330f6fc91">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/prefixes"/>
-    <rdf:rest rdf:nodeID="Nf957aeaa4ded49a7b78d37c22fc53fe4"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5a1036cee4c44d8b8b69778cfb907e4c">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/from_schema"/>
-    <rdf:rest rdf:nodeID="Nea12b9cc2e7a420094de0d1347421370"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N498a053f9257450d83bea1b09b3b8fe4">
+  <rdf:Description rdf:nodeID="Nbc51c7a1679643dc832b78cf8663f95a">
+    <rdf:rest rdf:nodeID="N6f8f2682c07d4f24844e5cc6abe5a426"/>
     <rdf:first rdf:resource="http://w3id.org/biolink/vocab/required"/>
-    <rdf:rest rdf:nodeID="Nce95af50c97a417789f91f5b04fd5288"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf12a2f6d706a4dfa99335a1fe9353303">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/primary_key"/>
-    <rdf:rest rdf:nodeID="N0ea3854bd66047a7bd5f0b59e8b26fe5"/>
+  <rdf:Description rdf:nodeID="Nae88d0b911eb49f898b1080eaea9e9ce">
+    <rdf:first>skos:definition</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N7c9ac493933a435d9ef5373ff6266602">
-    <rdf:rest rdf:nodeID="N059dd55e95f14432b04cfea4e2b9972a"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/narrower_matches">
+    <skos:mappingRelation rdf:nodeID="N11bb935cc0494e979586ee82aed85838"/>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <skos:definition>a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree.</skos:definition>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <rdfs:label>narrower_matches</rdfs:label>
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N36b53316f0864d3ebfa864e16e47e962">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definitions"/>
+    <rdf:rest rdf:nodeID="N014ab5d2a67e48d99ed8466e11b9fb01"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd5acf59006fc49f38f8dd536dbed1d50">
+    <rdf:rest rdf:nodeID="Nf789753887154b1ca2d84d6e49829245"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/inherited"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/note">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <skos:mappingRelation rdf:nodeID="Ndaeaf2e6fe504354a10b307844f814cd"/>
+    <skos:definition>Notes about an element</skos:definition>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>note</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N455f49abe3864d79bdd3c60763d02bb4">
+    <rdfs:label>is_a</rdfs:label>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5274297d9b4849d2857bf5e47d3b5e2a">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/default_curi_maps"/>
+    <rdf:rest rdf:nodeID="N774df7b1936e465b924476c34eba0a77"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/path">
+    <rdfs:label>path</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition>For any denormalized slot, this represents the tree or graph path used to generate the denormalized form</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb567c4375c3f4b328f1cfde62e8b364f">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/alt_descriptions"/>
+    <rdf:rest rdf:nodeID="Nc7b2dbd197004007b76bc93faad12de4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N83dd428d5deb46e49d99a3967366e978">
+    <rdf:rest rdf:nodeID="N9deadeaa98d54e499965f113fbbdb15d"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/id"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/TypeDefinition">
+    <skos:definition>A type definition</skos:definition>
+    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <biolink:slots rdf:nodeID="Nfaa190bfab9c455abd6205744cfab892"/>
+    <rdfs:label>TypeDefinition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N956569db27b54d9cb37b6f5b0ceea05c">
+    <rdf:rest rdf:nodeID="N72a0814129e7458da19531d273eff0ac"/>
     <rdf:first rdf:resource="http://w3id.org/biolink/vocab/license"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne933d1cdda234318b4e77ad9ab6afee5">
-    <rdf:rest rdf:nodeID="N802d5ee64e544dcd9973dd17f7cb6189"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/comment">
+    <rdfs:label>comment</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <skos:definition>Comment about an element</skos:definition>
+    <skos:mappingRelation rdf:nodeID="N93f3bd1b0c3a4f2fa6eaa0aef9a2b3a2"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na1e8e4e5d4f04ac4bf20537d7b26b73e">
+    <rdf:rest rdf:nodeID="N14811494c82e44dd8010646c67a7f508"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/abstract"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/role">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <rdfs:label>role</rdfs:label>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:note>Needs description</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb9ad3dc0c16e4734a8b44321766d474c">
+    <rdfs:label>mixins</rdfs:label>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncc61837c709443c580514027ac20807a">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/value_description"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/alias">
+    <rdfs:label>alias</rdfs:label>
+    <skos:definition>A name to be assigned to the slot in implementations that is different that its type.  The primary use for this is to allow class AND schema definitions to both have "slots" where one inline and the other a reference</skos:definition>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6a9f4d9a817e401c93d972c43161e710">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/multivalued"/>
+    <rdf:rest rdf:nodeID="Na910856176324aa68f444bbf18cd04f0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/imports">
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+    <rdfs:label>imports</rdfs:label>
+    <skos:definition>A list of modules that are imported into the schema</skos:definition>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/prefix_uri">
+    <rdfs:label>prefix_uri</rdfs:label>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition>A URI associated with a given prefix</skos:definition>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Prefix"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/id">
+    <rdfs:label>id</rdfs:label>
+    <biolink:primary_key rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:primary_key>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+    <skos:definition>a globally unique id or url for a schema</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc0a02227e5564e2fbbceca7b998fa197">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/inlined"/>
+    <rdf:rest rdf:nodeID="N6a5d0445889b4eedb0f268fce58e776f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N19e8b3af3f5b403faa513956e52393c3">
+    <rdf:rest rdf:nodeID="N67e127106605410d9bef9053fc4338ee"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/class_definition_mixins"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nba404d0fc566441eb51de102906e94fd">
+    <rdf:rest rdf:nodeID="N0daff22893d04ebf93912ec1a74fea92"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/inlined"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbdc6f2357ba54a0e929b09a0d3897d29">
+    <rdf:first>idot_context</rdf:first>
+    <rdf:rest rdf:nodeID="Ndb03e8e3c0ba44f2991675d6a397a62c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/mappings">
+    <skos:definition>a list of terms from different schemas or terminology systems that have comparable meaning. These may include terms that are precisely equivalent, broader or narrower in meaning, or otherwise semantically related but not equivalent from a strict ontological perspective.</skos:definition>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>mappings</rdfs:label>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <skos:mappingRelation rdf:nodeID="Nefbadace03ef4c98bea1f3aef155a4ea"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nde25158c3f704818af861ea5c2eea98f">
+    <rdf:rest rdf:nodeID="N5d9817490cab45bd85108b6c33f6141a"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/mappings"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N111e2828991d45eeb5957d4f93ef2ee4">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/required"/>
+    <rdf:rest rdf:nodeID="Nba404d0fc566441eb51de102906e94fd"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/SlotDefinition">
+    <skos:definition>A property or slot</skos:definition>
+    <biolink:slot_usage rdf:nodeID="N1f157b04ec5f4c33bbd3985d2d88cb09"/>
+    <biolink:slots rdf:nodeID="Ndc938561b18544f4b70bf5bd8db1f5f7"/>
+    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+    <rdfs:label>SlotDefinition</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncbec3b5fb21e4a9dba19a70b776bcb4c">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>skos:related</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/name">
+    <rdfs:label>name</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <skos:mappingRelation rdf:nodeID="Ne966a04d36a64db39ed080b8ceb6398a"/>
+    <skos:definition>a unique key that identifies a slot, type or class in a schema</skos:definition>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <biolink:primary_key rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:primary_key>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N037c70a285d04fb0bb3e1e65aafd3abb">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/typeof"/>
+    <rdf:rest rdf:nodeID="Nb1c48cbf41e840309e240266559f9226"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndabf60bf0e7345588b68d3e7ae0cb94e">
+    <rdf:rest rdf:nodeID="Nb567c4375c3f4b328f1cfde62e8b364f"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N952461df58014c419bb36f1bcbe22a8d">
+    <rdf:rest rdf:nodeID="Nd2b64bc23a76463483df8f5b40909f2b"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/broader_matches"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd2b64bc23a76463483df8f5b40909f2b">
+    <rdf:rest rdf:nodeID="Nb9ba8cd2260b4a81882b5246fed30ed2"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/narrower_matches"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne966a04d36a64db39ed080b8ceb6398a">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>rdfs:label</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncd4674ea4c674685990b7e842cd11259">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/flags"/>
+    <rdf:rest rdf:nodeID="N519c4d1bd48543f585587d967768d0b6"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3c452c0c2f0d4c82b693bcc81025cd83">
+    <rdf:rest rdf:nodeID="N04b0f157dbfc49658af034b788691831"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/description"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N791e0653830746a19c8073ac58d656aa">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/Example"/>
+    <rdf:rest rdf:nodeID="Nc1b0483af52344ef9e8bea62d4b2879e"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc4f7edfa393a4ad0950f98dfbcf411aa">
+    <rdf:first>skos:exactMatch</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N57273792855c4e3884b8cf929e088e4d">
+    <rdf:rest rdf:nodeID="N328aa3032a7f4e049b4201bb68d2cc00"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/broader_matches"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/abstract">
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+    <skos:definition>An abstract class is a high level class or slot that is typically used to group common slots together and is generally not instantiated. When generating golr-views, abstract classes are ignored</skos:definition>
+    <rdfs:label>abstract</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9f90a0ee4aea4a8ebf582975b48ed9cd">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/is_a"/>
+    <rdf:rest rdf:nodeID="N5f300e4be35f4c0ba9037c995af97f8d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N895d1dfd11684be3af34807e33b41ad2">
+    <rdf:rest rdf:nodeID="Nda81594acb4647a7af861882cf045a79"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/id_prefixes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd306346900074b61bfd4920844050eac">
+    <rdf:first rdf:nodeID="Nc716aa425e5f465299148bc5089e0f66"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5451ffca87e44738aab37897b8f867d2">
+    <rdf:rest rdf:nodeID="N8b6f947c51f4416fb6e1edbbc11d2241"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/apply_to">
+    <skos:definition>Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class.</skos:definition>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <rdfs:label>apply_to</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4c346d76da184153a37f33c414eca1bd">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/flags"/>
+    <rdf:rest rdf:nodeID="Nbfd352bfdc4b4df9ab741ccd9d6f9f28"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne9fef7c205ee483aa25320a414c3d946">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/identifier"/>
+    <rdf:rest rdf:nodeID="N00045c8755084cd2b51761dc965a44f3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc3cf02f5ff034ca6b9cf7ed7d376adbe">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/inherited"/>
+    <rdf:rest rdf:nodeID="N037c70a285d04fb0bb3e1e65aafd3abb"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N27e1e38206d842ba9c28757f1a3ecf62">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source_file_date"/>
+    <rdf:rest rdf:nodeID="N99da58815ccc4023b20c1e475a6b5e46"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/class_definition_mixins">
+    <biolink:alias>mixins</biolink:alias>
+    <rdfs:label>class_definition_mixins</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <skos:definition>List of definitions to be mixed in. Targets may be any definition of the same type</skos:definition>
+    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/mixins"/>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7246a4d3dea141d39695bd73575d0552">
+    <rdf:rest rdf:nodeID="N608c99c4142b403c9db30a2631784071"/>
     <rdf:first rdf:resource="http://w3id.org/biolink/vocab/alt_description_text"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd3b2b50081e04d6aa0085aba9b83a4f4">
-    <rdf:rest rdf:nodeID="N8c15afb3a0cc46d0945ce377a8507091"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/union_of"/>
+  <rdf:Description rdf:nodeID="N9e2c24de6dee415f887abb5819315603">
+    <rdf:rest rdf:nodeID="N7aad331744ec4d9993cf1ea166254d68"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/default_prefix"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne4952f4895f44f32b0d0999a65c76f32">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/inlined"/>
-    <rdf:rest rdf:nodeID="Nd5d8c4da321549fabdf2acb7b0577338"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/value">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Example"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label>value</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N4a024607304a4c1a86d7d61497742e38">
-    <rdf:rest rdf:nodeID="N313424f106c3457f93b0b0b87a717821"/>
-    <rdf:first>monarch_context</rdf:first>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/Definition">
+    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <biolink:slots rdf:nodeID="N0bfae2b84a1a45f3a6522816db18eee5"/>
+    <skos:definition>definition base class</skos:definition>
+    <biolink:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:abstract>
+    <rdfs:label>Definition</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncf3217813b754c2c909b428af97c753b">
-    <rdf:rest rdf:nodeID="Nf713421536374e18a1077bc741456965"/>
-    <rdf:first rdf:nodeID="N9295447ea6964d5498a26d31ab507b67"/>
+  <rdf:Description rdf:nodeID="Ne08b62867a184c64a595f934380a0058">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/aliases"/>
+    <rdf:rest rdf:nodeID="Nb78dd69ea7f94dba94a0557a736362fb"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N2d7d13ea57c84421b5169ca2d45347b6">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/broader_matches"/>
-    <rdf:rest rdf:nodeID="Nac5c913550624f54ae7bcf8a3ee6481b"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/slot_definition_is_a">
+    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/is_a"/>
+    <biolink:alias>is_a</biolink:alias>
+    <skos:definition>specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</skos:definition>
+    <rdfs:label>slot_definition_is_a</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N3c652b9e318540f8878adf6ad48d5613">
-    <rdf:rest rdf:nodeID="N691e6d49a56a4c0b9cd2325e7cea46bc"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/mixin"/>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/generation_date">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:label>generation_date</rdfs:label>
+    <skos:definition>date that the schema was loaded/generated.  Supplied by the loader</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N8c15afb3a0cc46d0945ce377a8507091">
-    <rdf:rest rdf:nodeID="Ne5beecc632534154bc375df0cfcb0ede"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/subclass_of"/>
+  <rdf:Description rdf:nodeID="Nc17626df555d41bda49be5eee2b7e4aa">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/local_name"/>
+    <rdf:rest rdf:nodeID="N793098af03b14284b79996f3b8dd7c99"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Na325779ce06f43088648a4da36b3d571">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/singular_name"/>
-    <rdf:rest rdf:nodeID="N8aaf192666364e0fb1397a332a019042"/>
+  <rdf:Description rdf:nodeID="N970e6f26d3d545459c75d9767c489179">
+    <rdf:rest rdf:nodeID="Nc3cf02f5ff034ca6b9cf7ed7d376adbe"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/role"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd41d14fd87314ed182575d8ac20af94c">
-    <biolink:prefix_uri>http://www.w3.org/2004/02/skos/core#</biolink:prefix_uri>
-    <biolink:local_name>skos</biolink:local_name>
+  <rdf:Description rdf:nodeID="Nd7e2eb8ec27e4098955758c284ffd826">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/symmetric"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N3ffe6824f4aa458f90204d8a25a815af">
-    <rdf:rest rdf:nodeID="N3d92ca55f8464d2faaf6eca882ad6668"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definition_mixins"/>
+  <rdf:Description rdf:nodeID="Nc716aa425e5f465299148bc5089e0f66">
+    <biolink:prefix_uri>http://www.w3.org/2002/07/owl#</biolink:prefix_uri>
+    <biolink:local_name>owl</biolink:local_name>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N1c2f666c17a94a4bb8daee2f2ac2aaf6">
+  <rdf:Description rdf:nodeID="N1bbdeb3b9597493abc407ab82bbdc806">
+    <rdf:rest rdf:nodeID="N0c38498e015d4323aa203c57cfcd59e9"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/object_property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/from_schema">
+    <skos:mappingRelation rdf:nodeID="N9a90df40067246b7950a88317e02cc97"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition>id of the schema that the element was derived from.  Supplied by the loader.</skos:definition>
+    <rdfs:label>from_schema</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/Example">
+    <skos:definition>example of usage</skos:definition>
+    <rdfs:label>Example</rdfs:label>
+    <biolink:slots rdf:nodeID="N6ca2c4443f094b17aa0e34b25db33eb4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N90532891ca87451f98cb541e158e51d6">
+    <rdf:rest rdf:nodeID="Ncd4674ea4c674685990b7e842cd11259"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/see_also"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf1a94a0a7056418e8a46bf736cbb9cfc">
+    <rdf:rest rdf:nodeID="N4a2cb1b464b34a10b9e0bdfe92d70df3"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/path"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfaae303e23154914b79bb5d34c403155">
     <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
     <rdfs:label>union_of</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nddfaa96b0a534d92addcfd2fd191e5cd">
-    <rdf:rest rdf:nodeID="N62cc43b73bc84b9a801a9131437ad932"/>
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/class_definition_mixins"/>
+  <rdf:Description rdf:nodeID="N328aa3032a7f4e049b4201bb68d2cc00">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/narrower_matches"/>
+    <rdf:rest rdf:nodeID="N6707e911010b48ff860b9911ca30bcb6"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne93fb68bd84d4a78bf48d467f6dd58c0">
-    <rdf:rest rdf:nodeID="N6b75481444c245c5882be03a92d8ac64"/>
+  <rdf:Description rdf:nodeID="N24e92b088ad04efea957e43c9d715d9d">
+    <rdf:rest rdf:nodeID="N70166a586b09424e8231d140fe55e50b"/>
+    <rdf:first>xsd</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1c662c9b744e4ea491170bd3ed8cbcfa">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>OIO</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2548cf1506f541d6a2ecf7159089c84c">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/subclass_of"/>
+    <rdf:rest rdf:nodeID="N45ec15a24899441abc13c7e0afff1048"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N22b81623cc7b44028204c512fb5cfd04">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/domain"/>
+    <rdf:rest rdf:nodeID="Ne6ebf85f00934cf38595bb7bb50dfb29"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf7df68c4344d4ca8bf78a7667b0c2a08">
+    <rdf:first>rdf</rdf:first>
+    <rdf:rest rdf:nodeID="Nef19fb1388534452bc11248c6a2e760d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N606e936435434008a5865c0d02234460">
+    <rdf:rest rdf:nodeID="Nde25158c3f704818af861ea5c2eea98f"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/id_prefixes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9a90df40067246b7950a88317e02cc97">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>skos:inScheme</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd8ca9bafb6ad47ed809cb41a8938ff9e">
+    <rdf:rest rdf:nodeID="N3bb9075cdad94b8782f590b3c687ebba"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/name"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N72a0814129e7458da19531d273eff0ac">
+    <rdf:rest rdf:nodeID="Nd0868e2e138049989a8b54ea278ccdb6"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/prefixes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/default_prefix">
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition>default and base prefix -- used for ':' identifiers, @base and @vocab</skos:definition>
+    <rdfs:label>default_prefix</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/inlined">
+    <biolink:inherited rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:inherited>
+    <rdfs:label>inlined</rdfs:label>
+    <skos:definition>if true then the value of this slot is inlined (i.e. a nested object) rather linked by key</skos:definition>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N66671931fad040fb91d8669761621655">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/subclass_of"/>
+    <rdf:rest rdf:nodeID="N55d27ff8a213469295e9745709502d85"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na39b39ef2cde496e8c59f04420649d9e">
+    <rdf:rest rdf:nodeID="N970e6f26d3d545459c75d9767c489179"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/is_class_field"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nef19fb1388534452bc11248c6a2e760d">
+    <rdf:rest rdf:nodeID="N24e92b088ad04efea957e43c9d715d9d"/>
+    <rdf:first>rdfs</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N15021291488a48ec8326cc59fea71710">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/default_prefix"/>
+    <rdf:rest rdf:nodeID="N816b922a72754a06804d36d1626a64ee"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nec9a92d385034f57b58a45ec55464aee">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/path"/>
+    <rdf:rest rdf:nodeID="Nc3c07f44582e444eaf1d980ef3984f3d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/inverse">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <skos:definition>used to indicate the inverse of a slot (e.g. 'expresses' is the inverse predicate of 'expressed in')</skos:definition>
+    <rdfs:label>inverse</rdfs:label>
+    <skos:mappingRelation rdf:nodeID="Ne7df667e94244fa88d5cc4ef69403eba"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N332c05d1d1874a6f8e4d6c0a4810e174">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/abstract"/>
+    <rdf:rest rdf:nodeID="N6e981c9af1604adaad126728ddbcbea2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6ca2c4443f094b17aa0e34b25db33eb4">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/value"/>
+    <rdf:rest rdf:nodeID="Ncc61837c709443c580514027ac20807a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/local_names">
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <skos:definition>map from local identifier to slot</skos:definition>
+    <rdfs:label>local_names</rdfs:label>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbeb83081360348e983135f0929984c49">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>rdf:type</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2cd827755d914b0e99cfc9c2a0d2ddbc">
+    <rdf:first rdf:nodeID="N85363314607d47b7b8862bff663e2764"/>
+    <rdf:rest rdf:nodeID="Nd306346900074b61bfd4920844050eac"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndaeaf2e6fe504354a10b307844f814cd">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>skos:note</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/is_a">
+    <skos:definition>specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded</skos:definition>
+    <rdfs:label>is_a</rdfs:label>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+    <skos:mappingRelation rdf:nodeID="Nbeb83081360348e983135f0929984c49"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N608c99c4142b403c9db30a2631784071">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4b03ea184aa64a2f83f5f753719610a5">
+    <biolink:prefix_uri>http://w3id.org/biolink/vocab/</biolink:prefix_uri>
+    <biolink:local_name>biolink</biolink:local_name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N93932466667d43fa8bc273124ab7146c">
+    <rdf:rest rdf:nodeID="N4cf5a4de45bc42f381238eca9f99f820"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/metamodel_version"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2e332d76fe6f48309f0366708a8c0bcf">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definition_union_of"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N278c5f5a0c184af797c9d3eed639ea1f">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/description"/>
+    <rdf:rest rdf:nodeID="Nbda4a591e5dd4f4c8d96f9cc5536f819"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/SchemaDefinition">
+    <rdfs:label>SchemaDefinition</rdfs:label>
+    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+    <biolink:slots rdf:nodeID="Nef004c76f2694c2e91fe0b1d8b73784d"/>
+    <skos:definition>A collection of definitions</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbda4a591e5dd4f4c8d96f9cc5536f819">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/note"/>
+    <rdf:rest rdf:nodeID="Nf9fc1e0487ed4db0beb61e13877c7045"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/default_curi_maps">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition>List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables</skos:definition>
+    <rdfs:label>default_curi_maps</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N84c4d6f83ce543ed94bda1baef281ff8">
+    <rdf:rest rdf:nodeID="N849c16f5fa59475c8e87e5e0f479e109"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_usage"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf9fc1e0487ed4db0beb61e13877c7045">
+    <rdf:rest rdf:nodeID="N7ef4f6ef21b841dba80731dbc489e663"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/comment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncb67da121396410dbb1df98357dce8bc">
+    <rdf:rest rdf:nodeID="N21145aad3e5c41cc8b807d863ed431ad"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/TypeDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8ff3abed09454622b21284226a5596cd">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/generation_date"/>
+    <rdf:rest rdf:nodeID="N47f7624754d449e5a04e6e8ca2c33b88"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/entity">
+    <skos:note>needs description</skos:note>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label>entity</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N40eb0ccb9eee4f5cad0fb0dffebd0632">
+    <rdf:first>monarch_context</rdf:first>
+    <rdf:rest rdf:nodeID="Nbdc6f2357ba54a0e929b09a0d3897d29"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N769a7bc1c5e44407822946cf29b32a6f">
+    <rdf:rest rdf:nodeID="N2548cf1506f541d6a2ecf7159089c84c"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/values_from"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N512e1da3effd4dfbbc6731c83c0a9f7a">
+    <rdf:rest rdf:nodeID="N111e2828991d45eeb5957d4f93ef2ee4"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/range"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8b6f947c51f4416fb6e1edbbc11d2241">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <rdf:rest rdf:nodeID="Ncb67da121396410dbb1df98357dce8bc"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/singular_name">
+    <skos:definition>a name that is used in the singular form</skos:definition>
+    <rdfs:label>singular_name</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0c38498e015d4323aa203c57cfcd59e9">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/primary_key"/>
+    <rdf:rest rdf:nodeID="Ne9fef7c205ee483aa25320a414c3d946"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N480bf92829ff492baae24020c8a6d6db">
+    <rdf:rest rdf:nodeID="Na39b39ef2cde496e8c59f04420649d9e"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/inverse"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/mixin">
+    <rdfs:label>mixin</rdfs:label>
+    <skos:definition>Used only as a mixin -- cannot be instantiated on its own.</skos:definition>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N23d02cf13a604995bcd61d606d5fac7d">
+    <rdf:rest rdf:nodeID="N88c2639b938546d0a5482b49484f8847"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/local_name"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N014ab5d2a67e48d99ed8466e11b9fb01">
+    <rdf:rest rdf:nodeID="N93932466667d43fa8bc273124ab7146c"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1a56a8e383a6443b98d871493984f6f0">
+    <rdf:rest rdf:nodeID="N2d6ed0afad5946e7b8ca088ff046c4e2"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/apply_to"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nefbadace03ef4c98bea1f3aef155a4ea">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>skos:mappingRelation</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N00045c8755084cd2b51761dc965a44f3">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/alias"/>
+    <rdf:rest rdf:nodeID="Nec9a92d385034f57b58a45ec55464aee"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0ffaa70fa31241b4b530a235942f790a">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>rdfs:subClassOf</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/subclass_of">
+    <skos:mappingRelation rdf:nodeID="N0ffaa70fa31241b4b530a235942f790a"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <skos:definition>Ontolgy property which this is a subclass of. Not to be confused with is_a which links datamodel classes</skos:definition>
+    <rdfs:label>subclass_of</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndc938561b18544f4b70bf5bd8db1f5f7">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/multivalued"/>
+    <rdf:rest rdf:nodeID="N22b81623cc7b44028204c512fb5cfd04"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0d723c80ab7445bd89813ad90cafee05">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/union_of"/>
+    <rdf:rest rdf:nodeID="N769a7bc1c5e44407822946cf29b32a6f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N88c2639b938546d0a5482b49484f8847">
+    <rdf:rest rdf:nodeID="N07595f4073d048ceb263de2b80025f55"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/prefix_uri"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc2fc07fb2e7045549ed8eac106b574da">
+    <rdf:first rdf:nodeID="N5220f13946b84381a4eb44540435206a"/>
+    <rdf:rest rdf:nodeID="N214dfedd56a94977af19f648c57b1b6c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/Element">
+    <biolink:slots rdf:nodeID="N25d9bd5dceff49c6b5d8d44efab1db29"/>
+    <biolink:abstract rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:abstract>
+    <rdfs:label>Element</rdfs:label>
+    <skos:definition>root of all described things</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N70d06a2d40734b6996ce6aa4a0286e25">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="Nfaae303e23154914b79bb5d34c403155"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/close_matches">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <rdfs:label>close_matches</rdfs:label>
+    <skos:mappingRelation rdf:nodeID="N7d134687e1414c2bb45f89dbc9d043ff"/>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition>a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/slot_definition_union_of">
+    <rdfs:label>slot_definition_union_of</rdfs:label>
+    <skos:definition>list of class or slot definitions that are combined to create the union class</skos:definition>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <biolink:alias>union_of</biolink:alias>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SlotDefinition"/>
+    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/union_of"/>
+    <biolink:multivalued rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</biolink:multivalued>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6c5b901cf0a848d7a57aba908129bfa5">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/imports"/>
+    <rdf:rest rdf:nodeID="N956569db27b54d9cb37b6f5b0ceea05c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N039bc13da1a848ffa4026a0fb49b64f4">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/generation_date"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N654a15e0ea184503af2dddafcd662456">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/class_definition_is_a"/>
+    <rdf:rest rdf:nodeID="N3c05528b8f814fdeba2c90b8844332e9"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbfd352bfdc4b4df9ab741ccd9d6f9f28">
+    <rdf:rest rdf:nodeID="N606e936435434008a5865c0d02234460"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/see_also"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb645038b255c414583b5c74daf6e9ee1">
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+    <rdfs:label>union_of</rdfs:label>
+    <biolink:range rdf:resource="http://w3id.org/biolink/vocab/ClassDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4eeb9b006cb4499aab1f140163da9f97">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definitions"/>
+    <rdf:rest rdf:nodeID="Nc3f32a2591fe49849a00a576bd256235"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne43d279537914ea390bc558e665d190b">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/entity"/>
+    <rdf:rest rdf:nodeID="N6a9f4d9a817e401c93d972c43161e710"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0871d84e625b44a2b895d769b076bef5">
+    <rdf:first rdf:nodeID="Nb9ad3dc0c16e4734a8b44321766d474c"/>
+    <rdf:rest rdf:nodeID="N70d06a2d40734b6996ce6aa4a0286e25"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N57f04130473e460389fcc8f574a87f3a">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definition_mixins"/>
+    <rdf:rest rdf:nodeID="N2e332d76fe6f48309f0366708a8c0bcf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/version">
+    <skos:definition>Schema version</skos:definition>
+    <rdfs:label>version</rdfs:label>
+    <biolink:domain rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+    <biolink:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N214dfedd56a94977af19f648c57b1b6c">
+    <rdf:first rdf:nodeID="N6b02eac1b9e244edb49d9570c685816b"/>
+    <rdf:rest rdf:nodeID="N15170257347843588bfe9d4b77cd77a2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc8652054fa5347f992a0f520a341309c">
+    <rdf:rest rdf:nodeID="N678f0e23f1524306927b3c0aa478630d"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/defining_slots"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N25d9bd5dceff49c6b5d8d44efab1db29">
+    <rdf:rest rdf:nodeID="N2b028bf22c404f90809590e4a7f7a7ec"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/name"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N93f3bd1b0c3a4f2fa6eaa0aef9a2b3a2">
+    <rdf:first>skos:editorialNote</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfde3bce3289e4aa2b415cb63389dbe67">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/alias"/>
+    <rdf:rest rdf:nodeID="Nf1a94a0a7056418e8a46bf736cbb9cfc"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc7b2dbd197004007b76bc93faad12de4">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/note"/>
+    <rdf:rest rdf:nodeID="N931da6f19aef449bb5f7e6508039626a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3a3959a7b7814742b2f95fdb2129d0e0">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/prefixes"/>
+    <rdf:rest rdf:nodeID="N15021291488a48ec8326cc59fea71710"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N15170257347843588bfe9d4b77cd77a2">
+    <rdf:first rdf:nodeID="Nb645038b255c414583b5c74daf6e9ee1"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3ea7718c997b4c56946c06e16bd80228">
+    <rdf:rest rdf:nodeID="N895d1dfd11684be3af34807e33b41ad2"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/mappings"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N307549b546c040cd89527b64845bfcd9">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/alt_descriptions"/>
+    <rdf:rest rdf:nodeID="N5851c205363845c58960d4b3a8a891bf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N45ec15a24899441abc13c7e0afff1048">
+    <rdf:rest rdf:nodeID="N83dd428d5deb46e49d99a3967366e978"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/symmetric"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4a2cb1b464b34a10b9e0bdfe92d70df3">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/subproperty_of"/>
+    <rdf:rest rdf:nodeID="N8028dd6bf01e40abab40f5aafe186e5a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc1ec9a9d30924788a6e4864e1137cc2c">
+    <rdf:rest rdf:nodeID="N113a6dce9adc457f9a6affd2784cbf6c"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source_file_size"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na484b41e49894cc098ae421f58f74b86">
+    <rdf:rest rdf:nodeID="N7a6579a0cbba4fa4864a1ca75cd72808"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definition_mixins"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc1b0483af52344ef9e8bea62d4b2879e">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/Element"/>
+    <rdf:rest rdf:nodeID="N2228256fa36841f1924413011de9bec0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na0528aa8314d49158b60c17a8e446f79">
+    <rdf:rest rdf:nodeID="N1a56a8e383a6443b98d871493984f6f0"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_usage"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N113a6dce9adc457f9a6affd2784cbf6c">
+    <rdf:rest rdf:nodeID="N039bc13da1a848ffa4026a0fb49b64f4"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source_file_date"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/biolink/vocab/ClassDefinition">
+    <rdf:type rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+    <rdfs:label>ClassDefinition</rdfs:label>
+    <biolink:slots rdf:nodeID="Nc8652054fa5347f992a0f520a341309c"/>
+    <biolink:slot_usage rdf:nodeID="Nc2fc07fb2e7045549ed8eac106b574da"/>
+    <skos:definition>A class or interface</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1f157b04ec5f4c33bbd3985d2d88cb09">
+    <rdf:first rdf:nodeID="N455f49abe3864d79bdd3c60763d02bb4"/>
+    <rdf:rest rdf:nodeID="N0871d84e625b44a2b895d769b076bef5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1f1c98fc697c4dff866af10291cba954">
+    <rdf:rest rdf:nodeID="Ndb11c3a16dc24e7ba1d6dbbb4cf1407c"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/version"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N14811494c82e44dd8010646c67a7f508">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/local_names"/>
+    <rdf:rest rdf:nodeID="N0d723c80ab7445bd89813ad90cafee05"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7a6579a0cbba4fa4864a1ca75cd72808">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definition_union_of"/>
+    <rdf:rest rdf:nodeID="N654a15e0ea184503af2dddafcd662456"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N50e2e1790327403b8ce30be21440c549">
+    <rdf:rest rdf:nodeID="N4c346d76da184153a37f33c414eca1bd"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/from_schema"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6ccc0f8aa89f45d6a84e8df40aa5895a">
+    <rdf:rest rdf:nodeID="N332c05d1d1874a6f8e4d6c0a4810e174"/>
     <rdf:first rdf:resource="http://w3id.org/biolink/vocab/mixins"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N8ad168c1b7e64c4db5af144e75ee87e9">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source_file_size"/>
-    <rdf:rest rdf:nodeID="N8a6020960e9c4cb2b62573edf58b3c81"/>
+  <rdf:Description rdf:nodeID="N1c8ad24639bb4b9fafc995d91be1fcd8">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/AltDescription"/>
+    <rdf:rest rdf:nodeID="N1b7a810c01094fdd912b9d05536daa2b"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N4734e6afeeab465c9ebcc7c857d0cf87">
-    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/local_names"/>
-    <rdf:rest rdf:nodeID="N2165990c66b548bfa92f1ad1bf2e6b69"/>
+  <rdf:Description rdf:nodeID="N4a46361e6975464a9a366d19d4e12477">
+    <rdf:first>rdfs:subPropertyOf</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N99da58815ccc4023b20c1e475a6b5e46">
+    <rdf:rest rdf:nodeID="N8ff3abed09454622b21284226a5596cd"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source_file_size"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3e5f186c442d4aaebffd9f9e42382e5c">
+    <rdf:rest rdf:nodeID="N19e8b3af3f5b403faa513956e52393c3"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/class_definition_is_a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nef004c76f2694c2e91fe0b1d8b73784d">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/id"/>
+    <rdf:rest rdf:nodeID="N1f1c98fc697c4dff866af10291cba954"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N02c786b2dfb14a1ea392c74a9ca5d217">
+    <rdf:rest rdf:nodeID="Nd82a0c17f7aa4a6b8d0e8f4c2dd39300"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/identifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5d9817490cab45bd85108b6c33f6141a">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/exact_matches"/>
+    <rdf:rest rdf:nodeID="N57273792855c4e3884b8cf929e088e4d"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9a5a05eae2e944eab64f68d8cb652826">
+    <rdf:first>skos:example</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2640555d035c4831a8a6916195fe4b73">
+    <rdf:first>skos:broadMatch</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0ee142d6425a499eae82aee795d2b28d">
+    <rdf:rest rdf:nodeID="N66671931fad040fb91d8669761621655"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/union_of"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N81acf86f0cb04d81b7ae51ce7cc33e53">
+    <rdf:rest rdf:nodeID="N427847b653d34c40b1fe28f59c2b5bd7"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/is_class_field"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nda81594acb4647a7af861882cf045a79">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/in_subset"/>
+    <rdf:rest rdf:nodeID="N779d95cbf37f4015bcc3b726a1b1a62f"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N07595f4073d048ceb263de2b80025f55">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slot_definition_is_a"/>
+    <rdf:rest rdf:nodeID="Na484b41e49894cc098ae421f58f74b86"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0daff22893d04ebf93912ec1a74fea92">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/definitional"/>
+    <rdf:rest rdf:nodeID="N1bbdeb3b9597493abc407ab82bbdc806"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N931da6f19aef449bb5f7e6508039626a">
+    <rdf:rest rdf:nodeID="Nec726ba09344407c94a7c0eed76582e2"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/comment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9deadeaa98d54e499965f113fbbdb15d">
+    <rdf:rest rdf:nodeID="N6c5b901cf0a848d7a57aba908129bfa5"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/version"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfaa190bfab9c455abd6205744cfab892">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/typeof"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1b7a810c01094fdd912b9d05536daa2b">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/Prefix"/>
+    <rdf:rest rdf:nodeID="N791e0653830746a19c8073ac58d656aa"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne4f5cbb115294d848a5eee437b6f863f">
+    <rdf:rest rdf:nodeID="N6ccc0f8aa89f45d6a84e8df40aa5895a"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/mixin"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2228256fa36841f1924413011de9bec0">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/Definition"/>
+    <rdf:rest rdf:nodeID="N5451ffca87e44738aab37897b8f867d2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc3f32a2591fe49849a00a576bd256235">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/classes"/>
+    <rdf:rest rdf:nodeID="Nca2034cedbe34e928a0591c24f29d5b4"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4cf5a4de45bc42f381238eca9f99f820">
+    <rdf:rest rdf:nodeID="N27e1e38206d842ba9c28757f1a3ecf62"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/source_file"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N678f0e23f1524306927b3c0aa478630d">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/slots"/>
+    <rdf:rest rdf:nodeID="Na0528aa8314d49158b60c17a8e446f79"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd82a0c17f7aa4a6b8d0e8f4c2dd39300">
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/definitional"/>
+    <rdf:rest rdf:nodeID="Nfde3bce3289e4aa2b415cb63389dbe67"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb9ba8cd2260b4a81882b5246fed30ed2">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/close_matches"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N21145aad3e5c41cc8b807d863ed431ad">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/SchemaDefinition"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndb03e8e3c0ba44f2991675d6a397a62c">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first>semweb_context</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N519c4d1bd48543f585587d967768d0b6">
+    <rdf:rest rdf:nodeID="N3ea7718c997b4c56946c06e16bd80228"/>
+    <rdf:first rdf:resource="http://w3id.org/biolink/vocab/aliases"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N85363314607d47b7b8862bff663e2764">
+    <biolink:prefix_uri>http://www.w3.org/2004/02/skos/core#</biolink:prefix_uri>
+    <biolink:local_name>skos</biolink:local_name>
   </rdf:Description>
 </rdf:RDF>
 
