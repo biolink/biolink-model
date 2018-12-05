@@ -3,7 +3,7 @@
 
 An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 
-URI: [http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation](http://bioentity.io/vocab/PairwiseGeneOrProteinInteractionAssociation)
+URI: [http://w3id.org/biolink/vocab/PairwiseGeneOrProteinInteractionAssociation](http://w3id.org/biolink/vocab/PairwiseGeneOrProteinInteractionAssociation)
 
 ![img](images/PairwiseGeneOrProteinInteractionAssociation.png)
 ## Mappings

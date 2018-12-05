@@ -1,5 +1,5 @@
-# Auto generated from contrib/monarch.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-11-12 18:14
+# Auto generated from monarch.yaml by pythongen.py version: 0.0.4
+# Generation date: 2018-12-05 12:03
 # Schema: monarch biolink extensions
 #
 # id: http://bioentity.io/json-schema/biolink/contrib/monarch.json

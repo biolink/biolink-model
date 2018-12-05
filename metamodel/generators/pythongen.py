@@ -21,7 +21,7 @@ class PythonGenerator(Generator):
         self.sourcefile = schema
         super().__init__(schema, fmt)
         if not self.schema.source_file and isinstance(self.sourcefile, str) and '\n' not in self.sourcefile:
-            self.schema.source_file = self.sourcefile
+            self.schema.source_file = os.path.basename(self.sourcefile)
 
     def gen_schema(self) -> str:
         split_descripton = '\n#              '.join(split_line(be(self.schema.description), split_len=100))

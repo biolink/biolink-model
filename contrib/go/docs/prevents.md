@@ -6,7 +6,7 @@ holds between an entity whose application or use reduces the likelihood of a pot
 URI: [http://w3id.org/biolink/vocab/prevents](slot_uri)
 ## Mappings
 
- * [RO:0002559](http://purl.obolibrary.org/obo/RO_0002559)
+ * [RO:0002599](http://purl.obolibrary.org/obo/RO_0002599)
  * [SEMMEDDB:PREVENTS](http://purl.obolibrary.org/obo/SEMMEDDB_PREVENTS)
 ## Domain and Range
 

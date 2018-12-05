@@ -1312,11 +1312,11 @@ bioentity:HasGenomicName a owl:Class ;
     obo:IAO_0000115 "mixing class for any entity that has a full name and a systematic synonym" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:systematic_synonym ;
+            owl:onProperty bioentity:full_name ;
             owl:someValuesFrom bioentity:label_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:full_name ;
+            owl:onProperty bioentity:systematic_synonym ;
             owl:someValuesFrom bioentity:label_type ],
         meta:mixin .
 
@@ -2236,12 +2236,12 @@ bioentity:GenotypeToPhenotypicFeatureAssociation a owl:Class ;
     obo:IAO_0000115 "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
-            owl:someValuesFrom bioentity:Genotype ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
             owl:onProperty bioentity:relation ;
             owl:someValuesFrom bioentity:RelationshipType ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:subject ;
+            owl:someValuesFrom bioentity:Genotype ],
         bioentity:EntityToPhenotypicFeatureAssociation,
         bioentity:GenotypeToThingAssociation ;
     owl:equivalentClass [ a owl:Class ;
@@ -2269,12 +2269,12 @@ bioentity:MolecularActivityToBiologicalProcessAssociation a owl:Class ;
     rdfs:label "molecular activity to biological process association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:object ;
-            owl:someValuesFrom bioentity:BiologicalProcess ],
+            owl:onProperty bioentity:subject ;
+            owl:someValuesFrom bioentity:MolecularActivity ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
-            owl:someValuesFrom bioentity:MolecularActivity ] ;
+            owl:onProperty bioentity:object ;
+            owl:someValuesFrom bioentity:BiologicalProcess ] ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( bioentity:Association [ a owl:Restriction ;
                         owl:cardinality 1 ;
@@ -2288,12 +2288,12 @@ bioentity:MolecularActivityToGeneProductAssociation a owl:Class ;
     rdfs:label "molecular activity to gene product association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:object ;
-            owl:someValuesFrom bioentity:GeneOrGeneProduct ],
+            owl:onProperty bioentity:subject ;
+            owl:someValuesFrom bioentity:MolecularActivity ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
-            owl:someValuesFrom bioentity:MolecularActivity ] ;
+            owl:onProperty bioentity:object ;
+            owl:someValuesFrom bioentity:GeneOrGeneProduct ] ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( bioentity:Association [ a owl:Restriction ;
                         owl:cardinality 1 ;
@@ -2384,12 +2384,12 @@ bioentity:TranscriptToGeneRelationship a owl:Class ;
     obo:IAO_0000115 "A gene is a collection of transcripts" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
-            owl:someValuesFrom bioentity:Transcript ],
+            owl:onProperty bioentity:object ;
+            owl:someValuesFrom bioentity:Gene ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:object ;
-            owl:someValuesFrom bioentity:Gene ] ;
+            owl:onProperty bioentity:subject ;
+            owl:someValuesFrom bioentity:Transcript ] ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( bioentity:SequenceFeatureRelationship [ a owl:Restriction ;
                         owl:cardinality 1 ;
@@ -2544,7 +2544,7 @@ bioentity:AnatomicalEntityToAnatomicalEntityOntogenicAssociation a owl:Class ;
     obo:IAO_0000115 "A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:object ;
+            owl:onProperty bioentity:subject ;
             owl:someValuesFrom bioentity:AnatomicalEntity ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
@@ -2552,7 +2552,7 @@ bioentity:AnatomicalEntityToAnatomicalEntityOntogenicAssociation a owl:Class ;
             owl:someValuesFrom bioentity:RelationshipType ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
+            owl:onProperty bioentity:object ;
             owl:someValuesFrom bioentity:AnatomicalEntity ] ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( bioentity:AnatomicalEntityToAnatomicalEntityAssociation [ a owl:Restriction ;
@@ -2565,7 +2565,7 @@ bioentity:AnatomicalEntityToAnatomicalEntityPartOfAssociation a owl:Class ;
     obo:IAO_0000115 "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:object ;
+            owl:onProperty bioentity:subject ;
             owl:someValuesFrom bioentity:AnatomicalEntity ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
@@ -2573,7 +2573,7 @@ bioentity:AnatomicalEntityToAnatomicalEntityPartOfAssociation a owl:Class ;
             owl:someValuesFrom bioentity:RelationshipType ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
+            owl:onProperty bioentity:object ;
             owl:someValuesFrom bioentity:AnatomicalEntity ] ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( bioentity:AnatomicalEntityToAnatomicalEntityAssociation [ a owl:Restriction ;
@@ -2605,7 +2605,7 @@ bioentity:GeneRegulatoryRelationship a owl:Class ;
     obo:IAO_0000115 "A regulatory relationship between two genes" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:object ;
+            owl:onProperty bioentity:subject ;
             owl:someValuesFrom bioentity:GeneOrGeneProduct ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
@@ -2613,7 +2613,7 @@ bioentity:GeneRegulatoryRelationship a owl:Class ;
             owl:someValuesFrom bioentity:RelationshipType ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
+            owl:onProperty bioentity:object ;
             owl:someValuesFrom bioentity:GeneOrGeneProduct ],
         bioentity:Association .
 
@@ -2639,16 +2639,16 @@ bioentity:GeneToGeneProductRelationship a owl:Class ;
     obo:IAO_0000115 "A gene is transcribed and potentially translated to a gene product" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
-            owl:someValuesFrom bioentity:Gene ],
+            owl:onProperty bioentity:relation ;
+            owl:someValuesFrom bioentity:RelationshipType ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty bioentity:object ;
             owl:someValuesFrom bioentity:GeneProduct ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:relation ;
-            owl:someValuesFrom bioentity:RelationshipType ] ;
+            owl:onProperty bioentity:subject ;
+            owl:someValuesFrom bioentity:Gene ] ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( bioentity:SequenceFeatureRelationship [ a owl:Restriction ;
                         owl:cardinality 1 ;
@@ -2675,16 +2675,16 @@ bioentity:GenotypeToGeneAssociation a owl:Class ;
     obo:IAO_0000115 "Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
+            owl:onProperty bioentity:relation ;
+            owl:someValuesFrom bioentity:RelationshipType ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
             owl:onProperty bioentity:subject ;
             owl:someValuesFrom bioentity:Genotype ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty bioentity:object ;
-            owl:someValuesFrom bioentity:Gene ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:relation ;
-            owl:someValuesFrom bioentity:RelationshipType ] ;
+            owl:someValuesFrom bioentity:Gene ] ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( bioentity:Association [ a owl:Restriction ;
                         owl:cardinality 1 ;
@@ -2723,16 +2723,16 @@ bioentity:GenotypeToVariantAssociation a owl:Class ;
     obo:IAO_0000115 "Any association between a genotype and a sequence variant." ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
+            owl:onProperty bioentity:subject ;
+            owl:someValuesFrom bioentity:Genotype ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
             owl:onProperty bioentity:object ;
             owl:someValuesFrom bioentity:SequenceVariant ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty bioentity:relation ;
-            owl:someValuesFrom bioentity:RelationshipType ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
-            owl:someValuesFrom bioentity:Genotype ] ;
+            owl:someValuesFrom bioentity:RelationshipType ] ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( bioentity:Association [ a owl:Restriction ;
                         owl:cardinality 1 ;
@@ -2778,16 +2778,16 @@ bioentity:MolecularActivityToDownstreamMolecularActivityAssociation a owl:Class 
     rdfs:label "molecular activity to downstream molecular activity association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:object ;
-            owl:someValuesFrom bioentity:MolecularActivity ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
             owl:onProperty bioentity:subject ;
             owl:someValuesFrom bioentity:MolecularActivity ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty bioentity:relation ;
-            owl:someValuesFrom bioentity:RelationshipType ] ;
+            owl:someValuesFrom bioentity:RelationshipType ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:object ;
+            owl:someValuesFrom bioentity:MolecularActivity ] ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( bioentity:Association [ a owl:Restriction ;
                         owl:cardinality 1 ;
@@ -2814,12 +2814,12 @@ bioentity:PopulationToPopulationAssociation a owl:Class ;
     obo:IAO_0000115 "An association between a two populations" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:relation ;
-            owl:someValuesFrom bioentity:RelationshipType ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
             owl:onProperty bioentity:subject ;
             owl:someValuesFrom bioentity:PopulationOfIndividualOrganisms ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:relation ;
+            owl:someValuesFrom bioentity:RelationshipType ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty bioentity:object ;
@@ -2845,12 +2845,12 @@ bioentity:VariantToDiseaseAssociation a owl:Class ;
     rdfs:label "variant to disease association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:relation ;
-            owl:someValuesFrom bioentity:RelationshipType ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
             owl:onProperty bioentity:object ;
             owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:relation ;
+            owl:someValuesFrom bioentity:RelationshipType ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty bioentity:subject ;
@@ -3127,12 +3127,12 @@ bioentity:EntityToFeatureOrDiseaseQualifiers a owl:Class ;
     obo:IAO_0000115 "Qualifiers for entity to disease or phenotype associations" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:onset_qualifier ;
-            owl:someValuesFrom bioentity:Onset ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bioentity:severity_qualifier ;
             owl:someValuesFrom bioentity:SeverityValue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:onset_qualifier ;
+            owl:someValuesFrom bioentity:Onset ],
         bioentity:FrequencyQualifier,
         meta:mixin .
 
@@ -3174,19 +3174,19 @@ bioentity:MolecularEvent a owl:Class ;
             owl:someValuesFrom bioentity:GeneOrGeneProduct ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:occurs_in ;
-            owl:someValuesFrom bioentity:NamedThing ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bioentity:upstream_causal_relationship ;
             owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:part_of ;
+            owl:someValuesFrom bioentity:NamedThing ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:downstream_causal_relationship ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:part_of ;
+            owl:onProperty bioentity:occurs_in ;
             owl:someValuesFrom bioentity:NamedThing ] .
 
 bioentity:ThingToDiseaseOrPhenotypicFeatureAssociation a owl:Class ;
@@ -3251,6 +3251,10 @@ bioentity:ExtensionsAndEvidenceAssociationMixin a owl:Class ;
     rdfs:label "extensions and evidence association mixin" ;
     obo:IAO_0000115 "An injected mixing that adds additional fields to association objects. This is a mixture of (a) closures for denormalization (b) evidence fields specific to the GO model." ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:subject ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:has_evidence ;
             owl:someValuesFrom bioentity:evidence_instance ],
@@ -3258,10 +3262,6 @@ bioentity:ExtensionsAndEvidenceAssociationMixin a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:has_evidence_type ;
             owl:someValuesFrom bioentity:EvidenceType ],
-        [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
-            owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:onProperty bioentity:object_extensions ;
             owl:someValuesFrom bioentity:PropertyValuePair ],
@@ -3272,15 +3272,15 @@ bioentity:FrequencyQuantifier a owl:Class ;
     rdfs:label "frequency quantifier" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:has_total ;
-            owl:someValuesFrom xsd:integer ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bioentity:has_percentage ;
             owl:someValuesFrom xsd:double ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:has_count ;
+            owl:someValuesFrom xsd:integer ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:has_total ;
             owl:someValuesFrom xsd:integer ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -3296,14 +3296,14 @@ bioentity:GoTermBioentityMixin a owl:Class ;
             owl:onProperty bioentity:regulates_closure ;
             owl:someValuesFrom bioentity:RelationshipType ],
         [ a owl:Restriction ;
-            owl:onProperty bioentity:isa_partof_closure_label ;
-            owl:someValuesFrom bioentity:label_type ],
+            owl:onProperty bioentity:isa_partof_closure ;
+            owl:someValuesFrom bioentity:OntologyClass ],
         [ a owl:Restriction ;
             owl:onProperty bioentity:regulates_closure_label ;
             owl:someValuesFrom bioentity:label_type ],
         [ a owl:Restriction ;
-            owl:onProperty bioentity:isa_partof_closure ;
-            owl:someValuesFrom bioentity:OntologyClass ],
+            owl:onProperty bioentity:isa_partof_closure_label ;
+            owl:someValuesFrom bioentity:label_type ],
         bioentity:HasGenomicName .
 
 bioentity:MacromolecularMachine a owl:Class ;
@@ -3337,11 +3337,11 @@ bioentity:SequenceFeatureRelationship a owl:Class ;
     obo:IAO_0000115 "For example, a particular exon is part of a particular transcript or gene" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:object ;
+            owl:onProperty bioentity:subject ;
             owl:someValuesFrom bioentity:GenomicEntity ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
+            owl:onProperty bioentity:object ;
             owl:someValuesFrom bioentity:GenomicEntity ] ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( bioentity:Association [ a owl:Restriction ;
@@ -3356,34 +3356,34 @@ bioentity:Treatment a owl:Class ;
     rdfs:label "treatment" ;
     obo:IAO_0000115 "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:treats ;
-            owl:someValuesFrom bioentity:DiseaseOrPhenotypicFeature ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty bioentity:has_exposure_parts ;
             owl:someValuesFrom bioentity:DrugExposure ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:treats ;
+            owl:someValuesFrom bioentity:DiseaseOrPhenotypicFeature ],
         bioentity:Environment .
 
 bioentity:VariantToPopulationAssociation a owl:Class ;
     rdfs:label "variant to population association" ;
     obo:IAO_0000115 "An association between a variant and a population, where the variant has particular frequency in the population" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
-            owl:someValuesFrom bioentity:SequenceVariant ],
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:has_count ;
+            owl:someValuesFrom xsd:integer ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty bioentity:object ;
             owl:someValuesFrom bioentity:PopulationOfIndividualOrganisms ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:has_count ;
-            owl:someValuesFrom xsd:integer ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bioentity:has_quotient ;
             owl:someValuesFrom xsd:double ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:subject ;
+            owl:someValuesFrom bioentity:SequenceVariant ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:has_total ;
@@ -3452,12 +3452,8 @@ bioentity:GenomicSequenceLocalization a owl:Class ;
     rdfs:label "genomic sequence localization" ;
     obo:IAO_0000115 "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
-            owl:someValuesFrom bioentity:GenomicEntity ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:genome_build ;
+            owl:onProperty bioentity:phase ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -3465,12 +3461,16 @@ bioentity:GenomicSequenceLocalization a owl:Class ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:phase ;
+            owl:onProperty bioentity:start_interbase_coordinate ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:start_interbase_coordinate ;
+            owl:onProperty bioentity:genome_build ;
             owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:subject ;
+            owl:someValuesFrom bioentity:GenomicEntity ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty bioentity:object ;
@@ -3490,14 +3490,6 @@ bioentity:PairwiseInteractionAssociation a owl:Class ;
     rdfs:label "pairwise interaction association" ;
     obo:IAO_0000115 "An interaction at the molecular level between two physical entities" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:object ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:interacting_molecules_category ;
-            owl:someValuesFrom bioentity:OntologyClass ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:id ;
             owl:someValuesFrom bioentity:identifier_type ],
@@ -3507,8 +3499,16 @@ bioentity:PairwiseInteractionAssociation a owl:Class ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
+            owl:onProperty bioentity:object ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
             owl:onProperty bioentity:relation ;
             owl:someValuesFrom bioentity:RelationshipType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:interacting_molecules_category ;
+            owl:someValuesFrom bioentity:OntologyClass ],
         bioentity:Association,
         meta:mixin .
 
@@ -3527,21 +3527,21 @@ bioentity:GeneToExpressionSiteAssociation a owl:Class ;
     rdfs:label "gene to expression site association" ;
     obo:IAO_0000115 "An association between a gene and an expression site, possibly qualified by stage/timing info." ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:relation ;
-            owl:someValuesFrom bioentity:RelationshipType ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:stage_qualifier ;
-            owl:someValuesFrom bioentity:LifeStage ],
+            owl:onProperty bioentity:quantifier_qualifier ;
+            owl:someValuesFrom bioentity:OntologyClass ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty bioentity:object ;
             owl:someValuesFrom bioentity:AnatomicalEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:quantifier_qualifier ;
-            owl:someValuesFrom bioentity:OntologyClass ],
+            owl:onProperty bioentity:stage_qualifier ;
+            owl:someValuesFrom bioentity:LifeStage ],
+        [ a owl:Restriction ;
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:relation ;
+            owl:someValuesFrom bioentity:RelationshipType ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty bioentity:subject ;
@@ -3575,16 +3575,16 @@ bioentity:EntityToPhenotypicFeatureAssociation a owl:Class ;
     rdfs:label "entity to phenotypic feature association" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty bioentity:description ;
+            owl:someValuesFrom bioentity:narrative_text ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty bioentity:sex_qualifier ;
             owl:someValuesFrom bioentity:BiologicalSex ],
         [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty bioentity:object ;
             owl:someValuesFrom bioentity:PhenotypicFeature ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:description ;
-            owl:someValuesFrom bioentity:narrative_text ],
         bioentity:EntityToFeatureOrDiseaseQualifiers ;
     owl:equivalentClass [ a owl:Class ;
             owl:intersectionOf ( bioentity:Association [ a owl:Restriction ;
@@ -3602,6 +3602,24 @@ bioentity:TaxonClosureMixin a owl:Class ;
     rdfs:label "taxon closure mixin" ;
     obo:IAO_0000115 "An association that includes flattened inlined objects, such as subject_taxon_closure" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty bioentity:object_taxon_closure ;
+            owl:someValuesFrom bioentity:OntologyClass ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:object_taxon_label ;
+            owl:someValuesFrom bioentity:Label ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:subject_taxon_label ;
+            owl:someValuesFrom bioentity:Label ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:subject_taxon ;
+            owl:someValuesFrom bioentity:OrganismTaxon ],
+        [ a owl:Restriction ;
+            owl:onProperty bioentity:subject_taxon_closure_label ;
+            owl:someValuesFrom bioentity:label_type ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:object_taxon ;
             owl:someValuesFrom bioentity:OrganismTaxon ],
@@ -3609,26 +3627,8 @@ bioentity:TaxonClosureMixin a owl:Class ;
             owl:onProperty bioentity:subject_taxon_closure ;
             owl:someValuesFrom bioentity:OntologyClass ],
         [ a owl:Restriction ;
-            owl:onProperty bioentity:object_taxon_closure ;
-            owl:someValuesFrom bioentity:OntologyClass ],
-        [ a owl:Restriction ;
             owl:onProperty bioentity:object_taxon_closure_label ;
             owl:someValuesFrom bioentity:label_type ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:subject_taxon_closure_label ;
-            owl:someValuesFrom bioentity:label_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:subject_taxon_label ;
-            owl:someValuesFrom bioentity:Label ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:object_taxon_label ;
-            owl:someValuesFrom bioentity:Label ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:subject_taxon ;
-            owl:someValuesFrom bioentity:OrganismTaxon ],
         meta:mixin .
 
 bioentity:Transcript a owl:Class ;
@@ -3659,12 +3659,12 @@ bioentity:Gene a owl:Class ;
     rdfs:label "gene" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:genetically_interacts_with ;
-            owl:someValuesFrom bioentity:Gene ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bioentity:has_gene_product ;
             owl:someValuesFrom bioentity:GeneProduct ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:genetically_interacts_with ;
+            owl:someValuesFrom bioentity:Gene ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:gene_associated_with_condition ;
@@ -3700,16 +3700,16 @@ bioentity:DiseaseOrPhenotypicFeature a owl:Class ;
     rdfs:subClassOf [ owl:unionOf ( bioentity:Disease bioentity:PhenotypicFeature ) ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:treated_by ;
-            owl:someValuesFrom bioentity:NamedThing ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bioentity:correlated_with ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:has_biomarker ;
             owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:treated_by ;
+            owl:someValuesFrom bioentity:NamedThing ],
         bioentity:BiologicalEntity,
         bioentity:ThingWithTaxon .
 
@@ -3790,16 +3790,16 @@ bioentity:GeneOrGeneProduct a owl:Class ;
         [ owl:unionOf ( bioentity:Gene bioentity:GeneProduct ) ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:expressed_in ;
-            owl:someValuesFrom bioentity:AnatomicalEntity ],
+            owl:onProperty bioentity:in_complex_with ;
+            owl:someValuesFrom bioentity:GeneOrGeneProduct ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:in_cell_population_with ;
             owl:someValuesFrom bioentity:GeneOrGeneProduct ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:in_complex_with ;
-            owl:someValuesFrom bioentity:GeneOrGeneProduct ],
+            owl:onProperty bioentity:expressed_in ;
+            owl:someValuesFrom bioentity:AnatomicalEntity ],
         bioentity:MacromolecularMachine .
 
 bioentity:relation a owl:AnnotationProperty ;
@@ -3817,17 +3817,6 @@ bioentity:Association a owl:Class ;
     rdfs:label "association" ;
     obo:IAO_0000115 "A typed association between two entities, supported by evidence" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:cardinality 1 ;
-            owl:onProperty bioentity:subject ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty bioentity:qualifiers ;
-            owl:someValuesFrom bioentity:OntologyClass ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:negated ;
-            owl:someValuesFrom xsd:boolean ],
-        [ a owl:Restriction ;
             owl:onProperty bioentity:publications ;
             owl:someValuesFrom bioentity:Publication ],
         [ a owl:Restriction ;
@@ -3835,21 +3824,32 @@ bioentity:Association a owl:Class ;
             owl:onProperty bioentity:association_slot ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
+            owl:onProperty bioentity:qualifiers ;
+            owl:someValuesFrom bioentity:OntologyClass ],
+        [ a owl:Restriction ;
             owl:cardinality 1 ;
             owl:onProperty bioentity:relation ;
             owl:someValuesFrom bioentity:RelationshipType ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:association_type ;
-            owl:someValuesFrom bioentity:OntologyClass ],
+            owl:cardinality 1 ;
+            owl:onProperty bioentity:object ;
+            owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:provided_by ;
             owl:someValuesFrom bioentity:Provider ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:negated ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
             owl:cardinality 1 ;
-            owl:onProperty bioentity:object ;
+            owl:onProperty bioentity:subject ;
             owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:association_type ;
+            owl:someValuesFrom bioentity:OntologyClass ],
         bioentity:ExtensionsAndEvidenceAssociationMixin,
         bioentity:InformationContentEntity .
 
@@ -3865,8 +3865,7 @@ bioentity:NamedThing a owl:Class ;
             owl:onProperty bioentity:description ;
             owl:someValuesFrom bioentity:narrative_text ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:iri ;
+            owl:onProperty bioentity:category ;
             owl:someValuesFrom bioentity:iri_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -3878,18 +3877,19 @@ bioentity:NamedThing a owl:Class ;
             owl:someValuesFrom bioentity:identifier_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:systematic_synonym ;
+            owl:onProperty bioentity:full_name ;
             owl:someValuesFrom bioentity:label_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:iri ;
+            owl:someValuesFrom bioentity:iri_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:node_property ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
-            owl:onProperty bioentity:category ;
-            owl:someValuesFrom bioentity:iri_type ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:full_name ;
+            owl:onProperty bioentity:systematic_synonym ;
             owl:someValuesFrom bioentity:label_type ] .
 
 bioentity:object a owl:AnnotationProperty ;
@@ -3911,119 +3911,19 @@ bioentity:MolecularEntity a owl:Class ;
     obo:IAO_0000115 "A gene, gene product, small molecule or macromolecule (including protein complex)" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_molecular_modification_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_response_to ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:increases_uptake_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty bioentity:increases_molecular_modification_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:increases_localization_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:molecularly_interacts_with ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:affects_stability_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:affects_expression_of ;
-            owl:someValuesFrom bioentity:GenomicEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:affects_synthesis_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_folding_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:biomarker_for ;
-            owl:someValuesFrom bioentity:DiseaseOrPhenotypicFeature ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:affects_activity_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_splicing_of ;
-            owl:someValuesFrom bioentity:Transcript ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:increases_abundance_of ;
+            owl:onProperty bioentity:increases_secretion_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:affects_secretion_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_transport_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_degradation_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:increases_splicing_of ;
-            owl:someValuesFrom bioentity:Transcript ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:affects_abundance_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:increases_activity_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:increases_expression_of ;
-            owl:someValuesFrom bioentity:GenomicEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_localization_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_expression_of ;
-            owl:someValuesFrom bioentity:GenomicEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:increases_mutation_rate_of ;
-            owl:someValuesFrom bioentity:GenomicEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:affects_response_to ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:regulates_entity_to_entity ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_synthesis_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:increases_folding_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:increases_response_to ;
+            owl:onProperty bioentity:decreases_stability_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -4031,23 +3931,27 @@ bioentity:MolecularEntity a owl:Class ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_secretion_of ;
+            owl:onProperty bioentity:increases_activity_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_abundance_of ;
+            owl:onProperty bioentity:affects_synthesis_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:increases_stability_of ;
+            owl:onProperty bioentity:affects_abundance_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_metabolic_processing_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
+            owl:onProperty bioentity:increases_expression_of ;
+            owl:someValuesFrom bioentity:GenomicEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_uptake_of ;
+            owl:onProperty bioentity:decreases_expression_of ;
+            owl:someValuesFrom bioentity:GenomicEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:increases_response_to ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -4055,15 +3959,63 @@ bioentity:MolecularEntity a owl:Class ;
             owl:someValuesFrom bioentity:GenomicEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:affects_metabolic_processing_of ;
+            owl:onProperty bioentity:decreases_transport_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_mutation_rate_of ;
-            owl:someValuesFrom bioentity:GenomicEntity ],
+            owl:onProperty bioentity:decreases_response_to ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty bioentity:affects_molecular_modification_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:biomarker_for ;
+            owl:someValuesFrom bioentity:DiseaseOrPhenotypicFeature ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:affects_uptake_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:decreases_localization_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:decreases_folding_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:decreases_degradation_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:increases_uptake_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:decreases_splicing_of ;
+            owl:someValuesFrom bioentity:Transcript ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:increases_transport_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:affects_secretion_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:increases_mutation_rate_of ;
+            owl:someValuesFrom bioentity:GenomicEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:regulates_entity_to_entity ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:increases_folding_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -4071,23 +4023,11 @@ bioentity:MolecularEntity a owl:Class ;
             owl:someValuesFrom bioentity:Transcript ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:increases_secretion_of ;
+            owl:onProperty bioentity:decreases_uptake_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:affects_uptake_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:affects_folding_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:affects_localization_of ;
-            owl:someValuesFrom bioentity:MolecularEntity ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty bioentity:decreases_stability_of ;
+            owl:onProperty bioentity:affects_stability_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -4099,11 +4039,67 @@ bioentity:MolecularEntity a owl:Class ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty bioentity:increases_stability_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:increases_splicing_of ;
+            owl:someValuesFrom bioentity:Transcript ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:affects_folding_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:decreases_mutation_rate_of ;
+            owl:someValuesFrom bioentity:GenomicEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:increases_localization_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:decreases_molecular_modification_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:molecularly_interacts_with ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:affects_localization_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:decreases_secretion_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:decreases_metabolic_processing_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:affects_response_to ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:decreases_synthesis_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty bioentity:decreases_activity_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:increases_transport_of ;
+            owl:onProperty bioentity:increases_synthesis_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:increases_abundance_of ;
+            owl:someValuesFrom bioentity:MolecularEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:decreases_abundance_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -4111,7 +4107,11 @@ bioentity:MolecularEntity a owl:Class ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty bioentity:increases_synthesis_of ;
+            owl:onProperty bioentity:affects_expression_of ;
+            owl:someValuesFrom bioentity:GenomicEntity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty bioentity:affects_metabolic_processing_of ;
             owl:someValuesFrom bioentity:MolecularEntity ],
         bioentity:BiologicalEntity,
         bioentity:GoTermBioentityMixin,

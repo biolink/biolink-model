@@ -765,7 +765,7 @@ meta:Builtins a shex:NodeConstraint ;
     shex:values ( [ a shex:IriStem ;
                 shex:stem "http://www.w3.org/2001/XMLSchema#"^^xsd:string ] ) .
 
-<file:///Users/hsolbri1/git/biolink/biolink-model/XSD_string__List> a shex:Shape ;
+<file:///Users/solbrig/git/biolink-continuous/biolink-model/XSD_string__List> a shex:Shape ;
     shex:closed true ;
     shex:expression [ a shex:EachOf ;
             shex:expressions ( [ a shex:TripleConstraint ;
@@ -777,7 +777,7 @@ meta:Builtins a shex:NodeConstraint ;
                         shex:predicate rdf:rest ;
                         shex:valueExpr [ a shex:ShapeOr ;
                                 shex:shapeExprs ( [ a shex:NodeConstraint ;
-                                            shex:values ( () ) ] <file:///Users/hsolbri1/git/biolink/biolink-model/XSD_string__List> ) ] ] ) ] .
+                                            shex:values ( () ) ] <file:///Users/solbrig/git/biolink-continuous/biolink-model/XSD_string__List> ) ] ] ) ] .
 
 biolink:AnatomicalEntityToAnatomicalEntityAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
@@ -1169,10 +1169,10 @@ biolink:NamedThing a shex:Shape ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate rdf:type ;
-                        shex:valueExpr <file:///Users/hsolbri1/git/biolink/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                        shex:valueExpr <file:///Users/solbrig/git/biolink-continuous/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate <file:///Users/hsolbri1/git/biolink/biolink-model/@id> ;
+                        shex:predicate <file:///Users/solbrig/git/biolink-continuous/biolink-model/@id> ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:nodeKind shex:nonliteral ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
@@ -1500,7 +1500,7 @@ biolink:MolecularEntity a shex:ShapeAnd ;
                                     shex:valueExpr biolink:DiseaseOrPhenotypicFeature ] ) ] ] ) .
 
 [] a shex:Schema ;
-    shex:shapes <file:///Users/hsolbri1/git/biolink/biolink-model/XSD_string__List>,
+    shex:shapes <file:///Users/solbrig/git/biolink-continuous/biolink-model/XSD_string__List>,
         biolink:ActivityAndBehavior,
         biolink:AdministrativeEntity,
         biolink:AnatomicalEntity,

@@ -51,7 +51,7 @@ def load_raw_schema(data: Union[str, TextIO],
         for sname, sdef in {k: SchemaDefinition(name=k, **v) for k, v in schemadefs.items()}.items():
             if schema is None:
                 schema = sdef
-                schema.source_file = source_file
+                schema.source_file = os.path.basename(source_file) if source_file else None
                 schema.source_file_date = source_file_date
                 schema.source_file_size = source_file_size
                 schema.generation_date =  datetime.now().strftime("%Y-%m-%d %H:%M")

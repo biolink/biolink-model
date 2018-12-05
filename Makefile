@@ -96,7 +96,7 @@ contrib/%/ontology.ttl: contrib/%.yaml
 # RDF
 # ~~~~~~~~~~~~~~~~~~~~
 rdf/%.ttl: dir-rdf metamodel/context.jsonld meta.yaml
-	gen-rdf $*.yaml -f ttl --context metamodel/context.jsonld > rdf/$*.ttl
+	gen-rdf $*.yaml -f ttl --context https://raw.githubusercontent.com/biolink/biolink-model/master/metamodel/context.jsonld > rdf/$*.ttl
 
 
 contrib/%/datamodel.py: contrib/%.yaml

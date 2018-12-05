@@ -1,5 +1,5 @@
 {
-   "comments": "Auto generated from /Users/solbrig/git/biolink-continuous/biolink-model/biolink-model.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-12-04 09:03\nSchema: biolink model\n\nid: https://biolink.github.io/biolink-model/ontology/biolink.ttl\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "comments": "Auto generated from biolink-model.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-12-05 12:02\nSchema: biolink model\n\nid: https://biolink.github.io/biolink-model/ontology/biolink.ttl\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "biolink": "http://w3id.org/biolink/vocab/",
       "OBAN": "http://purl.org/oban/",
@@ -16,6 +16,7 @@
       "WD": "http://example.org/unknown/WD/",
       "owl": "http://www.w3.org/2002/07/owl#",
       "GO": "http://purl.obolibrary.org/obo/GO_",
+      "Reactome": "http://example.org/unknown/Reactome/",
       "CL": "http://purl.obolibrary.org/obo/CL_",
       "PO": "http://purl.obolibrary.org/obo/PO_",
       "CLO": "http://purl.obolibrary.org/obo/CLO_",
@@ -43,14 +44,18 @@
       "FAO": "http://purl.obolibrary.org/obo/FAO_",
       "VMC": "http://example.org/unknown/VMC/",
       "IAO": "http://purl.obolibrary.org/obo/IAO_",
+      "IntAct": "http://example.org/unknown/IntAct/",
       "PR": "http://purl.obolibrary.org/obo/PR_",
       "MIR": "http://identifiers.org/mir/",
+      "RNAcentral": "http://example.org/unknown/RNAcentral/",
       "BFO": "http://purl.obolibrary.org/obo/BFO_",
       "HP": "http://purl.obolibrary.org/obo/HP_",
       "PW": "http://purl.obolibrary.org/obo/PW_",
       "UPHENO": "http://purl.obolibrary.org/obo/UPHENO_",
+      "HANCESTRO": "http://example.org/unknown/HANCESTRO/",
       "UniProtKB": "http://identifiers.org/uniprot/",
       "ClinVar": "http://www.ncbi.nlm.nih.gov/clinvar/",
+      "CIViC": "http://example.org/unknown/CIViC/",
       "OGMS": "http://purl.obolibrary.org/obo/OGMS_",
       "RO": "http://purl.obolibrary.org/obo/RO_",
       "actively_involved_in": {

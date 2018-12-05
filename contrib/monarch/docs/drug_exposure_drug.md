@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/drug_exposure_drug](slot_uri)
+URI: [http://w3id.org/biolink/vocab/drug_exposure_drug](slot_uri)
 ## Mappings
 
 ## Domain and Range
