@@ -4,7 +4,6 @@ import unittest
 # This has to occur post ClickTestCase
 from functools import reduce
 from typing import List, Tuple
-from urllib.parse import urljoin
 
 import click
 from rdflib import Graph, URIRef
@@ -65,8 +64,10 @@ class GenJSONLDTestCase(ClickTestCase):
     def test_meta_output(self):
         """ Generate a context AND a jsonld for the metamodel and make sure it parses as RDF """
         cwd = os.path.abspath(os.path.join(os.path.dirname(__file__)))
-        jsonld_path = os.path.join(self.testdir_path, 'metajson.jsonld')
-        rdf_path = os.path.join(self.testdir_path, 'metardf.ttl')
+        temp_dir = os.path.join(cwd, 'temp')
+        os.makedirs(temp_dir, exist_ok=True)
+        jsonld_path = os.path.join(temp_dir, 'metajson.jsonld')
+        rdf_path = os.path.join(temp_dir, 'metardf.ttl')
         yaml_path = os.path.abspath(os.path.join(cwd, '..', '..', 'meta.yaml'))
         meta_context_path = os.path.join(self.testdir_path, 'metacontext.jsonld')
         meta_context_relpath = os.path.basename(meta_context_path)
@@ -83,7 +84,7 @@ class GenJSONLDTestCase(ClickTestCase):
         new_ttl = g.serialize(format="turtle").decode()
         new_g = Graph()
         new_g.parse(data=new_ttl, format="turtle")
-        self.check_size(g, new_g, URIRef("https://biolink.github.io/metamodel/ontology/meta.ttl"), 9, 73, 0, "meta")
+        self.check_size(g, new_g, URIRef("https://biolink.github.io/metamodel/ontology/meta.ttl"), 9, 77, 0, "meta")
 
     def test_biolink(self):
         self.maxDiff=None

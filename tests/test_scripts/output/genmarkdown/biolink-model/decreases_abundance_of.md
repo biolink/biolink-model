@@ -6,7 +6,6 @@ holds between two molecular entities where the action or effect of one decreases
 URI: [http://w3id.org/biolink/vocab/decreases_abundance_of](slot_uri)
 ## Mappings
 
- * [SEMMEDDB:AFFECTS](http://purl.obolibrary.org/obo/SEMMEDDB_AFFECTS)
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) -> [MolecularEntity](MolecularEntity.md)

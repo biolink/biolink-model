@@ -1,0 +1,34 @@
+digraph {
+	graph [bb="0,0,382.85,122"];
+	node [label="\N"];
+	"entity to feature or disease qualifiers"	 [height=0.5,
+		label="entity to feature or disease qualifiers",
+		pos="199.14,104",
+		width=3.8483];
+	"frequency qualifier"	 [height=0.5,
+		pos="77.141,18",
+		width=2.1428];
+	"entity to feature or disease qualifiers" -> "frequency qualifier"	 [label=is_a,
+		lp="157.42,61",
+		pos="e,101.55,35.21 173.86,86.181 155.3,73.094 129.92,55.202 109.81,41.031"];
+	"severity qualifier"	 [color=blue,
+		height=0.5,
+		label="",
+		pos="199.14,18",
+		width=0.75];
+	"entity to feature or disease qualifiers" -> "severity qualifier"	 [color=blue,
+		label="severity qualifier",
+		lp="246.38,61",
+		pos="e,199.14,36.212 199.14,85.762 199.14,74.36 199.14,59.434 199.14,46.494",
+		style=solid];
+	"onset qualifier"	 [color=blue,
+		height=0.5,
+		label="",
+		pos="316.14,18",
+		width=0.75];
+	"entity to feature or disease qualifiers" -> "onset qualifier"	 [color=blue,
+		label="onset qualifier",
+		lp="342.99,61",
+		pos="e,311.9,36.246 263.03,87.847 274.34,82.854 285.31,76.378 294.14,68 300.5,61.966 305.13,53.772 308.46,45.764",
+		style=solid];
+}

@@ -45,6 +45,10 @@ Element interface
     inSubset: [String]
     fromSchema: String
     altDescriptions: [AltDescription]
+    exactMatches: [String]
+    broaderMatches: [String]
+    narrowerMatches: [String]
+    closeMatches: [String]
   }
 
 Example type

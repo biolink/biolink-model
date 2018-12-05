@@ -6,9 +6,6 @@ anatomical entity in which the disease or feature is found
 URI: [http://w3id.org/biolink/vocab/disease_or_phenotypic_feature_association_to_location_association_object](slot_uri)
 ## Mappings
 
- * [rdf:object](http://purl.obolibrary.org/obo/rdf_object)
- * [owl:annotatedTarget](http://purl.obolibrary.org/obo/owl_annotatedTarget)
- * [oban:association_has_object](http://purl.obolibrary.org/obo/oban_association_has_object)
 ## Domain and Range
 
 [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md) -> [AnatomicalEntity](AnatomicalEntity.md)

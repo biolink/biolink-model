@@ -1,5 +1,5 @@
 # Auto generated from go.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-12-05 11:01
+# Generation date: 2018-12-05 12:04
 # Schema: go biolink extensions
 #
 # id: http://bioentity.io/json-schema/biolink/contrib/go.json

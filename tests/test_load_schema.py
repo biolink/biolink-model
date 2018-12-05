@@ -6,7 +6,7 @@ from metamodel.utils.schemaloader import load_raw_schema, SchemaLoader
 
 schema = """
 test1:
-    id: "http://bioentity.io/test/test1.yaml"
+    id: "http://w3id.org/biolink/vocab/test/test1.yaml"
     description: Simple test schema
     license: https://creativecommons.org/publicdomain/zero/1.0/
 
@@ -37,7 +37,7 @@ test1:
 """
 
 nametest = """
-id: "http://bioentity.io/test/test1.yaml"
+id: "http://w3id.org/biolink/vocab/test/test1.yaml"
 description: Simple test schema
 """
 
@@ -61,7 +61,7 @@ class LoadSchemaTestCase(unittest.TestCase):
 
     def test_name_variants(self):
         nt1 = load_raw_schema(nametest)
-        self.assertEqual(nt1.name, 'http://bioentity.io/test/test1.yaml')
+        self.assertEqual(nt1.name, 'http://w3id.org/biolink/vocab/test/test1.yaml')
         nt2 = load_raw_schema(nametest + '\nname: nametest')
         self.assertEqual(nt2.name, 'nametest')
 

@@ -6,8 +6,6 @@ holds between two entities where exposure to one entity alters the chance of dev
 URI: [http://w3id.org/biolink/vocab/affects_risk_for](slot_uri)
 ## Mappings
 
- * [owl:topObjectProperty](http://purl.obolibrary.org/obo/owl_topObjectProperty)
- * [SEMMEDDB:ASSOCIATED_WITH](http://purl.obolibrary.org/obo/SEMMEDDB_ASSOCIATED_WITH)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)

@@ -9,7 +9,7 @@
    "shapes": [
       {
          "type": "NodeConstraint",
-         "id": "http://bioentity.io/meta/Builtins",
+         "id": "http://w3id.org/biolink/vocab/meta/Builtins",
          "values": [
             {
                "type": "IriStem",
@@ -19,11 +19,11 @@
       },
       {
          "type": "ShapeOr",
-         "id": "http://bioentity.io/meta/SlotRangeTypes",
+         "id": "http://w3id.org/biolink/vocab/meta/SlotRangeTypes",
          "shapeExprs": [
             "http://w3id.org/biolink/vocab/TypeDefinition",
             "http://w3id.org/biolink/vocab/ClassDefinition",
-            "http://bioentity.io/meta/Builtins"
+            "http://w3id.org/biolink/vocab/meta/Builtins"
          ]
       },
       {
@@ -105,7 +105,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "predicate": "http://w3id.org/biolink/vocab/class_definition_is_a",
                         "valueExpr": "http://w3id.org/biolink/vocab/ClassDefinition",
                         "min": 0,
                         "max": 1
@@ -320,7 +320,7 @@
                },
                {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/mappings",
+                  "predicate": "https://www.w3.org/TR/skos-reference/#mappingRelation",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -362,6 +362,46 @@
                   "type": "TripleConstraint",
                   "predicate": "http://w3id.org/biolink/vocab/alt_descriptions",
                   "valueExpr": "http://w3id.org/biolink/vocab/AltDescription",
+                  "min": 0,
+                  "max": -1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "https://www.w3.org/TR/skos-reference/#exactMatch",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                  },
+                  "min": 0,
+                  "max": -1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "https://www.w3.org/TR/skos-reference/#broadMatch",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                  },
+                  "min": 0,
+                  "max": -1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "https://www.w3.org/TR/skos-reference/#narrowMatch",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                  },
+                  "min": 0,
+                  "max": -1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "https://www.w3.org/TR/skos-reference/#closeMatch",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                  },
                   "min": 0,
                   "max": -1
                }
@@ -616,7 +656,7 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://w3id.org/biolink/vocab/range",
-                        "valueExpr": "http://bioentity.io/meta/SlotRangeTypes",
+                        "valueExpr": "http://w3id.org/biolink/vocab/meta/SlotRangeTypes",
                         "min": 0,
                         "max": 1
                      },
@@ -746,7 +786,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                        "predicate": "http://w3id.org/biolink/vocab/slot_definition_is_a",
                         "valueExpr": "http://w3id.org/biolink/vocab/SlotDefinition",
                         "min": 0,
                         "max": 1

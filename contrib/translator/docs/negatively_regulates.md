@@ -6,7 +6,6 @@ describes an entity that has a direct affect on the state or quality of another 
 URI: [http://w3id.org/biolink/vocab/negatively_regulates](slot_uri)
 ## Mappings
 
- * [WD:P128](http://purl.obolibrary.org/obo/WD_P128)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)

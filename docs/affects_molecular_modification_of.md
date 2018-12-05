@@ -6,7 +6,6 @@ holds between two molecular entities where the action or effect of one leads cha
 URI: [http://w3id.org/biolink/vocab/affects_molecular_modification_of](slot_uri)
 ## Mappings
 
- * [SEMMEDDB:AFFECTS](http://purl.obolibrary.org/obo/SEMMEDDB_AFFECTS)
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) -> [MolecularEntity](MolecularEntity.md)

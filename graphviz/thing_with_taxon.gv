@@ -1,0 +1,18 @@
+digraph {
+	graph [bb="0,0,136.15,122"];
+	node [label="\N"];
+	"thing with taxon"	 [height=0.5,
+		label="thing with taxon",
+		pos="68.077,104",
+		width=1.891];
+	"in taxon"	 [color=blue,
+		height=0.5,
+		label="",
+		pos="68.077,18",
+		width=0.75];
+	"thing with taxon" -> "in taxon"	 [color=blue,
+		label="in taxon",
+		lp="90.824,61",
+		pos="e,68.077,36.212 68.077,85.762 68.077,74.36 68.077,59.434 68.077,46.494",
+		style=solid];
+}

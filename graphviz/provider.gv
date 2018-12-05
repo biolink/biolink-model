@@ -1,0 +1,14 @@
+digraph {
+	graph [bb="0,0,166.1,122"];
+	node [label="\N"];
+	provider	 [height=0.5,
+		label=provider,
+		pos="83.048,104",
+		width=1.1129];
+	"administrative entity"	 [height=0.5,
+		pos="83.048,18",
+		width=2.3069];
+	provider -> "administrative entity"	 [label=is_a,
+		lp="94.324,61",
+		pos="e,83.048,36.212 83.048,85.762 83.048,74.36 83.048,59.434 83.048,46.494"];
+}

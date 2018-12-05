@@ -6,7 +6,6 @@ holds between two genes or gene products that are expressed in the same cell typ
 URI: [http://w3id.org/biolink/vocab/in_cell_population_with](slot_uri)
 ## Mappings
 
- * [SEMMEDDB:COEXISTS_WITH](http://purl.obolibrary.org/obo/SEMMEDDB_COEXISTS_WITH)
 ## Domain and Range
 
 [GeneOrGeneProduct](GeneOrGeneProduct.md) -> [GeneOrGeneProduct](GeneOrGeneProduct.md)

@@ -16,7 +16,7 @@
     biolink:id "https://biolink.github.io/biolink-model/ontology/biolink.ttl" ;
     biolink:id_prefixes ( "rdf" "rdfs" "xsd" "skos" "OIO" ) ;
     biolink:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    biolink:metamodel_version "0.3.1" ;
+    biolink:metamodel_version "0.3.2" ;
     biolink:prefixes ( [ biolink:local_name "biolink" ;
                 biolink:prefix_uri "http://w3id.org/biolink/vocab/" ] [ biolink:local_name "OBAN" ;
                 biolink:prefix_uri "http://purl.org/oban/" ] [ biolink:local_name "SIO" ;
@@ -271,8 +271,7 @@ biolink:has_molecular_consequence a biolink:related_to ;
     rdfs:label "has_molecular_consequence" ;
     biolink:domain biolink:NamedThing ;
     biolink:range biolink:OntologyClass ;
-    skos:definition "connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583" ;
-    skos:mappingRelation ( "owl:topObjectProperty" "SEMMEDDB:ASSOCIATED_WITH" ) .
+    skos:definition "connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583" .
 
 biolink:manifestation_of a biolink:related_to ;
     rdfs:label "manifestation_of" ;
@@ -641,8 +640,7 @@ biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_object a bi
     biolink:domain biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation ;
     biolink:range biolink:AnatomicalEntity ;
     biolink:required true ;
-    skos:definition "the structure at an earlier time" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "the structure at an earlier time" .
 
 biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_relation a biolink:relation ;
     rdfs:label "anatomical_entity_to_anatomical_entity_ontogenic_association_relation" ;
@@ -650,8 +648,7 @@ biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_relation a 
     biolink:domain biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation ;
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
-    skos:definition "the relationship type by which a subject is connected to an object in an association" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "the relationship type by which a subject is connected to an object in an association" .
 
 biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_subject a biolink:anatomical_entity_to_anatomical_entity_association_subject ;
     rdfs:label "anatomical_entity_to_anatomical_entity_ontogenic_association_subject" ;
@@ -659,8 +656,7 @@ biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_subject a b
     biolink:domain biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation ;
     biolink:range biolink:AnatomicalEntity ;
     biolink:required true ;
-    skos:definition "the structure at a later time" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "the structure at a later time" .
 
 biolink:anatomical_entity_to_anatomical_entity_part_of_association_object a biolink:anatomical_entity_to_anatomical_entity_association_object ;
     rdfs:label "anatomical_entity_to_anatomical_entity_part_of_association_object" ;
@@ -668,8 +664,7 @@ biolink:anatomical_entity_to_anatomical_entity_part_of_association_object a biol
     biolink:domain biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation ;
     biolink:range biolink:AnatomicalEntity ;
     biolink:required true ;
-    skos:definition "the whole" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "the whole" .
 
 biolink:anatomical_entity_to_anatomical_entity_part_of_association_relation a biolink:relation ;
     rdfs:label "anatomical_entity_to_anatomical_entity_part_of_association_relation" ;
@@ -678,8 +673,7 @@ biolink:anatomical_entity_to_anatomical_entity_part_of_association_relation a bi
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:part_of ;
-    skos:definition "the relationship type by which a subject is connected to an object in an association" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "the relationship type by which a subject is connected to an object in an association" .
 
 biolink:anatomical_entity_to_anatomical_entity_part_of_association_subject a biolink:anatomical_entity_to_anatomical_entity_association_subject ;
     rdfs:label "anatomical_entity_to_anatomical_entity_part_of_association_subject" ;
@@ -687,8 +681,7 @@ biolink:anatomical_entity_to_anatomical_entity_part_of_association_subject a bio
     biolink:domain biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation ;
     biolink:range biolink:AnatomicalEntity ;
     biolink:required true ;
-    skos:definition "the part" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "the part" .
 
 biolink:association_type a biolink:association_slot ;
     rdfs:label "association_type" ;
@@ -704,8 +697,7 @@ biolink:biosample_to_thing_association_subject a biolink:subject ;
     biolink:domain biolink:BiosampleToThingAssociation ;
     biolink:range biolink:Biosample ;
     biolink:required true ;
-    skos:definition "the biosample being described" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "the biosample being described" .
 
 biolink:case_to_thing_association_subject a biolink:subject ;
     rdfs:label "case_to_thing_association_subject" ;
@@ -714,8 +706,7 @@ biolink:case_to_thing_association_subject a biolink:subject ;
     biolink:domain biolink:CaseToThingAssociation ;
     biolink:range biolink:Case ;
     biolink:required true ;
-    skos:definition "the case (e.g. patient) that has the property" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "the case (e.g. patient) that has the property" .
 
 biolink:category a biolink:node_property ;
     rdfs:label "category" ;
@@ -733,8 +724,7 @@ biolink:cell_line_to_disease_or_phenotypic_feature_association_subject a biolink
     biolink:domain biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation ;
     biolink:range biolink:DiseaseOrPhenotypicFeature ;
     biolink:required true ;
-    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:cell_line_to_thing_association_subject a biolink:subject ;
     rdfs:label "cell_line_to_thing_association_subject" ;
@@ -743,8 +733,7 @@ biolink:cell_line_to_thing_association_subject a biolink:subject ;
     biolink:domain biolink:CellLineToThingAssociation ;
     biolink:range biolink:CellLine ;
     biolink:required true ;
-    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:chemical_formula_value rdfs:label "chemical formula value" .
 
@@ -755,8 +744,7 @@ biolink:chemical_to_disease_or_phenotypic_feature_association_object a biolink:o
     biolink:domain biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation ;
     biolink:range biolink:DiseaseOrPhenotypicFeature ;
     biolink:required true ;
-    skos:definition "the disease or phenotype that is affected by the chemical" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "the disease or phenotype that is affected by the chemical" .
 
 biolink:chemical_to_gene_association_object a biolink:object ;
     rdfs:label "chemical_to_gene_association_object" ;
@@ -765,8 +753,7 @@ biolink:chemical_to_gene_association_object a biolink:object ;
     biolink:domain biolink:ChemicalToGeneAssociation ;
     biolink:range biolink:GeneOrGeneProduct ;
     biolink:required true ;
-    skos:definition "the gene or gene product that is affected by the chemical" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "the gene or gene product that is affected by the chemical" .
 
 biolink:chemical_to_pathway_association_object a biolink:object ;
     rdfs:label "chemical_to_pathway_association_object" ;
@@ -775,8 +762,7 @@ biolink:chemical_to_pathway_association_object a biolink:object ;
     biolink:domain biolink:ChemicalToPathwayAssociation ;
     biolink:range biolink:Pathway ;
     biolink:required true ;
-    skos:definition "the pathway that is affected by the chemical" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "the pathway that is affected by the chemical" .
 
 biolink:chemical_to_thing_association_subject a biolink:subject ;
     rdfs:label "chemical_to_thing_association_subject" ;
@@ -785,8 +771,7 @@ biolink:chemical_to_thing_association_subject a biolink:subject ;
     biolink:domain biolink:ChemicalToThingAssociation ;
     biolink:range biolink:ChemicalSubstance ;
     biolink:required true ;
-    skos:definition "the chemical substance or entity that is an interactor" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "the chemical substance or entity that is an interactor" .
 
 biolink:contributes_to a biolink:related_to ;
     rdfs:label "contributes_to" ;
@@ -801,128 +786,112 @@ biolink:decreases_abundance_of a biolink:affects_abundance_of ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest" .
 
 biolink:decreases_activity_of a biolink:affects_activity_of ;
     rdfs:label "decreases_activity_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest" .
 
 biolink:decreases_degradation_of a biolink:affects_degradation_of ;
     rdfs:label "decreases_degradation_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest" .
 
 biolink:decreases_expression_of a biolink:affects_expression_of ;
     rdfs:label "decreases_expression_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:GenomicEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest" .
 
 biolink:decreases_folding_of a biolink:affects_folding_of ;
     rdfs:label "decreases_folding_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other " ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other " .
 
 biolink:decreases_localization_of a biolink:affects_localization_of ;
     rdfs:label "decreases_localization_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest" .
 
 biolink:decreases_metabolic_processing_of a biolink:affects_metabolic_processing_of ;
     rdfs:label "decreases_metabolic_processing_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest" .
 
 biolink:decreases_molecular_modification_of a biolink:affects_molecular_modification_of ;
     rdfs:label "decreases_molecular_modification_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" .
 
 biolink:decreases_mutation_rate_of a biolink:affects_mutation_rate_of ;
     rdfs:label "decreases_mutation_rate_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:GenomicEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest" .
 
 biolink:decreases_response_to a biolink:affects_response_to ;
     rdfs:label "decreases_response_to" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" .
 
 biolink:decreases_secretion_of a biolink:affects_secretion_of ;
     rdfs:label "decreases_secretion_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ" .
 
 biolink:decreases_splicing_of a biolink:affects_splicing_of ;
     rdfs:label "decreases_splicing_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:Transcript ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA" .
 
 biolink:decreases_stability_of a biolink:affects_stability_of ;
     rdfs:label "decreases_stability_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest" .
 
 biolink:decreases_synthesis_of a biolink:affects_synthesis_of ;
     rdfs:label "decreases_synthesis_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other" .
 
 biolink:decreases_transport_of a biolink:affects_transport_of ;
     rdfs:label "decreases_transport_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest" .
 
 biolink:decreases_uptake_of a biolink:affects_uptake_of ;
     rdfs:label "decreases_uptake_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ" .
 
 biolink:derives_from a biolink:related_to ;
     rdfs:label "derives_from" ;
@@ -948,8 +917,7 @@ biolink:disease_or_phenotypic_feature_association_to_location_association_object
     biolink:domain biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation ;
     biolink:range biolink:AnatomicalEntity ;
     biolink:required true ;
-    skos:definition "anatomical entity in which the disease or feature is found" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "anatomical entity in which the disease or feature is found" .
 
 biolink:disease_or_phenotypic_feature_association_to_thing_association_subject a biolink:subject ;
     rdfs:label "disease_or_phenotypic_feature_association_to_thing_association_subject" ;
@@ -958,8 +926,7 @@ biolink:disease_or_phenotypic_feature_association_to_thing_association_subject a
     biolink:domain biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation ;
     biolink:range biolink:DiseaseOrPhenotypicFeature ;
     biolink:required true ;
-    skos:definition "disease or phenotype" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "disease or phenotype" .
 
 biolink:disease_to_thing_association_subject a biolink:subject ;
     rdfs:label "disease_to_thing_association_subject" ;
@@ -968,8 +935,7 @@ biolink:disease_to_thing_association_subject a biolink:subject ;
     biolink:domain biolink:DiseaseToThingAssociation ;
     biolink:range biolink:Disease ;
     biolink:required true ;
-    skos:definition "disease class" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "disease class" .
 
 biolink:drug rdfs:label "drug" ;
     biolink:alias "drug" ;
@@ -991,8 +957,7 @@ biolink:entity_to_disease_association_object a biolink:object ;
     biolink:domain biolink:EntityToDiseaseAssociation ;
     biolink:range biolink:Disease ;
     biolink:required true ;
-    skos:definition "disease" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "disease" .
 
 biolink:entity_to_phenotypic_feature_association_description a biolink:description ;
     rdfs:label "entity_to_phenotypic_feature_association_description" ;
@@ -1000,8 +965,7 @@ biolink:entity_to_phenotypic_feature_association_description a biolink:descripti
     biolink:domain biolink:EntityToPhenotypicFeatureAssociation ;
     biolink:range biolink:narrative_text ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class" ;
-    skos:mappingRelation ( "dcterms:description" ) .
+    skos:definition "A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class" .
 
 biolink:entity_to_phenotypic_feature_association_object a biolink:object ;
     rdfs:label "entity_to_phenotypic_feature_association_object" ;
@@ -1010,8 +974,7 @@ biolink:entity_to_phenotypic_feature_association_object a biolink:object ;
     biolink:domain biolink:EntityToPhenotypicFeatureAssociation ;
     biolink:range biolink:PhenotypicFeature ;
     biolink:required true ;
-    skos:definition "phenotypic class" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "phenotypic class" .
 
 biolink:environment_to_phenotypic_feature_association_subject a biolink:subject ;
     rdfs:label "environment_to_phenotypic_feature_association_subject" ;
@@ -1020,8 +983,7 @@ biolink:environment_to_phenotypic_feature_association_subject a biolink:subject 
     biolink:domain biolink:EnvironmentToPhenotypicFeatureAssociation ;
     biolink:range biolink:Environment ;
     biolink:required true ;
-    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:evidence_instance rdfs:label "evidence instance" .
 
@@ -1031,8 +993,7 @@ biolink:exon_to_transcript_relationship_object a biolink:sequence_feature_relati
     biolink:domain biolink:ExonToTranscriptRelationship ;
     biolink:range biolink:Transcript ;
     biolink:required true ;
-    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:exon_to_transcript_relationship_subject a biolink:sequence_feature_relationship_subject ;
     rdfs:label "exon_to_transcript_relationship_subject" ;
@@ -1040,8 +1001,7 @@ biolink:exon_to_transcript_relationship_subject a biolink:sequence_feature_relat
     biolink:domain biolink:ExonToTranscriptRelationship ;
     biolink:range biolink:Exon ;
     biolink:required true ;
-    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:full_name a biolink:node_property ;
     rdfs:label "full_name" ;
@@ -1056,8 +1016,7 @@ biolink:gene_as_a_model_of_disease_association_subject a biolink:gene_to_disease
     biolink:range biolink:GeneOrGeneProduct ;
     biolink:required true ;
     skos:definition """A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.
-  """ ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+  """ .
 
 biolink:gene_associated_with_condition a biolink:related_to ;
     rdfs:label "gene_associated_with_condition" ;
@@ -1073,8 +1032,7 @@ biolink:gene_has_variant_that_contributes_to_disease_association_subject a bioli
     biolink:domain biolink:GeneHasVariantThatContributesToDiseaseAssociation ;
     biolink:range biolink:GeneOrGeneProduct ;
     biolink:required true ;
-    skos:definition "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease." ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease." .
 
 biolink:gene_regulatory_relationship_object a biolink:object ;
     rdfs:label "gene_regulatory_relationship_object" ;
@@ -1082,8 +1040,7 @@ biolink:gene_regulatory_relationship_object a biolink:object ;
     biolink:domain biolink:GeneRegulatoryRelationship ;
     biolink:range biolink:GeneOrGeneProduct ;
     biolink:required true ;
-    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:gene_regulatory_relationship_relation a biolink:relation ;
     rdfs:label "gene_regulatory_relationship_relation" ;
@@ -1091,8 +1048,7 @@ biolink:gene_regulatory_relationship_relation a biolink:relation ;
     biolink:domain biolink:GeneRegulatoryRelationship ;
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
-    skos:definition "the direction is always from regulator to regulated" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "the direction is always from regulator to regulated" .
 
 biolink:gene_regulatory_relationship_subject a biolink:subject ;
     rdfs:label "gene_regulatory_relationship_subject" ;
@@ -1100,8 +1056,7 @@ biolink:gene_regulatory_relationship_subject a biolink:subject ;
     biolink:domain biolink:GeneRegulatoryRelationship ;
     biolink:range biolink:GeneOrGeneProduct ;
     biolink:required true ;
-    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:gene_to_expression_site_association_object a biolink:object ;
     rdfs:label "gene_to_expression_site_association_object" ;
@@ -1109,8 +1064,7 @@ biolink:gene_to_expression_site_association_object a biolink:object ;
     biolink:domain biolink:GeneToExpressionSiteAssociation ;
     biolink:range biolink:AnatomicalEntity ;
     biolink:required true ;
-    skos:definition "location in which the gene is expressed" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "location in which the gene is expressed" .
 
 biolink:gene_to_expression_site_association_quantifier_qualifier a biolink:quantifier_qualifier ;
     rdfs:label "gene_to_expression_site_association_quantifier_qualifier" ;
@@ -1126,8 +1080,7 @@ biolink:gene_to_expression_site_association_relation a biolink:relation ;
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:expressed_in ;
-    skos:definition "expression relationship" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "expression relationship" .
 
 biolink:gene_to_expression_site_association_stage_qualifier a biolink:stage_qualifier ;
     rdfs:label "gene_to_expression_site_association_stage_qualifier" ;
@@ -1142,8 +1095,7 @@ biolink:gene_to_expression_site_association_subject a biolink:subject ;
     biolink:domain biolink:GeneToExpressionSiteAssociation ;
     biolink:range biolink:GeneOrGeneProduct ;
     biolink:required true ;
-    skos:definition "gene in which variation is correlated with the phenotypic feature" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "gene in which variation is correlated with the phenotypic feature" .
 
 biolink:gene_to_gene_association_object a biolink:object ;
     rdfs:label "gene_to_gene_association_object" ;
@@ -1152,8 +1104,7 @@ biolink:gene_to_gene_association_object a biolink:object ;
     biolink:domain biolink:GeneToGeneAssociation ;
     biolink:range biolink:GeneOrGeneProduct ;
     biolink:required true ;
-    skos:definition "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa" .
 
 biolink:gene_to_gene_association_subject a biolink:subject ;
     rdfs:label "gene_to_gene_association_subject" ;
@@ -1162,8 +1113,7 @@ biolink:gene_to_gene_association_subject a biolink:subject ;
     biolink:domain biolink:GeneToGeneAssociation ;
     biolink:range biolink:GeneOrGeneProduct ;
     biolink:required true ;
-    skos:definition "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa" .
 
 biolink:gene_to_gene_homology_association_relation a biolink:relation ;
     rdfs:label "gene_to_gene_homology_association_relation" ;
@@ -1173,8 +1123,7 @@ biolink:gene_to_gene_homology_association_relation a biolink:relation ;
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:homologous_to ;
-    skos:definition "homology relationship type" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "homology relationship type" .
 
 biolink:gene_to_gene_product_relationship_object a biolink:sequence_feature_relationship_object ;
     rdfs:label "gene_to_gene_product_relationship_object" ;
@@ -1182,8 +1131,7 @@ biolink:gene_to_gene_product_relationship_object a biolink:sequence_feature_rela
     biolink:domain biolink:GeneToGeneProductRelationship ;
     biolink:range biolink:GeneProduct ;
     biolink:required true ;
-    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:gene_to_gene_product_relationship_relation a biolink:relation ;
     rdfs:label "gene_to_gene_product_relationship_relation" ;
@@ -1192,8 +1140,7 @@ biolink:gene_to_gene_product_relationship_relation a biolink:relation ;
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:has_gene_product ;
-    skos:definition "the relationship type by which a subject is connected to an object in an association" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "the relationship type by which a subject is connected to an object in an association" .
 
 biolink:gene_to_gene_product_relationship_subject a biolink:sequence_feature_relationship_subject ;
     rdfs:label "gene_to_gene_product_relationship_subject" ;
@@ -1201,8 +1148,7 @@ biolink:gene_to_gene_product_relationship_subject a biolink:sequence_feature_rel
     biolink:domain biolink:GeneToGeneProductRelationship ;
     biolink:range biolink:Gene ;
     biolink:required true ;
-    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:gene_to_go_term_association_object a biolink:functional_association_object ;
     rdfs:label "gene_to_go_term_association_object" ;
@@ -1210,8 +1156,7 @@ biolink:gene_to_go_term_association_object a biolink:functional_association_obje
     biolink:domain biolink:GeneToGoTermAssociation ;
     biolink:range biolink:GeneOntologyClass ;
     biolink:required true ;
-    skos:definition "class describing the activity, process or localization of the gene product" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "class describing the activity, process or localization of the gene product" .
 
 biolink:gene_to_go_term_association_subject a biolink:functional_association_subject ;
     rdfs:label "gene_to_go_term_association_subject" ;
@@ -1219,8 +1164,7 @@ biolink:gene_to_go_term_association_subject a biolink:functional_association_sub
     biolink:domain biolink:GeneToGoTermAssociation ;
     biolink:range biolink:MolecularEntity ;
     biolink:required true ;
-    skos:definition "gene, product or macromolecular complex that has the function associated with the GO term" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "gene, product or macromolecular complex that has the function associated with the GO term" .
 
 biolink:gene_to_phenotypic_feature_association_subject a biolink:subject ;
     rdfs:label "gene_to_phenotypic_feature_association_subject" ;
@@ -1228,8 +1172,7 @@ biolink:gene_to_phenotypic_feature_association_subject a biolink:subject ;
     biolink:domain biolink:GeneToPhenotypicFeatureAssociation ;
     biolink:range biolink:GeneOrGeneProduct ;
     biolink:required true ;
-    skos:definition "gene in which variation is correlated with the phenotypic feature" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "gene in which variation is correlated with the phenotypic feature" .
 
 biolink:gene_to_thing_association_subject a biolink:subject ;
     rdfs:label "gene_to_thing_association_subject" ;
@@ -1237,8 +1180,7 @@ biolink:gene_to_thing_association_subject a biolink:subject ;
     biolink:domain biolink:GeneToThingAssociation ;
     biolink:range biolink:GeneOrGeneProduct ;
     biolink:required true ;
-    skos:definition "gene that is the subject of the association" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "gene that is the subject of the association" .
 
 biolink:genetically_interacts_with a biolink:interacts_with ;
     rdfs:label "genetically_interacts_with" ;
@@ -1260,8 +1202,7 @@ biolink:genomic_sequence_localization_object a biolink:object ;
     biolink:domain biolink:GenomicSequenceLocalization ;
     biolink:range biolink:GenomicEntity ;
     biolink:required true ;
-    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:genomic_sequence_localization_subject a biolink:subject ;
     rdfs:label "genomic_sequence_localization_subject" ;
@@ -1269,8 +1210,7 @@ biolink:genomic_sequence_localization_subject a biolink:subject ;
     biolink:domain biolink:GenomicSequenceLocalization ;
     biolink:range biolink:GenomicEntity ;
     biolink:required true ;
-    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:genotype_to_gene_association_object a biolink:object ;
     rdfs:label "genotype_to_gene_association_object" ;
@@ -1279,8 +1219,7 @@ biolink:genotype_to_gene_association_object a biolink:object ;
     biolink:domain biolink:GenotypeToGeneAssociation ;
     biolink:range biolink:Gene ;
     biolink:required true ;
-    skos:definition "gene implicated in genotype" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "gene implicated in genotype" .
 
 biolink:genotype_to_gene_association_relation a biolink:relation ;
     rdfs:label "genotype_to_gene_association_relation" ;
@@ -1288,8 +1227,7 @@ biolink:genotype_to_gene_association_relation a biolink:relation ;
     biolink:domain biolink:GenotypeToGeneAssociation ;
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
-    skos:definition "the relationship type used to connect genotype to gene" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "the relationship type used to connect genotype to gene" .
 
 biolink:genotype_to_gene_association_subject a biolink:subject ;
     rdfs:label "genotype_to_gene_association_subject" ;
@@ -1298,8 +1236,7 @@ biolink:genotype_to_gene_association_subject a biolink:subject ;
     biolink:domain biolink:GenotypeToGeneAssociation ;
     biolink:range biolink:Genotype ;
     biolink:required true ;
-    skos:definition "parent genotype" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "parent genotype" .
 
 biolink:genotype_to_genotype_part_association_object a biolink:object ;
     rdfs:label "genotype_to_genotype_part_association_object" ;
@@ -1308,8 +1245,7 @@ biolink:genotype_to_genotype_part_association_object a biolink:object ;
     biolink:domain biolink:GenotypeToGenotypePartAssociation ;
     biolink:range biolink:Genotype ;
     biolink:required true ;
-    skos:definition "child genotype" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "child genotype" .
 
 biolink:genotype_to_genotype_part_association_relation a biolink:relation ;
     rdfs:label "genotype_to_genotype_part_association_relation" ;
@@ -1317,8 +1253,7 @@ biolink:genotype_to_genotype_part_association_relation a biolink:relation ;
     biolink:domain biolink:GenotypeToGenotypePartAssociation ;
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
-    skos:definition "the relationship type by which a subject is connected to an object in an association" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "the relationship type by which a subject is connected to an object in an association" .
 
 biolink:genotype_to_genotype_part_association_subject a biolink:subject ;
     rdfs:label "genotype_to_genotype_part_association_subject" ;
@@ -1327,8 +1262,7 @@ biolink:genotype_to_genotype_part_association_subject a biolink:subject ;
     biolink:domain biolink:GenotypeToGenotypePartAssociation ;
     biolink:range biolink:Genotype ;
     biolink:required true ;
-    skos:definition "parent genotype" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "parent genotype" .
 
 biolink:genotype_to_phenotypic_feature_association_relation a biolink:relation ;
     rdfs:label "genotype_to_phenotypic_feature_association_relation" ;
@@ -1337,8 +1271,7 @@ biolink:genotype_to_phenotypic_feature_association_relation a biolink:relation ;
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:has_phenotype ;
-    skos:definition "the relationship type by which a subject is connected to an object in an association" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "the relationship type by which a subject is connected to an object in an association" .
 
 biolink:genotype_to_phenotypic_feature_association_subject a biolink:subject ;
     rdfs:label "genotype_to_phenotypic_feature_association_subject" ;
@@ -1346,8 +1279,7 @@ biolink:genotype_to_phenotypic_feature_association_subject a biolink:subject ;
     biolink:domain biolink:GenotypeToPhenotypicFeatureAssociation ;
     biolink:range biolink:Genotype ;
     biolink:required true ;
-    skos:definition "genotype that is associated with the phenotypic feature" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "genotype that is associated with the phenotypic feature" .
 
 biolink:genotype_to_thing_association_subject a biolink:subject ;
     rdfs:label "genotype_to_thing_association_subject" ;
@@ -1355,8 +1287,7 @@ biolink:genotype_to_thing_association_subject a biolink:subject ;
     biolink:domain biolink:GenotypeToThingAssociation ;
     biolink:range biolink:Genotype ;
     biolink:required true ;
-    skos:definition "genotype that is the subject of the association" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "genotype that is the subject of the association" .
 
 biolink:genotype_to_variant_association_object a biolink:object ;
     rdfs:label "genotype_to_variant_association_object" ;
@@ -1365,8 +1296,7 @@ biolink:genotype_to_variant_association_object a biolink:object ;
     biolink:domain biolink:GenotypeToVariantAssociation ;
     biolink:range biolink:SequenceVariant ;
     biolink:required true ;
-    skos:definition "gene implicated in genotype" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "gene implicated in genotype" .
 
 biolink:genotype_to_variant_association_relation a biolink:relation ;
     rdfs:label "genotype_to_variant_association_relation" ;
@@ -1374,8 +1304,7 @@ biolink:genotype_to_variant_association_relation a biolink:relation ;
     biolink:domain biolink:GenotypeToVariantAssociation ;
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
-    skos:definition "the relationship type used to connect genotype to gene" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "the relationship type used to connect genotype to gene" .
 
 biolink:genotype_to_variant_association_subject a biolink:subject ;
     rdfs:label "genotype_to_variant_association_subject" ;
@@ -1384,8 +1313,7 @@ biolink:genotype_to_variant_association_subject a biolink:subject ;
     biolink:domain biolink:GenotypeToVariantAssociation ;
     biolink:range biolink:Genotype ;
     biolink:required true ;
-    skos:definition "parent genotype" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "parent genotype" .
 
 biolink:has_exposure_parts rdfs:label "has_exposure_parts" ;
     biolink:alias "has exposure parts" ;
@@ -1434,24 +1362,21 @@ biolink:in_cell_population_with a biolink:coexists_with ;
     biolink:domain biolink:GeneOrGeneProduct ;
     biolink:range biolink:GeneOrGeneProduct ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two genes or gene products that are expressed in the same cell type or population " ;
-    skos:mappingRelation ( "SEMMEDDB:COEXISTS_WITH" ) .
+    skos:definition "holds between two genes or gene products that are expressed in the same cell type or population " .
 
 biolink:in_complex_with a biolink:coexists_with ;
     rdfs:label "in_complex_with" ;
     biolink:domain biolink:GeneOrGeneProduct ;
     biolink:range biolink:GeneOrGeneProduct ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex" ;
-    skos:mappingRelation ( "SEMMEDDB:COEXISTS_WITH" ) .
+    skos:definition "holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex" .
 
 biolink:in_pathway_with a biolink:coexists_with ;
     rdfs:label "in_pathway_with" ;
     biolink:domain biolink:GeneOrGeneProduct ;
     biolink:range biolink:GeneOrGeneProduct ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two genes or gene products that are part of in the same biological pathway" ;
-    skos:mappingRelation ( "SEMMEDDB:COEXISTS_WITH" ) .
+    skos:definition "holds between two genes or gene products that are part of in the same biological pathway" .
 
 biolink:in_taxon a biolink:related_to ;
     rdfs:label "in_taxon" ;
@@ -1466,128 +1391,112 @@ biolink:increases_abundance_of a biolink:affects_abundance_of ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest" .
 
 biolink:increases_activity_of a biolink:affects_activity_of ;
     rdfs:label "increases_activity_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest" .
 
 biolink:increases_degradation_of a biolink:affects_degradation_of ;
     rdfs:label "increases_degradation_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest" .
 
 biolink:increases_expression_of a biolink:affects_expression_of ;
     rdfs:label "increases_expression_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:GenomicEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest" .
 
 biolink:increases_folding_of a biolink:affects_folding_of ;
     rdfs:label "increases_folding_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other " ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other " .
 
 biolink:increases_localization_of a biolink:affects_localization_of ;
     rdfs:label "increases_localization_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest" .
 
 biolink:increases_metabolic_processing_of a biolink:affects_metabolic_processing_of ;
     rdfs:label "increases_metabolic_processing_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest" .
 
 biolink:increases_molecular_modification_of a biolink:affects_molecular_modification_of ;
     rdfs:label "increases_molecular_modification_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" .
 
 biolink:increases_mutation_rate_of a biolink:affects_mutation_rate_of ;
     rdfs:label "increases_mutation_rate_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:GenomicEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest" .
 
 biolink:increases_response_to a biolink:affects_response_to ;
     rdfs:label "increases_response_to" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" .
 
 biolink:increases_secretion_of a biolink:affects_secretion_of ;
     rdfs:label "increases_secretion_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ" .
 
 biolink:increases_splicing_of a biolink:affects_splicing_of ;
     rdfs:label "increases_splicing_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:Transcript ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA" .
 
 biolink:increases_stability_of a biolink:affects_stability_of ;
     rdfs:label "increases_stability_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest" .
 
 biolink:increases_synthesis_of a biolink:affects_synthesis_of ;
     rdfs:label "increases_synthesis_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other" .
 
 biolink:increases_transport_of a biolink:affects_transport_of ;
     rdfs:label "increases_transport_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest" .
 
 biolink:increases_uptake_of a biolink:affects_uptake_of ;
     rdfs:label "increases_uptake_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ" .
 
 biolink:interacting_molecules_category rdfs:label "interacting_molecules_category" ;
     biolink:alias "interacting molecules category" ;
@@ -1639,8 +1548,7 @@ biolink:macromolecular_machine_name a biolink:name ;
     biolink:domain biolink:MacromolecularMachine ;
     biolink:range biolink:symbol_type ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name" ;
-    skos:mappingRelation ( "rdfs:label" ) .
+    skos:definition "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name" .
 
 biolink:macromolecular_machine_to_biological_process_association_object a biolink:functional_association_object ;
     rdfs:label "macromolecular_machine_to_biological_process_association_object" ;
@@ -1648,8 +1556,7 @@ biolink:macromolecular_machine_to_biological_process_association_object a biolin
     biolink:domain biolink:MacromolecularMachineToBiologicalProcessAssociation ;
     biolink:range biolink:BiologicalProcess ;
     biolink:required true ;
-    skos:definition "class describing the activity, process or localization of the gene product" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "class describing the activity, process or localization of the gene product" .
 
 biolink:macromolecular_machine_to_cellular_component_association_object a biolink:functional_association_object ;
     rdfs:label "macromolecular_machine_to_cellular_component_association_object" ;
@@ -1657,8 +1564,7 @@ biolink:macromolecular_machine_to_cellular_component_association_object a biolin
     biolink:domain biolink:MacromolecularMachineToCellularComponentAssociation ;
     biolink:range biolink:CellularComponent ;
     biolink:required true ;
-    skos:definition "class describing the activity, process or localization of the gene product" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "class describing the activity, process or localization of the gene product" .
 
 biolink:macromolecular_machine_to_molecular_activity_association_object a biolink:functional_association_object ;
     rdfs:label "macromolecular_machine_to_molecular_activity_association_object" ;
@@ -1666,8 +1572,7 @@ biolink:macromolecular_machine_to_molecular_activity_association_object a biolin
     biolink:domain biolink:MacromolecularMachineToMolecularActivityAssociation ;
     biolink:range biolink:MolecularActivity ;
     biolink:required true ;
-    skos:definition "class describing the activity, process or localization of the gene product" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "class describing the activity, process or localization of the gene product" .
 
 biolink:model_to_disease_mixin_relation a biolink:relation ;
     rdfs:label "model_to_disease_mixin_relation" ;
@@ -1677,8 +1582,7 @@ biolink:model_to_disease_mixin_relation a biolink:relation ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:model_of ;
     skos:definition """The relationship to the disease
-  """ ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+  """ .
 
 biolink:model_to_disease_mixin_subject a biolink:subject ;
     rdfs:label "model_to_disease_mixin_subject" ;
@@ -1686,8 +1590,7 @@ biolink:model_to_disease_mixin_subject a biolink:subject ;
     biolink:domain biolink:ModelToDiseaseMixin ;
     biolink:range xsd:string ;
     biolink:required true ;
-    skos:definition "The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease" .
 
 biolink:negated a biolink:association_slot ;
     rdfs:label "negated" ;
@@ -1709,8 +1612,7 @@ biolink:pairwise_gene_to_gene_interaction_relation a biolink:pairwise_interactio
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:molecularly_interacts_with ;
-    skos:definition "interaction relationship type" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "interaction relationship type" .
 
 biolink:pairwise_interaction_association_id a biolink:id ;
     rdfs:label "pairwise_interaction_association_id" ;
@@ -1726,8 +1628,7 @@ biolink:pairwise_interaction_association_object a biolink:object ;
     biolink:domain biolink:PairwiseInteractionAssociation ;
     biolink:range biolink:MolecularEntity ;
     biolink:required true ;
-    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:pairwise_interaction_association_subject a biolink:subject ;
     rdfs:label "pairwise_interaction_association_subject" ;
@@ -1735,8 +1636,7 @@ biolink:pairwise_interaction_association_subject a biolink:subject ;
     biolink:domain biolink:PairwiseInteractionAssociation ;
     biolink:range biolink:MolecularEntity ;
     biolink:required true ;
-    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:phase a biolink:node_property ;
     rdfs:label "phase" ;
@@ -1761,8 +1661,7 @@ biolink:population_to_population_association_object a biolink:object ;
     biolink:domain biolink:PopulationToPopulationAssociation ;
     biolink:range biolink:PopulationOfIndividualOrganisms ;
     biolink:required true ;
-    skos:definition "the population that form the object of the association" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "the population that form the object of the association" .
 
 biolink:population_to_population_association_relation a biolink:relation ;
     rdfs:label "population_to_population_association_relation" ;
@@ -1770,8 +1669,7 @@ biolink:population_to_population_association_relation a biolink:relation ;
     biolink:domain biolink:PopulationToPopulationAssociation ;
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
-    skos:definition "A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used" .
 
 biolink:population_to_population_association_subject a biolink:subject ;
     rdfs:label "population_to_population_association_subject" ;
@@ -1779,8 +1677,7 @@ biolink:population_to_population_association_subject a biolink:subject ;
     biolink:domain biolink:PopulationToPopulationAssociation ;
     biolink:range biolink:PopulationOfIndividualOrganisms ;
     biolink:required true ;
-    skos:definition "the population that form the subject of the association" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "the population that form the subject of the association" .
 
 biolink:precedes a biolink:related_to ;
     rdfs:label "precedes" ;
@@ -1849,8 +1746,7 @@ biolink:sequence_variant_modulates_treatment_association_object a biolink:object
     biolink:domain biolink:SequenceVariantModulatesTreatmentAssociation ;
     biolink:range biolink:Treatment ;
     biolink:required true ;
-    skos:definition "treatment whose efficacy is modulated by the subject variant" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "treatment whose efficacy is modulated by the subject variant" .
 
 biolink:sequence_variant_modulates_treatment_association_subject a biolink:subject ;
     rdfs:label "sequence_variant_modulates_treatment_association_subject" ;
@@ -1858,8 +1754,7 @@ biolink:sequence_variant_modulates_treatment_association_subject a biolink:subje
     biolink:domain biolink:SequenceVariantModulatesTreatmentAssociation ;
     biolink:range biolink:SequenceVariant ;
     biolink:required true ;
-    skos:definition "variant that modulates the treatment of some disease" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "variant that modulates the treatment of some disease" .
 
 biolink:sequence_variant_qualifier a biolink:association_slot ;
     rdfs:label "sequence_variant_qualifier" ;
@@ -1913,8 +1808,7 @@ biolink:thing_to_disease_or_phenotypic_feature_association_object a biolink:obje
     biolink:domain biolink:ThingToDiseaseOrPhenotypicFeatureAssociation ;
     biolink:range biolink:DiseaseOrPhenotypicFeature ;
     biolink:required true ;
-    skos:definition "disease or phenotype" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "disease or phenotype" .
 
 biolink:time_type rdfs:label "time type" ;
     biolink:typeof "time" .
@@ -1931,8 +1825,7 @@ biolink:transcript_to_gene_relationship_object a biolink:sequence_feature_relati
     biolink:domain biolink:TranscriptToGeneRelationship ;
     biolink:range biolink:Gene ;
     biolink:required true ;
-    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:transcript_to_gene_relationship_subject a biolink:sequence_feature_relationship_subject ;
     rdfs:label "transcript_to_gene_relationship_subject" ;
@@ -1940,8 +1833,7 @@ biolink:transcript_to_gene_relationship_subject a biolink:sequence_feature_relat
     biolink:domain biolink:TranscriptToGeneRelationship ;
     biolink:range biolink:Transcript ;
     biolink:required true ;
-    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:treatment_treats a biolink:treats ;
     rdfs:label "treatment_treats" ;
@@ -1950,8 +1842,7 @@ biolink:treatment_treats a biolink:treats ;
     biolink:range biolink:DiseaseOrPhenotypicFeature ;
     biolink:required true ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat " ;
-    skos:mappingRelation ( "RO:0002606" "RO:0003307" "SEMMEDDB:TREATS" "WD:P2175" ) .
+    skos:definition "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat " .
 
 biolink:variant_to_disease_association_object a biolink:object ;
     rdfs:label "variant_to_disease_association_object" ;
@@ -1959,8 +1850,7 @@ biolink:variant_to_disease_association_object a biolink:object ;
     biolink:domain biolink:VariantToDiseaseAssociation ;
     biolink:range xsd:string ;
     biolink:required true ;
-    skos:definition "a disease that is associated with that variant" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "a disease that is associated with that variant" .
 
 biolink:variant_to_disease_association_relation a biolink:relation ;
     rdfs:label "variant_to_disease_association_relation" ;
@@ -1968,8 +1858,7 @@ biolink:variant_to_disease_association_relation a biolink:relation ;
     biolink:domain biolink:VariantToDiseaseAssociation ;
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
-    skos:definition "E.g. is pathogenic for" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "E.g. is pathogenic for" .
 
 biolink:variant_to_disease_association_subject a biolink:subject ;
     rdfs:label "variant_to_disease_association_subject" ;
@@ -1977,8 +1866,7 @@ biolink:variant_to_disease_association_subject a biolink:subject ;
     biolink:domain biolink:VariantToDiseaseAssociation ;
     biolink:range xsd:string ;
     biolink:required true ;
-    skos:definition "a sequence variant in which the allele state is associated in some way with the disease state" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "a sequence variant in which the allele state is associated in some way with the disease state" .
 
 biolink:variant_to_phenotypic_feature_association_subject a biolink:subject ;
     rdfs:label "variant_to_phenotypic_feature_association_subject" ;
@@ -1986,8 +1874,7 @@ biolink:variant_to_phenotypic_feature_association_subject a biolink:subject ;
     biolink:domain biolink:VariantToPhenotypicFeatureAssociation ;
     biolink:range biolink:SequenceVariant ;
     biolink:required true ;
-    skos:definition "a sequence variant in which the allele state is associated in some way with the phenotype state" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "a sequence variant in which the allele state is associated in some way with the phenotype state" .
 
 biolink:variant_to_population_association_has_count a biolink:has_count ;
     rdfs:label "variant_to_population_association_has_count" ;
@@ -2016,8 +1903,7 @@ biolink:variant_to_population_association_object a biolink:object ;
     biolink:domain biolink:VariantToPopulationAssociation ;
     biolink:range biolink:PopulationOfIndividualOrganisms ;
     biolink:required true ;
-    skos:definition "the population that is observed to have the frequency" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "the population that is observed to have the frequency" .
 
 biolink:variant_to_population_association_subject a biolink:subject ;
     rdfs:label "variant_to_population_association_subject" ;
@@ -2025,8 +1911,7 @@ biolink:variant_to_population_association_subject a biolink:subject ;
     biolink:domain biolink:VariantToPopulationAssociation ;
     biolink:range biolink:SequenceVariant ;
     biolink:required true ;
-    skos:definition "an allele that has a certain frequency in a given population" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "an allele that has a certain frequency in a given population" .
 
 biolink:variant_to_thing_association_subject a biolink:subject ;
     rdfs:label "variant_to_thing_association_subject" ;
@@ -2034,8 +1919,7 @@ biolink:variant_to_thing_association_subject a biolink:subject ;
     biolink:domain biolink:VariantToThingAssociation ;
     biolink:range biolink:SequenceVariant ;
     biolink:required true ;
-    skos:definition "a sequence variant in which the allele state is associated with some other entity" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "a sequence variant in which the allele state is associated with some other entity" .
 
 biolink:BiologicalProcessOrActivity a biolink:BiologicalEntity ;
     rdfs:label "BiologicalProcessOrActivity" ;
@@ -2230,8 +2114,7 @@ biolink:affects_risk_for a biolink:related_to ;
     biolink:domain biolink:NamedThing ;
     biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two entities where exposure to one entity alters the chance of developing the other " ;
-    skos:mappingRelation ( "owl:topObjectProperty" "SEMMEDDB:ASSOCIATED_WITH" ) .
+    skos:definition "holds between two entities where exposure to one entity alters the chance of developing the other " .
 
 biolink:biological_sequence rdfs:label "biological sequence" ;
     biolink:typeof "string" .
@@ -2268,8 +2151,7 @@ biolink:functional_association_subject a biolink:subject ;
     biolink:domain biolink:FunctionalAssociation ;
     biolink:range biolink:MacromolecularMachine ;
     biolink:required true ;
-    skos:definition "gene, product or macromolecular complex that has the function associated with the GO term" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "gene, product or macromolecular complex that has the function associated with the GO term" .
 
 biolink:has_biological_sequence a biolink:node_property ;
     rdfs:label "has_biological_sequence" ;
@@ -2283,8 +2165,7 @@ biolink:has_biomarker a biolink:correlated_with ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
     owl:inverseOf biolink:biomarker_for ;
-    skos:definition "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature." ;
-    skos:mappingRelation ( "RO:0002610" ) .
+    skos:definition "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature." .
 
 biolink:has_count a biolink:aggregate_statistic ;
     rdfs:label "has_count" ;
@@ -2352,8 +2233,7 @@ biolink:negatively_regulates a biolink:regulates ;
     biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." ;
-    skos:editorialNote "This is a grouping for process-process and entity-entity relations" ;
-    skos:mappingRelation ( "WD:P128" ) .
+    skos:editorialNote "This is a grouping for process-process and entity-entity relations" .
 
 biolink:overlaps a biolink:related_to ;
     rdfs:label "overlaps" ;
@@ -2371,8 +2251,7 @@ biolink:pairwise_interaction_association_relation a biolink:relation ;
     biolink:range biolink:RelationshipType ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:molecularly_interacts_with ;
-    skos:definition "interaction relationship type" ;
-    skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
+    skos:definition "interaction relationship type" .
 
 biolink:participates_in a biolink:related_to ;
     rdfs:label "participates_in" ;
@@ -2391,8 +2270,7 @@ biolink:positively_regulates a biolink:regulates ;
     biolink:range biolink:NamedThing ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." ;
-    skos:editorialNote "This is a grouping for process-process and entity-entity relations" ;
-    skos:mappingRelation ( "WD:P128" ) .
+    skos:editorialNote "This is a grouping for process-process and entity-entity relations" .
 
 biolink:symbol_type rdfs:label "symbol type" ;
     biolink:typeof "string" .
@@ -2623,128 +2501,112 @@ biolink:affects_abundance_of a biolink:affects ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest" .
 
 biolink:affects_activity_of a biolink:affects ;
     rdfs:label "affects_activity_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest" .
 
 biolink:affects_degradation_of a biolink:affects ;
     rdfs:label "affects_degradation_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest" .
 
 biolink:affects_expression_of a biolink:affects ;
     rdfs:label "affects_expression_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:GenomicEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest" .
 
 biolink:affects_folding_of a biolink:affects ;
     rdfs:label "affects_folding_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other " ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other " .
 
 biolink:affects_localization_of a biolink:affects ;
     rdfs:label "affects_localization_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest" .
 
 biolink:affects_metabolic_processing_of a biolink:affects ;
     rdfs:label "affects_metabolic_processing_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest" .
 
 biolink:affects_molecular_modification_of a biolink:affects ;
     rdfs:label "affects_molecular_modification_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)" .
 
 biolink:affects_mutation_rate_of a biolink:affects ;
     rdfs:label "affects_mutation_rate_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:GenomicEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest" .
 
 biolink:affects_response_to a biolink:affects ;
     rdfs:label "affects_response_to" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other" .
 
 biolink:affects_secretion_of a biolink:affects ;
     rdfs:label "affects_secretion_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ" .
 
 biolink:affects_splicing_of a biolink:affects ;
     rdfs:label "affects_splicing_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:Transcript ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA" .
 
 biolink:affects_stability_of a biolink:affects ;
     rdfs:label "affects_stability_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest" .
 
 biolink:affects_synthesis_of a biolink:affects ;
     rdfs:label "affects_synthesis_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other" .
 
 biolink:affects_transport_of a biolink:affects ;
     rdfs:label "affects_transport_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest" .
 
 biolink:affects_uptake_of a biolink:affects ;
     rdfs:label "affects_uptake_of" ;
     biolink:domain biolink:MolecularEntity ;
     biolink:range biolink:MolecularEntity ;
     OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ" ;
-    skos:mappingRelation ( "SEMMEDDB:AFFECTS" ) .
+    skos:definition "holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ" .
 
 biolink:anatomical_entity_to_anatomical_entity_association_object a biolink:object ;
     rdfs:label "anatomical_entity_to_anatomical_entity_association_object" ;
@@ -2752,8 +2614,7 @@ biolink:anatomical_entity_to_anatomical_entity_association_object a biolink:obje
     biolink:domain biolink:AnatomicalEntityToAnatomicalEntityAssociation ;
     biolink:range biolink:AnatomicalEntity ;
     biolink:required true ;
-    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:anatomical_entity_to_anatomical_entity_association_subject a biolink:subject ;
     rdfs:label "anatomical_entity_to_anatomical_entity_association_subject" ;
@@ -2761,8 +2622,7 @@ biolink:anatomical_entity_to_anatomical_entity_association_subject a biolink:sub
     biolink:domain biolink:AnatomicalEntityToAnatomicalEntityAssociation ;
     biolink:range biolink:AnatomicalEntity ;
     biolink:required true ;
-    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:correlated_with a biolink:related_to ;
     rdfs:label "correlated_with" ;
@@ -2778,8 +2638,7 @@ biolink:gene_to_disease_association_subject a biolink:subject ;
     biolink:domain biolink:GeneToDiseaseAssociation ;
     biolink:range biolink:GeneOrGeneProduct ;
     biolink:required true ;
-    skos:definition "gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model" ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model" .
 
 biolink:has_gene_product a biolink:related_to ;
     rdfs:label "has_gene_product" ;
@@ -2991,8 +2850,7 @@ biolink:sequence_feature_relationship_object a biolink:object ;
     biolink:domain biolink:SequenceFeatureRelationship ;
     biolink:range biolink:GenomicEntity ;
     biolink:required true ;
-    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:sequence_feature_relationship_subject a biolink:subject ;
     rdfs:label "sequence_feature_relationship_subject" ;
@@ -3000,8 +2858,7 @@ biolink:sequence_feature_relationship_subject a biolink:subject ;
     biolink:domain biolink:SequenceFeatureRelationship ;
     biolink:range biolink:GenomicEntity ;
     biolink:required true ;
-    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
-    skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
+    skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
 biolink:BiologicalProcess a biolink:BiologicalProcessOrActivity ;
     rdfs:label "BiologicalProcess" ;
@@ -3082,8 +2939,7 @@ biolink:functional_association_object a biolink:object ;
     biolink:domain biolink:FunctionalAssociation ;
     biolink:range biolink:GeneOntologyClass ;
     biolink:required true ;
-    skos:definition "class describing the activity, process or localization of the gene product" ;
-    skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
+    skos:definition "class describing the activity, process or localization of the gene product" .
 
 biolink:homologous_to a biolink:related_to ;
     rdfs:label "homologous_to" ;

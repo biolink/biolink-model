@@ -6,7 +6,7 @@
 #   1) make imgflags="-i"             -- generate uml images in images subdirectory (default)
 #   2) make imgflags="-i --noimages"  -- assume uml images already exist and generate links to them
 #   3) make imgflags=""               -- genrate uml images as inline url's
-imgflags?=-i --noimages
+imgflags?=-i --noimages 
 
 
 # ----------------------------------------
@@ -103,7 +103,8 @@ contrib/%/datamodel.py: contrib/%.yaml
 	gen-py-classes contrib/$*.yaml > $@
 
 gen-graphviz: dir-graphviz biolink-model.yaml
-	gen-graphviz  -d graphviz biolink-model.yaml
+	gen-graphviz  -d graphviz biolink-model.yaml -f gv
+	gen-graphviz  -d graphviz biolink-model.yaml -f svg
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Solr

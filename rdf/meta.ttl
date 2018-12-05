@@ -16,17 +16,17 @@
     biolink:id "https://biolink.github.io/metamodel/ontology/meta.ttl" ;
     biolink:id_prefixes ( "rdf" "rdfs" "xsd" "skos" "OIO" ) ;
     biolink:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    biolink:metamodel_version "0.3.1" ;
+    biolink:metamodel_version "0.3.2" ;
     biolink:prefixes ( [ biolink:local_name "biolink" ;
                 biolink:prefix_uri "http://w3id.org/biolink/vocab/" ] [ biolink:local_name "meta" ;
                 biolink:prefix_uri "http://bioentity.io/meta/" ] [ biolink:local_name "skos" ;
                 biolink:prefix_uri "http://www.w3.org/2004/02/skos/core#" ] [ biolink:local_name "owl" ;
                 biolink:prefix_uri "http://www.w3.org/2002/07/owl#" ] ) ;
-    biolink:slots ( biolink:name biolink:singular_name biolink:description biolink:alt_description_text biolink:source biolink:alt_descriptions biolink:note biolink:comment biolink:examples biolink:aliases biolink:in_subset biolink:from_schema biolink:flags biolink:see_also biolink:id_prefixes biolink:mappings biolink:is_a biolink:mixin biolink:mixins biolink:abstract biolink:local_names biolink:union_of biolink:values_from biolink:subclass_of biolink:symmetric biolink:id biolink:version biolink:imports biolink:license biolink:prefixes biolink:default_curi_maps biolink:default_prefix biolink:default_type biolink:types biolink:slot_definitions biolink:classes biolink:metamodel_version biolink:source_file biolink:source_file_date biolink:source_file_size biolink:generation_date biolink:defining_slots biolink:slots biolink:slot_usage biolink:apply_to biolink:entity biolink:multivalued biolink:domain biolink:range biolink:required biolink:inlined biolink:definitional biolink:object_property biolink:primary_key biolink:identifier biolink:alias biolink:path biolink:subproperty_of biolink:inverse biolink:is_class_field biolink:role biolink:inherited biolink:typeof biolink:value biolink:value_description biolink:local_name biolink:prefix_uri biolink:slot_definition_is_a biolink:slot_definition_mixins biolink:slot_definition_union_of biolink:class_definition_is_a biolink:class_definition_mixins biolink:class_definition_union_of ) ;
+    biolink:slots ( biolink:name biolink:singular_name biolink:description biolink:alt_description_text biolink:source biolink:alt_descriptions biolink:note biolink:comment biolink:examples biolink:aliases biolink:in_subset biolink:from_schema biolink:flags biolink:see_also biolink:id_prefixes biolink:mappings biolink:exact_matches biolink:broader_matches biolink:narrower_matches biolink:close_matches biolink:is_a biolink:mixin biolink:mixins biolink:abstract biolink:local_names biolink:union_of biolink:values_from biolink:subclass_of biolink:symmetric biolink:id biolink:version biolink:imports biolink:license biolink:prefixes biolink:default_curi_maps biolink:default_prefix biolink:default_type biolink:types biolink:slot_definitions biolink:classes biolink:metamodel_version biolink:source_file biolink:source_file_date biolink:source_file_size biolink:generation_date biolink:defining_slots biolink:slots biolink:slot_usage biolink:apply_to biolink:entity biolink:multivalued biolink:domain biolink:range biolink:required biolink:inlined biolink:definitional biolink:object_property biolink:primary_key biolink:identifier biolink:alias biolink:path biolink:subproperty_of biolink:inverse biolink:is_class_field biolink:role biolink:inherited biolink:typeof biolink:value biolink:value_description biolink:local_name biolink:prefix_uri biolink:slot_definition_is_a biolink:slot_definition_mixins biolink:slot_definition_union_of biolink:class_definition_is_a biolink:class_definition_mixins biolink:class_definition_union_of ) ;
     biolink:source_file "meta.yaml" ;
-    biolink:source_file_date "Wed Dec  5 10:14:53 2018" ;
-    biolink:source_file_size 19099 ;
-    biolink:version "0.3.1" ;
+    biolink:source_file_date "Wed Dec  5 11:54:01 2018" ;
+    biolink:source_file_size 21029 ;
+    biolink:version "0.3.2" ;
     skos:definition "Metamodel for biolink schema" ;
     skos:note "OIO prefix is not correct -- where IS \"inSubset\" derived from?" .
 
@@ -64,13 +64,20 @@ biolink:apply_to rdfs:label "apply_to" ;
     biolink:range biolink:ClassDefinition ;
     skos:definition "Used to extend an existing class definition. For example, if we have a core schema where a gene has two slots for identifier and symbol, and we have a specialized schema for my_organism where we wish to add a slot systematic_name, we can avoid subclassing by defining a class gene_my_organism, adding the slot to this class, and then adding an apply_to pointing to the gene class. The new slot will be 'injected into' the gene class." .
 
+biolink:broader_matches rdfs:label "broader_matches" ;
+    biolink:domain biolink:Element ;
+    biolink:inherited true ;
+    biolink:multivalued true ;
+    biolink:range xsd:string ;
+    skos:definition "a list of terms from different schemas or terminology systems that have a broader, more general meaning. Broader terms are typically shown as parents in a hierarchy or tree." ;
+    skos:mappingRelation ( "skos:broadMatch" ) .
+
 biolink:class_definition_is_a a biolink:is_a ;
     rdfs:label "class_definition_is_a" ;
     biolink:alias "is_a" ;
     biolink:domain biolink:ClassDefinition ;
     biolink:range biolink:ClassDefinition ;
-    skos:definition "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" ;
-    skos:mappingRelation ( "rdf:type" ) .
+    skos:definition "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" .
 
 biolink:class_definition_mixins a biolink:mixins ;
     rdfs:label "class_definition_mixins" ;
@@ -94,6 +101,13 @@ biolink:classes rdfs:label "classes" ;
     biolink:multivalued true ;
     biolink:range biolink:ClassDefinition ;
     skos:definition "classes defined in schema" .
+
+biolink:close_matches rdfs:label "close_matches" ;
+    biolink:domain biolink:Element ;
+    biolink:multivalued true ;
+    biolink:range xsd:string ;
+    skos:definition "a list of terms from different schemas or terminology systems that have a semantically similar but not strictly equivalent, broader, or narrower meaning. Such terms often describe the same general concept from different ontological perspectives (e.g. drug as a type of chemical entity versus drug as a type of role borne by a chemical entity)." ;
+    skos:mappingRelation ( "skos:closeMatch" ) .
 
 biolink:comment rdfs:label "comment" ;
     biolink:domain biolink:Element ;
@@ -146,6 +160,14 @@ biolink:entity rdfs:label "entity" ;
     biolink:domain biolink:ClassDefinition ;
     biolink:range xsd:boolean ;
     skos:note "needs description" .
+
+biolink:exact_matches rdfs:label "exact_matches" ;
+    biolink:domain biolink:Element ;
+    biolink:inherited true ;
+    biolink:multivalued true ;
+    biolink:range xsd:string ;
+    skos:definition "a list of terms from different schemas or terminology systems that have strictly equivalent meanings. " ;
+    skos:mappingRelation ( "skos:exactMatch" ) .
 
 biolink:examples rdfs:label "examples" ;
     biolink:domain biolink:Element ;
@@ -245,10 +267,10 @@ biolink:local_names rdfs:label "local_names" ;
 
 biolink:mappings rdfs:label "mappings" ;
     biolink:domain biolink:Element ;
-    biolink:inherited true ;
     biolink:multivalued true ;
     biolink:range xsd:string ;
-    skos:definition "list of equivalent or skos exact mappings to an ontology class" .
+    skos:definition "a list of terms from different schemas or terminology systems that have comparable meaning. These may include terms that are precisely equivalent, broader or narrower in meaning, or otherwise semantically related but not equivalent from a strict ontological perspective." ;
+    skos:mappingRelation ( "skos:mappingRelation" ) .
 
 biolink:metamodel_version rdfs:label "metamodel_version" ;
     biolink:domain biolink:SchemaDefinition ;
@@ -272,6 +294,14 @@ biolink:name rdfs:label "name" ;
     biolink:range xsd:string ;
     skos:definition "a unique key that identifies a slot, type or class in a schema" ;
     skos:mappingRelation ( "rdfs:label" ) .
+
+biolink:narrower_matches rdfs:label "narrower_matches" ;
+    biolink:domain biolink:Element ;
+    biolink:inherited true ;
+    biolink:multivalued true ;
+    biolink:range xsd:string ;
+    skos:definition "a list of terms from different schemas or terminology systems that have a narrower, more specific meaning. Narrower terms are typically shown as children in a hierarchy or tree." ;
+    skos:mappingRelation ( "skos:narrowMatch" ) .
 
 biolink:note rdfs:label "note" ;
     biolink:domain biolink:Element ;
@@ -340,8 +370,7 @@ biolink:slot_definition_is_a a biolink:is_a ;
     biolink:alias "is_a" ;
     biolink:domain biolink:SlotDefinition ;
     biolink:range biolink:SlotDefinition ;
-    skos:definition "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" ;
-    skos:mappingRelation ( "rdf:type" ) .
+    skos:definition "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded" .
 
 biolink:slot_definition_mixins a biolink:mixins ;
     rdfs:label "slot_definition_mixins" ;
@@ -493,11 +522,6 @@ biolink:Definition a biolink:Element ;
     biolink:slots ( biolink:is_a biolink:mixin biolink:mixins biolink:abstract biolink:local_names biolink:union_of biolink:subclass_of biolink:values_from biolink:symmetric ) ;
     skos:definition "definition base class" .
 
-biolink:Element rdfs:label "Element" ;
-    biolink:abstract true ;
-    biolink:slots ( biolink:name biolink:singular_name biolink:description biolink:note biolink:comment biolink:examples biolink:see_also biolink:flags biolink:aliases biolink:mappings biolink:id_prefixes biolink:in_subset biolink:from_schema biolink:alt_descriptions ) ;
-    skos:definition "root of all described things" .
-
 biolink:SchemaDefinition a biolink:Definition ;
     rdfs:label "SchemaDefinition" ;
     biolink:slots ( biolink:id biolink:version biolink:imports biolink:license biolink:prefixes biolink:default_prefix biolink:default_type biolink:default_curi_maps biolink:types biolink:slot_definitions biolink:classes biolink:metamodel_version biolink:source_file biolink:source_file_size biolink:source_file_date biolink:generation_date ) ;
@@ -513,6 +537,11 @@ biolink:ClassDefinition a biolink:Definition ;
                 biolink:range biolink:ClassDefinition ] ) ;
     biolink:slots ( biolink:defining_slots biolink:slots biolink:slot_usage biolink:apply_to biolink:entity biolink:class_definition_is_a biolink:class_definition_mixins biolink:class_definition_union_of ) ;
     skos:definition "A class or interface" .
+
+biolink:Element rdfs:label "Element" ;
+    biolink:abstract true ;
+    biolink:slots ( biolink:name biolink:singular_name biolink:description biolink:note biolink:comment biolink:examples biolink:see_also biolink:flags biolink:aliases biolink:mappings biolink:id_prefixes biolink:in_subset biolink:from_schema biolink:alt_descriptions biolink:exact_matches biolink:broader_matches biolink:narrower_matches biolink:close_matches ) ;
+    skos:definition "root of all described things" .
 
 biolink:SlotDefinition a biolink:Definition ;
     rdfs:label "SlotDefinition" ;

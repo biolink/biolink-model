@@ -1,5 +1,5 @@
 {
-   "comments": "Auto generated from /Users/hsolbri1/git/biolink/biolink-model/meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-10-25 06:57\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "comments": "Auto generated from meta.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-12-05 12:02\nSchema: metamodel\n\nid: https://biolink.github.io/metamodel/ontology/meta.ttl\ndescription: Metamodel for biolink schema\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "biolink": "http://w3id.org/biolink/vocab/",
       "meta": "http://bioentity.io/meta/",
@@ -24,9 +24,17 @@
       "apply_to": {
          "@type": "@id"
       },
+      "broader_matches": {
+         "@container": "@list",
+         "@id": "skos:broadMatch"
+      },
       "classes": {
          "@type": "@id",
          "@container": "@list"
+      },
+      "close_matches": {
+         "@container": "@list",
+         "@id": "skos:closeMatch"
       },
       "comment": {
          "@id": "skos:editorialNote"
@@ -52,6 +60,10 @@
       },
       "entity": {
          "@type": "xsd:boolean"
+      },
+      "exact_matches": {
+         "@container": "@list",
+         "@id": "skos:exactMatch"
       },
       "examples": {
          "@type": "@id",
@@ -101,7 +113,8 @@
          "@container": "@list"
       },
       "mappings": {
-         "@container": "@list"
+         "@container": "@list",
+         "@id": "skos:mappingRelation"
       },
       "mixin": {
          "@type": "xsd:boolean"
@@ -115,6 +128,10 @@
       },
       "name": {
          "@id": "rdfs:label"
+      },
+      "narrower_matches": {
+         "@container": "@list",
+         "@id": "skos:narrowMatch"
       },
       "note": {
          "@id": "skos:note"
