@@ -5,7 +5,7 @@ describes the severity of a phenotypic feature or disease
 
 URI: [http://w3id.org/biolink/vocab/SeverityValue](http://w3id.org/biolink/vocab/SeverityValue)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SeverityValue|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[SeverityValue]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EntityToFeatureOrDiseaseQualifiers]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[Attribute]^-\[SeverityValue])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SeverityValue|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[SeverityValue]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EntityToFeatureOrDiseaseQualifiers]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[Attribute]^-\[SeverityValue])
 ## Mappings
 
 ## Inheritance
@@ -20,7 +20,7 @@ URI: [http://w3id.org/biolink/vocab/SeverityValue](http://w3id.org/biolink/vocab
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

@@ -5,7 +5,7 @@ A functional association between a macromolecular machine (gene, gene product or
 
 URI: [http://w3id.org/biolink/vocab/MacromolecularMachineToMolecularActivityAssociation](http://w3id.org/biolink/vocab/MacromolecularMachineToMolecularActivityAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MacromolecularMachineToMolecularActivityAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20subject(i)>\[MacromolecularMachine],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20publications(i)%20*>\[Publication],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20relation(i)>\[RelationshipType],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20object>\[MolecularActivity],%20\[FunctionalAssociation]^-\[MacromolecularMachineToMolecularActivityAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MacromolecularMachineToMolecularActivityAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20subject(i)>\[MacromolecularMachine],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20publications(i)%20*>\[Publication],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20relation(i)>\[RelationshipType],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20object>\[MolecularActivity],%20\[FunctionalAssociation]^-\[MacromolecularMachineToMolecularActivityAssociation])
 ## Mappings
 
 ## Inheritance
@@ -31,7 +31,7 @@ URI: [http://w3id.org/biolink/vocab/MacromolecularMachineToMolecularActivityAsso
     * inherited from: [Association](Association.md)
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

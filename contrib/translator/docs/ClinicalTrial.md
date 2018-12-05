@@ -5,7 +5,7 @@
 
 URI: [http://w3id.org/biolink/vocab/ClinicalTrial](http://w3id.org/biolink/vocab/ClinicalTrial)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ClinicalTrial|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[ClinicalEntity]^-\[ClinicalTrial])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ClinicalTrial|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[ClinicalEntity]^-\[ClinicalTrial])
 ## Mappings
 
 ## Inheritance
@@ -17,7 +17,7 @@ URI: [http://w3id.org/biolink/vocab/ClinicalTrial](http://w3id.org/biolink/vocab
 
  * [category](category.md) *subsets*: (translator_minimal)
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [LabelType](LabelType.md)*
+    * range: [IriType](IriType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [description](description.md) *subsets*: (translator_minimal)
     * Description: a human-readable description of a thing

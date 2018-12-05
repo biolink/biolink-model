@@ -783,7 +783,7 @@ biolink:GoTermBioentityMixin a shex:ShapeAnd ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:isa_partof_closure_label ;
-                                    shex:valueExpr <file:///Users/hsolbri1/git/issue163/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                                    shex:valueExpr <file:///Users/solbrig/git/biolink-continuous/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:regulates_closure ;
@@ -791,7 +791,7 @@ biolink:GoTermBioentityMixin a shex:ShapeAnd ;
                                     shex:max 1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:regulates_closure_label ;
-                                    shex:valueExpr <file:///Users/hsolbri1/git/issue163/biolink-model/XSD_string__List> ] ) ] ] ) .
+                                    shex:valueExpr <file:///Users/solbrig/git/biolink-continuous/biolink-model/XSD_string__List> ] ) ] ] ) .
 
 biolink:HasGenomicName a shex:Shape ;
     shex:expression [ a shex:EachOf ;
@@ -918,7 +918,7 @@ biolink:TaxonClosureMixin a shex:Shape ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate biolink:subject_taxon_closure_label ;
-                        shex:valueExpr <file:///Users/hsolbri1/git/issue163/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                        shex:valueExpr <file:///Users/solbrig/git/biolink-continuous/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate biolink:object_taxon ;
@@ -934,7 +934,7 @@ biolink:TaxonClosureMixin a shex:Shape ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate biolink:object_taxon_closure_label ;
-                        shex:valueExpr <file:///Users/hsolbri1/git/issue163/biolink-model/XSD_string__List> ] ) ] .
+                        shex:valueExpr <file:///Users/solbrig/git/biolink-continuous/biolink-model/XSD_string__List> ] ) ] .
 
 biolink:Treatment a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Environment [ a shex:Shape ;
@@ -1257,7 +1257,7 @@ biolink:OrganismalEntity a shex:ShapeAnd ;
 biolink:Transcript a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GenomicEntity [ a shex:Shape ] ) .
 
-<file:///Users/hsolbri1/git/issue163/biolink-model/XSD_string__List> a shex:Shape ;
+<file:///Users/solbrig/git/biolink-continuous/biolink-model/XSD_string__List> a shex:Shape ;
     shex:closed true ;
     shex:expression [ a shex:EachOf ;
             shex:expressions ( [ a shex:TripleConstraint ;
@@ -1269,7 +1269,7 @@ biolink:Transcript a shex:ShapeAnd ;
                         shex:predicate rdf:rest ;
                         shex:valueExpr [ a shex:ShapeOr ;
                                 shex:shapeExprs ( [ a shex:NodeConstraint ;
-                                            shex:values ( () ) ] <file:///Users/hsolbri1/git/issue163/biolink-model/XSD_string__List> ) ] ] ) ] .
+                                            shex:values ( () ) ] <file:///Users/solbrig/git/biolink-continuous/biolink-model/XSD_string__List> ) ] ] ) ] .
 
 biolink:Attribute a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:OntologyClass [ a shex:Shape ] ) .
@@ -1404,7 +1404,7 @@ biolink:NamedThing a shex:Shape ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate rdf:type ;
-                        shex:valueExpr <file:///Users/hsolbri1/git/issue163/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
+                        shex:valueExpr <file:///Users/solbrig/git/biolink-continuous/biolink-model/XSD_string__List> ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate owl:topObjectProperty ;
@@ -1722,7 +1722,7 @@ biolink:MolecularEntity a shex:ShapeAnd ;
                                     shex:valueExpr biolink:DiseaseOrPhenotypicFeature ] ) ] ] ) .
 
 [] a shex:Schema ;
-    shex:shapes <file:///Users/hsolbri1/git/issue163/biolink-model/XSD_string__List>,
+    shex:shapes <file:///Users/solbrig/git/biolink-continuous/biolink-model/XSD_string__List>,
         meta:Builtins,
         meta:SlotRangeTypes,
         biolink:ActivityAndBehavior,

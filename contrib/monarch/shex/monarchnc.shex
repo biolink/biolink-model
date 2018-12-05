@@ -46,8 +46,8 @@
 )
 
 <http://w3id.org/biolink/vocab/Association>  (
-    @<http://w3id.org/biolink/vocab/InformationContentEntity> AND @<http://w3id.org/biolink/vocab/ExtensionsAndEvidenceAssociationMixin>
-    AND {
+    @<http://w3id.org/biolink/vocab/InformationContentEntity> AND
+    @<http://w3id.org/biolink/vocab/ExtensionsAndEvidenceAssociationMixin> AND {
        (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> @<http://w3id.org/biolink/vocab/OntologyClass> ? ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.w3.org/2001/XMLSchema#string> ;
           <http://w3id.org/biolink/vocab/negated> <http://www.w3.org/2001/XMLSchema#boolean> ? ;
@@ -407,8 +407,8 @@
 
 <http://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://w3id.org/biolink/vocab/gene_to_expression_site_association_stage_qualifier> @<http://w3id.org/biolink/vocab/LifeStage> ?
-          ;
+       (  <http://w3id.org/biolink/vocab/gene_to_expression_site_association_stage_qualifier>
+          @<http://w3id.org/biolink/vocab/LifeStage> ? ;
           <http://w3id.org/biolink/vocab/gene_to_expression_site_association_quantifier_qualifier>
           @<http://w3id.org/biolink/vocab/OntologyClass> ? ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
@@ -730,7 +730,8 @@
 )
 
 <http://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction>  (
-    @<http://w3id.org/biolink/vocab/GeneToGeneAssociation> AND @<http://w3id.org/biolink/vocab/PairwiseInteractionAssociation> AND {
+    @<http://w3id.org/biolink/vocab/GeneToGeneAssociation> AND @<http://w3id.org/biolink/vocab/PairwiseInteractionAssociation> AND
+    {
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
     }
 )
@@ -926,8 +927,10 @@
     @<http://w3id.org/biolink/vocab/FrequencyQuantifier> AND @<http://w3id.org/biolink/vocab/FrequencyQualifier> AND {
        (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/SequenceVariant> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
-          <http://w3id.org/biolink/vocab/variant_to_population_association_has_quotient> <http://www.w3.org/2001/XMLSchema#double> ? ;
-          <http://w3id.org/biolink/vocab/variant_to_population_association_has_count> <http://www.w3.org/2001/XMLSchema#integer> ? ;
+          <http://w3id.org/biolink/vocab/variant_to_population_association_has_quotient> <http://www.w3.org/2001/XMLSchema#double>
+          ? ;
+          <http://w3id.org/biolink/vocab/variant_to_population_association_has_count> <http://www.w3.org/2001/XMLSchema#integer> ?
+          ;
           <http://w3id.org/biolink/vocab/variant_to_population_association_has_total> <http://www.w3.org/2001/XMLSchema#integer> ?
        )
     }
