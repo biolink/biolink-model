@@ -1,12 +1,27 @@
-rdflib>=4.2.2
-graphviz>=0.9
-PyYAML>=3.13
-prefixcommons>=0.1.7
+################################################################################
+# This requirements file has been automatically generated from `Pipfile` with
+# `pipenv-to-requirements`
+#
+#
+# This has been done to maintain backward compatibility with tools and services
+# that do not support `Pipfile` yet.
+#
+# Do NOT edit it directly, use `pipenv install [-d]` to modify `Pipfile` and
+# `Pipfile.lock` and then regenerate `requirements*.txt`.
+################################################################################
+
+-e .
+certifi>=2018.4.16
+cfgraph>=0.2.1
 click>=7.0
+graphviz>=0.10.1
+idna
 jsonasobj>=1.2.1
 jsonschema>=2.6.0
+prefixcommons>=0.1.7
+pyshex>=0.5.12
+pyyaml>=3.13
 rdflib-jsonld>=0.4.0
-ShExJSG>=0.5.6
-certifi>=2018.4.16
-CFGraph>=0.2.0
-PyShEx>=0.5.11
+rdflib>=4.2.2
+requests
+shexjsg>=0.5.6

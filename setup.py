@@ -2,21 +2,24 @@ import sys
 
 from setuptools import setup, find_packages
 
-version = '0.2.0'
+version = '0.3.0'
 
 requires = [
+    "certifi>=2018.4.16",
+    "cfgraph>=0.2.1",
     "click>=7.0",
-    "PyYAML>=3.13",
+    "graphviz>=0.10.1",
+    "idna",
     "jsonasobj>=1.2.1",
     "jsonschema>=2.6.0",
-    "rdflib>=4.2.2",
-    "graphviz>=0.9",
     "prefixcommons>=0.1.7",
+    "pyshex>=0.5.12",
+    "pyyaml>=3.13",
     "rdflib-jsonld>=0.4.0",
-    "ShExJSG>=0.5.6",
-    "CFGraph>=0.2.0",
-    "PyShEx>=0.5.11"
-    ]
+    "rdflib>=4.2.2",
+    "requests",
+    "shexjsg>=0.5.6"
+]
 
 if sys.version_info < (3, 7):
     requires.append("dataclasses")

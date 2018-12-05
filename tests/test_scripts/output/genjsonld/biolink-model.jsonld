@@ -3453,6 +3453,9 @@
       "mappings": [
         "IAO:0000311"
       ],
+      "id_prefixes": [
+        "PMID"
+      ],
       "is_a": "InformationContentEntity",
       "@id": "Publication"
     },
@@ -3553,7 +3556,8 @@
         "WD:Q79529"
       ],
       "id_prefixes": [
-        "CHEMBL.TARGET"
+        "CHEBI",
+        "CHEMBL.COMPOUND"
       ],
       "is_a": "MolecularEntity",
       "subclass_of": "CHEBI:24431",
@@ -3735,6 +3739,9 @@
     {
       "name": "GeneOrGeneProduct",
       "description": "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another",
+      "id_prefixes": [
+        "CHEMBL.TARGET"
+      ],
       "is_a": "MacromolecularMachine",
       "union_of": [
         "Gene",
@@ -5884,9 +5891,9 @@
   ],
   "metamodel_version": "0.3.2",
   "source_file": "biolink-model.yaml",
-  "source_file_size": 97945,
-  "source_file_date": "Wed Dec  5 10:14:52 2018",
-  "generation_date": "2018-12-05 12:02",
+  "source_file_size": 98039,
+  "source_file_date": "Wed Dec  5 13:42:38 2018",
+  "generation_date": "2018-12-05 13:44",
   "@context": [
     "https://github.com/biolink/biolink-model/raw/master/context.jsonld",
     {
