@@ -3,7 +3,7 @@
 
 A set of zero or more Alleles on a single instance of a Sequence[VMC]
 
-URI: [http://bioentity.io/vocab/Haplotype](http://bioentity.io/vocab/Haplotype)
+URI: [http://w3id.org/biolink/vocab/Haplotype](http://w3id.org/biolink/vocab/Haplotype)
 
 ![img](images/Haplotype.png)
 ## Mappings

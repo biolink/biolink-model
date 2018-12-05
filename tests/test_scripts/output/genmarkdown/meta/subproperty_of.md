@@ -3,7 +3,7 @@
 
 Ontolgy property which this is a subproperty of
 
-URI: [http://bioentity.io/vocab/subproperty_of](slot_uri)
+URI: [http://w3id.org/biolink/vocab/subproperty_of](slot_uri)
 ## Mappings
 
  * [rdfs:subPropertyOf](http://purl.obolibrary.org/obo/rdfs_subPropertyOf)

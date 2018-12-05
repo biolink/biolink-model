@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/RelationshipQuantifier](http://bioentity.io/vocab/RelationshipQuantifier)
+URI: [http://w3id.org/biolink/vocab/RelationshipQuantifier](http://w3id.org/biolink/vocab/RelationshipQuantifier)
 
 ![img](images/RelationshipQuantifier.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 definition base class
 
-URI: [http://bioentity.io/vocab/Definition](http://bioentity.io/vocab/Definition)
+URI: [http://w3id.org/biolink/vocab/Definition](http://w3id.org/biolink/vocab/Definition)
 
 ![img](images/Definition.png)
 ## Mappings

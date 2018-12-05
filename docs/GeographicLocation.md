@@ -3,7 +3,7 @@
 
 a location that can be described in lat/long coordinates
 
-URI: [http://bioentity.io/vocab/GeographicLocation](http://bioentity.io/vocab/GeographicLocation)
+URI: [http://w3id.org/biolink/vocab/GeographicLocation](http://w3id.org/biolink/vocab/GeographicLocation)
 
 ![img](images/GeographicLocation.png)
 ## Mappings

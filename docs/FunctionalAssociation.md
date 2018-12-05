@@ -3,7 +3,7 @@
 
 An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
 
-URI: [http://bioentity.io/vocab/FunctionalAssociation](http://bioentity.io/vocab/FunctionalAssociation)
+URI: [http://w3id.org/biolink/vocab/FunctionalAssociation](http://w3id.org/biolink/vocab/FunctionalAssociation)
 
 ![img](images/FunctionalAssociation.png)
 ## Mappings

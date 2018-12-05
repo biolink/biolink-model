@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation](http://bioentity.io/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation)
+URI: [http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation](http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation)
 
 ![img](images/DiseaseOrPhenotypicFeatureAssociationToThingAssociation.png)
 ## Mappings

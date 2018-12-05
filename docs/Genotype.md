@@ -3,7 +3,7 @@
 
 An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
 
-URI: [http://bioentity.io/vocab/Genotype](http://bioentity.io/vocab/Genotype)
+URI: [http://w3id.org/biolink/vocab/Genotype](http://w3id.org/biolink/vocab/Genotype)
 
 ![img](images/Genotype.png)
 ## Mappings

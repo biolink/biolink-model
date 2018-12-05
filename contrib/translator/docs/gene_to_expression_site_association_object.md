@@ -3,7 +3,7 @@
 
 location in which the gene is expressed
 
-URI: [http://bioentity.io/vocab/gene_to_expression_site_association_object](slot_uri)
+URI: [http://w3id.org/biolink/vocab/gene_to_expression_site_association_object](slot_uri)
 ## Mappings
 
  * [rdf:object](http://purl.obolibrary.org/obo/rdf_object)

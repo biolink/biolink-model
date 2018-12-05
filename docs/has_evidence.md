@@ -3,7 +3,7 @@
 
 connects an association to an instance of supporting evidence
 
-URI: [http://bioentity.io/vocab/has_evidence](slot_uri)
+URI: [http://w3id.org/biolink/vocab/has_evidence](slot_uri)
 ## Mappings
 
  * [RO:0002558](http://purl.obolibrary.org/obo/RO_0002558)

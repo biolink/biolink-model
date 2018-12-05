@@ -3,7 +3,7 @@
 
 An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
 
-URI: [http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation](http://bioentity.io/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation)
+URI: [http://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation)
 
 ![img](images/ChemicalToDiseaseOrPhenotypicFeatureAssociation.png)
 ## Mappings

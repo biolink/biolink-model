@@ -3,7 +3,7 @@
 
 a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
 
-URI: [http://bioentity.io/vocab/GeneOrGeneProduct](http://bioentity.io/vocab/GeneOrGeneProduct)
+URI: [http://w3id.org/biolink/vocab/GeneOrGeneProduct](http://w3id.org/biolink/vocab/GeneOrGeneProduct)
 
 ![img](images/GeneOrGeneProduct.png)
 ## Mappings

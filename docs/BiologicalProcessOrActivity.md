@@ -3,7 +3,7 @@
 
 Either an individual molecular activity, or a collection of causally connected molecular activities
 
-URI: [http://bioentity.io/vocab/BiologicalProcessOrActivity](http://bioentity.io/vocab/BiologicalProcessOrActivity)
+URI: [http://w3id.org/biolink/vocab/BiologicalProcessOrActivity](http://w3id.org/biolink/vocab/BiologicalProcessOrActivity)
 
 ![img](images/BiologicalProcessOrActivity.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 Version of the metamodel used to load the schema. Supplied by the loader
 
-URI: [http://bioentity.io/vocab/metamodel_version](slot_uri)
+URI: [http://w3id.org/biolink/vocab/metamodel_version](slot_uri)
 ## Mappings
 
 ## Domain and Range

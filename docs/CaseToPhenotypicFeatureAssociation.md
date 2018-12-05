@@ -3,7 +3,7 @@
 
 An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
 
-URI: [http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation](http://bioentity.io/vocab/CaseToPhenotypicFeatureAssociation)
+URI: [http://w3id.org/biolink/vocab/CaseToPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/CaseToPhenotypicFeatureAssociation)
 
 ![img](images/CaseToPhenotypicFeatureAssociation.png)
 ## Mappings

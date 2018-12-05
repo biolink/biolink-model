@@ -13,7 +13,7 @@
   "prefixes": [
     {
       "local_name": "biolink",
-      "prefix_uri": "http://bioentity.io/vocab/"
+      "prefix_uri": "http://w3id.org/biolink/vocab/"
     },
     {
       "local_name": "OBAN",
@@ -1316,7 +1316,7 @@
       "name": "prevents",
       "description": "holds between an entity whose application or use reduces the likelihood of a potential outcome.  Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.",
       "mappings": [
-        "RO:0002559",
+        "RO:0002599",
         "SEMMEDDB:PREVENTS"
       ],
       "in_subset": [
@@ -3913,7 +3913,7 @@
         "SIO:001061"
       ],
       "id_prefixes": [
-        "ANCESTRO"
+        "HANCESTRO"
       ],
       "is_a": "OrganismalEntity",
       "mixins": [
@@ -5623,7 +5623,7 @@
           "description": "the population that is observed to have the frequency",
           "examples": [
             {
-              "value": "ANCESTRO:0010",
+              "value": "HANCESTRO:0010",
               "description": "African"
             }
           ],
@@ -6490,14 +6490,14 @@
     }
   ],
   "metamodel_version": "0.3.1",
-  "source_file": "/Users/hsolbri1/git/issue162/biolink-model/biolink-model.yaml",
-  "source_file_size": 97939,
-  "source_file_date": "Tue Nov  6 09:44:21 2018",
-  "generation_date": "2018-11-06 09:45",
+  "source_file": "biolink-model.yaml",
+  "source_file_size": 97941,
+  "source_file_date": "Tue Dec  4 17:41:37 2018",
+  "generation_date": "2018-12-05 09:36",
   "@context": [
-    "https://github.com/hsolbrig/biolink-model/raw/master/context.jsonld",
+    "https://github.com/biolink/biolink-model/raw/master/context.jsonld",
     {
-      "@base": "http://bioentity.io/vocab/"
+      "@base": "http://w3id.org/biolink/vocab/"
     }
   ],
   "@id": "https://biolink.github.io/biolink-model/ontology/biolink.ttl"

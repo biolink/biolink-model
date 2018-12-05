@@ -3,7 +3,7 @@
 
 A human-readable name for a thing
 
-URI: [http://bioentity.io/vocab/name](slot_uri)
+URI: [http://w3id.org/biolink/vocab/name](slot_uri)
 ## Mappings
 
  * [rdfs:label](http://purl.obolibrary.org/obo/rdfs_label)

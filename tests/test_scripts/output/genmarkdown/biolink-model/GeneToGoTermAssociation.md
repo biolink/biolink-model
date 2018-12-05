@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/GeneToGoTermAssociation](http://bioentity.io/vocab/GeneToGoTermAssociation)
+URI: [http://w3id.org/biolink/vocab/GeneToGoTermAssociation](http://w3id.org/biolink/vocab/GeneToGoTermAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToGoTermAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToGoTermAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToGoTermAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToGoTermAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToGoTermAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToGoTermAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneToGoTermAssociation]-%20object>\[GeneOntologyClass],%20\[GeneToGoTermAssociation]-%20subject>\[MolecularEntity],%20\[FunctionalAssociation]^-\[GeneToGoTermAssociation])
 ## Mappings

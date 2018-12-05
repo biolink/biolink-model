@@ -3,7 +3,7 @@
 
 holds between wholes and their parts (material entities or processes)
 
-URI: [http://bioentity.io/vocab/has_part](slot_uri)
+URI: [http://w3id.org/biolink/vocab/has_part](slot_uri)
 ## Mappings
 
  * [BFO:0000051](http://purl.obolibrary.org/obo/BFO_0000051)

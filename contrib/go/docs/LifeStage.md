@@ -3,7 +3,7 @@
 
 A stage of development or growth of an organism, including post-natal adult stages
 
-URI: [http://bioentity.io/vocab/LifeStage](http://bioentity.io/vocab/LifeStage)
+URI: [http://w3id.org/biolink/vocab/LifeStage](http://w3id.org/biolink/vocab/LifeStage)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[LifeStage|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[LifeStage]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToExpressionSiteAssociation]-%20stage%20qualifier(i)%20%3F>\[LifeStage],%20\[GeneToExpressionSiteAssociation]-%20stage%20qualifier(i)%20%3F>\[LifeStage],%20\[LifeStage]uses%20-.->\[ThingWithTaxon],%20\[OrganismalEntity]^-\[LifeStage])
 ## Mappings

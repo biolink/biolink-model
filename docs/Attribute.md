@@ -3,7 +3,7 @@
 
 A property or characteristic of an entity
 
-URI: [http://bioentity.io/vocab/Attribute](http://bioentity.io/vocab/Attribute)
+URI: [http://w3id.org/biolink/vocab/Attribute](http://w3id.org/biolink/vocab/Attribute)
 
 ![img](images/Attribute.png)
 ## Mappings

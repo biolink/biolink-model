@@ -16,8 +16,8 @@ from metamodel.utils.formatutils import camelcase, underscore
 from metamodel.utils.generator import Generator
 from metamodel.utils.yamlutils import YAMLRoot
 
-biolink_context = "https://github.com/hsolbrig/biolink-model/raw/master/context.jsonld"
-meta_context = "https://raw.githubusercontent.com/hsolbrig/biolink-model/master/metamodel/context.jsonld"
+biolink_context = "https://github.com/biolink/biolink-model/raw/master/context.jsonld"
+meta_context = "https://raw.githubusercontent.com/biolink/biolink-model/master/metamodel/context.jsonld"
 
 
 class JSONLDGenerator(Generator):
@@ -89,8 +89,6 @@ class JSONLDGenerator(Generator):
         # self._visit(self.schema)
         json_str = as_json(self.schema)
         json_obj = loads(json_str)
-        if '://' not in context:
-            context = urljoin('file:', pathname2url(os.path.abspath(context)))
         base_prefix = self.default_uri()
         json_obj["@context"] = [context, {'@base': base_prefix}] if base_prefix else context
         json_obj["@id"] = self.schema.id

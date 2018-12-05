@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/Biosample](http://bioentity.io/vocab/Biosample)
+URI: [http://w3id.org/biolink/vocab/Biosample](http://w3id.org/biolink/vocab/Biosample)
 
 ![img](images/Biosample.png)
 ## Mappings

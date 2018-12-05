@@ -3,7 +3,7 @@
 
 For example, a particular exon is part of a particular transcript or gene
 
-URI: [http://bioentity.io/vocab/SequenceFeatureRelationship](http://bioentity.io/vocab/SequenceFeatureRelationship)
+URI: [http://w3id.org/biolink/vocab/SequenceFeatureRelationship](http://w3id.org/biolink/vocab/SequenceFeatureRelationship)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SequenceFeatureRelationship|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[SequenceFeatureRelationship]-%20publications(i)%20*>\[Publication],%20\[SequenceFeatureRelationship]-%20qualifiers(i)%20*>\[OntologyClass],%20\[SequenceFeatureRelationship]-%20relation(i)>\[RelationshipType],%20\[SequenceFeatureRelationship]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[SequenceFeatureRelationship]-%20related%20to(i)%20%3F>\[NamedThing],%20\[SequenceFeatureRelationship]-%20object>\[GenomicEntity],%20\[SequenceFeatureRelationship]-%20subject>\[GenomicEntity],%20\[SequenceFeatureRelationship]^-\[TranscriptToGeneRelationship],%20\[SequenceFeatureRelationship]^-\[GeneToGeneProductRelationship],%20\[SequenceFeatureRelationship]^-\[ExonToTranscriptRelationship],%20\[Association]^-\[SequenceFeatureRelationship])
 ## Mappings

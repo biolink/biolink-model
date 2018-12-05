@@ -4,6 +4,7 @@ import unittest
 # This has to occur post ClickTestCase
 from functools import reduce
 from typing import List, Tuple
+from urllib.parse import urljoin
 
 import click
 from rdflib import Graph, URIRef
@@ -68,12 +69,13 @@ class GenJSONLDTestCase(ClickTestCase):
         rdf_path = os.path.join(self.testdir_path, 'metardf.ttl')
         yaml_path = os.path.abspath(os.path.join(cwd, '..', '..', 'meta.yaml'))
         meta_context_path = os.path.join(self.testdir_path, 'metacontext.jsonld')
+        meta_context_relpath = os.path.basename(meta_context_path)
 
         # Generate an image of the metamodel
         with open(meta_context_path, 'w') as tfile:
             tfile.write(ContextGenerator(yaml_path).serialize())
         with open(jsonld_path, 'w') as tfile:
-            tfile.write(JSONLDGenerator(yaml_path).serialize(context=meta_context_path))
+            tfile.write(JSONLDGenerator(yaml_path).serialize(context=meta_context_relpath))
         g = Graph()
         g.load(jsonld_path, format="json-ld")
         g.serialize(rdf_path, format="ttl")
@@ -97,6 +99,7 @@ class GenJSONLDTestCase(ClickTestCase):
         meta_yaml_path = os.path.abspath(os.path.join(cwd, '..', '..', 'meta.yaml'))
         context_path = os.path.join(temp_dir, 'biolinkcontext.jsonld')
         jsonld_path = os.path.join(temp_dir, 'biolinkjson.jsonld')
+        meta_context_relpath = os.path.basename(meta_context_path)
         rdf_path = os.path.join(temp_dir, 'biolinkrdf.ttl')
         yaml_path = os.path.abspath(os.path.join(cwd, '..', '..', 'biolink-model.yaml'))
 
@@ -106,7 +109,7 @@ class GenJSONLDTestCase(ClickTestCase):
         with open(context_path, 'w') as tfile:
             tfile.write(ContextGenerator(yaml_path).serialize())
         with open(jsonld_path, 'w') as tfile:
-            tfile.write(JSONLDGenerator(yaml_path).serialize(context=meta_context_path))
+            tfile.write(JSONLDGenerator(yaml_path).serialize(context=meta_context_relpath))
         g = Graph()
         g.load(jsonld_path, format="json-ld")
         g.serialize(rdf_path, format="ttl")

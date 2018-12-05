@@ -1,6 +1,6 @@
-@prefix : <http://bioentity.io/vocab/> .
+@prefix : <http://w3id.org/biolink/vocab/> .
 @prefix OIO: <http://www.geneontology.org/formats/oboInOwl#> .
-@prefix biolink: <http://bioentity.io/vocab/> .
+@prefix biolink: <http://w3id.org/biolink/vocab/> .
 @prefix meta: <http://bioentity.io/meta/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -19,7 +19,7 @@
     biolink:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     biolink:metamodel_version "0.3.1" ;
     biolink:prefixes ( [ biolink:local_name "biolink" ;
-                biolink:prefix_uri "http://bioentity.io/vocab/" ] [ biolink:local_name "OBAN" ;
+                biolink:prefix_uri "http://w3id.org/biolink/vocab/" ] [ biolink:local_name "OBAN" ;
                 biolink:prefix_uri "http://purl.org/oban/" ] [ biolink:local_name "SIO" ;
                 biolink:prefix_uri "http://semanticscience.org/resource/SIO_" ] [ biolink:local_name "wgs" ;
                 biolink:prefix_uri "http://www.w3.org/2003/01/geo/wgs84_pos" ] ) ;
@@ -82,12 +82,12 @@ biolink:Drug a biolink:ChemicalSubstance ;
 
 biolink:EnvironmentalFeature a biolink:PlanetaryEntity ;
     rdfs:label "EnvironmentalFeature" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/ENVO:00002297> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/ENVO:00002297> .
 
 biolink:EnvironmentalProcess a biolink:PlanetaryEntity ;
     rdfs:label "EnvironmentalProcess" ;
     biolink:mixins ( biolink:Occurrent ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/ENVO:02500000> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/ENVO:02500000> .
 
 biolink:EvidenceType a biolink:InformationContentEntity ;
     rdfs:label "EvidenceType" ;
@@ -110,7 +110,7 @@ biolink:Genome a biolink:GenomicEntity ;
 
 biolink:GenotypicSex a biolink:BiologicalSex ;
     rdfs:label "GenotypicSex" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/PATO:0020000> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/PATO:0020000> ;
     skos:definition "An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes." .
 
 biolink:GrossAnatomicalStructure a biolink:AnatomicalEntity ;
@@ -134,7 +134,7 @@ biolink:MicroRNA a biolink:NoncodingRNAProduct ;
     rdfs:label "MicroRNA" ;
     biolink:id_prefixes ( "MIR" ) ;
     biolink:mappings ( "SIO:001397" "WD:Q310899" ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/SO:0000276> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/SO:0000276> .
 
 biolink:PathognomonicityQuantifier a biolink:SpecificityQuantifier ;
     rdfs:label "PathognomonicityQuantifier" ;
@@ -148,7 +148,7 @@ biolink:Phenomenon a biolink:Occurrent ;
 
 biolink:PhenotypicSex a biolink:BiologicalSex ;
     rdfs:label "PhenotypicSex" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/PATO:0001894> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/PATO:0001894> ;
     skos:definition "An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present." .
 
 biolink:PhysiologicalProcess a biolink:BiologicalProcess ;
@@ -456,7 +456,7 @@ biolink:ChemicalToPathwayAssociation a biolink:Association ;
 
 biolink:ClinicalModifier a biolink:Attribute ;
     rdfs:label "ClinicalModifier" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/HP:0012823> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/HP:0012823> ;
     skos:definition "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects" .
 
 biolink:ConfidenceLevel a biolink:InformationContentEntity ;
@@ -537,13 +537,13 @@ biolink:IndividualOrganism a biolink:OrganismalEntity ;
     rdfs:label "IndividualOrganism" ;
     biolink:mappings ( "SIO:010000" "UMLSSG:LIVB" "WD:Q795052" ) ;
     biolink:mixins ( biolink:ThingWithTaxon ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/NCBITaxon:1> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/NCBITaxon:1> .
 
 biolink:MacromolecularComplex a biolink:MacromolecularMachine ;
     rdfs:label "MacromolecularComplex" ;
     biolink:id_prefixes ( "IntAct" "GO" "PR" "Reactome" ) ;
     biolink:mappings ( "SIO:010046" "WD:Q22325163" ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/GO:0032991> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/GO:0032991> .
 
 biolink:MacromolecularMachineToBiologicalProcessAssociation a biolink:FunctionalAssociation ;
     rdfs:label "MacromolecularMachineToBiologicalProcessAssociation" ;
@@ -570,7 +570,7 @@ biolink:NoncodingRNAProduct a biolink:RNAProduct ;
     rdfs:label "NoncodingRNAProduct" ;
     biolink:id_prefixes ( "RNAcentral" "NCBIGene" "ENSEMBL" ) ;
     biolink:mappings ( "SIO:001235" ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/SO:0000655> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/SO:0000655> .
 
 biolink:Onset a biolink:Attribute ;
     rdfs:label "Onset" ;
@@ -2121,7 +2121,7 @@ biolink:DiseaseToThingAssociation a biolink:Association ;
                 biolink:definitional true ;
                 biolink:range biolink:Disease ;
                 biolink:values_from ( "mondo" "omim" "orphanet" "ncit" "doid" ) ;
-                rdfs:subClassOf <http://bioentity.io/vocab/MONDO:0000001> ;
+                rdfs:subClassOf <http://w3id.org/biolink/vocab/MONDO:0000001> ;
                 skos:definition "disease class" ;
                 skos:example ( [ biolink:value "MONDO:0017314" ;
                             skos:definition "Ehlers-Danlos syndrome, vascular type" ] ) ] ) ;
@@ -2442,7 +2442,7 @@ biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation a biolink:Anatomical
 
 biolink:BiologicalSex a biolink:Attribute ;
     rdfs:label "BiologicalSex" ;
-    rdfs:subClassOf <http://bioentity.io/vocab/PATO:0000047> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/PATO:0000047> .
 
 biolink:Biosample a biolink:OrganismalEntity ;
     rdfs:label "Biosample" ;
@@ -2552,7 +2552,7 @@ biolink:GeographicLocation a biolink:PlanetaryEntity ;
 biolink:LifeStage a biolink:OrganismalEntity ;
     rdfs:label "LifeStage" ;
     biolink:mixins ( biolink:ThingWithTaxon ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/UBERON:0000105> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/UBERON:0000105> ;
     skos:definition "A stage of development or growth of an organism, including post-natal adult stages" .
 
 biolink:ModelToDiseaseMixin rdfs:label "ModelToDiseaseMixin" ;
@@ -2873,7 +2873,7 @@ biolink:EntityToDiseaseAssociation a biolink:EntityToFeatureOrDiseaseQualifiers 
     biolink:slot_usage ( [ rdfs:label "object" ;
                 biolink:definitional true ;
                 biolink:range biolink:Disease ;
-                rdfs:subClassOf <http://bioentity.io/vocab/MONDO:0000001> ;
+                rdfs:subClassOf <http://w3id.org/biolink/vocab/MONDO:0000001> ;
                 skos:definition "disease" ;
                 skos:example ( [ biolink:value "MONDO:0020066" ;
                             skos:definition "Ehlers-Danlos syndrome" ] ) ] ) ;
@@ -3107,7 +3107,7 @@ biolink:molecularly_interacts_with a biolink:physically_interacts_with ;
 
 biolink:Attribute rdfs:label "Attribute" ;
     biolink:mixins ( biolink:OntologyClass ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/PATO:0000001> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/PATO:0000001> ;
     skos:definition "A property or characteristic of an entity" .
 
 biolink:BiologicalEntity a biolink:NamedThing ;
@@ -3120,7 +3120,7 @@ biolink:ChemicalSubstance a biolink:MolecularEntity ;
     rdfs:label "ChemicalSubstance" ;
     biolink:id_prefixes ( "CHEMBL.TARGET" ) ;
     biolink:mappings ( "SIO:010004" "UMLSSG:CHEM" "WD:Q79529" ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/CHEBI:24431> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/CHEBI:24431> ;
     skos:definition "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part" .
 
 biolink:Disease a biolink:DiseaseOrPhenotypicFeature ;
@@ -3172,7 +3172,7 @@ biolink:PairwiseInteractionAssociation a biolink:Association ;
                             skos:definition "the subject molecular phosphorylates the object molecule" ] ) ] [ rdfs:label "object" ;
                 biolink:range biolink:MolecularEntity ] [ rdfs:label "interacting_molecules_category" ;
                 biolink:range biolink:OntologyClass ;
-                rdfs:subClassOf <http://bioentity.io/vocab/MI:1046> ;
+                rdfs:subClassOf <http://w3id.org/biolink/vocab/MI:1046> ;
                 skos:example ( [ biolink:value "MI:1048" ;
                             skos:definition "smallmolecule-protein" ] ) ] ) ;
     biolink:slots ( biolink:pairwise_interaction_association_subject biolink:pairwise_interaction_association_id biolink:pairwise_interaction_association_relation biolink:pairwise_interaction_association_object biolink:interacting_molecules_category ) ;
@@ -3184,7 +3184,7 @@ biolink:PopulationOfIndividualOrganisms a biolink:OrganismalEntity ;
     biolink:local_names ( "population" ) ;
     biolink:mappings ( "SIO:001061" ) ;
     biolink:mixins ( biolink:ThingWithTaxon ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/PCO:0000001> .
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/PCO:0000001> .
 
 biolink:GeneToExpressionSiteAssociation a biolink:Association ;
     rdfs:label "GeneToExpressionSiteAssociation" ;
@@ -3193,7 +3193,7 @@ biolink:GeneToExpressionSiteAssociation a biolink:Association ;
                 biolink:range biolink:GeneOrGeneProduct ;
                 skos:definition "gene in which variation is correlated with the phenotypic feature" ] [ rdfs:label "object" ;
                 biolink:range biolink:AnatomicalEntity ;
-                rdfs:subClassOf <http://bioentity.io/vocab/UBERON:0001062> ;
+                rdfs:subClassOf <http://w3id.org/biolink/vocab/UBERON:0001062> ;
                 skos:definition "location in which the gene is expressed" ;
                 skos:example ( [ biolink:value "UBERON:0002037" ;
                             skos:definition "cerebellum" ] ) ] [ rdfs:label "relation" ;
@@ -3236,7 +3236,7 @@ biolink:EntityToPhenotypicFeatureAssociation a biolink:Association ;
                 biolink:definitional true ;
                 biolink:range biolink:PhenotypicFeature ;
                 biolink:values_from ( "upheno" "hp" "mp" "wbphenotypic feature" ) ;
-                rdfs:subClassOf <http://bioentity.io/vocab/UPHENO:0001001> ;
+                rdfs:subClassOf <http://w3id.org/biolink/vocab/UPHENO:0001001> ;
                 skos:definition "phenotypic class" ;
                 skos:example ( [ biolink:value "HP:0002487" ;
                             skos:definition "Hyperkinesis" ] [ biolink:value "WBPhenotype:0000180" ;
@@ -3320,7 +3320,7 @@ biolink:AnatomicalEntity a biolink:OrganismalEntity ;
     biolink:mappings ( "UMLSSG:ANAT" "SIO:010046" "WD:Q4936952" ) ;
     biolink:mixins ( biolink:ThingWithTaxon ) ;
     biolink:slots ( biolink:expresses ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/UBERON:0001062> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/UBERON:0001062> ;
     skos:definition "A subcellular location, cell type or gross anatomical part" .
 
 biolink:node_property rdfs:label "node_property" ;
@@ -3384,7 +3384,7 @@ biolink:subject a biolink:association_slot ;
 biolink:NamedThing rdfs:label "NamedThing" ;
     biolink:mappings ( "UMLSSG:OBJC" "WD:Q35120" ) ;
     biolink:slots ( biolink:id biolink:name biolink:category biolink:related_to biolink:node_property biolink:iri biolink:full_name biolink:description biolink:systematic_synonym ) ;
-    rdfs:subClassOf <http://bioentity.io/vocab/BFO:0000001> ;
+    rdfs:subClassOf <http://w3id.org/biolink/vocab/BFO:0000001> ;
     skos:definition "a databased entity or concept/class" .
 
 biolink:MolecularEntity a biolink:BiologicalEntity ;

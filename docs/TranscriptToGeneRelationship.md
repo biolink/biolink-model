@@ -3,7 +3,7 @@
 
 A gene is a collection of transcripts
 
-URI: [http://bioentity.io/vocab/TranscriptToGeneRelationship](http://bioentity.io/vocab/TranscriptToGeneRelationship)
+URI: [http://w3id.org/biolink/vocab/TranscriptToGeneRelationship](http://w3id.org/biolink/vocab/TranscriptToGeneRelationship)
 
 ![img](images/TranscriptToGeneRelationship.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
 
-URI: [http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation](http://bioentity.io/vocab/GenotypeToPhenotypicFeatureAssociation)
+URI: [http://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation)
 
 ![img](images/GenotypeToPhenotypicFeatureAssociation.png)
 ## Mappings

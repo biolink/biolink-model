@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/EnvironmentalFeature](http://bioentity.io/vocab/EnvironmentalFeature)
+URI: [http://w3id.org/biolink/vocab/EnvironmentalFeature](http://w3id.org/biolink/vocab/EnvironmentalFeature)
 
 ![img](images/EnvironmentalFeature.png)
 ## Mappings

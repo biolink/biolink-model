@@ -3,7 +3,7 @@
 
 List of prefixcommon biocontexts to be fetched to resolve id_prefixes and inline prefix variables
 
-URI: [http://bioentity.io/vocab/default_curi_maps](slot_uri)
+URI: [http://w3id.org/biolink/vocab/default_curi_maps](slot_uri)
 ## Mappings
 
 ## Domain and Range

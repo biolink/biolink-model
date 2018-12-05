@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation](http://bioentity.io/vocab/GeneAsAModelOfDiseaseAssociation)
+URI: [http://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation](http://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneAsAModelOfDiseaseAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneAsAModelOfDiseaseAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneAsAModelOfDiseaseAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneAsAModelOfDiseaseAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneAsAModelOfDiseaseAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[GeneAsAModelOfDiseaseAssociation]-%20object(i)>\[Disease],%20\[GeneAsAModelOfDiseaseAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[GeneAsAModelOfDiseaseAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[GeneAsAModelOfDiseaseAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneAsAModelOfDiseaseAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneAsAModelOfDiseaseAssociation]uses%20-.->\[ModelToDiseaseMixin],%20\[GeneAsAModelOfDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneAsAModelOfDiseaseAssociation])
 ## Mappings

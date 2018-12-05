@@ -3,7 +3,7 @@
 
 An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 
-URI: [http://bioentity.io/vocab/PairwiseGeneToGeneInteraction](http://bioentity.io/vocab/PairwiseGeneToGeneInteraction)
+URI: [http://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction](http://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PairwiseGeneToGeneInteraction|name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F;id(i):identifier_type%20%3F]-%20interacting%20molecules%20category(i)%20%3F>\[OntologyClass],%20\[PairwiseGeneToGeneInteraction]-%20object(i)>\[MolecularEntity],%20\[PairwiseGeneToGeneInteraction]-%20subject(i)>\[MolecularEntity],%20\[PairwiseGeneToGeneInteraction]-%20provided%20by(i)%20%3F>\[Provider],%20\[PairwiseGeneToGeneInteraction]-%20publications(i)%20*>\[Publication],%20\[PairwiseGeneToGeneInteraction]-%20qualifiers(i)%20*>\[OntologyClass],%20\[PairwiseGeneToGeneInteraction]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[PairwiseGeneToGeneInteraction]-%20related%20to(i)%20%3F>\[NamedThing],%20\[PairwiseGeneToGeneInteraction]-%20relation>\[RelationshipType],%20\[PairwiseGeneToGeneInteraction]uses%20-.->\[PairwiseInteractionAssociation],%20\[GeneToGeneAssociation]^-\[PairwiseGeneToGeneInteraction])
 ## Mappings

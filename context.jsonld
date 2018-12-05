@@ -1,7 +1,7 @@
 {
-   "comments": "Auto generated from biolink-model.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-11-06 09:34\nSchema: biolink model\n\nid: https://biolink.github.io/biolink-model/ontology/biolink.ttl\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "comments": "Auto generated from biolink-model.yaml by contextgen.py version: 0.0.2\nGeneration date: 2018-12-04 17:46\nSchema: biolink model\n\nid: https://biolink.github.io/biolink-model/ontology/biolink.ttl\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
-      "biolink": "http://bioentity.io/vocab/",
+      "biolink": "http://w3id.org/biolink/vocab/",
       "OBAN": "http://purl.org/oban/",
       "SIO": "http://semanticscience.org/resource/SIO_",
       "wgs": "http://www.w3.org/2003/01/geo/wgs84_pos",
@@ -10,12 +10,13 @@
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "skos": "https://www.w3.org/TR/skos-reference/#",
       "OIO": "http://www.geneontology.org/formats/oboInOwl#",
-      "@vocab": "http://bioentity.io/vocab/",
-      "@base": "http://bioentity.io/vocab/",
+      "@vocab": "http://w3id.org/biolink/vocab/",
+      "@base": "http://w3id.org/biolink/vocab/",
       "UMLSSG": "http://example.org/unknown/UMLSSG/",
       "WD": "http://example.org/unknown/WD/",
       "owl": "http://www.w3.org/2002/07/owl#",
       "GO": "http://purl.obolibrary.org/obo/GO_",
+      "Reactome": "http://example.org/unknown/Reactome/",
       "CL": "http://purl.obolibrary.org/obo/CL_",
       "PO": "http://purl.obolibrary.org/obo/PO_",
       "CLO": "http://purl.obolibrary.org/obo/CLO_",
@@ -43,14 +44,18 @@
       "FAO": "http://purl.obolibrary.org/obo/FAO_",
       "VMC": "http://example.org/unknown/VMC/",
       "IAO": "http://purl.obolibrary.org/obo/IAO_",
+      "IntAct": "http://example.org/unknown/IntAct/",
       "PR": "http://purl.obolibrary.org/obo/PR_",
       "MIR": "http://identifiers.org/mir/",
+      "RNAcentral": "http://example.org/unknown/RNAcentral/",
       "BFO": "http://purl.obolibrary.org/obo/BFO_",
       "HP": "http://purl.obolibrary.org/obo/HP_",
       "PW": "http://purl.obolibrary.org/obo/PW_",
       "UPHENO": "http://purl.obolibrary.org/obo/UPHENO_",
+      "HANCESTRO": "http://example.org/unknown/HANCESTRO/",
       "UniProtKB": "http://identifiers.org/uniprot/",
       "ClinVar": "http://www.ncbi.nlm.nih.gov/clinvar/",
+      "CIViC": "http://example.org/unknown/CIViC/",
       "OGMS": "http://purl.obolibrary.org/obo/OGMS_",
       "RO": "http://purl.obolibrary.org/obo/RO_",
       "actively_involved_in": {
@@ -517,7 +522,7 @@
       },
       "prevents": {
          "@type": "@id",
-         "@id": "RO:0002559"
+         "@id": "RO:0002599"
       },
       "produces": {
          "@type": "@id",

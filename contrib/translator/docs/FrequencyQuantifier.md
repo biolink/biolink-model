@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/FrequencyQuantifier](http://bioentity.io/vocab/FrequencyQuantifier)
+URI: [http://w3id.org/biolink/vocab/FrequencyQuantifier](http://w3id.org/biolink/vocab/FrequencyQuantifier)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[VariantToPopulationAssociation]uses%20-.->\[FrequencyQuantifier|has_count:integer%20%3F;has_total:integer%20%3F;has_quotient:double%20%3F;has_percentage:double%20%3F],%20\[RelationshipQuantifier]^-\[FrequencyQuantifier])
 ## Mappings

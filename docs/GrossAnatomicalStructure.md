@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/GrossAnatomicalStructure](http://bioentity.io/vocab/GrossAnatomicalStructure)
+URI: [http://w3id.org/biolink/vocab/GrossAnatomicalStructure](http://w3id.org/biolink/vocab/GrossAnatomicalStructure)
 
 ![img](images/GrossAnatomicalStructure.png)
 ## Mappings

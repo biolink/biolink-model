@@ -3,7 +3,7 @@
 
 An IRI for the node. This is determined by the id using expansion rules.
 
-URI: [http://bioentity.io/vocab/iri](slot_uri)
+URI: [http://w3id.org/biolink/vocab/iri](slot_uri)
 ## Mappings
 
 ## Domain and Range

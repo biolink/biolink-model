@@ -3,7 +3,7 @@
 
 any grouping of multiple genes or gene products related by common descent
 
-URI: [http://bioentity.io/vocab/GeneFamily](http://bioentity.io/vocab/GeneFamily)
+URI: [http://w3id.org/biolink/vocab/GeneFamily](http://w3id.org/biolink/vocab/GeneFamily)
 
 ![img](images/GeneFamily.png)
 ## Mappings

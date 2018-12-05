@@ -3,7 +3,7 @@
 
 A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
 
-URI: [http://bioentity.io/vocab/Treatment](http://bioentity.io/vocab/Treatment)
+URI: [http://w3id.org/biolink/vocab/Treatment](http://w3id.org/biolink/vocab/Treatment)
 
 ![img](images/Treatment.png)
 ## Mappings

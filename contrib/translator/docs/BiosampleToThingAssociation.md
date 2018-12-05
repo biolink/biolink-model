@@ -3,7 +3,7 @@
 
 An association between a biosample and something
 
-URI: [http://bioentity.io/vocab/BiosampleToThingAssociation](http://bioentity.io/vocab/BiosampleToThingAssociation)
+URI: [http://w3id.org/biolink/vocab/BiosampleToThingAssociation](http://w3id.org/biolink/vocab/BiosampleToThingAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiosampleToThingAssociation|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F;negated(i):boolean%20%3F;object(i):string;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[BiosampleToThingAssociation]-%20publications(i)%20*>\[Publication],%20\[BiosampleToThingAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[BiosampleToThingAssociation]-%20relation(i)>\[RelationshipType],%20\[BiosampleToThingAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[BiosampleToThingAssociation]-%20related%20to(i)%20%3F>\[NamedThing],%20\[BiosampleToThingAssociation]-%20subject>\[Biosample],%20\[BiosampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[BiosampleToThingAssociation],%20\[Association]^-\[BiosampleToThingAssociation])
 ## Mappings

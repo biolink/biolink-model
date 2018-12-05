@@ -3,7 +3,7 @@
 
 disease
 
-URI: [http://bioentity.io/vocab/entity_to_disease_association_object](slot_uri)
+URI: [http://w3id.org/biolink/vocab/entity_to_disease_association_object](slot_uri)
 ## Mappings
 
  * [rdf:object](http://purl.obolibrary.org/obo/rdf_object)

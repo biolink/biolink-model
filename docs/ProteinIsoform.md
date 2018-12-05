@@ -3,7 +3,7 @@
 
 Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
 
-URI: [http://bioentity.io/vocab/ProteinIsoform](http://bioentity.io/vocab/ProteinIsoform)
+URI: [http://w3id.org/biolink/vocab/ProteinIsoform](http://w3id.org/biolink/vocab/ProteinIsoform)
 
 ![img](images/ProteinIsoform.png)
 ## Mappings

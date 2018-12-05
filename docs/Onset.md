@@ -3,7 +3,7 @@
 
 The age group in which manifestations appear
 
-URI: [http://bioentity.io/vocab/Onset](http://bioentity.io/vocab/Onset)
+URI: [http://w3id.org/biolink/vocab/Onset](http://w3id.org/biolink/vocab/Onset)
 
 ![img](images/Onset.png)
 ## Mappings

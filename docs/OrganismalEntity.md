@@ -3,7 +3,7 @@
 
 A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
 
-URI: [http://bioentity.io/vocab/OrganismalEntity](http://bioentity.io/vocab/OrganismalEntity)
+URI: [http://w3id.org/biolink/vocab/OrganismalEntity](http://w3id.org/biolink/vocab/OrganismalEntity)
 
 ![img](images/OrganismalEntity.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/Zygosity](http://bioentity.io/vocab/Zygosity)
+URI: [http://w3id.org/biolink/vocab/Zygosity](http://w3id.org/biolink/vocab/Zygosity)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Zygosity|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[Zygosity]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Genotype]-%20has%20zygosity(i)%20%3F>\[Zygosity],%20\[Attribute]^-\[Zygosity])
 ## Mappings

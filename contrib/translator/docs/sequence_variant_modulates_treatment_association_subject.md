@@ -3,7 +3,7 @@
 
 variant that modulates the treatment of some disease
 
-URI: [http://bioentity.io/vocab/sequence_variant_modulates_treatment_association_subject](slot_uri)
+URI: [http://w3id.org/biolink/vocab/sequence_variant_modulates_treatment_association_subject](slot_uri)
 ## Mappings
 
  * [rdf:subject](http://purl.obolibrary.org/obo/rdf_subject)

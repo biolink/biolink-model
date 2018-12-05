@@ -3,7 +3,7 @@
 
 A typed association between two entities, supported by evidence
 
-URI: [http://bioentity.io/vocab/Association](http://bioentity.io/vocab/Association)
+URI: [http://w3id.org/biolink/vocab/Association](http://w3id.org/biolink/vocab/Association)
 
 ![img](images/Association.png)
 ## Mappings

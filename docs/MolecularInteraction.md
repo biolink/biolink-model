@@ -3,7 +3,7 @@
 
 An interaction at the molecular level between two physical entities
 
-URI: [http://bioentity.io/vocab/MolecularInteraction](http://bioentity.io/vocab/MolecularInteraction)
+URI: [http://w3id.org/biolink/vocab/MolecularInteraction](http://w3id.org/biolink/vocab/MolecularInteraction)
 
 ![img](images/MolecularInteraction.png)
 ## Mappings

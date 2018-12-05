@@ -3,7 +3,7 @@
 
 a long-form human readable name for a thing
 
-URI: [http://bioentity.io/vocab/full_name](slot_uri)
+URI: [http://w3id.org/biolink/vocab/full_name](slot_uri)
 ## Mappings
 
 ## Domain and Range

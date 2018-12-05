@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/BiologicalSex](http://bioentity.io/vocab/BiologicalSex)
+URI: [http://w3id.org/biolink/vocab/BiologicalSex](http://w3id.org/biolink/vocab/BiologicalSex)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalSex|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[BiologicalSex]-%20related%20to(i)%20%3F>\[NamedThing],%20\[EntityToPhenotypicFeatureAssociation]-%20sex%20qualifier(i)%20%3F>\[BiologicalSex],%20\[BiologicalSex]^-\[PhenotypicSex],%20\[BiologicalSex]^-\[GenotypicSex],%20\[Attribute]^-\[BiologicalSex])
 ## Mappings

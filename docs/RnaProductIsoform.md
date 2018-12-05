@@ -3,7 +3,7 @@
 
 Represents a protein that is a specific isoform of the canonical or reference RNA
 
-URI: [http://bioentity.io/vocab/RNAProductIsoform](http://bioentity.io/vocab/RNAProductIsoform)
+URI: [http://w3id.org/biolink/vocab/RNAProductIsoform](http://w3id.org/biolink/vocab/RNAProductIsoform)
 
 ![img](images/RNAProductIsoform.png)
 ## Mappings

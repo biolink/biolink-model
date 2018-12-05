@@ -3,7 +3,7 @@
 
 State information and other details
 
-URI: [http://bioentity.io/vocab/flags](slot_uri)
+URI: [http://w3id.org/biolink/vocab/flags](slot_uri)
 ## Mappings
 
 ## Domain and Range

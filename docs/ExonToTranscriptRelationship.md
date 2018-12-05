@@ -3,7 +3,7 @@
 
 A transcript is formed from multiple exons
 
-URI: [http://bioentity.io/vocab/ExonToTranscriptRelationship](http://bioentity.io/vocab/ExonToTranscriptRelationship)
+URI: [http://w3id.org/biolink/vocab/ExonToTranscriptRelationship](http://w3id.org/biolink/vocab/ExonToTranscriptRelationship)
 
 ![img](images/ExonToTranscriptRelationship.png)
 ## Mappings

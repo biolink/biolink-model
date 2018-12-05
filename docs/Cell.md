@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/Cell](http://bioentity.io/vocab/Cell)
+URI: [http://w3id.org/biolink/vocab/Cell](http://w3id.org/biolink/vocab/Cell)
 
 ![img](images/Cell.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 The label for the taxon class or ancestor class for the object
 
-URI: [http://bioentity.io/vocab/object_taxon_closure_label](slot_uri)
+URI: [http://w3id.org/biolink/vocab/object_taxon_closure_label](slot_uri)
 ## Mappings
 
 ## Domain and Range

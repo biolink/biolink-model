@@ -3,7 +3,7 @@
 
 any slot that relates an association to another entity
 
-URI: [http://bioentity.io/vocab/association_slot](slot_uri)
+URI: [http://w3id.org/biolink/vocab/association_slot](slot_uri)
 ## Mappings
 
 ## Domain and Range

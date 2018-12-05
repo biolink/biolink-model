@@ -3,7 +3,7 @@
 
 holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest
 
-URI: [http://bioentity.io/vocab/affects_degradation_of](slot_uri)
+URI: [http://w3id.org/biolink/vocab/affects_degradation_of](slot_uri)
 ## Mappings
 
  * [SEMMEDDB:AFFECTS](http://purl.obolibrary.org/obo/SEMMEDDB_AFFECTS)

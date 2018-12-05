@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation](http://bioentity.io/vocab/AnatomicalEntityToAnatomicalEntityAssociation)
+URI: [http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation](http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation)
 
 ![img](images/AnatomicalEntityToAnatomicalEntityAssociation.png)
 ## Mappings

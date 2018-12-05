@@ -3,7 +3,7 @@
 
 A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
 
-URI: [http://bioentity.io/vocab/Protein](http://bioentity.io/vocab/Protein)
+URI: [http://w3id.org/biolink/vocab/Protein](http://w3id.org/biolink/vocab/Protein)
 
 ![img](images/Protein.png)
 ## Mappings

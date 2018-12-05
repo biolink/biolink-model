@@ -3,7 +3,7 @@
 
 a piece of information that typically describes some piece of biology or is used as support.
 
-URI: [http://bioentity.io/vocab/InformationContentEntity](http://bioentity.io/vocab/InformationContentEntity)
+URI: [http://w3id.org/biolink/vocab/InformationContentEntity](http://w3id.org/biolink/vocab/InformationContentEntity)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[InformationContentEntity|title:label_type%20%3F;id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;uri(i):uri%20%3F;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[InformationContentEntity]^-\[Publication],%20\[InformationContentEntity]^-\[NamedGraph],%20\[InformationContentEntity]^-\[EvidenceType],%20\[InformationContentEntity]^-\[ConfidenceLevel],%20\[InformationContentEntity]^-\[Association],%20\[NamedThing]^-\[InformationContentEntity])
 ## Mappings

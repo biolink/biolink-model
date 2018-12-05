@@ -1,6 +1,6 @@
-@prefix : <http://bioentity.io/vocab/> .
+@prefix : <http://w3id.org/biolink/vocab/> .
 @prefix OIO: <http://www.geneontology.org/formats/oboInOwl#> .
-@prefix biolink: <http://bioentity.io/vocab/> .
+@prefix biolink: <http://w3id.org/biolink/vocab/> .
 @prefix meta: <http://bioentity.io/meta/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -19,7 +19,7 @@
     biolink:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     biolink:metamodel_version "0.3.1" ;
     biolink:prefixes ( [ biolink:local_name "biolink" ;
-                biolink:prefix_uri "http://bioentity.io/vocab/" ] [ biolink:local_name "meta" ;
+                biolink:prefix_uri "http://w3id.org/biolink/vocab/" ] [ biolink:local_name "meta" ;
                 biolink:prefix_uri "http://bioentity.io/meta/" ] [ biolink:local_name "skos" ;
                 biolink:prefix_uri "http://www.w3.org/2004/02/skos/core#" ] [ biolink:local_name "owl" ;
                 biolink:prefix_uri "http://www.w3.org/2002/07/owl#" ] ) ;

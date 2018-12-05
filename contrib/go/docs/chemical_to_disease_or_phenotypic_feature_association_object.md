@@ -3,7 +3,7 @@
 
 the disease or phenotype that is affected by the chemical
 
-URI: [http://bioentity.io/vocab/chemical_to_disease_or_phenotypic_feature_association_object](slot_uri)
+URI: [http://w3id.org/biolink/vocab/chemical_to_disease_or_phenotypic_feature_association_object](slot_uri)
 ## Mappings
 
  * [rdf:object](http://purl.obolibrary.org/obo/rdf_object)

@@ -3,7 +3,7 @@
 
 A graph-based representation of how a collection of gene products operate together to achieve a biological objective. A GO-CAM model is a specialization of a named graph containing instances of GO molecular functions, entities, processes, cellular components etc, connected via causal relationships.
 
-URI: [http://bioentity.io/vocab/CausalActivityModel](http://bioentity.io/vocab/CausalActivityModel)
+URI: [http://w3id.org/biolink/vocab/CausalActivityModel](http://w3id.org/biolink/vocab/CausalActivityModel)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[CausalActivityModel|title:label_type%20%3F;id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[NamedGraph]^-\[CausalActivityModel])
 ## Mappings

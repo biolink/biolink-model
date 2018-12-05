@@ -3,7 +3,7 @@
 
 An association between a variant and a population, where the variant has particular frequency in the population
 
-URI: [http://bioentity.io/vocab/VariantToPopulationAssociation](http://bioentity.io/vocab/VariantToPopulationAssociation)
+URI: [http://w3id.org/biolink/vocab/VariantToPopulationAssociation](http://w3id.org/biolink/vocab/VariantToPopulationAssociation)
 
 ![img](images/VariantToPopulationAssociation.png)
 ## Mappings

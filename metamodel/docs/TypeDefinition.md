@@ -3,7 +3,7 @@
 
 A type definition
 
-URI: [http://bioentity.io/vocab/TypeDefinition](http://bioentity.io/vocab/TypeDefinition)
+URI: [http://w3id.org/biolink/vocab/TypeDefinition](http://w3id.org/biolink/vocab/TypeDefinition)
 
 ![img](images/TypeDefinition.png)
 ## Mappings

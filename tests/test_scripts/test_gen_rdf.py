@@ -2,6 +2,8 @@ import os
 import unittest
 
 # This has to occur post ClickTestCase
+from urllib.parse import urljoin
+
 import click
 
 from metamodel.generators.jsonldgen import meta_context
@@ -11,7 +13,7 @@ from tests.test_scripts.clicktestcase import ClickTestCase
 update_test_files = False
 
 cwd = os.path.dirname(__file__)
-meta_context = os.path.join(cwd, 'output', 'gencontext', 'meta.jsonld')
+meta_context = urljoin('file:', os.path.join(cwd, 'output', 'gencontext', 'meta.jsonld'))
 
 
 class GenRDFTestCase(ClickTestCase):

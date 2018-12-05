@@ -3,7 +3,7 @@
 
 A property or characteristic of an entity
 
-URI: [http://bioentity.io/vocab/Attribute](http://bioentity.io/vocab/Attribute)
+URI: [http://w3id.org/biolink/vocab/Attribute](http://w3id.org/biolink/vocab/Attribute)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[Attribute]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Attribute]uses%20-.->\[OntologyClass],%20\[Attribute]^-\[Zygosity],%20\[Attribute]^-\[SeverityValue],%20\[Attribute]^-\[Onset],%20\[Attribute]^-\[FrequencyValue],%20\[Attribute]^-\[ClinicalModifier],%20\[Attribute]^-\[BiologicalSex])
 ## Mappings

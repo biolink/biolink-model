@@ -3,7 +3,7 @@
 
 label for taxon closure slot
 
-URI: [http://bioentity.io/vocab/taxon_closure_label_slot](slot_uri)
+URI: [http://w3id.org/biolink/vocab/taxon_closure_label_slot](slot_uri)
 ## Mappings
 
 ## Domain and Range

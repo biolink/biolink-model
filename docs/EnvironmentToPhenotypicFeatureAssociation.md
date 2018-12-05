@@ -3,7 +3,7 @@
 
 Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
 
-URI: [http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation](http://bioentity.io/vocab/EnvironmentToPhenotypicFeatureAssociation)
+URI: [http://w3id.org/biolink/vocab/EnvironmentToPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/EnvironmentToPhenotypicFeatureAssociation)
 
 ![img](images/EnvironmentToPhenotypicFeatureAssociation.png)
 ## Mappings

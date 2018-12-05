@@ -3,7 +3,7 @@
 
 interaction relationship type
 
-URI: [http://bioentity.io/vocab/molecular_interaction_relation](slot_uri)
+URI: [http://w3id.org/biolink/vocab/molecular_interaction_relation](slot_uri)
 ## Mappings
 
  * [rdf:predicate](http://purl.obolibrary.org/obo/rdf_predicate)

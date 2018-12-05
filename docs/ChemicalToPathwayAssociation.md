@@ -3,7 +3,7 @@
 
 An interaction between a chemical entity and a biological process or pathway
 
-URI: [http://bioentity.io/vocab/ChemicalToPathwayAssociation](http://bioentity.io/vocab/ChemicalToPathwayAssociation)
+URI: [http://w3id.org/biolink/vocab/ChemicalToPathwayAssociation](http://w3id.org/biolink/vocab/ChemicalToPathwayAssociation)
 
 ![img](images/ChemicalToPathwayAssociation.png)
 ## Mappings

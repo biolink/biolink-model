@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/CellLine](http://bioentity.io/vocab/CellLine)
+URI: [http://w3id.org/biolink/vocab/CellLine](http://w3id.org/biolink/vocab/CellLine)
 
 ![img](images/CellLine.png)
 ## Mappings

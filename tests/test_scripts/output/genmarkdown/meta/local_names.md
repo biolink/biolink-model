@@ -3,7 +3,7 @@
 
 map from local identifier to slot
 
-URI: [http://bioentity.io/vocab/local_names](slot_uri)
+URI: [http://w3id.org/biolink/vocab/local_names](slot_uri)
 ## Mappings
 
 ## Domain and Range

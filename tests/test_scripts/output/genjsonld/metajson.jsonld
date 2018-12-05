@@ -17,7 +17,7 @@
   "prefixes": [
     {
       "local_name": "biolink",
-      "prefix_uri": "http://bioentity.io/vocab/"
+      "prefix_uri": "http://w3id.org/biolink/vocab/"
     },
     {
       "local_name": "meta",
@@ -833,14 +833,14 @@
     }
   ],
   "metamodel_version": "0.3.1",
-  "source_file": "/Users/hsolbri1/git/issue162/biolink-model/meta.yaml",
-  "source_file_size": 19095,
-  "source_file_date": "Mon Nov  5 12:39:03 2018",
-  "generation_date": "2018-11-06 09:45",
+  "source_file": "meta.yaml",
+  "source_file_size": 19099,
+  "source_file_date": "Wed Dec  5 10:14:53 2018",
+  "generation_date": "2018-12-05 10:33",
   "@context": [
-    "file:///Users/hsolbri1/git/issue162/biolink-model/tests/test_scripts/output/genjsonld/metacontext.jsonld",
+    "metacontext.jsonld",
     {
-      "@base": "http://bioentity.io/vocab/"
+      "@base": "http://w3id.org/biolink/vocab/"
     }
   ],
   "@id": "https://biolink.github.io/metamodel/ontology/meta.ttl"

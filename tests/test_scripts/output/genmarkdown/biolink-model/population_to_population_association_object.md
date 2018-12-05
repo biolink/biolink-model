@@ -3,7 +3,7 @@
 
 the population that form the object of the association
 
-URI: [http://bioentity.io/vocab/population_to_population_association_object](slot_uri)
+URI: [http://w3id.org/biolink/vocab/population_to_population_association_object](slot_uri)
 ## Mappings
 
  * [rdf:object](http://purl.obolibrary.org/obo/rdf_object)

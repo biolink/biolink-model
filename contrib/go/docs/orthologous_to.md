@@ -3,7 +3,7 @@
 
 a homology relationship between entities (typically genes) that diverged after a speciation event.
 
-URI: [http://bioentity.io/vocab/orthologous_to](slot_uri)
+URI: [http://w3id.org/biolink/vocab/orthologous_to](slot_uri)
 ## Mappings
 
  * [RO:HOM0000017](http://purl.obolibrary.org/obo/RO_HOM0000017)

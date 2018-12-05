@@ -3,7 +3,7 @@
 
 A gene, gene product, small molecule or macromolecule (including protein complex)
 
-URI: [http://bioentity.io/vocab/MolecularEntity](http://bioentity.io/vocab/MolecularEntity)
+URI: [http://w3id.org/biolink/vocab/MolecularEntity](http://w3id.org/biolink/vocab/MolecularEntity)
 
 ![img](images/MolecularEntity.png)
 ## Mappings

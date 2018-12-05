@@ -3,7 +3,7 @@
 
 an ontology class that describes a functional aspect of a gene, gene prodoct or complex
 
-URI: [http://bioentity.io/vocab/GeneOntologyClass](http://bioentity.io/vocab/GeneOntologyClass)
+URI: [http://w3id.org/biolink/vocab/GeneOntologyClass](http://w3id.org/biolink/vocab/GeneOntologyClass)
 
 ![img](images/GeneOntologyClass.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 ancestor of type of evidence object
 
-URI: [http://bioentity.io/vocab/evidence_object_closure](slot_uri)
+URI: [http://w3id.org/biolink/vocab/evidence_object_closure](slot_uri)
 ## Mappings
 
 ## Domain and Range

@@ -3,7 +3,7 @@
 
 An interaction at the molecular level between two physical entities
 
-URI: [http://bioentity.io/vocab/PairwiseInteractionAssociation](http://bioentity.io/vocab/PairwiseInteractionAssociation)
+URI: [http://w3id.org/biolink/vocab/PairwiseInteractionAssociation](http://w3id.org/biolink/vocab/PairwiseInteractionAssociation)
 
 ![img](images/PairwiseInteractionAssociation.png)
 ## Mappings

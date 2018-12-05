@@ -3,7 +3,7 @@
 
 a description
 
-URI: [http://bioentity.io/vocab/description](slot_uri)
+URI: [http://w3id.org/biolink/vocab/description](slot_uri)
 ## Mappings
 
  * [skos:definition](http://purl.obolibrary.org/obo/skos_definition)

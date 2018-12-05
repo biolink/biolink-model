@@ -3,7 +3,7 @@
 
 text of an alternate description
 
-URI: [http://bioentity.io/vocab/alt_description_text](slot_uri)
+URI: [http://w3id.org/biolink/vocab/alt_description_text](slot_uri)
 ## Mappings
 
 ## Domain and Range

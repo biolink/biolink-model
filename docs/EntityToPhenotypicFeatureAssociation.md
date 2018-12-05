@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation](http://bioentity.io/vocab/EntityToPhenotypicFeatureAssociation)
+URI: [http://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation)
 
 ![img](images/EntityToPhenotypicFeatureAssociation.png)
 ## Mappings

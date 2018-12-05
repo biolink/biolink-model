@@ -3,7 +3,7 @@
 
 A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
 
-URI: [http://bioentity.io/vocab/MacromolecularMachineToMolecularActivityAssociation](http://bioentity.io/vocab/MacromolecularMachineToMolecularActivityAssociation)
+URI: [http://w3id.org/biolink/vocab/MacromolecularMachineToMolecularActivityAssociation](http://w3id.org/biolink/vocab/MacromolecularMachineToMolecularActivityAssociation)
 
 ![img](images/MacromolecularMachineToMolecularActivityAssociation.png)
 ## Mappings

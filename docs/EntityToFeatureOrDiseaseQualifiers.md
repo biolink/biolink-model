@@ -3,7 +3,7 @@
 
 Qualifiers for entity to disease or phenotype associations
 
-URI: [http://bioentity.io/vocab/EntityToFeatureOrDiseaseQualifiers](http://bioentity.io/vocab/EntityToFeatureOrDiseaseQualifiers)
+URI: [http://w3id.org/biolink/vocab/EntityToFeatureOrDiseaseQualifiers](http://w3id.org/biolink/vocab/EntityToFeatureOrDiseaseQualifiers)
 
 ![img](images/EntityToFeatureOrDiseaseQualifiers.png)
 ## Mappings

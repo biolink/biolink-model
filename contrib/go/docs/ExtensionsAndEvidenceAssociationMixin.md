@@ -3,7 +3,7 @@
 
 An injected mixing that adds additional fields to association objects. This is a mixture of (a) closures for denormalization (b) evidence fields specific to the GO model.
 
-URI: [http://bioentity.io/vocab/ExtensionsAndEvidenceAssociationMixin](http://bioentity.io/vocab/ExtensionsAndEvidenceAssociationMixin)
+URI: [http://w3id.org/biolink/vocab/ExtensionsAndEvidenceAssociationMixin](http://w3id.org/biolink/vocab/ExtensionsAndEvidenceAssociationMixin)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ExtensionsAndEvidenceAssociationMixin|has_evidence:evidence_instance%20%3F;subject:string;subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[ExtensionsAndEvidenceAssociationMixin]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[ExtensionsAndEvidenceAssociationMixin]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[ExtensionsAndEvidenceAssociationMixin]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[ExtensionsAndEvidenceAssociationMixin]-%20has%20evidence%20type%20%3F>\[EvidenceType],%20\[ExtensionsAndEvidenceAssociationMixin]-%20object%20extensions%20*>\[PropertyValuePair],%20\[ExtensionsAndEvidenceAssociationMixin]uses%20-.->\[TaxonClosureMixin],%20\[Association]uses%20-.->\[ExtensionsAndEvidenceAssociationMixin])
 ## Mappings

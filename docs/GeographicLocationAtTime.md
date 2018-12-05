@@ -3,7 +3,7 @@
 
 a location that can be described in lat/long coordinates, for a particular time
 
-URI: [http://bioentity.io/vocab/GeographicLocationAtTime](http://bioentity.io/vocab/GeographicLocationAtTime)
+URI: [http://w3id.org/biolink/vocab/GeographicLocationAtTime](http://w3id.org/biolink/vocab/GeographicLocationAtTime)
 
 ![img](images/GeographicLocationAtTime.png)
 ## Mappings

@@ -3,7 +3,7 @@
 
 Level of confidence in a statement
 
-URI: [http://bioentity.io/vocab/ConfidenceLevel](http://bioentity.io/vocab/ConfidenceLevel)
+URI: [http://w3id.org/biolink/vocab/ConfidenceLevel](http://w3id.org/biolink/vocab/ConfidenceLevel)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ConfidenceLevel|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):label_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;title(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Association]-%20has%20confidence%20level(i)%20%3F>\[ConfidenceLevel],%20\[InformationContentEntity]^-\[ConfidenceLevel])
 ## Mappings

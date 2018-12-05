@@ -3,7 +3,7 @@
 
 A URI associated with a given prefix
 
-URI: [http://bioentity.io/vocab/prefix_uri](slot_uri)
+URI: [http://w3id.org/biolink/vocab/prefix_uri](slot_uri)
 ## Mappings
 
 ## Domain and Range

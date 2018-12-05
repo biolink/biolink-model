@@ -3,7 +3,7 @@
 
 
 
-URI: [http://bioentity.io/vocab/enabled_by](slot_uri)
+URI: [http://w3id.org/biolink/vocab/enabled_by](slot_uri)
 ## Mappings
 
 ## Domain and Range
