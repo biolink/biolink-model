@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-11-06 08:39
+# Generation date: 2018-12-08 05:13
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -88,6 +88,10 @@ class BiologicalEntityId(IdentifierType):
 
 
 class OntologyClassId(IdentifierType):
+    pass
+
+
+class RelationshipTypeId(IdentifierType):
     pass
 
 
@@ -560,14 +564,6 @@ class GrossAnatomicalStructureId(IdentifierType):
 
 
 @dataclass
-class RelationshipType(YAMLRoot):
-    """
-    An OWL property used as an edge label
-    """
-    pass
-
-
-@dataclass
 class Attribute(YAMLRoot):
     """
     A property or characteristic of an entity
@@ -690,6 +686,21 @@ class OntologyClass(NamedThing):
             self.id = OntologyClassId(self.id)
         if self.subclass_of and not isinstance(self.subclass_of, OntologyClassId):
             self.subclass_of = OntologyClassId(self.subclass_of)
+
+
+@dataclass
+class RelationshipType(OntologyClass):
+    """
+    An OWL property used as an edge label
+    """
+    id: RelationshipTypeId = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, RelationshipTypeId):
+            self.id = RelationshipTypeId(self.id)
 
 
 @dataclass
@@ -1679,7 +1690,7 @@ class Association(InformationContentEntity):
     association_type: Optional[OntologyClassId] = None
     subject: str = None
     negated: bool = False
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
     object: str = None
     qualifiers: List[OntologyClassId] = empty_list()
     publications: List[PublicationId] = empty_list()
@@ -1700,8 +1711,8 @@ class Association(InformationContentEntity):
             self.subject = str(self.subject)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
         if self.object is None:
             raise ValueError(f"object must be supplied")
         if not isinstance(self.object, str):
@@ -1720,7 +1731,7 @@ class GenotypeToGenotypePartAssociation(Association):
     Any association between one genotype and a genotypic entity that is a sub-component of it
     """
     id: GenotypeToGenotypePartAssociationId = None
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
     subject: GenotypeId = None
     object: GenotypeId = None
 
@@ -1732,8 +1743,8 @@ class GenotypeToGenotypePartAssociation(Association):
             self.id = GenotypeToGenotypePartAssociationId(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GenotypeId):
@@ -1751,7 +1762,7 @@ class GenotypeToGeneAssociation(Association):
     one. There is no assumption of cardinality
     """
     id: GenotypeToGeneAssociationId = None
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
     subject: GenotypeId = None
     object: GeneId = None
 
@@ -1763,8 +1774,8 @@ class GenotypeToGeneAssociation(Association):
             self.id = GenotypeToGeneAssociationId(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GenotypeId):
@@ -1781,7 +1792,7 @@ class GenotypeToVariantAssociation(Association):
     Any association between a genotype and a sequence variant.
     """
     id: GenotypeToVariantAssociationId = None
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
     subject: GenotypeId = None
     object: SequenceVariant = None
 
@@ -1793,8 +1804,8 @@ class GenotypeToVariantAssociation(Association):
             self.id = GenotypeToVariantAssociationId(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GenotypeId):
@@ -1834,7 +1845,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     differ) or paralogy (in which case the species may be the same)
     """
     id: GeneToGeneHomologyAssociationId = None
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -1844,8 +1855,8 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
             self.id = GeneToGeneHomologyAssociationId(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
 
 
 @dataclass
@@ -1855,7 +1866,7 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
     """
     id: PairwiseGeneToGeneInteractionId = None
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -1865,8 +1876,8 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
             self.id = PairwiseGeneToGeneInteractionId(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
 
 
 @dataclass
@@ -2117,7 +2128,7 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     either in isolation or through environment
     """
     id: GenotypeToPhenotypicFeatureAssociationId = None
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
     subject: GenotypeId = None
 
     def _fix_elements(self):
@@ -2128,8 +2139,8 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
             self.id = GenotypeToPhenotypicFeatureAssociationId(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GenotypeId):
@@ -2272,7 +2283,7 @@ class PopulationToPopulationAssociation(Association):
     id: PopulationToPopulationAssociationId = None
     subject: PopulationOfIndividualOrganismsId = None
     object: PopulationOfIndividualOrganismsId = None
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2290,8 +2301,8 @@ class PopulationToPopulationAssociation(Association):
             self.object = PopulationOfIndividualOrganismsId(self.object)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
 
 
 @dataclass
@@ -2315,7 +2326,7 @@ class VariantToPhenotypicFeatureAssociation(Association):
 class VariantToDiseaseAssociation(Association):
     id: VariantToDiseaseAssociationId = None
     subject: str = None
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
     object: str = None
 
     def _fix_elements(self):
@@ -2330,8 +2341,8 @@ class VariantToDiseaseAssociation(Association):
             self.subject = str(self.subject)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
         if self.object is None:
             raise ValueError(f"object must be supplied")
         if not isinstance(self.object, str):
@@ -2398,7 +2409,7 @@ class GeneToExpressionSiteAssociation(Association):
     quantifier_qualifier: Optional[OntologyClassId] = None
     subject: GeneOrGeneProductId = None
     object: AnatomicalEntityId = None
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2420,8 +2431,8 @@ class GeneToExpressionSiteAssociation(Association):
             self.object = AnatomicalEntityId(self.object)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
 
 
 @dataclass
@@ -2648,7 +2659,7 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     id: GeneToGeneProductRelationshipId = None
     subject: GeneId = None
     object: GeneProductId = None
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2666,8 +2677,8 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
             self.object = GeneProductId(self.object)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
 
 
 @dataclass
@@ -2701,7 +2712,7 @@ class GeneRegulatoryRelationship(Association):
     A regulatory relationship between two genes
     """
     id: GeneRegulatoryRelationshipId = None
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
     subject: GeneOrGeneProductId = None
     object: GeneOrGeneProductId = None
 
@@ -2713,8 +2724,8 @@ class GeneRegulatoryRelationship(Association):
             self.id = GeneRegulatoryRelationshipId(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GeneOrGeneProductId):
@@ -2757,7 +2768,7 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     id: AnatomicalEntityToAnatomicalEntityPartOfAssociationId = None
     subject: AnatomicalEntityId = None
     object: AnatomicalEntityId = None
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2775,8 +2786,8 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
             self.object = AnatomicalEntityId(self.object)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
 
 
 @dataclass
@@ -2789,7 +2800,7 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     id: AnatomicalEntityToAnatomicalEntityOntogenicAssociationId = None
     subject: AnatomicalEntityId = None
     object: AnatomicalEntityId = None
-    relation: RelationshipType = None
+    relation: RelationshipTypeId = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2807,8 +2818,8 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
             self.object = AnatomicalEntityId(self.object)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipType):
-            self.relation = RelationshipType(self.relation)
+        if not isinstance(self.relation, RelationshipTypeId):
+            self.relation = RelationshipTypeId(self.relation)
 
 
 @dataclass
