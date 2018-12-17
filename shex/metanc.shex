@@ -8,7 +8,7 @@
 )
 
 <http://w3id.org/biolink/vocab/AltDescription> {
-    (  <http://w3id.org/biolink/vocab/alt_description_text> <http://www.w3.org/2001/XMLSchema#string> ? ;
+    (  <https://www.w3.org/TR/skos-reference/#definition> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://w3id.org/biolink/vocab/source> <http://www.w3.org/2001/XMLSchema#string> ?
     )
 }
@@ -20,9 +20,9 @@
           <http://w3id.org/biolink/vocab/slot_usage> @<http://w3id.org/biolink/vocab/SlotDefinition> * ;
           <http://w3id.org/biolink/vocab/apply_to> @<http://w3id.org/biolink/vocab/ClassDefinition> ? ;
           <http://w3id.org/biolink/vocab/entity> <http://www.w3.org/2001/XMLSchema#boolean> ? ;
-          <http://w3id.org/biolink/vocab/class_definition_is_a> @<http://w3id.org/biolink/vocab/ClassDefinition> ? ;
-          <http://w3id.org/biolink/vocab/class_definition_mixins> @<http://w3id.org/biolink/vocab/ClassDefinition> * ;
-          <http://w3id.org/biolink/vocab/class_definition_union_of> @<http://w3id.org/biolink/vocab/ClassDefinition> *
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> @<http://w3id.org/biolink/vocab/ClassDefinition> ? ;
+          <http://w3id.org/biolink/vocab/mixins> @<http://w3id.org/biolink/vocab/ClassDefinition> * ;
+          <http://w3id.org/biolink/vocab/union_of> @<http://w3id.org/biolink/vocab/ClassDefinition> *
        )
     }
 )
@@ -66,7 +66,7 @@
 
 <http://w3id.org/biolink/vocab/Example> {
     (  <http://w3id.org/biolink/vocab/value> <http://www.w3.org/2001/XMLSchema#string> ? ;
-       <http://w3id.org/biolink/vocab/value_description> <http://www.w3.org/2001/XMLSchema#string> ?
+       <https://www.w3.org/TR/skos-reference/#definition> <http://www.w3.org/2001/XMLSchema#string> ?
     )
 }
 
@@ -87,7 +87,7 @@
           <http://w3id.org/biolink/vocab/default_type> @<http://w3id.org/biolink/vocab/TypeDefinition> ? ;
           <http://w3id.org/biolink/vocab/default_curi_maps> <http://www.w3.org/2001/XMLSchema#string> * ;
           <http://w3id.org/biolink/vocab/types> @<http://w3id.org/biolink/vocab/TypeDefinition> * ;
-          <http://w3id.org/biolink/vocab/slot_definitions> @<http://w3id.org/biolink/vocab/SlotDefinition> * ;
+          <http://w3id.org/biolink/vocab/slots> @<http://w3id.org/biolink/vocab/SlotDefinition> * ;
           <http://w3id.org/biolink/vocab/classes> @<http://w3id.org/biolink/vocab/ClassDefinition> * ;
           <http://w3id.org/biolink/vocab/metamodel_version> <http://www.w3.org/2001/XMLSchema#string> ? ;
           <http://w3id.org/biolink/vocab/source_file> <http://www.w3.org/2001/XMLSchema#string> ? ;
@@ -116,9 +116,9 @@
           <http://w3id.org/biolink/vocab/is_class_field> <http://www.w3.org/2001/XMLSchema#boolean> ? ;
           <http://w3id.org/biolink/vocab/role> <http://www.w3.org/2001/XMLSchema#string> ? ;
           <http://w3id.org/biolink/vocab/inherited> <http://www.w3.org/2001/XMLSchema#boolean> ? ;
-          <http://w3id.org/biolink/vocab/slot_definition_is_a> @<http://w3id.org/biolink/vocab/SlotDefinition> ? ;
-          <http://w3id.org/biolink/vocab/slot_definition_mixins> @<http://w3id.org/biolink/vocab/SlotDefinition> * ;
-          <http://w3id.org/biolink/vocab/slot_definition_union_of> @<http://w3id.org/biolink/vocab/SlotDefinition> *
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> @<http://w3id.org/biolink/vocab/SlotDefinition> ? ;
+          <http://w3id.org/biolink/vocab/mixins> @<http://w3id.org/biolink/vocab/SlotDefinition> * ;
+          <http://w3id.org/biolink/vocab/union_of> @<http://w3id.org/biolink/vocab/SlotDefinition> *
        )
     }
 )
