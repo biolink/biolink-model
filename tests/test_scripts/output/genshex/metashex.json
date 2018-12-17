@@ -34,7 +34,7 @@
             "expressions": [
                {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/alt_description_text",
+                  "predicate": "https://www.w3.org/TR/skos-reference/#definition",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -171,21 +171,21 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/class_definition_is_a",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                         "valueExpr": "http://w3id.org/biolink/vocab/ClassDefinition",
                         "min": 0,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/class_definition_mixins",
+                        "predicate": "http://w3id.org/biolink/vocab/mixins",
                         "valueExpr": "http://w3id.org/biolink/vocab/ClassDefinition__List",
                         "min": 0,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/class_definition_union_of",
+                        "predicate": "http://w3id.org/biolink/vocab/union_of",
                         "valueExpr": "http://w3id.org/biolink/vocab/ClassDefinition__List",
                         "min": 0,
                         "max": 1
@@ -594,7 +594,7 @@
                },
                {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/value_description",
+                  "predicate": "https://www.w3.org/TR/skos-reference/#definition",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -787,7 +787,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/slot_definitions",
+                        "predicate": "http://w3id.org/biolink/vocab/slots",
                         "valueExpr": "http://w3id.org/biolink/vocab/SlotDefinition__List",
                         "min": 0,
                         "max": 1
@@ -1014,21 +1014,21 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/slot_definition_is_a",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                         "valueExpr": "http://w3id.org/biolink/vocab/SlotDefinition",
                         "min": 0,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/slot_definition_mixins",
+                        "predicate": "http://w3id.org/biolink/vocab/mixins",
                         "valueExpr": "http://w3id.org/biolink/vocab/SlotDefinition__List",
                         "min": 0,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/slot_definition_union_of",
+                        "predicate": "http://w3id.org/biolink/vocab/union_of",
                         "valueExpr": "http://w3id.org/biolink/vocab/SlotDefinition__List",
                         "min": 0,
                         "max": 1
