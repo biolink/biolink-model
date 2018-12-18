@@ -52,10 +52,13 @@ class ShExGenerator(Generator):
     def _shapeIRI(name: ClassDefinitionName) -> IRIREF:
         return IRIREF(BIOENTITY[camelcase(name)])
 
-    def _predicate(self, name: SlotDefinitionName) -> IRIREF:
+    def _predicate(self, name: SlotDefinitionName, base_name: Optional[SlotDefinitionName]) -> IRIREF:
         slot = self.schema.slots[name]
         if slot.mappings:
             return IRIREF(cu.expand_uri(slot.mappings[0]))
+        elif base_name:
+            aliased_base_name = self.aliased_slot_name(name)
+            return self._predicate(base_name, aliased_base_name if aliased_base_name != base_name else None)
         else:
             # TODO: look at the RDF to figure out what URI's go here
             return IRIREF(BIOENTITY[underscore(name)])
@@ -101,7 +104,7 @@ class ShExGenerator(Generator):
         else:
             self.shape.expression.expressions.append(constraint)
 
-        constraint.predicate = self._predicate(slot.name)
+        constraint.predicate = self._predicate(slot.name, aliased_slot_name)
         # JSON-LD generates multi-valued entries as lists
         constraint.min = 1 if slot.primary_key or slot.required else 0
         constraint.max = 1 if not slot.multivalued or self.collections else -1

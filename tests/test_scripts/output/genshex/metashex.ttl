@@ -53,7 +53,7 @@ biolink:SchemaDefinition a shex:ShapeAnd ;
                                     shex:valueExpr biolink:TypeDefinition__List ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:slot_definitions ;
+                                    shex:predicate biolink:slots ;
                                     shex:valueExpr biolink:SlotDefinition__List ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
@@ -90,7 +90,7 @@ biolink:AltDescription a shex:Shape ;
             shex:expressions ( [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate biolink:alt_description_text ;
+                        shex:predicate <https://www.w3.org/TR/skos-reference/#definition> ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
@@ -109,7 +109,7 @@ biolink:Example a shex:Shape ;
                                 shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate biolink:value_description ;
+                        shex:predicate <https://www.w3.org/TR/skos-reference/#definition> ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] ) ] .
 
@@ -386,15 +386,15 @@ biolink:SlotDefinition a shex:ShapeAnd ;
                                             shex:datatype xsd:boolean ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:slot_definition_is_a ;
+                                    shex:predicate rdf:type ;
                                     shex:valueExpr biolink:SlotDefinition ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:slot_definition_mixins ;
+                                    shex:predicate biolink:mixins ;
                                     shex:valueExpr biolink:SlotDefinition__List ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:slot_definition_union_of ;
+                                    shex:predicate biolink:union_of ;
                                     shex:valueExpr biolink:SlotDefinition__List ] ) ] ] ) .
 
 biolink:ClassDefinition a shex:ShapeAnd ;
@@ -424,15 +424,15 @@ biolink:ClassDefinition a shex:ShapeAnd ;
                                             shex:datatype xsd:boolean ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:class_definition_is_a ;
+                                    shex:predicate rdf:type ;
                                     shex:valueExpr biolink:ClassDefinition ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:class_definition_mixins ;
+                                    shex:predicate biolink:mixins ;
                                     shex:valueExpr biolink:ClassDefinition__List ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:class_definition_union_of ;
+                                    shex:predicate biolink:union_of ;
                                     shex:valueExpr biolink:ClassDefinition__List ] ) ] ] ) .
 
 biolink:Definition a shex:ShapeAnd ;
