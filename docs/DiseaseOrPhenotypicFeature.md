@@ -24,7 +24,6 @@ URI: [http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature](http://w3id.org/
  *  class: **[DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)** *[disease or phenotypic feature association to thing association.subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)* **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
  *  class: **[Gene](Gene.md)** *[gene associated with condition](gene_associated_with_condition.md)* **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
  *  class: **[ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)** *[thing to disease or phenotypic feature association.object](thing_to_disease_or_phenotypic_feature_association_object.md)* **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
- *  class: **[Treatment](Treatment.md)** *[treatment.treats](treatment_treats.md)* **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
  *  class: **[Treatment](Treatment.md)** *[treats](treats.md)* **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
 ## Fields
 

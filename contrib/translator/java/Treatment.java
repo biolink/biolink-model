@@ -30,12 +30,12 @@ public class Treatment {
     @JsonProperty("has_exposure_parts")
     private List<String> hasExposureParts = new ArrayList<String>();
     /**
-     * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+     * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
      * (Required)
      * 
      */
     @JsonProperty("treats")
-    @JsonPropertyDescription("holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ")
+    @JsonPropertyDescription("holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat")
     private String treats;
 
     /**
@@ -59,7 +59,7 @@ public class Treatment {
     }
 
     /**
-     * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+     * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
      * (Required)
      * 
      */
@@ -69,7 +69,7 @@ public class Treatment {
     }
 
     /**
-     * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+     * holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
      * (Required)
      * 
      */

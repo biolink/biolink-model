@@ -19,6 +19,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonPropertyOrder({
     "association_slot",
     "association_type",
+    "id",
     "negated",
     "object",
     "provided_by",
@@ -43,6 +44,13 @@ public class Association {
     @JsonProperty("association_type")
     @JsonPropertyDescription("connects an association to the type of association (e.g. gene to phenotype)")
     private String associationType;
+    /**
+     * A unique identifier for an association
+     * 
+     */
+    @JsonProperty("id")
+    @JsonPropertyDescription("A unique identifier for an association")
+    private String id;
     /**
      * if set to true, then the association is negated i.e. is not true
      * 
@@ -130,6 +138,24 @@ public class Association {
     @JsonProperty("association_type")
     public void setAssociationType(String associationType) {
         this.associationType = associationType;
+    }
+
+    /**
+     * A unique identifier for an association
+     * 
+     */
+    @JsonProperty("id")
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * A unique identifier for an association
+     * 
+     */
+    @JsonProperty("id")
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**
@@ -266,12 +292,12 @@ public class Association {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("associationSlot", associationSlot).append("associationType", associationType).append("negated", negated).append("object", object).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("associationSlot", associationSlot).append("associationType", associationType).append("id", id).append("negated", negated).append("object", object).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(providedBy).append(negated).append(associationSlot).append(subject).append(associationType).append(qualifiers).append(object).append(publications).append(relation).toHashCode();
+        return new HashCodeBuilder().append(providedBy).append(negated).append(associationSlot).append(subject).append(associationType).append(qualifiers).append(id).append(object).append(publications).append(relation).toHashCode();
     }
 
     @Override
@@ -283,7 +309,7 @@ public class Association {
             return false;
         }
         Association rhs = ((Association) other);
-        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(associationSlot, rhs.associationSlot).append(subject, rhs.subject).append(associationType, rhs.associationType).append(qualifiers, rhs.qualifiers).append(object, rhs.object).append(publications, rhs.publications).append(relation, rhs.relation).isEquals();
+        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(associationSlot, rhs.associationSlot).append(subject, rhs.subject).append(associationType, rhs.associationType).append(qualifiers, rhs.qualifiers).append(id, rhs.id).append(object, rhs.object).append(publications, rhs.publications).append(relation, rhs.relation).isEquals();
     }
 
 }

@@ -18,7 +18,6 @@ URI: [http://w3id.org/biolink/vocab/treats](slot_uri)
  *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
 ## Children
 
- *  child: [treatment.treats](treatment_treats.md) *subsets*: (translator_minimal)
 ## Used in
 
  *  usage: [Treatment](Treatment.md)

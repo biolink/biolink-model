@@ -1130,7 +1130,7 @@
     },
     {
       "name": "treats",
-      "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ",
+      "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat",
       "aliases": [
         "is substance that treats"
       ],
@@ -1146,6 +1146,7 @@
       "is_a": "affects",
       "domain": "Treatment",
       "range": "DiseaseOrPhenotypicFeature",
+      "required": true,
       "inverse": "treated_by",
       "@id": "treats"
     },
@@ -1577,6 +1578,19 @@
       "range": "identifier_type",
       "identifier": true,
       "@id": "id"
+    },
+    {
+      "name": "association_id",
+      "description": "A unique identifier for an association",
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "node_property",
+      "domain": "Association",
+      "range": "identifier_type",
+      "identifier": true,
+      "alias": "id",
+      "@id": "association_id"
     },
     {
       "name": "iri",
@@ -2114,19 +2128,6 @@
       "@id": "drug"
     },
     {
-      "name": "treatment_treats",
-      "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ",
-      "in_subset": [
-        "translator_minimal"
-      ],
-      "is_a": "treats",
-      "domain": "Treatment",
-      "range": "DiseaseOrPhenotypicFeature",
-      "required": true,
-      "alias": "treats",
-      "@id": "treatment_treats"
-    },
-    {
       "name": "has_exposure_parts",
       "multivalued": true,
       "domain": "Treatment",
@@ -2281,7 +2282,7 @@
       "in_subset": [
         "translator_minimal"
       ],
-      "is_a": "id",
+      "is_a": "association_id",
       "domain": "PairwiseInteractionAssociation",
       "range": "identifier_type",
       "alias": "id",
@@ -3096,11 +3097,6 @@
   ],
   "classes": [
     {
-      "name": "RelationshipType",
-      "description": "An OWL property used as an edge label",
-      "@id": "RelationshipType"
-    },
-    {
       "name": "Attribute",
       "description": "A property or characteristic of an entity",
       "mixins": [
@@ -3235,6 +3231,12 @@
         "subclass_of"
       ],
       "@id": "OntologyClass"
+    },
+    {
+      "name": "RelationshipType",
+      "description": "An OWL property used as an edge label",
+      "is_a": "OntologyClass",
+      "@id": "RelationshipType"
     },
     {
       "name": "GeneOntologyClass",
@@ -4070,15 +4072,10 @@
       ],
       "is_a": "Environment",
       "slots": [
-        "treatment_treats",
+        "treats",
         "has_exposure_parts"
       ],
       "slot_usage": [
-        {
-          "name": "treats",
-          "range": "DiseaseOrPhenotypicFeature",
-          "required": true
-        },
         {
           "name": "has_exposure_parts",
           "multivalued": true,
@@ -4119,13 +4116,13 @@
         "rdf:Statement",
         "owl:Axiom"
       ],
-      "is_a": "InformationContentEntity",
       "slots": [
-        "association_type",
+        "association_id",
         "subject",
-        "negated",
         "relation",
         "object",
+        "negated",
+        "association_type",
         "qualifiers",
         "publications",
         "provided_by",
@@ -5891,9 +5888,9 @@
   ],
   "metamodel_version": "0.3.2",
   "source_file": "biolink-model.yaml",
-  "source_file_size": 98039,
-  "source_file_date": "Wed Dec  5 13:42:38 2018",
-  "generation_date": "2018-12-05 13:44",
+  "source_file_size": 98193,
+  "source_file_date": "Tue Dec 18 20:52:18 2018",
+  "generation_date": "2018-12-18 20:53",
   "@context": [
     "https://github.com/biolink/biolink-model/raw/master/context.jsonld",
     {

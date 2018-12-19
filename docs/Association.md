@@ -13,7 +13,6 @@ URI: [http://w3id.org/biolink/vocab/Association](http://w3id.org/biolink/vocab/A
  * [owl:Axiom](http://purl.obolibrary.org/obo/owl_Axiom)
 ## Inheritance
 
- *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
 ## Children
 
  * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
@@ -66,6 +65,10 @@ URI: [http://w3id.org/biolink/vocab/Association](http://w3id.org/biolink/vocab/A
     * Description: connects an association to the type of association (e.g. gene to phenotype)
     * range: [OntologyClass](OntologyClass.md)
     * __Local__
+ * [association.id](association_id.md) *subsets*: (translator_minimal)
+    * Description: A unique identifier for an association
+    * range: [IdentifierType](IdentifierType.md)
+    * __Local__
  * [negated](negated.md)
     * Description: if set to true, then the association is negated i.e. is not true
     * range: **boolean**
@@ -94,39 +97,3 @@ URI: [http://w3id.org/biolink/vocab/Association](http://w3id.org/biolink/vocab/A
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: **string** [required]
     * __Local__
- * [category](category.md) *subsets*: (translator_minimal)
-    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)*
-    * inherited from: [NamedThing](NamedThing.md)
- * [description](description.md) *subsets*: (translator_minimal)
-    * Description: a human-readable description of a thing
-    * range: [NarrativeText](NarrativeText.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [full name](full_name.md)
-    * Description: a long-form human readable name for a thing
-    * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [id](id.md) *subsets*: (translator_minimal)
-    * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [iri](iri.md) *subsets*: (translator_minimal)
-    * Description: An IRI for the node. This is determined by the id using expansion rules.
-    * range: [IriType](IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [name](name.md) *subsets*: (translator_minimal)
-    * Description: A human-readable name for a thing
-    * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [node property](node_property.md)
-    * Description: A grouping for any property that holds between a node and a value
-    * range: **string**
-    * inherited from: [NamedThing](NamedThing.md)
- * [related to](related_to.md)
-    * Description: A grouping for any relationship type that holds between any two things
-    * range: [NamedThing](NamedThing.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [systematic synonym](systematic_synonym.md)
-    * Description: more commonly used for gene symbols in yeast
-    * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)

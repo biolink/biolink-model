@@ -23,8 +23,8 @@ URI: [http://w3id.org/biolink/vocab/Treatment](http://w3id.org/biolink/vocab/Tre
  * [treatment.has exposure parts](has_exposure_parts.md)
     * range: [DrugExposure](DrugExposure.md)* [required]
     * __Local__
- * [treatment.treats](treatment_treats.md) *subsets*: (translator_minimal)
-    * Description: holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+ * [treats](treats.md) *subsets*: (translator_minimal)
+    * Description: holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) [required]
     * __Local__
  * [category](category.md) *subsets*: (translator_minimal)

@@ -114,6 +114,10 @@
          "description": "the part",
          "type": "string"
       },
+      "association_id": {
+         "description": "A unique identifier for an association",
+         "type": "string"
+      },
       "association_slot": {
          "description": "any slot that relates an association to another entity",
          "type": "string"
@@ -989,12 +993,8 @@
          "description": "holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition ",
          "type": "string"
       },
-      "treatment_treats": {
-         "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ",
-         "type": "string"
-      },
       "treats": {
-         "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ",
+         "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat",
          "type": "string"
       },
       "update_date": {
@@ -1156,6 +1156,12 @@
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": {
                   "$ref": "#/definitions/association_type"
+               }
+            },
+            "id": {
+               "description": "A unique identifier for an association",
+               "type": {
+                  "$ref": "#/definitions/association_id"
                }
             },
             "negated": {
@@ -2841,10 +2847,10 @@
                }
             },
             "treats": {
-               "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat ",
+               "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat",
                "required": true,
                "type": {
-                  "$ref": "#/definitions/treatment_treats"
+                  "$ref": "#/definitions/treats"
                }
             }
          },

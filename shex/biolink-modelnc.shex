@@ -45,20 +45,19 @@
     }
 )
 
-<http://w3id.org/biolink/vocab/Association>  (
-    @<http://w3id.org/biolink/vocab/InformationContentEntity> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> @<http://w3id.org/biolink/vocab/OntologyClass> ? ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.w3.org/2001/XMLSchema#string> ;
-          <http://w3id.org/biolink/vocab/negated> <http://www.w3.org/2001/XMLSchema#boolean> ? ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.w3.org/2001/XMLSchema#string> ;
-          <http://w3id.org/biolink/vocab/qualifiers> @<http://w3id.org/biolink/vocab/OntologyClass> * ;
-          <http://w3id.org/biolink/vocab/publications> @<http://w3id.org/biolink/vocab/Publication> * ;
-          <http://purl.org/pav/providedBy> @<http://w3id.org/biolink/vocab/Provider> ? ;
-          <http://w3id.org/biolink/vocab/association_slot> <http://www.w3.org/2001/XMLSchema#string> ?
-       )
-    }
-)
+<http://w3id.org/biolink/vocab/Association> {
+    (  <http://w3id.org/biolink/vocab/id> <http://www.w3.org/2001/XMLSchema#string> ? ;
+       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.w3.org/2001/XMLSchema#string> ;
+       <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
+       <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.w3.org/2001/XMLSchema#string> ;
+       <http://w3id.org/biolink/vocab/negated> <http://www.w3.org/2001/XMLSchema#boolean> ? ;
+       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> @<http://w3id.org/biolink/vocab/OntologyClass> ? ;
+       <http://w3id.org/biolink/vocab/qualifiers> @<http://w3id.org/biolink/vocab/OntologyClass> * ;
+       <http://w3id.org/biolink/vocab/publications> @<http://w3id.org/biolink/vocab/Publication> * ;
+       <http://purl.org/pav/providedBy> @<http://w3id.org/biolink/vocab/Provider> ? ;
+       <http://w3id.org/biolink/vocab/association_slot> <http://www.w3.org/2001/XMLSchema#string> ?
+    )
+}
 
 <http://w3id.org/biolink/vocab/Attribute>  (
     @<http://w3id.org/biolink/vocab/OntologyClass> AND { }
@@ -781,7 +780,9 @@
 
 <http://w3id.org/biolink/vocab/RelationshipQuantifier> { }
 
-<http://w3id.org/biolink/vocab/RelationshipType> { }
+<http://w3id.org/biolink/vocab/RelationshipType>  (
+    @<http://w3id.org/biolink/vocab/OntologyClass> AND { }
+)
 
 <http://w3id.org/biolink/vocab/RNAProduct>  (
     @<http://w3id.org/biolink/vocab/GeneProduct> AND { }

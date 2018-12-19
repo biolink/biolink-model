@@ -16,15 +16,15 @@ biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:AnatomicalEntity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:AnatomicalEntity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_relation ;
+                                    shex:predicate rdf:predicate ;
                                     shex:valueExpr biolink:RelationshipType ] ) ] ] ) .
 
 biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation a shex:ShapeAnd ;
@@ -33,15 +33,15 @@ biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:anatomical_entity_to_anatomical_entity_part_of_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:AnatomicalEntity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:anatomical_entity_to_anatomical_entity_part_of_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:AnatomicalEntity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:anatomical_entity_to_anatomical_entity_part_of_association_relation ;
+                                    shex:predicate rdf:predicate ;
                                     shex:valueExpr biolink:RelationshipType ] ) ] ] ) .
 
 biolink:BiosampleToDiseaseOrPhenotypicFeatureAssociation a shex:ShapeAnd ;
@@ -55,7 +55,7 @@ biolink:CausalActivityModel a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate biolink:causal_activity_model_title ;
+                        shex:predicate <http://purl.org/dc/elements/1.1/title> ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] ] ) .
 
@@ -67,7 +67,7 @@ biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:cell_line_to_disease_or_phenotypic_feature_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:DiseaseOrPhenotypicFeature ] ] ) .
 
 biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation a shex:ShapeAnd ;
@@ -75,7 +75,7 @@ biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:chemical_to_disease_or_phenotypic_feature_association_object ;
+                        shex:predicate rdf:object ;
                         shex:valueExpr biolink:DiseaseOrPhenotypicFeature ] ] ) .
 
 biolink:ChemicalToGeneAssociation a shex:ShapeAnd ;
@@ -83,7 +83,7 @@ biolink:ChemicalToGeneAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:chemical_to_gene_association_object ;
+                        shex:predicate rdf:object ;
                         shex:valueExpr biolink:GeneOrGeneProduct ] ] ) .
 
 biolink:ChemicalToPathwayAssociation a shex:ShapeAnd ;
@@ -91,7 +91,7 @@ biolink:ChemicalToPathwayAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:chemical_to_pathway_association_object ;
+                        shex:predicate rdf:object ;
                         shex:valueExpr biolink:Pathway ] ] ) .
 
 biolink:ClinicalIntervention a shex:ShapeAnd ;
@@ -117,7 +117,7 @@ biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation a shex:ShapeA
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:disease_or_phenotypic_feature_association_to_location_association_object ;
+                        shex:predicate rdf:object ;
                         shex:valueExpr biolink:AnatomicalEntity ] ] ) .
 
 biolink:DiseaseToPhenotypicFeatureAssociation a shex:ShapeAnd ;
@@ -131,7 +131,7 @@ biolink:EnvironmentToPhenotypicFeatureAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:environment_to_phenotypic_feature_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:Environment ] ] ) .
 
 biolink:EnvironmentalFeature a shex:ShapeAnd ;
@@ -146,11 +146,11 @@ biolink:ExonToTranscriptRelationship a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:exon_to_transcript_relationship_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:Exon ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:exon_to_transcript_relationship_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:Transcript ] ) ] ] ) .
 
 biolink:FrequencyValue a shex:ShapeAnd ;
@@ -161,7 +161,7 @@ biolink:GeneAsAModelOfDiseaseAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:gene_as_a_model_of_disease_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:GeneOrGeneProduct ] ] ) .
 
 biolink:GeneFamily a shex:ShapeAnd ;
@@ -177,7 +177,7 @@ biolink:GeneHasVariantThatContributesToDiseaseAssociation a shex:ShapeAnd ;
                                     shex:valueExpr biolink:SequenceVariant ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_has_variant_that_contributes_to_disease_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:GeneOrGeneProduct ] ) ] ] ) .
 
 biolink:GeneRegulatoryRelationship a shex:ShapeAnd ;
@@ -186,15 +186,15 @@ biolink:GeneRegulatoryRelationship a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_regulatory_relationship_relation ;
+                                    shex:predicate rdf:predicate ;
                                     shex:valueExpr biolink:RelationshipType ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_regulatory_relationship_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:GeneOrGeneProduct ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_regulatory_relationship_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:GeneOrGeneProduct ] ) ] ] ) .
 
 biolink:GeneToExpressionSiteAssociation a shex:ShapeAnd ;
@@ -203,23 +203,23 @@ biolink:GeneToExpressionSiteAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:gene_to_expression_site_association_stage_qualifier ;
+                                    shex:predicate biolink:stage_qualifier ;
                                     shex:valueExpr biolink:LifeStage ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:gene_to_expression_site_association_quantifier_qualifier ;
+                                    shex:predicate biolink:quantifier_qualifier ;
                                     shex:valueExpr biolink:OntologyClass ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_to_expression_site_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:GeneOrGeneProduct ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_to_expression_site_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:AnatomicalEntity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_to_expression_site_association_relation ;
+                                    shex:predicate rdf:predicate ;
                                     shex:valueExpr biolink:RelationshipType ] ) ] ] ) .
 
 biolink:GeneToGeneHomologyAssociation a shex:ShapeAnd ;
@@ -227,7 +227,7 @@ biolink:GeneToGeneHomologyAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:gene_to_gene_homology_association_relation ;
+                        shex:predicate rdf:predicate ;
                         shex:valueExpr biolink:RelationshipType ] ] ) .
 
 biolink:GeneToGeneProductRelationship a shex:ShapeAnd ;
@@ -236,15 +236,15 @@ biolink:GeneToGeneProductRelationship a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_to_gene_product_relationship_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:Gene ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_to_gene_product_relationship_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:GeneProduct ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_to_gene_product_relationship_relation ;
+                                    shex:predicate rdf:predicate ;
                                     shex:valueExpr biolink:RelationshipType ] ) ] ] ) .
 
 biolink:GeneToGoTermAssociation a shex:ShapeAnd ;
@@ -253,11 +253,11 @@ biolink:GeneToGoTermAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_to_go_term_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:MolecularEntity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_to_go_term_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:GeneOntologyClass ] ) ] ] ) .
 
 biolink:GeneToPhenotypicFeatureAssociation a shex:ShapeAnd ;
@@ -265,7 +265,7 @@ biolink:GeneToPhenotypicFeatureAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:gene_to_phenotypic_feature_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:GeneOrGeneProduct ] ] ) .
 
 biolink:Genome a shex:ShapeAnd ;
@@ -297,11 +297,11 @@ biolink:GenomicSequenceLocalization a shex:ShapeAnd ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:genomic_sequence_localization_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:GenomicEntity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:genomic_sequence_localization_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:GenomicEntity ] ) ] ] ) .
 
 biolink:GenotypeToGeneAssociation a shex:ShapeAnd ;
@@ -310,15 +310,15 @@ biolink:GenotypeToGeneAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:genotype_to_gene_association_relation ;
+                                    shex:predicate rdf:predicate ;
                                     shex:valueExpr biolink:RelationshipType ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:genotype_to_gene_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:Genotype ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:genotype_to_gene_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:Gene ] ) ] ] ) .
 
 biolink:GenotypeToGenotypePartAssociation a shex:ShapeAnd ;
@@ -327,15 +327,15 @@ biolink:GenotypeToGenotypePartAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:genotype_to_genotype_part_association_relation ;
+                                    shex:predicate rdf:predicate ;
                                     shex:valueExpr biolink:RelationshipType ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:genotype_to_genotype_part_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:Genotype ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:genotype_to_genotype_part_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:Genotype ] ) ] ] ) .
 
 biolink:GenotypeToPhenotypicFeatureAssociation a shex:ShapeAnd ;
@@ -344,11 +344,11 @@ biolink:GenotypeToPhenotypicFeatureAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:genotype_to_phenotypic_feature_association_relation ;
+                                    shex:predicate rdf:predicate ;
                                     shex:valueExpr biolink:RelationshipType ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:genotype_to_phenotypic_feature_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:Genotype ] ) ] ] ) .
 
 biolink:GenotypeToVariantAssociation a shex:ShapeAnd ;
@@ -357,15 +357,15 @@ biolink:GenotypeToVariantAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:genotype_to_variant_association_relation ;
+                                    shex:predicate rdf:predicate ;
                                     shex:valueExpr biolink:RelationshipType ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:genotype_to_variant_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:Genotype ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:genotype_to_variant_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:SequenceVariant ] ) ] ] ) .
 
 biolink:GenotypicSex a shex:ShapeAnd ;
@@ -394,7 +394,7 @@ biolink:MacromolecularMachineToBiologicalProcessAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:macromolecular_machine_to_biological_process_association_object ;
+                        shex:predicate rdf:object ;
                         shex:valueExpr biolink:BiologicalProcess ] ] ) .
 
 biolink:MacromolecularMachineToCellularComponentAssociation a shex:ShapeAnd ;
@@ -402,7 +402,7 @@ biolink:MacromolecularMachineToCellularComponentAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:macromolecular_machine_to_cellular_component_association_object ;
+                        shex:predicate rdf:object ;
                         shex:valueExpr biolink:CellularComponent ] ] ) .
 
 biolink:MacromolecularMachineToMolecularActivityAssociation a shex:ShapeAnd ;
@@ -410,7 +410,7 @@ biolink:MacromolecularMachineToMolecularActivityAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:macromolecular_machine_to_molecular_activity_association_object ;
+                        shex:predicate rdf:object ;
                         shex:valueExpr biolink:MolecularActivity ] ] ) .
 
 biolink:Metabolite a shex:ShapeAnd ;
@@ -425,11 +425,11 @@ biolink:MolecularActivityToBiologicalProcessAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:molecular_activity_to_biological_process_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:MolecularActivity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:molecular_activity_to_biological_process_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:BiologicalProcess ] ) ] ] ) .
 
 biolink:MolecularActivityToDownstreamMolecularActivityAssociation a shex:ShapeAnd ;
@@ -438,15 +438,15 @@ biolink:MolecularActivityToDownstreamMolecularActivityAssociation a shex:ShapeAn
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:molecular_activity_to_downstream_molecular_activity_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:MolecularActivity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:molecular_activity_to_downstream_molecular_activity_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:MolecularActivity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:molecular_activity_to_downstream_molecular_activity_association_relation ;
+                                    shex:predicate rdf:predicate ;
                                     shex:valueExpr biolink:RelationshipType ] ) ] ] ) .
 
 biolink:MolecularActivityToGeneProductAssociation a shex:ShapeAnd ;
@@ -455,11 +455,11 @@ biolink:MolecularActivityToGeneProductAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:molecular_activity_to_gene_product_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:MolecularActivity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:molecular_activity_to_gene_product_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:GeneOrGeneProduct ] ) ] ] ) .
 
 biolink:MolecularActivityToLocationAssociation a shex:ShapeAnd ;
@@ -468,11 +468,11 @@ biolink:MolecularActivityToLocationAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:molecular_activity_to_location_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:MolecularActivity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:molecular_activity_to_location_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:CellularComponent ] ) ] ] ) .
 
 biolink:MolecularEvent a shex:Shape ;
@@ -506,7 +506,7 @@ biolink:PairwiseGeneToGeneInteraction a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:pairwise_gene_to_gene_interaction_relation ;
+                        shex:predicate rdf:predicate ;
                         shex:valueExpr biolink:RelationshipType ] ] ) .
 
 biolink:PathognomonicityQuantifier a shex:ShapeAnd ;
@@ -527,15 +527,15 @@ biolink:PopulationToPopulationAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:population_to_population_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:PopulationOfIndividualOrganisms ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:population_to_population_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:PopulationOfIndividualOrganisms ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:population_to_population_association_relation ;
+                                    shex:predicate rdf:predicate ;
                                     shex:valueExpr biolink:RelationshipType ] ) ] ] ) .
 
 biolink:Procedure a shex:ShapeAnd ;
@@ -556,11 +556,11 @@ biolink:SequenceVariantModulatesTreatmentAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:sequence_variant_modulates_treatment_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:SequenceVariant ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:sequence_variant_modulates_treatment_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:Treatment ] ) ] ] ) .
 
 biolink:TranscriptToGeneRelationship a shex:ShapeAnd ;
@@ -569,11 +569,11 @@ biolink:TranscriptToGeneRelationship a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:transcript_to_gene_relationship_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:Transcript ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:transcript_to_gene_relationship_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:Gene ] ) ] ] ) .
 
 biolink:VariantToDiseaseAssociation a shex:ShapeAnd ;
@@ -582,16 +582,16 @@ biolink:VariantToDiseaseAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:variant_to_disease_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:variant_to_disease_association_relation ;
+                                    shex:predicate rdf:predicate ;
                                     shex:valueExpr biolink:RelationshipType ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:variant_to_disease_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] ) ] ] ) .
 
@@ -600,7 +600,7 @@ biolink:VariantToPhenotypicFeatureAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:variant_to_phenotypic_feature_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:SequenceVariant ] ] ) .
 
 biolink:VariantToPopulationAssociation a shex:ShapeAnd ;
@@ -609,25 +609,25 @@ biolink:VariantToPopulationAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:variant_to_population_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:SequenceVariant ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:variant_to_population_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:PopulationOfIndividualOrganisms ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:variant_to_population_association_has_quotient ;
+                                    shex:predicate biolink:has_quotient ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:double ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:variant_to_population_association_has_count ;
+                                    shex:predicate biolink:has_count ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:integer ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:variant_to_population_association_has_total ;
+                                    shex:predicate biolink:has_total ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:integer ] ] ) ] ] ) .
 
@@ -641,7 +641,7 @@ biolink:BiosampleToThingAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:biosample_to_thing_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:Biosample ] ] ) .
 
 biolink:Case a shex:ShapeAnd ;
@@ -652,7 +652,7 @@ biolink:CaseToThingAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:case_to_thing_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:Case ] ] ) .
 
 biolink:CellLine a shex:ShapeAnd ;
@@ -663,7 +663,7 @@ biolink:CellLineToThingAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:cell_line_to_thing_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:CellLine ] ] ) .
 
 biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation a shex:ShapeAnd ;
@@ -671,7 +671,7 @@ biolink:DiseaseOrPhenotypicFeatureAssociationToThingAssociation a shex:ShapeAnd 
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:disease_or_phenotypic_feature_association_to_thing_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:DiseaseOrPhenotypicFeature ] ] ) .
 
 biolink:DiseaseToThingAssociation a shex:ShapeAnd ;
@@ -679,7 +679,7 @@ biolink:DiseaseToThingAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:disease_to_thing_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:Disease ] ] ) .
 
 biolink:DrugExposure a shex:ShapeAnd ;
@@ -714,7 +714,7 @@ biolink:ExtensionsAndEvidenceAssociationMixin a shex:ShapeAnd ;
                                     shex:valueExpr [ a shex:NodeConstraint ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:extensions_and_evidence_association_mixin_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] ) ] ] ) .
 
@@ -750,7 +750,7 @@ biolink:GenotypeToThingAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:genotype_to_thing_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:Genotype ] ] ) .
 
 biolink:GeographicLocation a shex:ShapeAnd ;
@@ -816,12 +816,12 @@ biolink:ModelToDiseaseMixin a shex:Shape ;
             shex:expressions ( [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:model_to_disease_mixin_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:model_to_disease_mixin_relation ;
+                        shex:predicate rdf:predicate ;
                         shex:valueExpr biolink:RelationshipType ] ) ] .
 
 biolink:NamedGraph a shex:ShapeAnd ;
@@ -829,7 +829,7 @@ biolink:NamedGraph a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate biolink:named_graph_title ;
+                        shex:predicate <http://purl.org/dc/elements/1.1/title> ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] ] ) .
 
@@ -845,20 +845,20 @@ biolink:PairwiseInteractionAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:pairwise_interaction_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:MolecularEntity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:pairwise_interaction_association_id ;
+                                    shex:predicate biolink:id ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:pairwise_interaction_association_relation ;
+                                    shex:predicate rdf:predicate ;
                                     shex:valueExpr biolink:RelationshipType ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:pairwise_interaction_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:MolecularEntity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
@@ -942,7 +942,7 @@ biolink:Treatment a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:treatment_treats ;
+                                    shex:predicate <http://purl.obolibrary.org/obo/RO_0002606> ;
                                     shex:valueExpr biolink:DiseaseOrPhenotypicFeature ] [ a shex:TripleConstraint ;
                                     shex:max -1 ;
                                     shex:min 1 ;
@@ -962,11 +962,11 @@ biolink:AnatomicalEntityToAnatomicalEntityAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:anatomical_entity_to_anatomical_entity_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:AnatomicalEntity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:anatomical_entity_to_anatomical_entity_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:AnatomicalEntity ] ) ] ] ) .
 
 biolink:BiologicalProcessOrActivity a shex:ShapeAnd ;
@@ -1010,7 +1010,7 @@ biolink:GeneToDiseaseAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:gene_to_disease_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:GeneOrGeneProduct ] ] ) .
 
 biolink:GeneToGeneAssociation a shex:ShapeAnd ;
@@ -1019,11 +1019,11 @@ biolink:GeneToGeneAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_to_gene_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:GeneOrGeneProduct ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:gene_to_gene_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:GeneOrGeneProduct ] ) ] ] ) .
 
 biolink:GeneToThingAssociation a shex:ShapeAnd ;
@@ -1031,7 +1031,7 @@ biolink:GeneToThingAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:gene_to_thing_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:GeneOrGeneProduct ] ] ) .
 
 biolink:RNAProduct a shex:ShapeAnd ;
@@ -1045,7 +1045,7 @@ biolink:ChemicalToThingAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:chemical_to_thing_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:ChemicalSubstance ] ] ) .
 
 biolink:EntityToDiseaseAssociation a shex:ShapeAnd ;
@@ -1053,7 +1053,7 @@ biolink:EntityToDiseaseAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:entity_to_disease_association_object ;
+                        shex:predicate rdf:object ;
                         shex:valueExpr biolink:Disease ] ] ) .
 
 biolink:Environment a shex:ShapeAnd ;
@@ -1064,7 +1064,7 @@ biolink:MacromolecularMachine a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
-                        shex:predicate biolink:macromolecular_machine_name ;
+                        shex:predicate rdfs:label ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] ] ) .
 
@@ -1085,11 +1085,11 @@ biolink:SequenceFeatureRelationship a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:sequence_feature_relationship_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:GenomicEntity ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:sequence_feature_relationship_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:GenomicEntity ] ) ] ] ) .
 
 biolink:ThingToDiseaseOrPhenotypicFeatureAssociation a shex:ShapeAnd ;
@@ -1097,7 +1097,7 @@ biolink:ThingToDiseaseOrPhenotypicFeatureAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:thing_to_disease_or_phenotypic_feature_association_object ;
+                        shex:predicate rdf:object ;
                         shex:valueExpr biolink:DiseaseOrPhenotypicFeature ] ] ) .
 
 biolink:VariantToThingAssociation a shex:ShapeAnd ;
@@ -1105,7 +1105,7 @@ biolink:VariantToThingAssociation a shex:ShapeAnd ;
                 shex:expression [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 1 ;
-                        shex:predicate biolink:variant_to_thing_association_subject ;
+                        shex:predicate rdf:subject ;
                         shex:valueExpr biolink:SequenceVariant ] ] ) .
 
 biolink:BiologicalProcess a shex:ShapeAnd ;
@@ -1120,12 +1120,21 @@ biolink:FunctionalAssociation a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:functional_association_subject ;
+                                    shex:predicate rdf:subject ;
                                     shex:valueExpr biolink:MacromolecularMachine ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:functional_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:GeneOntologyClass ] ) ] ] ) .
+
+biolink:InformationContentEntity a shex:ShapeAnd ;
+    shex:shapeExprs ( biolink:NamedThing [ a shex:Shape ;
+                shex:expression [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate <http://purl.org/dc/elements/1.1/title> ;
+                        shex:valueExpr [ a shex:NodeConstraint ;
+                                shex:datatype xsd:string ] ] ] ) .
 
 biolink:BiologicalEntity a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:NamedThing [ a shex:Shape ;
@@ -1155,15 +1164,6 @@ biolink:Gene a shex:ShapeAnd ;
 biolink:GeneProduct a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GeneOrGeneProduct [ a shex:Shape ] ) .
 
-biolink:InformationContentEntity a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:NamedThing [ a shex:Shape ;
-                shex:expression [ a shex:TripleConstraint ;
-                        shex:max 1 ;
-                        shex:min 0 ;
-                        shex:predicate <http://purl.org/dc/elements/1.1/title> ;
-                        shex:valueExpr [ a shex:NodeConstraint ;
-                                shex:datatype xsd:string ] ] ] ) .
-
 biolink:OrganismalEntity a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:BiologicalEntity [ a shex:Shape ] ) .
 
@@ -1183,12 +1183,12 @@ biolink:EntityToPhenotypicFeatureAssociation a shex:ShapeAnd ;
                                     shex:valueExpr biolink:BiologicalSex ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:entity_to_phenotypic_feature_association_description ;
+                                    shex:predicate <http://purl.org/dc/terms/description> ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
-                                    shex:predicate biolink:entity_to_phenotypic_feature_association_object ;
+                                    shex:predicate rdf:object ;
                                     shex:valueExpr biolink:PhenotypicFeature ] ) ] ] ) .
 
 biolink:Genotype a shex:ShapeAnd ;
@@ -1213,16 +1213,16 @@ biolink:SequenceVariant a shex:ShapeAnd ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max -1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:sequence_variant_has_gene ;
+                                    shex:predicate biolink:has_gene ;
                                     shex:valueExpr biolink:Gene ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:sequence_variant_has_biological_sequence ;
+                                    shex:predicate biolink:has_biological_sequence ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate biolink:sequence_variant_id ;
+                                    shex:predicate biolink:id ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] ) ] ] ) .
 
@@ -1271,14 +1271,6 @@ biolink:DiseaseOrPhenotypicFeature a shex:ShapeAnd ;
                                     shex:predicate <http://purl.obolibrary.org/obo/RO_0002302> ;
                                     shex:valueExpr biolink:NamedThing ] ) ] ] ) .
 
-biolink:OntologyClass a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:NamedThing [ a shex:Shape ;
-                shex:expression [ a shex:TripleConstraint ;
-                        shex:max 1 ;
-                        shex:min 0 ;
-                        shex:predicate rdfs:subClassOf ;
-                        shex:valueExpr biolink:OntologyClass ] ] ) .
-
 biolink:AnatomicalEntity a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:OrganismalEntity biolink:ThingWithTaxon [ a shex:Shape ;
                 shex:expression [ a shex:TripleConstraint ;
@@ -1286,6 +1278,14 @@ biolink:AnatomicalEntity a shex:ShapeAnd ;
                         shex:min 0 ;
                         shex:predicate <http://purl.obolibrary.org/obo/RO_0002292> ;
                         shex:valueExpr biolink:GeneOrGeneProduct ] ] ) .
+
+biolink:OntologyClass a shex:ShapeAnd ;
+    shex:shapeExprs ( biolink:NamedThing [ a shex:Shape ;
+                shex:expression [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate rdfs:subClassOf ;
+                        shex:valueExpr biolink:OntologyClass ] ] ) .
 
 biolink:NamedThing a shex:Shape ;
     shex:expression [ a shex:EachOf ;
@@ -1344,7 +1344,8 @@ biolink:GenomicEntity a shex:ShapeAnd ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:datatype xsd:string ] ] ] ) .
 
-biolink:RelationshipType a shex:Shape .
+biolink:RelationshipType a shex:ShapeAnd ;
+    shex:shapeExprs ( biolink:OntologyClass [ a shex:Shape ] ) .
 
 biolink:GeneOrGeneProduct a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:MacromolecularMachine [ a shex:Shape ;
@@ -1368,23 +1369,19 @@ biolink:GeneOrGeneProduct a shex:ShapeAnd ;
                                     shex:valueExpr biolink:AnatomicalEntity ] ) ] ] ) .
 
 biolink:Association a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:InformationContentEntity biolink:ExtensionsAndEvidenceAssociationMixin [ a shex:Shape ;
+    shex:shapeExprs ( biolink:ExtensionsAndEvidenceAssociationMixin [ a shex:Shape ;
                 shex:expression [ a shex:EachOf ;
                         shex:expressions ( [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 0 ;
-                                    shex:predicate rdf:type ;
-                                    shex:valueExpr biolink:OntologyClass ] [ a shex:TripleConstraint ;
+                                    shex:predicate biolink:id ;
+                                    shex:valueExpr [ a shex:NodeConstraint ;
+                                            shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
                                     shex:predicate rdf:subject ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
-                                    shex:max 1 ;
-                                    shex:min 0 ;
-                                    shex:predicate biolink:negated ;
-                                    shex:valueExpr [ a shex:NodeConstraint ;
-                                            shex:datatype xsd:boolean ] ] [ a shex:TripleConstraint ;
                                     shex:max 1 ;
                                     shex:min 1 ;
                                     shex:predicate rdf:predicate ;
@@ -1394,6 +1391,15 @@ biolink:Association a shex:ShapeAnd ;
                                     shex:predicate rdf:object ;
                                     shex:valueExpr [ a shex:NodeConstraint ;
                                             shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
+                                    shex:max 1 ;
+                                    shex:min 0 ;
+                                    shex:predicate biolink:negated ;
+                                    shex:valueExpr [ a shex:NodeConstraint ;
+                                            shex:datatype xsd:boolean ] ] [ a shex:TripleConstraint ;
+                                    shex:max 1 ;
+                                    shex:min 0 ;
+                                    shex:predicate rdf:type ;
+                                    shex:valueExpr biolink:OntologyClass ] [ a shex:TripleConstraint ;
                                     shex:max -1 ;
                                     shex:min 0 ;
                                     shex:predicate biolink:qualifiers ;

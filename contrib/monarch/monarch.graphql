@@ -33,11 +33,12 @@ AnatomicalEntityToAnatomicalEntityPartOfAssociation type
 
 Association typeimplements ExtensionsAndEvidenceAssociationMixin
   {
-    associationType: OntologyClass
+    id: String
     subject: String!
-    negated: String
     relation: RelationshipType!
     object: String!
+    negated: String
+    associationType: OntologyClass
     qualifiers: [OntologyClass]
     publications: [Publication]
     providedBy: Provider
