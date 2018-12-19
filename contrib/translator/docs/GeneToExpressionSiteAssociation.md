@@ -5,7 +5,7 @@ An association between a gene and an expression site, possibly qualified by stag
 
 URI: [http://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation](http://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToExpressionSiteAssociation|id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToExpressionSiteAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToExpressionSiteAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToExpressionSiteAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToExpressionSiteAssociation]-%20relation>\[RelationshipType],%20\[GeneToExpressionSiteAssociation]-%20object>\[AnatomicalEntity],%20\[GeneToExpressionSiteAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier%20%3F>\[OntologyClass],%20\[GeneToExpressionSiteAssociation]-%20stage%20qualifier%20%3F>\[LifeStage],%20\[Association]^-\[GeneToExpressionSiteAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToExpressionSiteAssociation|relation:iri_type;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToExpressionSiteAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToExpressionSiteAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToExpressionSiteAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToExpressionSiteAssociation]-%20object>\[AnatomicalEntity],%20\[GeneToExpressionSiteAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier%20%3F>\[OntologyClass],%20\[GeneToExpressionSiteAssociation]-%20stage%20qualifier%20%3F>\[LifeStage],%20\[Association]^-\[GeneToExpressionSiteAssociation])
 ## Mappings
 
 ## Inheritance
@@ -27,7 +27,7 @@ URI: [http://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation](http://w3id
     * __Local__
  * [gene to expression site association.relation](gene_to_expression_site_association_relation.md)
     * Description: expression relationship
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * edge label: [expressed in](expressed_in.md) *subsets*: (translator_minimal)
     * __Local__
  * [gene to expression site association.stage qualifier](gene_to_expression_site_association_stage_qualifier.md)

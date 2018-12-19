@@ -5,7 +5,7 @@ A gene is transcribed and potentially translated to a gene product
 
 URI: [http://w3id.org/biolink/vocab/GeneToGeneProductRelationship](http://w3id.org/biolink/vocab/GeneToGeneProductRelationship)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToGeneProductRelationship|id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToGeneProductRelationship]-%20publications(i)%20*>\[Publication],%20\[GeneToGeneProductRelationship]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToGeneProductRelationship]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToGeneProductRelationship]-%20relation>\[RelationshipType],%20\[GeneToGeneProductRelationship]-%20object>\[GeneProduct],%20\[GeneToGeneProductRelationship]-%20subject>\[Gene],%20\[SequenceFeatureRelationship]^-\[GeneToGeneProductRelationship])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToGeneProductRelationship|relation:iri_type;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToGeneProductRelationship]-%20publications(i)%20*>\[Publication],%20\[GeneToGeneProductRelationship]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToGeneProductRelationship]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToGeneProductRelationship]-%20object>\[GeneProduct],%20\[GeneToGeneProductRelationship]-%20subject>\[Gene],%20\[SequenceFeatureRelationship]^-\[GeneToGeneProductRelationship])
 ## Mappings
 
 ## Inheritance
@@ -23,7 +23,7 @@ URI: [http://w3id.org/biolink/vocab/GeneToGeneProductRelationship](http://w3id.o
     * __Local__
  * [gene to gene product relationship.relation](gene_to_gene_product_relationship_relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * edge label: [has gene product](has_gene_product.md) *subsets*: (translator_minimal)
     * __Local__
  * [gene to gene product relationship.subject](gene_to_gene_product_relationship_subject.md)

@@ -5,7 +5,7 @@ An association between a sequence variant and a treatment or health intervention
 
 URI: [http://w3id.org/biolink/vocab/SequenceVariantModulatesTreatmentAssociation](http://w3id.org/biolink/vocab/SequenceVariantModulatesTreatmentAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SequenceVariantModulatesTreatmentAssociation|id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[SequenceVariantModulatesTreatmentAssociation]-%20publications(i)%20*>\[Publication],%20\[SequenceVariantModulatesTreatmentAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[SequenceVariantModulatesTreatmentAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[SequenceVariantModulatesTreatmentAssociation]-%20relation(i)>\[RelationshipType],%20\[SequenceVariantModulatesTreatmentAssociation]-%20object>\[Treatment],%20\[SequenceVariantModulatesTreatmentAssociation]-%20subject>\[SequenceVariant],%20\[Association]^-\[SequenceVariantModulatesTreatmentAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SequenceVariantModulatesTreatmentAssociation|id(i):identifier_type%20%3F;relation(i):iri_type;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[SequenceVariantModulatesTreatmentAssociation]-%20publications(i)%20*>\[Publication],%20\[SequenceVariantModulatesTreatmentAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[SequenceVariantModulatesTreatmentAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[SequenceVariantModulatesTreatmentAssociation]-%20object>\[Treatment],%20\[SequenceVariantModulatesTreatmentAssociation]-%20subject>\[SequenceVariant],%20\[Association]^-\[SequenceVariantModulatesTreatmentAssociation])
 ## Mappings
 
 ## Inheritance
@@ -55,5 +55,5 @@ URI: [http://w3id.org/biolink/vocab/SequenceVariantModulatesTreatmentAssociation
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)

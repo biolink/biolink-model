@@ -5,7 +5,7 @@ An interaction between a chemical entity and a phenotype or disease, where the p
 
 URI: [http://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ChemicalToDiseaseOrPhenotypicFeatureAssociation|id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20subject(i)>\[ChemicalSubstance],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20relation(i)>\[RelationshipType],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20object>\[DiseaseOrPhenotypicFeature],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[ChemicalToDiseaseOrPhenotypicFeatureAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ChemicalToDiseaseOrPhenotypicFeatureAssociation|id(i):identifier_type%20%3F;relation(i):iri_type;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20subject(i)>\[ChemicalSubstance],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20object>\[DiseaseOrPhenotypicFeature],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[ChemicalToDiseaseOrPhenotypicFeatureAssociation])
 ## Mappings
 
  * [SIO:000993](http://semanticscience.org/resource/SIO_000993)
@@ -54,9 +54,9 @@ URI: [http://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociat
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)
  * [subject](subject.md)
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)

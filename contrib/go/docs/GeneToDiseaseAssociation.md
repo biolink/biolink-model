@@ -5,7 +5,7 @@
 
 URI: [http://w3id.org/biolink/vocab/GeneToDiseaseAssociation](http://w3id.org/biolink/vocab/GeneToDiseaseAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToDiseaseAssociation|subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*;has_evidence(i):evidence_instance%20%3F;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToDiseaseAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToDiseaseAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToDiseaseAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[GeneToDiseaseAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[GeneToDiseaseAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToDiseaseAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToDiseaseAssociation]-%20object(i)>\[Disease],%20\[GeneToDiseaseAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[GeneToDiseaseAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[GeneToDiseaseAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneToDiseaseAssociation]uses%20-.->\[GeneToThingAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneHasVariantThatContributesToDiseaseAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneAsAModelOfDiseaseAssociation],%20\[Association]^-\[GeneToDiseaseAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToDiseaseAssociation|subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*;has_evidence(i):evidence_instance%20%3F;id(i):identifier_type%20%3F;relation(i):iri_type;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToDiseaseAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToDiseaseAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[GeneToDiseaseAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[GeneToDiseaseAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToDiseaseAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToDiseaseAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToDiseaseAssociation]-%20object(i)>\[Disease],%20\[GeneToDiseaseAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[GeneToDiseaseAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[GeneToDiseaseAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneToDiseaseAssociation]uses%20-.->\[GeneToThingAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneHasVariantThatContributesToDiseaseAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneAsAModelOfDiseaseAssociation],%20\[Association]^-\[GeneToDiseaseAssociation])
 ## Mappings
 
  * [SIO:000983](http://semanticscience.org/resource/SIO_000983)
@@ -52,7 +52,7 @@ URI: [http://w3id.org/biolink/vocab/GeneToDiseaseAssociation](http://w3id.org/bi
     * inherited from: [Association](Association.md)
  * [object](object.md)
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)
  * [object extensions](object_extensions.md)
     * Description: Additional relationships that are true of the object in the context of the association. For example, if the object is an anatomical term in an expression association, the object extensions may include part-of links
@@ -91,7 +91,7 @@ URI: [http://w3id.org/biolink/vocab/GeneToDiseaseAssociation](http://w3id.org/bi
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)
  * [severity qualifier](severity_qualifier.md)
     * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject

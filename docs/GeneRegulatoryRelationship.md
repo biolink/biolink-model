@@ -23,7 +23,7 @@ URI: [http://w3id.org/biolink/vocab/GeneRegulatoryRelationship](http://w3id.org/
     * __Local__
  * [gene regulatory relationship.relation](gene_regulatory_relationship_relation.md)
     * Description: the direction is always from regulator to regulated
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [gene regulatory relationship.subject](gene_regulatory_relationship_subject.md)
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.

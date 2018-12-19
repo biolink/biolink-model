@@ -23,7 +23,7 @@ URI: [http://w3id.org/biolink/vocab/PopulationToPopulationAssociation](http://w3
     * __Local__
  * [population to population association.relation](population_to_population_association_relation.md)
     * Description: A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [population to population association.subject](population_to_population_association_subject.md)
     * Description: the population that form the subject of the association

@@ -5,7 +5,7 @@ A relationship between a sequence feature and an entity it is localized to. The 
 
 URI: [http://w3id.org/biolink/vocab/GenomicSequenceLocalization](http://w3id.org/biolink/vocab/GenomicSequenceLocalization)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenomicSequenceLocalization|start_interbase_coordinate:string%20%3F;end_interbase_coordinate:string%20%3F;genome_build:string%20%3F;phase:string%20%3F;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenomicSequenceLocalization]-%20publications(i)%20*>\[Publication],%20\[GenomicSequenceLocalization]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenomicSequenceLocalization]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenomicSequenceLocalization]-%20relation(i)>\[RelationshipType],%20\[GenomicSequenceLocalization]-%20object>\[GenomicEntity],%20\[GenomicSequenceLocalization]-%20subject>\[GenomicEntity],%20\[Association]^-\[GenomicSequenceLocalization])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenomicSequenceLocalization|start_interbase_coordinate:string%20%3F;end_interbase_coordinate:string%20%3F;genome_build:string%20%3F;phase:string%20%3F;id(i):identifier_type%20%3F;relation(i):iri_type;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenomicSequenceLocalization]-%20publications(i)%20*>\[Publication],%20\[GenomicSequenceLocalization]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenomicSequenceLocalization]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenomicSequenceLocalization]-%20object>\[GenomicEntity],%20\[GenomicSequenceLocalization]-%20subject>\[GenomicEntity],%20\[Association]^-\[GenomicSequenceLocalization])
 ## Mappings
 
  * [faldo:location](http://purl.obolibrary.org/obo/faldo_location)
@@ -72,5 +72,5 @@ URI: [http://w3id.org/biolink/vocab/GenomicSequenceLocalization](http://w3id.org
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)

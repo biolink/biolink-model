@@ -57,7 +57,7 @@
     {
       "name": "iri type",
       "description": "An IRI",
-      "typeof": "string",
+      "typeof": "uri",
       "@id": "iri_type"
     },
     {
@@ -1693,7 +1693,7 @@
         "node with outgoing relationship"
       ],
       "domain": "Association",
-      "range": "xsd:string",
+      "range": "iri_type",
       "required": true,
       "@id": "subject"
     },
@@ -1711,7 +1711,7 @@
         "node with incoming relationship"
       ],
       "domain": "Association",
-      "range": "xsd:string",
+      "range": "iri_type",
       "required": true,
       "@id": "object"
     },
@@ -1738,7 +1738,7 @@
         "predicate"
       ],
       "domain": "Association",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "@id": "relation"
     },
@@ -2141,7 +2141,7 @@
       "description": "the relationship type by which a subject is connected to an object in an association",
       "is_a": "relation",
       "domain": "GenotypeToGenotypePartAssociation",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "alias": "relation",
       "@id": "genotype_to_genotype_part_association_relation"
@@ -2173,7 +2173,7 @@
       "description": "the relationship type used to connect genotype to gene",
       "is_a": "relation",
       "domain": "GenotypeToGeneAssociation",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "alias": "relation",
       "@id": "genotype_to_gene_association_relation"
@@ -2205,7 +2205,7 @@
       "description": "the relationship type used to connect genotype to gene",
       "is_a": "relation",
       "domain": "GenotypeToVariantAssociation",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "alias": "relation",
       "@id": "genotype_to_variant_association_relation"
@@ -2259,7 +2259,7 @@
       "description": "homology relationship type",
       "is_a": "relation",
       "domain": "GeneToGeneHomologyAssociation",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "definitional": true,
       "alias": "relation",
@@ -2293,7 +2293,7 @@
       "description": "interaction relationship type",
       "is_a": "relation",
       "domain": "PairwiseInteractionAssociation",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "definitional": true,
       "alias": "relation",
@@ -2322,7 +2322,7 @@
       "description": "interaction relationship type",
       "is_a": "pairwise_interaction_association_relation",
       "domain": "PairwiseGeneToGeneInteraction",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "definitional": true,
       "alias": "relation",
@@ -2498,7 +2498,7 @@
       "description": "the relationship type by which a subject is connected to an object in an association",
       "is_a": "relation",
       "domain": "GenotypeToPhenotypicFeatureAssociation",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "alias": "relation",
       "subproperty_of": "has_phenotype",
@@ -2637,7 +2637,7 @@
       "description": "A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used",
       "is_a": "relation",
       "domain": "PopulationToPopulationAssociation",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "alias": "relation",
       "@id": "population_to_population_association_relation"
@@ -2657,7 +2657,7 @@
       "description": "a sequence variant in which the allele state is associated in some way with the disease state",
       "is_a": "subject",
       "domain": "VariantToDiseaseAssociation",
-      "range": "xsd:string",
+      "range": "iri_type",
       "required": true,
       "alias": "subject",
       "@id": "variant_to_disease_association_subject"
@@ -2667,7 +2667,7 @@
       "description": "E.g. is pathogenic for",
       "is_a": "relation",
       "domain": "VariantToDiseaseAssociation",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "alias": "relation",
       "@id": "variant_to_disease_association_relation"
@@ -2677,7 +2677,7 @@
       "description": "a disease that is associated with that variant",
       "is_a": "object",
       "domain": "VariantToDiseaseAssociation",
-      "range": "xsd:string",
+      "range": "iri_type",
       "required": true,
       "alias": "object",
       "@id": "variant_to_disease_association_object"
@@ -2687,7 +2687,7 @@
       "description": "The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease",
       "is_a": "subject",
       "domain": "ModelToDiseaseMixin",
-      "range": "xsd:string",
+      "range": "iri_type",
       "required": true,
       "alias": "subject",
       "@id": "model_to_disease_mixin_subject"
@@ -2697,7 +2697,7 @@
       "description": "The relationship to the disease\n  ",
       "is_a": "relation",
       "domain": "ModelToDiseaseMixin",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "alias": "relation",
       "subproperty_of": "model_of",
@@ -2758,7 +2758,7 @@
       "description": "expression relationship",
       "is_a": "relation",
       "domain": "GeneToExpressionSiteAssociation",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "alias": "relation",
       "subproperty_of": "expressed_in",
@@ -2957,7 +2957,7 @@
       "description": "the relationship type by which a subject is connected to an object in an association",
       "is_a": "relation",
       "domain": "GeneToGeneProductRelationship",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "alias": "relation",
       "subproperty_of": "has_gene_product",
@@ -2988,7 +2988,7 @@
       "description": "the direction is always from regulator to regulated",
       "is_a": "relation",
       "domain": "GeneRegulatoryRelationship",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "alias": "relation",
       "@id": "gene_regulatory_relationship_relation"
@@ -3058,7 +3058,7 @@
       "description": "the relationship type by which a subject is connected to an object in an association",
       "is_a": "relation",
       "domain": "AnatomicalEntityToAnatomicalEntityPartOfAssociation",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "alias": "relation",
       "subproperty_of": "part_of",
@@ -3089,7 +3089,7 @@
       "description": "the relationship type by which a subject is connected to an object in an association",
       "is_a": "relation",
       "domain": "AnatomicalEntityToAnatomicalEntityOntogenicAssociation",
-      "range": "RelationshipType",
+      "range": "iri_type",
       "required": true,
       "alias": "relation",
       "@id": "anatomical_entity_to_anatomical_entity_ontogenic_association_relation"
@@ -5888,9 +5888,9 @@
   ],
   "metamodel_version": "0.3.2",
   "source_file": "biolink-model.yaml",
-  "source_file_size": 98193,
-  "source_file_date": "Tue Dec 18 20:52:18 2018",
-  "generation_date": "2018-12-18 20:53",
+  "source_file_size": 98173,
+  "source_file_date": "Tue Dec 18 21:31:06 2018",
+  "generation_date": "2018-12-18 21:31",
   "@context": [
     "https://github.com/biolink/biolink-model/raw/master/context.jsonld",
     {

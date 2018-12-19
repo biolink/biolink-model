@@ -23,7 +23,7 @@ URI: [http://w3id.org/biolink/vocab/GeneToGeneProductRelationship](http://w3id.o
     * __Local__
  * [gene to gene product relationship.relation](gene_to_gene_product_relationship_relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * edge label: [has gene product](has_gene_product.md) *subsets*: (translator_minimal)
     * __Local__
  * [gene to gene product relationship.subject](gene_to_gene_product_relationship_subject.md)

@@ -5,7 +5,7 @@ An relationship between a cell line and a disease or a phenotype, where the cell
 
 URI: [http://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[CellLineToDiseaseOrPhenotypicFeatureAssociation|id(i):identifier_type%20%3F;object(i):string;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20relation(i)>\[RelationshipType],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20subject>\[DiseaseOrPhenotypicFeature],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[CellLineToThingAssociation],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[CellLineToDiseaseOrPhenotypicFeatureAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[CellLineToDiseaseOrPhenotypicFeatureAssociation|id(i):identifier_type%20%3F;relation(i):iri_type;object(i):iri_type;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20subject>\[DiseaseOrPhenotypicFeature],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[CellLineToThingAssociation],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[CellLineToDiseaseOrPhenotypicFeatureAssociation])
 ## Mappings
 
 ## Inheritance
@@ -41,7 +41,7 @@ URI: [http://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociat
     * inherited from: [Association](Association.md)
  * [object](object.md)
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)
  * [provided by](provided_by.md)
     * Description: connects an association to the agent (person, organization or group) that provided it
@@ -57,5 +57,5 @@ URI: [http://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociat
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)

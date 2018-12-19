@@ -31,7 +31,7 @@ URI: [http://w3id.org/biolink/vocab/PairwiseInteractionAssociation](http://w3id.
     * __Local__
  * [pairwise interaction association.relation](pairwise_interaction_association_relation.md)
     * Description: interaction relationship type
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * edge label: [molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)
     * __Local__
  * [pairwise interaction association.subject](pairwise_interaction_association_subject.md)

@@ -5,7 +5,7 @@ Any association between one genotype and a genotypic entity that is a sub-compon
 
 URI: [http://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation](http://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenotypeToGenotypePartAssociation|id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToGenotypePartAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToGenotypePartAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToGenotypePartAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToGenotypePartAssociation]-%20object>\[Genotype],%20\[GenotypeToGenotypePartAssociation]-%20subject>\[Genotype],%20\[GenotypeToGenotypePartAssociation]-%20relation>\[RelationshipType],%20\[Association]^-\[GenotypeToGenotypePartAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenotypeToGenotypePartAssociation|relation:iri_type;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToGenotypePartAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToGenotypePartAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToGenotypePartAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToGenotypePartAssociation]-%20object>\[Genotype],%20\[GenotypeToGenotypePartAssociation]-%20subject>\[Genotype],%20\[Association]^-\[GenotypeToGenotypePartAssociation])
 ## Mappings
 
 ## Inheritance
@@ -23,7 +23,7 @@ URI: [http://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation](http://w3
     * __Local__
  * [genotype to genotype part association.relation](genotype_to_genotype_part_association_relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [genotype to genotype part association.subject](genotype_to_genotype_part_association_subject.md)
     * Description: parent genotype

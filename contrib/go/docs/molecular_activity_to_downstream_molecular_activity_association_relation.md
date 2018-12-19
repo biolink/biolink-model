@@ -8,7 +8,7 @@ URI: [http://w3id.org/biolink/vocab/molecular_activity_to_downstream_molecular_a
 
 ## Domain and Range
 
-[MolecularActivityToDownstreamMolecularActivityAssociation](MolecularActivityToDownstreamMolecularActivityAssociation.md) -> [RelationshipType](RelationshipType.md)
+[MolecularActivityToDownstreamMolecularActivityAssociation](MolecularActivityToDownstreamMolecularActivityAssociation.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [relation](relation.md)

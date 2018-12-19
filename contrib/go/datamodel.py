@@ -1,5 +1,5 @@
 # Auto generated from go.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-12-18 20:56
+# Generation date: 2018-12-18 21:34
 # Schema: go biolink extensions
 #
 # id: http://bioentity.io/json-schema/biolink/contrib/go.json
@@ -722,7 +722,7 @@ class MolecularActivityToDownstreamMolecularActivityAssociation(Association):
     id: MolecularActivityToDownstreamMolecularActivityAssociationAssociation_id
     subject: MolecularActivityId
     object: MolecularActivityId
-    relation: RelationshipTypeId
+    relation: IriType
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -740,8 +740,8 @@ class MolecularActivityToDownstreamMolecularActivityAssociation(Association):
             self.object = MolecularActivityId(self.object)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
 
 
 @dataclass
@@ -1874,9 +1874,9 @@ class Association(YAMLRoot):
     A typed association between two entities, supported by evidence
     """
     id: AssociationAssociation_id
-    subject: str
-    relation: RelationshipTypeId
-    object: str
+    subject: IriType
+    relation: IriType
+    object: IriType
     negated: bool = False
     association_type: Optional[OntologyClassId] = None
     qualifiers: List[OntologyClassId] = empty_list()
@@ -1902,7 +1902,7 @@ class GenotypeToGenotypePartAssociation(Association):
     Any association between one genotype and a genotypic entity that is a sub-component of it
     """
     id: GenotypeToGenotypePartAssociationAssociation_id
-    relation: RelationshipTypeId
+    relation: IriType
     subject: GenotypeId
     object: GenotypeId
 
@@ -1914,8 +1914,8 @@ class GenotypeToGenotypePartAssociation(Association):
             self.id = GenotypeToGenotypePartAssociationAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GenotypeId):
@@ -1933,7 +1933,7 @@ class GenotypeToGeneAssociation(Association):
     one. There is no assumption of cardinality
     """
     id: GenotypeToGeneAssociationAssociation_id
-    relation: RelationshipTypeId
+    relation: IriType
     subject: GenotypeId
     object: GeneId
 
@@ -1945,8 +1945,8 @@ class GenotypeToGeneAssociation(Association):
             self.id = GenotypeToGeneAssociationAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GenotypeId):
@@ -1963,7 +1963,7 @@ class GenotypeToVariantAssociation(Association):
     Any association between a genotype and a sequence variant.
     """
     id: GenotypeToVariantAssociationAssociation_id
-    relation: RelationshipTypeId
+    relation: IriType
     subject: GenotypeId
     object: SequenceVariant
 
@@ -1975,8 +1975,8 @@ class GenotypeToVariantAssociation(Association):
             self.id = GenotypeToVariantAssociationAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GenotypeId):
@@ -2016,7 +2016,7 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     differ) or paralogy (in which case the species may be the same)
     """
     id: GeneToGeneHomologyAssociationAssociation_id
-    relation: RelationshipTypeId
+    relation: IriType
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2026,8 +2026,8 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
             self.id = GeneToGeneHomologyAssociationAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
 
 
 @dataclass
@@ -2037,7 +2037,7 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
     """
     id: PairwiseGeneToGeneInteractionAssociation_id
-    relation: RelationshipTypeId
+    relation: IriType
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2047,8 +2047,8 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
             self.id = PairwiseGeneToGeneInteractionAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
 
 
 @dataclass
@@ -2299,7 +2299,7 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     either in isolation or through environment
     """
     id: GenotypeToPhenotypicFeatureAssociationAssociation_id
-    relation: RelationshipTypeId
+    relation: IriType
     subject: GenotypeId
 
     def _fix_elements(self):
@@ -2310,8 +2310,8 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
             self.id = GenotypeToPhenotypicFeatureAssociationAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GenotypeId):
@@ -2454,7 +2454,7 @@ class PopulationToPopulationAssociation(Association):
     id: PopulationToPopulationAssociationAssociation_id
     subject: PopulationOfIndividualOrganismsId
     object: PopulationOfIndividualOrganismsId
-    relation: RelationshipTypeId
+    relation: IriType
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2472,8 +2472,8 @@ class PopulationToPopulationAssociation(Association):
             self.object = PopulationOfIndividualOrganismsId(self.object)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
 
 
 @dataclass
@@ -2496,9 +2496,9 @@ class VariantToPhenotypicFeatureAssociation(Association):
 @dataclass
 class VariantToDiseaseAssociation(Association):
     id: VariantToDiseaseAssociationAssociation_id
-    subject: str
-    relation: RelationshipTypeId
-    object: str
+    subject: IriType
+    relation: IriType
+    object: IriType
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2508,16 +2508,16 @@ class VariantToDiseaseAssociation(Association):
             self.id = VariantToDiseaseAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
-        if not isinstance(self.subject, str):
-            self.subject = str(self.subject)
+        if not isinstance(self.subject, IriType):
+            self.subject = IriType(self.subject)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
         if self.object is None:
             raise ValueError(f"object must be supplied")
-        if not isinstance(self.object, str):
-            self.object = str(self.object)
+        if not isinstance(self.object, IriType):
+            self.object = IriType(self.object)
 
 
 @dataclass
@@ -2580,7 +2580,7 @@ class GeneToExpressionSiteAssociation(Association):
     quantifier_qualifier: Optional[OntologyClassId] = None
     subject: GeneOrGeneProductId
     object: AnatomicalEntityId
-    relation: RelationshipTypeId
+    relation: IriType
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2602,8 +2602,8 @@ class GeneToExpressionSiteAssociation(Association):
             self.object = AnatomicalEntityId(self.object)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
 
 
 @dataclass
@@ -2830,7 +2830,7 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     id: GeneToGeneProductRelationshipAssociation_id
     subject: GeneId
     object: GeneProductId
-    relation: RelationshipTypeId
+    relation: IriType
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2848,8 +2848,8 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
             self.object = GeneProductId(self.object)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
 
 
 @dataclass
@@ -2883,7 +2883,7 @@ class GeneRegulatoryRelationship(Association):
     A regulatory relationship between two genes
     """
     id: GeneRegulatoryRelationshipAssociation_id
-    relation: RelationshipTypeId
+    relation: IriType
     subject: GeneOrGeneProductId
     object: GeneOrGeneProductId
 
@@ -2895,8 +2895,8 @@ class GeneRegulatoryRelationship(Association):
             self.id = GeneRegulatoryRelationshipAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GeneOrGeneProductId):
@@ -2939,7 +2939,7 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     id: AnatomicalEntityToAnatomicalEntityPartOfAssociationAssociation_id
     subject: AnatomicalEntityId
     object: AnatomicalEntityId
-    relation: RelationshipTypeId
+    relation: IriType
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2957,8 +2957,8 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
             self.object = AnatomicalEntityId(self.object)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
 
 
 @dataclass
@@ -2971,7 +2971,7 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     id: AnatomicalEntityToAnatomicalEntityOntogenicAssociationAssociation_id
     subject: AnatomicalEntityId
     object: AnatomicalEntityId
-    relation: RelationshipTypeId
+    relation: IriType
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2989,8 +2989,8 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
             self.object = AnatomicalEntityId(self.object)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
+        if not isinstance(self.relation, IriType):
+            self.relation = IriType(self.relation)
 
 
 @dataclass
@@ -3205,7 +3205,7 @@ class NamedGraph(InformationContentEntity):
 
 @dataclass
 class PropertyValuePair(YAMLRoot):
-    relation: RelationshipTypeId
+    relation: IriType
     filler: Optional[NamedThingId] = None
 
     def _fix_elements(self):

@@ -21,15 +21,15 @@ URI: [http://w3id.org/biolink/vocab/VariantToDiseaseAssociation](http://w3id.org
 
  * [variant to disease association.object](variant_to_disease_association_object.md)
     * Description: a disease that is associated with that variant
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [variant to disease association.relation](variant_to_disease_association_relation.md)
     * Description: E.g. is pathogenic for
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [variant to disease association.subject](variant_to_disease_association_subject.md)
     * Description: a sequence variant in which the allele state is associated in some way with the disease state
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [association slot](association_slot.md)
     * Description: any slot that relates an association to another entity

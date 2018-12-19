@@ -8,7 +8,7 @@ URI: [http://w3id.org/biolink/vocab/gene_regulatory_relationship_relation](slot_
 
 ## Domain and Range
 
-[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) -> [RelationshipType](RelationshipType.md)
+[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [relation](relation.md)

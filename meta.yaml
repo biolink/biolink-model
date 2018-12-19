@@ -226,20 +226,6 @@ metamodel:
 
       #
       # Slots for all definitions (slot and class)
-      is_a:
-          multivalued: false
-          domain: definition
-          range: definition
-          description: >-
-            specifies single-inheritance between classes and slots.
-            While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing.
-            The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI
-            framework (e.g. java classes, python classes) then is_a is used.
-            When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins
-            are recursively unfolded
-          mappings:
-            - rdf:type
-
       mixin:
           domain: definition
           range: boolean
@@ -408,6 +394,20 @@ metamodel:
 
       #
       # Slots for class definition
+      is_a:
+        multivalued: false
+        domain: definition
+        range: definition
+        description: >-
+          specifies single-inheritance between classes and slots.
+          While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing.
+          The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI
+          framework (e.g. java classes, python classes) then is_a is used.
+          When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins
+          are recursively unfolded
+        mappings:
+        - rdfs:subClassOf
+
       defining_slots:
           multivalued: true
           domain: class definition
@@ -454,6 +454,20 @@ metamodel:
 
 
       # Slots for slot definition
+#      is_a_slot:
+#        multivalued: false
+#        domain: slot definition
+#        range: slot definition
+#        description: >-
+#          specifies single-inheritance between classes and slots.
+#          While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing.
+#          The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI
+#          framework (e.g. java classes, python classes) then is_a is used.
+#          When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins
+#          are recursively unfolded
+#        mappings:
+#        - rdfs:subPropertyOf
+
       multivalued:
           domain: slot definition
           range: boolean

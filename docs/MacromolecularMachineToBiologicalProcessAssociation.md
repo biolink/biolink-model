@@ -55,5 +55,5 @@ URI: [http://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAsso
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)

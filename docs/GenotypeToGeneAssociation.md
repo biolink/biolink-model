@@ -23,7 +23,7 @@ URI: [http://w3id.org/biolink/vocab/GenotypeToGeneAssociation](http://w3id.org/b
     * __Local__
  * [genotype to gene association.relation](genotype_to_gene_association_relation.md)
     * Description: the relationship type used to connect genotype to gene
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [genotype to gene association.subject](genotype_to_gene_association_subject.md)
     * Description: parent genotype

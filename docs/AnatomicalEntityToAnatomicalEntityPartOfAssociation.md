@@ -23,7 +23,7 @@ URI: [http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAsso
     * __Local__
  * [anatomical entity to anatomical entity part of association.relation](anatomical_entity_to_anatomical_entity_part_of_association_relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * edge label: [part of](part_of.md) *subsets*: (translator_minimal)
     * __Local__
  * [anatomical entity to anatomical entity part of association.subject](anatomical_entity_to_anatomical_entity_part_of_association_subject.md)

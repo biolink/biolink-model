@@ -5,7 +5,7 @@ An association between a macromolecular machine (gene, gene product or complex o
 
 URI: [http://w3id.org/biolink/vocab/FunctionalAssociation](http://w3id.org/biolink/vocab/FunctionalAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[FunctionalAssociation|id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[FunctionalAssociation]-%20publications(i)%20*>\[Publication],%20\[FunctionalAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[FunctionalAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[FunctionalAssociation]-%20relation(i)>\[RelationshipType],%20\[FunctionalAssociation]-%20object>\[GeneOntologyClass],%20\[FunctionalAssociation]-%20subject>\[MacromolecularMachine],%20\[FunctionalAssociation]^-\[MacromolecularMachineToMolecularActivityAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToCellularComponentAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToBiologicalProcessAssociation],%20\[FunctionalAssociation]^-\[GeneToGoTermAssociation],%20\[Association]^-\[FunctionalAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[FunctionalAssociation|id(i):identifier_type%20%3F;relation(i):iri_type;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[FunctionalAssociation]-%20publications(i)%20*>\[Publication],%20\[FunctionalAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[FunctionalAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[FunctionalAssociation]-%20object>\[GeneOntologyClass],%20\[FunctionalAssociation]-%20subject>\[MacromolecularMachine],%20\[FunctionalAssociation]^-\[MacromolecularMachineToMolecularActivityAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToCellularComponentAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToBiologicalProcessAssociation],%20\[FunctionalAssociation]^-\[GeneToGoTermAssociation],%20\[Association]^-\[FunctionalAssociation])
 ## Mappings
 
 ## Inheritance
@@ -59,5 +59,5 @@ URI: [http://w3id.org/biolink/vocab/FunctionalAssociation](http://w3id.org/bioli
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)

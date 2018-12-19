@@ -75,7 +75,7 @@ URI: [http://w3id.org/biolink/vocab/Association](http://w3id.org/biolink/vocab/A
     * __Local__
  * [object](object.md)
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [provided by](provided_by.md)
     * Description: connects an association to the agent (person, organization or group) that provided it
@@ -91,9 +91,9 @@ URI: [http://w3id.org/biolink/vocab/Association](http://w3id.org/biolink/vocab/A
     * __Local__
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [subject](subject.md)
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__

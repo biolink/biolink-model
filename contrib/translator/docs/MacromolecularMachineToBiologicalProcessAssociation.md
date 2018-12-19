@@ -5,7 +5,7 @@ A functional association between a macromolecular machine (gene, gene product or
 
 URI: [http://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation](http://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MacromolecularMachineToBiologicalProcessAssociation|id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20subject(i)>\[MacromolecularMachine],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20publications(i)%20*>\[Publication],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20relation(i)>\[RelationshipType],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20object>\[BiologicalProcess],%20\[FunctionalAssociation]^-\[MacromolecularMachineToBiologicalProcessAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MacromolecularMachineToBiologicalProcessAssociation|id(i):identifier_type%20%3F;relation(i):iri_type;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20subject(i)>\[MacromolecularMachine],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20publications(i)%20*>\[Publication],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[MacromolecularMachineToBiologicalProcessAssociation]-%20object>\[BiologicalProcess],%20\[FunctionalAssociation]^-\[MacromolecularMachineToBiologicalProcessAssociation])
 ## Mappings
 
 ## Inheritance
@@ -55,5 +55,5 @@ URI: [http://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAsso
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)

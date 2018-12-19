@@ -21,7 +21,7 @@ URI: [http://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation](http
 
  * [genotype to phenotypic feature association.relation](genotype_to_phenotypic_feature_association_relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * edge label: [has phenotype](has_phenotype.md) *subsets*: (translator_minimal)
     * __Local__
  * [genotype to phenotypic feature association.subject](genotype_to_phenotypic_feature_association_subject.md)
@@ -50,7 +50,7 @@ URI: [http://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation](http
     * inherited from: [Association](Association.md)
  * [object](object.md)
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)
  * [onset qualifier](onset_qualifier.md)
     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject

@@ -23,7 +23,7 @@ URI: [http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityOntogenicA
     * __Local__
  * [anatomical entity to anatomical entity ontogenic association.relation](anatomical_entity_to_anatomical_entity_ontogenic_association_relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [anatomical entity to anatomical entity ontogenic association.subject](anatomical_entity_to_anatomical_entity_ontogenic_association_subject.md)
     * Description: the structure at a later time

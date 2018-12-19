@@ -5,7 +5,7 @@ An association between a biosample and something
 
 URI: [http://w3id.org/biolink/vocab/BiosampleToThingAssociation](http://w3id.org/biolink/vocab/BiosampleToThingAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiosampleToThingAssociation|id(i):identifier_type%20%3F;object(i):string;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[BiosampleToThingAssociation]-%20publications(i)%20*>\[Publication],%20\[BiosampleToThingAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[BiosampleToThingAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[BiosampleToThingAssociation]-%20relation(i)>\[RelationshipType],%20\[BiosampleToThingAssociation]-%20subject>\[Biosample],%20\[BiosampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[BiosampleToThingAssociation],%20\[Association]^-\[BiosampleToThingAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiosampleToThingAssociation|id(i):identifier_type%20%3F;relation(i):iri_type;object(i):iri_type;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[BiosampleToThingAssociation]-%20publications(i)%20*>\[Publication],%20\[BiosampleToThingAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[BiosampleToThingAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[BiosampleToThingAssociation]-%20subject>\[Biosample],%20\[BiosampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[BiosampleToThingAssociation],%20\[Association]^-\[BiosampleToThingAssociation])
 ## Mappings
 
 ## Inheritance
@@ -40,7 +40,7 @@ URI: [http://w3id.org/biolink/vocab/BiosampleToThingAssociation](http://w3id.org
     * inherited from: [Association](Association.md)
  * [object](object.md)
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)
  * [provided by](provided_by.md)
     * Description: connects an association to the agent (person, organization or group) that provided it
@@ -56,5 +56,5 @@ URI: [http://w3id.org/biolink/vocab/BiosampleToThingAssociation](http://w3id.org
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)

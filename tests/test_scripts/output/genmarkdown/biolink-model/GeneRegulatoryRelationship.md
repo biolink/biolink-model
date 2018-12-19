@@ -5,7 +5,7 @@ A regulatory relationship between two genes
 
 URI: [http://w3id.org/biolink/vocab/GeneRegulatoryRelationship](http://w3id.org/biolink/vocab/GeneRegulatoryRelationship)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneRegulatoryRelationship|id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneRegulatoryRelationship]-%20publications(i)%20*>\[Publication],%20\[GeneRegulatoryRelationship]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneRegulatoryRelationship]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneRegulatoryRelationship]-%20object>\[GeneOrGeneProduct],%20\[GeneRegulatoryRelationship]-%20subject>\[GeneOrGeneProduct],%20\[GeneRegulatoryRelationship]-%20relation>\[RelationshipType],%20\[Association]^-\[GeneRegulatoryRelationship])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneRegulatoryRelationship|relation:iri_type;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneRegulatoryRelationship]-%20publications(i)%20*>\[Publication],%20\[GeneRegulatoryRelationship]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneRegulatoryRelationship]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneRegulatoryRelationship]-%20object>\[GeneOrGeneProduct],%20\[GeneRegulatoryRelationship]-%20subject>\[GeneOrGeneProduct],%20\[Association]^-\[GeneRegulatoryRelationship])
 ## Mappings
 
 ## Inheritance
@@ -23,7 +23,7 @@ URI: [http://w3id.org/biolink/vocab/GeneRegulatoryRelationship](http://w3id.org/
     * __Local__
  * [gene regulatory relationship.relation](gene_regulatory_relationship_relation.md)
     * Description: the direction is always from regulator to regulated
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [gene regulatory relationship.subject](gene_regulatory_relationship_subject.md)
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.

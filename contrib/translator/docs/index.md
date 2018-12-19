@@ -453,7 +453,7 @@ Monarch specific extensions
  * [EvidenceInstance](EvidenceInstance.md)  (**string**) 
  * [FrequencyValue](FrequencyValue.md)  (**string**) 
  * [IdentifierType](IdentifierType.md)  (**string**)  - A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form
- * [IriType](IriType.md)  (**string**)  - An IRI
+ * [IriType](IriType.md)  (**uri**)  - An IRI
  * [LabelType](LabelType.md)  (**string**)  - A string that provides a human-readable name for a thing
  * [NarrativeText](NarrativeText.md)  (**string**)  - A string that provides a human-readable description of something
  * [PerecentageFrequencyValue](PerecentageFrequencyValue.md)  (**double**) 

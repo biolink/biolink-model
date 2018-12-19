@@ -20,7 +20,7 @@ URI: [http://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction](http://w3id.o
 
  * [pairwise gene to gene interaction.relation](pairwise_gene_to_gene_interaction_relation.md)
     * Description: interaction relationship type
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * edge label: [molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)
     * __Local__
  * [association slot](association_slot.md)

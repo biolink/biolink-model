@@ -5,7 +5,7 @@ Any association between a genotype and a sequence variant.
 
 URI: [http://w3id.org/biolink/vocab/GenotypeToVariantAssociation](http://w3id.org/biolink/vocab/GenotypeToVariantAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenotypeToVariantAssociation|id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToVariantAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToVariantAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20object>\[SequenceVariant],%20\[GenotypeToVariantAssociation]-%20subject>\[Genotype],%20\[GenotypeToVariantAssociation]-%20relation>\[RelationshipType],%20\[Association]^-\[GenotypeToVariantAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenotypeToVariantAssociation|relation:iri_type;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToVariantAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToVariantAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20object>\[SequenceVariant],%20\[GenotypeToVariantAssociation]-%20subject>\[Genotype],%20\[Association]^-\[GenotypeToVariantAssociation])
 ## Mappings
 
 ## Inheritance
@@ -23,7 +23,7 @@ URI: [http://w3id.org/biolink/vocab/GenotypeToVariantAssociation](http://w3id.or
     * __Local__
  * [genotype to variant association.relation](genotype_to_variant_association_relation.md)
     * Description: the relationship type used to connect genotype to gene
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [genotype to variant association.subject](genotype_to_variant_association_subject.md)
     * Description: parent genotype

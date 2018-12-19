@@ -8,7 +8,7 @@ URI: [http://w3id.org/biolink/vocab/model_to_disease_mixin_relation](slot_uri)
 
 ## Domain and Range
 
-[ModelToDiseaseMixin](ModelToDiseaseMixin.md) -> [RelationshipType](RelationshipType.md)
+[ModelToDiseaseMixin](ModelToDiseaseMixin.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [relation](relation.md)

@@ -6,7 +6,7 @@ specifies single-inheritance between classes and slots. While multiple inheritan
 URI: [http://w3id.org/biolink/vocab/is_a](slot_uri)
 ## Mappings
 
- * [rdf:type](http://purl.obolibrary.org/obo/rdf_type)
+ * [rdfs:subClassOf](http://purl.obolibrary.org/obo/rdfs_subClassOf)
 ## Domain and Range
 
 [Definition](Definition.md) -> [Definition](Definition.md)

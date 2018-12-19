@@ -5,7 +5,7 @@
 
 URI: [http://w3id.org/biolink/vocab/GeneToGoTermAssociation](http://w3id.org/biolink/vocab/GeneToGoTermAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToGoTermAssociation|subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*;has_evidence(i):evidence_instance%20%3F;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToGoTermAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToGoTermAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToGoTermAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToGoTermAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToGoTermAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[GeneToGoTermAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[GeneToGoTermAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToGoTermAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToGoTermAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToGoTermAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToGoTermAssociation]-%20object>\[GeneOntologyClass],%20\[GeneToGoTermAssociation]-%20subject>\[MolecularEntity],%20\[FunctionalAssociation]^-\[GeneToGoTermAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToGoTermAssociation|subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*;has_evidence(i):evidence_instance%20%3F;id(i):identifier_type%20%3F;relation(i):iri_type;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToGoTermAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToGoTermAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToGoTermAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToGoTermAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[GeneToGoTermAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[GeneToGoTermAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToGoTermAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToGoTermAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToGoTermAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToGoTermAssociation]-%20object>\[GeneOntologyClass],%20\[GeneToGoTermAssociation]-%20subject>\[MolecularEntity],%20\[FunctionalAssociation]^-\[GeneToGoTermAssociation])
 ## Mappings
 
  * [http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association](http://purl.obolibrary.org/obo/http_//bio2rdf.org/wormbase_vocabulary_Gene-GO-Association)
@@ -83,7 +83,7 @@ URI: [http://w3id.org/biolink/vocab/GeneToGoTermAssociation](http://w3id.org/bio
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)
  * [subject taxon](subject_taxon.md)
     * Description: the taxonomic class of the entity in the object slot

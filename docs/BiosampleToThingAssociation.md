@@ -40,7 +40,7 @@ URI: [http://w3id.org/biolink/vocab/BiosampleToThingAssociation](http://w3id.org
     * inherited from: [Association](Association.md)
  * [object](object.md)
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)
  * [provided by](provided_by.md)
     * Description: connects an association to the agent (person, organization or group) that provided it
@@ -56,5 +56,5 @@ URI: [http://w3id.org/biolink/vocab/BiosampleToThingAssociation](http://w3id.org
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)

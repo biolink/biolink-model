@@ -5,7 +5,7 @@
 
 URI: [http://w3id.org/biolink/vocab/VariantToDiseaseAssociation](http://w3id.org/biolink/vocab/VariantToDiseaseAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[VariantToDiseaseAssociation|subject:string;object:string;subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*;has_evidence(i):evidence_instance%20%3F;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[VariantToDiseaseAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[VariantToDiseaseAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[VariantToDiseaseAssociation]-%20publications(i)%20*>\[Publication],%20\[VariantToDiseaseAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[VariantToDiseaseAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[VariantToDiseaseAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[VariantToDiseaseAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[VariantToDiseaseAssociation]-%20subject%20extensions(i)%20*>\[PropertyValuePair],%20\[VariantToDiseaseAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[VariantToDiseaseAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[VariantToDiseaseAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[VariantToDiseaseAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[VariantToDiseaseAssociation]-%20relation>\[RelationshipType],%20\[VariantToDiseaseAssociation]uses%20-.->\[VariantToThingAssociation],%20\[VariantToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[Association]^-\[VariantToDiseaseAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[VariantToDiseaseAssociation|subject:iri_type;relation:iri_type;object:iri_type;subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*;has_evidence(i):evidence_instance%20%3F;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[VariantToDiseaseAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[VariantToDiseaseAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[VariantToDiseaseAssociation]-%20publications(i)%20*>\[Publication],%20\[VariantToDiseaseAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[VariantToDiseaseAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[VariantToDiseaseAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[VariantToDiseaseAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[VariantToDiseaseAssociation]-%20subject%20extensions(i)%20*>\[PropertyValuePair],%20\[VariantToDiseaseAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[VariantToDiseaseAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[VariantToDiseaseAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[VariantToDiseaseAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[VariantToDiseaseAssociation]uses%20-.->\[VariantToThingAssociation],%20\[VariantToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[Association]^-\[VariantToDiseaseAssociation])
 ## Mappings
 
 ## Inheritance
@@ -21,15 +21,15 @@ URI: [http://w3id.org/biolink/vocab/VariantToDiseaseAssociation](http://w3id.org
 
  * [variant to disease association.object](variant_to_disease_association_object.md)
     * Description: a disease that is associated with that variant
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [variant to disease association.relation](variant_to_disease_association_relation.md)
     * Description: E.g. is pathogenic for
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [variant to disease association.subject](variant_to_disease_association_subject.md)
     * Description: a sequence variant in which the allele state is associated in some way with the disease state
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [association slot](association_slot.md)
     * Description: any slot that relates an association to another entity

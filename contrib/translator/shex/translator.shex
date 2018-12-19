@@ -31,7 +31,7 @@
     @<http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation> AND {
        (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL
        )
     }
 )
@@ -40,7 +40,7 @@
     @<http://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation> AND {
        (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL
        )
     }
 )
@@ -65,9 +65,9 @@
 
 <http://w3id.org/biolink/vocab/Association> {
     (  <http://w3id.org/biolink/vocab/id> <http://www.w3.org/2001/XMLSchema#string> ? ;
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.w3.org/2001/XMLSchema#string> ;
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.w3.org/2001/XMLSchema#string> ;
+       <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> NONLITERAL ;
+       <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL ;
+       <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> NONLITERAL ;
        <http://w3id.org/biolink/vocab/negated> <http://www.w3.org/2001/XMLSchema#boolean> ? ;
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> @<http://w3id.org/biolink/vocab/OntologyClass> ? ;
        <http://w3id.org/biolink/vocab/qualifiers> @<http://w3id.org/biolink/vocab/OntologyClass__List> ? ;
@@ -401,7 +401,7 @@
 
 <http://w3id.org/biolink/vocab/GeneRegulatoryRelationship>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
+       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct>
        )
@@ -421,7 +421,7 @@
           <http://w3id.org/biolink/vocab/quantifier_qualifier> @<http://w3id.org/biolink/vocab/OntologyClass> ? ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/AnatomicalEntity> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL
        )
     }
 )
@@ -436,7 +436,7 @@
 
 <http://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation>  (
     @<http://w3id.org/biolink/vocab/GeneToGeneAssociation> AND {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+       <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL
     }
 )
 
@@ -444,7 +444,7 @@
     @<http://w3id.org/biolink/vocab/SequenceFeatureRelationship> AND {
        (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Gene> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/GeneProduct> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL
        )
     }
 )
@@ -500,7 +500,7 @@
 
 <http://w3id.org/biolink/vocab/GenotypeToGeneAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
+       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Genotype> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/Gene>
        )
@@ -509,7 +509,7 @@
 
 <http://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
+       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Genotype> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/Genotype>
        )
@@ -519,7 +519,7 @@
 <http://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation> AND
     @<http://w3id.org/biolink/vocab/GenotypeToThingAssociation> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
+       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Genotype>
        )
     }
@@ -533,7 +533,7 @@
 
 <http://w3id.org/biolink/vocab/GenotypeToVariantAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
+       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/Genotype> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/SequenceVariant>
        )
@@ -617,8 +617,8 @@
 )
 
 <http://w3id.org/biolink/vocab/ModelToDiseaseMixin> {
-    (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.w3.org/2001/XMLSchema#string> ;
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+    (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> NONLITERAL ;
+       <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL
     )
 }
 
@@ -689,11 +689,11 @@
     }
 )
 
-<XSD_string__List> CLOSED {
-    (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#string> ? ;
+<XSD_uri__List> CLOSED {
+    (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> NONLITERAL ? ;
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  (
           [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ]
-          OR @<XSD_string__List>
+          OR @<XSD_uri__List>
        )
     )
 }
@@ -701,11 +701,11 @@
 <http://w3id.org/biolink/vocab/NamedThing> {
     (  <http://w3id.org/biolink/vocab/id> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/2001/XMLSchema#string> ? ;
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> @<XSD_string__List> ? ;
+       <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> @<XSD_uri__List> ? ;
        <@id> NONLITERAL ? ;
        <http://www.w3.org/2002/07/owl#topObjectProperty> @<http://w3id.org/biolink/vocab/NamedThing> ? ;
        <http://w3id.org/biolink/vocab/node_property> <http://www.w3.org/2001/XMLSchema#string> ? ;
-       <http://w3id.org/biolink/vocab/iri> <http://www.w3.org/2001/XMLSchema#string> ? ;
+       <http://w3id.org/biolink/vocab/iri> NONLITERAL ? ;
        <http://w3id.org/biolink/vocab/full_name> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://purl.org/dc/terms/description> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://w3id.org/biolink/vocab/systematic_synonym> <http://www.w3.org/2001/XMLSchema#string> ?
@@ -747,7 +747,7 @@
 <http://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction>  (
     @<http://w3id.org/biolink/vocab/GeneToGeneAssociation> AND @<http://w3id.org/biolink/vocab/PairwiseInteractionAssociation> AND
     {
-       <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+       <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL
     }
 )
 
@@ -755,7 +755,7 @@
     @<http://w3id.org/biolink/vocab/Association> AND {
        (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/MolecularEntity> ;
           <http://w3id.org/biolink/vocab/id> <http://www.w3.org/2001/XMLSchema#string> ? ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/MolecularEntity> ;
           <http://w3id.org/biolink/vocab/interacting_molecules_category> @<http://w3id.org/biolink/vocab/OntologyClass> ?
        )
@@ -798,7 +798,7 @@
     @<http://w3id.org/biolink/vocab/Association> AND {
        (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> @<http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
           <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> @<http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType>
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL
        )
     }
 )
@@ -925,9 +925,9 @@
 <http://w3id.org/biolink/vocab/VariantToDiseaseAssociation>  (
     @<http://w3id.org/biolink/vocab/Association> AND @<http://w3id.org/biolink/vocab/VariantToThingAssociation> AND
     @<http://w3id.org/biolink/vocab/EntityToDiseaseAssociation> AND {
-       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> <http://www.w3.org/2001/XMLSchema#string> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> @<http://w3id.org/biolink/vocab/RelationshipType> ;
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> <http://www.w3.org/2001/XMLSchema#string>
+       (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> NONLITERAL ;
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> NONLITERAL ;
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> NONLITERAL
        )
     }
 )

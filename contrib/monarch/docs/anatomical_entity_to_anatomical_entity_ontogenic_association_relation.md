@@ -8,7 +8,7 @@ URI: [http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_ontog
 
 ## Domain and Range
 
-[AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) -> [RelationshipType](RelationshipType.md)
+[AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [relation](relation.md)

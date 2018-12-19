@@ -5,7 +5,7 @@
 
 URI: [http://w3id.org/biolink/vocab/PropertyValuePair](http://w3id.org/biolink/vocab/PropertyValuePair)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PropertyValuePair]-%20filler%20%3F>\[NamedThing],%20\[PropertyValuePair]-%20relation>\[RelationshipType],%20\[Association]-%20extensions%20context%20slot(i)%20*>\[PropertyValuePair],%20\[ExtensionsAndEvidenceAssociationMixin]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[ExtensionsAndEvidenceAssociationMixin]-%20subject%20extensions(i)%20*>\[PropertyValuePair])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PropertyValuePair|relation:iri_type]-%20filler%20%3F>\[NamedThing],%20\[Association]-%20extensions%20context%20slot(i)%20*>\[PropertyValuePair],%20\[ExtensionsAndEvidenceAssociationMixin]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[ExtensionsAndEvidenceAssociationMixin]-%20subject%20extensions(i)%20*>\[PropertyValuePair])
 ## Mappings
 
 ## Inheritance
@@ -25,5 +25,5 @@ URI: [http://w3id.org/biolink/vocab/PropertyValuePair](http://w3id.org/biolink/v
     * __Local__
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__

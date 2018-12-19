@@ -8,7 +8,7 @@ URI: [http://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_relation](
 
 ## Domain and Range
 
-[PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) -> [RelationshipType](RelationshipType.md)
+[PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [pairwise interaction association.relation](pairwise_interaction_association_relation.md)

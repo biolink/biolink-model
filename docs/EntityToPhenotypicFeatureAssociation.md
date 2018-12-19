@@ -70,7 +70,7 @@ URI: [http://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation](http:/
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)
  * [severity qualifier](severity_qualifier.md)
     * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
@@ -78,5 +78,5 @@ URI: [http://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation](http:/
     * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
  * [subject](subject.md)
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)

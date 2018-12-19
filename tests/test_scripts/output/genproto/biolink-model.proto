@@ -17,7 +17,7 @@ message AnatomicalEntity
 message AnatomicalEntityToAnatomicalEntityAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
+  relation IriType = 2
   optional negated Boolean = 3
   optional associationType OntologyClass = 4
   repeated qualifiers OntologyClass = 5
@@ -39,7 +39,7 @@ message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
   optional associationSlot String = 7
   subject AnatomicalEntity = 8
   object AnatomicalEntity = 9
-  relation RelationshipType = 10
+  relation IriType = 10
  }
 // A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
 message AnatomicalEntityToAnatomicalEntityPartOfAssociation
@@ -53,15 +53,15 @@ message AnatomicalEntityToAnatomicalEntityPartOfAssociation
   optional associationSlot String = 7
   subject AnatomicalEntity = 8
   object AnatomicalEntity = 9
-  relation RelationshipType = 10
+  relation IriType = 10
  }
 // A typed association between two entities, supported by evidence
 message Association
  {
   optional id IdentifierType = 1
-  subject String = 2
-  relation RelationshipType = 3
-  object String = 4
+  subject IriType = 2
+  relation IriType = 3
+  object IriType = 4
   optional negated Boolean = 5
   optional associationType OntologyClass = 6
   repeated qualifiers OntologyClass = 7
@@ -73,8 +73,8 @@ message Association
 message CellLineToDiseaseOrPhenotypicFeatureAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
-  object String = 3
+  relation IriType = 2
+  object IriType = 3
   optional negated Boolean = 4
   optional associationType OntologyClass = 5
   repeated qualifiers OntologyClass = 6
@@ -87,8 +87,8 @@ message CellLineToDiseaseOrPhenotypicFeatureAssociation
 message ChemicalToDiseaseOrPhenotypicFeatureAssociation
  {
   optional id IdentifierType = 1
-  subject String = 2
-  relation RelationshipType = 3
+  subject IriType = 2
+  relation IriType = 3
   optional negated Boolean = 4
   optional associationType OntologyClass = 5
   repeated qualifiers OntologyClass = 6
@@ -101,8 +101,8 @@ message ChemicalToDiseaseOrPhenotypicFeatureAssociation
 message ChemicalToGeneAssociation
  {
   optional id IdentifierType = 1
-  subject String = 2
-  relation RelationshipType = 3
+  subject IriType = 2
+  relation IriType = 3
   optional negated Boolean = 4
   optional associationType OntologyClass = 5
   repeated qualifiers OntologyClass = 6
@@ -115,8 +115,8 @@ message ChemicalToGeneAssociation
 message ChemicalToPathwayAssociation
  {
   optional id IdentifierType = 1
-  subject String = 2
-  relation RelationshipType = 3
+  subject IriType = 2
+  relation IriType = 3
   optional negated Boolean = 4
   optional associationType OntologyClass = 5
   repeated qualifiers OntologyClass = 6
@@ -147,7 +147,7 @@ message DiseaseOrPhenotypicFeature
 message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
+  relation IriType = 2
   optional negated Boolean = 3
   optional associationType OntologyClass = 4
   repeated qualifiers OntologyClass = 5
@@ -176,8 +176,8 @@ message DrugExposure
 message EnvironmentToPhenotypicFeatureAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
-  object String = 3
+  relation IriType = 2
+  object IriType = 3
   optional negated Boolean = 4
   optional associationType OntologyClass = 5
   repeated qualifiers OntologyClass = 6
@@ -194,7 +194,7 @@ message EnvironmentToPhenotypicFeatureAssociation
 message ExonToTranscriptRelationship
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
+  relation IriType = 2
   optional negated Boolean = 3
   optional associationType OntologyClass = 4
   repeated qualifiers OntologyClass = 5
@@ -208,7 +208,7 @@ message ExonToTranscriptRelationship
 message FunctionalAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
+  relation IriType = 2
   optional negated Boolean = 3
   optional associationType OntologyClass = 4
   repeated qualifiers OntologyClass = 5
@@ -294,8 +294,8 @@ message Gene
 message GeneAsAModelOfDiseaseAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
-  object String = 3
+  relation IriType = 2
+  object IriType = 3
   optional negated Boolean = 4
   optional associationType OntologyClass = 5
   repeated qualifiers OntologyClass = 6
@@ -309,8 +309,8 @@ message GeneAsAModelOfDiseaseAssociation
 message GeneHasVariantThatContributesToDiseaseAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
-  object String = 3
+  relation IriType = 2
+  object IriType = 3
   optional negated Boolean = 4
   optional associationType OntologyClass = 5
   repeated qualifiers OntologyClass = 6
@@ -403,15 +403,15 @@ message GeneRegulatoryRelationship
   repeated publications Publication = 5
   optional providedBy Provider = 6
   optional associationSlot String = 7
-  relation RelationshipType = 8
+  relation IriType = 8
   subject GeneOrGeneProduct = 9
   object GeneOrGeneProduct = 10
  }
 message GeneToDiseaseAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
-  object String = 3
+  relation IriType = 2
+  object IriType = 3
   optional negated Boolean = 4
   optional associationType OntologyClass = 5
   repeated qualifiers OntologyClass = 6
@@ -436,7 +436,7 @@ message GeneToExpressionSiteAssociation
   optional quantifierQualifier OntologyClass = 9
   subject GeneOrGeneProduct = 10
   object AnatomicalEntity = 11
-  relation RelationshipType = 12
+  relation IriType = 12
  }
 // A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
 message GeneToGeneHomologyAssociation
@@ -450,7 +450,7 @@ message GeneToGeneHomologyAssociation
   optional associationSlot String = 7
   subject GeneOrGeneProduct = 8
   object GeneOrGeneProduct = 9
-  relation RelationshipType = 10
+  relation IriType = 10
  }
 // A gene is transcribed and potentially translated to a gene product
 message GeneToGeneProductRelationship
@@ -464,12 +464,12 @@ message GeneToGeneProductRelationship
   optional associationSlot String = 7
   subject Gene = 8
   object GeneProduct = 9
-  relation RelationshipType = 10
+  relation IriType = 10
  }
 message GeneToGoTermAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
+  relation IriType = 2
   optional negated Boolean = 3
   optional associationType OntologyClass = 4
   repeated qualifiers OntologyClass = 5
@@ -482,8 +482,8 @@ message GeneToGoTermAssociation
 message GeneToPhenotypicFeatureAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
-  object String = 3
+  relation IriType = 2
+  object IriType = 3
   optional negated Boolean = 4
   optional associationType OntologyClass = 5
   repeated qualifiers OntologyClass = 6
@@ -567,7 +567,7 @@ message GenomicEntity
 message GenomicSequenceLocalization
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
+  relation IriType = 2
   optional negated Boolean = 3
   optional associationType OntologyClass = 4
   repeated qualifiers OntologyClass = 5
@@ -659,7 +659,7 @@ message GenotypeToGeneAssociation
   repeated publications Publication = 5
   optional providedBy Provider = 6
   optional associationSlot String = 7
-  relation RelationshipType = 8
+  relation IriType = 8
   subject Genotype = 9
   object Gene = 10
  }
@@ -673,7 +673,7 @@ message GenotypeToGenotypePartAssociation
   repeated publications Publication = 5
   optional providedBy Provider = 6
   optional associationSlot String = 7
-  relation RelationshipType = 8
+  relation IriType = 8
   subject Genotype = 9
   object Genotype = 10
  }
@@ -681,7 +681,7 @@ message GenotypeToGenotypePartAssociation
 message GenotypeToPhenotypicFeatureAssociation
  {
   optional id IdentifierType = 1
-  object String = 2
+  object IriType = 2
   optional negated Boolean = 3
   optional associationType OntologyClass = 4
   repeated qualifiers OntologyClass = 5
@@ -692,7 +692,7 @@ message GenotypeToPhenotypicFeatureAssociation
   optional onsetQualifier Onset = 10
   optional sexQualifier BiologicalSex = 11
   optional description NarrativeText = 12
-  relation RelationshipType = 13
+  relation IriType = 13
   subject Genotype = 14
  }
 // Any association between a genotype and a sequence variant.
@@ -705,7 +705,7 @@ message GenotypeToVariantAssociation
   repeated publications Publication = 5
   optional providedBy Provider = 6
   optional associationSlot String = 7
-  relation RelationshipType = 8
+  relation IriType = 8
   subject Genotype = 9
   object SequenceVariant = 10
  }
@@ -811,7 +811,7 @@ message MacromolecularMachine
 message MacromolecularMachineToBiologicalProcessAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
+  relation IriType = 2
   optional negated Boolean = 3
   optional associationType OntologyClass = 4
   repeated qualifiers OntologyClass = 5
@@ -825,7 +825,7 @@ message MacromolecularMachineToBiologicalProcessAssociation
 message MacromolecularMachineToCellularComponentAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
+  relation IriType = 2
   optional negated Boolean = 3
   optional associationType OntologyClass = 4
   repeated qualifiers OntologyClass = 5
@@ -839,7 +839,7 @@ message MacromolecularMachineToCellularComponentAssociation
 message MacromolecularMachineToMolecularActivityAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
+  relation IriType = 2
   optional negated Boolean = 3
   optional associationType OntologyClass = 4
   repeated qualifiers OntologyClass = 5
@@ -972,7 +972,7 @@ message PairwiseGeneToGeneInteraction
   subject GeneOrGeneProduct = 8
   object GeneOrGeneProduct = 9
   optional interactingMoleculesCategory OntologyClass = 10
-  relation RelationshipType = 11
+  relation IriType = 11
  }
 // An association between a two populations
 message PopulationToPopulationAssociation
@@ -986,13 +986,13 @@ message PopulationToPopulationAssociation
   optional associationSlot String = 7
   subject PopulationOfIndividualOrganisms = 8
   object PopulationOfIndividualOrganisms = 9
-  relation RelationshipType = 10
+  relation IriType = 10
  }
 // For example, a particular exon is part of a particular transcript or gene
 message SequenceFeatureRelationship
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
+  relation IriType = 2
   optional negated Boolean = 3
   optional associationType OntologyClass = 4
   repeated qualifiers OntologyClass = 5
@@ -1074,7 +1074,7 @@ message SequenceVariant
 message TranscriptToGeneRelationship
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
+  relation IriType = 2
   optional negated Boolean = 3
   optional associationType OntologyClass = 4
   repeated qualifiers OntologyClass = 5
@@ -1111,15 +1111,15 @@ message VariantToDiseaseAssociation
   optional associationSlot String = 7
   optional severityQualifier SeverityValue = 8
   optional onsetQualifier Onset = 9
-  subject String = 10
-  relation RelationshipType = 11
-  object String = 12
+  subject IriType = 10
+  relation IriType = 11
+  object IriType = 12
  }
 message VariantToPhenotypicFeatureAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
-  object String = 3
+  relation IriType = 2
+  object IriType = 3
   optional negated Boolean = 4
   optional associationType OntologyClass = 5
   repeated qualifiers OntologyClass = 6
@@ -1136,7 +1136,7 @@ message VariantToPhenotypicFeatureAssociation
 message VariantToPopulationAssociation
  {
   optional id IdentifierType = 1
-  relation RelationshipType = 2
+  relation IriType = 2
   optional negated Boolean = 3
   optional associationType OntologyClass = 4
   repeated qualifiers OntologyClass = 5

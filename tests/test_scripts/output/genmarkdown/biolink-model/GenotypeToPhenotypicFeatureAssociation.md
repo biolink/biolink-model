@@ -5,7 +5,7 @@ Any association between one genotype and a phenotypic feature, where having the 
 
 URI: [http://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation](http://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenotypeToPhenotypicFeatureAssociation|id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F;description(i):narrative_text%20%3F]-%20object(i)>\[PhenotypicFeature],%20\[GenotypeToPhenotypicFeatureAssociation]-%20sex%20qualifier(i)%20%3F>\[BiologicalSex],%20\[GenotypeToPhenotypicFeatureAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[GenotypeToPhenotypicFeatureAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[GenotypeToPhenotypicFeatureAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToPhenotypicFeatureAssociation]-%20subject>\[Genotype],%20\[GenotypeToPhenotypicFeatureAssociation]-%20relation>\[RelationshipType],%20\[GenotypeToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GenotypeToPhenotypicFeatureAssociation]uses%20-.->\[GenotypeToThingAssociation],%20\[Association]^-\[GenotypeToPhenotypicFeatureAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenotypeToPhenotypicFeatureAssociation|relation:iri_type;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F;description(i):narrative_text%20%3F]-%20object(i)>\[PhenotypicFeature],%20\[GenotypeToPhenotypicFeatureAssociation]-%20sex%20qualifier(i)%20%3F>\[BiologicalSex],%20\[GenotypeToPhenotypicFeatureAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[GenotypeToPhenotypicFeatureAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[GenotypeToPhenotypicFeatureAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToPhenotypicFeatureAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToPhenotypicFeatureAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToPhenotypicFeatureAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToPhenotypicFeatureAssociation]-%20subject>\[Genotype],%20\[GenotypeToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GenotypeToPhenotypicFeatureAssociation]uses%20-.->\[GenotypeToThingAssociation],%20\[Association]^-\[GenotypeToPhenotypicFeatureAssociation])
 ## Mappings
 
 ## Inheritance
@@ -21,7 +21,7 @@ URI: [http://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation](http
 
  * [genotype to phenotypic feature association.relation](genotype_to_phenotypic_feature_association_relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * edge label: [has phenotype](has_phenotype.md) *subsets*: (translator_minimal)
     * __Local__
  * [genotype to phenotypic feature association.subject](genotype_to_phenotypic_feature_association_subject.md)
@@ -50,7 +50,7 @@ URI: [http://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation](http
     * inherited from: [Association](Association.md)
  * [object](object.md)
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)
  * [onset qualifier](onset_qualifier.md)
     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject

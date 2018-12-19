@@ -8,7 +8,7 @@ URI: [http://w3id.org/biolink/vocab/genotype_to_variant_association_relation](sl
 
 ## Domain and Range
 
-[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) -> [RelationshipType](RelationshipType.md)
+[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [relation](relation.md)

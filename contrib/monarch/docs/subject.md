@@ -11,7 +11,7 @@ URI: [http://w3id.org/biolink/vocab/subject](slot_uri)
  * [oban:association_has_subject](http://purl.obolibrary.org/obo/oban_association_has_subject)
 ## Domain and Range
 
-[Association](Association.md) -> **string**
+[Association](Association.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)

@@ -5,7 +5,7 @@ Any association between a genotype and a sequence variant.
 
 URI: [http://w3id.org/biolink/vocab/GenotypeToVariantAssociation](http://w3id.org/biolink/vocab/GenotypeToVariantAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenotypeToVariantAssociation|subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*;has_evidence(i):evidence_instance%20%3F;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToVariantAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToVariantAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[GenotypeToVariantAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[GenotypeToVariantAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GenotypeToVariantAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GenotypeToVariantAssociation]-%20object>\[SequenceVariant],%20\[GenotypeToVariantAssociation]-%20subject>\[Genotype],%20\[GenotypeToVariantAssociation]-%20relation>\[RelationshipType],%20\[Association]^-\[GenotypeToVariantAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GenotypeToVariantAssociation|relation:iri_type;subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*;has_evidence(i):evidence_instance%20%3F;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GenotypeToVariantAssociation]-%20publications(i)%20*>\[Publication],%20\[GenotypeToVariantAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[GenotypeToVariantAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[GenotypeToVariantAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GenotypeToVariantAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GenotypeToVariantAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GenotypeToVariantAssociation]-%20object>\[SequenceVariant],%20\[GenotypeToVariantAssociation]-%20subject>\[Genotype],%20\[Association]^-\[GenotypeToVariantAssociation])
 ## Mappings
 
 ## Inheritance
@@ -23,7 +23,7 @@ URI: [http://w3id.org/biolink/vocab/GenotypeToVariantAssociation](http://w3id.or
     * __Local__
  * [genotype to variant association.relation](genotype_to_variant_association_relation.md)
     * Description: the relationship type used to connect genotype to gene
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * __Local__
  * [genotype to variant association.subject](genotype_to_variant_association_subject.md)
     * Description: parent genotype

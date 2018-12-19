@@ -5,7 +5,7 @@ A homology association between two genes. May be orthology (in which case the sp
 
 URI: [http://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation](http://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToGeneHomologyAssociation|subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*;has_evidence(i):evidence_instance%20%3F;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20object(i)>\[GeneOrGeneProduct],%20\[GeneToGeneHomologyAssociation]-%20subject(i)>\[GeneOrGeneProduct],%20\[GeneToGeneHomologyAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToGeneHomologyAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToGeneHomologyAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToGeneHomologyAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToGeneHomologyAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[GeneToGeneHomologyAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[GeneToGeneHomologyAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToGeneHomologyAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToGeneHomologyAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToGeneHomologyAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToGeneHomologyAssociation]-%20relation>\[RelationshipType],%20\[GeneToGeneAssociation]^-\[GeneToGeneHomologyAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToGeneHomologyAssociation|relation:iri_type;subject_taxon_closure_label(i):label_type%20*;object_taxon_closure_label(i):label_type%20*;has_evidence(i):evidence_instance%20%3F;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20object(i)>\[GeneOrGeneProduct],%20\[GeneToGeneHomologyAssociation]-%20subject(i)>\[GeneOrGeneProduct],%20\[GeneToGeneHomologyAssociation]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToGeneHomologyAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToGeneHomologyAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToGeneHomologyAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToGeneHomologyAssociation]-%20has%20evidence%20type(i)%20%3F>\[EvidenceType],%20\[GeneToGeneHomologyAssociation]-%20object%20extensions(i)%20*>\[PropertyValuePair],%20\[GeneToGeneHomologyAssociation]-%20object%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToGeneHomologyAssociation]-%20object%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToGeneHomologyAssociation]-%20subject%20taxon%20closure(i)%20*>\[OntologyClass],%20\[GeneToGeneHomologyAssociation]-%20subject%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToGeneAssociation]^-\[GeneToGeneHomologyAssociation])
 ## Mappings
 
 ## Inheritance
@@ -19,7 +19,7 @@ URI: [http://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation](http://w3id.o
 
  * [gene to gene homology association.relation](gene_to_gene_homology_association_relation.md)
     * Description: homology relationship type
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * edge label: [homologous to](homologous_to.md) *subsets*: (translator_minimal)
     * __Local__
  * [association slot](association_slot.md)

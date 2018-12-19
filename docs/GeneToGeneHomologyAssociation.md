@@ -19,7 +19,7 @@ URI: [http://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation](http://w3id.o
 
  * [gene to gene homology association.relation](gene_to_gene_homology_association_relation.md)
     * Description: homology relationship type
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * edge label: [homologous to](homologous_to.md) *subsets*: (translator_minimal)
     * __Local__
  * [association slot](association_slot.md)

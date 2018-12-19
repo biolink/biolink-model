@@ -27,7 +27,7 @@ URI: [http://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation](http://w3id
     * __Local__
  * [gene to expression site association.relation](gene_to_expression_site_association_relation.md)
     * Description: expression relationship
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * edge label: [expressed in](expressed_in.md) *subsets*: (translator_minimal)
     * __Local__
  * [gene to expression site association.stage qualifier](gene_to_expression_site_association_stage_qualifier.md)

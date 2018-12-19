@@ -5,7 +5,7 @@
 
 URI: [http://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation](http://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneAsAModelOfDiseaseAssociation|id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneAsAModelOfDiseaseAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneAsAModelOfDiseaseAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneAsAModelOfDiseaseAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneAsAModelOfDiseaseAssociation]-%20object(i)>\[Disease],%20\[GeneAsAModelOfDiseaseAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[GeneAsAModelOfDiseaseAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[GeneAsAModelOfDiseaseAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneAsAModelOfDiseaseAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneAsAModelOfDiseaseAssociation]uses%20-.->\[ModelToDiseaseMixin],%20\[GeneAsAModelOfDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneAsAModelOfDiseaseAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneAsAModelOfDiseaseAssociation|relation(i):iri_type;id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneAsAModelOfDiseaseAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneAsAModelOfDiseaseAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneAsAModelOfDiseaseAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneAsAModelOfDiseaseAssociation]-%20object(i)>\[Disease],%20\[GeneAsAModelOfDiseaseAssociation]-%20onset%20qualifier(i)%20%3F>\[Onset],%20\[GeneAsAModelOfDiseaseAssociation]-%20severity%20qualifier(i)%20%3F>\[SeverityValue],%20\[GeneAsAModelOfDiseaseAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneAsAModelOfDiseaseAssociation]uses%20-.->\[ModelToDiseaseMixin],%20\[GeneAsAModelOfDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneAsAModelOfDiseaseAssociation])
 ## Mappings
 
 ## Inheritance
@@ -42,7 +42,7 @@ URI: [http://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation](http://w3i
     * inherited from: [Association](Association.md)
  * [object](object.md)
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: **string** [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)
  * [onset qualifier](onset_qualifier.md)
     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
@@ -62,7 +62,7 @@ URI: [http://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation](http://w3i
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)
  * [severity qualifier](severity_qualifier.md)
     * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject

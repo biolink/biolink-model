@@ -8,7 +8,7 @@ URI: [http://w3id.org/biolink/vocab/gene_to_gene_product_relationship_relation](
 
 ## Domain and Range
 
-[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) -> [RelationshipType](RelationshipType.md)
+[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [relation](relation.md)

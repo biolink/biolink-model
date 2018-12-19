@@ -5,7 +5,7 @@ abstract parent class for different kinds of gene-gene or gene product to gene p
 
 URI: [http://w3id.org/biolink/vocab/GeneToGeneAssociation](http://w3id.org/biolink/vocab/GeneToGeneAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToGeneAssociation|id(i):identifier_type%20%3F;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToGeneAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToGeneAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToGeneAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToGeneAssociation]-%20relation(i)>\[RelationshipType],%20\[GeneToGeneAssociation]-%20object>\[GeneOrGeneProduct],%20\[GeneToGeneAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToGeneAssociation]^-\[PairwiseGeneToGeneInteraction],%20\[GeneToGeneAssociation]^-\[GeneToGeneHomologyAssociation],%20\[Association]^-\[GeneToGeneAssociation])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneToGeneAssociation|id(i):identifier_type%20%3F;relation(i):iri_type;negated(i):boolean%20%3F;association_slot(i):string%20%3F]-%20provided%20by(i)%20%3F>\[Provider],%20\[GeneToGeneAssociation]-%20publications(i)%20*>\[Publication],%20\[GeneToGeneAssociation]-%20qualifiers(i)%20*>\[OntologyClass],%20\[GeneToGeneAssociation]-%20association%20type(i)%20%3F>\[OntologyClass],%20\[GeneToGeneAssociation]-%20object>\[GeneOrGeneProduct],%20\[GeneToGeneAssociation]-%20subject>\[GeneOrGeneProduct],%20\[GeneToGeneAssociation]^-\[PairwiseGeneToGeneInteraction],%20\[GeneToGeneAssociation]^-\[GeneToGeneHomologyAssociation],%20\[Association]^-\[GeneToGeneAssociation])
 ## Mappings
 
 ## Inheritance
@@ -57,5 +57,5 @@ URI: [http://w3id.org/biolink/vocab/GeneToGeneAssociation](http://w3id.org/bioli
     * inherited from: [Association](Association.md)
  * [relation](relation.md)
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [RelationshipType](RelationshipType.md) [required]
+    * range: [IriType](IriType.md) [required]
     * inherited from: [Association](Association.md)
