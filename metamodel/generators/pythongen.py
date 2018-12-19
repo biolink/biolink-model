@@ -224,7 +224,7 @@ class {camelcase(clsname)}{parentref}:{wrapped_description}
             return (f'List[{range_signature}]', 'empty_list()') if not slot.inlined or not pkeys \
                 else (f'Dict[{pkey}, {range_signature}]', 'empty_dict()')
         elif slot.primary_key or slot.identifier or slot.required:
-            return range_type, 'None' if cls.is_a else None
+            return range_type, 'None' if cls.is_a and not slot.alias else None
         elif range_type == 'bool':
             return 'bool', 'False'
         else:
