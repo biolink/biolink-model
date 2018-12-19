@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-12-08 05:13
+# Generation date: 2018-12-18 20:40
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -303,211 +303,215 @@ class GeographicLocationAtTimeId(IdentifierType):
     pass
 
 
-class AssociationId(IdentifierType):
+class AssociationAssociation_id(IdentifierType):
     pass
 
 
-class GenotypeToGenotypePartAssociationId(IdentifierType):
+class GenotypeToGenotypePartAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GenotypeToGeneAssociationId(IdentifierType):
+class GenotypeToGeneAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GenotypeToVariantAssociationId(IdentifierType):
+class GenotypeToVariantAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GeneToGeneAssociationId(IdentifierType):
+class GeneToGeneAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GeneToGeneHomologyAssociationId(IdentifierType):
+class GeneToGeneHomologyAssociationAssociation_id(IdentifierType):
     pass
 
 
-class PairwiseGeneToGeneInteractionId(IdentifierType):
+class PairwiseInteractionAssociationAssociation_id(IdentifierType):
     pass
 
 
-class CellLineToThingAssociationId(IdentifierType):
+class PairwiseGeneToGeneInteractionAssociation_id(IdentifierType):
     pass
 
 
-class CellLineToDiseaseOrPhenotypicFeatureAssociationId(IdentifierType):
+class CellLineToThingAssociationAssociation_id(IdentifierType):
     pass
 
 
-class ChemicalToThingAssociationId(IdentifierType):
+class CellLineToDiseaseOrPhenotypicFeatureAssociationAssociation_id(IdentifierType):
     pass
 
 
-class CaseToThingAssociationId(IdentifierType):
+class ChemicalToThingAssociationAssociation_id(IdentifierType):
     pass
 
 
-class ChemicalToDiseaseOrPhenotypicFeatureAssociationId(IdentifierType):
+class CaseToThingAssociationAssociation_id(IdentifierType):
     pass
 
 
-class ChemicalToPathwayAssociationId(IdentifierType):
+class ChemicalToDiseaseOrPhenotypicFeatureAssociationAssociation_id(IdentifierType):
     pass
 
 
-class ChemicalToGeneAssociationId(IdentifierType):
+class ChemicalToPathwayAssociationAssociation_id(IdentifierType):
     pass
 
 
-class BiosampleToThingAssociationId(IdentifierType):
+class ChemicalToGeneAssociationAssociation_id(IdentifierType):
     pass
 
 
-class BiosampleToDiseaseOrPhenotypicFeatureAssociationId(IdentifierType):
+class BiosampleToThingAssociationAssociation_id(IdentifierType):
     pass
 
 
-class EntityToPhenotypicFeatureAssociationId(IdentifierType):
+class BiosampleToDiseaseOrPhenotypicFeatureAssociationAssociation_id(IdentifierType):
     pass
 
 
-class DiseaseOrPhenotypicFeatureAssociationToThingAssociationId(IdentifierType):
+class EntityToPhenotypicFeatureAssociationAssociation_id(IdentifierType):
     pass
 
 
-class DiseaseOrPhenotypicFeatureAssociationToLocationAssociationId(IdentifierType):
+class DiseaseOrPhenotypicFeatureAssociationToThingAssociationAssociation_id(IdentifierType):
     pass
 
 
-class ThingToDiseaseOrPhenotypicFeatureAssociationId(IdentifierType):
+class DiseaseOrPhenotypicFeatureAssociationToLocationAssociationAssociation_id(IdentifierType):
     pass
 
 
-class DiseaseToThingAssociationId(IdentifierType):
+class ThingToDiseaseOrPhenotypicFeatureAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GenotypeToPhenotypicFeatureAssociationId(IdentifierType):
+class DiseaseToThingAssociationAssociation_id(IdentifierType):
     pass
 
 
-class EnvironmentToPhenotypicFeatureAssociationId(IdentifierType):
+class GenotypeToPhenotypicFeatureAssociationAssociation_id(IdentifierType):
     pass
 
 
-class DiseaseToPhenotypicFeatureAssociationId(IdentifierType):
+class EnvironmentToPhenotypicFeatureAssociationAssociation_id(IdentifierType):
     pass
 
 
-class CaseToPhenotypicFeatureAssociationId(IdentifierType):
+class DiseaseToPhenotypicFeatureAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GeneToThingAssociationId(IdentifierType):
+class CaseToPhenotypicFeatureAssociationAssociation_id(IdentifierType):
     pass
 
 
-class VariantToThingAssociationId(IdentifierType):
+class GeneToThingAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GeneToPhenotypicFeatureAssociationId(IdentifierType):
+class VariantToThingAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GeneToDiseaseAssociationId(IdentifierType):
+class GeneToPhenotypicFeatureAssociationAssociation_id(IdentifierType):
     pass
 
 
-class VariantToPopulationAssociationId(IdentifierType):
+class GeneToDiseaseAssociationAssociation_id(IdentifierType):
     pass
 
 
-class PopulationToPopulationAssociationId(IdentifierType):
+class VariantToPopulationAssociationAssociation_id(IdentifierType):
     pass
 
 
-class VariantToPhenotypicFeatureAssociationId(IdentifierType):
+class PopulationToPopulationAssociationAssociation_id(IdentifierType):
     pass
 
 
-class VariantToDiseaseAssociationId(IdentifierType):
+class VariantToPhenotypicFeatureAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GeneAsAModelOfDiseaseAssociationId(IdentifierType):
+class VariantToDiseaseAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GeneHasVariantThatContributesToDiseaseAssociationId(IdentifierType):
+class GeneAsAModelOfDiseaseAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GenotypeToThingAssociationId(IdentifierType):
+class GeneHasVariantThatContributesToDiseaseAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GeneToExpressionSiteAssociationId(IdentifierType):
+class GenotypeToThingAssociationAssociation_id(IdentifierType):
     pass
 
 
-class SequenceVariantModulatesTreatmentAssociationId(IdentifierType):
+class GeneToExpressionSiteAssociationAssociation_id(IdentifierType):
     pass
 
 
-class FunctionalAssociationId(IdentifierType):
+class SequenceVariantModulatesTreatmentAssociationAssociation_id(IdentifierType):
     pass
 
 
-class MacromolecularMachineToMolecularActivityAssociationId(IdentifierType):
+class FunctionalAssociationAssociation_id(IdentifierType):
     pass
 
 
-class MacromolecularMachineToBiologicalProcessAssociationId(IdentifierType):
+class MacromolecularMachineToMolecularActivityAssociationAssociation_id(IdentifierType):
     pass
 
 
-class MacromolecularMachineToCellularComponentAssociationId(IdentifierType):
+class MacromolecularMachineToBiologicalProcessAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GeneToGoTermAssociationId(IdentifierType):
+class MacromolecularMachineToCellularComponentAssociationAssociation_id(IdentifierType):
     pass
 
 
-class GenomicSequenceLocalizationId(IdentifierType):
+class GeneToGoTermAssociationAssociation_id(IdentifierType):
     pass
 
 
-class SequenceFeatureRelationshipId(IdentifierType):
+class GenomicSequenceLocalizationAssociation_id(IdentifierType):
     pass
 
 
-class TranscriptToGeneRelationshipId(IdentifierType):
+class SequenceFeatureRelationshipAssociation_id(IdentifierType):
     pass
 
 
-class GeneToGeneProductRelationshipId(IdentifierType):
+class TranscriptToGeneRelationshipAssociation_id(IdentifierType):
     pass
 
 
-class ExonToTranscriptRelationshipId(IdentifierType):
+class GeneToGeneProductRelationshipAssociation_id(IdentifierType):
     pass
 
 
-class GeneRegulatoryRelationshipId(IdentifierType):
+class ExonToTranscriptRelationshipAssociation_id(IdentifierType):
     pass
 
 
-class AnatomicalEntityToAnatomicalEntityAssociationId(IdentifierType):
+class GeneRegulatoryRelationshipAssociation_id(IdentifierType):
     pass
 
 
-class AnatomicalEntityToAnatomicalEntityPartOfAssociationId(IdentifierType):
+class AnatomicalEntityToAnatomicalEntityAssociationAssociation_id(IdentifierType):
     pass
 
 
-class AnatomicalEntityToAnatomicalEntityOntogenicAssociationId(IdentifierType):
+class AnatomicalEntityToAnatomicalEntityPartOfAssociationAssociation_id(IdentifierType):
+    pass
+
+
+class AnatomicalEntityToAnatomicalEntityOntogenicAssociationAssociation_id(IdentifierType):
     pass
 
 
@@ -1682,16 +1686,16 @@ class GeographicLocationAtTime(GeographicLocation):
 
 
 @dataclass
-class Association(InformationContentEntity):
+class Association(YAMLRoot):
     """
     A typed association between two entities, supported by evidence
     """
-    id: AssociationId = None
-    association_type: Optional[OntologyClassId] = None
-    subject: str = None
+    id: AssociationAssociation_id
+    subject: str
+    relation: RelationshipTypeId
+    object: str
     negated: bool = False
-    relation: RelationshipTypeId = None
-    object: str = None
+    association_type: Optional[OntologyClassId] = None
     qualifiers: List[OntologyClassId] = empty_list()
     publications: List[PublicationId] = empty_list()
     provided_by: Optional[Provider] = None
@@ -1699,24 +1703,8 @@ class Association(InformationContentEntity):
 
     def _fix_elements(self):
         super()._fix_elements()
-        if self.id is None:
-            raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, AssociationId):
-            self.id = AssociationId(self.id)
         if self.association_type and not isinstance(self.association_type, OntologyClassId):
             self.association_type = OntologyClassId(self.association_type)
-        if self.subject is None:
-            raise ValueError(f"subject must be supplied")
-        if not isinstance(self.subject, str):
-            self.subject = str(self.subject)
-        if self.relation is None:
-            raise ValueError(f"relation must be supplied")
-        if not isinstance(self.relation, RelationshipTypeId):
-            self.relation = RelationshipTypeId(self.relation)
-        if self.object is None:
-            raise ValueError(f"object must be supplied")
-        if not isinstance(self.object, str):
-            self.object = str(self.object)
         self.qualifiers = [v if isinstance(v, OntologyClassId)
                            else OntologyClassId(v) for v in self.qualifiers]
         self.publications = [v if isinstance(v, PublicationId)
@@ -1730,17 +1718,17 @@ class GenotypeToGenotypePartAssociation(Association):
     """
     Any association between one genotype and a genotypic entity that is a sub-component of it
     """
-    id: GenotypeToGenotypePartAssociationId = None
-    relation: RelationshipTypeId = None
-    subject: GenotypeId = None
-    object: GenotypeId = None
+    id: GenotypeToGenotypePartAssociationAssociation_id
+    relation: RelationshipTypeId
+    subject: GenotypeId
+    object: GenotypeId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GenotypeToGenotypePartAssociationId):
-            self.id = GenotypeToGenotypePartAssociationId(self.id)
+        if not isinstance(self.id, GenotypeToGenotypePartAssociationAssociation_id):
+            self.id = GenotypeToGenotypePartAssociationAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
         if not isinstance(self.relation, RelationshipTypeId):
@@ -1761,17 +1749,17 @@ class GenotypeToGeneAssociation(Association):
     Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single
     one. There is no assumption of cardinality
     """
-    id: GenotypeToGeneAssociationId = None
-    relation: RelationshipTypeId = None
-    subject: GenotypeId = None
-    object: GeneId = None
+    id: GenotypeToGeneAssociationAssociation_id
+    relation: RelationshipTypeId
+    subject: GenotypeId
+    object: GeneId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GenotypeToGeneAssociationId):
-            self.id = GenotypeToGeneAssociationId(self.id)
+        if not isinstance(self.id, GenotypeToGeneAssociationAssociation_id):
+            self.id = GenotypeToGeneAssociationAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
         if not isinstance(self.relation, RelationshipTypeId):
@@ -1791,17 +1779,17 @@ class GenotypeToVariantAssociation(Association):
     """
     Any association between a genotype and a sequence variant.
     """
-    id: GenotypeToVariantAssociationId = None
-    relation: RelationshipTypeId = None
-    subject: GenotypeId = None
-    object: SequenceVariant = None
+    id: GenotypeToVariantAssociationAssociation_id
+    relation: RelationshipTypeId
+    subject: GenotypeId
+    object: SequenceVariant
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GenotypeToVariantAssociationId):
-            self.id = GenotypeToVariantAssociationId(self.id)
+        if not isinstance(self.id, GenotypeToVariantAssociationAssociation_id):
+            self.id = GenotypeToVariantAssociationAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
         if not isinstance(self.relation, RelationshipTypeId):
@@ -1822,9 +1810,9 @@ class GeneToGeneAssociation(Association):
     abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes
     homology and interaction.
     """
-    id: GeneToGeneAssociationId = None
-    subject: GeneOrGeneProductId = None
-    object: GeneOrGeneProductId = None
+    id: GeneToGeneAssociationAssociation_id
+    subject: GeneOrGeneProductId
+    object: GeneOrGeneProductId
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -1844,15 +1832,15 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
     A homology association between two genes. May be orthology (in which case the species of subject and object should
     differ) or paralogy (in which case the species may be the same)
     """
-    id: GeneToGeneHomologyAssociationId = None
-    relation: RelationshipTypeId = None
+    id: GeneToGeneHomologyAssociationAssociation_id
+    relation: RelationshipTypeId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GeneToGeneHomologyAssociationId):
-            self.id = GeneToGeneHomologyAssociationId(self.id)
+        if not isinstance(self.id, GeneToGeneHomologyAssociationAssociation_id):
+            self.id = GeneToGeneHomologyAssociationAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
         if not isinstance(self.relation, RelationshipTypeId):
@@ -1865,15 +1853,15 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
     An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between
     genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
     """
-    id: PairwiseGeneToGeneInteractionId = None
-    relation: RelationshipTypeId = None
+    id: PairwiseGeneToGeneInteractionAssociation_id
+    relation: RelationshipTypeId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, PairwiseGeneToGeneInteractionId):
-            self.id = PairwiseGeneToGeneInteractionId(self.id)
+        if not isinstance(self.id, PairwiseGeneToGeneInteractionAssociation_id):
+            self.id = PairwiseGeneToGeneInteractionAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
         if not isinstance(self.relation, RelationshipTypeId):
@@ -1885,8 +1873,8 @@ class CellLineToThingAssociation(Association):
     """
     An relationship between a cell line and another entity
     """
-    id: CellLineToThingAssociationId = None
-    subject: CellLineId = None
+    id: CellLineToThingAssociationAssociation_id
+    subject: CellLineId
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -1902,15 +1890,15 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an
     individual with that disease or phenotype
     """
-    id: CellLineToDiseaseOrPhenotypicFeatureAssociationId = None
-    subject: DiseaseOrPhenotypicFeatureId = None
+    id: CellLineToDiseaseOrPhenotypicFeatureAssociationAssociation_id
+    subject: DiseaseOrPhenotypicFeatureId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, CellLineToDiseaseOrPhenotypicFeatureAssociationId):
-            self.id = CellLineToDiseaseOrPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, CellLineToDiseaseOrPhenotypicFeatureAssociationAssociation_id):
+            self.id = CellLineToDiseaseOrPhenotypicFeatureAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, DiseaseOrPhenotypicFeatureId):
@@ -1922,8 +1910,8 @@ class ChemicalToThingAssociation(Association):
     """
     An interaction between a chemical entity and another entity
     """
-    id: ChemicalToThingAssociationId = None
-    subject: ChemicalSubstanceId = None
+    id: ChemicalToThingAssociationAssociation_id
+    subject: ChemicalSubstanceId
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -1938,8 +1926,8 @@ class CaseToThingAssociation(Association):
     """
     An abstract association for use where the case is the subject
     """
-    id: CaseToThingAssociationId = None
-    subject: CaseId = None
+    id: CaseToThingAssociationAssociation_id
+    subject: CaseId
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -1955,15 +1943,15 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise
     to or exacerbates the phenotype
     """
-    id: ChemicalToDiseaseOrPhenotypicFeatureAssociationId = None
-    object: DiseaseOrPhenotypicFeatureId = None
+    id: ChemicalToDiseaseOrPhenotypicFeatureAssociationAssociation_id
+    object: DiseaseOrPhenotypicFeatureId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, ChemicalToDiseaseOrPhenotypicFeatureAssociationId):
-            self.id = ChemicalToDiseaseOrPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, ChemicalToDiseaseOrPhenotypicFeatureAssociationAssociation_id):
+            self.id = ChemicalToDiseaseOrPhenotypicFeatureAssociationAssociation_id(self.id)
         if self.object is None:
             raise ValueError(f"object must be supplied")
         if not isinstance(self.object, DiseaseOrPhenotypicFeatureId):
@@ -1975,15 +1963,15 @@ class ChemicalToPathwayAssociation(Association):
     """
     An interaction between a chemical entity and a biological process or pathway
     """
-    id: ChemicalToPathwayAssociationId = None
-    object: PathwayId = None
+    id: ChemicalToPathwayAssociationAssociation_id
+    object: PathwayId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, ChemicalToPathwayAssociationId):
-            self.id = ChemicalToPathwayAssociationId(self.id)
+        if not isinstance(self.id, ChemicalToPathwayAssociationAssociation_id):
+            self.id = ChemicalToPathwayAssociationAssociation_id(self.id)
         if self.object is None:
             raise ValueError(f"object must be supplied")
         if not isinstance(self.object, PathwayId):
@@ -1995,15 +1983,15 @@ class ChemicalToGeneAssociation(Association):
     """
     An interaction between a chemical entity and a gene or gene product
     """
-    id: ChemicalToGeneAssociationId = None
-    object: GeneOrGeneProductId = None
+    id: ChemicalToGeneAssociationAssociation_id
+    object: GeneOrGeneProductId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, ChemicalToGeneAssociationId):
-            self.id = ChemicalToGeneAssociationId(self.id)
+        if not isinstance(self.id, ChemicalToGeneAssociationAssociation_id):
+            self.id = ChemicalToGeneAssociationAssociation_id(self.id)
         if self.object is None:
             raise ValueError(f"object must be supplied")
         if not isinstance(self.object, GeneOrGeneProductId):
@@ -2015,8 +2003,8 @@ class BiosampleToThingAssociation(Association):
     """
     An association between a biosample and something
     """
-    id: BiosampleToThingAssociationId = None
-    subject: BiosampleId = None
+    id: BiosampleToThingAssociationAssociation_id
+    subject: BiosampleId
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2032,22 +2020,22 @@ class BiosampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     An association between a biosample and a disease or phenotype
     definitional: true
     """
-    id: BiosampleToDiseaseOrPhenotypicFeatureAssociationId = None
+    id: BiosampleToDiseaseOrPhenotypicFeatureAssociationAssociation_id
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, BiosampleToDiseaseOrPhenotypicFeatureAssociationId):
-            self.id = BiosampleToDiseaseOrPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, BiosampleToDiseaseOrPhenotypicFeatureAssociationAssociation_id):
+            self.id = BiosampleToDiseaseOrPhenotypicFeatureAssociationAssociation_id(self.id)
 
 
 @dataclass
 class EntityToPhenotypicFeatureAssociation(Association):
-    id: EntityToPhenotypicFeatureAssociationId = None
+    id: EntityToPhenotypicFeatureAssociationAssociation_id
     sex_qualifier: Optional[BiologicalSex] = None
     description: Optional[NarrativeText] = None
-    object: PhenotypicFeatureId = None
+    object: PhenotypicFeatureId
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2063,8 +2051,8 @@ class EntityToPhenotypicFeatureAssociation(Association):
 
 @dataclass
 class DiseaseOrPhenotypicFeatureAssociationToThingAssociation(Association):
-    id: DiseaseOrPhenotypicFeatureAssociationToThingAssociationId = None
-    subject: DiseaseOrPhenotypicFeatureId = None
+    id: DiseaseOrPhenotypicFeatureAssociationToThingAssociationAssociation_id
+    subject: DiseaseOrPhenotypicFeatureId
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2080,15 +2068,15 @@ class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(DiseaseOrPhenot
     An association between either a disease or a phenotypic feature and an anatomical entity, where the
     disease/feature manifests in that site.
     """
-    id: DiseaseOrPhenotypicFeatureAssociationToLocationAssociationId = None
-    object: AnatomicalEntityId = None
+    id: DiseaseOrPhenotypicFeatureAssociationToLocationAssociationAssociation_id
+    object: AnatomicalEntityId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, DiseaseOrPhenotypicFeatureAssociationToLocationAssociationId):
-            self.id = DiseaseOrPhenotypicFeatureAssociationToLocationAssociationId(self.id)
+        if not isinstance(self.id, DiseaseOrPhenotypicFeatureAssociationToLocationAssociationAssociation_id):
+            self.id = DiseaseOrPhenotypicFeatureAssociationToLocationAssociationAssociation_id(self.id)
         if self.object is None:
             raise ValueError(f"object must be supplied")
         if not isinstance(self.object, AnatomicalEntityId):
@@ -2097,8 +2085,8 @@ class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(DiseaseOrPhenot
 
 @dataclass
 class ThingToDiseaseOrPhenotypicFeatureAssociation(Association):
-    id: ThingToDiseaseOrPhenotypicFeatureAssociationId = None
-    object: DiseaseOrPhenotypicFeatureId = None
+    id: ThingToDiseaseOrPhenotypicFeatureAssociationAssociation_id
+    object: DiseaseOrPhenotypicFeatureId
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2110,8 +2098,8 @@ class ThingToDiseaseOrPhenotypicFeatureAssociation(Association):
 
 @dataclass
 class DiseaseToThingAssociation(Association):
-    id: DiseaseToThingAssociationId = None
-    subject: DiseaseId = None
+    id: DiseaseToThingAssociationAssociation_id
+    subject: DiseaseId
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2127,16 +2115,16 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype,
     either in isolation or through environment
     """
-    id: GenotypeToPhenotypicFeatureAssociationId = None
-    relation: RelationshipTypeId = None
-    subject: GenotypeId = None
+    id: GenotypeToPhenotypicFeatureAssociationAssociation_id
+    relation: RelationshipTypeId
+    subject: GenotypeId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GenotypeToPhenotypicFeatureAssociationId):
-            self.id = GenotypeToPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, GenotypeToPhenotypicFeatureAssociationAssociation_id):
+            self.id = GenotypeToPhenotypicFeatureAssociationAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
         if not isinstance(self.relation, RelationshipTypeId):
@@ -2153,15 +2141,15 @@ class EnvironmentToPhenotypicFeatureAssociation(Association):
     Any association between an environment and a phenotypic feature, where being in the environment influences the
     phenotype
     """
-    id: EnvironmentToPhenotypicFeatureAssociationId = None
-    subject: EnvironmentId = None
+    id: EnvironmentToPhenotypicFeatureAssociationAssociation_id
+    subject: EnvironmentId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, EnvironmentToPhenotypicFeatureAssociationId):
-            self.id = EnvironmentToPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, EnvironmentToPhenotypicFeatureAssociationAssociation_id):
+            self.id = EnvironmentToPhenotypicFeatureAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, EnvironmentId):
@@ -2174,14 +2162,14 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
     An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the
     disease in some way
     """
-    id: DiseaseToPhenotypicFeatureAssociationId = None
+    id: DiseaseToPhenotypicFeatureAssociationAssociation_id
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, DiseaseToPhenotypicFeatureAssociationId):
-            self.id = DiseaseToPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, DiseaseToPhenotypicFeatureAssociationAssociation_id):
+            self.id = DiseaseToPhenotypicFeatureAssociationAssociation_id(self.id)
 
 
 @dataclass
@@ -2190,20 +2178,20 @@ class CaseToPhenotypicFeatureAssociation(Association):
     An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or
     has had the phenotype
     """
-    id: CaseToPhenotypicFeatureAssociationId = None
+    id: CaseToPhenotypicFeatureAssociationAssociation_id
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, CaseToPhenotypicFeatureAssociationId):
-            self.id = CaseToPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, CaseToPhenotypicFeatureAssociationAssociation_id):
+            self.id = CaseToPhenotypicFeatureAssociationAssociation_id(self.id)
 
 
 @dataclass
 class GeneToThingAssociation(Association):
-    id: GeneToThingAssociationId = None
-    subject: GeneOrGeneProductId = None
+    id: GeneToThingAssociationAssociation_id
+    subject: GeneOrGeneProductId
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2215,15 +2203,15 @@ class GeneToThingAssociation(Association):
 
 @dataclass
 class GeneToPhenotypicFeatureAssociation(Association):
-    id: GeneToPhenotypicFeatureAssociationId = None
-    subject: GeneOrGeneProductId = None
+    id: GeneToPhenotypicFeatureAssociationAssociation_id
+    subject: GeneOrGeneProductId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GeneToPhenotypicFeatureAssociationId):
-            self.id = GeneToPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, GeneToPhenotypicFeatureAssociationAssociation_id):
+            self.id = GeneToPhenotypicFeatureAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GeneOrGeneProductId):
@@ -2232,15 +2220,15 @@ class GeneToPhenotypicFeatureAssociation(Association):
 
 @dataclass
 class GeneToDiseaseAssociation(Association):
-    id: GeneToDiseaseAssociationId = None
-    subject: GeneOrGeneProductId = None
+    id: GeneToDiseaseAssociationAssociation_id
+    subject: GeneOrGeneProductId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GeneToDiseaseAssociationId):
-            self.id = GeneToDiseaseAssociationId(self.id)
+        if not isinstance(self.id, GeneToDiseaseAssociationAssociation_id):
+            self.id = GeneToDiseaseAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GeneOrGeneProductId):
@@ -2252,9 +2240,9 @@ class VariantToPopulationAssociation(Association):
     """
     An association between a variant and a population, where the variant has particular frequency in the population
     """
-    id: VariantToPopulationAssociationId = None
-    subject: SequenceVariant = None
-    object: PopulationOfIndividualOrganismsId = None
+    id: VariantToPopulationAssociationAssociation_id
+    subject: SequenceVariant
+    object: PopulationOfIndividualOrganismsId
     has_quotient: Optional[float] = None
     has_count: Optional[int] = None
     has_total: Optional[int] = None
@@ -2263,8 +2251,8 @@ class VariantToPopulationAssociation(Association):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, VariantToPopulationAssociationId):
-            self.id = VariantToPopulationAssociationId(self.id)
+        if not isinstance(self.id, VariantToPopulationAssociationAssociation_id):
+            self.id = VariantToPopulationAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, SequenceVariant):
@@ -2280,17 +2268,17 @@ class PopulationToPopulationAssociation(Association):
     """
     An association between a two populations
     """
-    id: PopulationToPopulationAssociationId = None
-    subject: PopulationOfIndividualOrganismsId = None
-    object: PopulationOfIndividualOrganismsId = None
-    relation: RelationshipTypeId = None
+    id: PopulationToPopulationAssociationAssociation_id
+    subject: PopulationOfIndividualOrganismsId
+    object: PopulationOfIndividualOrganismsId
+    relation: RelationshipTypeId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, PopulationToPopulationAssociationId):
-            self.id = PopulationToPopulationAssociationId(self.id)
+        if not isinstance(self.id, PopulationToPopulationAssociationAssociation_id):
+            self.id = PopulationToPopulationAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, PopulationOfIndividualOrganismsId):
@@ -2307,15 +2295,15 @@ class PopulationToPopulationAssociation(Association):
 
 @dataclass
 class VariantToPhenotypicFeatureAssociation(Association):
-    id: VariantToPhenotypicFeatureAssociationId = None
-    subject: SequenceVariant = None
+    id: VariantToPhenotypicFeatureAssociationAssociation_id
+    subject: SequenceVariant
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, VariantToPhenotypicFeatureAssociationId):
-            self.id = VariantToPhenotypicFeatureAssociationId(self.id)
+        if not isinstance(self.id, VariantToPhenotypicFeatureAssociationAssociation_id):
+            self.id = VariantToPhenotypicFeatureAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, SequenceVariant):
@@ -2324,17 +2312,17 @@ class VariantToPhenotypicFeatureAssociation(Association):
 
 @dataclass
 class VariantToDiseaseAssociation(Association):
-    id: VariantToDiseaseAssociationId = None
-    subject: str = None
-    relation: RelationshipTypeId = None
-    object: str = None
+    id: VariantToDiseaseAssociationAssociation_id
+    subject: str
+    relation: RelationshipTypeId
+    object: str
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, VariantToDiseaseAssociationId):
-            self.id = VariantToDiseaseAssociationId(self.id)
+        if not isinstance(self.id, VariantToDiseaseAssociationAssociation_id):
+            self.id = VariantToDiseaseAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, str):
@@ -2351,15 +2339,15 @@ class VariantToDiseaseAssociation(Association):
 
 @dataclass
 class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
-    id: GeneAsAModelOfDiseaseAssociationId = None
-    subject: GeneOrGeneProductId = None
+    id: GeneAsAModelOfDiseaseAssociationAssociation_id
+    subject: GeneOrGeneProductId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GeneAsAModelOfDiseaseAssociationId):
-            self.id = GeneAsAModelOfDiseaseAssociationId(self.id)
+        if not isinstance(self.id, GeneAsAModelOfDiseaseAssociationAssociation_id):
+            self.id = GeneAsAModelOfDiseaseAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GeneOrGeneProductId):
@@ -2368,16 +2356,16 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
 
 @dataclass
 class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation):
-    id: GeneHasVariantThatContributesToDiseaseAssociationId = None
+    id: GeneHasVariantThatContributesToDiseaseAssociationAssociation_id
     sequence_variant_qualifier: Optional[SequenceVariant] = None
-    subject: GeneOrGeneProductId = None
+    subject: GeneOrGeneProductId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GeneHasVariantThatContributesToDiseaseAssociationId):
-            self.id = GeneHasVariantThatContributesToDiseaseAssociationId(self.id)
+        if not isinstance(self.id, GeneHasVariantThatContributesToDiseaseAssociationAssociation_id):
+            self.id = GeneHasVariantThatContributesToDiseaseAssociationAssociation_id(self.id)
         if self.sequence_variant_qualifier and not isinstance(self.sequence_variant_qualifier, SequenceVariant):
             self.sequence_variant_qualifier = SequenceVariant(self.sequence_variant_qualifier)
         if self.subject is None:
@@ -2388,8 +2376,8 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
 
 @dataclass
 class GenotypeToThingAssociation(Association):
-    id: GenotypeToThingAssociationId = None
-    subject: GenotypeId = None
+    id: GenotypeToThingAssociationAssociation_id
+    subject: GenotypeId
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2404,19 +2392,19 @@ class GeneToExpressionSiteAssociation(Association):
     """
     An association between a gene and an expression site, possibly qualified by stage/timing info.
     """
-    id: GeneToExpressionSiteAssociationId = None
+    id: GeneToExpressionSiteAssociationAssociation_id
     stage_qualifier: Optional[LifeStageId] = None
     quantifier_qualifier: Optional[OntologyClassId] = None
-    subject: GeneOrGeneProductId = None
-    object: AnatomicalEntityId = None
-    relation: RelationshipTypeId = None
+    subject: GeneOrGeneProductId
+    object: AnatomicalEntityId
+    relation: RelationshipTypeId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GeneToExpressionSiteAssociationId):
-            self.id = GeneToExpressionSiteAssociationId(self.id)
+        if not isinstance(self.id, GeneToExpressionSiteAssociationAssociation_id):
+            self.id = GeneToExpressionSiteAssociationAssociation_id(self.id)
         if self.stage_qualifier and not isinstance(self.stage_qualifier, LifeStageId):
             self.stage_qualifier = LifeStageId(self.stage_qualifier)
         if self.quantifier_qualifier and not isinstance(self.quantifier_qualifier, OntologyClassId):
@@ -2441,9 +2429,9 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     An association between a sequence variant and a treatment or health intervention. The treatment object itself
     encompasses both the disease and the drug used.
     """
-    id: SequenceVariantModulatesTreatmentAssociationId = None
-    subject: SequenceVariant = None
-    object: TreatmentId = None
+    id: SequenceVariantModulatesTreatmentAssociationAssociation_id
+    subject: SequenceVariant
+    object: TreatmentId
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -2463,16 +2451,16 @@ class FunctionalAssociation(Association):
     An association between a macromolecular machine (gene, gene product or complex of gene products) and either a
     molecular activity, a biological process or a cellular location in which a function is executed
     """
-    id: FunctionalAssociationId = None
-    subject: MacromolecularMachineId = None
-    object: GeneOntologyClassId = None
+    id: FunctionalAssociationAssociation_id
+    subject: MacromolecularMachineId
+    object: GeneOntologyClassId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, FunctionalAssociationId):
-            self.id = FunctionalAssociationId(self.id)
+        if not isinstance(self.id, FunctionalAssociationAssociation_id):
+            self.id = FunctionalAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, MacromolecularMachineId):
@@ -2490,15 +2478,15 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
     (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to
     its execution
     """
-    id: MacromolecularMachineToMolecularActivityAssociationId = None
-    object: MolecularActivityId = None
+    id: MacromolecularMachineToMolecularActivityAssociationAssociation_id
+    object: MolecularActivityId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, MacromolecularMachineToMolecularActivityAssociationId):
-            self.id = MacromolecularMachineToMolecularActivityAssociationId(self.id)
+        if not isinstance(self.id, MacromolecularMachineToMolecularActivityAssociationAssociation_id):
+            self.id = MacromolecularMachineToMolecularActivityAssociationAssociation_id(self.id)
         if self.object is None:
             raise ValueError(f"object must be supplied")
         if not isinstance(self.object, MolecularActivityId):
@@ -2512,15 +2500,15 @@ class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation)
     or pathway (as represented in the GO biological process branch), where the entity carries out some part of the
     process, regulates it, or acts upstream of it
     """
-    id: MacromolecularMachineToBiologicalProcessAssociationId = None
-    object: BiologicalProcessId = None
+    id: MacromolecularMachineToBiologicalProcessAssociationAssociation_id
+    object: BiologicalProcessId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, MacromolecularMachineToBiologicalProcessAssociationId):
-            self.id = MacromolecularMachineToBiologicalProcessAssociationId(self.id)
+        if not isinstance(self.id, MacromolecularMachineToBiologicalProcessAssociationAssociation_id):
+            self.id = MacromolecularMachineToBiologicalProcessAssociationAssociation_id(self.id)
         if self.object is None:
             raise ValueError(f"object must be supplied")
         if not isinstance(self.object, BiologicalProcessId):
@@ -2534,15 +2522,15 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
     (as represented in the GO cellular component branch), where the entity carries out its function in the cellular
     component
     """
-    id: MacromolecularMachineToCellularComponentAssociationId = None
-    object: CellularComponentId = None
+    id: MacromolecularMachineToCellularComponentAssociationAssociation_id
+    object: CellularComponentId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, MacromolecularMachineToCellularComponentAssociationId):
-            self.id = MacromolecularMachineToCellularComponentAssociationId(self.id)
+        if not isinstance(self.id, MacromolecularMachineToCellularComponentAssociationAssociation_id):
+            self.id = MacromolecularMachineToCellularComponentAssociationAssociation_id(self.id)
         if self.object is None:
             raise ValueError(f"object must be supplied")
         if not isinstance(self.object, CellularComponentId):
@@ -2551,16 +2539,16 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
 
 @dataclass
 class GeneToGoTermAssociation(FunctionalAssociation):
-    id: GeneToGoTermAssociationId = None
-    subject: MolecularEntityId = None
-    object: GeneOntologyClassId = None
+    id: GeneToGoTermAssociationAssociation_id
+    subject: MolecularEntityId
+    object: GeneOntologyClassId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GeneToGoTermAssociationId):
-            self.id = GeneToGoTermAssociationId(self.id)
+        if not isinstance(self.id, GeneToGoTermAssociationAssociation_id):
+            self.id = GeneToGoTermAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, MolecularEntityId):
@@ -2577,20 +2565,20 @@ class GenomicSequenceLocalization(Association):
     A relationship between a sequence feature and an entity it is localized to. The reference entity may be a
     chromosome, chromosome region or information entity such as a contig
     """
-    id: GenomicSequenceLocalizationId = None
+    id: GenomicSequenceLocalizationAssociation_id
     start_interbase_coordinate: Optional[str] = None
     end_interbase_coordinate: Optional[str] = None
     genome_build: Optional[str] = None
     phase: Optional[str] = None
-    subject: GenomicEntityId = None
-    object: GenomicEntityId = None
+    subject: GenomicEntityId
+    object: GenomicEntityId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GenomicSequenceLocalizationId):
-            self.id = GenomicSequenceLocalizationId(self.id)
+        if not isinstance(self.id, GenomicSequenceLocalizationAssociation_id):
+            self.id = GenomicSequenceLocalizationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GenomicEntityId):
@@ -2606,16 +2594,16 @@ class SequenceFeatureRelationship(Association):
     """
     For example, a particular exon is part of a particular transcript or gene
     """
-    id: SequenceFeatureRelationshipId = None
-    subject: GenomicEntityId = None
-    object: GenomicEntityId = None
+    id: SequenceFeatureRelationshipAssociation_id
+    subject: GenomicEntityId
+    object: GenomicEntityId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, SequenceFeatureRelationshipId):
-            self.id = SequenceFeatureRelationshipId(self.id)
+        if not isinstance(self.id, SequenceFeatureRelationshipAssociation_id):
+            self.id = SequenceFeatureRelationshipAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GenomicEntityId):
@@ -2631,16 +2619,16 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     """
     A gene is a collection of transcripts
     """
-    id: TranscriptToGeneRelationshipId = None
-    subject: TranscriptId = None
-    object: GeneId = None
+    id: TranscriptToGeneRelationshipAssociation_id
+    subject: TranscriptId
+    object: GeneId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, TranscriptToGeneRelationshipId):
-            self.id = TranscriptToGeneRelationshipId(self.id)
+        if not isinstance(self.id, TranscriptToGeneRelationshipAssociation_id):
+            self.id = TranscriptToGeneRelationshipAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, TranscriptId):
@@ -2656,17 +2644,17 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
     """
     A gene is transcribed and potentially translated to a gene product
     """
-    id: GeneToGeneProductRelationshipId = None
-    subject: GeneId = None
-    object: GeneProductId = None
-    relation: RelationshipTypeId = None
+    id: GeneToGeneProductRelationshipAssociation_id
+    subject: GeneId
+    object: GeneProductId
+    relation: RelationshipTypeId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GeneToGeneProductRelationshipId):
-            self.id = GeneToGeneProductRelationshipId(self.id)
+        if not isinstance(self.id, GeneToGeneProductRelationshipAssociation_id):
+            self.id = GeneToGeneProductRelationshipAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, GeneId):
@@ -2686,16 +2674,16 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     """
     A transcript is formed from multiple exons
     """
-    id: ExonToTranscriptRelationshipId = None
-    subject: ExonId = None
-    object: TranscriptId = None
+    id: ExonToTranscriptRelationshipAssociation_id
+    subject: ExonId
+    object: TranscriptId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, ExonToTranscriptRelationshipId):
-            self.id = ExonToTranscriptRelationshipId(self.id)
+        if not isinstance(self.id, ExonToTranscriptRelationshipAssociation_id):
+            self.id = ExonToTranscriptRelationshipAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, ExonId):
@@ -2711,17 +2699,17 @@ class GeneRegulatoryRelationship(Association):
     """
     A regulatory relationship between two genes
     """
-    id: GeneRegulatoryRelationshipId = None
-    relation: RelationshipTypeId = None
-    subject: GeneOrGeneProductId = None
-    object: GeneOrGeneProductId = None
+    id: GeneRegulatoryRelationshipAssociation_id
+    relation: RelationshipTypeId
+    subject: GeneOrGeneProductId
+    object: GeneOrGeneProductId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, GeneRegulatoryRelationshipId):
-            self.id = GeneRegulatoryRelationshipId(self.id)
+        if not isinstance(self.id, GeneRegulatoryRelationshipAssociation_id):
+            self.id = GeneRegulatoryRelationshipAssociation_id(self.id)
         if self.relation is None:
             raise ValueError(f"relation must be supplied")
         if not isinstance(self.relation, RelationshipTypeId):
@@ -2738,16 +2726,16 @@ class GeneRegulatoryRelationship(Association):
 
 @dataclass
 class AnatomicalEntityToAnatomicalEntityAssociation(Association):
-    id: AnatomicalEntityToAnatomicalEntityAssociationId = None
-    subject: AnatomicalEntityId = None
-    object: AnatomicalEntityId = None
+    id: AnatomicalEntityToAnatomicalEntityAssociationAssociation_id
+    subject: AnatomicalEntityId
+    object: AnatomicalEntityId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, AnatomicalEntityToAnatomicalEntityAssociationId):
-            self.id = AnatomicalEntityToAnatomicalEntityAssociationId(self.id)
+        if not isinstance(self.id, AnatomicalEntityToAnatomicalEntityAssociationAssociation_id):
+            self.id = AnatomicalEntityToAnatomicalEntityAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, AnatomicalEntityId):
@@ -2765,17 +2753,17 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
     related by parthood. This includes relationships between cellular components and cells, between cells and tissues,
     tissues and whole organisms
     """
-    id: AnatomicalEntityToAnatomicalEntityPartOfAssociationId = None
-    subject: AnatomicalEntityId = None
-    object: AnatomicalEntityId = None
-    relation: RelationshipTypeId = None
+    id: AnatomicalEntityToAnatomicalEntityPartOfAssociationAssociation_id
+    subject: AnatomicalEntityId
+    object: AnatomicalEntityId
+    relation: RelationshipTypeId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, AnatomicalEntityToAnatomicalEntityPartOfAssociationId):
-            self.id = AnatomicalEntityToAnatomicalEntityPartOfAssociationId(self.id)
+        if not isinstance(self.id, AnatomicalEntityToAnatomicalEntityPartOfAssociationAssociation_id):
+            self.id = AnatomicalEntityToAnatomicalEntityPartOfAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, AnatomicalEntityId):
@@ -2797,17 +2785,17 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
     related by development. A number of different relationship types can be used to specify the precise nature of the
     relationship
     """
-    id: AnatomicalEntityToAnatomicalEntityOntogenicAssociationId = None
-    subject: AnatomicalEntityId = None
-    object: AnatomicalEntityId = None
-    relation: RelationshipTypeId = None
+    id: AnatomicalEntityToAnatomicalEntityOntogenicAssociationAssociation_id
+    subject: AnatomicalEntityId
+    object: AnatomicalEntityId
+    relation: RelationshipTypeId
 
     def _fix_elements(self):
         super()._fix_elements()
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if not isinstance(self.id, AnatomicalEntityToAnatomicalEntityOntogenicAssociationId):
-            self.id = AnatomicalEntityToAnatomicalEntityOntogenicAssociationId(self.id)
+        if not isinstance(self.id, AnatomicalEntityToAnatomicalEntityOntogenicAssociationAssociation_id):
+            self.id = AnatomicalEntityToAnatomicalEntityOntogenicAssociationAssociation_id(self.id)
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
         if not isinstance(self.subject, AnatomicalEntityId):

@@ -820,11 +820,13 @@ slots:
       - SEMMEDDB:CAUSES
       - WD:P1542
 
-  treats :
+  treats:
     aliases: ['is substance that treats']
     is_a: affects
     description: >-
-      holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
+      holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
+    domain: treatment
+    required: true
     range: disease or phenotypic feature
     in_subset:
       - translator_minimal
@@ -1153,6 +1155,17 @@ slots:
       - translator_minimal
     domain: named thing
     range: identifier type
+
+  association_id:
+    is_a: node property
+    identifier: true
+    description: >-
+        A unique identifier for an association
+    in_subset:
+        - translator_minimal
+    domain: association
+    range: identifier type
+    alias: id
       
   iri:
     is_a: node property
@@ -1264,6 +1277,7 @@ slots:
     is_a: association slot
     description: >-
       the relationship type by which a subject is connected to an object in an association
+    domain: association
     range: relationship type
     required: true
     local_names:
@@ -1512,10 +1526,9 @@ slots:
 
   end interbase coordinate:
     is_a: interbase coordinate
+
     
 classes:
-
-  
 
   attribute:
     subclass_of: PATO:0000001
@@ -2173,12 +2186,8 @@ classes:
     is_a: environment
     description: >-
       A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
-    slots:
-      - treats
+
     slot_usage:
-      treats:
-        range: disease or phenotypic feature
-        required: true
       has exposure parts:
         multivalued: true
         range: drug exposure
@@ -2213,12 +2222,12 @@ classes:
       A typed association between two entities, supported by evidence
     comment: This is roughly the model used by biolink and ontobio at the moment
     slots:
-      - id
-      - association type
+      - association_id
       - subject
-      - negated
       - relation
       - object
+      - negated
+      - association type
       - qualifiers
       - publications
       - provided by
