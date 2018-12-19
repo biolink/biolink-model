@@ -10,8 +10,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://biolink.github.io/biolink-model/ontology/biolink.ttl> rdfs:label "biolink model" ;
-    biolink:classes ( biolink:RelationshipType biolink:Attribute biolink:BiologicalSex biolink:PhenotypicSex biolink:GenotypicSex biolink:SeverityValue biolink:FrequencyValue biolink:ClinicalModifier biolink:Onset biolink:RelationshipQuantifier biolink:SenstivityQuantifier
-     biolink:SpecificityQuantifier biolink:PathognomonicityQuantifier biolink:FrequencyQuantifier biolink:NamedThing biolink:BiologicalEntity biolink:OntologyClass biolink:GeneOntologyClass biolink:ThingWithTaxon biolink:OrganismTaxon biolink:OrganismalEntity );
+    biolink:classes ( biolink:Attribute biolink:BiologicalSex biolink:PhenotypicSex biolink:GenotypicSex biolink:SeverityValue
+    biolink:FrequencyValue biolink:ClinicalModifier biolink:Onset biolink:RelationshipQuantifier biolink:SenstivityQuantifier ) ;
     biolink:default_curi_maps ( "obo_context" "monarch_context" "idot_context" "semweb_context" ) ;
     biolink:default_prefix "biolink" ;
     biolink:generation_date "2018-12-18"^^xsd:date ;
@@ -24,12 +24,14 @@
                 biolink:prefix_uri "http://purl.org/oban/" ] [ biolink:local_name "SIO" ;
                 biolink:prefix_uri "http://semanticscience.org/resource/SIO_" ] [ biolink:local_name "wgs" ;
                 biolink:prefix_uri "http://www.w3.org/2003/01/geo/wgs84_pos" ] ) ;
-    biolink:slots ( biolink:related_to biolink:interacts_with biolink:physically_interacts_with biolink:molecularly_interacts_with biolink:genetically_interacts_with biolink:affects biolink:affects_abundance_of biolink:increases_abundance_of biolink:decreases_abundance_of
-    biolink:affects_activity_of biolink:increases_activity_of biolink:decreases_activity_of biolink:affects_expression_of biolink:increases_expression_of biolink:decreases_expression_of biolink:affects_folding_of biolink:increases_folding_of biolink:decreases_folding_of ) ;
+    biolink:slots ( biolink:related_to biolink:interacts_with biolink:physically_interacts_with biolink:molecularly_interacts_with
+    biolink:genetically_interacts_with biolink:affects biolink:affects_abundance_of biolink:increases_abundance_of ) ;
     biolink:source_file "biolink-model.yaml" ;
-    biolink:source_file_date "Mon Dec 17 12:25:38 2018" ;
-    biolink:source_file_size 98039 ;
-    biolink:types ( biolink:phenotype biolink:evidence_instance biolink:chemical_formula_value biolink:identifier_type biolink:iri_type biolink:label_type biolink:narrative_text biolink:symbol_type biolink:chemical_formula_type biolink:frequency_value biolink:perecentage_frequency_value biolink:quotient biolink:unit biolink:time_type biolink:biological_sequence ) ;
+    biolink:source_file_date "Tue Dec 18 21:31:06 2018" ;
+    biolink:source_file_size 98173 ;
+    biolink:types ( biolink:phenotype biolink:evidence_instance biolink:chemical_formula_value biolink:identifier_type
+    biolink:iri_type biolink:label_type biolink:narrative_text biolink:symbol_type biolink:chemical_formula_type
+    biolink:frequency_value biolink:perecentage_frequency_value biolink:quotient biolink:unit biolink:time_type biolink:biological_sequence ) ;
     skos:definition "Entity and association taxonomy and datamodel for life-sciences data" .
 
 biolink:ActivityAndBehavior a biolink:Occurrent ;
@@ -175,6 +177,10 @@ biolink:RNAProductIsoform a biolink:RNAProduct ;
     biolink:id_prefixes ( "RNAcentral" ) ;
     biolink:mixins ( biolink:GeneProductIsoform ) ;
     skos:definition "Represents a protein that is a specific isoform of the canonical or reference RNA" .
+
+biolink:RelationshipType a biolink:OntologyClass ;
+    rdfs:label "RelationshipType" ;
+    skos:definition "An OWL property used as an edge label" .
 
 biolink:SenstivityQuantifier a biolink:RelationshipQuantifier ;
     rdfs:label "SenstivityQuantifier" ;
@@ -650,7 +656,7 @@ biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_relation a 
     rdfs:label "anatomical_entity_to_anatomical_entity_ontogenic_association_relation" ;
     biolink:alias "relation" ;
     biolink:domain biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     skos:definition "the relationship type by which a subject is connected to an object in an association" .
 
@@ -674,7 +680,7 @@ biolink:anatomical_entity_to_anatomical_entity_part_of_association_relation a bi
     rdfs:label "anatomical_entity_to_anatomical_entity_part_of_association_relation" ;
     biolink:alias "relation" ;
     biolink:domain biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:part_of ;
     skos:definition "the relationship type by which a subject is connected to an object in an association" .
@@ -1050,7 +1056,7 @@ biolink:gene_regulatory_relationship_relation a biolink:relation ;
     rdfs:label "gene_regulatory_relationship_relation" ;
     biolink:alias "relation" ;
     biolink:domain biolink:GeneRegulatoryRelationship ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     skos:definition "the direction is always from regulator to regulated" .
 
@@ -1081,7 +1087,7 @@ biolink:gene_to_expression_site_association_relation a biolink:relation ;
     rdfs:label "gene_to_expression_site_association_relation" ;
     biolink:alias "relation" ;
     biolink:domain biolink:GeneToExpressionSiteAssociation ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:expressed_in ;
     skos:definition "expression relationship" .
@@ -1124,7 +1130,7 @@ biolink:gene_to_gene_homology_association_relation a biolink:relation ;
     biolink:alias "relation" ;
     biolink:definitional true ;
     biolink:domain biolink:GeneToGeneHomologyAssociation ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:homologous_to ;
     skos:definition "homology relationship type" .
@@ -1141,7 +1147,7 @@ biolink:gene_to_gene_product_relationship_relation a biolink:relation ;
     rdfs:label "gene_to_gene_product_relationship_relation" ;
     biolink:alias "relation" ;
     biolink:domain biolink:GeneToGeneProductRelationship ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:has_gene_product ;
     skos:definition "the relationship type by which a subject is connected to an object in an association" .
@@ -1229,7 +1235,7 @@ biolink:genotype_to_gene_association_relation a biolink:relation ;
     rdfs:label "genotype_to_gene_association_relation" ;
     biolink:alias "relation" ;
     biolink:domain biolink:GenotypeToGeneAssociation ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     skos:definition "the relationship type used to connect genotype to gene" .
 
@@ -1255,7 +1261,7 @@ biolink:genotype_to_genotype_part_association_relation a biolink:relation ;
     rdfs:label "genotype_to_genotype_part_association_relation" ;
     biolink:alias "relation" ;
     biolink:domain biolink:GenotypeToGenotypePartAssociation ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     skos:definition "the relationship type by which a subject is connected to an object in an association" .
 
@@ -1272,7 +1278,7 @@ biolink:genotype_to_phenotypic_feature_association_relation a biolink:relation ;
     rdfs:label "genotype_to_phenotypic_feature_association_relation" ;
     biolink:alias "relation" ;
     biolink:domain biolink:GenotypeToPhenotypicFeatureAssociation ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:has_phenotype ;
     skos:definition "the relationship type by which a subject is connected to an object in an association" .
@@ -1306,7 +1312,7 @@ biolink:genotype_to_variant_association_relation a biolink:relation ;
     rdfs:label "genotype_to_variant_association_relation" ;
     biolink:alias "relation" ;
     biolink:domain biolink:GenotypeToVariantAssociation ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     skos:definition "the relationship type used to connect genotype to gene" .
 
@@ -1582,7 +1588,7 @@ biolink:model_to_disease_mixin_relation a biolink:relation ;
     rdfs:label "model_to_disease_mixin_relation" ;
     biolink:alias "relation" ;
     biolink:domain biolink:ModelToDiseaseMixin ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:model_of ;
     skos:definition """The relationship to the disease
@@ -1592,7 +1598,7 @@ biolink:model_to_disease_mixin_subject a biolink:subject ;
     rdfs:label "model_to_disease_mixin_subject" ;
     biolink:alias "subject" ;
     biolink:domain biolink:ModelToDiseaseMixin ;
-    biolink:range xsd:string ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     skos:definition "The entity that serves as the model of the disease. This may be an organism, a strain of organism, a genotype or variant that exhibits similar features, or a gene that when mutated exhibits features of the disease" .
 
@@ -1613,12 +1619,12 @@ biolink:pairwise_gene_to_gene_interaction_relation a biolink:pairwise_interactio
     biolink:alias "relation" ;
     biolink:definitional true ;
     biolink:domain biolink:PairwiseGeneToGeneInteraction ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:molecularly_interacts_with ;
     skos:definition "interaction relationship type" .
 
-biolink:pairwise_interaction_association_id a biolink:id ;
+biolink:pairwise_interaction_association_id a biolink:association_id ;
     rdfs:label "pairwise_interaction_association_id" ;
     biolink:alias "id" ;
     biolink:domain biolink:PairwiseInteractionAssociation ;
@@ -1671,7 +1677,7 @@ biolink:population_to_population_association_relation a biolink:relation ;
     rdfs:label "population_to_population_association_relation" ;
     biolink:alias "relation" ;
     biolink:domain biolink:PopulationToPopulationAssociation ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     skos:definition "A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used" .
 
@@ -1839,20 +1845,11 @@ biolink:transcript_to_gene_relationship_subject a biolink:sequence_feature_relat
     biolink:required true ;
     skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." .
 
-biolink:treatment_treats a biolink:treats ;
-    rdfs:label "treatment_treats" ;
-    biolink:alias "treats" ;
-    biolink:domain biolink:Treatment ;
-    biolink:range biolink:DiseaseOrPhenotypicFeature ;
-    biolink:required true ;
-    OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat " .
-
 biolink:variant_to_disease_association_object a biolink:object ;
     rdfs:label "variant_to_disease_association_object" ;
     biolink:alias "object" ;
     biolink:domain biolink:VariantToDiseaseAssociation ;
-    biolink:range xsd:string ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     skos:definition "a disease that is associated with that variant" .
 
@@ -1860,7 +1857,7 @@ biolink:variant_to_disease_association_relation a biolink:relation ;
     rdfs:label "variant_to_disease_association_relation" ;
     biolink:alias "relation" ;
     biolink:domain biolink:VariantToDiseaseAssociation ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     skos:definition "E.g. is pathogenic for" .
 
@@ -1868,7 +1865,7 @@ biolink:variant_to_disease_association_subject a biolink:subject ;
     rdfs:label "variant_to_disease_association_subject" ;
     biolink:alias "subject" ;
     biolink:domain biolink:VariantToDiseaseAssociation ;
-    biolink:range xsd:string ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     skos:definition "a sequence variant in which the allele state is associated in some way with the disease state" .
 
@@ -2120,6 +2117,15 @@ biolink:affects_risk_for a biolink:related_to ;
     OIO:inSubset ( "translator_minimal" ) ;
     skos:definition "holds between two entities where exposure to one entity alters the chance of developing the other " .
 
+biolink:association_id a biolink:node_property ;
+    rdfs:label "association_id" ;
+    biolink:alias "id" ;
+    biolink:domain biolink:Association ;
+    biolink:identifier true ;
+    biolink:range biolink:identifier_type ;
+    OIO:inSubset ( "translator_minimal" ) ;
+    skos:definition "A unique identifier for an association" .
+
 biolink:biological_sequence rdfs:label "biological sequence" ;
     biolink:typeof "string" .
 
@@ -2189,6 +2195,14 @@ biolink:has_total a biolink:aggregate_statistic ;
     biolink:range xsd:integer ;
     skos:definition "total number of things in a particular reference set" .
 
+biolink:id a biolink:node_property ;
+    rdfs:label "id" ;
+    biolink:domain biolink:NamedThing ;
+    biolink:identifier true ;
+    biolink:range biolink:identifier_type ;
+    OIO:inSubset ( "translator_minimal" ) ;
+    skos:definition "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI" .
+
 biolink:interacts_with a biolink:related_to ;
     rdfs:label "interacts_with" ;
     biolink:domain biolink:NamedThing ;
@@ -2203,10 +2217,6 @@ biolink:interbase_coordinate a biolink:node_property ;
     biolink:domain biolink:NamedThing ;
     biolink:range xsd:string ;
     skos:definition "TODO" .
-
-biolink:iri_type rdfs:label "iri type" ;
-    biolink:typeof "string" ;
-    skos:definition "An IRI" .
 
 biolink:model_of a biolink:related_to ;
     rdfs:label "model_of" ;
@@ -2252,7 +2262,7 @@ biolink:pairwise_interaction_association_relation a biolink:relation ;
     biolink:alias "relation" ;
     biolink:definitional true ;
     biolink:domain biolink:PairwiseInteractionAssociation ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     rdfs:subPropertyOf biolink:molecularly_interacts_with ;
     skos:definition "interaction relationship type" .
@@ -2293,9 +2303,10 @@ biolink:treats a biolink:affects ;
     biolink:aliases ( "is substance that treats" ) ;
     biolink:domain biolink:Treatment ;
     biolink:range biolink:DiseaseOrPhenotypicFeature ;
+    biolink:required true ;
     OIO:inSubset ( "translator_minimal" ) ;
     owl:inverseOf biolink:treated_by ;
-    skos:definition "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat " ;
+    skos:definition "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat" ;
     skos:mappingRelation ( "RO:0002606" "RO:0003307" "SEMMEDDB:TREATS" "WD:P2175" ) .
 
 biolink:AnatomicalEntityToAnatomicalEntityOntogenicAssociation a biolink:AnatomicalEntityToAnatomicalEntityAssociation ;
@@ -2429,6 +2440,13 @@ biolink:GeographicLocation a biolink:PlanetaryEntity ;
     biolink:slots ( biolink:latitude biolink:longitude ) ;
     skos:definition "a location that can be described in lat/long coordinates" ;
     skos:mappingRelation ( "UMLSSG:GEOG" ) .
+
+biolink:InformationContentEntity a biolink:NamedThing ;
+    rdfs:label "InformationContentEntity" ;
+    biolink:abstract true ;
+    biolink:aliases ( "information" "information artefact" "information entity" ) ;
+    skos:definition "a piece of information that typically describes some piece of biology or is used as support." ;
+    skos:mappingRelation ( "IAO:0000030" "UMLSSG:CONC" ) .
 
 biolink:LifeStage a biolink:OrganismalEntity ;
     rdfs:label "LifeStage" ;
@@ -2669,18 +2687,6 @@ biolink:has_phenotype a biolink:related_to ;
     skos:definition "holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). " ;
     skos:mappingRelation ( "RO:0002200" ) .
 
-biolink:id a biolink:node_property ;
-    rdfs:label "id" ;
-    biolink:domain biolink:NamedThing ;
-    biolink:identifier true ;
-    biolink:range biolink:identifier_type ;
-    OIO:inSubset ( "translator_minimal" ) ;
-    skos:definition "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI" .
-
-biolink:identifier_type rdfs:label "identifier type" ;
-    biolink:typeof "string" ;
-    skos:definition "A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form" .
-
 biolink:part_of a biolink:overlaps ;
     rdfs:label "part_of" ;
     biolink:domain biolink:NamedThing ;
@@ -2775,13 +2781,6 @@ biolink:GeneToGeneAssociation a biolink:Association ;
     biolink:slots ( biolink:gene_to_gene_association_subject biolink:gene_to_gene_association_object ) ;
     skos:definition "abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction." .
 
-biolink:InformationContentEntity a biolink:NamedThing ;
-    rdfs:label "InformationContentEntity" ;
-    biolink:abstract true ;
-    biolink:aliases ( "information" "information artefact" "information entity" ) ;
-    skos:definition "a piece of information that typically describes some piece of biology or is used as support." ;
-    skos:mappingRelation ( "IAO:0000030" "UMLSSG:CONC" ) .
-
 biolink:ThingToDiseaseOrPhenotypicFeatureAssociation a biolink:Association ;
     rdfs:label "ThingToDiseaseOrPhenotypicFeatureAssociation" ;
     biolink:abstract true ;
@@ -2794,6 +2793,17 @@ biolink:ThingToDiseaseOrPhenotypicFeatureAssociation a biolink:Association ;
                             skos:definition "Ehlers-Danlos syndrome, vascular type" ] [ biolink:value "MP:0013229" ;
                             skos:definition "abnormal brain ventricle size" ] ) ] ) ;
     biolink:slots ( biolink:thing_to_disease_or_phenotypic_feature_association_object ) .
+
+biolink:Treatment a biolink:Environment ;
+    rdfs:label "Treatment" ;
+    biolink:aliases ( "medical action" ) ;
+    biolink:slot_usage ( [ rdfs:label "has_exposure_parts" ;
+                biolink:multivalued true ;
+                biolink:range biolink:DrugExposure ;
+                biolink:required true ] ) ;
+    biolink:slots ( biolink:treats biolink:has_exposure_parts ) ;
+    skos:definition "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'" ;
+    skos:mappingRelation ( "OGMS:0000090" "SIO:001398" ) .
 
 biolink:VariantToThingAssociation a biolink:Association ;
     rdfs:label "VariantToThingAssociation" ;
@@ -2832,6 +2842,10 @@ biolink:expressed_in a biolink:related_to ;
     owl:inverseOf biolink:expresses ;
     skos:definition "holds between a gene or gene product and an anatomical entity in which it is expressed" ;
     skos:mappingRelation ( "RO:0002206" ) .
+
+biolink:identifier_type rdfs:label "identifier type" ;
+    biolink:typeof "string" ;
+    skos:definition "A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form" .
 
 biolink:label_type rdfs:label "label type" ;
     biolink:typeof "string" ;
@@ -2899,19 +2913,6 @@ biolink:SequenceFeatureRelationship a biolink:Association ;
                 biolink:range biolink:GenomicEntity ] ) ;
     biolink:slots ( biolink:sequence_feature_relationship_subject biolink:sequence_feature_relationship_object ) ;
     skos:definition "For example, a particular exon is part of a particular transcript or gene" .
-
-biolink:Treatment a biolink:Environment ;
-    rdfs:label "Treatment" ;
-    biolink:aliases ( "medical action" ) ;
-    biolink:slot_usage ( [ rdfs:label "treats" ;
-                biolink:range biolink:DiseaseOrPhenotypicFeature ;
-                biolink:required true ] [ rdfs:label "has_exposure_parts" ;
-                biolink:multivalued true ;
-                biolink:range biolink:DrugExposure ;
-                biolink:required true ] ) ;
-    biolink:slots ( biolink:treatment_treats biolink:has_exposure_parts ) ;
-    skos:definition "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'" ;
-    skos:mappingRelation ( "OGMS:0000090" "SIO:001398" ) .
 
 biolink:VariantToPopulationAssociation a biolink:Association ;
     rdfs:label "VariantToPopulationAssociation" ;
@@ -3102,17 +3103,17 @@ biolink:EntityToPhenotypicFeatureAssociation a biolink:Association ;
                             skos:definition "abnormal circulating bilirubin level" ] ) ] ) ;
     biolink:slots ( biolink:sex_qualifier biolink:entity_to_phenotypic_feature_association_description biolink:entity_to_phenotypic_feature_association_object ) .
 
-biolink:OntologyClass a biolink:NamedThing ;
-    rdfs:label "OntologyClass" ;
-    biolink:slots ( biolink:subclass_of ) ;
-    skos:definition "a concept or class in an ontology, vocabulary or thesaurus" .
-
 biolink:Genotype a biolink:GenomicEntity ;
     rdfs:label "Genotype" ;
     biolink:slots ( biolink:has_zygosity ) ;
     skos:definition "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background" ;
     skos:editorialNote "Consider renaming as genotypic entity" ;
     skos:mappingRelation ( "GENO:0000536" "SIO:001079" ) .
+
+biolink:OntologyClass a biolink:NamedThing ;
+    rdfs:label "OntologyClass" ;
+    biolink:slots ( biolink:subclass_of ) ;
+    skos:definition "a concept or class in an ontology, vocabulary or thesaurus" .
 
 biolink:Gene a biolink:GeneOrGeneProduct ;
     rdfs:label "Gene" ;
@@ -3140,9 +3141,6 @@ biolink:SequenceVariant a biolink:GenomicEntity ;
     skos:definition "An allele that varies in its sequence from what is considered the reference allele at that locus." ;
     skos:editorialNote "This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)" ;
     skos:mappingRelation ( "GENO:0000002" "WD:Q15304597" "SIO:010277" "VMC:Allele" ) .
-
-biolink:RelationshipType rdfs:label "RelationshipType" ;
-    skos:definition "An OWL property used as an edge label" .
 
 biolink:DiseaseOrPhenotypicFeature a biolink:BiologicalEntity ;
     rdfs:label "DiseaseOrPhenotypicFeature" ;
@@ -3181,16 +3179,11 @@ biolink:AnatomicalEntity a biolink:OrganismalEntity ;
     skos:definition "A subcellular location, cell type or gross anatomical part" ;
     skos:mappingRelation ( "UMLSSG:ANAT" "SIO:010046" "WD:Q4936952" ) .
 
-biolink:node_property rdfs:label "node_property" ;
-    biolink:domain biolink:NamedThing ;
-    biolink:range xsd:string ;
-    skos:definition "A grouping for any property that holds between a node and a value" .
-
 biolink:relation a biolink:association_slot ;
     rdfs:label "relation" ;
     biolink:domain biolink:Association ;
     biolink:local_names ( "annotation predicate" "predicate" ) ;
-    biolink:range biolink:RelationshipType ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     skos:definition "the relationship type by which a subject is connected to an object in an association" ;
     skos:mappingRelation ( "rdf:predicate" "owl:annotatedProperty" "oban:association_has_predicate" ) .
@@ -3201,6 +3194,15 @@ biolink:GenomicEntity a biolink:MolecularEntity ;
     biolink:slots ( biolink:has_biological_sequence ) ;
     skos:definition "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)" ;
     skos:mappingRelation ( "SO:0000110" "UMLSSG:GENE" ) .
+
+biolink:iri_type rdfs:label "iri type" ;
+    biolink:typeof "uri" ;
+    skos:definition "An IRI" .
+
+biolink:node_property rdfs:label "node_property" ;
+    biolink:domain biolink:NamedThing ;
+    biolink:range xsd:string ;
+    skos:definition "A grouping for any property that holds between a node and a value" .
 
 biolink:related_to rdfs:label "related_to" ;
     biolink:domain biolink:NamedThing ;
@@ -3215,9 +3217,8 @@ biolink:GeneOrGeneProduct a biolink:MacromolecularMachine ;
     biolink:union_of ( biolink:Gene biolink:GeneProduct ) ;
     skos:definition "a union of genes or gene products. Frequently an identifier for one will be used as proxy for another" .
 
-biolink:Association a biolink:InformationContentEntity ;
-    rdfs:label "Association" ;
-    biolink:slots ( biolink:association_type biolink:subject biolink:negated biolink:relation biolink:object biolink:qualifiers biolink:publications biolink:provided_by biolink:association_slot ) ;
+biolink:Association rdfs:label "Association" ;
+    biolink:slots ( biolink:association_id biolink:subject biolink:relation biolink:object biolink:negated biolink:association_type biolink:qualifiers biolink:publications biolink:provided_by biolink:association_slot ) ;
     skos:definition "A typed association between two entities, supported by evidence" ;
     skos:editorialNote "This is roughly the model used by biolink and ontobio at the moment" ;
     skos:mappingRelation ( "OBAN:association" "rdf:Statement" "owl:Axiom" ) .
@@ -3226,7 +3227,7 @@ biolink:object a biolink:association_slot ;
     rdfs:label "object" ;
     biolink:domain biolink:Association ;
     biolink:local_names ( "descriptor" "node with incoming relationship" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
     skos:mappingRelation ( "rdf:object" "owl:annotatedTarget" "oban:association_has_object" ) .
@@ -3235,7 +3236,7 @@ biolink:subject a biolink:association_slot ;
     rdfs:label "subject" ;
     biolink:domain biolink:Association ;
     biolink:local_names ( "annotation subject" "node with outgoing relationship" ) ;
-    biolink:range xsd:string ;
+    biolink:range biolink:iri_type ;
     biolink:required true ;
     skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
     skos:mappingRelation ( "rdf:subject" "owl:annotatedSource" "oban:association_has_subject" ) .
@@ -3250,8 +3251,7 @@ biolink:MolecularEntity a biolink:BiologicalEntity ;
     rdfs:label "MolecularEntity" ;
     biolink:aliases ( "bioentity" ) ;
     biolink:mixins ( biolink:ThingWithTaxon ) ;
-    biolink:slots ( biolink:molecularly_interacts_with biolink:affects_abundance_of biolink:increases_abundance_of biolink:decreases_abundance_of biolink:affects_activity_of biolink:increases_activity_of biolink:decreases_activity_of biolink:affects_expression_of
-    biolink:increases_expression_of biolink:decreases_expression_of biolink:affects_folding_of biolink:increases_folding_of biolink:decreases_folding_of biolink:affects_localization_of biolink:increases_localization_of biolink:decreases_localization_of ) ;
+    biolink:slots ( biolink:molecularly_interacts_with biolink:affects_abundance_of biolink:increases_abundance_of biolink:decreases_abundance_of biolink:affects_activity_of biolink:increases_activity_of biolink:decreases_activity_of biolink:affects_expression_of biolink:increases_expression_of biolink:decreases_expression_of biolink:affects_folding_of biolink:increases_folding_of biolink:decreases_folding_of biolink:affects_localization_of biolink:increases_localization_of biolink:decreases_localization_of biolink:affects_metabolic_processing_of biolink:increases_metabolic_processing_of biolink:decreases_metabolic_processing_of biolink:affects_molecular_modification_of biolink:increases_molecular_modification_of biolink:decreases_molecular_modification_of biolink:affects_synthesis_of biolink:increases_synthesis_of biolink:decreases_synthesis_of biolink:affects_degradation_of biolink:increases_degradation_of biolink:decreases_degradation_of biolink:affects_mutation_rate_of biolink:increases_mutation_rate_of biolink:decreases_mutation_rate_of biolink:affects_response_to biolink:increases_response_to biolink:decreases_response_to biolink:affects_splicing_of biolink:increases_splicing_of biolink:decreases_splicing_of biolink:affects_stability_of biolink:increases_stability_of biolink:decreases_stability_of biolink:affects_transport_of biolink:increases_transport_of biolink:decreases_transport_of biolink:affects_secretion_of biolink:increases_secretion_of biolink:decreases_secretion_of biolink:affects_uptake_of biolink:increases_uptake_of biolink:decreases_uptake_of biolink:regulates_entity_to_entity biolink:biomarker_for ) ;
     skos:definition "A gene, gene product, small molecule or macromolecule (including protein complex)" ;
     skos:editorialNote "Check SIO mapping - also mapped to chemical substance." ;
     skos:mappingRelation ( "SIO:010004" "WD:Q43460564" ) .

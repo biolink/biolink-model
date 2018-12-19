@@ -21,23 +21,24 @@ AnatomicalEntityToAnatomicalEntityOntogenicAssociation type
   {
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
-    relation: RelationshipType!
+    relation: String!
   }
 
 AnatomicalEntityToAnatomicalEntityPartOfAssociation type
   {
     subject: AnatomicalEntity!
     object: AnatomicalEntity!
-    relation: RelationshipType!
+    relation: String!
   }
 
 Association typeimplements ExtensionsAndEvidenceAssociationMixin
   {
-    associationType: OntologyClass
+    id: String
     subject: String!
-    negated: String
-    relation: RelationshipType!
+    relation: String!
     object: String!
+    negated: String
+    associationType: OntologyClass
     qualifiers: [OntologyClass]
     publications: [Publication]
     providedBy: Provider
@@ -336,7 +337,7 @@ GeneProductIsoform interface
 
 GeneRegulatoryRelationship type
   {
-    relation: RelationshipType!
+    relation: String!
     subject: GeneOrGeneProduct!
     object: GeneOrGeneProduct!
   }
@@ -352,7 +353,7 @@ GeneToExpressionSiteAssociation type
     quantifierQualifier: OntologyClass
     subject: GeneOrGeneProduct!
     object: AnatomicalEntity!
-    relation: RelationshipType!
+    relation: String!
   }
 
 GeneToGeneAssociation interface
@@ -363,14 +364,14 @@ GeneToGeneAssociation interface
 
 GeneToGeneHomologyAssociation type
   {
-    relation: RelationshipType!
+    relation: String!
   }
 
 GeneToGeneProductRelationship type
   {
     subject: Gene!
     object: GeneProduct!
-    relation: RelationshipType!
+    relation: String!
   }
 
 GeneToGoTermAssociation type
@@ -415,21 +416,21 @@ Genotype type
 
 GenotypeToGeneAssociation type
   {
-    relation: RelationshipType!
+    relation: String!
     subject: Genotype!
     object: Gene!
   }
 
 GenotypeToGenotypePartAssociation type
   {
-    relation: RelationshipType!
+    relation: String!
     subject: Genotype!
     object: Genotype!
   }
 
 GenotypeToPhenotypicFeatureAssociation typeimplements EntityToPhenotypicFeatureAssociation, GenotypeToThingAssociation
   {
-    relation: RelationshipType!
+    relation: String!
     subject: Genotype!
   }
 
@@ -440,7 +441,7 @@ GenotypeToThingAssociation interface
 
 GenotypeToVariantAssociation type
   {
-    relation: RelationshipType!
+    relation: String!
     subject: Genotype!
     object: SequenceVariant!
   }
@@ -516,7 +517,7 @@ MicroRNA type
 ModelToDiseaseMixin interface
   {
     subject: String!
-    relation: RelationshipType!
+    relation: String!
   }
 
 MolecularActivity typeimplements Occurrent
@@ -630,14 +631,14 @@ OrganismalEntity interface
 
 PairwiseGeneToGeneInteraction typeimplements PairwiseInteractionAssociation
   {
-    relation: RelationshipType!
+    relation: String!
   }
 
 PairwiseInteractionAssociation interface
   {
     subject: MolecularEntity!
     id: String
-    relation: RelationshipType!
+    relation: String!
     object: MolecularEntity!
     interactingMoleculesCategory: OntologyClass
   }
@@ -678,7 +679,7 @@ PopulationToPopulationAssociation type
   {
     subject: PopulationOfIndividualOrganisms!
     object: PopulationOfIndividualOrganisms!
-    relation: RelationshipType!
+    relation: String!
   }
 
 Procedure type
@@ -687,7 +688,7 @@ Procedure type
 
 PropertyValuePair type
   {
-    relation: RelationshipType!
+    relation: String!
     filler: NamedThing
   }
 
@@ -795,7 +796,7 @@ Treatment type
 VariantToDiseaseAssociation typeimplements VariantToThingAssociation, EntityToDiseaseAssociation
   {
     subject: String!
-    relation: RelationshipType!
+    relation: String!
     object: String!
   }
 

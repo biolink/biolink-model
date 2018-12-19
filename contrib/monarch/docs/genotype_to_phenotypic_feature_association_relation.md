@@ -8,7 +8,7 @@ URI: [http://w3id.org/biolink/vocab/genotype_to_phenotypic_feature_association_r
 
 ## Domain and Range
 
-[GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) -> [RelationshipType](RelationshipType.md)
+[GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [relation](relation.md)

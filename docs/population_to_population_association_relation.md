@@ -8,7 +8,7 @@ URI: [http://w3id.org/biolink/vocab/population_to_population_association_relatio
 
 ## Domain and Range
 
-[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) -> [RelationshipType](RelationshipType.md)
+[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [relation](relation.md)

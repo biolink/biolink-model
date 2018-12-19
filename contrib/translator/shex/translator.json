@@ -65,14 +65,14 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/AnatomicalEntity",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/AnatomicalEntity",
                         "min": 1,
                         "max": 1
@@ -94,22 +94,25 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/AnatomicalEntity",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/AnatomicalEntity",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_relation",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      }
@@ -130,22 +133,25 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_part_of_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/AnatomicalEntity",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_part_of_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/AnatomicalEntity",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_part_of_association_relation",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      }
@@ -221,94 +227,101 @@
          }
       },
       {
-         "type": "ShapeAnd",
+         "type": "Shape",
          "id": "http://w3id.org/biolink/vocab/Association",
-         "shapeExprs": [
-            "http://w3id.org/biolink/vocab/InformationContentEntity",
-            {
-               "type": "Shape",
-               "expression": {
-                  "type": "EachOf",
-                  "expressions": [
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": "http://w3id.org/biolink/vocab/OntologyClass",
-                        "min": 0,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string"
-                        },
-                        "min": 1,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/negated",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
-                        },
-                        "min": 0,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
-                        "min": 1,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string"
-                        },
-                        "min": 1,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/qualifiers",
-                        "valueExpr": "http://w3id.org/biolink/vocab/OntologyClass__List",
-                        "min": 0,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/publications",
-                        "valueExpr": "http://w3id.org/biolink/vocab/Publication__List",
-                        "min": 0,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://purl.org/pav/providedBy",
-                        "valueExpr": "http://w3id.org/biolink/vocab/Provider",
-                        "min": 0,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/association_slot",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string"
-                        },
-                        "min": 0,
-                        "max": 1
-                     }
-                  ]
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://w3id.org/biolink/vocab/id",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                  },
+                  "min": 0,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "nodeKind": "nonliteral"
+                  },
+                  "min": 1,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "nodeKind": "nonliteral"
+                  },
+                  "min": 1,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "nodeKind": "nonliteral"
+                  },
+                  "min": 1,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://w3id.org/biolink/vocab/negated",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+                  },
+                  "min": 0,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": "http://w3id.org/biolink/vocab/OntologyClass",
+                  "min": 0,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://w3id.org/biolink/vocab/qualifiers",
+                  "valueExpr": "http://w3id.org/biolink/vocab/OntologyClass__List",
+                  "min": 0,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://w3id.org/biolink/vocab/publications",
+                  "valueExpr": "http://w3id.org/biolink/vocab/Publication__List",
+                  "min": 0,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://purl.org/pav/providedBy",
+                  "valueExpr": "http://w3id.org/biolink/vocab/Provider",
+                  "min": 0,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://w3id.org/biolink/vocab/association_slot",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                  },
+                  "min": 0,
+                  "max": 1
                }
-            }
-         ]
+            ]
+         }
       },
       {
          "type": "ShapeAnd",
@@ -402,7 +415,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/biosample_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/Biosample",
                   "min": 1,
                   "max": 1
@@ -441,7 +454,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/case_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/Case",
                   "min": 1,
                   "max": 1
@@ -480,7 +493,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/cell_line_to_disease_or_phenotypic_feature_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature",
                   "min": 1,
                   "max": 1
@@ -497,7 +510,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/cell_line_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/CellLine",
                   "min": 1,
                   "max": 1
@@ -536,7 +549,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/chemical_to_disease_or_phenotypic_feature_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature",
                   "min": 1,
                   "max": 1
@@ -554,7 +567,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/chemical_to_gene_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://w3id.org/biolink/vocab/GeneOrGeneProduct",
                   "min": 1,
                   "max": 1
@@ -572,7 +585,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/chemical_to_pathway_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://w3id.org/biolink/vocab/Pathway",
                   "min": 1,
                   "max": 1
@@ -589,7 +602,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/chemical_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/ChemicalSubstance",
                   "min": 1,
                   "max": 1
@@ -723,7 +736,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/disease_or_phenotypic_feature_association_to_location_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://w3id.org/biolink/vocab/AnatomicalEntity",
                   "min": 1,
                   "max": 1
@@ -740,7 +753,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/disease_or_phenotypic_feature_association_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature",
                   "min": 1,
                   "max": 1
@@ -769,7 +782,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/disease_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/Disease",
                   "min": 1,
                   "max": 1
@@ -846,7 +859,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/entity_to_disease_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://w3id.org/biolink/vocab/Disease",
                   "min": 1,
                   "max": 1
@@ -903,7 +916,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/entity_to_phenotypic_feature_association_description",
+                        "predicate": "http://purl.org/dc/terms/description",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -913,7 +926,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/entity_to_phenotypic_feature_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/PhenotypicFeature",
                         "min": 1,
                         "max": 1
@@ -943,7 +956,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/environment_to_phenotypic_feature_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/Environment",
                   "min": 1,
                   "max": 1
@@ -1004,14 +1017,14 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/exon_to_transcript_relationship_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/Exon",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/exon_to_transcript_relationship_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/Transcript",
                         "min": 1,
                         "max": 1
@@ -1102,14 +1115,14 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/functional_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/MacromolecularMachine",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/functional_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/GeneOntologyClass",
                         "min": 1,
                         "max": 1
@@ -1166,7 +1179,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/gene_as_a_model_of_disease_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/GeneOrGeneProduct",
                   "min": 1,
                   "max": 1
@@ -1208,7 +1221,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_has_variant_that_contributes_to_disease_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/GeneOrGeneProduct",
                         "min": 1,
                         "max": 1
@@ -1303,21 +1316,24 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_regulatory_relationship_relation",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_regulatory_relationship_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/GeneOrGeneProduct",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_regulatory_relationship_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/GeneOrGeneProduct",
                         "min": 1,
                         "max": 1
@@ -1338,7 +1354,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/gene_to_disease_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/GeneOrGeneProduct",
                   "min": 1,
                   "max": 1
@@ -1358,36 +1374,39 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_to_expression_site_association_stage_qualifier",
+                        "predicate": "http://w3id.org/biolink/vocab/stage_qualifier",
                         "valueExpr": "http://w3id.org/biolink/vocab/LifeStage",
                         "min": 0,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_to_expression_site_association_quantifier_qualifier",
+                        "predicate": "http://w3id.org/biolink/vocab/quantifier_qualifier",
                         "valueExpr": "http://w3id.org/biolink/vocab/OntologyClass",
                         "min": 0,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_to_expression_site_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/GeneOrGeneProduct",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_to_expression_site_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/AnatomicalEntity",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_to_expression_site_association_relation",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      }
@@ -1408,14 +1427,14 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_to_gene_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/GeneOrGeneProduct",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_to_gene_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/GeneOrGeneProduct",
                         "min": 1,
                         "max": 1
@@ -1434,8 +1453,11 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/gene_to_gene_homology_association_relation",
-                  "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "nodeKind": "nonliteral"
+                  },
                   "min": 1,
                   "max": 1
                }
@@ -1454,22 +1476,25 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_to_gene_product_relationship_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/Gene",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_to_gene_product_relationship_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/GeneProduct",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_to_gene_product_relationship_relation",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      }
@@ -1490,14 +1515,14 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_to_go_term_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/MolecularEntity",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/gene_to_go_term_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/GeneOntologyClass",
                         "min": 1,
                         "max": 1
@@ -1518,7 +1543,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/gene_to_phenotypic_feature_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/GeneOrGeneProduct",
                   "min": 1,
                   "max": 1
@@ -1535,7 +1560,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/gene_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/GeneOrGeneProduct",
                   "min": 1,
                   "max": 1
@@ -1625,14 +1650,14 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/genomic_sequence_localization_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/GenomicEntity",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/genomic_sequence_localization_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/GenomicEntity",
                         "min": 1,
                         "max": 1
@@ -1671,21 +1696,24 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/genotype_to_gene_association_relation",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/genotype_to_gene_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/Genotype",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/genotype_to_gene_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/Gene",
                         "min": 1,
                         "max": 1
@@ -1707,21 +1735,24 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/genotype_to_genotype_part_association_relation",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/genotype_to_genotype_part_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/Genotype",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/genotype_to_genotype_part_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/Genotype",
                         "min": 1,
                         "max": 1
@@ -1745,14 +1776,17 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/genotype_to_phenotypic_feature_association_relation",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/genotype_to_phenotypic_feature_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/Genotype",
                         "min": 1,
                         "max": 1
@@ -1771,7 +1805,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/genotype_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/Genotype",
                   "min": 1,
                   "max": 1
@@ -1791,21 +1825,24 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/genotype_to_variant_association_relation",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/genotype_to_variant_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/Genotype",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/genotype_to_variant_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/SequenceVariant",
                         "min": 1,
                         "max": 1
@@ -1961,7 +1998,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/macromolecular_machine_name",
+                  "predicate": "http://www.w3.org/2000/01/rdf-schema#label",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -1981,7 +2018,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/macromolecular_machine_to_biological_process_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://w3id.org/biolink/vocab/BiologicalProcess",
                   "min": 1,
                   "max": 1
@@ -1998,7 +2035,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/macromolecular_machine_to_cellular_component_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://w3id.org/biolink/vocab/CellularComponent",
                   "min": 1,
                   "max": 1
@@ -2015,7 +2052,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/macromolecular_machine_to_molecular_activity_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://w3id.org/biolink/vocab/MolecularActivity",
                   "min": 1,
                   "max": 1
@@ -2051,18 +2088,21 @@
             "expressions": [
                {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/model_to_disease_mixin_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": {
                      "type": "NodeConstraint",
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                     "nodeKind": "nonliteral"
                   },
                   "min": 1,
                   "max": 1
                },
                {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/model_to_disease_mixin_relation",
-                  "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "nodeKind": "nonliteral"
+                  },
                   "min": 1,
                   "max": 1
                }
@@ -2462,7 +2502,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/named_graph_title",
+                  "predicate": "http://purl.org/dc/elements/1.1/title",
                   "valueExpr": {
                      "type": "NodeConstraint",
                      "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -2475,7 +2515,7 @@
       },
       {
          "type": "Shape",
-         "id": "XSD_string__List",
+         "id": "XSD_uri__List",
          "closed": true,
          "expression": {
             "type": "EachOf",
@@ -2485,7 +2525,7 @@
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
                   "valueExpr": {
                      "type": "NodeConstraint",
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                     "nodeKind": "nonliteral"
                   },
                   "min": 0,
                   "max": 1
@@ -2502,7 +2542,7 @@
                               "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
                            ]
                         },
-                        "XSD_string__List"
+                        "XSD_uri__List"
                      ]
                   }
                }
@@ -2538,7 +2578,7 @@
                {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                  "valueExpr": "XSD_string__List",
+                  "valueExpr": "XSD_uri__List",
                   "min": 0,
                   "max": 1
                },
@@ -2574,7 +2614,7 @@
                   "predicate": "http://w3id.org/biolink/vocab/iri",
                   "valueExpr": {
                      "type": "NodeConstraint",
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                     "nodeKind": "nonliteral"
                   },
                   "min": 0,
                   "max": 1
@@ -2722,8 +2762,11 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_relation",
-                  "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "nodeKind": "nonliteral"
+                  },
                   "min": 1,
                   "max": 1
                }
@@ -2742,14 +2785,14 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/pairwise_interaction_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/MolecularEntity",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/pairwise_interaction_association_id",
+                        "predicate": "http://w3id.org/biolink/vocab/id",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -2759,14 +2802,17 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/pairwise_interaction_association_relation",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/pairwise_interaction_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/MolecularEntity",
                         "min": 1,
                         "max": 1
@@ -2876,22 +2922,25 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/population_to_population_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/population_to_population_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/population_to_population_association_relation",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      }
@@ -2956,8 +3005,14 @@
          "id": "http://w3id.org/biolink/vocab/RelationshipQuantifier"
       },
       {
-         "type": "Shape",
-         "id": "http://w3id.org/biolink/vocab/RelationshipType"
+         "type": "ShapeAnd",
+         "id": "http://w3id.org/biolink/vocab/RelationshipType",
+         "shapeExprs": [
+            "http://w3id.org/biolink/vocab/OntologyClass",
+            {
+               "type": "Shape"
+            }
+         ]
       },
       {
          "type": "ShapeAnd",
@@ -3002,14 +3057,14 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/sequence_feature_relationship_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/GenomicEntity",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/sequence_feature_relationship_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/GenomicEntity",
                         "min": 1,
                         "max": 1
@@ -3064,14 +3119,14 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/sequence_variant_has_gene",
+                        "predicate": "http://w3id.org/biolink/vocab/has_gene",
                         "valueExpr": "http://w3id.org/biolink/vocab/Gene__List",
                         "min": 0,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/sequence_variant_has_biological_sequence",
+                        "predicate": "http://w3id.org/biolink/vocab/has_biological_sequence",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -3081,7 +3136,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/sequence_variant_id",
+                        "predicate": "http://w3id.org/biolink/vocab/id",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#string"
@@ -3106,14 +3161,14 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/sequence_variant_modulates_treatment_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/SequenceVariant",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/sequence_variant_modulates_treatment_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/Treatment",
                         "min": 1,
                         "max": 1
@@ -3152,7 +3207,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/thing_to_disease_or_phenotypic_feature_association_object",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                   "valueExpr": "http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature",
                   "min": 1,
                   "max": 1
@@ -3193,14 +3248,14 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/transcript_to_gene_relationship_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/Transcript",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/transcript_to_gene_relationship_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/Gene",
                         "min": 1,
                         "max": 1
@@ -3255,7 +3310,7 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/treatment_treats",
+                        "predicate": "http://purl.obolibrary.org/obo/RO_0002606",
                         "valueExpr": "http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature",
                         "min": 1,
                         "max": 1
@@ -3286,27 +3341,30 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/variant_to_disease_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": {
                            "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                           "nodeKind": "nonliteral"
                         },
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/variant_to_disease_association_relation",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/variant_to_disease_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": {
                            "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                           "nodeKind": "nonliteral"
                         },
                         "min": 1,
                         "max": 1
@@ -3327,7 +3385,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/variant_to_phenotypic_feature_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/SequenceVariant",
                   "min": 1,
                   "max": 1
@@ -3350,21 +3408,21 @@
                   "expressions": [
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/variant_to_population_association_subject",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": "http://w3id.org/biolink/vocab/SequenceVariant",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/variant_to_population_association_object",
+                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": "http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms",
                         "min": 1,
                         "max": 1
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/variant_to_population_association_has_quotient",
+                        "predicate": "http://w3id.org/biolink/vocab/has_quotient",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#double"
@@ -3374,7 +3432,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/variant_to_population_association_has_count",
+                        "predicate": "http://w3id.org/biolink/vocab/has_count",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#integer"
@@ -3384,7 +3442,7 @@
                      },
                      {
                         "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/variant_to_population_association_has_total",
+                        "predicate": "http://w3id.org/biolink/vocab/has_total",
                         "valueExpr": {
                            "type": "NodeConstraint",
                            "datatype": "http://www.w3.org/2001/XMLSchema#integer"
@@ -3406,7 +3464,7 @@
                "type": "Shape",
                "expression": {
                   "type": "TripleConstraint",
-                  "predicate": "http://w3id.org/biolink/vocab/variant_to_thing_association_subject",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": "http://w3id.org/biolink/vocab/SequenceVariant",
                   "min": 1,
                   "max": 1

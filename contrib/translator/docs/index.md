@@ -7,6 +7,59 @@ Monarch specific extensions
 
  * [AdministrativeEntity](AdministrativeEntity.md)
     * [Provider](Provider.md) - person, group, organization or project that provides a piece of information
+ * [Association](Association.md) - A typed association between two entities, supported by evidence
+    * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
+       * [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) - A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
+       * [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) - A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
+    * [BiosampleToDiseaseOrPhenotypicFeatureAssociation](BiosampleToDiseaseOrPhenotypicFeatureAssociation.md) - An association between a biosample and a disease or phenotype
+    * [BiosampleToThingAssociation](BiosampleToThingAssociation.md) - An association between a biosample and something
+    * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
+    * [CaseToThingAssociation](CaseToThingAssociation.md) - An abstract association for use where the case is the subject
+    * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) - An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
+    * [CellLineToThingAssociation](CellLineToThingAssociation.md) - An relationship between a cell line and another entity
+    * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) - An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
+    * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) - An interaction between a chemical entity and a gene or gene product
+    * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) - An interaction between a chemical entity and a biological process or pathway
+    * [ChemicalToThingAssociation](ChemicalToThingAssociation.md) - An interaction between a chemical entity and another entity
+    * [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
+       * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md) - An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
+    * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
+    * [DiseaseToThingAssociation](DiseaseToThingAssociation.md)
+    * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
+    * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+    * [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
+       * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
+       * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
+       * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
+       * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
+    * [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) - A regulatory relationship between two genes
+    * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+       * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
+       * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
+    * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) - An association between a gene and an expression site, possibly qualified by stage/timing info.
+    * [GeneToGeneAssociation](GeneToGeneAssociation.md) - abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
+       * [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) - A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
+       * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) - An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+    * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+    * [GeneToThingAssociation](GeneToThingAssociation.md)
+    * [GenomicSequenceLocalization](GenomicSequenceLocalization.md) - A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
+    * [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) - Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
+    * [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) - Any association between one genotype and a genotypic entity that is a sub-component of it
+    * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
+    * [GenotypeToThingAssociation](GenotypeToThingAssociation.md)
+    * [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) - Any association between a genotype and a sequence variant.
+    * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) - An interaction at the molecular level between two physical entities
+    * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) - An association between a two populations
+    * [SequenceFeatureRelationship](SequenceFeatureRelationship.md) - For example, a particular exon is part of a particular transcript or gene
+       * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) - A transcript is formed from multiple exons
+       * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) - A gene is transcribed and potentially translated to a gene product
+       * [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) - A gene is a collection of transcripts
+    * [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) - An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.
+    * [ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)
+    * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
+    * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
+    * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) - An association between a variant and a population, where the variant has particular frequency in the population
+    * [VariantToThingAssociation](VariantToThingAssociation.md)
  * [Attribute](Attribute.md) - A property or characteristic of an entity
     * [BiologicalSex](BiologicalSex.md)
        * [GenotypicSex](GenotypicSex.md) - An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
@@ -70,59 +123,6 @@ Monarch specific extensions
        * [ClinicalTrial](ClinicalTrial.md)
     * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
     * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
-       * [Association](Association.md) - A typed association between two entities, supported by evidence
-          * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
-             * [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) - A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
-             * [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) - A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
-          * [BiosampleToDiseaseOrPhenotypicFeatureAssociation](BiosampleToDiseaseOrPhenotypicFeatureAssociation.md) - An association between a biosample and a disease or phenotype
-          * [BiosampleToThingAssociation](BiosampleToThingAssociation.md) - An association between a biosample and something
-          * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
-          * [CaseToThingAssociation](CaseToThingAssociation.md) - An abstract association for use where the case is the subject
-          * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) - An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
-          * [CellLineToThingAssociation](CellLineToThingAssociation.md) - An relationship between a cell line and another entity
-          * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) - An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
-          * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) - An interaction between a chemical entity and a gene or gene product
-          * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) - An interaction between a chemical entity and a biological process or pathway
-          * [ChemicalToThingAssociation](ChemicalToThingAssociation.md) - An interaction between a chemical entity and another entity
-          * [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
-             * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md) - An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
-          * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
-          * [DiseaseToThingAssociation](DiseaseToThingAssociation.md)
-          * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
-          * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
-          * [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
-             * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
-             * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
-             * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
-             * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md) - A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
-          * [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) - A regulatory relationship between two genes
-          * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
-             * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
-             * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
-          * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) - An association between a gene and an expression site, possibly qualified by stage/timing info.
-          * [GeneToGeneAssociation](GeneToGeneAssociation.md) - abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
-             * [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) - A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
-             * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) - An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
-          * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
-          * [GeneToThingAssociation](GeneToThingAssociation.md)
-          * [GenomicSequenceLocalization](GenomicSequenceLocalization.md) - A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
-          * [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) - Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
-          * [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) - Any association between one genotype and a genotypic entity that is a sub-component of it
-          * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
-          * [GenotypeToThingAssociation](GenotypeToThingAssociation.md)
-          * [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) - Any association between a genotype and a sequence variant.
-          * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) - An interaction at the molecular level between two physical entities
-          * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) - An association between a two populations
-          * [SequenceFeatureRelationship](SequenceFeatureRelationship.md) - For example, a particular exon is part of a particular transcript or gene
-             * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) - A transcript is formed from multiple exons
-             * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) - A gene is transcribed and potentially translated to a gene product
-             * [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) - A gene is a collection of transcripts
-          * [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) - An association between a sequence variant and a treatment or health intervention. The treatment object itself encompasses both the disease and the drug used.
-          * [ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)
-          * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
-          * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
-          * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) - An association between a variant and a population, where the variant has particular frequency in the population
-          * [VariantToThingAssociation](VariantToThingAssociation.md)
        * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
        * [EvidenceType](EvidenceType.md) - Class of evidence that supports an association
        * [NamedGraph](NamedGraph.md)
@@ -134,12 +134,12 @@ Monarch specific extensions
     * [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
        * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
        * [OrganismTaxon](OrganismTaxon.md)
+       * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
     * [PlanetaryEntity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet
        * [EnvironmentalFeature](EnvironmentalFeature.md)
        * [EnvironmentalProcess](EnvironmentalProcess.md)
        * [GeographicLocation](GeographicLocation.md) - a location that can be described in lat/long coordinates
           * [GeographicLocationAtTime](GeographicLocationAtTime.md) - a location that can be described in lat/long coordinates, for a particular time
- * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
 ### Mixins
 
  * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
@@ -287,6 +287,8 @@ Monarch specific extensions
           * [variant to population association.has quotient](variant_to_population_association_has_quotient.md) - frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
        * [has total](has_total.md) - total number of things in a particular reference set
           * [variant to population association.has total](variant_to_population_association_has_total.md) - number all populations that carry a particular allele, aka allele number
+    * [association.id](association_id.md) *subsets*: (translator_minimal) - A unique identifier for an association
+       * [pairwise interaction association.id](pairwise_interaction_association_id.md) *subsets*: (translator_minimal) - identifier for the interaction. This may come from an interaction database such as IMEX.
     * [category](category.md) *subsets*: (translator_minimal) - Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
     * [description](description.md) *subsets*: (translator_minimal) - a human-readable description of a thing
@@ -301,7 +303,6 @@ Monarch specific extensions
        * [sequence variant.has gene](sequence_variant_has_gene.md) - Each allele can be associated with any number of genes
     * [has zygosity](has_zygosity.md)
     * [id](id.md) *subsets*: (translator_minimal) - A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-       * [pairwise interaction association.id](pairwise_interaction_association_id.md) *subsets*: (translator_minimal) - identifier for the interaction. This may come from an interaction database such as IMEX.
        * [sequence variant.id](sequence_variant_id.md) *subsets*: (translator_minimal)
     * [interbase coordinate](interbase_coordinate.md) - TODO
        * [end interbase coordinate](end_interbase_coordinate.md)
@@ -377,8 +378,7 @@ Monarch specific extensions
           * [regulates, process to process](regulates_process_to_process.md) *subsets*: (translator_minimal)
              * [negatively regulates, process to process](negatively_regulates_process_to_process.md) *subsets*: (translator_minimal)
              * [positively regulates, process to process](positively_regulates_process_to_process.md) *subsets*: (translator_minimal)
-       * [treats](treats.md) *subsets*: (translator_minimal) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat 
-          * [treatment.treats](treatment_treats.md) *subsets*: (translator_minimal)
+       * [treats](treats.md) *subsets*: (translator_minimal) - holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
     * [affects risk for](affects_risk_for.md) *subsets*: (translator_minimal) - holds between two entities where exposure to one entity alters the chance of developing the other 
        * [predisposes](predisposes.md) *subsets*: (translator_minimal) - holds between two entities where exposure to one entity increases the chance of developing the other 
        * [prevents](prevents.md) *subsets*: (translator_minimal) - holds between an entity whose application or use reduces the likelihood of a potential outcome.  Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.
@@ -453,7 +453,7 @@ Monarch specific extensions
  * [EvidenceInstance](EvidenceInstance.md)  (**string**) 
  * [FrequencyValue](FrequencyValue.md)  (**string**) 
  * [IdentifierType](IdentifierType.md)  (**string**)  - A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form
- * [IriType](IriType.md)  (**string**)  - An IRI
+ * [IriType](IriType.md)  (**uri**)  - An IRI
  * [LabelType](LabelType.md)  (**string**)  - A string that provides a human-readable name for a thing
  * [NarrativeText](NarrativeText.md)  (**string**)  - A string that provides a human-readable description of something
  * [PerecentageFrequencyValue](PerecentageFrequencyValue.md)  (**double**) 

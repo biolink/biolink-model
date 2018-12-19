@@ -11,7 +11,7 @@ URI: [http://w3id.org/biolink/vocab/relation](slot_uri)
  * [oban:association_has_predicate](http://purl.obolibrary.org/obo/oban_association_has_predicate)
 ## Domain and Range
 
-[Association](Association.md) -> [RelationshipType](RelationshipType.md)
+[Association](Association.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)

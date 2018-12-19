@@ -14,6 +14,7 @@ URI: [http://w3id.org/biolink/vocab/node_property](slot_uri)
 ## Children
 
  *  child: [aggregate statistic](aggregate_statistic.md)
+ *  child: [association.id](association_id.md) *subsets*: (translator_minimal)
  *  child: [category](category.md) *subsets*: (translator_minimal)
  *  child: [creation date](creation_date.md)
  *  child: [description](description.md) *subsets*: (translator_minimal)

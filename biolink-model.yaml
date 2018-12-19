@@ -41,7 +41,7 @@ types:
       May be URI in full or compact (CURIE) form
 
   iri type:
-    typeof: string
+    typeof: uri
     description: >-
       An IRI
 
@@ -1243,7 +1243,7 @@ slots:
       connects an association to the subject of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     required: true
-#    range: named thing
+    range: iri type
     mappings:
       - rdf:subject
       - owl:annotatedSource
@@ -1255,7 +1255,7 @@ slots:
       connects an association to the object of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     required: true
-#    range: named thing
+    range: iri type
     local_names:
       ga4gh: descriptor
       neo4j: node with incoming relationship
@@ -1278,7 +1278,7 @@ slots:
     description: >-
       the relationship type by which a subject is connected to an object in an association
     domain: association
-    range: relationship type
+    range: iri type
     required: true
     local_names:
       ga4gh: annotation predicate

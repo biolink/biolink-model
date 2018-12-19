@@ -11,7 +11,7 @@ URI: [http://w3id.org/biolink/vocab/pairwise_interaction_association_id](slot_ur
 [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) -> [IdentifierType](IdentifierType.md)
 ## Inheritance
 
- *  is_a: [id](id.md) *subsets*: (translator_minimal)
+ *  is_a: [association.id](association_id.md) *subsets*: (translator_minimal)
 ## Children
 
 ## Used in

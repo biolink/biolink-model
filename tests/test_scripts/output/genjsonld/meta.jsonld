@@ -241,16 +241,6 @@
       "@id": "close_matches"
     },
     {
-      "name": "is_a",
-      "description": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded",
-      "mappings": [
-        "rdf:type"
-      ],
-      "domain": "Definition",
-      "range": "Definition",
-      "@id": "is_a"
-    },
-    {
       "name": "mixin",
       "description": "Used only as a mixin -- cannot be instantiated on its own.",
       "domain": "Definition",
@@ -437,6 +427,16 @@
       "domain": "SchemaDefinition",
       "range": "xsd:date",
       "@id": "generation_date"
+    },
+    {
+      "name": "is_a",
+      "description": "specifies single-inheritance between classes and slots. While multiple inheritance is not allowed, mixins can be provided effectively providing the same thing. The semantics are the same when translated to formalisms that allow MI (e.g. RDFS/OWL). When translating to a SI framework (e.g. java classes, python classes) then is_a is used. When translating a framework without polymorphism (e.g. json-schema, solr document schema) then is_a and mixins are recursively unfolded",
+      "mappings": [
+        "rdfs:subClassOf"
+      ],
+      "domain": "Definition",
+      "range": "Definition",
+      "@id": "is_a"
     },
     {
       "name": "defining_slots",
@@ -881,9 +881,9 @@
   ],
   "metamodel_version": "0.3.2",
   "source_file": "meta.yaml",
-  "source_file_size": 21029,
-  "source_file_date": "Wed Dec  5 11:54:01 2018",
-  "generation_date": "2018-12-05 12:02",
+  "source_file_size": 21737,
+  "source_file_date": "Tue Dec 18 21:32:06 2018",
+  "generation_date": "2018-12-18 21:32",
   "@context": [
     "https://raw.githubusercontent.com/biolink/biolink-model/master/metamodel/context.jsonld",
     {

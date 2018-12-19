@@ -15,6 +15,7 @@ URI: [http://w3id.org/biolink/vocab/OntologyClass](http://w3id.org/biolink/vocab
 
  * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
  * [OrganismTaxon](OrganismTaxon.md)
+ * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
  * [Attribute](Attribute.md) (mixin)  - A property or characteristic of an entity
 ## Used in
 

@@ -114,7 +114,10 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      }
@@ -150,7 +153,10 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      }
@@ -160,94 +166,101 @@
          ]
       },
       {
-         "type": "ShapeAnd",
+         "type": "Shape",
          "id": "http://w3id.org/biolink/vocab/Association",
-         "shapeExprs": [
-            "http://w3id.org/biolink/vocab/InformationContentEntity",
-            {
-               "type": "Shape",
-               "expression": {
-                  "type": "EachOf",
-                  "expressions": [
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                        "valueExpr": "http://w3id.org/biolink/vocab/OntologyClass",
-                        "min": 0,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string"
-                        },
-                        "min": 1,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/negated",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
-                        },
-                        "min": 0,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
-                        "min": 1,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string"
-                        },
-                        "min": 1,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/qualifiers",
-                        "valueExpr": "http://w3id.org/biolink/vocab/OntologyClass",
-                        "min": 0,
-                        "max": -1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/publications",
-                        "valueExpr": "http://w3id.org/biolink/vocab/Publication",
-                        "min": 0,
-                        "max": -1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://purl.org/pav/providedBy",
-                        "valueExpr": "http://w3id.org/biolink/vocab/Provider",
-                        "min": 0,
-                        "max": 1
-                     },
-                     {
-                        "type": "TripleConstraint",
-                        "predicate": "http://w3id.org/biolink/vocab/association_slot",
-                        "valueExpr": {
-                           "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string"
-                        },
-                        "min": 0,
-                        "max": 1
-                     }
-                  ]
+         "expression": {
+            "type": "EachOf",
+            "expressions": [
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://w3id.org/biolink/vocab/id",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                  },
+                  "min": 0,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "nodeKind": "nonliteral"
+                  },
+                  "min": 1,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "nodeKind": "nonliteral"
+                  },
+                  "min": 1,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "nodeKind": "nonliteral"
+                  },
+                  "min": 1,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://w3id.org/biolink/vocab/negated",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+                  },
+                  "min": 0,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+                  "valueExpr": "http://w3id.org/biolink/vocab/OntologyClass",
+                  "min": 0,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://w3id.org/biolink/vocab/qualifiers",
+                  "valueExpr": "http://w3id.org/biolink/vocab/OntologyClass",
+                  "min": 0,
+                  "max": -1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://w3id.org/biolink/vocab/publications",
+                  "valueExpr": "http://w3id.org/biolink/vocab/Publication",
+                  "min": 0,
+                  "max": -1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://purl.org/pav/providedBy",
+                  "valueExpr": "http://w3id.org/biolink/vocab/Provider",
+                  "min": 0,
+                  "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://w3id.org/biolink/vocab/association_slot",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                  },
+                  "min": 0,
+                  "max": 1
                }
-            }
-         ]
+            ]
+         }
       },
       {
          "type": "ShapeAnd",
@@ -1210,7 +1223,10 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
@@ -1293,7 +1309,10 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      }
@@ -1341,7 +1360,10 @@
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                  "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "nodeKind": "nonliteral"
+                  },
                   "min": 1,
                   "max": 1
                }
@@ -1375,7 +1397,10 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      }
@@ -1578,7 +1603,10 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
@@ -1614,7 +1642,10 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
@@ -1652,7 +1683,10 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
@@ -1698,7 +1732,10 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
@@ -1950,7 +1987,7 @@
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                   "valueExpr": {
                      "type": "NodeConstraint",
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                     "nodeKind": "nonliteral"
                   },
                   "min": 1,
                   "max": 1
@@ -1958,7 +1995,10 @@
                {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                  "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "nodeKind": "nonliteral"
+                  },
                   "min": 1,
                   "max": 1
                }
@@ -2380,7 +2420,7 @@
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
                   "valueExpr": {
                      "type": "NodeConstraint",
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                     "nodeKind": "nonliteral"
                   },
                   "min": 0,
                   "max": -1
@@ -2407,7 +2447,7 @@
                   "predicate": "http://w3id.org/biolink/vocab/iri",
                   "valueExpr": {
                      "type": "NodeConstraint",
-                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                     "nodeKind": "nonliteral"
                   },
                   "min": 0,
                   "max": 1
@@ -2556,7 +2596,10 @@
                "expression": {
                   "type": "TripleConstraint",
                   "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                  "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "nodeKind": "nonliteral"
+                  },
                   "min": 1,
                   "max": 1
                }
@@ -2593,7 +2636,10 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
@@ -2724,7 +2770,10 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      }
@@ -2789,8 +2838,14 @@
          "id": "http://w3id.org/biolink/vocab/RelationshipQuantifier"
       },
       {
-         "type": "Shape",
-         "id": "http://w3id.org/biolink/vocab/RelationshipType"
+         "type": "ShapeAnd",
+         "id": "http://w3id.org/biolink/vocab/RelationshipType",
+         "shapeExprs": [
+            "http://w3id.org/biolink/vocab/OntologyClass",
+            {
+               "type": "Shape"
+            }
+         ]
       },
       {
          "type": "ShapeAnd",
@@ -3056,7 +3111,7 @@
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#subject",
                         "valueExpr": {
                            "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                           "nodeKind": "nonliteral"
                         },
                         "min": 1,
                         "max": 1
@@ -3064,7 +3119,10 @@
                      {
                         "type": "TripleConstraint",
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate",
-                        "valueExpr": "http://w3id.org/biolink/vocab/RelationshipType",
+                        "valueExpr": {
+                           "type": "NodeConstraint",
+                           "nodeKind": "nonliteral"
+                        },
                         "min": 1,
                         "max": 1
                      },
@@ -3073,7 +3131,7 @@
                         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#object",
                         "valueExpr": {
                            "type": "NodeConstraint",
-                           "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                           "nodeKind": "nonliteral"
                         },
                         "min": 1,
                         "max": 1

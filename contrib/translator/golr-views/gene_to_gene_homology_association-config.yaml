@@ -6,52 +6,16 @@ display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [gene 
 document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [gene
     to gene homology association]
 fields:
-- description: A unique identifier for a thing. Must be either a CURIE shorthand for
-    a URI or a complete URI
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [id]
+- description: A unique identifier for an association
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association_id]
   id: id
-- description: A human-readable name for a thing
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [name]
-  id: name
-- cardinality: multi
-  description: Name of the high level ontology class in which this entity is categorized.
-    Corresponds to the label for the biolink entity type class. In a neo4j database
-    this MAY correspond to the neo4j label tag
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [category]
-  id: category
-- description: URI expansion of CURIE
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [uri]
-  id: uri
-- description: A grouping for any relationship type that holds between any two things
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [related
-      to]
-  id: related_to
-- description: A grouping for any property that holds between a node and a value
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [node property]
-  id: node_property
-- description: An IRI for the node. This is determined by the id using expansion rules.
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [iri]
-  id: iri
-- description: a long-form human readable name for a thing
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [full name]
-  id: full_name
-- description: a human-readable description of a thing
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [description]
-  id: description
-- description: more commonly used for gene symbols in yeast
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [systematic
-      synonym]
-  id: systematic_synonym
-- description: Narrative text describing the entity
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [title]
-  id: title
+- description: if set to true, then the association is negated i.e. is not true
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [negated]
+  id: negated
 - description: connects an association to the type of association (e.g. gene to phenotype)
   display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association
       type]
   id: association_type
-- description: if set to true, then the association is negated i.e. is not true
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [negated]
-  id: negated
 - cardinality: multi
   description: connects an association to qualifiers that modify or qualify the meaning
     of that association

@@ -8,7 +8,7 @@ URI: [http://w3id.org/biolink/vocab/extensions_and_evidence_association_mixin_su
 
 ## Domain and Range
 
-[ExtensionsAndEvidenceAssociationMixin](ExtensionsAndEvidenceAssociationMixin.md) -> **string**
+[ExtensionsAndEvidenceAssociationMixin](ExtensionsAndEvidenceAssociationMixin.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [subject](subject.md)

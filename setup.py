@@ -2,7 +2,7 @@ import sys
 
 from setuptools import setup, find_packages
 
-version = '0.3.0'
+version = '0.3.1'
 
 requires = [
     "certifi>=2018.4.16",
@@ -13,7 +13,7 @@ requires = [
     "jsonasobj>=1.2.1",
     "jsonschema>=2.6.0",
     "prefixcommons>=0.1.7",
-    "pyshex>=0.5.12",
+    "pyshex>=0.6.0",
     "pyyaml>=3.13",
     "rdflib-jsonld>=0.4.0",
     "rdflib>=4.2.2",

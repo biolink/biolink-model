@@ -8,7 +8,7 @@ URI: [http://w3id.org/biolink/vocab/gene_to_expression_site_association_relation
 
 ## Domain and Range
 
-[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) -> [RelationshipType](RelationshipType.md)
+[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [relation](relation.md)

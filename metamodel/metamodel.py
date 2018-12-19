@@ -1,5 +1,5 @@
 # Auto generated from meta.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-11-12 18:12
+# Generation date: 2018-12-18 21:32
 # Schema: metamodel
 #
 # id: https://biolink.github.io/metamodel/ontology/meta.ttl

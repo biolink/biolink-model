@@ -8,7 +8,7 @@ URI: [http://w3id.org/biolink/vocab/variant_to_disease_association_relation](slo
 
 ## Domain and Range
 
-[VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) -> [RelationshipType](RelationshipType.md)
+[VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [relation](relation.md)

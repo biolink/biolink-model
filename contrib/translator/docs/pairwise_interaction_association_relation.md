@@ -8,7 +8,7 @@ URI: [http://w3id.org/biolink/vocab/pairwise_interaction_association_relation](s
 
 ## Domain and Range
 
-[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) -> [RelationshipType](RelationshipType.md)
+[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) -> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [relation](relation.md)
