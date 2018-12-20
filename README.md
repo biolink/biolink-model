@@ -193,7 +193,7 @@ This is used to generate various artifacts such as
 
 Auto-generated UML diagram:
 
-![img](biolink-model/docs/images/GeneToExpressionSiteAssociation.png)
+![img](docs/images/GeneToExpressionSiteAssociation.png)
 
 Auto-generated GraphQL definition:
 
