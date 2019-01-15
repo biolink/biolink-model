@@ -1,3 +1,6 @@
+# Installation make a copy of this file that we should ignore
+biolink_model/biolink-model.yaml
+
 ontology/*.obo
 ontology/*.pro
 ontology/*.qlf
@@ -94,3 +97,8 @@ ENV/
 
 # Apple stuff
 .DS_Store
+
+# Huge test files -- must stay local
+biolink_drugbank.ttl
+biolink_hgnc.ttl
+
