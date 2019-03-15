@@ -1187,6 +1187,17 @@ slots:
       - translator_minimal
     mappings:
       - "rdfs:label"
+
+  synonym:
+    is_a: node property
+    aliases: ['alias']
+    domain: named thing
+    range: label type
+    description: >-
+      Alternate human-readable names for a thing
+    multivalued: true
+    in_subset:
+      - translator_minimal
   
   category:
     is_a: node property
