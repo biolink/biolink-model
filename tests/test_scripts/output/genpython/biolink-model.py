@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.0.4
-# Generation date: 2018-12-18 21:31
+# Generation date: 2019-03-15 14:56
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -19,10 +19,6 @@ inherited_slots: List[str] = []
 
 # Type names
 class Phenotype(str):
-    pass
-
-
-class EvidenceInstance(str):
     pass
 
 
@@ -641,6 +637,7 @@ class NamedThing(YAMLRoot):
     related_to: Optional[NamedThingId] = None
     node_property: Optional[str] = None
     iri: Optional[IriType] = None
+    synonym: List[LabelType] = empty_list()
     full_name: Optional[LabelType] = None
     description: Optional[NarrativeText] = None
     systematic_synonym: Optional[LabelType] = None
@@ -655,6 +652,8 @@ class NamedThing(YAMLRoot):
             self.related_to = NamedThingId(self.related_to)
         if self.iri and not isinstance(self.iri, IriType):
             self.iri = IriType(self.iri)
+        self.synonym = [v if isinstance(v, LabelType)
+                        else LabelType(v) for v in self.synonym]
         if self.full_name and not isinstance(self.full_name, LabelType):
             self.full_name = LabelType(self.full_name)
         if self.description and not isinstance(self.description, NarrativeText):
@@ -772,6 +771,11 @@ class Case(IndividualOrganism):
 
 @dataclass
 class PopulationOfIndividualOrganisms(OrganismalEntity):
+    """
+    A collection of individuals from the same taxonomic class distinguished by one or more characteristics.
+    Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance
+    for Genome Resources]
+    """
     id: PopulationOfIndividualOrganismsId = None
 
     def _fix_elements(self):

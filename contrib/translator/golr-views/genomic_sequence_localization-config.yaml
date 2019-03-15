@@ -1,67 +1,73 @@
 description: A relationship between a sequence feature and an entity it is localized
   to. The reference entity may be a chromosome, chromosome region or information entity
   such as a contig
-display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [genomic
-    sequence localization]
-document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [genomic
-    sequence localization]
+display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- genomic sequence localization
+document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- genomic sequence localization
 fields:
 - description: A unique identifier for an association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association_id]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - association_id
   id: id
 - description: the relationship type by which a subject is connected to an object
     in an association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [relation]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - relation
   id: relation
 - description: if set to true, then the association is negated i.e. is not true
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [negated]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - negated
   id: negated
 - description: connects an association to the type of association (e.g. gene to phenotype)
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association
-      type]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - association type
   id: association_type
 - cardinality: multi
   description: connects an association to qualifiers that modify or qualify the meaning
     of that association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [qualifiers]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - qualifiers
   id: qualifiers
 - cardinality: multi
   description: connects an association to publications supporting the association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [publications]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - publications
   id: publications
 - description: connects an association to the agent (person, organization or group)
     that provided it
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [provided
-      by]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - provided by
   id: provided_by
 - description: any slot that relates an association to another entity
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association
-      slot]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - association slot
   id: association_slot
 - description: TODO
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [start
-      interbase coordinate]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - start interbase coordinate
   id: start_interbase_coordinate
 - description: TODO
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [end interbase
-      coordinate]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - end interbase coordinate
   id: end_interbase_coordinate
 - description: TODO
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [genome
-      build]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - genome build
   id: genome_build
 - description: TODO
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [phase]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - phase
   id: phase
 - description: connects an association to the subject of the association. For example,
     in a gene-to-phenotype association, the gene is subject and phenotype is object.
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [genomic
-      sequence localization subject]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - genomic sequence localization subject
   id: subject
 - description: connects an association to the object of the association. For example,
     in a gene-to-phenotype association, the gene is subject and phenotype is object.
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [genomic
-      sequence localization object]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - genomic sequence localization object
   id: object
 id: genomic_sequence_localization
 schema_generating: true

@@ -2454,6 +2454,16 @@
                },
                {
                   "type": "TripleConstraint",
+                  "predicate": "http://w3id.org/biolink/vocab/synonym",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                  },
+                  "min": 0,
+                  "max": -1
+               },
+               {
+                  "type": "TripleConstraint",
                   "predicate": "http://w3id.org/biolink/vocab/full_name",
                   "valueExpr": {
                      "type": "NodeConstraint",

@@ -5,7 +5,7 @@ Any entity or process that exists at the level of the whole planet
 
 URI: [http://w3id.org/biolink/vocab/PlanetaryEntity](http://w3id.org/biolink/vocab/PlanetaryEntity)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PlanetaryEntity|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[PlanetaryEntity]^-\[GeographicLocation],%20\[PlanetaryEntity]^-\[EnvironmentalProcess],%20\[PlanetaryEntity]^-\[EnvironmentalFeature],%20\[NamedThing]^-\[PlanetaryEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PlanetaryEntity|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;synonym(i):label_type%20*;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[PlanetaryEntity]^-\[GeographicLocation],%20\[PlanetaryEntity]^-\[EnvironmentalProcess],%20\[PlanetaryEntity]^-\[EnvironmentalFeature],%20\[NamedThing]^-\[PlanetaryEntity])
 ## Mappings
 
 ## Inheritance
@@ -51,6 +51,10 @@ URI: [http://w3id.org/biolink/vocab/PlanetaryEntity](http://w3id.org/biolink/voc
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

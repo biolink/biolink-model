@@ -41,10 +41,6 @@
       "@id": "phenotype"
     },
     {
-      "name": "evidence instance",
-      "@id": "evidence_instance"
-    },
-    {
       "name": "chemical formula value",
       "@id": "chemical_formula_value"
     },
@@ -1622,6 +1618,21 @@
       "@id": "name"
     },
     {
+      "name": "synonym",
+      "description": "Alternate human-readable names for a thing",
+      "aliases": [
+        "alias"
+      ],
+      "in_subset": [
+        "translator_minimal"
+      ],
+      "is_a": "node_property",
+      "multivalued": true,
+      "domain": "NamedThing",
+      "range": "label_type",
+      "@id": "synonym"
+    },
+    {
       "name": "category",
       "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
       "mappings": [
@@ -1766,7 +1777,7 @@
       ],
       "is_a": "association_slot",
       "domain": "Association",
-      "range": "evidence_instance",
+      "range": "EvidenceType",
       "@id": "has_evidence"
     },
     {
@@ -3205,6 +3216,7 @@
         "related_to",
         "node_property",
         "iri",
+        "synonym",
         "full_name",
         "description",
         "systematic_synonym"
@@ -3304,6 +3316,7 @@
     },
     {
       "name": "PopulationOfIndividualOrganisms",
+      "description": "A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]  ",
       "mappings": [
         "SIO:001061"
       ],
@@ -3315,6 +3328,7 @@
         "ThingWithTaxon"
       ],
       "local_names": [
+        "population",
         "population"
       ],
       "subclass_of": "PCO:0000001",
@@ -5888,9 +5902,9 @@
   ],
   "metamodel_version": "0.3.2",
   "source_file": "biolink-model.yaml",
-  "source_file_size": 98173,
-  "source_file_date": "Tue Dec 18 21:31:06 2018",
-  "generation_date": "2018-12-18 21:31",
+  "source_file_size": 98679,
+  "source_file_date": "Fri Mar 15 14:04:00 2019",
+  "generation_date": "2019-03-15 14:44",
   "@context": [
     "https://github.com/biolink/biolink-model/raw/master/context.jsonld",
     {

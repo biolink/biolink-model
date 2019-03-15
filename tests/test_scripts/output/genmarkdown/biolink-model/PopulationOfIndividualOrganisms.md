@@ -1,11 +1,11 @@
 # Class: population of individual organisms
 
 
-
+A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
 
 URI: [http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms](http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PopulationOfIndividualOrganisms|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[PopulationOfIndividualOrganisms]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[PopulationToPopulationAssociation]-%20object(i)>\[PopulationOfIndividualOrganisms],%20\[PopulationToPopulationAssociation]-%20subject(i)>\[PopulationOfIndividualOrganisms],%20\[VariantToPopulationAssociation]-%20object(i)>\[PopulationOfIndividualOrganisms],%20\[PopulationOfIndividualOrganisms]uses%20-.->\[ThingWithTaxon],%20\[OrganismalEntity]^-\[PopulationOfIndividualOrganisms])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[PopulationOfIndividualOrganisms|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;synonym(i):label_type%20*;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[PopulationOfIndividualOrganisms]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[PopulationToPopulationAssociation]-%20object(i)>\[PopulationOfIndividualOrganisms],%20\[PopulationToPopulationAssociation]-%20subject(i)>\[PopulationOfIndividualOrganisms],%20\[VariantToPopulationAssociation]-%20object(i)>\[PopulationOfIndividualOrganisms],%20\[PopulationOfIndividualOrganisms]uses%20-.->\[ThingWithTaxon],%20\[OrganismalEntity]^-\[PopulationOfIndividualOrganisms])
 ## Mappings
 
  * [SIO:001061](http://semanticscience.org/resource/SIO_001061)
@@ -62,6 +62,10 @@ URI: [http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms](http://w3id
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

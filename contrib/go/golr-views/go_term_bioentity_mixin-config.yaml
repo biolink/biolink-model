@@ -1,15 +1,16 @@
 description: mixes in GO properties to bio-entities
-display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [go term
-    bioentity mixin]
-document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [go
-    term bioentity mixin]
+display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- go term bioentity mixin
+document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- go term bioentity mixin
 fields:
 - description: a long-form human readable name for a thing
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [full name]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - full name
   id: full_name
 - description: more commonly used for gene symbols in yeast
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [systematic
-      synonym]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - systematic synonym
   id: systematic_synonym
 - cardinality: multi
   description: Ancestors (reflexive) of the object field following is_a (subClassOf)
@@ -18,28 +19,28 @@ fields:
     expression queries (finding genes that are expressed in a structure, a subtype,
     or a part of that structure) or in GO queries (in any of the three branches of
     GO)
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [isa partof
-      closure]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - isa partof closure
   id: isa_partof_closure
 - cardinality: multi
   description: 'parent field for fields used for storing the label of the closure
     concept. See also: closure concept field'
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [isa partof
-      closure label]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - isa partof closure label
   id: isa_partof_closure_label
 - cardinality: multi
   description: Ancestors (reflexive) of the object field following is_a (subClassOf),
     part-of and regulates (including positive and negative) relationships. This is
     typically used as a query constraint and for faceting where the range is a biological
     process
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [regulates
-      closure]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - regulates closure
   id: regulates_closure
 - cardinality: multi
   description: 'parent field for fields used for storing the label of the closure
     concept. See also: closure concept field'
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [regulates
-      closure label]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - regulates closure label
   id: regulates_closure_label
 id: go_term_bioentity_mixin
 schema_generating: true

@@ -5,7 +5,7 @@ Either one of a disease or an individual phenotypic feature. Some knowledge reso
 
 URI: [http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature](http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[DiseaseOrPhenotypicFeature|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[DiseaseOrPhenotypicFeature]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[DiseaseOrPhenotypicFeature]-%20treated%20by%20%3F>\[NamedThing],%20\[DiseaseOrPhenotypicFeature]-%20has%20biomarker%20%3F>\[MolecularEntity],%20\[DiseaseOrPhenotypicFeature]-%20correlated%20with%20%3F>\[MolecularEntity],%20\[MolecularEntity]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20subject(i)>\[DiseaseOrPhenotypicFeature],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20object(i)>\[DiseaseOrPhenotypicFeature],%20\[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]-%20subject(i)>\[DiseaseOrPhenotypicFeature],%20\[Gene]-%20gene%20associated%20with%20condition(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[ThingToDiseaseOrPhenotypicFeatureAssociation]-%20object(i)>\[DiseaseOrPhenotypicFeature],%20\[Treatment]-%20treats(i)>\[DiseaseOrPhenotypicFeature],%20\[DiseaseOrPhenotypicFeature]uses%20-.->\[ThingWithTaxon],%20\[DiseaseOrPhenotypicFeature]^-\[PhenotypicFeature],%20\[DiseaseOrPhenotypicFeature]^-\[Disease],%20\[BiologicalEntity]^-\[DiseaseOrPhenotypicFeature])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[DiseaseOrPhenotypicFeature|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;synonym(i):label_type%20*;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[DiseaseOrPhenotypicFeature]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[DiseaseOrPhenotypicFeature]-%20treated%20by%20%3F>\[NamedThing],%20\[DiseaseOrPhenotypicFeature]-%20has%20biomarker%20%3F>\[MolecularEntity],%20\[DiseaseOrPhenotypicFeature]-%20correlated%20with%20%3F>\[MolecularEntity],%20\[MolecularEntity]-%20biomarker%20for(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20subject(i)>\[DiseaseOrPhenotypicFeature],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20object(i)>\[DiseaseOrPhenotypicFeature],%20\[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]-%20subject(i)>\[DiseaseOrPhenotypicFeature],%20\[Gene]-%20gene%20associated%20with%20condition(i)%20%3F>\[DiseaseOrPhenotypicFeature],%20\[ThingToDiseaseOrPhenotypicFeatureAssociation]-%20object(i)>\[DiseaseOrPhenotypicFeature],%20\[Treatment]-%20treats(i)>\[DiseaseOrPhenotypicFeature],%20\[DiseaseOrPhenotypicFeature]uses%20-.->\[ThingWithTaxon],%20\[DiseaseOrPhenotypicFeature]^-\[PhenotypicFeature],%20\[DiseaseOrPhenotypicFeature]^-\[Disease],%20\[BiologicalEntity]^-\[DiseaseOrPhenotypicFeature])
 ## Mappings
 
 ## Inheritance
@@ -78,6 +78,10 @@ URI: [http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature](http://w3id.org/
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

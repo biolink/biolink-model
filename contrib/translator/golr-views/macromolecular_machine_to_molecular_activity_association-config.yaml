@@ -2,52 +2,57 @@ description: A functional association between a macromolecular machine (gene, ge
   product or complex) and a molecular activity (as represented in the GO molecular
   function branch), where the entity carries out the activity, or contributes to its
   execution
-display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [macromolecular
-    machine to molecular activity association]
-document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [macromolecular
-    machine to molecular activity association]
+display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- macromolecular machine to molecular activity association
+document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- macromolecular machine to molecular activity association
 fields:
 - description: A unique identifier for an association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association_id]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - association_id
   id: id
 - description: the relationship type by which a subject is connected to an object
     in an association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [relation]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - relation
   id: relation
 - description: if set to true, then the association is negated i.e. is not true
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [negated]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - negated
   id: negated
 - description: connects an association to the type of association (e.g. gene to phenotype)
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association
-      type]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - association type
   id: association_type
 - cardinality: multi
   description: connects an association to qualifiers that modify or qualify the meaning
     of that association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [qualifiers]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - qualifiers
   id: qualifiers
 - cardinality: multi
   description: connects an association to publications supporting the association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [publications]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - publications
   id: publications
 - description: connects an association to the agent (person, organization or group)
     that provided it
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [provided
-      by]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - provided by
   id: provided_by
 - description: any slot that relates an association to another entity
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association
-      slot]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - association slot
   id: association_slot
 - description: gene, product or macromolecular complex that has the function associated
     with the GO term
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [functional
-      association subject]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - functional association subject
   id: subject
 - description: class describing the activity, process or localization of the gene
     product
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [macromolecular
-      machine to molecular activity association object]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - macromolecular machine to molecular activity association object
   id: object
 id: macromolecular_machine_to_molecular_activity_association
 schema_generating: true

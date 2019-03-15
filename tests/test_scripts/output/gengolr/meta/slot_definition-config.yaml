@@ -1,75 +1,93 @@
 description: A property or slot
-display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [slot definition]
-document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [slot
-    definition]
+display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- slot definition
+document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- slot definition
 fields:
 - description: a unique key that identifies a slot, type or class in a schema
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [name]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - name
   id: name
 - description: a name that is used in the singular form
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [singular_name]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - singular_name
   id: singular_name
 - description: a description
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [description]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - description
   id: description
 - description: Notes about an element
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [note]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - note
   id: note
 - description: Comment about an element
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [comment]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - comment
   id: comment
 - cardinality: multi
   description: Example of usage for a slot or class
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [examples]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - examples
   id: examples
-- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [see_also]
+- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - see_also
   id: see_also
 - cardinality: multi
   description: State information and other details
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [flags]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - flags
   id: flags
 - cardinality: multi
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [aliases]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - aliases
   id: aliases
 - cardinality: multi
   description: a list of terms from different schemas or terminology systems that
     have comparable meaning. These may include terms that are precisely equivalent,
     broader or narrower in meaning, or otherwise semantically related but not equivalent
     from a strict ontological perspective.
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [mappings]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - mappings
   id: mappings
 - cardinality: multi
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [id_prefixes]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - id_prefixes
   id: id_prefixes
 - cardinality: multi
   description: used to indicate membership of a term in a defined subset of biolink
     terms used for a particular domain or application (e.g. the translator_minimal
     subset holding the minimal set of predicates used in a translator knowledge graph)
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [in_subset]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - in_subset
   id: in_subset
 - description: id of the schema that the element was derived from.  Supplied by the
     loader.
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [from_schema]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - from_schema
   id: from_schema
 - cardinality: multi
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [alt_descriptions]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - alt_descriptions
   id: alt_descriptions
 - cardinality: multi
   description: 'a list of terms from different schemas or terminology systems that
     have strictly equivalent meanings. '
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [exact_matches]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - exact_matches
   id: exact_matches
 - cardinality: multi
   description: a list of terms from different schemas or terminology systems that
     have a broader, more general meaning. Broader terms are typically shown as parents
     in a hierarchy or tree.
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [broader_matches]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - broader_matches
   id: broader_matches
 - cardinality: multi
   description: a list of terms from different schemas or terminology systems that
     have a narrower, more specific meaning. Narrower terms are typically shown as
     children in a hierarchy or tree.
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [narrower_matches]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - narrower_matches
   id: narrower_matches
 - cardinality: multi
   description: a list of terms from different schemas or terminology systems that
@@ -77,81 +95,104 @@ fields:
     meaning. Such terms often describe the same general concept from different ontological
     perspectives (e.g. drug as a type of chemical entity versus drug as a type of
     role borne by a chemical entity).
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [close_matches]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - close_matches
   id: close_matches
 - description: Used only as a mixin -- cannot be instantiated on its own.
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [mixin]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - mixin
   id: mixin
 - description: An abstract class is a high level class or slot that is typically used
     to group common slots together and is generally not instantiated. When generating
     golr-views, abstract classes are ignored
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [abstract]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - abstract
   id: abstract
 - cardinality: multi
   description: map from local identifier to slot
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [local_names]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - local_names
   id: local_names
 - description: Ontolgy property which this is a subclass of. Not to be confused with
     is_a which links datamodel classes
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [subclass_of]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - subclass_of
   id: subclass_of
 - cardinality: multi
   description: identifies the possible uri's of the range
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [values_from]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - values_from
   id: values_from
 - description: Symmetric slot
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [symmetric]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - symmetric
   id: symmetric
 - description: If true slot can have many values
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [multivalued]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - multivalued
   id: multivalued
 - description: The class to which this slot applies.
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [domain]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - domain
   id: domain
 - description: The slot type.  Can be any class or type
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [range]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - range
   id: range
 - description: If true slot must have at least one value
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [required]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - required
   id: required
 - description: true means that this slot is part of the formal definition of a class
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [object_property]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - object_property
   id: object_property
 - description: if true then the value of this slot is inlined (i.e. a nested object)
     rather linked by key
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [inlined]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - inlined
   id: inlined
 - description: True means that this serves as a unique identifier
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [primary_key]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - primary_key
   id: primary_key
 - description: True means that this slot must be unique across the collection of slots
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [identifier]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - identifier
   id: identifier
-- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [definitional]
+- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - definitional
   id: definitional
 - description: A name to be assigned to the slot in implementations that is different
     that its type.  The primary use for this is to allow class AND schema definitions
     to both have "slots" where one inline and the other a reference
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [alias]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - alias
   id: alias
 - description: For any denormalized slot, this represents the tree or graph path used
     to generate the denormalized form
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [path]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - path
   id: path
 - description: Ontolgy property which this is a subproperty of
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [subproperty_of]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - subproperty_of
   id: subproperty_of
 - description: used to indicate the inverse of a slot (e.g. 'expresses' is the inverse
     predicate of 'expressed in')
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [inverse]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - inverse
   id: inverse
-- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [is_class_field]
+- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - is_class_field
   id: is_class_field
-- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [role]
+- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - role
   id: role
 - description: True means that the slot is an essential attribute of the container
     -- that the slot is carried across is_a and slot_usage paths
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [inherited]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - inherited
   id: inherited
 - description: specifies single-inheritance between classes and slots. While multiple
     inheritance is not allowed, mixins can be provided effectively providing the same
@@ -160,20 +201,20 @@ fields:
     classes) then is_a is used. When translating a framework without polymorphism
     (e.g. json-schema, solr document schema) then is_a and mixins are recursively
     unfolded
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [slot definition
-      is_a]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - slot definition is_a
   id: is_a
 - cardinality: multi
   description: List of definitions to be mixed in. Targets may be any definition of
     the same type
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [slot definition
-      mixins]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - slot definition mixins
   id: mixins
 - cardinality: multi
   description: list of class or slot definitions that are combined to create the union
     class
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [slot definition
-      union_of]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - slot definition union_of
   id: union_of
 id: slot_definition
 schema_generating: true

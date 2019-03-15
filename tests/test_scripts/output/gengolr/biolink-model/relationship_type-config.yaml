@@ -1,46 +1,58 @@
 description: An OWL property used as an edge label
-display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [relationship
-    type]
-document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [relationship
-    type]
+display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- relationship type
+document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- relationship type
 fields:
 - description: A unique identifier for a thing. Must be either a CURIE shorthand for
     a URI or a complete URI
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [id]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - id
   id: id
 - description: A human-readable name for a thing
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [name]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - name
   id: name
 - cardinality: multi
   description: Name of the high level ontology class in which this entity is categorized.
     Corresponds to the label for the biolink entity type class. In a neo4j database
     this MAY correspond to the neo4j label tag
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [category]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - category
   id: category
 - description: A grouping for any relationship type that holds between any two things
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [related
-      to]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - related to
   id: related_to
 - description: A grouping for any property that holds between a node and a value
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [node property]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - node property
   id: node_property
 - description: An IRI for the node. This is determined by the id using expansion rules.
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [iri]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - iri
   id: iri
+- cardinality: multi
+  description: Alternate human-readable names for a thing
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - synonym
+  id: synonym
 - description: a long-form human readable name for a thing
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [full name]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - full name
   id: full_name
 - description: a human-readable description of a thing
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [description]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - description
   id: description
 - description: more commonly used for gene symbols in yeast
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [systematic
-      synonym]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - systematic synonym
   id: systematic_synonym
 - description: holds between two classes where the domain class is a specialization
     of the range class
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [subclass
-      of]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - subclass of
   id: subclass_of
 id: relationship_type
 schema_generating: true

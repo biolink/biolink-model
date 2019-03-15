@@ -5,7 +5,7 @@ Class of evidence that supports an association
 
 URI: [http://w3id.org/biolink/vocab/EvidenceType](http://w3id.org/biolink/vocab/EvidenceType)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EvidenceType|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[InformationContentEntity]^-\[EvidenceType])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EvidenceType|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;synonym(i):label_type%20*;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Association]-%20has%20evidence(i)%20%3F>\[EvidenceType],%20\[InformationContentEntity]^-\[EvidenceType])
 ## Mappings
 
  * [ECO:0000000](http://purl.obolibrary.org/obo/ECO_0000000)
@@ -14,6 +14,9 @@ URI: [http://w3id.org/biolink/vocab/EvidenceType](http://w3id.org/biolink/vocab/
  *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
 ## Children
 
+## Used in
+
+ *  class: **[Association](Association.md)** *[has evidence](has_evidence.md)* **[EvidenceType](EvidenceType.md)**
 ## Fields
 
  * [category](category.md) *subsets*: (translator_minimal)
@@ -47,6 +50,10 @@ URI: [http://w3id.org/biolink/vocab/EvidenceType](http://w3id.org/biolink/vocab/
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

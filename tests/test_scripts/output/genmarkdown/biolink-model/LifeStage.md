@@ -5,7 +5,7 @@ A stage of development or growth of an organism, including post-natal adult stag
 
 URI: [http://w3id.org/biolink/vocab/LifeStage](http://w3id.org/biolink/vocab/LifeStage)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[LifeStage|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[LifeStage]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToExpressionSiteAssociation]-%20stage%20qualifier(i)%20%3F>\[LifeStage],%20\[GeneToExpressionSiteAssociation]-%20stage%20qualifier(i)%20%3F>\[LifeStage],%20\[LifeStage]uses%20-.->\[ThingWithTaxon],%20\[OrganismalEntity]^-\[LifeStage])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[LifeStage|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;synonym(i):label_type%20*;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[LifeStage]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[GeneToExpressionSiteAssociation]-%20stage%20qualifier(i)%20%3F>\[LifeStage],%20\[GeneToExpressionSiteAssociation]-%20stage%20qualifier(i)%20%3F>\[LifeStage],%20\[LifeStage]uses%20-.->\[ThingWithTaxon],%20\[OrganismalEntity]^-\[LifeStage])
 ## Mappings
 
  * [UBERON:0000105](http://purl.obolibrary.org/obo/UBERON_0000105)
@@ -60,6 +60,10 @@ URI: [http://w3id.org/biolink/vocab/LifeStage](http://w3id.org/biolink/vocab/Lif
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

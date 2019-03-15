@@ -264,7 +264,7 @@ ExtensionsAndEvidenceAssociationMixin interfaceimplements TaxonClosureMixin
     objectExtensions: [PropertyValuePair]
     hasEvidenceGraph: String
     hasEvidenceType: EvidenceType
-    hasEvidence: String
+    hasEvidence: EvidenceType
   }
 
 FrequencyQualifier interface
@@ -595,6 +595,7 @@ NamedThing type
     relatedTo: NamedThing
     nodeProperty: String
     iri: String
+    synonym: [String]
     fullName: String
     description: String
     systematicSynonym: String

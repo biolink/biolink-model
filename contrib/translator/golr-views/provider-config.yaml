@@ -1,6 +1,8 @@
 description: person, group, organization or project that provides a piece of information
-display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [provider]
-document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [provider]
+display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- provider
+document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- provider
 id: provider
 schema_generating: true
 weight: 20

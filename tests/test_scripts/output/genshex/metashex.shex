@@ -1,7 +1,6 @@
 
 <http://w3id.org/biolink/vocab/meta/Builtins> [ <http://www.w3.org/2001/XMLSchema#>~ ]
 
-
 <http://w3id.org/biolink/vocab/meta/SlotRangeTypes>  (
     @<http://w3id.org/biolink/vocab/TypeDefinition> OR @<http://w3id.org/biolink/vocab/ClassDefinition> OR
     @<http://w3id.org/biolink/vocab/meta/Builtins>
@@ -16,8 +15,7 @@
 <http://w3id.org/biolink/vocab/SlotDefinition__List> CLOSED {
     (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> @<http://w3id.org/biolink/vocab/SlotDefinition> ? ;
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  (
-          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ]
-          OR @<http://w3id.org/biolink/vocab/SlotDefinition__List>
+          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ] OR @<http://w3id.org/biolink/vocab/SlotDefinition__List>
        )
     )
 }
@@ -25,8 +23,7 @@
 <http://w3id.org/biolink/vocab/ClassDefinition__List> CLOSED {
     (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> @<http://w3id.org/biolink/vocab/ClassDefinition> ? ;
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  (
-          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ]
-          OR @<http://w3id.org/biolink/vocab/ClassDefinition__List>
+          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ] OR @<http://w3id.org/biolink/vocab/ClassDefinition__List>
        )
     )
 }
@@ -48,8 +45,7 @@
 <http://w3id.org/biolink/vocab/Definition__List> CLOSED {
     (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> @<http://w3id.org/biolink/vocab/Definition> ? ;
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  (
-          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ]
-          OR @<http://w3id.org/biolink/vocab/Definition__List>
+          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ] OR @<http://w3id.org/biolink/vocab/Definition__List>
        )
     )
 }
@@ -57,8 +53,7 @@
 <XSD_string__List> CLOSED {
     (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  (
-          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ]
-          OR @<XSD_string__List>
+          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ] OR @<XSD_string__List>
        )
     )
 }
@@ -81,8 +76,7 @@
 <http://w3id.org/biolink/vocab/Example__List> CLOSED {
     (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> @<http://w3id.org/biolink/vocab/Example> ? ;
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  (
-          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ]
-          OR @<http://w3id.org/biolink/vocab/Example__List>
+          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ] OR @<http://w3id.org/biolink/vocab/Example__List>
        )
     )
 }
@@ -90,8 +84,7 @@
 <http://w3id.org/biolink/vocab/AltDescription__List> CLOSED {
     (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> @<http://w3id.org/biolink/vocab/AltDescription> ? ;
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  (
-          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ]
-          OR @<http://w3id.org/biolink/vocab/AltDescription__List>
+          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ] OR @<http://w3id.org/biolink/vocab/AltDescription__List>
        )
     )
 }
@@ -133,8 +126,7 @@
 <http://w3id.org/biolink/vocab/Prefix__List> CLOSED {
     (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> @<http://w3id.org/biolink/vocab/Prefix> ? ;
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  (
-          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ]
-          OR @<http://w3id.org/biolink/vocab/Prefix__List>
+          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ] OR @<http://w3id.org/biolink/vocab/Prefix__List>
        )
     )
 }
@@ -142,8 +134,7 @@
 <http://w3id.org/biolink/vocab/TypeDefinition__List> CLOSED {
     (  <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> @<http://w3id.org/biolink/vocab/TypeDefinition> ? ;
        <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest>  (
-          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ]
-          OR @<http://w3id.org/biolink/vocab/TypeDefinition__List>
+          [ <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> ] OR @<http://w3id.org/biolink/vocab/TypeDefinition__List>
        )
     )
 }

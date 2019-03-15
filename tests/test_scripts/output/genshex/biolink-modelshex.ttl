@@ -917,6 +917,20 @@ biolink:Publication__List a shex:Shape ;
 biolink:RNAProduct a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GeneProduct [ a shex:Shape ] ) .
 
+biolink:XSD_string__List a shex:Shape ;
+    shex:closed true ;
+    shex:expression [ a shex:EachOf ;
+            shex:expressions ( [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate rdf:first ;
+                        shex:valueExpr [ a shex:NodeConstraint ;
+                                shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
+                        shex:predicate rdf:rest ;
+                        shex:valueExpr [ a shex:ShapeOr ;
+                                shex:shapeExprs ( [ a shex:NodeConstraint ;
+                                            shex:values ( () ) ] biolink:XSD_string__List ) ] ] ) ] .
+
 biolink:XSD_uri__List a shex:Shape ;
     shex:closed true ;
     shex:expression [ a shex:EachOf ;
@@ -1187,6 +1201,10 @@ biolink:NamedThing a shex:Shape ;
                         shex:predicate biolink:iri ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:nodeKind shex:nonliteral ] ] [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate biolink:synonym ;
+                        shex:valueExpr biolink:XSD_string__List ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate biolink:full_name ;
@@ -1650,6 +1668,7 @@ biolink:MolecularEntity a shex:ShapeAnd ;
         biolink:VariantToPhenotypicFeatureAssociation,
         biolink:VariantToPopulationAssociation,
         biolink:VariantToThingAssociation,
+        biolink:XSD_string__List,
         biolink:XSD_uri__List,
         biolink:Zygosity,
         meta:Builtins,

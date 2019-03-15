@@ -33,7 +33,7 @@ class PythonGenTestCase(unittest.TestCase):
             with open(master_file) as oldf:
                 olddat = metadata_filter(oldf.read())
                 self.maxDiff = None
-                self.assertEqual(olddat, newdat, f'\n{master_file_name} does not match output -- run "make regen-mm"?')
+                self.assertEqual(olddat, newdat, f'\n{master_file_name} does not match {model_out} -- run "make regen-mm"?')
 
     def test_metamodel(self):
         python_metamodel_path = os.path.abspath(metamodel.metamodel.__file__)

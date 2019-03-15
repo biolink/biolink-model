@@ -5,7 +5,7 @@
 
 URI: [http://w3id.org/biolink/vocab/Disease](http://w3id.org/biolink/vocab/Disease)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Disease|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20treated%20by(i)%20%3F>\[NamedThing],%20\[Disease]-%20has%20biomarker(i)%20%3F>\[MolecularEntity],%20\[Disease]-%20correlated%20with(i)%20%3F>\[MolecularEntity],%20\[Disease]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[Disease]-%20related%20to(i)%20%3F>\[NamedThing],%20\[DiseaseToThingAssociation]-%20subject(i)>\[Disease],%20\[EntityToDiseaseAssociation]-%20object(i)>\[Disease],%20\[NamedThing]-%20manifestation%20of(i)%20%3F>\[Disease],%20\[DiseaseOrPhenotypicFeature]^-\[Disease])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Disease|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;synonym(i):label_type%20*;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20treated%20by(i)%20%3F>\[NamedThing],%20\[Disease]-%20has%20biomarker(i)%20%3F>\[MolecularEntity],%20\[Disease]-%20correlated%20with(i)%20%3F>\[MolecularEntity],%20\[Disease]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[Disease]-%20related%20to(i)%20%3F>\[NamedThing],%20\[DiseaseToThingAssociation]-%20subject(i)>\[Disease],%20\[EntityToDiseaseAssociation]-%20object(i)>\[Disease],%20\[NamedThing]-%20manifestation%20of(i)%20%3F>\[Disease],%20\[DiseaseOrPhenotypicFeature]^-\[Disease])
 ## Mappings
 
  * [MONDO:0000001](http://purl.obolibrary.org/obo/MONDO_0000001)
@@ -71,6 +71,10 @@ URI: [http://w3id.org/biolink/vocab/Disease](http://w3id.org/biolink/vocab/Disea
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

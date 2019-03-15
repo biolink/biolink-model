@@ -110,6 +110,7 @@ class ClickTestCase(unittest.TestCase):
             compare_result = old_txt == new_txt
 
             # If necessary, update the test file
+            self.maxDiff = None
             if not compare_result:
                 if update_test_file or refresh_files:
                     with open(testfile_path, 'w') as f:

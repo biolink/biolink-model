@@ -29,6 +29,7 @@ class GenCSVTestCase(ClickTestCase):
         self.do_test([self.metamodel_file, "-r", "schema definition", "-r", "slot definition"], 'meta_sd_sd',
                      update_test_file=update_test_files)
         self.do_test([self.metamodel_file, "-r", "nada"], 'meta_sd', error=ValueError)
+        self.maxDiff = None
         self.assertFalse(update_test_files, "Updating test files")
 
     def test_biolink(self):

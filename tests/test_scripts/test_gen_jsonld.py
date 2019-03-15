@@ -119,7 +119,7 @@ class GenJSONLDTestCase(ClickTestCase):
         new_g = Graph()
         new_g.parse(data=new_ttl, format="turtle")
         self.check_size(g, new_g, URIRef("https://biolink.github.io/biolink-model/ontology/biolink.ttl"),
-                        145, 257, 15, "biolink-model")
+                        145, 258, 14, "biolink-model")
 
 
 if __name__ == '__main__':

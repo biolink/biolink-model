@@ -5,7 +5,7 @@ A property or characteristic of an entity
 
 URI: [http://w3id.org/biolink/vocab/Attribute](http://w3id.org/biolink/vocab/Attribute)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[Attribute]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Attribute]uses%20-.->\[OntologyClass],%20\[Attribute]^-\[Zygosity],%20\[Attribute]^-\[SeverityValue],%20\[Attribute]^-\[Onset],%20\[Attribute]^-\[FrequencyValue],%20\[Attribute]^-\[ClinicalModifier],%20\[Attribute]^-\[BiologicalSex])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;synonym(i):label_type%20*;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[Attribute]-%20related%20to(i)%20%3F>\[NamedThing],%20\[Attribute]uses%20-.->\[OntologyClass],%20\[Attribute]^-\[Zygosity],%20\[Attribute]^-\[SeverityValue],%20\[Attribute]^-\[Onset],%20\[Attribute]^-\[FrequencyValue],%20\[Attribute]^-\[ClinicalModifier],%20\[Attribute]^-\[BiologicalSex])
 ## Mappings
 
  * [PATO:0000001](http://purl.obolibrary.org/obo/PATO_0000001)
@@ -60,6 +60,10 @@ URI: [http://w3id.org/biolink/vocab/Attribute](http://w3id.org/biolink/vocab/Att
     * Description: holds between two classes where the domain class is a specialization of the range class
     * range: [OntologyClass](OntologyClass.md)
     * inherited from: [OntologyClass](OntologyClass.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
+    * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast
     * range: [LabelType](LabelType.md)

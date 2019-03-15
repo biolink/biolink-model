@@ -1,111 +1,116 @@
 description: A regulatory relationship between two genes
-display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [gene regulatory
-    relationship]
-document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [gene
-    regulatory relationship]
+display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- gene regulatory relationship
+document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- gene regulatory relationship
 fields:
 - description: the taxonomic class of the entity in the object slot
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [subject
-      taxon]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - subject taxon
   id: subject_taxon
-- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [subject
-      taxon label]
+- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - subject taxon label
   id: subject_taxon_label
 - cardinality: multi
   description: The taxon class or ancestor class for the subject
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [subject
-      taxon closure]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - subject taxon closure
   id: subject_taxon_closure
 - cardinality: multi
   description: The label for the taxon class or ancestor class for the subject
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [subject
-      taxon closure label]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - subject taxon closure label
   id: subject_taxon_closure_label
 - description: the taxonomic class of the entity in the object slot
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [object
-      taxon]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - object taxon
   id: object_taxon
-- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [object
-      taxon label]
+- display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - object taxon label
   id: object_taxon_label
 - cardinality: multi
   description: The taxon class or ancestor class for the object
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [object
-      taxon closure]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - object taxon closure
   id: object_taxon_closure
 - cardinality: multi
   description: The label for the taxon class or ancestor class for the object
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [object
-      taxon closure label]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - object taxon closure label
   id: object_taxon_closure_label
 - cardinality: multi
   description: Additional relationships that are true of the subject in the context
     of the association. For example, if the subject is a gene product in a functional
     association, the subject extensions may represent  an isoform or a specific post-translational
     state
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [subject
-      extensions]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - subject extensions
   id: subject_extensions
 - cardinality: multi
   description: Additional relationships that are true of the object in the context
     of the association. For example, if the object is an anatomical term in an expression
     association, the object extensions may include part-of links
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [object
-      extensions]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - object extensions
   id: object_extensions
 - description: connects an association to a graph object including a path from subject
     to object
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [has evidence
-      graph]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - has evidence graph
   id: has_evidence_graph
 - description: connects an association to the class of evidence used
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [has evidence
-      type]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - has evidence type
   id: has_evidence_type
 - description: connects an association to an instance of supporting evidence
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [has evidence]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - has evidence
   id: has_evidence
 - description: A unique identifier for an association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association_id]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - association_id
   id: id
 - description: if set to true, then the association is negated i.e. is not true
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [negated]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - negated
   id: negated
 - description: connects an association to the type of association (e.g. gene to phenotype)
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association
-      type]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - association type
   id: association_type
 - cardinality: multi
   description: connects an association to qualifiers that modify or qualify the meaning
     of that association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [qualifiers]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - qualifiers
   id: qualifiers
 - cardinality: multi
   description: connects an association to publications supporting the association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [publications]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - publications
   id: publications
 - description: connects an association to the agent (person, organization or group)
     that provided it
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [provided
-      by]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - provided by
   id: provided_by
 - description: any slot that relates an association to another entity
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association
-      slot]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - association slot
   id: association_slot
 - description: the direction is always from regulator to regulated
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [gene regulatory
-      relationship relation]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - gene regulatory relationship relation
   id: relation
 - description: connects an association to the subject of the association. For example,
     in a gene-to-phenotype association, the gene is subject and phenotype is object.
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [gene regulatory
-      relationship subject]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - gene regulatory relationship subject
   id: subject
 - description: connects an association to the object of the association. For example,
     in a gene-to-phenotype association, the gene is subject and phenotype is object.
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [gene regulatory
-      relationship object]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - gene regulatory relationship object
   id: object
 id: gene_regulatory_relationship
 schema_generating: true

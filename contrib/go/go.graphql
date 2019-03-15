@@ -263,7 +263,7 @@ ExtensionsAndEvidenceAssociationMixin interfaceimplements TaxonClosureMixin
   {
     objectExtensions: [PropertyValuePair]
     hasEvidenceType: EvidenceType
-    hasEvidence: String
+    hasEvidence: EvidenceType
     subject: String!
   }
 
@@ -641,6 +641,7 @@ NamedThing type
     relatedTo: NamedThing
     nodeProperty: String
     iri: String
+    synonym: [String]
     fullName: String
     description: String
     systematicSynonym: String

@@ -5,7 +5,7 @@
 
 URI: [http://w3id.org/biolink/vocab/OrganismTaxon](http://w3id.org/biolink/vocab/OrganismTaxon)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[OrganismTaxon]-%20related%20to(i)%20%3F>\[NamedThing],%20\[ThingWithTaxon]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[OntologyClass]^-\[OrganismTaxon])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;synonym(i):label_type%20*;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F]-%20subclass%20of(i)%20%3F>\[OntologyClass],%20\[OrganismTaxon]-%20related%20to(i)%20%3F>\[NamedThing],%20\[ThingWithTaxon]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[OntologyClass]^-\[OrganismTaxon])
 ## Mappings
 
  * [WD:Q16521](http://purl.obolibrary.org/obo/WD_Q16521)
@@ -55,6 +55,10 @@ URI: [http://w3id.org/biolink/vocab/OrganismTaxon](http://w3id.org/biolink/vocab
     * Description: holds between two classes where the domain class is a specialization of the range class
     * range: [OntologyClass](OntologyClass.md)
     * inherited from: [OntologyClass](OntologyClass.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
+    * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast
     * range: [LabelType](LabelType.md)

@@ -5,7 +5,7 @@ An execution of a molecular function carried out by a gene product or macromolec
 
 URI: [http://w3id.org/biolink/vocab/MolecularActivity](http://w3id.org/biolink/vocab/MolecularActivity)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MolecularActivity|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20precedes(i)%20%3F>\[Occurrent],%20\[MolecularActivity]-%20has%20input(i)%20%3F>\[NamedThing],%20\[MolecularActivity]-%20has%20participant(i)%20%3F>\[NamedThing],%20\[MolecularActivity]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[MolecularActivity]-%20related%20to(i)%20%3F>\[NamedThing],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20object(i)>\[MolecularActivity],%20\[MolecularActivity]uses%20-.->\[Occurrent],%20\[BiologicalProcessOrActivity]^-\[MolecularActivity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MolecularActivity|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;synonym(i):label_type%20*;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20precedes(i)%20%3F>\[Occurrent],%20\[MolecularActivity]-%20has%20input(i)%20%3F>\[NamedThing],%20\[MolecularActivity]-%20has%20participant(i)%20%3F>\[NamedThing],%20\[MolecularActivity]-%20regulates,%20process%20to%20process(i)%20%3F>\[Occurrent],%20\[MolecularActivity]-%20related%20to(i)%20%3F>\[NamedThing],%20\[MacromolecularMachineToMolecularActivityAssociation]-%20object(i)>\[MolecularActivity],%20\[MolecularActivity]uses%20-.->\[Occurrent],%20\[BiologicalProcessOrActivity]^-\[MolecularActivity])
 ## Mappings
 
  * [GO:0003674](http://purl.obolibrary.org/obo/GO_0003674)
@@ -71,6 +71,10 @@ URI: [http://w3id.org/biolink/vocab/MolecularActivity](http://w3id.org/biolink/v
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

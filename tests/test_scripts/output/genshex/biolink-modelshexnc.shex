@@ -1,7 +1,6 @@
 
 <http://w3id.org/biolink/vocab/meta/Builtins> [ <http://www.w3.org/2001/XMLSchema#>~ ]
 
-
 <http://w3id.org/biolink/vocab/meta/SlotRangeTypes>  (
     @<http://w3id.org/biolink/vocab/TypeDefinition> OR @<http://w3id.org/biolink/vocab/ClassDefinition> OR
     @<http://w3id.org/biolink/vocab/meta/Builtins>
@@ -661,6 +660,7 @@
        <http://www.w3.org/2002/07/owl#topObjectProperty> @<http://w3id.org/biolink/vocab/NamedThing> ? ;
        <http://w3id.org/biolink/vocab/node_property> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://w3id.org/biolink/vocab/iri> NONLITERAL ? ;
+       <http://w3id.org/biolink/vocab/synonym> <http://www.w3.org/2001/XMLSchema#string> * ;
        <http://w3id.org/biolink/vocab/full_name> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://purl.org/dc/terms/description> <http://www.w3.org/2001/XMLSchema#string> ? ;
        <http://w3id.org/biolink/vocab/systematic_synonym> <http://www.w3.org/2001/XMLSchema#string> ?

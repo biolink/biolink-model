@@ -1,57 +1,61 @@
 description: An association between a gene and an expression site, possibly qualified
   by stage/timing info.
-display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName [gene to
-    expression site association]
-document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName [gene
-    to expression site association]
+display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- gene to expression site association
+document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+- gene to expression site association
 fields:
 - description: A unique identifier for an association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association_id]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - association_id
   id: id
 - description: if set to true, then the association is negated i.e. is not true
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [negated]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - negated
   id: negated
 - description: connects an association to the type of association (e.g. gene to phenotype)
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association
-      type]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - association type
   id: association_type
 - cardinality: multi
   description: connects an association to qualifiers that modify or qualify the meaning
     of that association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [qualifiers]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - qualifiers
   id: qualifiers
 - cardinality: multi
   description: connects an association to publications supporting the association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [publications]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - publications
   id: publications
 - description: connects an association to the agent (person, organization or group)
     that provided it
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [provided
-      by]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - provided by
   id: provided_by
 - description: any slot that relates an association to another entity
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [association
-      slot]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - association slot
   id: association_slot
 - description: stage at which the gene is expressed in the site
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [gene to
-      expression site association stage qualifier]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - gene to expression site association stage qualifier
   id: stage_qualifier
 - description: can be used to indicate magnitude, or also ranking
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [gene to
-      expression site association quantifier qualifier]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - gene to expression site association quantifier qualifier
   id: quantifier_qualifier
 - description: gene in which variation is correlated with the phenotypic feature
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [gene to
-      expression site association subject]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - gene to expression site association subject
   id: subject
 - description: location in which the gene is expressed
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [gene to
-      expression site association object]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - gene to expression site association object
   id: object
 - description: expression relationship
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName [gene to
-      expression site association relation]
+  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  - gene to expression site association relation
   id: relation
 id: gene_to_expression_site_association
 schema_generating: true

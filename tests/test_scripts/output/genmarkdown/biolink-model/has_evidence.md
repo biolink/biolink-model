@@ -9,7 +9,7 @@ URI: [http://w3id.org/biolink/vocab/has_evidence](slot_uri)
  * [RO:0002558](http://purl.obolibrary.org/obo/RO_0002558)
 ## Domain and Range
 
-[Association](Association.md) -> [EvidenceInstance](EvidenceInstance.md)
+[Association](Association.md) -> [EvidenceType](EvidenceType.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)
