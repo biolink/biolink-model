@@ -360,7 +360,7 @@
          "type": "string"
       },
       "gene_as_a_model_of_disease_association_subject": {
-         "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
+         "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
          "type": "string"
       },
       "gene_associated_with_condition": {
@@ -729,7 +729,7 @@
          "type": "string"
       },
       "model_to_disease_mixin_relation": {
-         "description": "The relationship to the disease\n  ",
+         "description": "The relationship to the disease",
          "type": "string"
       },
       "model_to_disease_mixin_subject": {
@@ -1618,7 +1618,7 @@
          "description": "",
          "properties": {
             "subject": {
-               "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
+               "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
                "required": true,
                "type": {
                   "$ref": "#/definitions/gene_as_a_model_of_disease_association_subject"

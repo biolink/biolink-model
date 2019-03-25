@@ -1634,7 +1634,7 @@ classes:
     abstract: true
     mappings:
       - WD:Q28845870
-        
+
   ontology class:
     is_a: named thing
     description: "a concept or class in an ontology, vocabulary or thesaurus"
@@ -1643,14 +1643,14 @@ classes:
     is_a: ontology class
     description: >-
       An OWL property used as an edge label
-    
+
   gene ontology class:
     description: >-
       an ontology class that describes a functional aspect of a gene, gene prodoct or complex
     is_a: ontology class
     flags:
       - testing
-      
+
   thing with taxon:
     abstract: true
     mixin: true
@@ -1658,14 +1658,14 @@ classes:
       A mixin that can be used on any entity with a taxon
     slots:
       - in taxon
-      
+
   organism taxon:
     is_a: ontology class
     values_from:
       - NCBITaxon
     mappings:
       - WD:Q16521
-      
+
   organismal entity:
     description: >-
       A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
@@ -1673,7 +1673,7 @@ classes:
     is_a: biological entity
     mappings:
       - WD:Q7239
-      
+
   individual organism:
     mixins:
       - thing with taxon
@@ -1689,11 +1689,11 @@ classes:
     is_a: individual organism
     description: >-
       An individual organism that has a patient role in some clinical context.
-    
+
   population of individual organisms:
     description: >-
       A collection of individuals from the same taxonomic class distinguished by one or more characteristics.
-      Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]  
+      Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
     local_names:
       ga4gh: population
       agr: population
@@ -1705,7 +1705,7 @@ classes:
       - SIO:001061
     id_prefixes:
       - HANCESTRO
-      
+
   biosample:
     aliases: ['biospecimen', 'sample']
     mixins:
@@ -1713,7 +1713,7 @@ classes:
     is_a: organismal entity
     mappings:
       - SIO:001050
-      
+
   disease or phenotypic feature:
     aliases: ['phenome']
     is_a: biological entity
@@ -1724,7 +1724,7 @@ classes:
     union_of:
       - disease
       - phenotypic feature
-      
+
   disease:
     aliases: ['condition', 'disorder', 'medical condition']
     is_a: disease or phenotypic feature
@@ -1733,7 +1733,7 @@ classes:
       - "WD:Q12136"
       - SIO:010299
       - UMLSSG:DISO
-      
+
   phenotypic feature:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
     is_a: disease or phenotypic feature
@@ -1741,7 +1741,7 @@ classes:
       - "UPHENO:0001001"
       - SIO:010056
       - WD:Q169872
-      
+
   environment:
     aliases: ['environment', 'exposure', 'experimental condition']
     is_a: biological entity
@@ -1760,7 +1760,7 @@ classes:
     mappings:
       - "IAO:0000030"
       - "UMLSSG:CONC"
-      
+
   confidence level:
     is_a: information content entity
     description: >-
@@ -1769,7 +1769,7 @@ classes:
       - cio
     mappings:
       - "CIO:0000028"
-      
+
   evidence type:
     is_a: information content entity
     aliases: ['evidence code']
@@ -1779,7 +1779,7 @@ classes:
       - eco
     mappings:
       - "ECO:0000000"
-      
+
   publication:
     is_a: information content entity
     aliases: ['reference']
@@ -1794,7 +1794,7 @@ classes:
 
   administrative entity:
     abstract: true
-    
+
   provider:
     is_a: administrative entity
     aliases: ['agent', 'group']
@@ -1802,7 +1802,7 @@ classes:
       person, group, organization or project that provides a piece of information
     mappings:
       - UMLSSG:ORGA
-      
+
   molecular entity:
     is_a: biological entity
     mixins:
@@ -1828,7 +1828,7 @@ classes:
     id_prefixes:
       - CHEBI
       - CHEMBL.COMPOUND
-        
+
   drug:
     is_a: chemical substance
     description: >-
@@ -1837,8 +1837,8 @@ classes:
       The CHEBI ID represents a role rather than a substance
     mappings:
       - WD:Q12140
-      - CHEBI:23888       
-      
+      - CHEBI:23888
+
   metabolite:
     is_a: chemical substance
     description: >-
@@ -1854,7 +1854,7 @@ classes:
 #        - ontology class
 #      description: >-
 #        A property or characteristic of an entity
-    
+
   anatomical entity:
     is_a: organismal entity
     mixins:
@@ -1879,28 +1879,28 @@ classes:
     is_a: named thing
     description: >-
       Any entity or process that exists at the level of the whole planet
-      
+
   environmental process:
     is_a: planetary entity
     mixins:
       - occurrent
     subclass_of: ENVO:02500000
-      
+
   environmental feature:
     is_a: planetary entity
     subclass_of: ENVO:00002297
-      
+
   clinical entity:
     is_a: named thing
     description: >-
       Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
-      
+
   clinical trial:
     is_a: clinical entity
-      
+
   clinical intervention:
     is_a: clinical entity
-      
+
   device:
     is_a: named thing
     description: >-
@@ -1950,7 +1950,7 @@ classes:
     mappings:
       - SO:0000316
       - SIO:001390
-      
+
   macromolecular machine:
     is_a: genomic entity
     union_of:
@@ -1967,7 +1967,7 @@ classes:
         description: >-
           genes are typically designated by a short symbol and a full name. We map the symbol to the default display name
           and use an additional slot for full name
-      
+
   gene or gene product:
     is_a: macromolecular machine
     union_of:
@@ -1978,7 +1978,7 @@ classes:
       Frequently an identifier for one will be used as proxy for another
     id_prefixes:
       - CHEMBL.TARGET
-      
+
   gene:
     is_a: gene or gene product
     aliases: ['locus']
@@ -1997,7 +1997,7 @@ classes:
       - WB
       - SGD
       - PomBase
-      
+
   gene product:
     is_a: gene or gene product
     description: >-
@@ -2007,7 +2007,7 @@ classes:
       - RNA product
     mappings:
       - WD:Q424689
-    
+
   protein:
     is_a: gene product
     aliases: ['polypeptide']
@@ -2021,7 +2021,7 @@ classes:
       - UniProtKB
       - PR
       - ENSEMBL
-    
+
   gene product isoform:
     is_a: gene product
     description: >-
@@ -2030,7 +2030,7 @@ classes:
       or it may represent the superclass of all isoforms.
     entity: true
     abstract: true
-    
+
   protein isoform:
     aliases: ['proteoform']
     is_a: protein
@@ -2042,7 +2042,7 @@ classes:
       - UniProtKB
       - PR
       - ENSEMBL
-    
+
   RNA product:
     is_a: gene product
     mappings:
@@ -2051,7 +2051,7 @@ classes:
       - WD:Q11053
     id_prefixes:
       - RNAcentral
-    
+
   RNA product isoform:
     is_a: RNA product
     description: >-
@@ -2060,7 +2060,7 @@ classes:
       - gene product isoform
     id_prefixes:
       - RNAcentral
-      
+
   noncoding RNA product:
     is_a: RNA product
     id_prefixes:
@@ -2070,7 +2070,7 @@ classes:
     subclass_of: SO:0000655
     mappings:
       - SIO:001235
-      
+
   microRNA:
     is_a: noncoding RNA product
     subclass_of: SO:0000276
@@ -2079,7 +2079,7 @@ classes:
       - WD:Q310899
     id_prefixes:
       - MIR
-        
+
   macromolecular complex:
     is_a: macromolecular machine
     subclass_of: "GO:0032991"
@@ -2091,7 +2091,7 @@ classes:
       - GO
       - PR
       - Reactome
-      
+
   gene grouping:
     abstract: true
     mixin: true
@@ -2110,7 +2110,7 @@ classes:
       any grouping of multiple genes or gene products related by common descent
     id_prefixes:
       - PANTHER
-      
+
   zygosity:
     is_a: attribute
     mappings:
@@ -2218,18 +2218,18 @@ classes:
       - longitude
     mappings:
       - "UMLSSG:GEOG"
-      
+
   geographic location at time:
     is_a: geographic location
     description: >-
       a location that can be described in lat/long coordinates, for a particular time
     slots:
       - timepoint
-      
+
   ## ------
   ## ASSOCIATIONS
   ## ------
-      
+
   association:
     description: >-
       A typed association between two entities, supported by evidence
@@ -2443,7 +2443,7 @@ classes:
 #        - range: cell line
 #        - range: disease or phenotypic feature
         range: disease or phenotypic feature
-        
+
   chemical to thing association:
     is_a: association
     defining_slots:
@@ -2488,7 +2488,7 @@ classes:
         range: disease or phenotypic feature
         description: "the disease or phenotype that is affected by the chemical"
         definitional: true
-        
+
   chemical to pathway association:
     is_a: association
     mappings:
@@ -2505,7 +2505,7 @@ classes:
         range: pathway
         description: "the pathway that is affected by the chemical"
         definitional: true
-        
+
   chemical to gene association:
     is_a: association
     mappings:
@@ -2522,7 +2522,7 @@ classes:
         range: gene or gene product
         description: "the gene or gene product that is affected by the chemical"
         definitional: true
-        
+
   biosample to thing association:
     is_a: association
     defining_slots:
@@ -2536,7 +2536,7 @@ classes:
         description: >-
           the biosample being described
         definitional: true
-        
+
   biosample to disease or phenotypic feature association:
     is_a: association
     defining_slots:
@@ -2585,7 +2585,7 @@ classes:
         examples:
           - value: HP:0002487
             description: Hyperkinesis
-          - value: WBPhenotype:0000180 
+          - value: WBPhenotype:0000180
             description: axon morphology variant
           - value: MP:0001569
             description: abnormal circulating bilirubin level
@@ -2609,7 +2609,7 @@ classes:
         examples:
           - value: MONDO:0020066
             description: "Ehlers-Danlos syndrome"
-      
+
 
   disease or phenotypic feature association to thing association:
     abstract: true
@@ -2693,7 +2693,7 @@ classes:
         range: genotype
         description: >-
           genotype that is associated with the phenotypic feature
-          
+
   environment to phenotypic feature association:
     is_a: association
     defining_slots:
@@ -2707,7 +2707,7 @@ classes:
       subject:
         range: environment
         definitional: true
-          
+
   disease to phenotypic feature association:
     is_a: association
     defining_slots:
@@ -2717,7 +2717,7 @@ classes:
     mixins:
       - entity to phenotypic feature association
       - disease to thing association
-      
+
   case to phenotypic feature association:
     is_a: association
     defining_slots:
@@ -2727,7 +2727,7 @@ classes:
     mixins:
       - entity to phenotypic feature association
       - case to thing association
-      
+
   gene to thing association:
     is_a: association
     defining_slots:
@@ -2756,7 +2756,7 @@ classes:
             description: "ClinVar representation of NM_000059.3(BRCA2):c.7007G>A (p.Arg2336His)"
           - value: ClinGen:CA024716
             description: "chr13:g.32921033G>C (hg19) in ClinGen"
-        
+
   gene to phenotypic feature association:
     is_a: association
     mappings:
@@ -2774,7 +2774,7 @@ classes:
         examples:
           - value: HGNC:2197
             description: "COL1A1 (Human)"
-            
+
   gene to disease association:
     is_a: association
     comment: >-
@@ -2859,7 +2859,7 @@ classes:
           A relationship type that holds between the subject and object populations. Standard mereological
           relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships
           can also be used
-      
+
   variant to phenotypic feature association:
     is_a: association
     defining_slots:
@@ -2900,7 +2900,7 @@ classes:
         examples:
           - value: MONDO:0016419
             description: hereditary breast cancer
-          
+
   model to disease mixin:
     mixin: true
     abstract: true
@@ -2916,7 +2916,7 @@ classes:
         subproperty_of: model of
         description: >-
           The relationship to the disease
-            
+
   gene as a model of disease association:
     is_a: gene to disease association
     defining_slots:
@@ -2932,7 +2932,7 @@ classes:
         description: >-
           A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene,
           or it may be a gene whose mutants recapitulate core features of the disease.
-            
+
   gene has variant that contributes to disease association:
     is_a: gene to disease association
     defining_slots:
@@ -2957,7 +2957,7 @@ classes:
       subject:
         range: genotype
         description: "genotype that is the subject of the association"
-        
+
   gene to expression site association:
     is_a: association
     defining_slots:
@@ -3043,7 +3043,7 @@ classes:
             description: kinase activity
           - value: GO:0045211
             description: postsynaptic membrane
-    
+
   macromolecular machine to molecular activity association:
     is_a: functional association
     description: >-
@@ -3053,7 +3053,7 @@ classes:
     slot_usage:
       object:
         range: molecular activity
-          
+
   macromolecular machine to biological process association:
     is_a: functional association
     description: >-
@@ -3073,7 +3073,7 @@ classes:
     slot_usage:
       object:
         range: cellular component
-        
+
   gene to go term association:
     aliases: ['functional association']
     is_a: functional association
@@ -3196,7 +3196,7 @@ classes:
       object:
         range: gene or gene product
         role: regulated gene
-  
+
   anatomical entity to anatomical entity association:
 #      schema: gocam
     is_a: association
@@ -3208,7 +3208,7 @@ classes:
         range: anatomical entity
       object:
         range: anatomical entity
-  
+
   anatomical entity to anatomical entity part of association:
 #      schema: gocam
     is_a: anatomical entity to anatomical entity association
@@ -3229,7 +3229,7 @@ classes:
           the whole
       relation:
         subproperty_of: part of
-  
+
   anatomical entity to anatomical entity ontogenic association:
     is_a: anatomical entity to anatomical entity association
     description: >-
@@ -3332,7 +3332,7 @@ classes:
     is_a: biological process
     mappings:
       - "UMLSSG:PHYS"
-      
+
   cellular component:
     is_a: anatomical entity
     description: >-
@@ -3343,7 +3343,7 @@ classes:
       - WD:Q5058355
     id_prefixes:
       - GO
-      
+
   cell:
     is_a: anatomical entity
     mappings:
@@ -3361,7 +3361,7 @@ classes:
       - "CLO:0000031"
     id_prefixes:
       - CLO
-      
+
   gross anatomical structure:
     aliases: ['tissue', 'organ']
     is_a: anatomical entity
@@ -3373,5 +3373,5 @@ classes:
       - UBERON
       - PO
       - FAO
-      
-  
+
+

@@ -117,7 +117,7 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [IndividualOrganism](IndividualOrganism.md)
              * [Case](Case.md) - An individual organism that has a patient role in some clinical context.
           * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
-          * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]  
+          * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
     * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
        * [ClinicalIntervention](ClinicalIntervention.md)
        * [ClinicalTrial](ClinicalTrial.md)

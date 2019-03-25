@@ -2705,7 +2705,7 @@
     },
     {
       "name": "model_to_disease_mixin_relation",
-      "description": "The relationship to the disease\n  ",
+      "description": "The relationship to the disease",
       "is_a": "relation",
       "domain": "ModelToDiseaseMixin",
       "range": "iri_type",
@@ -2716,7 +2716,7 @@
     },
     {
       "name": "gene_as_a_model_of_disease_association_subject",
-      "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
+      "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
       "is_a": "gene_to_disease_association_subject",
       "domain": "GeneAsAModelOfDiseaseAssociation",
       "range": "GeneOrGeneProduct",
@@ -3316,7 +3316,7 @@
     },
     {
       "name": "PopulationOfIndividualOrganisms",
-      "description": "A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]  ",
+      "description": "A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]",
       "mappings": [
         "SIO:001061"
       ],
@@ -5187,7 +5187,7 @@
         },
         {
           "name": "relation",
-          "description": "The relationship to the disease\n  ",
+          "description": "The relationship to the disease",
           "subproperty_of": "model_of"
         }
       ],
@@ -5211,7 +5211,7 @@
       "slot_usage": [
         {
           "name": "subject",
-          "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
+          "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
           "range": "GeneOrGeneProduct"
         }
       ],
@@ -5902,9 +5902,9 @@
   ],
   "metamodel_version": "0.3.2",
   "source_file": "biolink-model.yaml",
-  "source_file_size": 98679,
-  "source_file_date": "Fri Mar 15 14:04:00 2019",
-  "generation_date": "2019-03-15 14:44",
+  "source_file_size": 98223,
+  "source_file_date": "Fri Mar 22 13:08:52 2019",
+  "generation_date": "2019-03-22 13:28",
   "@context": [
     "https://github.com/biolink/biolink-model/raw/master/context.jsonld",
     {
