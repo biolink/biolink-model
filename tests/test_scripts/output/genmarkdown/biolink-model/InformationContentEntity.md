@@ -10,6 +10,28 @@ URI: [http://w3id.org/biolink/vocab/InformationContentEntity](http://w3id.org/bi
 
  * [IAO:0000030](http://purl.obolibrary.org/obo/IAO_0000030)
  * [UMLSSG:CONC](http://purl.obolibrary.org/obo/UMLSSG_CONC)
+ * [UMLSSC:T077](http://purl.obolibrary.org/obo/UMLSSC_T077)
+ * [UMLSST:cnce](http://purl.obolibrary.org/obo/UMLSST_cnce)
+ * [UMLSSC:T078](http://purl.obolibrary.org/obo/UMLSSC_T078)
+ * [UMLSST:idcn](http://purl.obolibrary.org/obo/UMLSST_idcn)
+ * [UMLSSC:T079](http://purl.obolibrary.org/obo/UMLSSC_T079)
+ * [UMLSST:tmco](http://purl.obolibrary.org/obo/UMLSST_tmco)
+ * [UMLSSC:T080](http://purl.obolibrary.org/obo/UMLSSC_T080)
+ * [UMLSST:qlco](http://purl.obolibrary.org/obo/UMLSST_qlco)
+ * [UMLSSC:T081](http://purl.obolibrary.org/obo/UMLSSC_T081)
+ * [UMLSST:qnco](http://purl.obolibrary.org/obo/UMLSST_qnco)
+ * [UMLSSC:T082](http://purl.obolibrary.org/obo/UMLSSC_T082)
+ * [UMLSST:spco](http://purl.obolibrary.org/obo/UMLSST_spco)
+ * [UMLSSC:T089](http://purl.obolibrary.org/obo/UMLSSC_T089)
+ * [UMLSST:rnlw](http://purl.obolibrary.org/obo/UMLSST_rnlw)
+ * [UMLSSC:T102](http://purl.obolibrary.org/obo/UMLSSC_T102)
+ * [UMLSST:grpa](http://purl.obolibrary.org/obo/UMLSST_grpa)
+ * [UMLSSC:T169](http://purl.obolibrary.org/obo/UMLSSC_T169)
+ * [UMLSST:ftcn](http://purl.obolibrary.org/obo/UMLSST_ftcn)
+ * [UMLSSC:T171](http://purl.obolibrary.org/obo/UMLSSC_T171)
+ * [UMLSST:lang](http://purl.obolibrary.org/obo/UMLSST_lang)
+ * [UMLSSC:T185](http://purl.obolibrary.org/obo/UMLSSC_T185)
+ * [UMLSST:clas](http://purl.obolibrary.org/obo/UMLSST_clas)
 ## Inheritance
 
  *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class

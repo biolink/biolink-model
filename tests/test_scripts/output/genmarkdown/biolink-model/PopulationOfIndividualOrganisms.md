@@ -9,6 +9,8 @@ URI: [http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms](http://w3id
 ## Mappings
 
  * [SIO:001061](http://semanticscience.org/resource/SIO_001061)
+ * [UMLSSC:T098](http://purl.obolibrary.org/obo/UMLSSC_T098)
+ * [UMLSST:popg](http://purl.obolibrary.org/obo/UMLSST_popg)
  * [PCO:0000001](http://purl.obolibrary.org/obo/PCO_0000001)
 ## Inheritance
 

@@ -8,9 +8,17 @@ URI: [http://w3id.org/biolink/vocab/AnatomicalEntity](http://w3id.org/biolink/vo
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[AnatomicalEntity|id(i):identifier_type%20%3F;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;synonym(i):label_type%20*;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;has_phenotype(i):phenotype%20%3F]-%20related%20to(i)%20%3F>\[NamedThing],%20\[AnatomicalEntity]-%20in%20taxon(i)%20%3F>\[OrganismTaxon],%20\[AnatomicalEntity]-%20expresses%20%3F>\[GeneOrGeneProduct],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20object(i)>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityAssociation]-%20subject(i)>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20object(i)>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityOntogenicAssociation]-%20subject(i)>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20object(i)>\[AnatomicalEntity],%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation]-%20subject(i)>\[AnatomicalEntity],%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation]-%20object(i)>\[AnatomicalEntity],%20\[GeneOrGeneProduct]-%20expressed%20in(i)%20%3F>\[AnatomicalEntity],%20\[GeneToExpressionSiteAssociation]-%20object(i)>\[AnatomicalEntity],%20\[AnatomicalEntity]uses%20-.->\[ThingWithTaxon],%20\[AnatomicalEntity]^-\[GrossAnatomicalStructure],%20\[AnatomicalEntity]^-\[CellularComponent],%20\[AnatomicalEntity]^-\[Cell],%20\[OrganismalEntity]^-\[AnatomicalEntity])
 ## Mappings
 
- * [UMLSSG:ANAT](http://purl.obolibrary.org/obo/UMLSSG_ANAT)
  * [SIO:010046](http://semanticscience.org/resource/SIO_010046)
  * [WD:Q4936952](http://purl.obolibrary.org/obo/WD_Q4936952)
+ * [UMLSSG:ANAT](http://purl.obolibrary.org/obo/UMLSSG_ANAT)
+ * [UMLSSC:T022](http://purl.obolibrary.org/obo/UMLSSC_T022)
+ * [UMLSST:bdsy](http://purl.obolibrary.org/obo/UMLSST_bdsy)
+ * [UMLSSC:T029](http://purl.obolibrary.org/obo/UMLSSC_T029)
+ * [UMLSST:blor](http://purl.obolibrary.org/obo/UMLSST_blor)
+ * [UMLSSC:T030](http://purl.obolibrary.org/obo/UMLSSC_T030)
+ * [UMLSST:bsoj](http://purl.obolibrary.org/obo/UMLSST_bsoj)
+ * [UMLSSC:T031](http://purl.obolibrary.org/obo/UMLSSC_T031)
+ * [UMLSST:bdsu](http://purl.obolibrary.org/obo/UMLSST_bdsu)
  * [UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062)
 ## Inheritance
 

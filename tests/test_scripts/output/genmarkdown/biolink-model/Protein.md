@@ -11,6 +11,10 @@ URI: [http://w3id.org/biolink/vocab/Protein](http://w3id.org/biolink/vocab/Prote
  * [PR:000000001](http://purl.obolibrary.org/obo/PR_000000001)
  * [SIO:010043](http://semanticscience.org/resource/SIO_010043)
  * [WD:Q8054](http://purl.obolibrary.org/obo/WD_Q8054)
+ * [UMLSSC:T087](http://purl.obolibrary.org/obo/UMLSSC_T087)
+ * [UMLSST:amas](http://purl.obolibrary.org/obo/UMLSST_amas)
+ * [UMLSSC:T116](http://purl.obolibrary.org/obo/UMLSSC_T116)
+ * [UMLSST:aapp](http://purl.obolibrary.org/obo/UMLSST_aapp)
 ## Inheritance
 
  *  is_a: [GeneProduct](GeneProduct.md) - The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules

@@ -9,6 +9,8 @@ URI: [http://w3id.org/biolink/vocab/BiologicalEntity](http://w3id.org/biolink/vo
 ## Mappings
 
  * [WD:Q28845870](http://purl.obolibrary.org/obo/WD_Q28845870)
+ * [UMLSSC:T050](http://purl.obolibrary.org/obo/UMLSSC_T050)
+ * [UMLSST:emod](http://purl.obolibrary.org/obo/UMLSST_emod)
 ## Inheritance
 
  *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class

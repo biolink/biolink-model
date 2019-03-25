@@ -8,8 +8,16 @@ URI: [http://w3id.org/biolink/vocab/NamedThing](http://w3id.org/biolink/vocab/Na
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing|id:identifier_type%20%3F;name:label_type%20%3F;category:iri_type%20*;node_property:string%20%3F;iri:iri_type%20%3F;synonym:label_type%20*;full_name:label_type%20%3F;description:narrative_text%20%3F;systematic_synonym:label_type%20%3F]-%20related%20to%20%3F>\[NamedThing],%20\[NamedThing]-%20affects(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20affects%20risk%20for(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20causes(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20co-localizes%20with(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20coexists%20with(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20contributes%20to(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20derives%20from(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20derives%20into(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20disrupts(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20filler(i)%20%3F>\[NamedThing],%20\[Occurrent]-%20has%20input(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20has%20part(i)%20%3F>\[NamedThing],%20\[Occurrent]-%20has%20participant(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20homologous%20to(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20interacts%20with(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20located%20in(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20location%20of(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20model%20of(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20negatively%20regulates(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20occurs%20in(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20orthologous%20to(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20overlaps(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20paralogous%20to(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20part%20of(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20physically%20interacts%20with(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20positively%20regulates(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20predisposes(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20prevents(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20produces(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20regulates(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20related%20to%20%3F>\[NamedThing],%20\[NamedThing]-%20same%20as(i)%20%3F>\[NamedThing],%20\[DiseaseOrPhenotypicFeature]-%20treated%20by(i)%20%3F>\[NamedThing],%20\[NamedThing]-%20xenologous%20to(i)%20%3F>\[NamedThing],%20\[NamedThing]^-\[PlanetaryEntity],%20\[NamedThing]^-\[OntologyClass],%20\[NamedThing]^-\[Occurrent],%20\[NamedThing]^-\[InformationContentEntity],%20\[NamedThing]^-\[Device],%20\[NamedThing]^-\[ClinicalEntity],%20\[NamedThing]^-\[BiologicalEntity])
 ## Mappings
 
- * [UMLSSG:OBJC](http://purl.obolibrary.org/obo/UMLSSG_OBJC)
  * [WD:Q35120](http://purl.obolibrary.org/obo/WD_Q35120)
+ * [UMLSSG:OBJC](http://purl.obolibrary.org/obo/UMLSSG_OBJC)
+ * [UMLSSC:T071](http://purl.obolibrary.org/obo/UMLSSC_T071)
+ * [UMLSST:enty](http://purl.obolibrary.org/obo/UMLSST_enty)
+ * [UMLSSC:T072](http://purl.obolibrary.org/obo/UMLSSC_T072)
+ * [UMLSST:phob](http://purl.obolibrary.org/obo/UMLSST_phob)
+ * [UMLSSC:T073](http://purl.obolibrary.org/obo/UMLSSC_T073)
+ * [UMLSST:mnob](http://purl.obolibrary.org/obo/UMLSST_mnob)
+ * [UMLSSC:T168](http://purl.obolibrary.org/obo/UMLSSC_T168)
+ * [UMLSST:food](http://purl.obolibrary.org/obo/UMLSST_food)
  * [BFO:0000001](http://purl.obolibrary.org/obo/BFO_0000001)
 ## Inheritance
 

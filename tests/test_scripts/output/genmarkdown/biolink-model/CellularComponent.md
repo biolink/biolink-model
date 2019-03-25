@@ -11,6 +11,8 @@ URI: [http://w3id.org/biolink/vocab/CellularComponent](http://w3id.org/biolink/v
  * [GO:0005575](http://purl.obolibrary.org/obo/GO_0005575)
  * [SIO:001400](http://semanticscience.org/resource/SIO_001400)
  * [WD:Q5058355](http://purl.obolibrary.org/obo/WD_Q5058355)
+ * [UMLSSC:T026](http://purl.obolibrary.org/obo/UMLSSC_T026)
+ * [UMLSST:celc](http://purl.obolibrary.org/obo/UMLSST_celc)
 ## Inheritance
 
  *  is_a: [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part

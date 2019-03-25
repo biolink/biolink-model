@@ -9,6 +9,8 @@ URI: [http://w3id.org/biolink/vocab/Publication](http://w3id.org/biolink/vocab/P
 ## Mappings
 
  * [IAO:0000311](http://purl.obolibrary.org/obo/IAO_0000311)
+ * [UMLSSC:T170](http://purl.obolibrary.org/obo/UMLSSC_T170)
+ * [UMLSST:inpr](http://purl.obolibrary.org/obo/UMLSST_inpr)
 ## Inheritance
 
  *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.

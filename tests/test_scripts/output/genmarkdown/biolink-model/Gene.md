@@ -11,7 +11,6 @@ URI: [http://w3id.org/biolink/vocab/Gene](http://w3id.org/biolink/vocab/Gene)
  * [SO:0000704](http://purl.obolibrary.org/obo/SO_0000704)
  * [SIO:010035](http://semanticscience.org/resource/SIO_010035)
  * [WD:Q7187](http://purl.obolibrary.org/obo/WD_Q7187)
- * [UMLSSG:GENE](http://purl.obolibrary.org/obo/UMLSSG_GENE)
 ## Inheritance
 
  *  is_a: [GeneOrGeneProduct](GeneOrGeneProduct.md) - a union of genes or gene products. Frequently an identifier for one will be used as proxy for another

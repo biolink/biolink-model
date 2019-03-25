@@ -11,6 +11,16 @@ URI: [http://w3id.org/biolink/vocab/GrossAnatomicalStructure](http://w3id.org/bi
  * [UBERON:0010000](http://purl.obolibrary.org/obo/UBERON_0010000)
  * [SIO:010046](http://semanticscience.org/resource/SIO_010046)
  * [WD:Q4936952](http://purl.obolibrary.org/obo/WD_Q4936952)
+ * [UMLSSC:T017](http://purl.obolibrary.org/obo/UMLSSC_T017)
+ * [UMLSST:anst](http://purl.obolibrary.org/obo/UMLSST_anst)
+ * [UMLSSC:T021](http://purl.obolibrary.org/obo/UMLSSC_T021)
+ * [UMLSST:ffas](http://purl.obolibrary.org/obo/UMLSST_ffas)
+ * [UMLSSC:T023](http://purl.obolibrary.org/obo/UMLSSC_T023)
+ * [UMLSST:bpoc](http://purl.obolibrary.org/obo/UMLSST_bpoc)
+ * [UMLSSC:T024](http://purl.obolibrary.org/obo/UMLSSC_T024)
+ * [UMLSST:tisu](http://purl.obolibrary.org/obo/UMLSST_tisu)
+ * [UMLSSC:T018](http://purl.obolibrary.org/obo/UMLSSC_T018)
+ * [UMLSST:emst](http://purl.obolibrary.org/obo/UMLSST_emst)
 ## Inheritance
 
  *  is_a: [AnatomicalEntity](AnatomicalEntity.md) - A subcellular location, cell type or gross anatomical part

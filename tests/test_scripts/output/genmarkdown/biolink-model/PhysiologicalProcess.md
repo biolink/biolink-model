@@ -9,6 +9,22 @@ URI: [http://w3id.org/biolink/vocab/PhysiologicalProcess](http://w3id.org/biolin
 ## Mappings
 
  * [UMLSSG:PHYS](http://purl.obolibrary.org/obo/UMLSSG_PHYS)
+ * [UMLSSC:T032](http://purl.obolibrary.org/obo/UMLSSC_T032)
+ * [UMLSST:orga](http://purl.obolibrary.org/obo/UMLSST_orga)
+ * [UMLSSC:T039](http://purl.obolibrary.org/obo/UMLSSC_T039)
+ * [UMLSST:phsf](http://purl.obolibrary.org/obo/UMLSST_phsf)
+ * [UMLSSC:T040](http://purl.obolibrary.org/obo/UMLSSC_T040)
+ * [UMLSST:orgf](http://purl.obolibrary.org/obo/UMLSST_orgf)
+ * [UMLSSC:T041](http://purl.obolibrary.org/obo/UMLSSC_T041)
+ * [UMLSST:menp](http://purl.obolibrary.org/obo/UMLSST_menp)
+ * [UMLSSC:T042](http://purl.obolibrary.org/obo/UMLSSC_T042)
+ * [UMLSST:ortf](http://purl.obolibrary.org/obo/UMLSST_ortf)
+ * [UMLSSC:T043](http://purl.obolibrary.org/obo/UMLSSC_T043)
+ * [UMLSST:celf](http://purl.obolibrary.org/obo/UMLSST_celf)
+ * [UMLSSC:T045](http://purl.obolibrary.org/obo/UMLSSC_T045)
+ * [UMLSST:genf](http://purl.obolibrary.org/obo/UMLSST_genf)
+ * [UMLSSC:T201](http://purl.obolibrary.org/obo/UMLSSC_T201)
+ * [UMLSST:clna](http://purl.obolibrary.org/obo/UMLSST_clna)
 ## Inheritance
 
  *  is_a: [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions

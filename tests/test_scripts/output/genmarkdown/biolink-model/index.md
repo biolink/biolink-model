@@ -84,6 +84,7 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
        * [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
           * [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+             * [Carbohydrate](Carbohydrate.md)
              * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
              * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
           * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
@@ -117,7 +118,7 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [IndividualOrganism](IndividualOrganism.md)
              * [Case](Case.md) - An individual organism that has a patient role in some clinical context.
           * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
-          * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
+          * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]  
     * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
        * [ClinicalIntervention](ClinicalIntervention.md)
        * [ClinicalTrial](ClinicalTrial.md)

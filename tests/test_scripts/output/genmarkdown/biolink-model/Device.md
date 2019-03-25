@@ -9,6 +9,12 @@ URI: [http://w3id.org/biolink/vocab/Device](http://w3id.org/biolink/vocab/Device
 ## Mappings
 
  * [UMLSSG:DEVI](http://purl.obolibrary.org/obo/UMLSSG_DEVI)
+ * [UMLSSC:T074](http://purl.obolibrary.org/obo/UMLSSC_T074)
+ * [UMLSST:medd](http://purl.obolibrary.org/obo/UMLSST_medd)
+ * [UMLSSC:T075](http://purl.obolibrary.org/obo/UMLSSC_T075)
+ * [UMLSST:resd](http://purl.obolibrary.org/obo/UMLSST_resd)
+ * [UMLSSC:T203](http://purl.obolibrary.org/obo/UMLSSC_T203)
+ * [UMLSST:drdd](http://purl.obolibrary.org/obo/UMLSST_drdd)
 ## Inheritance
 
  *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class

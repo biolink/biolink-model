@@ -9,6 +9,8 @@ URI: [http://w3id.org/biolink/vocab/MolecularActivity](http://w3id.org/biolink/v
 ## Mappings
 
  * [GO:0003674](http://purl.obolibrary.org/obo/GO_0003674)
+ * [UMLSSC:T044](http://purl.obolibrary.org/obo/UMLSSC_T044)
+ * [UMLSST:moft](http://purl.obolibrary.org/obo/UMLSST_moft)
 ## Inheritance
 
  *  is_a: [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities

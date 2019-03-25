@@ -9,7 +9,10 @@ URI: [http://w3id.org/biolink/vocab/GenomicEntity](http://w3id.org/biolink/vocab
 ## Mappings
 
  * [SO:0000110](http://purl.obolibrary.org/obo/SO_0000110)
- * [UMLSSG:GENE](http://purl.obolibrary.org/obo/UMLSSG_GENE)
+ * [UMLSSC:T028](http://purl.obolibrary.org/obo/UMLSSC_T028)
+ * [UMLSST:gngm](http://purl.obolibrary.org/obo/UMLSST_gngm)
+ * [UMLSSC:T086](http://purl.obolibrary.org/obo/UMLSSC_T086)
+ * [UMLSST:nusq](http://purl.obolibrary.org/obo/UMLSST_nusq)
 ## Inheritance
 
  *  is_a: [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)

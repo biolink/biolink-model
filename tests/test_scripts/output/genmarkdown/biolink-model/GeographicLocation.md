@@ -9,6 +9,8 @@ URI: [http://w3id.org/biolink/vocab/GeographicLocation](http://w3id.org/biolink/
 ## Mappings
 
  * [UMLSSG:GEOG](http://purl.obolibrary.org/obo/UMLSSG_GEOG)
+ * [UMLSST:geoa](http://purl.obolibrary.org/obo/UMLSST_geoa)
+ * [UMLSSC:T083](http://purl.obolibrary.org/obo/UMLSSC_T083)
 ## Inheritance
 
  *  is_a: [PlanetaryEntity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet

@@ -19,6 +19,7 @@ URI: [http://w3id.org/biolink/vocab/ModelToDiseaseMixin](http://w3id.org/biolink
 
  * [model to disease mixin.relation](model_to_disease_mixin_relation.md)
     * Description: The relationship to the disease
+  
     * range: [IriType](IriType.md) [required]
     * edge label: [model of](model_of.md) *subsets*: (translator_minimal)
     * __Local__

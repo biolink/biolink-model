@@ -21,6 +21,7 @@ URI: [http://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation](http://w3i
 
  * [gene as a model of disease association.subject](gene_as_a_model_of_disease_association_subject.md)
     * Description: A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.
+  
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
     * __Local__
  * [association slot](association_slot.md)

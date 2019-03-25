@@ -9,6 +9,18 @@ URI: [http://w3id.org/biolink/vocab/Phenomenon](http://w3id.org/biolink/vocab/Ph
 ## Mappings
 
  * [UMLSSG:PHEN](http://purl.obolibrary.org/obo/UMLSSG_PHEN)
+ * [UMLSSC:T034](http://purl.obolibrary.org/obo/UMLSSC_T034)
+ * [UMLSST:lbtr](http://purl.obolibrary.org/obo/UMLSST_lbtr)
+ * [UMLSSC:T038](http://purl.obolibrary.org/obo/UMLSSC_T038)
+ * [UMLSST:biof](http://purl.obolibrary.org/obo/UMLSST_biof)
+ * [UMLSSC:T067](http://purl.obolibrary.org/obo/UMLSSC_T067)
+ * [UMLSST:phpr](http://purl.obolibrary.org/obo/UMLSST_phpr)
+ * [UMLSSC:T068](http://purl.obolibrary.org/obo/UMLSSC_T068)
+ * [UMLSST:hcpp](http://purl.obolibrary.org/obo/UMLSST_hcpp)
+ * [UMLSSC:T069](http://purl.obolibrary.org/obo/UMLSSC_T069)
+ * [UMLSST:eehu](http://purl.obolibrary.org/obo/UMLSST_eehu)
+ * [UMLSSC:T070](http://purl.obolibrary.org/obo/UMLSSC_T070)
+ * [UMLSST:npop](http://purl.obolibrary.org/obo/UMLSST_npop)
 ## Inheritance
 
  *  is_a: [Occurrent](Occurrent.md) - A processual entity
