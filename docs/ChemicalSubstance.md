@@ -9,14 +9,53 @@ URI: [http://w3id.org/biolink/vocab/ChemicalSubstance](http://w3id.org/biolink/v
 ## Mappings
 
  * [SIO:010004](http://semanticscience.org/resource/SIO_010004)
- * [UMLSSG:CHEM](http://purl.obolibrary.org/obo/UMLSSG_CHEM)
  * [WD:Q79529](http://purl.obolibrary.org/obo/WD_Q79529)
+ * [UMLSSC:T167](http://purl.obolibrary.org/obo/UMLSSC_T167)
+ * [UMLSST:sbst](http://purl.obolibrary.org/obo/UMLSST_sbst)
+ * [UMLSSG:CHEM](http://purl.obolibrary.org/obo/UMLSSG_CHEM)
+ * [UMLSSC:T103](http://purl.obolibrary.org/obo/UMLSSC_T103)
+ * [UMLSST:chem](http://purl.obolibrary.org/obo/UMLSST_chem)
+ * [UMLSSC:T104](http://purl.obolibrary.org/obo/UMLSSC_T104)
+ * [UMLSST:chvs](http://purl.obolibrary.org/obo/UMLSST_chvs)
+ * [UMLSSC:T109](http://purl.obolibrary.org/obo/UMLSSC_T109)
+ * [UMLSST:orch](http://purl.obolibrary.org/obo/UMLSST_orch)
+ * [UMLSSC:T114](http://purl.obolibrary.org/obo/UMLSSC_T114)
+ * [UMLSST:nnon](http://purl.obolibrary.org/obo/UMLSST_nnon)
+ * [UMLSSC:T120](http://purl.obolibrary.org/obo/UMLSSC_T120)
+ * [UMLSST:chvf](http://purl.obolibrary.org/obo/UMLSST_chvf)
+ * [UMLSSC:T121](http://purl.obolibrary.org/obo/UMLSSC_T121)
+ * [UMLSST:phsu](http://purl.obolibrary.org/obo/UMLSST_phsu)
+ * [UMLSSC:T122](http://purl.obolibrary.org/obo/UMLSSC_T122)
+ * [UMLSST:bodm](http://purl.obolibrary.org/obo/UMLSST_bodm)
+ * [UMLSSC:T123](http://purl.obolibrary.org/obo/UMLSSC_T123)
+ * [UMLSST:bacs](http://purl.obolibrary.org/obo/UMLSST_bacs)
+ * [UMLSSC:T125](http://purl.obolibrary.org/obo/UMLSSC_T125)
+ * [UMLSST:horm](http://purl.obolibrary.org/obo/UMLSST_horm)
+ * [UMLSSC:T126](http://purl.obolibrary.org/obo/UMLSSC_T126)
+ * [UMLSST:enzy](http://purl.obolibrary.org/obo/UMLSST_enzy)
+ * [UMLSSC:T127](http://purl.obolibrary.org/obo/UMLSSC_T127)
+ * [UMLSST:vita](http://purl.obolibrary.org/obo/UMLSST_vita)
+ * [UMLSSC:T129](http://purl.obolibrary.org/obo/UMLSSC_T129)
+ * [UMLSST:imft](http://purl.obolibrary.org/obo/UMLSST_imft)
+ * [UMLSSC:T130](http://purl.obolibrary.org/obo/UMLSSC_T130)
+ * [UMLSST:irda](http://purl.obolibrary.org/obo/UMLSST_irda)
+ * [UMLSSC:T131](http://purl.obolibrary.org/obo/UMLSSC_T131)
+ * [UMLSST:hops](http://purl.obolibrary.org/obo/UMLSST_hops)
+ * [UMLSSC:T192](http://purl.obolibrary.org/obo/UMLSSC_T192)
+ * [UMLSST:rcpt](http://purl.obolibrary.org/obo/UMLSST_rcpt)
+ * [UMLSSC:T195](http://purl.obolibrary.org/obo/UMLSSC_T195)
+ * [UMLSST:antb](http://purl.obolibrary.org/obo/UMLSST_antb)
+ * [UMLSSC:T196](http://purl.obolibrary.org/obo/UMLSSC_T196)
+ * [UMLSST:elii](http://purl.obolibrary.org/obo/UMLSST_elii)
+ * [UMLSSC:T197](http://purl.obolibrary.org/obo/UMLSSC_T197)
+ * [UMLSST:inch](http://purl.obolibrary.org/obo/UMLSST_inch)
  * [CHEBI:24431](http://purl.obolibrary.org/obo/CHEBI_24431)
 ## Inheritance
 
  *  is_a: [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
 ## Children
 
+ * [Carbohydrate](Carbohydrate.md)
  * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
  * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
 ## Used in
@@ -268,6 +307,10 @@ URI: [http://w3id.org/biolink/vocab/ChemicalSubstance](http://w3id.org/biolink/v
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

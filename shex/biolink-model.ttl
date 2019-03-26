@@ -49,6 +49,9 @@ biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation a shex:ShapeAnd ;
 biolink:BiosampleToDiseaseOrPhenotypicFeatureAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:BiosampleToThingAssociation biolink:ThingToDiseaseOrPhenotypicFeatureAssociation [ a shex:Shape ] ) .
 
+biolink:Carbohydrate a shex:ShapeAnd ;
+    shex:shapeExprs ( biolink:ChemicalSubstance [ a shex:Shape ] ) .
+
 biolink:CaseToPhenotypicFeatureAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association biolink:EntityToPhenotypicFeatureAssociation biolink:CaseToThingAssociation [ a shex:Shape ] ) .
 
@@ -917,6 +920,20 @@ biolink:Publication__List a shex:Shape ;
 biolink:RNAProduct a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GeneProduct [ a shex:Shape ] ) .
 
+biolink:XSD_string__List a shex:Shape ;
+    shex:closed true ;
+    shex:expression [ a shex:EachOf ;
+            shex:expressions ( [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate rdf:first ;
+                        shex:valueExpr [ a shex:NodeConstraint ;
+                                shex:datatype xsd:string ] ] [ a shex:TripleConstraint ;
+                        shex:predicate rdf:rest ;
+                        shex:valueExpr [ a shex:ShapeOr ;
+                                shex:shapeExprs ( [ a shex:NodeConstraint ;
+                                            shex:values ( () ) ] biolink:XSD_string__List ) ] ] ) ] .
+
 biolink:XSD_uri__List a shex:Shape ;
     shex:closed true ;
     shex:expression [ a shex:EachOf ;
@@ -1005,9 +1022,6 @@ biolink:VariantToThingAssociation a shex:ShapeAnd ;
                         shex:predicate rdf:subject ;
                         shex:valueExpr biolink:SequenceVariant ] ] ) .
 
-biolink:ChemicalSubstance a shex:ShapeAnd ;
-    shex:shapeExprs ( biolink:MolecularEntity [ a shex:Shape ] ) .
-
 biolink:FunctionalAssociation a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:Association [ a shex:Shape ;
                 shex:expression [ a shex:EachOf ;
@@ -1028,6 +1042,9 @@ biolink:BiologicalEntity a shex:ShapeAnd ;
                         shex:min 0 ;
                         shex:predicate <http://purl.obolibrary.org/obo/RO_0002200> ;
                         shex:valueExpr [ a shex:NodeConstraint ] ] ] ) .
+
+biolink:ChemicalSubstance a shex:ShapeAnd ;
+    shex:shapeExprs ( biolink:MolecularEntity [ a shex:Shape ] ) .
 
 biolink:Gene a shex:ShapeAnd ;
     shex:shapeExprs ( biolink:GeneOrGeneProduct [ a shex:Shape ;
@@ -1187,6 +1204,10 @@ biolink:NamedThing a shex:Shape ;
                         shex:predicate biolink:iri ;
                         shex:valueExpr [ a shex:NodeConstraint ;
                                 shex:nodeKind shex:nonliteral ] ] [ a shex:TripleConstraint ;
+                        shex:max 1 ;
+                        shex:min 0 ;
+                        shex:predicate biolink:synonym ;
+                        shex:valueExpr biolink:XSD_string__List ] [ a shex:TripleConstraint ;
                         shex:max 1 ;
                         shex:min 0 ;
                         shex:predicate biolink:full_name ;
@@ -1516,6 +1537,7 @@ biolink:MolecularEntity a shex:ShapeAnd ;
         biolink:Biosample,
         biolink:BiosampleToDiseaseOrPhenotypicFeatureAssociation,
         biolink:BiosampleToThingAssociation,
+        biolink:Carbohydrate,
         biolink:Case,
         biolink:CaseToPhenotypicFeatureAssociation,
         biolink:CaseToThingAssociation,
@@ -1650,6 +1672,7 @@ biolink:MolecularEntity a shex:ShapeAnd ;
         biolink:VariantToPhenotypicFeatureAssociation,
         biolink:VariantToPopulationAssociation,
         biolink:VariantToThingAssociation,
+        biolink:XSD_string__List,
         biolink:XSD_uri__List,
         biolink:Zygosity,
         meta:Builtins,

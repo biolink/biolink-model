@@ -8,8 +8,16 @@ URI: [http://w3id.org/biolink/vocab/NamedThing](http://w3id.org/biolink/vocab/Na
 ![img](images/NamedThing.png)
 ## Mappings
 
- * [UMLSSG:OBJC](http://purl.obolibrary.org/obo/UMLSSG_OBJC)
  * [WD:Q35120](http://purl.obolibrary.org/obo/WD_Q35120)
+ * [UMLSSG:OBJC](http://purl.obolibrary.org/obo/UMLSSG_OBJC)
+ * [UMLSSC:T071](http://purl.obolibrary.org/obo/UMLSSC_T071)
+ * [UMLSST:enty](http://purl.obolibrary.org/obo/UMLSST_enty)
+ * [UMLSSC:T072](http://purl.obolibrary.org/obo/UMLSSC_T072)
+ * [UMLSST:phob](http://purl.obolibrary.org/obo/UMLSST_phob)
+ * [UMLSSC:T073](http://purl.obolibrary.org/obo/UMLSSC_T073)
+ * [UMLSST:mnob](http://purl.obolibrary.org/obo/UMLSST_mnob)
+ * [UMLSSC:T168](http://purl.obolibrary.org/obo/UMLSSC_T168)
+ * [UMLSST:food](http://purl.obolibrary.org/obo/UMLSST_food)
  * [BFO:0000001](http://purl.obolibrary.org/obo/BFO_0000001)
 ## Inheritance
 
@@ -91,6 +99,10 @@ URI: [http://w3id.org/biolink/vocab/NamedThing](http://w3id.org/biolink/vocab/Na
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * __Local__
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * __Local__
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

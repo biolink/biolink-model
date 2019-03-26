@@ -25,6 +25,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "name",
     "node_property",
     "related_to",
+    "synonym",
     "systematic_synonym"
 })
 public class NamedThing {
@@ -85,6 +86,13 @@ public class NamedThing {
     @JsonProperty("related_to")
     @JsonPropertyDescription("A grouping for any relationship type that holds between any two things")
     private String relatedTo;
+    /**
+     * Alternate human-readable names for a thing
+     * 
+     */
+    @JsonProperty("synonym")
+    @JsonPropertyDescription("Alternate human-readable names for a thing")
+    private List<String> synonym = new ArrayList<String>();
     /**
      * more commonly used for gene symbols in yeast
      * 
@@ -238,6 +246,24 @@ public class NamedThing {
     }
 
     /**
+     * Alternate human-readable names for a thing
+     * 
+     */
+    @JsonProperty("synonym")
+    public List<String> getSynonym() {
+        return synonym;
+    }
+
+    /**
+     * Alternate human-readable names for a thing
+     * 
+     */
+    @JsonProperty("synonym")
+    public void setSynonym(List<String> synonym) {
+        this.synonym = synonym;
+    }
+
+    /**
      * more commonly used for gene symbols in yeast
      * 
      */
@@ -257,12 +283,12 @@ public class NamedThing {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("category", category).append("description", description).append("fullName", fullName).append("id", id).append("iri", iri).append("name", name).append("nodeProperty", nodeProperty).append("relatedTo", relatedTo).append("systematicSynonym", systematicSynonym).toString();
+        return new ToStringBuilder(this).append("category", category).append("description", description).append("fullName", fullName).append("id", id).append("iri", iri).append("name", name).append("nodeProperty", nodeProperty).append("relatedTo", relatedTo).append("synonym", synonym).append("systematicSynonym", systematicSynonym).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(iri).append(nodeProperty).append(systematicSynonym).append(name).append(description).append(fullName).append(id).append(category).append(relatedTo).toHashCode();
+        return new HashCodeBuilder().append(iri).append(nodeProperty).append(synonym).append(systematicSynonym).append(name).append(description).append(fullName).append(id).append(category).append(relatedTo).toHashCode();
     }
 
     @Override
@@ -274,7 +300,7 @@ public class NamedThing {
             return false;
         }
         NamedThing rhs = ((NamedThing) other);
-        return new EqualsBuilder().append(iri, rhs.iri).append(nodeProperty, rhs.nodeProperty).append(systematicSynonym, rhs.systematicSynonym).append(name, rhs.name).append(description, rhs.description).append(fullName, rhs.fullName).append(id, rhs.id).append(category, rhs.category).append(relatedTo, rhs.relatedTo).isEquals();
+        return new EqualsBuilder().append(iri, rhs.iri).append(nodeProperty, rhs.nodeProperty).append(synonym, rhs.synonym).append(systematicSynonym, rhs.systematicSynonym).append(name, rhs.name).append(description, rhs.description).append(fullName, rhs.fullName).append(id, rhs.id).append(category, rhs.category).append(relatedTo, rhs.relatedTo).isEquals();
     }
 
 }

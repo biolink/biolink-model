@@ -9,6 +9,24 @@ URI: [http://w3id.org/biolink/vocab/ActivityAndBehavior](http://w3id.org/biolink
 ## Mappings
 
  * [UMLSSG:ACTI](http://purl.obolibrary.org/obo/UMLSSG_ACTI)
+ * [UMLSSC:T051](http://purl.obolibrary.org/obo/UMLSSC_T051)
+ * [UMLSST:evnt](http://purl.obolibrary.org/obo/UMLSST_evnt)
+ * [UMLSSC:T052](http://purl.obolibrary.org/obo/UMLSSC_T052)
+ * [UMLSST:acty](http://purl.obolibrary.org/obo/UMLSST_acty)
+ * [UMLSSC:T053](http://purl.obolibrary.org/obo/UMLSSC_T053)
+ * [UMLSST:bhvr](http://purl.obolibrary.org/obo/UMLSST_bhvr)
+ * [UMLSSC:T054](http://purl.obolibrary.org/obo/UMLSSC_T054)
+ * [UMLSST:socb](http://purl.obolibrary.org/obo/UMLSST_socb)
+ * [UMLSSC:T055](http://purl.obolibrary.org/obo/UMLSSC_T055)
+ * [UMLSST:inbe](http://purl.obolibrary.org/obo/UMLSST_inbe)
+ * [UMLSSC:T056](http://purl.obolibrary.org/obo/UMLSSC_T056)
+ * [UMLSST:dora](http://purl.obolibrary.org/obo/UMLSST_dora)
+ * [UMLSSC:T057](http://purl.obolibrary.org/obo/UMLSSC_T057)
+ * [UMLSST:ocac](http://purl.obolibrary.org/obo/UMLSST_ocac)
+ * [UMLSSC:T064](http://purl.obolibrary.org/obo/UMLSSC_T064)
+ * [UMLSST:gora](http://purl.obolibrary.org/obo/UMLSST_gora)
+ * [UMLSSC:T066](http://purl.obolibrary.org/obo/UMLSSC_T066)
+ * [UMLSST:mcha](http://purl.obolibrary.org/obo/UMLSST_mcha)
 ## Inheritance
 
  *  is_a: [Occurrent](Occurrent.md) - A processual entity
@@ -63,6 +81,10 @@ URI: [http://w3id.org/biolink/vocab/ActivityAndBehavior](http://w3id.org/biolink
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

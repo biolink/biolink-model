@@ -79,6 +79,10 @@ BiosampleToThingAssociation interface
     subject: Biosample!
   }
 
+Carbohydrate type
+  {
+  }
+
 Case type
   {
   }
@@ -573,6 +577,7 @@ NamedThing type
     relatedTo: NamedThing
     nodeProperty: String
     iri: String
+    synonym: [String]
     fullName: String
     description: String
     systematicSynonym: String

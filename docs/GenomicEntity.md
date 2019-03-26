@@ -9,7 +9,10 @@ URI: [http://w3id.org/biolink/vocab/GenomicEntity](http://w3id.org/biolink/vocab
 ## Mappings
 
  * [SO:0000110](http://purl.obolibrary.org/obo/SO_0000110)
- * [UMLSSG:GENE](http://purl.obolibrary.org/obo/UMLSSG_GENE)
+ * [UMLSSC:T028](http://purl.obolibrary.org/obo/UMLSSC_T028)
+ * [UMLSST:gngm](http://purl.obolibrary.org/obo/UMLSST_gngm)
+ * [UMLSSC:T086](http://purl.obolibrary.org/obo/UMLSSC_T086)
+ * [UMLSST:nusq](http://purl.obolibrary.org/obo/UMLSST_nusq)
 ## Inheritance
 
  *  is_a: [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
@@ -284,6 +287,10 @@ URI: [http://w3id.org/biolink/vocab/GenomicEntity](http://w3id.org/biolink/vocab
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

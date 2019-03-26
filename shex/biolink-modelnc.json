@@ -364,6 +364,16 @@
       },
       {
          "type": "ShapeAnd",
+         "id": "http://w3id.org/biolink/vocab/Carbohydrate",
+         "shapeExprs": [
+            "http://w3id.org/biolink/vocab/ChemicalSubstance",
+            {
+               "type": "Shape"
+            }
+         ]
+      },
+      {
+         "type": "ShapeAnd",
          "id": "http://w3id.org/biolink/vocab/Case",
          "shapeExprs": [
             "http://w3id.org/biolink/vocab/IndividualOrganism",
@@ -2451,6 +2461,16 @@
                   },
                   "min": 0,
                   "max": 1
+               },
+               {
+                  "type": "TripleConstraint",
+                  "predicate": "http://w3id.org/biolink/vocab/synonym",
+                  "valueExpr": {
+                     "type": "NodeConstraint",
+                     "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                  },
+                  "min": 0,
+                  "max": -1
                },
                {
                   "type": "TripleConstraint",

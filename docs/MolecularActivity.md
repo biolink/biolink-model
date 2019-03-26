@@ -9,6 +9,8 @@ URI: [http://w3id.org/biolink/vocab/MolecularActivity](http://w3id.org/biolink/v
 ## Mappings
 
  * [GO:0003674](http://purl.obolibrary.org/obo/GO_0003674)
+ * [UMLSSC:T044](http://purl.obolibrary.org/obo/UMLSSC_T044)
+ * [UMLSST:moft](http://purl.obolibrary.org/obo/UMLSST_moft)
 ## Inheritance
 
  *  is_a: [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md) - Either an individual molecular activity, or a collection of causally connected molecular activities
@@ -71,6 +73,10 @@ URI: [http://w3id.org/biolink/vocab/MolecularActivity](http://w3id.org/biolink/v
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

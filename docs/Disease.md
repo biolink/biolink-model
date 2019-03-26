@@ -12,6 +12,26 @@ URI: [http://w3id.org/biolink/vocab/Disease](http://w3id.org/biolink/vocab/Disea
  * [WD:Q12136](http://purl.obolibrary.org/obo/WD_Q12136)
  * [SIO:010299](http://semanticscience.org/resource/SIO_010299)
  * [UMLSSG:DISO](http://purl.obolibrary.org/obo/UMLSSG_DISO)
+ * [UMLSSC:T019](http://purl.obolibrary.org/obo/UMLSSC_T019)
+ * [UMLSST:cgab](http://purl.obolibrary.org/obo/UMLSST_cgab)
+ * [UMLSSC:T020](http://purl.obolibrary.org/obo/UMLSSC_T020)
+ * [UMLSST:acab](http://purl.obolibrary.org/obo/UMLSST_acab)
+ * [UMLSSC:T037](http://purl.obolibrary.org/obo/UMLSSC_T037)
+ * [UMLSST:inpo](http://purl.obolibrary.org/obo/UMLSST_inpo)
+ * [UMLSSC:T046](http://purl.obolibrary.org/obo/UMLSSC_T046)
+ * [UMLSST:patf](http://purl.obolibrary.org/obo/UMLSST_patf)
+ * [UMLSSC:T047](http://purl.obolibrary.org/obo/UMLSSC_T047)
+ * [UMLSST:dsyn](http://purl.obolibrary.org/obo/UMLSST_dsyn)
+ * [UMLSSC:T048](http://purl.obolibrary.org/obo/UMLSSC_T048)
+ * [UMLSST:mobd](http://purl.obolibrary.org/obo/UMLSST_mobd)
+ * [UMLSSC:T049](http://purl.obolibrary.org/obo/UMLSSC_T049)
+ * [UMLSST:comd](http://purl.obolibrary.org/obo/UMLSST_comd)
+ * [UMLSSC:T184](http://purl.obolibrary.org/obo/UMLSSC_T184)
+ * [UMLSST:sosy](http://purl.obolibrary.org/obo/UMLSST_sosy)
+ * [UMLSSC:T190](http://purl.obolibrary.org/obo/UMLSSC_T190)
+ * [UMLSST:anab](http://purl.obolibrary.org/obo/UMLSST_anab)
+ * [UMLSSC:T191](http://purl.obolibrary.org/obo/UMLSSC_T191)
+ * [UMLSST:neop](http://purl.obolibrary.org/obo/UMLSST_neop)
 ## Inheritance
 
  *  is_a: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) - Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
@@ -71,6 +91,10 @@ URI: [http://w3id.org/biolink/vocab/Disease](http://w3id.org/biolink/vocab/Disea
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

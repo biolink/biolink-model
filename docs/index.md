@@ -84,6 +84,7 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [Treatment](Treatment.md) - A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
        * [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
           * [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+             * [Carbohydrate](Carbohydrate.md)
              * [Drug](Drug.md) - A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
              * [Metabolite](Metabolite.md) - Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
           * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
@@ -117,7 +118,7 @@ Entity and association taxonomy and datamodel for life-sciences data
           * [IndividualOrganism](IndividualOrganism.md)
              * [Case](Case.md) - An individual organism that has a patient role in some clinical context.
           * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
-          * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
+          * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md) - A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]  
     * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
        * [ClinicalIntervention](ClinicalIntervention.md)
        * [ClinicalTrial](ClinicalTrial.md)
@@ -309,6 +310,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [name](name.md) *subsets*: (translator_minimal) - A human-readable name for a thing
        * [macromolecular machine.name](macromolecular_machine_name.md) *subsets*: (translator_minimal) - genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
     * [phase](phase.md) - TODO
+    * [synonym](synonym.md) *subsets*: (translator_minimal) - Alternate human-readable names for a thing
     * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
     * [timepoint](timepoint.md) - a point in time
     * [update date](update_date.md) - date on which thing was updated. This can be applied to nodes or edges
@@ -439,7 +441,6 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [BiologicalSequence](BiologicalSequence.md)  (**string**) 
  * [ChemicalFormulaType](ChemicalFormulaType.md)  (**string**) 
  * [ChemicalFormulaValue](ChemicalFormulaValue.md)  (**string**) 
- * [EvidenceInstance](EvidenceInstance.md)  (**string**) 
  * [FrequencyValue](FrequencyValue.md)  (**string**) 
  * [IdentifierType](IdentifierType.md)  (**string**)  - A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form
  * [IriType](IriType.md)  (**uri**)  - An IRI

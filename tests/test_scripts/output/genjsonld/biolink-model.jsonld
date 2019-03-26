@@ -26,6 +26,18 @@
     {
       "local_name": "wgs",
       "prefix_uri": "http://www.w3.org/2003/01/geo/wgs84_pos"
+    },
+    {
+      "local_name": "UMLSSG",
+      "prefix_uri": "https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/"
+    },
+    {
+      "local_name": "UMLSST",
+      "prefix_uri": "https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/"
+    },
+    {
+      "local_name": "UMLSSC",
+      "prefix_uri": "https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/"
     }
   ],
   "default_prefix": "biolink",
@@ -2705,7 +2717,7 @@
     },
     {
       "name": "model_to_disease_mixin_relation",
-      "description": "The relationship to the disease",
+      "description": "The relationship to the disease\n  ",
       "is_a": "relation",
       "domain": "ModelToDiseaseMixin",
       "range": "iri_type",
@@ -2716,7 +2728,7 @@
     },
     {
       "name": "gene_as_a_model_of_disease_association_subject",
-      "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
+      "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
       "is_a": "gene_to_disease_association_subject",
       "domain": "GeneAsAModelOfDiseaseAssociation",
       "range": "GeneOrGeneProduct",
@@ -3205,8 +3217,16 @@
       "name": "NamedThing",
       "description": "a databased entity or concept/class",
       "mappings": [
+        "WD:Q35120",
         "UMLSSG:OBJC",
-        "WD:Q35120"
+        "UMLSSC:T071",
+        "UMLSST:enty",
+        "UMLSSC:T072",
+        "UMLSST:phob",
+        "UMLSSC:T073",
+        "UMLSST:mnob",
+        "UMLSSC:T168",
+        "UMLSST:food"
       ],
       "subclass_of": "BFO:0000001",
       "slots": [
@@ -3226,7 +3246,9 @@
     {
       "name": "BiologicalEntity",
       "mappings": [
-        "WD:Q28845870"
+        "WD:Q28845870",
+        "UMLSSC:T050",
+        "UMLSST:emod"
       ],
       "is_a": "NamedThing",
       "abstract": true,
@@ -3294,8 +3316,48 @@
       "name": "IndividualOrganism",
       "mappings": [
         "SIO:010000",
+        "WD:Q795052",
         "UMLSSG:LIVB",
-        "WD:Q795052"
+        "UMLSSC:T001",
+        "UMLSST:orgm",
+        "UMLSSC:T002",
+        "UMLSST:plnt",
+        "UMLSSC:T004",
+        "UMLSST:fngs",
+        "UMLSSC:T005",
+        "UMLSST:virs",
+        "UMLSSC:T007",
+        "UMLSST:bact",
+        "UMLSSC:T008",
+        "UMLSST:anim",
+        "UMLSSC:T010",
+        "UMLSST:vtbt",
+        "UMLSSC:T011",
+        "UMLSST:amph",
+        "UMLSSC:T012",
+        "UMLSST:bird",
+        "UMLSSC:T013",
+        "UMLSST:fish",
+        "UMLSSC:T014",
+        "UMLSST:rept",
+        "UMLSSC:T015",
+        "UMLSST:mamm",
+        "UMLSSC:T016",
+        "UMLSST:humn",
+        "UMLSSC:T096",
+        "UMLSST:grup",
+        "UMLSSC:T097",
+        "UMLSST:prog",
+        "UMLSSC:T099",
+        "UMLSST:famg",
+        "UMLSSC:T100",
+        "UMLSST:aggp",
+        "UMLSSC:T101",
+        "UMLSST:podg",
+        "UMLSSC:T194",
+        "UMLSST:arch",
+        "UMLSSC:T204",
+        "UMLSST:euka"
       ],
       "is_a": "OrganismalEntity",
       "mixins": [
@@ -3316,9 +3378,11 @@
     },
     {
       "name": "PopulationOfIndividualOrganisms",
-      "description": "A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]",
+      "description": "A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]  ",
       "mappings": [
-        "SIO:001061"
+        "SIO:001061",
+        "UMLSSC:T098",
+        "UMLSST:popg"
       ],
       "id_prefixes": [
         "HANCESTRO"
@@ -3355,6 +3419,10 @@
       "aliases": [
         "phenome"
       ],
+      "mappings": [
+        "UMLSSC:T033",
+        "UMLSST:fndg"
+      ],
       "is_a": "BiologicalEntity",
       "mixins": [
         "ThingWithTaxon"
@@ -3381,7 +3449,27 @@
         "MONDO:0000001",
         "WD:Q12136",
         "SIO:010299",
-        "UMLSSG:DISO"
+        "UMLSSG:DISO",
+        "UMLSSC:T019",
+        "UMLSST:cgab",
+        "UMLSSC:T020",
+        "UMLSST:acab",
+        "UMLSSC:T037",
+        "UMLSST:inpo",
+        "UMLSSC:T046",
+        "UMLSST:patf",
+        "UMLSSC:T047",
+        "UMLSST:dsyn",
+        "UMLSSC:T048",
+        "UMLSST:mobd",
+        "UMLSSC:T049",
+        "UMLSST:comd",
+        "UMLSSC:T184",
+        "UMLSST:sosy",
+        "UMLSSC:T190",
+        "UMLSST:anab",
+        "UMLSSC:T191",
+        "UMLSST:neop"
       ],
       "is_a": "DiseaseOrPhenotypicFeature",
       "@id": "Disease"
@@ -3427,7 +3515,29 @@
       ],
       "mappings": [
         "IAO:0000030",
-        "UMLSSG:CONC"
+        "UMLSSG:CONC",
+        "UMLSSC:T077",
+        "UMLSST:cnce",
+        "UMLSSC:T078",
+        "UMLSST:idcn",
+        "UMLSSC:T079",
+        "UMLSST:tmco",
+        "UMLSSC:T080",
+        "UMLSST:qlco",
+        "UMLSSC:T081",
+        "UMLSST:qnco",
+        "UMLSSC:T082",
+        "UMLSST:spco",
+        "UMLSSC:T089",
+        "UMLSST:rnlw",
+        "UMLSSC:T102",
+        "UMLSST:grpa",
+        "UMLSSC:T169",
+        "UMLSST:ftcn",
+        "UMLSSC:T171",
+        "UMLSST:lang",
+        "UMLSSC:T185",
+        "UMLSST:clas"
       ],
       "is_a": "NamedThing",
       "abstract": true,
@@ -3467,7 +3577,9 @@
         "reference"
       ],
       "mappings": [
-        "IAO:0000311"
+        "IAO:0000311",
+        "UMLSSC:T170",
+        "UMLSST:inpr"
       ],
       "id_prefixes": [
         "PMID"
@@ -3488,7 +3600,15 @@
         "group"
       ],
       "mappings": [
-        "UMLSSG:ORGA"
+        "UMLSSG:ORGA",
+        "UMLSSC:T092",
+        "UMLSST:orgt",
+        "UMLSSC:T093",
+        "UMLSST:hcro",
+        "UMLSSC:T094",
+        "UMLSST:pros",
+        "UMLSSC:T095",
+        "UMLSST:shro"
       ],
       "is_a": "AdministrativeEntity",
       "@id": "Provider"
@@ -3502,7 +3622,10 @@
       ],
       "mappings": [
         "SIO:010004",
-        "WD:Q43460564"
+        "WD:Q43460564",
+        "UMLSSG:GENE",
+        "UMLSSC:T085",
+        "UMLSST:mosq"
       ],
       "is_a": "BiologicalEntity",
       "mixins": [
@@ -3568,8 +3691,46 @@
       "description": "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part",
       "mappings": [
         "SIO:010004",
+        "WD:Q79529",
+        "UMLSSC:T167",
+        "UMLSST:sbst",
         "UMLSSG:CHEM",
-        "WD:Q79529"
+        "UMLSSC:T103",
+        "UMLSST:chem",
+        "UMLSSC:T104",
+        "UMLSST:chvs",
+        "UMLSSC:T109",
+        "UMLSST:orch",
+        "UMLSSC:T114",
+        "UMLSST:nnon",
+        "UMLSSC:T120",
+        "UMLSST:chvf",
+        "UMLSSC:T121",
+        "UMLSST:phsu",
+        "UMLSSC:T122",
+        "UMLSST:bodm",
+        "UMLSSC:T123",
+        "UMLSST:bacs",
+        "UMLSSC:T125",
+        "UMLSST:horm",
+        "UMLSSC:T126",
+        "UMLSST:enzy",
+        "UMLSSC:T127",
+        "UMLSST:vita",
+        "UMLSSC:T129",
+        "UMLSST:imft",
+        "UMLSSC:T130",
+        "UMLSST:irda",
+        "UMLSSC:T131",
+        "UMLSST:hops",
+        "UMLSSC:T192",
+        "UMLSST:rcpt",
+        "UMLSSC:T195",
+        "UMLSST:antb",
+        "UMLSSC:T196",
+        "UMLSST:elii",
+        "UMLSSC:T197",
+        "UMLSST:inch"
       ],
       "id_prefixes": [
         "CHEBI",
@@ -3580,12 +3741,23 @@
       "@id": "ChemicalSubstance"
     },
     {
+      "name": "Carbohydrate",
+      "mappings": [
+        "UMLSSC:T088",
+        "UMLSST:crbs"
+      ],
+      "is_a": "ChemicalSubstance",
+      "@id": "Carbohydrate"
+    },
+    {
       "name": "Drug",
       "description": "A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease",
       "comment": "The CHEBI ID represents a role rather than a substance",
       "mappings": [
         "WD:Q12140",
-        "CHEBI:23888"
+        "CHEBI:23888",
+        "UMLSSC:T200",
+        "UMLSST:clnd"
       ],
       "is_a": "ChemicalSubstance",
       "@id": "Drug"
@@ -3604,9 +3776,17 @@
       "name": "AnatomicalEntity",
       "description": "A subcellular location, cell type or gross anatomical part",
       "mappings": [
-        "UMLSSG:ANAT",
         "SIO:010046",
-        "WD:Q4936952"
+        "WD:Q4936952",
+        "UMLSSG:ANAT",
+        "UMLSSC:T022",
+        "UMLSST:bdsy",
+        "UMLSSC:T029",
+        "UMLSST:blor",
+        "UMLSSC:T030",
+        "UMLSST:bsoj",
+        "UMLSSC:T031",
+        "UMLSST:bdsu"
       ],
       "is_a": "OrganismalEntity",
       "mixins": [
@@ -3669,7 +3849,13 @@
       "name": "Device",
       "description": "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment",
       "mappings": [
-        "UMLSSG:DEVI"
+        "UMLSSG:DEVI",
+        "UMLSSC:T074",
+        "UMLSST:medd",
+        "UMLSSC:T075",
+        "UMLSST:resd",
+        "UMLSSC:T203",
+        "UMLSST:drdd"
       ],
       "is_a": "NamedThing",
       "@id": "Device"
@@ -3682,7 +3868,10 @@
       ],
       "mappings": [
         "SO:0000110",
-        "UMLSSG:GENE"
+        "UMLSSC:T028",
+        "UMLSST:gngm",
+        "UMLSSC:T086",
+        "UMLSST:nusq"
       ],
       "is_a": "MolecularEntity",
       "slots": [
@@ -3779,8 +3968,7 @@
       "mappings": [
         "SO:0000704",
         "SIO:010035",
-        "WD:Q7187",
-        "UMLSSG:GENE"
+        "WD:Q7187"
       ],
       "id_prefixes": [
         "NCBIGene",
@@ -3823,7 +4011,11 @@
       "mappings": [
         "PR:000000001",
         "SIO:010043",
-        "WD:Q8054"
+        "WD:Q8054",
+        "UMLSSC:T087",
+        "UMLSST:amas",
+        "UMLSSC:T116",
+        "UMLSST:aapp"
       ],
       "id_prefixes": [
         "UniProtKB",
@@ -4103,7 +4295,9 @@
       "name": "GeographicLocation",
       "description": "a location that can be described in lat/long coordinates",
       "mappings": [
-        "UMLSSG:GEOG"
+        "UMLSSG:GEOG",
+        "UMLSST:geoa",
+        "UMLSSC:T083"
       ],
       "is_a": "PlanetaryEntity",
       "slots": [
@@ -5187,7 +5381,7 @@
         },
         {
           "name": "relation",
-          "description": "The relationship to the disease",
+          "description": "The relationship to the disease\n  ",
           "subproperty_of": "model_of"
         }
       ],
@@ -5211,7 +5405,7 @@
       "slot_usage": [
         {
           "name": "subject",
-          "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
+          "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
           "range": "GeneOrGeneProduct"
         }
       ],
@@ -5757,7 +5951,9 @@
         "reaction"
       ],
       "mappings": [
-        "GO:0003674"
+        "GO:0003674",
+        "UMLSSC:T044",
+        "UMLSST:moft"
       ],
       "id_prefixes": [
         "GO",
@@ -5773,7 +5969,25 @@
       "name": "ActivityAndBehavior",
       "description": "Activity or behavior of any independent integral living, organization or mechanical actor in the world",
       "mappings": [
-        "UMLSSG:ACTI"
+        "UMLSSG:ACTI",
+        "UMLSSC:T051",
+        "UMLSST:evnt",
+        "UMLSSC:T052",
+        "UMLSST:acty",
+        "UMLSSC:T053",
+        "UMLSST:bhvr",
+        "UMLSSC:T054",
+        "UMLSST:socb",
+        "UMLSSC:T055",
+        "UMLSST:inbe",
+        "UMLSSC:T056",
+        "UMLSST:dora",
+        "UMLSSC:T057",
+        "UMLSST:ocac",
+        "UMLSSC:T064",
+        "UMLSST:gora",
+        "UMLSSC:T066",
+        "UMLSST:mcha"
       ],
       "is_a": "Occurrent",
       "@id": "ActivityAndBehavior"
@@ -5782,7 +5996,21 @@
       "name": "Procedure",
       "description": "A series of actions conducted in a certain order or manner",
       "mappings": [
-        "UMLSSG:PROC"
+        "UMLSSG:PROC",
+        "UMLSSC:T058",
+        "UMLSST:hlca",
+        "UMLSSC:T059",
+        "UMLSST:lbpr",
+        "UMLSSC:T060",
+        "UMLSST:diap",
+        "UMLSSC:T061",
+        "UMLSST:topp",
+        "UMLSSC:T062",
+        "UMLSST:resa",
+        "UMLSSC:T063",
+        "UMLSST:mbrt",
+        "UMLSSC:T065",
+        "UMLSST:edac"
       ],
       "is_a": "Occurrent",
       "@id": "Procedure"
@@ -5791,7 +6019,19 @@
       "name": "Phenomenon",
       "description": "a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question",
       "mappings": [
-        "UMLSSG:PHEN"
+        "UMLSSG:PHEN",
+        "UMLSSC:T034",
+        "UMLSST:lbtr",
+        "UMLSSC:T038",
+        "UMLSST:biof",
+        "UMLSSC:T067",
+        "UMLSST:phpr",
+        "UMLSSC:T068",
+        "UMLSST:hcpp",
+        "UMLSSC:T069",
+        "UMLSST:eehu",
+        "UMLSSC:T070",
+        "UMLSST:npop"
       ],
       "is_a": "Occurrent",
       "@id": "Phenomenon"
@@ -5835,7 +6075,23 @@
         "physiology"
       ],
       "mappings": [
-        "UMLSSG:PHYS"
+        "UMLSSG:PHYS",
+        "UMLSSC:T032",
+        "UMLSST:orga",
+        "UMLSSC:T039",
+        "UMLSST:phsf",
+        "UMLSSC:T040",
+        "UMLSST:orgf",
+        "UMLSSC:T041",
+        "UMLSST:menp",
+        "UMLSSC:T042",
+        "UMLSST:ortf",
+        "UMLSSC:T043",
+        "UMLSST:celf",
+        "UMLSSC:T045",
+        "UMLSST:genf",
+        "UMLSSC:T201",
+        "UMLSST:clna"
       ],
       "is_a": "BiologicalProcess",
       "@id": "PhysiologicalProcess"
@@ -5846,7 +6102,9 @@
       "mappings": [
         "GO:0005575",
         "SIO:001400",
-        "WD:Q5058355"
+        "WD:Q5058355",
+        "UMLSSC:T026",
+        "UMLSST:celc"
       ],
       "id_prefixes": [
         "GO"
@@ -5860,7 +6118,9 @@
         "GO:0005623",
         "CL:0000000",
         "SIO:010001",
-        "WD:Q7868"
+        "WD:Q7868",
+        "UMLSSC:T025",
+        "UMLSST:cell"
       ],
       "id_prefixes": [
         "CL",
@@ -5889,7 +6149,17 @@
       "mappings": [
         "UBERON:0010000",
         "SIO:010046",
-        "WD:Q4936952"
+        "WD:Q4936952",
+        "UMLSSC:T017",
+        "UMLSST:anst",
+        "UMLSSC:T021",
+        "UMLSST:ffas",
+        "UMLSSC:T023",
+        "UMLSST:bpoc",
+        "UMLSSC:T024",
+        "UMLSST:tisu",
+        "UMLSSC:T018",
+        "UMLSST:emst"
       ],
       "id_prefixes": [
         "UBERON",
@@ -5902,9 +6172,9 @@
   ],
   "metamodel_version": "0.3.2",
   "source_file": "biolink-model.yaml",
-  "source_file_size": 98223,
-  "source_file_date": "Fri Mar 22 13:08:52 2019",
-  "generation_date": "2019-03-22 13:28",
+  "source_file_size": 108082,
+  "source_file_date": "Tue Mar 26 07:33:44 2019",
+  "generation_date": "2019-03-26 08:39",
   "@context": [
     "https://github.com/biolink/biolink-model/raw/master/context.jsonld",
     {

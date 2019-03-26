@@ -10,6 +10,9 @@ URI: [http://w3id.org/biolink/vocab/MolecularEntity](http://w3id.org/biolink/voc
 
  * [SIO:010004](http://semanticscience.org/resource/SIO_010004)
  * [WD:Q43460564](http://purl.obolibrary.org/obo/WD_Q43460564)
+ * [UMLSSG:GENE](http://purl.obolibrary.org/obo/UMLSSG_GENE)
+ * [UMLSSC:T085](http://purl.obolibrary.org/obo/UMLSSC_T085)
+ * [UMLSST:mosq](http://purl.obolibrary.org/obo/UMLSST_mosq)
 ## Inheritance
 
  *  is_a: [BiologicalEntity](BiologicalEntity.md)
@@ -314,6 +317,10 @@ URI: [http://w3id.org/biolink/vocab/MolecularEntity](http://w3id.org/biolink/voc
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

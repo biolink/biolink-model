@@ -630,6 +630,13 @@
          "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
          "type": "string"
       },
+      "synonym": {
+         "description": "Alternate human-readable names for a thing",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "systematic_synonym": {
          "description": "more commonly used for gene symbols in yeast",
          "type": "string"
@@ -824,6 +831,12 @@
          "description": "An association between a biosample and a disease or phenotype\n  definitional: true",
          "properties": {},
          "title": "BiosampleToDiseaseOrPhenotypicFeatureAssociation",
+         "type": "object"
+      },
+      "Carbohydrate": {
+         "description": "",
+         "properties": {},
+         "title": "Carbohydrate",
          "type": "object"
       },
       "Case": {
@@ -1861,6 +1874,13 @@
                "description": "A grouping for any relationship type that holds between any two things",
                "type": "string"
             },
+            "synonym": {
+               "description": "Alternate human-readable names for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "systematic_synonym": {
                "description": "more commonly used for gene symbols in yeast",
                "type": "string"
@@ -1976,7 +1996,7 @@
          "type": "object"
       },
       "PopulationOfIndividualOrganisms": {
-         "description": "",
+         "description": "A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]",
          "properties": {},
          "title": "PopulationOfIndividualOrganisms",
          "type": "object"

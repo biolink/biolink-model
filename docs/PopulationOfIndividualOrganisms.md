@@ -1,7 +1,7 @@
 # Class: population of individual organisms
 
 
-
+A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
 
 URI: [http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms](http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms)
 
@@ -9,6 +9,8 @@ URI: [http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms](http://w3id
 ## Mappings
 
  * [SIO:001061](http://semanticscience.org/resource/SIO_001061)
+ * [UMLSSC:T098](http://purl.obolibrary.org/obo/UMLSSC_T098)
+ * [UMLSST:popg](http://purl.obolibrary.org/obo/UMLSST_popg)
  * [PCO:0000001](http://purl.obolibrary.org/obo/PCO_0000001)
 ## Inheritance
 
@@ -62,6 +64,10 @@ URI: [http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms](http://w3id
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

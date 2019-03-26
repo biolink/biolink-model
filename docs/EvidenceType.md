@@ -14,6 +14,9 @@ URI: [http://w3id.org/biolink/vocab/EvidenceType](http://w3id.org/biolink/vocab/
  *  is_a: [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
 ## Children
 
+## Used in
+
+ *  class: **[Association](Association.md)** *[has evidence](has_evidence.md)* **[EvidenceType](EvidenceType.md)**
 ## Fields
 
  * [category](category.md) *subsets*: (translator_minimal)
@@ -47,6 +50,10 @@ URI: [http://w3id.org/biolink/vocab/EvidenceType](http://w3id.org/biolink/vocab/
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

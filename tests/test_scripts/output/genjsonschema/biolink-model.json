@@ -833,6 +833,12 @@
          "title": "BiosampleToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
       },
+      "Carbohydrate": {
+         "description": "",
+         "properties": {},
+         "title": "Carbohydrate",
+         "type": "object"
+      },
       "Case": {
          "description": "An individual organism that has a patient role in some clinical context.",
          "properties": {},
@@ -1156,7 +1162,7 @@
          "description": "",
          "properties": {
             "subject": {
-               "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
+               "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
                "required": true,
                "type": "string"
             }

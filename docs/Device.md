@@ -9,6 +9,12 @@ URI: [http://w3id.org/biolink/vocab/Device](http://w3id.org/biolink/vocab/Device
 ## Mappings
 
  * [UMLSSG:DEVI](http://purl.obolibrary.org/obo/UMLSSG_DEVI)
+ * [UMLSSC:T074](http://purl.obolibrary.org/obo/UMLSSC_T074)
+ * [UMLSST:medd](http://purl.obolibrary.org/obo/UMLSST_medd)
+ * [UMLSSC:T075](http://purl.obolibrary.org/obo/UMLSSC_T075)
+ * [UMLSST:resd](http://purl.obolibrary.org/obo/UMLSST_resd)
+ * [UMLSSC:T203](http://purl.obolibrary.org/obo/UMLSSC_T203)
+ * [UMLSST:drdd](http://purl.obolibrary.org/obo/UMLSST_drdd)
 ## Inheritance
 
  *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
@@ -47,6 +53,10 @@ URI: [http://w3id.org/biolink/vocab/Device](http://w3id.org/biolink/vocab/Device
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

@@ -8,9 +8,17 @@ URI: [http://w3id.org/biolink/vocab/AnatomicalEntity](http://w3id.org/biolink/vo
 ![img](images/AnatomicalEntity.png)
 ## Mappings
 
- * [UMLSSG:ANAT](http://purl.obolibrary.org/obo/UMLSSG_ANAT)
  * [SIO:010046](http://semanticscience.org/resource/SIO_010046)
  * [WD:Q4936952](http://purl.obolibrary.org/obo/WD_Q4936952)
+ * [UMLSSG:ANAT](http://purl.obolibrary.org/obo/UMLSSG_ANAT)
+ * [UMLSSC:T022](http://purl.obolibrary.org/obo/UMLSSC_T022)
+ * [UMLSST:bdsy](http://purl.obolibrary.org/obo/UMLSST_bdsy)
+ * [UMLSSC:T029](http://purl.obolibrary.org/obo/UMLSSC_T029)
+ * [UMLSST:blor](http://purl.obolibrary.org/obo/UMLSST_blor)
+ * [UMLSSC:T030](http://purl.obolibrary.org/obo/UMLSSC_T030)
+ * [UMLSST:bsoj](http://purl.obolibrary.org/obo/UMLSST_bsoj)
+ * [UMLSSC:T031](http://purl.obolibrary.org/obo/UMLSSC_T031)
+ * [UMLSST:bdsu](http://purl.obolibrary.org/obo/UMLSST_bdsu)
  * [UBERON:0001062](http://purl.obolibrary.org/obo/UBERON_0001062)
 ## Inheritance
 
@@ -77,6 +85,10 @@ URI: [http://w3id.org/biolink/vocab/AnatomicalEntity](http://w3id.org/biolink/vo
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

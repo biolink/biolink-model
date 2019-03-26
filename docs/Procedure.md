@@ -9,6 +9,20 @@ URI: [http://w3id.org/biolink/vocab/Procedure](http://w3id.org/biolink/vocab/Pro
 ## Mappings
 
  * [UMLSSG:PROC](http://purl.obolibrary.org/obo/UMLSSG_PROC)
+ * [UMLSSC:T058](http://purl.obolibrary.org/obo/UMLSSC_T058)
+ * [UMLSST:hlca](http://purl.obolibrary.org/obo/UMLSST_hlca)
+ * [UMLSSC:T059](http://purl.obolibrary.org/obo/UMLSSC_T059)
+ * [UMLSST:lbpr](http://purl.obolibrary.org/obo/UMLSST_lbpr)
+ * [UMLSSC:T060](http://purl.obolibrary.org/obo/UMLSSC_T060)
+ * [UMLSST:diap](http://purl.obolibrary.org/obo/UMLSST_diap)
+ * [UMLSSC:T061](http://purl.obolibrary.org/obo/UMLSSC_T061)
+ * [UMLSST:topp](http://purl.obolibrary.org/obo/UMLSST_topp)
+ * [UMLSSC:T062](http://purl.obolibrary.org/obo/UMLSSC_T062)
+ * [UMLSST:resa](http://purl.obolibrary.org/obo/UMLSST_resa)
+ * [UMLSSC:T063](http://purl.obolibrary.org/obo/UMLSSC_T063)
+ * [UMLSST:mbrt](http://purl.obolibrary.org/obo/UMLSST_mbrt)
+ * [UMLSSC:T065](http://purl.obolibrary.org/obo/UMLSSC_T065)
+ * [UMLSST:edac](http://purl.obolibrary.org/obo/UMLSST_edac)
 ## Inheritance
 
  *  is_a: [Occurrent](Occurrent.md) - A processual entity
@@ -63,6 +77,10 @@ URI: [http://w3id.org/biolink/vocab/Procedure](http://w3id.org/biolink/vocab/Pro
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

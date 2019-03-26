@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.0.4
-# Generation date: 2019-03-15 14:36
+# Generation date: 2019-03-25 17:08
 # Schema: biolink model
 #
 # id: https://biolink.github.io/biolink-model/ontology/biolink.ttl
@@ -156,6 +156,10 @@ class MolecularEntityId(IdentifierType):
 
 
 class ChemicalSubstanceId(IdentifierType):
+    pass
+
+
+class CarbohydrateId(IdentifierType):
     pass
 
 
@@ -1113,6 +1117,18 @@ class ChemicalSubstance(MolecularEntity):
             raise ValueError(f"id must be supplied")
         if not isinstance(self.id, ChemicalSubstanceId):
             self.id = ChemicalSubstanceId(self.id)
+
+
+@dataclass
+class Carbohydrate(ChemicalSubstance):
+    id: CarbohydrateId = None
+
+    def _fix_elements(self):
+        super()._fix_elements()
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if not isinstance(self.id, CarbohydrateId):
+            self.id = CarbohydrateId(self.id)
 
 
 @dataclass

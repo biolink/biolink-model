@@ -9,6 +9,8 @@ URI: [http://w3id.org/biolink/vocab/GeographicLocation](http://w3id.org/biolink/
 ## Mappings
 
  * [UMLSSG:GEOG](http://purl.obolibrary.org/obo/UMLSSG_GEOG)
+ * [UMLSST:geoa](http://purl.obolibrary.org/obo/UMLSST_geoa)
+ * [UMLSSC:T083](http://purl.obolibrary.org/obo/UMLSSC_T083)
 ## Inheritance
 
  *  is_a: [PlanetaryEntity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet
@@ -58,6 +60,10 @@ URI: [http://w3id.org/biolink/vocab/GeographicLocation](http://w3id.org/biolink/
  * [related to](related_to.md)
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
     * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast

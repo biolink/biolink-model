@@ -265,6 +265,10 @@ URI: [http://w3id.org/biolink/vocab/Haplotype](http://w3id.org/biolink/vocab/Hap
     * Description: A grouping for any relationship type that holds between any two things
     * range: [NamedThing](NamedThing.md)
     * inherited from: [NamedThing](NamedThing.md)
+ * [synonym](synonym.md) *subsets*: (translator_minimal)
+    * Description: Alternate human-readable names for a thing
+    * range: [LabelType](LabelType.md)*
+    * inherited from: [NamedThing](NamedThing.md)
  * [systematic synonym](systematic_synonym.md)
     * Description: more commonly used for gene symbols in yeast
     * range: [LabelType](LabelType.md)

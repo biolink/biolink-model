@@ -364,6 +364,16 @@
       },
       {
          "type": "ShapeAnd",
+         "id": "http://w3id.org/biolink/vocab/Carbohydrate",
+         "shapeExprs": [
+            "http://w3id.org/biolink/vocab/ChemicalSubstance",
+            {
+               "type": "Shape"
+            }
+         ]
+      },
+      {
+         "type": "ShapeAnd",
          "id": "http://w3id.org/biolink/vocab/Case",
          "shapeExprs": [
             "http://w3id.org/biolink/vocab/IndividualOrganism",

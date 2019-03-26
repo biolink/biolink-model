@@ -360,7 +360,7 @@
          "type": "string"
       },
       "gene_as_a_model_of_disease_association_subject": {
-         "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
+         "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
          "type": "string"
       },
       "gene_associated_with_condition": {
@@ -729,7 +729,7 @@
          "type": "string"
       },
       "model_to_disease_mixin_relation": {
-         "description": "The relationship to the disease",
+         "description": "The relationship to the disease\n  ",
          "type": "string"
       },
       "model_to_disease_mixin_subject": {
@@ -1256,6 +1256,12 @@
          "title": "BiosampleToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
       },
+      "Carbohydrate": {
+         "description": "",
+         "properties": {},
+         "title": "Carbohydrate",
+         "type": "object"
+      },
       "Case": {
          "description": "An individual organism that has a patient role in some clinical context.",
          "properties": {},
@@ -1618,7 +1624,7 @@
          "description": "",
          "properties": {
             "subject": {
-               "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
+               "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
                "required": true,
                "type": {
                   "$ref": "#/definitions/gene_as_a_model_of_disease_association_subject"
