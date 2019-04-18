@@ -1156,6 +1156,7 @@ slots:
       - translator_minimal
     domain: named thing
     range: identifier type
+    required: true
 
   association_id:
     is_a: node property
@@ -1188,6 +1189,7 @@ slots:
       - translator_minimal
     mappings:
       - "rdfs:label"
+    required: true
 
   synonym:
     is_a: node property
@@ -1213,6 +1215,7 @@ slots:
       - translator_minimal
     mappings:
       - "rdf:type"
+    required: true
   
   full name:
     is_a: node property
