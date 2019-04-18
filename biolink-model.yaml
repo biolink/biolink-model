@@ -1283,7 +1283,7 @@ slots:
       This is analogous to category for nodes. 
     note: in neo4j this corresponds to the relationship type and the convention is for a snake_case label
     range: label type
-    required: false
+    required: true
 
   relation:
     is_a: association slot
