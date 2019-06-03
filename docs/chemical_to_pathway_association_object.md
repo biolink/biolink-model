@@ -1,19 +1,17 @@
 # Slot: object
 
 
-the pathway that is affected by the chemical
 
-URI: [http://w3id.org/biolink/vocab/chemical_to_pathway_association_object](slot_uri)
-## Mappings
 
+URI: [biolink:chemical_to_pathway_association_object](https://w3id.org/biolink/vocab/chemical_to_pathway_association_object)
 ## Domain and Range
 
-[ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) -> [Pathway](Pathway.md)
+[ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) ->  <sub>REQ</sub> [Pathway](Pathway.md)
 ## Inheritance
 
  *  is_a: [object](object.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md)
+ * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md)

@@ -1,6 +1,5 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -19,27 +18,14 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 })
 public class Genotype {
 
-    /**
-     * A grouping for any property that holds between a node and a value
-     * 
-     */
     @JsonProperty("has_zygosity")
-    @JsonPropertyDescription("A grouping for any property that holds between a node and a value")
     private String hasZygosity;
 
-    /**
-     * A grouping for any property that holds between a node and a value
-     * 
-     */
     @JsonProperty("has_zygosity")
     public String getHasZygosity() {
         return hasZygosity;
     }
 
-    /**
-     * A grouping for any property that holds between a node and a value
-     * 
-     */
     @JsonProperty("has_zygosity")
     public void setHasZygosity(String hasZygosity) {
         this.hasZygosity = hasZygosity;

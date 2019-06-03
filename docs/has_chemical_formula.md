@@ -3,17 +3,15 @@
 
 description of chemical compound based on element symbols
 
-URI: [http://w3id.org/biolink/vocab/has_chemical_formula](slot_uri)
-## Mappings
-
- * [WD:P274](http://purl.obolibrary.org/obo/WD_P274)
+URI: [biolink:has_chemical_formula](https://w3id.org/biolink/vocab/has_chemical_formula)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [ChemicalFormulaValue](ChemicalFormulaValue.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [ChemicalFormulaValue](ChemicalFormulaValue.md)
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [NamedThing](NamedThing.md)

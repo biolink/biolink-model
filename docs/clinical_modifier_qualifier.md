@@ -3,16 +3,15 @@
 
 Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
 
-URI: [http://w3id.org/biolink/vocab/clinical_modifier_qualifier](slot_uri)
-## Mappings
-
+URI: [biolink:clinical_modifier_qualifier](https://w3id.org/biolink/vocab/clinical_modifier_qualifier)
 ## Domain and Range
 
-[Association](Association.md) -> [ClinicalModifier](ClinicalModifier.md)
+[Association](Association.md) ->  <sub>OPT</sub> [ClinicalModifier](ClinicalModifier.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [Association](Association.md)

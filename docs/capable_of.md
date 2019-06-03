@@ -3,17 +3,15 @@
 
 holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function.
 
-URI: [http://w3id.org/biolink/vocab/capable_of](slot_uri)
-## Mappings
-
- * [RO:0002215](http://purl.obolibrary.org/obo/RO_0002215)
+URI: [biolink:capable_of](https://w3id.org/biolink/vocab/capable_of)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [Occurrent](Occurrent.md)
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [Occurrent](Occurrent.md)
 ## Inheritance
 
- *  is_a: [actively involved in](actively_involved_in.md) *subsets*: (translator_minimal)
+ *  is_a: [actively involved in](actively_involved_in.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [NamedThing](NamedThing.md)

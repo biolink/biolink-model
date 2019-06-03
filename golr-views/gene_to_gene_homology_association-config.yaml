@@ -1,59 +1,52 @@
 description: A homology association between two genes. May be orthology (in which
   case the species of subject and object should differ) or paralogy (in which case
   the species may be the same)
-display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
 - gene to gene homology association
-document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
 - gene to gene homology association
 fields:
 - description: A unique identifier for an association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - association_id
   id: id
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - gene to gene association_subject
+  id: subject
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - gene to gene homology association_relation
+  id: relation
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - gene to gene association_object
+  id: object
 - description: if set to true, then the association is negated i.e. is not true
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - negated
   id: negated
 - description: connects an association to the type of association (e.g. gene to phenotype)
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - association type
   id: association_type
 - cardinality: multi
   description: connects an association to qualifiers that modify or qualify the meaning
     of that association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - qualifiers
   id: qualifiers
 - cardinality: multi
   description: connects an association to publications supporting the association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - publications
   id: publications
 - description: connects an association to the agent (person, organization or group)
     that provided it
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - provided by
   id: provided_by
 - description: any slot that relates an association to another entity
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - association slot
   id: association_slot
-- description: the subject gene in the association. If the relation is symmetric,
-    subject vs object is arbitrary. We allow a gene product to stand as proxy for
-    the gene or vice versa
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
-  - gene to gene association subject
-  id: subject
-- description: the object gene in the association. If the relation is symmetric, subject
-    vs object is arbitrary. We allow a gene product to stand as proxy for the gene
-    or vice versa
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
-  - gene to gene association object
-  id: object
-- description: homology relationship type
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
-  - gene to gene homology association relation
-  id: relation
 id: gene_to_gene_homology_association
 schema_generating: true
 weight: 20

@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-the biosample being described
 
-URI: [http://w3id.org/biolink/vocab/biosample_to_thing_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:biosample_to_thing_association_subject](https://w3id.org/biolink/vocab/biosample_to_thing_association_subject)
 ## Domain and Range
 
-[BiosampleToThingAssociation](BiosampleToThingAssociation.md) -> [Biosample](Biosample.md)
+[BiosampleToThingAssociation](BiosampleToThingAssociation.md) ->  <sub>REQ</sub> [Biosample](Biosample.md)
 ## Inheritance
 
  *  is_a: [subject](subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [BiosampleToThingAssociation](BiosampleToThingAssociation.md)
+ * [BiosampleToThingAssociation](BiosampleToThingAssociation.md)

@@ -3,20 +3,23 @@
 
 holds between two processes, where one completes before the other begins
 
-URI: [http://w3id.org/biolink/vocab/precedes](slot_uri)
-## Mappings
-
- * [BFO:0000063](http://purl.obolibrary.org/obo/BFO_0000063)
- * [SEMMEDDB:PRECEDES](http://purl.obolibrary.org/obo/SEMMEDDB_PRECEDES)
- * [WD:P156](http://purl.obolibrary.org/obo/WD_P156)
+URI: [biolink:precedes](https://w3id.org/biolink/vocab/precedes)
 ## Domain and Range
 
-[Occurrent](Occurrent.md) -> [Occurrent](Occurrent.md)
+[Occurrent](Occurrent.md) ->  <sub>0..*</sub> [Occurrent](Occurrent.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [Occurrent](Occurrent.md)
+ * [ActivityAndBehavior](ActivityAndBehavior.md)
+ * [BiologicalProcess](BiologicalProcess.md)
+ * [EnvironmentalProcess](EnvironmentalProcess.md)
+ * [MolecularActivity](MolecularActivity.md)
+ * [Occurrent](Occurrent.md)
+ * [Pathway](Pathway.md)
+ * [Phenomenon](Phenomenon.md)
+ * [PhysiologicalProcess](PhysiologicalProcess.md)
+ * [Procedure](Procedure.md)

@@ -1,7 +1,16 @@
-id: "http://bioentity.io/json-schema/biolink/contrib/monarch.json"
+id: https://bioentity.io/json-schema/biolink/contrib/monarch
 name: monarch biolink extensions
+
+prefixes:
+  biolink: https://w3id.org/biolink/vocab/
+  biolinkml: https://w3id.org/biolink/biolinkml/
+  monarch: https://bioentity.io/json-schema/biolink/contrib/monarch
+
+default_prefix: monarch
+default_range: string
+
 imports:
-  - "biolink-model"
+  - biolink:biolink
   - "contrib/core"  
   - "contrib/class_extensions"  
   - "contrib/closures"  

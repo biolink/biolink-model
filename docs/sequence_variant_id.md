@@ -1,19 +1,17 @@
 # Slot: id
 
 
-A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
 
-URI: [http://w3id.org/biolink/vocab/sequence_variant_id](slot_uri)
-## Mappings
 
+URI: [biolink:sequence_variant_id](https://w3id.org/biolink/vocab/sequence_variant_id)
 ## Domain and Range
 
-[SequenceVariant](SequenceVariant.md) -> [IdentifierType](IdentifierType.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>REQ</sub> [IdentifierType](IdentifierType.md)
 ## Inheritance
 
- *  is_a: [id](id.md) *subsets*: (translator_minimal)
+ *  is_a: [id](id.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [SequenceVariant](SequenceVariant.md)
+ * [SequenceVariant](SequenceVariant.md)

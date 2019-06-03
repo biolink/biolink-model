@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -17,6 +19,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonPropertyOrder({
     "has_input",
     "has_participant",
+    "negatively_regulates_process_to_process",
+    "positively_regulates_process_to_process",
     "precedes",
     "regulates_process_to_process"
 })
@@ -28,35 +32,34 @@ public class Occurrent {
      */
     @JsonProperty("has_input")
     @JsonPropertyDescription("holds between a process and a continuant, where the continuant is an input into the process")
-    private String hasInput;
+    private List<String> hasInput = new ArrayList<String>();
     /**
-     * holds between a process and a continuant, where the continuant is somehow involved in the process 
+     * holds between a process and a continuant, where the continuant is somehow involved in the process
      * 
      */
     @JsonProperty("has_participant")
-    @JsonPropertyDescription("holds between a process and a continuant, where the continuant is somehow involved in the process ")
-    private String hasParticipant;
+    @JsonPropertyDescription("holds between a process and a continuant, where the continuant is somehow involved in the process")
+    private List<String> hasParticipant = new ArrayList<String>();
+    @JsonProperty("negatively_regulates_process_to_process")
+    private List<String> negativelyRegulatesProcessToProcess = new ArrayList<String>();
+    @JsonProperty("positively_regulates_process_to_process")
+    private List<String> positivelyRegulatesProcessToProcess = new ArrayList<String>();
     /**
      * holds between two processes, where one completes before the other begins
      * 
      */
     @JsonProperty("precedes")
     @JsonPropertyDescription("holds between two processes, where one completes before the other begins")
-    private String precedes;
-    /**
-     * describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
-     * 
-     */
+    private List<String> precedes = new ArrayList<String>();
     @JsonProperty("regulates_process_to_process")
-    @JsonPropertyDescription("describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.")
-    private String regulatesProcessToProcess;
+    private List<String> regulatesProcessToProcess = new ArrayList<String>();
 
     /**
      * holds between a process and a continuant, where the continuant is an input into the process
      * 
      */
     @JsonProperty("has_input")
-    public String getHasInput() {
+    public List<String> getHasInput() {
         return hasInput;
     }
 
@@ -65,26 +68,46 @@ public class Occurrent {
      * 
      */
     @JsonProperty("has_input")
-    public void setHasInput(String hasInput) {
+    public void setHasInput(List<String> hasInput) {
         this.hasInput = hasInput;
     }
 
     /**
-     * holds between a process and a continuant, where the continuant is somehow involved in the process 
+     * holds between a process and a continuant, where the continuant is somehow involved in the process
      * 
      */
     @JsonProperty("has_participant")
-    public String getHasParticipant() {
+    public List<String> getHasParticipant() {
         return hasParticipant;
     }
 
     /**
-     * holds between a process and a continuant, where the continuant is somehow involved in the process 
+     * holds between a process and a continuant, where the continuant is somehow involved in the process
      * 
      */
     @JsonProperty("has_participant")
-    public void setHasParticipant(String hasParticipant) {
+    public void setHasParticipant(List<String> hasParticipant) {
         this.hasParticipant = hasParticipant;
+    }
+
+    @JsonProperty("negatively_regulates_process_to_process")
+    public List<String> getNegativelyRegulatesProcessToProcess() {
+        return negativelyRegulatesProcessToProcess;
+    }
+
+    @JsonProperty("negatively_regulates_process_to_process")
+    public void setNegativelyRegulatesProcessToProcess(List<String> negativelyRegulatesProcessToProcess) {
+        this.negativelyRegulatesProcessToProcess = negativelyRegulatesProcessToProcess;
+    }
+
+    @JsonProperty("positively_regulates_process_to_process")
+    public List<String> getPositivelyRegulatesProcessToProcess() {
+        return positivelyRegulatesProcessToProcess;
+    }
+
+    @JsonProperty("positively_regulates_process_to_process")
+    public void setPositivelyRegulatesProcessToProcess(List<String> positivelyRegulatesProcessToProcess) {
+        this.positivelyRegulatesProcessToProcess = positivelyRegulatesProcessToProcess;
     }
 
     /**
@@ -92,7 +115,7 @@ public class Occurrent {
      * 
      */
     @JsonProperty("precedes")
-    public String getPrecedes() {
+    public List<String> getPrecedes() {
         return precedes;
     }
 
@@ -101,36 +124,28 @@ public class Occurrent {
      * 
      */
     @JsonProperty("precedes")
-    public void setPrecedes(String precedes) {
+    public void setPrecedes(List<String> precedes) {
         this.precedes = precedes;
     }
 
-    /**
-     * describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
-     * 
-     */
     @JsonProperty("regulates_process_to_process")
-    public String getRegulatesProcessToProcess() {
+    public List<String> getRegulatesProcessToProcess() {
         return regulatesProcessToProcess;
     }
 
-    /**
-     * describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
-     * 
-     */
     @JsonProperty("regulates_process_to_process")
-    public void setRegulatesProcessToProcess(String regulatesProcessToProcess) {
+    public void setRegulatesProcessToProcess(List<String> regulatesProcessToProcess) {
         this.regulatesProcessToProcess = regulatesProcessToProcess;
     }
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasInput", hasInput).append("hasParticipant", hasParticipant).append("precedes", precedes).append("regulatesProcessToProcess", regulatesProcessToProcess).toString();
+        return new ToStringBuilder(this).append("hasInput", hasInput).append("hasParticipant", hasParticipant).append("negativelyRegulatesProcessToProcess", negativelyRegulatesProcessToProcess).append("positivelyRegulatesProcessToProcess", positivelyRegulatesProcessToProcess).append("precedes", precedes).append("regulatesProcessToProcess", regulatesProcessToProcess).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(precedes).append(regulatesProcessToProcess).append(hasInput).append(hasParticipant).toHashCode();
+        return new HashCodeBuilder().append(precedes).append(positivelyRegulatesProcessToProcess).append(regulatesProcessToProcess).append(negativelyRegulatesProcessToProcess).append(hasInput).append(hasParticipant).toHashCode();
     }
 
     @Override
@@ -142,7 +157,7 @@ public class Occurrent {
             return false;
         }
         Occurrent rhs = ((Occurrent) other);
-        return new EqualsBuilder().append(precedes, rhs.precedes).append(regulatesProcessToProcess, rhs.regulatesProcessToProcess).append(hasInput, rhs.hasInput).append(hasParticipant, rhs.hasParticipant).isEquals();
+        return new EqualsBuilder().append(precedes, rhs.precedes).append(positivelyRegulatesProcessToProcess, rhs.positivelyRegulatesProcessToProcess).append(regulatesProcessToProcess, rhs.regulatesProcessToProcess).append(negativelyRegulatesProcessToProcess, rhs.negativelyRegulatesProcessToProcess).append(hasInput, rhs.hasInput).append(hasParticipant, rhs.hasParticipant).isEquals();
     }
 
 }

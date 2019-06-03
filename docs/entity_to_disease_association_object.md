@@ -1,19 +1,17 @@
 # Slot: object
 
 
-disease
 
-URI: [http://w3id.org/biolink/vocab/entity_to_disease_association_object](slot_uri)
-## Mappings
 
+URI: [biolink:entity_to_disease_association_object](https://w3id.org/biolink/vocab/entity_to_disease_association_object)
 ## Domain and Range
 
-[EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) -> [Disease](Disease.md)
+[EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) ->  <sub>REQ</sub> [Disease](Disease.md)
 ## Inheritance
 
  *  is_a: [object](object.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)
+ * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)

@@ -6,197 +6,192 @@
 #   1) make imgflags="-i"             -- generate uml images in images subdirectory (default)
 #   2) make imgflags="-i --noimages"  -- assume uml images already exist and generate links to them
 #   3) make imgflags=""               -- genrate uml images as inline url's
-imgflags?=-i 
+imgflags?=--noimages
 
 
 # ----------------------------------------
 # TOP LEVEL TARGETS
 # ----------------------------------------
-all: build test
-test: pytests
-shex: shex/meta.ttl shex/biolink-model.ttl
-rdf: rdf/meta.ttl rdf/biolink-model.ttl
-docs: metamodel/docs/index.md docs/index.md
+all: install tests build
 
-build: metamodel/context.jsonld context.jsonld build_core contrib_build_monarch contrib_build_translator contrib_build_go
-build_core: metamodel/docs/index.md biolinkmodel/datamodel.py docs/index.md gen-golr-views \
-ontology/biolink.ttl json-schema/biolink-model.json java graphql/biolink-model.graphql proto/biolink-model.proto \
-gen-graphviz rdf/meta.ttl shex/meta.ttl rdf/biolink-model.ttl shex/biolink-model.ttl
+# Build the biolink model python library
+python: biolinkmodel/datamodel.py
+docs: docs/index.md
+json-schema: json-schema/biolink-model.json
 
-contrib_build_%: contrib-dir-% contrib/%/docs/index.md contrib/%/datamodel.py contrib-golr-% contrib/%/ontology.ttl \
-contrib/%/schema.json contrib-java-% contrib/%/%.graphql contrib/%/shex
-	echo
+build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz java context.jsonld \
+json-schema/biolink-model.json biolink-model.owl biolink-model.proto biolink-model.shex biolink-model.ttl
 
-install:
-	pip install -e . --upgrade
+# TODO: Get this working
+build_contrib: contrib_build_monarch contrib_build_translator contrib_build_go
+
+install: env.lock
+
+
+
+# ---------------------------------------
+# Install package into build environment
+# ---------------------------------------
+env.lock:
+	pipenv install --dev
+	cp /dev/null env.lock
 
 
 # ----------------------------------------
 # BUILD/COMPILATION
 # ----------------------------------------
 # ~~~~~~~~~~~~~~~~~~~~
-# CSV
+# Python
 # ~~~~~~~~~~~~~~~~~~~~
-kbsync: subsets/biological_entity.csv
-	cp $< ../translator-knowledge-beacon/api/types.csv
+biolinkmodel/datamodel.py: biolink-model.yaml env.lock
+	pipenv run gen-py-classes $< > tmp.py && pipenv run python tmp.py &&  (pipenv run comparefiles tmp.py $@ && cp $@ $@-PREV && cp tmp.py $@); rm tmp.py
 
-subsets/biological_entity.csv: biolink-model.yaml
-	gen-csv -r 'biological entity' biolink-model.yaml > $@.tmp && mv $@.tmp $@
-
-biolink-model.tsv: biolink-model.yaml
-	gen-csv -f tsv biolink-model.yaml > $@.tmp && mv $@.tmp $@
-
-# ~~~~~~~~~~~~~~~~~~~~
-# JSON-LD CONTEXT
-# ~~~~~~~~~~~~~~~~~~~~
-context.jsonld: biolink-model.yaml
-	gen-jsonld-context $< > tmp.jsonld && (comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
-
-metamodel/context.jsonld: meta.yaml
-	gen-jsonld-context $< > tmp.jsonld && (comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
-
-# ~~~~~~~~~~~~~~~~~~~~
-# JSONSCHEMA -> Java
-# ~~~~~~~~~~~~~~~~~~~~
-json-schema/%.json: dir-json-schema %.yaml
-	gen-json-schema $*.yaml > $@
-
-contrib/%/schema.json: contrib-dir-% contrib/%.yaml
-	gen-json-schema contrib/$*.yaml > $@
-
-java: dir-java json-schema/biolink-model.json
-	jsonschema2pojo --source json-schema/biolink-model.json -T JSONSCHEMA -t java
-
-contrib-java-%: contrib-dir-% contrib/%/schema.json
-	mkdir -p contrib/$*/java
-	jsonschema2pojo --source contrib/$*/schema.json -T JSONSCHEMA -t contrib/$*/java
 
 # ~~~~~~~~~~~~~~~~~~~~
 # DOCS
 # ~~~~~~~~~~~~~~~~~~~~
-docs/index.md: biolink-model.yaml
-	gen-markdown --dir docs $(imgflags) $<
+docs/index.md: biolink-model.yaml env.lock
+	pipenv run gen-markdown --dir docs $(imgflags) $<
 
-metamodel/docs/index.md: meta.yaml
-	gen-markdown --dir metamodel/docs $(imgflags) $<
-
-contrib/%/docs/index.md: contrib/%.yaml
-	gen-markdown --dir contrib/$*/docs $<
-
-# ~~~~~~~~~~~~~~~~~~~~
-# Ontology
-# ~~~~~~~~~~~~~~~~~~~~
-ontology/biolink.ttl: biolink-model.yaml
-	gen-owl -o $@ biolink-model.yaml
-
-contrib/%/ontology.ttl: contrib/%.yaml
-	gen-owl -o $@ contrib/$*.yaml
-
-# ~~~~~~~~~~~~~~~~~~~~
-# RDF
-# ~~~~~~~~~~~~~~~~~~~~
-rdf/%.ttl: dir-rdf metamodel/context.jsonld meta.yaml
-	gen-rdf $*.yaml -f ttl --context https://raw.githubusercontent.com/biolink/biolink-model/master/metamodel/context.jsonld > rdf/$*.ttl
-
-
-contrib/%/datamodel.py: contrib/%.yaml
-	gen-py-classes contrib/$*.yaml > $@
-
-gen-graphviz: dir-graphviz biolink-model.yaml
-	gen-graphviz  -d graphviz biolink-model.yaml -f gv
-	gen-graphviz  -d graphviz biolink-model.yaml -f svg
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Solr
 # ~~~~~~~~~~~~~~~~~~~~
-gen-golr-views: dir-golr-views biolink-model.yaml
-	gen-golr-views -d golr-views biolink-model.yaml
-
-contrib-golr-%: contrib/%.yaml
-	mkdir -p contrib/$*/golr-views
-	gen-golr-views -d contrib/$*/golr-views contrib/$*.yaml
-
-# ~~~~~~~~~~~~~~~~~~~~
-# Python
-# ~~~~~~~~~~~~~~~~~~~~
-contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml
-	gen-py-classes contrib/$*.yaml > tmp.py && (comparefiles tmp.py $@ && cp tmp.py $@); rm tmp.py
-
-# ~~~~~~~~~~~~~~~~~~~~
-# ShEx
-# ~~~~~~~~~~~~~~~~~~~~
-shex/%.ttl: dir-shex %.yaml
-	gen-shex $*.yaml -f rdf > shex/$*.ttl
-	gen-shex $*.yaml -c -f rdf > shex/$*nc.ttl
-	gen-shex $*.yaml -f shex > shex/$*.shex
-	gen-shex $*.yaml -c -f shex > shex/$*nc.shex
-	gen-shex $*.yaml -f json > shex/$*.json
-	gen-shex $*.yaml -c -f json > shex/$*nc.json
-
-contrib/%/shex:
-	mkdir -p contrib/$*/shex
-	gen-shex contrib/$*.yaml -f rdf > contrib/$*/shex/$*.ttl
-	gen-shex contrib/$*.yaml -c -f rdf > contrib/$*/shex/$*nc.ttl
-	gen-shex contrib/$*.yaml -f shex > contrib/$*/shex/$*.shex
-	gen-shex contrib/$*.yaml -c -f shex > contrib/$*/shex/$*nc.shex
-	gen-shex contrib/$*.yaml -f json > contrib/$*/shex/$*.json
-	gen-shex contrib/$*.yaml -c -f json > contrib/$*/shex/$*nc.json
+gen-golr-views: biolink-model.yaml dir-golr-views env.lock
+	pipenv run gen-golr-views -d golr-views $<
 
 
 # ~~~~~~~~~~~~~~~~~~~~
 # Graphql
 # ~~~~~~~~~~~~~~~~~~~~
+biolink-model.graphql: biolink-model.yaml env.lock
+	pipenv run gen-graphql $< > $@
 
-graphql/biolink-model.graphql: dir-graphql biolink-model.yaml
-	gen-graphql biolink-model.yaml > $@
 
-proto/biolink-model.proto: dir-proto biolink-model.yaml
-	gen-proto biolink-model.yaml > $@
+# ~~~~~~~~~~~~~~~~~~~~
+# Graphviz
+# ~~~~~~~~~~~~~~~~~~~~
+gen-graphviz: biolink-model.yaml dir-graphviz env.lock
+	pipenv run gen-graphviz  -d graphviz $< -f gv
+	pipenv run gen-graphviz  -d graphviz $< -f svg
 
-contrib/%/%.graphql: contrib-dir-% contrib/%.yaml
-	gen-graphql contrib/$*.yaml > contrib/$*/$*.graphql
+
+# ~~~~~~~~~~~~~~~~~~~~
+# Java
+# ~~~~~~~~~~~~~~~~~~~~
+java: json-schema/biolink-model.json dir-java env.lock
+	jsonschema2pojo --source $< -T JSONSCHEMA -t java
+
+
+# ~~~~~~~~~~~~~~~~~~~~
+# JSON-LD CONTEXT
+# ~~~~~~~~~~~~~~~~~~~~
+context.jsonld: biolink-model.yaml env.lock
+	pipenv run gen-jsonld-context $< > tmp.jsonld && ( pipenv run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
+
+
+# ~~~~~~~~~~~~~~~~~~~~
+# JSON-SCHEMA
+# ~~~~~~~~~~~~~~~~~~~~
+json-schema/biolink-model.json: biolink-model.yaml dir-json-schema env.lock
+	pipenv run gen-json-schema $< > $@
+
+
+# ~~~~~~~~~~~~~~~~~~~~
+# Ontology
+# ~~~~~~~~~~~~~~~~~~~~
+biolink-model.owl: biolink-model.yaml env.lock
+	pipenv run gen-owl -o $@ $<
+
+
+# ~~~~~~~~~~~~~~~~~~~~
+# Proto
+# ~~~~~~~~~~~~~~~~~~~~
+biolink-model.proto: biolink-model.yaml env.lock
+	pipenv run gen-proto $< > $@
+
+# ~~~~~~~~~~~~~~~~~~~~
+# RDF
+# ~~~~~~~~~~~~~~~~~~~~
+biolink-model.ttl: biolink-model.yaml env.lock
+	pipenv run gen-rdf -f ttl --context https://w3id.org/biolink/biolinkml/context.jsonld $<  > $@
+
+# ~~~~~~~~~~~~~~~~~~~~
+# ShEx
+# ~~~~~~~~~~~~~~~~~~~~
+biolink-model.shex: biolink-model.yaml
+	pipenv run gen-shex $< > $@
+
 
 # ----------------------------------------
 # Ontology conversion
 # ----------------------------------------
 
-ontology/%.json: ontology/%.ttl
-	owltools $< -o -f json $@
+# ontology/%.json: ontology/%.ttl
+# 	owltools $< -o -f json $@
 
-ontology/%.obo: ontology/%.ttl
-	owltools $< -o -f obo --no-check $@
+# ontology/%.obo: ontology/%.ttl
+# 	owltools $< -o -f obo --no-check $@
 
-ontology/%.omn: ontology/%.ttl
-	owltools $< -o -f omn --prefix '' http://w3id.org/biolink/vocab/ --prefix def http://purl.obolibrary.org/obo/IAO_0000115 $@
+# ontology/%.omn: ontology/%.ttl
+# 	owltools $< -o -f omn --prefix '' http://w3id.org/biolink/vocab/ --prefix def http://purl.obolibrary.org/obo/IAO_0000115 $@
 
-ontology/%.tree: ontology/%.json
-	ogr --showdefs -t tree -r $< % > $@
+# ontology/%.tree: ontology/%.json
+# 	ogr --showdefs -t tree -r $< % > $@
 
-ontology/%.png: ontology/%.json
-	ogr-tree -t png -o $@ -r $< %
+# ontology/%.png: ontology/%.json
+# 	ogr-tree -t png -o $@ -r $< %
+
 
 # ~~~~~~~~~~~~~~~~~~~~
-# Update the metamodel - not part of the main build.  Use this method when meta.yaml has changed
+# Contrib
 # ~~~~~~~~~~~~~~~~~~~~
-MM = metamodel/metamodel.py
-BMM = biolinkmodel/datamodel.py
+contrib_build_%: contrib-dir-% contrib/%/docs/index.md contrib/%/datamodel.py contrib-golr-% contrib/%/%.graphql \
+contrib/%/%.owl contrib/%/schema.json contrib-java-% contrib/%/%.shex
+	echo
 
-regen-mm:
-	gen-py-classes meta.yaml > tmp.py && python tmp.py && (comparefiles tmp.py $(MM) && cp $(MM) $(MM)-PREV && cp tmp.py $(MM)); rm tmp.py
-	gen-py-classes biolink-model.yaml > tmp.py && python tmp.py &&  (comparefiles tmp.py $(BMM) && cp $(BMM) $(BMM)-PREV && cp tmp.py $(BMM)); rm tmp.py
+contrib/%/datamodel.py: contrib-dir-% contrib/%.yaml env.lock
+	pipenv run gen-py-classes contrib/$*.yaml > tmp.py && (pipenv run comparefiles tmp.py $@ && cp tmp.py $@); rm tmp.py
+
+contrib/%/docs/index.md: contrib/%.yaml
+	pipenv run gen-markdown --dir contrib/$*/docs $<
+
+contrib/%/datamodel.py: contrib/%.yaml
+	pipenv run gen-py-classes contrib/$*.yaml > $@
+
+contrib-golr-%: contrib-dir-% contrib/%.yaml
+	pipenv run gen-golr-views -d contrib/$*/golr-views contrib/$*.yaml
+
+contrib/%/%.graphql: contrib-dir-% contrib/%.yaml
+	pipenv run gen-graphql contrib/$*.yaml > contrib/$*/$*.graphql
+
+contrib-java-%: contrib-dir-% contrib/%/schema.json
+	mkdir -p contrib/$*/java
+	jsonschema2pojo --source contrib/$*/schema.json -T JSONSCHEMA -t contrib/$*/java
+
+contrib/%/schema.json: contrib-dir-% contrib/%.yaml
+	pipenv run gen-json-schema contrib/$*.yaml > $@
+
+contrib/%/%.owl: contrib/%.yaml
+	pipenv run gen-owl -o $@ contrib/$*.yaml
+
+contrib/%/%.shex: contrib-dir-% contrib/%.yaml
+	pipenv run gen-shex contrib/*.yaml > $@
 
 # ----------------------------------------
 # TESTS
 # ----------------------------------------
-pytests:
-	python -m unittest discover -p 'test_*.py'
+tests: biolink-model.yaml env.lock
+	pipenv run python -m unittest discover -p 'test_*.py'
 
 
 # ----------------------------------------
 # CLEAN
 # ----------------------------------------
 clean:
-	rm -rf subsets java shex proto ontology json-schema graphviz graphql golr-views contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md
+	rm -rf contrib/go contrib/monarch contrib/translator docs/images/* docs/*.md golr-views graphql graphviz java json json-schema ontology proto rdf shex
+	rm -f env.lock
+	pipenv --rm
 
 # ----------------------------------------
 # UTILS

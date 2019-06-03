@@ -1,19 +1,17 @@
 # Slot: has gene
 
 
-Each allele can be associated with any number of genes
 
-URI: [http://w3id.org/biolink/vocab/sequence_variant_has_gene](slot_uri)
-## Mappings
 
+URI: [biolink:sequence_variant_has_gene](https://w3id.org/biolink/vocab/sequence_variant_has_gene)
 ## Domain and Range
 
-[SequenceVariant](SequenceVariant.md) -> [Gene](Gene.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>0..*</sub> [Gene](Gene.md)
 ## Inheritance
 
  *  is_a: [has gene](has_gene.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [SequenceVariant](SequenceVariant.md)
+ * [SequenceVariant](SequenceVariant.md)

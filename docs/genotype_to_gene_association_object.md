@@ -1,19 +1,17 @@
 # Slot: object
 
 
-gene implicated in genotype
 
-URI: [http://w3id.org/biolink/vocab/genotype_to_gene_association_object](slot_uri)
-## Mappings
 
+URI: [biolink:genotype_to_gene_association_object](https://w3id.org/biolink/vocab/genotype_to_gene_association_object)
 ## Domain and Range
 
-[GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) -> [Gene](Gene.md)
+[GenotypeToGeneAssociation](GenotypeToGeneAssociation.md) ->  <sub>REQ</sub> [Gene](Gene.md)
 ## Inheritance
 
  *  is_a: [object](object.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)
+ * [GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)

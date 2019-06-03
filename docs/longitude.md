@@ -3,18 +3,16 @@
 
 longitude
 
-URI: [http://w3id.org/biolink/vocab/longitude](slot_uri)
-## Mappings
-
- * [wgs:long](http://purl.obolibrary.org/obo/wgs_long)
+URI: [biolink:longitude](https://w3id.org/biolink/vocab/longitude)
 ## Domain and Range
 
-[GeographicLocation](GeographicLocation.md) -> **float**
+[GeographicLocation](GeographicLocation.md) ->  <sub>OPT</sub> [Float](Float.md)
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeographicLocation](GeographicLocation.md)
+ * [GeographicLocation](GeographicLocation.md)
+ * [GeographicLocationAtTime](GeographicLocationAtTime.md)

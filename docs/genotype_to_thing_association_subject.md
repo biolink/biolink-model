@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-genotype that is the subject of the association
 
-URI: [http://w3id.org/biolink/vocab/genotype_to_thing_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:genotype_to_thing_association_subject](https://w3id.org/biolink/vocab/genotype_to_thing_association_subject)
 ## Domain and Range
 
-[GenotypeToThingAssociation](GenotypeToThingAssociation.md) -> [Genotype](Genotype.md)
+[GenotypeToThingAssociation](GenotypeToThingAssociation.md) ->  <sub>REQ</sub> [Genotype](Genotype.md)
 ## Inheritance
 
  *  is_a: [subject](subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GenotypeToThingAssociation](GenotypeToThingAssociation.md)
+ * [GenotypeToThingAssociation](GenotypeToThingAssociation.md)

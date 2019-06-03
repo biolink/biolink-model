@@ -3,17 +3,15 @@
 
 connects an association to an instance of supporting evidence
 
-URI: [http://w3id.org/biolink/vocab/has_evidence](slot_uri)
-## Mappings
-
- * [RO:0002558](http://purl.obolibrary.org/obo/RO_0002558)
+URI: [biolink:has_evidence](https://w3id.org/biolink/vocab/has_evidence)
 ## Domain and Range
 
-[Association](Association.md) -> [EvidenceType](EvidenceType.md)
+[Association](Association.md) ->  <sub>OPT</sub> [EvidenceType](EvidenceType.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [Association](Association.md)

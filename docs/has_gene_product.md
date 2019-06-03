@@ -3,19 +3,15 @@
 
 holds between a gene and a transcribed and/or translated product generated from it
 
-URI: [http://w3id.org/biolink/vocab/has_gene_product](slot_uri)
-## Mappings
-
- * [RO:0002205](http://purl.obolibrary.org/obo/RO_0002205)
- * [WD:P688](http://purl.obolibrary.org/obo/WD_P688)
+URI: [biolink:has_gene_product](https://w3id.org/biolink/vocab/has_gene_product)
 ## Domain and Range
 
-[Gene](Gene.md) -> [GeneProduct](GeneProduct.md)
+[Gene](Gene.md) ->  <sub>0..*</sub> [GeneProduct](GeneProduct.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [Gene](Gene.md)
+ * [Gene](Gene.md)

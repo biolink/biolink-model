@@ -1,19 +1,17 @@
 # Slot: object
 
 
-gene implicated in genotype
 
-URI: [http://w3id.org/biolink/vocab/genotype_to_variant_association_object](slot_uri)
-## Mappings
 
+URI: [biolink:genotype_to_variant_association_object](https://w3id.org/biolink/vocab/genotype_to_variant_association_object)
 ## Domain and Range
 
-[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) -> [SequenceVariant](SequenceVariant.md)
+[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) ->  <sub>REQ</sub> [SequenceVariant](SequenceVariant.md)
 ## Inheritance
 
  *  is_a: [object](object.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)
+ * [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)

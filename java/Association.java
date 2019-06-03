@@ -19,6 +19,10 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonPropertyOrder({
     "association_slot",
     "association_type",
+    "clinical_modifier_qualifier",
+    "edge_label",
+    "has_confidence_level",
+    "has_evidence",
     "id",
     "negated",
     "object",
@@ -45,7 +49,36 @@ public class Association {
     @JsonPropertyDescription("connects an association to the type of association (e.g. gene to phenotype)")
     private String associationType;
     /**
+     * Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+     * 
+     */
+    @JsonProperty("clinical_modifier_qualifier")
+    @JsonPropertyDescription("Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects")
+    private String clinicalModifierQualifier;
+    /**
+     * A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * 
+     */
+    @JsonProperty("edge_label")
+    @JsonPropertyDescription("A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.")
+    private String edgeLabel;
+    /**
+     * connects an association to a qualitative term denoting the level of confidence
+     * 
+     */
+    @JsonProperty("has_confidence_level")
+    @JsonPropertyDescription("connects an association to a qualitative term denoting the level of confidence")
+    private String hasConfidenceLevel;
+    /**
+     * connects an association to an instance of supporting evidence
+     * 
+     */
+    @JsonProperty("has_evidence")
+    @JsonPropertyDescription("connects an association to an instance of supporting evidence")
+    private String hasEvidence;
+    /**
      * A unique identifier for an association
+     * (Required)
      * 
      */
     @JsonProperty("id")
@@ -141,7 +174,80 @@ public class Association {
     }
 
     /**
+     * Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+     * 
+     */
+    @JsonProperty("clinical_modifier_qualifier")
+    public String getClinicalModifierQualifier() {
+        return clinicalModifierQualifier;
+    }
+
+    /**
+     * Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+     * 
+     */
+    @JsonProperty("clinical_modifier_qualifier")
+    public void setClinicalModifierQualifier(String clinicalModifierQualifier) {
+        this.clinicalModifierQualifier = clinicalModifierQualifier;
+    }
+
+    /**
+     * A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * 
+     */
+    @JsonProperty("edge_label")
+    public String getEdgeLabel() {
+        return edgeLabel;
+    }
+
+    /**
+     * A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * 
+     */
+    @JsonProperty("edge_label")
+    public void setEdgeLabel(String edgeLabel) {
+        this.edgeLabel = edgeLabel;
+    }
+
+    /**
+     * connects an association to a qualitative term denoting the level of confidence
+     * 
+     */
+    @JsonProperty("has_confidence_level")
+    public String getHasConfidenceLevel() {
+        return hasConfidenceLevel;
+    }
+
+    /**
+     * connects an association to a qualitative term denoting the level of confidence
+     * 
+     */
+    @JsonProperty("has_confidence_level")
+    public void setHasConfidenceLevel(String hasConfidenceLevel) {
+        this.hasConfidenceLevel = hasConfidenceLevel;
+    }
+
+    /**
+     * connects an association to an instance of supporting evidence
+     * 
+     */
+    @JsonProperty("has_evidence")
+    public String getHasEvidence() {
+        return hasEvidence;
+    }
+
+    /**
+     * connects an association to an instance of supporting evidence
+     * 
+     */
+    @JsonProperty("has_evidence")
+    public void setHasEvidence(String hasEvidence) {
+        this.hasEvidence = hasEvidence;
+    }
+
+    /**
      * A unique identifier for an association
+     * (Required)
      * 
      */
     @JsonProperty("id")
@@ -151,6 +257,7 @@ public class Association {
 
     /**
      * A unique identifier for an association
+     * (Required)
      * 
      */
     @JsonProperty("id")
@@ -292,12 +399,12 @@ public class Association {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("associationSlot", associationSlot).append("associationType", associationType).append("id", id).append("negated", negated).append("object", object).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("associationSlot", associationSlot).append("associationType", associationType).append("clinicalModifierQualifier", clinicalModifierQualifier).append("edgeLabel", edgeLabel).append("hasConfidenceLevel", hasConfidenceLevel).append("hasEvidence", hasEvidence).append("id", id).append("negated", negated).append("object", object).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(providedBy).append(negated).append(associationSlot).append(subject).append(associationType).append(qualifiers).append(id).append(object).append(publications).append(relation).toHashCode();
+        return new HashCodeBuilder().append(providedBy).append(negated).append(associationSlot).append(clinicalModifierQualifier).append(subject).append(associationType).append(qualifiers).append(relation).append(hasConfidenceLevel).append(hasEvidence).append(edgeLabel).append(id).append(object).append(publications).toHashCode();
     }
 
     @Override
@@ -309,7 +416,7 @@ public class Association {
             return false;
         }
         Association rhs = ((Association) other);
-        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(associationSlot, rhs.associationSlot).append(subject, rhs.subject).append(associationType, rhs.associationType).append(qualifiers, rhs.qualifiers).append(id, rhs.id).append(object, rhs.object).append(publications, rhs.publications).append(relation, rhs.relation).isEquals();
+        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(associationSlot, rhs.associationSlot).append(clinicalModifierQualifier, rhs.clinicalModifierQualifier).append(subject, rhs.subject).append(associationType, rhs.associationType).append(qualifiers, rhs.qualifiers).append(relation, rhs.relation).append(hasConfidenceLevel, rhs.hasConfidenceLevel).append(hasEvidence, rhs.hasEvidence).append(edgeLabel, rhs.edgeLabel).append(id, rhs.id).append(object, rhs.object).append(publications, rhs.publications).isEquals();
     }
 
 }

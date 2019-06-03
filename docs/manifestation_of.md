@@ -3,18 +3,15 @@
 
 used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
 
-URI: [http://w3id.org/biolink/vocab/manifestation_of](slot_uri)
-## Mappings
-
- * [SEMMEDDB:MANIFESTATION_OF](http://purl.obolibrary.org/obo/SEMMEDDB_MANIFESTATION_OF)
- * [WD:P1557](http://purl.obolibrary.org/obo/WD_P1557)
+URI: [biolink:manifestation_of](https://w3id.org/biolink/vocab/manifestation_of)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [Disease](Disease.md)
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [Disease](Disease.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [NamedThing](NamedThing.md)

@@ -3,17 +3,27 @@
 
 a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
 
-URI: [http://w3id.org/biolink/vocab/onset_qualifier](slot_uri)
-## Mappings
-
+URI: [biolink:onset_qualifier](https://w3id.org/biolink/vocab/onset_qualifier)
 ## Domain and Range
 
-[EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) -> [Onset](Onset.md)
+[EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) ->  <sub>OPT</sub> [Onset](Onset.md)
 ## Inheritance
 
  *  is_a: [association slot](association_slot.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
+ * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
+ * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
+ * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)
+ * [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
+ * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
+ * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md)
+ * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
+ * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
+ * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
+ * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md)
+ * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
+ * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)

@@ -3,17 +3,15 @@
 
 holds between two entities where exposure to one entity increases the chance of developing the other
 
-URI: [http://w3id.org/biolink/vocab/predisposes](slot_uri)
-## Mappings
-
- * [SEMMEDDB:PREDISPOSES](http://purl.obolibrary.org/obo/SEMMEDDB_PREDISPOSES)
+URI: [biolink:predisposes](https://w3id.org/biolink/vocab/predisposes)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
 ## Inheritance
 
- *  is_a: [affects risk for](affects_risk_for.md) *subsets*: (translator_minimal)
+ *  is_a: [affects risk for](affects_risk_for.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [NamedThing](NamedThing.md)

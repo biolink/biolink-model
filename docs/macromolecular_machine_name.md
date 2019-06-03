@@ -1,19 +1,28 @@
 # Slot: name
 
 
-genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
 
-URI: [http://w3id.org/biolink/vocab/macromolecular_machine_name](slot_uri)
-## Mappings
 
+URI: [biolink:macromolecular_machine_name](https://w3id.org/biolink/vocab/macromolecular_machine_name)
 ## Domain and Range
 
-[MacromolecularMachine](MacromolecularMachine.md) -> [SymbolType](SymbolType.md)
+[MacromolecularMachine](MacromolecularMachine.md) ->  <sub>OPT</sub> [SymbolType](SymbolType.md)
 ## Inheritance
 
- *  is_a: [name](name.md) *subsets*: (translator_minimal)
+ *  is_a: [name](name.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [MacromolecularMachine](MacromolecularMachine.md)
+ * [RNAProduct](RNAProduct.md)
+ * [RNAProductIsoform](RNAProductIsoform.md)
+ * [Gene](Gene.md)
+ * [GeneOrGeneProduct](GeneOrGeneProduct.md)
+ * [GeneProduct](GeneProduct.md)
+ * [GeneProductIsoform](GeneProductIsoform.md)
+ * [MacromolecularComplex](MacromolecularComplex.md)
+ * [MacromolecularMachine](MacromolecularMachine.md)
+ * [MicroRNA](MicroRNA.md)
+ * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+ * [Protein](Protein.md)
+ * [ProteinIsoform](ProteinIsoform.md)

@@ -1,85 +1,141 @@
 {
-   "$id": "https://biolink.github.io/biolink-model/ontology/biolink.ttl",
+   "$id": "https://w3id.org/biolink/biolink-model",
    "$schema": "http://json-schema.org/draft-04/schema#",
    "definitions": {
       "actively_involved_in": {
          "description": "holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects": {
          "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_abundance_of": {
          "description": "holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_activity_of": {
          "description": "holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_degradation_of": {
          "description": "holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_expression_of": {
          "description": "holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_folding_of": {
-         "description": "holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other ",
-         "type": "string"
+         "description": "holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_localization_of": {
          "description": "holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_metabolic_processing_of": {
          "description": "holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_molecular_modification_of": {
          "description": "holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_mutation_rate_of": {
          "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_response_to": {
          "description": "holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_risk_for": {
-         "description": "holds between two entities where exposure to one entity alters the chance of developing the other ",
-         "type": "string"
+         "description": "holds between two entities where exposure to one entity alters the chance of developing the other",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_secretion_of": {
          "description": "holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_splicing_of": {
          "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_stability_of": {
          "description": "holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_synthesis_of": {
          "description": "holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_transport_of": {
          "description": "holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "affects_uptake_of": {
          "description": "holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "aggregate_statistic": {
-         "description": "A grouping for any property that holds between a node and a value",
          "type": "string"
       },
       "association_slot": {
@@ -92,11 +148,17 @@
       },
       "biomarker_for": {
          "description": "holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "capable_of": {
-         "description": "holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function. ",
-         "type": "string"
+         "description": "holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "category": {
          "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
@@ -107,27 +169,42 @@
       },
       "causes": {
          "description": "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "clinical_modifier_qualifier": {
          "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
          "type": "string"
       },
-      "co-localizes_with": {
-         "description": "holds between two entities that are observed to be located in the same place.",
-         "type": "string"
-      },
       "coexists_with": {
          "description": "holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "colocalizes_with": {
+         "description": "holds between two entities that are observed to be located in the same place.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "contributes_to": {
          "description": "holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "correlated_with": {
          "description": "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "creation_date": {
          "description": "date on which thing was created. This can be applied to nodes or edges",
@@ -135,75 +212,129 @@
       },
       "decreases_abundance_of": {
          "description": "holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_activity_of": {
          "description": "holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_degradation_of": {
          "description": "holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_expression_of": {
          "description": "holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_folding_of": {
-         "description": "holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other ",
-         "type": "string"
+         "description": "holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_localization_of": {
          "description": "holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_metabolic_processing_of": {
          "description": "holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_molecular_modification_of": {
          "description": "holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_mutation_rate_of": {
          "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_response_to": {
          "description": "holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_secretion_of": {
          "description": "holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_splicing_of": {
          "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_stability_of": {
          "description": "holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_synthesis_of": {
          "description": "holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_transport_of": {
          "description": "holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "decreases_uptake_of": {
          "description": "holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "derives_from": {
          "description": "holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "derives_into": {
          "description": "holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "description": {
          "description": "a human-readable description of a thing",
@@ -211,7 +342,10 @@
       },
       "disrupts": {
          "description": "describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "drug": {
          "items": {
@@ -220,20 +354,25 @@
          "type": "array"
       },
       "edge_label": {
-         "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. ",
+         "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
          "type": "string"
       },
       "end_interbase_coordinate": {
-         "description": "TODO",
          "type": "string"
       },
       "expressed_in": {
          "description": "holds between a gene or gene product and an anatomical entity in which it is expressed",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "expresses": {
          "description": "holds between an anatomical entity and gene or gene product that is expressed there",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "filler": {
          "description": "The value in a property-value tuple",
@@ -249,11 +388,17 @@
       },
       "gene_associated_with_condition": {
          "description": "holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "genetically_interacts_with": {
          "description": "holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "genome_build": {
          "description": "TODO",
@@ -265,7 +410,10 @@
       },
       "has_biomarker": {
          "description": "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "has_chemical_formula": {
          "description": "description of chemical compound based on element symbols",
@@ -295,34 +443,51 @@
       },
       "has_gene_product": {
          "description": "holds between a gene and a transcribed and/or translated product generated from it",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "has_input": {
          "description": "holds between a process and a continuant, where the continuant is an input into the process",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "has_molecular_consequence": {
          "description": "connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "has_part": {
          "description": "holds between wholes and their parts (material entities or processes)",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "has_participant": {
-         "description": "holds between a process and a continuant, where the continuant is somehow involved in the process ",
-         "type": "string"
+         "description": "holds between a process and a continuant, where the continuant is somehow involved in the process",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "has_percentage": {
          "description": "equivalent to has quotient multiplied by 100",
          "type": "string"
       },
       "has_phenotype": {
-         "description": "holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). ",
-         "type": "string"
+         "description": "holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "has_quotient": {
-         "description": "A grouping for any property that holds between a node and a value",
          "type": "string"
       },
       "has_total": {
@@ -330,103 +495,168 @@
          "type": "string"
       },
       "has_zygosity": {
-         "description": "A grouping for any property that holds between a node and a value",
          "type": "string"
       },
       "homologous_to": {
          "description": "holds between two biological entities that have common evolutionary origin",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "id": {
          "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
          "type": "string"
       },
       "in_cell_population_with": {
-         "description": "holds between two genes or gene products that are expressed in the same cell type or population ",
-         "type": "string"
+         "description": "holds between two genes or gene products that are expressed in the same cell type or population",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "in_complex_with": {
          "description": "holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "in_pathway_with": {
          "description": "holds between two genes or gene products that are part of in the same biological pathway",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "in_taxon": {
          "description": "connects a thing to a class representing a taxon",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_abundance_of": {
          "description": "holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_activity_of": {
          "description": "holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_degradation_of": {
          "description": "holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_expression_of": {
          "description": "holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_folding_of": {
-         "description": "holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other ",
-         "type": "string"
+         "description": "holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_localization_of": {
          "description": "holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_metabolic_processing_of": {
          "description": "holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_molecular_modification_of": {
          "description": "holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_mutation_rate_of": {
          "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_response_to": {
          "description": "holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_secretion_of": {
          "description": "holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_splicing_of": {
          "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_stability_of": {
          "description": "holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_synthesis_of": {
          "description": "holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_transport_of": {
          "description": "holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "increases_uptake_of": {
          "description": "holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "interacting_molecules_category": {
          "type": "string"
       },
       "interacts_with": {
          "description": "holds between any two entities that directly or indirectly interact with each other",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "interbase_coordinate": {
          "description": "TODO",
@@ -442,11 +672,17 @@
       },
       "located_in": {
          "description": "holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "location_of": {
-         "description": "holds between material entity or site and a material entity that is located within it (but not considered a part of it) ",
-         "type": "string"
+         "description": "holds between material entity or site and a material entity that is located within it (but not considered a part of it)",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "longitude": {
          "description": "longitude",
@@ -454,15 +690,23 @@
       },
       "manifestation_of": {
          "description": "used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "model_of": {
-         "description": "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.    ",
-         "type": "string"
+         "description": "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "molecularly_interacts_with": {
-         "description": "holds between two entities that make physical contact as part of some interaction",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "name": {
          "description": "A human-readable name for a thing",
@@ -473,16 +717,22 @@
          "type": "string"
       },
       "negatively_regulates": {
-         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "negatively_regulates_entity_to_entity": {
-         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "negatively_regulates_process_to_process": {
-         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "node_property": {
          "description": "A grouping for any property that holds between a node and a value",
@@ -494,7 +744,10 @@
       },
       "occurs_in": {
          "description": "holds between a process and a material entity or site within which the process occurs",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "onset_qualifier": {
          "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
@@ -502,23 +755,38 @@
       },
       "orthologous_to": {
          "description": "a homology relationship between entities (typically genes) that diverged after a speciation event.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "overlaps": {
          "description": "holds between entties that overlap in their extents (materials or processes)",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "paralogous_to": {
          "description": "a homology relationship that holds between entities (typically genes) that diverged after a duplication event.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "part_of": {
          "description": "holds between parts and wholes (material entities or processes)",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "participates_in": {
          "description": "holds between a continuant and a process, where the continuant is somehow involved in the process",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "phase": {
          "description": "TODO",
@@ -526,35 +794,56 @@
       },
       "physically_interacts_with": {
          "description": "holds between two entities that make physical contact as part of some interaction",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "positively_regulates": {
-         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "positively_regulates_entity_to_entity": {
-         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "positively_regulates_process_to_process": {
-         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "precedes": {
          "description": "holds between two processes, where one completes before the other begins",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "predisposes": {
-         "description": "holds between two entities where exposure to one entity increases the chance of developing the other ",
-         "type": "string"
+         "description": "holds between two entities where exposure to one entity increases the chance of developing the other",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "prevents": {
-         "description": "holds between an entity whose application or use reduces the likelihood of a potential outcome.  Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.",
-         "type": "string"
+         "description": "holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "produces": {
          "description": "holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "provided_by": {
          "description": "connects an association to the agent (person, organization or group) that provided it",
@@ -579,20 +868,29 @@
          "type": "string"
       },
       "regulates": {
-         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "regulates_entity_to_entity": {
-         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "regulates_process_to_process": {
-         "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "related_to": {
-         "description": "A grouping for any relationship type that holds between any two things",
-         "type": "string"
+         "description": "A relationship that is asserted between two named things",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "relation": {
          "description": "the relationship type by which a subject is connected to an object in an association",
@@ -600,7 +898,10 @@
       },
       "same_as": {
          "description": "holds between two entities that are considered equivalent to each other",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "sequence_variant_qualifier": {
          "description": "a qualifier used in an association where the variant",
@@ -619,12 +920,14 @@
          "type": "string"
       },
       "start_interbase_coordinate": {
-         "description": "TODO",
          "type": "string"
       },
       "subclass_of": {
          "description": "holds between two classes where the domain class is a specialization of the range class",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "subject": {
          "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
@@ -646,12 +949,18 @@
          "type": "string"
       },
       "treated_by": {
-         "description": "holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition ",
-         "type": "string"
+         "description": "holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "treats": {
          "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "update_date": {
          "description": "date on which thing was updated. This can be applied to nodes or edges",
@@ -659,7 +968,10 @@
       },
       "xenologous_to": {
          "description": "a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       }
    },
    "properties": {
@@ -674,7 +986,17 @@
          "properties": {
             "expresses": {
                "description": "holds between an anatomical entity and gene or gene product that is expressed there",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "in_taxon": {
+               "description": "connects a thing to a class representing a taxon",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "AnatomicalEntity",
@@ -684,12 +1006,10 @@
          "description": "",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             }
@@ -701,17 +1021,14 @@
          "description": "A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship",
          "properties": {
             "object": {
-               "description": "the structure at an earlier time",
                "required": true,
                "type": "string"
             },
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "the structure at a later time",
                "required": true,
                "type": "string"
             }
@@ -723,17 +1040,14 @@
          "description": "A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms",
          "properties": {
             "object": {
-               "description": "the whole",
                "required": true,
                "type": "string"
             },
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "the part",
                "required": true,
                "type": "string"
             }
@@ -752,8 +1066,25 @@
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
             },
+            "clinical_modifier_qualifier": {
+               "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
+               "type": "string"
+            },
+            "edge_label": {
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "type": "string"
+            },
+            "has_confidence_level": {
+               "description": "connects an association to a qualitative term denoting the level of confidence",
+               "type": "string"
+            },
+            "has_evidence": {
+               "description": "connects an association to an instance of supporting evidence",
+               "type": "string"
+            },
             "id": {
                "description": "A unique identifier for an association",
+               "required": true,
                "type": "string"
             },
             "negated": {
@@ -799,13 +1130,106 @@
       },
       "Attribute": {
          "description": "A property or characteristic of an entity",
-         "properties": {},
+         "properties": {
+            "category": {
+               "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "description": {
+               "description": "a human-readable description of a thing",
+               "type": "string"
+            },
+            "full_name": {
+               "description": "a long-form human readable name for a thing",
+               "type": "string"
+            },
+            "id": {
+               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "required": true,
+               "type": "string"
+            },
+            "interacts_with": {
+               "description": "holds between any two entities that directly or indirectly interact with each other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "iri": {
+               "description": "An IRI for the node. This is determined by the id using expansion rules.",
+               "type": "string"
+            },
+            "name": {
+               "description": "A human-readable name for a thing",
+               "type": "string"
+            },
+            "node_property": {
+               "description": "A grouping for any property that holds between a node and a value",
+               "type": "string"
+            },
+            "related_to": {
+               "description": "A relationship that is asserted between two named things",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "subclass_of": {
+               "description": "holds between two classes where the domain class is a specialization of the range class",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "synonym": {
+               "description": "Alternate human-readable names for a thing",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "systematic_synonym": {
+               "description": "more commonly used for gene symbols in yeast",
+               "type": "string"
+            }
+         },
          "title": "Attribute",
          "type": "object"
       },
       "BiologicalProcess": {
          "description": "One or more causally connected executions of molecular functions",
-         "properties": {},
+         "properties": {
+            "has_input": {
+               "description": "holds between a process and a continuant, where the continuant is an input into the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_participant": {
+               "description": "holds between a process and a continuant, where the continuant is somehow involved in the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "precedes": {
+               "description": "holds between two processes, where one completes before the other begins",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "regulates_process_to_process": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
          "title": "BiologicalProcess",
          "type": "object"
       },
@@ -823,12 +1247,20 @@
       },
       "Biosample": {
          "description": "",
-         "properties": {},
+         "properties": {
+            "in_taxon": {
+               "description": "connects a thing to a class representing a taxon",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
          "title": "Biosample",
          "type": "object"
       },
       "BiosampleToDiseaseOrPhenotypicFeatureAssociation": {
-         "description": "An association between a biosample and a disease or phenotype\n  definitional: true",
+         "description": "An association between a biosample and a disease or phenotype",
          "properties": {},
          "title": "BiosampleToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
@@ -847,7 +1279,24 @@
       },
       "CaseToPhenotypicFeatureAssociation": {
          "description": "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype",
-         "properties": {},
+         "properties": {
+            "frequency_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
+            },
+            "onset_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "severity_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
+            },
+            "sex_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
+            }
+         },
          "title": "CaseToPhenotypicFeatureAssociation",
          "type": "object"
       },
@@ -867,7 +1316,6 @@
          "description": "An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype",
          "properties": {
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             }
@@ -891,7 +1339,6 @@
          "description": "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype",
          "properties": {
             "object": {
-               "description": "the disease or phenotype that is affected by the chemical",
                "required": true,
                "type": "string"
             }
@@ -903,7 +1350,6 @@
          "description": "An interaction between a chemical entity and a gene or gene product",
          "properties": {
             "object": {
-               "description": "the gene or gene product that is affected by the chemical",
                "required": true,
                "type": "string"
             }
@@ -915,7 +1361,6 @@
          "description": "An interaction between a chemical entity and a biological process or pathway",
          "properties": {
             "object": {
-               "description": "the pathway that is affected by the chemical",
                "required": true,
                "type": "string"
             }
@@ -976,15 +1421,31 @@
          "properties": {
             "correlated_with": {
                "description": "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "has_biomarker": {
                "description": "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "in_taxon": {
+               "description": "connects a thing to a class representing a taxon",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "treated_by": {
-               "description": "holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition ",
-               "type": "string"
+               "description": "holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "DiseaseOrPhenotypicFeature",
@@ -994,7 +1455,6 @@
          "description": "An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.",
          "properties": {
             "object": {
-               "description": "anatomical entity in which the disease or feature is found",
                "required": true,
                "type": "string"
             }
@@ -1004,7 +1464,24 @@
       },
       "DiseaseToPhenotypicFeatureAssociation": {
          "description": "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way",
-         "properties": {},
+         "properties": {
+            "frequency_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
+            },
+            "onset_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "severity_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
+            },
+            "sex_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
+            }
+         },
          "title": "DiseaseToPhenotypicFeatureAssociation",
          "type": "object"
       },
@@ -1037,8 +1514,23 @@
       "EnvironmentToPhenotypicFeatureAssociation": {
          "description": "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype",
          "properties": {
+            "frequency_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
+            },
+            "onset_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "severity_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
+            },
+            "sex_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
+            },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             }
@@ -1054,7 +1546,35 @@
       },
       "EnvironmentalProcess": {
          "description": "",
-         "properties": {},
+         "properties": {
+            "has_input": {
+               "description": "holds between a process and a continuant, where the continuant is an input into the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_participant": {
+               "description": "holds between a process and a continuant, where the continuant is somehow involved in the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "precedes": {
+               "description": "holds between two processes, where one completes before the other begins",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "regulates_process_to_process": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
          "title": "EnvironmentalProcess",
          "type": "object"
       },
@@ -1074,12 +1594,10 @@
          "description": "A transcript is formed from multiple exons",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             }
@@ -1087,10 +1605,15 @@
          "title": "ExonToTranscriptRelationship",
          "type": "object"
       },
-      "FrequencyQualifier": {
+      "FrequencyQualifierMixin": {
          "description": "Qualifier for freqency type associations",
-         "properties": {},
-         "title": "FrequencyQualifier",
+         "properties": {
+            "frequency_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
+            }
+         },
+         "title": "FrequencyQualifierMixin",
          "type": "object"
       },
       "FrequencyQuantifier": {
@@ -1105,7 +1628,6 @@
                "type": "string"
             },
             "has_quotient": {
-               "description": "A grouping for any property that holds between a node and a value",
                "type": "string"
             },
             "has_total": {
@@ -1126,12 +1648,10 @@
          "description": "An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed",
          "properties": {
             "object": {
-               "description": "class describing the activity, process or localization of the gene product",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "gene, product or macromolecular complex that has the function associated with the GO term",
                "required": true,
                "type": "string"
             }
@@ -1144,15 +1664,24 @@
          "properties": {
             "gene_associated_with_condition": {
                "description": "holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "genetically_interacts_with": {
                "description": "holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "has_gene_product": {
                "description": "holds between a gene and a transcribed and/or translated product generated from it",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "Gene",
@@ -1162,7 +1691,6 @@
          "description": "",
          "properties": {
             "subject": {
-               "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.\n  ",
                "required": true,
                "type": "string"
             }
@@ -1184,7 +1712,6 @@
                "type": "string"
             },
             "subject": {
-               "description": "A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.",
                "required": true,
                "type": "string"
             }
@@ -1203,19 +1730,31 @@
          "properties": {
             "expressed_in": {
                "description": "holds between a gene or gene product and an anatomical entity in which it is expressed",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "in_cell_population_with": {
-               "description": "holds between two genes or gene products that are expressed in the same cell type or population ",
-               "type": "string"
+               "description": "holds between two genes or gene products that are expressed in the same cell type or population",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "in_complex_with": {
                "description": "holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "in_pathway_with": {
                "description": "holds between two genes or gene products that are part of in the same biological pathway",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "GeneOrGeneProduct",
@@ -1231,17 +1770,14 @@
          "description": "A regulatory relationship between two genes",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             },
             "relation": {
-               "description": "the direction is always from regulator to regulated",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             }
@@ -1252,8 +1788,19 @@
       "GeneToDiseaseAssociation": {
          "description": "",
          "properties": {
+            "frequency_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
+            },
+            "onset_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "severity_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
+            },
             "subject": {
-               "description": "gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model",
                "required": true,
                "type": "string"
             }
@@ -1265,25 +1812,20 @@
          "description": "An association between a gene and an expression site, possibly qualified by stage/timing info.",
          "properties": {
             "object": {
-               "description": "location in which the gene is expressed",
                "required": true,
                "type": "string"
             },
             "quantifier_qualifier": {
-               "description": "can be used to indicate magnitude, or also ranking",
                "type": "string"
             },
             "relation": {
-               "description": "expression relationship",
                "required": true,
                "type": "string"
             },
             "stage_qualifier": {
-               "description": "stage at which the gene is expressed in the site",
                "type": "string"
             },
             "subject": {
-               "description": "gene in which variation is correlated with the phenotypic feature",
                "required": true,
                "type": "string"
             }
@@ -1295,7 +1837,6 @@
          "description": "A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)",
          "properties": {
             "relation": {
-               "description": "homology relationship type",
                "required": true,
                "type": "string"
             }
@@ -1307,17 +1848,14 @@
          "description": "A gene is transcribed and potentially translated to a gene product",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             },
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             }
@@ -1329,12 +1867,10 @@
          "description": "",
          "properties": {
             "object": {
-               "description": "class describing the activity, process or localization of the gene product",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "gene, product or macromolecular complex that has the function associated with the GO term",
                "required": true,
                "type": "string"
             }
@@ -1345,8 +1881,23 @@
       "GeneToPhenotypicFeatureAssociation": {
          "description": "",
          "properties": {
+            "frequency_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
+            },
+            "onset_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "severity_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
+            },
+            "sex_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
+            },
             "subject": {
-               "description": "gene in which variation is correlated with the phenotypic feature",
                "required": true,
                "type": "string"
             }
@@ -1375,7 +1926,6 @@
          "description": "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig",
          "properties": {
             "end_interbase_coordinate": {
-               "description": "TODO",
                "type": "string"
             },
             "genome_build": {
@@ -1383,7 +1933,6 @@
                "type": "string"
             },
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             },
@@ -1392,11 +1941,9 @@
                "type": "string"
             },
             "start_interbase_coordinate": {
-               "description": "TODO",
                "type": "string"
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             }
@@ -1408,7 +1955,6 @@
          "description": "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background",
          "properties": {
             "has_zygosity": {
-               "description": "A grouping for any property that holds between a node and a value",
                "type": "string"
             }
          },
@@ -1419,17 +1965,14 @@
          "description": "Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality",
          "properties": {
             "object": {
-               "description": "gene implicated in genotype",
                "required": true,
                "type": "string"
             },
             "relation": {
-               "description": "the relationship type used to connect genotype to gene",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "parent genotype",
                "required": true,
                "type": "string"
             }
@@ -1441,17 +1984,14 @@
          "description": "Any association between one genotype and a genotypic entity that is a sub-component of it",
          "properties": {
             "object": {
-               "description": "child genotype",
                "required": true,
                "type": "string"
             },
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "parent genotype",
                "required": true,
                "type": "string"
             }
@@ -1462,13 +2002,27 @@
       "GenotypeToPhenotypicFeatureAssociation": {
          "description": "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment",
          "properties": {
+            "frequency_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
+            },
+            "onset_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
             "relation": {
-               "description": "the relationship type by which a subject is connected to an object in an association",
                "required": true,
                "type": "string"
             },
+            "severity_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
+            },
+            "sex_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
+            },
             "subject": {
-               "description": "genotype that is associated with the phenotypic feature",
                "required": true,
                "type": "string"
             }
@@ -1480,17 +2034,14 @@
          "description": "Any association between a genotype and a sequence variant.",
          "properties": {
             "object": {
-               "description": "gene implicated in genotype",
                "required": true,
                "type": "string"
             },
             "relation": {
-               "description": "the relationship type used to connect genotype to gene",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "parent genotype",
                "required": true,
                "type": "string"
             }
@@ -1544,13 +2095,29 @@
       },
       "IndividualOrganism": {
          "description": "",
-         "properties": {},
+         "properties": {
+            "in_taxon": {
+               "description": "connects a thing to a class representing a taxon",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
          "title": "IndividualOrganism",
          "type": "object"
       },
       "LifeStage": {
          "description": "A stage of development or growth of an organism, including post-natal adult stages",
-         "properties": {},
+         "properties": {
+            "in_taxon": {
+               "description": "connects a thing to a class representing a taxon",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
          "title": "LifeStage",
          "type": "object"
       },
@@ -1564,7 +2131,6 @@
          "description": "A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.",
          "properties": {
             "name": {
-               "description": "genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name",
                "type": "string"
             }
          },
@@ -1575,7 +2141,6 @@
          "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it",
          "properties": {
             "object": {
-               "description": "class describing the activity, process or localization of the gene product",
                "required": true,
                "type": "string"
             }
@@ -1587,7 +2152,6 @@
          "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component",
          "properties": {
             "object": {
-               "description": "class describing the activity, process or localization of the gene product",
                "required": true,
                "type": "string"
             }
@@ -1599,7 +2163,6 @@
          "description": "A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution",
          "properties": {
             "object": {
-               "description": "class describing the activity, process or localization of the gene product",
                "required": true,
                "type": "string"
             }
@@ -1621,7 +2184,35 @@
       },
       "MolecularActivity": {
          "description": "An execution of a molecular function carried out by a gene product or macromolecular complex.",
-         "properties": {},
+         "properties": {
+            "has_input": {
+               "description": "holds between a process and a continuant, where the continuant is an input into the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_participant": {
+               "description": "holds between a process and a continuant, where the continuant is somehow involved in the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "precedes": {
+               "description": "holds between two processes, where one completes before the other begins",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "regulates_process_to_process": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
          "title": "MolecularActivity",
          "type": "object"
       },
@@ -1630,207 +2221,377 @@
          "properties": {
             "affects_abundance_of": {
                "description": "holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_activity_of": {
                "description": "holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_degradation_of": {
                "description": "holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_expression_of": {
                "description": "holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_folding_of": {
-               "description": "holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other ",
-               "type": "string"
+               "description": "holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_localization_of": {
                "description": "holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_metabolic_processing_of": {
                "description": "holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_molecular_modification_of": {
                "description": "holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_mutation_rate_of": {
                "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_response_to": {
                "description": "holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_secretion_of": {
                "description": "holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_splicing_of": {
                "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_stability_of": {
                "description": "holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_synthesis_of": {
                "description": "holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_transport_of": {
                "description": "holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "affects_uptake_of": {
                "description": "holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "biomarker_for": {
                "description": "holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_abundance_of": {
                "description": "holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_activity_of": {
                "description": "holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_degradation_of": {
                "description": "holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_expression_of": {
                "description": "holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_folding_of": {
-               "description": "holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other ",
-               "type": "string"
+               "description": "holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_localization_of": {
                "description": "holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_metabolic_processing_of": {
                "description": "holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_molecular_modification_of": {
                "description": "holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_mutation_rate_of": {
                "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_response_to": {
                "description": "holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_secretion_of": {
                "description": "holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_splicing_of": {
                "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_stability_of": {
                "description": "holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_synthesis_of": {
                "description": "holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_transport_of": {
                "description": "holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "decreases_uptake_of": {
                "description": "holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "in_taxon": {
+               "description": "connects a thing to a class representing a taxon",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_abundance_of": {
                "description": "holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_activity_of": {
                "description": "holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_degradation_of": {
                "description": "holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_expression_of": {
                "description": "holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_folding_of": {
-               "description": "holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other ",
-               "type": "string"
+               "description": "holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_localization_of": {
                "description": "holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_metabolic_processing_of": {
                "description": "holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_molecular_modification_of": {
                "description": "holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_mutation_rate_of": {
                "description": "holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_response_to": {
                "description": "holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_secretion_of": {
                "description": "holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_splicing_of": {
                "description": "holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_stability_of": {
                "description": "holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_synthesis_of": {
                "description": "holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_transport_of": {
                "description": "holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "increases_uptake_of": {
                "description": "holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "molecularly_interacts_with": {
-               "description": "holds between two entities that make physical contact as part of some interaction",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "negatively_regulates_entity_to_entity": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "positively_regulates_entity_to_entity": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "regulates_entity_to_entity": {
-               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "MolecularEntity",
@@ -1839,8 +2600,85 @@
       "NamedThing": {
          "description": "a databased entity or concept/class",
          "properties": {
+            "actively_involved_in": {
+               "description": "holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "affects": {
+               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "affects_risk_for": {
+               "description": "holds between two entities where exposure to one entity alters the chance of developing the other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "aggregate_statistic": {
+               "type": "string"
+            },
+            "capable_of": {
+               "description": "holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "category": {
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "causes": {
+               "description": "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "coexists_with": {
+               "description": "holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "colocalizes_with": {
+               "description": "holds between two entities that are observed to be located in the same place.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "contributes_to": {
+               "description": "holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "creation_date": {
+               "description": "date on which thing was created. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "derives_from": {
+               "description": "holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "derives_into": {
+               "description": "holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity",
                "items": {
                   "type": "string"
                },
@@ -1850,29 +2688,203 @@
                "description": "a human-readable description of a thing",
                "type": "string"
             },
+            "disrupts": {
+               "description": "describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "filler": {
+               "description": "The value in a property-value tuple",
+               "type": "string"
+            },
             "full_name": {
                "description": "a long-form human readable name for a thing",
                "type": "string"
             },
+            "has_chemical_formula": {
+               "description": "description of chemical compound based on element symbols",
+               "type": "string"
+            },
+            "has_molecular_consequence": {
+               "description": "connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_part": {
+               "description": "holds between wholes and their parts (material entities or processes)",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "homologous_to": {
+               "description": "holds between two biological entities that have common evolutionary origin",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "required": true,
+               "type": "string"
+            },
+            "interacts_with": {
+               "description": "holds between any two entities that directly or indirectly interact with each other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "interbase_coordinate": {
+               "description": "TODO",
                "type": "string"
             },
             "iri": {
                "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
+            "located_in": {
+               "description": "holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "location_of": {
+               "description": "holds between material entity or site and a material entity that is located within it (but not considered a part of it)",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "manifestation_of": {
+               "description": "used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "model_of": {
+               "description": "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "name": {
                "description": "A human-readable name for a thing",
                "type": "string"
+            },
+            "negatively_regulates": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "node_property": {
                "description": "A grouping for any property that holds between a node and a value",
                "type": "string"
             },
+            "occurs_in": {
+               "description": "holds between a process and a material entity or site within which the process occurs",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "orthologous_to": {
+               "description": "a homology relationship between entities (typically genes) that diverged after a speciation event.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "overlaps": {
+               "description": "holds between entties that overlap in their extents (materials or processes)",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "paralogous_to": {
+               "description": "a homology relationship that holds between entities (typically genes) that diverged after a duplication event.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "part_of": {
+               "description": "holds between parts and wholes (material entities or processes)",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "participates_in": {
+               "description": "holds between a continuant and a process, where the continuant is somehow involved in the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "physically_interacts_with": {
+               "description": "holds between two entities that make physical contact as part of some interaction",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "positively_regulates": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "predisposes": {
+               "description": "holds between two entities where exposure to one entity increases the chance of developing the other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "prevents": {
+               "description": "holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "produces": {
+               "description": "holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "regulates": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "related_to": {
-               "description": "A grouping for any relationship type that holds between any two things",
-               "type": "string"
+               "description": "A relationship that is asserted between two named things",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "same_as": {
+               "description": "holds between two entities that are considered equivalent to each other",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "synonym": {
                "description": "Alternate human-readable names for a thing",
@@ -1884,6 +2896,17 @@
             "systematic_synonym": {
                "description": "more commonly used for gene symbols in yeast",
                "type": "string"
+            },
+            "update_date": {
+               "description": "date on which thing was updated. This can be applied to nodes or edges",
+               "type": "string"
+            },
+            "xenologous_to": {
+               "description": "a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "NamedThing",
@@ -1900,19 +2923,42 @@
          "properties": {
             "has_input": {
                "description": "holds between a process and a continuant, where the continuant is an input into the process",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "has_participant": {
-               "description": "holds between a process and a continuant, where the continuant is somehow involved in the process ",
-               "type": "string"
+               "description": "holds between a process and a continuant, where the continuant is somehow involved in the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "negatively_regulates_process_to_process": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "positively_regulates_process_to_process": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "precedes": {
                "description": "holds between two processes, where one completes before the other begins",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "regulates_process_to_process": {
-               "description": "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "Occurrent",
@@ -1929,7 +2975,10 @@
          "properties": {
             "subclass_of": {
                "description": "holds between two classes where the domain class is a specialization of the range class",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "OntologyClass",
@@ -1945,7 +2994,6 @@
          "description": "An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)",
          "properties": {
             "relation": {
-               "description": "interaction relationship type",
                "required": true,
                "type": "string"
             }
@@ -1997,7 +3045,15 @@
       },
       "PopulationOfIndividualOrganisms": {
          "description": "A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]",
-         "properties": {},
+         "properties": {
+            "in_taxon": {
+               "description": "connects a thing to a class representing a taxon",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
          "title": "PopulationOfIndividualOrganisms",
          "type": "object"
       },
@@ -2005,17 +3061,14 @@
          "description": "An association between a two populations",
          "properties": {
             "object": {
-               "description": "the population that form the object of the association",
                "required": true,
                "type": "string"
             },
             "relation": {
-               "description": "A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "the population that form the subject of the association",
                "required": true,
                "type": "string"
             }
@@ -2071,22 +3124,20 @@
          "title": "RelationshipType",
          "type": "object"
       },
-      "SenstivityQuantifier": {
+      "SensitivityQuantifier": {
          "description": "",
          "properties": {},
-         "title": "SenstivityQuantifier",
+         "title": "SensitivityQuantifier",
          "type": "object"
       },
       "SequenceFeatureRelationship": {
          "description": "For example, a particular exon is part of a particular transcript or gene",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             }
@@ -2098,18 +3149,16 @@
          "description": "An allele that varies in its sequence from what is considered the reference allele at that locus.",
          "properties": {
             "has_biological_sequence": {
-               "description": "The state of the sequence w.r.t a reference sequence",
                "type": "string"
             },
             "has_gene": {
-               "description": "Each allele can be associated with any number of genes",
                "items": {
                   "type": "string"
                },
                "type": "array"
             },
             "id": {
-               "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+               "required": true,
                "type": "string"
             }
          },
@@ -2138,12 +3187,10 @@
          "description": "A gene is a collection of transcripts",
          "properties": {
             "object": {
-               "description": "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.",
                "required": true,
                "type": "string"
             }
@@ -2163,8 +3210,11 @@
             },
             "treats": {
                "description": "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat",
+               "items": {
+                  "type": "string"
+               },
                "required": true,
-               "type": "string"
+               "type": "array"
             }
          },
          "title": "Treatment",
@@ -2173,18 +3223,27 @@
       "VariantToDiseaseAssociation": {
          "description": "",
          "properties": {
+            "frequency_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
+            },
             "object": {
-               "description": "a disease that is associated with that variant",
                "required": true,
+               "type": "string"
+            },
+            "onset_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
                "type": "string"
             },
             "relation": {
-               "description": "E.g. is pathogenic for",
                "required": true,
                "type": "string"
             },
+            "severity_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
+            },
             "subject": {
-               "description": "a sequence variant in which the allele state is associated in some way with the disease state",
                "required": true,
                "type": "string"
             }
@@ -2195,8 +3254,23 @@
       "VariantToPhenotypicFeatureAssociation": {
          "description": "",
          "properties": {
+            "frequency_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
+            },
+            "onset_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
+            "severity_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
+            },
+            "sex_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
+            },
             "subject": {
-               "description": "a sequence variant in which the allele state is associated in some way with the phenotype state",
                "required": true,
                "type": "string"
             }
@@ -2207,25 +3281,28 @@
       "VariantToPopulationAssociation": {
          "description": "An association between a variant and a population, where the variant has particular frequency in the population",
          "properties": {
+            "frequency_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
+               "type": "string"
+            },
             "has_count": {
-               "description": "number in object population that carry a particular allele, aka allele count",
+               "type": "string"
+            },
+            "has_percentage": {
+               "description": "equivalent to has quotient multiplied by 100",
                "type": "string"
             },
             "has_quotient": {
-               "description": "frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency",
                "type": "string"
             },
             "has_total": {
-               "description": "number all populations that carry a particular allele, aka allele number",
                "type": "string"
             },
             "object": {
-               "description": "the population that is observed to have the frequency",
                "required": true,
                "type": "string"
             },
             "subject": {
-               "description": "an allele that has a certain frequency in a given population",
                "required": true,
                "type": "string"
             }
@@ -2240,7 +3317,7 @@
          "type": "object"
       }
    },
-   "title": "biolink model",
+   "title": "biolink_model",
    "type": "object"
 }
 

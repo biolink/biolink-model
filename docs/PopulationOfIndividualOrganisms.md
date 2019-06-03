@@ -3,73 +3,79 @@
 
 A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
 
-URI: [http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms](http://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms)
+URI: [biolink:PopulationOfIndividualOrganisms](https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms)
 
-![img](images/PopulationOfIndividualOrganisms.png)
-## Mappings
-
- * [SIO:001061](http://semanticscience.org/resource/SIO_001061)
- * [UMLSSC:T098](http://purl.obolibrary.org/obo/UMLSSC_T098)
- * [UMLSST:popg](http://purl.obolibrary.org/obo/UMLSST_popg)
- * [PCO:0000001](http://purl.obolibrary.org/obo/PCO_0000001)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]<filler(i)%200..1-%20\[PopulationOfIndividualOrganisms|id(i):identifier_type;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;synonym(i):label_type%20*;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;creation_date(i):date%20%3F;update_date(i):date%20%3F;has_chemical_formula(i):chemical_formula_value%20%3F;aggregate_statistic(i):string%20%3F;interbase_coordinate(i):string%20%3F],%20\[OntologyClass]<has%20molecular%20consequence(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<same%20as(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<produces(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[Disease]<manifestation%20of(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<derives%20from(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<derives%20into(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[Occurrent]<capable%20of(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[Occurrent]<actively%20involved%20in(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[Occurrent]<participates%20in(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<part%20of(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<has%20part(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<overlaps(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<model%20of(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<location%20of(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<located%20in(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<occurs%20in(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<prevents(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<causes(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<contributes%20to(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<predisposes(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<affects%20risk%20for(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<colocalizes%20with(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<coexists%20with(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<xenologous%20to(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<orthologous%20to(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<paralogous%20to(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<homologous%20to(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<disrupts(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<negatively%20regulates(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<positively%20regulates(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<regulates(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<affects(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<physically%20interacts%20with(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<interacts%20with(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[NamedThing]<related%20to(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[PhenotypicFeature]<has%20phenotype(i)%200..*-%20\[PopulationOfIndividualOrganisms],%20\[OrganismTaxon]<in%20taxon%200..*-%20\[PopulationOfIndividualOrganisms],%20\[PopulationToPopulationAssociation]-%20object%201..1>\[PopulationOfIndividualOrganisms],%20\[PopulationToPopulationAssociation]-%20subject%201..1>\[PopulationOfIndividualOrganisms],%20\[VariantToPopulationAssociation]-%20object%201..1>\[PopulationOfIndividualOrganisms],%20\[PopulationOfIndividualOrganisms]uses%20-.->\[ThingWithTaxon],%20\[OrganismalEntity]^-\[PopulationOfIndividualOrganisms])
 ## Inheritance
 
  *  is_a: [OrganismalEntity](OrganismalEntity.md) - A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities
  *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
 ## Children
 
-## Used in
+## Used by
 
- *  class: **[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)** *[population to population association.object](population_to_population_association_object.md)* **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
- *  class: **[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)** *[population to population association.subject](population_to_population_association_subject.md)* **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
- *  class: **[VariantToPopulationAssociation](VariantToPopulationAssociation.md)** *[variant to population association.object](variant_to_population_association_object.md)* **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
+ *  **[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)** *[population to population association.object](population_to_population_association_object.md)*  <sub>REQ</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
+ *  **[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)** *[population to population association.subject](population_to_population_association_subject.md)*  <sub>REQ</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
+ *  **[VariantToPopulationAssociation](VariantToPopulationAssociation.md)** *[variant to population association.object](variant_to_population_association_object.md)*  <sub>REQ</sub>  **[PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)**
 ## Fields
 
- * [category](category.md) *subsets*: (translator_minimal)
+ * [category](category.md)  <sub>0..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)*
+    * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [description](description.md) *subsets*: (translator_minimal)
+    * in subsets: (translator_minimal)
+ * [description](description.md)  <sub>OPT</sub>
     * Description: a human-readable description of a thing
     * range: [NarrativeText](NarrativeText.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [full name](full_name.md)
+    * in subsets: (translator_minimal)
+ * [full name](full_name.md)  <sub>OPT</sub>
     * Description: a long-form human readable name for a thing
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [has phenotype](has_phenotype.md) *subsets*: (translator_minimal)
-    * Description: holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). 
-    * range: [Phenotype](Phenotype.md)
+ * [has phenotype](has_phenotype.md)  <sub>0..*</sub>
+    * Description: holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
+    * range: [PhenotypicFeature](PhenotypicFeature.md)
     * inherited from: [BiologicalEntity](BiologicalEntity.md)
- * [id](id.md) *subsets*: (translator_minimal)
+    * in subsets: (translator_minimal)
+ * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [IdentifierType](IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [in taxon](in_taxon.md) *subsets*: (translator_minimal)
+    * in subsets: (translator_minimal)
+ * [in taxon](in_taxon.md)  <sub>0..*</sub>
     * Description: connects a thing to a class representing a taxon
     * range: [OrganismTaxon](OrganismTaxon.md)
-    * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
- * [iri](iri.md) *subsets*: (translator_minimal)
+    * in subsets: (translator_minimal)
+ * [interacts with](interacts_with.md)  <sub>0..*</sub>
+    * Description: holds between any two entities that directly or indirectly interact with each other
+    * range: [NamedThing](NamedThing.md)
+    * inherited from: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)
+ * [iri](iri.md)  <sub>OPT</sub>
     * Description: An IRI for the node. This is determined by the id using expansion rules.
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [name](name.md) *subsets*: (translator_minimal)
+    * in subsets: (translator_minimal)
+ * [name](name.md)  <sub>OPT</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [node property](node_property.md)
+    * in subsets: (translator_minimal)
+ * [node property](node_property.md)  <sub>OPT</sub>
     * Description: A grouping for any property that holds between a node and a value
-    * range: **string**
+    * range: [String](String.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [related to](related_to.md)
-    * Description: A grouping for any relationship type that holds between any two things
+ * [related to](related_to.md)  <sub>0..*</sub>
+    * Description: A relationship that is asserted between two named things
     * range: [NamedThing](NamedThing.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [synonym](synonym.md) *subsets*: (translator_minimal)
+ * [synonym](synonym.md)  <sub>0..*</sub>
     * Description: Alternate human-readable names for a thing
-    * range: [LabelType](LabelType.md)*
+    * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [systematic synonym](systematic_synonym.md)
+    * in subsets: (translator_minimal)
+ * [systematic synonym](systematic_synonym.md)  <sub>OPT</sub>
     * Description: more commonly used for gene symbols in yeast
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)

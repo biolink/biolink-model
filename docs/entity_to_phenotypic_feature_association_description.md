@@ -1,19 +1,17 @@
 # Slot: description
 
 
-A description of specific aspects of this phenotype, not otherwise covered by the phenotype ontology class
 
-URI: [http://w3id.org/biolink/vocab/entity_to_phenotypic_feature_association_description](slot_uri)
-## Mappings
 
+URI: [biolink:entity_to_phenotypic_feature_association_description](https://w3id.org/biolink/vocab/entity_to_phenotypic_feature_association_description)
 ## Domain and Range
 
-[EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) -> [NarrativeText](NarrativeText.md)
+[EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) ->  <sub>OPT</sub> [NarrativeText](NarrativeText.md)
 ## Inheritance
 
- *  is_a: [description](description.md) *subsets*: (translator_minimal)
+ *  is_a: [description](description.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
+ * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)

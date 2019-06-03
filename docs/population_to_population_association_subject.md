@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-the population that form the subject of the association
 
-URI: [http://w3id.org/biolink/vocab/population_to_population_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:population_to_population_association_subject](https://w3id.org/biolink/vocab/population_to_population_association_subject)
 ## Domain and Range
 
-[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) -> [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
+[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) ->  <sub>REQ</sub> [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
 ## Inheritance
 
  *  is_a: [subject](subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)
+ * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)

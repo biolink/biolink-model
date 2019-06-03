@@ -36,7 +36,7 @@ public class Treatment {
      */
     @JsonProperty("treats")
     @JsonPropertyDescription("holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat")
-    private String treats;
+    private List<String> treats = new ArrayList<String>();
 
     /**
      * 
@@ -64,7 +64,7 @@ public class Treatment {
      * 
      */
     @JsonProperty("treats")
-    public String getTreats() {
+    public List<String> getTreats() {
         return treats;
     }
 
@@ -74,7 +74,7 @@ public class Treatment {
      * 
      */
     @JsonProperty("treats")
-    public void setTreats(String treats) {
+    public void setTreats(List<String> treats) {
         this.treats = treats;
     }
 

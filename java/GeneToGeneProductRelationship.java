@@ -1,6 +1,5 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -22,32 +21,29 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class GeneToGeneProductRelationship {
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * 
      * (Required)
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
     private String object;
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * 
      * (Required)
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
     private String relation;
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * 
      * (Required)
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
     private String subject;
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * 
      * (Required)
      * 
      */
@@ -57,7 +53,7 @@ public class GeneToGeneProductRelationship {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * 
      * (Required)
      * 
      */
@@ -67,7 +63,7 @@ public class GeneToGeneProductRelationship {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * 
      * (Required)
      * 
      */
@@ -77,7 +73,7 @@ public class GeneToGeneProductRelationship {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * 
      * (Required)
      * 
      */
@@ -87,7 +83,7 @@ public class GeneToGeneProductRelationship {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * 
      * (Required)
      * 
      */
@@ -97,7 +93,7 @@ public class GeneToGeneProductRelationship {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * 
      * (Required)
      * 
      */

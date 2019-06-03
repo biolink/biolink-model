@@ -1,6 +1,5 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -22,32 +21,29 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class GenotypeToVariantAssociation {
 
     /**
-     * gene implicated in genotype
+     * 
      * (Required)
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("gene implicated in genotype")
     private String object;
     /**
-     * the relationship type used to connect genotype to gene
+     * 
      * (Required)
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("the relationship type used to connect genotype to gene")
     private String relation;
     /**
-     * parent genotype
+     * 
      * (Required)
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("parent genotype")
     private String subject;
 
     /**
-     * gene implicated in genotype
+     * 
      * (Required)
      * 
      */
@@ -57,7 +53,7 @@ public class GenotypeToVariantAssociation {
     }
 
     /**
-     * gene implicated in genotype
+     * 
      * (Required)
      * 
      */
@@ -67,7 +63,7 @@ public class GenotypeToVariantAssociation {
     }
 
     /**
-     * the relationship type used to connect genotype to gene
+     * 
      * (Required)
      * 
      */
@@ -77,7 +73,7 @@ public class GenotypeToVariantAssociation {
     }
 
     /**
-     * the relationship type used to connect genotype to gene
+     * 
      * (Required)
      * 
      */
@@ -87,7 +83,7 @@ public class GenotypeToVariantAssociation {
     }
 
     /**
-     * parent genotype
+     * 
      * (Required)
      * 
      */
@@ -97,7 +93,7 @@ public class GenotypeToVariantAssociation {
     }
 
     /**
-     * parent genotype
+     * 
      * (Required)
      * 
      */

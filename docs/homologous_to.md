@@ -3,21 +3,18 @@
 
 holds between two biological entities that have common evolutionary origin
 
-URI: [http://w3id.org/biolink/vocab/homologous_to](slot_uri)
-## Mappings
-
- * [RO:HOM0000001](http://purl.obolibrary.org/obo/RO_HOM0000001)
- * [SIO:010302](http://semanticscience.org/resource/SIO_010302)
+URI: [biolink:homologous_to](https://w3id.org/biolink/vocab/homologous_to)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [orthologous to](orthologous_to.md) *subsets*: (translator_minimal)
- *  child: [paralogous to](paralogous_to.md) *subsets*: (translator_minimal)
- *  child: [xenologous to](xenologous_to.md) *subsets*: (translator_minimal)
-## Used in
+ *  [orthologous to](orthologous_to.md)
+ *  [paralogous to](paralogous_to.md)
+ *  [xenologous to](xenologous_to.md)
+## Used by
 
+ * [NamedThing](NamedThing.md)

@@ -3,20 +3,19 @@
 
 holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
 
-URI: [http://w3id.org/biolink/vocab/correlated_with](slot_uri)
-## Mappings
-
- * [RO:0002610](http://purl.obolibrary.org/obo/RO_0002610)
+URI: [biolink:correlated_with](https://w3id.org/biolink/vocab/correlated_with)
 ## Domain and Range
 
-[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) -> [MolecularEntity](MolecularEntity.md)
+[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [biomarker for](biomarker_for.md) *subsets*: (translator_minimal)
- *  child: [has biomarker](has_biomarker.md) *subsets*: (translator_minimal)
-## Used in
+ *  [biomarker for](biomarker_for.md)
+ *  [has biomarker](has_biomarker.md)
+## Used by
 
- *  usage: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+ * [Disease](Disease.md)
+ * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+ * [PhenotypicFeature](PhenotypicFeature.md)

@@ -15,21 +15,98 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "frequency_qualifier",
+    "onset_qualifier",
+    "severity_qualifier",
     "subject"
 })
 public class GeneToDiseaseAssociation {
 
     /**
-     * gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
+     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * 
+     */
+    @JsonProperty("frequency_qualifier")
+    @JsonPropertyDescription("a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject")
+    private String frequencyQualifier;
+    /**
+     * a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+     * 
+     */
+    @JsonProperty("onset_qualifier")
+    @JsonPropertyDescription("a qualifier used in a phenotypic association to state when the phenotype appears is in the subject")
+    private String onsetQualifier;
+    /**
+     * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+     * 
+     */
+    @JsonProperty("severity_qualifier")
+    @JsonPropertyDescription("a qualifier used in a phenotypic association to state how severe the phenotype is in the subject")
+    private String severityQualifier;
+    /**
+     * 
      * (Required)
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model")
     private String subject;
 
     /**
-     * gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
+     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * 
+     */
+    @JsonProperty("frequency_qualifier")
+    public String getFrequencyQualifier() {
+        return frequencyQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * 
+     */
+    @JsonProperty("frequency_qualifier")
+    public void setFrequencyQualifier(String frequencyQualifier) {
+        this.frequencyQualifier = frequencyQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+     * 
+     */
+    @JsonProperty("onset_qualifier")
+    public String getOnsetQualifier() {
+        return onsetQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+     * 
+     */
+    @JsonProperty("onset_qualifier")
+    public void setOnsetQualifier(String onsetQualifier) {
+        this.onsetQualifier = onsetQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+     * 
+     */
+    @JsonProperty("severity_qualifier")
+    public String getSeverityQualifier() {
+        return severityQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+     * 
+     */
+    @JsonProperty("severity_qualifier")
+    public void setSeverityQualifier(String severityQualifier) {
+        this.severityQualifier = severityQualifier;
+    }
+
+    /**
+     * 
      * (Required)
      * 
      */
@@ -39,7 +116,7 @@ public class GeneToDiseaseAssociation {
     }
 
     /**
-     * gene in which variation is correlated with the disease - may be protective or causative or associative, or as a model
+     * 
      * (Required)
      * 
      */
@@ -50,12 +127,12 @@ public class GeneToDiseaseAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("frequencyQualifier", frequencyQualifier).append("onsetQualifier", onsetQualifier).append("severityQualifier", severityQualifier).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(subject).toHashCode();
+        return new HashCodeBuilder().append(frequencyQualifier).append(onsetQualifier).append(severityQualifier).append(subject).toHashCode();
     }
 
     @Override
@@ -67,7 +144,7 @@ public class GeneToDiseaseAssociation {
             return false;
         }
         GeneToDiseaseAssociation rhs = ((GeneToDiseaseAssociation) other);
-        return new EqualsBuilder().append(subject, rhs.subject).isEquals();
+        return new EqualsBuilder().append(frequencyQualifier, rhs.frequencyQualifier).append(onsetQualifier, rhs.onsetQualifier).append(severityQualifier, rhs.severityQualifier).append(subject, rhs.subject).isEquals();
     }
 
 }

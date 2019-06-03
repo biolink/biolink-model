@@ -3,20 +3,24 @@
 
 holds between a process and a continuant, where the continuant is somehow involved in the process
 
-URI: [http://w3id.org/biolink/vocab/has_participant](slot_uri)
-## Mappings
-
- * [RO:0000057](http://purl.obolibrary.org/obo/RO_0000057)
- * [WD:P2283](http://purl.obolibrary.org/obo/WD_P2283)
+URI: [biolink:has_participant](https://w3id.org/biolink/vocab/has_participant)
 ## Domain and Range
 
-[Occurrent](Occurrent.md) -> [NamedThing](NamedThing.md)
+[Occurrent](Occurrent.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [has input](has_input.md) *subsets*: (translator_minimal)
-## Used in
+ *  [has input](has_input.md)
+## Used by
 
- *  usage: [Occurrent](Occurrent.md)
+ * [ActivityAndBehavior](ActivityAndBehavior.md)
+ * [BiologicalProcess](BiologicalProcess.md)
+ * [EnvironmentalProcess](EnvironmentalProcess.md)
+ * [MolecularActivity](MolecularActivity.md)
+ * [Occurrent](Occurrent.md)
+ * [Pathway](Pathway.md)
+ * [Phenomenon](Phenomenon.md)
+ * [PhysiologicalProcess](PhysiologicalProcess.md)
+ * [Procedure](Procedure.md)

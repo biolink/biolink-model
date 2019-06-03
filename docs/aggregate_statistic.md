@@ -1,22 +1,21 @@
 # Slot: aggregate statistic
 
 
-A grouping for any property that holds between a node and a value
 
-URI: [http://w3id.org/biolink/vocab/aggregate_statistic](slot_uri)
-## Mappings
 
+URI: [biolink:aggregate_statistic](https://w3id.org/biolink/vocab/aggregate_statistic)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> **string**
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](String.md)
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
 ## Children
 
- *  child: [has count](has_count.md)
- *  child: [has percentage](has_percentage.md)
- *  child: [has quotient](has_quotient.md)
- *  child: [has total](has_total.md)
-## Used in
+ *  [has count](has_count.md)
+ *  [has percentage](has_percentage.md)
+ *  [has quotient](has_quotient.md)
+ *  [has total](has_total.md)
+## Used by
 
+ * [NamedThing](NamedThing.md)

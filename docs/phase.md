@@ -3,17 +3,15 @@
 
 TODO
 
-URI: [http://w3id.org/biolink/vocab/phase](slot_uri)
-## Mappings
-
+URI: [biolink:phase](https://w3id.org/biolink/vocab/phase)
 ## Domain and Range
 
-[GenomicSequenceLocalization](GenomicSequenceLocalization.md) -> **string**
+[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>OPT</sub> [String](String.md)
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
+ * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
