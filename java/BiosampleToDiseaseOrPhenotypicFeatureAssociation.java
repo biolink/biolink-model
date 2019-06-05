@@ -9,7 +9,6 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  * BiosampleToDiseaseOrPhenotypicFeatureAssociation
  * <p>
  * An association between a biosample and a disease or phenotype
- *   definitional: true
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)

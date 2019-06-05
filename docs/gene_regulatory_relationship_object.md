@@ -1,19 +1,17 @@
 # Slot: object
 
 
-connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
-URI: [http://w3id.org/biolink/vocab/gene_regulatory_relationship_object](slot_uri)
-## Mappings
 
+URI: [biolink:gene_regulatory_relationship_object](https://w3id.org/biolink/vocab/gene_regulatory_relationship_object)
 ## Domain and Range
 
-[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) -> [GeneOrGeneProduct](GeneOrGeneProduct.md)
+[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) ->  <sub>REQ</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
 ## Inheritance
 
  *  is_a: [object](object.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md)
+ * [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md)

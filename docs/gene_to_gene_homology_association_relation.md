@@ -1,20 +1,17 @@
 # Slot: relation
 
 
-homology relationship type
 
-URI: [http://w3id.org/biolink/vocab/gene_to_gene_homology_association_relation](slot_uri)
-## Mappings
 
+URI: [biolink:gene_to_gene_homology_association_relation](https://w3id.org/biolink/vocab/gene_to_gene_homology_association_relation)
 ## Domain and Range
 
-[GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) -> [IriType](IriType.md)
+[GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [relation](relation.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md)
- *  reifies: [homologous to](homologous_to.md) *subsets*: (translator_minimal)
+ * [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md)

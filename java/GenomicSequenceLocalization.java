@@ -24,12 +24,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 })
 public class GenomicSequenceLocalization {
 
-    /**
-     * TODO
-     * 
-     */
     @JsonProperty("end_interbase_coordinate")
-    @JsonPropertyDescription("TODO")
     private String endInterbaseCoordinate;
     /**
      * TODO
@@ -39,12 +34,11 @@ public class GenomicSequenceLocalization {
     @JsonPropertyDescription("TODO")
     private String genomeBuild;
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * 
      * (Required)
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
     private String object;
     /**
      * TODO
@@ -53,35 +47,21 @@ public class GenomicSequenceLocalization {
     @JsonProperty("phase")
     @JsonPropertyDescription("TODO")
     private String phase;
-    /**
-     * TODO
-     * 
-     */
     @JsonProperty("start_interbase_coordinate")
-    @JsonPropertyDescription("TODO")
     private String startInterbaseCoordinate;
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * 
      * (Required)
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
     private String subject;
 
-    /**
-     * TODO
-     * 
-     */
     @JsonProperty("end_interbase_coordinate")
     public String getEndInterbaseCoordinate() {
         return endInterbaseCoordinate;
     }
 
-    /**
-     * TODO
-     * 
-     */
     @JsonProperty("end_interbase_coordinate")
     public void setEndInterbaseCoordinate(String endInterbaseCoordinate) {
         this.endInterbaseCoordinate = endInterbaseCoordinate;
@@ -106,7 +86,7 @@ public class GenomicSequenceLocalization {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * 
      * (Required)
      * 
      */
@@ -116,7 +96,7 @@ public class GenomicSequenceLocalization {
     }
 
     /**
-     * connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * 
      * (Required)
      * 
      */
@@ -143,26 +123,18 @@ public class GenomicSequenceLocalization {
         this.phase = phase;
     }
 
-    /**
-     * TODO
-     * 
-     */
     @JsonProperty("start_interbase_coordinate")
     public String getStartInterbaseCoordinate() {
         return startInterbaseCoordinate;
     }
 
-    /**
-     * TODO
-     * 
-     */
     @JsonProperty("start_interbase_coordinate")
     public void setStartInterbaseCoordinate(String startInterbaseCoordinate) {
         this.startInterbaseCoordinate = startInterbaseCoordinate;
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * 
      * (Required)
      * 
      */
@@ -172,7 +144,7 @@ public class GenomicSequenceLocalization {
     }
 
     /**
-     * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+     * 
      * (Required)
      * 
      */

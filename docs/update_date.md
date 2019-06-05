@@ -3,16 +3,15 @@
 
 date on which thing was updated. This can be applied to nodes or edges
 
-URI: [http://w3id.org/biolink/vocab/update_date](slot_uri)
-## Mappings
-
+URI: [biolink:update_date](https://w3id.org/biolink/vocab/update_date)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> **date**
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Date](Date.md)
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [NamedThing](NamedThing.md)

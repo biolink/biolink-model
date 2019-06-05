@@ -1,19 +1,17 @@
 # Slot: object
 
 
-the disease or phenotype that is affected by the chemical
 
-URI: [http://w3id.org/biolink/vocab/chemical_to_disease_or_phenotypic_feature_association_object](slot_uri)
-## Mappings
 
+URI: [biolink:chemical_to_disease_or_phenotypic_feature_association_object](https://w3id.org/biolink/vocab/chemical_to_disease_or_phenotypic_feature_association_object)
 ## Domain and Range
 
-[ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) -> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+[ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) ->  <sub>REQ</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 ## Inheritance
 
  *  is_a: [object](object.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)
+ * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)

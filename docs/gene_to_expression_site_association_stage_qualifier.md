@@ -1,19 +1,17 @@
 # Slot: stage qualifier
 
 
-stage at which the gene is expressed in the site
 
-URI: [http://w3id.org/biolink/vocab/gene_to_expression_site_association_stage_qualifier](slot_uri)
-## Mappings
 
+URI: [biolink:gene_to_expression_site_association_stage_qualifier](https://w3id.org/biolink/vocab/gene_to_expression_site_association_stage_qualifier)
 ## Domain and Range
 
-[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) -> [LifeStage](LifeStage.md)
+[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) ->  <sub>OPT</sub> [LifeStage](LifeStage.md)
 ## Inheritance
 
  *  is_a: [stage qualifier](stage_qualifier.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
+ * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)

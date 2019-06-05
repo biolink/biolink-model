@@ -1,6 +1,5 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -24,46 +23,33 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class GeneToExpressionSiteAssociation {
 
     /**
-     * location in which the gene is expressed
+     * 
      * (Required)
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("location in which the gene is expressed")
     private String object;
-    /**
-     * can be used to indicate magnitude, or also ranking
-     * 
-     */
     @JsonProperty("quantifier_qualifier")
-    @JsonPropertyDescription("can be used to indicate magnitude, or also ranking")
     private String quantifierQualifier;
     /**
-     * expression relationship
+     * 
      * (Required)
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("expression relationship")
     private String relation;
-    /**
-     * stage at which the gene is expressed in the site
-     * 
-     */
     @JsonProperty("stage_qualifier")
-    @JsonPropertyDescription("stage at which the gene is expressed in the site")
     private String stageQualifier;
     /**
-     * gene in which variation is correlated with the phenotypic feature
+     * 
      * (Required)
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("gene in which variation is correlated with the phenotypic feature")
     private String subject;
 
     /**
-     * location in which the gene is expressed
+     * 
      * (Required)
      * 
      */
@@ -73,7 +59,7 @@ public class GeneToExpressionSiteAssociation {
     }
 
     /**
-     * location in which the gene is expressed
+     * 
      * (Required)
      * 
      */
@@ -82,26 +68,18 @@ public class GeneToExpressionSiteAssociation {
         this.object = object;
     }
 
-    /**
-     * can be used to indicate magnitude, or also ranking
-     * 
-     */
     @JsonProperty("quantifier_qualifier")
     public String getQuantifierQualifier() {
         return quantifierQualifier;
     }
 
-    /**
-     * can be used to indicate magnitude, or also ranking
-     * 
-     */
     @JsonProperty("quantifier_qualifier")
     public void setQuantifierQualifier(String quantifierQualifier) {
         this.quantifierQualifier = quantifierQualifier;
     }
 
     /**
-     * expression relationship
+     * 
      * (Required)
      * 
      */
@@ -111,7 +89,7 @@ public class GeneToExpressionSiteAssociation {
     }
 
     /**
-     * expression relationship
+     * 
      * (Required)
      * 
      */
@@ -120,26 +98,18 @@ public class GeneToExpressionSiteAssociation {
         this.relation = relation;
     }
 
-    /**
-     * stage at which the gene is expressed in the site
-     * 
-     */
     @JsonProperty("stage_qualifier")
     public String getStageQualifier() {
         return stageQualifier;
     }
 
-    /**
-     * stage at which the gene is expressed in the site
-     * 
-     */
     @JsonProperty("stage_qualifier")
     public void setStageQualifier(String stageQualifier) {
         this.stageQualifier = stageQualifier;
     }
 
     /**
-     * gene in which variation is correlated with the phenotypic feature
+     * 
      * (Required)
      * 
      */
@@ -149,7 +119,7 @@ public class GeneToExpressionSiteAssociation {
     }
 
     /**
-     * gene in which variation is correlated with the phenotypic feature
+     * 
      * (Required)
      * 
      */

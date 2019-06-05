@@ -1,19 +1,17 @@
 # Slot: object
 
 
-the structure at an earlier time
 
-URI: [http://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_object](slot_uri)
-## Mappings
 
+URI: [biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_object](https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_object)
 ## Domain and Range
 
-[AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) -> [AnatomicalEntity](AnatomicalEntity.md)
+[AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) ->  <sub>REQ</sub> [AnatomicalEntity](AnatomicalEntity.md)
 ## Inheritance
 
  *  is_a: [anatomical entity to anatomical entity association.object](anatomical_entity_to_anatomical_entity_association_object.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md)
+ * [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md)

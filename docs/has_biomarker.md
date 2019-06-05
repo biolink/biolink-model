@@ -3,17 +3,17 @@
 
 holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
 
-URI: [http://w3id.org/biolink/vocab/has_biomarker](slot_uri)
-## Mappings
-
+URI: [biolink:has_biomarker](https://w3id.org/biolink/vocab/has_biomarker)
 ## Domain and Range
 
-[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) -> [MolecularEntity](MolecularEntity.md)
+[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
 ## Inheritance
 
- *  is_a: [correlated with](correlated_with.md) *subsets*: (translator_minimal)
+ *  is_a: [correlated with](correlated_with.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+ * [Disease](Disease.md)
+ * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+ * [PhenotypicFeature](PhenotypicFeature.md)

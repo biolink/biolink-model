@@ -15,39 +15,78 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "frequency_qualifier",
     "object",
+    "onset_qualifier",
     "relation",
+    "severity_qualifier",
     "subject"
 })
 public class VariantToDiseaseAssociation {
 
     /**
-     * a disease that is associated with that variant
+     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * 
+     */
+    @JsonProperty("frequency_qualifier")
+    @JsonPropertyDescription("a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject")
+    private String frequencyQualifier;
+    /**
+     * 
      * (Required)
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("a disease that is associated with that variant")
     private String object;
     /**
-     * E.g. is pathogenic for
+     * a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+     * 
+     */
+    @JsonProperty("onset_qualifier")
+    @JsonPropertyDescription("a qualifier used in a phenotypic association to state when the phenotype appears is in the subject")
+    private String onsetQualifier;
+    /**
+     * 
      * (Required)
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("E.g. is pathogenic for")
     private String relation;
     /**
-     * a sequence variant in which the allele state is associated in some way with the disease state
+     * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+     * 
+     */
+    @JsonProperty("severity_qualifier")
+    @JsonPropertyDescription("a qualifier used in a phenotypic association to state how severe the phenotype is in the subject")
+    private String severityQualifier;
+    /**
+     * 
      * (Required)
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("a sequence variant in which the allele state is associated in some way with the disease state")
     private String subject;
 
     /**
-     * a disease that is associated with that variant
+     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * 
+     */
+    @JsonProperty("frequency_qualifier")
+    public String getFrequencyQualifier() {
+        return frequencyQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * 
+     */
+    @JsonProperty("frequency_qualifier")
+    public void setFrequencyQualifier(String frequencyQualifier) {
+        this.frequencyQualifier = frequencyQualifier;
+    }
+
+    /**
+     * 
      * (Required)
      * 
      */
@@ -57,7 +96,7 @@ public class VariantToDiseaseAssociation {
     }
 
     /**
-     * a disease that is associated with that variant
+     * 
      * (Required)
      * 
      */
@@ -67,7 +106,25 @@ public class VariantToDiseaseAssociation {
     }
 
     /**
-     * E.g. is pathogenic for
+     * a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+     * 
+     */
+    @JsonProperty("onset_qualifier")
+    public String getOnsetQualifier() {
+        return onsetQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+     * 
+     */
+    @JsonProperty("onset_qualifier")
+    public void setOnsetQualifier(String onsetQualifier) {
+        this.onsetQualifier = onsetQualifier;
+    }
+
+    /**
+     * 
      * (Required)
      * 
      */
@@ -77,7 +134,7 @@ public class VariantToDiseaseAssociation {
     }
 
     /**
-     * E.g. is pathogenic for
+     * 
      * (Required)
      * 
      */
@@ -87,7 +144,25 @@ public class VariantToDiseaseAssociation {
     }
 
     /**
-     * a sequence variant in which the allele state is associated in some way with the disease state
+     * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+     * 
+     */
+    @JsonProperty("severity_qualifier")
+    public String getSeverityQualifier() {
+        return severityQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+     * 
+     */
+    @JsonProperty("severity_qualifier")
+    public void setSeverityQualifier(String severityQualifier) {
+        this.severityQualifier = severityQualifier;
+    }
+
+    /**
+     * 
      * (Required)
      * 
      */
@@ -97,7 +172,7 @@ public class VariantToDiseaseAssociation {
     }
 
     /**
-     * a sequence variant in which the allele state is associated in some way with the disease state
+     * 
      * (Required)
      * 
      */
@@ -108,12 +183,12 @@ public class VariantToDiseaseAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("object", object).append("relation", relation).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("frequencyQualifier", frequencyQualifier).append("object", object).append("onsetQualifier", onsetQualifier).append("relation", relation).append("severityQualifier", severityQualifier).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(subject).append(object).append(relation).toHashCode();
+        return new HashCodeBuilder().append(onsetQualifier).append(severityQualifier).append(subject).append(frequencyQualifier).append(object).append(relation).toHashCode();
     }
 
     @Override
@@ -125,7 +200,7 @@ public class VariantToDiseaseAssociation {
             return false;
         }
         VariantToDiseaseAssociation rhs = ((VariantToDiseaseAssociation) other);
-        return new EqualsBuilder().append(subject, rhs.subject).append(object, rhs.object).append(relation, rhs.relation).isEquals();
+        return new EqualsBuilder().append(onsetQualifier, rhs.onsetQualifier).append(severityQualifier, rhs.severityQualifier).append(subject, rhs.subject).append(frequencyQualifier, rhs.frequencyQualifier).append(object, rhs.object).append(relation, rhs.relation).isEquals();
     }
 
 }

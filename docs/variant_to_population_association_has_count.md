@@ -1,19 +1,17 @@
 # Slot: has count
 
 
-number in object population that carry a particular allele, aka allele count
 
-URI: [http://w3id.org/biolink/vocab/variant_to_population_association_has_count](slot_uri)
-## Mappings
 
+URI: [biolink:variant_to_population_association_has_count](https://w3id.org/biolink/vocab/variant_to_population_association_has_count)
 ## Domain and Range
 
-[VariantToPopulationAssociation](VariantToPopulationAssociation.md) -> **integer**
+[VariantToPopulationAssociation](VariantToPopulationAssociation.md) ->  <sub>OPT</sub> [Integer](Integer.md)
 ## Inheritance
 
  *  is_a: [has count](has_count.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
+ * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

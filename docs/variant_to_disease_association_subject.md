@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-a sequence variant in which the allele state is associated in some way with the disease state
 
-URI: [http://w3id.org/biolink/vocab/variant_to_disease_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:variant_to_disease_association_subject](https://w3id.org/biolink/vocab/variant_to_disease_association_subject)
 ## Domain and Range
 
-[VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) -> [IriType](IriType.md)
+[VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [subject](subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
+ * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)

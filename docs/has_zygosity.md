@@ -1,19 +1,17 @@
 # Slot: has zygosity
 
 
-A grouping for any property that holds between a node and a value
 
-URI: [http://w3id.org/biolink/vocab/has_zygosity](slot_uri)
-## Mappings
 
+URI: [biolink:has_zygosity](https://w3id.org/biolink/vocab/has_zygosity)
 ## Domain and Range
 
-[Genotype](Genotype.md) -> [Zygosity](Zygosity.md)
+[Genotype](Genotype.md) ->  <sub>OPT</sub> [Zygosity](Zygosity.md)
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [Genotype](Genotype.md)
+ * [Genotype](Genotype.md)

@@ -3,19 +3,15 @@
 
 holds between parts and wholes (material entities or processes)
 
-URI: [http://w3id.org/biolink/vocab/part_of](slot_uri)
-## Mappings
-
- * [BFO:0000050](http://purl.obolibrary.org/obo/BFO_0000050)
- * [SEMMEDDB:PART_OF](http://purl.obolibrary.org/obo/SEMMEDDB_PART_OF)
- * [WD:P361](http://purl.obolibrary.org/obo/WD_P361)
+URI: [biolink:part_of](https://w3id.org/biolink/vocab/part_of)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
 ## Inheritance
 
- *  is_a: [overlaps](overlaps.md) *subsets*: (translator_minimal)
+ *  is_a: [overlaps](overlaps.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [NamedThing](NamedThing.md)

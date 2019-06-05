@@ -1,19 +1,17 @@
 # Slot: object
 
 
-location in which the gene is expressed
 
-URI: [http://w3id.org/biolink/vocab/gene_to_expression_site_association_object](slot_uri)
-## Mappings
 
+URI: [biolink:gene_to_expression_site_association_object](https://w3id.org/biolink/vocab/gene_to_expression_site_association_object)
 ## Domain and Range
 
-[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) -> [AnatomicalEntity](AnatomicalEntity.md)
+[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) ->  <sub>REQ</sub> [AnatomicalEntity](AnatomicalEntity.md)
 ## Inheritance
 
  *  is_a: [object](object.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
+ * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)

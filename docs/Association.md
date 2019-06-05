@@ -3,14 +3,9 @@
 
 A typed association between two entities, supported by evidence
 
-URI: [http://w3id.org/biolink/vocab/Association](http://w3id.org/biolink/vocab/Association)
+URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
 
-![img](images/Association.png)
-## Mappings
-
- * [OBAN:association](http://purl.obolibrary.org/obo/OBAN_association)
- * [rdf:Statement](http://purl.obolibrary.org/obo/rdf_Statement)
- * [owl:Axiom](http://purl.obolibrary.org/obo/owl_Axiom)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ClinicalModifier]<clinical%20modifier%20qualifier%200..1-%20\[Association|id:identifier_type;subject:iri_type;relation:iri_type;object:iri_type;negated:boolean%20%3F;association_slot:string%20%3F;edge_label:label_type%20%3F],%20\[EvidenceType]<has%20evidence%200..1-%20\[Association],%20\[ConfidenceLevel]<has%20confidence%20level%200..1-%20\[Association],%20\[Provider]<provided%20by%200..1-%20\[Association],%20\[Publication]<publications%200..*-%20\[Association],%20\[OntologyClass]<qualifiers%200..*-%20\[Association],%20\[OntologyClass]<association%20type%200..1-%20\[Association],%20\[Association]^-\[VariantToThingAssociation],%20\[Association]^-\[VariantToPopulationAssociation],%20\[Association]^-\[VariantToPhenotypicFeatureAssociation],%20\[Association]^-\[VariantToDiseaseAssociation],%20\[Association]^-\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[SequenceVariantModulatesTreatmentAssociation],%20\[Association]^-\[SequenceFeatureRelationship],%20\[Association]^-\[PopulationToPopulationAssociation],%20\[Association]^-\[PairwiseInteractionAssociation],%20\[Association]^-\[GenotypeToVariantAssociation],%20\[Association]^-\[GenotypeToThingAssociation],%20\[Association]^-\[GenotypeToPhenotypicFeatureAssociation],%20\[Association]^-\[GenotypeToGenotypePartAssociation],%20\[Association]^-\[GenotypeToGeneAssociation],%20\[Association]^-\[GenomicSequenceLocalization],%20\[Association]^-\[GeneToThingAssociation],%20\[Association]^-\[GeneToPhenotypicFeatureAssociation],%20\[Association]^-\[GeneToGeneAssociation],%20\[Association]^-\[GeneToExpressionSiteAssociation],%20\[Association]^-\[GeneToDiseaseAssociation],%20\[Association]^-\[GeneRegulatoryRelationship],%20\[Association]^-\[FunctionalAssociation],%20\[Association]^-\[EnvironmentToPhenotypicFeatureAssociation],%20\[Association]^-\[EntityToPhenotypicFeatureAssociation],%20\[Association]^-\[DiseaseToThingAssociation],%20\[Association]^-\[DiseaseToPhenotypicFeatureAssociation],%20\[Association]^-\[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],%20\[Association]^-\[ChemicalToThingAssociation],%20\[Association]^-\[ChemicalToPathwayAssociation],%20\[Association]^-\[ChemicalToGeneAssociation],%20\[Association]^-\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[CellLineToThingAssociation],%20\[Association]^-\[CellLineToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[CaseToThingAssociation],%20\[Association]^-\[CaseToPhenotypicFeatureAssociation],%20\[Association]^-\[BiosampleToThingAssociation],%20\[Association]^-\[BiosampleToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[AnatomicalEntityToAnatomicalEntityAssociation])
 ## Inheritance
 
 ## Children
@@ -53,47 +48,50 @@ URI: [http://w3id.org/biolink/vocab/Association](http://w3id.org/biolink/vocab/A
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) - An association between a variant and a population, where the variant has particular frequency in the population
  * [VariantToThingAssociation](VariantToThingAssociation.md)
-## Used in
+## Used by
 
 ## Fields
 
- * [association slot](association_slot.md)
+ * [association slot](association_slot.md)  <sub>OPT</sub>
     * Description: any slot that relates an association to another entity
-    * range: **string**
-    * __Local__
- * [association type](association_type.md)
+    * range: [String](String.md)
+ * [association type](association_type.md)  <sub>OPT</sub>
     * Description: connects an association to the type of association (e.g. gene to phenotype)
     * range: [OntologyClass](OntologyClass.md)
-    * __Local__
- * [association.id](association_id.md) *subsets*: (translator_minimal)
+ * [association.id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
     * range: [IdentifierType](IdentifierType.md)
-    * __Local__
- * [negated](negated.md)
+    * in subsets: (translator_minimal)
+ * [clinical modifier qualifier](clinical_modifier_qualifier.md)  <sub>OPT</sub>
+    * Description: Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+    * range: [ClinicalModifier](ClinicalModifier.md)
+ * [edge label](edge_label.md)  <sub>OPT</sub>
+    * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+    * range: [LabelType](LabelType.md)
+ * [has confidence level](has_confidence_level.md)  <sub>OPT</sub>
+    * Description: connects an association to a qualitative term denoting the level of confidence
+    * range: [ConfidenceLevel](ConfidenceLevel.md)
+ * [has evidence](has_evidence.md)  <sub>OPT</sub>
+    * Description: connects an association to an instance of supporting evidence
+    * range: [EvidenceType](EvidenceType.md)
+ * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
-    * range: **boolean**
-    * __Local__
- * [object](object.md)
+    * range: [Boolean](Boolean.md)
+ * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: [IriType](IriType.md) [required]
-    * __Local__
- * [provided by](provided_by.md)
+    * range: [IriType](IriType.md)
+ * [provided by](provided_by.md)  <sub>OPT</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
-    * __Local__
- * [publications](publications.md)
+ * [publications](publications.md)  <sub>0..*</sub>
     * Description: connects an association to publications supporting the association
-    * range: [Publication](Publication.md)*
-    * __Local__
- * [qualifiers](qualifiers.md)
+    * range: [Publication](Publication.md)
+ * [qualifiers](qualifiers.md)  <sub>0..*</sub>
     * Description: connects an association to qualifiers that modify or qualify the meaning of that association
-    * range: [OntologyClass](OntologyClass.md)*
-    * __Local__
- * [relation](relation.md)
+    * range: [OntologyClass](OntologyClass.md)
+ * [relation](relation.md)  <sub>REQ</sub>
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [IriType](IriType.md) [required]
-    * __Local__
- * [subject](subject.md)
+    * range: [IriType](IriType.md)
+ * [subject](subject.md)  <sub>REQ</sub>
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: [IriType](IriType.md) [required]
-    * __Local__
+    * range: [IriType](IriType.md)

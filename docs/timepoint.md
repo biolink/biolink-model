@@ -3,17 +3,15 @@
 
 a point in time
 
-URI: [http://w3id.org/biolink/vocab/timepoint](slot_uri)
-## Mappings
-
+URI: [biolink:timepoint](https://w3id.org/biolink/vocab/timepoint)
 ## Domain and Range
 
-[GeographicLocationAtTime](GeographicLocationAtTime.md) -> [TimeType](TimeType.md)
+[GeographicLocationAtTime](GeographicLocationAtTime.md) ->  <sub>OPT</sub> [TimeType](TimeType.md)
 ## Inheritance
 
  *  is_a: [node property](node_property.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeographicLocationAtTime](GeographicLocationAtTime.md)
+ * [GeographicLocationAtTime](GeographicLocationAtTime.md)

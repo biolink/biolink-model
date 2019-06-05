@@ -1,20 +1,17 @@
 # Slot: relation
 
 
-The relationship to the disease
 
-URI: [http://w3id.org/biolink/vocab/model_to_disease_mixin_relation](slot_uri)
-## Mappings
 
+URI: [biolink:model_to_disease_mixin_relation](https://w3id.org/biolink/vocab/model_to_disease_mixin_relation)
 ## Domain and Range
 
-[ModelToDiseaseMixin](ModelToDiseaseMixin.md) -> [IriType](IriType.md)
+[ModelToDiseaseMixin](ModelToDiseaseMixin.md) ->  <sub>REQ</sub> [IriType](IriType.md)
 ## Inheritance
 
  *  is_a: [relation](relation.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [ModelToDiseaseMixin](ModelToDiseaseMixin.md)
- *  reifies: [model of](model_of.md) *subsets*: (translator_minimal)
+ * [ModelToDiseaseMixin](ModelToDiseaseMixin.md)

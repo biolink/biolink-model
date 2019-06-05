@@ -3,17 +3,40 @@
 
 holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest
 
-URI: [http://w3id.org/biolink/vocab/decreases_expression_of](slot_uri)
-## Mappings
-
+URI: [biolink:decreases_expression_of](https://w3id.org/biolink/vocab/decreases_expression_of)
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) -> [GenomicEntity](GenomicEntity.md)
+[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [GenomicEntity](GenomicEntity.md)
 ## Inheritance
 
- *  is_a: [affects expression of](affects_expression_of.md) *subsets*: (translator_minimal)
+ *  is_a: [affects expression of](affects_expression_of.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [MolecularEntity](MolecularEntity.md)
+ * [RNAProduct](RNAProduct.md)
+ * [RNAProductIsoform](RNAProductIsoform.md)
+ * [Carbohydrate](Carbohydrate.md)
+ * [ChemicalSubstance](ChemicalSubstance.md)
+ * [CodingSequence](CodingSequence.md)
+ * [Drug](Drug.md)
+ * [Exon](Exon.md)
+ * [Gene](Gene.md)
+ * [GeneFamily](GeneFamily.md)
+ * [GeneOrGeneProduct](GeneOrGeneProduct.md)
+ * [GeneProduct](GeneProduct.md)
+ * [GeneProductIsoform](GeneProductIsoform.md)
+ * [Genome](Genome.md)
+ * [GenomicEntity](GenomicEntity.md)
+ * [Genotype](Genotype.md)
+ * [Haplotype](Haplotype.md)
+ * [MacromolecularComplex](MacromolecularComplex.md)
+ * [MacromolecularMachine](MacromolecularMachine.md)
+ * [Metabolite](Metabolite.md)
+ * [MicroRNA](MicroRNA.md)
+ * [MolecularEntity](MolecularEntity.md)
+ * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+ * [Protein](Protein.md)
+ * [ProteinIsoform](ProteinIsoform.md)
+ * [SequenceVariant](SequenceVariant.md)
+ * [Transcript](Transcript.md)

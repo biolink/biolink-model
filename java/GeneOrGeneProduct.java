@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -28,35 +30,35 @@ public class GeneOrGeneProduct {
      */
     @JsonProperty("expressed_in")
     @JsonPropertyDescription("holds between a gene or gene product and an anatomical entity in which it is expressed")
-    private String expressedIn;
+    private List<String> expressedIn = new ArrayList<String>();
     /**
-     * holds between two genes or gene products that are expressed in the same cell type or population 
+     * holds between two genes or gene products that are expressed in the same cell type or population
      * 
      */
     @JsonProperty("in_cell_population_with")
-    @JsonPropertyDescription("holds between two genes or gene products that are expressed in the same cell type or population ")
-    private String inCellPopulationWith;
+    @JsonPropertyDescription("holds between two genes or gene products that are expressed in the same cell type or population")
+    private List<String> inCellPopulationWith = new ArrayList<String>();
     /**
      * holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex
      * 
      */
     @JsonProperty("in_complex_with")
     @JsonPropertyDescription("holds between two genes or gene products that are part of (or code for products that are part of) in the same macromolecular complex")
-    private String inComplexWith;
+    private List<String> inComplexWith = new ArrayList<String>();
     /**
      * holds between two genes or gene products that are part of in the same biological pathway
      * 
      */
     @JsonProperty("in_pathway_with")
     @JsonPropertyDescription("holds between two genes or gene products that are part of in the same biological pathway")
-    private String inPathwayWith;
+    private List<String> inPathwayWith = new ArrayList<String>();
 
     /**
      * holds between a gene or gene product and an anatomical entity in which it is expressed
      * 
      */
     @JsonProperty("expressed_in")
-    public String getExpressedIn() {
+    public List<String> getExpressedIn() {
         return expressedIn;
     }
 
@@ -65,25 +67,25 @@ public class GeneOrGeneProduct {
      * 
      */
     @JsonProperty("expressed_in")
-    public void setExpressedIn(String expressedIn) {
+    public void setExpressedIn(List<String> expressedIn) {
         this.expressedIn = expressedIn;
     }
 
     /**
-     * holds between two genes or gene products that are expressed in the same cell type or population 
+     * holds between two genes or gene products that are expressed in the same cell type or population
      * 
      */
     @JsonProperty("in_cell_population_with")
-    public String getInCellPopulationWith() {
+    public List<String> getInCellPopulationWith() {
         return inCellPopulationWith;
     }
 
     /**
-     * holds between two genes or gene products that are expressed in the same cell type or population 
+     * holds between two genes or gene products that are expressed in the same cell type or population
      * 
      */
     @JsonProperty("in_cell_population_with")
-    public void setInCellPopulationWith(String inCellPopulationWith) {
+    public void setInCellPopulationWith(List<String> inCellPopulationWith) {
         this.inCellPopulationWith = inCellPopulationWith;
     }
 
@@ -92,7 +94,7 @@ public class GeneOrGeneProduct {
      * 
      */
     @JsonProperty("in_complex_with")
-    public String getInComplexWith() {
+    public List<String> getInComplexWith() {
         return inComplexWith;
     }
 
@@ -101,7 +103,7 @@ public class GeneOrGeneProduct {
      * 
      */
     @JsonProperty("in_complex_with")
-    public void setInComplexWith(String inComplexWith) {
+    public void setInComplexWith(List<String> inComplexWith) {
         this.inComplexWith = inComplexWith;
     }
 
@@ -110,7 +112,7 @@ public class GeneOrGeneProduct {
      * 
      */
     @JsonProperty("in_pathway_with")
-    public String getInPathwayWith() {
+    public List<String> getInPathwayWith() {
         return inPathwayWith;
     }
 
@@ -119,7 +121,7 @@ public class GeneOrGeneProduct {
      * 
      */
     @JsonProperty("in_pathway_with")
-    public void setInPathwayWith(String inPathwayWith) {
+    public void setInPathwayWith(List<String> inPathwayWith) {
         this.inPathwayWith = inPathwayWith;
     }
 

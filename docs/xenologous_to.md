@@ -3,17 +3,15 @@
 
 a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor.
 
-URI: [http://w3id.org/biolink/vocab/xenologous_to](slot_uri)
-## Mappings
-
- * [RO:HOM0000018](http://purl.obolibrary.org/obo/RO_HOM0000018)
+URI: [biolink:xenologous_to](https://w3id.org/biolink/vocab/xenologous_to)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
 ## Inheritance
 
- *  is_a: [homologous to](homologous_to.md) *subsets*: (translator_minimal)
+ *  is_a: [homologous to](homologous_to.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [NamedThing](NamedThing.md)

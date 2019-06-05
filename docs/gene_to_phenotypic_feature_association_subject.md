@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-gene in which variation is correlated with the phenotypic feature
 
-URI: [http://w3id.org/biolink/vocab/gene_to_phenotypic_feature_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:gene_to_phenotypic_feature_association_subject](https://w3id.org/biolink/vocab/gene_to_phenotypic_feature_association_subject)
 ## Domain and Range
 
-[GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) -> [GeneOrGeneProduct](GeneOrGeneProduct.md)
+[GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) ->  <sub>REQ</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
 ## Inheritance
 
  *  is_a: [subject](subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)
+ * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md)

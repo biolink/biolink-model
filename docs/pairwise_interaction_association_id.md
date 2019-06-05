@@ -1,19 +1,17 @@
 # Slot: id
 
 
-identifier for the interaction. This may come from an interaction database such as IMEX.
 
-URI: [http://w3id.org/biolink/vocab/pairwise_interaction_association_id](slot_uri)
-## Mappings
 
+URI: [biolink:pairwise_interaction_association_id](https://w3id.org/biolink/vocab/pairwise_interaction_association_id)
 ## Domain and Range
 
-[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) -> [IdentifierType](IdentifierType.md)
+[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) ->  <sub>REQ</sub> [IdentifierType](IdentifierType.md)
 ## Inheritance
 
- *  is_a: [association.id](association_id.md) *subsets*: (translator_minimal)
+ *  is_a: [association.id](association_id.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)
+ * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)

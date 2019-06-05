@@ -3,18 +3,16 @@
 
 holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
 
-URI: [http://w3id.org/biolink/vocab/actively_involved_in](slot_uri)
-## Mappings
-
- * [RO:0002331](http://purl.obolibrary.org/obo/RO_0002331)
+URI: [biolink:actively_involved_in](https://w3id.org/biolink/vocab/actively_involved_in)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [Occurrent](Occurrent.md)
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [Occurrent](Occurrent.md)
 ## Inheritance
 
- *  is_a: [participates in](participates_in.md) *subsets*: (translator_minimal)
+ *  is_a: [participates in](participates_in.md)
 ## Children
 
- *  child: [capable of](capable_of.md) *subsets*: (translator_minimal)
-## Used in
+ *  [capable of](capable_of.md)
+## Used by
 
+ * [NamedThing](NamedThing.md)

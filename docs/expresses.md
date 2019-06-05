@@ -3,18 +3,18 @@
 
 holds between an anatomical entity and gene or gene product that is expressed there
 
-URI: [http://w3id.org/biolink/vocab/expresses](slot_uri)
-## Mappings
-
- * [RO:0002292](http://purl.obolibrary.org/obo/RO_0002292)
+URI: [biolink:expresses](https://w3id.org/biolink/vocab/expresses)
 ## Domain and Range
 
-[AnatomicalEntity](AnatomicalEntity.md) -> [GeneOrGeneProduct](GeneOrGeneProduct.md)
+[AnatomicalEntity](AnatomicalEntity.md) ->  <sub>0..*</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [AnatomicalEntity](AnatomicalEntity.md)
+ * [AnatomicalEntity](AnatomicalEntity.md)
+ * [Cell](Cell.md)
+ * [CellularComponent](CellularComponent.md)
+ * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)

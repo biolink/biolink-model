@@ -1,55 +1,50 @@
 description: An association between a two populations
-display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
 - population to population association
-document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
 - population to population association
 fields:
 - description: A unique identifier for an association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - association_id
   id: id
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - population to population association_subject
+  id: subject
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - population to population association_relation
+  id: relation
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - population to population association_object
+  id: object
 - description: if set to true, then the association is negated i.e. is not true
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - negated
   id: negated
 - description: connects an association to the type of association (e.g. gene to phenotype)
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - association type
   id: association_type
 - cardinality: multi
   description: connects an association to qualifiers that modify or qualify the meaning
     of that association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - qualifiers
   id: qualifiers
 - cardinality: multi
   description: connects an association to publications supporting the association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - publications
   id: publications
 - description: connects an association to the agent (person, organization or group)
     that provided it
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - provided by
   id: provided_by
 - description: any slot that relates an association to another entity
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - association slot
   id: association_slot
-- description: the population that form the subject of the association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
-  - population to population association subject
-  id: subject
-- description: the population that form the object of the association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
-  - population to population association object
-  id: object
-- description: A relationship type that holds between the subject and object populations.
-    Standard mereological relations can be used. E.g. subject part-of object, subject
-    overlaps object. Derivation relationships can also be used
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
-  - population to population association relation
-  id: relation
 id: population_to_population_association
 schema_generating: true
 weight: 20

@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
-URI: [http://w3id.org/biolink/vocab/exon_to_transcript_relationship_subject](slot_uri)
-## Mappings
 
+URI: [biolink:exon_to_transcript_relationship_subject](https://w3id.org/biolink/vocab/exon_to_transcript_relationship_subject)
 ## Domain and Range
 
-[ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) -> [Exon](Exon.md)
+[ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) ->  <sub>REQ</sub> [Exon](Exon.md)
 ## Inheritance
 
  *  is_a: [sequence feature relationship.subject](sequence_feature_relationship_subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)
+ * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)

@@ -1,19 +1,17 @@
 # Slot: object
 
 
-the gene or gene product that is affected by the chemical
 
-URI: [http://w3id.org/biolink/vocab/chemical_to_gene_association_object](slot_uri)
-## Mappings
 
+URI: [biolink:chemical_to_gene_association_object](https://w3id.org/biolink/vocab/chemical_to_gene_association_object)
 ## Domain and Range
 
-[ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) -> [GeneOrGeneProduct](GeneOrGeneProduct.md)
+[ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) ->  <sub>REQ</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
 ## Inheritance
 
  *  is_a: [object](object.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)
+ * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)

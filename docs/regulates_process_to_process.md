@@ -1,22 +1,27 @@
 # Slot: regulates, process to process
 
 
-describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
 
-URI: [http://w3id.org/biolink/vocab/regulates_process_to_process](slot_uri)
-## Mappings
 
- * [RO:0002211](http://purl.obolibrary.org/obo/RO_0002211)
+URI: [biolink:regulates_process_to_process](https://w3id.org/biolink/vocab/regulates_process_to_process)
 ## Domain and Range
 
-[Occurrent](Occurrent.md) -> [Occurrent](Occurrent.md)
+[Occurrent](Occurrent.md) ->  <sub>0..*</sub> [Occurrent](Occurrent.md)
 ## Inheritance
 
- *  is_a: [regulates](regulates.md) *subsets*: (translator_minimal)
+ *  is_a: [regulates](regulates.md)
 ## Children
 
- *  child: [negatively regulates, process to process](negatively_regulates_process_to_process.md) *subsets*: (translator_minimal)
- *  child: [positively regulates, process to process](positively_regulates_process_to_process.md) *subsets*: (translator_minimal)
-## Used in
+ *  [negatively regulates, process to process](negatively_regulates_process_to_process.md)
+ *  [positively regulates, process to process](positively_regulates_process_to_process.md)
+## Used by
 
- *  usage: [Occurrent](Occurrent.md)
+ * [ActivityAndBehavior](ActivityAndBehavior.md)
+ * [BiologicalProcess](BiologicalProcess.md)
+ * [EnvironmentalProcess](EnvironmentalProcess.md)
+ * [MolecularActivity](MolecularActivity.md)
+ * [Occurrent](Occurrent.md)
+ * [Pathway](Pathway.md)
+ * [Phenomenon](Phenomenon.md)
+ * [PhysiologicalProcess](PhysiologicalProcess.md)
+ * [Procedure](Procedure.md)

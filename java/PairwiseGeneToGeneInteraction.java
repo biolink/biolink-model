@@ -1,6 +1,5 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -20,16 +19,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class PairwiseGeneToGeneInteraction {
 
     /**
-     * interaction relationship type
+     * 
      * (Required)
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("interaction relationship type")
     private String relation;
 
     /**
-     * interaction relationship type
+     * 
      * (Required)
      * 
      */
@@ -39,7 +37,7 @@ public class PairwiseGeneToGeneInteraction {
     }
 
     /**
-     * interaction relationship type
+     * 
      * (Required)
      * 
      */

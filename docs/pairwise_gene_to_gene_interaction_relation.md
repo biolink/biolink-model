@@ -1,20 +1,17 @@
 # Slot: relation
 
 
-interaction relationship type
 
-URI: [http://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_relation](slot_uri)
-## Mappings
 
+URI: [biolink:pairwise_gene_to_gene_interaction_relation](https://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_relation)
 ## Domain and Range
 
-[PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) -> [IriType](IriType.md)
+[PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) ->  <sub>REQ</sub> [IriType](IriType.md)
 ## Inheritance
 
- *  is_a: [pairwise interaction association.relation](pairwise_interaction_association_relation.md)
+ *  is_a: [relation](relation.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md)
- *  reifies: [molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)
+ * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md)

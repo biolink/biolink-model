@@ -3,16 +3,15 @@
 
 connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
 
-URI: [http://w3id.org/biolink/vocab/has_molecular_consequence](slot_uri)
-## Mappings
-
+URI: [biolink:has_molecular_consequence](https://w3id.org/biolink/vocab/has_molecular_consequence)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [OntologyClass](OntologyClass.md)
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [OntologyClass](OntologyClass.md)
 ## Inheritance
 
  *  is_a: [related to](related_to.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [NamedThing](NamedThing.md)

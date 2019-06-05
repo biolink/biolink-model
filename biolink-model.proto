@@ -1,0 +1,3255 @@
+// Activity or behavior of any independent integral living, organization or mechanical actor in the world
+message ActivityAndBehavior
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated regulatesProcessToProcess None = 12
+  repeated hasParticipant None = 13
+  repeated hasInput None = 14
+  repeated precedes None = 15
+ }
+// A subcellular location, cell type or gross anatomical part
+message AnatomicalEntity
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated expresses None = 13
+  repeated inTaxon None = 14
+ }
+message AnatomicalEntityToAnatomicalEntityAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
+message AnatomicalEntityToAnatomicalEntityOntogenicAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
+message AnatomicalEntityToAnatomicalEntityPartOfAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// A typed association between two entities, supported by evidence
+message Association
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional edgeLabel None = 11
+  optional hasConfidenceLevel None = 12
+  optional hasEvidence None = 13
+  optional clinicalModifierQualifier None = 14
+ }
+// A property or characteristic of an entity
+message Attribute
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated subclassOf None = 12
+ }
+// One or more causally connected executions of molecular functions
+message BiologicalProcess
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated regulatesProcessToProcess None = 13
+  repeated hasParticipant None = 14
+  repeated hasInput None = 15
+  repeated precedes None = 16
+ }
+// Either an individual molecular activity, or a collection of causally connected molecular activities
+message BiologicalProcessOrActivity
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+ }
+message BiologicalSex
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated subclassOf None = 12
+ }
+message Biosample
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated inTaxon None = 13
+ }
+// An association between a biosample and a disease or phenotype
+message BiosampleToDiseaseOrPhenotypicFeatureAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+message Carbohydrate
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+ }
+// An individual organism that has a patient role in some clinical context.
+message Case
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated inTaxon None = 13
+ }
+// An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
+message CaseToPhenotypicFeatureAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional sexQualifier None = 11
+  optional frequencyQualifier None = 12
+  optional severityQualifier None = 13
+  optional onsetQualifier None = 14
+ }
+message Cell
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated expresses None = 13
+  repeated inTaxon None = 14
+ }
+message CellLine
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated inTaxon None = 13
+ }
+// An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
+message CellLineToDiseaseOrPhenotypicFeatureAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// A location in or around a cell
+message CellularComponent
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated expresses None = 13
+  repeated inTaxon None = 14
+ }
+// May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
+message ChemicalSubstance
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+ }
+// An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
+message ChemicalToDiseaseOrPhenotypicFeatureAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// An interaction between a chemical entity and a gene or gene product
+message ChemicalToGeneAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// An interaction between a chemical entity and a biological process or pathway
+message ChemicalToPathwayAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
+message ClinicalEntity
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+ }
+message ClinicalIntervention
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+ }
+// Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+message ClinicalModifier
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated subclassOf None = 12
+ }
+message ClinicalTrial
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+ }
+message CodingSequence
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+ }
+// Level of confidence in a statement
+message ConfidenceLevel
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+ }
+// A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
+message Device
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+ }
+message Disease
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated correlatedWith None = 13
+  repeated hasBiomarker None = 14
+  repeated treatedBy None = 15
+  repeated inTaxon None = 16
+ }
+// Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
+message DiseaseOrPhenotypicFeature
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated correlatedWith None = 13
+  repeated hasBiomarker None = 14
+  repeated treatedBy None = 15
+  repeated inTaxon None = 16
+ }
+// An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site.
+message DiseaseOrPhenotypicFeatureAssociationToLocationAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
+message DiseaseToPhenotypicFeatureAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional sexQualifier None = 11
+  optional frequencyQualifier None = 12
+  optional severityQualifier None = 13
+  optional onsetQualifier None = 14
+ }
+// A substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease
+message Drug
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+ }
+// A drug exposure is an intake of a particular chemical substance
+message DrugExposure
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated drug None = 13
+ }
+// A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes
+message Environment
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+ }
+// Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+message EnvironmentToPhenotypicFeatureAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional sexQualifier None = 11
+  optional frequencyQualifier None = 12
+  optional severityQualifier None = 13
+  optional onsetQualifier None = 14
+ }
+message EnvironmentalFeature
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+ }
+message EnvironmentalProcess
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated regulatesProcessToProcess None = 12
+  repeated hasParticipant None = 13
+  repeated hasInput None = 14
+  repeated precedes None = 15
+ }
+// Class of evidence that supports an association
+message EvidenceType
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+ }
+// A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
+message Exon
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+ }
+// A transcript is formed from multiple exons
+message ExonToTranscriptRelationship
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// describes the frequency of occurrence of an event or condition
+message FrequencyValue
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated subclassOf None = 12
+ }
+// An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
+message FunctionalAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+message Gene
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+  repeated inPathwayWith None = 66
+  repeated inComplexWith None = 67
+  repeated inCellPopulationWith None = 68
+  repeated expressedIn None = 69
+  repeated geneticallyInteractsWith None = 70
+  repeated hasGeneProduct None = 71
+  repeated geneAssociatedWithCondition None = 72
+ }
+message GeneAsAModelOfDiseaseAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional frequencyQualifier None = 11
+  optional severityQualifier None = 12
+  optional onsetQualifier None = 13
+ }
+// any grouping of multiple genes or gene products related by common descent
+message GeneFamily
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+ }
+message GeneHasVariantThatContributesToDiseaseAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional frequencyQualifier None = 11
+  optional severityQualifier None = 12
+  optional onsetQualifier None = 13
+  optional sequenceVariantQualifier None = 14
+ }
+// an ontology class that describes a functional aspect of a gene, gene prodoct or complex
+message GeneOntologyClass
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated subclassOf None = 12
+ }
+// a union of genes or gene products. Frequently an identifier for one will be used as proxy for another
+message GeneOrGeneProduct
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+  repeated inPathwayWith None = 66
+  repeated inComplexWith None = 67
+  repeated inCellPopulationWith None = 68
+  repeated expressedIn None = 69
+ }
+// The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules
+message GeneProduct
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+  repeated inPathwayWith None = 66
+  repeated inComplexWith None = 67
+  repeated inCellPopulationWith None = 68
+  repeated expressedIn None = 69
+ }
+// A regulatory relationship between two genes
+message GeneRegulatoryRelationship
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+message GeneToDiseaseAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional frequencyQualifier None = 11
+  optional severityQualifier None = 12
+  optional onsetQualifier None = 13
+ }
+// An association between a gene and an expression site, possibly qualified by stage/timing info.
+message GeneToExpressionSiteAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional stageQualifier None = 11
+  optional quantifierQualifier None = 12
+ }
+// A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
+message GeneToGeneHomologyAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// A gene is transcribed and potentially translated to a gene product
+message GeneToGeneProductRelationship
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+message GeneToGoTermAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+message GeneToPhenotypicFeatureAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional sexQualifier None = 11
+  optional frequencyQualifier None = 12
+  optional severityQualifier None = 13
+  optional onsetQualifier None = 14
+ }
+// A genome is the sum of genetic material within a cell or virion.
+message Genome
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+ }
+// an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
+message GenomicEntity
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+ }
+// A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig
+message GenomicSequenceLocalization
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional startInterbaseCoordinate None = 11
+  optional endInterbaseCoordinate None = 12
+  optional genomeBuild None = 13
+  optional phase None = 14
+ }
+// An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background
+message Genotype
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+  optional hasZygosity None = 66
+ }
+// Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
+message GenotypeToGeneAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// Any association between one genotype and a genotypic entity that is a sub-component of it
+message GenotypeToGenotypePartAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
+message GenotypeToPhenotypicFeatureAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional sexQualifier None = 11
+  optional frequencyQualifier None = 12
+  optional severityQualifier None = 13
+  optional onsetQualifier None = 14
+ }
+// Any association between a genotype and a sequence variant.
+message GenotypeToVariantAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
+message GenotypicSex
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated subclassOf None = 12
+ }
+// a location that can be described in lat/long coordinates
+message GeographicLocation
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  optional latitude None = 12
+  optional longitude None = 13
+ }
+// a location that can be described in lat/long coordinates, for a particular time
+message GeographicLocationAtTime
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  optional latitude None = 12
+  optional longitude None = 13
+  optional timepoint None = 14
+ }
+message GrossAnatomicalStructure
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated expresses None = 13
+  repeated inTaxon None = 14
+ }
+// A set of zero or more Alleles on a single instance of a Sequence[VMC]
+message Haplotype
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+ }
+message IndividualOrganism
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated inTaxon None = 13
+ }
+// A stage of development or growth of an organism, including post-natal adult stages
+message LifeStage
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated inTaxon None = 13
+ }
+message MacromolecularComplex
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+ }
+// A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
+message MacromolecularMachine
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+ }
+// A functional association between a macromolecular machine (gene, gene product or complex) and a biological process or pathway (as represented in the GO biological process branch), where the entity carries out some part of the process, regulates it, or acts upstream of it
+message MacromolecularMachineToBiologicalProcessAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// A functional association between a macromolecular machine (gene, gene product or complex) and a cellular component (as represented in the GO cellular component branch), where the entity carries out its function in the cellular component
+message MacromolecularMachineToCellularComponentAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
+message MacromolecularMachineToMolecularActivityAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
+message Metabolite
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+ }
+message MicroRNA
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+  repeated inPathwayWith None = 66
+  repeated inComplexWith None = 67
+  repeated inCellPopulationWith None = 68
+  repeated expressedIn None = 69
+ }
+// An execution of a molecular function carried out by a gene product or macromolecular complex.
+message MolecularActivity
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated regulatesProcessToProcess None = 13
+  repeated hasParticipant None = 14
+  repeated hasInput None = 15
+  repeated precedes None = 16
+ }
+// A gene, gene product, small molecule or macromolecule (including protein complex)
+message MolecularEntity
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  repeated positivelyRegulatesEntityToEntity None = 65
+  repeated negativelyRegulatesEntityToEntity None = 66
+ }
+// a databased entity or concept/class
+message NamedThing
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated physicallyInteractsWith None = 12
+  repeated affects None = 13
+  repeated regulates None = 14
+  repeated positivelyRegulates None = 15
+  repeated negativelyRegulates None = 16
+  repeated disrupts None = 17
+  repeated homologousTo None = 18
+  repeated paralogousTo None = 19
+  repeated orthologousTo None = 20
+  repeated xenologousTo None = 21
+  repeated coexistsWith None = 22
+  repeated colocalizesWith None = 23
+  repeated affectsRiskFor None = 24
+  repeated predisposes None = 25
+  repeated contributesTo None = 26
+  repeated causes None = 27
+  repeated prevents None = 28
+  repeated occursIn None = 29
+  repeated locatedIn None = 30
+  repeated locationOf None = 31
+  repeated modelOf None = 32
+  repeated overlaps None = 33
+  repeated hasPart None = 34
+  repeated partOf None = 35
+  repeated participatesIn None = 36
+  repeated activelyInvolvedIn None = 37
+  repeated capableOf None = 38
+  repeated derivesInto None = 39
+  repeated derivesFrom None = 40
+  repeated manifestationOf None = 41
+  repeated produces None = 42
+  repeated sameAs None = 43
+  optional creationDate None = 44
+  optional updateDate None = 45
+  optional hasChemicalFormula None = 46
+  optional aggregateStatistic None = 47
+  repeated hasMolecularConsequence None = 48
+  optional filler None = 49
+  optional interbaseCoordinate None = 50
+ }
+message NoncodingRNAProduct
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+  repeated inPathwayWith None = 66
+  repeated inComplexWith None = 67
+  repeated inCellPopulationWith None = 68
+  repeated expressedIn None = 69
+ }
+// A processual entity
+message Occurrent
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated regulatesProcessToProcess None = 12
+  repeated hasParticipant None = 13
+  repeated hasInput None = 14
+  repeated precedes None = 15
+  repeated positivelyRegulatesProcessToProcess None = 16
+  repeated negativelyRegulatesProcessToProcess None = 17
+ }
+// The age group in which manifestations appear
+message Onset
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated subclassOf None = 12
+ }
+// a concept or class in an ontology, vocabulary or thesaurus
+message OntologyClass
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated subclassOf None = 12
+ }
+message OrganismTaxon
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated subclassOf None = 12
+ }
+// An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+message PairwiseGeneToGeneInteraction
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+message Pathway
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated regulatesProcessToProcess None = 13
+  repeated hasParticipant None = 14
+  repeated hasInput None = 15
+  repeated precedes None = 16
+ }
+// a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
+message Phenomenon
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated regulatesProcessToProcess None = 12
+  repeated hasParticipant None = 13
+  repeated hasInput None = 14
+  repeated precedes None = 15
+ }
+message PhenotypicFeature
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated correlatedWith None = 13
+  repeated hasBiomarker None = 14
+  repeated treatedBy None = 15
+  repeated inTaxon None = 16
+ }
+// An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
+message PhenotypicSex
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated subclassOf None = 12
+ }
+message PhysiologicalProcess
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated regulatesProcessToProcess None = 13
+  repeated hasParticipant None = 14
+  repeated hasInput None = 15
+  repeated precedes None = 16
+ }
+// Any entity or process that exists at the level of the whole planet
+message PlanetaryEntity
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+ }
+// A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]
+message PopulationOfIndividualOrganisms
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated inTaxon None = 13
+ }
+// An association between a two populations
+message PopulationToPopulationAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// A series of actions conducted in a certain order or manner
+message Procedure
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated regulatesProcessToProcess None = 12
+  repeated hasParticipant None = 13
+  repeated hasInput None = 14
+  repeated precedes None = 15
+ }
+// A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA
+message Protein
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+  repeated inPathwayWith None = 66
+  repeated inComplexWith None = 67
+  repeated inCellPopulationWith None = 68
+  repeated expressedIn None = 69
+ }
+// Represents a protein that is a specific isoform of the canonical or reference protein. See https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4114032/
+message ProteinIsoform
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+  repeated inPathwayWith None = 66
+  repeated inComplexWith None = 67
+  repeated inCellPopulationWith None = 68
+  repeated expressedIn None = 69
+ }
+// person, group, organization or project that provides a piece of information
+message Provider
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+ }
+// Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
+message Publication
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+ }
+// An OWL property used as an edge label
+message RelationshipType
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated subclassOf None = 12
+ }
+message RNAProduct
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+  repeated inPathwayWith None = 66
+  repeated inComplexWith None = 67
+  repeated inCellPopulationWith None = 68
+  repeated expressedIn None = 69
+ }
+// Represents a protein that is a specific isoform of the canonical or reference RNA
+message RNAProductIsoform
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+  repeated inPathwayWith None = 66
+  repeated inComplexWith None = 67
+  repeated inCellPopulationWith None = 68
+  repeated expressedIn None = 69
+ }
+// For example, a particular exon is part of a particular transcript or gene
+message SequenceFeatureRelationship
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// An allele that varies in its sequence from what is considered the reference allele at that locus.
+message SequenceVariant
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+  repeated hasGene None = 66
+ }
+// describes the severity of a phenotypic feature or disease
+message SeverityValue
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated subclassOf None = 12
+ }
+// An RNA synthesized on a DNA or RNA template by an RNA polymerase
+message Transcript
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated molecularlyInteractsWith None = 13
+  repeated affectsAbundanceOf None = 14
+  repeated increasesAbundanceOf None = 15
+  repeated decreasesAbundanceOf None = 16
+  repeated affectsActivityOf None = 17
+  repeated increasesActivityOf None = 18
+  repeated decreasesActivityOf None = 19
+  repeated affectsExpressionOf None = 20
+  repeated increasesExpressionOf None = 21
+  repeated decreasesExpressionOf None = 22
+  repeated affectsFoldingOf None = 23
+  repeated increasesFoldingOf None = 24
+  repeated decreasesFoldingOf None = 25
+  repeated affectsLocalizationOf None = 26
+  repeated increasesLocalizationOf None = 27
+  repeated decreasesLocalizationOf None = 28
+  repeated affectsMetabolicProcessingOf None = 29
+  repeated increasesMetabolicProcessingOf None = 30
+  repeated decreasesMetabolicProcessingOf None = 31
+  repeated affectsMolecularModificationOf None = 32
+  repeated increasesMolecularModificationOf None = 33
+  repeated decreasesMolecularModificationOf None = 34
+  repeated affectsSynthesisOf None = 35
+  repeated increasesSynthesisOf None = 36
+  repeated decreasesSynthesisOf None = 37
+  repeated affectsDegradationOf None = 38
+  repeated increasesDegradationOf None = 39
+  repeated decreasesDegradationOf None = 40
+  repeated affectsMutationRateOf None = 41
+  repeated increasesMutationRateOf None = 42
+  repeated decreasesMutationRateOf None = 43
+  repeated affectsResponseTo None = 44
+  repeated increasesResponseTo None = 45
+  repeated decreasesResponseTo None = 46
+  repeated affectsSplicingOf None = 47
+  repeated increasesSplicingOf None = 48
+  repeated decreasesSplicingOf None = 49
+  repeated affectsStabilityOf None = 50
+  repeated increasesStabilityOf None = 51
+  repeated decreasesStabilityOf None = 52
+  repeated affectsTransportOf None = 53
+  repeated increasesTransportOf None = 54
+  repeated decreasesTransportOf None = 55
+  repeated affectsSecretionOf None = 56
+  repeated increasesSecretionOf None = 57
+  repeated decreasesSecretionOf None = 58
+  repeated affectsUptakeOf None = 59
+  repeated increasesUptakeOf None = 60
+  repeated decreasesUptakeOf None = 61
+  repeated regulatesEntityToEntity None = 62
+  repeated biomarkerFor None = 63
+  repeated inTaxon None = 64
+  optional hasBiologicalSequence None = 65
+ }
+// A gene is a collection of transcripts
+message TranscriptToGeneRelationship
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+ }
+// A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
+message Treatment
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated hasPhenotype None = 12
+  repeated treats None = 13
+  repeated hasExposureParts None = 14
+ }
+message VariantToDiseaseAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional frequencyQualifier None = 11
+  optional severityQualifier None = 12
+  optional onsetQualifier None = 13
+ }
+message VariantToPhenotypicFeatureAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional sexQualifier None = 11
+  optional frequencyQualifier None = 12
+  optional severityQualifier None = 13
+  optional onsetQualifier None = 14
+ }
+// An association between a variant and a population, where the variant has particular frequency in the population
+message VariantToPopulationAssociation
+ {
+  id None = 1
+  subject None = 2
+  relation None = 3
+  object None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  optional hasCount None = 11
+  optional hasTotal None = 12
+  optional hasQuotient None = 13
+  optional hasPercentage None = 14
+  optional frequencyQualifier None = 15
+ }
+message Zygosity
+ {
+  id None = 1
+  optional name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  optional systematicSynonym None = 11
+  repeated subclassOf None = 12
+ }
+

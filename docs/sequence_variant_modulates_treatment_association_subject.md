@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-variant that modulates the treatment of some disease
 
-URI: [http://w3id.org/biolink/vocab/sequence_variant_modulates_treatment_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:sequence_variant_modulates_treatment_association_subject](https://w3id.org/biolink/vocab/sequence_variant_modulates_treatment_association_subject)
 ## Domain and Range
 
-[SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) -> [SequenceVariant](SequenceVariant.md)
+[SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) ->  <sub>REQ</sub> [SequenceVariant](SequenceVariant.md)
 ## Inheritance
 
  *  is_a: [subject](subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md)
+ * [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md)

@@ -1,0 +1,18 @@
+digraph {
+	graph [bb="0,0,206.11,122"];
+	node [label="\N"];
+	"frequency qualifier mixin"	 [height=0.5,
+		label="frequency qualifier mixin",
+		pos="99.988,104",
+		width=2.7774];
+	"frequency qualifier"	 [color=blue,
+		height=0.5,
+		label="frequency value",
+		pos="99.988,18",
+		width=1.8561];
+	"frequency qualifier mixin" -> "frequency qualifier"	 [color=blue,
+		label="frequency qualifier",
+		lp="153.05,61",
+		pos="e,99.988,36.212 99.988,85.762 99.988,74.36 99.988,59.434 99.988,46.494",
+		style=solid];
+}

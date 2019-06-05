@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -27,28 +29,28 @@ public class Gene {
      */
     @JsonProperty("gene_associated_with_condition")
     @JsonPropertyDescription("holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with")
-    private String geneAssociatedWithCondition;
+    private List<String> geneAssociatedWithCondition = new ArrayList<String>();
     /**
      * holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
      * 
      */
     @JsonProperty("genetically_interacts_with")
     @JsonPropertyDescription("holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.")
-    private String geneticallyInteractsWith;
+    private List<String> geneticallyInteractsWith = new ArrayList<String>();
     /**
      * holds between a gene and a transcribed and/or translated product generated from it
      * 
      */
     @JsonProperty("has_gene_product")
     @JsonPropertyDescription("holds between a gene and a transcribed and/or translated product generated from it")
-    private String hasGeneProduct;
+    private List<String> hasGeneProduct = new ArrayList<String>();
 
     /**
      * holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with
      * 
      */
     @JsonProperty("gene_associated_with_condition")
-    public String getGeneAssociatedWithCondition() {
+    public List<String> getGeneAssociatedWithCondition() {
         return geneAssociatedWithCondition;
     }
 
@@ -57,7 +59,7 @@ public class Gene {
      * 
      */
     @JsonProperty("gene_associated_with_condition")
-    public void setGeneAssociatedWithCondition(String geneAssociatedWithCondition) {
+    public void setGeneAssociatedWithCondition(List<String> geneAssociatedWithCondition) {
         this.geneAssociatedWithCondition = geneAssociatedWithCondition;
     }
 
@@ -66,7 +68,7 @@ public class Gene {
      * 
      */
     @JsonProperty("genetically_interacts_with")
-    public String getGeneticallyInteractsWith() {
+    public List<String> getGeneticallyInteractsWith() {
         return geneticallyInteractsWith;
     }
 
@@ -75,7 +77,7 @@ public class Gene {
      * 
      */
     @JsonProperty("genetically_interacts_with")
-    public void setGeneticallyInteractsWith(String geneticallyInteractsWith) {
+    public void setGeneticallyInteractsWith(List<String> geneticallyInteractsWith) {
         this.geneticallyInteractsWith = geneticallyInteractsWith;
     }
 
@@ -84,7 +86,7 @@ public class Gene {
      * 
      */
     @JsonProperty("has_gene_product")
-    public String getHasGeneProduct() {
+    public List<String> getHasGeneProduct() {
         return hasGeneProduct;
     }
 
@@ -93,7 +95,7 @@ public class Gene {
      * 
      */
     @JsonProperty("has_gene_product")
-    public void setHasGeneProduct(String hasGeneProduct) {
+    public void setHasGeneProduct(List<String> hasGeneProduct) {
         this.hasGeneProduct = hasGeneProduct;
     }
 

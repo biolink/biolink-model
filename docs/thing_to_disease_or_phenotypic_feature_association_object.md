@@ -1,19 +1,17 @@
 # Slot: object
 
 
-disease or phenotype
 
-URI: [http://w3id.org/biolink/vocab/thing_to_disease_or_phenotypic_feature_association_object](slot_uri)
-## Mappings
 
+URI: [biolink:thing_to_disease_or_phenotypic_feature_association_object](https://w3id.org/biolink/vocab/thing_to_disease_or_phenotypic_feature_association_object)
 ## Domain and Range
 
-[ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md) -> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+[ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md) ->  <sub>REQ</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 ## Inheritance
 
  *  is_a: [object](object.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)
+ * [ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)

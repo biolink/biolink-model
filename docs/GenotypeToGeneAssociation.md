@@ -3,57 +3,50 @@
 
 Any association between a genotype and a gene. The genotype have have multiple variants in that gene or a single one. There is no assumption of cardinality
 
-URI: [http://w3id.org/biolink/vocab/GenotypeToGeneAssociation](http://w3id.org/biolink/vocab/GenotypeToGeneAssociation)
+URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/GenotypeToGeneAssociation)
 
-![img](images/GenotypeToGeneAssociation.png)
-## Mappings
-
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ClinicalModifier]<clinical%20modifier%20qualifier(i)%200..1-%20\[GenotypeToGeneAssociation|relation:iri_type;id(i):identifier_type;negated(i):boolean%20%3F;association_slot(i):string%20%3F;edge_label(i):label_type%20%3F],%20\[EvidenceType]<has%20evidence(i)%200..1-%20\[GenotypeToGeneAssociation],%20\[ConfidenceLevel]<has%20confidence%20level(i)%200..1-%20\[GenotypeToGeneAssociation],%20\[Provider]<provided%20by(i)%200..1-%20\[GenotypeToGeneAssociation],%20\[Publication]<publications(i)%200..*-%20\[GenotypeToGeneAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GenotypeToGeneAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GenotypeToGeneAssociation],%20\[Gene]<object%201..1-%20\[GenotypeToGeneAssociation],%20\[Genotype]<subject%201..1-%20\[GenotypeToGeneAssociation],%20\[Association]^-\[GenotypeToGeneAssociation])
 ## Inheritance
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
 ## Children
 
-## Used in
+## Used by
 
 ## Fields
 
- * [genotype to gene association.object](genotype_to_gene_association_object.md)
-    * Description: gene implicated in genotype
-    * range: [Gene](Gene.md) [required]
-    * __Local__
- * [genotype to gene association.relation](genotype_to_gene_association_relation.md)
-    * Description: the relationship type used to connect genotype to gene
-    * range: [IriType](IriType.md) [required]
-    * __Local__
- * [genotype to gene association.subject](genotype_to_gene_association_subject.md)
-    * Description: parent genotype
-    * range: [Genotype](Genotype.md) [required]
-    * __Local__
- * [association slot](association_slot.md)
+ * [association slot](association_slot.md)  <sub>OPT</sub>
     * Description: any slot that relates an association to another entity
-    * range: **string**
+    * range: [String](String.md)
     * inherited from: [Association](Association.md)
- * [association type](association_type.md)
+ * [association type](association_type.md)  <sub>OPT</sub>
     * Description: connects an association to the type of association (e.g. gene to phenotype)
     * range: [OntologyClass](OntologyClass.md)
     * inherited from: [Association](Association.md)
- * [association.id](association_id.md) *subsets*: (translator_minimal)
+ * [association.id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
     * range: [IdentifierType](IdentifierType.md)
     * inherited from: [Association](Association.md)
- * [negated](negated.md)
+    * in subsets: (translator_minimal)
+ * [genotype to gene association.object](genotype_to_gene_association_object.md)  <sub>REQ</sub>
+    * range: [Gene](Gene.md)
+ * [genotype to gene association.relation](genotype_to_gene_association_relation.md)  <sub>REQ</sub>
+    * range: [IriType](IriType.md)
+ * [genotype to gene association.subject](genotype_to_gene_association_subject.md)  <sub>REQ</sub>
+    * range: [Genotype](Genotype.md)
+ * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
-    * range: **boolean**
+    * range: [Boolean](Boolean.md)
     * inherited from: [Association](Association.md)
- * [provided by](provided_by.md)
+ * [provided by](provided_by.md)  <sub>OPT</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
- * [publications](publications.md)
+ * [publications](publications.md)  <sub>0..*</sub>
     * Description: connects an association to publications supporting the association
-    * range: [Publication](Publication.md)*
+    * range: [Publication](Publication.md)
     * inherited from: [Association](Association.md)
- * [qualifiers](qualifiers.md)
+ * [qualifiers](qualifiers.md)  <sub>0..*</sub>
     * Description: connects an association to qualifiers that modify or qualify the meaning of that association
-    * range: [OntologyClass](OntologyClass.md)*
+    * range: [OntologyClass](OntologyClass.md)
     * inherited from: [Association](Association.md)
