@@ -7,7 +7,7 @@ URI: [biolink:regulates_process_to_process](https://w3id.org/biolink/vocab/regul
 ## Domain and Range
 
 [Occurrent](Occurrent.md) ->  <sub>0..*</sub> [Occurrent](Occurrent.md)
-## Inheritance
+## Parents
 
  *  is_a: [regulates](regulates.md)
 ## Children

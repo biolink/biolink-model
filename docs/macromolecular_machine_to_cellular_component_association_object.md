@@ -7,9 +7,9 @@ URI: [biolink:macromolecular_machine_to_cellular_component_association_object](h
 ## Domain and Range
 
 [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) ->  <sub>REQ</sub> [CellularComponent](CellularComponent.md)
-## Inheritance
+## Parents
 
- *  is_a: [functional association.object](functional_association_object.md)
+ *  is_a: [object](functional_association_object.md)
 ## Children
 
 ## Used by

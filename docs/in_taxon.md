@@ -7,7 +7,7 @@ URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
 ## Domain and Range
 
 [ThingWithTaxon](ThingWithTaxon.md) ->  <sub>0..*</sub> [OrganismTaxon](OrganismTaxon.md)
-## Inheritance
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children

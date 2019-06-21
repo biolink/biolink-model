@@ -7,7 +7,7 @@ URI: [biolink:genotype_to_thing_association_subject](https://w3id.org/biolink/vo
 ## Domain and Range
 
 [GenotypeToThingAssociation](GenotypeToThingAssociation.md) ->  <sub>REQ</sub> [Genotype](Genotype.md)
-## Inheritance
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children

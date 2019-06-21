@@ -7,12 +7,12 @@ URI: [biolink:node_property](https://w3id.org/biolink/vocab/node_property)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](String.md)
-## Inheritance
+## Parents
 
 ## Children
 
  *  [aggregate statistic](aggregate_statistic.md)
- *  [association.id](association_id.md)
+ *  [id](association_id.md)
  *  [category](category.md)
  *  [creation date](creation_date.md)
  *  [description](description.md)

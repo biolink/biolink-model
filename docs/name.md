@@ -7,12 +7,12 @@ URI: [biolink:name](https://w3id.org/biolink/vocab/name)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [LabelType](LabelType.md)
-## Inheritance
+## Parents
 
  *  is_a: [node property](node_property.md)
 ## Children
 
- *  [macromolecular machine.name](macromolecular_machine_name.md)
+ *  [name](macromolecular_machine_name.md)
 ## Used by
 
  * [ActivityAndBehavior](ActivityAndBehavior.md)

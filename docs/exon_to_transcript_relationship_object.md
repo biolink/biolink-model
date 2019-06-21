@@ -7,9 +7,9 @@ URI: [biolink:exon_to_transcript_relationship_object](https://w3id.org/biolink/v
 ## Domain and Range
 
 [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) ->  <sub>REQ</sub> [Transcript](Transcript.md)
-## Inheritance
+## Parents
 
- *  is_a: [sequence feature relationship.object](sequence_feature_relationship_object.md)
+ *  is_a: [object](sequence_feature_relationship_object.md)
 ## Children
 
 ## Used by

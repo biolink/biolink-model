@@ -7,7 +7,7 @@ URI: [biolink:affects_localization_of](https://w3id.org/biolink/vocab/affects_lo
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [affects](affects.md)
 ## Children

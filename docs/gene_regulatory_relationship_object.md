@@ -7,7 +7,7 @@ URI: [biolink:gene_regulatory_relationship_object](https://w3id.org/biolink/voca
 ## Domain and Range
 
 [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) ->  <sub>REQ</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
-## Inheritance
+## Parents
 
  *  is_a: [object](object.md)
 ## Children

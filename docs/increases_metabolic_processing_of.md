@@ -7,7 +7,7 @@ URI: [biolink:increases_metabolic_processing_of](https://w3id.org/biolink/vocab/
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [affects metabolic processing of](affects_metabolic_processing_of.md)
 ## Children

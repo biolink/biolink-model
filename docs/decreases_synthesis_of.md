@@ -7,7 +7,7 @@ URI: [biolink:decreases_synthesis_of](https://w3id.org/biolink/vocab/decreases_s
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [affects synthesis of](affects_synthesis_of.md)
 ## Children

@@ -7,7 +7,7 @@ URI: [biolink:anatomical_entity_to_anatomical_entity_part_of_association_relatio
 ## Domain and Range
 
 [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
-## Inheritance
+## Parents
 
  *  is_a: [relation](relation.md)
 ## Children

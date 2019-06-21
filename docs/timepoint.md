@@ -7,7 +7,7 @@ URI: [biolink:timepoint](https://w3id.org/biolink/vocab/timepoint)
 ## Domain and Range
 
 [GeographicLocationAtTime](GeographicLocationAtTime.md) ->  <sub>OPT</sub> [TimeType](TimeType.md)
-## Inheritance
+## Parents
 
  *  is_a: [node property](node_property.md)
 ## Children

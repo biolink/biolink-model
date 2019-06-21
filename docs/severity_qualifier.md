@@ -7,7 +7,7 @@ URI: [biolink:severity_qualifier](https://w3id.org/biolink/vocab/severity_qualif
 ## Domain and Range
 
 [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) ->  <sub>OPT</sub> [SeverityValue](SeverityValue.md)
-## Inheritance
+## Parents
 
  *  is_a: [association slot](association_slot.md)
 ## Children

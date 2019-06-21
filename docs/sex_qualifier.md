@@ -7,7 +7,7 @@ URI: [biolink:sex_qualifier](https://w3id.org/biolink/vocab/sex_qualifier)
 ## Domain and Range
 
 [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) ->  <sub>OPT</sub> [BiologicalSex](BiologicalSex.md)
-## Inheritance
+## Parents
 
  *  is_a: [association slot](association_slot.md)
 ## Children

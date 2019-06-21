@@ -7,7 +7,7 @@ URI: [biolink:variant_to_thing_association_subject](https://w3id.org/biolink/voc
 ## Domain and Range
 
 [VariantToThingAssociation](VariantToThingAssociation.md) ->  <sub>REQ</sub> [SequenceVariant](SequenceVariant.md)
-## Inheritance
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children

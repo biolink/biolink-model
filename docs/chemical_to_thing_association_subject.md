@@ -7,7 +7,7 @@ URI: [biolink:chemical_to_thing_association_subject](https://w3id.org/biolink/vo
 ## Domain and Range
 
 [ChemicalToThingAssociation](ChemicalToThingAssociation.md) ->  <sub>REQ</sub> [ChemicalSubstance](ChemicalSubstance.md)
-## Inheritance
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children

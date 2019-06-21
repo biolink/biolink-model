@@ -7,7 +7,7 @@ URI: [biolink:increases_mutation_rate_of](https://w3id.org/biolink/vocab/increas
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [GenomicEntity](GenomicEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [affects mutation rate of](affects_mutation_rate_of.md)
 ## Children

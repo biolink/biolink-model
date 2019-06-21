@@ -7,7 +7,7 @@ URI: [biolink:decreases_response_to](https://w3id.org/biolink/vocab/decreases_re
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [affects response to](affects_response_to.md)
 ## Children

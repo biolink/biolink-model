@@ -7,7 +7,7 @@ URI: [biolink:predisposes](https://w3id.org/biolink/vocab/predisposes)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
-## Inheritance
+## Parents
 
  *  is_a: [affects risk for](affects_risk_for.md)
 ## Children

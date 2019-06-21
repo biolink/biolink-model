@@ -7,7 +7,7 @@ URI: [biolink:capable_of](https://w3id.org/biolink/vocab/capable_of)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [Occurrent](Occurrent.md)
-## Inheritance
+## Parents
 
  *  is_a: [actively involved in](actively_involved_in.md)
 ## Children

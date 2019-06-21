@@ -7,7 +7,7 @@ URI: [biolink:biomarker_for](https://w3id.org/biolink/vocab/biomarker_for)
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-## Inheritance
+## Parents
 
  *  is_a: [correlated with](correlated_with.md)
 ## Children

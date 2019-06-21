@@ -7,7 +7,7 @@ URI: [biolink:gene_to_gene_product_relationship_relation](https://w3id.org/bioli
 ## Domain and Range
 
 [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) ->  <sub>REQ</sub> [IriType](IriType.md)
-## Inheritance
+## Parents
 
  *  is_a: [relation](relation.md)
 ## Children

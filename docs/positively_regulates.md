@@ -7,7 +7,7 @@ URI: [biolink:positively_regulates](https://w3id.org/biolink/vocab/positively_re
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
-## Inheritance
+## Parents
 
  *  is_a: [regulates](regulates.md)
 ## Children

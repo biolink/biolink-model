@@ -7,7 +7,7 @@ URI: [biolink:synonym](https://w3id.org/biolink/vocab/synonym)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [LabelType](LabelType.md)
-## Inheritance
+## Parents
 
  *  is_a: [node property](node_property.md)
 ## Children

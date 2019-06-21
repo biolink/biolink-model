@@ -7,7 +7,7 @@ URI: [biolink:molecularly_interacts_with](https://w3id.org/biolink/vocab/molecul
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [physically interacts with](physically_interacts_with.md)
 ## Children

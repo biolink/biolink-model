@@ -7,7 +7,7 @@ URI: [biolink:occurs_in](https://w3id.org/biolink/vocab/occurs_in)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
-## Inheritance
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children

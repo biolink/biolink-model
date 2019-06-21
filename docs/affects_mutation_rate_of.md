@@ -7,7 +7,7 @@ URI: [biolink:affects_mutation_rate_of](https://w3id.org/biolink/vocab/affects_m
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [GenomicEntity](GenomicEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [affects](affects.md)
 ## Children

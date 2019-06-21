@@ -7,7 +7,7 @@ URI: [biolink:environment_to_phenotypic_feature_association_subject](https://w3i
 ## Domain and Range
 
 [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md) ->  <sub>REQ</sub> [Environment](Environment.md)
-## Inheritance
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children

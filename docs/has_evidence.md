@@ -7,7 +7,7 @@ URI: [biolink:has_evidence](https://w3id.org/biolink/vocab/has_evidence)
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>OPT</sub> [EvidenceType](EvidenceType.md)
-## Inheritance
+## Parents
 
  *  is_a: [association slot](association_slot.md)
 ## Children

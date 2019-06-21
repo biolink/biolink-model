@@ -7,12 +7,12 @@ URI: [biolink:association_id](https://w3id.org/biolink/vocab/association_id)
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>REQ</sub> [IdentifierType](IdentifierType.md)
-## Inheritance
+## Parents
 
  *  is_a: [node property](node_property.md)
 ## Children
 
- *  [pairwise interaction association.id](pairwise_interaction_association_id.md)
+ *  [id](pairwise_interaction_association_id.md)
 ## Used by
 
  * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)

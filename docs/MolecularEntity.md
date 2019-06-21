@@ -5,17 +5,19 @@ A gene, gene product, small molecule or macromolecule (including protein complex
 
 URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]<filler(i)%200..1-%20\[MolecularEntity|id(i):identifier_type;name(i):label_type%20%3F;category(i):iri_type%20*;node_property(i):string%20%3F;iri(i):iri_type%20%3F;synonym(i):label_type%20*;full_name(i):label_type%20%3F;description(i):narrative_text%20%3F;systematic_synonym(i):label_type%20%3F;creation_date(i):date%20%3F;update_date(i):date%20%3F;has_chemical_formula(i):chemical_formula_value%20%3F;aggregate_statistic(i):string%20%3F;interbase_coordinate(i):string%20%3F],%20\[OntologyClass]<has%20molecular%20consequence(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<same%20as(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<produces(i)%200..*-%20\[MolecularEntity],%20\[Disease]<manifestation%20of(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<derives%20from(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<derives%20into(i)%200..*-%20\[MolecularEntity],%20\[Occurrent]<capable%20of(i)%200..*-%20\[MolecularEntity],%20\[Occurrent]<actively%20involved%20in(i)%200..*-%20\[MolecularEntity],%20\[Occurrent]<participates%20in(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<part%20of(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<has%20part(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<overlaps(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<model%20of(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<location%20of(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<located%20in(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<occurs%20in(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<prevents(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<causes(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<contributes%20to(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<predisposes(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<affects%20risk%20for(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<colocalizes%20with(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<coexists%20with(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<xenologous%20to(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<orthologous%20to(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<paralogous%20to(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<homologous%20to(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<disrupts(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<negatively%20regulates(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<positively%20regulates(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<regulates(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<affects(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<physically%20interacts%20with(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<interacts%20with(i)%200..*-%20\[MolecularEntity],%20\[NamedThing]<related%20to(i)%200..*-%20\[MolecularEntity],%20\[PhenotypicFeature]<has%20phenotype(i)%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<negatively%20regulates,%20entity%20to%20entity%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<positively%20regulates,%20entity%20to%20entity%200..*-%20\[MolecularEntity],%20\[OrganismTaxon]<in%20taxon%200..*-%20\[MolecularEntity],%20\[DiseaseOrPhenotypicFeature]<biomarker%20for%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<regulates,%20entity%20to%20entity%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<decreases%20uptake%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<increases%20uptake%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<affects%20uptake%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<decreases%20secretion%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<increases%20secretion%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<affects%20secretion%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<decreases%20transport%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<increases%20transport%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<affects%20transport%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<decreases%20stability%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<increases%20stability%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<affects%20stability%20of%200..*-%20\[MolecularEntity],%20\[Transcript]<decreases%20splicing%20of%200..*-%20\[MolecularEntity],%20\[Transcript]<increases%20splicing%20of%200..*-%20\[MolecularEntity],%20\[Transcript]<affects%20splicing%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<decreases%20response%20to%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<increases%20response%20to%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<affects%20response%20to%200..*-%20\[MolecularEntity],%20\[GenomicEntity]<decreases%20mutation%20rate%20of%200..*-%20\[MolecularEntity],%20\[GenomicEntity]<increases%20mutation%20rate%20of%200..*-%20\[MolecularEntity],%20\[GenomicEntity]<affects%20mutation%20rate%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<decreases%20degradation%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<increases%20degradation%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<affects%20degradation%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<decreases%20synthesis%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<increases%20synthesis%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<affects%20synthesis%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<decreases%20molecular%20modification%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<increases%20molecular%20modification%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<affects%20molecular%20modification%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<decreases%20metabolic%20processing%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<increases%20metabolic%20processing%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<affects%20metabolic%20processing%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<decreases%20localization%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<increases%20localization%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<affects%20localization%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<decreases%20folding%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<increases%20folding%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<affects%20folding%20of%200..*-%20\[MolecularEntity],%20\[GenomicEntity]<decreases%20expression%20of%200..*-%20\[MolecularEntity],%20\[GenomicEntity]<increases%20expression%20of%200..*-%20\[MolecularEntity],%20\[GenomicEntity]<affects%20expression%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<decreases%20activity%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<increases%20activity%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<affects%20activity%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<decreases%20abundance%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<increases%20abundance%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<affects%20abundance%20of%200..*-%20\[MolecularEntity],%20\[MolecularEntity]<molecularly%20interacts%20with%200..*-%20\[MolecularEntity],%20\[DiseaseOrPhenotypicFeature]-%20correlated%20with%200..*>\[MolecularEntity],%20\[GeneToGoTermAssociation]-%20subject%201..1>\[MolecularEntity],%20\[DiseaseOrPhenotypicFeature]-%20has%20biomarker%200..*>\[MolecularEntity],%20\[PairwiseInteractionAssociation]-%20object%201..1>\[MolecularEntity],%20\[PairwiseInteractionAssociation]-%20subject%201..1>\[MolecularEntity],%20\[MolecularEntity]uses%20-.->\[ThingWithTaxon],%20\[MolecularEntity]^-\[GenomicEntity],%20\[MolecularEntity]^-\[GeneFamily],%20\[MolecularEntity]^-\[ChemicalSubstance],%20\[BiologicalEntity]^-\[MolecularEntity])
-## Inheritance
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[MolecularEntity|id(i):identifier_type;name(i):label_type%20%3F;category(i):iri_type%20*],%20\[GeneToGoTermAssociation]-%20subject%201..1>\[MolecularEntity],%20\[PairwiseInteractionAssociation]-%20object%201..1>\[MolecularEntity],%20\[PairwiseInteractionAssociation]-%20subject%201..1>\[MolecularEntity],%20\[MolecularEntity]uses%20-.->\[ThingWithTaxon],%20\[MolecularEntity]^-\[GenomicEntity],%20\[MolecularEntity]^-\[GeneFamily],%20\[MolecularEntity]^-\[ChemicalSubstance],%20\[BiologicalEntity]^-\[MolecularEntity])
+## Parents
 
  *  is_a: [BiologicalEntity](BiologicalEntity.md)
+## Uses Mixins
+
  *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
 ## Children
 
  * [ChemicalSubstance](ChemicalSubstance.md) - May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part
  * [GeneFamily](GeneFamily.md) - any grouping of multiple genes or gene products related by common descent
  * [GenomicEntity](GenomicEntity.md) - an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)
-## Used by
+## Referenced by class
 
  *  **[MolecularEntity](MolecularEntity.md)** *[affects abundance of](affects_abundance_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[affects activity of](affects_activity_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
@@ -44,7 +46,7 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
  *  **[MolecularEntity](MolecularEntity.md)** *[decreases synthesis of](decreases_synthesis_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[decreases transport of](decreases_transport_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[decreases uptake of](decreases_uptake_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[GeneToGoTermAssociation](GeneToGoTermAssociation.md)** *[gene to go term association.subject](gene_to_go_term_association_subject.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[GeneToGoTermAssociation](GeneToGoTermAssociation.md)** *[subject](gene_to_go_term_association_subject.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[has biomarker](has_biomarker.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[increases abundance of](increases_abundance_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[increases activity of](increases_activity_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
@@ -61,11 +63,36 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
  *  **[MolecularEntity](MolecularEntity.md)** *[increases uptake of](increases_uptake_of.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[molecularly interacts with](molecularly_interacts_with.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[negatively regulates, entity to entity](negatively_regulates_entity_to_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)** *[pairwise interaction association.object](pairwise_interaction_association_object.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
- *  **[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)** *[pairwise interaction association.subject](pairwise_interaction_association_subject.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)** *[object](pairwise_interaction_association_object.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
+ *  **[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)** *[subject](pairwise_interaction_association_subject.md)*  <sub>REQ</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[positively regulates, entity to entity](positively_regulates_entity_to_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
  *  **[MolecularEntity](MolecularEntity.md)** *[regulates, entity to entity](regulates_entity_to_entity.md)*  <sub>0..*</sub>  **[MolecularEntity](MolecularEntity.md)**
-## Fields
+## Attributes
+
+### Inherited from named thing:
+
+ * [id](id.md)  <sub>REQ</sub>
+    * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+    * range: [IdentifierType](IdentifierType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)
+ * [name](name.md)  <sub>OPT</sub>
+    * Description: A human-readable name for a thing
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)
+ * [category](category.md)  <sub>0..*</sub>
+    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+    * range: [IriType](IriType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)
+### Inherited from thing with taxon:
+
+ * [in taxon](in_taxon.md)  <sub>0..*</sub>
+    * Description: connects a thing to a class representing a taxon
+    * range: [OrganismTaxon](OrganismTaxon.md)
+    * in subsets: (translator_minimal)
+### Domain for slot:
 
  * [affects abundance of](affects_abundance_of.md)  <sub>0..*</sub>
     * Description: holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest
@@ -135,11 +162,6 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
     * Description: holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
     * in subsets: (translator_minimal)
- * [category](category.md)  <sub>0..*</sub>
-    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
-    * in subsets: (translator_minimal)
  * [decreases abundance of](decreases_abundance_of.md)  <sub>0..*</sub>
     * Description: holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest
     * range: [MolecularEntity](MolecularEntity.md)
@@ -203,29 +225,6 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
  * [decreases uptake of](decreases_uptake_of.md)  <sub>0..*</sub>
     * Description: holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
     * range: [MolecularEntity](MolecularEntity.md)
-    * in subsets: (translator_minimal)
- * [description](description.md)  <sub>OPT</sub>
-    * Description: a human-readable description of a thing
-    * range: [NarrativeText](NarrativeText.md)
-    * inherited from: [NamedThing](NamedThing.md)
-    * in subsets: (translator_minimal)
- * [full name](full_name.md)  <sub>OPT</sub>
-    * Description: a long-form human readable name for a thing
-    * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [has phenotype](has_phenotype.md)  <sub>0..*</sub>
-    * Description: holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
-    * range: [PhenotypicFeature](PhenotypicFeature.md)
-    * inherited from: [BiologicalEntity](BiologicalEntity.md)
-    * in subsets: (translator_minimal)
- * [id](id.md)  <sub>REQ</sub>
-    * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
-    * in subsets: (translator_minimal)
- * [in taxon](in_taxon.md)  <sub>0..*</sub>
-    * Description: connects a thing to a class representing a taxon
-    * range: [OrganismTaxon](OrganismTaxon.md)
     * in subsets: (translator_minimal)
  * [increases abundance of](increases_abundance_of.md)  <sub>0..*</sub>
     * Description: holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest
@@ -291,47 +290,15 @@ URI: [biolink:MolecularEntity](https://w3id.org/biolink/vocab/MolecularEntity)
     * Description: holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
     * range: [MolecularEntity](MolecularEntity.md)
     * in subsets: (translator_minimal)
- * [interacts with](interacts_with.md)  <sub>0..*</sub>
-    * Description: holds between any two entities that directly or indirectly interact with each other
-    * range: [NamedThing](NamedThing.md)
-    * inherited from: [NamedThing](NamedThing.md)
-    * in subsets: (translator_minimal)
- * [iri](iri.md)  <sub>OPT</sub>
-    * Description: An IRI for the node. This is determined by the id using expansion rules.
-    * range: [IriType](IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
-    * in subsets: (translator_minimal)
  * [molecularly interacts with](molecularly_interacts_with.md)  <sub>0..*</sub>
     * range: [MolecularEntity](MolecularEntity.md)
-    * in subsets: (translator_minimal)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for a thing
-    * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.md)  <sub>0..*</sub>
     * range: [MolecularEntity](MolecularEntity.md)
     * in subsets: (translator_minimal)
- * [node property](node_property.md)  <sub>OPT</sub>
-    * Description: A grouping for any property that holds between a node and a value
-    * range: [String](String.md)
-    * inherited from: [NamedThing](NamedThing.md)
  * [positively regulates, entity to entity](positively_regulates_entity_to_entity.md)  <sub>0..*</sub>
     * range: [MolecularEntity](MolecularEntity.md)
     * in subsets: (translator_minimal)
  * [regulates, entity to entity](regulates_entity_to_entity.md)  <sub>0..*</sub>
     * range: [MolecularEntity](MolecularEntity.md)
     * in subsets: (translator_minimal)
- * [related to](related_to.md)  <sub>0..*</sub>
-    * Description: A relationship that is asserted between two named things
-    * range: [NamedThing](NamedThing.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [synonym](synonym.md)  <sub>0..*</sub>
-    * Description: Alternate human-readable names for a thing
-    * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
-    * in subsets: (translator_minimal)
- * [systematic synonym](systematic_synonym.md)  <sub>OPT</sub>
-    * Description: more commonly used for gene symbols in yeast
-    * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)

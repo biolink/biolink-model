@@ -7,7 +7,7 @@ URI: [biolink:interbase_coordinate](https://w3id.org/biolink/vocab/interbase_coo
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](String.md)
-## Inheritance
+## Parents
 
  *  is_a: [node property](node_property.md)
 ## Children

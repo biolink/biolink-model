@@ -7,7 +7,7 @@ URI: [biolink:publications](https://w3id.org/biolink/vocab/publications)
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>0..*</sub> [Publication](Publication.md)
-## Inheritance
+## Parents
 
  *  is_a: [association slot](association_slot.md)
 ## Children

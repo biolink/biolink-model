@@ -7,7 +7,7 @@ URI: [biolink:variant_to_population_association_has_total](https://w3id.org/biol
 ## Domain and Range
 
 [VariantToPopulationAssociation](VariantToPopulationAssociation.md) ->  <sub>OPT</sub> [Integer](Integer.md)
-## Inheritance
+## Parents
 
  *  is_a: [has total](has_total.md)
 ## Children

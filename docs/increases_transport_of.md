@@ -7,7 +7,7 @@ URI: [biolink:increases_transport_of](https://w3id.org/biolink/vocab/increases_t
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [affects transport of](affects_transport_of.md)
 ## Children

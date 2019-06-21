@@ -7,7 +7,7 @@ URI: [biolink:macromolecular_machine_name](https://w3id.org/biolink/vocab/macrom
 ## Domain and Range
 
 [MacromolecularMachine](MacromolecularMachine.md) ->  <sub>OPT</sub> [SymbolType](SymbolType.md)
-## Inheritance
+## Parents
 
  *  is_a: [name](name.md)
 ## Children

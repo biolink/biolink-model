@@ -7,7 +7,7 @@ URI: [biolink:aggregate_statistic](https://w3id.org/biolink/vocab/aggregate_stat
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](String.md)
-## Inheritance
+## Parents
 
  *  is_a: [node property](node_property.md)
 ## Children

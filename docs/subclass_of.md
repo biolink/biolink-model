@@ -7,7 +7,7 @@ URI: [biolink:subclass_of](https://w3id.org/biolink/vocab/subclass_of)
 ## Domain and Range
 
 [OntologyClass](OntologyClass.md) ->  <sub>0..*</sub> [OntologyClass](OntologyClass.md)
-## Inheritance
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children

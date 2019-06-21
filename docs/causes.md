@@ -7,7 +7,7 @@ URI: [biolink:causes](https://w3id.org/biolink/vocab/causes)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
-## Inheritance
+## Parents
 
  *  is_a: [contributes to](contributes_to.md)
 ## Children

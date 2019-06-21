@@ -7,7 +7,7 @@ URI: [biolink:negatively_regulates_process_to_process](https://w3id.org/biolink/
 ## Domain and Range
 
 [Occurrent](Occurrent.md) ->  <sub>0..*</sub> [Occurrent](Occurrent.md)
-## Inheritance
+## Parents
 
  *  is_a: [regulates, process to process](regulates_process_to_process.md)
 ## Children

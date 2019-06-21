@@ -7,7 +7,7 @@ URI: [biolink:update_date](https://w3id.org/biolink/vocab/update_date)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Date](Date.md)
-## Inheritance
+## Parents
 
  *  is_a: [node property](node_property.md)
 ## Children

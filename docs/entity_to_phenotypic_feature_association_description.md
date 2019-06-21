@@ -7,7 +7,7 @@ URI: [biolink:entity_to_phenotypic_feature_association_description](https://w3id
 ## Domain and Range
 
 [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) ->  <sub>OPT</sub> [NarrativeText](NarrativeText.md)
-## Inheritance
+## Parents
 
  *  is_a: [description](description.md)
 ## Children

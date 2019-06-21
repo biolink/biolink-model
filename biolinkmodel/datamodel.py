@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.2.0
-# Generation date: 2019-06-03 09:58
+# Generation date: 2019-06-20 20:47
 # Schema: biolink_model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -10,7 +10,7 @@ from typing import Optional, List, Union, Dict, ClassVar
 from dataclasses import dataclass
 from biolinkml.utils.metamodelcore import empty_list, empty_dict
 from biolinkml.utils.yamlutils import YAMLRoot
-from biolinkml.utils.metamodelcore import Bool, URI, XSDDateTime, XSDTime
+from biolinkml.utils.metamodelcore import Bool, URI, XSDDate, XSDTime
 from includes.types import Boolean, Date, Double, Float, Integer, String, Time, Uri
 
 metamodel_version = "1.3.4"
@@ -914,8 +914,8 @@ class NamedThing(YAMLRoot):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -1008,10 +1008,10 @@ class NamedThing(YAMLRoot):
                          else NamedThingId(v) for v in self.produces]
         self.same_as = [v if isinstance(v, NamedThingId)
                         else NamedThingId(v) for v in self.same_as]
-        if self.creation_date is not None and not isinstance(self.creation_date, XSDDateTime):
-            self.creation_date = XSDDateTime(self.creation_date)
-        if self.update_date is not None and not isinstance(self.update_date, XSDDateTime):
-            self.update_date = XSDDateTime(self.update_date)
+        if self.creation_date is not None and not isinstance(self.creation_date, XSDDate):
+            self.creation_date = XSDDate(self.creation_date)
+        if self.update_date is not None and not isinstance(self.update_date, XSDDate):
+            self.update_date = XSDDate(self.update_date)
         self.has_molecular_consequence = [v if isinstance(v, OntologyClassId)
                                           else OntologyClassId(v) for v in self.has_molecular_consequence]
         if self.filler is not None and not isinstance(self.filler, NamedThingId):
@@ -1066,8 +1066,8 @@ class BiologicalEntity(NamedThing):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -1134,8 +1134,8 @@ class OntologyClass(NamedThing):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -1204,8 +1204,8 @@ class RelationshipType(OntologyClass):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -1274,8 +1274,8 @@ class GeneOntologyClass(OntologyClass):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -1341,8 +1341,8 @@ class OrganismTaxon(OntologyClass):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -1412,8 +1412,8 @@ class OrganismalEntity(BiologicalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -1474,8 +1474,8 @@ class IndividualOrganism(OrganismalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -1549,8 +1549,8 @@ class Case(IndividualOrganism):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -1626,8 +1626,8 @@ class PopulationOfIndividualOrganisms(OrganismalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -1698,8 +1698,8 @@ class Biosample(OrganismalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -1774,8 +1774,8 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -1853,8 +1853,8 @@ class Disease(DiseaseOrPhenotypicFeature):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -1926,8 +1926,8 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -2003,8 +2003,8 @@ class Environment(BiologicalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -2073,8 +2073,8 @@ class InformationContentEntity(NamedThing):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -2135,8 +2135,8 @@ class ConfidenceLevel(InformationContentEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -2204,8 +2204,8 @@ class EvidenceType(InformationContentEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -2275,8 +2275,8 @@ class Publication(InformationContentEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -2341,8 +2341,8 @@ class AdministrativeEntity(NamedThing):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -2403,8 +2403,8 @@ class Provider(AdministrativeEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -2472,8 +2472,8 @@ class MolecularEntity(BiologicalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -2705,8 +2705,8 @@ class ChemicalSubstance(MolecularEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -2828,8 +2828,8 @@ class Carbohydrate(ChemicalSubstance):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -2956,8 +2956,8 @@ class Drug(ChemicalSubstance):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -3084,8 +3084,8 @@ class Metabolite(ChemicalSubstance):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -3212,8 +3212,8 @@ class AnatomicalEntity(OrganismalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -3290,8 +3290,8 @@ class LifeStage(OrganismalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -3365,8 +3365,8 @@ class PlanetaryEntity(NamedThing):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -3429,8 +3429,8 @@ class EnvironmentalProcess(PlanetaryEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -3507,8 +3507,8 @@ class EnvironmentalFeature(PlanetaryEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -3577,8 +3577,8 @@ class ClinicalEntity(NamedThing):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -3641,8 +3641,8 @@ class ClinicalTrial(ClinicalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -3707,8 +3707,8 @@ class ClinicalIntervention(ClinicalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -3776,8 +3776,8 @@ class Device(NamedThing):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -3844,8 +3844,8 @@ class GenomicEntity(MolecularEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -3973,8 +3973,8 @@ class Genome(GenomicEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -4102,8 +4102,8 @@ class Transcript(GenomicEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -4232,8 +4232,8 @@ class Exon(GenomicEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -4358,8 +4358,8 @@ class CodingSequence(GenomicEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -4487,8 +4487,8 @@ class MacromolecularMachine(GenomicEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -4618,8 +4618,8 @@ class GeneOrGeneProduct(MacromolecularMachine):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -4758,8 +4758,8 @@ class Gene(GeneOrGeneProduct):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -4904,8 +4904,8 @@ class GeneProduct(GeneOrGeneProduct):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -5042,8 +5042,8 @@ class Protein(GeneProduct):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -5183,8 +5183,8 @@ class GeneProductIsoform(GeneProduct):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -5318,8 +5318,8 @@ class ProteinIsoform(Protein):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -5456,8 +5456,8 @@ class RNAProduct(GeneProduct):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -5595,8 +5595,8 @@ class RNAProductIsoform(RNAProduct):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -5733,8 +5733,8 @@ class NoncodingRNAProduct(RNAProduct):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -5871,8 +5871,8 @@ class MicroRNA(NoncodingRNAProduct):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -6011,8 +6011,8 @@ class MacromolecularComplex(MacromolecularMachine):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -6143,8 +6143,8 @@ class GeneFamily(MolecularEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -6296,8 +6296,8 @@ class Genotype(GenomicEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -6428,8 +6428,8 @@ class Haplotype(GenomicEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -6556,8 +6556,8 @@ class SequenceVariant(GenomicEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -6691,8 +6691,8 @@ class DrugExposure(Environment):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -6766,8 +6766,8 @@ class Treatment(Environment):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -6844,8 +6844,8 @@ class GeographicLocation(PlanetaryEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -6915,8 +6915,8 @@ class GeographicLocationAtTime(GeographicLocation):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -8865,8 +8865,8 @@ class Occurrent(NamedThing):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -8950,8 +8950,8 @@ class BiologicalProcessOrActivity(BiologicalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -9020,8 +9020,8 @@ class MolecularActivity(BiologicalProcessOrActivity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -9104,8 +9104,8 @@ class ActivityAndBehavior(Occurrent):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -9179,8 +9179,8 @@ class Procedure(Occurrent):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -9254,8 +9254,8 @@ class Phenomenon(Occurrent):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -9329,8 +9329,8 @@ class BiologicalProcess(BiologicalProcessOrActivity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -9410,8 +9410,8 @@ class Pathway(BiologicalProcess):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -9485,8 +9485,8 @@ class PhysiologicalProcess(BiologicalProcess):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -9563,8 +9563,8 @@ class CellularComponent(AnatomicalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -9636,8 +9636,8 @@ class Cell(AnatomicalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -9709,8 +9709,8 @@ class CellLine(Biosample):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()
@@ -9781,8 +9781,8 @@ class GrossAnatomicalStructure(AnatomicalEntity):
     manifestation_of: List[Union[str, DiseaseId]] = empty_list()
     produces: List[Union[str, NamedThingId]] = empty_list()
     same_as: List[Union[str, NamedThingId]] = empty_list()
-    creation_date: Optional[Union[str, XSDDateTime]] = None
-    update_date: Optional[Union[str, XSDDateTime]] = None
+    creation_date: Optional[Union[str, XSDDate]] = None
+    update_date: Optional[Union[str, XSDDate]] = None
     has_chemical_formula: Optional[str] = None
     aggregate_statistic: Optional[str] = None
     has_molecular_consequence: List[Union[str, OntologyClassId]] = empty_list()

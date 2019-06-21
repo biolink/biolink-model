@@ -7,7 +7,7 @@ URI: [biolink:has_part](https://w3id.org/biolink/vocab/has_part)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
-## Inheritance
+## Parents
 
  *  is_a: [overlaps](overlaps.md)
 ## Children

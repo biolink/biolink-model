@@ -7,7 +7,7 @@ URI: [biolink:chemical_to_disease_or_phenotypic_feature_association_object](http
 ## Domain and Range
 
 [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) ->  <sub>REQ</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-## Inheritance
+## Parents
 
  *  is_a: [object](object.md)
 ## Children

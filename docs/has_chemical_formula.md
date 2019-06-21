@@ -7,7 +7,7 @@ URI: [biolink:has_chemical_formula](https://w3id.org/biolink/vocab/has_chemical_
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [ChemicalFormulaValue](ChemicalFormulaValue.md)
-## Inheritance
+## Parents
 
  *  is_a: [node property](node_property.md)
 ## Children

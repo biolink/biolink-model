@@ -7,7 +7,7 @@ URI: [biolink:interacting_molecules_category](https://w3id.org/biolink/vocab/int
 ## Domain and Range
 
 [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) ->  <sub>OPT</sub> [OntologyClass](OntologyClass.md)
-## Inheritance
+## Parents
 
 ## Children
 

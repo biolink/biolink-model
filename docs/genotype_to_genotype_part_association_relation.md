@@ -7,7 +7,7 @@ URI: [biolink:genotype_to_genotype_part_association_relation](https://w3id.org/b
 ## Domain and Range
 
 [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
-## Inheritance
+## Parents
 
  *  is_a: [relation](relation.md)
 ## Children

@@ -7,7 +7,7 @@ URI: [biolink:model_of](https://w3id.org/biolink/vocab/model_of)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
-## Inheritance
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children

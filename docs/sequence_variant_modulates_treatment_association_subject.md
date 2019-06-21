@@ -7,7 +7,7 @@ URI: [biolink:sequence_variant_modulates_treatment_association_subject](https://
 ## Domain and Range
 
 [SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md) ->  <sub>REQ</sub> [SequenceVariant](SequenceVariant.md)
-## Inheritance
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children

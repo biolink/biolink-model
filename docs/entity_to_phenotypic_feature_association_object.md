@@ -7,7 +7,7 @@ URI: [biolink:entity_to_phenotypic_feature_association_object](https://w3id.org/
 ## Domain and Range
 
 [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) ->  <sub>REQ</sub> [PhenotypicFeature](PhenotypicFeature.md)
-## Inheritance
+## Parents
 
  *  is_a: [object](object.md)
 ## Children

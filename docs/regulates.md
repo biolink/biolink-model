@@ -7,7 +7,7 @@ URI: [biolink:regulates](https://w3id.org/biolink/vocab/regulates)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
-## Inheritance
+## Parents
 
  *  is_a: [affects](affects.md)
 ## Children

@@ -7,9 +7,9 @@ URI: [biolink:pairwise_interaction_association_id](https://w3id.org/biolink/voca
 ## Domain and Range
 
 [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) ->  <sub>REQ</sub> [IdentifierType](IdentifierType.md)
-## Inheritance
+## Parents
 
- *  is_a: [association.id](association_id.md)
+ *  is_a: [id](association_id.md)
 ## Children
 
 ## Used by

@@ -7,7 +7,7 @@ URI: [biolink:positively_regulates_entity_to_entity](https://w3id.org/biolink/vo
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [regulates, entity to entity](regulates_entity_to_entity.md)
 ## Children

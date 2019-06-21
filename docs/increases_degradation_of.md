@@ -7,7 +7,7 @@ URI: [biolink:increases_degradation_of](https://w3id.org/biolink/vocab/increases
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [affects degradation of](affects_degradation_of.md)
 ## Children

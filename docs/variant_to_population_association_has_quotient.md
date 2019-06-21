@@ -7,7 +7,7 @@ URI: [biolink:variant_to_population_association_has_quotient](https://w3id.org/b
 ## Domain and Range
 
 [VariantToPopulationAssociation](VariantToPopulationAssociation.md) ->  <sub>OPT</sub> [Double](Double.md)
-## Inheritance
+## Parents
 
  *  is_a: [has quotient](has_quotient.md)
 ## Children

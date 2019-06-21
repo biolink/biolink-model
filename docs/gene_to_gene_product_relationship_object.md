@@ -7,9 +7,9 @@ URI: [biolink:gene_to_gene_product_relationship_object](https://w3id.org/biolink
 ## Domain and Range
 
 [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) ->  <sub>REQ</sub> [GeneProduct](GeneProduct.md)
-## Inheritance
+## Parents
 
- *  is_a: [sequence feature relationship.object](sequence_feature_relationship_object.md)
+ *  is_a: [object](sequence_feature_relationship_object.md)
 ## Children
 
 ## Used by

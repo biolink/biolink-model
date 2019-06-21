@@ -7,7 +7,7 @@ URI: [biolink:pairwise_interaction_association_subject](https://w3id.org/biolink
 ## Domain and Range
 
 [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) ->  <sub>REQ</sub> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children

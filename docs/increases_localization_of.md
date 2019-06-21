@@ -7,7 +7,7 @@ URI: [biolink:increases_localization_of](https://w3id.org/biolink/vocab/increase
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [affects localization of](affects_localization_of.md)
 ## Children

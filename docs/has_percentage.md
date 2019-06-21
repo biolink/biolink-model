@@ -7,7 +7,7 @@ URI: [biolink:has_percentage](https://w3id.org/biolink/vocab/has_percentage)
 ## Domain and Range
 
 [FrequencyQuantifier](FrequencyQuantifier.md) ->  <sub>OPT</sub> [Double](Double.md)
-## Inheritance
+## Parents
 
  *  is_a: [aggregate statistic](aggregate_statistic.md)
 ## Children

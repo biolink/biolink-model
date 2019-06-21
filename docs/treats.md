@@ -7,7 +7,7 @@ URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 ## Domain and Range
 
 [Treatment](Treatment.md) ->  <sub>1..*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-## Inheritance
+## Parents
 
  *  is_a: [affects](affects.md)
 ## Children

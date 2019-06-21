@@ -7,7 +7,7 @@ URI: [biolink:clinical_modifier_qualifier](https://w3id.org/biolink/vocab/clinic
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>OPT</sub> [ClinicalModifier](ClinicalModifier.md)
-## Inheritance
+## Parents
 
  *  is_a: [association slot](association_slot.md)
 ## Children

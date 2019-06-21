@@ -7,7 +7,7 @@ URI: [biolink:sequence_variant_qualifier](https://w3id.org/biolink/vocab/sequenc
 ## Domain and Range
 
 [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) ->  <sub>OPT</sub> [SequenceVariant](SequenceVariant.md)
-## Inheritance
+## Parents
 
  *  is_a: [association slot](association_slot.md)
 ## Children

@@ -7,7 +7,7 @@ URI: [biolink:gene_to_expression_site_association_stage_qualifier](https://w3id.
 ## Domain and Range
 
 [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) ->  <sub>OPT</sub> [LifeStage](LifeStage.md)
-## Inheritance
+## Parents
 
  *  is_a: [stage qualifier](stage_qualifier.md)
 ## Children

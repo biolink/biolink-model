@@ -7,7 +7,7 @@ URI: [biolink:has_gene_product](https://w3id.org/biolink/vocab/has_gene_product)
 ## Domain and Range
 
 [Gene](Gene.md) ->  <sub>0..*</sub> [GeneProduct](GeneProduct.md)
-## Inheritance
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children

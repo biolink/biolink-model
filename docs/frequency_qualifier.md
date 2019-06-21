@@ -7,7 +7,7 @@ URI: [biolink:frequency_qualifier](https://w3id.org/biolink/vocab/frequency_qual
 ## Domain and Range
 
 [FrequencyQualifierMixin](FrequencyQualifierMixin.md) ->  <sub>OPT</sub> [FrequencyValue](FrequencyValue.md)
-## Inheritance
+## Parents
 
  *  is_a: [association slot](association_slot.md)
 ## Children

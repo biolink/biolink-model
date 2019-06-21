@@ -7,7 +7,7 @@ URI: [biolink:cell_line_to_thing_association_subject](https://w3id.org/biolink/v
 ## Domain and Range
 
 [CellLineToThingAssociation](CellLineToThingAssociation.md) ->  <sub>REQ</sub> [CellLine](CellLine.md)
-## Inheritance
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children

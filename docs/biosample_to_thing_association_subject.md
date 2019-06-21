@@ -7,7 +7,7 @@ URI: [biolink:biosample_to_thing_association_subject](https://w3id.org/biolink/v
 ## Domain and Range
 
 [BiosampleToThingAssociation](BiosampleToThingAssociation.md) ->  <sub>REQ</sub> [Biosample](Biosample.md)
-## Inheritance
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children

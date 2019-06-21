@@ -7,7 +7,7 @@ URI: [biolink:increases_secretion_of](https://w3id.org/biolink/vocab/increases_s
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [affects secretion of](affects_secretion_of.md)
 ## Children

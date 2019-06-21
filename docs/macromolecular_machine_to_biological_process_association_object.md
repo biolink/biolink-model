@@ -7,9 +7,9 @@ URI: [biolink:macromolecular_machine_to_biological_process_association_object](h
 ## Domain and Range
 
 [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md) ->  <sub>REQ</sub> [BiologicalProcess](BiologicalProcess.md)
-## Inheritance
+## Parents
 
- *  is_a: [functional association.object](functional_association_object.md)
+ *  is_a: [object](functional_association_object.md)
 ## Children
 
 ## Used by

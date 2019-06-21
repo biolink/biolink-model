@@ -7,7 +7,7 @@ URI: [biolink:gene_to_gene_association_subject](https://w3id.org/biolink/vocab/g
 ## Domain and Range
 
 [GeneToGeneAssociation](GeneToGeneAssociation.md) ->  <sub>REQ</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
-## Inheritance
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children

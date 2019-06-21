@@ -7,7 +7,7 @@ URI: [biolink:genomic_sequence_localization_subject](https://w3id.org/biolink/vo
 ## Domain and Range
 
 [GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>REQ</sub> [GenomicEntity](GenomicEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children

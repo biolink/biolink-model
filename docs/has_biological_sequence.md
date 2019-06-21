@@ -7,12 +7,12 @@ URI: [biolink:has_biological_sequence](https://w3id.org/biolink/vocab/has_biolog
 ## Domain and Range
 
 [GenomicEntity](GenomicEntity.md) ->  <sub>OPT</sub> [BiologicalSequence](BiologicalSequence.md)
-## Inheritance
+## Parents
 
  *  is_a: [node property](node_property.md)
 ## Children
 
- *  [sequence variant.has biological sequence](sequence_variant_has_biological_sequence.md)
+ *  [has biological sequence](sequence_variant_has_biological_sequence.md)
 ## Used by
 
  * [RNAProduct](RNAProduct.md)

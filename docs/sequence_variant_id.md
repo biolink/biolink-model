@@ -7,7 +7,7 @@ URI: [biolink:sequence_variant_id](https://w3id.org/biolink/vocab/sequence_varia
 ## Domain and Range
 
 [SequenceVariant](SequenceVariant.md) ->  <sub>REQ</sub> [IdentifierType](IdentifierType.md)
-## Inheritance
+## Parents
 
  *  is_a: [id](id.md)
 ## Children

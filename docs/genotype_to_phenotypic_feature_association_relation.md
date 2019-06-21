@@ -7,7 +7,7 @@ URI: [biolink:genotype_to_phenotypic_feature_association_relation](https://w3id.
 ## Domain and Range
 
 [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
-## Inheritance
+## Parents
 
  *  is_a: [relation](relation.md)
 ## Children

@@ -7,7 +7,7 @@ URI: [biolink:negated](https://w3id.org/biolink/vocab/negated)
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>OPT</sub> [Boolean](Boolean.md)
-## Inheritance
+## Parents
 
  *  is_a: [association slot](association_slot.md)
 ## Children

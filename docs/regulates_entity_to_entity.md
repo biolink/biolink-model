@@ -7,7 +7,7 @@ URI: [biolink:regulates_entity_to_entity](https://w3id.org/biolink/vocab/regulat
 ## Domain and Range
 
 [MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [regulates](regulates.md)
 ## Children

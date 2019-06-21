@@ -7,7 +7,7 @@ URI: [biolink:expressed_in](https://w3id.org/biolink/vocab/expressed_in)
 ## Domain and Range
 
 [GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..*</sub> [AnatomicalEntity](AnatomicalEntity.md)
-## Inheritance
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children

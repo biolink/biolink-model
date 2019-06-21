@@ -7,9 +7,9 @@ URI: [biolink:gene_has_variant_that_contributes_to_disease_association_subject](
 ## Domain and Range
 
 [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) ->  <sub>REQ</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
-## Inheritance
+## Parents
 
- *  is_a: [gene to disease association.subject](gene_to_disease_association_subject.md)
+ *  is_a: [subject](gene_to_disease_association_subject.md)
 ## Children
 
 ## Used by

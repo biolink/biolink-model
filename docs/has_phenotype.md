@@ -7,7 +7,7 @@ URI: [biolink:has_phenotype](https://w3id.org/biolink/vocab/has_phenotype)
 ## Domain and Range
 
 [BiologicalEntity](BiologicalEntity.md) ->  <sub>0..*</sub> [PhenotypicFeature](PhenotypicFeature.md)
-## Inheritance
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children

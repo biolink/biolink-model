@@ -7,7 +7,7 @@ URI: [biolink:variant_to_disease_association_object](https://w3id.org/biolink/vo
 ## Domain and Range
 
 [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
-## Inheritance
+## Parents
 
  *  is_a: [object](object.md)
 ## Children

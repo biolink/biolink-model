@@ -7,9 +7,9 @@ URI: [biolink:gene_to_go_term_association_subject](https://w3id.org/biolink/voca
 ## Domain and Range
 
 [GeneToGoTermAssociation](GeneToGoTermAssociation.md) ->  <sub>REQ</sub> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+## Parents
 
- *  is_a: [functional association.subject](functional_association_subject.md)
+ *  is_a: [subject](functional_association_subject.md)
 ## Children
 
 ## Used by

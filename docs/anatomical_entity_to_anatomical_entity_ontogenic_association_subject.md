@@ -7,9 +7,9 @@ URI: [biolink:anatomical_entity_to_anatomical_entity_ontogenic_association_subje
 ## Domain and Range
 
 [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) ->  <sub>REQ</sub> [AnatomicalEntity](AnatomicalEntity.md)
-## Inheritance
+## Parents
 
- *  is_a: [anatomical entity to anatomical entity association.subject](anatomical_entity_to_anatomical_entity_association_subject.md)
+ *  is_a: [subject](anatomical_entity_to_anatomical_entity_association_subject.md)
 ## Children
 
 ## Used by

@@ -7,7 +7,7 @@ URI: [biolink:participates_in](https://w3id.org/biolink/vocab/participates_in)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [Occurrent](Occurrent.md)
-## Inheritance
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children

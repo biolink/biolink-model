@@ -7,7 +7,7 @@ URI: [biolink:has_input](https://w3id.org/biolink/vocab/has_input)
 ## Domain and Range
 
 [Occurrent](Occurrent.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
-## Inheritance
+## Parents
 
  *  is_a: [has participant](has_participant.md)
 ## Children

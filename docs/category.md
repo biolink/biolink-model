@@ -7,7 +7,7 @@ URI: [biolink:category](https://w3id.org/biolink/vocab/category)
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [IriType](IriType.md)
-## Inheritance
+## Parents
 
  *  is_a: [node property](node_property.md)
 ## Children

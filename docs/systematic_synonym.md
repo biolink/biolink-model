@@ -7,7 +7,7 @@ URI: [biolink:systematic_synonym](https://w3id.org/biolink/vocab/systematic_syno
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [LabelType](LabelType.md)
-## Inheritance
+## Parents
 
  *  is_a: [node property](node_property.md)
 ## Children

@@ -7,12 +7,12 @@ URI: [biolink:functional_association_subject](https://w3id.org/biolink/vocab/fun
 ## Domain and Range
 
 [FunctionalAssociation](FunctionalAssociation.md) ->  <sub>REQ</sub> [MacromolecularMachine](MacromolecularMachine.md)
-## Inheritance
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children
 
- *  [gene to go term association.subject](gene_to_go_term_association_subject.md)
+ *  [subject](gene_to_go_term_association_subject.md)
 ## Used by
 
  * [FunctionalAssociation](FunctionalAssociation.md)

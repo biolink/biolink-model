@@ -7,7 +7,7 @@ URI: [biolink:disease_to_thing_association_subject](https://w3id.org/biolink/voc
 ## Domain and Range
 
 [DiseaseToThingAssociation](DiseaseToThingAssociation.md) ->  <sub>REQ</sub> [Disease](Disease.md)
-## Inheritance
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children

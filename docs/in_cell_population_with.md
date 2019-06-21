@@ -7,7 +7,7 @@ URI: [biolink:in_cell_population_with](https://w3id.org/biolink/vocab/in_cell_po
 ## Domain and Range
 
 [GeneOrGeneProduct](GeneOrGeneProduct.md) ->  <sub>0..*</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
-## Inheritance
+## Parents
 
  *  is_a: [coexists with](coexists_with.md)
 ## Children
