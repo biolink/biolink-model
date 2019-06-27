@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.2.0
-# Generation date: 2019-06-20 20:47
+# Generation date: 2019-06-27 17:07
 # Schema: biolink_model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -13,7 +13,7 @@ from biolinkml.utils.yamlutils import YAMLRoot
 from biolinkml.utils.metamodelcore import Bool, URI, XSDDate, XSDTime
 from includes.types import Boolean, Date, Double, Float, Integer, String, Time, Uri
 
-metamodel_version = "1.3.4"
+metamodel_version = "1.3.5"
 
 # Types
 class ChemicalFormulaValue(str):
@@ -619,7 +619,7 @@ class Attribute(YAMLRoot):
 
     # === attribute ===
     id: Union[str, AttributeId]
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType]
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -635,10 +635,10 @@ class Attribute(YAMLRoot):
         super()._fix_elements()
         if not isinstance(self.id, AttributeId):
             self.id = AttributeId(self.id)
-        if self.name is not None and not isinstance(self.name, LabelType):
+        if not isinstance(self.name, LabelType):
             self.name = LabelType(self.name)
-        self.category = [v if isinstance(v, IriType)
-                         else IriType(v) for v in self.category]
+        if not isinstance(self.category, IriType):
+            self.category = IriType(self.category)
         self.related_to = [v if isinstance(v, NamedThingId)
                            else NamedThingId(v) for v in self.related_to]
         self.interacts_with = [v if isinstance(v, NamedThingId)
@@ -663,7 +663,7 @@ class BiologicalSex(Attribute):
 
     # === attribute ===
     id: Union[str, BiologicalSexId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -692,7 +692,7 @@ class PhenotypicSex(BiologicalSex):
 
     # === attribute ===
     id: Union[str, PhenotypicSexId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -724,7 +724,7 @@ class GenotypicSex(BiologicalSex):
 
     # === attribute ===
     id: Union[str, GenotypicSexId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -755,7 +755,7 @@ class SeverityValue(Attribute):
 
     # === attribute ===
     id: Union[str, SeverityValueId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -784,7 +784,7 @@ class FrequencyValue(Attribute):
 
     # === attribute ===
     id: Union[str, FrequencyValueId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -814,7 +814,7 @@ class ClinicalModifier(Attribute):
 
     # === attribute ===
     id: Union[str, ClinicalModifierId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -843,7 +843,7 @@ class Onset(Attribute):
 
     # === attribute ===
     id: Union[str, OnsetId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -872,7 +872,7 @@ class NamedThing(YAMLRoot):
 
     # === named thing ===
     id: Union[str, NamedThingId]
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType]
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -926,10 +926,10 @@ class NamedThing(YAMLRoot):
         super()._fix_elements()
         if not isinstance(self.id, NamedThingId):
             self.id = NamedThingId(self.id)
-        if self.name is not None and not isinstance(self.name, LabelType):
+        if not isinstance(self.name, LabelType):
             self.name = LabelType(self.name)
-        self.category = [v if isinstance(v, IriType)
-                         else IriType(v) for v in self.category]
+        if not isinstance(self.category, IriType):
+            self.category = IriType(self.category)
         self.related_to = [v if isinstance(v, NamedThingId)
                            else NamedThingId(v) for v in self.related_to]
         self.interacts_with = [v if isinstance(v, NamedThingId)
@@ -1024,7 +1024,7 @@ class BiologicalEntity(NamedThing):
 
     # === named thing ===
     id: Union[str, BiologicalEntityId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -1092,7 +1092,7 @@ class OntologyClass(NamedThing):
 
     # === named thing ===
     id: Union[str, OntologyClassId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -1162,7 +1162,7 @@ class RelationshipType(OntologyClass):
 
     # === named thing ===
     id: Union[str, RelationshipTypeId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -1232,7 +1232,7 @@ class GeneOntologyClass(OntologyClass):
 
     # === named thing ===
     id: Union[str, GeneOntologyClassId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -1299,7 +1299,7 @@ class OrganismTaxon(OntologyClass):
 
     # === named thing ===
     id: Union[str, OrganismTaxonId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -1370,7 +1370,7 @@ class OrganismalEntity(BiologicalEntity):
 
     # === named thing ===
     id: Union[str, OrganismalEntityId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -1432,7 +1432,7 @@ class IndividualOrganism(OrganismalEntity):
 
     # === named thing ===
     id: Union[str, IndividualOrganismId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -1507,7 +1507,7 @@ class Case(IndividualOrganism):
 
     # === named thing ===
     id: Union[str, CaseId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -1584,7 +1584,7 @@ class PopulationOfIndividualOrganisms(OrganismalEntity):
 
     # === named thing ===
     id: Union[str, PopulationOfIndividualOrganismsId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -1656,7 +1656,7 @@ class Biosample(OrganismalEntity):
 
     # === named thing ===
     id: Union[str, BiosampleId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -1732,7 +1732,7 @@ class DiseaseOrPhenotypicFeature(BiologicalEntity):
 
     # === named thing ===
     id: Union[str, DiseaseOrPhenotypicFeatureId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -1811,7 +1811,7 @@ class Disease(DiseaseOrPhenotypicFeature):
 
     # === named thing ===
     id: Union[str, DiseaseId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -1884,7 +1884,7 @@ class PhenotypicFeature(DiseaseOrPhenotypicFeature):
 
     # === named thing ===
     id: Union[str, PhenotypicFeatureId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -1961,7 +1961,7 @@ class Environment(BiologicalEntity):
 
     # === named thing ===
     id: Union[str, EnvironmentId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -2031,7 +2031,7 @@ class InformationContentEntity(NamedThing):
 
     # === named thing ===
     id: Union[str, InformationContentEntityId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -2093,7 +2093,7 @@ class ConfidenceLevel(InformationContentEntity):
 
     # === named thing ===
     id: Union[str, ConfidenceLevelId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -2162,7 +2162,7 @@ class EvidenceType(InformationContentEntity):
 
     # === named thing ===
     id: Union[str, EvidenceTypeId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -2233,7 +2233,7 @@ class Publication(InformationContentEntity):
 
     # === named thing ===
     id: Union[str, PublicationId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -2299,7 +2299,7 @@ class AdministrativeEntity(NamedThing):
 
     # === named thing ===
     id: Union[str, AdministrativeEntityId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -2361,7 +2361,7 @@ class Provider(AdministrativeEntity):
 
     # === named thing ===
     id: Union[str, ProviderId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -2430,7 +2430,7 @@ class MolecularEntity(BiologicalEntity):
 
     # === named thing ===
     id: Union[str, MolecularEntityId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -2663,7 +2663,7 @@ class ChemicalSubstance(MolecularEntity):
 
     # === named thing ===
     id: Union[str, ChemicalSubstanceId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -2786,7 +2786,7 @@ class Carbohydrate(ChemicalSubstance):
 
     # === named thing ===
     id: Union[str, CarbohydrateId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -2914,7 +2914,7 @@ class Drug(ChemicalSubstance):
 
     # === named thing ===
     id: Union[str, DrugId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -3042,7 +3042,7 @@ class Metabolite(ChemicalSubstance):
 
     # === named thing ===
     id: Union[str, MetaboliteId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -3170,7 +3170,7 @@ class AnatomicalEntity(OrganismalEntity):
 
     # === named thing ===
     id: Union[str, AnatomicalEntityId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -3248,7 +3248,7 @@ class LifeStage(OrganismalEntity):
 
     # === named thing ===
     id: Union[str, LifeStageId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -3323,7 +3323,7 @@ class PlanetaryEntity(NamedThing):
 
     # === named thing ===
     id: Union[str, PlanetaryEntityId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -3387,7 +3387,7 @@ class EnvironmentalProcess(PlanetaryEntity):
 
     # === named thing ===
     id: Union[str, EnvironmentalProcessId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -3465,7 +3465,7 @@ class EnvironmentalFeature(PlanetaryEntity):
 
     # === named thing ===
     id: Union[str, EnvironmentalFeatureId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -3535,7 +3535,7 @@ class ClinicalEntity(NamedThing):
 
     # === named thing ===
     id: Union[str, ClinicalEntityId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -3599,7 +3599,7 @@ class ClinicalTrial(ClinicalEntity):
 
     # === named thing ===
     id: Union[str, ClinicalTrialId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -3665,7 +3665,7 @@ class ClinicalIntervention(ClinicalEntity):
 
     # === named thing ===
     id: Union[str, ClinicalInterventionId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -3734,7 +3734,7 @@ class Device(NamedThing):
 
     # === named thing ===
     id: Union[str, DeviceId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -3802,7 +3802,7 @@ class GenomicEntity(MolecularEntity):
 
     # === named thing ===
     id: Union[str, GenomicEntityId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -3931,7 +3931,7 @@ class Genome(GenomicEntity):
 
     # === named thing ===
     id: Union[str, GenomeId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -4060,7 +4060,7 @@ class Transcript(GenomicEntity):
 
     # === named thing ===
     id: Union[str, TranscriptId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -4190,7 +4190,7 @@ class Exon(GenomicEntity):
 
     # === named thing ===
     id: Union[str, ExonId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -4316,7 +4316,7 @@ class CodingSequence(GenomicEntity):
 
     # === named thing ===
     id: Union[str, CodingSequenceId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -4558,7 +4558,7 @@ class MacromolecularMachine(GenomicEntity):
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     # === macromolecular machine ===
-    name: Optional[Union[str, SymbolType]] = None
+    name: Union[str, SymbolType] = None
 
     def _fix_elements(self):
         super()._fix_elements()
@@ -4689,7 +4689,7 @@ class GeneOrGeneProduct(MacromolecularMachine):
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     # === macromolecular machine ===
-    name: Optional[Union[str, SymbolType]] = None
+    name: Union[str, SymbolType] = None
 
     # === gene or gene product ===
     in_pathway_with: List[Union[str, GeneOrGeneProductId]] = empty_list()
@@ -4829,7 +4829,7 @@ class Gene(GeneOrGeneProduct):
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     # === macromolecular machine ===
-    name: Optional[Union[str, SymbolType]] = None
+    name: Union[str, SymbolType] = None
 
     # === gene or gene product ===
     in_pathway_with: List[Union[str, GeneOrGeneProductId]] = empty_list()
@@ -4975,7 +4975,7 @@ class GeneProduct(GeneOrGeneProduct):
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     # === macromolecular machine ===
-    name: Optional[Union[str, SymbolType]] = None
+    name: Union[str, SymbolType] = None
 
     # === gene or gene product ===
     in_pathway_with: List[Union[str, GeneOrGeneProductId]] = empty_list()
@@ -5113,7 +5113,7 @@ class Protein(GeneProduct):
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     # === macromolecular machine ===
-    name: Optional[Union[str, SymbolType]] = None
+    name: Union[str, SymbolType] = None
 
     # === gene or gene product ===
     in_pathway_with: List[Union[str, GeneOrGeneProductId]] = empty_list()
@@ -5254,7 +5254,7 @@ class GeneProductIsoform(GeneProduct):
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     # === macromolecular machine ===
-    name: Optional[Union[str, SymbolType]] = None
+    name: Union[str, SymbolType] = None
 
     # === gene or gene product ===
     in_pathway_with: List[Union[str, GeneOrGeneProductId]] = empty_list()
@@ -5389,7 +5389,7 @@ class ProteinIsoform(Protein):
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     # === macromolecular machine ===
-    name: Optional[Union[str, SymbolType]] = None
+    name: Union[str, SymbolType] = None
 
     # === gene or gene product ===
     in_pathway_with: List[Union[str, GeneOrGeneProductId]] = empty_list()
@@ -5527,7 +5527,7 @@ class RNAProduct(GeneProduct):
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     # === macromolecular machine ===
-    name: Optional[Union[str, SymbolType]] = None
+    name: Union[str, SymbolType] = None
 
     # === gene or gene product ===
     in_pathway_with: List[Union[str, GeneOrGeneProductId]] = empty_list()
@@ -5666,7 +5666,7 @@ class RNAProductIsoform(RNAProduct):
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     # === macromolecular machine ===
-    name: Optional[Union[str, SymbolType]] = None
+    name: Union[str, SymbolType] = None
 
     # === gene or gene product ===
     in_pathway_with: List[Union[str, GeneOrGeneProductId]] = empty_list()
@@ -5804,7 +5804,7 @@ class NoncodingRNAProduct(RNAProduct):
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     # === macromolecular machine ===
-    name: Optional[Union[str, SymbolType]] = None
+    name: Union[str, SymbolType] = None
 
     # === gene or gene product ===
     in_pathway_with: List[Union[str, GeneOrGeneProductId]] = empty_list()
@@ -5942,7 +5942,7 @@ class MicroRNA(NoncodingRNAProduct):
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     # === macromolecular machine ===
-    name: Optional[Union[str, SymbolType]] = None
+    name: Union[str, SymbolType] = None
 
     # === gene or gene product ===
     in_pathway_with: List[Union[str, GeneOrGeneProductId]] = empty_list()
@@ -6082,7 +6082,7 @@ class MacromolecularComplex(MacromolecularMachine):
     has_biological_sequence: Optional[Union[str, BiologicalSequence]] = None
 
     # === macromolecular machine ===
-    name: Optional[Union[str, SymbolType]] = None
+    name: Union[str, SymbolType] = None
 
     # === macromolecular complex ===
 
@@ -6101,7 +6101,7 @@ class GeneFamily(MolecularEntity):
 
     # === named thing ===
     id: Union[str, GeneFamilyId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -6224,7 +6224,7 @@ class Zygosity(Attribute):
 
     # === attribute ===
     id: Union[str, ZygosityId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -6254,7 +6254,7 @@ class Genotype(GenomicEntity):
 
     # === named thing ===
     id: Union[str, GenotypeId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -6386,7 +6386,7 @@ class Haplotype(GenomicEntity):
 
     # === named thing ===
     id: Union[str, HaplotypeId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -6514,7 +6514,7 @@ class SequenceVariant(GenomicEntity):
     _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "has_phenotype", "molecularly_interacts_with", "affects_abundance_of", "increases_abundance_of", "decreases_abundance_of", "affects_activity_of", "increases_activity_of", "decreases_activity_of", "affects_expression_of", "increases_expression_of", "decreases_expression_of", "affects_folding_of", "increases_folding_of", "decreases_folding_of", "affects_localization_of", "increases_localization_of", "decreases_localization_of", "affects_metabolic_processing_of", "increases_metabolic_processing_of", "decreases_metabolic_processing_of", "affects_molecular_modification_of", "increases_molecular_modification_of", "decreases_molecular_modification_of", "affects_synthesis_of", "increases_synthesis_of", "decreases_synthesis_of", "affects_degradation_of", "increases_degradation_of", "decreases_degradation_of", "affects_mutation_rate_of", "increases_mutation_rate_of", "decreases_mutation_rate_of", "affects_response_to", "increases_response_to", "decreases_response_to", "affects_splicing_of", "increases_splicing_of", "decreases_splicing_of", "affects_stability_of", "increases_stability_of", "decreases_stability_of", "affects_transport_of", "increases_transport_of", "decreases_transport_of", "affects_secretion_of", "increases_secretion_of", "decreases_secretion_of", "affects_uptake_of", "increases_uptake_of", "decreases_uptake_of", "regulates_entity_to_entity", "biomarker_for", "in_taxon"]
 
     # === named thing ===
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -6649,7 +6649,7 @@ class DrugExposure(Environment):
 
     # === named thing ===
     id: Union[str, DrugExposureId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -6724,7 +6724,7 @@ class Treatment(Environment):
 
     # === named thing ===
     id: Union[str, TreatmentId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -6802,7 +6802,7 @@ class GeographicLocation(PlanetaryEntity):
 
     # === named thing ===
     id: Union[str, GeographicLocationId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -6873,7 +6873,7 @@ class GeographicLocationAtTime(GeographicLocation):
 
     # === named thing ===
     id: Union[str, GeographicLocationAtTimeId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -6952,13 +6952,13 @@ class Association(YAMLRoot):
     subject: Union[str, IriType]
     relation: Union[str, IriType]
     object: Union[str, IriType]
+    edge_label: Union[str, LabelType]
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -6981,7 +6981,7 @@ class Association(YAMLRoot):
                              else PublicationId(v) for v in self.publications]
         if self.provided_by is not None and not isinstance(self.provided_by, ProviderId):
             self.provided_by = ProviderId(self.provided_by)
-        if self.edge_label is not None and not isinstance(self.edge_label, LabelType):
+        if not isinstance(self.edge_label, LabelType):
             self.edge_label = LabelType(self.edge_label)
         if self.has_confidence_level is not None and not isinstance(self.has_confidence_level, ConfidenceLevelId):
             self.has_confidence_level = ConfidenceLevelId(self.has_confidence_level)
@@ -7000,13 +7000,13 @@ class GenotypeToGenotypePartAssociation(Association):
 
     # === association ===
     id: Union[str, GenotypeToGenotypePartAssociationId] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7038,13 +7038,13 @@ class GenotypeToGeneAssociation(Association):
 
     # === association ===
     id: Union[str, GenotypeToGeneAssociationId] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7075,13 +7075,13 @@ class GenotypeToVariantAssociation(Association):
 
     # === association ===
     id: Union[str, GenotypeToVariantAssociationId] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7114,13 +7114,13 @@ class GeneToGeneAssociation(Association):
     # === association ===
     id: Union[str, GeneToGeneAssociationId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7147,13 +7147,13 @@ class GeneToGeneHomologyAssociation(GeneToGeneAssociation):
 
     # === association ===
     id: Union[str, GeneToGeneHomologyAssociationId] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7183,13 +7183,13 @@ class PairwiseGeneToGeneInteraction(GeneToGeneAssociation):
 
     # === association ===
     id: Union[str, PairwiseGeneToGeneInteractionId] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7220,13 +7220,13 @@ class CellLineToThingAssociation(Association):
     id: Union[str, CellLineToThingAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7252,13 +7252,13 @@ class CellLineToDiseaseOrPhenotypicFeatureAssociation(Association):
     id: Union[str, CellLineToDiseaseOrPhenotypicFeatureAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7285,13 +7285,13 @@ class ChemicalToThingAssociation(Association):
     id: Union[str, ChemicalToThingAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7316,13 +7316,13 @@ class CaseToThingAssociation(Association):
     id: Union[str, CaseToThingAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7348,13 +7348,13 @@ class ChemicalToDiseaseOrPhenotypicFeatureAssociation(Association):
     id: Union[str, ChemicalToDiseaseOrPhenotypicFeatureAssociationId] = None
     subject: Union[str, IriType] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7381,13 +7381,13 @@ class ChemicalToPathwayAssociation(Association):
     id: Union[str, ChemicalToPathwayAssociationId] = None
     subject: Union[str, IriType] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7414,13 +7414,13 @@ class ChemicalToGeneAssociation(Association):
     id: Union[str, ChemicalToGeneAssociationId] = None
     subject: Union[str, IriType] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7447,13 +7447,13 @@ class BiosampleToThingAssociation(Association):
     id: Union[str, BiosampleToThingAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7479,13 +7479,13 @@ class BiosampleToDiseaseOrPhenotypicFeatureAssociation(Association):
     subject: Union[str, IriType] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7506,13 +7506,13 @@ class EntityToPhenotypicFeatureAssociation(Association):
     id: Union[str, EntityToPhenotypicFeatureAssociationId] = None
     subject: Union[str, IriType] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7549,13 +7549,13 @@ class DiseaseOrPhenotypicFeatureAssociationToThingAssociation(Association):
     id: Union[str, DiseaseOrPhenotypicFeatureAssociationToThingAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7580,13 +7580,13 @@ class DiseaseOrPhenotypicFeatureAssociationToLocationAssociation(DiseaseOrPhenot
     # === association ===
     id: Union[str, DiseaseOrPhenotypicFeatureAssociationToLocationAssociationId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7613,13 +7613,13 @@ class ThingToDiseaseOrPhenotypicFeatureAssociation(Association):
     id: Union[str, ThingToDiseaseOrPhenotypicFeatureAssociationId] = None
     subject: Union[str, IriType] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7641,13 +7641,13 @@ class DiseaseToThingAssociation(Association):
     id: Union[str, DiseaseToThingAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7672,13 +7672,13 @@ class GenotypeToPhenotypicFeatureAssociation(Association):
     # === association ===
     id: Union[str, GenotypeToPhenotypicFeatureAssociationId] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7721,13 +7721,13 @@ class EnvironmentToPhenotypicFeatureAssociation(Association):
     id: Union[str, EnvironmentToPhenotypicFeatureAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7768,13 +7768,13 @@ class DiseaseToPhenotypicFeatureAssociation(Association):
     subject: Union[str, IriType] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7812,13 +7812,13 @@ class CaseToPhenotypicFeatureAssociation(Association):
     subject: Union[str, IriType] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7851,13 +7851,13 @@ class GeneToThingAssociation(Association):
     id: Union[str, GeneToThingAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7879,13 +7879,13 @@ class GeneToPhenotypicFeatureAssociation(Association):
     id: Union[str, GeneToPhenotypicFeatureAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7921,13 +7921,13 @@ class GeneToDiseaseAssociation(Association):
     id: Union[str, GeneToDiseaseAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -7962,13 +7962,13 @@ class VariantToPopulationAssociation(Association):
     # === association ===
     id: Union[str, VariantToPopulationAssociationId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8003,13 +8003,13 @@ class PopulationToPopulationAssociation(Association):
 
     # === association ===
     id: Union[str, PopulationToPopulationAssociationId] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8039,13 +8039,13 @@ class VariantToPhenotypicFeatureAssociation(Association):
     id: Union[str, VariantToPhenotypicFeatureAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8079,13 +8079,13 @@ class VariantToDiseaseAssociation(Association):
 
     # === association ===
     id: Union[str, VariantToDiseaseAssociationId] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8124,13 +8124,13 @@ class GeneAsAModelOfDiseaseAssociation(GeneToDiseaseAssociation):
     id: Union[str, GeneAsAModelOfDiseaseAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8159,13 +8159,13 @@ class GeneHasVariantThatContributesToDiseaseAssociation(GeneToDiseaseAssociation
     id: Union[str, GeneHasVariantThatContributesToDiseaseAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8197,13 +8197,13 @@ class GenotypeToThingAssociation(Association):
     id: Union[str, GenotypeToThingAssociationId] = None
     relation: Union[str, IriType] = None
     object: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8226,13 +8226,13 @@ class GeneToExpressionSiteAssociation(Association):
 
     # === association ===
     id: Union[str, GeneToExpressionSiteAssociationId] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8271,13 +8271,13 @@ class SequenceVariantModulatesTreatmentAssociation(Association):
     # === association ===
     id: Union[str, SequenceVariantModulatesTreatmentAssociationId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8305,13 +8305,13 @@ class FunctionalAssociation(Association):
     # === association ===
     id: Union[str, FunctionalAssociationId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8342,13 +8342,13 @@ class MacromolecularMachineToMolecularActivityAssociation(FunctionalAssociation)
     # === association ===
     id: Union[str, MacromolecularMachineToMolecularActivityAssociationId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8379,13 +8379,13 @@ class MacromolecularMachineToBiologicalProcessAssociation(FunctionalAssociation)
     # === association ===
     id: Union[str, MacromolecularMachineToBiologicalProcessAssociationId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8416,13 +8416,13 @@ class MacromolecularMachineToCellularComponentAssociation(FunctionalAssociation)
     # === association ===
     id: Union[str, MacromolecularMachineToCellularComponentAssociationId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8448,13 +8448,13 @@ class GeneToGoTermAssociation(FunctionalAssociation):
     # === association ===
     id: Union[str, GeneToGoTermAssociationId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8486,13 +8486,13 @@ class GenomicSequenceLocalization(Association):
     # === association ===
     id: Union[str, GenomicSequenceLocalizationId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8525,13 +8525,13 @@ class SequenceFeatureRelationship(Association):
     # === association ===
     id: Union[str, SequenceFeatureRelationshipId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8560,13 +8560,13 @@ class TranscriptToGeneRelationship(SequenceFeatureRelationship):
     # === association ===
     id: Union[str, TranscriptToGeneRelationshipId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8596,13 +8596,13 @@ class GeneToGeneProductRelationship(SequenceFeatureRelationship):
 
     # === association ===
     id: Union[str, GeneToGeneProductRelationshipId] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8636,13 +8636,13 @@ class ExonToTranscriptRelationship(SequenceFeatureRelationship):
     # === association ===
     id: Union[str, ExonToTranscriptRelationshipId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8672,13 +8672,13 @@ class GeneRegulatoryRelationship(Association):
 
     # === association ===
     id: Union[str, GeneRegulatoryRelationshipId] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8707,13 +8707,13 @@ class AnatomicalEntityToAnatomicalEntityAssociation(Association):
     # === association ===
     id: Union[str, AnatomicalEntityToAnatomicalEntityAssociationId] = None
     relation: Union[str, IriType] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8743,13 +8743,13 @@ class AnatomicalEntityToAnatomicalEntityPartOfAssociation(AnatomicalEntityToAnat
 
     # === association ===
     id: Union[str, AnatomicalEntityToAnatomicalEntityPartOfAssociationId] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8784,13 +8784,13 @@ class AnatomicalEntityToAnatomicalEntityOntogenicAssociation(AnatomicalEntityToA
 
     # === association ===
     id: Union[str, AnatomicalEntityToAnatomicalEntityOntogenicAssociationId] = None
+    edge_label: Union[str, LabelType] = None
     negated: Optional[Bool] = None
     association_type: Optional[Union[str, OntologyClassId]] = None
     qualifiers: List[Union[str, OntologyClassId]] = empty_list()
     publications: List[Union[str, PublicationId]] = empty_list()
     provided_by: Optional[Union[str, ProviderId]] = None
     association_slot: Optional[str] = None
-    edge_label: Optional[Union[str, LabelType]] = None
     has_confidence_level: Optional[Union[str, ConfidenceLevelId]] = None
     has_evidence: Optional[Union[str, EvidenceTypeId]] = None
     clinical_modifier_qualifier: Optional[Union[str, ClinicalModifierId]] = None
@@ -8823,7 +8823,7 @@ class Occurrent(NamedThing):
 
     # === named thing ===
     id: Union[str, OccurrentId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -8908,7 +8908,7 @@ class BiologicalProcessOrActivity(BiologicalEntity):
 
     # === named thing ===
     id: Union[str, BiologicalProcessOrActivityId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -8978,7 +8978,7 @@ class MolecularActivity(BiologicalProcessOrActivity):
 
     # === named thing ===
     id: Union[str, MolecularActivityId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -9062,7 +9062,7 @@ class ActivityAndBehavior(Occurrent):
 
     # === named thing ===
     id: Union[str, ActivityAndBehaviorId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -9137,7 +9137,7 @@ class Procedure(Occurrent):
 
     # === named thing ===
     id: Union[str, ProcedureId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -9212,7 +9212,7 @@ class Phenomenon(Occurrent):
 
     # === named thing ===
     id: Union[str, PhenomenonId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -9287,7 +9287,7 @@ class BiologicalProcess(BiologicalProcessOrActivity):
 
     # === named thing ===
     id: Union[str, BiologicalProcessId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -9368,7 +9368,7 @@ class Pathway(BiologicalProcess):
 
     # === named thing ===
     id: Union[str, PathwayId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -9443,7 +9443,7 @@ class PhysiologicalProcess(BiologicalProcess):
 
     # === named thing ===
     id: Union[str, PhysiologicalProcessId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -9521,7 +9521,7 @@ class CellularComponent(AnatomicalEntity):
 
     # === named thing ===
     id: Union[str, CellularComponentId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -9594,7 +9594,7 @@ class Cell(AnatomicalEntity):
 
     # === named thing ===
     id: Union[str, CellId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -9667,7 +9667,7 @@ class CellLine(Biosample):
 
     # === named thing ===
     id: Union[str, CellLineId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()
@@ -9739,7 +9739,7 @@ class GrossAnatomicalStructure(AnatomicalEntity):
 
     # === named thing ===
     id: Union[str, GrossAnatomicalStructureId] = None
-    name: Optional[Union[str, LabelType]] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
     related_to: List[Union[str, NamedThingId]] = empty_list()
     interacts_with: List[Union[str, NamedThingId]] = empty_list()

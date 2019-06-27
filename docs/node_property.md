@@ -1,13 +1,17 @@
+
 # Slot: node property
 
 
 A grouping for any property that holds between a node and a value
 
 URI: [biolink:node_property](https://w3id.org/biolink/vocab/node_property)
+
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](String.md)
+
 ## Parents
+
 
 ## Children
 
@@ -34,6 +38,7 @@ URI: [biolink:node_property](https://w3id.org/biolink/vocab/node_property)
  *  [systematic synonym](systematic_synonym.md)
  *  [timepoint](timepoint.md)
  *  [update date](update_date.md)
+
 ## Used by
 
  * [RNAProduct](RNAProduct.md)

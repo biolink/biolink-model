@@ -1,3 +1,4 @@
+
 # Class: named thing
 
 
@@ -5,7 +6,8 @@ a databased entity or concept/class
 
 URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing|id:identifier_type;name:label_type%20%3F;category:iri_type%20*]^-\[PlanetaryEntity],%20\[NamedThing]^-\[OntologyClass],%20\[NamedThing]^-\[Occurrent],%20\[NamedThing]^-\[InformationContentEntity],%20\[NamedThing]^-\[Device],%20\[NamedThing]^-\[ClinicalEntity],%20\[NamedThing]^-\[BiologicalEntity],%20\[NamedThing]^-\[AdministrativeEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing|id:identifier_type;name:label_type;category:iri_type%20%2B]^-\[PlanetaryEntity],%20\[NamedThing]^-\[OntologyClass],%20\[NamedThing]^-\[Occurrent],%20\[NamedThing]^-\[InformationContentEntity],%20\[NamedThing]^-\[Device],%20\[NamedThing]^-\[ClinicalEntity],%20\[NamedThing]^-\[BiologicalEntity],%20\[NamedThing]^-\[AdministrativeEntity])
+
 ## Children
 
  * [AdministrativeEntity](AdministrativeEntity.md)
@@ -16,6 +18,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  * [Occurrent](Occurrent.md) - A processual entity
  * [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
  * [PlanetaryEntity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet
+
 ## Referenced by class
 
  *  **[NamedThing](NamedThing.md)** *[affects](affects.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
@@ -52,11 +55,13 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[NamedThing](NamedThing.md)** *[same as](same_as.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)** *[treated by](treated_by.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[xenologous to](xenologous_to.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
+
 ## Attributes
+
 
 ### Own
 
- * [category](category.md)  <sub>0..*</sub>
+ * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * range: [IriType](IriType.md)
     * in subsets: (translator_minimal)
@@ -64,24 +69,11 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [IdentifierType](IdentifierType.md)
     * in subsets: (translator_minimal)
- * [name](name.md)  <sub>OPT</sub>
+ * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](LabelType.md)
     * in subsets: (translator_minimal)
-### Inherited from named thing:
 
- * [id](id.md)  <sub>REQ</sub>
-    * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](IdentifierType.md)
-    * in subsets: (translator_minimal)
- * [name](name.md)  <sub>OPT</sub>
-    * Description: A human-readable name for a thing
-    * range: [LabelType](LabelType.md)
-    * in subsets: (translator_minimal)
- * [category](category.md)  <sub>0..*</sub>
-    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)
-    * in subsets: (translator_minimal)
 ### Domain for slot:
 
  * [actively involved in](actively_involved_in.md)  <sub>0..*</sub>
@@ -102,7 +94,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
     * Description: holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function.
     * range: [Occurrent](Occurrent.md)
     * in subsets: (translator_minimal)
- * [category](category.md)  <sub>0..*</sub>
+ * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * range: [IriType](IriType.md)
     * in subsets: (translator_minimal)
@@ -192,7 +184,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
     * Description: holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.
     * range: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
- * [name](name.md)  <sub>OPT</sub>
+ * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](LabelType.md)
     * in subsets: (translator_minimal)

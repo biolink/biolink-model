@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,1050.7,281"];
+	graph [bb="0,0,1173.1,281"];
 	node [label="\N"];
 	"genotype to genotype part association"	 [height=0.5,
 		label="genotype to genotype part association",
-		pos="437.4,263",
+		pos="495.4,263",
 		width=3.9918];
 	association	 [height=0.5,
 		pos="49.402,177",
 		width=1.3723];
 	"genotype to genotype part association" -> association	 [label=is_a,
 		lp="145.68,220",
-		pos="e,71.092,193.3 314.51,253.6 245.49,247.31 166.78,238.14 133.85,227 114.69,220.52 95.144,209.3 79.687,199.12"];
+		pos="e,71.049,193.43 363.51,255.84 278.15,250.07 175.43,240.64 133.85,227 114.63,220.7 95.08,209.49 79.635,199.28"];
 	id	 [height=0.5,
 		pos="143.4,177",
 		width=0.75];
 	"genotype to genotype part association" -> id	 [color=blue,
 		label=id,
 		lp="179.85,220",
-		pos="e,149.46,194.66 305.99,255.61 251.47,250.41 195.77,241.65 173.51,227 165.06,221.44 158.62,212.6 153.91,203.9",
+		pos="e,149.4,194.76 369.43,254.24 286.49,247.57 190.23,237.72 173.51,227 164.99,221.54 158.54,212.73 153.83,204.01",
 		style=solid];
 	subject	 [height=0.5,
 		pos="276.4,177",
@@ -25,7 +25,7 @@ digraph {
 	"genotype to genotype part association" -> subject	 [color=blue,
 		label=subject,
 		lp="314.23,220",
-		pos="e,278.37,195.06 351.4,248.51 326.27,242.78 303.04,235.51 293.75,227 287.46,221.24 283.45,213.09 280.89,205.03",
+		pos="e,278.18,195.29 379.25,252.38 342.35,246.89 307.54,238.78 293.75,227 287.19,221.4 283.11,213.19 280.57,205.03",
 		style=solid];
 	relation	 [height=0.5,
 		pos="256.4,18",
@@ -33,7 +33,7 @@ digraph {
 	"genotype to genotype part association" -> relation	 [color=blue,
 		label=relation,
 		lp="240.78,134",
-		pos="e,247,35.476 349.24,248.67 326.3,243.36 301.98,236.29 280.4,227 256.85,216.86 246.28,216.56 232.4,195 202.59,148.68 225.71,81.424 \
+		pos="e,247,35.476 378.32,252.54 345.85,247.21 311.1,239.15 280.4,227 256.56,217.56 246.28,216.56 232.4,195 202.59,148.68 225.71,81.424 \
 242.65,44.586",
 		style=solid];
 	object	 [height=0.5,
@@ -42,8 +42,8 @@ digraph {
 	"genotype to genotype part association" -> object	 [color=blue,
 		label=object,
 		lp="373.51,177",
-		pos="e,325.12,108.39 409.11,245.26 391.68,233.03 370.08,215.36 356.19,195 338.23,168.67 345.29,156.57 333.4,127 332.16,123.92 330.79,\
-120.73 329.38,117.58",
+		pos="e,325.12,108.39 437.65,246.5 409.66,235.86 377.56,219.37 356.19,195 335.18,171.03 345.29,156.57 333.4,127 332.16,123.92 330.79,120.73 \
+329.38,117.58",
 		style=solid];
 	negated	 [color=blue,
 		height=0.5,
@@ -52,8 +52,8 @@ digraph {
 		width=1.0584];
 	"genotype to genotype part association" -> negated	 [color=blue,
 		label=negated,
-		lp="459.17,220",
-		pos="e,437.4,195.21 437.4,244.76 437.4,233.36 437.4,218.43 437.4,205.49",
+		lp="492.17,220",
+		pos="e,449.09,194.33 483.1,244.76 474.86,232.55 463.9,216.29 454.77,202.76",
 		style=solid];
 	"association type"	 [color=blue,
 		height=0.5,
@@ -62,8 +62,8 @@ digraph {
 		width=1.6931];
 	"genotype to genotype part association" -> "association type"	 [color=blue,
 		label="association type",
-		lp="548.31,220",
-		pos="e,531.38,193.92 461.64,245.18 479.49,232.07 503.89,214.13 523.19,199.94",
+		lp="574.31,220",
+		pos="e,542.11,194.92 507.91,244.76 516.18,232.71 527.15,216.72 536.36,203.3",
 		style=solid];
 	qualifiers	 [color=blue,
 		height=0.5,
@@ -72,8 +72,8 @@ digraph {
 		width=1.6931];
 	"genotype to genotype part association" -> qualifiers	 [color=blue,
 		label=qualifiers,
-		lp="654.45,220",
-		pos="e,667.24,193.38 521.19,248.35 546.09,242.88 573.18,235.8 597.4,227 618.33,219.39 640.48,208.24 658.33,198.39",
+		lp="672.45,220",
+		pos="e,674.13,194.09 567.39,247.36 586.09,242.07 605.89,235.33 623.4,227 638.34,219.9 653.51,209.7 665.97,200.37",
 		style=solid];
 	publications	 [color=blue,
 		height=0.5,
@@ -82,8 +82,8 @@ digraph {
 		width=1.3859];
 	"genotype to genotype part association" -> publications	 [color=blue,
 		label=publications,
-		lp="765.62,220",
-		pos="e,790.84,190.82 539.11,250.26 594.54,242.9 657.23,233.79 684.4,227 717.64,218.69 754.04,205.44 781.25,194.66",
+		lp="777.62,220",
+		pos="e,793.23,191.65 595.91,250.07 630.08,244.48 668.24,236.9 702.4,227 730.42,218.88 760.75,206.34 784.03,195.85",
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
@@ -92,25 +92,36 @@ digraph {
 		width=1.1129];
 	"genotype to genotype part association" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="881.03,220",
-		pos="e,904.17,190.3 540.64,250.39 557.27,248.49 574.3,246.63 590.4,245 684.92,235.45 710.86,248.51 803.4,227 835.34,219.58 869.88,205.71 \
-895.02,194.46",
+		lp="889.03,220",
+		pos="e,905.48,190.85 599.91,250.57 616.14,248.68 632.72,246.77 648.4,245 722.58,236.64 743.2,245.99 815.4,227 843.61,219.58 873.82,206.38 \
+896.33,195.4",
 		style=solid];
 	"association slot"	 [color=blue,
 		height=0.5,
 		label=string,
-		pos="1020.4,177",
+		pos="1019.4,177",
 		width=0.8403];
 	"genotype to genotype part association" -> "association slot"	 [color=blue,
 		label="association slot",
-		lp="998.37,220",
-		pos="e,999.5,190.37 538.54,250.2 555.82,248.27 573.61,246.45 590.4,245 663.13,238.73 847.77,245.43 918.4,227 944.1,220.29 970.99,206.81 \
-990.7,195.53",
+		lp="1004.4,220",
+		pos="e,999.8,190.79 597.38,250.25 614.4,248.34 631.89,246.5 648.4,245 771.7,233.76 807.37,261.1 926.4,227 949.51,220.38 973.35,207.42 \
+991.11,196.36",
+		style=solid];
+	"edge label"	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="1128.4,177",
+		width=1.2425];
+	"genotype to genotype part association" -> "edge label"	 [color=blue,
+		label="edge label",
+		lp="1109,220",
+		pos="e,1109.3,193.56 596.12,250.1 613.53,248.17 631.47,246.37 648.4,245 737.75,237.76 966.04,254.37 1051.4,227 1069.4,221.24 1087.2,210.11 \
+1101.2,199.81",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,
 		label="identifier type",
-		pos="658.4,263",
+		pos="716.4,263",
 		width=1.652];
 	subject -> relation	 [pos="e,258.67,36.027 274.11,158.76 270.64,131.21 264.04,78.735 259.95,46.223",
 		style=dotted];
@@ -120,18 +131,18 @@ digraph {
 	"genotype to genotype part association_subject"	 [color=blue,
 		height=0.5,
 		label=genotype,
-		pos="778.4,263",
+		pos="836.4,263",
 		width=1.1812];
 	"genotype to genotype part association_relation"	 [color=blue,
 		height=0.5,
 		label="iri type",
-		pos="874.4,263",
+		pos="932.4,263",
 		width=0.9834];
 	object -> relation	 [pos="e,270.17,34.752 302.79,74.435 295.09,65.075 285.33,53.191 276.74,42.745",
 		style=dotted];
 	"genotype to genotype part association_object"	 [color=blue,
 		height=0.5,
 		label=genotype,
-		pos="970.4,263",
+		pos="1028.4,263",
 		width=1.1812];
 }

@@ -1,15 +1,19 @@
+
 # Slot: relation
 
 
 the relationship type by which a subject is connected to an object in an association
 
 URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
+
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+
 ## Parents
 
  *  is_a: [association slot](association_slot.md)
+
 ## Children
 
  *  [relation](anatomical_entity_to_anatomical_entity_ontogenic_association_relation.md)
@@ -27,6 +31,7 @@ URI: [biolink:relation](https://w3id.org/biolink/vocab/relation)
  *  [relation](pairwise_interaction_association_relation.md)
  *  [relation](population_to_population_association_relation.md)
  *  [relation](variant_to_disease_association_relation.md)
+
 ## Used by
 
  * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)

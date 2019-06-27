@@ -1,3 +1,4 @@
+
 # Class: gene to go term association
 
 
@@ -6,12 +7,16 @@
 URI: [biolink:GeneToGoTermAssociation](https://w3id.org/biolink/vocab/GeneToGoTermAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneToGoTermAssociation|id(i):identifier_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneToGoTermAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneToGoTermAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneToGoTermAssociation],%20\[GeneOntologyClass]<object%201..1-%20\[GeneToGoTermAssociation],%20\[MolecularEntity]<subject%201..1-%20\[GeneToGoTermAssociation],%20\[FunctionalAssociation]^-\[GeneToGoTermAssociation])
+
 ## Parents
 
  *  is_a: [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -19,6 +24,7 @@ URI: [biolink:GeneToGoTermAssociation](https://w3id.org/biolink/vocab/GeneToGoTe
     * range: [GeneOntologyClass](GeneOntologyClass.md)
  * [subject](gene_to_go_term_association_subject.md)  <sub>REQ</sub>
     * range: [MolecularEntity](MolecularEntity.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -58,12 +64,7 @@ URI: [biolink:GeneToGoTermAssociation](https://w3id.org/biolink/vocab/GeneToGoTe
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from gene to go term association:
 
- * [subject](gene_to_go_term_association_subject.md)  <sub>REQ</sub>
-    * range: [MolecularEntity](MolecularEntity.md)
- * [object](gene_to_go_term_association_object.md)  <sub>REQ</sub>
-    * range: [GeneOntologyClass](GeneOntologyClass.md)
 ### Domain for slot:
 
  * [object](gene_to_go_term_association_object.md)  <sub>REQ</sub>

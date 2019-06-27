@@ -1,7 +1,9 @@
+
 # Biolink_Model schema
 
 
 Entity and association taxonomy and datamodel for life-sciences data
+
 
 ### Classes
 
@@ -140,6 +142,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [EnvironmentalProcess](EnvironmentalProcess.md)
        * [GeographicLocation](GeographicLocation.md) - a location that can be described in lat/long coordinates
           * [GeographicLocationAtTime](GeographicLocationAtTime.md) - a location that can be described in lat/long coordinates, for a particular time
+
 ### Mixins
 
  * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
@@ -163,12 +166,13 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
  * [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
  * [VariantToThingAssociation](VariantToThingAssociation.md)
+
 ### Slots
 
  * [association slot](association_slot.md) - any slot that relates an association to another entity
     * [association type](association_type.md) - connects an association to the type of association (e.g. gene to phenotype)
     * [clinical modifier qualifier](clinical_modifier_qualifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
-    * [edge label](edge_label.md) - A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+    * [edge label](edge_label.md) - A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. 
     * [frequency qualifier](frequency_qualifier.md) - a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     * [has confidence level](has_confidence_level.md) - connects an association to a qualitative term denoting the level of confidence
     * [has evidence](has_evidence.md) - connects an association to an instance of supporting evidence
@@ -423,7 +427,9 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
     * [subclass of](subclass_of.md) - holds between two classes where the domain class is a specialization of the range class
     * [treated by](treated_by.md) - holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
+
 ### Types
+
 
 #### Built in
 
@@ -437,6 +443,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * **float**
  * **int**
  * **str**
+
 #### Defined
 
  * [BiologicalSequence](BiologicalSequence.md)  ([String](String.md)) 

@@ -1,3 +1,4 @@
+
 # Class: anatomical entity to anatomical entity association
 
 
@@ -6,16 +7,21 @@
 URI: [biolink:AnatomicalEntityToAnatomicalEntityAssociation](https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[AnatomicalEntityToAnatomicalEntityAssociation|id(i):identifier_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[AnatomicalEntityToAnatomicalEntityAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[AnatomicalEntityToAnatomicalEntityAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[AnatomicalEntityToAnatomicalEntityAssociation],%20\[AnatomicalEntity]<object%201..1-%20\[AnatomicalEntityToAnatomicalEntityAssociation],%20\[AnatomicalEntity]<subject%201..1-%20\[AnatomicalEntityToAnatomicalEntityAssociation],%20\[AnatomicalEntityToAnatomicalEntityAssociation]^-\[AnatomicalEntityToAnatomicalEntityPartOfAssociation],%20\[AnatomicalEntityToAnatomicalEntityAssociation]^-\[AnatomicalEntityToAnatomicalEntityOntogenicAssociation],%20\[Association]^-\[AnatomicalEntityToAnatomicalEntityAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Children
 
  * [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) - A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
  * [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) - A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -23,12 +29,7 @@ URI: [biolink:AnatomicalEntityToAnatomicalEntityAssociation](https://w3id.org/bi
     * range: [AnatomicalEntity](AnatomicalEntity.md)
  * [subject](anatomical_entity_to_anatomical_entity_association_subject.md)  <sub>REQ</sub>
     * range: [AnatomicalEntity](AnatomicalEntity.md)
-### Inherited from anatomical entity to anatomical entity association:
 
- * [subject](anatomical_entity_to_anatomical_entity_association_subject.md)  <sub>REQ</sub>
-    * range: [AnatomicalEntity](AnatomicalEntity.md)
- * [object](anatomical_entity_to_anatomical_entity_association_object.md)  <sub>REQ</sub>
-    * range: [AnatomicalEntity](AnatomicalEntity.md)
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -68,6 +69,7 @@ URI: [biolink:AnatomicalEntityToAnatomicalEntityAssociation](https://w3id.org/bi
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
+
 ### Domain for slot:
 
  * [object](anatomical_entity_to_anatomical_entity_association_object.md)  <sub>REQ</sub>

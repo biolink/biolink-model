@@ -56,11 +56,12 @@ public class Association {
     @JsonPropertyDescription("Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects")
     private String clinicalModifierQualifier;
     /**
-     * A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. 
+     * (Required)
      * 
      */
     @JsonProperty("edge_label")
-    @JsonPropertyDescription("A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.")
+    @JsonPropertyDescription("A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. ")
     private String edgeLabel;
     /**
      * connects an association to a qualitative term denoting the level of confidence
@@ -192,7 +193,8 @@ public class Association {
     }
 
     /**
-     * A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. 
+     * (Required)
      * 
      */
     @JsonProperty("edge_label")
@@ -201,7 +203,8 @@ public class Association {
     }
 
     /**
-     * A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
+     * A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. 
+     * (Required)
      * 
      */
     @JsonProperty("edge_label")

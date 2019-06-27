@@ -1,3 +1,4 @@
+
 # Class: genomic sequence localization
 
 
@@ -6,12 +7,16 @@ A relationship between a sequence feature and an entity it is localized to. The 
 URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/GenomicSequenceLocalization)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GenomicSequenceLocalization|start_interbase_coordinate:string%20%3F;end_interbase_coordinate:string%20%3F;genome_build:string%20%3F;phase:string%20%3F;id(i):identifier_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GenomicSequenceLocalization],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GenomicSequenceLocalization],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GenomicSequenceLocalization],%20\[GenomicEntity]<object%201..1-%20\[GenomicSequenceLocalization],%20\[GenomicEntity]<subject%201..1-%20\[GenomicSequenceLocalization],%20\[Association]^-\[GenomicSequenceLocalization])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -29,6 +34,7 @@ URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/Genomi
     * range: [String](String.md)
  * [start interbase coordinate](start_interbase_coordinate.md)  <sub>OPT</sub>
     * range: [String](String.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -68,22 +74,7 @@ URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/Genomi
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from genomic sequence localization:
 
- * [subject](genomic_sequence_localization_subject.md)  <sub>REQ</sub>
-    * range: [GenomicEntity](GenomicEntity.md)
- * [object](genomic_sequence_localization_object.md)  <sub>REQ</sub>
-    * range: [GenomicEntity](GenomicEntity.md)
- * [start interbase coordinate](start_interbase_coordinate.md)  <sub>OPT</sub>
-    * range: [String](String.md)
- * [end interbase coordinate](end_interbase_coordinate.md)  <sub>OPT</sub>
-    * range: [String](String.md)
- * [genome build](genome_build.md)  <sub>OPT</sub>
-    * Description: TODO
-    * range: [String](String.md)
- * [phase](phase.md)  <sub>OPT</sub>
-    * Description: TODO
-    * range: [String](String.md)
 ### Domain for slot:
 
  * [end interbase coordinate](end_interbase_coordinate.md)  <sub>OPT</sub>

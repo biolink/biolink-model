@@ -1,3 +1,4 @@
+
 # Class: population to population association
 
 
@@ -6,12 +7,16 @@ An association between a two populations
 URI: [biolink:PopulationToPopulationAssociation](https://w3id.org/biolink/vocab/PopulationToPopulationAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[PopulationToPopulationAssociation|relation:iri_type;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[PopulationToPopulationAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[PopulationToPopulationAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[PopulationToPopulationAssociation],%20\[PopulationOfIndividualOrganisms]<object%201..1-%20\[PopulationToPopulationAssociation],%20\[PopulationOfIndividualOrganisms]<subject%201..1-%20\[PopulationToPopulationAssociation],%20\[Association]^-\[PopulationToPopulationAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -21,6 +26,7 @@ URI: [biolink:PopulationToPopulationAssociation](https://w3id.org/biolink/vocab/
     * range: [IriType](IriType.md)
  * [subject](population_to_population_association_subject.md)  <sub>REQ</sub>
     * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -60,14 +66,7 @@ URI: [biolink:PopulationToPopulationAssociation](https://w3id.org/biolink/vocab/
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from population to population association:
 
- * [subject](population_to_population_association_subject.md)  <sub>REQ</sub>
-    * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
- * [relation](population_to_population_association_relation.md)  <sub>REQ</sub>
-    * range: [IriType](IriType.md)
- * [object](population_to_population_association_object.md)  <sub>REQ</sub>
-    * range: [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
 ### Domain for slot:
 
  * [object](population_to_population_association_object.md)  <sub>REQ</sub>

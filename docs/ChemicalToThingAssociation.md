@@ -1,3 +1,4 @@
+
 # Class: chemical to thing association
 
 
@@ -6,22 +7,28 @@ An interaction between a chemical entity and another entity
 URI: [biolink:ChemicalToThingAssociation](https://w3id.org/biolink/vocab/ChemicalToThingAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ChemicalToThingAssociation|id(i):identifier_type;relation(i):iri_type;object(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ChemicalToThingAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ChemicalToThingAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ChemicalToThingAssociation],%20\[ChemicalSubstance]<subject%201..1-%20\[ChemicalToThingAssociation],%20\[ChemicalToPathwayAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[ChemicalToGeneAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[Association]^-\[ChemicalToThingAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Mixin for
 
  * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) (mixin)  - An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
  * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) (mixin)  - An interaction between a chemical entity and a gene or gene product
  * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) (mixin)  - An interaction between a chemical entity and a biological process or pathway
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
  * [subject](chemical_to_thing_association_subject.md)  <sub>REQ</sub>
     * range: [ChemicalSubstance](ChemicalSubstance.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -61,10 +68,7 @@ URI: [biolink:ChemicalToThingAssociation](https://w3id.org/biolink/vocab/Chemica
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from chemical to thing association:
 
- * [subject](chemical_to_thing_association_subject.md)  <sub>REQ</sub>
-    * range: [ChemicalSubstance](ChemicalSubstance.md)
 ### Domain for slot:
 
  * [subject](chemical_to_thing_association_subject.md)  <sub>REQ</sub>

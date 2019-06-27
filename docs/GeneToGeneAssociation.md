@@ -1,3 +1,4 @@
+
 # Class: gene to gene association
 
 
@@ -6,16 +7,21 @@ abstract parent class for different kinds of gene-gene or gene product to gene p
 URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/vocab/GeneToGeneAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneToGeneAssociation|id(i):identifier_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneToGeneAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneToGeneAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneToGeneAssociation],%20\[GeneOrGeneProduct]<object%201..1-%20\[GeneToGeneAssociation],%20\[GeneOrGeneProduct]<subject%201..1-%20\[GeneToGeneAssociation],%20\[GeneToGeneAssociation]^-\[PairwiseGeneToGeneInteraction],%20\[GeneToGeneAssociation]^-\[GeneToGeneHomologyAssociation],%20\[Association]^-\[GeneToGeneAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Children
 
  * [GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) - A homology association between two genes. May be orthology (in which case the species of subject and object should differ) or paralogy (in which case the species may be the same)
  * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) - An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -23,6 +29,7 @@ URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/vocab/GeneToGeneAs
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
  * [subject](gene_to_gene_association_subject.md)  <sub>REQ</sub>
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -62,12 +69,7 @@ URI: [biolink:GeneToGeneAssociation](https://w3id.org/biolink/vocab/GeneToGeneAs
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from gene to gene association:
 
- * [subject](gene_to_gene_association_subject.md)  <sub>REQ</sub>
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
- * [object](gene_to_gene_association_object.md)  <sub>REQ</sub>
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 ### Domain for slot:
 
  * [object](gene_to_gene_association_object.md)  <sub>REQ</sub>

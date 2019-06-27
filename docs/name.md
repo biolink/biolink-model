@@ -1,18 +1,23 @@
+
 # Slot: name
 
 
 A human-readable name for a thing
 
 URI: [biolink:name](https://w3id.org/biolink/vocab/name)
+
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [LabelType](LabelType.md)
+[NamedThing](NamedThing.md) ->  <sub>REQ</sub> [LabelType](LabelType.md)
+
 ## Parents
 
  *  is_a: [node property](node_property.md)
+
 ## Children
 
  *  [name](macromolecular_machine_name.md)
+
 ## Used by
 
  * [ActivityAndBehavior](ActivityAndBehavior.md)

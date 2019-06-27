@@ -1,3 +1,4 @@
+
 # Class: entity to phenotypic feature association
 
 
@@ -6,12 +7,15 @@
 URI: [biolink:EntityToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[EntityToPhenotypicFeatureAssociation|id(i):identifier_type;subject(i):iri_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[EntityToPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[EntityToPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[EntityToPhenotypicFeatureAssociation],%20\[Onset]<onset%20qualifier%200..1-%20\[EntityToPhenotypicFeatureAssociation],%20\[SeverityValue]<severity%20qualifier%200..1-%20\[EntityToPhenotypicFeatureAssociation],%20\[FrequencyValue]<frequency%20qualifier%200..1-%20\[EntityToPhenotypicFeatureAssociation],%20\[BiologicalSex]<sex%20qualifier%200..1-%20\[EntityToPhenotypicFeatureAssociation],%20\[PhenotypicFeature]<object%201..1-%20\[EntityToPhenotypicFeatureAssociation],%20\[EntityToPhenotypicFeatureAssociation]uses%20-.->\[EntityToFeatureOrDiseaseQualifiers],%20\[VariantToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GenotypeToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GeneToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[EnvironmentToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[DiseaseToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[CaseToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[Association]^-\[EntityToPhenotypicFeatureAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Uses Mixins
 
  *  mixin: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) - Qualifiers for entity to disease or phenotype associations
+
 ## Mixin for
 
  * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
@@ -20,9 +24,12 @@ URI: [biolink:EntityToPhenotypicFeatureAssociation](https://w3id.org/biolink/voc
  * [GeneToPhenotypicFeatureAssociation](GeneToPhenotypicFeatureAssociation.md) (mixin) 
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) (mixin)  - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) (mixin) 
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -31,6 +38,7 @@ URI: [biolink:EntityToPhenotypicFeatureAssociation](https://w3id.org/biolink/voc
  * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
     * range: [BiologicalSex](BiologicalSex.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -70,6 +78,7 @@ URI: [biolink:EntityToPhenotypicFeatureAssociation](https://w3id.org/biolink/voc
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
+
 ### Inherited from entity to feature or disease qualifiers:
 
  * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
@@ -78,18 +87,13 @@ URI: [biolink:EntityToPhenotypicFeatureAssociation](https://w3id.org/biolink/voc
  * [onset qualifier](onset_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
     * range: [Onset](Onset.md)
-### Inherited from entity to phenotypic feature association:
 
- * [object](entity_to_phenotypic_feature_association_object.md)  <sub>REQ</sub>
-    * range: [PhenotypicFeature](PhenotypicFeature.md)
- * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
-    * range: [BiologicalSex](BiologicalSex.md)
 ### Inherited from frequency qualifier mixin:
 
  * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     * range: [FrequencyValue](FrequencyValue.md)
+
 ### Domain for slot:
 
  * [description](entity_to_phenotypic_feature_association_description.md)  <sub>OPT</sub>

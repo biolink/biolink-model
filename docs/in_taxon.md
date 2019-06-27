@@ -1,16 +1,21 @@
+
 # Slot: in taxon
 
 
 connects a thing to a class representing a taxon
 
 URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
+
 ## Domain and Range
 
 [ThingWithTaxon](ThingWithTaxon.md) ->  <sub>0..*</sub> [OrganismTaxon](OrganismTaxon.md)
+
 ## Parents
 
  *  is_a: [related to](related_to.md)
+
 ## Children
+
 
 ## Used by
 

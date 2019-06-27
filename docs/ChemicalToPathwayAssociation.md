@@ -1,3 +1,4 @@
+
 # Class: chemical to pathway association
 
 
@@ -6,20 +7,26 @@ An interaction between a chemical entity and a biological process or pathway
 URI: [biolink:ChemicalToPathwayAssociation](https://w3id.org/biolink/vocab/ChemicalToPathwayAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ChemicalToPathwayAssociation|id(i):identifier_type;subject(i):iri_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ChemicalToPathwayAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ChemicalToPathwayAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ChemicalToPathwayAssociation],%20\[Pathway]<object%201..1-%20\[ChemicalToPathwayAssociation],%20\[ChemicalToPathwayAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[Association]^-\[ChemicalToPathwayAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Uses Mixins
 
  *  mixin: [ChemicalToThingAssociation](ChemicalToThingAssociation.md) - An interaction between a chemical entity and another entity
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
  * [object](chemical_to_pathway_association_object.md)  <sub>REQ</sub>
     * range: [Pathway](Pathway.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -59,10 +66,7 @@ URI: [biolink:ChemicalToPathwayAssociation](https://w3id.org/biolink/vocab/Chemi
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from chemical to pathway association:
 
- * [object](chemical_to_pathway_association_object.md)  <sub>REQ</sub>
-    * range: [Pathway](Pathway.md)
 ### Domain for slot:
 
  * [object](chemical_to_pathway_association_object.md)  <sub>REQ</sub>

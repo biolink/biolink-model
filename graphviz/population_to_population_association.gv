@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,1372.4,281"];
+	graph [bb="0,0,1430.4,281"];
 	node [label="\N"];
 	"population to population association"	 [height=0.5,
 		label="population to population association",
-		pos="437.4,263",
+		pos="495.4,263",
 		width=3.8491];
 	association	 [height=0.5,
 		pos="49.402,177",
 		width=1.3723];
 	"population to population association" -> association	 [label=is_a,
 		lp="145.68,220",
-		pos="e,71.092,193.3 317.67,253.89 247.91,247.59 167.28,238.31 133.85,227 114.69,220.52 95.144,209.3 79.687,199.12"];
+		pos="e,71.049,193.43 367.19,256.09 281.12,250.34 176.03,240.83 133.85,227 114.63,220.7 95.08,209.49 79.635,199.28"];
 	id	 [height=0.5,
 		pos="143.4,177",
 		width=0.75];
 	"population to population association" -> id	 [color=blue,
 		label=id,
 		lp="179.85,220",
-		pos="e,149.46,194.66 309.54,255.94 253.9,250.78 196.25,241.97 173.51,227 165.06,221.44 158.62,212.6 153.91,203.9",
+		pos="e,149.4,194.76 372.95,254.53 289.24,247.85 190.47,237.87 173.51,227 164.99,221.54 158.54,212.73 153.83,204.01",
 		style=solid];
 	subject	 [height=0.5,
 		pos="276.4,177",
@@ -25,7 +25,7 @@ digraph {
 	"population to population association" -> subject	 [color=blue,
 		label=subject,
 		lp="314.23,220",
-		pos="e,278.37,195.06 352.17,248.68 326.75,242.92 303.13,235.59 293.75,227 287.46,221.24 283.45,213.09 280.89,205.03",
+		pos="e,278.18,195.29 381.42,252.7 343.73,247.2 307.81,239.01 293.75,227 287.19,221.4 283.11,213.19 280.57,205.03",
 		style=solid];
 	relation	 [height=0.5,
 		pos="256.4,18",
@@ -33,7 +33,7 @@ digraph {
 	"population to population association" -> relation	 [color=blue,
 		label=relation,
 		lp="240.78,134",
-		pos="e,247,35.476 350.46,248.95 327.16,243.61 302.36,236.46 280.4,227 256.85,216.86 246.28,216.56 232.4,195 202.59,148.68 225.71,81.424 \
+		pos="e,247,35.476 380.55,252.9 347.45,247.57 311.81,239.43 280.4,227 256.56,217.56 246.28,216.56 232.4,195 202.59,148.68 225.71,81.424 \
 242.65,44.586",
 		style=solid];
 	object	 [height=0.5,
@@ -42,8 +42,8 @@ digraph {
 	"population to population association" -> object	 [color=blue,
 		label=object,
 		lp="373.51,177",
-		pos="e,325.12,108.39 409.11,245.26 391.68,233.03 370.08,215.36 356.19,195 338.23,168.67 345.29,156.57 333.4,127 332.16,123.92 330.79,\
-120.73 329.38,117.58",
+		pos="e,325.12,108.39 437.65,246.5 409.66,235.86 377.56,219.37 356.19,195 335.18,171.03 345.29,156.57 333.4,127 332.16,123.92 330.79,120.73 \
+329.38,117.58",
 		style=solid];
 	negated	 [color=blue,
 		height=0.5,
@@ -52,8 +52,8 @@ digraph {
 		width=1.0584];
 	"population to population association" -> negated	 [color=blue,
 		label=negated,
-		lp="459.17,220",
-		pos="e,437.4,195.21 437.4,244.76 437.4,233.36 437.4,218.43 437.4,205.49",
+		lp="492.17,220",
+		pos="e,449.09,194.33 483.1,244.76 474.86,232.55 463.9,216.29 454.77,202.76",
 		style=solid];
 	"association type"	 [color=blue,
 		height=0.5,
@@ -62,8 +62,8 @@ digraph {
 		width=1.6931];
 	"population to population association" -> "association type"	 [color=blue,
 		label="association type",
-		lp="548.31,220",
-		pos="e,531.38,193.92 461.64,245.18 479.49,232.07 503.89,214.13 523.19,199.94",
+		lp="574.31,220",
+		pos="e,542.11,194.92 507.91,244.76 516.18,232.71 527.15,216.72 536.36,203.3",
 		style=solid];
 	qualifiers	 [color=blue,
 		height=0.5,
@@ -72,8 +72,8 @@ digraph {
 		width=1.6931];
 	"population to population association" -> qualifiers	 [color=blue,
 		label=qualifiers,
-		lp="654.45,220",
-		pos="e,667.24,193.38 520.36,248.53 545.49,243.04 572.92,235.9 597.4,227 618.33,219.39 640.48,208.24 658.33,198.39",
+		lp="672.45,220",
+		pos="e,674.13,194.09 566.72,247.55 585.62,242.23 605.68,235.43 623.4,227 638.34,219.9 653.51,209.7 665.97,200.37",
 		style=solid];
 	publications	 [color=blue,
 		height=0.5,
@@ -82,8 +82,8 @@ digraph {
 		width=1.3859];
 	"population to population association" -> publications	 [color=blue,
 		label=publications,
-		lp="765.62,220",
-		pos="e,790.84,190.82 537.51,250.47 593.32,243.08 656.97,233.86 684.4,227 717.64,218.69 754.04,205.44 781.25,194.66",
+		lp="777.62,220",
+		pos="e,793.23,191.65 594.34,250.33 628.9,244.71 667.72,237.05 702.4,227 730.42,218.88 760.75,206.34 784.03,195.85",
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
@@ -92,25 +92,36 @@ digraph {
 		width=1.1129];
 	"population to population association" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="881.03,220",
-		pos="e,904.17,190.31 536.86,250.37 553.07,248.46 569.69,246.6 585.4,245 682.12,235.13 708.69,248.92 803.4,227 835.35,219.61 869.89,205.74 \
-895.03,194.48",
+		lp="889.03,220",
+		pos="e,905.49,190.88 595.69,250.57 611.64,248.66 627.97,246.75 643.4,245 719.78,236.36 741.04,246.43 815.4,227 843.62,219.63 873.83,206.42 \
+896.34,195.43",
 		style=solid];
 	"association slot"	 [color=blue,
 		height=0.5,
 		label=string,
-		pos="1020.4,177",
+		pos="1019.4,177",
 		width=0.8403];
 	"population to population association" -> "association slot"	 [color=blue,
 		label="association slot",
-		lp="998.37,220",
-		pos="e,999.5,190.38 535.22,250.16 551.94,248.24 569.16,246.43 585.4,245 659.23,238.52 846.69,245.69 918.4,227 944.1,220.3 970.99,206.82 \
-990.7,195.53",
+		lp="1004.4,220",
+		pos="e,999.8,190.79 593.63,250.25 610.23,248.33 627.29,246.49 643.4,245 768.9,233.39 805.22,261.64 926.4,227 949.52,220.39 973.35,207.43 \
+991.11,196.37",
+		style=solid];
+	"edge label"	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="1128.4,177",
+		width=1.2425];
+	"population to population association" -> "edge label"	 [color=blue,
+		label="edge label",
+		lp="1109,220",
+		pos="e,1109.3,193.56 592.42,250.12 609.39,248.17 626.89,246.37 643.4,245 733.85,237.52 964.97,254.69 1051.4,227 1069.4,221.24 1087.2,\
+210.11 1101.2,199.81",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,
 		label="identifier type",
-		pos="653.4,263",
+		pos="711.4,263",
 		width=1.652];
 	subject -> relation	 [pos="e,258.67,36.027 274.11,158.76 270.64,131.21 264.04,78.735 259.95,46.223",
 		style=dotted];
@@ -120,18 +131,18 @@ digraph {
 	"population to population association_subject"	 [color=blue,
 		height=0.5,
 		label="population of individual organisms",
-		pos="864.4,263",
+		pos="922.4,263",
 		width=3.722];
 	"population to population association_relation"	 [color=blue,
 		height=0.5,
 		label="iri type",
-		pos="1051.4,263",
+		pos="1109.4,263",
 		width=0.9834];
 	object -> relation	 [pos="e,270.17,34.752 302.79,74.435 295.09,65.075 285.33,53.191 276.74,42.745",
 		style=dotted];
 	"population to population association_object"	 [color=blue,
 		height=0.5,
 		label="population of individual organisms",
-		pos="1238.4,263",
+		pos="1296.4,263",
 		width=3.722];
 }

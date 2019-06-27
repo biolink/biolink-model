@@ -1,13 +1,17 @@
+
 # Slot: related to
 
 
 A relationship that is asserted between two named things
 
 URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
+
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+
 ## Parents
+
 
 ## Children
 
@@ -40,6 +44,7 @@ URI: [biolink:related_to](https://w3id.org/biolink/vocab/related_to)
  *  [same as](same_as.md)
  *  [subclass of](subclass_of.md)
  *  [treated by](treated_by.md)
+
 ## Used by
 
  * [RNAProduct](RNAProduct.md)

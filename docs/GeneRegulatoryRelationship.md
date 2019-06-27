@@ -1,3 +1,4 @@
+
 # Class: gene regulatory relationship
 
 
@@ -6,12 +7,16 @@ A regulatory relationship between two genes
 URI: [biolink:GeneRegulatoryRelationship](https://w3id.org/biolink/vocab/GeneRegulatoryRelationship)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneRegulatoryRelationship|relation:iri_type;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneRegulatoryRelationship],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneRegulatoryRelationship],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneRegulatoryRelationship],%20\[GeneOrGeneProduct]<object%201..1-%20\[GeneRegulatoryRelationship],%20\[GeneOrGeneProduct]<subject%201..1-%20\[GeneRegulatoryRelationship],%20\[Association]^-\[GeneRegulatoryRelationship])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -21,6 +26,7 @@ URI: [biolink:GeneRegulatoryRelationship](https://w3id.org/biolink/vocab/GeneReg
     * range: [IriType](IriType.md)
  * [subject](gene_regulatory_relationship_subject.md)  <sub>REQ</sub>
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -60,14 +66,7 @@ URI: [biolink:GeneRegulatoryRelationship](https://w3id.org/biolink/vocab/GeneReg
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from gene regulatory relationship:
 
- * [subject](gene_regulatory_relationship_subject.md)  <sub>REQ</sub>
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
- * [relation](gene_regulatory_relationship_relation.md)  <sub>REQ</sub>
-    * range: [IriType](IriType.md)
- * [object](gene_regulatory_relationship_object.md)  <sub>REQ</sub>
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
 ### Domain for slot:
 
  * [object](gene_regulatory_relationship_object.md)  <sub>REQ</sub>

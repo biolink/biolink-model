@@ -1,3 +1,4 @@
+
 # Class: variant to thing association
 
 
@@ -6,22 +7,28 @@
 URI: [biolink:VariantToThingAssociation](https://w3id.org/biolink/vocab/VariantToThingAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[VariantToThingAssociation|id(i):identifier_type;relation(i):iri_type;object(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[VariantToThingAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[VariantToThingAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[VariantToThingAssociation],%20\[SequenceVariant]<subject%201..1-%20\[VariantToThingAssociation],%20\[VariantToPopulationAssociation]uses%20-.->\[VariantToThingAssociation],%20\[VariantToPhenotypicFeatureAssociation]uses%20-.->\[VariantToThingAssociation],%20\[VariantToDiseaseAssociation]uses%20-.->\[VariantToThingAssociation],%20\[Association]^-\[VariantToThingAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Mixin for
 
  * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) (mixin) 
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md) (mixin) 
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) (mixin)  - An association between a variant and a population, where the variant has particular frequency in the population
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
  * [subject](variant_to_thing_association_subject.md)  <sub>REQ</sub>
     * range: [SequenceVariant](SequenceVariant.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -61,10 +68,7 @@ URI: [biolink:VariantToThingAssociation](https://w3id.org/biolink/vocab/VariantT
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from variant to thing association:
 
- * [subject](variant_to_thing_association_subject.md)  <sub>REQ</sub>
-    * range: [SequenceVariant](SequenceVariant.md)
 ### Domain for slot:
 
  * [subject](variant_to_thing_association_subject.md)  <sub>REQ</sub>

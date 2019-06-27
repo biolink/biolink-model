@@ -48,7 +48,7 @@ PREFIX WD: <http://example.org/UNKNOWN/WD/>
 
 <Time> xsd:dateTime
 
-<Date> xsd:dateTime
+<Date> xsd:date
 
 <Datetime> xsd:dateTime
 
@@ -122,7 +122,7 @@ PREFIX WD: <http://example.org/UNKNOWN/WD/>
           <qualifiers> @<OntologyClass> * ;
           <publications> @<Publication> * ;
           pav:providedBy @<Provider> ? ;
-          <edge_label> @<LabelType> ? ;
+          <edge_label> @<LabelType> ;
           <has_confidence_level> @<ConfidenceLevel> ? ;
           OBO:RO_0002558 @<EvidenceType> ? ;
           <clinical_modifier_qualifier> @<ClinicalModifier> ?
@@ -132,8 +132,8 @@ PREFIX WD: <http://example.org/UNKNOWN/WD/>
 }
 
 <Attribute> EXTRA rdf:type CLOSED {
-    (  $<Attribute_t> (  rdfs:label @<LabelType> ? ;
-          rdfs:subClassOf @<IriType> * ;
+    (  $<Attribute_t> (  rdfs:label @<LabelType> ;
+          rdfs:subClassOf @<IriType> + ;
           owl:ObjectProperty @<NamedThing> * ;
           OBO:RO_0002434 @<NamedThing> * ;
           <node_property> @<String> ? ;
@@ -921,7 +921,7 @@ PREFIX WD: <http://example.org/UNKNOWN/WD/>
 }
 
 <MacromolecularMachine> EXTRA rdf:type CLOSED {
-    (  $<MacromolecularMachine_t> (  <name> @<SymbolType> ? ;
+    (  $<MacromolecularMachine_t> (  <name> @<SymbolType> ;
           &<GenomicEntity_t>
        ) ;
        rdf:type [ <MacromolecularMachine> ]
@@ -1049,8 +1049,8 @@ PREFIX WD: <http://example.org/UNKNOWN/WD/>
 }
 
 <NamedThing> EXTRA rdf:type CLOSED {
-    (  $<NamedThing_t> (  rdfs:label @<LabelType> ? ;
-          rdfs:subClassOf @<IriType> * ;
+    (  $<NamedThing_t> (  rdfs:label @<LabelType> ;
+          rdfs:subClassOf @<IriType> + ;
           owl:ObjectProperty @<NamedThing> * ;
           OBO:RO_0002434 @<NamedThing> * ;
           <node_property> @<String> ? ;

@@ -1,13 +1,17 @@
+
 # Slot: association slot
 
 
 any slot that relates an association to another entity
 
 URI: [biolink:association_slot](https://w3id.org/biolink/vocab/association_slot)
+
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>OPT</sub> [String](String.md)
+
 ## Parents
+
 
 ## Children
 
@@ -30,6 +34,7 @@ URI: [biolink:association_slot](https://w3id.org/biolink/vocab/association_slot)
  *  [sex qualifier](sex_qualifier.md)
  *  [stage qualifier](stage_qualifier.md)
  *  [subject](subject.md)
+
 ## Used by
 
  * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)

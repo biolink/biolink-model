@@ -1,3 +1,4 @@
+
 # Class: genotype to variant association
 
 
@@ -6,12 +7,16 @@ Any association between a genotype and a sequence variant.
 URI: [biolink:GenotypeToVariantAssociation](https://w3id.org/biolink/vocab/GenotypeToVariantAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GenotypeToVariantAssociation|relation:iri_type;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GenotypeToVariantAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GenotypeToVariantAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GenotypeToVariantAssociation],%20\[SequenceVariant]<object%201..1-%20\[GenotypeToVariantAssociation],%20\[Genotype]<subject%201..1-%20\[GenotypeToVariantAssociation],%20\[Association]^-\[GenotypeToVariantAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -21,6 +26,7 @@ URI: [biolink:GenotypeToVariantAssociation](https://w3id.org/biolink/vocab/Genot
     * range: [IriType](IriType.md)
  * [subject](genotype_to_variant_association_subject.md)  <sub>REQ</sub>
     * range: [Genotype](Genotype.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -60,14 +66,7 @@ URI: [biolink:GenotypeToVariantAssociation](https://w3id.org/biolink/vocab/Genot
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from genotype to variant association:
 
- * [subject](genotype_to_variant_association_subject.md)  <sub>REQ</sub>
-    * range: [Genotype](Genotype.md)
- * [relation](genotype_to_variant_association_relation.md)  <sub>REQ</sub>
-    * range: [IriType](IriType.md)
- * [object](genotype_to_variant_association_object.md)  <sub>REQ</sub>
-    * range: [SequenceVariant](SequenceVariant.md)
 ### Domain for slot:
 
  * [object](genotype_to_variant_association_object.md)  <sub>REQ</sub>

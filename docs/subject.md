@@ -1,15 +1,19 @@
+
 # Slot: subject
 
 
 connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
 URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
+
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+
 ## Parents
 
  *  is_a: [association slot](association_slot.md)
+
 ## Children
 
  *  [subject](anatomical_entity_to_anatomical_entity_association_subject.md)
@@ -43,6 +47,7 @@ URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
  *  [subject](variant_to_phenotypic_feature_association_subject.md)
  *  [subject](variant_to_population_association_subject.md)
  *  [subject](variant_to_thing_association_subject.md)
+
 ## Used by
 
  * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)

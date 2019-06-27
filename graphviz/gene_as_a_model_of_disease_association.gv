@@ -1,37 +1,37 @@
 digraph {
-	graph [bb="0,0,1962.9,281"];
+	graph [bb="0,0,2064.9,281"];
 	node [label="\N"];
 	"gene as a model of disease association"	 [height=0.5,
 		label="gene as a model of disease association",
-		pos="1029.1,263",
+		pos="1088.1,263",
 		width=4.0461];
 	"gene to disease association"	 [height=0.5,
 		pos="105.14,177",
 		width=2.9207];
 	"gene as a model of disease association" -> "gene to disease association"	 [label=is_a,
 		lp="501.42,220",
-		pos="e,181.43,189.46 894.84,255.95 785.59,249.76 627.48,239.75 489.59,227 369.07,215.86 339.04,211.55 219.14,195 210.18,193.76 200.83,\
+		pos="e,181.43,189.46 950.69,256.99 829.26,251.14 647.46,241.08 489.59,227 369.03,216.25 339.04,211.55 219.14,195 210.18,193.76 200.83,\
 192.4 191.51,191"];
 	"model to disease mixin"	 [height=0.5,
 		pos="320.14,177",
 		width=2.5527];
 	"gene as a model of disease association" -> "model to disease mixin"	 [label=uses,
 		lp="617.2,220",
-		pos="e,387.91,189.26 898.9,254.88 814.84,248.91 703.24,239.64 605.03,227 522.32,216.35 502.27,209.5 420.14,195 412.9,193.72 405.36,192.38 \
+		pos="e,387.91,189.26 952.44,256.41 855.42,250.85 721.89,241.43 605.03,227 522.27,216.78 502.27,209.5 420.14,195 412.9,193.72 405.36,192.38 \
 397.81,191.03"];
 	"entity to disease association"	 [height=0.5,
 		pos="538.14,177",
 		width=3.0164];
 	"gene as a model of disease association" -> "entity to disease association"	 [label=uses,
 		lp="693.2,220",
-		pos="e,578.06,193.79 893.65,256.36 828.75,251.32 750.26,242.47 681.03,227 649.28,219.91 614.82,207.98 587.7,197.55"];
+		pos="e,577.72,193.84 957.56,254.97 858.9,248.25 732.06,238 681.03,227 649.11,220.12 614.52,208.14 587.37,197.63"];
 	id	 [height=0.5,
 		pos="692.14,177",
 		width=0.75];
 	"gene as a model of disease association" -> id	 [color=blue,
 		label=id,
 		lp="728.59,220",
-		pos="e,698.16,194.74 904.83,253.61 826.73,246.81 737.89,237.08 722.25,227 713.75,221.52 707.3,212.7 702.59,203.99",
+		pos="e,698.11,194.81 954.94,255.7 858.59,249.44 741.98,239.46 722.25,227 713.7,221.59 707.24,212.8 702.53,204.08",
 		style=solid];
 	subject	 [height=0.5,
 		pos="810.14,177",
@@ -39,7 +39,7 @@ digraph {
 	"gene as a model of disease association" -> subject	 [color=blue,
 		label=subject,
 		lp="847.97,220",
-		pos="e,811.92,195.29 912.18,252.26 875.59,246.77 841.18,238.69 827.49,227 820.93,221.4 816.85,213.19 814.31,205.03",
+		pos="e,811.81,195.41 970.31,252.38 906.78,245.66 839.03,236.47 827.49,227 820.82,221.53 816.71,213.35 814.18,205.19",
 		style=solid];
 	relation	 [color=blue,
 		height=0.5,
@@ -49,8 +49,8 @@ digraph {
 	"gene as a model of disease association" -> relation	 [color=blue,
 		label=relation,
 		lp="776.52,134",
-		pos="e,786.91,35.266 911.23,252.4 879,247.07 844.58,239.05 814.14,227 790.3,217.56 779.43,216.93 766.14,195 737.44,147.6 763.49,80.763 \
-782.14,44.283",
+		pos="e,786.91,35.266 968.74,252.69 908.46,246.41 842.27,237.57 814.14,227 790.14,217.98 779.43,216.93 766.14,195 737.44,147.6 763.49,\
+80.763 782.14,44.283",
 		style=solid];
 	object	 [color=blue,
 		height=0.5,
@@ -60,8 +60,8 @@ digraph {
 	"gene as a model of disease association" -> object	 [color=blue,
 		label=object,
 		lp="907.25,177",
-		pos="e,867.63,108.77 968.28,246.54 940.56,236.08 909.62,219.73 889.94,195 870.61,170.73 883.3,156.64 874.14,127 873.27,124.18 872.29,\
-121.26 871.25,118.36",
+		pos="e,867.63,108.77 1019.7,247.04 969.7,234.06 907.73,214.71 889.94,195 869.15,171.97 883.3,156.64 874.14,127 873.27,124.18 872.29,121.26 \
+871.25,118.36",
 		style=solid];
 	negated	 [color=blue,
 		height=0.5,
@@ -70,8 +70,8 @@ digraph {
 		width=1.0584];
 	"gene as a model of disease association" -> negated	 [color=blue,
 		label=negated,
-		lp="1025.9,220",
-		pos="e,982.83,194.33 1016.8,244.76 1008.6,232.55 997.64,216.29 988.52,202.76",
+		lp="1058.9,220",
+		pos="e,991.84,192.21 1063.9,245.18 1045.4,231.55 1019.7,212.71 1000.1,198.29",
 		style=solid];
 	"association type"	 [color=blue,
 		height=0.5,
@@ -80,8 +80,8 @@ digraph {
 		width=1.6931];
 	"gene as a model of disease association" -> "association type"	 [color=blue,
 		label="association type",
-		lp="1108,220",
-		pos="e,1075.9,194.92 1041.7,244.76 1049.9,232.71 1060.9,216.72 1070.1,203.3",
+		lp="1133,220",
+		pos="e,1088.1,195.21 1088.1,244.76 1088.1,233.36 1088.1,218.43 1088.1,205.49",
 		style=solid];
 	qualifiers	 [color=blue,
 		height=0.5,
@@ -90,8 +90,8 @@ digraph {
 		width=1.6931];
 	"gene as a model of disease association" -> qualifiers	 [color=blue,
 		label=qualifiers,
-		lp="1206.2,220",
-		pos="e,1207.9,194.09 1101.5,247.27 1120.1,241.99 1139.7,235.28 1157.1,227 1172.1,219.9 1187.2,209.7 1199.7,200.37",
+		lp="1224.2,220",
+		pos="e,1215.3,194.67 1144.4,246.29 1157.4,241.15 1170.7,234.75 1182.1,227 1192,220.3 1201.3,211.1 1208.8,202.42",
 		style=solid];
 	publications	 [color=blue,
 		height=0.5,
@@ -100,8 +100,8 @@ digraph {
 		width=1.3859];
 	"gene as a model of disease association" -> publications	 [color=blue,
 		label=publications,
-		lp="1311.4,220",
-		pos="e,1327,191.65 1130.2,249.98 1164.2,244.4 1202.2,236.85 1236.1,227 1264.2,218.88 1294.5,206.34 1317.8,195.85",
+		lp="1321.4,220",
+		pos="e,1330.4,192.2 1174.1,248.43 1200.2,242.93 1228.6,235.81 1254.1,227 1277.2,219.02 1301.9,207.18 1321.3,197.02",
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
@@ -110,9 +110,8 @@ digraph {
 		width=1.1129];
 	"gene as a model of disease association" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="1422.8,220",
-		pos="e,1439.2,190.84 1135,250.61 1151.5,248.71 1168.3,246.79 1184.1,245 1257.4,236.75 1277.8,245.81 1349.1,227 1377.3,219.56 1407.6,206.36 \
-1430.1,195.39",
+		lp="1429.8,220",
+		pos="e,1440.3,191.41 1193.7,250.55 1262.8,242.13 1343.1,231.72 1359.1,227 1384.4,219.57 1411.1,206.91 1431.5,196.18",
 		style=solid];
 	"association slot"	 [color=blue,
 		height=0.5,
@@ -121,47 +120,58 @@ digraph {
 		width=0.8403];
 	"gene as a model of disease association" -> "association slot"	 [color=blue,
 		label="association slot",
-		lp="1538.1,220",
-		pos="e,1533.5,190.78 1132.5,250.27 1149.7,248.35 1167.4,246.52 1184.1,245 1306.6,233.91 1342,260.88 1460.1,227 1483.3,220.37 1507.1,207.42 \
-1524.8,196.35",
+		lp="1541.1,220",
+		pos="e,1534.2,191.4 1192.3,250.39 1209.3,248.48 1226.7,246.62 1243.1,245 1342.5,235.24 1371.8,256.84 1467.1,227 1488.1,220.43 1509.5,\
+208.01 1525.7,197.2",
+		style=solid];
+	"edge label"	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="1646.1,177",
+		width=1.2425];
+	"gene as a model of disease association" -> "edge label"	 [color=blue,
+		label="edge label",
+		lp="1640.7,220",
+		pos="e,1631.8,194.22 1190.6,250.17 1208.1,248.25 1226.1,246.43 1243.1,245 1319.6,238.57 1516.9,255.6 1588.1,227 1601.9,221.47 1614.7,\
+211.27 1624.7,201.51",
 		style=solid];
 	"frequency qualifier"	 [color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="1668.1,177",
+		pos="1776.1,177",
 		width=1.8561];
 	"gene as a model of disease association" -> "frequency qualifier"	 [color=blue,
 		label="frequency qualifier",
-		lp="1670.2,220",
-		pos="e,1646.7,194.05 1131.2,250.11 1148.8,248.18 1167,246.38 1184.1,245 1273.1,237.85 1499.8,252.81 1585.1,227 1604.1,221.26 1623.2,210.21 \
-1638.3,199.95",
+		lp="1765.2,220",
+		pos="e,1749.8,193.57 1190.2,250.07 1207.8,248.14 1226,246.35 1243.1,245 1338.5,237.48 1580.4,250.37 1673.1,227 1696.9,221 1721.7,209.16 \
+1741,198.51",
 		style=solid];
 	"severity qualifier"	 [color=blue,
 		height=0.5,
 		label="severity value",
-		pos="1812.1,177",
+		pos="1920.1,177",
 		width=1.6517];
 	"gene as a model of disease association" -> "severity qualifier"	 [color=blue,
 		label="severity qualifier",
-		lp="1807.4,220",
-		pos="e,1790.5,193.88 1130.3,250.03 1148.2,248.09 1166.7,246.3 1184.1,245 1244.3,240.51 1669.2,243.82 1727.1,227 1746.7,221.34 1766.4,\
-210.17 1781.9,199.83",
+		lp="1906.4,220",
+		pos="e,1895.6,193.41 1189.3,250 1207.2,248.06 1225.7,246.28 1243.1,245 1371.5,235.57 1697.5,259.03 1822.1,227 1844.9,221.15 1868.5,209.35 \
+1886.8,198.68",
 		style=solid];
 	"onset qualifier"	 [color=blue,
 		height=0.5,
 		label=onset,
-		pos="1923.1,177",
+		pos="2031.1,177",
 		width=0.79928];
 	"gene as a model of disease association" -> "onset qualifier"	 [color=blue,
 		label="onset qualifier",
-		lp="1923,220",
-		pos="e,1908.3,192.91 1129.9,249.98 1147.9,248.03 1166.6,246.25 1184.1,245 1258.9,239.67 1787.5,252.07 1858.1,227 1874.1,221.35 1889.2,\
-210.2 1900.8,199.86",
+		lp="2025,220",
+		pos="e,2015,191.97 1188.9,249.96 1206.9,248.01 1225.6,246.24 1243.1,245 1322.3,239.42 1881.6,251.19 1957.1,227 1975.5,221.13 1993.5,209.18 \
+2007.1,198.44",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,
 		label="identifier type",
-		pos="1252.1,263",
+		pos="1311.1,263",
 		width=1.652];
 	subject -> relation	 [pos="e,798.62,36.027 808.65,158.76 806.4,131.21 802.11,78.735 799.45,46.223",
 		style=dotted];
@@ -171,7 +181,7 @@ digraph {
 	"gene as a model of disease association_subject"	 [color=blue,
 		height=0.5,
 		label="gene or gene product",
-		pos="1414.1,263",
+		pos="1473.1,263",
 		width=2.3474];
 	object -> relation	 [pos="e,811.38,34.499 845.85,74.435 837.63,64.915 827.16,52.785 818.04,42.212",
 		style=dotted];

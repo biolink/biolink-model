@@ -1,29 +1,29 @@
 digraph {
-	graph [bb="0,0,1286.7,281"];
+	graph [bb="0,0,1409.1,281"];
 	node [label="\N"];
 	"chemical to pathway association"	 [height=0.5,
 		label="chemical to pathway association",
-		pos="628.4,263",
+		pos="673.4,263",
 		width=3.4663];
 	association	 [height=0.5,
 		pos="49.402,177",
 		width=1.3723];
 	"chemical to pathway association" -> association	 [label=is_a,
-		lp="274.68,220",
-		pos="e,86.011,189.19 516.17,255.05 409.84,245.95 246.21,227.86 107.4,195 103.59,194.1 99.655,193.08 95.723,191.99"];
+		lp="288.68,220",
+		pos="e,86.011,189.19 556.34,256.67 440.93,248.62 260.17,231.16 107.4,195 103.59,194.1 99.655,193.08 95.723,191.99"];
 	"chemical to thing association"	 [height=0.5,
 		pos="229.4,177",
 		width=3.1391];
 	"chemical to pathway association" -> "chemical to thing association"	 [label=uses,
 		lp="388.46,220",
-		pos="e,271.85,193.8 525.77,252.74 479.69,247.01 424.88,238.63 376.29,227 344.18,219.31 309.16,207.53 281.36,197.33"];
+		pos="e,271.16,193.81 561.35,254.96 505.3,249.54 436.7,240.78 376.29,227 343.87,219.6 308.56,207.71 280.69,197.38"];
 	id	 [height=0.5,
 		pos="387.4,177",
 		width=0.75];
 	"chemical to pathway association" -> id	 [color=blue,
 		label=id,
 		lp="423.85,220",
-		pos="e,393.54,194.54 523.29,253.26 479.69,247.56 435.19,239.07 417.51,227 409.15,221.29 402.73,212.43 398.01,203.74",
+		pos="e,393.47,194.65 557.28,256.33 500.99,251.2 440.62,242.28 417.51,227 409.07,221.42 402.63,212.58 397.92,203.88",
 		style=solid];
 	subject	 [color=blue,
 		height=0.5,
@@ -33,7 +33,7 @@ digraph {
 	"chemical to pathway association" -> subject	 [color=blue,
 		label=subject,
 		lp="550.23,220",
-		pos="e,514.78,195.23 561.51,247.79 549.8,242.71 538.57,235.97 529.75,227 523.86,221.01 519.96,212.93 517.39,205.01",
+		pos="e,514.37,195.06 591.26,249.37 564.68,243.51 539.51,235.94 529.75,227 523.46,221.24 519.45,213.09 516.89,205.03",
 		style=solid];
 	relation	 [color=blue,
 		height=0.5,
@@ -43,7 +43,8 @@ digraph {
 	"chemical to pathway association" -> relation	 [color=blue,
 		label=relation,
 		lp="477.78,134",
-		pos="e,486.51,35.369 547.96,249.09 517.43,239.37 485.83,222.9 468.4,195 439.12,148.13 463.95,81.089 481.9,44.432",
+		pos="e,486.55,35.342 589.32,249.6 565.2,244.2 539.26,236.85 516.4,227 492.85,216.86 481.88,216.81 468.4,195 439.34,147.99 464.09,81.004 \
+481.97,44.393",
 		style=solid];
 	object	 [height=0.5,
 		pos="556.4,91",
@@ -51,7 +52,7 @@ digraph {
 	"chemical to pathway association" -> object	 [color=blue,
 		label=object,
 		lp="609.51,177",
-		pos="e,565.32,108.32 617.44,245.05 609.6,231.63 599.23,212.64 592.19,195 580.58,165.88 584.31,156.4 573.4,127 572.25,123.89 570.93,120.68 \
+		pos="e,565.32,108.32 644.34,245.24 626.83,233.12 605.43,215.57 592.19,195 575.23,168.63 584.31,156.4 573.4,127 572.25,123.89 570.93,120.68 \
 569.55,117.52",
 		style=solid];
 	negated	 [color=blue,
@@ -61,8 +62,8 @@ digraph {
 		width=1.0584];
 	"chemical to pathway association" -> negated	 [color=blue,
 		label=negated,
-		lp="676.17,220",
-		pos="e,664.18,194.62 637.94,244.76 644.17,232.86 652.41,217.12 659.38,203.8",
+		lp="695.17,220",
+		pos="e,673.4,195.21 673.4,244.76 673.4,233.36 673.4,218.43 673.4,205.49",
 		style=solid];
 	"association type"	 [color=blue,
 		height=0.5,
@@ -71,8 +72,8 @@ digraph {
 		width=1.6931];
 	"chemical to pathway association" -> "association type"	 [color=blue,
 		label="association type",
-		lp="772.31,220",
-		pos="e,762.91,193.22 665.14,245.7 677.11,239.91 690.39,233.32 702.4,227 719.56,217.97 738.27,207.43 754.02,198.37",
+		lp="784.31,220",
+		pos="e,767.38,193.92 697.64,245.18 715.49,232.07 739.89,214.13 759.19,199.94",
 		style=solid];
 	qualifiers	 [color=blue,
 		height=0.5,
@@ -81,8 +82,8 @@ digraph {
 		width=1.6931];
 	"chemical to pathway association" -> qualifiers	 [color=blue,
 		label=qualifiers,
-		lp="884.45,220",
-		pos="e,901.12,192.83 719.87,250.67 752.36,245.06 788.91,237.31 821.4,227 845.67,219.3 871.62,207.55 892.11,197.37",
+		lp="890.45,220",
+		pos="e,903.24,193.38 753.49,249.16 779.39,243.58 807.98,236.24 833.4,227 854.33,219.39 876.48,208.24 894.33,198.39",
 		style=solid];
 	publications	 [color=blue,
 		height=0.5,
@@ -91,9 +92,8 @@ digraph {
 		width=1.3859];
 	"chemical to pathway association" -> publications	 [color=blue,
 		label=publications,
-		lp="997.62,220",
-		pos="e,1026.6,190.58 719.2,250.61 733.65,248.69 748.43,246.77 762.4,245 829.89,236.47 848.09,242.18 914.4,227 949.7,218.92 988.4,205.32 \
-1016.9,194.34",
+		lp="1001.6,220",
+		pos="e,1026.8,190.82 764.51,250.62 828.48,241.78 905.21,230.8 920.4,227 953.64,218.69 990.04,205.44 1017.3,194.66",
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
@@ -102,25 +102,36 @@ digraph {
 		width=1.1129];
 	"chemical to pathway association" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="1114,220",
-		pos="e,1139.8,190.21 716.96,250.24 732.1,248.31 747.69,246.47 762.4,245 883.39,232.9 916.58,252.82 1035.4,227 1068.5,219.8 1104.4,205.78 \
-1130.4,194.42",
+		lp="1117,220",
+		pos="e,1140.2,190.36 762.34,250.34 777.36,248.41 792.81,246.54 807.4,245 910.25,234.11 938.59,250.07 1039.4,227 1071.4,219.69 1105.9,\
+205.81 1131,194.53",
 		style=solid];
 	"association slot"	 [color=blue,
 		height=0.5,
 		label=string,
-		pos="1256.4,177",
+		pos="1255.4,177",
 		width=0.8403];
 	"chemical to pathway association" -> "association slot"	 [color=blue,
 		label="association slot",
-		lp="1233.4,220",
-		pos="e,1235.2,190.2 715.86,250.13 731.34,248.18 747.32,246.36 762.4,245 848.59,237.23 1067.5,248.02 1151.4,227 1178.1,220.32 1206.1,206.61 \
-1226.4,195.23",
+		lp="1235.4,220",
+		pos="e,1234.7,190.39 761.22,250.16 776.59,248.21 792.44,246.39 807.4,245 884.28,237.85 1079.7,246.53 1154.4,227 1179.9,220.33 1206.5,\
+206.84 1226,195.56",
+		style=solid];
+	"edge label"	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="1364.4,177",
+		width=1.2425];
+	"chemical to pathway association" -> "edge label"	 [color=blue,
+		label="edge label",
+		lp="1342,220",
+		pos="e,1344.2,193.36 760.49,250.07 776.08,248.11 792.2,246.31 807.4,245 912.65,235.96 1181.3,257.48 1282.4,227 1301.6,221.21 1320.9,209.81 \
+1335.9,199.35",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,
 		label="identifier type",
-		pos="830.4,263",
+		pos="875.4,263",
 		width=1.652];
 	subject -> relation	 [pos="e,498.22,36.027 510.57,158.76 507.79,131.21 502.51,78.735 499.24,46.223",
 		style=dotted];
@@ -132,6 +143,6 @@ digraph {
 	"chemical to pathway association_object"	 [color=blue,
 		height=0.5,
 		label=pathway,
-		pos="948.4,263",
+		pos="993.4,263",
 		width=1.1129];
 }

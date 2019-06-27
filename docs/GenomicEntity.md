@@ -1,3 +1,4 @@
+
 # Class: genomic entity
 
 
@@ -5,10 +6,12 @@ an entity that can either be directly located on a genome (gene, transcript, exo
 
 URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GenomicEntity|has_biological_sequence:biological_sequence%20%3F;id(i):identifier_type;name(i):label_type%20%3F;category(i):iri_type%20*],%20\[GenomicSequenceLocalization]-%20object%201..1>\[GenomicEntity],%20\[GenomicSequenceLocalization]-%20subject%201..1>\[GenomicEntity],%20\[SequenceFeatureRelationship]-%20object%201..1>\[GenomicEntity],%20\[SequenceFeatureRelationship]-%20subject%201..1>\[GenomicEntity],%20\[GenomicEntity]^-\[Transcript],%20\[GenomicEntity]^-\[SequenceVariant],%20\[GenomicEntity]^-\[MacromolecularMachine],%20\[GenomicEntity]^-\[Haplotype],%20\[GenomicEntity]^-\[Genotype],%20\[GenomicEntity]^-\[Genome],%20\[GenomicEntity]^-\[Exon],%20\[GenomicEntity]^-\[CodingSequence],%20\[MolecularEntity]^-\[GenomicEntity])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GenomicEntity|has_biological_sequence:biological_sequence%20%3F;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GenomicSequenceLocalization]-%20object%201..1>\[GenomicEntity],%20\[GenomicSequenceLocalization]-%20subject%201..1>\[GenomicEntity],%20\[SequenceFeatureRelationship]-%20object%201..1>\[GenomicEntity],%20\[SequenceFeatureRelationship]-%20subject%201..1>\[GenomicEntity],%20\[GenomicEntity]^-\[Transcript],%20\[GenomicEntity]^-\[SequenceVariant],%20\[GenomicEntity]^-\[MacromolecularMachine],%20\[GenomicEntity]^-\[Haplotype],%20\[GenomicEntity]^-\[Genotype],%20\[GenomicEntity]^-\[Genome],%20\[GenomicEntity]^-\[Exon],%20\[GenomicEntity]^-\[CodingSequence],%20\[MolecularEntity]^-\[GenomicEntity])
+
 ## Parents
 
  *  is_a: [MolecularEntity](MolecularEntity.md) - A gene, gene product, small molecule or macromolecule (including protein complex)
+
 ## Children
 
  * [CodingSequence](CodingSequence.md)
@@ -19,6 +22,7 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
  * [MacromolecularMachine](MacromolecularMachine.md) - A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.
  * [SequenceVariant](SequenceVariant.md) - An allele that varies in its sequence from what is considered the reference allele at that locus.
  * [Transcript](Transcript.md) - An RNA synthesized on a DNA or RNA template by an RNA polymerase
+
 ## Referenced by class
 
  *  **[MolecularEntity](MolecularEntity.md)** *[affects expression of](affects_expression_of.md)*  <sub>0..*</sub>  **[GenomicEntity](GenomicEntity.md)**
@@ -31,18 +35,16 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
  *  **[MolecularEntity](MolecularEntity.md)** *[increases mutation rate of](increases_mutation_rate_of.md)*  <sub>0..*</sub>  **[GenomicEntity](GenomicEntity.md)**
  *  **[SequenceFeatureRelationship](SequenceFeatureRelationship.md)** *[object](sequence_feature_relationship_object.md)*  <sub>REQ</sub>  **[GenomicEntity](GenomicEntity.md)**
  *  **[SequenceFeatureRelationship](SequenceFeatureRelationship.md)** *[subject](sequence_feature_relationship_subject.md)*  <sub>REQ</sub>  **[GenomicEntity](GenomicEntity.md)**
+
 ## Attributes
+
 
 ### Own
 
  * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
     * Description: connects a genomic feature to its sequence
     * range: [BiologicalSequence](BiologicalSequence.md)
-### Inherited from genomic entity:
 
- * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
-    * Description: connects a genomic feature to its sequence
-    * range: [BiologicalSequence](BiologicalSequence.md)
 ### Inherited from named thing:
 
  * [id](id.md)  <sub>REQ</sub>
@@ -50,16 +52,17 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
     * range: [IdentifierType](IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
- * [name](name.md)  <sub>OPT</sub>
+ * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
- * [category](category.md)  <sub>0..*</sub>
+ * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
+
 ### Inherited from thing with taxon:
 
  * [in taxon](in_taxon.md)  <sub>0..*</sub>
@@ -67,6 +70,7 @@ URI: [biolink:GenomicEntity](https://w3id.org/biolink/vocab/GenomicEntity)
     * range: [OrganismTaxon](OrganismTaxon.md)
     * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
     * in subsets: (translator_minimal)
+
 ### Domain for slot:
 
  * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>

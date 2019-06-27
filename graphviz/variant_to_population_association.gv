@@ -1,44 +1,43 @@
 digraph {
-	graph [bb="0,0,2229.2,281"];
+	graph [bb="0,0,2336.2,281"];
 	node [label="\N"];
 	"variant to population association"	 [height=0.5,
 		label="variant to population association",
-		pos="1168.4,263",
+		pos="1238.4,263",
 		width=3.4803];
 	association	 [height=0.5,
 		pos="49.402,177",
 		width=1.3723];
 	"variant to population association" -> association	 [label=is_a,
-		lp="446.68,220",
-		pos="e,85.307,189.39 1046.3,258.81 900.61,253.4 649.76,242.77 434.85,227 289.02,216.3 250.74,223.93 107.4,195 103.33,194.18 99.143,193.18 \
-94.966,192.09"];
+		lp="440.68,220",
+		pos="e,85.309,189.38 1115.2,259.62 956.38,254.78 671.78,244.48 428.85,227 285.65,216.7 248.11,223.53 107.4,195 103.33,194.17 99.144,193.18 \
+94.967,192.08"];
 	"variant to thing association"	 [height=0.5,
 		pos="222.4,177",
 		width=2.9346];
 	"variant to population association" -> "variant to thing association"	 [label=uses,
-		lp="590.46,220",
-		pos="e,299.32,189.41 1047.6,258.13 928.14,252.72 740.35,242.64 578.29,227 470.35,216.58 443.72,210.57 336.4,195 327.59,193.72 318.41,\
-192.35 309.24,190.94"];
+		lp="586.46,220",
+		pos="e,299.32,189.39 1115.8,259.28 982.35,254.54 762.82,244.76 574.29,227 468.08,216.99 441.96,210.43 336.4,195 327.59,193.71 318.41,\
+192.33 309.24,190.92"];
 	"frequency quantifier"	 [height=0.5,
 		pos="427.4,177",
 		width=2.2656];
 	"variant to population association" -> "frequency quantifier"	 [label=uses,
 		lp="700.46,220",
-		pos="e,488.08,189.08 1048.2,257.7 950.82,252.52 810.33,243.02 688.29,227 612.11,217 593.84,209.57 518.4,195 511.81,193.73 504.96,192.39 \
-498.1,191.05"];
+		pos="e,484.07,190.02 1115.6,259.21 1003.9,254.76 834.52,245.49 688.29,227 621.67,218.58 546.43,203.56 493.93,192.17"];
 	"frequency qualifier mixin"	 [height=0.5,
 		pos="627.4,177",
 		width=2.7774];
 	"variant to population association" -> "frequency qualifier mixin"	 [label=uses,
 		lp="773.46,220",
-		pos="e,664.09,193.77 1051.9,256.19 951.52,249.68 814.66,239.09 761.29,227 731.25,220.19 698.86,208.23 673.46,197.71"];
+		pos="e,663.78,193.78 1118.4,257.81 999.81,251.97 826.85,241.41 761.29,227 731.1,220.36 698.58,208.35 673.16,197.75"];
 	id	 [height=0.5,
 		pos="772.4,177",
 		width=0.75];
 	"variant to population association" -> id	 [color=blue,
 		label=id,
 		lp="808.85,220",
-		pos="e,778.37,194.81 1050.8,256.69 951.89,250.52 823.32,240.15 802.51,227 793.96,221.59 787.49,212.8 782.79,204.08",
+		pos="e,778.33,194.87 1116.6,258.6 997.03,253.37 828.7,243.26 802.51,227 793.91,221.66 787.44,212.88 782.74,204.15",
 		style=solid];
 	subject	 [height=0.5,
 		pos="890.4,177",
@@ -46,7 +45,7 @@ digraph {
 	"variant to population association" -> subject	 [color=blue,
 		label=subject,
 		lp="928.23,220",
-		pos="e,892.07,195.41 1061.4,253.51 994.99,246.71 919.95,237.01 907.75,227 901.08,221.53 896.97,213.35 894.44,205.19",
+		pos="e,891.9,195.02 1121.8,256.38 1033.5,250.37 924.54,240.38 907.75,227 900.9,221.55 896.75,213.23 894.23,204.93",
 		style=solid];
 	relation	 [color=blue,
 		height=0.5,
@@ -56,7 +55,7 @@ digraph {
 	"variant to population association" -> relation	 [color=blue,
 		label=relation,
 		lp="856.78,134",
-		pos="e,867.17,35.266 1060.1,253.82 997.06,247.5 924.27,238.22 894.4,227 870.4,217.98 859.68,216.93 846.4,195 817.7,147.6 843.75,80.763 \
+		pos="e,867.17,35.266 1121,256.72 1038.1,251.16 934.93,241.62 894.4,227 870.28,218.3 859.68,216.93 846.4,195 817.7,147.6 843.75,80.763 \
 862.39,44.283",
 		style=solid];
 	object	 [height=0.5,
@@ -65,7 +64,7 @@ digraph {
 	"variant to population association" -> object	 [color=blue,
 		label=object,
 		lp="987.51,177",
-		pos="e,946.47,108.27 1102.2,247.64 1051.9,234.66 988.26,215.02 970.19,195 949.41,171.97 964.59,156.3 954.4,127 953.31,123.87 952.03,120.64 \
+		pos="e,946.47,108.27 1148.4,250.4 1080.5,239.08 995.03,220.34 970.19,195 948.48,172.84 964.59,156.3 954.4,127 953.31,123.87 952.03,120.64 \
 950.67,117.47",
 		style=solid];
 	negated	 [color=blue,
@@ -75,8 +74,8 @@ digraph {
 		width=1.0584];
 	"variant to population association" -> negated	 [color=blue,
 		label=negated,
-		lp="1139.2,220",
-		pos="e,1072.1,192.21 1144.2,245.18 1125.6,231.55 1100,212.71 1080.4,198.29",
+		lp="1163.2,220",
+		pos="e,1074.8,191.4 1188.9,246.43 1173.3,240.76 1156.2,234.06 1140.9,227 1121.4,218.02 1100.4,206.4 1083.6,196.62",
 		style=solid];
 	"association type"	 [color=blue,
 		height=0.5,
@@ -85,8 +84,8 @@ digraph {
 		width=1.6931];
 	"variant to population association" -> "association type"	 [color=blue,
 		label="association type",
-		lp="1213.3,220",
-		pos="e,1168.4,195.21 1168.4,244.76 1168.4,233.36 1168.4,218.43 1168.4,205.49",
+		lp="1242.3,220",
+		pos="e,1176.7,195.07 1214.9,245.26 1208.5,239.81 1201.9,233.52 1196.6,227 1190.9,220.1 1185.8,211.9 1181.5,204.17",
 		style=solid];
 	qualifiers	 [color=blue,
 		height=0.5,
@@ -95,8 +94,8 @@ digraph {
 		width=1.6931];
 	"variant to population association" -> qualifiers	 [color=blue,
 		label=qualifiers,
-		lp="1304.5,220",
-		pos="e,1295.5,194.67 1223.7,246.68 1237,241.47 1250.7,234.95 1262.4,227 1272.3,220.3 1281.5,211.1 1289.1,202.42",
+		lp="1321.5,220",
+		pos="e,1302.9,195.35 1266.9,245.37 1273.9,240.09 1281,233.85 1286.4,227 1291.6,220.42 1295.9,212.4 1299.2,204.74",
 		style=solid];
 	publications	 [color=blue,
 		height=0.5,
@@ -105,8 +104,8 @@ digraph {
 		width=1.3859];
 	"variant to population association" -> publications	 [color=blue,
 		label=publications,
-		lp="1401.6,220",
-		pos="e,1410.6,192.2 1250.1,249.31 1277.3,243.7 1307.5,236.3 1334.4,227 1357.5,219.02 1382.1,207.18 1401.5,197.02",
+		lp="1412.6,220",
+		pos="e,1413.3,192.92 1296.8,247.06 1314.6,241.49 1334.1,234.68 1351.4,227 1369.6,218.92 1388.9,207.97 1404.5,198.38",
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
@@ -115,9 +114,8 @@ digraph {
 		width=1.1129];
 	"variant to population association" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="1510,220",
-		pos="e,1520.6,191.42 1260.3,250.74 1274.7,248.82 1289.5,246.85 1303.4,245 1363.8,236.97 1380.9,244.21 1439.4,227 1464.6,219.58 1491.4,\
-206.91 1511.7,196.18",
+		lp="1517,220",
+		pos="e,1522.1,191.93 1328.8,250.54 1375.8,243.48 1428,234.58 1450.4,227 1472.4,219.57 1495.4,207.57 1513.3,197.18",
 		style=solid];
 	"association slot"	 [color=blue,
 		height=0.5,
@@ -126,63 +124,74 @@ digraph {
 		width=0.8403];
 	"variant to population association" -> "association slot"	 [color=blue,
 		label="association slot",
-		lp="1623.4,220",
-		pos="e,1614.8,191.21 1257.6,250.35 1272.9,248.4 1288.6,246.53 1303.4,245 1411.6,233.81 1443.5,259.15 1547.4,227 1568.6,220.45 1590.1,\
-207.92 1606.3,197.03",
+		lp="1625.4,220",
+		pos="e,1615.5,191.78 1328.8,250.53 1343.7,248.59 1359,246.68 1373.4,245 1453.7,235.66 1478,253.33 1554.4,227 1573.5,220.42 1592.7,208.4 \
+1607.4,197.8",
+		style=solid];
+	"edge label"	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="1726.4,177",
+		width=1.2425];
+	"variant to population association" -> "edge label"	 [color=blue,
+		label="edge label",
+		lp="1723,220",
+		pos="e,1712.9,194.66 1327.3,250.22 1342.6,248.28 1358.5,246.44 1373.4,245 1439.7,238.6 1611.2,253.14 1672.4,227 1685.2,221.54 1696.9,\
+211.67 1706.1,202.14",
 		style=solid];
 	"has count"	 [height=0.5,
-		pos="1725.4,177",
+		pos="1832.4,177",
 		width=1.2154];
 	"variant to population association" -> "has count"	 [color=blue,
 		label="has count",
-		lp="1720,220",
-		pos="e,1712,194.23 1256.5,250.17 1272.1,248.21 1288.2,246.38 1303.4,245 1384.7,237.6 1595,258.3 1670.4,227 1683.6,221.54 1695.6,211.48 \
-1705.1,201.81",
+		lp="1812,220",
+		pos="e,1813.6,193.3 1326.5,250.15 1342.1,248.19 1358.2,246.37 1373.4,245 1458,237.38 1674.5,253.05 1755.4,227 1773.5,221.17 1791.4,209.93 \
+1805.4,199.57",
 		style=solid];
 	"has total"	 [height=0.5,
-		pos="1827.4,177",
+		pos="1934.4,177",
 		width=1.1062];
 	"variant to population association" -> "has total"	 [color=blue,
 		label="has total",
-		lp="1803.9,220",
-		pos="e,1808.9,193.1 1256.1,250.11 1271.9,248.14 1288.1,246.33 1303.4,245 1402.4,236.42 1655.7,257.15 1750.4,227 1768.6,221.2 1786.7,209.84 \
-1800.8,199.41",
+		lp="1900.9,220",
+		pos="e,1912.9,192.38 1326.1,250.08 1341.8,248.12 1358.1,246.31 1373.4,245 1477.3,236.1 1741.8,254.63 1842.4,227 1864.5,220.93 1887.1,\
+208.72 1904.4,197.88",
 		style=solid];
 	"has quotient"	 [height=0.5,
-		pos="1938.4,177",
+		pos="2045.4,177",
 		width=1.4747];
 	"variant to population association" -> "has quotient"	 [color=blue,
 		label="has quotient",
-		lp="1905.4,220",
-		pos="e,1912.2,192.89 1255.8,250.07 1271.6,248.1 1288,246.29 1303.4,245 1420.4,235.23 1717.2,254.41 1831.4,227 1856.6,220.94 1883.1,208.64 \
-1903.4,197.76",
+		lp="2006.4,220",
+		pos="e,2017.5,192.41 1325.8,250.05 1341.6,248.08 1358,246.28 1373.4,245 1496.4,234.83 1807.9,253.71 1928.4,227 1956.3,220.81 1985.9,208.09 \
+2008.4,197.03",
 		style=solid];
 	"has percentage"	 [color=blue,
 		height=0.5,
 		label=double,
-		pos="2043.4,177",
+		pos="2150.4,177",
 		width=0.94933];
 	"variant to population association" -> "has percentage"	 [color=blue,
 		label="has percentage",
-		lp="2022.8,220",
-		pos="e,2021.9,191.26 1255.4,250.04 1271.3,248.06 1287.8,246.25 1303.4,245 1374.3,239.29 1874.4,244.32 1943.4,227 1968.3,220.76 1994.1,\
-207.65 2013.3,196.42",
+		lp="2125.8,220",
+		pos="e,2128.2,190.8 1325.4,250.03 1341.3,248.04 1357.8,246.24 1373.4,245 1522.1,233.13 1899.3,261.56 2044.4,227 2071,220.66 2098.9,207.2 \
+2119.4,195.83",
 		style=solid];
 	"frequency qualifier"	 [color=blue,
 		height=0.5,
 		label="frequency value",
-		pos="2162.4,177",
+		pos="2269.4,177",
 		width=1.8561];
 	"variant to population association" -> "frequency qualifier"	 [color=blue,
 		label="frequency qualifier",
-		lp="2156.5,220",
-		pos="e,2138.2,193.96 1255.4,249.98 1271.3,248 1287.8,246.22 1303.4,245 1388.2,238.37 1986.2,248.54 2068.4,227 2090,221.34 2112.2,209.87 \
-2129.6,199.34",
+		lp="2260.5,220",
+		pos="e,2244.5,193.72 1325.4,249.97 1341.3,247.99 1357.8,246.21 1373.4,245 1461.8,238.13 2085.4,248.7 2171.4,227 2194,221.31 2217.2,209.72 \
+2235.4,199.13",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,
 		label="identifier type",
-		pos="1371.4,263",
+		pos="1441.4,263",
 		width=1.652];
 	subject -> relation	 [pos="e,878.88,36.027 888.91,158.76 886.66,131.21 882.37,78.735 879.71,46.223",
 		style=dotted];
@@ -192,28 +201,28 @@ digraph {
 	"variant to population association_subject"	 [color=blue,
 		height=0.5,
 		label="sequence variant",
-		pos="1518.4,263",
+		pos="1588.4,263",
 		width=1.9244];
 	object -> relation	 [pos="e,891.17,34.752 923.79,74.435 916.09,65.075 906.33,53.191 897.74,42.745",
 		style=dotted];
 	"variant to population association_object"	 [color=blue,
 		height=0.5,
 		label="population of individual organisms",
-		pos="1739.4,263",
+		pos="1809.4,263",
 		width=3.722];
 	"variant to population association_has count"	 [color=blue,
 		height=0.5,
 		label=integer,
-		pos="1926.4,263",
+		pos="1996.4,263",
 		width=0.96276];
 	"variant to population association_has total"	 [color=blue,
 		height=0.5,
 		label=integer,
-		pos="2013.4,263",
+		pos="2083.4,263",
 		width=0.96276];
 	"variant to population association_has quotient"	 [color=blue,
 		height=0.5,
 		label=double,
-		pos="2100.4,263",
+		pos="2170.4,263",
 		width=0.94933];
 }

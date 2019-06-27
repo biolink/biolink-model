@@ -1,3 +1,4 @@
+
 # Class: biosample to disease or phenotypic feature association
 
 
@@ -6,14 +7,18 @@ An association between a biosample and a disease or phenotype
 URI: [biolink:BiosampleToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/BiosampleToDiseaseOrPhenotypicFeatureAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[BiosampleToDiseaseOrPhenotypicFeatureAssociation|id(i):identifier_type;subject(i):iri_type;relation(i):iri_type;object(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[BiosampleToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[BiosampleToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[BiosampleToDiseaseOrPhenotypicFeatureAssociation],%20\[BiosampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[BiosampleToThingAssociation],%20\[BiosampleToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[BiosampleToDiseaseOrPhenotypicFeatureAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Uses Mixins
 
  *  mixin: [BiosampleToThingAssociation](BiosampleToThingAssociation.md) - An association between a biosample and something
  *  mixin: [ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)
+
 ## Attributes
+
 
 ### Inherited from association:
 

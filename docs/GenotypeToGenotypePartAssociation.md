@@ -1,3 +1,4 @@
+
 # Class: genotype to genotype part association
 
 
@@ -6,12 +7,16 @@ Any association between one genotype and a genotypic entity that is a sub-compon
 URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GenotypeToGenotypePartAssociation|relation:iri_type;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GenotypeToGenotypePartAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GenotypeToGenotypePartAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GenotypeToGenotypePartAssociation],%20\[Genotype]<object%201..1-%20\[GenotypeToGenotypePartAssociation],%20\[Genotype]<subject%201..1-%20\[GenotypeToGenotypePartAssociation],%20\[Association]^-\[GenotypeToGenotypePartAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -21,6 +26,7 @@ URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/
     * range: [IriType](IriType.md)
  * [subject](genotype_to_genotype_part_association_subject.md)  <sub>REQ</sub>
     * range: [Genotype](Genotype.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -60,14 +66,7 @@ URI: [biolink:GenotypeToGenotypePartAssociation](https://w3id.org/biolink/vocab/
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from genotype to genotype part association:
 
- * [subject](genotype_to_genotype_part_association_subject.md)  <sub>REQ</sub>
-    * range: [Genotype](Genotype.md)
- * [relation](genotype_to_genotype_part_association_relation.md)  <sub>REQ</sub>
-    * range: [IriType](IriType.md)
- * [object](genotype_to_genotype_part_association_object.md)  <sub>REQ</sub>
-    * range: [Genotype](Genotype.md)
 ### Domain for slot:
 
  * [object](genotype_to_genotype_part_association_object.md)  <sub>REQ</sub>

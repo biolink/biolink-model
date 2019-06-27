@@ -1,18 +1,23 @@
+
 # Slot: has biological sequence
 
 
 connects a genomic feature to its sequence
 
 URI: [biolink:has_biological_sequence](https://w3id.org/biolink/vocab/has_biological_sequence)
+
 ## Domain and Range
 
 [GenomicEntity](GenomicEntity.md) ->  <sub>OPT</sub> [BiologicalSequence](BiologicalSequence.md)
+
 ## Parents
 
  *  is_a: [node property](node_property.md)
+
 ## Children
 
  *  [has biological sequence](sequence_variant_has_biological_sequence.md)
+
 ## Used by
 
  * [RNAProduct](RNAProduct.md)

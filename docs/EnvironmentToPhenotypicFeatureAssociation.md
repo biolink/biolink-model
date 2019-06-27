@@ -1,3 +1,4 @@
+
 # Class: environment to phenotypic feature association
 
 
@@ -6,20 +7,26 @@ Any association between an environment and a phenotypic feature, where being in 
 URI: [biolink:EnvironmentToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/EnvironmentToPhenotypicFeatureAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[EnvironmentToPhenotypicFeatureAssociation|id(i):identifier_type;relation(i):iri_type;object(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[EnvironmentToPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[EnvironmentToPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[EnvironmentToPhenotypicFeatureAssociation],%20\[Onset]<onset%20qualifier%200..1-%20\[EnvironmentToPhenotypicFeatureAssociation],%20\[SeverityValue]<severity%20qualifier%200..1-%20\[EnvironmentToPhenotypicFeatureAssociation],%20\[FrequencyValue]<frequency%20qualifier%200..1-%20\[EnvironmentToPhenotypicFeatureAssociation],%20\[BiologicalSex]<sex%20qualifier%200..1-%20\[EnvironmentToPhenotypicFeatureAssociation],%20\[Environment]<subject%201..1-%20\[EnvironmentToPhenotypicFeatureAssociation],%20\[EnvironmentToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[Association]^-\[EnvironmentToPhenotypicFeatureAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Uses Mixins
 
  *  mixin: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
  * [subject](environment_to_phenotypic_feature_association_subject.md)  <sub>REQ</sub>
     * range: [Environment](Environment.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -59,6 +66,7 @@ URI: [biolink:EnvironmentToPhenotypicFeatureAssociation](https://w3id.org/biolin
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
+
 ### Inherited from entity to feature or disease qualifiers:
 
  * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
@@ -67,6 +75,7 @@ URI: [biolink:EnvironmentToPhenotypicFeatureAssociation](https://w3id.org/biolin
  * [onset qualifier](onset_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
     * range: [Onset](Onset.md)
+
 ### Inherited from entity to phenotypic feature association:
 
  * [object](entity_to_phenotypic_feature_association_object.md)  <sub>REQ</sub>
@@ -75,15 +84,13 @@ URI: [biolink:EnvironmentToPhenotypicFeatureAssociation](https://w3id.org/biolin
  * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
     * range: [BiologicalSex](BiologicalSex.md)
-### Inherited from environment to phenotypic feature association:
 
- * [subject](environment_to_phenotypic_feature_association_subject.md)  <sub>REQ</sub>
-    * range: [Environment](Environment.md)
 ### Inherited from frequency qualifier mixin:
 
  * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     * range: [FrequencyValue](FrequencyValue.md)
+
 ### Domain for slot:
 
  * [subject](environment_to_phenotypic_feature_association_subject.md)  <sub>REQ</sub>
