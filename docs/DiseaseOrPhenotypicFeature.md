@@ -3,89 +3,64 @@
 
 Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate.
 
-URI: [http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature](http://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature)
+URI: [biolink:DiseaseOrPhenotypicFeature](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature)
 
-![img](images/DiseaseOrPhenotypicFeature.png)
-## Mappings
-
- * [UMLSSC:T033](http://purl.obolibrary.org/obo/UMLSSC_T033)
- * [UMLSST:fndg](http://purl.obolibrary.org/obo/UMLSST_fndg)
-## Inheritance
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[DiseaseOrPhenotypicFeature|id(i):identifier_type;name(i):label_type%20%3F;category(i):iri_type%20*],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]-%20subject%201..1>\[DiseaseOrPhenotypicFeature],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]-%20object%201..1>\[DiseaseOrPhenotypicFeature],%20\[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]-%20subject%201..1>\[DiseaseOrPhenotypicFeature],%20\[ThingToDiseaseOrPhenotypicFeatureAssociation]-%20object%201..1>\[DiseaseOrPhenotypicFeature],%20\[DiseaseOrPhenotypicFeature]uses%20-.->\[ThingWithTaxon],%20\[DiseaseOrPhenotypicFeature]^-\[PhenotypicFeature],%20\[DiseaseOrPhenotypicFeature]^-\[Disease],%20\[BiologicalEntity]^-\[DiseaseOrPhenotypicFeature])
+## Parents
 
  *  is_a: [BiologicalEntity](BiologicalEntity.md)
+## Uses Mixins
+
  *  mixin: [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
 ## Children
 
  * [Disease](Disease.md)
  * [PhenotypicFeature](PhenotypicFeature.md)
-## Used in
+## Referenced by class
 
- *  class: **[MolecularEntity](MolecularEntity.md)** *[biomarker for](biomarker_for.md)* **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
- *  class: **[CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md)** *[cell line to disease or phenotypic feature association.subject](cell_line_to_disease_or_phenotypic_feature_association_subject.md)* **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
- *  class: **[ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)** *[chemical to disease or phenotypic feature association.object](chemical_to_disease_or_phenotypic_feature_association_object.md)* **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
- *  class: **[DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)** *[disease or phenotypic feature association to thing association.subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)* **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
- *  class: **[Gene](Gene.md)** *[gene associated with condition](gene_associated_with_condition.md)* **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
- *  class: **[ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)** *[thing to disease or phenotypic feature association.object](thing_to_disease_or_phenotypic_feature_association_object.md)* **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
- *  class: **[Treatment](Treatment.md)** *[treats](treats.md)* **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
-## Fields
+ *  **[MolecularEntity](MolecularEntity.md)** *[biomarker for](biomarker_for.md)*  <sub>0..*</sub>  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
+ *  **[CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md)** *[subject](cell_line_to_disease_or_phenotypic_feature_association_subject.md)*  <sub>REQ</sub>  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
+ *  **[ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)** *[object](chemical_to_disease_or_phenotypic_feature_association_object.md)*  <sub>REQ</sub>  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
+ *  **[DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)** *[subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)*  <sub>REQ</sub>  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
+ *  **[Gene](Gene.md)** *[gene associated with condition](gene_associated_with_condition.md)*  <sub>0..*</sub>  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
+ *  **[ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)** *[object](thing_to_disease_or_phenotypic_feature_association_object.md)*  <sub>REQ</sub>  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
+ *  **[Treatment](Treatment.md)** *[treats](treats.md)*  <sub>1..*</sub>  **[DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)**
+## Attributes
 
- * [correlated with](correlated_with.md) *subsets*: (translator_minimal)
-    * Description: holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
-    * range: [MolecularEntity](MolecularEntity.md)
-    * __Local__
- * [has biomarker](has_biomarker.md) *subsets*: (translator_minimal)
-    * Description: holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
-    * range: [MolecularEntity](MolecularEntity.md)
-    * __Local__
- * [treated by](treated_by.md) *subsets*: (translator_minimal)
-    * Description: holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition 
-    * range: [NamedThing](NamedThing.md)
-    * __Local__
- * [category](category.md) *subsets*: (translator_minimal)
-    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)*
-    * inherited from: [NamedThing](NamedThing.md)
- * [description](description.md) *subsets*: (translator_minimal)
-    * Description: a human-readable description of a thing
-    * range: [NarrativeText](NarrativeText.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [full name](full_name.md)
-    * Description: a long-form human readable name for a thing
-    * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [has phenotype](has_phenotype.md) *subsets*: (translator_minimal)
-    * Description: holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature). 
-    * range: [Phenotype](Phenotype.md)
-    * inherited from: [BiologicalEntity](BiologicalEntity.md)
- * [id](id.md) *subsets*: (translator_minimal)
+### Inherited from named thing:
+
+ * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [IdentifierType](IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [in taxon](in_taxon.md) *subsets*: (translator_minimal)
-    * Description: connects a thing to a class representing a taxon
-    * range: [OrganismTaxon](OrganismTaxon.md)
-    * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
- * [iri](iri.md) *subsets*: (translator_minimal)
-    * Description: An IRI for the node. This is determined by the id using expansion rules.
-    * range: [IriType](IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [name](name.md) *subsets*: (translator_minimal)
+    * in subsets: (translator_minimal)
+ * [name](name.md)  <sub>OPT</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [node property](node_property.md)
-    * Description: A grouping for any property that holds between a node and a value
-    * range: **string**
+    * in subsets: (translator_minimal)
+ * [category](category.md)  <sub>0..*</sub>
+    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+    * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [related to](related_to.md)
-    * Description: A grouping for any relationship type that holds between any two things
+    * in subsets: (translator_minimal)
+### Inherited from thing with taxon:
+
+ * [in taxon](in_taxon.md)  <sub>0..*</sub>
+    * Description: connects a thing to a class representing a taxon
+    * range: [OrganismTaxon](OrganismTaxon.md)
+    * in subsets: (translator_minimal)
+### Domain for slot:
+
+ * [correlated with](correlated_with.md)  <sub>0..*</sub>
+    * Description: holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+    * range: [MolecularEntity](MolecularEntity.md)
+    * in subsets: (translator_minimal)
+ * [has biomarker](has_biomarker.md)  <sub>0..*</sub>
+    * Description: holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature.
+    * range: [MolecularEntity](MolecularEntity.md)
+    * in subsets: (translator_minimal)
+ * [treated by](treated_by.md)  <sub>0..*</sub>
+    * Description: holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition
     * range: [NamedThing](NamedThing.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [synonym](synonym.md) *subsets*: (translator_minimal)
-    * Description: Alternate human-readable names for a thing
-    * range: [LabelType](LabelType.md)*
-    * inherited from: [NamedThing](NamedThing.md)
- * [systematic synonym](systematic_synonym.md)
-    * Description: more commonly used for gene symbols in yeast
-    * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)

@@ -15,7 +15,9 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "frequency_qualifier",
     "has_count",
+    "has_percentage",
     "has_quotient",
     "has_total",
     "object",
@@ -24,99 +26,108 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class VariantToPopulationAssociation {
 
     /**
-     * number in object population that carry a particular allele, aka allele count
+     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
      * 
      */
+    @JsonProperty("frequency_qualifier")
+    @JsonPropertyDescription("a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject")
+    private String frequencyQualifier;
     @JsonProperty("has_count")
-    @JsonPropertyDescription("number in object population that carry a particular allele, aka allele count")
     private String hasCount;
     /**
-     * frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
+     * equivalent to has quotient multiplied by 100
      * 
      */
+    @JsonProperty("has_percentage")
+    @JsonPropertyDescription("equivalent to has quotient multiplied by 100")
+    private String hasPercentage;
     @JsonProperty("has_quotient")
-    @JsonPropertyDescription("frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency")
     private String hasQuotient;
-    /**
-     * number all populations that carry a particular allele, aka allele number
-     * 
-     */
     @JsonProperty("has_total")
-    @JsonPropertyDescription("number all populations that carry a particular allele, aka allele number")
     private String hasTotal;
     /**
-     * the population that is observed to have the frequency
+     * 
      * (Required)
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("the population that is observed to have the frequency")
     private String object;
     /**
-     * an allele that has a certain frequency in a given population
+     * 
      * (Required)
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("an allele that has a certain frequency in a given population")
     private String subject;
 
     /**
-     * number in object population that carry a particular allele, aka allele count
+     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
      * 
      */
+    @JsonProperty("frequency_qualifier")
+    public String getFrequencyQualifier() {
+        return frequencyQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * 
+     */
+    @JsonProperty("frequency_qualifier")
+    public void setFrequencyQualifier(String frequencyQualifier) {
+        this.frequencyQualifier = frequencyQualifier;
+    }
+
     @JsonProperty("has_count")
     public String getHasCount() {
         return hasCount;
     }
 
-    /**
-     * number in object population that carry a particular allele, aka allele count
-     * 
-     */
     @JsonProperty("has_count")
     public void setHasCount(String hasCount) {
         this.hasCount = hasCount;
     }
 
     /**
-     * frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
+     * equivalent to has quotient multiplied by 100
      * 
      */
+    @JsonProperty("has_percentage")
+    public String getHasPercentage() {
+        return hasPercentage;
+    }
+
+    /**
+     * equivalent to has quotient multiplied by 100
+     * 
+     */
+    @JsonProperty("has_percentage")
+    public void setHasPercentage(String hasPercentage) {
+        this.hasPercentage = hasPercentage;
+    }
+
     @JsonProperty("has_quotient")
     public String getHasQuotient() {
         return hasQuotient;
     }
 
-    /**
-     * frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
-     * 
-     */
     @JsonProperty("has_quotient")
     public void setHasQuotient(String hasQuotient) {
         this.hasQuotient = hasQuotient;
     }
 
-    /**
-     * number all populations that carry a particular allele, aka allele number
-     * 
-     */
     @JsonProperty("has_total")
     public String getHasTotal() {
         return hasTotal;
     }
 
-    /**
-     * number all populations that carry a particular allele, aka allele number
-     * 
-     */
     @JsonProperty("has_total")
     public void setHasTotal(String hasTotal) {
         this.hasTotal = hasTotal;
     }
 
     /**
-     * the population that is observed to have the frequency
+     * 
      * (Required)
      * 
      */
@@ -126,7 +137,7 @@ public class VariantToPopulationAssociation {
     }
 
     /**
-     * the population that is observed to have the frequency
+     * 
      * (Required)
      * 
      */
@@ -136,7 +147,7 @@ public class VariantToPopulationAssociation {
     }
 
     /**
-     * an allele that has a certain frequency in a given population
+     * 
      * (Required)
      * 
      */
@@ -146,7 +157,7 @@ public class VariantToPopulationAssociation {
     }
 
     /**
-     * an allele that has a certain frequency in a given population
+     * 
      * (Required)
      * 
      */
@@ -157,12 +168,12 @@ public class VariantToPopulationAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasCount", hasCount).append("hasQuotient", hasQuotient).append("hasTotal", hasTotal).append("object", object).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("frequencyQualifier", frequencyQualifier).append("hasCount", hasCount).append("hasPercentage", hasPercentage).append("hasQuotient", hasQuotient).append("hasTotal", hasTotal).append("object", object).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasCount).append(hasQuotient).append(hasTotal).append(subject).append(object).toHashCode();
+        return new HashCodeBuilder().append(hasPercentage).append(hasQuotient).append(subject).append(frequencyQualifier).append(hasCount).append(hasTotal).append(object).toHashCode();
     }
 
     @Override
@@ -174,7 +185,7 @@ public class VariantToPopulationAssociation {
             return false;
         }
         VariantToPopulationAssociation rhs = ((VariantToPopulationAssociation) other);
-        return new EqualsBuilder().append(hasCount, rhs.hasCount).append(hasQuotient, rhs.hasQuotient).append(hasTotal, rhs.hasTotal).append(subject, rhs.subject).append(object, rhs.object).isEquals();
+        return new EqualsBuilder().append(hasPercentage, rhs.hasPercentage).append(hasQuotient, rhs.hasQuotient).append(subject, rhs.subject).append(frequencyQualifier, rhs.frequencyQualifier).append(hasCount, rhs.hasCount).append(hasTotal, rhs.hasTotal).append(object, rhs.object).isEquals();
     }
 
 }

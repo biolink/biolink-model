@@ -3,34 +3,55 @@
 
 
 
-URI: [http://w3id.org/biolink/vocab/FrequencyQuantifier](http://w3id.org/biolink/vocab/FrequencyQuantifier)
+URI: [biolink:FrequencyQuantifier](https://w3id.org/biolink/vocab/FrequencyQuantifier)
 
-![img](images/FrequencyQuantifier.png)
-## Mappings
-
-## Inheritance
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[VariantToPopulationAssociation]uses%20-.->\[FrequencyQuantifier|has_count:integer%20%3F;has_total:integer%20%3F;has_quotient:double%20%3F;has_percentage:double%20%3F],%20\[RelationshipQuantifier]^-\[FrequencyQuantifier])
+## Parents
 
  *  is_a: [RelationshipQuantifier](RelationshipQuantifier.md)
-## Children
+## Mixin for
 
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) (mixin)  - An association between a variant and a population, where the variant has particular frequency in the population
-## Used in
+## Referenced by class
 
-## Fields
+## Attributes
 
- * [has count](has_count.md)
+### Own
+
+ * [has count](has_count.md)  <sub>OPT</sub>
     * Description: number of things with a particular property
-    * range: **integer**
-    * __Local__
- * [has percentage](has_percentage.md)
+    * range: [Integer](Integer.md)
+ * [has percentage](has_percentage.md)  <sub>OPT</sub>
     * Description: equivalent to has quotient multiplied by 100
-    * range: **double**
-    * __Local__
- * [has quotient](has_quotient.md)
-    * Description: A grouping for any property that holds between a node and a value
-    * range: **double**
-    * __Local__
- * [has total](has_total.md)
+    * range: [Double](Double.md)
+ * [has quotient](has_quotient.md)  <sub>OPT</sub>
+    * range: [Double](Double.md)
+ * [has total](has_total.md)  <sub>OPT</sub>
     * Description: total number of things in a particular reference set
-    * range: **integer**
-    * __Local__
+    * range: [Integer](Integer.md)
+### Inherited from frequency quantifier:
+
+ * [has count](has_count.md)  <sub>OPT</sub>
+    * Description: number of things with a particular property
+    * range: [Integer](Integer.md)
+ * [has total](has_total.md)  <sub>OPT</sub>
+    * Description: total number of things in a particular reference set
+    * range: [Integer](Integer.md)
+ * [has quotient](has_quotient.md)  <sub>OPT</sub>
+    * range: [Double](Double.md)
+ * [has percentage](has_percentage.md)  <sub>OPT</sub>
+    * Description: equivalent to has quotient multiplied by 100
+    * range: [Double](Double.md)
+### Domain for slot:
+
+ * [has count](has_count.md)  <sub>OPT</sub>
+    * Description: number of things with a particular property
+    * range: [Integer](Integer.md)
+ * [has percentage](has_percentage.md)  <sub>OPT</sub>
+    * Description: equivalent to has quotient multiplied by 100
+    * range: [Double](Double.md)
+ * [has quotient](has_quotient.md)  <sub>OPT</sub>
+    * range: [Double](Double.md)
+ * [has total](has_total.md)  <sub>OPT</sub>
+    * Description: total number of things in a particular reference set
+    * range: [Integer](Integer.md)

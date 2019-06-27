@@ -1,19 +1,17 @@
 # Slot: relation
 
 
-the relationship type by which a subject is connected to an object in an association
 
-URI: [http://w3id.org/biolink/vocab/genotype_to_genotype_part_association_relation](slot_uri)
-## Mappings
 
+URI: [biolink:genotype_to_genotype_part_association_relation](https://w3id.org/biolink/vocab/genotype_to_genotype_part_association_relation)
 ## Domain and Range
 
-[GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) -> [IriType](IriType.md)
-## Inheritance
+[GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+## Parents
 
  *  is_a: [relation](relation.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)
+ * [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)

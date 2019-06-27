@@ -1,20 +1,17 @@
 # Slot: relation
 
 
-expression relationship
 
-URI: [http://w3id.org/biolink/vocab/gene_to_expression_site_association_relation](slot_uri)
-## Mappings
 
+URI: [biolink:gene_to_expression_site_association_relation](https://w3id.org/biolink/vocab/gene_to_expression_site_association_relation)
 ## Domain and Range
 
-[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) -> [IriType](IriType.md)
-## Inheritance
+[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+## Parents
 
  *  is_a: [relation](relation.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
- *  reifies: [expressed in](expressed_in.md) *subsets*: (translator_minimal)
+ * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)

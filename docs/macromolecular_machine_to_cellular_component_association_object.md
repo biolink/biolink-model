@@ -1,19 +1,17 @@
 # Slot: object
 
 
-class describing the activity, process or localization of the gene product
 
-URI: [http://w3id.org/biolink/vocab/macromolecular_machine_to_cellular_component_association_object](slot_uri)
-## Mappings
 
+URI: [biolink:macromolecular_machine_to_cellular_component_association_object](https://w3id.org/biolink/vocab/macromolecular_machine_to_cellular_component_association_object)
 ## Domain and Range
 
-[MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) -> [CellularComponent](CellularComponent.md)
-## Inheritance
+[MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md) ->  <sub>REQ</sub> [CellularComponent](CellularComponent.md)
+## Parents
 
- *  is_a: [functional association.object](functional_association_object.md)
+ *  is_a: [object](functional_association_object.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md)
+ * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md)

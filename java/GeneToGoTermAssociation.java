@@ -1,6 +1,5 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -21,24 +20,22 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class GeneToGoTermAssociation {
 
     /**
-     * class describing the activity, process or localization of the gene product
+     * 
      * (Required)
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("class describing the activity, process or localization of the gene product")
     private String object;
     /**
-     * gene, product or macromolecular complex that has the function associated with the GO term
+     * 
      * (Required)
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("gene, product or macromolecular complex that has the function associated with the GO term")
     private String subject;
 
     /**
-     * class describing the activity, process or localization of the gene product
+     * 
      * (Required)
      * 
      */
@@ -48,7 +45,7 @@ public class GeneToGoTermAssociation {
     }
 
     /**
-     * class describing the activity, process or localization of the gene product
+     * 
      * (Required)
      * 
      */
@@ -58,7 +55,7 @@ public class GeneToGoTermAssociation {
     }
 
     /**
-     * gene, product or macromolecular complex that has the function associated with the GO term
+     * 
      * (Required)
      * 
      */
@@ -68,7 +65,7 @@ public class GeneToGoTermAssociation {
     }
 
     /**
-     * gene, product or macromolecular complex that has the function associated with the GO term
+     * 
      * (Required)
      * 
      */

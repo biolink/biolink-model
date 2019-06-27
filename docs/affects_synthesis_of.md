@@ -3,19 +3,42 @@
 
 holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other
 
-URI: [http://w3id.org/biolink/vocab/affects_synthesis_of](slot_uri)
-## Mappings
-
+URI: [biolink:affects_synthesis_of](https://w3id.org/biolink/vocab/affects_synthesis_of)
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) -> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+## Parents
 
- *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
+ *  is_a: [affects](affects.md)
 ## Children
 
- *  child: [decreases synthesis of](decreases_synthesis_of.md) *subsets*: (translator_minimal)
- *  child: [increases synthesis of](increases_synthesis_of.md) *subsets*: (translator_minimal)
-## Used in
+ *  [decreases synthesis of](decreases_synthesis_of.md)
+ *  [increases synthesis of](increases_synthesis_of.md)
+## Used by
 
- *  usage: [MolecularEntity](MolecularEntity.md)
+ * [RNAProduct](RNAProduct.md)
+ * [RNAProductIsoform](RNAProductIsoform.md)
+ * [Carbohydrate](Carbohydrate.md)
+ * [ChemicalSubstance](ChemicalSubstance.md)
+ * [CodingSequence](CodingSequence.md)
+ * [Drug](Drug.md)
+ * [Exon](Exon.md)
+ * [Gene](Gene.md)
+ * [GeneFamily](GeneFamily.md)
+ * [GeneOrGeneProduct](GeneOrGeneProduct.md)
+ * [GeneProduct](GeneProduct.md)
+ * [GeneProductIsoform](GeneProductIsoform.md)
+ * [Genome](Genome.md)
+ * [GenomicEntity](GenomicEntity.md)
+ * [Genotype](Genotype.md)
+ * [Haplotype](Haplotype.md)
+ * [MacromolecularComplex](MacromolecularComplex.md)
+ * [MacromolecularMachine](MacromolecularMachine.md)
+ * [Metabolite](Metabolite.md)
+ * [MicroRNA](MicroRNA.md)
+ * [MolecularEntity](MolecularEntity.md)
+ * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+ * [Protein](Protein.md)
+ * [ProteinIsoform](ProteinIsoform.md)
+ * [SequenceVariant](SequenceVariant.md)
+ * [Transcript](Transcript.md)

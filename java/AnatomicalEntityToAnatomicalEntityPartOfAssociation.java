@@ -1,6 +1,5 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -22,32 +21,29 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class AnatomicalEntityToAnatomicalEntityPartOfAssociation {
 
     /**
-     * the whole
+     * 
      * (Required)
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("the whole")
     private String object;
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * 
      * (Required)
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
     private String relation;
     /**
-     * the part
+     * 
      * (Required)
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("the part")
     private String subject;
 
     /**
-     * the whole
+     * 
      * (Required)
      * 
      */
@@ -57,7 +53,7 @@ public class AnatomicalEntityToAnatomicalEntityPartOfAssociation {
     }
 
     /**
-     * the whole
+     * 
      * (Required)
      * 
      */
@@ -67,7 +63,7 @@ public class AnatomicalEntityToAnatomicalEntityPartOfAssociation {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * 
      * (Required)
      * 
      */
@@ -77,7 +73,7 @@ public class AnatomicalEntityToAnatomicalEntityPartOfAssociation {
     }
 
     /**
-     * the relationship type by which a subject is connected to an object in an association
+     * 
      * (Required)
      * 
      */
@@ -87,7 +83,7 @@ public class AnatomicalEntityToAnatomicalEntityPartOfAssociation {
     }
 
     /**
-     * the part
+     * 
      * (Required)
      * 
      */
@@ -97,7 +93,7 @@ public class AnatomicalEntityToAnatomicalEntityPartOfAssociation {
     }
 
     /**
-     * the part
+     * 
      * (Required)
      * 
      */

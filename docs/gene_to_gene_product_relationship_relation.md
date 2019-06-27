@@ -1,20 +1,17 @@
 # Slot: relation
 
 
-the relationship type by which a subject is connected to an object in an association
 
-URI: [http://w3id.org/biolink/vocab/gene_to_gene_product_relationship_relation](slot_uri)
-## Mappings
 
+URI: [biolink:gene_to_gene_product_relationship_relation](https://w3id.org/biolink/vocab/gene_to_gene_product_relationship_relation)
 ## Domain and Range
 
-[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) -> [IriType](IriType.md)
-## Inheritance
+[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+## Parents
 
  *  is_a: [relation](relation.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)
- *  reifies: [has gene product](has_gene_product.md) *subsets*: (translator_minimal)
+ * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)

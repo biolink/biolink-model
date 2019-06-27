@@ -1,4 +1,5 @@
 Browse the contrib models:
 
- * [https://biolink.github.io/biolink-model](https://biolink.github.io/biolink-model)
-
+ * [Gene Ontology](https://biolink.github.io/contrib/go/docs/index.html)
+ * [Monarch](https://biolink.github.io/contrib/monarch/docs/index.html)
+ * [Translator](https://biolink.github.io/translator/docs/index.html)

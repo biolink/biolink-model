@@ -1,19 +1,17 @@
 # Slot: has quotient
 
 
-frequency of allele in population, expressed as a number with allele divided by number in reference population, aka allele frequency
 
-URI: [http://w3id.org/biolink/vocab/variant_to_population_association_has_quotient](slot_uri)
-## Mappings
 
+URI: [biolink:variant_to_population_association_has_quotient](https://w3id.org/biolink/vocab/variant_to_population_association_has_quotient)
 ## Domain and Range
 
-[VariantToPopulationAssociation](VariantToPopulationAssociation.md) -> **double**
-## Inheritance
+[VariantToPopulationAssociation](VariantToPopulationAssociation.md) ->  <sub>OPT</sub> [Double](Double.md)
+## Parents
 
  *  is_a: [has quotient](has_quotient.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
+ * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

@@ -3,19 +3,15 @@
 
 holds between a process and a material entity or site within which the process occurs
 
-URI: [http://w3id.org/biolink/vocab/occurs_in](slot_uri)
-## Mappings
-
- * [BFO:0000066](http://purl.obolibrary.org/obo/BFO_0000066)
- * [SEMMEDDB:OCCURS_IN](http://purl.obolibrary.org/obo/SEMMEDDB_OCCURS_IN)
- * [SEMMEDDB:PROCESS_OF](http://purl.obolibrary.org/obo/SEMMEDDB_PROCESS_OF)
+URI: [biolink:occurs_in](https://w3id.org/biolink/vocab/occurs_in)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
-## Inheritance
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [NamedThing](NamedThing.md)

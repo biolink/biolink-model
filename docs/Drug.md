@@ -3,16 +3,14 @@
 
 
 
-URI: [http://w3id.org/biolink/vocab/drug](slot_uri)
-## Mappings
-
+URI: [biolink:drug](https://w3id.org/biolink/vocab/drug)
 ## Domain and Range
 
-[DrugExposure](DrugExposure.md) -> [ChemicalSubstance](ChemicalSubstance.md)
-## Inheritance
+[DrugExposure](DrugExposure.md) ->  <sub>1..*</sub> [ChemicalSubstance](ChemicalSubstance.md)
+## Parents
 
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [DrugExposure](DrugExposure.md)
+ * [DrugExposure](DrugExposure.md)

@@ -3,18 +3,17 @@
 
 TODO
 
-URI: [http://w3id.org/biolink/vocab/interbase_coordinate](slot_uri)
-## Mappings
-
+URI: [biolink:interbase_coordinate](https://w3id.org/biolink/vocab/interbase_coordinate)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> **string**
-## Inheritance
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](String.md)
+## Parents
 
  *  is_a: [node property](node_property.md)
 ## Children
 
- *  child: [end interbase coordinate](end_interbase_coordinate.md)
- *  child: [start interbase coordinate](start_interbase_coordinate.md)
-## Used in
+ *  [end interbase coordinate](end_interbase_coordinate.md)
+ *  [start interbase coordinate](start_interbase_coordinate.md)
+## Used by
 
+ * [NamedThing](NamedThing.md)

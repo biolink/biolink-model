@@ -3,18 +3,16 @@
 
 holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other
 
-URI: [http://w3id.org/biolink/vocab/contributes_to](slot_uri)
-## Mappings
-
- * [RO:0002326](http://purl.obolibrary.org/obo/RO_0002326)
+URI: [biolink:contributes_to](https://w3id.org/biolink/vocab/contributes_to)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
-## Inheritance
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [causes](causes.md) *subsets*: (translator_minimal)
-## Used in
+ *  [causes](causes.md)
+## Used by
 
+ * [NamedThing](NamedThing.md)

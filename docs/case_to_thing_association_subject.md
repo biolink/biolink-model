@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-the case (e.g. patient) that has the property
 
-URI: [http://w3id.org/biolink/vocab/case_to_thing_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:case_to_thing_association_subject](https://w3id.org/biolink/vocab/case_to_thing_association_subject)
 ## Domain and Range
 
-[CaseToThingAssociation](CaseToThingAssociation.md) -> [Case](Case.md)
-## Inheritance
+[CaseToThingAssociation](CaseToThingAssociation.md) ->  <sub>REQ</sub> [Case](Case.md)
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [CaseToThingAssociation](CaseToThingAssociation.md)
+ * [CaseToThingAssociation](CaseToThingAssociation.md)

@@ -3,18 +3,16 @@
 
 
 
-URI: [http://w3id.org/biolink/vocab/SpecificityQuantifier](http://w3id.org/biolink/vocab/SpecificityQuantifier)
+URI: [biolink:SpecificityQuantifier](https://w3id.org/biolink/vocab/SpecificityQuantifier)
 
-![img](images/SpecificityQuantifier.png)
-## Mappings
-
-## Inheritance
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SpecificityQuantifier]^-\[PathognomonicityQuantifier],%20\[RelationshipQuantifier]^-\[SpecificityQuantifier])
+## Parents
 
  *  is_a: [RelationshipQuantifier](RelationshipQuantifier.md)
 ## Children
 
  * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
-## Used in
+## Referenced by class
 
-## Fields
+## Attributes
 

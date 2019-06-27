@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -25,14 +27,14 @@ public class OntologyClass {
      */
     @JsonProperty("subclass_of")
     @JsonPropertyDescription("holds between two classes where the domain class is a specialization of the range class")
-    private String subclassOf;
+    private List<String> subclassOf = new ArrayList<String>();
 
     /**
      * holds between two classes where the domain class is a specialization of the range class
      * 
      */
     @JsonProperty("subclass_of")
-    public String getSubclassOf() {
+    public List<String> getSubclassOf() {
         return subclassOf;
     }
 
@@ -41,7 +43,7 @@ public class OntologyClass {
      * 
      */
     @JsonProperty("subclass_of")
-    public void setSubclassOf(String subclassOf) {
+    public void setSubclassOf(List<String> subclassOf) {
         this.subclassOf = subclassOf;
     }
 

@@ -3,27 +3,31 @@
 
 person, group, organization or project that provides a piece of information
 
-URI: [http://w3id.org/biolink/vocab/Provider](http://w3id.org/biolink/vocab/Provider)
+URI: [biolink:Provider](https://w3id.org/biolink/vocab/Provider)
 
-![img](images/Provider.png)
-## Mappings
-
- * [UMLSSG:ORGA](http://purl.obolibrary.org/obo/UMLSSG_ORGA)
- * [UMLSSC:T092](http://purl.obolibrary.org/obo/UMLSSC_T092)
- * [UMLSST:orgt](http://purl.obolibrary.org/obo/UMLSST_orgt)
- * [UMLSSC:T093](http://purl.obolibrary.org/obo/UMLSSC_T093)
- * [UMLSST:hcro](http://purl.obolibrary.org/obo/UMLSST_hcro)
- * [UMLSSC:T094](http://purl.obolibrary.org/obo/UMLSSC_T094)
- * [UMLSST:pros](http://purl.obolibrary.org/obo/UMLSST_pros)
- * [UMLSSC:T095](http://purl.obolibrary.org/obo/UMLSSC_T095)
- * [UMLSST:shro](http://purl.obolibrary.org/obo/UMLSST_shro)
-## Inheritance
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]-%20provided%20by%200..1>\[Provider|id(i):identifier_type;name(i):label_type%20%3F;category(i):iri_type%20*],%20\[AdministrativeEntity]^-\[Provider])
+## Parents
 
  *  is_a: [AdministrativeEntity](AdministrativeEntity.md)
-## Children
+## Referenced by class
 
-## Used in
+ *  **[Association](Association.md)** *[provided by](provided_by.md)*  <sub>OPT</sub>  **[Provider](Provider.md)**
+## Attributes
 
- *  class: **[Association](Association.md)** *[provided by](provided_by.md)* **[Provider](Provider.md)**
-## Fields
+### Inherited from named thing:
 
+ * [id](id.md)  <sub>REQ</sub>
+    * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+    * range: [IdentifierType](IdentifierType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)
+ * [name](name.md)  <sub>OPT</sub>
+    * Description: A human-readable name for a thing
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)
+ * [category](category.md)  <sub>0..*</sub>
+    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+    * range: [IriType](IriType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)

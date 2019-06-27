@@ -3,17 +3,13 @@
 
 any grouping of multiple genes or gene products
 
-URI: [http://w3id.org/biolink/vocab/GeneGrouping](http://w3id.org/biolink/vocab/GeneGrouping)
+URI: [biolink:GeneGrouping](https://w3id.org/biolink/vocab/GeneGrouping)
 
-![img](images/GeneGrouping.png)
-## Mappings
-
-## Inheritance
-
-## Children
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneFamily]uses%20-.->\[GeneGrouping])
+## Mixin for
 
  * [GeneFamily](GeneFamily.md) (mixin)  - any grouping of multiple genes or gene products related by common descent
-## Used in
+## Referenced by class
 
-## Fields
+## Attributes
 

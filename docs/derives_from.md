@@ -3,17 +3,15 @@
 
 holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
 
-URI: [http://w3id.org/biolink/vocab/derives_from](slot_uri)
-## Mappings
-
- * [RO:0001000](http://purl.obolibrary.org/obo/RO_0001000)
+URI: [biolink:derives_from](https://w3id.org/biolink/vocab/derives_from)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
-## Inheritance
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [NamedThing](NamedThing.md)

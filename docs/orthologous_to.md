@@ -3,18 +3,15 @@
 
 a homology relationship between entities (typically genes) that diverged after a speciation event.
 
-URI: [http://w3id.org/biolink/vocab/orthologous_to](slot_uri)
-## Mappings
-
- * [RO:HOM0000017](http://purl.obolibrary.org/obo/RO_HOM0000017)
- * [WD:P684](http://purl.obolibrary.org/obo/WD_P684)
+URI: [biolink:orthologous_to](https://w3id.org/biolink/vocab/orthologous_to)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
-## Inheritance
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+## Parents
 
- *  is_a: [homologous to](homologous_to.md) *subsets*: (translator_minimal)
+ *  is_a: [homologous to](homologous_to.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [NamedThing](NamedThing.md)

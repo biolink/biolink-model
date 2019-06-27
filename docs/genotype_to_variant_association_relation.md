@@ -1,19 +1,17 @@
 # Slot: relation
 
 
-the relationship type used to connect genotype to gene
 
-URI: [http://w3id.org/biolink/vocab/genotype_to_variant_association_relation](slot_uri)
-## Mappings
 
+URI: [biolink:genotype_to_variant_association_relation](https://w3id.org/biolink/vocab/genotype_to_variant_association_relation)
 ## Domain and Range
 
-[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) -> [IriType](IriType.md)
-## Inheritance
+[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+## Parents
 
  *  is_a: [relation](relation.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)
+ * [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)

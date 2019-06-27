@@ -3,19 +3,15 @@
 
 holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other
 
-URI: [http://w3id.org/biolink/vocab/causes](slot_uri)
-## Mappings
-
- * [RO:0002410](http://purl.obolibrary.org/obo/RO_0002410)
- * [SEMMEDDB:CAUSES](http://purl.obolibrary.org/obo/SEMMEDDB_CAUSES)
- * [WD:P1542](http://purl.obolibrary.org/obo/WD_P1542)
+URI: [biolink:causes](https://w3id.org/biolink/vocab/causes)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
-## Inheritance
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+## Parents
 
- *  is_a: [contributes to](contributes_to.md) *subsets*: (translator_minimal)
+ *  is_a: [contributes to](contributes_to.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [NamedThing](NamedThing.md)

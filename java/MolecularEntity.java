@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
@@ -48,6 +50,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "decreases_synthesis_of",
     "decreases_transport_of",
     "decreases_uptake_of",
+    "in_taxon",
     "increases_abundance_of",
     "increases_activity_of",
     "increases_degradation_of",
@@ -65,6 +68,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "increases_transport_of",
     "increases_uptake_of",
     "molecularly_interacts_with",
+    "negatively_regulates_entity_to_entity",
+    "positively_regulates_entity_to_entity",
     "regulates_entity_to_entity"
 })
 public class MolecularEntity {
@@ -75,364 +80,365 @@ public class MolecularEntity {
      */
     @JsonProperty("affects_abundance_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest")
-    private String affectsAbundanceOf;
+    private List<String> affectsAbundanceOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest
      * 
      */
     @JsonProperty("affects_activity_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one changes the activity of the other within a system of interest")
-    private String affectsActivityOf;
+    private List<String> affectsActivityOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest
      * 
      */
     @JsonProperty("affects_degradation_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one impacts the rate of degradation of the other within a system of interest")
-    private String affectsDegradationOf;
+    private List<String> affectsDegradationOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest
      * 
      */
     @JsonProperty("affects_expression_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest")
-    private String affectsExpressionOf;
+    private List<String> affectsExpressionOf = new ArrayList<String>();
     /**
-     * holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other 
+     * holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other
      * 
      */
     @JsonProperty("affects_folding_of")
-    @JsonPropertyDescription("holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other ")
-    private String affectsFoldingOf;
+    @JsonPropertyDescription("holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other")
+    private List<String> affectsFoldingOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest
      * 
      */
     @JsonProperty("affects_localization_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one changes the localization of the other within a system of interest")
-    private String affectsLocalizationOf;
+    private List<String> affectsLocalizationOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest
      * 
      */
     @JsonProperty("affects_metabolic_processing_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one impacts the metabolic processing of the other within a system of interest")
-    private String affectsMetabolicProcessingOf;
+    private List<String> affectsMetabolicProcessingOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
      * 
      */
     @JsonProperty("affects_molecular_modification_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one leads changes in the molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)")
-    private String affectsMolecularModificationOf;
+    private List<String> affectsMolecularModificationOf = new ArrayList<String>();
     /**
      * holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest
      * 
      */
     @JsonProperty("affects_mutation_rate_of")
     @JsonPropertyDescription("holds between a molecular entity and a genomic entity where the action or effect of the molecular entity impacts the rate of mutation of the genomic entity within a system of interest")
-    private String affectsMutationRateOf;
+    private List<String> affectsMutationRateOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
      * 
      */
     @JsonProperty("affects_response_to")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one impacts the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other")
-    private String affectsResponseTo;
+    private List<String> affectsResponseTo = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ
      * 
      */
     @JsonProperty("affects_secretion_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one impacts the rate of secretion of the other out of a cell, gland, or organ")
-    private String affectsSecretionOf;
+    private List<String> affectsSecretionOf = new ArrayList<String>();
     /**
      * holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA
      * 
      */
     @JsonProperty("affects_splicing_of")
     @JsonPropertyDescription("holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA")
-    private String affectsSplicingOf;
+    private List<String> affectsSplicingOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest
      * 
      */
     @JsonProperty("affects_stability_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one impacts the stability of the other within a system of interest")
-    private String affectsStabilityOf;
+    private List<String> affectsStabilityOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other
      * 
      */
     @JsonProperty("affects_synthesis_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one impacts the rate of chemical synthesis of the other")
-    private String affectsSynthesisOf;
+    private List<String> affectsSynthesisOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest
      * 
      */
     @JsonProperty("affects_transport_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one impacts the rate of transport of the other across some boundary in a system of interest")
-    private String affectsTransportOf;
+    private List<String> affectsTransportOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ
      * 
      */
     @JsonProperty("affects_uptake_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one impacts the rate of uptake of the other into of a cell, gland, or organ")
-    private String affectsUptakeOf;
+    private List<String> affectsUptakeOf = new ArrayList<String>();
     /**
      * holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
      * 
      */
     @JsonProperty("biomarker_for")
     @JsonPropertyDescription("holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.")
-    private String biomarkerFor;
+    private List<String> biomarkerFor = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest
      * 
      */
     @JsonProperty("decreases_abundance_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the amount of the other within a system of interest")
-    private String decreasesAbundanceOf;
+    private List<String> decreasesAbundanceOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest
      * 
      */
     @JsonProperty("decreases_activity_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the activity of the other within a system of interest")
-    private String decreasesActivityOf;
+    private List<String> decreasesActivityOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
      * 
      */
     @JsonProperty("decreases_degradation_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest")
-    private String decreasesDegradationOf;
+    private List<String> decreasesDegradationOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest
      * 
      */
     @JsonProperty("decreases_expression_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the level of expression of the other within a system of interest")
-    private String decreasesExpressionOf;
+    private List<String> decreasesExpressionOf = new ArrayList<String>();
     /**
-     * holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other 
+     * holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other
      * 
      */
     @JsonProperty("decreases_folding_of")
-    @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other ")
-    private String decreasesFoldingOf;
+    @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other")
+    private List<String> decreasesFoldingOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest
      * 
      */
     @JsonProperty("decreases_localization_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the proper localization of the other within a system of interest")
-    private String decreasesLocalizationOf;
+    private List<String> decreasesLocalizationOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest
      * 
      */
     @JsonProperty("decreases_metabolic_processing_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the rate of metabolic processing of the other within a system of interest")
-    private String decreasesMetabolicProcessingOf;
+    private List<String> decreasesMetabolicProcessingOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
      * 
      */
     @JsonProperty("decreases_molecular_modification_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)")
-    private String decreasesMolecularModificationOf;
+    private List<String> decreasesMolecularModificationOf = new ArrayList<String>();
     /**
      * holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest
      * 
      */
     @JsonProperty("decreases_mutation_rate_of")
     @JsonPropertyDescription("holds between a molecular entity and a genomic entity where the action or effect of the molecular entity decreases the rate of mutation of the genomic entity within a system of interest")
-    private String decreasesMutationRateOf;
+    private List<String> decreasesMutationRateOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
      * 
      */
     @JsonProperty("decreases_response_to")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other")
-    private String decreasesResponseTo;
+    private List<String> decreasesResponseTo = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
      * 
      */
     @JsonProperty("decreases_secretion_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ")
-    private String decreasesSecretionOf;
+    private List<String> decreasesSecretionOf = new ArrayList<String>();
     /**
      * holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA
      * 
      */
     @JsonProperty("decreases_splicing_of")
     @JsonPropertyDescription("holds between a molecular entity and an mRNA where the action or effect of the molecular entity decreases the proper splicing of the mRNA")
-    private String decreasesSplicingOf;
+    private List<String> decreasesSplicingOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest
      * 
      */
     @JsonProperty("decreases_stability_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the stability of the other within a system of interest")
-    private String decreasesStabilityOf;
+    private List<String> decreasesStabilityOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other
      * 
      */
     @JsonProperty("decreases_synthesis_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the rate of chemical synthesis of the other")
-    private String decreasesSynthesisOf;
+    private List<String> decreasesSynthesisOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest
      * 
      */
     @JsonProperty("decreases_transport_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the rate of transport of the other across some boundary in a system of interest")
-    private String decreasesTransportOf;
+    private List<String> decreasesTransportOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ
      * 
      */
     @JsonProperty("decreases_uptake_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one decreases the rate of uptake of the other into of a cell, gland, or organ")
-    private String decreasesUptakeOf;
+    private List<String> decreasesUptakeOf = new ArrayList<String>();
+    /**
+     * connects a thing to a class representing a taxon
+     * 
+     */
+    @JsonProperty("in_taxon")
+    @JsonPropertyDescription("connects a thing to a class representing a taxon")
+    private List<String> inTaxon = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest
      * 
      */
     @JsonProperty("increases_abundance_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the amount of the other within a system of interest")
-    private String increasesAbundanceOf;
+    private List<String> increasesAbundanceOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest
      * 
      */
     @JsonProperty("increases_activity_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest")
-    private String increasesActivityOf;
+    private List<String> increasesActivityOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest
      * 
      */
     @JsonProperty("increases_degradation_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the rate of degradation of the other within a system of interest")
-    private String increasesDegradationOf;
+    private List<String> increasesDegradationOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest
      * 
      */
     @JsonProperty("increases_expression_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the level of expression of the other within a system of interest")
-    private String increasesExpressionOf;
+    private List<String> increasesExpressionOf = new ArrayList<String>();
     /**
-     * holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other 
+     * holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other
      * 
      */
     @JsonProperty("increases_folding_of")
-    @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other ")
-    private String increasesFoldingOf;
+    @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other")
+    private List<String> increasesFoldingOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest
      * 
      */
     @JsonProperty("increases_localization_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the proper localization of the other within a system of interest")
-    private String increasesLocalizationOf;
+    private List<String> increasesLocalizationOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest
      * 
      */
     @JsonProperty("increases_metabolic_processing_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the rate of metabolic processing of the other within a system of interest")
-    private String increasesMetabolicProcessingOf;
+    private List<String> increasesMetabolicProcessingOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
      * 
      */
     @JsonProperty("increases_molecular_modification_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one leads to increased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)")
-    private String increasesMolecularModificationOf;
+    private List<String> increasesMolecularModificationOf = new ArrayList<String>();
     /**
      * holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest
      * 
      */
     @JsonProperty("increases_mutation_rate_of")
     @JsonPropertyDescription("holds between a molecular entity and a genomic entity where the action or effect of the molecular entity increases the rate of mutation of the genomic entity within a system of interest")
-    private String increasesMutationRateOf;
+    private List<String> increasesMutationRateOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
      * 
      */
     @JsonProperty("increases_response_to")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other")
-    private String increasesResponseTo;
+    private List<String> increasesResponseTo = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ
      * 
      */
     @JsonProperty("increases_secretion_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the rate of secretion of the other out of a cell, gland, or organ")
-    private String increasesSecretionOf;
+    private List<String> increasesSecretionOf = new ArrayList<String>();
     /**
      * holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA
      * 
      */
     @JsonProperty("increases_splicing_of")
     @JsonPropertyDescription("holds between a molecular entity and an mRNA where the action or effect of the molecular entity increases the proper splicing of the mRNA")
-    private String increasesSplicingOf;
+    private List<String> increasesSplicingOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest
      * 
      */
     @JsonProperty("increases_stability_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the stability of the other within a system of interest")
-    private String increasesStabilityOf;
+    private List<String> increasesStabilityOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other
      * 
      */
     @JsonProperty("increases_synthesis_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the rate of chemical synthesis of the other")
-    private String increasesSynthesisOf;
+    private List<String> increasesSynthesisOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest
      * 
      */
     @JsonProperty("increases_transport_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the rate of transport of the other across some boundary in a system of interest")
-    private String increasesTransportOf;
+    private List<String> increasesTransportOf = new ArrayList<String>();
     /**
      * holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
      * 
      */
     @JsonProperty("increases_uptake_of")
     @JsonPropertyDescription("holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ")
-    private String increasesUptakeOf;
-    /**
-     * holds between two entities that make physical contact as part of some interaction
-     * 
-     */
+    private List<String> increasesUptakeOf = new ArrayList<String>();
     @JsonProperty("molecularly_interacts_with")
-    @JsonPropertyDescription("holds between two entities that make physical contact as part of some interaction")
-    private String molecularlyInteractsWith;
-    /**
-     * describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
-     * 
-     */
+    private List<String> molecularlyInteractsWith = new ArrayList<String>();
+    @JsonProperty("negatively_regulates_entity_to_entity")
+    private List<String> negativelyRegulatesEntityToEntity = new ArrayList<String>();
+    @JsonProperty("positively_regulates_entity_to_entity")
+    private List<String> positivelyRegulatesEntityToEntity = new ArrayList<String>();
     @JsonProperty("regulates_entity_to_entity")
-    @JsonPropertyDescription("describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.")
-    private String regulatesEntityToEntity;
+    private List<String> regulatesEntityToEntity = new ArrayList<String>();
 
     /**
      * holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest
      * 
      */
     @JsonProperty("affects_abundance_of")
-    public String getAffectsAbundanceOf() {
+    public List<String> getAffectsAbundanceOf() {
         return affectsAbundanceOf;
     }
 
@@ -441,7 +447,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_abundance_of")
-    public void setAffectsAbundanceOf(String affectsAbundanceOf) {
+    public void setAffectsAbundanceOf(List<String> affectsAbundanceOf) {
         this.affectsAbundanceOf = affectsAbundanceOf;
     }
 
@@ -450,7 +456,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_activity_of")
-    public String getAffectsActivityOf() {
+    public List<String> getAffectsActivityOf() {
         return affectsActivityOf;
     }
 
@@ -459,7 +465,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_activity_of")
-    public void setAffectsActivityOf(String affectsActivityOf) {
+    public void setAffectsActivityOf(List<String> affectsActivityOf) {
         this.affectsActivityOf = affectsActivityOf;
     }
 
@@ -468,7 +474,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_degradation_of")
-    public String getAffectsDegradationOf() {
+    public List<String> getAffectsDegradationOf() {
         return affectsDegradationOf;
     }
 
@@ -477,7 +483,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_degradation_of")
-    public void setAffectsDegradationOf(String affectsDegradationOf) {
+    public void setAffectsDegradationOf(List<String> affectsDegradationOf) {
         this.affectsDegradationOf = affectsDegradationOf;
     }
 
@@ -486,7 +492,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_expression_of")
-    public String getAffectsExpressionOf() {
+    public List<String> getAffectsExpressionOf() {
         return affectsExpressionOf;
     }
 
@@ -495,25 +501,25 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_expression_of")
-    public void setAffectsExpressionOf(String affectsExpressionOf) {
+    public void setAffectsExpressionOf(List<String> affectsExpressionOf) {
         this.affectsExpressionOf = affectsExpressionOf;
     }
 
     /**
-     * holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other 
+     * holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other
      * 
      */
     @JsonProperty("affects_folding_of")
-    public String getAffectsFoldingOf() {
+    public List<String> getAffectsFoldingOf() {
         return affectsFoldingOf;
     }
 
     /**
-     * holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other 
+     * holds between two molecular entities where the action or effect of one changes the rate or quality of folding of the other
      * 
      */
     @JsonProperty("affects_folding_of")
-    public void setAffectsFoldingOf(String affectsFoldingOf) {
+    public void setAffectsFoldingOf(List<String> affectsFoldingOf) {
         this.affectsFoldingOf = affectsFoldingOf;
     }
 
@@ -522,7 +528,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_localization_of")
-    public String getAffectsLocalizationOf() {
+    public List<String> getAffectsLocalizationOf() {
         return affectsLocalizationOf;
     }
 
@@ -531,7 +537,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_localization_of")
-    public void setAffectsLocalizationOf(String affectsLocalizationOf) {
+    public void setAffectsLocalizationOf(List<String> affectsLocalizationOf) {
         this.affectsLocalizationOf = affectsLocalizationOf;
     }
 
@@ -540,7 +546,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_metabolic_processing_of")
-    public String getAffectsMetabolicProcessingOf() {
+    public List<String> getAffectsMetabolicProcessingOf() {
         return affectsMetabolicProcessingOf;
     }
 
@@ -549,7 +555,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_metabolic_processing_of")
-    public void setAffectsMetabolicProcessingOf(String affectsMetabolicProcessingOf) {
+    public void setAffectsMetabolicProcessingOf(List<String> affectsMetabolicProcessingOf) {
         this.affectsMetabolicProcessingOf = affectsMetabolicProcessingOf;
     }
 
@@ -558,7 +564,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_molecular_modification_of")
-    public String getAffectsMolecularModificationOf() {
+    public List<String> getAffectsMolecularModificationOf() {
         return affectsMolecularModificationOf;
     }
 
@@ -567,7 +573,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_molecular_modification_of")
-    public void setAffectsMolecularModificationOf(String affectsMolecularModificationOf) {
+    public void setAffectsMolecularModificationOf(List<String> affectsMolecularModificationOf) {
         this.affectsMolecularModificationOf = affectsMolecularModificationOf;
     }
 
@@ -576,7 +582,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_mutation_rate_of")
-    public String getAffectsMutationRateOf() {
+    public List<String> getAffectsMutationRateOf() {
         return affectsMutationRateOf;
     }
 
@@ -585,7 +591,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_mutation_rate_of")
-    public void setAffectsMutationRateOf(String affectsMutationRateOf) {
+    public void setAffectsMutationRateOf(List<String> affectsMutationRateOf) {
         this.affectsMutationRateOf = affectsMutationRateOf;
     }
 
@@ -594,7 +600,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_response_to")
-    public String getAffectsResponseTo() {
+    public List<String> getAffectsResponseTo() {
         return affectsResponseTo;
     }
 
@@ -603,7 +609,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_response_to")
-    public void setAffectsResponseTo(String affectsResponseTo) {
+    public void setAffectsResponseTo(List<String> affectsResponseTo) {
         this.affectsResponseTo = affectsResponseTo;
     }
 
@@ -612,7 +618,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_secretion_of")
-    public String getAffectsSecretionOf() {
+    public List<String> getAffectsSecretionOf() {
         return affectsSecretionOf;
     }
 
@@ -621,7 +627,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_secretion_of")
-    public void setAffectsSecretionOf(String affectsSecretionOf) {
+    public void setAffectsSecretionOf(List<String> affectsSecretionOf) {
         this.affectsSecretionOf = affectsSecretionOf;
     }
 
@@ -630,7 +636,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_splicing_of")
-    public String getAffectsSplicingOf() {
+    public List<String> getAffectsSplicingOf() {
         return affectsSplicingOf;
     }
 
@@ -639,7 +645,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_splicing_of")
-    public void setAffectsSplicingOf(String affectsSplicingOf) {
+    public void setAffectsSplicingOf(List<String> affectsSplicingOf) {
         this.affectsSplicingOf = affectsSplicingOf;
     }
 
@@ -648,7 +654,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_stability_of")
-    public String getAffectsStabilityOf() {
+    public List<String> getAffectsStabilityOf() {
         return affectsStabilityOf;
     }
 
@@ -657,7 +663,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_stability_of")
-    public void setAffectsStabilityOf(String affectsStabilityOf) {
+    public void setAffectsStabilityOf(List<String> affectsStabilityOf) {
         this.affectsStabilityOf = affectsStabilityOf;
     }
 
@@ -666,7 +672,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_synthesis_of")
-    public String getAffectsSynthesisOf() {
+    public List<String> getAffectsSynthesisOf() {
         return affectsSynthesisOf;
     }
 
@@ -675,7 +681,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_synthesis_of")
-    public void setAffectsSynthesisOf(String affectsSynthesisOf) {
+    public void setAffectsSynthesisOf(List<String> affectsSynthesisOf) {
         this.affectsSynthesisOf = affectsSynthesisOf;
     }
 
@@ -684,7 +690,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_transport_of")
-    public String getAffectsTransportOf() {
+    public List<String> getAffectsTransportOf() {
         return affectsTransportOf;
     }
 
@@ -693,7 +699,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_transport_of")
-    public void setAffectsTransportOf(String affectsTransportOf) {
+    public void setAffectsTransportOf(List<String> affectsTransportOf) {
         this.affectsTransportOf = affectsTransportOf;
     }
 
@@ -702,7 +708,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_uptake_of")
-    public String getAffectsUptakeOf() {
+    public List<String> getAffectsUptakeOf() {
         return affectsUptakeOf;
     }
 
@@ -711,7 +717,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("affects_uptake_of")
-    public void setAffectsUptakeOf(String affectsUptakeOf) {
+    public void setAffectsUptakeOf(List<String> affectsUptakeOf) {
         this.affectsUptakeOf = affectsUptakeOf;
     }
 
@@ -720,7 +726,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("biomarker_for")
-    public String getBiomarkerFor() {
+    public List<String> getBiomarkerFor() {
         return biomarkerFor;
     }
 
@@ -729,7 +735,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("biomarker_for")
-    public void setBiomarkerFor(String biomarkerFor) {
+    public void setBiomarkerFor(List<String> biomarkerFor) {
         this.biomarkerFor = biomarkerFor;
     }
 
@@ -738,7 +744,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_abundance_of")
-    public String getDecreasesAbundanceOf() {
+    public List<String> getDecreasesAbundanceOf() {
         return decreasesAbundanceOf;
     }
 
@@ -747,7 +753,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_abundance_of")
-    public void setDecreasesAbundanceOf(String decreasesAbundanceOf) {
+    public void setDecreasesAbundanceOf(List<String> decreasesAbundanceOf) {
         this.decreasesAbundanceOf = decreasesAbundanceOf;
     }
 
@@ -756,7 +762,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_activity_of")
-    public String getDecreasesActivityOf() {
+    public List<String> getDecreasesActivityOf() {
         return decreasesActivityOf;
     }
 
@@ -765,7 +771,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_activity_of")
-    public void setDecreasesActivityOf(String decreasesActivityOf) {
+    public void setDecreasesActivityOf(List<String> decreasesActivityOf) {
         this.decreasesActivityOf = decreasesActivityOf;
     }
 
@@ -774,7 +780,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_degradation_of")
-    public String getDecreasesDegradationOf() {
+    public List<String> getDecreasesDegradationOf() {
         return decreasesDegradationOf;
     }
 
@@ -783,7 +789,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_degradation_of")
-    public void setDecreasesDegradationOf(String decreasesDegradationOf) {
+    public void setDecreasesDegradationOf(List<String> decreasesDegradationOf) {
         this.decreasesDegradationOf = decreasesDegradationOf;
     }
 
@@ -792,7 +798,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_expression_of")
-    public String getDecreasesExpressionOf() {
+    public List<String> getDecreasesExpressionOf() {
         return decreasesExpressionOf;
     }
 
@@ -801,25 +807,25 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_expression_of")
-    public void setDecreasesExpressionOf(String decreasesExpressionOf) {
+    public void setDecreasesExpressionOf(List<String> decreasesExpressionOf) {
         this.decreasesExpressionOf = decreasesExpressionOf;
     }
 
     /**
-     * holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other 
+     * holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other
      * 
      */
     @JsonProperty("decreases_folding_of")
-    public String getDecreasesFoldingOf() {
+    public List<String> getDecreasesFoldingOf() {
         return decreasesFoldingOf;
     }
 
     /**
-     * holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other 
+     * holds between two molecular entities where the action or effect of one decreases the rate or quality of folding of the other
      * 
      */
     @JsonProperty("decreases_folding_of")
-    public void setDecreasesFoldingOf(String decreasesFoldingOf) {
+    public void setDecreasesFoldingOf(List<String> decreasesFoldingOf) {
         this.decreasesFoldingOf = decreasesFoldingOf;
     }
 
@@ -828,7 +834,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_localization_of")
-    public String getDecreasesLocalizationOf() {
+    public List<String> getDecreasesLocalizationOf() {
         return decreasesLocalizationOf;
     }
 
@@ -837,7 +843,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_localization_of")
-    public void setDecreasesLocalizationOf(String decreasesLocalizationOf) {
+    public void setDecreasesLocalizationOf(List<String> decreasesLocalizationOf) {
         this.decreasesLocalizationOf = decreasesLocalizationOf;
     }
 
@@ -846,7 +852,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_metabolic_processing_of")
-    public String getDecreasesMetabolicProcessingOf() {
+    public List<String> getDecreasesMetabolicProcessingOf() {
         return decreasesMetabolicProcessingOf;
     }
 
@@ -855,7 +861,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_metabolic_processing_of")
-    public void setDecreasesMetabolicProcessingOf(String decreasesMetabolicProcessingOf) {
+    public void setDecreasesMetabolicProcessingOf(List<String> decreasesMetabolicProcessingOf) {
         this.decreasesMetabolicProcessingOf = decreasesMetabolicProcessingOf;
     }
 
@@ -864,7 +870,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_molecular_modification_of")
-    public String getDecreasesMolecularModificationOf() {
+    public List<String> getDecreasesMolecularModificationOf() {
         return decreasesMolecularModificationOf;
     }
 
@@ -873,7 +879,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_molecular_modification_of")
-    public void setDecreasesMolecularModificationOf(String decreasesMolecularModificationOf) {
+    public void setDecreasesMolecularModificationOf(List<String> decreasesMolecularModificationOf) {
         this.decreasesMolecularModificationOf = decreasesMolecularModificationOf;
     }
 
@@ -882,7 +888,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_mutation_rate_of")
-    public String getDecreasesMutationRateOf() {
+    public List<String> getDecreasesMutationRateOf() {
         return decreasesMutationRateOf;
     }
 
@@ -891,7 +897,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_mutation_rate_of")
-    public void setDecreasesMutationRateOf(String decreasesMutationRateOf) {
+    public void setDecreasesMutationRateOf(List<String> decreasesMutationRateOf) {
         this.decreasesMutationRateOf = decreasesMutationRateOf;
     }
 
@@ -900,7 +906,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_response_to")
-    public String getDecreasesResponseTo() {
+    public List<String> getDecreasesResponseTo() {
         return decreasesResponseTo;
     }
 
@@ -909,7 +915,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_response_to")
-    public void setDecreasesResponseTo(String decreasesResponseTo) {
+    public void setDecreasesResponseTo(List<String> decreasesResponseTo) {
         this.decreasesResponseTo = decreasesResponseTo;
     }
 
@@ -918,7 +924,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_secretion_of")
-    public String getDecreasesSecretionOf() {
+    public List<String> getDecreasesSecretionOf() {
         return decreasesSecretionOf;
     }
 
@@ -927,7 +933,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_secretion_of")
-    public void setDecreasesSecretionOf(String decreasesSecretionOf) {
+    public void setDecreasesSecretionOf(List<String> decreasesSecretionOf) {
         this.decreasesSecretionOf = decreasesSecretionOf;
     }
 
@@ -936,7 +942,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_splicing_of")
-    public String getDecreasesSplicingOf() {
+    public List<String> getDecreasesSplicingOf() {
         return decreasesSplicingOf;
     }
 
@@ -945,7 +951,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_splicing_of")
-    public void setDecreasesSplicingOf(String decreasesSplicingOf) {
+    public void setDecreasesSplicingOf(List<String> decreasesSplicingOf) {
         this.decreasesSplicingOf = decreasesSplicingOf;
     }
 
@@ -954,7 +960,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_stability_of")
-    public String getDecreasesStabilityOf() {
+    public List<String> getDecreasesStabilityOf() {
         return decreasesStabilityOf;
     }
 
@@ -963,7 +969,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_stability_of")
-    public void setDecreasesStabilityOf(String decreasesStabilityOf) {
+    public void setDecreasesStabilityOf(List<String> decreasesStabilityOf) {
         this.decreasesStabilityOf = decreasesStabilityOf;
     }
 
@@ -972,7 +978,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_synthesis_of")
-    public String getDecreasesSynthesisOf() {
+    public List<String> getDecreasesSynthesisOf() {
         return decreasesSynthesisOf;
     }
 
@@ -981,7 +987,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_synthesis_of")
-    public void setDecreasesSynthesisOf(String decreasesSynthesisOf) {
+    public void setDecreasesSynthesisOf(List<String> decreasesSynthesisOf) {
         this.decreasesSynthesisOf = decreasesSynthesisOf;
     }
 
@@ -990,7 +996,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_transport_of")
-    public String getDecreasesTransportOf() {
+    public List<String> getDecreasesTransportOf() {
         return decreasesTransportOf;
     }
 
@@ -999,7 +1005,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_transport_of")
-    public void setDecreasesTransportOf(String decreasesTransportOf) {
+    public void setDecreasesTransportOf(List<String> decreasesTransportOf) {
         this.decreasesTransportOf = decreasesTransportOf;
     }
 
@@ -1008,7 +1014,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_uptake_of")
-    public String getDecreasesUptakeOf() {
+    public List<String> getDecreasesUptakeOf() {
         return decreasesUptakeOf;
     }
 
@@ -1017,8 +1023,26 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("decreases_uptake_of")
-    public void setDecreasesUptakeOf(String decreasesUptakeOf) {
+    public void setDecreasesUptakeOf(List<String> decreasesUptakeOf) {
         this.decreasesUptakeOf = decreasesUptakeOf;
+    }
+
+    /**
+     * connects a thing to a class representing a taxon
+     * 
+     */
+    @JsonProperty("in_taxon")
+    public List<String> getInTaxon() {
+        return inTaxon;
+    }
+
+    /**
+     * connects a thing to a class representing a taxon
+     * 
+     */
+    @JsonProperty("in_taxon")
+    public void setInTaxon(List<String> inTaxon) {
+        this.inTaxon = inTaxon;
     }
 
     /**
@@ -1026,7 +1050,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_abundance_of")
-    public String getIncreasesAbundanceOf() {
+    public List<String> getIncreasesAbundanceOf() {
         return increasesAbundanceOf;
     }
 
@@ -1035,7 +1059,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_abundance_of")
-    public void setIncreasesAbundanceOf(String increasesAbundanceOf) {
+    public void setIncreasesAbundanceOf(List<String> increasesAbundanceOf) {
         this.increasesAbundanceOf = increasesAbundanceOf;
     }
 
@@ -1044,7 +1068,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_activity_of")
-    public String getIncreasesActivityOf() {
+    public List<String> getIncreasesActivityOf() {
         return increasesActivityOf;
     }
 
@@ -1053,7 +1077,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_activity_of")
-    public void setIncreasesActivityOf(String increasesActivityOf) {
+    public void setIncreasesActivityOf(List<String> increasesActivityOf) {
         this.increasesActivityOf = increasesActivityOf;
     }
 
@@ -1062,7 +1086,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_degradation_of")
-    public String getIncreasesDegradationOf() {
+    public List<String> getIncreasesDegradationOf() {
         return increasesDegradationOf;
     }
 
@@ -1071,7 +1095,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_degradation_of")
-    public void setIncreasesDegradationOf(String increasesDegradationOf) {
+    public void setIncreasesDegradationOf(List<String> increasesDegradationOf) {
         this.increasesDegradationOf = increasesDegradationOf;
     }
 
@@ -1080,7 +1104,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_expression_of")
-    public String getIncreasesExpressionOf() {
+    public List<String> getIncreasesExpressionOf() {
         return increasesExpressionOf;
     }
 
@@ -1089,25 +1113,25 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_expression_of")
-    public void setIncreasesExpressionOf(String increasesExpressionOf) {
+    public void setIncreasesExpressionOf(List<String> increasesExpressionOf) {
         this.increasesExpressionOf = increasesExpressionOf;
     }
 
     /**
-     * holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other 
+     * holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other
      * 
      */
     @JsonProperty("increases_folding_of")
-    public String getIncreasesFoldingOf() {
+    public List<String> getIncreasesFoldingOf() {
         return increasesFoldingOf;
     }
 
     /**
-     * holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other 
+     * holds between two molecular entities where the action or effect of one increases the rate or quality of folding of the other
      * 
      */
     @JsonProperty("increases_folding_of")
-    public void setIncreasesFoldingOf(String increasesFoldingOf) {
+    public void setIncreasesFoldingOf(List<String> increasesFoldingOf) {
         this.increasesFoldingOf = increasesFoldingOf;
     }
 
@@ -1116,7 +1140,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_localization_of")
-    public String getIncreasesLocalizationOf() {
+    public List<String> getIncreasesLocalizationOf() {
         return increasesLocalizationOf;
     }
 
@@ -1125,7 +1149,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_localization_of")
-    public void setIncreasesLocalizationOf(String increasesLocalizationOf) {
+    public void setIncreasesLocalizationOf(List<String> increasesLocalizationOf) {
         this.increasesLocalizationOf = increasesLocalizationOf;
     }
 
@@ -1134,7 +1158,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_metabolic_processing_of")
-    public String getIncreasesMetabolicProcessingOf() {
+    public List<String> getIncreasesMetabolicProcessingOf() {
         return increasesMetabolicProcessingOf;
     }
 
@@ -1143,7 +1167,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_metabolic_processing_of")
-    public void setIncreasesMetabolicProcessingOf(String increasesMetabolicProcessingOf) {
+    public void setIncreasesMetabolicProcessingOf(List<String> increasesMetabolicProcessingOf) {
         this.increasesMetabolicProcessingOf = increasesMetabolicProcessingOf;
     }
 
@@ -1152,7 +1176,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_molecular_modification_of")
-    public String getIncreasesMolecularModificationOf() {
+    public List<String> getIncreasesMolecularModificationOf() {
         return increasesMolecularModificationOf;
     }
 
@@ -1161,7 +1185,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_molecular_modification_of")
-    public void setIncreasesMolecularModificationOf(String increasesMolecularModificationOf) {
+    public void setIncreasesMolecularModificationOf(List<String> increasesMolecularModificationOf) {
         this.increasesMolecularModificationOf = increasesMolecularModificationOf;
     }
 
@@ -1170,7 +1194,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_mutation_rate_of")
-    public String getIncreasesMutationRateOf() {
+    public List<String> getIncreasesMutationRateOf() {
         return increasesMutationRateOf;
     }
 
@@ -1179,7 +1203,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_mutation_rate_of")
-    public void setIncreasesMutationRateOf(String increasesMutationRateOf) {
+    public void setIncreasesMutationRateOf(List<String> increasesMutationRateOf) {
         this.increasesMutationRateOf = increasesMutationRateOf;
     }
 
@@ -1188,7 +1212,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_response_to")
-    public String getIncreasesResponseTo() {
+    public List<String> getIncreasesResponseTo() {
         return increasesResponseTo;
     }
 
@@ -1197,7 +1221,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_response_to")
-    public void setIncreasesResponseTo(String increasesResponseTo) {
+    public void setIncreasesResponseTo(List<String> increasesResponseTo) {
         this.increasesResponseTo = increasesResponseTo;
     }
 
@@ -1206,7 +1230,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_secretion_of")
-    public String getIncreasesSecretionOf() {
+    public List<String> getIncreasesSecretionOf() {
         return increasesSecretionOf;
     }
 
@@ -1215,7 +1239,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_secretion_of")
-    public void setIncreasesSecretionOf(String increasesSecretionOf) {
+    public void setIncreasesSecretionOf(List<String> increasesSecretionOf) {
         this.increasesSecretionOf = increasesSecretionOf;
     }
 
@@ -1224,7 +1248,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_splicing_of")
-    public String getIncreasesSplicingOf() {
+    public List<String> getIncreasesSplicingOf() {
         return increasesSplicingOf;
     }
 
@@ -1233,7 +1257,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_splicing_of")
-    public void setIncreasesSplicingOf(String increasesSplicingOf) {
+    public void setIncreasesSplicingOf(List<String> increasesSplicingOf) {
         this.increasesSplicingOf = increasesSplicingOf;
     }
 
@@ -1242,7 +1266,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_stability_of")
-    public String getIncreasesStabilityOf() {
+    public List<String> getIncreasesStabilityOf() {
         return increasesStabilityOf;
     }
 
@@ -1251,7 +1275,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_stability_of")
-    public void setIncreasesStabilityOf(String increasesStabilityOf) {
+    public void setIncreasesStabilityOf(List<String> increasesStabilityOf) {
         this.increasesStabilityOf = increasesStabilityOf;
     }
 
@@ -1260,7 +1284,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_synthesis_of")
-    public String getIncreasesSynthesisOf() {
+    public List<String> getIncreasesSynthesisOf() {
         return increasesSynthesisOf;
     }
 
@@ -1269,7 +1293,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_synthesis_of")
-    public void setIncreasesSynthesisOf(String increasesSynthesisOf) {
+    public void setIncreasesSynthesisOf(List<String> increasesSynthesisOf) {
         this.increasesSynthesisOf = increasesSynthesisOf;
     }
 
@@ -1278,7 +1302,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_transport_of")
-    public String getIncreasesTransportOf() {
+    public List<String> getIncreasesTransportOf() {
         return increasesTransportOf;
     }
 
@@ -1287,7 +1311,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_transport_of")
-    public void setIncreasesTransportOf(String increasesTransportOf) {
+    public void setIncreasesTransportOf(List<String> increasesTransportOf) {
         this.increasesTransportOf = increasesTransportOf;
     }
 
@@ -1296,7 +1320,7 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_uptake_of")
-    public String getIncreasesUptakeOf() {
+    public List<String> getIncreasesUptakeOf() {
         return increasesUptakeOf;
     }
 
@@ -1305,54 +1329,58 @@ public class MolecularEntity {
      * 
      */
     @JsonProperty("increases_uptake_of")
-    public void setIncreasesUptakeOf(String increasesUptakeOf) {
+    public void setIncreasesUptakeOf(List<String> increasesUptakeOf) {
         this.increasesUptakeOf = increasesUptakeOf;
     }
 
-    /**
-     * holds between two entities that make physical contact as part of some interaction
-     * 
-     */
     @JsonProperty("molecularly_interacts_with")
-    public String getMolecularlyInteractsWith() {
+    public List<String> getMolecularlyInteractsWith() {
         return molecularlyInteractsWith;
     }
 
-    /**
-     * holds between two entities that make physical contact as part of some interaction
-     * 
-     */
     @JsonProperty("molecularly_interacts_with")
-    public void setMolecularlyInteractsWith(String molecularlyInteractsWith) {
+    public void setMolecularlyInteractsWith(List<String> molecularlyInteractsWith) {
         this.molecularlyInteractsWith = molecularlyInteractsWith;
     }
 
-    /**
-     * describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
-     * 
-     */
+    @JsonProperty("negatively_regulates_entity_to_entity")
+    public List<String> getNegativelyRegulatesEntityToEntity() {
+        return negativelyRegulatesEntityToEntity;
+    }
+
+    @JsonProperty("negatively_regulates_entity_to_entity")
+    public void setNegativelyRegulatesEntityToEntity(List<String> negativelyRegulatesEntityToEntity) {
+        this.negativelyRegulatesEntityToEntity = negativelyRegulatesEntityToEntity;
+    }
+
+    @JsonProperty("positively_regulates_entity_to_entity")
+    public List<String> getPositivelyRegulatesEntityToEntity() {
+        return positivelyRegulatesEntityToEntity;
+    }
+
+    @JsonProperty("positively_regulates_entity_to_entity")
+    public void setPositivelyRegulatesEntityToEntity(List<String> positivelyRegulatesEntityToEntity) {
+        this.positivelyRegulatesEntityToEntity = positivelyRegulatesEntityToEntity;
+    }
+
     @JsonProperty("regulates_entity_to_entity")
-    public String getRegulatesEntityToEntity() {
+    public List<String> getRegulatesEntityToEntity() {
         return regulatesEntityToEntity;
     }
 
-    /**
-     * describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
-     * 
-     */
     @JsonProperty("regulates_entity_to_entity")
-    public void setRegulatesEntityToEntity(String regulatesEntityToEntity) {
+    public void setRegulatesEntityToEntity(List<String> regulatesEntityToEntity) {
         this.regulatesEntityToEntity = regulatesEntityToEntity;
     }
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("affectsAbundanceOf", affectsAbundanceOf).append("affectsActivityOf", affectsActivityOf).append("affectsDegradationOf", affectsDegradationOf).append("affectsExpressionOf", affectsExpressionOf).append("affectsFoldingOf", affectsFoldingOf).append("affectsLocalizationOf", affectsLocalizationOf).append("affectsMetabolicProcessingOf", affectsMetabolicProcessingOf).append("affectsMolecularModificationOf", affectsMolecularModificationOf).append("affectsMutationRateOf", affectsMutationRateOf).append("affectsResponseTo", affectsResponseTo).append("affectsSecretionOf", affectsSecretionOf).append("affectsSplicingOf", affectsSplicingOf).append("affectsStabilityOf", affectsStabilityOf).append("affectsSynthesisOf", affectsSynthesisOf).append("affectsTransportOf", affectsTransportOf).append("affectsUptakeOf", affectsUptakeOf).append("biomarkerFor", biomarkerFor).append("decreasesAbundanceOf", decreasesAbundanceOf).append("decreasesActivityOf", decreasesActivityOf).append("decreasesDegradationOf", decreasesDegradationOf).append("decreasesExpressionOf", decreasesExpressionOf).append("decreasesFoldingOf", decreasesFoldingOf).append("decreasesLocalizationOf", decreasesLocalizationOf).append("decreasesMetabolicProcessingOf", decreasesMetabolicProcessingOf).append("decreasesMolecularModificationOf", decreasesMolecularModificationOf).append("decreasesMutationRateOf", decreasesMutationRateOf).append("decreasesResponseTo", decreasesResponseTo).append("decreasesSecretionOf", decreasesSecretionOf).append("decreasesSplicingOf", decreasesSplicingOf).append("decreasesStabilityOf", decreasesStabilityOf).append("decreasesSynthesisOf", decreasesSynthesisOf).append("decreasesTransportOf", decreasesTransportOf).append("decreasesUptakeOf", decreasesUptakeOf).append("increasesAbundanceOf", increasesAbundanceOf).append("increasesActivityOf", increasesActivityOf).append("increasesDegradationOf", increasesDegradationOf).append("increasesExpressionOf", increasesExpressionOf).append("increasesFoldingOf", increasesFoldingOf).append("increasesLocalizationOf", increasesLocalizationOf).append("increasesMetabolicProcessingOf", increasesMetabolicProcessingOf).append("increasesMolecularModificationOf", increasesMolecularModificationOf).append("increasesMutationRateOf", increasesMutationRateOf).append("increasesResponseTo", increasesResponseTo).append("increasesSecretionOf", increasesSecretionOf).append("increasesSplicingOf", increasesSplicingOf).append("increasesStabilityOf", increasesStabilityOf).append("increasesSynthesisOf", increasesSynthesisOf).append("increasesTransportOf", increasesTransportOf).append("increasesUptakeOf", increasesUptakeOf).append("molecularlyInteractsWith", molecularlyInteractsWith).append("regulatesEntityToEntity", regulatesEntityToEntity).toString();
+        return new ToStringBuilder(this).append("affectsAbundanceOf", affectsAbundanceOf).append("affectsActivityOf", affectsActivityOf).append("affectsDegradationOf", affectsDegradationOf).append("affectsExpressionOf", affectsExpressionOf).append("affectsFoldingOf", affectsFoldingOf).append("affectsLocalizationOf", affectsLocalizationOf).append("affectsMetabolicProcessingOf", affectsMetabolicProcessingOf).append("affectsMolecularModificationOf", affectsMolecularModificationOf).append("affectsMutationRateOf", affectsMutationRateOf).append("affectsResponseTo", affectsResponseTo).append("affectsSecretionOf", affectsSecretionOf).append("affectsSplicingOf", affectsSplicingOf).append("affectsStabilityOf", affectsStabilityOf).append("affectsSynthesisOf", affectsSynthesisOf).append("affectsTransportOf", affectsTransportOf).append("affectsUptakeOf", affectsUptakeOf).append("biomarkerFor", biomarkerFor).append("decreasesAbundanceOf", decreasesAbundanceOf).append("decreasesActivityOf", decreasesActivityOf).append("decreasesDegradationOf", decreasesDegradationOf).append("decreasesExpressionOf", decreasesExpressionOf).append("decreasesFoldingOf", decreasesFoldingOf).append("decreasesLocalizationOf", decreasesLocalizationOf).append("decreasesMetabolicProcessingOf", decreasesMetabolicProcessingOf).append("decreasesMolecularModificationOf", decreasesMolecularModificationOf).append("decreasesMutationRateOf", decreasesMutationRateOf).append("decreasesResponseTo", decreasesResponseTo).append("decreasesSecretionOf", decreasesSecretionOf).append("decreasesSplicingOf", decreasesSplicingOf).append("decreasesStabilityOf", decreasesStabilityOf).append("decreasesSynthesisOf", decreasesSynthesisOf).append("decreasesTransportOf", decreasesTransportOf).append("decreasesUptakeOf", decreasesUptakeOf).append("inTaxon", inTaxon).append("increasesAbundanceOf", increasesAbundanceOf).append("increasesActivityOf", increasesActivityOf).append("increasesDegradationOf", increasesDegradationOf).append("increasesExpressionOf", increasesExpressionOf).append("increasesFoldingOf", increasesFoldingOf).append("increasesLocalizationOf", increasesLocalizationOf).append("increasesMetabolicProcessingOf", increasesMetabolicProcessingOf).append("increasesMolecularModificationOf", increasesMolecularModificationOf).append("increasesMutationRateOf", increasesMutationRateOf).append("increasesResponseTo", increasesResponseTo).append("increasesSecretionOf", increasesSecretionOf).append("increasesSplicingOf", increasesSplicingOf).append("increasesStabilityOf", increasesStabilityOf).append("increasesSynthesisOf", increasesSynthesisOf).append("increasesTransportOf", increasesTransportOf).append("increasesUptakeOf", increasesUptakeOf).append("molecularlyInteractsWith", molecularlyInteractsWith).append("negativelyRegulatesEntityToEntity", negativelyRegulatesEntityToEntity).append("positivelyRegulatesEntityToEntity", positivelyRegulatesEntityToEntity).append("regulatesEntityToEntity", regulatesEntityToEntity).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(affectsMetabolicProcessingOf).append(decreasesFoldingOf).append(increasesSecretionOf).append(decreasesLocalizationOf).append(affectsUptakeOf).append(decreasesResponseTo).append(decreasesTransportOf).append(molecularlyInteractsWith).append(decreasesExpressionOf).append(increasesStabilityOf).append(decreasesSecretionOf).append(decreasesStabilityOf).append(increasesAbundanceOf).append(increasesMutationRateOf).append(affectsMutationRateOf).append(increasesExpressionOf).append(affectsLocalizationOf).append(affectsAbundanceOf).append(increasesMolecularModificationOf).append(decreasesDegradationOf).append(increasesFoldingOf).append(decreasesMutationRateOf).append(decreasesSynthesisOf).append(affectsFoldingOf).append(decreasesUptakeOf).append(increasesMetabolicProcessingOf).append(decreasesActivityOf).append(affectsSecretionOf).append(decreasesSplicingOf).append(decreasesMetabolicProcessingOf).append(increasesUptakeOf).append(affectsActivityOf).append(affectsStabilityOf).append(increasesSplicingOf).append(biomarkerFor).append(increasesLocalizationOf).append(increasesDegradationOf).append(affectsResponseTo).append(affectsExpressionOf).append(affectsTransportOf).append(decreasesAbundanceOf).append(affectsSynthesisOf).append(affectsDegradationOf).append(affectsSplicingOf).append(affectsMolecularModificationOf).append(decreasesMolecularModificationOf).append(increasesTransportOf).append(increasesSynthesisOf).append(increasesResponseTo).append(increasesActivityOf).append(regulatesEntityToEntity).toHashCode();
+        return new HashCodeBuilder().append(affectsMetabolicProcessingOf).append(decreasesFoldingOf).append(increasesSecretionOf).append(decreasesLocalizationOf).append(affectsUptakeOf).append(decreasesResponseTo).append(decreasesTransportOf).append(molecularlyInteractsWith).append(decreasesExpressionOf).append(increasesStabilityOf).append(decreasesSecretionOf).append(decreasesStabilityOf).append(increasesAbundanceOf).append(increasesMutationRateOf).append(affectsMutationRateOf).append(increasesExpressionOf).append(affectsLocalizationOf).append(affectsAbundanceOf).append(increasesMolecularModificationOf).append(decreasesDegradationOf).append(increasesFoldingOf).append(decreasesMutationRateOf).append(decreasesSynthesisOf).append(affectsFoldingOf).append(decreasesUptakeOf).append(increasesMetabolicProcessingOf).append(decreasesActivityOf).append(affectsSecretionOf).append(decreasesSplicingOf).append(decreasesMetabolicProcessingOf).append(increasesUptakeOf).append(negativelyRegulatesEntityToEntity).append(inTaxon).append(affectsActivityOf).append(affectsStabilityOf).append(increasesSplicingOf).append(biomarkerFor).append(increasesLocalizationOf).append(increasesDegradationOf).append(affectsResponseTo).append(affectsExpressionOf).append(affectsTransportOf).append(decreasesAbundanceOf).append(affectsSynthesisOf).append(affectsDegradationOf).append(affectsSplicingOf).append(affectsMolecularModificationOf).append(decreasesMolecularModificationOf).append(increasesTransportOf).append(increasesSynthesisOf).append(increasesResponseTo).append(increasesActivityOf).append(regulatesEntityToEntity).append(positivelyRegulatesEntityToEntity).toHashCode();
     }
 
     @Override
@@ -1364,7 +1392,7 @@ public class MolecularEntity {
             return false;
         }
         MolecularEntity rhs = ((MolecularEntity) other);
-        return new EqualsBuilder().append(affectsMetabolicProcessingOf, rhs.affectsMetabolicProcessingOf).append(decreasesFoldingOf, rhs.decreasesFoldingOf).append(increasesSecretionOf, rhs.increasesSecretionOf).append(decreasesLocalizationOf, rhs.decreasesLocalizationOf).append(affectsUptakeOf, rhs.affectsUptakeOf).append(decreasesResponseTo, rhs.decreasesResponseTo).append(decreasesTransportOf, rhs.decreasesTransportOf).append(molecularlyInteractsWith, rhs.molecularlyInteractsWith).append(decreasesExpressionOf, rhs.decreasesExpressionOf).append(increasesStabilityOf, rhs.increasesStabilityOf).append(decreasesSecretionOf, rhs.decreasesSecretionOf).append(decreasesStabilityOf, rhs.decreasesStabilityOf).append(increasesAbundanceOf, rhs.increasesAbundanceOf).append(increasesMutationRateOf, rhs.increasesMutationRateOf).append(affectsMutationRateOf, rhs.affectsMutationRateOf).append(increasesExpressionOf, rhs.increasesExpressionOf).append(affectsLocalizationOf, rhs.affectsLocalizationOf).append(affectsAbundanceOf, rhs.affectsAbundanceOf).append(increasesMolecularModificationOf, rhs.increasesMolecularModificationOf).append(decreasesDegradationOf, rhs.decreasesDegradationOf).append(increasesFoldingOf, rhs.increasesFoldingOf).append(decreasesMutationRateOf, rhs.decreasesMutationRateOf).append(decreasesSynthesisOf, rhs.decreasesSynthesisOf).append(affectsFoldingOf, rhs.affectsFoldingOf).append(decreasesUptakeOf, rhs.decreasesUptakeOf).append(increasesMetabolicProcessingOf, rhs.increasesMetabolicProcessingOf).append(decreasesActivityOf, rhs.decreasesActivityOf).append(affectsSecretionOf, rhs.affectsSecretionOf).append(decreasesSplicingOf, rhs.decreasesSplicingOf).append(decreasesMetabolicProcessingOf, rhs.decreasesMetabolicProcessingOf).append(increasesUptakeOf, rhs.increasesUptakeOf).append(affectsActivityOf, rhs.affectsActivityOf).append(affectsStabilityOf, rhs.affectsStabilityOf).append(increasesSplicingOf, rhs.increasesSplicingOf).append(biomarkerFor, rhs.biomarkerFor).append(increasesLocalizationOf, rhs.increasesLocalizationOf).append(increasesDegradationOf, rhs.increasesDegradationOf).append(affectsResponseTo, rhs.affectsResponseTo).append(affectsExpressionOf, rhs.affectsExpressionOf).append(affectsTransportOf, rhs.affectsTransportOf).append(decreasesAbundanceOf, rhs.decreasesAbundanceOf).append(affectsSynthesisOf, rhs.affectsSynthesisOf).append(affectsDegradationOf, rhs.affectsDegradationOf).append(affectsSplicingOf, rhs.affectsSplicingOf).append(affectsMolecularModificationOf, rhs.affectsMolecularModificationOf).append(decreasesMolecularModificationOf, rhs.decreasesMolecularModificationOf).append(increasesTransportOf, rhs.increasesTransportOf).append(increasesSynthesisOf, rhs.increasesSynthesisOf).append(increasesResponseTo, rhs.increasesResponseTo).append(increasesActivityOf, rhs.increasesActivityOf).append(regulatesEntityToEntity, rhs.regulatesEntityToEntity).isEquals();
+        return new EqualsBuilder().append(affectsMetabolicProcessingOf, rhs.affectsMetabolicProcessingOf).append(decreasesFoldingOf, rhs.decreasesFoldingOf).append(increasesSecretionOf, rhs.increasesSecretionOf).append(decreasesLocalizationOf, rhs.decreasesLocalizationOf).append(affectsUptakeOf, rhs.affectsUptakeOf).append(decreasesResponseTo, rhs.decreasesResponseTo).append(decreasesTransportOf, rhs.decreasesTransportOf).append(molecularlyInteractsWith, rhs.molecularlyInteractsWith).append(decreasesExpressionOf, rhs.decreasesExpressionOf).append(increasesStabilityOf, rhs.increasesStabilityOf).append(decreasesSecretionOf, rhs.decreasesSecretionOf).append(decreasesStabilityOf, rhs.decreasesStabilityOf).append(increasesAbundanceOf, rhs.increasesAbundanceOf).append(increasesMutationRateOf, rhs.increasesMutationRateOf).append(affectsMutationRateOf, rhs.affectsMutationRateOf).append(increasesExpressionOf, rhs.increasesExpressionOf).append(affectsLocalizationOf, rhs.affectsLocalizationOf).append(affectsAbundanceOf, rhs.affectsAbundanceOf).append(increasesMolecularModificationOf, rhs.increasesMolecularModificationOf).append(decreasesDegradationOf, rhs.decreasesDegradationOf).append(increasesFoldingOf, rhs.increasesFoldingOf).append(decreasesMutationRateOf, rhs.decreasesMutationRateOf).append(decreasesSynthesisOf, rhs.decreasesSynthesisOf).append(affectsFoldingOf, rhs.affectsFoldingOf).append(decreasesUptakeOf, rhs.decreasesUptakeOf).append(increasesMetabolicProcessingOf, rhs.increasesMetabolicProcessingOf).append(decreasesActivityOf, rhs.decreasesActivityOf).append(affectsSecretionOf, rhs.affectsSecretionOf).append(decreasesSplicingOf, rhs.decreasesSplicingOf).append(decreasesMetabolicProcessingOf, rhs.decreasesMetabolicProcessingOf).append(increasesUptakeOf, rhs.increasesUptakeOf).append(negativelyRegulatesEntityToEntity, rhs.negativelyRegulatesEntityToEntity).append(inTaxon, rhs.inTaxon).append(affectsActivityOf, rhs.affectsActivityOf).append(affectsStabilityOf, rhs.affectsStabilityOf).append(increasesSplicingOf, rhs.increasesSplicingOf).append(biomarkerFor, rhs.biomarkerFor).append(increasesLocalizationOf, rhs.increasesLocalizationOf).append(increasesDegradationOf, rhs.increasesDegradationOf).append(affectsResponseTo, rhs.affectsResponseTo).append(affectsExpressionOf, rhs.affectsExpressionOf).append(affectsTransportOf, rhs.affectsTransportOf).append(decreasesAbundanceOf, rhs.decreasesAbundanceOf).append(affectsSynthesisOf, rhs.affectsSynthesisOf).append(affectsDegradationOf, rhs.affectsDegradationOf).append(affectsSplicingOf, rhs.affectsSplicingOf).append(affectsMolecularModificationOf, rhs.affectsMolecularModificationOf).append(decreasesMolecularModificationOf, rhs.decreasesMolecularModificationOf).append(increasesTransportOf, rhs.increasesTransportOf).append(increasesSynthesisOf, rhs.increasesSynthesisOf).append(increasesResponseTo, rhs.increasesResponseTo).append(increasesActivityOf, rhs.increasesActivityOf).append(regulatesEntityToEntity, rhs.regulatesEntityToEntity).append(positivelyRegulatesEntityToEntity, rhs.positivelyRegulatesEntityToEntity).isEquals();
     }
 
 }

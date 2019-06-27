@@ -3,18 +3,17 @@
 
 holds between two entities where exposure to one entity alters the chance of developing the other
 
-URI: [http://w3id.org/biolink/vocab/affects_risk_for](slot_uri)
-## Mappings
-
+URI: [biolink:affects_risk_for](https://w3id.org/biolink/vocab/affects_risk_for)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
-## Inheritance
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [predisposes](predisposes.md) *subsets*: (translator_minimal)
- *  child: [prevents](prevents.md) *subsets*: (translator_minimal)
-## Used in
+ *  [predisposes](predisposes.md)
+ *  [prevents](prevents.md)
+## Used by
 
+ * [NamedThing](NamedThing.md)

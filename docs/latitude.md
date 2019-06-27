@@ -3,18 +3,16 @@
 
 latitude
 
-URI: [http://w3id.org/biolink/vocab/latitude](slot_uri)
-## Mappings
-
- * [wgs:lat](http://purl.obolibrary.org/obo/wgs_lat)
+URI: [biolink:latitude](https://w3id.org/biolink/vocab/latitude)
 ## Domain and Range
 
-[GeographicLocation](GeographicLocation.md) -> **float**
-## Inheritance
+[GeographicLocation](GeographicLocation.md) ->  <sub>OPT</sub> [Float](Float.md)
+## Parents
 
  *  is_a: [node property](node_property.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeographicLocation](GeographicLocation.md)
+ * [GeographicLocation](GeographicLocation.md)
+ * [GeographicLocationAtTime](GeographicLocationAtTime.md)

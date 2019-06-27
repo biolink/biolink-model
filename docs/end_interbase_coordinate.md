@@ -1,19 +1,17 @@
 # Slot: end interbase coordinate
 
 
-TODO
 
-URI: [http://w3id.org/biolink/vocab/end_interbase_coordinate](slot_uri)
-## Mappings
 
+URI: [biolink:end_interbase_coordinate](https://w3id.org/biolink/vocab/end_interbase_coordinate)
 ## Domain and Range
 
-[GenomicSequenceLocalization](GenomicSequenceLocalization.md) -> **string**
-## Inheritance
+[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>OPT</sub> [String](String.md)
+## Parents
 
  *  is_a: [interbase coordinate](interbase_coordinate.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
+ * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)

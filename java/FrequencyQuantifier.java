@@ -36,12 +36,7 @@ public class FrequencyQuantifier {
     @JsonProperty("has_percentage")
     @JsonPropertyDescription("equivalent to has quotient multiplied by 100")
     private String hasPercentage;
-    /**
-     * A grouping for any property that holds between a node and a value
-     * 
-     */
     @JsonProperty("has_quotient")
-    @JsonPropertyDescription("A grouping for any property that holds between a node and a value")
     private String hasQuotient;
     /**
      * total number of things in a particular reference set
@@ -87,19 +82,11 @@ public class FrequencyQuantifier {
         this.hasPercentage = hasPercentage;
     }
 
-    /**
-     * A grouping for any property that holds between a node and a value
-     * 
-     */
     @JsonProperty("has_quotient")
     public String getHasQuotient() {
         return hasQuotient;
     }
 
-    /**
-     * A grouping for any property that holds between a node and a value
-     * 
-     */
     @JsonProperty("has_quotient")
     public void setHasQuotient(String hasQuotient) {
         this.hasQuotient = hasQuotient;

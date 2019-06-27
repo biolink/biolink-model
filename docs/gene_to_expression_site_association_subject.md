@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-gene in which variation is correlated with the phenotypic feature
 
-URI: [http://w3id.org/biolink/vocab/gene_to_expression_site_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:gene_to_expression_site_association_subject](https://w3id.org/biolink/vocab/gene_to_expression_site_association_subject)
 ## Domain and Range
 
-[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) -> [GeneOrGeneProduct](GeneOrGeneProduct.md)
-## Inheritance
+[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md) ->  <sub>REQ</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
+ * [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)

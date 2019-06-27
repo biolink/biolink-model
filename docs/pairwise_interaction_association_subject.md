@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
-URI: [http://w3id.org/biolink/vocab/pairwise_interaction_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:pairwise_interaction_association_subject](https://w3id.org/biolink/vocab/pairwise_interaction_association_subject)
 ## Domain and Range
 
-[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) -> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) ->  <sub>REQ</sub> [MolecularEntity](MolecularEntity.md)
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)
+ * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)

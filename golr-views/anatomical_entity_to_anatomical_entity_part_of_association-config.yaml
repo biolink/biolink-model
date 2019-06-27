@@ -2,56 +2,52 @@ description: A relationship between two anatomical entities where the relationsh
   is mereological, i.e the two entities are related by parthood. This includes relationships
   between cellular components and cells, between cells and tissues, tissues and whole
   organisms
-display_name: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
 - anatomical entity to anatomical entity part of association
-document_category: !!python/object/new:metamodel.metamodel.ClassDefinitionName
+document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
 - anatomical entity to anatomical entity part of association
 fields:
 - description: A unique identifier for an association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - association_id
   id: id
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - anatomical entity to anatomical entity part of association_subject
+  id: subject
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - anatomical entity to anatomical entity part of association_relation
+  id: relation
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - anatomical entity to anatomical entity part of association_object
+  id: object
 - description: if set to true, then the association is negated i.e. is not true
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - negated
   id: negated
 - description: connects an association to the type of association (e.g. gene to phenotype)
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - association type
   id: association_type
 - cardinality: multi
   description: connects an association to qualifiers that modify or qualify the meaning
     of that association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - qualifiers
   id: qualifiers
 - cardinality: multi
   description: connects an association to publications supporting the association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - publications
   id: publications
 - description: connects an association to the agent (person, organization or group)
     that provided it
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - provided by
   id: provided_by
 - description: any slot that relates an association to another entity
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - association slot
   id: association_slot
-- description: the part
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
-  - anatomical entity to anatomical entity part of association subject
-  id: subject
-- description: the whole
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
-  - anatomical entity to anatomical entity part of association object
-  id: object
-- description: the relationship type by which a subject is connected to an object
-    in an association
-  display_name: !!python/object/new:metamodel.metamodel.SlotDefinitionName
-  - anatomical entity to anatomical entity part of association relation
-  id: relation
 id: anatomical_entity_to_anatomical_entity_part_of_association
 schema_generating: true
 weight: 20

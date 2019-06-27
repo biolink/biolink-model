@@ -1,19 +1,17 @@
 # Slot: relation
 
 
-A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
 
-URI: [http://w3id.org/biolink/vocab/population_to_population_association_relation](slot_uri)
-## Mappings
 
+URI: [biolink:population_to_population_association_relation](https://w3id.org/biolink/vocab/population_to_population_association_relation)
 ## Domain and Range
 
-[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) -> [IriType](IriType.md)
-## Inheritance
+[PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+## Parents
 
  *  is_a: [relation](relation.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)
+ * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)

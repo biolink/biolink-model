@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
-URI: [http://w3id.org/biolink/vocab/genomic_sequence_localization_subject](slot_uri)
-## Mappings
 
+URI: [biolink:genomic_sequence_localization_subject](https://w3id.org/biolink/vocab/genomic_sequence_localization_subject)
 ## Domain and Range
 
-[GenomicSequenceLocalization](GenomicSequenceLocalization.md) -> [GenomicEntity](GenomicEntity.md)
-## Inheritance
+[GenomicSequenceLocalization](GenomicSequenceLocalization.md) ->  <sub>REQ</sub> [GenomicEntity](GenomicEntity.md)
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GenomicSequenceLocalization](GenomicSequenceLocalization.md)
+ * [GenomicSequenceLocalization](GenomicSequenceLocalization.md)

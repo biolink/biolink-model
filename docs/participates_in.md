@@ -3,18 +3,16 @@
 
 holds between a continuant and a process, where the continuant is somehow involved in the process
 
-URI: [http://w3id.org/biolink/vocab/participates_in](slot_uri)
-## Mappings
-
- * [RO:0000056](http://purl.obolibrary.org/obo/RO_0000056)
+URI: [biolink:participates_in](https://w3id.org/biolink/vocab/participates_in)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [Occurrent](Occurrent.md)
-## Inheritance
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [Occurrent](Occurrent.md)
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [actively involved in](actively_involved_in.md) *subsets*: (translator_minimal)
-## Used in
+ *  [actively involved in](actively_involved_in.md)
+## Used by
 
+ * [NamedThing](NamedThing.md)

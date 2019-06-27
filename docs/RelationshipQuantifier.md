@@ -3,19 +3,15 @@
 
 
 
-URI: [http://w3id.org/biolink/vocab/RelationshipQuantifier](http://w3id.org/biolink/vocab/RelationshipQuantifier)
+URI: [biolink:RelationshipQuantifier](https://w3id.org/biolink/vocab/RelationshipQuantifier)
 
-![img](images/RelationshipQuantifier.png)
-## Mappings
-
-## Inheritance
-
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[RelationshipQuantifier]^-\[SpecificityQuantifier],%20\[RelationshipQuantifier]^-\[SensitivityQuantifier],%20\[RelationshipQuantifier]^-\[FrequencyQuantifier])
 ## Children
 
  * [FrequencyQuantifier](FrequencyQuantifier.md)
- * [SenstivityQuantifier](SenstivityQuantifier.md)
+ * [SensitivityQuantifier](SensitivityQuantifier.md)
  * [SpecificityQuantifier](SpecificityQuantifier.md)
-## Used in
+## Referenced by class
 
-## Fields
+## Attributes
 

@@ -1,20 +1,21 @@
 # Slot: subject
 
 
-gene, product or macromolecular complex that has the function associated with the GO term
 
-URI: [http://w3id.org/biolink/vocab/functional_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:functional_association_subject](https://w3id.org/biolink/vocab/functional_association_subject)
 ## Domain and Range
 
-[FunctionalAssociation](FunctionalAssociation.md) -> [MacromolecularMachine](MacromolecularMachine.md)
-## Inheritance
+[FunctionalAssociation](FunctionalAssociation.md) ->  <sub>REQ</sub> [MacromolecularMachine](MacromolecularMachine.md)
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children
 
- *  child: [gene to go term association.subject](gene_to_go_term_association_subject.md)
-## Used in
+ *  [subject](gene_to_go_term_association_subject.md)
+## Used by
 
- *  usage: [FunctionalAssociation](FunctionalAssociation.md)
+ * [FunctionalAssociation](FunctionalAssociation.md)
+ * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md)
+ * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md)
+ * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md)

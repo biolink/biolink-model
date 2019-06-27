@@ -3,36 +3,10 @@
 
 a piece of information that typically describes some piece of biology or is used as support.
 
-URI: [http://w3id.org/biolink/vocab/InformationContentEntity](http://w3id.org/biolink/vocab/InformationContentEntity)
+URI: [biolink:InformationContentEntity](https://w3id.org/biolink/vocab/InformationContentEntity)
 
-![img](images/InformationContentEntity.png)
-## Mappings
-
- * [IAO:0000030](http://purl.obolibrary.org/obo/IAO_0000030)
- * [UMLSSG:CONC](http://purl.obolibrary.org/obo/UMLSSG_CONC)
- * [UMLSSC:T077](http://purl.obolibrary.org/obo/UMLSSC_T077)
- * [UMLSST:cnce](http://purl.obolibrary.org/obo/UMLSST_cnce)
- * [UMLSSC:T078](http://purl.obolibrary.org/obo/UMLSSC_T078)
- * [UMLSST:idcn](http://purl.obolibrary.org/obo/UMLSST_idcn)
- * [UMLSSC:T079](http://purl.obolibrary.org/obo/UMLSSC_T079)
- * [UMLSST:tmco](http://purl.obolibrary.org/obo/UMLSST_tmco)
- * [UMLSSC:T080](http://purl.obolibrary.org/obo/UMLSSC_T080)
- * [UMLSST:qlco](http://purl.obolibrary.org/obo/UMLSST_qlco)
- * [UMLSSC:T081](http://purl.obolibrary.org/obo/UMLSSC_T081)
- * [UMLSST:qnco](http://purl.obolibrary.org/obo/UMLSST_qnco)
- * [UMLSSC:T082](http://purl.obolibrary.org/obo/UMLSSC_T082)
- * [UMLSST:spco](http://purl.obolibrary.org/obo/UMLSST_spco)
- * [UMLSSC:T089](http://purl.obolibrary.org/obo/UMLSSC_T089)
- * [UMLSST:rnlw](http://purl.obolibrary.org/obo/UMLSST_rnlw)
- * [UMLSSC:T102](http://purl.obolibrary.org/obo/UMLSSC_T102)
- * [UMLSST:grpa](http://purl.obolibrary.org/obo/UMLSST_grpa)
- * [UMLSSC:T169](http://purl.obolibrary.org/obo/UMLSSC_T169)
- * [UMLSST:ftcn](http://purl.obolibrary.org/obo/UMLSST_ftcn)
- * [UMLSSC:T171](http://purl.obolibrary.org/obo/UMLSSC_T171)
- * [UMLSST:lang](http://purl.obolibrary.org/obo/UMLSST_lang)
- * [UMLSSC:T185](http://purl.obolibrary.org/obo/UMLSSC_T185)
- * [UMLSST:clas](http://purl.obolibrary.org/obo/UMLSST_clas)
-## Inheritance
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[InformationContentEntity|id(i):identifier_type;name(i):label_type%20%3F;category(i):iri_type%20*]^-\[Publication],%20\[InformationContentEntity]^-\[EvidenceType],%20\[InformationContentEntity]^-\[ConfidenceLevel],%20\[NamedThing]^-\[InformationContentEntity])
+## Parents
 
  *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
 ## Children
@@ -40,47 +14,24 @@ URI: [http://w3id.org/biolink/vocab/InformationContentEntity](http://w3id.org/bi
  * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
  * [EvidenceType](EvidenceType.md) - Class of evidence that supports an association
  * [Publication](Publication.md) - Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
-## Used in
+## Referenced by class
 
-## Fields
+## Attributes
 
- * [category](category.md) *subsets*: (translator_minimal)
-    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)*
-    * inherited from: [NamedThing](NamedThing.md)
- * [description](description.md) *subsets*: (translator_minimal)
-    * Description: a human-readable description of a thing
-    * range: [NarrativeText](NarrativeText.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [full name](full_name.md)
-    * Description: a long-form human readable name for a thing
-    * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [id](id.md) *subsets*: (translator_minimal)
+### Inherited from named thing:
+
+ * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [IdentifierType](IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [iri](iri.md) *subsets*: (translator_minimal)
-    * Description: An IRI for the node. This is determined by the id using expansion rules.
-    * range: [IriType](IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [name](name.md) *subsets*: (translator_minimal)
+    * in subsets: (translator_minimal)
+ * [name](name.md)  <sub>OPT</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [node property](node_property.md)
-    * Description: A grouping for any property that holds between a node and a value
-    * range: **string**
+    * in subsets: (translator_minimal)
+ * [category](category.md)  <sub>0..*</sub>
+    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+    * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
- * [related to](related_to.md)
-    * Description: A grouping for any relationship type that holds between any two things
-    * range: [NamedThing](NamedThing.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [synonym](synonym.md) *subsets*: (translator_minimal)
-    * Description: Alternate human-readable names for a thing
-    * range: [LabelType](LabelType.md)*
-    * inherited from: [NamedThing](NamedThing.md)
- * [systematic synonym](systematic_synonym.md)
-    * Description: more commonly used for gene symbols in yeast
-    * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)

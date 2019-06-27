@@ -3,19 +3,17 @@
 
 number of things with a particular property
 
-URI: [http://w3id.org/biolink/vocab/has_count](slot_uri)
-## Mappings
-
+URI: [biolink:has_count](https://w3id.org/biolink/vocab/has_count)
 ## Domain and Range
 
-[FrequencyQuantifier](FrequencyQuantifier.md) -> **integer**
-## Inheritance
+[FrequencyQuantifier](FrequencyQuantifier.md) ->  <sub>OPT</sub> [Integer](Integer.md)
+## Parents
 
  *  is_a: [aggregate statistic](aggregate_statistic.md)
 ## Children
 
- *  child: [variant to population association.has count](variant_to_population_association_has_count.md)
-## Used in
+ *  [has count](variant_to_population_association_has_count.md)
+## Used by
 
- *  usage: [FrequencyQuantifier](FrequencyQuantifier.md)
- *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
+ * [FrequencyQuantifier](FrequencyQuantifier.md)
+ * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

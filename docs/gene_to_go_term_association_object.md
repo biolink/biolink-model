@@ -1,19 +1,17 @@
 # Slot: object
 
 
-class describing the activity, process or localization of the gene product
 
-URI: [http://w3id.org/biolink/vocab/gene_to_go_term_association_object](slot_uri)
-## Mappings
 
+URI: [biolink:gene_to_go_term_association_object](https://w3id.org/biolink/vocab/gene_to_go_term_association_object)
 ## Domain and Range
 
-[GeneToGoTermAssociation](GeneToGoTermAssociation.md) -> [GeneOntologyClass](GeneOntologyClass.md)
-## Inheritance
+[GeneToGoTermAssociation](GeneToGoTermAssociation.md) ->  <sub>REQ</sub> [GeneOntologyClass](GeneOntologyClass.md)
+## Parents
 
- *  is_a: [functional association.object](functional_association_object.md)
+ *  is_a: [object](functional_association_object.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeneToGoTermAssociation](GeneToGoTermAssociation.md)
+ * [GeneToGoTermAssociation](GeneToGoTermAssociation.md)

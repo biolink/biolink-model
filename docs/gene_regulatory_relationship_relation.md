@@ -1,19 +1,17 @@
 # Slot: relation
 
 
-the direction is always from regulator to regulated
 
-URI: [http://w3id.org/biolink/vocab/gene_regulatory_relationship_relation](slot_uri)
-## Mappings
 
+URI: [biolink:gene_regulatory_relationship_relation](https://w3id.org/biolink/vocab/gene_regulatory_relationship_relation)
 ## Domain and Range
 
-[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) -> [IriType](IriType.md)
-## Inheritance
+[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+## Parents
 
  *  is_a: [relation](relation.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md)
+ * [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md)

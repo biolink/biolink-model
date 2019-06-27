@@ -3,21 +3,15 @@
 
 holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat
 
-URI: [http://w3id.org/biolink/vocab/treats](slot_uri)
-## Mappings
-
- * [RO:0002606](http://purl.obolibrary.org/obo/RO_0002606)
- * [RO:0003307](http://purl.obolibrary.org/obo/RO_0003307)
- * [SEMMEDDB:TREATS](http://purl.obolibrary.org/obo/SEMMEDDB_TREATS)
- * [WD:P2175](http://purl.obolibrary.org/obo/WD_P2175)
+URI: [biolink:treats](https://w3id.org/biolink/vocab/treats)
 ## Domain and Range
 
-[Treatment](Treatment.md) -> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
-## Inheritance
+[Treatment](Treatment.md) ->  <sub>1..*</sub> [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+## Parents
 
- *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
+ *  is_a: [affects](affects.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [Treatment](Treatment.md)
+ * [Treatment](Treatment.md)

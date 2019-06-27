@@ -3,16 +3,14 @@
 
 
 
-URI: [http://w3id.org/biolink/vocab/has_exposure_parts](slot_uri)
-## Mappings
-
+URI: [biolink:has_exposure_parts](https://w3id.org/biolink/vocab/has_exposure_parts)
 ## Domain and Range
 
-[Treatment](Treatment.md) -> [DrugExposure](DrugExposure.md)
-## Inheritance
+[Treatment](Treatment.md) ->  <sub>1..*</sub> [DrugExposure](DrugExposure.md)
+## Parents
 
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [Treatment](Treatment.md)
+ * [Treatment](Treatment.md)

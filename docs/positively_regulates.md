@@ -1,18 +1,17 @@
 # Slot: positively regulates
 
 
-describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
 
-URI: [http://w3id.org/biolink/vocab/positively_regulates](slot_uri)
-## Mappings
 
+URI: [biolink:positively_regulates](https://w3id.org/biolink/vocab/positively_regulates)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
-## Inheritance
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+## Parents
 
- *  is_a: [regulates](regulates.md) *subsets*: (translator_minimal)
+ *  is_a: [regulates](regulates.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [NamedThing](NamedThing.md)

@@ -3,13 +3,10 @@
 
 A property or characteristic of an entity
 
-URI: [http://w3id.org/biolink/vocab/Attribute](http://w3id.org/biolink/vocab/Attribute)
+URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 
-![img](images/Attribute.png)
-## Mappings
-
- * [PATO:0000001](http://purl.obolibrary.org/obo/PATO_0000001)
-## Inheritance
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute|id:identifier_type;name:label_type%20%3F;category:iri_type%20*]uses%20-.->\[OntologyClass],%20\[Attribute]^-\[Zygosity],%20\[Attribute]^-\[SeverityValue],%20\[Attribute]^-\[Onset],%20\[Attribute]^-\[FrequencyValue],%20\[Attribute]^-\[ClinicalModifier],%20\[Attribute]^-\[BiologicalSex])
+## Uses Mixins
 
  *  mixin: [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
 ## Children
@@ -20,51 +17,21 @@ URI: [http://w3id.org/biolink/vocab/Attribute](http://w3id.org/biolink/vocab/Att
  * [Onset](Onset.md) - The age group in which manifestations appear
  * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
  * [Zygosity](Zygosity.md)
-## Used in
+## Referenced by class
 
-## Fields
+## Attributes
 
- * [category](category.md) *subsets*: (translator_minimal)
-    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)*
-    * inherited from: [NamedThing](NamedThing.md)
- * [description](description.md) *subsets*: (translator_minimal)
-    * Description: a human-readable description of a thing
-    * range: [NarrativeText](NarrativeText.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [full name](full_name.md)
-    * Description: a long-form human readable name for a thing
-    * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [id](id.md) *subsets*: (translator_minimal)
+### Inherited from named thing:
+
+ * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
     * range: [IdentifierType](IdentifierType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [iri](iri.md) *subsets*: (translator_minimal)
-    * Description: An IRI for the node. This is determined by the id using expansion rules.
-    * range: [IriType](IriType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [name](name.md) *subsets*: (translator_minimal)
+    * in subsets: (translator_minimal)
+ * [name](name.md)  <sub>OPT</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [node property](node_property.md)
-    * Description: A grouping for any property that holds between a node and a value
-    * range: **string**
-    * inherited from: [NamedThing](NamedThing.md)
- * [related to](related_to.md)
-    * Description: A grouping for any relationship type that holds between any two things
-    * range: [NamedThing](NamedThing.md)
-    * inherited from: [NamedThing](NamedThing.md)
- * [subclass of](subclass_of.md) *subsets*: (translator_minimal)
-    * Description: holds between two classes where the domain class is a specialization of the range class
-    * range: [OntologyClass](OntologyClass.md)
-    * inherited from: [OntologyClass](OntologyClass.md)
- * [synonym](synonym.md) *subsets*: (translator_minimal)
-    * Description: Alternate human-readable names for a thing
-    * range: [LabelType](LabelType.md)*
-    * inherited from: [NamedThing](NamedThing.md)
- * [systematic synonym](systematic_synonym.md)
-    * Description: more commonly used for gene symbols in yeast
-    * range: [LabelType](LabelType.md)
-    * inherited from: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)
+ * [category](category.md)  <sub>0..*</sub>
+    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+    * range: [IriType](IriType.md)
+    * in subsets: (translator_minimal)

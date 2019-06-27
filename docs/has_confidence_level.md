@@ -3,16 +3,15 @@
 
 connects an association to a qualitative term denoting the level of confidence
 
-URI: [http://w3id.org/biolink/vocab/has_confidence_level](slot_uri)
-## Mappings
-
+URI: [biolink:has_confidence_level](https://w3id.org/biolink/vocab/has_confidence_level)
 ## Domain and Range
 
-[Association](Association.md) -> [ConfidenceLevel](ConfidenceLevel.md)
-## Inheritance
+[Association](Association.md) ->  <sub>OPT</sub> [ConfidenceLevel](ConfidenceLevel.md)
+## Parents
 
  *  is_a: [association slot](association_slot.md)
 ## Children
 
-## Used in
+## Used by
 
+ * [Association](Association.md)

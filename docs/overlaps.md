@@ -3,19 +3,17 @@
 
 holds between entties that overlap in their extents (materials or processes)
 
-URI: [http://w3id.org/biolink/vocab/overlaps](slot_uri)
-## Mappings
-
- * [RO:0002131](http://purl.obolibrary.org/obo/RO_0002131)
+URI: [biolink:overlaps](https://w3id.org/biolink/vocab/overlaps)
 ## Domain and Range
 
-[NamedThing](NamedThing.md) -> [NamedThing](NamedThing.md)
-## Inheritance
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [NamedThing](NamedThing.md)
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children
 
- *  child: [has part](has_part.md) *subsets*: (translator_minimal)
- *  child: [part of](part_of.md) *subsets*: (translator_minimal)
-## Used in
+ *  [has part](has_part.md)
+ *  [part of](part_of.md)
+## Used by
 
+ * [NamedThing](NamedThing.md)

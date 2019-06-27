@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-a sequence variant in which the allele state is associated with some other entity
 
-URI: [http://w3id.org/biolink/vocab/variant_to_thing_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:variant_to_thing_association_subject](https://w3id.org/biolink/vocab/variant_to_thing_association_subject)
 ## Domain and Range
 
-[VariantToThingAssociation](VariantToThingAssociation.md) -> [SequenceVariant](SequenceVariant.md)
-## Inheritance
+[VariantToThingAssociation](VariantToThingAssociation.md) ->  <sub>REQ</sub> [SequenceVariant](SequenceVariant.md)
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [VariantToThingAssociation](VariantToThingAssociation.md)
+ * [VariantToThingAssociation](VariantToThingAssociation.md)

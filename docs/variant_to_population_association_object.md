@@ -1,19 +1,17 @@
 # Slot: object
 
 
-the population that is observed to have the frequency
 
-URI: [http://w3id.org/biolink/vocab/variant_to_population_association_object](slot_uri)
-## Mappings
 
+URI: [biolink:variant_to_population_association_object](https://w3id.org/biolink/vocab/variant_to_population_association_object)
 ## Domain and Range
 
-[VariantToPopulationAssociation](VariantToPopulationAssociation.md) -> [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
-## Inheritance
+[VariantToPopulationAssociation](VariantToPopulationAssociation.md) ->  <sub>REQ</sub> [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
+## Parents
 
  *  is_a: [object](object.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
+ * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

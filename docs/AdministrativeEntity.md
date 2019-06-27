@@ -3,17 +3,33 @@
 
 
 
-URI: [http://w3id.org/biolink/vocab/AdministrativeEntity](http://w3id.org/biolink/vocab/AdministrativeEntity)
+URI: [biolink:AdministrativeEntity](https://w3id.org/biolink/vocab/AdministrativeEntity)
 
-![img](images/AdministrativeEntity.png)
-## Mappings
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[AdministrativeEntity|id(i):identifier_type;name(i):label_type%20%3F;category(i):iri_type%20*]^-\[Provider],%20\[NamedThing]^-\[AdministrativeEntity])
+## Parents
 
-## Inheritance
-
+ *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
 ## Children
 
  * [Provider](Provider.md) - person, group, organization or project that provides a piece of information
-## Used in
+## Referenced by class
 
-## Fields
+## Attributes
 
+### Inherited from named thing:
+
+ * [id](id.md)  <sub>REQ</sub>
+    * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+    * range: [IdentifierType](IdentifierType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)
+ * [name](name.md)  <sub>OPT</sub>
+    * Description: A human-readable name for a thing
+    * range: [LabelType](LabelType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)
+ * [category](category.md)  <sub>0..*</sub>
+    * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+    * range: [IriType](IriType.md)
+    * inherited from: [NamedThing](NamedThing.md)
+    * in subsets: (translator_minimal)

@@ -1,22 +1,44 @@
 # Slot: regulates, entity to entity
 
 
-describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
 
-URI: [http://w3id.org/biolink/vocab/regulates_entity_to_entity](slot_uri)
-## Mappings
 
- * [RO:0002448](http://purl.obolibrary.org/obo/RO_0002448)
+URI: [biolink:regulates_entity_to_entity](https://w3id.org/biolink/vocab/regulates_entity_to_entity)
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) -> [MolecularEntity](MolecularEntity.md)
-## Inheritance
+[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [MolecularEntity](MolecularEntity.md)
+## Parents
 
- *  is_a: [regulates](regulates.md) *subsets*: (translator_minimal)
+ *  is_a: [regulates](regulates.md)
 ## Children
 
- *  child: [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.md) *subsets*: (translator_minimal)
- *  child: [positively regulates, entity to entity](positively_regulates_entity_to_entity.md) *subsets*: (translator_minimal)
-## Used in
+ *  [negatively regulates, entity to entity](negatively_regulates_entity_to_entity.md)
+ *  [positively regulates, entity to entity](positively_regulates_entity_to_entity.md)
+## Used by
 
- *  usage: [MolecularEntity](MolecularEntity.md)
+ * [RNAProduct](RNAProduct.md)
+ * [RNAProductIsoform](RNAProductIsoform.md)
+ * [Carbohydrate](Carbohydrate.md)
+ * [ChemicalSubstance](ChemicalSubstance.md)
+ * [CodingSequence](CodingSequence.md)
+ * [Drug](Drug.md)
+ * [Exon](Exon.md)
+ * [Gene](Gene.md)
+ * [GeneFamily](GeneFamily.md)
+ * [GeneOrGeneProduct](GeneOrGeneProduct.md)
+ * [GeneProduct](GeneProduct.md)
+ * [GeneProductIsoform](GeneProductIsoform.md)
+ * [Genome](Genome.md)
+ * [GenomicEntity](GenomicEntity.md)
+ * [Genotype](Genotype.md)
+ * [Haplotype](Haplotype.md)
+ * [MacromolecularComplex](MacromolecularComplex.md)
+ * [MacromolecularMachine](MacromolecularMachine.md)
+ * [Metabolite](Metabolite.md)
+ * [MicroRNA](MicroRNA.md)
+ * [MolecularEntity](MolecularEntity.md)
+ * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+ * [Protein](Protein.md)
+ * [ProteinIsoform](ProteinIsoform.md)
+ * [SequenceVariant](SequenceVariant.md)
+ * [Transcript](Transcript.md)

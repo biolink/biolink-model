@@ -1,21 +1,19 @@
 # Slot: has quotient
 
 
-A grouping for any property that holds between a node and a value
 
-URI: [http://w3id.org/biolink/vocab/has_quotient](slot_uri)
-## Mappings
 
+URI: [biolink:has_quotient](https://w3id.org/biolink/vocab/has_quotient)
 ## Domain and Range
 
-[FrequencyQuantifier](FrequencyQuantifier.md) -> **double**
-## Inheritance
+[FrequencyQuantifier](FrequencyQuantifier.md) ->  <sub>OPT</sub> [Double](Double.md)
+## Parents
 
  *  is_a: [aggregate statistic](aggregate_statistic.md)
 ## Children
 
- *  child: [variant to population association.has quotient](variant_to_population_association_has_quotient.md)
-## Used in
+ *  [has quotient](variant_to_population_association_has_quotient.md)
+## Used by
 
- *  usage: [FrequencyQuantifier](FrequencyQuantifier.md)
- *  usage: [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
+ * [FrequencyQuantifier](FrequencyQuantifier.md)
+ * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

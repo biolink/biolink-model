@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -23,66 +22,41 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 })
 public class SequenceVariant {
 
-    /**
-     * The state of the sequence w.r.t a reference sequence
-     * 
-     */
     @JsonProperty("has_biological_sequence")
-    @JsonPropertyDescription("The state of the sequence w.r.t a reference sequence")
     private String hasBiologicalSequence;
-    /**
-     * Each allele can be associated with any number of genes
-     * 
-     */
     @JsonProperty("has_gene")
-    @JsonPropertyDescription("Each allele can be associated with any number of genes")
     private List<String> hasGene = new ArrayList<String>();
     /**
-     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     * (Required)
      * 
      */
     @JsonProperty("id")
-    @JsonPropertyDescription("A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI")
     private String id;
 
-    /**
-     * The state of the sequence w.r.t a reference sequence
-     * 
-     */
     @JsonProperty("has_biological_sequence")
     public String getHasBiologicalSequence() {
         return hasBiologicalSequence;
     }
 
-    /**
-     * The state of the sequence w.r.t a reference sequence
-     * 
-     */
     @JsonProperty("has_biological_sequence")
     public void setHasBiologicalSequence(String hasBiologicalSequence) {
         this.hasBiologicalSequence = hasBiologicalSequence;
     }
 
-    /**
-     * Each allele can be associated with any number of genes
-     * 
-     */
     @JsonProperty("has_gene")
     public List<String> getHasGene() {
         return hasGene;
     }
 
-    /**
-     * Each allele can be associated with any number of genes
-     * 
-     */
     @JsonProperty("has_gene")
     public void setHasGene(List<String> hasGene) {
         this.hasGene = hasGene;
     }
 
     /**
-     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     * (Required)
      * 
      */
     @JsonProperty("id")
@@ -91,7 +65,8 @@ public class SequenceVariant {
     }
 
     /**
-     * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
+     * 
+     * (Required)
      * 
      */
     @JsonProperty("id")

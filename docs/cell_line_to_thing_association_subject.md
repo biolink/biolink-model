@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
-URI: [http://w3id.org/biolink/vocab/cell_line_to_thing_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:cell_line_to_thing_association_subject](https://w3id.org/biolink/vocab/cell_line_to_thing_association_subject)
 ## Domain and Range
 
-[CellLineToThingAssociation](CellLineToThingAssociation.md) -> [CellLine](CellLine.md)
-## Inheritance
+[CellLineToThingAssociation](CellLineToThingAssociation.md) ->  <sub>REQ</sub> [CellLine](CellLine.md)
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [CellLineToThingAssociation](CellLineToThingAssociation.md)
+ * [CellLineToThingAssociation](CellLineToThingAssociation.md)

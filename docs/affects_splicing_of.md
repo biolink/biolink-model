@@ -3,19 +3,42 @@
 
 holds between a molecular entity and an mRNA where the action or effect of the molecular entity impacts the splicing of the mRNA
 
-URI: [http://w3id.org/biolink/vocab/affects_splicing_of](slot_uri)
-## Mappings
-
+URI: [biolink:affects_splicing_of](https://w3id.org/biolink/vocab/affects_splicing_of)
 ## Domain and Range
 
-[MolecularEntity](MolecularEntity.md) -> [Transcript](Transcript.md)
-## Inheritance
+[MolecularEntity](MolecularEntity.md) ->  <sub>0..*</sub> [Transcript](Transcript.md)
+## Parents
 
- *  is_a: [affects](affects.md) *subsets*: (translator_minimal)
+ *  is_a: [affects](affects.md)
 ## Children
 
- *  child: [decreases splicing of](decreases_splicing_of.md) *subsets*: (translator_minimal)
- *  child: [increases splicing of](increases_splicing_of.md) *subsets*: (translator_minimal)
-## Used in
+ *  [decreases splicing of](decreases_splicing_of.md)
+ *  [increases splicing of](increases_splicing_of.md)
+## Used by
 
- *  usage: [MolecularEntity](MolecularEntity.md)
+ * [RNAProduct](RNAProduct.md)
+ * [RNAProductIsoform](RNAProductIsoform.md)
+ * [Carbohydrate](Carbohydrate.md)
+ * [ChemicalSubstance](ChemicalSubstance.md)
+ * [CodingSequence](CodingSequence.md)
+ * [Drug](Drug.md)
+ * [Exon](Exon.md)
+ * [Gene](Gene.md)
+ * [GeneFamily](GeneFamily.md)
+ * [GeneOrGeneProduct](GeneOrGeneProduct.md)
+ * [GeneProduct](GeneProduct.md)
+ * [GeneProductIsoform](GeneProductIsoform.md)
+ * [Genome](Genome.md)
+ * [GenomicEntity](GenomicEntity.md)
+ * [Genotype](Genotype.md)
+ * [Haplotype](Haplotype.md)
+ * [MacromolecularComplex](MacromolecularComplex.md)
+ * [MacromolecularMachine](MacromolecularMachine.md)
+ * [Metabolite](Metabolite.md)
+ * [MicroRNA](MicroRNA.md)
+ * [MolecularEntity](MolecularEntity.md)
+ * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+ * [Protein](Protein.md)
+ * [ProteinIsoform](ProteinIsoform.md)
+ * [SequenceVariant](SequenceVariant.md)
+ * [Transcript](Transcript.md)

@@ -1,0 +1,14 @@
+description: Qualifier for freqency type associations
+display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
+- frequency qualifier mixin
+document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
+- frequency qualifier mixin
+fields:
+- description: a qualifier used in a phenotypic association to state how frequent
+    the phenotype is observed in the subject
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - frequency qualifier
+  id: frequency_qualifier
+id: frequency_qualifier_mixin
+schema_generating: true
+weight: 20

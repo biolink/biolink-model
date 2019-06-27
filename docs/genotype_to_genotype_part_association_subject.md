@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-parent genotype
 
-URI: [http://w3id.org/biolink/vocab/genotype_to_genotype_part_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:genotype_to_genotype_part_association_subject](https://w3id.org/biolink/vocab/genotype_to_genotype_part_association_subject)
 ## Domain and Range
 
-[GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) -> [Genotype](Genotype.md)
-## Inheritance
+[GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) ->  <sub>REQ</sub> [Genotype](Genotype.md)
+## Parents
 
  *  is_a: [subject](subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)
+ * [GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md)

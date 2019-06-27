@@ -1,19 +1,17 @@
 # Slot: relation
 
 
-E.g. is pathogenic for
 
-URI: [http://w3id.org/biolink/vocab/variant_to_disease_association_relation](slot_uri)
-## Mappings
 
+URI: [biolink:variant_to_disease_association_relation](https://w3id.org/biolink/vocab/variant_to_disease_association_relation)
 ## Domain and Range
 
-[VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) -> [IriType](IriType.md)
-## Inheritance
+[VariantToDiseaseAssociation](VariantToDiseaseAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+## Parents
 
  *  is_a: [relation](relation.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)
+ * [VariantToDiseaseAssociation](VariantToDiseaseAssociation.md)

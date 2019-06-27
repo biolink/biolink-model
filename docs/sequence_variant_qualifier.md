@@ -3,17 +3,15 @@
 
 a qualifier used in an association where the variant
 
-URI: [http://w3id.org/biolink/vocab/sequence_variant_qualifier](slot_uri)
-## Mappings
-
+URI: [biolink:sequence_variant_qualifier](https://w3id.org/biolink/vocab/sequence_variant_qualifier)
 ## Domain and Range
 
-[GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) -> [SequenceVariant](SequenceVariant.md)
-## Inheritance
+[GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) ->  <sub>OPT</sub> [SequenceVariant](SequenceVariant.md)
+## Parents
 
  *  is_a: [association slot](association_slot.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
+ * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)

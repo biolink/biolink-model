@@ -1,6 +1,5 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -22,32 +21,29 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class PopulationToPopulationAssociation {
 
     /**
-     * the population that form the object of the association
+     * 
      * (Required)
      * 
      */
     @JsonProperty("object")
-    @JsonPropertyDescription("the population that form the object of the association")
     private String object;
     /**
-     * A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
+     * 
      * (Required)
      * 
      */
     @JsonProperty("relation")
-    @JsonPropertyDescription("A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used")
     private String relation;
     /**
-     * the population that form the subject of the association
+     * 
      * (Required)
      * 
      */
     @JsonProperty("subject")
-    @JsonPropertyDescription("the population that form the subject of the association")
     private String subject;
 
     /**
-     * the population that form the object of the association
+     * 
      * (Required)
      * 
      */
@@ -57,7 +53,7 @@ public class PopulationToPopulationAssociation {
     }
 
     /**
-     * the population that form the object of the association
+     * 
      * (Required)
      * 
      */
@@ -67,7 +63,7 @@ public class PopulationToPopulationAssociation {
     }
 
     /**
-     * A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
+     * 
      * (Required)
      * 
      */
@@ -77,7 +73,7 @@ public class PopulationToPopulationAssociation {
     }
 
     /**
-     * A relationship type that holds between the subject and object populations. Standard mereological relations can be used. E.g. subject part-of object, subject overlaps object. Derivation relationships can also be used
+     * 
      * (Required)
      * 
      */
@@ -87,7 +83,7 @@ public class PopulationToPopulationAssociation {
     }
 
     /**
-     * the population that form the subject of the association
+     * 
      * (Required)
      * 
      */
@@ -97,7 +93,7 @@ public class PopulationToPopulationAssociation {
     }
 
     /**
-     * the population that form the subject of the association
+     * 
      * (Required)
      * 
      */

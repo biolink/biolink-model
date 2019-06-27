@@ -3,16 +3,14 @@
 
 
 
-URI: [http://w3id.org/biolink/vocab/interacting_molecules_category](slot_uri)
-## Mappings
-
+URI: [biolink:interacting_molecules_category](https://w3id.org/biolink/vocab/interacting_molecules_category)
 ## Domain and Range
 
-[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) -> [OntologyClass](OntologyClass.md)
-## Inheritance
+[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) ->  <sub>OPT</sub> [OntologyClass](OntologyClass.md)
+## Parents
 
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)
+ * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)

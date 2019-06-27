@@ -3,17 +3,16 @@
 
 equivalent to has quotient multiplied by 100
 
-URI: [http://w3id.org/biolink/vocab/has_percentage](slot_uri)
-## Mappings
-
+URI: [biolink:has_percentage](https://w3id.org/biolink/vocab/has_percentage)
 ## Domain and Range
 
-[FrequencyQuantifier](FrequencyQuantifier.md) -> **double**
-## Inheritance
+[FrequencyQuantifier](FrequencyQuantifier.md) ->  <sub>OPT</sub> [Double](Double.md)
+## Parents
 
  *  is_a: [aggregate statistic](aggregate_statistic.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [FrequencyQuantifier](FrequencyQuantifier.md)
+ * [FrequencyQuantifier](FrequencyQuantifier.md)
+ * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

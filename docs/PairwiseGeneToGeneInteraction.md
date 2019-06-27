@@ -3,62 +3,75 @@
 
 An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
 
-URI: [http://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction](http://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction)
+URI: [biolink:PairwiseGeneToGeneInteraction](https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction)
 
-![img](images/PairwiseGeneToGeneInteraction.png)
-## Mappings
-
-## Inheritance
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[PairwiseGeneToGeneInteraction|relation:iri_type;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[PairwiseGeneToGeneInteraction],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[PairwiseGeneToGeneInteraction],%20\[OntologyClass]<association%20type(i)%200..1-%20\[PairwiseGeneToGeneInteraction],%20\[GeneOrGeneProduct]<object(i)%201..1-%20\[PairwiseGeneToGeneInteraction],%20\[GeneOrGeneProduct]<subject(i)%201..1-%20\[PairwiseGeneToGeneInteraction],%20\[PairwiseGeneToGeneInteraction]uses%20-.->\[PairwiseInteractionAssociation],%20\[GeneToGeneAssociation]^-\[PairwiseGeneToGeneInteraction])
+## Parents
 
  *  is_a: [GeneToGeneAssociation](GeneToGeneAssociation.md) - abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
+## Uses Mixins
+
  *  mixin: [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) - An interaction at the molecular level between two physical entities
-## Children
+## Referenced by class
 
-## Used in
+## Attributes
 
-## Fields
+### Own
 
- * [pairwise gene to gene interaction.relation](pairwise_gene_to_gene_interaction_relation.md)
-    * Description: interaction relationship type
-    * range: [IriType](IriType.md) [required]
-    * edge label: [molecularly interacts with](molecularly_interacts_with.md) *subsets*: (translator_minimal)
-    * __Local__
- * [association slot](association_slot.md)
-    * Description: any slot that relates an association to another entity
-    * range: **string**
-    * inherited from: [Association](Association.md)
- * [association type](association_type.md)
-    * Description: connects an association to the type of association (e.g. gene to phenotype)
-    * range: [OntologyClass](OntologyClass.md)
-    * inherited from: [Association](Association.md)
- * [association.id](association_id.md) *subsets*: (translator_minimal)
+ * [relation](pairwise_gene_to_gene_interaction_relation.md)  <sub>REQ</sub>
+    * range: [IriType](IriType.md)
+### Inherited from association:
+
+ * [id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
     * range: [IdentifierType](IdentifierType.md)
     * inherited from: [Association](Association.md)
- * [gene to gene association.object](gene_to_gene_association_object.md)
-    * Description: the object gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
-    * inherited from: [GeneToGeneAssociation](GeneToGeneAssociation.md)
- * [gene to gene association.subject](gene_to_gene_association_subject.md)
-    * Description: the subject gene in the association. If the relation is symmetric, subject vs object is arbitrary. We allow a gene product to stand as proxy for the gene or vice versa
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md) [required]
-    * inherited from: [GeneToGeneAssociation](GeneToGeneAssociation.md)
- * [pairwise interaction association.interacting molecules category](interacting_molecules_category.md)
-    * range: [OntologyClass](OntologyClass.md)
-    * inherited from: [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)
- * [negated](negated.md)
-    * Description: if set to true, then the association is negated i.e. is not true
-    * range: **boolean**
+    * in subsets: (translator_minimal)
+ * [subject](subject.md)  <sub>REQ</sub>
+    * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+    * range: [IriType](IriType.md)
     * inherited from: [Association](Association.md)
- * [provided by](provided_by.md)
+ * [relation](relation.md)  <sub>REQ</sub>
+    * Description: the relationship type by which a subject is connected to an object in an association
+    * range: [IriType](IriType.md)
+    * inherited from: [Association](Association.md)
+ * [object](object.md)  <sub>REQ</sub>
+    * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
+    * range: [IriType](IriType.md)
+    * inherited from: [Association](Association.md)
+ * [negated](negated.md)  <sub>OPT</sub>
+    * Description: if set to true, then the association is negated i.e. is not true
+    * range: [Boolean](Boolean.md)
+    * inherited from: [Association](Association.md)
+ * [association type](association_type.md)  <sub>OPT</sub>
+    * Description: connects an association to the type of association (e.g. gene to phenotype)
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [Association](Association.md)
+ * [qualifiers](qualifiers.md)  <sub>0..*</sub>
+    * Description: connects an association to qualifiers that modify or qualify the meaning of that association
+    * range: [OntologyClass](OntologyClass.md)
+    * inherited from: [Association](Association.md)
+ * [publications](publications.md)  <sub>0..*</sub>
+    * Description: connects an association to publications supporting the association
+    * range: [Publication](Publication.md)
+    * inherited from: [Association](Association.md)
+ * [provided by](provided_by.md)  <sub>OPT</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
- * [publications](publications.md)
-    * Description: connects an association to publications supporting the association
-    * range: [Publication](Publication.md)*
-    * inherited from: [Association](Association.md)
- * [qualifiers](qualifiers.md)
-    * Description: connects an association to qualifiers that modify or qualify the meaning of that association
-    * range: [OntologyClass](OntologyClass.md)*
-    * inherited from: [Association](Association.md)
+### Inherited from gene to gene association:
+
+ * [subject](gene_to_gene_association_subject.md)  <sub>REQ</sub>
+    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+    * inherited from: [GeneToGeneAssociation](GeneToGeneAssociation.md)
+ * [object](gene_to_gene_association_object.md)  <sub>REQ</sub>
+    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+    * inherited from: [GeneToGeneAssociation](GeneToGeneAssociation.md)
+### Inherited from pairwise gene to gene interaction:
+
+ * [relation](pairwise_gene_to_gene_interaction_relation.md)  <sub>REQ</sub>
+    * range: [IriType](IriType.md)
+### Domain for slot:
+
+ * [relation](pairwise_gene_to_gene_interaction_relation.md)  <sub>REQ</sub>
+    * range: [IriType](IriType.md)

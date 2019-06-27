@@ -1,19 +1,17 @@
 # Slot: subject
 
 
-A gene that has a role in modeling the disease. This may be a model organism ortholog of a known disease gene, or it may be a gene whose mutants recapitulate core features of the disease.
 
-URI: [http://w3id.org/biolink/vocab/gene_has_variant_that_contributes_to_disease_association_subject](slot_uri)
-## Mappings
 
+URI: [biolink:gene_has_variant_that_contributes_to_disease_association_subject](https://w3id.org/biolink/vocab/gene_has_variant_that_contributes_to_disease_association_subject)
 ## Domain and Range
 
-[GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) -> [GeneOrGeneProduct](GeneOrGeneProduct.md)
-## Inheritance
+[GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md) ->  <sub>REQ</sub> [GeneOrGeneProduct](GeneOrGeneProduct.md)
+## Parents
 
- *  is_a: [gene to disease association.subject](gene_to_disease_association_subject.md)
+ *  is_a: [subject](gene_to_disease_association_subject.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
+ * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)

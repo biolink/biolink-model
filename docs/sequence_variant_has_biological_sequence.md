@@ -1,19 +1,17 @@
 # Slot: has biological sequence
 
 
-The state of the sequence w.r.t a reference sequence
 
-URI: [http://w3id.org/biolink/vocab/sequence_variant_has_biological_sequence](slot_uri)
-## Mappings
 
+URI: [biolink:sequence_variant_has_biological_sequence](https://w3id.org/biolink/vocab/sequence_variant_has_biological_sequence)
 ## Domain and Range
 
-[SequenceVariant](SequenceVariant.md) -> [BiologicalSequence](BiologicalSequence.md)
-## Inheritance
+[SequenceVariant](SequenceVariant.md) ->  <sub>OPT</sub> [BiologicalSequence](BiologicalSequence.md)
+## Parents
 
  *  is_a: [has biological sequence](has_biological_sequence.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [SequenceVariant](SequenceVariant.md)
+ * [SequenceVariant](SequenceVariant.md)

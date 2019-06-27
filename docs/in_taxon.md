@@ -3,19 +3,54 @@
 
 connects a thing to a class representing a taxon
 
-URI: [http://w3id.org/biolink/vocab/in_taxon](slot_uri)
-## Mappings
-
- * [RO:0002162](http://purl.obolibrary.org/obo/RO_0002162)
- * [WD:P703](http://purl.obolibrary.org/obo/WD_P703)
+URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
 ## Domain and Range
 
-[ThingWithTaxon](ThingWithTaxon.md) -> [OrganismTaxon](OrganismTaxon.md)
-## Inheritance
+[ThingWithTaxon](ThingWithTaxon.md) ->  <sub>0..*</sub> [OrganismTaxon](OrganismTaxon.md)
+## Parents
 
  *  is_a: [related to](related_to.md)
 ## Children
 
-## Used in
+## Used by
 
- *  usage: [ThingWithTaxon](ThingWithTaxon.md)
+ * [RNAProduct](RNAProduct.md)
+ * [RNAProductIsoform](RNAProductIsoform.md)
+ * [AnatomicalEntity](AnatomicalEntity.md)
+ * [Biosample](Biosample.md)
+ * [Carbohydrate](Carbohydrate.md)
+ * [Case](Case.md)
+ * [Cell](Cell.md)
+ * [CellLine](CellLine.md)
+ * [CellularComponent](CellularComponent.md)
+ * [ChemicalSubstance](ChemicalSubstance.md)
+ * [CodingSequence](CodingSequence.md)
+ * [Disease](Disease.md)
+ * [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+ * [Drug](Drug.md)
+ * [Exon](Exon.md)
+ * [Gene](Gene.md)
+ * [GeneFamily](GeneFamily.md)
+ * [GeneOrGeneProduct](GeneOrGeneProduct.md)
+ * [GeneProduct](GeneProduct.md)
+ * [GeneProductIsoform](GeneProductIsoform.md)
+ * [Genome](Genome.md)
+ * [GenomicEntity](GenomicEntity.md)
+ * [Genotype](Genotype.md)
+ * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
+ * [Haplotype](Haplotype.md)
+ * [IndividualOrganism](IndividualOrganism.md)
+ * [LifeStage](LifeStage.md)
+ * [MacromolecularComplex](MacromolecularComplex.md)
+ * [MacromolecularMachine](MacromolecularMachine.md)
+ * [Metabolite](Metabolite.md)
+ * [MicroRNA](MicroRNA.md)
+ * [MolecularEntity](MolecularEntity.md)
+ * [NoncodingRNAProduct](NoncodingRNAProduct.md)
+ * [PhenotypicFeature](PhenotypicFeature.md)
+ * [PopulationOfIndividualOrganisms](PopulationOfIndividualOrganisms.md)
+ * [Protein](Protein.md)
+ * [ProteinIsoform](ProteinIsoform.md)
+ * [SequenceVariant](SequenceVariant.md)
+ * [ThingWithTaxon](ThingWithTaxon.md)
+ * [Transcript](Transcript.md)

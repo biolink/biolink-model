@@ -1,6 +1,5 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -19,27 +18,14 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 })
 public class MacromolecularMachine {
 
-    /**
-     * genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-     * 
-     */
     @JsonProperty("name")
-    @JsonPropertyDescription("genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name")
     private String name;
 
-    /**
-     * genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-     * 
-     */
     @JsonProperty("name")
     public String getName() {
         return name;
     }
 
-    /**
-     * genes are typically designated by a short symbol and a full name. We map the symbol to the default display name and use an additional slot for full name
-     * 
-     */
     @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
