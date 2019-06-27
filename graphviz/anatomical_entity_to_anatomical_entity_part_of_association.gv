@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,1467.5,281"];
+	graph [bb="0,0,1525.5,281"];
 	node [label="\N"];
 	"anatomical entity to anatomical entity part of association"	 [height=0.5,
 		label="anatomical entity to anatomical entity part of association",
-		pos="709.2,263",
+		pos="767.2,263",
 		width=5.8539];
 	"anatomical entity to anatomical entity association"	 [height=0.5,
 		pos="185.2,177",
 		width=5.1445];
 	"anatomical entity to anatomical entity part of association" -> "anatomical entity to anatomical entity association"	 [label=is_a,
 		lp="417.48,220",
-		pos="e,251.4,193.93 569.35,249.52 517.73,243.73 458.86,236.16 405.65,227 357.31,218.68 303.63,206.56 261.34,196.34"];
+		pos="e,249.9,193.9 606.46,251.29 543.6,245.59 471.03,237.63 405.65,227 356.6,219.03 302.13,206.71 259.61,196.29"];
 	id	 [height=0.5,
 		pos="415.2,177",
 		width=0.75];
 	"anatomical entity to anatomical entity part of association" -> id	 [color=blue,
 		label=id,
 		lp="451.65,220",
-		pos="e,421.26,194.66 543.54,251.83 501.31,246.46 462.88,238.57 445.31,227 436.86,221.44 430.42,212.6 425.71,203.9",
+		pos="e,421.2,194.76 606.37,251.3 533.23,244.83 459.72,236.24 445.31,227 436.79,221.54 430.34,212.73 425.63,204.01",
 		style=solid];
 	subject	 [height=0.5,
 		pos="548.2,177",
@@ -25,7 +25,7 @@ digraph {
 	"anatomical entity to anatomical entity part of association" -> subject	 [color=blue,
 		label=subject,
 		lp="586.03,220",
-		pos="e,550.17,195.06 615.96,246.8 593.7,241.35 573.94,234.68 565.55,227 559.26,221.24 555.25,213.09 552.69,205.03",
+		pos="e,549.98,195.29 631.55,249.17 602.37,243.87 576.87,236.67 565.55,227 558.99,221.4 554.91,213.19 552.37,205.03",
 		style=solid];
 	relation	 [height=0.5,
 		pos="528.2,18",
@@ -33,7 +33,7 @@ digraph {
 	"anatomical entity to anatomical entity part of association" -> relation	 [color=blue,
 		label=relation,
 		lp="512.58,134",
-		pos="e,518.8,35.476 613.62,246.9 592.92,241.82 571.46,235.3 552.2,227 528.65,216.86 518.08,216.56 504.2,195 474.39,148.68 497.5,81.424 \
+		pos="e,518.8,35.476 631.5,249.21 604.65,244.01 577.1,236.86 552.2,227 528.36,217.56 518.08,216.56 504.2,195 474.39,148.68 497.5,81.424 \
 514.45,44.586",
 		style=solid];
 	object	 [height=0.5,
@@ -42,8 +42,8 @@ digraph {
 	"anatomical entity to anatomical entity part of association" -> object	 [color=blue,
 		label=object,
 		lp="645.3,177",
-		pos="e,596.92,108.39 680.52,244.98 663.15,232.77 641.77,215.2 627.99,195 610.03,168.67 617.09,156.57 605.2,127 603.96,123.92 602.59,120.73 \
-601.18,117.58",
+		pos="e,596.92,108.39 707.35,245.69 679.87,235.04 648.83,218.76 627.99,195 606.98,171.03 617.09,156.57 605.2,127 603.96,123.92 602.59,\
+120.73 601.18,117.58",
 		style=solid];
 	negated	 [color=blue,
 		height=0.5,
@@ -52,8 +52,8 @@ digraph {
 		width=1.0584];
 	"anatomical entity to anatomical entity part of association" -> negated	 [color=blue,
 		label=negated,
-		lp="730.97,220",
-		pos="e,709.2,195.21 709.2,244.76 709.2,233.36 709.2,218.43 709.2,205.49",
+		lp="763.97,220",
+		pos="e,720.89,194.33 754.9,244.76 746.66,232.55 735.7,216.29 726.57,202.76",
 		style=solid];
 	"association type"	 [color=blue,
 		height=0.5,
@@ -62,8 +62,8 @@ digraph {
 		width=1.6931];
 	"anatomical entity to anatomical entity part of association" -> "association type"	 [color=blue,
 		label="association type",
-		lp="820.11,220",
-		pos="e,803.3,193.84 733.73,244.97 751.59,231.84 775.92,213.96 795.14,199.83",
+		lp="846.11,220",
+		pos="e,813.91,194.92 779.71,244.76 787.98,232.71 798.95,216.72 808.16,203.3",
 		style=solid];
 	qualifiers	 [color=blue,
 		height=0.5,
@@ -72,8 +72,8 @@ digraph {
 		width=1.6931];
 	"anatomical entity to anatomical entity part of association" -> qualifiers	 [color=blue,
 		label=qualifiers,
-		lp="926.25,220",
-		pos="e,939.04,193.38 800.48,246.67 823.25,241.46 847.39,234.93 869.2,227 890.13,219.39 912.28,208.24 930.13,198.39",
+		lp="944.25,220",
+		pos="e,945.93,194.09 843.21,246.2 860.71,241.09 878.94,234.73 895.2,227 910.14,219.9 925.31,209.7 937.77,200.37",
 		style=solid];
 	publications	 [color=blue,
 		height=0.5,
@@ -82,8 +82,8 @@ digraph {
 		width=1.3859];
 	"anatomical entity to anatomical entity part of association" -> publications	 [color=blue,
 		label=publications,
-		lp="1037.4,220",
-		pos="e,1062.6,190.82 840.27,248.88 877.99,243.48 919,236.3 956.2,227 989.44,218.69 1025.8,205.44 1053.1,194.66",
+		lp="1049.4,220",
+		pos="e,1065,191.65 881.03,247.82 911.6,242.5 944.42,235.63 974.2,227 1002.2,218.88 1032.5,206.34 1055.8,195.85",
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
@@ -92,24 +92,34 @@ digraph {
 		width=1.1129];
 	"anatomical entity to anatomical entity part of association" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="1152.8,220",
-		pos="e,1175.4,190.41 858.4,250.27 950.04,242.1 1053.9,232.11 1075.2,227 1106.9,219.41 1141.2,205.69 1166.3,194.54",
+		lp="1160.8,220",
+		pos="e,1177.3,190.82 917.27,250.36 984.24,243.84 1055.2,235.5 1087.2,227 1115.4,219.52 1145.6,206.31 1168.1,195.35",
 		style=solid];
 	"association slot"	 [color=blue,
 		height=0.5,
 		label=string,
-		pos="1292.2,177",
+		pos="1291.2,177",
 		width=0.8403];
 	"anatomical entity to anatomical entity part of association" -> "association slot"	 [color=blue,
 		label="association slot",
-		lp="1270.2,220",
-		pos="e,1271.3,190.28 860.07,250.4 883.22,248.54 906.85,246.69 929.2,245 1045.1,236.26 1077.9,257.15 1190.2,227 1215.9,220.11 1242.7,206.63 \
-1262.5,195.41",
+		lp="1274.2,220",
+		pos="e,1271.2,190.9 918.93,250.5 1042.4,240.31 1196.5,227.51 1198.2,227 1221.1,220.21 1244.8,207.38 1262.5,196.42",
+		style=solid];
+	"edge label"	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="1400.2,177",
+		width=1.2425];
+	"anatomical entity to anatomical entity part of association" -> "edge label"	 [color=blue,
+		label="edge label",
+		lp="1379.8,220",
+		pos="e,1380.9,193.25 916.27,250.24 939.99,248.37 964.26,246.56 987.2,245 1061.4,239.97 1250.4,249.61 1321.2,227 1339.6,221.11 1358,209.86 \
+1372.4,199.52",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,
 		label="identifier type",
-		pos="997.2,263",
+		pos="1055.2,263",
 		width=1.652];
 	subject -> relation	 [pos="e,530.47,36.027 545.91,158.76 542.44,131.21 535.84,78.735 531.75,46.223",
 		style=dotted];
@@ -119,18 +129,18 @@ digraph {
 	"anatomical entity to anatomical entity part of association_subject"	 [color=blue,
 		height=0.5,
 		label="anatomical entity",
-		pos="1146.2,263",
+		pos="1204.2,263",
 		width=1.9792];
 	"anatomical entity to anatomical entity part of association_relation"	 [color=blue,
 		height=0.5,
 		label="iri type",
-		pos="1271.2,263",
+		pos="1329.2,263",
 		width=0.9834];
 	object -> relation	 [pos="e,541.97,34.752 574.59,74.435 566.89,65.075 557.13,53.191 548.54,42.745",
 		style=dotted];
 	"anatomical entity to anatomical entity part of association_object"	 [color=blue,
 		height=0.5,
 		label="anatomical entity",
-		pos="1396.2,263",
+		pos="1454.2,263",
 		width=1.9792];
 }

@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,1178.5,281"];
+	graph [bb="0,0,1301,281"];
 	node [label="\N"];
 	"gene to gene product relationship"	 [height=0.5,
 		label="gene to gene product relationship",
-		pos="565.23,263",
+		pos="623.23,263",
 		width=3.5551];
 	"sequence feature relationship"	 [height=0.5,
 		pos="113.23,177",
 		width=3.1453];
 	"gene to gene product relationship" -> "sequence feature relationship"	 [label=is_a,
 		lp="273.51,220",
-		pos="e,155.44,193.82 450.41,255.02 393.21,249.63 323.29,240.87 261.68,227 228.93,219.63 193.25,207.74 165.07,197.4"];
+		pos="e,154.75,193.8 500.83,257.69 430.3,252.92 340.3,243.93 261.68,227 228.62,219.88 192.66,207.88 164.41,197.42"];
 	id	 [height=0.5,
 		pos="271.23,177",
 		width=0.75];
 	"gene to gene product relationship" -> id	 [color=blue,
 		label=id,
 		lp="307.68,220",
-		pos="e,277.29,194.66 445.15,256.64 387.19,251.59 325.14,242.67 301.34,227 292.89,221.44 286.45,212.6 281.74,203.9",
+		pos="e,277.23,194.76 508.19,255.11 423,248.44 318.8,238.19 301.34,227 292.82,221.54 286.37,212.73 281.66,204.01",
 		style=solid];
 	subject	 [height=0.5,
 		pos="404.23,177",
@@ -25,7 +25,7 @@ digraph {
 	"gene to gene product relationship" -> subject	 [color=blue,
 		label=subject,
 		lp="442.06,220",
-		pos="e,406.2,195.06 482.32,249.2 456.02,243.37 431.25,235.85 421.58,227 415.29,221.24 411.28,213.09 408.72,205.03",
+		pos="e,406.01,195.29 514.43,253.43 474.88,247.94 436.28,239.56 421.58,227 415.02,221.4 410.94,213.19 408.4,205.03",
 		style=solid];
 	relation	 [height=0.5,
 		pos="384.23,18",
@@ -33,7 +33,7 @@ digraph {
 	"gene to gene product relationship" -> relation	 [color=blue,
 		label=relation,
 		lp="368.61,134",
-		pos="e,374.83,35.476 480.33,249.41 456.45,244.03 430.83,236.73 408.23,227 384.68,216.86 374.11,216.56 360.23,195 330.42,148.68 353.54,\
+		pos="e,374.83,35.476 513.37,253.69 478.88,248.38 441.22,240.06 408.23,227 384.39,217.56 374.11,216.56 360.23,195 330.42,148.68 353.54,\
 81.424 370.48,44.586",
 		style=solid];
 	object	 [height=0.5,
@@ -42,7 +42,7 @@ digraph {
 	"gene to gene product relationship" -> object	 [color=blue,
 		label=object,
 		lp="501.34,177",
-		pos="e,452.95,108.39 536.94,245.26 519.51,233.03 497.91,215.36 484.02,195 466.06,168.67 473.12,156.57 461.23,127 459.99,123.92 458.62,\
+		pos="e,452.95,108.39 566.17,246.76 538.02,236.14 505.57,219.57 484.02,195 463.01,171.03 473.12,156.57 461.23,127 459.99,123.92 458.62,\
 120.73 457.21,117.58",
 		style=solid];
 	negated	 [color=blue,
@@ -52,8 +52,8 @@ digraph {
 		width=1.0584];
 	"gene to gene product relationship" -> negated	 [color=blue,
 		label=negated,
-		lp="587,220",
-		pos="e,565.23,195.21 565.23,244.76 565.23,233.36 565.23,218.43 565.23,205.49",
+		lp="620,220",
+		pos="e,576.92,194.33 610.93,244.76 602.69,232.55 591.73,216.29 582.6,202.76",
 		style=solid];
 	"association type"	 [color=blue,
 		height=0.5,
@@ -62,8 +62,8 @@ digraph {
 		width=1.6931];
 	"gene to gene product relationship" -> "association type"	 [color=blue,
 		label="association type",
-		lp="676.14,220",
-		pos="e,659.21,193.92 589.47,245.18 607.32,232.07 631.72,214.13 651.02,199.94",
+		lp="702.14,220",
+		pos="e,669.94,194.92 635.74,244.76 644.01,232.71 654.98,216.72 664.19,203.3",
 		style=solid];
 	qualifiers	 [color=blue,
 		height=0.5,
@@ -72,8 +72,8 @@ digraph {
 		width=1.6931];
 	"gene to gene product relationship" -> qualifiers	 [color=blue,
 		label=qualifiers,
-		lp="782.28,220",
-		pos="e,795.07,193.38 646.14,248.98 671.82,243.43 700.08,236.14 725.23,227 746.16,219.39 768.31,208.24 786.16,198.39",
+		lp="800.28,220",
+		pos="e,801.96,194.09 693.22,247.92 712.5,242.54 733.09,235.62 751.23,227 766.17,219.9 781.34,209.7 793.8,200.37",
 		style=solid];
 	publications	 [color=blue,
 		height=0.5,
@@ -82,8 +82,8 @@ digraph {
 		width=1.3859];
 	"gene to gene product relationship" -> publications	 [color=blue,
 		label=publications,
-		lp="893.45,220",
-		pos="e,918.67,190.82 657.34,250.48 721.1,241.66 797.12,230.78 812.23,227 845.47,218.69 881.87,205.44 909.08,194.66",
+		lp="905.45,220",
+		pos="e,921.06,191.65 718.52,250.92 753.98,245.25 794.32,237.41 830.23,227 858.25,218.88 888.58,206.34 911.86,195.85",
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
@@ -92,25 +92,36 @@ digraph {
 		width=1.1129];
 	"gene to gene product relationship" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="1008.9,220",
-		pos="e,1032,190.35 656.53,250.33 671.78,248.41 687.44,246.55 702.23,245 803.77,234.35 831.72,249.82 931.23,227 963.19,219.67 997.73,205.8 \
-1022.9,194.52",
+		lp="1016.9,220",
+		pos="e,1033.3,190.93 715.3,250.49 730.31,248.57 745.69,246.67 760.23,245 841.42,235.68 864.1,247.42 943.23,227 971.47,219.71 1001.7,206.5 \
+1024.2,195.49",
 		style=solid];
 	"association slot"	 [color=blue,
 		height=0.5,
 		label=string,
-		pos="1148.2,177",
+		pos="1147.2,177",
 		width=0.8403];
 	"gene to gene product relationship" -> "association slot"	 [color=blue,
 		label="association slot",
-		lp="1126.2,220",
-		pos="e,1127.3,190.39 655.39,250.13 670.99,248.2 687.06,246.39 702.23,245 778.46,238.01 972.14,246.24 1046.2,227 1071.9,220.33 1098.8,\
-206.84 1118.5,195.55",
+		lp="1132.2,220",
+		pos="e,1127.6,190.81 713.77,250.2 729.25,248.27 745.19,246.45 760.23,245 825.39,238.73 991.28,244.91 1054.2,227 1077.4,220.42 1101.2,\
+207.46 1118.9,196.38",
+		style=solid];
+	"edge label"	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="1256.2,177",
+		width=1.2425];
+	"gene to gene product relationship" -> "edge label"	 [color=blue,
+		label="edge label",
+		lp="1236.8,220",
+		pos="e,1237.2,193.57 712.65,250.1 728.47,248.15 744.82,246.34 760.23,245 853.08,236.92 1090.5,255.38 1179.2,227 1197.2,221.25 1215,210.12 \
+1229,199.82",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,
 		label="identifier type",
-		pos="770.23,263",
+		pos="828.23,263",
 		width=1.652];
 	subject -> relation	 [pos="e,386.5,36.027 401.94,158.76 398.47,131.21 391.87,78.735 387.78,46.223",
 		style=dotted];
@@ -120,18 +131,18 @@ digraph {
 	"gene to gene product relationship_subject"	 [color=blue,
 		height=0.5,
 		label=gene,
-		pos="874.23,263",
+		pos="932.23,263",
 		width=0.75];
 	"gene to gene product relationship_relation"	 [color=blue,
 		height=0.5,
 		label="iri type",
-		pos="954.23,263",
+		pos="1012.2,263",
 		width=0.9834];
 	object -> relation	 [pos="e,398,34.752 430.62,74.435 422.92,65.075 413.16,53.191 404.57,42.745",
 		style=dotted];
 	"gene to gene product relationship_object"	 [color=blue,
 		height=0.5,
 		label="gene product",
-		pos="1063.2,263",
+		pos="1121.2,263",
 		width=1.5563];
 }

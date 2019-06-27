@@ -1,3 +1,4 @@
+
 # Class: disease to thing association
 
 
@@ -6,20 +7,26 @@
 URI: [biolink:DiseaseToThingAssociation](https://w3id.org/biolink/vocab/DiseaseToThingAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[DiseaseToThingAssociation|id(i):identifier_type;relation(i):iri_type;object(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[DiseaseToThingAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[DiseaseToThingAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[DiseaseToThingAssociation],%20\[Disease]<subject%201..1-%20\[DiseaseToThingAssociation],%20\[DiseaseToPhenotypicFeatureAssociation]uses%20-.->\[DiseaseToThingAssociation],%20\[Association]^-\[DiseaseToThingAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Mixin for
 
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) (mixin)  - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
  * [subject](disease_to_thing_association_subject.md)  <sub>REQ</sub>
     * range: [Disease](Disease.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -59,10 +66,7 @@ URI: [biolink:DiseaseToThingAssociation](https://w3id.org/biolink/vocab/DiseaseT
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from disease to thing association:
 
- * [subject](disease_to_thing_association_subject.md)  <sub>REQ</sub>
-    * range: [Disease](Disease.md)
 ### Domain for slot:
 
  * [subject](disease_to_thing_association_subject.md)  <sub>REQ</sub>

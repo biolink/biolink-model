@@ -1,3 +1,4 @@
+
 # Class: anatomical entity to anatomical entity part of association
 
 
@@ -6,12 +7,16 @@ A relationship between two anatomical entities where the relationship is mereolo
 URI: [biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation](https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation|relation:iri_type;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation],%20\[AnatomicalEntity]<object%201..1-%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation],%20\[AnatomicalEntity]<subject%201..1-%20\[AnatomicalEntityToAnatomicalEntityPartOfAssociation],%20\[AnatomicalEntityToAnatomicalEntityAssociation]^-\[AnatomicalEntityToAnatomicalEntityPartOfAssociation])
+
 ## Parents
 
  *  is_a: [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -21,14 +26,7 @@ URI: [biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation](https://w3id.
     * range: [IriType](IriType.md)
  * [subject](anatomical_entity_to_anatomical_entity_part_of_association_subject.md)  <sub>REQ</sub>
     * range: [AnatomicalEntity](AnatomicalEntity.md)
-### Inherited from anatomical entity to anatomical entity part of association:
 
- * [subject](anatomical_entity_to_anatomical_entity_part_of_association_subject.md)  <sub>REQ</sub>
-    * range: [AnatomicalEntity](AnatomicalEntity.md)
- * [relation](anatomical_entity_to_anatomical_entity_part_of_association_relation.md)  <sub>REQ</sub>
-    * range: [IriType](IriType.md)
- * [object](anatomical_entity_to_anatomical_entity_part_of_association_object.md)  <sub>REQ</sub>
-    * range: [AnatomicalEntity](AnatomicalEntity.md)
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -68,6 +66,7 @@ URI: [biolink:AnatomicalEntityToAnatomicalEntityPartOfAssociation](https://w3id.
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
+
 ### Domain for slot:
 
  * [object](anatomical_entity_to_anatomical_entity_part_of_association_object.md)  <sub>REQ</sub>

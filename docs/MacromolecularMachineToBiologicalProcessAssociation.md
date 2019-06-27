@@ -1,3 +1,4 @@
+
 # Class: macromolecular machine to biological process association
 
 
@@ -6,17 +7,22 @@ A functional association between a macromolecular machine (gene, gene product or
 URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[MacromolecularMachineToBiologicalProcessAssociation|id(i):identifier_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[MacromolecularMachineToBiologicalProcessAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[MacromolecularMachineToBiologicalProcessAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[MacromolecularMachineToBiologicalProcessAssociation],%20\[MacromolecularMachine]<subject(i)%201..1-%20\[MacromolecularMachineToBiologicalProcessAssociation],%20\[BiologicalProcess]<object%201..1-%20\[MacromolecularMachineToBiologicalProcessAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToBiologicalProcessAssociation])
+
 ## Parents
 
  *  is_a: [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
  * [object](macromolecular_machine_to_biological_process_association_object.md)  <sub>REQ</sub>
     * range: [BiologicalProcess](BiologicalProcess.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -56,6 +62,7 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
+
 ### Inherited from functional association:
 
  * [subject](functional_association_subject.md)  <sub>REQ</sub>
@@ -64,10 +71,7 @@ URI: [biolink:MacromolecularMachineToBiologicalProcessAssociation](https://w3id.
  * [object](functional_association_object.md)  <sub>REQ</sub>
     * range: [GeneOntologyClass](GeneOntologyClass.md)
     * inherited from: [FunctionalAssociation](FunctionalAssociation.md)
-### Inherited from macromolecular machine to biological process association:
 
- * [object](macromolecular_machine_to_biological_process_association_object.md)  <sub>REQ</sub>
-    * range: [BiologicalProcess](BiologicalProcess.md)
 ### Domain for slot:
 
  * [object](macromolecular_machine_to_biological_process_association_object.md)  <sub>REQ</sub>

@@ -1,3 +1,4 @@
+
 # Class: cell line to disease or phenotypic feature association
 
 
@@ -6,21 +7,27 @@ An relationship between a cell line and a disease or a phenotype, where the cell
 URI: [biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation|id(i):identifier_type;relation(i):iri_type;object(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation],%20\[DiseaseOrPhenotypicFeature]<subject%201..1-%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[CellLineToThingAssociation],%20\[CellLineToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[CellLineToDiseaseOrPhenotypicFeatureAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Uses Mixins
 
  *  mixin: [CellLineToThingAssociation](CellLineToThingAssociation.md) - An relationship between a cell line and another entity
  *  mixin: [ThingToDiseaseOrPhenotypicFeatureAssociation](ThingToDiseaseOrPhenotypicFeatureAssociation.md)
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
  * [subject](cell_line_to_disease_or_phenotypic_feature_association_subject.md)  <sub>REQ</sub>
     * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -60,10 +67,7 @@ URI: [biolink:CellLineToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from cell line to disease or phenotypic feature association:
 
- * [subject](cell_line_to_disease_or_phenotypic_feature_association_subject.md)  <sub>REQ</sub>
-    * range: [DiseaseOrPhenotypicFeature](DiseaseOrPhenotypicFeature.md)
 ### Domain for slot:
 
  * [subject](cell_line_to_disease_or_phenotypic_feature_association_subject.md)  <sub>REQ</sub>

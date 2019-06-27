@@ -1,3 +1,4 @@
+
 # Class: gene to gene product relationship
 
 
@@ -6,12 +7,16 @@ A gene is transcribed and potentially translated to a gene product
 URI: [biolink:GeneToGeneProductRelationship](https://w3id.org/biolink/vocab/GeneToGeneProductRelationship)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneToGeneProductRelationship|relation:iri_type;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneToGeneProductRelationship],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneToGeneProductRelationship],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneToGeneProductRelationship],%20\[GeneProduct]<object%201..1-%20\[GeneToGeneProductRelationship],%20\[Gene]<subject%201..1-%20\[GeneToGeneProductRelationship],%20\[SequenceFeatureRelationship]^-\[GeneToGeneProductRelationship])
+
 ## Parents
 
  *  is_a: [SequenceFeatureRelationship](SequenceFeatureRelationship.md) - For example, a particular exon is part of a particular transcript or gene
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -21,6 +26,7 @@ URI: [biolink:GeneToGeneProductRelationship](https://w3id.org/biolink/vocab/Gene
     * range: [IriType](IriType.md)
  * [subject](gene_to_gene_product_relationship_subject.md)  <sub>REQ</sub>
     * range: [Gene](Gene.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -60,14 +66,7 @@ URI: [biolink:GeneToGeneProductRelationship](https://w3id.org/biolink/vocab/Gene
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from gene to gene product relationship:
 
- * [subject](gene_to_gene_product_relationship_subject.md)  <sub>REQ</sub>
-    * range: [Gene](Gene.md)
- * [relation](gene_to_gene_product_relationship_relation.md)  <sub>REQ</sub>
-    * range: [IriType](IriType.md)
- * [object](gene_to_gene_product_relationship_object.md)  <sub>REQ</sub>
-    * range: [GeneProduct](GeneProduct.md)
 ### Domain for slot:
 
  * [object](gene_to_gene_product_relationship_object.md)  <sub>REQ</sub>

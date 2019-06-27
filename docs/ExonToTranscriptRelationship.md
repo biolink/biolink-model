@@ -1,3 +1,4 @@
+
 # Class: exon to transcript relationship
 
 
@@ -6,12 +7,16 @@ A transcript is formed from multiple exons
 URI: [biolink:ExonToTranscriptRelationship](https://w3id.org/biolink/vocab/ExonToTranscriptRelationship)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ExonToTranscriptRelationship|id(i):identifier_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ExonToTranscriptRelationship],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ExonToTranscriptRelationship],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ExonToTranscriptRelationship],%20\[Transcript]<object%201..1-%20\[ExonToTranscriptRelationship],%20\[Exon]<subject%201..1-%20\[ExonToTranscriptRelationship],%20\[SequenceFeatureRelationship]^-\[ExonToTranscriptRelationship])
+
 ## Parents
 
  *  is_a: [SequenceFeatureRelationship](SequenceFeatureRelationship.md) - For example, a particular exon is part of a particular transcript or gene
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -19,6 +24,7 @@ URI: [biolink:ExonToTranscriptRelationship](https://w3id.org/biolink/vocab/ExonT
     * range: [Transcript](Transcript.md)
  * [subject](exon_to_transcript_relationship_subject.md)  <sub>REQ</sub>
     * range: [Exon](Exon.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -58,12 +64,7 @@ URI: [biolink:ExonToTranscriptRelationship](https://w3id.org/biolink/vocab/ExonT
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from exon to transcript relationship:
 
- * [subject](exon_to_transcript_relationship_subject.md)  <sub>REQ</sub>
-    * range: [Exon](Exon.md)
- * [object](exon_to_transcript_relationship_object.md)  <sub>REQ</sub>
-    * range: [Transcript](Transcript.md)
 ### Domain for slot:
 
  * [object](exon_to_transcript_relationship_object.md)  <sub>REQ</sub>

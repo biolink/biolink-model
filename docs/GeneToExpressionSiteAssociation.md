@@ -1,3 +1,4 @@
+
 # Class: gene to expression site association
 
 
@@ -6,12 +7,16 @@ An association between a gene and an expression site, possibly qualified by stag
 URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneToExpressionSiteAssociation|relation:iri_type;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneToExpressionSiteAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneToExpressionSiteAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneToExpressionSiteAssociation],%20\[OntologyClass]<quantifier%20qualifier%200..1-%20\[GeneToExpressionSiteAssociation],%20\[LifeStage]<stage%20qualifier%200..1-%20\[GeneToExpressionSiteAssociation],%20\[AnatomicalEntity]<object%201..1-%20\[GeneToExpressionSiteAssociation],%20\[GeneOrGeneProduct]<subject%201..1-%20\[GeneToExpressionSiteAssociation],%20\[Association]^-\[GeneToExpressionSiteAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -25,6 +30,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
     * range: [LifeStage](LifeStage.md)
  * [subject](gene_to_expression_site_association_subject.md)  <sub>REQ</sub>
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -64,18 +70,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from gene to expression site association:
 
- * [subject](gene_to_expression_site_association_subject.md)  <sub>REQ</sub>
-    * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
- * [relation](gene_to_expression_site_association_relation.md)  <sub>REQ</sub>
-    * range: [IriType](IriType.md)
- * [object](gene_to_expression_site_association_object.md)  <sub>REQ</sub>
-    * range: [AnatomicalEntity](AnatomicalEntity.md)
- * [stage qualifier](gene_to_expression_site_association_stage_qualifier.md)  <sub>OPT</sub>
-    * range: [LifeStage](LifeStage.md)
- * [quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)  <sub>OPT</sub>
-    * range: [OntologyClass](OntologyClass.md)
 ### Domain for slot:
 
  * [object](gene_to_expression_site_association_object.md)  <sub>REQ</sub>

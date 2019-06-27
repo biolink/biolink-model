@@ -1,3 +1,4 @@
+
 # Class: gene to gene homology association
 
 
@@ -6,17 +7,22 @@ A homology association between two genes. May be orthology (in which case the sp
 URI: [biolink:GeneToGeneHomologyAssociation](https://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneToGeneHomologyAssociation|relation:iri_type;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneToGeneHomologyAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneToGeneHomologyAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneToGeneHomologyAssociation],%20\[GeneOrGeneProduct]<object(i)%201..1-%20\[GeneToGeneHomologyAssociation],%20\[GeneOrGeneProduct]<subject(i)%201..1-%20\[GeneToGeneHomologyAssociation],%20\[GeneToGeneAssociation]^-\[GeneToGeneHomologyAssociation])
+
 ## Parents
 
  *  is_a: [GeneToGeneAssociation](GeneToGeneAssociation.md) - abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
  * [relation](gene_to_gene_homology_association_relation.md)  <sub>REQ</sub>
     * range: [IriType](IriType.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -56,6 +62,7 @@ URI: [biolink:GeneToGeneHomologyAssociation](https://w3id.org/biolink/vocab/Gene
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
+
 ### Inherited from gene to gene association:
 
  * [subject](gene_to_gene_association_subject.md)  <sub>REQ</sub>
@@ -64,10 +71,7 @@ URI: [biolink:GeneToGeneHomologyAssociation](https://w3id.org/biolink/vocab/Gene
  * [object](gene_to_gene_association_object.md)  <sub>REQ</sub>
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
     * inherited from: [GeneToGeneAssociation](GeneToGeneAssociation.md)
-### Inherited from gene to gene homology association:
 
- * [relation](gene_to_gene_homology_association_relation.md)  <sub>REQ</sub>
-    * range: [IriType](IriType.md)
 ### Domain for slot:
 
  * [relation](gene_to_gene_homology_association_relation.md)  <sub>REQ</sub>

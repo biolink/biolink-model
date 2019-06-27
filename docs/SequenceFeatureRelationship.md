@@ -1,3 +1,4 @@
+
 # Class: sequence feature relationship
 
 
@@ -6,17 +7,22 @@ For example, a particular exon is part of a particular transcript or gene
 URI: [biolink:SequenceFeatureRelationship](https://w3id.org/biolink/vocab/SequenceFeatureRelationship)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[SequenceFeatureRelationship|id(i):identifier_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[SequenceFeatureRelationship],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[SequenceFeatureRelationship],%20\[OntologyClass]<association%20type(i)%200..1-%20\[SequenceFeatureRelationship],%20\[GenomicEntity]<object%201..1-%20\[SequenceFeatureRelationship],%20\[GenomicEntity]<subject%201..1-%20\[SequenceFeatureRelationship],%20\[SequenceFeatureRelationship]^-\[TranscriptToGeneRelationship],%20\[SequenceFeatureRelationship]^-\[GeneToGeneProductRelationship],%20\[SequenceFeatureRelationship]^-\[ExonToTranscriptRelationship],%20\[Association]^-\[SequenceFeatureRelationship])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Children
 
  * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md) - A transcript is formed from multiple exons
  * [GeneToGeneProductRelationship](GeneToGeneProductRelationship.md) - A gene is transcribed and potentially translated to a gene product
  * [TranscriptToGeneRelationship](TranscriptToGeneRelationship.md) - A gene is a collection of transcripts
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -24,6 +30,7 @@ URI: [biolink:SequenceFeatureRelationship](https://w3id.org/biolink/vocab/Sequen
     * range: [GenomicEntity](GenomicEntity.md)
  * [subject](sequence_feature_relationship_subject.md)  <sub>REQ</sub>
     * range: [GenomicEntity](GenomicEntity.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -63,12 +70,7 @@ URI: [biolink:SequenceFeatureRelationship](https://w3id.org/biolink/vocab/Sequen
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from sequence feature relationship:
 
- * [subject](sequence_feature_relationship_subject.md)  <sub>REQ</sub>
-    * range: [GenomicEntity](GenomicEntity.md)
- * [object](sequence_feature_relationship_object.md)  <sub>REQ</sub>
-    * range: [GenomicEntity](GenomicEntity.md)
 ### Domain for slot:
 
  * [object](sequence_feature_relationship_object.md)  <sub>REQ</sub>

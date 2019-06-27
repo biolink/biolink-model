@@ -1,9 +1,9 @@
-dist: trusty
+dist: xenial
 sudo: false
 
 language: python
 python:
-  - "3.6"
+  - "3.7"
 
 env:
   - COLUMNS=80
@@ -14,5 +14,5 @@ install:
 
 # command to run tests
 script: 
-  - PYTHONPATH=. make test
+  - PYTHONPATH=. make tests
 

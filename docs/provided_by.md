@@ -1,16 +1,21 @@
+
 # Slot: provided by
 
 
 connects an association to the agent (person, organization or group) that provided it
 
 URI: [biolink:provided_by](https://w3id.org/biolink/vocab/provided_by)
+
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>OPT</sub> [Provider](Provider.md)
+
 ## Parents
 
  *  is_a: [association slot](association_slot.md)
+
 ## Children
+
 
 ## Used by
 

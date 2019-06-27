@@ -34,6 +34,7 @@ public class Attribute {
 
     /**
      * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+     * (Required)
      * 
      */
     @JsonProperty("category")
@@ -77,6 +78,7 @@ public class Attribute {
     private String iri;
     /**
      * A human-readable name for a thing
+     * (Required)
      * 
      */
     @JsonProperty("name")
@@ -120,6 +122,7 @@ public class Attribute {
 
     /**
      * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+     * (Required)
      * 
      */
     @JsonProperty("category")
@@ -129,6 +132,7 @@ public class Attribute {
 
     /**
      * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
+     * (Required)
      * 
      */
     @JsonProperty("category")
@@ -230,6 +234,7 @@ public class Attribute {
 
     /**
      * A human-readable name for a thing
+     * (Required)
      * 
      */
     @JsonProperty("name")
@@ -239,6 +244,7 @@ public class Attribute {
 
     /**
      * A human-readable name for a thing
+     * (Required)
      * 
      */
     @JsonProperty("name")

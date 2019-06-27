@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,1050.7,281"];
+	graph [bb="0,0,1173.1,281"];
 	node [label="\N"];
 	"cell line to thing association"	 [height=0.5,
 		label="cell line to thing association",
-		pos="437.4,263",
+		pos="495.4,263",
 		width=3.0369];
 	association	 [height=0.5,
 		pos="49.402,177",
 		width=1.3723];
 	"cell line to thing association" -> association	 [label=is_a,
 		lp="145.68,220",
-		pos="e,71.092,193.3 337.38,255.62 263.8,249.35 170.48,239.4 133.85,227 114.69,220.52 95.144,209.3 79.687,199.12"];
+		pos="e,71.049,193.43 390.93,257.62 301.47,252.09 180,242.14 133.85,227 114.63,220.7 95.08,209.49 79.635,199.28"];
 	id	 [height=0.5,
 		pos="143.4,177",
 		width=0.75];
 	"cell line to thing association" -> id	 [color=blue,
 		label=id,
 		lp="179.85,220",
-		pos="e,149.46,194.66 332.36,257.87 270.48,253.1 199.39,244.03 173.51,227 165.06,221.44 158.62,212.6 153.91,203.9",
+		pos="e,149.4,194.76 394.03,256.17 306.73,249.55 191.92,238.8 173.51,227 164.99,221.54 158.54,212.73 153.83,204.01",
 		style=solid];
 	subject	 [height=0.5,
 		pos="276.4,177",
@@ -25,7 +25,7 @@ digraph {
 	"cell line to thing association" -> subject	 [color=blue,
 		label=subject,
 		lp="314.23,220",
-		pos="e,278.37,195.06 359.53,250.3 331.41,244.32 304.04,236.42 293.75,227 287.46,221.24 283.45,213.09 280.89,205.03",
+		pos="e,278.18,195.29 397.51,254.88 354.35,249.45 309.8,240.71 293.75,227 287.19,221.4 283.11,213.19 280.57,205.03",
 		style=solid];
 	relation	 [color=blue,
 		height=0.5,
@@ -35,7 +35,7 @@ digraph {
 	"cell line to thing association" -> relation	 [color=blue,
 		label=relation,
 		lp="240.78,134",
-		pos="e,247,35.476 357.77,250.58 332.42,245.1 304.67,237.45 280.4,227 256.85,216.86 246.28,216.56 232.4,195 202.59,148.68 225.71,81.424 \
+		pos="e,247,35.476 396.46,255.28 359.14,250.1 316.91,241.45 280.4,227 256.56,217.56 246.28,216.56 232.4,195 202.59,148.68 225.71,81.424 \
 242.65,44.586",
 		style=solid];
 	object	 [color=blue,
@@ -46,7 +46,7 @@ digraph {
 	"cell line to thing association" -> object	 [color=blue,
 		label=object,
 		lp="373.51,177",
-		pos="e,326.55,108.88 409.5,245.53 392,233.3 370.18,215.51 356.19,195 338.23,168.67 344.25,156.97 333.4,127 332.4,124.22 331.32,121.33 \
+		pos="e,326.55,108.88 440.08,247.41 411.53,236.81 378.18,220.08 356.19,195 335.18,171.03 344.25,156.97 333.4,127 332.4,124.22 331.32,121.33 \
 330.23,118.45",
 		style=solid];
 	negated	 [color=blue,
@@ -56,8 +56,8 @@ digraph {
 		width=1.0584];
 	"cell line to thing association" -> negated	 [color=blue,
 		label=negated,
-		lp="459.17,220",
-		pos="e,437.4,195.21 437.4,244.76 437.4,233.36 437.4,218.43 437.4,205.49",
+		lp="492.17,220",
+		pos="e,449.09,194.33 483.1,244.76 474.86,232.55 463.9,216.29 454.77,202.76",
 		style=solid];
 	"association type"	 [color=blue,
 		height=0.5,
@@ -66,8 +66,8 @@ digraph {
 		width=1.6931];
 	"cell line to thing association" -> "association type"	 [color=blue,
 		label="association type",
-		lp="548.31,220",
-		pos="e,531.67,193.71 461.36,245.39 479.3,232.2 503.98,214.06 523.42,199.77",
+		lp="574.31,220",
+		pos="e,542.11,194.92 507.91,244.76 516.18,232.71 527.15,216.72 536.36,203.3",
 		style=solid];
 	qualifiers	 [color=blue,
 		height=0.5,
@@ -76,8 +76,8 @@ digraph {
 		width=1.6931];
 	"cell line to thing association" -> qualifiers	 [color=blue,
 		label=qualifiers,
-		lp="654.45,220",
-		pos="e,667.24,193.38 513.42,250.02 540.37,244.35 570.64,236.73 597.4,227 618.33,219.39 640.48,208.24 658.33,198.39",
+		lp="672.45,220",
+		pos="e,674.13,194.09 562.41,248.75 582.53,243.26 604.33,236.07 623.4,227 638.34,219.9 653.51,209.7 665.97,200.37",
 		style=solid];
 	publications	 [color=blue,
 		height=0.5,
@@ -86,9 +86,8 @@ digraph {
 		width=1.3859];
 	"cell line to thing association" -> publications	 [color=blue,
 		label=publications,
-		lp="765.62,220",
-		pos="e,791.13,190.75 517.72,250.73 530.65,248.79 543.89,246.83 556.4,245 613.25,236.7 628.63,240.8 684.4,227 717.77,218.75 754.3,205.43 \
-781.54,194.61",
+		lp="777.62,220",
+		pos="e,793.23,191.65 576.17,250.81 623.73,243.28 679.02,233.78 702.4,227 730.42,218.88 760.75,206.34 784.03,195.85",
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
@@ -97,25 +96,36 @@ digraph {
 		width=1.1129];
 	"cell line to thing association" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="881.03,220",
-		pos="e,904.19,190.4 515.38,250.32 529.03,248.36 543.11,246.49 556.4,245 665.79,232.76 696.05,251.3 803.4,227 835.38,219.76 869.92,205.88 \
-895.05,194.58",
+		lp="889.03,220",
+		pos="e,905.52,191 574.04,250.41 587.49,248.46 601.33,246.57 614.4,245 703.45,234.29 728.46,249.03 815.4,227 843.68,219.84 873.88,206.62 \
+896.38,195.57",
 		style=solid];
 	"association slot"	 [color=blue,
 		height=0.5,
 		label=string,
-		pos="1020.4,177",
+		pos="1019.4,177",
 		width=0.8403];
 	"cell line to thing association" -> "association slot"	 [color=blue,
 		label="association slot",
-		lp="998.37,220",
-		pos="e,999.5,190.41 514.39,250.2 528.34,248.21 542.78,246.36 556.4,245 636.54,236.97 840.42,247.14 918.4,227 944.12,220.36 971,206.87 \
-990.71,195.57",
+		lp="1004.4,220",
+		pos="e,999.81,190.83 572.72,250.24 586.57,248.26 600.89,246.41 614.4,245 683.48,237.8 859.57,245.89 926.4,227 949.54,220.46 973.37,207.5 \
+991.12,196.41",
+		style=solid];
+	"edge label"	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="1128.4,177",
+		width=1.2425];
+	"cell line to thing association" -> "edge label"	 [color=blue,
+		label="edge label",
+		lp="1109,220",
+		pos="e,1109.3,193.58 572.07,250.15 586.12,248.15 600.67,246.32 614.4,245 711.15,235.72 958.8,256.51 1051.4,227 1069.4,221.27 1087.2,210.14 \
+1101.2,199.83",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,
 		label="identifier type",
-		pos="624.4,263",
+		pos="682.4,263",
 		width=1.652];
 	subject -> relation	 [pos="e,258.67,36.027 274.11,158.76 270.64,131.21 264.04,78.735 259.95,46.223",
 		style=dotted];
@@ -125,7 +135,7 @@ digraph {
 	"cell line to thing association_subject"	 [color=blue,
 		height=0.5,
 		label="cell line",
-		pos="740.4,263",
+		pos="798.4,263",
 		width=1.0651];
 	object -> relation	 [pos="e,270.64,34.499 305.11,74.435 296.89,64.915 286.42,52.785 277.3,42.212",
 		style=dotted];

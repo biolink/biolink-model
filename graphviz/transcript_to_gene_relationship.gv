@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,1178.5,281"];
+	graph [bb="0,0,1301,281"];
 	node [label="\N"];
 	"transcript to gene relationship"	 [height=0.5,
 		label="transcript to gene relationship",
-		pos="565.23,263",
+		pos="623.23,263",
 		width=3.2072];
 	"sequence feature relationship"	 [height=0.5,
 		pos="113.23,177",
 		width=3.1453];
 	"transcript to gene relationship" -> "sequence feature relationship"	 [label=is_a,
 		lp="273.51,220",
-		pos="e,155.44,193.82 458.96,255.81 400.29,250.5 326.4,241.57 261.68,227 228.93,219.63 193.25,207.74 165.07,197.4"];
+		pos="e,154.75,193.8 511.46,258.39 439.5,253.82 344.31,244.79 261.68,227 228.62,219.88 192.66,207.88 164.41,197.42"];
 	id	 [height=0.5,
 		pos="271.23,177",
 		width=0.75];
 	"transcript to gene relationship" -> id	 [color=blue,
 		label=id,
 		lp="307.68,220",
-		pos="e,277.29,194.66 454.97,257.46 394.36,252.59 326.49,243.56 301.34,227 292.89,221.44 286.45,212.6 281.74,203.9",
+		pos="e,277.23,194.76 517.21,255.81 430.53,249.17 319.42,238.59 301.34,227 292.82,221.54 286.37,212.73 281.66,204.01",
 		style=solid];
 	subject	 [height=0.5,
 		pos="404.23,177",
@@ -25,7 +25,7 @@ digraph {
 	"transcript to gene relationship" -> subject	 [color=blue,
 		label=subject,
 		lp="442.06,220",
-		pos="e,406.2,195.06 485.42,249.88 457.99,243.95 431.63,236.2 421.58,227 415.29,221.24 411.28,213.09 408.72,205.03",
+		pos="e,406.01,195.29 521.52,254.39 479.58,248.93 437.16,240.31 421.58,227 415.02,221.4 410.94,213.19 408.4,205.03",
 		style=solid];
 	relation	 [color=blue,
 		height=0.5,
@@ -35,7 +35,7 @@ digraph {
 	"transcript to gene relationship" -> relation	 [color=blue,
 		label=relation,
 		lp="368.61,134",
-		pos="e,374.83,35.476 483.58,250.14 458.78,244.69 431.86,237.18 408.23,227 384.68,216.86 374.11,216.56 360.23,195 330.42,148.68 353.54,\
+		pos="e,374.83,35.476 520.49,254.75 484.13,249.51 443.51,240.97 408.23,227 384.39,217.56 374.11,216.56 360.23,195 330.42,148.68 353.54,\
 81.424 370.48,44.586",
 		style=solid];
 	object	 [height=0.5,
@@ -44,7 +44,7 @@ digraph {
 	"transcript to gene relationship" -> object	 [color=blue,
 		label=object,
 		lp="501.34,177",
-		pos="e,452.95,108.39 537.33,245.53 519.83,233.3 498.01,215.51 484.02,195 466.06,168.67 473.12,156.57 461.23,127 459.99,123.92 458.62,\
+		pos="e,452.95,108.39 567.21,247.15 538.83,236.54 505.84,219.87 484.02,195 463.01,171.03 473.12,156.57 461.23,127 459.99,123.92 458.62,\
 120.73 457.21,117.58",
 		style=solid];
 	negated	 [color=blue,
@@ -54,8 +54,8 @@ digraph {
 		width=1.0584];
 	"transcript to gene relationship" -> negated	 [color=blue,
 		label=negated,
-		lp="587,220",
-		pos="e,565.23,195.21 565.23,244.76 565.23,233.36 565.23,218.43 565.23,205.49",
+		lp="620,220",
+		pos="e,576.92,194.33 610.93,244.76 602.69,232.55 591.73,216.29 582.6,202.76",
 		style=solid];
 	"association type"	 [color=blue,
 		height=0.5,
@@ -64,8 +64,8 @@ digraph {
 		width=1.6931];
 	"transcript to gene relationship" -> "association type"	 [color=blue,
 		label="association type",
-		lp="676.14,220",
-		pos="e,659.5,193.71 589.19,245.39 607.13,232.2 631.81,214.06 651.25,199.77",
+		lp="702.14,220",
+		pos="e,669.94,194.92 635.74,244.76 644.01,232.71 654.98,216.72 664.19,203.3",
 		style=solid];
 	qualifiers	 [color=blue,
 		height=0.5,
@@ -74,8 +74,8 @@ digraph {
 		width=1.6931];
 	"transcript to gene relationship" -> qualifiers	 [color=blue,
 		label=qualifiers,
-		lp="782.28,220",
-		pos="e,795.07,193.38 643.28,249.59 669.72,243.96 699.14,236.48 725.23,227 746.16,219.39 768.31,208.24 786.16,198.39",
+		lp="800.28,220",
+		pos="e,801.96,194.09 691.56,248.38 711.32,242.94 732.57,235.87 751.23,227 766.17,219.9 781.34,209.7 793.8,200.37",
 		style=solid];
 	publications	 [color=blue,
 		height=0.5,
@@ -84,8 +84,8 @@ digraph {
 		width=1.3859];
 	"transcript to gene relationship" -> publications	 [color=blue,
 		label=publications,
-		lp="893.45,220",
-		pos="e,918.67,190.82 649.97,250.75 720.66,240.51 810.2,227.51 812.23,227 845.47,218.69 881.87,205.44 909.08,194.66",
+		lp="905.45,220",
+		pos="e,921.06,191.65 706.41,250.43 753.41,242.96 807.24,233.66 830.23,227 858.25,218.88 888.58,206.34 911.86,195.85",
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
@@ -94,25 +94,36 @@ digraph {
 		width=1.1129];
 	"transcript to gene relationship" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="1008.9,220",
-		pos="e,1032,190.38 647.5,250.34 661.73,248.38 676.39,246.51 690.23,245 797.01,233.34 826.49,250.8 931.23,227 963.21,219.73 997.74,205.86 \
-1022.9,194.56",
+		lp="1016.9,220",
+		pos="e,1033.3,190.98 706.19,250.45 720.21,248.5 734.62,246.61 748.23,245 834.67,234.79 858.89,248.49 943.23,227 971.5,219.8 1001.7,206.58 \
+1024.2,195.55",
 		style=solid];
 	"association slot"	 [color=blue,
 		height=0.5,
 		label=string,
-		pos="1148.2,177",
+		pos="1147.2,177",
 		width=0.8403];
 	"transcript to gene relationship" -> "association slot"	 [color=blue,
 		label="association slot",
-		lp="1126.2,220",
-		pos="e,1127.3,190.4 646.46,250.19 661.01,248.22 676.05,246.38 690.23,245 769.07,237.35 969.54,246.84 1046.2,227 1071.9,220.35 1098.8,\
-206.86 1118.5,195.56",
+		lp="1132.2,220",
+		pos="e,1127.6,190.82 704.81,250.24 719.25,248.27 734.16,246.42 748.23,245 816,238.14 988.69,245.56 1054.2,227 1077.4,220.45 1101.2,207.49 \
+1118.9,196.4",
+		style=solid];
+	"edge label"	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="1256.2,177",
+		width=1.2425];
+	"transcript to gene relationship" -> "edge label"	 [color=blue,
+		label="edge label",
+		lp="1236.8,220",
+		pos="e,1237.2,193.58 704.11,250.13 718.77,248.15 733.93,246.32 748.23,245 843.68,236.16 1087.9,256.14 1179.2,227 1197.2,221.26 1215,210.13 \
+1229,199.83",
 		style=solid];
 	association_id	 [color=blue,
 		height=0.5,
 		label="identifier type",
-		pos="758.23,263",
+		pos="816.23,263",
 		width=1.652];
 	subject -> relation	 [pos="e,386.5,36.027 401.94,158.76 398.47,131.21 391.87,78.735 387.78,46.223",
 		style=dotted];
@@ -122,13 +133,13 @@ digraph {
 	"transcript to gene relationship_subject"	 [color=blue,
 		height=0.5,
 		label=transcript,
-		pos="879.23,263",
+		pos="937.23,263",
 		width=1.2084];
 	object -> relation	 [pos="e,398,34.752 430.62,74.435 422.92,65.075 413.16,53.191 404.57,42.745",
 		style=dotted];
 	"transcript to gene relationship_object"	 [color=blue,
 		height=0.5,
 		label=gene,
-		pos="968.23,263",
+		pos="1026.2,263",
 		width=0.75];
 }

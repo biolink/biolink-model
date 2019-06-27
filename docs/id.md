@@ -1,18 +1,23 @@
+
 # Slot: id
 
 
 A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
 
 URI: [biolink:id](https://w3id.org/biolink/vocab/id)
+
 ## Domain and Range
 
 [NamedThing](NamedThing.md) ->  <sub>REQ</sub> [IdentifierType](IdentifierType.md)
+
 ## Parents
 
  *  is_a: [node property](node_property.md)
+
 ## Children
 
  *  [id](sequence_variant_id.md)
+
 ## Used by
 
  * [RNAProduct](RNAProduct.md)

@@ -1,23 +1,23 @@
 digraph {
-	graph [bb="0,0,1252.2,281"];
+	graph [bb="0,0,1352.2,281"];
 	node [label="\N"];
 	"pairwise interaction association"	 [height=0.5,
 		label="pairwise interaction association",
-		pos="495.4,263",
+		pos="554.4,263",
 		width=3.3777];
 	association	 [height=0.5,
 		pos="49.402,177",
 		width=1.3723];
 	"pairwise interaction association" -> association	 [label=is_a,
 		lp="145.68,220",
-		pos="e,71.049,193.43 380.78,256.98 292.5,251.34 178.28,241.57 133.85,227 114.63,220.7 95.08,209.49 79.635,199.28"];
+		pos="e,70.675,193.28 436.19,258.76 331.85,253.94 188.15,244.39 133.85,227 114.45,220.79 94.758,209.47 79.272,199.18"];
 	id	 [height=0.5,
 		pos="143.4,177",
 		width=0.75];
 	"pairwise interaction association" -> id	 [color=blue,
 		label=id,
 		lp="179.85,220",
-		pos="e,149.4,194.76 384.67,255.45 298.73,248.78 191.26,238.38 173.51,227 164.99,221.54 158.54,212.73 153.83,204.01",
+		pos="e,149.36,194.82 438.95,257.33 335.16,251.38 195.68,240.95 173.51,227 164.95,221.61 158.48,212.82 153.78,204.09",
 		style=solid];
 	subject	 [height=0.5,
 		pos="276.4,177",
@@ -25,7 +25,7 @@ digraph {
 	"pairwise interaction association" -> subject	 [color=blue,
 		label=subject,
 		lp="314.23,220",
-		pos="e,278.18,195.29 390.14,253.92 349.38,248.44 308.89,239.93 293.75,227 287.19,221.4 283.11,213.19 280.57,205.03",
+		pos="e,278.07,195.41 449.96,253.77 382.9,246.96 306.11,237.14 293.75,227 287.08,221.53 282.97,213.35 280.44,205.19",
 		style=solid];
 	relation	 [height=0.5,
 		pos="256.4,18",
@@ -33,7 +33,7 @@ digraph {
 	"pairwise interaction association" -> relation	 [color=blue,
 		label=relation,
 		lp="240.78,134",
-		pos="e,247,35.476 389.11,254.23 353.67,248.95 314.53,240.51 280.4,227 256.56,217.56 246.28,216.56 232.4,195 202.59,148.68 225.71,81.424 \
+		pos="e,247,35.476 448.59,254.07 384.98,247.74 310.66,238.37 280.4,227 256.4,217.98 246.28,216.56 232.4,195 202.59,148.68 225.71,81.424 \
 242.65,44.586",
 		style=solid];
 	object	 [height=0.5,
@@ -42,7 +42,7 @@ digraph {
 	"pairwise interaction association" -> object	 [color=blue,
 		label=object,
 		lp="373.51,177",
-		pos="e,325.12,108.39 439.04,247.02 410.73,236.41 377.92,219.77 356.19,195 335.18,171.03 345.29,156.57 333.4,127 332.16,123.92 330.79,\
+		pos="e,325.12,108.39 466.08,250.61 427.92,241.13 385.42,224.43 356.19,195 333.74,172.38 345.29,156.57 333.4,127 332.16,123.92 330.79,\
 120.73 329.38,117.58",
 		style=solid];
 	negated	 [color=blue,
@@ -52,8 +52,8 @@ digraph {
 		width=1.0584];
 	"pairwise interaction association" -> negated	 [color=blue,
 		label=negated,
-		lp="492.17,220",
-		pos="e,449.09,194.33 483.1,244.76 474.86,232.55 463.9,216.29 454.77,202.76",
+		lp="525.17,220",
+		pos="e,458.09,192.21 530.16,245.18 511.62,231.55 485.99,212.71 466.37,198.29",
 		style=solid];
 	"association type"	 [color=blue,
 		height=0.5,
@@ -62,8 +62,8 @@ digraph {
 		width=1.6931];
 	"pairwise interaction association" -> "association type"	 [color=blue,
 		label="association type",
-		lp="574.31,220",
-		pos="e,542.11,194.92 507.91,244.76 516.18,232.71 527.15,216.72 536.36,203.3",
+		lp="599.31,220",
+		pos="e,554.4,195.21 554.4,244.76 554.4,233.36 554.4,218.43 554.4,205.49",
 		style=solid];
 	qualifiers	 [color=blue,
 		height=0.5,
@@ -72,8 +72,8 @@ digraph {
 		width=1.6931];
 	"pairwise interaction association" -> qualifiers	 [color=blue,
 		label=qualifiers,
-		lp="672.45,220",
-		pos="e,674.13,194.09 564.72,248.11 584.2,242.7 605.06,235.72 623.4,227 638.34,219.9 653.51,209.7 665.97,200.37",
+		lp="690.45,220",
+		pos="e,681.55,194.67 609.22,246.87 622.64,241.63 636.55,235.05 648.4,227 658.26,220.3 667.51,211.1 675.09,202.42",
 		style=solid];
 	publications	 [color=blue,
 		height=0.5,
@@ -82,8 +82,8 @@ digraph {
 		width=1.3859];
 	"pairwise interaction association" -> publications	 [color=blue,
 		label=publications,
-		lp="777.62,220",
-		pos="e,793.23,191.65 588.1,251.33 624.18,245.63 665.61,237.66 702.4,227 730.42,218.88 760.75,206.34 784.03,195.85",
+		lp="787.62,220",
+		pos="e,796.62,192.2 635.25,249.49 662.67,243.85 693.23,236.39 720.4,227 743.49,219.02 768.15,207.18 787.55,197.02",
 		style=solid];
 	"provided by"	 [color=blue,
 		height=0.5,
@@ -92,9 +92,9 @@ digraph {
 		width=1.1129];
 	"pairwise interaction association" -> "provided by"	 [color=blue,
 		label="provided by",
-		lp="889.03,220",
-		pos="e,905.51,190.95 583.07,250.44 597.53,248.52 612.38,246.63 626.4,245 710.22,235.25 733.66,247.95 815.4,227 843.65,219.76 873.86,206.54 \
-896.37,195.52",
+		lp="896.03,220",
+		pos="e,906.58,191.45 643.18,250.7 657.3,248.77 671.75,246.82 685.4,245 747.59,236.73 765.19,244.6 825.4,227 850.64,219.63 877.4,206.96 \
+897.72,196.22",
 		style=solid];
 	"association slot"	 [color=blue,
 		height=0.5,
@@ -103,25 +103,36 @@ digraph {
 		width=0.8403];
 	"pairwise interaction association" -> "association slot"	 [color=blue,
 		label="association slot",
-		lp="1004.4,220",
-		pos="e,999.81,190.82 581.26,250.24 596.28,248.29 611.78,246.44 626.4,245 692.87,238.45 862.15,245.24 926.4,227 949.53,220.43 973.37,207.47 \
-991.12,196.39",
+		lp="1009.4,220",
+		pos="e,1000.8,191.22 640.98,250.31 655.78,248.36 671.02,246.51 685.4,245 795.31,233.47 827.81,259.61 933.4,227 954.56,220.46 976.11,207.93 \
+992.34,197.04",
+		style=solid];
+	"edge label"	 [color=blue,
+		height=0.5,
+		label="label type",
+		pos="1120.4,177",
+		width=1.2425];
+	"pairwise interaction association" -> "edge label"	 [color=blue,
+		label="edge label",
+		lp="1111,220",
+		pos="e,1104.5,194.01 639.89,250.15 655.03,248.19 670.66,246.37 685.4,245 767.59,237.37 979.03,255.76 1056.4,227 1071.4,221.43 1085.7,\
+210.97 1096.9,201.06",
 		style=solid];
 	"interacting molecules category"	 [color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="1128.4,177",
+		pos="1244.4,177",
 		width=1.6931];
 	"pairwise interaction association" -> "interacting molecules category"	 [color=blue,
 		label="interacting molecules category",
-		lp="1166.3,220",
-		pos="e,1108.7,194.07 580.53,250.12 595.78,248.15 611.54,246.33 626.4,245 720.55,236.56 961.35,255.76 1051.4,227 1069.1,221.34 1086.7,\
-210.44 1100.6,200.26",
+		lp="1266.3,220",
+		pos="e,1218.6,193.59 639.53,250.08 654.78,248.12 670.54,246.31 685.4,245 786.86,236.06 1044.7,252.15 1143.4,227 1166.7,221.06 1190.9,\
+209.3 1209.8,198.68",
 		style=solid];
 	"pairwise interaction association_id"	 [color=blue,
 		height=0.5,
 		label="identifier type",
-		pos="694.4,263",
+		pos="753.4,263",
 		width=1.652];
 	subject -> relation	 [pos="e,258.67,36.027 274.11,158.76 270.64,131.21 264.04,78.735 259.95,46.223",
 		style=dotted];
@@ -131,18 +142,18 @@ digraph {
 	"pairwise interaction association_subject"	 [color=blue,
 		height=0.5,
 		label="molecular entity",
-		pos="839.4,263",
+		pos="898.4,263",
 		width=1.8837];
 	"pairwise interaction association_relation"	 [color=blue,
 		height=0.5,
 		label="iri type",
-		pos="960.4,263",
+		pos="1019.4,263",
 		width=0.9834];
 	object -> relation	 [pos="e,270.17,34.752 302.79,74.435 295.09,65.075 285.33,53.191 276.74,42.745",
 		style=dotted];
 	"pairwise interaction association_object"	 [color=blue,
 		height=0.5,
 		label="molecular entity",
-		pos="1081.4,263",
+		pos="1140.4,263",
 		width=1.8837];
 }

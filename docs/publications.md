@@ -1,16 +1,21 @@
+
 # Slot: publications
 
 
 connects an association to publications supporting the association
 
 URI: [biolink:publications](https://w3id.org/biolink/vocab/publications)
+
 ## Domain and Range
 
 [Association](Association.md) ->  <sub>0..*</sub> [Publication](Publication.md)
+
 ## Parents
 
  *  is_a: [association slot](association_slot.md)
+
 ## Children
+
 
 ## Used by
 

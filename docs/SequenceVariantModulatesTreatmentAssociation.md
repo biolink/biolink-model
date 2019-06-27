@@ -1,3 +1,4 @@
+
 # Class: sequence variant modulates treatment association
 
 
@@ -6,12 +7,16 @@ An association between a sequence variant and a treatment or health intervention
 URI: [biolink:SequenceVariantModulatesTreatmentAssociation](https://w3id.org/biolink/vocab/SequenceVariantModulatesTreatmentAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[SequenceVariantModulatesTreatmentAssociation|id(i):identifier_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[SequenceVariantModulatesTreatmentAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[SequenceVariantModulatesTreatmentAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[SequenceVariantModulatesTreatmentAssociation],%20\[Treatment]<object%201..1-%20\[SequenceVariantModulatesTreatmentAssociation],%20\[SequenceVariant]<subject%201..1-%20\[SequenceVariantModulatesTreatmentAssociation],%20\[Association]^-\[SequenceVariantModulatesTreatmentAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -19,6 +24,7 @@ URI: [biolink:SequenceVariantModulatesTreatmentAssociation](https://w3id.org/bio
     * range: [Treatment](Treatment.md)
  * [subject](sequence_variant_modulates_treatment_association_subject.md)  <sub>REQ</sub>
     * range: [SequenceVariant](SequenceVariant.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -58,12 +64,7 @@ URI: [biolink:SequenceVariantModulatesTreatmentAssociation](https://w3id.org/bio
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from sequence variant modulates treatment association:
 
- * [subject](sequence_variant_modulates_treatment_association_subject.md)  <sub>REQ</sub>
-    * range: [SequenceVariant](SequenceVariant.md)
- * [object](sequence_variant_modulates_treatment_association_object.md)  <sub>REQ</sub>
-    * range: [Treatment](Treatment.md)
 ### Domain for slot:
 
  * [object](sequence_variant_modulates_treatment_association_object.md)  <sub>REQ</sub>

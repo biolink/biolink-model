@@ -1,3 +1,4 @@
+
 # Class: ontology class
 
 
@@ -5,18 +6,22 @@ a concept or class in an ontology, vocabulary or thesaurus
 
 URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]-%20association%20type%200..1>\[OntologyClass|id(i):identifier_type;name(i):label_type%20%3F;category(i):iri_type%20*],%20\[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier%200..1>\[OntologyClass],%20\[Association]-%20qualifiers%200..*>\[OntologyClass],%20\[Attribute]uses%20-.->\[OntologyClass],%20\[OntologyClass]^-\[RelationshipType],%20\[OntologyClass]^-\[OrganismTaxon],%20\[OntologyClass]^-\[GeneOntologyClass],%20\[NamedThing]^-\[OntologyClass])
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Association]-%20association%20type%200..1>\[OntologyClass|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GeneToExpressionSiteAssociation]-%20quantifier%20qualifier%200..1>\[OntologyClass],%20\[Association]-%20qualifiers%200..*>\[OntologyClass],%20\[Attribute]uses%20-.->\[OntologyClass],%20\[OntologyClass]^-\[RelationshipType],%20\[OntologyClass]^-\[OrganismTaxon],%20\[OntologyClass]^-\[GeneOntologyClass],%20\[NamedThing]^-\[OntologyClass])
+
 ## Parents
 
  *  is_a: [NamedThing](NamedThing.md) - a databased entity or concept/class
+
 ## Children
 
  * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
  * [OrganismTaxon](OrganismTaxon.md)
  * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
+
 ## Mixin for
 
  * [Attribute](Attribute.md) (mixin)  - A property or characteristic of an entity
+
 ## Referenced by class
 
  *  **[Association](Association.md)** *[association type](association_type.md)*  <sub>OPT</sub>  **[OntologyClass](OntologyClass.md)**
@@ -26,7 +31,9 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
  *  **[Association](Association.md)** *[qualifiers](qualifiers.md)*  <sub>0..*</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[quantifier qualifier](quantifier_qualifier.md)*  <sub>OPT</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[OntologyClass](OntologyClass.md)** *[subclass of](subclass_of.md)*  <sub>0..*</sub>  **[OntologyClass](OntologyClass.md)**
+
 ## Attributes
+
 
 ### Inherited from named thing:
 
@@ -35,16 +42,17 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
     * range: [IdentifierType](IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
- * [name](name.md)  <sub>OPT</sub>
+ * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
     * range: [LabelType](LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
- * [category](category.md)  <sub>0..*</sub>
+ * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
+
 ### Domain for slot:
 
  * [subclass of](subclass_of.md)  <sub>0..*</sub>

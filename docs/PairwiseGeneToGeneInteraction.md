@@ -1,3 +1,4 @@
+
 # Class: pairwise gene to gene interaction
 
 
@@ -6,20 +7,26 @@ An interaction between two genes or two gene products. May be physical (e.g. pro
 URI: [biolink:PairwiseGeneToGeneInteraction](https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[PairwiseGeneToGeneInteraction|relation:iri_type;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[PairwiseGeneToGeneInteraction],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[PairwiseGeneToGeneInteraction],%20\[OntologyClass]<association%20type(i)%200..1-%20\[PairwiseGeneToGeneInteraction],%20\[GeneOrGeneProduct]<object(i)%201..1-%20\[PairwiseGeneToGeneInteraction],%20\[GeneOrGeneProduct]<subject(i)%201..1-%20\[PairwiseGeneToGeneInteraction],%20\[PairwiseGeneToGeneInteraction]uses%20-.->\[PairwiseInteractionAssociation],%20\[GeneToGeneAssociation]^-\[PairwiseGeneToGeneInteraction])
+
 ## Parents
 
  *  is_a: [GeneToGeneAssociation](GeneToGeneAssociation.md) - abstract parent class for different kinds of gene-gene or gene product to gene product relationships. Includes homology and interaction.
+
 ## Uses Mixins
 
  *  mixin: [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) - An interaction at the molecular level between two physical entities
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
  * [relation](pairwise_gene_to_gene_interaction_relation.md)  <sub>REQ</sub>
     * range: [IriType](IriType.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -59,6 +66,7 @@ URI: [biolink:PairwiseGeneToGeneInteraction](https://w3id.org/biolink/vocab/Pair
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
+
 ### Inherited from gene to gene association:
 
  * [subject](gene_to_gene_association_subject.md)  <sub>REQ</sub>
@@ -67,10 +75,7 @@ URI: [biolink:PairwiseGeneToGeneInteraction](https://w3id.org/biolink/vocab/Pair
  * [object](gene_to_gene_association_object.md)  <sub>REQ</sub>
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
     * inherited from: [GeneToGeneAssociation](GeneToGeneAssociation.md)
-### Inherited from pairwise gene to gene interaction:
 
- * [relation](pairwise_gene_to_gene_interaction_relation.md)  <sub>REQ</sub>
-    * range: [IriType](IriType.md)
 ### Domain for slot:
 
  * [relation](pairwise_gene_to_gene_interaction_relation.md)  <sub>REQ</sub>

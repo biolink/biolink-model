@@ -1,3 +1,4 @@
+
 # Class: model to disease mixin
 
 
@@ -6,12 +7,16 @@ This mixin is used for any association class for which the subject (source node)
 URI: [biolink:ModelToDiseaseMixin](https://w3id.org/biolink/vocab/ModelToDiseaseMixin)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneAsAModelOfDiseaseAssociation]uses%20-.->\[ModelToDiseaseMixin])
+
 ## Mixin for
 
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md) (mixin) 
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Domain for slot:
 

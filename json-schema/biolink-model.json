@@ -354,7 +354,7 @@
          "type": "array"
       },
       "edge_label": {
-         "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+         "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. ",
          "type": "string"
       },
       "end_interbase_coordinate": {
@@ -1071,7 +1071,8 @@
                "type": "string"
             },
             "edge_label": {
-               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. ",
+               "required": true,
                "type": "string"
             },
             "has_confidence_level": {
@@ -1136,6 +1137,7 @@
                "items": {
                   "type": "string"
                },
+               "required": true,
                "type": "array"
             },
             "description": {
@@ -1164,6 +1166,7 @@
             },
             "name": {
                "description": "A human-readable name for a thing",
+               "required": true,
                "type": "string"
             },
             "node_property": {
@@ -2131,6 +2134,7 @@
          "description": "A union of gene, gene product, and macromolecular complex. These are the basic units of function in a cell. They either carry out individual biological activities, or they encode molecules which do this.",
          "properties": {
             "name": {
+               "required": true,
                "type": "string"
             }
          },
@@ -2636,6 +2640,7 @@
                "items": {
                   "type": "string"
                },
+               "required": true,
                "type": "array"
             },
             "causes": {
@@ -2778,6 +2783,7 @@
             },
             "name": {
                "description": "A human-readable name for a thing",
+               "required": true,
                "type": "string"
             },
             "negatively_regulates": {

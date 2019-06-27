@@ -1,3 +1,4 @@
+
 # Class: transcript to gene relationship
 
 
@@ -6,12 +7,16 @@ A gene is a collection of transcripts
 URI: [biolink:TranscriptToGeneRelationship](https://w3id.org/biolink/vocab/TranscriptToGeneRelationship)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[TranscriptToGeneRelationship|id(i):identifier_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[TranscriptToGeneRelationship],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[TranscriptToGeneRelationship],%20\[OntologyClass]<association%20type(i)%200..1-%20\[TranscriptToGeneRelationship],%20\[Gene]<object%201..1-%20\[TranscriptToGeneRelationship],%20\[Transcript]<subject%201..1-%20\[TranscriptToGeneRelationship],%20\[SequenceFeatureRelationship]^-\[TranscriptToGeneRelationship])
+
 ## Parents
 
  *  is_a: [SequenceFeatureRelationship](SequenceFeatureRelationship.md) - For example, a particular exon is part of a particular transcript or gene
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -19,6 +24,7 @@ URI: [biolink:TranscriptToGeneRelationship](https://w3id.org/biolink/vocab/Trans
     * range: [Gene](Gene.md)
  * [subject](transcript_to_gene_relationship_subject.md)  <sub>REQ</sub>
     * range: [Transcript](Transcript.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -58,12 +64,7 @@ URI: [biolink:TranscriptToGeneRelationship](https://w3id.org/biolink/vocab/Trans
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from transcript to gene relationship:
 
- * [subject](transcript_to_gene_relationship_subject.md)  <sub>REQ</sub>
-    * range: [Transcript](Transcript.md)
- * [object](transcript_to_gene_relationship_object.md)  <sub>REQ</sub>
-    * range: [Gene](Gene.md)
 ### Domain for slot:
 
  * [object](transcript_to_gene_relationship_object.md)  <sub>REQ</sub>

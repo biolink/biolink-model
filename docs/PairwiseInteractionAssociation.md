@@ -1,3 +1,4 @@
+
 # Class: pairwise interaction association
 
 
@@ -6,15 +7,20 @@ An interaction at the molecular level between two physical entities
 URI: [biolink:PairwiseInteractionAssociation](https://w3id.org/biolink/vocab/PairwiseInteractionAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[PairwiseInteractionAssociation|id:identifier_type;relation:iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[PairwiseInteractionAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[PairwiseInteractionAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[PairwiseInteractionAssociation],%20\[MolecularEntity]<object%201..1-%20\[PairwiseInteractionAssociation],%20\[MolecularEntity]<subject%201..1-%20\[PairwiseInteractionAssociation],%20\[PairwiseGeneToGeneInteraction]uses%20-.->\[PairwiseInteractionAssociation],%20\[Association]^-\[PairwiseInteractionAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Mixin for
 
  * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md) (mixin)  - An interaction between two genes or two gene products. May be physical (e.g. protein binding) or genetic (between genes). May be symmetric (e.g. protein interaction) or directed (e.g. phosphorylation)
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
@@ -26,6 +32,7 @@ URI: [biolink:PairwiseInteractionAssociation](https://w3id.org/biolink/vocab/Pai
     * range: [IriType](IriType.md)
  * [subject](pairwise_interaction_association_subject.md)  <sub>REQ</sub>
     * range: [MolecularEntity](MolecularEntity.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -65,16 +72,7 @@ URI: [biolink:PairwiseInteractionAssociation](https://w3id.org/biolink/vocab/Pai
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from pairwise interaction association:
 
- * [id](pairwise_interaction_association_id.md)  <sub>REQ</sub>
-    * range: [IdentifierType](IdentifierType.md)
- * [subject](pairwise_interaction_association_subject.md)  <sub>REQ</sub>
-    * range: [MolecularEntity](MolecularEntity.md)
- * [relation](pairwise_interaction_association_relation.md)  <sub>REQ</sub>
-    * range: [IriType](IriType.md)
- * [object](pairwise_interaction_association_object.md)  <sub>REQ</sub>
-    * range: [MolecularEntity](MolecularEntity.md)
 ### Domain for slot:
 
  * [interacting molecules category](interacting_molecules_category.md)  <sub>OPT</sub>

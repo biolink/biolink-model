@@ -18,14 +18,29 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 })
 public class MacromolecularMachine {
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("name")
     private String name;
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("name")
     public String getName() {
         return name;
     }
 
+    /**
+     * 
+     * (Required)
+     * 
+     */
     @JsonProperty("name")
     public void setName(String name) {
         this.name = name;

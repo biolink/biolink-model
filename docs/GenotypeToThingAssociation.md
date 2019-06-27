@@ -1,3 +1,4 @@
+
 # Class: genotype to thing association
 
 
@@ -6,20 +7,26 @@
 URI: [biolink:GenotypeToThingAssociation](https://w3id.org/biolink/vocab/GenotypeToThingAssociation)
 
 ![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GenotypeToThingAssociation|id(i):identifier_type;relation(i):iri_type;object(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GenotypeToThingAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GenotypeToThingAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GenotypeToThingAssociation],%20\[Genotype]<subject%201..1-%20\[GenotypeToThingAssociation],%20\[GenotypeToPhenotypicFeatureAssociation]uses%20-.->\[GenotypeToThingAssociation],%20\[Association]^-\[GenotypeToThingAssociation])
+
 ## Parents
 
  *  is_a: [Association](Association.md) - A typed association between two entities, supported by evidence
+
 ## Mixin for
 
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) (mixin)  - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
+
 ## Referenced by class
 
+
 ## Attributes
+
 
 ### Own
 
  * [subject](genotype_to_thing_association_subject.md)  <sub>REQ</sub>
     * range: [Genotype](Genotype.md)
+
 ### Inherited from association:
 
  * [id](association_id.md)  <sub>REQ</sub>
@@ -59,10 +66,7 @@ URI: [biolink:GenotypeToThingAssociation](https://w3id.org/biolink/vocab/Genotyp
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-### Inherited from genotype to thing association:
 
- * [subject](genotype_to_thing_association_subject.md)  <sub>REQ</sub>
-    * range: [Genotype](Genotype.md)
 ### Domain for slot:
 
  * [subject](genotype_to_thing_association_subject.md)  <sub>REQ</sub>
