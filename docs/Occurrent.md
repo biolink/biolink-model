@@ -6,7 +6,7 @@ A processual entity
 
 URI: [biolink:Occurrent](https://w3id.org/biolink/vocab/Occurrent)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MolecularActivity]uses%20-.->\[Occurrent|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[EnvironmentalProcess]uses%20-.->\[Occurrent],%20\[BiologicalProcess]uses%20-.->\[Occurrent],%20\[Occurrent]^-\[Procedure],%20\[Occurrent]^-\[Phenomenon],%20\[Occurrent]^-\[ActivityAndBehavior],%20\[NamedThing]^-\[Occurrent])
+![img](images/Occurrent.png)
 
 ## Parents
 

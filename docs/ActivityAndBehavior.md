@@ -6,7 +6,7 @@ Activity or behavior of any independent integral living, organization or mechani
 
 URI: [biolink:ActivityAndBehavior](https://w3id.org/biolink/vocab/ActivityAndBehavior)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Occurrent]^-\[ActivityAndBehavior|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
+![img](images/ActivityAndBehavior.png)
 
 ## Parents
 

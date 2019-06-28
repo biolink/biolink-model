@@ -6,7 +6,7 @@ A gene is transcribed and potentially translated to a gene product
 
 URI: [biolink:GeneToGeneProductRelationship](https://w3id.org/biolink/vocab/GeneToGeneProductRelationship)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneToGeneProductRelationship|relation:iri_type;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneToGeneProductRelationship],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneToGeneProductRelationship],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneToGeneProductRelationship],%20\[GeneProduct]<object%201..1-%20\[GeneToGeneProductRelationship],%20\[Gene]<subject%201..1-%20\[GeneToGeneProductRelationship],%20\[SequenceFeatureRelationship]^-\[GeneToGeneProductRelationship])
+![img](images/GeneToGeneProductRelationship.png)
 
 ## Parents
 

@@ -6,7 +6,7 @@
 
 URI: [biolink:OrganismTaxon](https://w3id.org/biolink/vocab/OrganismTaxon)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ThingWithTaxon]-%20in%20taxon%200..*>\[OrganismTaxon|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[OntologyClass]^-\[OrganismTaxon])
+![img](images/OrganismTaxon.png)
 
 ## Parents
 

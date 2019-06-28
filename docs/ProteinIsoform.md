@@ -6,7 +6,7 @@ Represents a protein that is a specific isoform of the canonical or reference pr
 
 URI: [biolink:ProteinIsoform](https://w3id.org/biolink/vocab/ProteinIsoform)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[ProteinIsoform|name(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):identifier_type;category(i):iri_type%20%2B],%20\[ProteinIsoform]uses%20-.->\[GeneProductIsoform],%20\[Protein]^-\[ProteinIsoform])
+![img](images/ProteinIsoform.png)
 
 ## Parents
 

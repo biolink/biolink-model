@@ -6,7 +6,7 @@ An interaction between a chemical entity and a gene or gene product
 
 URI: [biolink:ChemicalToGeneAssociation](https://w3id.org/biolink/vocab/ChemicalToGeneAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ChemicalToGeneAssociation|id(i):identifier_type;subject(i):iri_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ChemicalToGeneAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ChemicalToGeneAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ChemicalToGeneAssociation],%20\[GeneOrGeneProduct]<object%201..1-%20\[ChemicalToGeneAssociation],%20\[ChemicalToGeneAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[Association]^-\[ChemicalToGeneAssociation])
+![img](images/ChemicalToGeneAssociation.png)
 
 ## Parents
 

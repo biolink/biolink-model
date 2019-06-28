@@ -6,7 +6,7 @@ An information content entity that describes a genome by specifying the total va
 
 URI: [biolink:Genotype](https://w3id.org/biolink/vocab/Genotype)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Genotype|has_biological_sequence(i):biological_sequence%20%3F;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[Zygosity]<has%20zygosity%200..1-%20\[Genotype],%20\[GenotypeToGeneAssociation]-%20subject%201..1>\[Genotype],%20\[GenotypeToGenotypePartAssociation]-%20object%201..1>\[Genotype],%20\[GenotypeToGenotypePartAssociation]-%20subject%201..1>\[Genotype],%20\[GenotypeToPhenotypicFeatureAssociation]-%20subject%201..1>\[Genotype],%20\[GenotypeToThingAssociation]-%20subject%201..1>\[Genotype],%20\[GenotypeToVariantAssociation]-%20subject%201..1>\[Genotype],%20\[GenomicEntity]^-\[Genotype])
+![img](images/Genotype.png)
 
 ## Parents
 

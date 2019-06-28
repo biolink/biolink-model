@@ -6,7 +6,7 @@ A functional association between a macromolecular machine (gene, gene product or
 
 URI: [biolink:MacromolecularMachineToCellularComponentAssociation](https://w3id.org/biolink/vocab/MacromolecularMachineToCellularComponentAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[MacromolecularMachineToCellularComponentAssociation|id(i):identifier_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[MacromolecularMachineToCellularComponentAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[MacromolecularMachineToCellularComponentAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[MacromolecularMachineToCellularComponentAssociation],%20\[MacromolecularMachine]<subject(i)%201..1-%20\[MacromolecularMachineToCellularComponentAssociation],%20\[CellularComponent]<object%201..1-%20\[MacromolecularMachineToCellularComponentAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToCellularComponentAssociation])
+![img](images/MacromolecularMachineToCellularComponentAssociation.png)
 
 ## Parents
 

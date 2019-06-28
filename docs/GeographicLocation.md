@@ -6,7 +6,7 @@ a location that can be described in lat/long coordinates
 
 URI: [biolink:GeographicLocation](https://w3id.org/biolink/vocab/GeographicLocation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeographicLocation|latitude:float%20%3F;longitude:float%20%3F;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[GeographicLocationAtTime],%20\[PlanetaryEntity]^-\[GeographicLocation])
+![img](images/GeographicLocation.png)
 
 ## Parents
 

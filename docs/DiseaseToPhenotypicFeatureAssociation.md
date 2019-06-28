@@ -6,7 +6,7 @@ An association between a disease and a phenotypic feature in which the phenotypi
 
 URI: [biolink:DiseaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/DiseaseToPhenotypicFeatureAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[DiseaseToPhenotypicFeatureAssociation|id(i):identifier_type;subject(i):iri_type;relation(i):iri_type;object(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[DiseaseToPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[DiseaseToPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[DiseaseToPhenotypicFeatureAssociation],%20\[Onset]<onset%20qualifier%200..1-%20\[DiseaseToPhenotypicFeatureAssociation],%20\[SeverityValue]<severity%20qualifier%200..1-%20\[DiseaseToPhenotypicFeatureAssociation],%20\[FrequencyValue]<frequency%20qualifier%200..1-%20\[DiseaseToPhenotypicFeatureAssociation],%20\[BiologicalSex]<sex%20qualifier%200..1-%20\[DiseaseToPhenotypicFeatureAssociation],%20\[DiseaseToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[DiseaseToPhenotypicFeatureAssociation]uses%20-.->\[DiseaseToThingAssociation],%20\[Association]^-\[DiseaseToPhenotypicFeatureAssociation])
+![img](images/DiseaseToPhenotypicFeatureAssociation.png)
 
 ## Parents
 

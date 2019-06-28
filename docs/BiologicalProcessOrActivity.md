@@ -6,7 +6,7 @@ Either an individual molecular activity, or a collection of causally connected m
 
 URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/BiologicalProcessOrActivity)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalProcessOrActivity|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[MolecularActivity],%20\[BiologicalProcessOrActivity]^-\[BiologicalProcess],%20\[BiologicalEntity]^-\[BiologicalProcessOrActivity])
+![img](images/BiologicalProcessOrActivity.png)
 
 ## Parents
 

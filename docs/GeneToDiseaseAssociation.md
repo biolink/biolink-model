@@ -6,7 +6,7 @@
 
 URI: [biolink:GeneToDiseaseAssociation](https://w3id.org/biolink/vocab/GeneToDiseaseAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GeneToDiseaseAssociation|id(i):identifier_type;relation(i):iri_type;object(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GeneToDiseaseAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GeneToDiseaseAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GeneToDiseaseAssociation],%20\[Onset]<onset%20qualifier%200..1-%20\[GeneToDiseaseAssociation],%20\[SeverityValue]<severity%20qualifier%200..1-%20\[GeneToDiseaseAssociation],%20\[FrequencyValue]<frequency%20qualifier%200..1-%20\[GeneToDiseaseAssociation],%20\[GeneOrGeneProduct]<subject%201..1-%20\[GeneToDiseaseAssociation],%20\[GeneToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneToDiseaseAssociation]uses%20-.->\[GeneToThingAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneHasVariantThatContributesToDiseaseAssociation],%20\[GeneToDiseaseAssociation]^-\[GeneAsAModelOfDiseaseAssociation],%20\[Association]^-\[GeneToDiseaseAssociation])
+![img](images/GeneToDiseaseAssociation.png)
 
 ## Parents
 

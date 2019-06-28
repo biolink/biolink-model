@@ -6,7 +6,7 @@ any grouping of multiple genes or gene products
 
 URI: [biolink:GeneGrouping](https://w3id.org/biolink/vocab/GeneGrouping)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneFamily]uses%20-.->\[GeneGrouping])
+![img](images/GeneGrouping.png)
 
 ## Mixin for
 

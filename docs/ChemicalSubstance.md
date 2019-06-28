@@ -6,7 +6,7 @@ May be a chemical entity or a formulation with a chemical entity as active ingre
 
 URI: [biolink:ChemicalSubstance](https://w3id.org/biolink/vocab/ChemicalSubstance)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[ChemicalSubstance|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ChemicalToThingAssociation]-%20subject%201..1>\[ChemicalSubstance],%20\[ChemicalSubstance]^-\[Metabolite],%20\[ChemicalSubstance]^-\[Drug],%20\[ChemicalSubstance]^-\[Carbohydrate],%20\[MolecularEntity]^-\[ChemicalSubstance])
+![img](images/ChemicalSubstance.png)
 
 ## Parents
 

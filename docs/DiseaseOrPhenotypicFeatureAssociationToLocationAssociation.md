@@ -6,7 +6,7 @@ An association between either a disease or a phenotypic feature and an anatomica
 
 URI: [biolink:DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation|id(i):identifier_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],%20\[DiseaseOrPhenotypicFeature]<subject(i)%201..1-%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],%20\[AnatomicalEntity]<object%201..1-%20\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation],%20\[DiseaseOrPhenotypicFeatureAssociationToThingAssociation]^-\[DiseaseOrPhenotypicFeatureAssociationToLocationAssociation])
+![img](images/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.png)
 
 ## Parents
 

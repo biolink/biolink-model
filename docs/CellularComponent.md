@@ -6,7 +6,7 @@ A location in or around a cell
 
 URI: [biolink:CellularComponent](https://w3id.org/biolink/vocab/CellularComponent)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[CellularComponent|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[MacromolecularMachineToCellularComponentAssociation]-%20object%201..1>\[CellularComponent],%20\[AnatomicalEntity]^-\[CellularComponent])
+![img](images/CellularComponent.png)
 
 ## Parents
 

@@ -6,7 +6,7 @@ Any association between a genotype and a gene. The genotype have have multiple v
 
 URI: [biolink:GenotypeToGeneAssociation](https://w3id.org/biolink/vocab/GenotypeToGeneAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GenotypeToGeneAssociation|relation:iri_type;id(i):identifier_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GenotypeToGeneAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GenotypeToGeneAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GenotypeToGeneAssociation],%20\[Gene]<object%201..1-%20\[GenotypeToGeneAssociation],%20\[Genotype]<subject%201..1-%20\[GenotypeToGeneAssociation],%20\[Association]^-\[GenotypeToGeneAssociation])
+![img](images/GenotypeToGeneAssociation.png)
 
 ## Parents
 

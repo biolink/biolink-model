@@ -6,7 +6,7 @@ a databased entity or concept/class
 
 URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing|id:identifier_type;name:label_type;category:iri_type%20%2B]^-\[PlanetaryEntity],%20\[NamedThing]^-\[OntologyClass],%20\[NamedThing]^-\[Occurrent],%20\[NamedThing]^-\[InformationContentEntity],%20\[NamedThing]^-\[Device],%20\[NamedThing]^-\[ClinicalEntity],%20\[NamedThing]^-\[BiologicalEntity],%20\[NamedThing]^-\[AdministrativeEntity])
+![img](images/NamedThing.png)
 
 ## Children
 

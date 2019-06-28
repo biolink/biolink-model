@@ -6,7 +6,7 @@
 
 URI: [biolink:IndividualOrganism](https://w3id.org/biolink/vocab/IndividualOrganism)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[IndividualOrganism|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[IndividualOrganism]uses%20-.->\[ThingWithTaxon],%20\[IndividualOrganism]^-\[Case],%20\[OrganismalEntity]^-\[IndividualOrganism])
+![img](images/IndividualOrganism.png)
 
 ## Parents
 

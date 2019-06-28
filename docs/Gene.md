@@ -6,7 +6,7 @@
 
 URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Gene|name(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):identifier_type;category(i):iri_type%20%2B],%20\[GeneToGeneProductRelationship]-%20subject%201..1>\[Gene],%20\[GenotypeToGeneAssociation]-%20object%201..1>\[Gene],%20\[SequenceVariant]-%20has%20gene%200..*>\[Gene],%20\[TranscriptToGeneRelationship]-%20object%201..1>\[Gene],%20\[GeneOrGeneProduct]^-\[Gene])
+![img](images/Gene.png)
 
 ## Parents
 

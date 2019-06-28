@@ -6,7 +6,7 @@ This is an abstract class that can be mixed in with different kinds of gene prod
 
 URI: [biolink:GeneProductIsoform](https://w3id.org/biolink/vocab/GeneProductIsoform)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GeneProductIsoform|name(i):symbol_type;has_biological_sequence(i):biological_sequence%20%3F;id(i):identifier_type;category(i):iri_type%20%2B],%20\[ProteinIsoform]uses%20-.->\[GeneProductIsoform],%20\[RNAProductIsoform]uses%20-.->\[GeneProductIsoform],%20\[GeneProduct]^-\[GeneProductIsoform])
+![img](images/GeneProductIsoform.png)
 
 ## Parents
 

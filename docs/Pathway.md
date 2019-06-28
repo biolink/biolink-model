@@ -6,7 +6,7 @@
 
 URI: [biolink:Pathway](https://w3id.org/biolink/vocab/Pathway)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[ChemicalToPathwayAssociation]-%20object%201..1>\[Pathway|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[BiologicalProcess]^-\[Pathway])
+![img](images/Pathway.png)
 
 ## Parents
 

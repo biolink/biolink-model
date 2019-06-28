@@ -6,7 +6,7 @@ a piece of information that typically describes some piece of biology or is used
 
 URI: [biolink:InformationContentEntity](https://w3id.org/biolink/vocab/InformationContentEntity)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[InformationContentEntity|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B]^-\[Publication],%20\[InformationContentEntity]^-\[EvidenceType],%20\[InformationContentEntity]^-\[ConfidenceLevel],%20\[NamedThing]^-\[InformationContentEntity])
+![img](images/InformationContentEntity.png)
 
 ## Parents
 

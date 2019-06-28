@@ -6,7 +6,7 @@ Any association between one genotype and a phenotypic feature, where having the 
 
 URI: [biolink:GenotypeToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[GenotypeToPhenotypicFeatureAssociation|relation:iri_type;id(i):identifier_type;object(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[GenotypeToPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[GenotypeToPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[GenotypeToPhenotypicFeatureAssociation],%20\[Onset]<onset%20qualifier%200..1-%20\[GenotypeToPhenotypicFeatureAssociation],%20\[SeverityValue]<severity%20qualifier%200..1-%20\[GenotypeToPhenotypicFeatureAssociation],%20\[FrequencyValue]<frequency%20qualifier%200..1-%20\[GenotypeToPhenotypicFeatureAssociation],%20\[BiologicalSex]<sex%20qualifier%200..1-%20\[GenotypeToPhenotypicFeatureAssociation],%20\[Genotype]<subject%201..1-%20\[GenotypeToPhenotypicFeatureAssociation],%20\[GenotypeToPhenotypicFeatureAssociation]uses%20-.->\[EntityToPhenotypicFeatureAssociation],%20\[GenotypeToPhenotypicFeatureAssociation]uses%20-.->\[GenotypeToThingAssociation],%20\[Association]^-\[GenotypeToPhenotypicFeatureAssociation])
+![img](images/GenotypeToPhenotypicFeatureAssociation.png)
 
 ## Parents
 

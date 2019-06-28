@@ -6,7 +6,7 @@ any grouping of multiple genes or gene products related by common descent
 
 URI: [biolink:GeneFamily](https://w3id.org/biolink/vocab/GeneFamily)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GeneFamily|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GeneFamily]uses%20-.->\[GeneGrouping],%20\[MolecularEntity]^-\[GeneFamily])
+![img](images/GeneFamily.png)
 
 ## Parents
 

@@ -6,7 +6,7 @@ A feature of the environment of an organism that influences one or more phenotyp
 
 URI: [biolink:Environment](https://w3id.org/biolink/vocab/Environment)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EnvironmentToPhenotypicFeatureAssociation]-%20subject%201..1>\[Environment|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[Environment]^-\[Treatment],%20\[Environment]^-\[DrugExposure],%20\[BiologicalEntity]^-\[Environment])
+![img](images/Environment.png)
 
 ## Parents
 

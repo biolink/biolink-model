@@ -6,7 +6,7 @@ mixin class for any association whose object (target node) is a disease
 
 URI: [biolink:EntityToDiseaseAssociation](https://w3id.org/biolink/vocab/EntityToDiseaseAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[FrequencyValue]<frequency%20qualifier(i)%200..1-%20\[EntityToDiseaseAssociation],%20\[Onset]<onset%20qualifier(i)%200..1-%20\[EntityToDiseaseAssociation],%20\[SeverityValue]<severity%20qualifier(i)%200..1-%20\[EntityToDiseaseAssociation],%20\[VariantToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneAsAModelOfDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[EntityToFeatureOrDiseaseQualifiers]^-\[EntityToDiseaseAssociation])
+![img](images/EntityToDiseaseAssociation.png)
 
 ## Parents
 

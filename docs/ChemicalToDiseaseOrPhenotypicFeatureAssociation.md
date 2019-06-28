@@ -6,7 +6,7 @@ An interaction between a chemical entity and a phenotype or disease, where the p
 
 URI: [biolink:ChemicalToDiseaseOrPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation|id(i):identifier_type;subject(i):iri_type;relation(i):iri_type;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[DiseaseOrPhenotypicFeature]<object%201..1-%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ChemicalToThingAssociation],%20\[ChemicalToDiseaseOrPhenotypicFeatureAssociation]uses%20-.->\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[ChemicalToDiseaseOrPhenotypicFeatureAssociation])
+![img](images/ChemicalToDiseaseOrPhenotypicFeatureAssociation.png)
 
 ## Parents
 

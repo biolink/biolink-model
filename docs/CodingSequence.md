@@ -6,7 +6,7 @@
 
 URI: [biolink:CodingSequence](https://w3id.org/biolink/vocab/CodingSequence)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[CodingSequence|has_biological_sequence(i):biological_sequence%20%3F;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[GenomicEntity]^-\[CodingSequence])
+![img](images/CodingSequence.png)
 
 ## Parents
 

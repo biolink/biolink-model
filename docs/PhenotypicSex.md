@@ -6,7 +6,7 @@ An attribute corresponding to the phenotypic sex of the individual, based upon t
 
 URI: [biolink:PhenotypicSex](https://w3id.org/biolink/vocab/PhenotypicSex)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[BiologicalSex]^-\[PhenotypicSex|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B])
+![img](images/PhenotypicSex.png)
 
 ## Parents
 

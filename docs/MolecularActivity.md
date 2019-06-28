@@ -6,7 +6,7 @@ An execution of a molecular function carried out by a gene product or macromolec
 
 URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivity)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MacromolecularMachineToMolecularActivityAssociation]-%20object%201..1>\[MolecularActivity|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[MolecularActivity]uses%20-.->\[Occurrent],%20\[BiologicalProcessOrActivity]^-\[MolecularActivity])
+![img](images/MolecularActivity.png)
 
 ## Parents
 

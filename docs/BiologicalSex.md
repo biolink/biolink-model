@@ -6,7 +6,7 @@
 
 URI: [biolink:BiologicalSex](https://w3id.org/biolink/vocab/BiologicalSex)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EntityToPhenotypicFeatureAssociation]-%20sex%20qualifier%200..1>\[BiologicalSex|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[BiologicalSex]^-\[PhenotypicSex],%20\[BiologicalSex]^-\[GenotypicSex],%20\[Attribute]^-\[BiologicalSex])
+![img](images/BiologicalSex.png)
 
 ## Parents
 

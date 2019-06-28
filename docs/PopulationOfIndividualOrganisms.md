@@ -6,7 +6,7 @@ A collection of individuals from the same taxonomic class distinguished by one o
 
 URI: [biolink:PopulationOfIndividualOrganisms](https://w3id.org/biolink/vocab/PopulationOfIndividualOrganisms)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon%200..*-%20\[PopulationOfIndividualOrganisms|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[PopulationToPopulationAssociation]-%20object%201..1>\[PopulationOfIndividualOrganisms],%20\[PopulationToPopulationAssociation]-%20subject%201..1>\[PopulationOfIndividualOrganisms],%20\[VariantToPopulationAssociation]-%20object%201..1>\[PopulationOfIndividualOrganisms],%20\[PopulationOfIndividualOrganisms]uses%20-.->\[ThingWithTaxon],%20\[OrganismalEntity]^-\[PopulationOfIndividualOrganisms])
+![img](images/PopulationOfIndividualOrganisms.png)
 
 ## Parents
 

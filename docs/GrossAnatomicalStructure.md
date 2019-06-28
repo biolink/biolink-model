@@ -6,7 +6,7 @@
 
 URI: [biolink:GrossAnatomicalStructure](https://w3id.org/biolink/vocab/GrossAnatomicalStructure)
 
-![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[GrossAnatomicalStructure|id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[AnatomicalEntity]^-\[GrossAnatomicalStructure])
+![img](images/GrossAnatomicalStructure.png)
 
 ## Parents
 
