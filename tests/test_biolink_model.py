@@ -3,7 +3,7 @@ import unittest
 
 from biolinkml.utils.schemaloader import SchemaLoader
 
-from biolinkmodel import BIOLINK_MODEL_YAML
+from biolink import BIOLINK_MODEL_YAML
 
 
 class BiolinkModelTestCase(unittest.TestCase):

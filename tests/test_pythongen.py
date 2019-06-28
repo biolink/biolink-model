@@ -3,7 +3,7 @@ from types import ModuleType
 
 from biolinkml.generators.pythongen import PythonGenerator
 
-from biolinkmodel import BIOLINK_MODEL_YAML
+from biolink import BIOLINK_MODEL_YAML
 
 
 class PythonGenTestCase(unittest.TestCase):

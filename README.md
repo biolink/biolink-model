@@ -90,8 +90,8 @@ The yaml definition is currently used to derive:
     - these can be compiled down to Solr XML schemas
     - these are also intermediate targets used within the BBOP/AmiGO framework
  - [JSON Schema](json-schema)
- - [Python dataclasses](biolinkmodel/datamodel.py)
- - [marshmallow schema definitions](biolinkmodel/schema.py)
+ - [Python dataclasses](biolink/model.py)
+ - [marshmallow schema definitions](biolink/schema.py)
     - can be used to serialize/deserialize python object model to JSON and YAML
  - [Java code gen](java)
     - [Jackson annotations](https://github.com/FasterXML/jackson-annotations) used be default
