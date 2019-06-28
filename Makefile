@@ -15,7 +15,7 @@ imgflags?=--noimages
 all: install tests build
 
 # Build the biolink model python library
-python: biolinkmodel/datamodel.py
+python: biolink/model.py
 docs: docs/index.md
 json-schema: json-schema/biolink-model.json
 
@@ -43,7 +43,7 @@ env.lock:
 # ~~~~~~~~~~~~~~~~~~~~
 # Python
 # ~~~~~~~~~~~~~~~~~~~~
-biolinkmodel/datamodel.py: biolink-model.yaml env.lock
+biolink/model.py: biolink-model.yaml env.lock
 	pipenv run gen-py-classes $< > tmp.py && pipenv run python tmp.py &&  (pipenv run comparefiles tmp.py $@ && cp $@ $@-PREV && cp tmp.py $@); rm tmp.py
 
 
