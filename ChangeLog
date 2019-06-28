@@ -1,0 +1,315 @@
+CHANGES
+=======
+
+v1.2.0
+------
+
+* Update .gitignore
+* Update setup.cfg
+* Revert "Update setup.py"
+* Update setup.py
+* Update remaining artifacts
+* Update Makefile and tests
+* Rename biolinkmodel folder to biolink
+* Switch to newer biolinkml
+* Fix issue #227
+* Point travis at tests (vs. test)
+* Fix issue #225
+* Backing up to Travis 3.6
+* updating index docs
+* Update UML diagrams
+* Change travis build to 3.7
+* Build from new makefile
+* Update biolink-model.yaml
+* Update biolink-model.yaml
+* Fixes #212
+* Undoing committed change, intended to open pull request
+* Fixes #212
+* Update tests for Semantic Net updates
+* Commit cosmetic changes so we can merge the latest Semantic Net elements
+* Added UMLS Semantic Types and Codes to the Biolink YAML model (#209)
+* Update all content for model changes
+* Update documentation (#194)
+* remove useless evidence instance and use evidence type for has evidence to fix https://github.com/biolink/biolink-model/issues/153 (#195)
+* Add description for population (#196)
+* Update biolink-model.yaml (#203)
+* Add Gitter badge
+* Fixed null pointer exception
+* Regen tests (#192)
+* model refactoring (#187)
+* Add Python 3.7 badge to README
+* Fix issue #188.  Use non-aliased slot names in RDF (#190)
+* Update tests, requirements and version
+* chembl id prefixes (#180)
+* Adding PMID as id prefix for publications (#181)
+* Resolve merge conflicts
+* Detect ALL unused prefixes (#183)
+* Partial fix for issue #175 - missing prefix fix
+* Partial fix for issue #175 - missing prefix fix
+* Changed ANCESTRO to HANCESTRO
+* Update tests to reflect changes
+* Fixing type in RO mapping of the 'prevents' slot
+* Changed graphviz output to .gv and .svg.  Fixes issue #176 (#177)
+* extend mappings with new slots (#173)
+* Change base URI to  http://w3id.org/biolink/vocab
+* Detect ALL unused prefixes
+* merge
+* Update secondary files Also removed a few more false change positives
+* Test and build of patch change
+* Remove GMODChado mapping
+* Make category an IRI type
+* Fix issue #163.   Also added pipenv files and fixed make file bug
+* Checkpoint
+* Added comparefiles tool and added to makefile
+* Sort markdown index files
+* Sort markdown output
+* Sample test code for RDF files
+* Update tests to reflect ancestors fix
+* Fixed scope error
+* Correct error in shex compact grammar generation
+* Update to fix a bug in the shexc generator
+* Updates ShEx testing and generation
+* Fixed issue in ShEx generation
+* Fix for issue #138.  Also updated version number
+* Remove a debug statement
+* Make test file case sensitive
+* Fix issue #131 by changing the name of the test script and adding a pattern to the Makefile
+* Add COLUMNS to travis build
+* Fixes issue #133 and does complete build
+* Updated tests to reflect issue 120 fix
+* Fix for issue #119.  Also includes a complete make
+* Fix for issue #119.  Also includes a complete make
+* Fixed issue #120
+* Updated version for ShExJSG
+* Update requirements to match setup
+* Update biolink-model.yaml
+* Update images
+* Build fix
+* Resync build
+* adding 48 new predicates to support CTD data
+* Start of documentation for using the schema loader
+* fixed erroneous BFO:0000066  mappings
+* Fix for issue #106 - regenerate all documents
+* Completely merge biolink-model.yaml
+* Set the test refresh\_files variable to false
+* Completed the biolink-model.yaml merge and regenerated the ouutput
+* Conflict resolution
+* Order related differences?
+* Integrated last change to biolink-model.yaml on biolink repository
+* Remove contrib PNG's and use direct reference
+* docs
+* Everything is more or less solid
+* Everything is more or less solid
+* Get the right context for the metamodel
+* Added a RDF directory to the make file
+* Checkpoint. Metamodel seems completely sound in JSON/RDF and the like
+* RDF generating from JSON-LD
+* Updated the python to type the slots
+* First cut at ShEx generator
+* Theoretically complete except for ShEx
+* Undoing earlier name fix -- need another approach
+* Fix for issue #14
+* Undo fix for issue #12
+* Fix for issue #12
+* Fix for issue #12
+* Fix for issue #11
+* Fix for issue #10
+* Update test and make output to reflect changes in json schema generator
+* Fixed a typo in Generator.visit\_all\_\_class slots
+* Fixes issue #9
+* Test files updated to reflect biolink-model.yaml refactoring for issue #8
+* Misc test files that were missed in previous submissions
+* Temporary fix for issue #8 -- added expected failure decorators
+* Fix for issue #7
+* Fixes for issue #5
+* Fixes for issue #4
+* Additional changes for yuml determinacy problem
+* Fixed non-determinacy issue in emission order
+* Cleaned up contextgen comments and clicktestcase editing of it
+* Fix issue #6
+* Part of issue 2 fix
+* Removed Generator.root\_closure, as it was only called from here
+* Fix Issue #3 - extra asterisk
+* Fix Issue #5
+* Fix Issue #2
+* Added link to the metamodel markdown documentation
+* Approaching beta version of markdown and yuml diagrams
+* Switch to inline UML
+* Update to YUML and markdown generators
+* OWl Generation is close to working
+* Set theme jekyll-theme-dinky
+* Updated the docs
+* Passes 3.6 and 3.7 tox tests
+* Removed bin directory and added scripts to setup.py
+* Checkpoint -- all generators running
+* Checkpoint -- YUML generator approaching complete
+* Checkpoint -- Generating everything through markdown
+* Checkpoint -- generating complete python for metamodel and biolink
+* Checkpoint -- metamodel is (almost) self generating
+* Proposed dataclasses representation of metamodel
+* test for shex etc
+
+v1.1.1
+------
+
+* added generated docs for new elements
+* Additional association paths
+* Added zenodo badge, see #87
+* added predisposes and has input slots
+* added missing generated docs
+* evidence
+* Additional mappings
+* semweb prefixes
+* Ensure all prefixes added
+* regen
+* add 'in taxon' slot to translator\_minimal subset
+* imports
+* trim leading 'is' from several predicate names
+* changing in\_subset values to lists
+* regen
+* Fixes #77
+* Added example property for chemical entity, fixes #64
+* pop2pop
+* Update biolink-model.yaml
+* regen docs
+* fix syntax errs
+* stub code for generating nested objects in contextld
+* Fixed invalid YAML file
+* update treats condition->treats
+* fix typos, minor updates to deescriptions
+* Added in\_subset and  inverse annotations to TKG min predicates, and WD and SemMedDB mappings
+* added in\_subset and inverse slot definitions
+* renamed 4 predicates, deprecated two predicates, added numerous new predicates
+* re-prioritized
+* re-prioritized
+* Added chembl, fixes #65
+* added links to context file, see #65
+* missing docs
+* Using reactome for now, but see https://github.com/monarch-initiative/dipper/issues/582
+* include all prefixes
+* JSON-LD context generation
+* link to kgx
+
+v1.1.0
+------
+
+* docs
+* regen
+* fix typo
+* updated docs
+* Added grouping for BP+MF, fixes #59
+* Update biolink-model.yaml
+* add SEMMEDDB:PRECEDES mapping
+* neo4j-names
+* proposed for #49
+* tr
+* Added UMLS Semantic Group LIVB as a mapping
+* category
+* expanding UML
+* new classes
+* restored
+* regen
+* variant to pop frequencies
+* add missing
+* Use correct UPHENO Phenotype IRI
+* upgraded marshmallow
+* fixed typo
+* Added metabolite, fixes #35
+* Fix upheno mapping, fixes #41
+* Update biolink-model.yaml
+* Update biolink-model.yaml
+* Update biolink-model.yaml
+* nu
+* yUML
+* variants
+* protobuf
+* regen
+* regen
+* regen
+* regulates
+* local-names
+* Adding predicates
+* NT: haplotype
+* sequence variant changes, from #21
+* Update biolink-model.yaml
+* Issue #26
+* regenerated
+* regenerated
+* regen
+* ontol
+* regen
+* ontology iri
+* license
+* license
+* license
+* adding license
+
+v1.0.0
+------
+
+* regenerated derived artefacts
+* fixing typo
+* removing occupation, was added for #7
+* First pass at modeling isoforms in schema, see also discussion at https://github.com/The-Sequence-Ontology/MSO/issues/1
+* improved metamodel def
+* reorganized README
+* regen
+* Fix list typo
+* add\_wikidata\_class\_mappings
+* sio mappings
+* Added mappings from @micheldumontier in https://github.com/NCATS-Tangerine/translator-knowledge-beacon/pull/45
+* pheno qualifiers
+* Added mappings to the small number of Wikidata concept types
+* Gitignore local Eclipse IDE configuration
+* first pass at ShEx, #12
+* csvs
+* moved docs from top level
+* csv export
+* regen
+* regen
+* docs
+* moved
+* moved
+* remove stale
+* split some out into contrib
+* additional mappings
+* doc
+* regen
+* Added md doc generator, md docs and regenerated all
+* test-docs
+* test-docs
+* Set theme jekyll-theme-dinky
+* Set theme jekyll-theme-dinky
+* Exemplar SIO mapping see #1
+* Adding some mappings for bio2rdf association types, see #1
+* regen
+* fix typo
+* adding space and time
+* add attributes
+* Update biolink-model.yaml
+* Add microRNA type
+* regen
+* Adding new types Annotating types with identifiers #2
+* regen
+* mixins
+* regen
+* regen
+* graphql
+* sample
+* fixed link
+* regen with color coding
+* regen-gv
+* regen
+* regen
+* schemagen
+* using manager methods
+* regen
+* regen
+* travis-badge
+* travis
+* generation of owl, new classes, travis
+* docs
+* regen
+* adding expression example
+* adding expression example
+* initial commit
