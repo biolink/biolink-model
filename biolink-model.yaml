@@ -1958,9 +1958,9 @@ classes:
       - thing with taxon
     aliases: ['bioentity']
     description: "A gene, gene product, small molecule or macromolecule (including protein complex)"
-    notes:
-      - "Check SIO mapping - also mapped to chemical substance."
-    class_uri: SIO:010004
+    #notes:
+    #  - "Check SIO mapping - also mapped to chemical substance.": Resolved by changing SIO:010004 to SIO:010341
+    class_uri: SIO:010341
     mappings:
       - WD:Q43460564
       # UMLS Semantic Group "Genes & Molecular Sequences"
