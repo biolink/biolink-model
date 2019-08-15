@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.0.2\nGeneration date: 2019-06-28 16:36\nSchema: biolink_model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2019-07-22 10:56\nSchema: biolink_model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "_comments": null,
       "type": "@type",
@@ -59,13 +59,13 @@
       "dcterms": "http://purl.org/dc/terms/",
       "dictyBase": "http://dictybase.org/gene/",
       "faldo": "http://biohackathon.org/resource/faldo#",
-      "meta": "https://w3id.org/biolink/biolinkml/meta/",
       "metatype": "https://w3id.org/biolink/biolinkml/type/",
       "oban": "http://example.org/UNKNOWN/oban/",
       "owl": "http://www.w3.org/2002/07/owl#",
       "pav": "http://purl.org/pav/",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "shex": "http://www.w3.org/ns/shex#",
       "skos": "https://www.w3.org/TR/skos-reference/#",
       "wgs": "http://www.w3.org/2003/01/geo/wgs84_pos",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
@@ -684,7 +684,7 @@
          "@id": "GO:0003674"
       },
       "MolecularEntity": {
-         "@id": "SIO:010004"
+         "@id": "SIO:010341"
       },
       "NamedThing": {
          "@id": "WD:Q35120"
