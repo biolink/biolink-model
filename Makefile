@@ -17,9 +17,10 @@ all: install tests build
 # Build the biolink model python library
 python: biolink/model.py
 docs: docs/index.md
+shex: biolink-model.shex biolink-modeln.shex biolink-model.shexj biolink-modeln.shexj
 json-schema: json-schema/biolink-model.json
 
-build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz java context.jsonld \
+build: python docs/index.md gen-golr-views biolink-model.graphql gen-graphviz java context.jsonld contextn.jsonld \
 json-schema/biolink-model.json biolink-model.owl biolink-model.proto biolink-model.shex biolink-model.ttl
 
 # TODO: Get this working
@@ -89,6 +90,9 @@ java: json-schema/biolink-model.json dir-java env.lock
 context.jsonld: biolink-model.yaml env.lock
 	pipenv run gen-jsonld-context $< > tmp.jsonld && ( pipenv run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
 
+contextn.jsonld: biolink-model.yaml env.lock
+	pipenv run gen-jsonld-context --metauris $< > tmp.jsonld && ( pipenv run comparefiles tmp.jsonld $@ -c "^\s*\"comments\".*\n" && cp tmp.jsonld $@); rm tmp.jsonld
+
 
 # ~~~~~~~~~~~~~~~~~~~~
 # JSON-SCHEMA
@@ -121,6 +125,12 @@ biolink-model.ttl: biolink-model.yaml env.lock
 # ~~~~~~~~~~~~~~~~~~~~
 biolink-model.shex: biolink-model.yaml
 	pipenv run gen-shex $< > $@
+biolink-modeln.shex: biolink-model.yaml
+	pipenv run gen-shex --metauris $< > $@
+biolink-model.shexj: biolink-model.yaml
+	pipenv run gen-shex --format json $< > $@
+biolink-modeln.shexj: biolink-model.yaml
+	pipenv run gen-shex --metauris --format json $< > $@
 
 
 # ----------------------------------------
