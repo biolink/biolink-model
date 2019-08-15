@@ -8,7 +8,7 @@ URI: [biolink:systematic_synonym](https://w3id.org/biolink/vocab/systematic_syno
 
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [LabelType](LabelType.md)
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [LabelType](LabelType.md)
 
 ## Parents
 

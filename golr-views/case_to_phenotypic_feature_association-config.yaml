@@ -5,10 +5,6 @@ display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
 document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
 - case to phenotypic feature association
 fields:
-- description: A unique identifier for an association
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - association_id
-  id: id
 - description: connects an association to the subject of the association. For example,
     in a gene-to-phenotype association, the gene is subject and phenotype is object.
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
@@ -24,6 +20,10 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - object
   id: object
+- description: A unique identifier for an association
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - association_id
+  id: id
 - description: if set to true, then the association is negated i.e. is not true
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - negated
@@ -52,8 +52,8 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - association slot
   id: association_slot
-- description: 'A high-level grouping for the relationship type. AKA minimal predicate.
-    This is analogous to category for nodes. '
+- description: A high-level grouping for the relationship type. AKA minimal predicate.
+    This is analogous to category for nodes.
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - edge label
   id: edge_label

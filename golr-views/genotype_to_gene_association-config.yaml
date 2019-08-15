@@ -5,10 +5,6 @@ display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
 document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
 - genotype to gene association
 fields:
-- description: A unique identifier for an association
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - association_id
-  id: id
 - display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - genotype to gene association_subject
   id: subject
@@ -18,6 +14,10 @@ fields:
 - display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - genotype to gene association_object
   id: object
+- description: A unique identifier for an association
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - association_id
+  id: id
 - description: if set to true, then the association is negated i.e. is not true
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - negated
@@ -46,8 +46,8 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - association slot
   id: association_slot
-- description: 'A high-level grouping for the relationship type. AKA minimal predicate.
-    This is analogous to category for nodes. '
+- description: A high-level grouping for the relationship type. AKA minimal predicate.
+    This is analogous to category for nodes.
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - edge label
   id: edge_label

@@ -8,7 +8,7 @@ URI: [biolink:pairwise_interaction_association_relation](https://w3id.org/biolin
 
 ## Domain and Range
 
-[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) ->  <sub>REQ</sub> [Uriorcurie](Uriorcurie.md)
 
 ## Parents
 

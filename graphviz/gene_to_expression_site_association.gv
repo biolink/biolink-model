@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1572.4,281"];
+	graph [bb="0,0,1590.4,281"];
 	node [label="\N"];
 	"gene to expression site association"	 [height=0.5,
 		label="gene to expression site association",
@@ -9,41 +9,41 @@ digraph {
 		pos="49.402,177",
 		width=1.3723];
 	"gene to expression site association" -> association	 [label=is_a,
-		lp="145.68,220",
-		pos="e,70.648,193.36 494.1,260.15 371.9,256.27 198.58,247.3 133.85,227 114.42,220.9 94.718,209.6 79.24,199.28"];
-	id	 [height=0.5,
-		pos="143.4,177",
-		width=0.75];
-	"gene to expression site association" -> id	 [color=blue,
-		label=id,
-		lp="179.85,220",
-		pos="e,149.32,194.88 496.17,258.71 372.6,253.63 200.45,243.67 173.51,227 164.91,221.67 158.43,212.89 153.74,204.16",
-		style=solid];
+		lp="101.68,220",
+		pos="e,58.849,195.05 494.54,259.67 347.83,255.06 124.83,245.16 89.85,227 79.637,221.7 71.092,212.56 64.526,203.54"];
 	subject	 [height=0.5,
-		pos="276.4,177",
+		pos="204.4,177",
 		width=0.97656];
 	"gene to expression site association" -> subject	 [color=blue,
 		label=subject,
-		lp="314.23,220",
-		pos="e,277.9,195.02 502.4,256.01 415.1,249.96 310.2,240.11 293.75,227 286.9,221.55 282.75,213.23 280.23,204.93",
+		lp="242.23,220",
+		pos="e,205.85,195.08 496.63,258.46 386.96,253.45 243.23,243.78 221.75,227 214.85,221.61 210.68,213.31 208.17,205.01",
 		style=solid];
 	relation	 [height=0.5,
-		pos="256.4,18",
+		pos="184.4,18",
 		width=1.031];
 	"gene to expression site association" -> relation	 [color=blue,
 		label=relation,
-		lp="245.78,134",
-		pos="e,249.31,35.763 501.75,256.37 419.83,250.76 320.08,241.31 280.4,227 256.28,218.3 246.28,216.56 232.4,195 215.91,169.38 219.21,157.15 \
-223.64,127 227.84,98.478 237.89,67.064 245.76,45.317",
+		lp="173.78,134",
+		pos="e,177.31,35.763 495.89,258.85 393.71,254.25 259.71,244.99 208.4,227 184.21,218.52 174.28,216.56 160.4,195 143.91,169.38 147.21,157.15 \
+151.64,127 155.84,98.478 165.89,67.064 173.76,45.317",
 		style=solid];
 	object	 [height=0.5,
-		pos="316.4,91",
+		pos="244.4,91",
 		width=0.88096];
 	"gene to expression site association" -> object	 [color=blue,
 		label=object,
-		lp="373.51,177",
-		pos="e,325.12,108.39 535.05,249.75 467.54,238.06 382.21,219.13 356.19,195 332.83,173.32 345.29,156.57 333.4,127 332.16,123.92 330.79,\
-120.73 329.38,117.58",
+		lp="301.51,177",
+		pos="e,253.12,108.39 514.21,253.03 428.2,243.1 317.83,224.93 284.19,195 260.38,173.81 273.29,156.57 261.4,127 260.16,123.92 258.79,120.73 \
+257.38,117.58",
+		style=solid];
+	id	 [height=0.5,
+		pos="354.4,177",
+		width=0.75];
+	"gene to expression site association" -> id	 [color=blue,
+		label=id,
+		lp="484.85,220",
+		pos="e,375.88,188.34 556.19,247.51 508.75,235.7 444.56,217.63 390.4,195 388.61,194.25 386.79,193.46 384.96,192.63",
 		style=solid];
 	negated	 [color=blue,
 		height=0.5,
@@ -103,7 +103,7 @@ digraph {
 	"gene to expression site association" -> "association slot"	 [color=blue,
 		label="association slot",
 		lp="1011.4,220",
-		pos="e,1001.5,191.76 719.55,250.53 734.87,248.62 750.57,246.71 765.4,245 843.08,236.05 866.52,252.59 940.4,227 959.51,220.38 978.72,208.37 \
+		pos="e,1001.5,191.76 719.25,250.47 734.34,248.57 749.8,246.69 764.4,245 842.51,235.99 866.09,252.71 940.4,227 959.51,220.39 978.72,208.38 \
 993.42,197.78",
 		style=solid];
 	"edge label"	 [color=blue,
@@ -114,7 +114,7 @@ digraph {
 	"gene to expression site association" -> "edge label"	 [color=blue,
 		label="edge label",
 		lp="1109,220",
-		pos="e,1098.9,194.66 717.59,250.23 733.52,248.29 749.92,246.46 765.4,245 830.35,238.87 998.42,252.65 1058.4,227 1071.2,221.53 1082.9,\
+		pos="e,1098.9,194.66 717.31,250.17 733.01,248.26 749.15,246.45 764.4,245 829.57,238.82 998.22,252.73 1058.4,227 1071.2,221.53 1082.9,\
 211.67 1092.1,202.14",
 		style=solid];
 	"stage qualifier"	 [height=0.5,
@@ -123,7 +123,7 @@ digraph {
 	"gene to expression site association" -> "stage qualifier"	 [color=blue,
 		label="stage qualifier",
 		lp="1216.9,220",
-		pos="e,1211.5,193.53 716.82,250.14 732.99,248.19 749.67,246.38 765.4,245 848.73,237.7 1060.7,249.18 1141.4,227 1163.1,221.03 1185.4,209.43 \
+		pos="e,1211.5,193.53 716.54,250.09 732.48,248.16 748.9,246.36 764.4,245 847.95,237.65 1060.5,249.23 1141.4,227 1163.1,221.03 1185.4,209.43 \
 1202.9,198.9",
 		style=dashed];
 	"quantifier qualifier"	 [height=0.5,
@@ -132,44 +132,44 @@ digraph {
 	"gene to expression site association" -> "quantifier qualifier"	 [color=blue,
 		label="quantifier qualifier",
 		lp="1359.3,220",
-		pos="e,1356.4,193.33 716.43,250.03 732.72,248.09 749.54,246.3 765.4,245 875.11,236.02 1152.6,249.2 1260.4,227 1290.3,220.84 1322.3,208.47 \
-1347,197.57",
+		pos="e,1356.4,193.33 716.15,249.98 732.21,248.05 748.77,246.29 764.4,245 874.33,235.96 1152.4,249.24 1260.4,227 1290.3,220.84 1322.3,\
+208.47 1347,197.58",
 		style=dashed];
-	association_id	 [color=blue,
-		height=0.5,
-		label="identifier type",
-		pos="833.4,263",
-		width=1.652];
-	subject -> relation	 [pos="e,258.67,36.027 274.11,158.76 270.64,131.21 264.04,78.735 259.95,46.223",
+	subject -> relation	 [pos="e,186.67,36.027 202.11,158.76 198.64,131.21 192.04,78.735 187.95,46.223",
 		style=dotted];
 	subject -> object	 [label=relation,
-		lp="312.78,134",
-		pos="e,302.82,107.46 279.98,158.87 282.29,149.13 285.78,137.08 290.64,127 292.43,123.29 294.6,119.56 296.91,115.97"];
+		lp="240.78,134",
+		pos="e,230.82,107.46 207.98,158.87 210.29,149.13 213.78,137.08 218.64,127 220.43,123.29 222.6,119.56 224.91,115.97"];
 	"gene to expression site association_subject"	 [color=blue,
 		height=0.5,
 		label="gene or gene product",
-		pos="995.4,263",
+		pos="858.4,263",
 		width=2.3474];
 	"gene to expression site association_relation"	 [color=blue,
 		height=0.5,
-		label="iri type",
-		pos="1133.4,263",
-		width=0.9834];
-	object -> relation	 [pos="e,270.17,34.752 302.79,74.435 295.09,65.075 285.33,53.191 276.74,42.745",
+		label=uriorcurie,
+		pos="1005.4,263",
+		width=1.2492];
+	object -> relation	 [pos="e,198.17,34.752 230.79,74.435 223.09,65.075 213.33,53.191 204.74,42.745",
 		style=dotted];
 	"gene to expression site association_object"	 [color=blue,
 		height=0.5,
 		label="anatomical entity",
-		pos="1258.4,263",
+		pos="1139.4,263",
 		width=1.9792];
+	association_id	 [color=blue,
+		height=0.5,
+		label="identifier type",
+		pos="1288.4,263",
+		width=1.652];
 	"gene to expression site association_stage qualifier"	 [color=blue,
 		height=0.5,
 		label="life stage",
-		pos="1390.4,263",
+		pos="1408.4,263",
 		width=1.1742];
 	"gene to expression site association_quantifier qualifier"	 [color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="1511.4,263",
+		pos="1529.4,263",
 		width=1.6931];
 }

@@ -54,7 +54,8 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - description
   id: description
-- description: more commonly used for gene symbols in yeast
+- cardinality: multi
+  description: more commonly used for gene symbols in yeast
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - systematic synonym
   id: systematic_synonym

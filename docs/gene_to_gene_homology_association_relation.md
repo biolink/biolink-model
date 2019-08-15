@@ -8,7 +8,7 @@ URI: [biolink:gene_to_gene_homology_association_relation](https://w3id.org/bioli
 
 ## Domain and Range
 
-[GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+[GeneToGeneHomologyAssociation](GeneToGeneHomologyAssociation.md) ->  <sub>REQ</sub> [Uriorcurie](Uriorcurie.md)
 
 ## Parents
 
