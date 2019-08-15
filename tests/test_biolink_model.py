@@ -1,4 +1,3 @@
-import sys
 import unittest
 
 from biolinkml.utils.schemaloader import SchemaLoader
