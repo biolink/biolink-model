@@ -388,7 +388,7 @@ public class NamedThing {
      */
     @JsonProperty("systematic_synonym")
     @JsonPropertyDescription("more commonly used for gene symbols in yeast")
-    private String systematicSynonym;
+    private List<String> systematicSynonym = new ArrayList<String>();
     /**
      * date on which thing was updated. This can be applied to nodes or edges
      * 
@@ -1229,7 +1229,7 @@ public class NamedThing {
      * 
      */
     @JsonProperty("systematic_synonym")
-    public String getSystematicSynonym() {
+    public List<String> getSystematicSynonym() {
         return systematicSynonym;
     }
 
@@ -1238,7 +1238,7 @@ public class NamedThing {
      * 
      */
     @JsonProperty("systematic_synonym")
-    public void setSystematicSynonym(String systematicSynonym) {
+    public void setSystematicSynonym(List<String> systematicSynonym) {
         this.systematicSynonym = systematicSynonym;
     }
 

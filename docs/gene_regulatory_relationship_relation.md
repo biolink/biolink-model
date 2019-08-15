@@ -8,7 +8,7 @@ URI: [biolink:gene_regulatory_relationship_relation](https://w3id.org/biolink/vo
 
 ## Domain and Range
 
-[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+[GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) ->  <sub>REQ</sub> [Uriorcurie](Uriorcurie.md)
 
 ## Parents
 

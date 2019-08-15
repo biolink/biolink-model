@@ -118,7 +118,7 @@ public class Attribute {
      */
     @JsonProperty("systematic_synonym")
     @JsonPropertyDescription("more commonly used for gene symbols in yeast")
-    private String systematicSynonym;
+    private List<String> systematicSynonym = new ArrayList<String>();
 
     /**
      * Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
@@ -329,7 +329,7 @@ public class Attribute {
      * 
      */
     @JsonProperty("systematic_synonym")
-    public String getSystematicSynonym() {
+    public List<String> getSystematicSynonym() {
         return systematicSynonym;
     }
 
@@ -338,7 +338,7 @@ public class Attribute {
      * 
      */
     @JsonProperty("systematic_synonym")
-    public void setSystematicSynonym(String systematicSynonym) {
+    public void setSystematicSynonym(List<String> systematicSynonym) {
         this.systematicSynonym = systematicSynonym;
     }
 

@@ -8,7 +8,7 @@ URI: [biolink:genotype_to_variant_association_relation](https://w3id.org/biolink
 
 ## Domain and Range
 
-[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) ->  <sub>REQ</sub> [Uriorcurie](Uriorcurie.md)
 
 ## Parents
 

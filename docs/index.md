@@ -172,7 +172,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [association slot](association_slot.md) - any slot that relates an association to another entity
     * [association type](association_type.md) - connects an association to the type of association (e.g. gene to phenotype)
     * [clinical modifier qualifier](clinical_modifier_qualifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
-    * [edge label](edge_label.md) - A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. 
+    * [edge label](edge_label.md) - A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
     * [frequency qualifier](frequency_qualifier.md) - a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     * [has confidence level](has_confidence_level.md) - connects an association to a qualitative term denoting the level of confidence
     * [has evidence](has_evidence.md) - connects an association to an instance of supporting evidence
@@ -434,7 +434,9 @@ Entity and association taxonomy and datamodel for life-sciences data
 #### Built in
 
  * **Bool**
+ * **ElementIdentifier**
  * **NCName**
+ * **NodeIdentifier**
  * **URI**
  * **URIorCURIE**
  * **XSDDate**
@@ -454,12 +456,14 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [Double](Double.md)  (**float**)  - A real number that conforms to the xsd:double specification
  * [Float](Float.md)  (**float**)  - A real number that conforms to the xsd:float specification
  * [Frequency](Frequency.md)  ([String](String.md)) 
- * [IdentifierType](IdentifierType.md)  ([String](String.md))  - A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form
+ * [IdentifierType](IdentifierType.md)  (**ElementIdentifier**)  - A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form
  * [Integer](Integer.md)  (**int**)  - An integer
- * [IriType](IriType.md)  ([Uri](Uri.md))  - An IRI
+ * [IriType](IriType.md)  ([Uriorcurie](Uriorcurie.md))  - An IRI
  * [LabelType](LabelType.md)  ([String](String.md))  - A string that provides a human-readable name for a thing
  * [NarrativeText](NarrativeText.md)  ([String](String.md))  - A string that provides a human-readable description of something
  * [Ncname](Ncname.md)  (**NCName**)  - Prefix part of CURIE
+ * [Nodeidentifier](Nodeidentifier.md)  (**NodeIdentifier**)  - A URI, CURIE or BNODE that represents a node in a model.
+ * [Objectidentifier](Objectidentifier.md)  (**ElementIdentifier**)  - A URI or CURIE that represents an object in the model.
  * [PerecentageFrequencyValue](PerecentageFrequencyValue.md)  ([Double](Double.md)) 
  * [Quotient](Quotient.md)  ([Double](Double.md)) 
  * [String](String.md)  (**str**)  - A character string

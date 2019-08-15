@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1320.6,281"];
+	graph [bb="0,0,1320.9,281"];
 	node [label="\N"];
 	"macromolecular machine to cellular component association"	 [height=0.5,
 		label="macromolecular machine to cellular component association",
@@ -9,43 +9,43 @@ digraph {
 		pos="87.466,177",
 		width=2.4296];
 	"macromolecular machine to cellular component association" -> "functional association"	 [label=is_a,
-		lp="221.74,220",
-		pos="e,120.89,193.72 405.34,251.08 328.72,244.64 246.72,236.14 209.91,227 182.49,220.19 153.14,208.37 130.05,197.94"];
-	id	 [height=0.5,
-		pos="219.47,177",
-		width=0.75];
-	"macromolecular machine to cellular component association" -> id	 [color=blue,
-		label=id,
-		lp="255.91,220",
-		pos="e,225.46,194.76 407.03,250.98 335.1,244.55 263.75,236.09 249.58,227 241.06,221.54 234.6,212.73 229.9,204.01",
-		style=solid];
+		lp="177.74,220",
+		pos="e,108.65,194.5 377.24,254.47 293.14,248.99 205.06,240.32 165.91,227 148.44,221.05 130.93,210.45 116.91,200.54"];
 	subject	 [height=0.5,
-		pos="352.47,177",
+		pos="280.47,177",
 		width=0.97656];
 	"macromolecular machine to cellular component association" -> subject	 [color=blue,
 		label=subject,
-		lp="390.29,220",
-		pos="e,354.24,195.29 434.25,248.89 405.72,243.61 380.93,236.5 369.81,227 363.25,221.4 359.17,213.19 356.63,205.03",
+		lp="318.29,220",
+		pos="e,282.11,195.44 420.52,249.86 362.85,243.57 308.3,235.55 297.81,227 291.13,221.55 287.01,213.38 284.48,205.21",
 		style=solid];
 	relation	 [color=blue,
 		height=0.5,
-		label="iri type",
-		pos="332.47,18",
-		width=0.9834];
+		label=uriorcurie,
+		pos="260.47,18",
+		width=1.2492];
 	"macromolecular machine to cellular component association" -> relation	 [color=blue,
 		label=relation,
-		lp="316.84,134",
-		pos="e,323.07,35.476 434.05,248.88 407.75,243.71 380.83,236.65 356.47,227 332.63,217.56 322.34,216.56 308.47,195 278.66,148.68 301.77,\
-81.424 318.71,44.586",
+		lp="244.84,134",
+		pos="e,250.94,35.738 417.79,250.05 363.41,244.13 309.53,236.33 284.47,227 260.44,218.05 250.34,216.56 236.47,195 206.73,148.8 229.65,\
+81.772 246.58,44.872",
 		style=solid];
 	object	 [height=0.5,
-		pos="392.47,91",
+		pos="320.47,91",
 		width=0.88096];
 	"macromolecular machine to cellular component association" -> object	 [color=blue,
 		label=object,
-		lp="449.57,177",
-		pos="e,401.19,108.39 511.26,245.55 483.87,234.9 453.01,218.66 432.26,195 411.24,171.03 421.36,156.57 409.47,127 408.23,123.92 406.86,\
-120.73 405.45,117.58",
+		lp="377.57,177",
+		pos="e,329.19,108.39 494.97,246.06 442.79,233.11 379.75,214.26 360.26,195 337.59,172.6 349.36,156.57 337.47,127 336.23,123.92 334.86,\
+120.73 333.45,117.58",
+		style=solid];
+	id	 [height=0.5,
+		pos="430.47,177",
+		width=0.75];
+	"macromolecular machine to cellular component association" -> id	 [color=blue,
+		label=id,
+		lp="514.91,220",
+		pos="e,450.45,189.19 541.91,244.97 517.56,230.12 483.25,209.19 459.15,194.49",
 		style=solid];
 	negated	 [color=blue,
 		height=0.5,
@@ -115,29 +115,29 @@ digraph {
 	"macromolecular machine to cellular component association" -> "edge label"	 [color=blue,
 		label="edge label",
 		lp="1184,220",
-		pos="e,1185.1,193.24 727.94,250.28 752.54,248.41 777.69,246.59 801.47,245 873.42,240.19 1056.8,248.99 1125.5,227 1143.9,221.1 1162.3,\
-209.84 1176.7,199.51",
+		pos="e,1185.1,193.25 727.57,250.24 751.96,248.39 776.89,246.58 800.47,245 872.64,240.17 1056.6,249.05 1125.5,227 1143.9,221.1 1162.3,\
+209.85 1176.7,199.51",
 		style=solid];
-	association_id	 [color=blue,
-		height=0.5,
-		label="identifier type",
-		pos="869.47,263",
-		width=1.652];
-	subject -> relation	 [pos="e,334.73,36.027 350.17,158.76 346.71,131.21 340.11,78.735 336.02,46.223",
+	subject -> relation	 [pos="e,262.73,36.027 278.17,158.76 274.71,131.21 268.11,78.735 264.02,46.223",
 		style=dotted];
 	subject -> object	 [label=relation,
-		lp="388.84,134",
-		pos="e,378.88,107.46 356.04,158.87 358.35,149.13 361.85,137.08 366.71,127 368.5,123.29 370.66,119.56 372.98,115.97"];
+		lp="316.84,134",
+		pos="e,306.88,107.46 284.04,158.87 286.35,149.13 289.85,137.08 294.71,127 296.5,123.29 298.66,119.56 300.98,115.97"];
 	"functional association_subject"	 [color=blue,
 		height=0.5,
 		label="macromolecular machine",
-		pos="1046.5,263",
+		pos="909.47,263",
 		width=2.7701];
-	object -> relation	 [pos="e,346.23,34.752 378.85,74.435 371.16,65.075 361.39,53.191 352.8,42.745",
+	object -> relation	 [pos="e,274.65,35.261 306.85,74.435 299.27,65.207 289.67,53.528 281.17,43.191",
 		style=dotted];
 	"macromolecular machine to cellular component association_object"	 [color=blue,
 		height=0.5,
 		label="cellular component",
-		pos="1242.5,263",
+		pos="1105.5,263",
 		width=2.1702];
+	association_id	 [color=blue,
+		height=0.5,
+		label="identifier type",
+		pos="1261.5,263",
+		width=1.652];
 }

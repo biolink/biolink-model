@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,361.3,122"];
+	graph [bb="0,0,417.87,122"];
 	node [label="\N"];
 	"model to disease mixin"	 [height=0.5,
 		label="model to disease mixin",
@@ -23,12 +23,12 @@ digraph {
 		style=solid];
 	"model to disease mixin_subject"	 [color=blue,
 		height=0.5,
-		label="iri type",
-		pos="236.9,104",
-		width=0.9834];
+		label="named thing",
+		pos="255.9,104",
+		width=1.5019];
 	"model to disease mixin_relation"	 [color=blue,
 		height=0.5,
-		label="iri type",
-		pos="325.9,104",
-		width=0.9834];
+		label=uriorcurie,
+		pos="372.9,104",
+		width=1.2492];
 }

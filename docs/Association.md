@@ -69,7 +69,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
     * range: [Boolean](Boolean.md)
  * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: [IriType](IriType.md)
+    * range: [NamedThing](NamedThing.md)
  * [provided by](provided_by.md)  <sub>OPT</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
@@ -81,10 +81,10 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
     * range: [OntologyClass](OntologyClass.md)
  * [relation](relation.md)  <sub>REQ</sub>
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [IriType](IriType.md)
+    * range: [Uriorcurie](Uriorcurie.md)
  * [subject](subject.md)  <sub>REQ</sub>
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: [IriType](IriType.md)
+    * range: [NamedThing](NamedThing.md)
 
 ### Domain for slot:
 
@@ -102,7 +102,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
     * Description: Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
     * range: [ClinicalModifier](ClinicalModifier.md)
  * [edge label](edge_label.md)  <sub>REQ</sub>
-    * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. 
+    * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
     * range: [LabelType](LabelType.md)
  * [has confidence level](has_confidence_level.md)  <sub>OPT</sub>
     * Description: connects an association to a qualitative term denoting the level of confidence
@@ -115,7 +115,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
     * range: [Boolean](Boolean.md)
  * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: [IriType](IriType.md)
+    * range: [NamedThing](NamedThing.md)
  * [provided by](provided_by.md)  <sub>OPT</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
@@ -127,7 +127,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
     * range: [OntologyClass](OntologyClass.md)
  * [relation](relation.md)  <sub>REQ</sub>
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [IriType](IriType.md)
+    * range: [Uriorcurie](Uriorcurie.md)
  * [subject](subject.md)  <sub>REQ</sub>
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
-    * range: [IriType](IriType.md)
+    * range: [NamedThing](NamedThing.md)

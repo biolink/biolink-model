@@ -30,7 +30,6 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
  *  **[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)** *[interacting molecules category](interacting_molecules_category.md)*  <sub>OPT</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[Association](Association.md)** *[qualifiers](qualifiers.md)*  <sub>0..*</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[quantifier qualifier](quantifier_qualifier.md)*  <sub>OPT</sub>  **[OntologyClass](OntologyClass.md)**
- *  **[OntologyClass](OntologyClass.md)** *[subclass of](subclass_of.md)*  <sub>0..*</sub>  **[OntologyClass](OntologyClass.md)**
 
 ## Attributes
 
@@ -57,5 +56,5 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 
  * [subclass of](subclass_of.md)  <sub>0..*</sub>
     * Description: holds between two classes where the domain class is a specialization of the range class
-    * range: [OntologyClass](OntologyClass.md)
+    * range: [IriType](IriType.md)
     * in subsets: (translator_minimal)

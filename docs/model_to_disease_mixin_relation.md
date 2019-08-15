@@ -8,7 +8,7 @@ URI: [biolink:model_to_disease_mixin_relation](https://w3id.org/biolink/vocab/mo
 
 ## Domain and Range
 
-[ModelToDiseaseMixin](ModelToDiseaseMixin.md) ->  <sub>REQ</sub> [IriType](IriType.md)
+[ModelToDiseaseMixin](ModelToDiseaseMixin.md) ->  <sub>REQ</sub> [Uriorcurie](Uriorcurie.md)
 
 ## Parents
 

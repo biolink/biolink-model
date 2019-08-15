@@ -6,6 +6,7 @@
 @prefix pav: <http://purl.org/pav/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix shex: <http://www.w3.org/ns/shex#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -171,30 +172,30 @@
         "rdfs",
         "skos",
         "xsd" ;
-    :generation_date "2019-06-28 16:36"^^xsd:dateTime ;
+    :generation_date "2019-08-15 09:58"^^xsd:dateTime ;
     :id <https://w3id.org/biolink/biolink-model> ;
     :imports <biolinkml:types> ;
-    :metamodel_version "1.3.5" ;
-    :prefixes [ :prefix_prefix "xsd" ;
+    :metamodel_version "1.4.0" ;
+    :prefixes [ :prefix_prefix "SIO" ;
+            :prefix_reference <http://semanticscience.org/resource/SIO_> ],
+        [ :prefix_prefix "xsd" ;
             :prefix_reference xsd: ],
-        [ :prefix_prefix "OBAN" ;
-            :prefix_reference <http://purl.org/oban/> ],
+        [ :prefix_prefix "metatype" ;
+            :prefix_reference metatype: ],
+        [ :prefix_prefix "shex" ;
+            :prefix_reference shex: ],
         [ :prefix_prefix "biolinkml" ;
             :prefix_reference <https://w3id.org/biolink/biolinkml/> ],
-        [ :prefix_prefix "UMLSSC" ;
-            :prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ],
-        [ :prefix_prefix "SIO" ;
-            :prefix_reference <http://semanticscience.org/resource/SIO_> ],
         [ :prefix_prefix "biolink" ;
             :prefix_reference <https://w3id.org/biolink/vocab/> ],
         [ :prefix_prefix "wgs" ;
             :prefix_reference <http://www.w3.org/2003/01/geo/wgs84_pos> ],
-        [ :prefix_prefix "metatype" ;
-            :prefix_reference metatype: ],
+        [ :prefix_prefix "UMLSSC" ;
+            :prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/> ],
+        [ :prefix_prefix "OBAN" ;
+            :prefix_reference <http://purl.org/oban/> ],
         [ :prefix_prefix "UMLSST" ;
             :prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/> ],
-        [ :prefix_prefix "meta" ;
-            :prefix_reference : ],
         [ :prefix_prefix "UMLSSG" ;
             :prefix_reference <https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/> ] ;
     :slots <https://w3id.org/biolink/vocab/actively_involved_in>,
@@ -456,8 +457,8 @@
         <https://w3id.org/biolink/vocab/variant_to_thing_association_subject>,
         <https://w3id.org/biolink/vocab/xenologous_to> ;
     :source_file "biolink-model.yaml" ;
-    :source_file_date "Thu Jun 27 17:15:34 2019"^^xsd:dateTime ;
-    :source_file_size 107043 ;
+    :source_file_date "Thu Aug 15 09:09:28 2019"^^xsd:dateTime ;
+    :source_file_size 107191 ;
     :subsets <https://w3id.org/biolink/vocab/testing>,
         <https://w3id.org/biolink/vocab/translator_minimal> ;
     :types <https://w3id.org/biolink/vocab/biological_sequence>,
@@ -474,6 +475,8 @@
         <https://w3id.org/biolink/vocab/label_type>,
         <https://w3id.org/biolink/vocab/narrative_text>,
         <https://w3id.org/biolink/vocab/ncname>,
+        <https://w3id.org/biolink/vocab/nodeidentifier>,
+        <https://w3id.org/biolink/vocab/objectidentifier>,
         <https://w3id.org/biolink/vocab/perecentage_frequency_value>,
         <https://w3id.org/biolink/vocab/quotient>,
         <https://w3id.org/biolink/vocab/string>,
@@ -487,6 +490,7 @@
 <https://w3id.org/biolink/vocab/Cell> a :ClassDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <https://w3id.org/biolink/vocab/CL:0000000>,
+        <https://w3id.org/biolink/vocab/GO:0005623>,
         <https://w3id.org/biolink/vocab/SIO:010001>,
         <umlssc:T025>,
         <umlsst:cell>,
@@ -512,7 +516,8 @@
 
 <https://w3id.org/biolink/vocab/CodingSequence> a :ClassDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:001390> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:001390>,
+        <https://w3id.org/biolink/vocab/SO:0000316> ;
     :class_uri <http://purl.obolibrary.org/obo/SO_0000316> ;
     :is_a <https://w3id.org/biolink/vocab/GenomicEntity> ;
     :slots <https://w3id.org/biolink/vocab/affects_abundance_of>,
@@ -586,7 +591,8 @@
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <https://w3id.org/biolink/vocab/CHEBI:23888>,
         <umlssc:T200>,
-        <umlsst:clnd> ;
+        <umlsst:clnd>,
+        <wd:Q12140> ;
     skos:note "The CHEBI ID represents a role rather than a substance" ;
     :class_uri <http://example.org/UNKNOWN/WD/Q12140> ;
     :is_a <https://w3id.org/biolink/vocab/ChemicalSubstance> ;
@@ -658,7 +664,8 @@
 <https://w3id.org/biolink/vocab/GeneFamily> a :ClassDefinition ;
     skos:definition "any grouping of multiple genes or gene products related by common descent" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <ncit:C20130>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:001380>,
+        <ncit:C20130>,
         <wd:Q417841> ;
     :class_uri <http://semanticscience.org/resource/SIO_001380> ;
     :id_prefixes "PANTHER" ;
@@ -733,6 +740,7 @@
     skos:definition "A genome is the sum of genetic material within a cell or virion." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:000984>,
+        <https://w3id.org/biolink/vocab/SO:0001026>,
         <wd:Q7020> ;
     :class_uri <http://purl.obolibrary.org/obo/SO_0001026> ;
     :is_a <https://w3id.org/biolink/vocab/GenomicEntity> ;
@@ -807,6 +815,7 @@
         "tissue" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010046>,
+        <https://w3id.org/biolink/vocab/UBERON:0010000>,
         <umlssc:T017>,
         <umlssc:T018>,
         <umlssc:T021>,
@@ -841,7 +850,8 @@
 <https://w3id.org/biolink/vocab/Haplotype> a :ClassDefinition ;
     skos:definition "A set of zero or more Alleles on a single instance of a Sequence[VMC]" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <vmc:Haplotype> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/GENO:0000871>,
+        <vmc:Haplotype> ;
     :class_uri <http://purl.obolibrary.org/obo/GENO_0000871> ;
     :is_a <https://w3id.org/biolink/vocab/GenomicEntity> ;
     :slots <https://w3id.org/biolink/vocab/affects_abundance_of>,
@@ -913,6 +923,7 @@
 <https://w3id.org/biolink/vocab/Metabolite> a :ClassDefinition ;
     skos:definition "Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/CHEBI:25212> ;
     skos:note "The CHEBI ID represents a role rather than a substance" ;
     :class_uri <http://purl.obolibrary.org/obo/CHEBI_25212> ;
     :is_a <https://w3id.org/biolink/vocab/ChemicalSubstance> ;
@@ -984,7 +995,8 @@
 <https://w3id.org/biolink/vocab/MicroRNA> a :ClassDefinition ;
     rdfs:subClassOf <https://w3id.org/biolink/vocab/SO:0000276> ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <wd:Q310899> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:001397>,
+        <wd:Q310899> ;
     :class_uri <http://semanticscience.org/resource/SIO_001397> ;
     :id_prefixes "MIR" ;
     :is_a <https://w3id.org/biolink/vocab/NoncodingRNAProduct> ;
@@ -1080,6 +1092,23 @@
     :repr "str" ;
     :uri xsd:string .
 
+<https://w3id.org/biolink/vocab/nodeidentifier> a :TypeDefinition ;
+    skos:definition "A URI, CURIE or BNODE that represents a node in a model." ;
+    skos:inScheme <https://w3id.org/biolink/biolinkml/types> ;
+    :base "NodeIdentifier" ;
+    :imported_from "https://w3id.org/biolink/biolinkml/types" ;
+    :repr "str" ;
+    :uri shex:nonLiteral .
+
+<https://w3id.org/biolink/vocab/objectidentifier> a :TypeDefinition ;
+    skos:definition "A URI or CURIE that represents an object in the model." ;
+    skos:inScheme <https://w3id.org/biolink/biolinkml/types> ;
+    skos:note "Used for inheritence and type checking" ;
+    :base "ElementIdentifier" ;
+    :imported_from "https://w3id.org/biolink/biolinkml/types" ;
+    :repr "str" ;
+    :uri shex:iri .
+
 <https://w3id.org/biolink/vocab/perecentage_frequency_value> a :TypeDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :base "float" ;
@@ -1100,10 +1129,10 @@
     :typeof <https://w3id.org/biolink/vocab/string> ;
     :uri <http://purl.obolibrary.org/obo/UO_0000000> .
 
-<https://w3id.org/biolink/vocab/uriorcurie> a :TypeDefinition ;
-    skos:definition "a URI or a CURIE" ;
+<https://w3id.org/biolink/vocab/uri> a :TypeDefinition ;
+    skos:definition "a complete URI" ;
     skos:inScheme <https://w3id.org/biolink/biolinkml/types> ;
-    :base "URIorCURIE" ;
+    :base "URI" ;
     :imported_from "https://w3id.org/biolink/biolinkml/types" ;
     :repr "str" ;
     :uri xsd:anyURI .
@@ -1267,6 +1296,7 @@
 
 <https://w3id.org/biolink/vocab/CellLine> a :ClassDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/CLO:0000031> ;
     :class_uri <http://purl.obolibrary.org/obo/CLO_0000031> ;
     :id_prefixes "CLO" ;
     :is_a <https://w3id.org/biolink/vocab/Biosample> ;
@@ -1287,7 +1317,8 @@
 <https://w3id.org/biolink/vocab/CellularComponent> a :ClassDefinition ;
     skos:definition "A location in or around a cell" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:001400>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/GO:0005575>,
+        <https://w3id.org/biolink/vocab/SIO:001400>,
         <umlssc:T026>,
         <umlsst:celc>,
         <wd:Q5058355> ;
@@ -1344,6 +1375,7 @@
 <https://w3id.org/biolink/vocab/ConfidenceLevel> a :ClassDefinition ;
     skos:definition "Level of confidence in a statement" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/CIO:0000028> ;
     :class_uri <http://purl.obolibrary.org/obo/CIO_0000028> ;
     :is_a <https://w3id.org/biolink/vocab/InformationContentEntity> ;
     :slots <https://w3id.org/biolink/vocab/category>,
@@ -1451,6 +1483,7 @@
     skos:altLabel "evidence code" ;
     skos:definition "Class of evidence that supports an association" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/ECO:0000000> ;
     :class_uri <http://purl.obolibrary.org/obo/ECO_0000000> ;
     :is_a <https://w3id.org/biolink/vocab/InformationContentEntity> ;
     :slots <https://w3id.org/biolink/vocab/category>,
@@ -1470,6 +1503,7 @@
     skos:definition "A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010445>,
+        <https://w3id.org/biolink/vocab/SO:0000147>,
         <wd:Q373027> ;
     :class_uri <http://purl.obolibrary.org/obo/SO_0000147> ;
     :is_a <https://w3id.org/biolink/vocab/GenomicEntity> ;
@@ -1561,7 +1595,8 @@
 <https://w3id.org/biolink/vocab/IndividualOrganism> a :ClassDefinition ;
     rdfs:subClassOf <https://w3id.org/biolink/vocab/NCBITaxon:1> ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <umlssc:T001>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010000>,
+        <umlssc:T001>,
         <umlssc:T002>,
         <umlssc:T004>,
         <umlssc:T005>,
@@ -1623,7 +1658,8 @@
 <https://w3id.org/biolink/vocab/MacromolecularComplex> a :ClassDefinition ;
     rdfs:subClassOf <https://w3id.org/biolink/vocab/GO:0032991> ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <wd:Q22325163> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010046>,
+        <wd:Q22325163> ;
     :class_uri <http://semanticscience.org/resource/SIO_010046> ;
     :id_prefixes "GO",
         "IntAct",
@@ -1702,7 +1738,8 @@
         "reaction" ;
     skos:definition "An execution of a molecular function carried out by a gene product or macromolecular complex." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <umlssc:T044>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/GO:0003674>,
+        <umlssc:T044>,
         <umlsst:moft> ;
     :class_uri <http://purl.obolibrary.org/obo/GO_0003674> ;
     :id_prefixes "GO",
@@ -1729,6 +1766,7 @@
 <https://w3id.org/biolink/vocab/NoncodingRNAProduct> a :ClassDefinition ;
     rdfs:subClassOf <https://w3id.org/biolink/vocab/SO:0000655> ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:001235> ;
     :class_uri <http://semanticscience.org/resource/SIO_001235> ;
     :id_prefixes "ENSEMBL",
         "NCBIGene",
@@ -1807,6 +1845,7 @@
 <https://w3id.org/biolink/vocab/Onset> a :ClassDefinition ;
     skos:definition "The age group in which manifestations appear" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/HP:0003674> ;
     :class_uri <http://purl.obolibrary.org/obo/HP_0003674> ;
     :is_a <https://w3id.org/biolink/vocab/Attribute> ;
     :slots <https://w3id.org/biolink/vocab/category>,
@@ -1824,6 +1863,7 @@
 
 <https://w3id.org/biolink/vocab/OrganismTaxon> a :ClassDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <wd:Q16521> ;
     :class_uri <http://example.org/UNKNOWN/WD/Q16521> ;
     :is_a <https://w3id.org/biolink/vocab/OntologyClass> ;
     :slots <https://w3id.org/biolink/vocab/category>,
@@ -1849,7 +1889,8 @@
 
 <https://w3id.org/biolink/vocab/Pathway> a :ClassDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/PW:0000001>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/GO:0007165>,
+        <https://w3id.org/biolink/vocab/PW:0000001>,
         <https://w3id.org/biolink/vocab/SIO:010526>,
         <wd:Q4915012> ;
     :class_uri <http://purl.obolibrary.org/obo/GO_0007165> ;
@@ -2085,7 +2126,8 @@
     skos:altLabel "reference" ;
     skos:definition "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <umlssc:T170>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/IAO:0000311>,
+        <umlssc:T170>,
         <umlsst:inpr> ;
     :class_uri <http://purl.obolibrary.org/obo/IAO_0000311> ;
     :id_prefixes "PMID" ;
@@ -2205,6 +2247,7 @@
 
 <https://w3id.org/biolink/vocab/Zygosity> a :ClassDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/GENO:0000133> ;
     :class_uri <http://purl.obolibrary.org/obo/GENO_0000133> ;
     :is_a <https://w3id.org/biolink/vocab/Attribute> ;
     :slots <https://w3id.org/biolink/vocab/category>,
@@ -2221,6 +2264,7 @@
         <https://w3id.org/biolink/vocab/systematic_synonym> .
 
 <https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityOntogenicAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_association_object> ;
@@ -2231,16 +2275,18 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityOntogenicAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityOntogenicAssociation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_ontogenic_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityOntogenicAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_association_subject> ;
@@ -2251,6 +2297,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_part_of_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_association_object> ;
@@ -2261,16 +2308,18 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_part_of_association_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_part_of_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityPartOfAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_association_subject> ;
@@ -2281,6 +2330,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/biosample_to_thing_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/BiosampleToThingAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2298,6 +2348,7 @@
     :uri xsd:boolean .
 
 <https://w3id.org/biolink/vocab/case_to_thing_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/CaseToThingAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2308,6 +2359,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/cell_line_to_disease_or_phenotypic_feature_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/CellLineToDiseaseOrPhenotypicFeatureAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2318,6 +2370,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/cell_line_to_thing_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/CellLineToThingAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2335,6 +2388,7 @@
     :uri xsd:string .
 
 <https://w3id.org/biolink/vocab/chemical_to_disease_or_phenotypic_feature_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2345,6 +2399,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/chemical_to_gene_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/ChemicalToGeneAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2355,6 +2410,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/chemical_to_pathway_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/ChemicalToPathwayAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2365,6 +2421,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/chemical_to_thing_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/ChemicalToThingAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2375,6 +2432,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/disease_or_phenotypic_feature_association_to_location_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2385,6 +2443,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/disease_to_thing_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/DiseaseToThingAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2395,6 +2454,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/entity_to_phenotypic_feature_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2405,6 +2465,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/environment_to_phenotypic_feature_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/EnvironmentToPhenotypicFeatureAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2415,6 +2476,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/exon_to_transcript_relationship_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/ExonToTranscriptRelationship> ;
     :is_a <https://w3id.org/biolink/vocab/sequence_feature_relationship_object> ;
@@ -2425,6 +2487,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/exon_to_transcript_relationship_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/ExonToTranscriptRelationship> ;
     :is_a <https://w3id.org/biolink/vocab/sequence_feature_relationship_subject> ;
@@ -2435,6 +2498,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/gene_as_a_model_of_disease_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GeneAsAModelOfDiseaseAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/gene_to_disease_association_subject> ;
@@ -2445,6 +2509,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/gene_has_variant_that_contributes_to_disease_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GeneHasVariantThatContributesToDiseaseAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/gene_to_disease_association_subject> ;
@@ -2455,6 +2520,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/gene_regulatory_relationship_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/GeneRegulatoryRelationship> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2466,16 +2532,18 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/gene_regulatory_relationship_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/GeneRegulatoryRelationship> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/GeneRegulatoryRelationship> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/gene_regulatory_relationship_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GeneRegulatoryRelationship> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2487,6 +2555,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/gene_to_expression_site_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2497,6 +2566,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/gene_to_expression_site_association_quantifier_qualifier> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "quantifier qualifier" ;
     :domain <https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/quantifier_qualifier> ;
@@ -2506,16 +2576,18 @@
     :slot_uri <https://w3id.org/biolink/vocab/quantifier_qualifier> .
 
 <https://w3id.org/biolink/vocab/gene_to_expression_site_association_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/gene_to_expression_site_association_stage_qualifier> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "stage qualifier" ;
     :domain <https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/stage_qualifier> ;
@@ -2525,6 +2597,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/stage_qualifier> .
 
 <https://w3id.org/biolink/vocab/gene_to_expression_site_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GeneToExpressionSiteAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2535,16 +2608,18 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/gene_to_gene_homology_association_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/GeneToGeneHomologyAssociation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/gene_to_gene_product_relationship_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/GeneToGeneProductRelationship> ;
     :is_a <https://w3id.org/biolink/vocab/sequence_feature_relationship_object> ;
@@ -2555,16 +2630,18 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/gene_to_gene_product_relationship_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/GeneToGeneProductRelationship> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/GeneToGeneProductRelationship> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/gene_to_gene_product_relationship_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GeneToGeneProductRelationship> ;
     :is_a <https://w3id.org/biolink/vocab/sequence_feature_relationship_subject> ;
@@ -2575,6 +2652,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/gene_to_go_term_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/GeneToGoTermAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/functional_association_object> ;
@@ -2585,6 +2663,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/gene_to_go_term_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GeneToGoTermAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/functional_association_subject> ;
@@ -2595,6 +2674,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/gene_to_phenotypic_feature_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2605,6 +2685,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/gene_to_thing_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GeneToThingAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2615,6 +2696,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/genomic_sequence_localization_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/GenomicSequenceLocalization> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2625,6 +2707,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/genomic_sequence_localization_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GenomicSequenceLocalization> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2635,6 +2718,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/genotype_to_gene_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/GenotypeToGeneAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2645,16 +2729,18 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/genotype_to_gene_association_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/GenotypeToGeneAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/GenotypeToGeneAssociation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/genotype_to_gene_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GenotypeToGeneAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2665,6 +2751,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/genotype_to_genotype_part_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2675,16 +2762,18 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/genotype_to_genotype_part_association_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/genotype_to_genotype_part_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GenotypeToGenotypePartAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2695,16 +2784,18 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/genotype_to_phenotypic_feature_association_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/genotype_to_phenotypic_feature_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GenotypeToPhenotypicFeatureAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2715,6 +2806,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/genotype_to_thing_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GenotypeToThingAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2725,6 +2817,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/genotype_to_variant_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/GenotypeToVariantAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2735,16 +2828,18 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/genotype_to_variant_association_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/GenotypeToVariantAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/GenotypeToVariantAssociation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/genotype_to_variant_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GenotypeToVariantAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2755,6 +2850,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/macromolecular_machine_to_biological_process_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/MacromolecularMachineToBiologicalProcessAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/functional_association_object> ;
@@ -2765,6 +2861,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/macromolecular_machine_to_cellular_component_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/MacromolecularMachineToCellularComponentAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/functional_association_object> ;
@@ -2775,6 +2872,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/macromolecular_machine_to_molecular_activity_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/MacromolecularMachineToMolecularActivityAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/functional_association_object> ;
@@ -2785,19 +2883,22 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/pairwise_gene_to_gene_interaction_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/PairwiseGeneToGeneInteraction> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/pairwise_interaction_association_id> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "id" ;
     :domain <https://w3id.org/biolink/vocab/PairwiseInteractionAssociation> ;
     :identifier true ;
+    :ifabsent "bnode" ;
     :is_a <https://w3id.org/biolink/vocab/association_id> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/PairwiseInteractionAssociation> ;
@@ -2806,6 +2907,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/id> .
 
 <https://w3id.org/biolink/vocab/pairwise_interaction_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/PairwiseInteractionAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2816,16 +2918,18 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/pairwise_interaction_association_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/PairwiseInteractionAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/PairwiseInteractionAssociation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/pairwise_interaction_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/PairwiseInteractionAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2836,6 +2940,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/population_to_population_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/PopulationToPopulationAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2846,16 +2951,18 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/population_to_population_association_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/PopulationToPopulationAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/PopulationToPopulationAssociation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/population_to_population_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/PopulationToPopulationAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2866,6 +2973,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/sequence_variant_has_biological_sequence> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "has biological sequence" ;
     :domain <https://w3id.org/biolink/vocab/SequenceVariant> ;
     :is_a <https://w3id.org/biolink/vocab/has_biological_sequence> ;
@@ -2875,6 +2983,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/has_biological_sequence> .
 
 <https://w3id.org/biolink/vocab/sequence_variant_has_gene> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "has gene" ;
     :domain <https://w3id.org/biolink/vocab/SequenceVariant> ;
     :is_a <https://w3id.org/biolink/vocab/has_gene> ;
@@ -2885,6 +2994,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/has_gene> .
 
 <https://w3id.org/biolink/vocab/sequence_variant_id> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "id" ;
     :domain <https://w3id.org/biolink/vocab/SequenceVariant> ;
     :identifier true ;
@@ -2896,6 +3006,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/id> .
 
 <https://w3id.org/biolink/vocab/sequence_variant_modulates_treatment_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/SequenceVariantModulatesTreatmentAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2906,6 +3017,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/sequence_variant_modulates_treatment_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/SequenceVariantModulatesTreatmentAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -2926,6 +3038,7 @@
     skos:inScheme <https://w3id.org/biolink/biolink-model> .
 
 <https://w3id.org/biolink/vocab/thing_to_disease_or_phenotypic_feature_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/ThingToDiseaseOrPhenotypicFeatureAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -2952,6 +3065,7 @@
     :uri xsd:dateTime .
 
 <https://w3id.org/biolink/vocab/transcript_to_gene_relationship_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/TranscriptToGeneRelationship> ;
     :is_a <https://w3id.org/biolink/vocab/sequence_feature_relationship_object> ;
@@ -2962,6 +3076,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/transcript_to_gene_relationship_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/TranscriptToGeneRelationship> ;
     :is_a <https://w3id.org/biolink/vocab/sequence_feature_relationship_subject> ;
@@ -2971,45 +3086,41 @@
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
-<https://w3id.org/biolink/vocab/uri> a :TypeDefinition ;
-    skos:definition "a complete URI" ;
-    skos:inScheme <https://w3id.org/biolink/biolinkml/types> ;
-    :base "URI" ;
-    :imported_from "https://w3id.org/biolink/biolinkml/types" ;
-    :repr "str" ;
-    :uri xsd:anyURI .
-
 <https://w3id.org/biolink/vocab/variant_to_disease_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/VariantToDiseaseAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/VariantToDiseaseAssociation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/NamedThing> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/variant_to_disease_association_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/VariantToDiseaseAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/VariantToDiseaseAssociation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/variant_to_disease_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/VariantToDiseaseAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/VariantToDiseaseAssociation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/NamedThing> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/variant_to_phenotypic_feature_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/VariantToPhenotypicFeatureAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -3020,6 +3131,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/variant_to_population_association_has_count> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "has count" ;
     :domain <https://w3id.org/biolink/vocab/VariantToPopulationAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/has_count> ;
@@ -3029,6 +3141,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/has_count> .
 
 <https://w3id.org/biolink/vocab/variant_to_population_association_has_quotient> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "has quotient" ;
     :domain <https://w3id.org/biolink/vocab/VariantToPopulationAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/has_quotient> ;
@@ -3038,6 +3151,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/has_quotient> .
 
 <https://w3id.org/biolink/vocab/variant_to_population_association_has_total> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "has total" ;
     :domain <https://w3id.org/biolink/vocab/VariantToPopulationAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/has_total> ;
@@ -3047,6 +3161,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/has_total> .
 
 <https://w3id.org/biolink/vocab/variant_to_population_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/VariantToPopulationAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -3057,6 +3172,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/variant_to_population_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/VariantToPopulationAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -3067,6 +3183,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/variant_to_thing_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/VariantToThingAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -3097,6 +3214,7 @@
     skos:altLabel "biospecimen",
         "sample" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:001050> ;
     :class_uri <http://semanticscience.org/resource/SIO_001050> ;
     :is_a <https://w3id.org/biolink/vocab/OrganismalEntity> ;
     :mixins <https://w3id.org/biolink/vocab/ThingWithTaxon> ;
@@ -3138,6 +3256,7 @@
 <https://w3id.org/biolink/vocab/ChemicalToDiseaseOrPhenotypicFeatureAssociation> a :ClassDefinition ;
     skos:definition "An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:000993> ;
     :class_uri <http://semanticscience.org/resource/SIO_000993> ;
     :defining_slots <https://w3id.org/biolink/vocab/object>,
         <https://w3id.org/biolink/vocab/subject> ;
@@ -3159,6 +3278,7 @@
 <https://w3id.org/biolink/vocab/ChemicalToGeneAssociation> a :ClassDefinition ;
     skos:definition "An interaction between a chemical entity and a gene or gene product" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:001257> ;
     :class_uri <http://semanticscience.org/resource/SIO_001257> ;
     :defining_slots <https://w3id.org/biolink/vocab/object>,
         <https://w3id.org/biolink/vocab/subject> ;
@@ -3179,6 +3299,7 @@
 <https://w3id.org/biolink/vocab/ChemicalToPathwayAssociation> a :ClassDefinition ;
     skos:definition "An interaction between a chemical entity and a biological process or pathway" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:001250> ;
     :class_uri <http://semanticscience.org/resource/SIO_001250> ;
     :defining_slots <https://w3id.org/biolink/vocab/object>,
         <https://w3id.org/biolink/vocab/subject> ;
@@ -3218,6 +3339,7 @@
 <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToLocationAssociation> a :ClassDefinition ;
     skos:definition "An association between either a disease or a phenotypic feature and an anatomical entity, where the disease/feature manifests in that site." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ncit:R100> ;
     :class_uri <http://purl.obolibrary.org/obo/NCIT_R100> ;
     :is_a <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation> ;
     :slots <https://w3id.org/biolink/vocab/association_id>,
@@ -3237,7 +3359,8 @@
         "drug intake" ;
     skos:definition "A drug exposure is an intake of a particular chemical substance" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:001005> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/ECTO:0000509>,
+        <https://w3id.org/biolink/vocab/SIO:001005> ;
     :class_uri <http://example.org/UNKNOWN/ECTO/0000509> ;
     :is_a <https://w3id.org/biolink/vocab/Environment> ;
     :slots <https://w3id.org/biolink/vocab/category>,
@@ -3281,6 +3404,7 @@
 
 <https://w3id.org/biolink/vocab/GeneToPhenotypicFeatureAssociation> a :ClassDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association> ;
     :class_uri <http://bio2rdf.org/wormbase_vocabulary:Gene-Phenotype-Association> ;
     :defining_slots <https://w3id.org/biolink/vocab/object>,
         <https://w3id.org/biolink/vocab/subject> ;
@@ -3307,7 +3431,8 @@
     skos:altLabel "polypeptide" ;
     skos:definition "A gene product that is composed of a chain of amino acid sequences and is produced by ribosome-mediated translation of mRNA" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010043>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/PR:000000001>,
+        <https://w3id.org/biolink/vocab/SIO:010043>,
         <umlssc:T087>,
         <umlssc:T116>,
         <umlsst:aapp>,
@@ -3450,6 +3575,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002215> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/actively_involved_in> ;
@@ -3462,7 +3588,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:CAUSES>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002410>,
+        <semmeddb:CAUSES>,
         <wd:P1542> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
@@ -3476,6 +3603,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two entities that are observed to be located in the same place." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:00002325> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/coexists_with> ;
@@ -3487,6 +3615,7 @@
 <https://w3id.org/biolink/vocab/creation_date> a :SlotDefinition ;
     skos:definition "date on which thing was created. This can be applied to nodes or edges" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation dcterms:created ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :is_a <https://w3id.org/biolink/vocab/node_property> ;
     :owner <https://w3id.org/biolink/vocab/creation_date> ;
@@ -3503,6 +3632,7 @@
     :uri xsd:date .
 
 <https://w3id.org/biolink/vocab/disease_or_phenotypic_feature_association_to_thing_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeatureAssociationToThingAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -3516,6 +3646,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <semmeddb:DISRUPTS> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/affects> ;
@@ -3533,6 +3664,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/end_interbase_coordinate> .
 
 <https://w3id.org/biolink/vocab/entity_to_disease_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/EntityToDiseaseAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -3543,6 +3675,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/entity_to_phenotypic_feature_association_description> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "description" ;
     :domain <https://w3id.org/biolink/vocab/EntityToPhenotypicFeatureAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/description> ;
@@ -3562,6 +3695,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a gene and a disease or phenotypic feature that the gene or its alleles/products may influence, contribute to, or correlate with" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <wd:P2293> ;
     :domain <https://w3id.org/biolink/vocab/Gene> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -3574,6 +3708,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002435> ;
     :domain <https://w3id.org/biolink/vocab/Gene> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/interacts_with> ;
@@ -3594,6 +3729,7 @@
 <https://w3id.org/biolink/vocab/has_chemical_formula> a :SlotDefinition ;
     skos:definition "description of chemical compound based on element symbols" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <wd:P274> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :is_a <https://w3id.org/biolink/vocab/node_property> ;
     :owner <https://w3id.org/biolink/vocab/has_chemical_formula> ;
@@ -3603,6 +3739,7 @@
 <https://w3id.org/biolink/vocab/has_evidence> a :SlotDefinition ;
     skos:definition "connects an association to an instance of supporting evidence" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002558> ;
     :domain <https://w3id.org/biolink/vocab/Association> ;
     :is_a <https://w3id.org/biolink/vocab/association_slot> ;
     :owner <https://w3id.org/biolink/vocab/has_evidence> ;
@@ -3613,7 +3750,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a gene and a transcribed and/or translated product generated from it" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <wd:P688> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002205>,
+        <wd:P688> ;
     :domain <https://w3id.org/biolink/vocab/Gene> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -3633,6 +3771,7 @@
 <https://w3id.org/biolink/vocab/latitude> a :SlotDefinition ;
     skos:definition "latitude" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <wgs:lat> ;
     :domain <https://w3id.org/biolink/vocab/GeographicLocation> ;
     :is_a <https://w3id.org/biolink/vocab/node_property> ;
     :owner <https://w3id.org/biolink/vocab/GeographicLocation> ;
@@ -3642,6 +3781,7 @@
 <https://w3id.org/biolink/vocab/longitude> a :SlotDefinition ;
     skos:definition "longitude" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <wgs:long> ;
     :domain <https://w3id.org/biolink/vocab/GeographicLocation> ;
     :is_a <https://w3id.org/biolink/vocab/node_property> ;
     :owner <https://w3id.org/biolink/vocab/GeographicLocation> ;
@@ -3652,7 +3792,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <wd:P1557> ;
+    skos:mappingRelation <semmeddb:MANIFESTATION_OF>,
+        <wd:P1557> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -3665,6 +3806,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0003301> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -3674,22 +3816,24 @@
     :slot_uri <http://purl.obolibrary.org/obo/RO_0003301> .
 
 <https://w3id.org/biolink/vocab/model_to_disease_mixin_relation> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "relation" ;
     :domain <https://w3id.org/biolink/vocab/ModelToDiseaseMixin> ;
     :is_a <https://w3id.org/biolink/vocab/relation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/model_to_disease_mixin_relation> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/relation> .
 
 <https://w3id.org/biolink/vocab/model_to_disease_mixin_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/ModelToDiseaseMixin> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/model_to_disease_mixin_subject> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/NamedThing> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
@@ -3704,7 +3848,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:altLabel "activity directly negatively regulates activity of" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:INHIBITS> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002449>,
+        <semmeddb:INHIBITS> ;
     :domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
@@ -3722,6 +3867,7 @@
 
 <https://w3id.org/biolink/vocab/negatively_regulates_process_to_process> a :SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002212> ;
     :domain <https://w3id.org/biolink/vocab/Occurrent> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/regulates_process_to_process> ;
@@ -3735,7 +3881,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a process and a material entity or site within which the process occurs" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:OCCURS_IN>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/BFO:0000066>,
+        <semmeddb:OCCURS_IN>,
         <semmeddb:PROCESS_OF> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
@@ -3749,7 +3896,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "a homology relationship between entities (typically genes) that diverged after a speciation event." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <wd:P684> ;
+    skos:mappingRelation <ro:HOM0000017>,
+        <wd:P684> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/homologous_to> ;
@@ -3762,6 +3910,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "a homology relationship that holds between entities (typically genes) that diverged after a duplication event." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ro:HOM0000011> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/homologous_to> ;
@@ -3783,7 +3932,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:altLabel "activity directly positively regulates activity of" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:STIMULATES> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002450>,
+        <semmeddb:STIMULATES> ;
     :domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
@@ -3801,6 +3951,7 @@
 
 <https://w3id.org/biolink/vocab/positively_regulates_process_to_process> a :SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002213> ;
     :domain <https://w3id.org/biolink/vocab/Occurrent> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/regulates_process_to_process> ;
@@ -3814,6 +3965,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two entities where exposure to one entity increases the chance of developing the other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <semmeddb:PREDISPOSES> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/affects_risk_for> ;
@@ -3826,7 +3978,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between an entity whose application or use reduces the likelihood of a potential outcome. Typically used to associate a chemical substance, exposure, activity, or medical intervention that can prevent the onset a disease or phenotypic feature." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:PREVENTS> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002599>,
+        <semmeddb:PREVENTS> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/affects_risk_for> ;
@@ -3839,7 +3992,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:PRODUCES>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0003000>,
+        <semmeddb:PRODUCES>,
         <wd:P1056> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
@@ -3853,7 +4007,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two entities that are considered equivalent to each other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation owl:sameAs,
+    skos:mappingRelation owl:equivalentClass,
+        owl:sameAs,
         skos:exactMatch,
         <wd:P2888> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
@@ -3894,6 +4049,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "a homology relationship characterized by an interspecies (horizontal) transfer since the common ancestor." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <ro:HOM0000018> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/homologous_to> ;
@@ -3905,7 +4061,8 @@
 <https://w3id.org/biolink/vocab/BiologicalProcess> a :ClassDefinition ;
     skos:definition "One or more causally connected executions of molecular functions" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:000006>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/GO:0008150>,
+        <https://w3id.org/biolink/vocab/SIO:000006>,
         <wd:Q2996394> ;
     :class_uri <http://purl.obolibrary.org/obo/GO_0008150> ;
     :id_prefixes "GO",
@@ -3991,6 +4148,7 @@
         "exposure" ;
     skos:definition "A feature of the environment of an organism that influences one or more phenotypic features of that organism, potentially mediated by genes" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:000955> ;
     :class_uri <http://semanticscience.org/resource/SIO_000955> ;
     :is_a <https://w3id.org/biolink/vocab/BiologicalEntity> ;
     :slots <https://w3id.org/biolink/vocab/category>,
@@ -4195,7 +4353,8 @@
         "information entity" ;
     skos:definition "a piece of information that typically describes some piece of biology or is used as support." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <umlssc:T077>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/IAO:0000030>,
+        <umlssc:T077>,
         <umlssc:T078>,
         <umlssc:T079>,
         <umlssc:T080>,
@@ -4335,6 +4494,7 @@
         "trait" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010056>,
+        <https://w3id.org/biolink/vocab/UPHENO:0001001>,
         <wd:Q169872> ;
     :class_uri <http://purl.obolibrary.org/obo/UPHENO_0001001> ;
     :is_a <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature> ;
@@ -4359,17 +4519,18 @@
     rdfs:subClassOf <https://w3id.org/biolink/vocab/PCO:0000001> ;
     skos:definition "A collection of individuals from the same taxonomic class distinguished by one or more characteristics. Characteristics can include, but are not limited to, shared geographic location, genetics, phenotypes [Alliance for Genome Resources]" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <umlssc:T098>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:001061>,
+        <umlssc:T098>,
         <umlsst:popg> ;
     :class_uri <http://semanticscience.org/resource/SIO_001061> ;
     :id_prefixes "HANCESTRO" ;
     :is_a <https://w3id.org/biolink/vocab/OrganismalEntity> ;
     :local_names [ a :LocalName ;
             skos:altLabel "population" ;
-            :local_name_source "agr" ],
+            :local_name_source "ga4gh" ],
         [ a :LocalName ;
             skos:altLabel "population" ;
-            :local_name_source "ga4gh" ] ;
+            :local_name_source "agr" ] ;
     :mixins <https://w3id.org/biolink/vocab/ThingWithTaxon> ;
     :slots <https://w3id.org/biolink/vocab/category>,
         <https://w3id.org/biolink/vocab/description>,
@@ -4387,7 +4548,8 @@
 
 <https://w3id.org/biolink/vocab/RNAProduct> a :ClassDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010450>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/CHEBI:33697>,
+        <https://w3id.org/biolink/vocab/SIO:010450>,
         <wd:Q11053> ;
     :class_uri <http://purl.obolibrary.org/obo/CHEBI_33697> ;
     :id_prefixes "RNAcentral" ;
@@ -4466,7 +4628,8 @@
     skos:altLabel "medical action" ;
     skos:definition "A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:001398> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/OGMS:0000090>,
+        <https://w3id.org/biolink/vocab/SIO:001398> ;
     :class_uri <http://purl.obolibrary.org/obo/OGMS_0000090> ;
     :is_a <https://w3id.org/biolink/vocab/Environment> ;
     :slots <https://w3id.org/biolink/vocab/category>,
@@ -4512,6 +4675,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002331> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/participates_in> ;
@@ -4521,6 +4685,7 @@
     :slot_uri <http://purl.obolibrary.org/obo/RO_0002331> .
 
 <https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -4531,6 +4696,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -4553,6 +4719,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two entities where the occurrence, existence, or activity of one causes or contributes to the occurrence or generation of the other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002326> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -4566,6 +4733,7 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/derives_into> ;
     skos:definition "holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0001000> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -4579,7 +4747,8 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/derives_from> ;
     skos:definition "holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:CONVERTS_TO> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0001001>,
+        <semmeddb:CONVERTS_TO> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -4589,6 +4758,7 @@
     :slot_uri <http://purl.obolibrary.org/obo/RO_0001001> .
 
 <https://w3id.org/biolink/vocab/drug> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :domain <https://w3id.org/biolink/vocab/DrugExposure> ;
     :is_usage_slot true ;
     :multivalued true ;
@@ -4607,6 +4777,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/filler> .
 
 <https://w3id.org/biolink/vocab/gene_to_disease_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GeneToDiseaseAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -4617,6 +4788,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/subject> .
 
 <https://w3id.org/biolink/vocab/gene_to_gene_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/GeneToGeneAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -4627,6 +4799,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/gene_to_gene_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/GeneToGeneAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -4646,6 +4819,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/has_confidence_level> .
 
 <https://w3id.org/biolink/vocab/has_exposure_parts> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :domain <https://w3id.org/biolink/vocab/Treatment> ;
     :is_usage_slot true ;
     :multivalued true ;
@@ -4670,7 +4844,8 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/part_of> ;
     skos:definition "holds between wholes and their parts (material entities or processes)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <wd:P527> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/BFO:0000051>,
+        <wd:P527> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/overlaps> ;
@@ -4689,17 +4864,27 @@
     :slot_uri <https://w3id.org/biolink/vocab/has_percentage> .
 
 <https://w3id.org/biolink/vocab/interacting_molecules_category> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :domain <https://w3id.org/biolink/vocab/PairwiseInteractionAssociation> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/interacting_molecules_category> ;
     :range <https://w3id.org/biolink/vocab/OntologyClass> ;
     :slot_uri <https://w3id.org/biolink/vocab/interacting_molecules_category> .
 
+<https://w3id.org/biolink/vocab/iri_type> a :TypeDefinition ;
+    skos:definition "An IRI" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    :base "URIorCURIE" ;
+    :repr "str" ;
+    :typeof <https://w3id.org/biolink/vocab/uriorcurie> ;
+    :uri xsd:anyURI .
+
 <https://w3id.org/biolink/vocab/located_in> a :SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     owl:inverseOf <https://w3id.org/biolink/vocab/location_of> ;
     skos:definition "holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0001025> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -4713,7 +4898,8 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/located_in> ;
     skos:definition "holds between material entity or site and a material entity that is located within it (but not considered a part of it)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/WD:276>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0001015>,
+        <https://w3id.org/biolink/vocab/WD:276>,
         <semmeddb:LOCATION_OF> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
@@ -4728,7 +4914,8 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/has_part> ;
     skos:definition "holds between parts and wholes (material entities or processes)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:PART_OF>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/BFO:0000050>,
+        <semmeddb:PART_OF>,
         <wd:P361> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
@@ -4742,7 +4929,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two entities that make physical contact as part of some interaction" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:INTERACTS_WITH> ;
+    skos:mappingRelation <semmeddb:INTERACTS_WITH>,
+        <wd:P129> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/interacts_with> ;
@@ -4758,7 +4946,8 @@
     skos:altLabel "is substance that treats" ;
     skos:definition "holds between a therapeutic procedure or chemical substance and a disease or phenotypic feature that it is used to treat" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0003307>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002606>,
+        <https://w3id.org/biolink/vocab/RO:0003307>,
         <semmeddb:TREATS>,
         <wd:P2175> ;
     :domain <https://w3id.org/biolink/vocab/Treatment> ;
@@ -4859,7 +5048,8 @@
         "disorder",
         "medical condition" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010299>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/MONDO:0000001>,
+        <https://w3id.org/biolink/vocab/SIO:010299>,
         <umlssc:T019>,
         <umlssc:T020>,
         <umlssc:T037>,
@@ -4939,6 +5129,7 @@
 
 <https://w3id.org/biolink/vocab/GeneToDiseaseAssociation> a :ClassDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:000983> ;
     skos:note "NCIT:R176 refers to the inverse relationship" ;
     :class_uri <http://semanticscience.org/resource/SIO_000983> ;
     :defining_slots <https://w3id.org/biolink/vocab/object>,
@@ -4964,6 +5155,7 @@
 <https://w3id.org/biolink/vocab/GeneToGoTermAssociation> a :ClassDefinition ;
     skos:altLabel "functional association" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association> ;
     :class_uri <http://bio2rdf.org/wormbase_vocabulary:Gene-GO-Association> ;
     :defining_slots <https://w3id.org/biolink/vocab/object>,
         <https://w3id.org/biolink/vocab/subject> ;
@@ -5059,9 +5251,8 @@
 <https://w3id.org/biolink/vocab/identifier_type> a :TypeDefinition ;
     skos:definition "A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    :base "str" ;
-    :typeof <https://w3id.org/biolink/vocab/string> ;
-    :uri xsd:string .
+    :base "ElementIdentifier" ;
+    :uri xsd:anyURI .
 
 <https://w3id.org/biolink/vocab/integer> a :TypeDefinition ;
     skos:definition "An integer" ;
@@ -5074,6 +5265,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between entties that overlap in their extents (materials or processes)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002131> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -5087,6 +5279,7 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/has_participant> ;
     skos:definition "holds between a continuant and a process, where the continuant is somehow involved in the process" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0000056> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -5096,6 +5289,7 @@
     :slot_uri <http://purl.obolibrary.org/obo/RO_0000056> .
 
 <https://w3id.org/biolink/vocab/sequence_feature_relationship_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/SequenceFeatureRelationship> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -5106,6 +5300,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/sequence_feature_relationship_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/SequenceFeatureRelationship> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -5119,7 +5314,8 @@
     rdfs:subClassOf <https://w3id.org/biolink/vocab/CHEBI:24431> ;
     skos:definition "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <umlssc:T103>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010004>,
+        <umlssc:T103>,
         <umlssc:T104>,
         <umlssc:T109>,
         <umlssc:T114>,
@@ -5336,6 +5532,7 @@
 <https://w3id.org/biolink/vocab/OrganismalEntity> a :ClassDefinition ;
     skos:definition "A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <wd:Q7239> ;
     :abstract true ;
     :class_uri <http://example.org/UNKNOWN/WD/Q7239> ;
     :is_a <https://w3id.org/biolink/vocab/BiologicalEntity> ;
@@ -5376,7 +5573,8 @@
 <https://w3id.org/biolink/vocab/Transcript> a :ClassDefinition ;
     skos:definition "An RNA synthesized on a DNA or RNA template by an RNA polymerase" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010450> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010450>,
+        <https://w3id.org/biolink/vocab/SO:0000673> ;
     :class_uri <http://purl.obolibrary.org/obo/SO_0000673> ;
     :is_a <https://w3id.org/biolink/vocab/GenomicEntity> ;
     :slots <https://w3id.org/biolink/vocab/affects_abundance_of>,
@@ -5484,6 +5682,7 @@
     :uri xsd:double .
 
 <https://w3id.org/biolink/vocab/functional_association_object> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "object" ;
     :domain <https://w3id.org/biolink/vocab/FunctionalAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/object> ;
@@ -5494,6 +5693,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/object> .
 
 <https://w3id.org/biolink/vocab/functional_association_subject> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "subject" ;
     :domain <https://w3id.org/biolink/vocab/FunctionalAssociation> ;
     :is_a <https://w3id.org/biolink/vocab/subject> ;
@@ -5517,7 +5717,8 @@
     skos:altLabel "in homology relationship with" ;
     skos:definition "holds between two biological entities that have common evolutionary origin" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010302> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010302>,
+        <ro:HOM0000001> ;
     skos:note "typically used to describe homology relationships between genes or gene products" ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
@@ -5592,7 +5793,8 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/treats> ;
     skos:definition "holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <wd:P2176> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002302>,
+        <wd:P2176> ;
     :domain <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -5604,7 +5806,8 @@
 <https://w3id.org/biolink/vocab/BiologicalEntity> a :ClassDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <umlssc:T050>,
-        <umlsst:emod> ;
+        <umlsst:emod>,
+        <wd:Q28845870> ;
     :abstract true ;
     :class_uri <http://example.org/UNKNOWN/WD/Q28845870> ;
     :is_a <https://w3id.org/biolink/vocab/NamedThing> ;
@@ -5780,6 +5983,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two entities that are co-located in the same aggregate object, process, or spatio-temporal region" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <semmeddb:COEXISTS_WITH> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -5792,6 +5996,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a disease or phenotypic feature and a measurable molecular entity that is used as an indicator of the presence or state of the disease or feature." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002610> ;
     :domain <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -5805,6 +6010,7 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/expressed_in> ;
     skos:definition "holds between an anatomical entity and gene or gene product that is expressed there" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002292> ;
     :domain <https://w3id.org/biolink/vocab/AnatomicalEntity> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -5828,6 +6034,7 @@
 
 <https://w3id.org/biolink/vocab/regulates> a :SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <wd:P128> ;
     skos:note "This is a grouping for process-process and entity-entity relations" ;
     :abstract true ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
@@ -5926,6 +6133,7 @@
 <https://w3id.org/biolink/vocab/GeneProduct> a :ClassDefinition ;
     skos:definition "The functional molecular product of a single gene. Gene products are either proteins or functional RNA molecules" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <wd:Q424689> ;
     :class_uri <http://example.org/UNKNOWN/WD/Q424689> ;
     :is_a <https://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
     :slots <https://w3id.org/biolink/vocab/affects_abundance_of>,
@@ -6169,7 +6377,8 @@
 <https://w3id.org/biolink/vocab/Genotype> a :ClassDefinition ;
     skos:definition "An information content entity that describes a genome by specifying the total variation in genomic sequence and/or gene expression, relative to some extablished background" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:001079> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/GENO:0000536>,
+        <https://w3id.org/biolink/vocab/SIO:001079> ;
     skos:note "Consider renaming as genotypic entity" ;
     :class_uri <http://purl.obolibrary.org/obo/GENO_0000536> ;
     :is_a <https://w3id.org/biolink/vocab/GenomicEntity> ;
@@ -6307,7 +6516,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between a process and a continuant, where the continuant is an input into the process" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:USES> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002233>,
+        <semmeddb:USES> ;
     :domain <https://w3id.org/biolink/vocab/Occurrent> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/has_participant> ;
@@ -6320,7 +6530,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two processes, where one completes before the other begins" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:PRECEDES>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/BFO:0000063>,
+        <semmeddb:PRECEDES>,
         <wd:P156> ;
     :domain <https://w3id.org/biolink/vocab/Occurrent> ;
     :inherited true ;
@@ -6334,6 +6545,7 @@
     skos:altLabel "locus" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010035>,
+        <https://w3id.org/biolink/vocab/SO:0000704>,
         <wd:Q7187> ;
     :class_uri <http://purl.obolibrary.org/obo/SO_0000704> ;
     :id_prefixes "ENSEMBL",
@@ -6496,6 +6708,7 @@
 <https://w3id.org/biolink/vocab/GenomicSequenceLocalization> a :ClassDefinition ;
     skos:definition "A relationship between a sequence feature and an entity it is localized to. The reference entity may be a chromosome, chromosome region or information entity such as a contig" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <faldo:location> ;
     :class_uri <http://biohackathon.org/resource/faldo#location> ;
     :is_a <https://w3id.org/biolink/vocab/Association> ;
     :slots <https://w3id.org/biolink/vocab/association_id>,
@@ -6514,11 +6727,30 @@
         <https://w3id.org/biolink/vocab/relation>,
         <https://w3id.org/biolink/vocab/start_interbase_coordinate> .
 
+<https://w3id.org/biolink/vocab/OntologyClass> a :ClassDefinition ;
+    skos:definition "a concept or class in an ontology, vocabulary or thesaurus" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    :class_uri <https://w3id.org/biolink/vocab/OntologyClass> ;
+    :is_a <https://w3id.org/biolink/vocab/NamedThing> ;
+    :slots <https://w3id.org/biolink/vocab/category>,
+        <https://w3id.org/biolink/vocab/description>,
+        <https://w3id.org/biolink/vocab/full_name>,
+        <https://w3id.org/biolink/vocab/id>,
+        <https://w3id.org/biolink/vocab/interacts_with>,
+        <https://w3id.org/biolink/vocab/iri>,
+        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/node_property>,
+        <https://w3id.org/biolink/vocab/related_to>,
+        <https://w3id.org/biolink/vocab/subclass_of>,
+        <https://w3id.org/biolink/vocab/synonym>,
+        <https://w3id.org/biolink/vocab/systematic_synonym> .
+
 <https://w3id.org/biolink/vocab/expressed_in> a :SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     owl:inverseOf <https://w3id.org/biolink/vocab/expresses> ;
     skos:definition "holds between a gene or gene product and an anatomical entity in which it is expressed" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002206> ;
     :domain <https://w3id.org/biolink/vocab/GeneOrGeneProduct> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -6532,7 +6764,8 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/participates_in> ;
     skos:definition "holds between a process and a continuant, where the continuant is somehow involved in the process" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <wd:P2283> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0000057>,
+        <wd:P2283> ;
     :domain <https://w3id.org/biolink/vocab/Occurrent> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -6578,6 +6811,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/in_pathway_with> .
 
 <https://w3id.org/biolink/vocab/macromolecular_machine_name> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :alias "name" ;
     :domain <https://w3id.org/biolink/vocab/MacromolecularMachine> ;
     :is_a <https://w3id.org/biolink/vocab/name> ;
@@ -6589,6 +6823,7 @@
 
 <https://w3id.org/biolink/vocab/regulates_process_to_process> a :SlotDefinition ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002211> ;
     :domain <https://w3id.org/biolink/vocab/Occurrent> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/regulates> ;
@@ -6601,7 +6836,8 @@
     rdfs:subClassOf <https://w3id.org/biolink/vocab/UBERON:0001062> ;
     skos:definition "A subcellular location, cell type or gross anatomical part" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <umlssc:T022>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010046>,
+        <umlssc:T022>,
         <umlssc:T029>,
         <umlssc:T030>,
         <umlssc:T031>,
@@ -6705,38 +6941,21 @@
         <https://w3id.org/biolink/vocab/quantifier_qualifier>,
         <https://w3id.org/biolink/vocab/stage_qualifier> .
 
-<https://w3id.org/biolink/vocab/OntologyClass> a :ClassDefinition ;
-    skos:definition "a concept or class in an ontology, vocabulary or thesaurus" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    :class_uri <https://w3id.org/biolink/vocab/OntologyClass> ;
-    :is_a <https://w3id.org/biolink/vocab/NamedThing> ;
-    :slots <https://w3id.org/biolink/vocab/category>,
-        <https://w3id.org/biolink/vocab/description>,
-        <https://w3id.org/biolink/vocab/full_name>,
-        <https://w3id.org/biolink/vocab/id>,
-        <https://w3id.org/biolink/vocab/interacts_with>,
-        <https://w3id.org/biolink/vocab/iri>,
-        <https://w3id.org/biolink/vocab/name>,
-        <https://w3id.org/biolink/vocab/node_property>,
-        <https://w3id.org/biolink/vocab/related_to>,
-        <https://w3id.org/biolink/vocab/subclass_of>,
-        <https://w3id.org/biolink/vocab/synonym>,
-        <https://w3id.org/biolink/vocab/systematic_synonym> .
-
 <https://w3id.org/biolink/vocab/SequenceVariant> a :ClassDefinition ;
     skos:altLabel "allele" ;
     skos:definition "An allele that varies in its sequence from what is considered the reference allele at that locus." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010277>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/GENO:0000002>,
+        <https://w3id.org/biolink/vocab/SIO:010277>,
         <vmc:Allele>,
         <wd:Q15304597> ;
     skos:note "This class is for modeling the specific state at a locus. A single dbSNP rs ID could correspond to more than one sequence variants (e.g CIViC:1252 and CIViC:1253, two distinct BRCA2 alleles for rs28897743)" ;
     :alt_descriptions [ a :AltDescription ;
-            skos:definition "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition" ;
-            :source "AGR" ],
-        [ a :AltDescription ;
             skos:definition "A contiguous change at a Location" ;
-            :source "VMC" ] ;
+            :source "VMC" ],
+        [ a :AltDescription ;
+            skos:definition "An enitity that describes a single affected, endogenous allele.  These can be of any type that matches that definition" ;
+            :source "AGR" ] ;
     :class_uri <http://purl.obolibrary.org/obo/GENO_0000002> ;
     :id_prefixes "CIViC",
         "ClinVar",
@@ -6835,15 +7054,23 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between two classes where the domain class is a specialization of the range class" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:IS_A>,
+    skos:mappingRelation rdfs:subClassOf,
+        <semmeddb:IS_A>,
         <wd:P279> ;
     :domain <https://w3id.org/biolink/vocab/OntologyClass> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
     :multivalued true ;
     :owner <https://w3id.org/biolink/vocab/subclass_of> ;
-    :range <https://w3id.org/biolink/vocab/OntologyClass> ;
+    :range <https://w3id.org/biolink/vocab/iri_type> ;
     :slot_uri rdfs:subClassOf .
+
+<https://w3id.org/biolink/vocab/string> a :TypeDefinition ;
+    skos:definition "A character string" ;
+    skos:inScheme <https://w3id.org/biolink/biolinkml/types> ;
+    :base "str" ;
+    :imported_from "https://w3id.org/biolink/biolinkml/types" ;
+    :uri xsd:string .
 
 <https://w3id.org/biolink/vocab/frequency_qualifier> a :SlotDefinition ;
     skos:definition "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject" ;
@@ -6854,16 +7081,18 @@
     :range <https://w3id.org/biolink/vocab/FrequencyValue> ;
     :slot_uri <https://w3id.org/biolink/vocab/frequency_qualifier> .
 
-<https://w3id.org/biolink/vocab/string> a :TypeDefinition ;
-    skos:definition "A character string" ;
+<https://w3id.org/biolink/vocab/uriorcurie> a :TypeDefinition ;
+    skos:definition "a URI or a CURIE" ;
     skos:inScheme <https://w3id.org/biolink/biolinkml/types> ;
-    :base "str" ;
+    :base "URIorCURIE" ;
     :imported_from "https://w3id.org/biolink/biolinkml/types" ;
-    :uri xsd:string .
+    :repr "str" ;
+    :uri xsd:anyURI .
 
 <https://w3id.org/biolink/vocab/Occurrent> a :ClassDefinition ;
     skos:definition "A processual entity" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/BFO:0000003> ;
     :class_uri <http://purl.obolibrary.org/obo/BFO_0000003> ;
     :is_a <https://w3id.org/biolink/vocab/NamedThing> ;
     :slots <https://w3id.org/biolink/vocab/category>,
@@ -6888,7 +7117,8 @@
     skos:altLabel "sequence feature" ;
     skos:definition "an entity that can either be directly located on a genome (gene, transcript, exon, regulatory region) or is encoded in a genome (protein)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <umlssc:T028>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SO:0000110>,
+        <umlssc:T028>,
         <umlssc:T086>,
         <umlsst:gngm>,
         <umlsst:nusq> ;
@@ -6964,6 +7194,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <semmeddb:AFFECTS> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -7059,17 +7290,10 @@
     :range <https://w3id.org/biolink/vocab/biological_sequence> ;
     :slot_uri <https://w3id.org/biolink/vocab/has_biological_sequence> .
 
-<https://w3id.org/biolink/vocab/iri_type> a :TypeDefinition ;
-    skos:definition "An IRI" ;
-    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    :base "URI" ;
-    :repr "str" ;
-    :typeof <https://w3id.org/biolink/vocab/uri> ;
-    :uri xsd:anyURI .
-
 <https://w3id.org/biolink/vocab/molecularly_interacts_with> a :SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002436> ;
     :domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/physically_interacts_with> ;
@@ -7083,6 +7307,7 @@
     owl:inverseOf <https://w3id.org/biolink/vocab/has_biomarker> ;
     skos:definition "holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002607> ;
     :domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/correlated_with> ;
@@ -7479,15 +7704,16 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:altLabel "activity directly regulates activity of" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002448> ;
     :domain <https://w3id.org/biolink/vocab/MolecularEntity> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/regulates> ;
     :local_names [ a :LocalName ;
-            skos:altLabel "regulates" ;
-            :local_name_source "translator" ],
-        [ a :LocalName ;
             skos:altLabel "activity directly regulates activity of" ;
-            :local_name_source "ro" ] ;
+            :local_name_source "ro" ],
+        [ a :LocalName ;
+            skos:altLabel "regulates" ;
+            :local_name_source "translator" ] ;
     :multivalued true ;
     :owner <https://w3id.org/biolink/vocab/regulates_entity_to_entity> ;
     :range <https://w3id.org/biolink/vocab/MolecularEntity> ;
@@ -7689,7 +7915,8 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "connects a thing to a class representing a taxon" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <wd:P703> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002162>,
+        <wd:P703> ;
     :domain <https://w3id.org/biolink/vocab/ThingWithTaxon> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -7703,6 +7930,7 @@
     skos:definition "holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature)." ;
     skos:editorialNote "check the range" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002200> ;
     :domain <https://w3id.org/biolink/vocab/BiologicalEntity> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -7718,6 +7946,7 @@
     :alias "id" ;
     :domain <https://w3id.org/biolink/vocab/Association> ;
     :identifier true ;
+    :ifabsent "bnode" ;
     :is_a <https://w3id.org/biolink/vocab/node_property> ;
     :owner <https://w3id.org/biolink/vocab/Association> ;
     :range <https://w3id.org/biolink/vocab/identifier_type> ;
@@ -7727,6 +7956,7 @@
 <https://w3id.org/biolink/vocab/association_type> a :SlotDefinition ;
     skos:definition "connects an association to the type of association (e.g. gene to phenotype)" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation rdf:type ;
     :domain <https://w3id.org/biolink/vocab/Association> ;
     :is_a <https://w3id.org/biolink/vocab/association_slot> ;
     :owner <https://w3id.org/biolink/vocab/Association> ;
@@ -7736,6 +7966,7 @@
 <https://w3id.org/biolink/vocab/provided_by> a :SlotDefinition ;
     skos:definition "connects an association to the agent (person, organization or group) that provided it" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation pav:providedBy ;
     :domain <https://w3id.org/biolink/vocab/Association> ;
     :is_a <https://w3id.org/biolink/vocab/association_slot> ;
     :owner <https://w3id.org/biolink/vocab/Association> ;
@@ -7777,7 +8008,7 @@
     :slot_uri <https://w3id.org/biolink/vocab/qualifiers> .
 
 <https://w3id.org/biolink/vocab/edge_label> a :SlotDefinition ;
-    skos:definition "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. " ;
+    skos:definition "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes." ;
     skos:editorialNote "in neo4j this corresponds to the relationship type and the convention is for a snake_case label" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :domain <https://w3id.org/biolink/vocab/Association> ;
@@ -7791,7 +8022,8 @@
     skos:definition "A typed association between two entities, supported by evidence" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     skos:mappingRelation rdf:Statement,
-        owl:Axiom ;
+        owl:Axiom,
+        <oban:association> ;
     skos:note "This is roughly the model used by biolink and ontobio at the moment" ;
     :class_uri <http://purl.org/oban/association> ;
     :slots <https://w3id.org/biolink/vocab/association_id>,
@@ -7815,6 +8047,7 @@
         "label" ;
     skos:definition "A human-readable name for a thing" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation rdfs:label ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :is_a <https://w3id.org/biolink/vocab/node_property> ;
     :owner <https://w3id.org/biolink/vocab/NamedThing> ;
@@ -7836,18 +8069,19 @@
 <https://w3id.org/biolink/vocab/relation> a :SlotDefinition ;
     skos:definition "the relationship type by which a subject is connected to an object in an association" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation owl:annotatedProperty,
+    skos:mappingRelation rdf:predicate,
+        owl:annotatedProperty,
         <oban:association_has_predicate> ;
     :domain <https://w3id.org/biolink/vocab/Association> ;
     :is_a <https://w3id.org/biolink/vocab/association_slot> ;
     :local_names [ a :LocalName ;
-            skos:altLabel "annotation predicate" ;
-            :local_name_source "ga4gh" ],
-        [ a :LocalName ;
             skos:altLabel "predicate" ;
-            :local_name_source "translator" ] ;
+            :local_name_source "translator" ],
+        [ a :LocalName ;
+            skos:altLabel "annotation predicate" ;
+            :local_name_source "ga4gh" ] ;
     :owner <https://w3id.org/biolink/vocab/Association> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
     :slot_uri rdf:predicate .
 
@@ -7855,6 +8089,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation rdfs:subClassOf ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :is_a <https://w3id.org/biolink/vocab/node_property> ;
     :is_class_field true ;
@@ -7900,6 +8135,7 @@
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :is_a <https://w3id.org/biolink/vocab/node_property> ;
+    :multivalued true ;
     :owner <https://w3id.org/biolink/vocab/systematic_synonym> ;
     :range <https://w3id.org/biolink/vocab/label_type> ;
     :slot_uri <https://w3id.org/biolink/vocab/systematic_synonym> .
@@ -7908,6 +8144,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "a human-readable description of a thing" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation dcterms:description ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :is_a <https://w3id.org/biolink/vocab/node_property> ;
     :owner <https://w3id.org/biolink/vocab/description> ;
@@ -7918,6 +8155,7 @@
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
     skos:definition "holds between any two entities that directly or indirectly interact with each other" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0002434> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :is_a <https://w3id.org/biolink/vocab/related_to> ;
@@ -7950,7 +8188,8 @@
         <umlsst:enty>,
         <umlsst:food>,
         <umlsst:mnob>,
-        <umlsst:phob> ;
+        <umlsst:phob>,
+        <wd:Q35120> ;
     :class_uri <http://example.org/UNKNOWN/WD/Q35120> ;
     :slots <https://w3id.org/biolink/vocab/actively_involved_in>,
         <https://w3id.org/biolink/vocab/affects>,
@@ -8006,13 +8245,13 @@
 <https://w3id.org/biolink/vocab/MolecularEntity> a :ClassDefinition ;
     skos:altLabel "bioentity" ;
     skos:definition "A gene, gene product, small molecule or macromolecule (including protein complex)" ;
-    skos:editorialNote "Check SIO mapping - also mapped to chemical substance." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <umlssc:T085>,
+    skos:mappingRelation <https://w3id.org/biolink/vocab/SIO:010341>,
+        <umlssc:T085>,
         <umlssg:GENE>,
         <umlsst:mosq>,
         <wd:Q43460564> ;
-    :class_uri <http://semanticscience.org/resource/SIO_010004> ;
+    :class_uri <http://semanticscience.org/resource/SIO_010341> ;
     :is_a <https://w3id.org/biolink/vocab/BiologicalEntity> ;
     :mixins <https://w3id.org/biolink/vocab/ThingWithTaxon> ;
     :slots <https://w3id.org/biolink/vocab/affects_abundance_of>,
@@ -8093,18 +8332,19 @@
 <https://w3id.org/biolink/vocab/object> a :SlotDefinition ;
     skos:definition "connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation owl:annotatedTarget,
+    skos:mappingRelation rdf:object,
+        owl:annotatedTarget,
         <oban:association_has_object> ;
     :domain <https://w3id.org/biolink/vocab/Association> ;
     :is_a <https://w3id.org/biolink/vocab/association_slot> ;
     :local_names [ a :LocalName ;
-            skos:altLabel "node with incoming relationship" ;
-            :local_name_source "neo4j" ],
-        [ a :LocalName ;
             skos:altLabel "descriptor" ;
-            :local_name_source "ga4gh" ] ;
+            :local_name_source "ga4gh" ],
+        [ a :LocalName ;
+            skos:altLabel "node with incoming relationship" ;
+            :local_name_source "neo4j" ] ;
     :owner <https://w3id.org/biolink/vocab/Association> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/NamedThing> ;
     :required true ;
     :slot_uri rdf:object .
 
@@ -8115,7 +8355,8 @@
 <https://w3id.org/biolink/vocab/related_to> a :SlotDefinition ;
     skos:definition "A relationship that is asserted between two named things" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation <semmeddb:ASSOCIATED_WITH> ;
+    skos:mappingRelation owl:ObjectProperty,
+        <semmeddb:ASSOCIATED_WITH> ;
     :domain <https://w3id.org/biolink/vocab/NamedThing> ;
     :inherited true ;
     :multivalued true ;
@@ -8126,18 +8367,19 @@
 <https://w3id.org/biolink/vocab/subject> a :SlotDefinition ;
     skos:definition "connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object." ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
-    skos:mappingRelation owl:annotatedSource,
+    skos:mappingRelation rdf:subject,
+        owl:annotatedSource,
         <oban:association_has_subject> ;
     :domain <https://w3id.org/biolink/vocab/Association> ;
     :is_a <https://w3id.org/biolink/vocab/association_slot> ;
     :local_names [ a :LocalName ;
-            skos:altLabel "node with outgoing relationship" ;
-            :local_name_source "neo4j" ],
-        [ a :LocalName ;
             skos:altLabel "annotation subject" ;
-            :local_name_source "ga4gh" ] ;
+            :local_name_source "ga4gh" ],
+        [ a :LocalName ;
+            skos:altLabel "node with outgoing relationship" ;
+            :local_name_source "neo4j" ] ;
     :owner <https://w3id.org/biolink/vocab/Association> ;
-    :range <https://w3id.org/biolink/vocab/iri_type> ;
+    :range <https://w3id.org/biolink/vocab/NamedThing> ;
     :required true ;
     :slot_uri rdf:subject .
 

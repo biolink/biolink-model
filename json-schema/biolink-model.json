@@ -354,7 +354,7 @@
          "type": "array"
       },
       "edge_label": {
-         "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. ",
+         "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
          "type": "string"
       },
       "end_interbase_coordinate": {
@@ -942,7 +942,10 @@
       },
       "systematic_synonym": {
          "description": "more commonly used for gene symbols in yeast",
-         "type": "string"
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "timepoint": {
          "description": "a point in time",
@@ -1071,7 +1074,7 @@
                "type": "string"
             },
             "edge_label": {
-               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes. ",
+               "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "required": true,
                "type": "string"
             },
@@ -1196,7 +1199,10 @@
             },
             "systematic_synonym": {
                "description": "more commonly used for gene symbols in yeast",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             }
          },
          "title": "Attribute",
@@ -2901,7 +2907,10 @@
             },
             "systematic_synonym": {
                "description": "more commonly used for gene symbols in yeast",
-               "type": "string"
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "update_date": {
                "description": "date on which thing was updated. This can be applied to nodes or edges",
