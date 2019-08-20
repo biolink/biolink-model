@@ -51,14 +51,13 @@ types:
       - Should be implemented as a stronger type
 
   identifier type:
-    base: ElementIdentifier
-    uri: xsd:anyURI
+    typeof: string
     description: >-
       A string that is intended to uniquely identify a thing
       May be URI in full or compact (CURIE) form
 
   iri type:
-    typeof: uriorcurie
+    typeof: uri
     description: >-
       An IRI
 
@@ -1121,8 +1120,7 @@ slots:
     description: >-
       holds between two classes where the domain class is a specialization of the range class
     domain: ontology class
-    range: iri type
-    multivalued: True
+    range: ontology class
     in_subset:
       - translator_minimal
     slot_uri: rdfs:subClassOf
@@ -1206,7 +1204,6 @@ slots:
         - translator_minimal
     domain: association
     range: identifier type
-    ifabsent: bnode
     alias: id
 
   iri:
@@ -1254,7 +1251,7 @@ slots:
       - translator_minimal
     required: true
     slot_uri: rdfs:subClassOf
-
+    
   full name:
     is_a: node property
     domain: named thing
@@ -1276,7 +1273,6 @@ slots:
     is_a: node property
     domain: named thing
     range: label type
-    multivalued: true
     description: >-
       more commonly used for gene symbols in yeast
 
@@ -1296,7 +1292,7 @@ slots:
       connects an association to the subject of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     required: true
-    range: named thing
+    range: iri type
     slot_uri: rdf:subject
     mappings:
       - owl:annotatedSource
@@ -1308,7 +1304,7 @@ slots:
       connects an association to the object of the association.
       For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     required: true
-    range: named thing
+    range: iri type
     local_names:
       ga4gh: descriptor
       neo4j: node with incoming relationship
@@ -1321,7 +1317,7 @@ slots:
     is_a: association slot
     description: >-
       A high-level grouping for the relationship type. AKA minimal predicate.
-      This is analogous to category for nodes.
+      This is analogous to category for nodes. 
     domain: association
     notes:
     - in neo4j this corresponds to the relationship type and the convention is for a snake_case label
@@ -1333,7 +1329,7 @@ slots:
     description: >-
       the relationship type by which a subject is connected to an object in an association
     domain: association
-    range: uriorcurie
+    range: iri type
     required: true
     local_names:
       ga4gh: annotation predicate
@@ -2579,10 +2575,10 @@ classes:
     comments:
       - This is roughly the model used by biolink and ontobio at the moment
     slots:
+      - association_id
       - subject
       - relation
       - object
-      - association_id
       - negated
       - association type
       - qualifiers
