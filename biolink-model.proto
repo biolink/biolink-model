@@ -619,6 +619,53 @@ message ConfidenceLevel
   optional description None = 10
   repeated systematicSynonym None = 11
  }
+message DataFile
+ {
+  id None = 1
+  name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  repeated systematicSynonym None = 11
+ }
+message DataSet
+ {
+  id None = 1
+  name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  repeated systematicSynonym None = 11
+ }
+message DataSetVersion
+ {
+  id None = 1
+  name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  repeated systematicSynonym None = 11
+  optional title None = 12
+  optional sourceDataFile None = 13
+  optional versionOf None = 14
+  optional type None = 15
+  optional distribution None = 16
+ }
 // A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
 message Device
  {
@@ -3117,6 +3164,22 @@ message SeverityValue
   optional description None = 10
   repeated systematicSynonym None = 11
   repeated subclassOf None = 12
+ }
+message SourceFile
+ {
+  id None = 1
+  name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  repeated systematicSynonym None = 11
+  optional sourceVersion None = 12
+  optional retrievedOn None = 13
  }
 // An RNA synthesized on a DNA or RNA template by an RNA polymerase
 message Transcript

@@ -124,6 +124,12 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
        * [ClinicalIntervention](ClinicalIntervention.md)
        * [ClinicalTrial](ClinicalTrial.md)
+    * [DataFile](DataFile.md)
+       * [SourceFile](SourceFile.md)
+    * [DataSet](DataSet.md)
+       * [DataSetVersion](DataSetVersion.md)
+          * [DataSetSummary](DataSetSummary.md)
+          * [DistributionLevel](DistributionLevel.md)
     * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
     * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
        * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
@@ -145,6 +151,8 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ### Mixins
 
+ * [DataSetSummary](DataSetSummary.md)
+ * [DistributionLevel](DistributionLevel.md)
  * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
  * [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) - Qualifiers for entity to disease or phenotype associations
     * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
@@ -294,6 +302,8 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
     * [description](description.md) - a human-readable description of a thing
        * [description](entity_to_phenotypic_feature_association_description.md)
+    * [distribution](distribution.md)
+    * [downloadURL](downloadURL.md)
     * [filler](filler.md) - The value in a property-value tuple
     * [full name](full_name.md) - a long-form human readable name for a thing
     * [genome build](genome_build.md) - TODO
@@ -314,10 +324,17 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [name](name.md) - A human-readable name for a thing
        * [name](macromolecular_machine_name.md)
     * [phase](phase.md) - TODO
+    * [retrievedOn](retrievedOn.md)
+    * [source data file](source_data_file.md)
+    * [source version](source_version.md)
+    * [source web page](source_web_page.md)
     * [synonym](synonym.md) - Alternate human-readable names for a thing
     * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
     * [timepoint](timepoint.md) - a point in time
+    * [title](title.md)
+    * [type](type.md)
     * [update date](update_date.md) - date on which thing was updated. This can be applied to nodes or edges
+    * [versionOf](versionOf.md)
  * [related to](related_to.md) - A relationship that is asserted between two named things
     * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
        * [affects abundance of](affects_abundance_of.md) - holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest

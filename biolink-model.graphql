@@ -719,6 +719,77 @@ type ConfidenceLevel
     systematicSynonym: [LabelType]
   }
 
+type DataFile
+  {
+    id: IdentifierType!
+    name: LabelType!
+    category: [IriType]!
+    relatedTo: [NamedThing]
+    interactsWith: [NamedThing]
+    nodeProperty: String
+    iri: IriType
+    synonym: [LabelType]
+    fullName: LabelType
+    description: NarrativeText
+    systematicSynonym: [LabelType]
+  }
+
+type DataSet
+  {
+    id: IdentifierType!
+    name: LabelType!
+    category: [IriType]!
+    relatedTo: [NamedThing]
+    interactsWith: [NamedThing]
+    nodeProperty: String
+    iri: IriType
+    synonym: [LabelType]
+    fullName: LabelType
+    description: NarrativeText
+    systematicSynonym: [LabelType]
+  }
+
+interface DataSetSummary
+  {
+    id: IdentifierType!
+    name: LabelType!
+    category: [IriType]!
+    relatedTo: [NamedThing]
+    interactsWith: [NamedThing]
+    nodeProperty: String
+    iri: IriType
+    synonym: [LabelType]
+    fullName: LabelType
+    description: NarrativeText
+    systematicSynonym: [LabelType]
+    title: String
+    sourceDataFile: DataFile
+    versionOf: DataSet
+    type: String
+    distribution: DistributionLevel
+    sourceWebPage: String
+  }
+
+type DataSetVersion
+  {
+    id: IdentifierType!
+    name: LabelType!
+    category: [IriType]!
+    relatedTo: [NamedThing]
+    interactsWith: [NamedThing]
+    nodeProperty: String
+    iri: IriType
+    synonym: [LabelType]
+    fullName: LabelType
+    description: NarrativeText
+    systematicSynonym: [LabelType]
+    title: String
+    sourceDataFile: DataFile
+    versionOf: DataSet
+    type: String
+    distribution: DistributionLevel
+  }
+
 type Device
   {
     id: IdentifierType!
@@ -836,6 +907,27 @@ interface DiseaseToThingAssociation
     providedBy: Provider
     associationSlot: String
     edgeLabel: LabelType!
+  }
+
+interface DistributionLevel
+  {
+    id: IdentifierType!
+    name: LabelType!
+    category: [IriType]!
+    relatedTo: [NamedThing]
+    interactsWith: [NamedThing]
+    nodeProperty: String
+    iri: IriType
+    synonym: [LabelType]
+    fullName: LabelType
+    description: NarrativeText
+    systematicSynonym: [LabelType]
+    title: String
+    sourceDataFile: DataFile
+    versionOf: DataSet
+    type: String
+    distribution: DistributionLevel
+    downloadURL: String
   }
 
 type Drug
@@ -3515,6 +3607,23 @@ type SeverityValue
     description: NarrativeText
     systematicSynonym: [LabelType]
     subclassOf: [IriType]
+  }
+
+type SourceFile
+  {
+    id: IdentifierType!
+    name: LabelType!
+    category: [IriType]!
+    relatedTo: [NamedThing]
+    interactsWith: [NamedThing]
+    nodeProperty: String
+    iri: IriType
+    synonym: [LabelType]
+    fullName: LabelType
+    description: NarrativeText
+    systematicSynonym: [LabelType]
+    sourceVersion: String
+    retrievedOn: Date
   }
 
 interface SpecificityQuantifier

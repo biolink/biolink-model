@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2019-07-22 10:56\nSchema: biolink_model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2019-08-20 14:05\nSchema: biolink_model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "_comments": null,
       "type": "@type",
@@ -15,6 +15,7 @@
       "ClinVar": "http://www.ncbi.nlm.nih.gov/clinvar/",
       "ECO": "http://purl.obolibrary.org/obo/ECO_",
       "ECTO": "http://example.org/UNKNOWN/ECTO/",
+      "EFO": "http://purl.obolibrary.org/obo/EFO_",
       "ENSEMBL": "http://ensembl.org/id/",
       "FAO": "http://purl.obolibrary.org/obo/FAO_",
       "GENO": "http://purl.obolibrary.org/obo/GENO_",
@@ -56,6 +57,7 @@
       "WD": "http://example.org/UNKNOWN/WD/",
       "ZFIN": "http://zfin.org/",
       "biolinkml": "https://w3id.org/biolink/biolinkml/",
+      "dct": "http://example.org/UNKNOWN/dct/",
       "dcterms": "http://purl.org/dc/terms/",
       "dictyBase": "http://dictybase.org/gene/",
       "faldo": "http://biohackathon.org/resource/faldo#",
@@ -67,6 +69,7 @@
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "shex": "http://www.w3.org/ns/shex#",
       "skos": "https://www.w3.org/TR/skos-reference/#",
+      "void": "http://rdfs.org/ns/void#",
       "wgs": "http://www.w3.org/2003/01/geo/wgs84_pos",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "@vocab": "https://w3id.org/biolink/vocab/",
@@ -216,6 +219,9 @@
          "@type": "@id"
       },
       "disrupts": {
+         "@type": "@id"
+      },
+      "distribution": {
          "@type": "@id"
       },
       "expressed_in": {
@@ -458,6 +464,9 @@
       "relation": {
          "@type": "@id"
       },
+      "retrievedOn": {
+         "@type": "xsd:date"
+      },
       "same_as": {
          "@type": "@id"
       },
@@ -468,6 +477,9 @@
          "@type": "@id"
       },
       "sex_qualifier": {
+         "@type": "@id"
+      },
+      "source_data_file": {
          "@type": "@id"
       },
       "stage_qualifier": {
@@ -490,6 +502,9 @@
       },
       "update_date": {
          "@type": "xsd:date"
+      },
+      "versionOf": {
+         "@type": "@id"
       },
       "xenologous_to": {
          "@type": "@id"

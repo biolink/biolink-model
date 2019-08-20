@@ -13,6 +13,8 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  * [AdministrativeEntity](AdministrativeEntity.md)
  * [BiologicalEntity](BiologicalEntity.md)
  * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
+ * [DataFile](DataFile.md)
+ * [DataSet](DataSet.md)
  * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
  * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
  * [Occurrent](Occurrent.md) - A processual entity

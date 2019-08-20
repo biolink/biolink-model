@@ -1,8 +1,10 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2019-07-22 10:56\nSchema: biolink_model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2019-08-20 14:05\nSchema: biolink_model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "_comments": null,
-      "type": "@type",
+      "type": {
+         "@id": "rdf:type"
+      },
       "BFO": "http://purl.obolibrary.org/obo/BFO_",
       "BIOGRID": "http://thebiogrid.org/",
       "CHEBI": "http://purl.obolibrary.org/obo/CHEBI_",
@@ -15,6 +17,7 @@
       "ClinVar": "http://www.ncbi.nlm.nih.gov/clinvar/",
       "ECO": "http://purl.obolibrary.org/obo/ECO_",
       "ECTO": "http://example.org/UNKNOWN/ECTO/",
+      "EFO": "http://purl.obolibrary.org/obo/EFO_",
       "ENSEMBL": "http://ensembl.org/id/",
       "FAO": "http://purl.obolibrary.org/obo/FAO_",
       "GENO": "http://purl.obolibrary.org/obo/GENO_",
@@ -50,12 +53,13 @@
       "UMLSSG": "https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/",
       "UMLSST": "https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/",
       "UPHENO": "http://purl.obolibrary.org/obo/UPHENO_",
-      "UniProtKB": "http://purl.uniprot.org/uniprot/",
+      "UniProtKB": "http://identifiers.org/uniprot/",
       "VMC": "http://example.org/UNKNOWN/VMC/",
       "WB": "http://identifiers.org/wb/",
       "WD": "http://example.org/UNKNOWN/WD/",
       "ZFIN": "http://zfin.org/",
       "biolinkml": "https://w3id.org/biolink/biolinkml/",
+      "dct": "http://example.org/UNKNOWN/dct/",
       "dcterms": "http://purl.org/dc/terms/",
       "dictyBase": "http://dictybase.org/gene/",
       "faldo": "http://biohackathon.org/resource/faldo#",
@@ -67,6 +71,7 @@
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "shex": "http://www.w3.org/ns/shex#",
       "skos": "https://www.w3.org/TR/skos-reference/#",
+      "void": "http://rdfs.org/ns/void#",
       "wgs": "http://www.w3.org/2003/01/geo/wgs84_pos",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "@vocab": "https://w3id.org/biolink/vocab/",
@@ -235,6 +240,13 @@
       "disrupts": {
          "@type": "@id",
          "@id": "SEMMEDDB:DISRUPTS"
+      },
+      "distribution": {
+         "@type": "@id",
+         "@id": "void:Dataset"
+      },
+      "downloadURL": {
+         "@id": "dct:downloadURL"
       },
       "expressed_in": {
          "@type": "@id",
@@ -524,6 +536,10 @@
          "@type": "@id",
          "@id": "rdf:predicate"
       },
+      "retrievedOn": {
+         "@type": "xsd:date",
+         "@id": "pav:retrievedOn"
+      },
       "same_as": {
          "@type": "@id",
          "@id": "owl:equivalentClass"
@@ -536,6 +552,16 @@
       },
       "sex_qualifier": {
          "@type": "@id"
+      },
+      "source_data_file": {
+         "@type": "@id",
+         "@id": "dcterms:source"
+      },
+      "source_version": {
+         "@id": "pav:version"
+      },
+      "source_web_page": {
+         "@id": "dcterms:source"
       },
       "stage_qualifier": {
          "@type": "@id"
@@ -551,6 +577,9 @@
       "timepoint": {
          "@type": "xsd:dateTime"
       },
+      "title": {
+         "@id": "dct:title"
+      },
       "treated_by": {
          "@type": "@id",
          "@id": "RO:0002302"
@@ -561,6 +590,10 @@
       },
       "update_date": {
          "@type": "xsd:date"
+      },
+      "versionOf": {
+         "@type": "@id",
+         "@id": "dct:isVersionOf"
       },
       "xenologous_to": {
          "@type": "@id",
@@ -607,6 +640,12 @@
       },
       "ConfidenceLevel": {
          "@id": "CIO:0000028"
+      },
+      "DataFile": {
+         "@id": "EFO:0004095"
+      },
+      "DataSet": {
+         "@id": "IAO:0000100"
       },
       "Disease": {
          "@id": "MONDO:0000001"
