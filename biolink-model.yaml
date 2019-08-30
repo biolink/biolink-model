@@ -1935,7 +1935,7 @@ classes:
       - SIO:010056
       - WD:Q169872
 
-  environment:
+  exposure event:
     aliases: ['environment', 'exposure', 'experimental condition']
     is_a: biological entity
     description: >-
@@ -2518,11 +2518,11 @@ classes:
           - value: ClinVarVariant:17681
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
 
-  drug exposure:
+  chemical exposure:
     aliases: ['drug intake', 'drug dose']
-    is_a: environment
+    is_a: exposure event
     description: >-
-      A drug exposure is an intake of a particular chemical substance
+      A chemical exposure is an intake of a particular chemical substance
 #    slots:
 #      - has input
     slot_usage:
@@ -2536,14 +2536,14 @@ classes:
 
   treatment:
     aliases: ['medical action']
-    is_a: environment
+    is_a: exposure event
     description: >-
       A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
 
     slot_usage:
       has exposure parts:
         multivalued: true
-        range: drug exposure
+        range: chemical exposure
         required: true
     class_uri: OGMS:0000090
     mappings:
