@@ -2526,7 +2526,7 @@ classes:
 #    slots:
 #      - has input
     slot_usage:
-      drug:
+      chemical substance:
         range: chemical substance
         required: true
         multivalued: true
@@ -2874,6 +2874,32 @@ classes:
       - thing to disease or phenotypic feature association
     description: >-
       An association between a biosample and a disease or phenotype
+
+  disease to exposure association:
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    description: >-
+      An association between an exposure event and a disease
+    slot_usage:
+      subject:
+        range: disease
+      object:
+        range: exposure event
+
+  phenotype to exposure association:
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    description: >-
+      An association between an exposure event and a phenotype
+    slot_usage:
+      subject:
+        range: phenotype
+      object:
+        range: exposure event
 
   frequency qualifier mixin:
     mixin: true
