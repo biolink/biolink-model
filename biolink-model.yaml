@@ -2876,7 +2876,7 @@ classes:
       An association between a biosample and a disease or phenotype
 
   disease to exposure association:
-    is_a: association
+    is_a: disease to thing association
     defining_slots:
       - subject
       - object
@@ -2885,19 +2885,6 @@ classes:
     slot_usage:
       subject:
         range: disease
-      object:
-        range: exposure event
-
-  phenotype to exposure association:
-    is_a: association
-    defining_slots:
-      - subject
-      - object
-    description: >-
-      An association between an exposure event and a phenotype
-    slot_usage:
-      subject:
-        range: phenotype
       object:
         range: exposure event
 
@@ -3039,7 +3026,7 @@ classes:
         description: >-
           genotype that is associated with the phenotypic feature
 
-  environment to phenotypic feature association:
+  exposure event to phenotypic feature association:
     is_a: association
     defining_slots:
       - subject
@@ -3050,7 +3037,7 @@ classes:
       - entity to phenotypic feature association
     slot_usage:
       subject:
-        range: environment
+        range: exposure event
 
   disease to phenotypic feature association:
     is_a: association
