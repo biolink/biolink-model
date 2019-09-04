@@ -1139,30 +1139,35 @@ slots:
 
   title:
     is_a: node property
-    domain: data set version
+    domain: dataset version
     slot_uri: dct:title
 
   source data file:
     is_a: node property
-    domain: data set version
+    domain: dataset version
     range: data file
     slot_uri: dcterms:source
 
   source web page:
     is_a: node property
-    domain: data set summary
+    domain: dataset summary
     slot_uri: dcterms:source
 
-  retrievedOn:
+  source logo:
+    is_a: node property
+    domain: dataset summary
+    slot_uri: schema:logo
+
+  retrieved on:
     is_a: node property
     domain: source file
     range: date
     slot_uri: pav:retrievedOn
 
-  versionOf:
+  version of:
     is_a: node property
-    domain: data set version
-    range: data set
+    domain: dataset version
+    range: dataset summary
     slot_uri: dct:isVersionOf
 
   source version:
@@ -1170,20 +1175,21 @@ slots:
     domain: source file
     slot_uri: pav:version
 
-  downloadURL:
+  download url:
     is_a: node property
-    domain: distribution level
+    domain: dataset distribution
     slot_uri: dct:downloadURL
+
+  ingest date:
+    is_a: node property
+    domain: dataset version
+    slot_uri: pav:version
 
   distribution:
     is_a: node property
-    domain: data set version
-    range: distribution level
-    slot_uri: void:Dataset
-
-  type:
-    is_a: node property
-    slot_uri: rdf:type
+    domain: dataset version
+    range: dataset distribution
+    slot_uri: dct:distribution
 
   id:
     is_a: node property
@@ -1688,37 +1694,37 @@ classes:
     is_a: data file
     slots:
       - source version
-      - retrievedOn
+      - retrieved on
 
-#  data set descriptor:
-#    abstract: true
-#    mixin: true
-
-  data set:
+  dataset:
     is_a: named thing
+    description: "an item that refers to a collection of data files from a data source"
     class_uri: IAO:0000100
-
-  data set version:
-    is_a: data set
     slots:
       - title
-#      - description
-      - source data file
-      - versionOf
-      - type
-      - distribution
+    mappings:
+      schema:Dataset
 
-  distribution level:
-    is_a: data set version
-    mixin: true
-    slots:
-      - downloadURL
-
-  data set summary:
-    is_a: data set version
-    mixin: true
+  dataset summary:
+    is_a: dataset
+    description: "an item that holds summary level information about a dataset"
     slots:
       - source web page
+      - source logo
+
+  dataset version:
+    is_a: dataset
+    description: "an item that holds version level information about a dataset"
+    slots:
+      - source data file
+      - ingest date
+      - distribution
+
+  dataset distribution:
+    is_a: dataset
+    description: "an item that holds distribution level information about a dataset"
+    slots:
+      - download url
 
   biological entity:
     is_a: named thing
