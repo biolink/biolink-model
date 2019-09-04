@@ -12,6 +12,8 @@ prefixes:
   UMLSSG: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/
   UMLSST: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/
   UMLSSC: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/
+  dct: http://purl.org/dc/terms/
+  schema: http://schema.org/
 
 default_prefix: biolink
 default_range: string
@@ -1139,19 +1141,19 @@ slots:
 
   title:
     is_a: node property
-    domain: dataset version
+    domain: dataset
     slot_uri: dct:title
 
   source data file:
     is_a: node property
     domain: dataset version
     range: data file
-    slot_uri: dcterms:source
+    slot_uri: dct:source
 
   source web page:
     is_a: node property
     domain: dataset summary
-    slot_uri: dcterms:source
+    slot_uri: dct:source
 
   source logo:
     is_a: node property
@@ -1276,7 +1278,7 @@ slots:
       a human-readable description of a thing
     in_subset:
       - translator_minimal
-    slot_uri: dcterms:description
+    slot_uri: dct:description
 
   systematic synonym:
     is_a: node property
@@ -1387,7 +1389,7 @@ slots:
     range: date
     description: >-
       date on which thing was created. This can be applied to nodes or edges
-    slot_uri: dcterms:created
+    slot_uri: dct:created
 
   update date:
     is_a: node property
@@ -1703,7 +1705,7 @@ classes:
     slots:
       - title
     mappings:
-      schema:Dataset
+      - schema:dataset
 
   dataset summary:
     is_a: dataset
