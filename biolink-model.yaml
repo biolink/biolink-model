@@ -9,10 +9,11 @@ prefixes:
   OBAN: http://purl.org/oban/
   SIO: http://semanticscience.org/resource/SIO_
   wgs: http://www.w3.org/2003/01/geo/wgs84_pos
+  qud: http://qudt.org/1.1/schema/qudt#
   UMLSSG: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/GROUP/
   UMLSST: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/
   UMLSSC: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/
-
+  
 default_prefix: biolink
 default_range: string
 
@@ -32,11 +33,16 @@ emit_prefixes:
 
 subsets:
   translator_minimal:
-    description: Minimum subset of translator work
+    description: >-
+      Minimum subset of translator work
+
+  samples:
+    description: >-
+      Sample/biosample datamodel
 
   testing:
-    description: (tbd)
-
+    description: >-
+      TBD
 
 imports:
   - biolinkml:types
@@ -79,7 +85,7 @@ types:
     typeof: string
     uri: UO:0000105
 
-  perecentage frequency value:
+  percentage frequency value:
     typeof: double
     uri: UO:0000187
 
@@ -93,6 +99,8 @@ types:
     uri: UO:0000000
     id_prefixes:
       - UO
+    mappings:
+      - qud:Unit
 
   time type:
     typeof: time
@@ -1066,6 +1074,7 @@ slots:
       holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
     in_subset:
       - translator_minimal
+      - samples
     inverse: derives into
     slot_uri: RO:0001000
 
@@ -1575,16 +1584,102 @@ slots:
   end interbase coordinate:
     is_a: interbase coordinate
 
+  has attribute:
+    description: >-
+      connects any named thing to an attribute
+    mappings:
+      - SIO:000008
+      - RO:0000053
+    range: attribute
+    multivalued: true
+    in_subset:
+      - samples
+
+  has attribute type:
+    description: >-
+      connects an attribute to a class that describes it
+    domain: attribute
+    range: ontology class
+    multivalued: false
+    in_subset:
+      - samples
+
+  has qualitative value:
+    description: >-
+      connects an attribute to a value
+    domain: attribute
+    range: named thing
+    multivalued: false
+    in_subset:
+      - samples
+
+  has quantitative value:
+    description: >-
+      connects an attribute to a value
+    domain: attribute
+    range: quantity value
+#    multivalued: false
+    multivalued: true
+    mappings:
+      - qud:quantityValue
+    in_subset:
+      - samples
+
+  has numeric value:
+    description: >-
+      connects a quantity value to a number
+    domain: quantity value
+    range: double
+    multivalued: false
+    mappings:
+      - qud:quantityValue
+    in_subset:
+      - samples
+
+  has unit:
+    description: >-
+      connects a quantity value to a unit
+    domain: quantity value
+    range: unit
+    multivalued: false
+    mappings:
+      - qud:unit
+    in_subset:
+      - samples
 
 classes:
 
+  abstract entity:
+    description: >-
+      Any thing that is not a process or a physical mass-bearing entity
+
   attribute:
     subclass_of: PATO:0000001
+    mappings:
+      - SIO:000614
+    is_a: abstract entity
     mixins:
       - ontology class
     description: >-
-      A property or characteristic of an entity
+      A property or characteristic of an entity.
+      For example, an apple may have properties such as color, shape, age, crispiness.
+      An environmental sample may have attributes such as depth, lat, long, material.
+    slots:
+      - has attribute type
+      - has quantitative value
+      - has qualitative value
+    in_subset:
+      - samples
 
+  quantity value:
+    is_a: abstract entity
+    description: >-
+      A value of an attribute that is quantitative and measurable, expressed as a combination
+      of a unit and a numeric value
+    slots:
+      - has unit
+      - has numeric value
+      
   ## ------
   ## THINGS
   ## ------
@@ -1864,12 +1959,28 @@ classes:
     id_prefixes:
       - HANCESTRO
 
-  biosample:
-    aliases: ['biospecimen', 'sample']
+  subject of investigation:
+    abstract: true
+    mixin: true
+    description: >-
+      An entity that has the role of being studied in an investigation, study, or experiment
+      
+  material sample:
+    aliases: ['biospecimen', 'sample', 'biosample', 'physical sample']
+    is_a: named thing
     mixins:
-      - thing with taxon
-    is_a: organismal entity
-    class_uri: SIO:001050
+      - subject of investigation
+      - physical entity
+    description: >-
+      A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
+    mappings:
+      - OBI:0000747
+      - SIO:001050
+    slots:
+      - has attribute
+    id_prefixes:
+      - BioSample
+      - GOLD.META
 
   disease or phenotypic feature:
     aliases: ['phenome']
@@ -2048,6 +2159,7 @@ classes:
     is_a: biological entity
     mixins:
       - thing with taxon
+      - physical entity
     aliases: ['bioentity']
     description: "A gene, gene product, small molecule or macromolecule (including protein complex)"
     #notes:
@@ -2172,6 +2284,7 @@ classes:
     is_a: organismal entity
     mixins:
       - thing with taxon
+      - physical entity
     subclass_of: UBERON:0001062
     description: >-
       A subcellular location, cell type or gross anatomical part
@@ -2851,29 +2964,51 @@ classes:
         range: gene or gene product
         description: "the gene or gene product that is affected by the chemical"
 
-  biosample to thing association:
+  material sample to thing association:
     is_a: association
     defining_slots:
       - subject
     abstract: true
     description: >-
-      An association between a biosample and something
+      An association between a material sample and something
     slot_usage:
       subject:
-        range: biosample
+        range: material sample
         description: >-
-          the biosample being described
+          the material sample being described
 
-  biosample to disease or phenotypic feature association:
+  material sample derivation association:
+    is_a: association
+    defining_slots:
+      - subject
+      - relation
+    description: >-
+      An association between a material sample and the material entity it is derived from
+    slot_usage:
+      subject:
+        range: material sample
+        description: >-
+          the material sample being described
+      object:
+        description: >-
+          the material entity the sample was derived from. This may be another material sample, or
+          any other material entity, including for example an organism, a geographic feature, or some
+          environmental material.
+      relation:
+        description: >-
+          derivation relationship
+        subproperty_of: derives from
+
+  material sample to disease or phenotypic feature association:
     is_a: association
     defining_slots:
       - subject
       - object
     mixins:
-      - biosample to thing association
+      - material sample to thing association
       - thing to disease or phenotypic feature association
     description: >-
-      An association between a biosample and a disease or phenotype
+      An association between a material sample and a disease or phenotype
 
   frequency qualifier mixin:
     mixin: true
@@ -3570,6 +3705,11 @@ classes:
     is_a: named thing
     class_uri: BFO:0000003
 
+  physical entity:
+    description: >-
+      An entity that has physical properties such as mass, volume, or charge
+    is_a: named thing
+
   biological process or activity:
     is_a: biological entity
     description: >-
@@ -3770,7 +3910,7 @@ classes:
       - PO
 
   cell line:
-    is_a: biosample
+    is_a: organismal entity
     class_uri: CLO:0000031
     id_prefixes:
       - CLO
