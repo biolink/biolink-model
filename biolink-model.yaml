@@ -1535,12 +1535,18 @@ slots:
       consequence. E.g.  SO:0001583
     range: ontology class
 
+  has drug:
+    is_a: node property
+    description: >-
+      connects an entity to a single drug
+    range: drug
+
     ## genotypes
 
   has gene:
     is_a: node property
     description: >-
-      connects and entity to a single gene
+      connects an entity to a single gene
     range: gene
 
   has zygosity:
@@ -2519,14 +2525,28 @@ classes:
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
 
   chemical exposure:
-    aliases: ['drug intake', 'drug dose']
+#    aliases: ['drug intake', 'drug dose']
     is_a: exposure event
     description: >-
       A chemical exposure is an intake of a particular chemical substance
 #    slots:
 #      - has input
+#    slot_usage:
+#      chemical substance:
+#        range: chemical substance
+#        required: true
+#        multivalued: true
+    class_uri: ECTO:9000000
+
+  drug exposure:
+    aliases: ['drug intake', 'drug dose']
+    is_a: chemical exposure
+    description: >-
+      A drug exposure is an intake of a particular chemical substance
+#    slots:
+#      - has input
     slot_usage:
-      chemical substance:
+      has drug:
         range: chemical substance
         required: true
         multivalued: true
@@ -2539,11 +2559,10 @@ classes:
     is_a: exposure event
     description: >-
       A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
-
     slot_usage:
-      has exposure parts:
+      has part:
         multivalued: true
-        range: chemical exposure
+        range: drug exposure
         required: true
     class_uri: OGMS:0000090
     mappings:
