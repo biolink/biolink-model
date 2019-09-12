@@ -13,6 +13,7 @@ prefixes:
   UMLSST: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/STY/
   UMLSSC: https://uts-ws.nlm.nih.gov/rest/semantic-network/semantic-network/current/TUI/
   dct: http://purl.org/dc/terms/
+  dcat: http://www.w3.org/ns/dcat#
   schema: http://schema.org/
 
 default_prefix: biolink
@@ -1144,10 +1145,10 @@ slots:
     domain: dataset
     slot_uri: dct:title
 
-  source data file:
+  has dataset:
     is_a: node property
     domain: dataset version
-    range: data file
+    range: dataset
     slot_uri: dct:source
 
   source web page:
@@ -1162,7 +1163,7 @@ slots:
 
   retrieved on:
     is_a: node property
-    domain: source file
+    domain: dataset
     range: date
     slot_uri: pav:retrievedOn
 
@@ -1172,22 +1173,32 @@ slots:
     range: dataset summary
     slot_uri: dct:isVersionOf
 
-  source version:
+  version:
     is_a: node property
-    domain: source file
+    domain: dataset
     slot_uri: pav:version
 
   download url:
     is_a: node property
+    domain: information content entity
+    slot_uri: dcat:downloadURL
+
+  dataset download url:
+    is_a: node property
+    domain: dataset
+    slot_uri: dcat:downloadURL
+
+  distribution download url:
+    is_a: node property
     domain: dataset distribution
-    slot_uri: dct:downloadURL
+    slot_uri: dcat:downloadURL
 
   ingest date:
     is_a: node property
     domain: dataset version
     slot_uri: pav:version
 
-  distribution:
+  has distribution:
     is_a: node property
     domain: dataset version
     range: dataset distribution
@@ -1688,45 +1699,38 @@ classes:
       - UMLSSC:T168
       - UMLSST:food
 
-  data file:
-    is_a: named thing
-    class_uri: EFO:0004095
-
-  source file:
-    is_a: data file
-    slots:
-      - source version
-      - retrieved on
-
   dataset:
-    is_a: named thing
-    description: "an item that refers to a collection of data files from a data source"
+    is_a: information content entity
+    description: "an item that refers to a collection of data from a data source"
     class_uri: IAO:0000100
     slots:
       - title
+      - dataset download url
+      - version
+      - retrieved on
     mappings:
       - schema:dataset
 
   dataset summary:
-    is_a: dataset
+    is_a: information content entity
     description: "an item that holds summary level information about a dataset"
     slots:
       - source web page
       - source logo
 
   dataset version:
-    is_a: dataset
+    is_a: information content entity
     description: "an item that holds version level information about a dataset"
     slots:
-      - source data file
+      - has dataset
       - ingest date
-      - distribution
+      - has distribution
 
   dataset distribution:
-    is_a: dataset
+    is_a: information content entity
     description: "an item that holds distribution level information about a dataset"
     slots:
-      - download url
+      - distribution download url
 
   biological entity:
     is_a: named thing
