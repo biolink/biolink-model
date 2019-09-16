@@ -347,6 +347,12 @@
          },
          "type": "array"
       },
+      "distribution": {
+         "type": "string"
+      },
+      "downloadURL": {
+         "type": "string"
+      },
       "drug": {
          "items": {
             "type": "string"
@@ -896,6 +902,9 @@
          "description": "the relationship type by which a subject is connected to an object in an association",
          "type": "string"
       },
+      "retrievedOn": {
+         "type": "string"
+      },
       "same_as": {
          "description": "holds between two entities that are considered equivalent to each other",
          "items": {
@@ -913,6 +922,15 @@
       },
       "sex_qualifier": {
          "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+         "type": "string"
+      },
+      "source_data_file": {
+         "type": "string"
+      },
+      "source_version": {
+         "type": "string"
+      },
+      "source_web_page": {
          "type": "string"
       },
       "stage_qualifier": {
@@ -951,6 +969,9 @@
          "description": "a point in time",
          "type": "string"
       },
+      "title": {
+         "type": "string"
+      },
       "treated_by": {
          "description": "holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition",
          "items": {
@@ -965,8 +986,14 @@
          },
          "type": "array"
       },
+      "type": {
+         "type": "string"
+      },
       "update_date": {
          "description": "date on which thing was updated. This can be applied to nodes or edges",
+         "type": "string"
+      },
+      "versionOf": {
          "type": "string"
       },
       "xenologous_to": {
@@ -1413,6 +1440,50 @@
          "title": "ConfidenceLevel",
          "type": "object"
       },
+      "DataFile": {
+         "description": "",
+         "properties": {},
+         "title": "DataFile",
+         "type": "object"
+      },
+      "DataSet": {
+         "description": "",
+         "properties": {},
+         "title": "DataSet",
+         "type": "object"
+      },
+      "DataSetSummary": {
+         "description": "",
+         "properties": {
+            "source_web_page": {
+               "type": "string"
+            }
+         },
+         "title": "DataSetSummary",
+         "type": "object"
+      },
+      "DataSetVersion": {
+         "description": "",
+         "properties": {
+            "distribution": {
+               "type": "string"
+            },
+            "source_data_file": {
+               "type": "string"
+            },
+            "title": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "versionOf": {
+               "type": "string"
+            }
+         },
+         "title": "DataSetVersion",
+         "type": "object"
+      },
       "Device": {
          "description": "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment",
          "properties": {},
@@ -1492,6 +1563,16 @@
             }
          },
          "title": "DiseaseToPhenotypicFeatureAssociation",
+         "type": "object"
+      },
+      "DistributionLevel": {
+         "description": "",
+         "properties": {
+            "downloadURL": {
+               "type": "string"
+            }
+         },
+         "title": "DistributionLevel",
          "type": "object"
       },
       "Drug": {
@@ -3184,6 +3265,19 @@
          "description": "describes the severity of a phenotypic feature or disease",
          "properties": {},
          "title": "SeverityValue",
+         "type": "object"
+      },
+      "SourceFile": {
+         "description": "",
+         "properties": {
+            "retrievedOn": {
+               "type": "string"
+            },
+            "source_version": {
+               "type": "string"
+            }
+         },
+         "title": "SourceFile",
          "type": "object"
       },
       "SpecificityQuantifier": {

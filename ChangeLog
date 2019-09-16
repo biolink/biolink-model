@@ -1,12 +1,41 @@
 CHANGES
 =======
 
+v1.2.3
+------
+
+* Newest biolinkml output + changes from dataset push
+* TBD: tag looks like an JSON object tag - quote it!
+
+v1.2.2
+------
+
+* first passing test
+* Make run against new model
+* Adjustments to type system and association
+* Fix merge issue on contextn
+* Add native URIs and shexJ format
+* Add context that uses metamodel uris instead of slot\_uri and class\_uri
+* Add context that uses metamodel uris instead of slot\_uri and class\_uri
+* Fix JSON object/array parsing conflict
+* SIO:010004 duplication resolved
+* Needed double quotes around string..
+
+v1.2.1
+------
+
+* Bump version to 1.2.1
+* Fix typo
+* Add ChangeLog
+* Switched to png for UML images
+
 v1.2.0
 ------
 
 * Update .gitignore
 * Update setup.cfg
 * Revert "Update setup.py"
+* Use the official uniprot PURLs for uniprot entries
 * Update setup.py
 * Update remaining artifacts
 * Update Makefile and tests
