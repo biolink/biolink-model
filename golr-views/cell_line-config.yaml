@@ -64,11 +64,6 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - has phenotype
   id: has_phenotype
-- cardinality: multi
-  description: connects a thing to a class representing a taxon
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - in taxon
-  id: in_taxon
 id: cell_line
 schema_generating: true
 weight: 20

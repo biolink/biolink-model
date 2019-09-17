@@ -410,6 +410,17 @@
          "description": "TODO",
          "type": "string"
       },
+      "has_attribute": {
+         "description": "connects any named thing to an attribute",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "has_attribute_type": {
+         "description": "connects an attribute to a class that describes it",
+         "type": "string"
+      },
       "has_biological_sequence": {
          "description": "connects a genomic feature to its sequence",
          "type": "string"
@@ -468,6 +479,10 @@
          },
          "type": "array"
       },
+      "has_numeric_value": {
+         "description": "connects a quantity value to a number",
+         "type": "string"
+      },
       "has_part": {
          "description": "holds between wholes and their parts (material entities or processes)",
          "items": {
@@ -493,11 +508,26 @@
          },
          "type": "array"
       },
+      "has_qualitative_value": {
+         "description": "connects an attribute to a value",
+         "type": "string"
+      },
+      "has_quantitative_value": {
+         "description": "connects an attribute to a value",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "has_quotient": {
          "type": "string"
       },
       "has_total": {
          "description": "total number of things in a particular reference set",
+         "type": "string"
+      },
+      "has_unit": {
+         "description": "connects a quantity value to a unit",
          "type": "string"
       },
       "has_zygosity": {
@@ -702,7 +732,7 @@
          "type": "array"
       },
       "model_of": {
-         "description": "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.",
+         "description": "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.",
          "items": {
             "type": "string"
          },
@@ -1005,6 +1035,12 @@
       }
    },
    "properties": {
+      "AbstractEntity": {
+         "description": "Any thing that is not a process or a physical mass-bearing entity",
+         "properties": {},
+         "title": "AbstractEntity",
+         "type": "object"
+      },
       "ActivityAndBehavior": {
          "description": "Activity or behavior of any independent integral living, organization or mechanical actor in the world",
          "properties": {},
@@ -1160,7 +1196,7 @@
          "type": "object"
       },
       "Attribute": {
-         "description": "A property or characteristic of an entity",
+         "description": "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.",
          "properties": {
             "category": {
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
@@ -1177,6 +1213,21 @@
             "full_name": {
                "description": "a long-form human readable name for a thing",
                "type": "string"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -1279,26 +1330,6 @@
          "description": "",
          "properties": {},
          "title": "BiologicalSex",
-         "type": "object"
-      },
-      "Biosample": {
-         "description": "",
-         "properties": {
-            "in_taxon": {
-               "description": "connects a thing to a class representing a taxon",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            }
-         },
-         "title": "Biosample",
-         "type": "object"
-      },
-      "BiosampleToDiseaseOrPhenotypicFeatureAssociation": {
-         "description": "An association between a biosample and a disease or phenotype",
-         "properties": {},
-         "title": "BiosampleToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
       },
       "Carbohydrate": {
@@ -2261,6 +2292,45 @@
          "title": "MacromolecularMachineToMolecularActivityAssociation",
          "type": "object"
       },
+      "MaterialSample": {
+         "description": "A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]",
+         "properties": {
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "title": "MaterialSample",
+         "type": "object"
+      },
+      "MaterialSampleDerivationAssociation": {
+         "description": "An association between a material sample and the material entity it is derived from",
+         "properties": {
+            "object": {
+               "required": true,
+               "type": "string"
+            },
+            "relation": {
+               "required": true,
+               "type": "string"
+            },
+            "subject": {
+               "required": true,
+               "type": "string"
+            }
+         },
+         "title": "MaterialSampleDerivationAssociation",
+         "type": "object"
+      },
+      "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation": {
+         "description": "An association between a material sample and a disease or phenotype",
+         "properties": {},
+         "title": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
+         "type": "object"
+      },
       "Metabolite": {
          "description": "Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.",
          "properties": {},
@@ -2862,7 +2932,7 @@
                "type": "array"
             },
             "model_of": {
-               "description": "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.",
+               "description": "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.",
                "items": {
                   "type": "string"
                },
@@ -3127,6 +3197,12 @@
          "title": "PhenotypicSex",
          "type": "object"
       },
+      "PhysicalEntity": {
+         "description": "An entity that has physical properties such as mass, volume, or charge",
+         "properties": {},
+         "title": "PhysicalEntity",
+         "type": "object"
+      },
       "PhysiologicalProcess": {
          "description": "",
          "properties": {},
@@ -3200,6 +3276,21 @@
          "description": "Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.",
          "properties": {},
          "title": "Publication",
+         "type": "object"
+      },
+      "QuantityValue": {
+         "description": "A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value",
+         "properties": {
+            "has_numeric_value": {
+               "description": "connects a quantity value to a number",
+               "type": "string"
+            },
+            "has_unit": {
+               "description": "connects a quantity value to a unit",
+               "type": "string"
+            }
+         },
+         "title": "QuantityValue",
          "type": "object"
       },
       "RNAProduct": {

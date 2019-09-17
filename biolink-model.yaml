@@ -1309,7 +1309,7 @@ slots:
     slot_uri: rdf:subject
     mappings:
       - owl:annotatedSource
-      - oban:association_has_subject
+      - OBAN:association_has_subject
 
   object:
     is_a: association slot
@@ -1324,7 +1324,7 @@ slots:
     slot_uri: rdf:object
     mappings:
       - owl:annotatedTarget
-      - oban:association_has_object
+      - OBAN:association_has_object
 
   edge label:
     is_a: association slot
@@ -1350,7 +1350,7 @@ slots:
     slot_uri: rdf:predicate
     mappings:
       - "owl:annotatedProperty"
-      - "oban:association_has_predicate"
+      - "OBAN:association_has_predicate"
 
   negated:
     is_a: association slot

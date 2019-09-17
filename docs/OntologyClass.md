@@ -20,12 +20,13 @@ URI: [biolink:OntologyClass](https://w3id.org/biolink/vocab/OntologyClass)
 
 ## Mixin for
 
- * [Attribute](Attribute.md) (mixin)  - A property or characteristic of an entity
+ * [Attribute](Attribute.md) (mixin)  - A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
 
 ## Referenced by class
 
  *  **[Association](Association.md)** *[association type](association_type.md)*  <sub>OPT</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[quantifier qualifier](gene_to_expression_site_association_quantifier_qualifier.md)*  <sub>OPT</sub>  **[OntologyClass](OntologyClass.md)**
+ *  **[Attribute](Attribute.md)** *[has attribute type](has_attribute_type.md)*  <sub>OPT</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[NamedThing](NamedThing.md)** *[has molecular consequence](has_molecular_consequence.md)*  <sub>0..*</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md)** *[interacting molecules category](interacting_molecules_category.md)*  <sub>OPT</sub>  **[OntologyClass](OntologyClass.md)**
  *  **[Association](Association.md)** *[qualifiers](qualifiers.md)*  <sub>0..*</sub>  **[OntologyClass](OntologyClass.md)**

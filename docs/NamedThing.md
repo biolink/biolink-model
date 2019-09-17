@@ -17,8 +17,10 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  * [DataSet](DataSet.md)
  * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
  * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
+ * [MaterialSample](MaterialSample.md) - A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
  * [Occurrent](Occurrent.md) - A processual entity
  * [OntologyClass](OntologyClass.md) - a concept or class in an ontology, vocabulary or thesaurus
+ * [PhysicalEntity](PhysicalEntity.md) - An entity that has physical properties such as mass, volume, or charge
  * [PlanetaryEntity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet
 
 ## Referenced by class
@@ -36,10 +38,12 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  *  **[Occurrent](Occurrent.md)** *[has input](has_input.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[has part](has_part.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[Occurrent](Occurrent.md)** *[has participant](has_participant.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[Attribute](Attribute.md)** *[has qualitative value](has_qualitative_value.md)*  <sub>OPT</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[homologous to](homologous_to.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[interacts with](interacts_with.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[located in](located_in.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[location of](location_of.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
+ *  **[MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md)** *[object](material_sample_derivation_association_object.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[model of](model_of.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
  *  **[ModelToDiseaseMixin](ModelToDiseaseMixin.md)** *[subject](model_to_disease_mixin_subject.md)*  <sub>REQ</sub>  **[NamedThing](NamedThing.md)**
  *  **[NamedThing](NamedThing.md)** *[negatively regulates](negatively_regulates.md)*  <sub>0..*</sub>  **[NamedThing](NamedThing.md)**
@@ -127,7 +131,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
  * [derives from](derives_from.md)  <sub>0..*</sub>
     * Description: holds between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
     * range: [NamedThing](NamedThing.md)
-    * in subsets: (translator_minimal)
+    * in subsets: (translator_minimal,samples)
  * [derives into](derives_into.md)  <sub>0..*</sub>
     * Description: holds between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity
     * range: [NamedThing](NamedThing.md)
@@ -188,7 +192,7 @@ URI: [biolink:NamedThing](https://w3id.org/biolink/vocab/NamedThing)
     * range: [Disease](Disease.md)
     * in subsets: (translator_minimal)
  * [model of](model_of.md)  <sub>0..*</sub>
-    * Description: holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.
+    * Description: holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
     * range: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>

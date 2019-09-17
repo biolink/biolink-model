@@ -5,6 +5,19 @@ display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
 document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
 - genotypic sex
 fields:
+- description: connects an attribute to a class that describes it
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has attribute type
+  id: has_attribute_type
+- cardinality: multi
+  description: connects an attribute to a value
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has quantitative value
+  id: has_quantitative_value
+- description: connects an attribute to a value
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has qualitative value
+  id: has_qualitative_value
 - description: A unique identifier for a thing. Must be either a CURIE shorthand for
     a URI or a complete URI
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
