@@ -1,5 +1,5 @@
 # Auto generated from biolink-model.yaml by pythongen.py version: 0.2.1
-# Generation date: 2019-08-20 14:27
+# Generation date: 2019-09-17 13:01
 # Schema: biolink_model
 #
 # id: https://w3id.org/biolink/biolink-model
@@ -21,6 +21,7 @@ metamodel_version = "1.4.1"
 # Namespaces
 BFO = Namespace('http://purl.obolibrary.org/obo/BFO_')
 BIOGRID = Namespace('http://thebiogrid.org/')
+BIOSAMPLE = Namespace('http://example.org/UNKNOWN/BioSample/')
 CHEBI = Namespace('http://purl.obolibrary.org/obo/CHEBI_')
 CHEMBL_COMPOUND = Namespace('http://identifiers.org/chembl.compound/')
 CHEMBL_TARGET = Namespace('http://identifiers.org/chembl.target/')
@@ -36,6 +37,7 @@ ENSEMBL = Namespace('http://ensembl.org/id/')
 FAO = Namespace('http://purl.obolibrary.org/obo/FAO_')
 GENO = Namespace('http://purl.obolibrary.org/obo/GENO_')
 GO = Namespace('http://purl.obolibrary.org/obo/GO_')
+GOLD_META = Namespace('http://identifiers.org/gold.meta/')
 HANCESTRO = Namespace('http://example.org/UNKNOWN/HANCESTRO/')
 HGNC = Namespace('http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=')
 HP = Namespace('http://purl.obolibrary.org/obo/HP_')
@@ -47,6 +49,7 @@ MONDO = Namespace('http://purl.obolibrary.org/obo/MONDO_')
 NCBIGENE = Namespace('http://www.ncbi.nlm.nih.gov/gene/')
 NCIT = Namespace('http://purl.obolibrary.org/obo/NCIT_')
 OBAN = Namespace('http://purl.org/oban/')
+OBI = Namespace('http://purl.obolibrary.org/obo/OBI_')
 OGMS = Namespace('http://purl.obolibrary.org/obo/OGMS_')
 OIO = Namespace('http://www.geneontology.org/formats/oboInOwl#')
 PANTHER = Namespace('http://www.pantherdb.org/panther/family.do?clsAccession=')
@@ -78,9 +81,9 @@ DCT = Namespace('http://example.org/UNKNOWN/dct/')
 DCTERMS = Namespace('http://purl.org/dc/terms/')
 DICTYBASE = Namespace('http://dictybase.org/gene/')
 FALDO = Namespace('http://biohackathon.org/resource/faldo#')
-OBAN = Namespace('http://example.org/UNKNOWN/oban/')
 OWL = Namespace('http://www.w3.org/2002/07/owl#')
 PAV = Namespace('http://purl.org/pav/')
+QUD = Namespace('http://qudt.org/1.1/schema/qudt#')
 RDF = Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = Namespace('http://www.w3.org/2000/01/rdf-schema#')
 SHEX = Namespace('http://www.w3.org/ns/shex#')
@@ -146,11 +149,11 @@ class Frequency(String):
     type_model_uri = BIOLINK.Frequency
 
 
-class PerecentageFrequencyValue(Double):
+class PercentageFrequencyValue(Double):
     type_class_uri = UO["0000187"]
     type_class_curie = "UO:0000187"
-    type_name = "perecentage frequency value"
-    type_model_uri = BIOLINK.PerecentageFrequencyValue
+    type_name = "percentage frequency value"
+    type_model_uri = BIOLINK.PercentageFrequencyValue
 
 
 class Quotient(Double):
@@ -278,7 +281,7 @@ class PopulationOfIndividualOrganismsId(OrganismalEntityId):
     pass
 
 
-class BiosampleId(OrganismalEntityId):
+class MaterialSampleId(NamedThingId):
     pass
 
 
@@ -542,11 +545,15 @@ class ChemicalToGeneAssociationId(AssociationId):
     pass
 
 
-class BiosampleToThingAssociationId(AssociationId):
+class MaterialSampleToThingAssociationId(AssociationId):
     pass
 
 
-class BiosampleToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
+class MaterialSampleDerivationAssociationId(AssociationId):
+    pass
+
+
+class MaterialSampleToDiseaseOrPhenotypicFeatureAssociationId(AssociationId):
     pass
 
 
@@ -698,6 +705,10 @@ class OccurrentId(NamedThingId):
     pass
 
 
+class PhysicalEntityId(NamedThingId):
+    pass
+
+
 class BiologicalProcessOrActivityId(BiologicalEntityId):
     pass
 
@@ -738,7 +749,7 @@ class CellId(AnatomicalEntityId):
     pass
 
 
-class CellLineId(BiosampleId):
+class CellLineId(OrganismalEntityId):
     pass
 
 
@@ -746,10 +757,23 @@ class GrossAnatomicalStructureId(AnatomicalEntityId):
     pass
 
 
-@dataclass
-class Attribute(YAMLRoot):
+class AbstractEntity(YAMLRoot):
     """
-    A property or characteristic of an entity
+    Any thing that is not a process or a physical mass-bearing entity
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.AbstractEntity
+    class_class_curie: ClassVar[str] = "biolink:AbstractEntity"
+    class_name: ClassVar[str] = "abstract entity"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.AbstractEntity
+
+
+@dataclass
+class Attribute(AbstractEntity):
+    """
+    A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age,
+    crispiness. An environmental sample may have attributes such as depth, lat, long, material.
     """
     _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "subclass_of"]
 
@@ -758,15 +782,46 @@ class Attribute(YAMLRoot):
     class_name: ClassVar[str] = "attribute"
     class_model_uri: ClassVar[URIRef] = BIOLINK.Attribute
 
-    id: Union[ElementIdentifier, AttributeId]
-    name: Union[str, LabelType]
+    id: Union[ElementIdentifier, AttributeId] = None
+    name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
+    has_attribute_type: Optional[Union[ElementIdentifier, OntologyClassId]] = None
+    has_quantitative_value: List[Union[dict, "QuantityValue"]] = empty_list()
+    has_qualitative_value: Optional[Union[ElementIdentifier, NamedThingId]] = None
 
     def __post_init__(self):
         if self.id is None:
             raise ValueError(f"id must be supplied")
         if self.id is not None and not isinstance(self.id, AttributeId):
             self.id = AttributeId(self.id)
+        if self.has_attribute_type is not None and not isinstance(self.has_attribute_type, OntologyClassId):
+            self.has_attribute_type = OntologyClassId(self.has_attribute_type)
+        self.has_quantitative_value = [v if isinstance(v, QuantityValue)
+                                       else QuantityValue(**v) for v in self.has_quantitative_value]
+        if self.has_qualitative_value is not None and not isinstance(self.has_qualitative_value, NamedThingId):
+            self.has_qualitative_value = NamedThingId(self.has_qualitative_value)
+        super().__post_init__()
+
+
+@dataclass
+class QuantityValue(AbstractEntity):
+    """
+    A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric
+    value
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.QuantityValue
+    class_class_curie: ClassVar[str] = "biolink:QuantityValue"
+    class_name: ClassVar[str] = "quantity value"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.QuantityValue
+
+    has_unit: Optional[Union[str, Unit]] = None
+    has_numeric_value: Optional[float] = None
+
+    def __post_init__(self):
+        if self.has_unit is not None and not isinstance(self.has_unit, Unit):
+            self.has_unit = Unit(self.has_unit)
         super().__post_init__()
 
 
@@ -1263,23 +1318,31 @@ class PopulationOfIndividualOrganisms(OrganismalEntity):
 
 
 @dataclass
-class Biosample(OrganismalEntity):
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "has_phenotype", "in_taxon"]
+class MaterialSample(NamedThing):
+    """
+    A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a
+    portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use.
+    [SIO]
+    """
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with"]
 
-    class_class_uri: ClassVar[URIRef] = SIO["001050"]
-    class_class_curie: ClassVar[str] = "SIO:001050"
-    class_name: ClassVar[str] = "biosample"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.Biosample
+    class_class_uri: ClassVar[URIRef] = BIOLINK.MaterialSample
+    class_class_curie: ClassVar[str] = "biolink:MaterialSample"
+    class_name: ClassVar[str] = "material sample"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSample
 
-    id: Union[ElementIdentifier, BiosampleId] = None
+    id: Union[ElementIdentifier, MaterialSampleId] = None
     name: Union[str, LabelType] = None
     category: List[Union[str, IriType]] = empty_list()
+    has_attribute: List[Union[ElementIdentifier, AttributeId]] = empty_list()
 
     def __post_init__(self):
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if self.id is not None and not isinstance(self.id, BiosampleId):
-            self.id = BiosampleId(self.id)
+        if self.id is not None and not isinstance(self.id, MaterialSampleId):
+            self.id = MaterialSampleId(self.id)
+        self.has_attribute = [v if isinstance(v, AttributeId)
+                              else AttributeId(v) for v in self.has_attribute]
         super().__post_init__()
 
 
@@ -2912,54 +2975,92 @@ class ChemicalToGeneAssociation(Association):
 
 
 @dataclass
-class BiosampleToThingAssociation(Association):
+class MaterialSampleToThingAssociation(Association):
     """
-    An association between a biosample and something
+    An association between a material sample and something
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BiosampleToThingAssociation
-    class_class_curie: ClassVar[str] = "biolink:BiosampleToThingAssociation"
-    class_name: ClassVar[str] = "biosample to thing association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.BiosampleToThingAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleToThingAssociation
+    class_class_curie: ClassVar[str] = "biolink:MaterialSampleToThingAssociation"
+    class_name: ClassVar[str] = "material sample to thing association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleToThingAssociation
 
-    subject: Union[ElementIdentifier, BiosampleId] = None
+    subject: Union[ElementIdentifier, MaterialSampleId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[str, BiosampleToThingAssociationId] = bnode()
+    id: Union[str, MaterialSampleToThingAssociationId] = bnode()
 
     def __post_init__(self):
         if self.subject is None:
             raise ValueError(f"subject must be supplied")
-        if self.subject is not None and not isinstance(self.subject, BiosampleId):
-            self.subject = BiosampleId(self.subject)
+        if self.subject is not None and not isinstance(self.subject, MaterialSampleId):
+            self.subject = MaterialSampleId(self.subject)
         super().__post_init__()
 
 
 @dataclass
-class BiosampleToDiseaseOrPhenotypicFeatureAssociation(Association):
+class MaterialSampleDerivationAssociation(Association):
     """
-    An association between a biosample and a disease or phenotype
+    An association between a material sample and the material entity it is derived from
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BIOLINK.BiosampleToDiseaseOrPhenotypicFeatureAssociation
-    class_class_curie: ClassVar[str] = "biolink:BiosampleToDiseaseOrPhenotypicFeatureAssociation"
-    class_name: ClassVar[str] = "biosample to disease or phenotypic feature association"
-    class_model_uri: ClassVar[URIRef] = BIOLINK.BiosampleToDiseaseOrPhenotypicFeatureAssociation
+    class_class_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleDerivationAssociation
+    class_class_curie: ClassVar[str] = "biolink:MaterialSampleDerivationAssociation"
+    class_name: ClassVar[str] = "material sample derivation association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleDerivationAssociation
+
+    subject: Union[ElementIdentifier, MaterialSampleId] = None
+    relation: Union[str, URIorCURIE] = None
+    object: Union[ElementIdentifier, NamedThingId] = None
+    edge_label: Union[str, LabelType] = None
+    id: Union[str, MaterialSampleDerivationAssociationId] = bnode()
+
+    def __post_init__(self):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if self.id is not None and not isinstance(self.id, MaterialSampleDerivationAssociationId):
+            self.id = MaterialSampleDerivationAssociationId(self.id)
+        if self.subject is None:
+            raise ValueError(f"subject must be supplied")
+        if self.subject is not None and not isinstance(self.subject, MaterialSampleId):
+            self.subject = MaterialSampleId(self.subject)
+        if self.relation is None:
+            raise ValueError(f"relation must be supplied")
+        if self.relation is not None and not isinstance(self.relation, URIorCURIE):
+            self.relation = URIorCURIE(self.relation)
+        if self.object is None:
+            raise ValueError(f"object must be supplied")
+        if self.object is not None and not isinstance(self.object, NamedThingId):
+            self.object = NamedThingId(self.object)
+        super().__post_init__()
+
+
+@dataclass
+class MaterialSampleToDiseaseOrPhenotypicFeatureAssociation(Association):
+    """
+    An association between a material sample and a disease or phenotype
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
+    class_class_curie: ClassVar[str] = "biolink:MaterialSampleToDiseaseOrPhenotypicFeatureAssociation"
+    class_name: ClassVar[str] = "material sample to disease or phenotypic feature association"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
 
     subject: Union[ElementIdentifier, NamedThingId] = None
     relation: Union[str, URIorCURIE] = None
     object: Union[ElementIdentifier, NamedThingId] = None
     edge_label: Union[str, LabelType] = None
-    id: Union[str, BiosampleToDiseaseOrPhenotypicFeatureAssociationId] = bnode()
+    id: Union[str, MaterialSampleToDiseaseOrPhenotypicFeatureAssociationId] = bnode()
 
     def __post_init__(self):
         if self.id is None:
             raise ValueError(f"id must be supplied")
-        if self.id is not None and not isinstance(self.id, BiosampleToDiseaseOrPhenotypicFeatureAssociationId):
-            self.id = BiosampleToDiseaseOrPhenotypicFeatureAssociationId(self.id)
+        if self.id is not None and not isinstance(self.id, MaterialSampleToDiseaseOrPhenotypicFeatureAssociationId):
+            self.id = MaterialSampleToDiseaseOrPhenotypicFeatureAssociationId(self.id)
         super().__post_init__()
 
 
@@ -4093,6 +4194,30 @@ class Occurrent(NamedThing):
 
 
 @dataclass
+class PhysicalEntity(NamedThing):
+    """
+    An entity that has physical properties such as mass, volume, or charge
+    """
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with"]
+
+    class_class_uri: ClassVar[URIRef] = BIOLINK.PhysicalEntity
+    class_class_curie: ClassVar[str] = "biolink:PhysicalEntity"
+    class_name: ClassVar[str] = "physical entity"
+    class_model_uri: ClassVar[URIRef] = BIOLINK.PhysicalEntity
+
+    id: Union[ElementIdentifier, PhysicalEntityId] = None
+    name: Union[str, LabelType] = None
+    category: List[Union[str, IriType]] = empty_list()
+
+    def __post_init__(self):
+        if self.id is None:
+            raise ValueError(f"id must be supplied")
+        if self.id is not None and not isinstance(self.id, PhysicalEntityId):
+            self.id = PhysicalEntityId(self.id)
+        super().__post_init__()
+
+
+@dataclass
 class BiologicalProcessOrActivity(BiologicalEntity):
     """
     Either an individual molecular activity, or a collection of causally connected molecular activities
@@ -4324,8 +4449,8 @@ class Cell(AnatomicalEntity):
 
 
 @dataclass
-class CellLine(Biosample):
-    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "has_phenotype", "in_taxon"]
+class CellLine(OrganismalEntity):
+    _inherited_slots: ClassVar[List[str]] = ["related_to", "interacts_with", "has_phenotype"]
 
     class_class_uri: ClassVar[URIRef] = CLO["0000031"]
     class_class_curie: ClassVar[str] = "CLO:0000031"

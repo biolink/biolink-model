@@ -12,7 +12,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * Attribute
  * <p>
- * A property or characteristic of an entity
+ * A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -20,6 +20,9 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "category",
     "description",
     "full_name",
+    "has_attribute_type",
+    "has_qualitative_value",
+    "has_quantitative_value",
     "id",
     "interacts_with",
     "iri",
@@ -54,6 +57,27 @@ public class Attribute {
     @JsonProperty("full_name")
     @JsonPropertyDescription("a long-form human readable name for a thing")
     private String fullName;
+    /**
+     * connects an attribute to a class that describes it
+     * 
+     */
+    @JsonProperty("has_attribute_type")
+    @JsonPropertyDescription("connects an attribute to a class that describes it")
+    private String hasAttributeType;
+    /**
+     * connects an attribute to a value
+     * 
+     */
+    @JsonProperty("has_qualitative_value")
+    @JsonPropertyDescription("connects an attribute to a value")
+    private String hasQualitativeValue;
+    /**
+     * connects an attribute to a value
+     * 
+     */
+    @JsonProperty("has_quantitative_value")
+    @JsonPropertyDescription("connects an attribute to a value")
+    private List<String> hasQuantitativeValue = new ArrayList<String>();
     /**
      * A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
      * (Required)
@@ -174,6 +198,60 @@ public class Attribute {
     @JsonProperty("full_name")
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    /**
+     * connects an attribute to a class that describes it
+     * 
+     */
+    @JsonProperty("has_attribute_type")
+    public String getHasAttributeType() {
+        return hasAttributeType;
+    }
+
+    /**
+     * connects an attribute to a class that describes it
+     * 
+     */
+    @JsonProperty("has_attribute_type")
+    public void setHasAttributeType(String hasAttributeType) {
+        this.hasAttributeType = hasAttributeType;
+    }
+
+    /**
+     * connects an attribute to a value
+     * 
+     */
+    @JsonProperty("has_qualitative_value")
+    public String getHasQualitativeValue() {
+        return hasQualitativeValue;
+    }
+
+    /**
+     * connects an attribute to a value
+     * 
+     */
+    @JsonProperty("has_qualitative_value")
+    public void setHasQualitativeValue(String hasQualitativeValue) {
+        this.hasQualitativeValue = hasQualitativeValue;
+    }
+
+    /**
+     * connects an attribute to a value
+     * 
+     */
+    @JsonProperty("has_quantitative_value")
+    public List<String> getHasQuantitativeValue() {
+        return hasQuantitativeValue;
+    }
+
+    /**
+     * connects an attribute to a value
+     * 
+     */
+    @JsonProperty("has_quantitative_value")
+    public void setHasQuantitativeValue(List<String> hasQuantitativeValue) {
+        this.hasQuantitativeValue = hasQuantitativeValue;
     }
 
     /**
@@ -344,12 +422,12 @@ public class Attribute {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("category", category).append("description", description).append("fullName", fullName).append("id", id).append("interactsWith", interactsWith).append("iri", iri).append("name", name).append("nodeProperty", nodeProperty).append("relatedTo", relatedTo).append("subclassOf", subclassOf).append("synonym", synonym).append("systematicSynonym", systematicSynonym).toString();
+        return new ToStringBuilder(this).append("category", category).append("description", description).append("fullName", fullName).append("hasAttributeType", hasAttributeType).append("hasQualitativeValue", hasQualitativeValue).append("hasQuantitativeValue", hasQuantitativeValue).append("id", id).append("interactsWith", interactsWith).append("iri", iri).append("name", name).append("nodeProperty", nodeProperty).append("relatedTo", relatedTo).append("subclassOf", subclassOf).append("synonym", synonym).append("systematicSynonym", systematicSynonym).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(iri).append(nodeProperty).append(systematicSynonym).append(description).append(fullName).append(relatedTo).append(interactsWith).append(synonym).append(subclassOf).append(name).append(id).append(category).toHashCode();
+        return new HashCodeBuilder().append(hasQuantitativeValue).append(iri).append(nodeProperty).append(systematicSynonym).append(description).append(fullName).append(relatedTo).append(interactsWith).append(synonym).append(subclassOf).append(name).append(hasAttributeType).append(id).append(category).append(hasQualitativeValue).toHashCode();
     }
 
     @Override
@@ -361,7 +439,7 @@ public class Attribute {
             return false;
         }
         Attribute rhs = ((Attribute) other);
-        return new EqualsBuilder().append(iri, rhs.iri).append(nodeProperty, rhs.nodeProperty).append(systematicSynonym, rhs.systematicSynonym).append(description, rhs.description).append(fullName, rhs.fullName).append(relatedTo, rhs.relatedTo).append(interactsWith, rhs.interactsWith).append(synonym, rhs.synonym).append(subclassOf, rhs.subclassOf).append(name, rhs.name).append(id, rhs.id).append(category, rhs.category).isEquals();
+        return new EqualsBuilder().append(hasQuantitativeValue, rhs.hasQuantitativeValue).append(iri, rhs.iri).append(nodeProperty, rhs.nodeProperty).append(systematicSynonym, rhs.systematicSynonym).append(description, rhs.description).append(fullName, rhs.fullName).append(relatedTo, rhs.relatedTo).append(interactsWith, rhs.interactsWith).append(synonym, rhs.synonym).append(subclassOf, rhs.subclassOf).append(name, rhs.name).append(hasAttributeType, rhs.hasAttributeType).append(id, rhs.id).append(category, rhs.category).append(hasQualitativeValue, rhs.hasQualitativeValue).isEquals();
     }
 
 }

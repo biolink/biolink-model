@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2019-08-20 14:27\nSchema: biolink_model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2019-09-17 13:01\nSchema: biolink_model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "_comments": null,
       "type": {
@@ -7,6 +7,7 @@
       },
       "BFO": "http://purl.obolibrary.org/obo/BFO_",
       "BIOGRID": "http://thebiogrid.org/",
+      "BioSample": "http://example.org/UNKNOWN/BioSample/",
       "CHEBI": "http://purl.obolibrary.org/obo/CHEBI_",
       "CHEMBL.COMPOUND": "http://identifiers.org/chembl.compound/",
       "CHEMBL.TARGET": "http://identifiers.org/chembl.target/",
@@ -22,6 +23,7 @@
       "FAO": "http://purl.obolibrary.org/obo/FAO_",
       "GENO": "http://purl.obolibrary.org/obo/GENO_",
       "GO": "http://purl.obolibrary.org/obo/GO_",
+      "GOLD.META": "http://identifiers.org/gold.meta/",
       "HANCESTRO": "http://example.org/UNKNOWN/HANCESTRO/",
       "HGNC": "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=",
       "HP": "http://purl.obolibrary.org/obo/HP_",
@@ -33,6 +35,7 @@
       "NCBIGene": "http://www.ncbi.nlm.nih.gov/gene/",
       "NCIT": "http://purl.obolibrary.org/obo/NCIT_",
       "OBAN": "http://purl.org/oban/",
+      "OBI": "http://purl.obolibrary.org/obo/OBI_",
       "OGMS": "http://purl.obolibrary.org/obo/OGMS_",
       "OIO": "http://www.geneontology.org/formats/oboInOwl#",
       "PANTHER": "http://www.pantherdb.org/panther/family.do?clsAccession=",
@@ -64,9 +67,9 @@
       "dictyBase": "http://dictybase.org/gene/",
       "faldo": "http://biohackathon.org/resource/faldo#",
       "metatype": "https://w3id.org/biolink/biolinkml/type/",
-      "oban": "http://example.org/UNKNOWN/oban/",
       "owl": "http://www.w3.org/2002/07/owl#",
       "pav": "http://purl.org/pav/",
+      "qud": "http://qudt.org/1.1/schema/qudt#",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "shex": "http://www.w3.org/ns/shex#",
@@ -270,6 +273,12 @@
          "@type": "@id",
          "@id": "RO:0002435"
       },
+      "has_attribute": {
+         "@type": "@id"
+      },
+      "has_attribute_type": {
+         "@type": "@id"
+      },
       "has_biomarker": {
          "@type": "@id"
       },
@@ -300,6 +309,9 @@
       "has_molecular_consequence": {
          "@type": "@id"
       },
+      "has_numeric_value": {
+         "@type": "xsd:double"
+      },
       "has_part": {
          "@type": "@id",
          "@id": "BFO:0000051"
@@ -315,11 +327,20 @@
          "@type": "@id",
          "@id": "RO:0002200"
       },
+      "has_qualitative_value": {
+         "@type": "@id"
+      },
+      "has_quantitative_value": {
+         "@type": "@id"
+      },
       "has_quotient": {
          "@type": "xsd:double"
       },
       "has_total": {
          "@type": "xsd:integer"
+      },
+      "has_unit": {
+         "@type": "UO:0000000"
       },
       "has_zygosity": {
          "@type": "@id"
@@ -610,9 +631,6 @@
       },
       "BiologicalProcess": {
          "@id": "GO:0008150"
-      },
-      "Biosample": {
-         "@id": "SIO:001050"
       },
       "Cell": {
          "@id": "GO:0005623"

@@ -97,21 +97,24 @@ message Association
   optional hasEvidence None = 13
   optional clinicalModifierQualifier None = 14
  }
-// A property or characteristic of an entity
+// A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
 message Attribute
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  optional nodeProperty None = 6
-  optional iri None = 7
-  repeated synonym None = 8
-  optional fullName None = 9
-  optional description None = 10
-  repeated systematicSynonym None = 11
-  repeated subclassOf None = 12
+  optional hasAttributeType None = 1
+  repeated hasQuantitativeValue None = 2
+  optional hasQualitativeValue None = 3
+  id None = 4
+  name None = 5
+  repeated category None = 6
+  repeated relatedTo None = 7
+  repeated interactsWith None = 8
+  optional nodeProperty None = 9
+  optional iri None = 10
+  repeated synonym None = 11
+  optional fullName None = 12
+  optional description None = 13
+  repeated systematicSynonym None = 14
+  repeated subclassOf None = 15
  }
 // One or more causally connected executions of molecular functions
 message BiologicalProcess
@@ -151,49 +154,21 @@ message BiologicalProcessOrActivity
  }
 message BiologicalSex
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  optional nodeProperty None = 6
-  optional iri None = 7
-  repeated synonym None = 8
-  optional fullName None = 9
-  optional description None = 10
-  repeated systematicSynonym None = 11
-  repeated subclassOf None = 12
- }
-message Biosample
- {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  optional nodeProperty None = 6
-  optional iri None = 7
-  repeated synonym None = 8
-  optional fullName None = 9
-  optional description None = 10
-  repeated systematicSynonym None = 11
-  repeated hasPhenotype None = 12
-  repeated inTaxon None = 13
- }
-// An association between a biosample and a disease or phenotype
-message BiosampleToDiseaseOrPhenotypicFeatureAssociation
- {
-  subject None = 1
-  relation None = 2
-  object None = 3
+  optional hasAttributeType None = 1
+  repeated hasQuantitativeValue None = 2
+  optional hasQualitativeValue None = 3
   id None = 4
-  optional negated None = 5
-  optional associationType None = 6
-  repeated qualifiers None = 7
-  repeated publications None = 8
-  optional providedBy None = 9
-  optional associationSlot None = 10
-  edgeLabel None = 11
+  name None = 5
+  repeated category None = 6
+  repeated relatedTo None = 7
+  repeated interactsWith None = 8
+  optional nodeProperty None = 9
+  optional iri None = 10
+  repeated synonym None = 11
+  optional fullName None = 12
+  optional description None = 13
+  repeated systematicSynonym None = 14
+  repeated subclassOf None = 15
  }
 message Carbohydrate
  {
@@ -329,7 +304,6 @@ message CellLine
   optional description None = 10
   repeated systematicSynonym None = 11
   repeated hasPhenotype None = 12
-  repeated inTaxon None = 13
  }
 // An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
 message CellLineToDiseaseOrPhenotypicFeatureAssociation
@@ -509,18 +483,21 @@ message ClinicalIntervention
 // Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
 message ClinicalModifier
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  optional nodeProperty None = 6
-  optional iri None = 7
-  repeated synonym None = 8
-  optional fullName None = 9
-  optional description None = 10
-  repeated systematicSynonym None = 11
-  repeated subclassOf None = 12
+  optional hasAttributeType None = 1
+  repeated hasQuantitativeValue None = 2
+  optional hasQualitativeValue None = 3
+  id None = 4
+  name None = 5
+  repeated category None = 6
+  repeated relatedTo None = 7
+  repeated interactsWith None = 8
+  optional nodeProperty None = 9
+  optional iri None = 10
+  repeated synonym None = 11
+  optional fullName None = 12
+  optional description None = 13
+  repeated systematicSynonym None = 14
+  repeated subclassOf None = 15
  }
 message ClinicalTrial
  {
@@ -1008,18 +985,21 @@ message ExonToTranscriptRelationship
 // describes the frequency of occurrence of an event or condition
 message FrequencyValue
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  optional nodeProperty None = 6
-  optional iri None = 7
-  repeated synonym None = 8
-  optional fullName None = 9
-  optional description None = 10
-  repeated systematicSynonym None = 11
-  repeated subclassOf None = 12
+  optional hasAttributeType None = 1
+  repeated hasQuantitativeValue None = 2
+  optional hasQualitativeValue None = 3
+  id None = 4
+  name None = 5
+  repeated category None = 6
+  repeated relatedTo None = 7
+  repeated interactsWith None = 8
+  optional nodeProperty None = 9
+  optional iri None = 10
+  repeated synonym None = 11
+  optional fullName None = 12
+  optional description None = 13
+  repeated systematicSynonym None = 14
+  repeated subclassOf None = 15
  }
 // An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
 message FunctionalAssociation
@@ -1781,18 +1761,21 @@ message GenotypeToVariantAssociation
 // An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
 message GenotypicSex
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  optional nodeProperty None = 6
-  optional iri None = 7
-  repeated synonym None = 8
-  optional fullName None = 9
-  optional description None = 10
-  repeated systematicSynonym None = 11
-  repeated subclassOf None = 12
+  optional hasAttributeType None = 1
+  repeated hasQuantitativeValue None = 2
+  optional hasQualitativeValue None = 3
+  id None = 4
+  name None = 5
+  repeated category None = 6
+  repeated relatedTo None = 7
+  repeated interactsWith None = 8
+  optional nodeProperty None = 9
+  optional iri None = 10
+  repeated synonym None = 11
+  optional fullName None = 12
+  optional description None = 13
+  repeated systematicSynonym None = 14
+  repeated subclassOf None = 15
  }
 // a location that can be described in lat/long coordinates
 message GeographicLocation
@@ -2117,6 +2100,52 @@ message MacromolecularMachineToCellularComponentAssociation
  }
 // A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution
 message MacromolecularMachineToMolecularActivityAssociation
+ {
+  subject None = 1
+  relation None = 2
+  object None = 3
+  id None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  edgeLabel None = 11
+ }
+// A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
+message MaterialSample
+ {
+  id None = 1
+  name None = 2
+  repeated category None = 3
+  repeated relatedTo None = 4
+  repeated interactsWith None = 5
+  optional nodeProperty None = 6
+  optional iri None = 7
+  repeated synonym None = 8
+  optional fullName None = 9
+  optional description None = 10
+  repeated systematicSynonym None = 11
+  repeated hasAttribute None = 12
+ }
+// An association between a material sample and the material entity it is derived from
+message MaterialSampleDerivationAssociation
+ {
+  subject None = 1
+  relation None = 2
+  object None = 3
+  id None = 4
+  optional negated None = 5
+  optional associationType None = 6
+  repeated qualifiers None = 7
+  repeated publications None = 8
+  optional providedBy None = 9
+  optional associationSlot None = 10
+  edgeLabel None = 11
+ }
+// An association between a material sample and a disease or phenotype
+message MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
  {
   subject None = 1
   relation None = 2
@@ -2510,18 +2539,21 @@ message Occurrent
 // The age group in which manifestations appear
 message Onset
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  optional nodeProperty None = 6
-  optional iri None = 7
-  repeated synonym None = 8
-  optional fullName None = 9
-  optional description None = 10
-  repeated systematicSynonym None = 11
-  repeated subclassOf None = 12
+  optional hasAttributeType None = 1
+  repeated hasQuantitativeValue None = 2
+  optional hasQualitativeValue None = 3
+  id None = 4
+  name None = 5
+  repeated category None = 6
+  repeated relatedTo None = 7
+  repeated interactsWith None = 8
+  optional nodeProperty None = 9
+  optional iri None = 10
+  repeated synonym None = 11
+  optional fullName None = 12
+  optional description None = 13
+  repeated systematicSynonym None = 14
+  repeated subclassOf None = 15
  }
 // a concept or class in an ontology, vocabulary or thesaurus
 message OntologyClass
@@ -2629,6 +2661,25 @@ message PhenotypicFeature
 // An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
 message PhenotypicSex
  {
+  optional hasAttributeType None = 1
+  repeated hasQuantitativeValue None = 2
+  optional hasQualitativeValue None = 3
+  id None = 4
+  name None = 5
+  repeated category None = 6
+  repeated relatedTo None = 7
+  repeated interactsWith None = 8
+  optional nodeProperty None = 9
+  optional iri None = 10
+  repeated synonym None = 11
+  optional fullName None = 12
+  optional description None = 13
+  repeated systematicSynonym None = 14
+  repeated subclassOf None = 15
+ }
+// An entity that has physical properties such as mass, volume, or charge
+message PhysicalEntity
+ {
   id None = 1
   name None = 2
   repeated category None = 3
@@ -2640,7 +2691,6 @@ message PhenotypicSex
   optional fullName None = 9
   optional description None = 10
   repeated systematicSynonym None = 11
-  repeated subclassOf None = 12
  }
 message PhysiologicalProcess
  {
@@ -2903,6 +2953,12 @@ message Publication
   optional description None = 10
   repeated systematicSynonym None = 11
  }
+// A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
+message QuantityValue
+ {
+  optional hasUnit None = 1
+  optional hasNumericValue None = 2
+ }
 // An OWL property used as an edge label
 message RelationshipType
  {
@@ -3152,18 +3208,21 @@ message SequenceVariant
 // describes the severity of a phenotypic feature or disease
 message SeverityValue
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  optional nodeProperty None = 6
-  optional iri None = 7
-  repeated synonym None = 8
-  optional fullName None = 9
-  optional description None = 10
-  repeated systematicSynonym None = 11
-  repeated subclassOf None = 12
+  optional hasAttributeType None = 1
+  repeated hasQuantitativeValue None = 2
+  optional hasQualitativeValue None = 3
+  id None = 4
+  name None = 5
+  repeated category None = 6
+  repeated relatedTo None = 7
+  repeated interactsWith None = 8
+  optional nodeProperty None = 9
+  optional iri None = 10
+  repeated synonym None = 11
+  optional fullName None = 12
+  optional description None = 13
+  repeated systematicSynonym None = 14
+  repeated subclassOf None = 15
  }
 message SourceFile
  {
@@ -3340,17 +3399,20 @@ message VariantToPopulationAssociation
  }
 message Zygosity
  {
-  id None = 1
-  name None = 2
-  repeated category None = 3
-  repeated relatedTo None = 4
-  repeated interactsWith None = 5
-  optional nodeProperty None = 6
-  optional iri None = 7
-  repeated synonym None = 8
-  optional fullName None = 9
-  optional description None = 10
-  repeated systematicSynonym None = 11
-  repeated subclassOf None = 12
+  optional hasAttributeType None = 1
+  repeated hasQuantitativeValue None = 2
+  optional hasQualitativeValue None = 3
+  id None = 4
+  name None = 5
+  repeated category None = 6
+  repeated relatedTo None = 7
+  repeated interactsWith None = 8
+  optional nodeProperty None = 9
+  optional iri None = 10
+  repeated synonym None = 11
+  optional fullName None = 12
+  optional description None = 13
+  repeated systematicSynonym None = 14
+  repeated subclassOf None = 15
  }
 

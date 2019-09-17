@@ -264,11 +264,11 @@ public class NamedThing {
     @JsonPropertyDescription("used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome")
     private List<String> manifestationOf = new ArrayList<String>();
     /**
-     * holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.
+     * holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
      * 
      */
     @JsonProperty("model_of")
-    @JsonPropertyDescription("holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.")
+    @JsonPropertyDescription("holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.")
     private List<String> modelOf = new ArrayList<String>();
     /**
      * A human-readable name for a thing
@@ -905,7 +905,7 @@ public class NamedThing {
     }
 
     /**
-     * holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.
+     * holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
      * 
      */
     @JsonProperty("model_of")
@@ -914,7 +914,7 @@ public class NamedThing {
     }
 
     /**
-     * holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.
+     * holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
      * 
      */
     @JsonProperty("model_of")
