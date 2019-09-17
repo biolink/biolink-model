@@ -1531,6 +1531,14 @@ slots:
     multivalued: true
     range: publication
 
+  change is catalyzed by:
+    is_a: association slot
+    multivalued: true
+    range: macromolecular machine
+    description: >-
+      hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in
+      that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
+      
   has biological sequence:
     is_a: node property
     description: >-
@@ -2917,6 +2925,54 @@ classes:
         range: case
         description: "the case (e.g. patient) that has the property"
 
+  chemical to chemical association:
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - chemical to thing association
+    description: >-
+      A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
+    slot_usage:
+      object:
+        range: chemical structure
+        description: "the chemical element that is the target of the statement"
+
+  chemical to chemical derivation association:
+    is_a: chemical to chemical association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    slots:
+      - change is catalyzed by
+    description: >-
+      A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream.
+      For any such association there is an implicit reaction:
+        IF
+        R has-input C1 AND
+        R has-output C2 AND
+        R enabled-by P AND
+        R type Reaction
+        THEN
+        C1 derives-into C2 <<change is catalyzed by P>>
+    slot_usage:
+      subject:
+        range: chemical structure
+        description: >-
+          the upstream chemical entity
+      object:
+        range: chemical structure
+        description: >-
+          the downstream chemical entity
+      relation:
+        subproperty_of: derives into
+      change is catalyzed by:
+        description: >-
+          this connects the derivation edge to the molecular entity that catalyzes the reaction that causes the
+          subject chemical to transform into the object chemical
+        
   chemical to disease or phenotypic feature association:
     is_a: association
     class_uri: SIO:000993
