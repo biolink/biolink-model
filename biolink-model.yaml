@@ -1051,11 +1051,20 @@ slots:
   capable of:
     is_a: actively involved in
     description: >-
-      holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function.
+      holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
     range: occurrent
     in_subset:
       - translator_minimal
     slot_uri: RO:0002215
+
+  enabled by:
+    is_a: has participant
+    description: >-
+      holds between a process and a physical entity, where the physical entity executes the process
+    range: biological process or activity
+    in_subset:
+      - translator_minimal
+    slot_uri: RO:0002333
 
   derives into:
     is_a: related to
@@ -3776,6 +3785,10 @@ classes:
     id_prefixes:
       - GO
       - Reactome
+    slots:
+      - has input
+      - has output
+      - enabled by
 
   molecular activity:
     is_a: biological process or activity
@@ -3785,6 +3798,19 @@ classes:
     description: >-
       An execution of a molecular function carried out by a gene product or macromolecular complex.
     class_uri: GO:0003674
+    slot_usage:
+      has input:
+        range: chemical substance
+        description: >-
+          A chemical entity that is the input for the reaction
+      has output:
+        range: chemical substance
+        description: >-
+          A chemical entity that is the output for the reaction
+      enabled by:
+        range: macromolecular machine
+        description: >-
+          The gene product, gene, or complex that catalyzes the reaction
     mappings:
       # UMLS Semantic Type "Molecular Function"
       - UMLSSC:T044
