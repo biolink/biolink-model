@@ -1029,6 +1029,15 @@ slots:
     mappings:
       - SEMMEDDB:USES
 
+  has input:
+    is_a: has participant
+    description: >-
+      holds between a process and a continuant, where the continuant is an output of the process
+    domain: occurrent
+    in_subset:
+      - translator_minimal
+    slot_uri: RO:0002234
+
   participates in:
     is_a: related to
     description: >-
