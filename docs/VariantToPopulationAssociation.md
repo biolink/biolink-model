@@ -53,7 +53,7 @@ URI: [biolink:VariantToPopulationAssociation](https://w3id.org/biolink/vocab/Var
     * inherited from: [Association](Association.md)
  * [id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [Nodeidentifier](Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
@@ -76,29 +76,6 @@ URI: [biolink:VariantToPopulationAssociation](https://w3id.org/biolink/vocab/Var
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-
-### Inherited from frequency qualifier mixin:
-
- * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-    * range: [FrequencyValue](FrequencyValue.md)
-
-### Inherited from frequency quantifier:
-
- * [has count](has_count.md)  <sub>OPT</sub>
-    * Description: number of things with a particular property
-    * range: [Integer](Integer.md)
-    * inherited from: [FrequencyQuantifier](FrequencyQuantifier.md)
- * [has total](has_total.md)  <sub>OPT</sub>
-    * Description: total number of things in a particular reference set
-    * range: [Integer](Integer.md)
-    * inherited from: [FrequencyQuantifier](FrequencyQuantifier.md)
- * [has quotient](has_quotient.md)  <sub>OPT</sub>
-    * range: [Double](Double.md)
-    * inherited from: [FrequencyQuantifier](FrequencyQuantifier.md)
- * [has percentage](has_percentage.md)  <sub>OPT</sub>
-    * Description: equivalent to has quotient multiplied by 100
-    * range: [Double](Double.md)
 
 ### Domain for slot:
 

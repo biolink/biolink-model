@@ -8,7 +8,7 @@ URI: [biolink:frequency_qualifier](https://w3id.org/biolink/vocab/frequency_qual
 
 ## Domain and Range
 
-[FrequencyQualifierMixin](FrequencyQualifierMixin.md) ->  <sub>OPT</sub> [FrequencyValue](FrequencyValue.md)
+[Association](Association.md) ->  <sub>OPT</sub> [FrequencyValue](FrequencyValue.md)
 
 ## Parents
 
@@ -19,6 +19,7 @@ URI: [biolink:frequency_qualifier](https://w3id.org/biolink/vocab/frequency_qual
 
 ## Used by
 
+ * [Association](Association.md)
  * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)

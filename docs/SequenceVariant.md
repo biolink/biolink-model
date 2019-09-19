@@ -16,7 +16,7 @@ URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
 
  *  **[GenotypeToVariantAssociation](GenotypeToVariantAssociation.md)** *[object](genotype_to_variant_association_object.md)*  <sub>REQ</sub>  **[SequenceVariant](SequenceVariant.md)**
  *  **[SequenceVariantModulatesTreatmentAssociation](SequenceVariantModulatesTreatmentAssociation.md)** *[subject](sequence_variant_modulates_treatment_association_subject.md)*  <sub>REQ</sub>  **[SequenceVariant](SequenceVariant.md)**
- *  **[GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)** *[sequence variant qualifier](sequence_variant_qualifier.md)*  <sub>OPT</sub>  **[SequenceVariant](SequenceVariant.md)**
+ *  **[Association](Association.md)** *[sequence variant qualifier](sequence_variant_qualifier.md)*  <sub>OPT</sub>  **[SequenceVariant](SequenceVariant.md)**
  *  **[VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)** *[subject](variant_to_phenotypic_feature_association_subject.md)*  <sub>REQ</sub>  **[SequenceVariant](SequenceVariant.md)**
  *  **[VariantToPopulationAssociation](VariantToPopulationAssociation.md)** *[subject](variant_to_population_association_subject.md)*  <sub>REQ</sub>  **[SequenceVariant](SequenceVariant.md)**
  *  **[VariantToThingAssociation](VariantToThingAssociation.md)** *[subject](variant_to_thing_association_subject.md)*  <sub>REQ</sub>  **[SequenceVariant](SequenceVariant.md)**
@@ -61,10 +61,6 @@ URI: [biolink:SequenceVariant](https://w3id.org/biolink/vocab/SequenceVariant)
 
 ### Domain for slot:
 
- * [has gene](has_gene.md)  <sub>OPT</sub>
-    * Description: connects and entity to a single gene
-    * range: [Gene](Gene.md)
-    * inherited from: [SequenceVariant](SequenceVariant.md)
  * [has biological sequence](sequence_variant_has_biological_sequence.md)  <sub>OPT</sub>
     * range: [BiologicalSequence](BiologicalSequence.md)
  * [has gene](sequence_variant_has_gene.md)  <sub>0..*</sub>

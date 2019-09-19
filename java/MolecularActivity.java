@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -17,109 +16,57 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "enabled_by",
     "has_input",
-    "has_participant",
-    "precedes",
-    "regulates_process_to_process"
+    "has_output"
 })
 public class MolecularActivity {
 
-    /**
-     * holds between a process and a continuant, where the continuant is an input into the process
-     * 
-     */
+    @JsonProperty("enabled_by")
+    private List<String> enabledBy = new ArrayList<String>();
     @JsonProperty("has_input")
-    @JsonPropertyDescription("holds between a process and a continuant, where the continuant is an input into the process")
     private List<String> hasInput = new ArrayList<String>();
-    /**
-     * holds between a process and a continuant, where the continuant is somehow involved in the process
-     * 
-     */
-    @JsonProperty("has_participant")
-    @JsonPropertyDescription("holds between a process and a continuant, where the continuant is somehow involved in the process")
-    private List<String> hasParticipant = new ArrayList<String>();
-    /**
-     * holds between two processes, where one completes before the other begins
-     * 
-     */
-    @JsonProperty("precedes")
-    @JsonPropertyDescription("holds between two processes, where one completes before the other begins")
-    private List<String> precedes = new ArrayList<String>();
-    @JsonProperty("regulates_process_to_process")
-    private List<String> regulatesProcessToProcess = new ArrayList<String>();
+    @JsonProperty("has_output")
+    private List<String> hasOutput = new ArrayList<String>();
 
-    /**
-     * holds between a process and a continuant, where the continuant is an input into the process
-     * 
-     */
+    @JsonProperty("enabled_by")
+    public List<String> getEnabledBy() {
+        return enabledBy;
+    }
+
+    @JsonProperty("enabled_by")
+    public void setEnabledBy(List<String> enabledBy) {
+        this.enabledBy = enabledBy;
+    }
+
     @JsonProperty("has_input")
     public List<String> getHasInput() {
         return hasInput;
     }
 
-    /**
-     * holds between a process and a continuant, where the continuant is an input into the process
-     * 
-     */
     @JsonProperty("has_input")
     public void setHasInput(List<String> hasInput) {
         this.hasInput = hasInput;
     }
 
-    /**
-     * holds between a process and a continuant, where the continuant is somehow involved in the process
-     * 
-     */
-    @JsonProperty("has_participant")
-    public List<String> getHasParticipant() {
-        return hasParticipant;
+    @JsonProperty("has_output")
+    public List<String> getHasOutput() {
+        return hasOutput;
     }
 
-    /**
-     * holds between a process and a continuant, where the continuant is somehow involved in the process
-     * 
-     */
-    @JsonProperty("has_participant")
-    public void setHasParticipant(List<String> hasParticipant) {
-        this.hasParticipant = hasParticipant;
-    }
-
-    /**
-     * holds between two processes, where one completes before the other begins
-     * 
-     */
-    @JsonProperty("precedes")
-    public List<String> getPrecedes() {
-        return precedes;
-    }
-
-    /**
-     * holds between two processes, where one completes before the other begins
-     * 
-     */
-    @JsonProperty("precedes")
-    public void setPrecedes(List<String> precedes) {
-        this.precedes = precedes;
-    }
-
-    @JsonProperty("regulates_process_to_process")
-    public List<String> getRegulatesProcessToProcess() {
-        return regulatesProcessToProcess;
-    }
-
-    @JsonProperty("regulates_process_to_process")
-    public void setRegulatesProcessToProcess(List<String> regulatesProcessToProcess) {
-        this.regulatesProcessToProcess = regulatesProcessToProcess;
+    @JsonProperty("has_output")
+    public void setHasOutput(List<String> hasOutput) {
+        this.hasOutput = hasOutput;
     }
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasInput", hasInput).append("hasParticipant", hasParticipant).append("precedes", precedes).append("regulatesProcessToProcess", regulatesProcessToProcess).toString();
+        return new ToStringBuilder(this).append("enabledBy", enabledBy).append("hasInput", hasInput).append("hasOutput", hasOutput).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(precedes).append(regulatesProcessToProcess).append(hasInput).append(hasParticipant).toHashCode();
+        return new HashCodeBuilder().append(enabledBy).append(hasOutput).append(hasInput).toHashCode();
     }
 
     @Override
@@ -131,7 +78,7 @@ public class MolecularActivity {
             return false;
         }
         MolecularActivity rhs = ((MolecularActivity) other);
-        return new EqualsBuilder().append(precedes, rhs.precedes).append(regulatesProcessToProcess, rhs.regulatesProcessToProcess).append(hasInput, rhs.hasInput).append(hasParticipant, rhs.hasParticipant).isEquals();
+        return new EqualsBuilder().append(enabledBy, rhs.enabledBy).append(hasOutput, rhs.hasOutput).append(hasInput, rhs.hasInput).isEquals();
     }
 
 }

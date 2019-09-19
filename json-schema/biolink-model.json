@@ -154,7 +154,7 @@
          "type": "array"
       },
       "capable_of": {
-         "description": "holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function.",
+         "description": "holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.",
          "items": {
             "type": "string"
          },
@@ -169,6 +169,13 @@
       },
       "causes": {
          "description": "holds between two entities where the occurrence, existence, or activity of one causes the occurrence or  generation of the other",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "change_is_catalyzed_by": {
+         "description": "hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.",
          "items": {
             "type": "string"
          },
@@ -347,6 +354,12 @@
          },
          "type": "array"
       },
+      "distribution": {
+         "type": "string"
+      },
+      "downloadURL": {
+         "type": "string"
+      },
       "drug": {
          "items": {
             "type": "string"
@@ -356,6 +369,13 @@
       "edge_label": {
          "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
          "type": "string"
+      },
+      "enabled_by": {
+         "description": "holds between a process and a physical entity, where the physical entity executes the process",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
       },
       "end_interbase_coordinate": {
          "type": "string"
@@ -402,6 +422,17 @@
       },
       "genome_build": {
          "description": "TODO",
+         "type": "string"
+      },
+      "has_attribute": {
+         "description": "connects any named thing to an attribute",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
+      "has_attribute_type": {
+         "description": "connects an attribute to a class that describes it",
          "type": "string"
       },
       "has_biological_sequence": {
@@ -462,6 +493,17 @@
          },
          "type": "array"
       },
+      "has_numeric_value": {
+         "description": "connects a quantity value to a number",
+         "type": "string"
+      },
+      "has_output": {
+         "description": "holds between a process and a continuant, where the continuant is an output of the process",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "has_part": {
          "description": "holds between wholes and their parts (material entities or processes)",
          "items": {
@@ -487,11 +529,26 @@
          },
          "type": "array"
       },
+      "has_qualitative_value": {
+         "description": "connects an attribute to a value",
+         "type": "string"
+      },
+      "has_quantitative_value": {
+         "description": "connects an attribute to a value",
+         "items": {
+            "type": "string"
+         },
+         "type": "array"
+      },
       "has_quotient": {
          "type": "string"
       },
       "has_total": {
          "description": "total number of things in a particular reference set",
+         "type": "string"
+      },
+      "has_unit": {
+         "description": "connects a quantity value to a unit",
          "type": "string"
       },
       "has_zygosity": {
@@ -696,7 +753,7 @@
          "type": "array"
       },
       "model_of": {
-         "description": "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.",
+         "description": "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.",
          "items": {
             "type": "string"
          },
@@ -896,6 +953,9 @@
          "description": "the relationship type by which a subject is connected to an object in an association",
          "type": "string"
       },
+      "retrievedOn": {
+         "type": "string"
+      },
       "same_as": {
          "description": "holds between two entities that are considered equivalent to each other",
          "items": {
@@ -913,6 +973,15 @@
       },
       "sex_qualifier": {
          "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+         "type": "string"
+      },
+      "source_data_file": {
+         "type": "string"
+      },
+      "source_version": {
+         "type": "string"
+      },
+      "source_web_page": {
          "type": "string"
       },
       "stage_qualifier": {
@@ -951,6 +1020,9 @@
          "description": "a point in time",
          "type": "string"
       },
+      "title": {
+         "type": "string"
+      },
       "treated_by": {
          "description": "holds between a disease or phenotypic feature and a therapeutic process or chemical substance that is used to treat the condition",
          "items": {
@@ -965,8 +1037,14 @@
          },
          "type": "array"
       },
+      "type": {
+         "type": "string"
+      },
       "update_date": {
          "description": "date on which thing was updated. This can be applied to nodes or edges",
+         "type": "string"
+      },
+      "versionOf": {
          "type": "string"
       },
       "xenologous_to": {
@@ -978,6 +1056,12 @@
       }
    },
    "properties": {
+      "AbstractEntity": {
+         "description": "Any thing that is not a process or a physical mass-bearing entity",
+         "properties": {},
+         "title": "AbstractEntity",
+         "type": "object"
+      },
       "ActivityAndBehavior": {
          "description": "Activity or behavior of any independent integral living, organization or mechanical actor in the world",
          "properties": {},
@@ -1069,6 +1153,13 @@
                "description": "connects an association to the type of association (e.g. gene to phenotype)",
                "type": "string"
             },
+            "change_is_catalyzed_by": {
+               "description": "hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "clinical_modifier_qualifier": {
                "description": "Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects",
                "type": "string"
@@ -1076,6 +1167,10 @@
             "edge_label": {
                "description": "A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.",
                "required": true,
+               "type": "string"
+            },
+            "frequency_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
                "type": "string"
             },
             "has_confidence_level": {
@@ -1100,6 +1195,10 @@
                "required": true,
                "type": "string"
             },
+            "onset_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
+               "type": "string"
+            },
             "provided_by": {
                "description": "connects an association to the agent (person, organization or group) that provided it",
                "type": "string"
@@ -1118,9 +1217,29 @@
                },
                "type": "array"
             },
+            "quantifier_qualifier": {
+               "description": "A measurable quantity for the object of the association",
+               "type": "string"
+            },
             "relation": {
                "description": "the relationship type by which a subject is connected to an object in an association",
                "required": true,
+               "type": "string"
+            },
+            "sequence_variant_qualifier": {
+               "description": "a qualifier used in an association where the variant",
+               "type": "string"
+            },
+            "severity_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
+               "type": "string"
+            },
+            "sex_qualifier": {
+               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+               "type": "string"
+            },
+            "stage_qualifier": {
+               "description": "stage at which expression takes place",
                "type": "string"
             },
             "subject": {
@@ -1133,7 +1252,7 @@
          "type": "object"
       },
       "Attribute": {
-         "description": "A property or characteristic of an entity",
+         "description": "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.",
          "properties": {
             "category": {
                "description": "Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag",
@@ -1150,6 +1269,21 @@
             "full_name": {
                "description": "a long-form human readable name for a thing",
                "type": "string"
+            },
+            "has_attribute_type": {
+               "description": "connects an attribute to a class that describes it",
+               "type": "string"
+            },
+            "has_qualitative_value": {
+               "description": "connects an attribute to a value",
+               "type": "string"
+            },
+            "has_quantitative_value": {
+               "description": "connects an attribute to a value",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
             },
             "id": {
                "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -1210,9 +1344,29 @@
       },
       "BiologicalProcess": {
          "description": "One or more causally connected executions of molecular functions",
+         "properties": {},
+         "title": "BiologicalProcess",
+         "type": "object"
+      },
+      "BiologicalProcessOrActivity": {
+         "description": "Either an individual molecular activity, or a collection of causally connected molecular activities",
          "properties": {
+            "enabled_by": {
+               "description": "holds between a process and a physical entity, where the physical entity executes the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_input": {
                "description": "holds between a process and a continuant, where the continuant is an input into the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
+               "description": "holds between a process and a continuant, where the continuant is an output of the process",
                "items": {
                   "type": "string"
                },
@@ -1239,12 +1393,6 @@
                "type": "array"
             }
          },
-         "title": "BiologicalProcess",
-         "type": "object"
-      },
-      "BiologicalProcessOrActivity": {
-         "description": "Either an individual molecular activity, or a collection of causally connected molecular activities",
-         "properties": {},
          "title": "BiologicalProcessOrActivity",
          "type": "object"
       },
@@ -1252,26 +1400,6 @@
          "description": "",
          "properties": {},
          "title": "BiologicalSex",
-         "type": "object"
-      },
-      "Biosample": {
-         "description": "",
-         "properties": {
-            "in_taxon": {
-               "description": "connects a thing to a class representing a taxon",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            }
-         },
-         "title": "Biosample",
-         "type": "object"
-      },
-      "BiosampleToDiseaseOrPhenotypicFeatureAssociation": {
-         "description": "An association between a biosample and a disease or phenotype",
-         "properties": {},
-         "title": "BiosampleToDiseaseOrPhenotypicFeatureAssociation",
          "type": "object"
       },
       "Carbohydrate": {
@@ -1288,24 +1416,7 @@
       },
       "CaseToPhenotypicFeatureAssociation": {
          "description": "An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype",
-         "properties": {
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
-            },
-            "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
-               "type": "string"
-            },
-            "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
-            },
-            "sex_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
-               "type": "string"
-            }
-         },
+         "properties": {},
          "title": "CaseToPhenotypicFeatureAssociation",
          "type": "object"
       },
@@ -1342,6 +1453,42 @@
          "description": "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part",
          "properties": {},
          "title": "ChemicalSubstance",
+         "type": "object"
+      },
+      "ChemicalToChemicalAssociation": {
+         "description": "A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.",
+         "properties": {
+            "object": {
+               "required": true,
+               "type": "string"
+            }
+         },
+         "title": "ChemicalToChemicalAssociation",
+         "type": "object"
+      },
+      "ChemicalToChemicalDerivationAssociation": {
+         "description": "A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:\n  IF\n  R has-input C1 AND\n  R has-output C2 AND\n  R enabled-by P AND\n  R type Reaction\n  THEN\n  C1 derives-into C2 <<change is catalyzed by P>>",
+         "properties": {
+            "change_is_catalyzed_by": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "object": {
+               "required": true,
+               "type": "string"
+            },
+            "relation": {
+               "required": true,
+               "type": "string"
+            },
+            "subject": {
+               "required": true,
+               "type": "string"
+            }
+         },
+         "title": "ChemicalToChemicalDerivationAssociation",
          "type": "object"
       },
       "ChemicalToDiseaseOrPhenotypicFeatureAssociation": {
@@ -1413,6 +1560,50 @@
          "title": "ConfidenceLevel",
          "type": "object"
       },
+      "DataFile": {
+         "description": "",
+         "properties": {},
+         "title": "DataFile",
+         "type": "object"
+      },
+      "DataSet": {
+         "description": "",
+         "properties": {},
+         "title": "DataSet",
+         "type": "object"
+      },
+      "DataSetSummary": {
+         "description": "",
+         "properties": {
+            "source_web_page": {
+               "type": "string"
+            }
+         },
+         "title": "DataSetSummary",
+         "type": "object"
+      },
+      "DataSetVersion": {
+         "description": "",
+         "properties": {
+            "distribution": {
+               "type": "string"
+            },
+            "source_data_file": {
+               "type": "string"
+            },
+            "title": {
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
+            },
+            "versionOf": {
+               "type": "string"
+            }
+         },
+         "title": "DataSetVersion",
+         "type": "object"
+      },
       "Device": {
          "description": "A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment",
          "properties": {},
@@ -1473,25 +1664,28 @@
       },
       "DiseaseToPhenotypicFeatureAssociation": {
          "description": "An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way",
+         "properties": {},
+         "title": "DiseaseToPhenotypicFeatureAssociation",
+         "type": "object"
+      },
+      "DistributionLevel": {
+         "description": "",
          "properties": {
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
-            },
-            "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
-               "type": "string"
-            },
-            "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
-            },
-            "sex_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
+            "downloadURL": {
                "type": "string"
             }
          },
-         "title": "DiseaseToPhenotypicFeatureAssociation",
+         "title": "DistributionLevel",
+         "type": "object"
+      },
+      "DistributionLevel": {
+         "description": "",
+         "properties": {
+            "downloadURL": {
+               "type": "string"
+            }
+         },
+         "title": "DistributionLevel",
          "type": "object"
       },
       "Drug": {
@@ -1523,22 +1717,6 @@
       "EnvironmentToPhenotypicFeatureAssociation": {
          "description": "Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype",
          "properties": {
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
-            },
-            "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
-               "type": "string"
-            },
-            "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
-            },
-            "sex_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
-               "type": "string"
-            },
             "subject": {
                "required": true,
                "type": "string"
@@ -1558,6 +1736,13 @@
          "properties": {
             "has_input": {
                "description": "holds between a process and a continuant, where the continuant is an input into the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
+               "description": "holds between a process and a continuant, where the continuant is an output of the process",
                "items": {
                   "type": "string"
                },
@@ -1797,18 +1982,6 @@
       "GeneToDiseaseAssociation": {
          "description": "",
          "properties": {
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
-            },
-            "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
-               "type": "string"
-            },
-            "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
-            },
             "subject": {
                "required": true,
                "type": "string"
@@ -1890,22 +2063,6 @@
       "GeneToPhenotypicFeatureAssociation": {
          "description": "",
          "properties": {
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
-            },
-            "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
-               "type": "string"
-            },
-            "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
-            },
-            "sex_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
-               "type": "string"
-            },
             "subject": {
                "required": true,
                "type": "string"
@@ -2011,24 +2168,8 @@
       "GenotypeToPhenotypicFeatureAssociation": {
          "description": "Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment",
          "properties": {
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
-            },
-            "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
-               "type": "string"
-            },
             "relation": {
                "required": true,
-               "type": "string"
-            },
-            "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
-            },
-            "sex_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
                "type": "string"
             },
             "subject": {
@@ -2180,6 +2321,45 @@
          "title": "MacromolecularMachineToMolecularActivityAssociation",
          "type": "object"
       },
+      "MaterialSample": {
+         "description": "A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]",
+         "properties": {
+            "has_attribute": {
+               "description": "connects any named thing to an attribute",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            }
+         },
+         "title": "MaterialSample",
+         "type": "object"
+      },
+      "MaterialSampleDerivationAssociation": {
+         "description": "An association between a material sample and the material entity it is derived from",
+         "properties": {
+            "object": {
+               "required": true,
+               "type": "string"
+            },
+            "relation": {
+               "required": true,
+               "type": "string"
+            },
+            "subject": {
+               "required": true,
+               "type": "string"
+            }
+         },
+         "title": "MaterialSampleDerivationAssociation",
+         "type": "object"
+      },
+      "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation": {
+         "description": "An association between a material sample and a disease or phenotype",
+         "properties": {},
+         "title": "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
+         "type": "object"
+      },
       "Metabolite": {
          "description": "Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.",
          "properties": {},
@@ -2195,28 +2375,19 @@
       "MolecularActivity": {
          "description": "An execution of a molecular function carried out by a gene product or macromolecular complex.",
          "properties": {
+            "enabled_by": {
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_input": {
-               "description": "holds between a process and a continuant, where the continuant is an input into the process",
                "items": {
                   "type": "string"
                },
                "type": "array"
             },
-            "has_participant": {
-               "description": "holds between a process and a continuant, where the continuant is somehow involved in the process",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "precedes": {
-               "description": "holds between two processes, where one completes before the other begins",
-               "items": {
-                  "type": "string"
-               },
-               "type": "array"
-            },
-            "regulates_process_to_process": {
+            "has_output": {
                "items": {
                   "type": "string"
                },
@@ -2635,7 +2806,7 @@
                "type": "string"
             },
             "capable_of": {
-               "description": "holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function.",
+               "description": "holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.",
                "items": {
                   "type": "string"
                },
@@ -2706,6 +2877,9 @@
                },
                "type": "array"
             },
+            "end_interbase_coordinate": {
+               "type": "string"
+            },
             "filler": {
                "description": "The value in a property-value tuple",
                "type": "string"
@@ -2714,8 +2888,24 @@
                "description": "a long-form human readable name for a thing",
                "type": "string"
             },
+            "genome_build": {
+               "description": "TODO",
+               "type": "string"
+            },
+            "has_biological_sequence": {
+               "description": "connects a genomic feature to its sequence",
+               "type": "string"
+            },
             "has_chemical_formula": {
                "description": "description of chemical compound based on element symbols",
+               "type": "string"
+            },
+            "has_count": {
+               "description": "number of things with a particular property",
+               "type": "string"
+            },
+            "has_gene": {
+               "description": "connects and entity to a single gene",
                "type": "string"
             },
             "has_molecular_consequence": {
@@ -2731,6 +2921,20 @@
                   "type": "string"
                },
                "type": "array"
+            },
+            "has_percentage": {
+               "description": "equivalent to has quotient multiplied by 100",
+               "type": "string"
+            },
+            "has_quotient": {
+               "type": "string"
+            },
+            "has_total": {
+               "description": "total number of things in a particular reference set",
+               "type": "string"
+            },
+            "has_zygosity": {
+               "type": "string"
             },
             "homologous_to": {
                "description": "holds between two biological entities that have common evolutionary origin",
@@ -2759,6 +2963,10 @@
                "description": "An IRI for the node. This is determined by the id using expansion rules.",
                "type": "string"
             },
+            "latitude": {
+               "description": "latitude",
+               "type": "string"
+            },
             "located_in": {
                "description": "holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)",
                "items": {
@@ -2773,6 +2981,10 @@
                },
                "type": "array"
             },
+            "longitude": {
+               "description": "longitude",
+               "type": "string"
+            },
             "manifestation_of": {
                "description": "used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome",
                "items": {
@@ -2781,7 +2993,7 @@
                "type": "array"
             },
             "model_of": {
-               "description": "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.",
+               "description": "holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.",
                "items": {
                   "type": "string"
                },
@@ -2844,6 +3056,10 @@
                },
                "type": "array"
             },
+            "phase": {
+               "description": "TODO",
+               "type": "string"
+            },
             "physically_interacts_with": {
                "description": "holds between two entities that make physical contact as part of some interaction",
                "items": {
@@ -2898,6 +3114,9 @@
                },
                "type": "array"
             },
+            "start_interbase_coordinate": {
+               "type": "string"
+            },
             "synonym": {
                "description": "Alternate human-readable names for a thing",
                "items": {
@@ -2911,6 +3130,13 @@
                   "type": "string"
                },
                "type": "array"
+            },
+            "timepoint": {
+               "description": "a point in time",
+               "type": "string"
+            },
+            "type": {
+               "type": "string"
             },
             "update_date": {
                "description": "date on which thing was updated. This can be applied to nodes or edges",
@@ -2936,8 +3162,22 @@
       "Occurrent": {
          "description": "A processual entity",
          "properties": {
+            "enabled_by": {
+               "description": "holds between a process and a physical entity, where the physical entity executes the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
             "has_input": {
                "description": "holds between a process and a continuant, where the continuant is an input into the process",
+               "items": {
+                  "type": "string"
+               },
+               "type": "array"
+            },
+            "has_output": {
+               "description": "holds between a process and a continuant, where the continuant is an output of the process",
                "items": {
                   "type": "string"
                },
@@ -3046,6 +3286,12 @@
          "title": "PhenotypicSex",
          "type": "object"
       },
+      "PhysicalEntity": {
+         "description": "An entity that has physical properties such as mass, volume, or charge",
+         "properties": {},
+         "title": "PhysicalEntity",
+         "type": "object"
+      },
       "PhysiologicalProcess": {
          "description": "",
          "properties": {},
@@ -3121,6 +3367,21 @@
          "title": "Publication",
          "type": "object"
       },
+      "QuantityValue": {
+         "description": "A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value",
+         "properties": {
+            "has_numeric_value": {
+               "description": "connects a quantity value to a number",
+               "type": "string"
+            },
+            "has_unit": {
+               "description": "connects a quantity value to a unit",
+               "type": "string"
+            }
+         },
+         "title": "QuantityValue",
+         "type": "object"
+      },
       "RNAProduct": {
          "description": "",
          "properties": {},
@@ -3186,6 +3447,19 @@
          "title": "SeverityValue",
          "type": "object"
       },
+      "SourceFile": {
+         "description": "",
+         "properties": {
+            "retrievedOn": {
+               "type": "string"
+            },
+            "source_version": {
+               "type": "string"
+            }
+         },
+         "title": "SourceFile",
+         "type": "object"
+      },
       "SpecificityQuantifier": {
          "description": "",
          "properties": {},
@@ -3238,24 +3512,12 @@
       "VariantToDiseaseAssociation": {
          "description": "",
          "properties": {
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
-            },
             "object": {
                "required": true,
                "type": "string"
             },
-            "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
-               "type": "string"
-            },
             "relation": {
                "required": true,
-               "type": "string"
-            },
-            "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
                "type": "string"
             },
             "subject": {
@@ -3269,22 +3531,6 @@
       "VariantToPhenotypicFeatureAssociation": {
          "description": "",
          "properties": {
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
-            },
-            "onset_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state when the phenotype appears is in the subject",
-               "type": "string"
-            },
-            "severity_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how severe the phenotype is in the subject",
-               "type": "string"
-            },
-            "sex_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.",
-               "type": "string"
-            },
             "subject": {
                "required": true,
                "type": "string"
@@ -3296,10 +3542,6 @@
       "VariantToPopulationAssociation": {
          "description": "An association between a variant and a population, where the variant has particular frequency in the population",
          "properties": {
-            "frequency_qualifier": {
-               "description": "a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject",
-               "type": "string"
-            },
             "has_count": {
                "type": "string"
             },

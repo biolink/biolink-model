@@ -1,5 +1,5 @@
 digraph {
-	graph [bb="0,0,1590.4,281"];
+	graph [bb="0,0,1588.4,281"];
 	node [label="\N"];
 	"gene to expression site association"	 [height=0.5,
 		label="gene to expression site association",
@@ -125,7 +125,7 @@ digraph {
 		lp="1216.9,220",
 		pos="e,1211.5,193.53 716.54,250.09 732.48,248.16 748.9,246.36 764.4,245 847.95,237.65 1060.5,249.23 1141.4,227 1163.1,221.03 1185.4,209.43 \
 1202.9,198.9",
-		style=dashed];
+		style=solid];
 	"quantifier qualifier"	 [height=0.5,
 		pos="1389.4,177",
 		width=2.1023];
@@ -134,7 +134,7 @@ digraph {
 		lp="1359.3,220",
 		pos="e,1356.4,193.33 716.15,249.98 732.21,248.05 748.77,246.29 764.4,245 874.33,235.96 1152.4,249.24 1260.4,227 1290.3,220.84 1322.3,\
 208.47 1347,197.58",
-		style=dashed];
+		style=solid];
 	subject -> relation	 [pos="e,186.67,36.027 202.11,158.76 198.64,131.21 192.04,78.735 187.95,46.223",
 		style=dotted];
 	subject -> object	 [label=relation,
@@ -159,17 +159,17 @@ digraph {
 		width=1.9792];
 	association_id	 [color=blue,
 		height=0.5,
-		label="identifier type",
-		pos="1288.4,263",
-		width=1.652];
+		label=nodeidentifier,
+		pos="1287.4,263",
+		width=1.6451];
 	"gene to expression site association_stage qualifier"	 [color=blue,
 		height=0.5,
 		label="life stage",
-		pos="1408.4,263",
+		pos="1406.4,263",
 		width=1.1742];
 	"gene to expression site association_quantifier qualifier"	 [color=blue,
 		height=0.5,
 		label="ontology class",
-		pos="1529.4,263",
+		pos="1527.4,263",
 		width=1.6931];
 }

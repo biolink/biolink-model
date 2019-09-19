@@ -8,7 +8,7 @@ URI: [biolink:association_id](https://w3id.org/biolink/vocab/association_id)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>REQ</sub> [IdentifierType](IdentifierType.md)
+[Association](Association.md) ->  <sub>REQ</sub> [Nodeidentifier](Nodeidentifier.md)
 
 ## Parents
 
@@ -24,12 +24,12 @@ URI: [biolink:association_id](https://w3id.org/biolink/vocab/association_id)
  * [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md)
  * [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md)
  * [Association](Association.md)
- * [BiosampleToDiseaseOrPhenotypicFeatureAssociation](BiosampleToDiseaseOrPhenotypicFeatureAssociation.md)
- * [BiosampleToThingAssociation](BiosampleToThingAssociation.md)
  * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
  * [CaseToThingAssociation](CaseToThingAssociation.md)
  * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md)
  * [CellLineToThingAssociation](CellLineToThingAssociation.md)
+ * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md)
+ * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md)
  * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md)
  * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md)
  * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md)
@@ -62,6 +62,9 @@ URI: [biolink:association_id](https://w3id.org/biolink/vocab/association_id)
  * [MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md)
  * [MacromolecularMachineToCellularComponentAssociation](MacromolecularMachineToCellularComponentAssociation.md)
  * [MacromolecularMachineToMolecularActivityAssociation](MacromolecularMachineToMolecularActivityAssociation.md)
+ * [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md)
+ * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md)
+ * [MaterialSampleToThingAssociation](MaterialSampleToThingAssociation.md)
  * [PairwiseGeneToGeneInteraction](PairwiseGeneToGeneInteraction.md)
  * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md)
  * [SequenceFeatureRelationship](SequenceFeatureRelationship.md)

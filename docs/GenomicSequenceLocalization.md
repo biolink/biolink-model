@@ -20,20 +20,10 @@ URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/Genomi
 
 ### Own
 
- * [end interbase coordinate](end_interbase_coordinate.md)  <sub>OPT</sub>
-    * range: [String](String.md)
- * [genome build](genome_build.md)  <sub>OPT</sub>
-    * Description: TODO
-    * range: [String](String.md)
  * [object](genomic_sequence_localization_object.md)  <sub>REQ</sub>
     * range: [GenomicEntity](GenomicEntity.md)
  * [subject](genomic_sequence_localization_subject.md)  <sub>REQ</sub>
     * range: [GenomicEntity](GenomicEntity.md)
- * [phase](phase.md)  <sub>OPT</sub>
-    * Description: TODO
-    * range: [String](String.md)
- * [start interbase coordinate](start_interbase_coordinate.md)  <sub>OPT</sub>
-    * range: [String](String.md)
 
 ### Inherited from association:
 
@@ -51,7 +41,7 @@ URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/Genomi
     * inherited from: [Association](Association.md)
  * [id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [Nodeidentifier](Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
@@ -77,17 +67,7 @@ URI: [biolink:GenomicSequenceLocalization](https://w3id.org/biolink/vocab/Genomi
 
 ### Domain for slot:
 
- * [end interbase coordinate](end_interbase_coordinate.md)  <sub>OPT</sub>
-    * range: [String](String.md)
- * [genome build](genome_build.md)  <sub>OPT</sub>
-    * Description: TODO
-    * range: [String](String.md)
  * [object](genomic_sequence_localization_object.md)  <sub>REQ</sub>
     * range: [GenomicEntity](GenomicEntity.md)
  * [subject](genomic_sequence_localization_subject.md)  <sub>REQ</sub>
     * range: [GenomicEntity](GenomicEntity.md)
- * [phase](phase.md)  <sub>OPT</sub>
-    * Description: TODO
-    * range: [String](String.md)
- * [start interbase coordinate](start_interbase_coordinate.md)  <sub>OPT</sub>
-    * range: [String](String.md)

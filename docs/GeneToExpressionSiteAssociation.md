@@ -47,7 +47,7 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
     * inherited from: [Association](Association.md)
  * [id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [Nodeidentifier](Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
@@ -83,11 +83,3 @@ URI: [biolink:GeneToExpressionSiteAssociation](https://w3id.org/biolink/vocab/Ge
     * range: [LifeStage](LifeStage.md)
  * [subject](gene_to_expression_site_association_subject.md)  <sub>REQ</sub>
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
- * [quantifier qualifier](quantifier_qualifier.md)  <sub>OPT</sub>
-    * Description: A measurable quantity for the object of the association
-    * range: [OntologyClass](OntologyClass.md)
-    * inherited from: [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)
- * [stage qualifier](stage_qualifier.md)  <sub>OPT</sub>
-    * Description: stage at which expression takes place
-    * range: [LifeStage](LifeStage.md)
-    * inherited from: [GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)

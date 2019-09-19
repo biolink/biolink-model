@@ -7,16 +7,27 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ### Classes
 
+ * [AbstractEntity](AbstractEntity.md) - Any thing that is not a process or a physical mass-bearing entity
+    * [Attribute](Attribute.md) - A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
+       * [BiologicalSex](BiologicalSex.md)
+          * [GenotypicSex](GenotypicSex.md) - An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
+          * [PhenotypicSex](PhenotypicSex.md) - An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
+       * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
+       * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
+       * [Onset](Onset.md) - The age group in which manifestations appear
+       * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
+       * [Zygosity](Zygosity.md)
+    * [QuantityValue](QuantityValue.md) - A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
  * [Association](Association.md) - A typed association between two entities, supported by evidence
     * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
        * [AnatomicalEntityToAnatomicalEntityOntogenicAssociation](AnatomicalEntityToAnatomicalEntityOntogenicAssociation.md) - A relationship between two anatomical entities where the relationship is ontogenic, i.e the two entities are related by development. A number of different relationship types can be used to specify the precise nature of the relationship
        * [AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) - A relationship between two anatomical entities where the relationship is mereological, i.e the two entities are related by parthood. This includes relationships between cellular components and cells, between cells and tissues, tissues and whole organisms
-    * [BiosampleToDiseaseOrPhenotypicFeatureAssociation](BiosampleToDiseaseOrPhenotypicFeatureAssociation.md) - An association between a biosample and a disease or phenotype
-    * [BiosampleToThingAssociation](BiosampleToThingAssociation.md) - An association between a biosample and something
     * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
     * [CaseToThingAssociation](CaseToThingAssociation.md) - An abstract association for use where the case is the subject
     * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) - An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
     * [CellLineToThingAssociation](CellLineToThingAssociation.md) - An relationship between a cell line and another entity
+    * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) - A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
+       * [ChemicalToChemicalDerivationAssociation](ChemicalToChemicalDerivationAssociation.md) - A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
     * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) - An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
     * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) - An interaction between a chemical entity and a gene or gene product
     * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) - An interaction between a chemical entity and a biological process or pathway
@@ -48,6 +59,9 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
     * [GenotypeToThingAssociation](GenotypeToThingAssociation.md)
     * [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) - Any association between a genotype and a sequence variant.
+    * [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) - An association between a material sample and the material entity it is derived from
+    * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) - An association between a material sample and a disease or phenotype
+    * [MaterialSampleToThingAssociation](MaterialSampleToThingAssociation.md) - An association between a material sample and something
     * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) - An interaction at the molecular level between two physical entities
     * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) - An association between a two populations
     * [SequenceFeatureRelationship](SequenceFeatureRelationship.md) - For example, a particular exon is part of a particular transcript or gene
@@ -60,15 +74,6 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
     * [VariantToPopulationAssociation](VariantToPopulationAssociation.md) - An association between a variant and a population, where the variant has particular frequency in the population
     * [VariantToThingAssociation](VariantToThingAssociation.md)
- * [Attribute](Attribute.md) - A property or characteristic of an entity
-    * [BiologicalSex](BiologicalSex.md)
-       * [GenotypicSex](GenotypicSex.md) - An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
-       * [PhenotypicSex](PhenotypicSex.md) - An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.
-    * [ClinicalModifier](ClinicalModifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
-    * [FrequencyValue](FrequencyValue.md) - describes the frequency of occurrence of an event or condition
-    * [Onset](Onset.md) - The age group in which manifestations appear
-    * [SeverityValue](SeverityValue.md) - describes the severity of a phenotypic feature or disease
-    * [Zygosity](Zygosity.md)
  * [NamedThing](NamedThing.md) - a databased entity or concept/class
     * [AdministrativeEntity](AdministrativeEntity.md)
        * [Provider](Provider.md) - person, group, organization or project that provides a piece of information
@@ -115,8 +120,7 @@ Entity and association taxonomy and datamodel for life-sciences data
              * [Cell](Cell.md)
              * [CellularComponent](CellularComponent.md) - A location in or around a cell
              * [GrossAnatomicalStructure](GrossAnatomicalStructure.md)
-          * [Biosample](Biosample.md)
-             * [CellLine](CellLine.md)
+          * [CellLine](CellLine.md)
           * [IndividualOrganism](IndividualOrganism.md)
              * [Case](Case.md) - An individual organism that has a patient role in some clinical context.
           * [LifeStage](LifeStage.md) - A stage of development or growth of an organism, including post-natal adult stages
@@ -124,11 +128,18 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [ClinicalEntity](ClinicalEntity.md) - Any entity or process that exists in the clinical domain and outside the biological realm. Diseases are placed under biological entities
        * [ClinicalIntervention](ClinicalIntervention.md)
        * [ClinicalTrial](ClinicalTrial.md)
+    * [DataFile](DataFile.md)
+       * [SourceFile](SourceFile.md)
+    * [DataSet](DataSet.md)
+       * [DataSetVersion](DataSetVersion.md)
+          * [DataSetSummary](DataSetSummary.md)
+          * [DistributionLevel](DistributionLevel.md)
     * [Device](Device.md) - A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
     * [InformationContentEntity](InformationContentEntity.md) - a piece of information that typically describes some piece of biology or is used as support.
        * [ConfidenceLevel](ConfidenceLevel.md) - Level of confidence in a statement
        * [EvidenceType](EvidenceType.md) - Class of evidence that supports an association
        * [Publication](Publication.md) - Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.
+    * [MaterialSample](MaterialSample.md) - A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
     * [Occurrent](Occurrent.md) - A processual entity
        * [ActivityAndBehavior](ActivityAndBehavior.md) - Activity or behavior of any independent integral living, organization or mechanical actor in the world
        * [Phenomenon](Phenomenon.md) - a fact or situation that is observed to exist or happen, especially one whose cause or explanation is in question
@@ -137,6 +148,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [GeneOntologyClass](GeneOntologyClass.md) - an ontology class that describes a functional aspect of a gene, gene prodoct or complex
        * [OrganismTaxon](OrganismTaxon.md)
        * [RelationshipType](RelationshipType.md) - An OWL property used as an edge label
+    * [PhysicalEntity](PhysicalEntity.md) - An entity that has physical properties such as mass, volume, or charge
     * [PlanetaryEntity](PlanetaryEntity.md) - Any entity or process that exists at the level of the whole planet
        * [EnvironmentalFeature](EnvironmentalFeature.md)
        * [EnvironmentalProcess](EnvironmentalProcess.md)
@@ -145,6 +157,8 @@ Entity and association taxonomy and datamodel for life-sciences data
 
 ### Mixins
 
+ * [DataSetSummary](DataSetSummary.md)
+ * [DistributionLevel](DistributionLevel.md)
  * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
  * [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md) - Qualifiers for entity to disease or phenotype associations
     * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md) - mixin class for any association whose object (target node) is a disease
@@ -164,6 +178,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [SensitivityQuantifier](SensitivityQuantifier.md)
  * [SpecificityQuantifier](SpecificityQuantifier.md)
     * [PathognomonicityQuantifier](PathognomonicityQuantifier.md) - A relationship quantifier between a variant or symptom and a disease, which is high when the presence of the feature implies the existence of the disease
+ * [SubjectOfInvestigation](SubjectOfInvestigation.md) - An entity that has the role of being studied in an investigation, study, or experiment
  * [ThingWithTaxon](ThingWithTaxon.md) - A mixin that can be used on any entity with a taxon
  * [VariantToThingAssociation](VariantToThingAssociation.md)
 
@@ -171,6 +186,8 @@ Entity and association taxonomy and datamodel for life-sciences data
 
  * [association slot](association_slot.md) - any slot that relates an association to another entity
     * [association type](association_type.md) - connects an association to the type of association (e.g. gene to phenotype)
+    * [change is catalyzed by](change_is_catalyzed_by.md) - hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
+       * [change is catalyzed by](chemical_to_chemical_derivation_association_change_is_catalyzed_by.md)
     * [clinical modifier qualifier](clinical_modifier_qualifier.md) - Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
     * [edge label](edge_label.md) - A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
     * [frequency qualifier](frequency_qualifier.md) - a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
@@ -181,6 +198,8 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [object](anatomical_entity_to_anatomical_entity_association_object.md)
           * [object](anatomical_entity_to_anatomical_entity_ontogenic_association_object.md)
           * [object](anatomical_entity_to_anatomical_entity_part_of_association_object.md)
+       * [object](chemical_to_chemical_association_object.md)
+          * [object](chemical_to_chemical_derivation_association_object.md)
        * [object](chemical_to_disease_or_phenotypic_feature_association_object.md)
        * [object](chemical_to_gene_association_object.md)
        * [object](chemical_to_pathway_association_object.md)
@@ -199,6 +218,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [object](genotype_to_gene_association_object.md)
        * [object](genotype_to_genotype_part_association_object.md)
        * [object](genotype_to_variant_association_object.md)
+       * [object](material_sample_derivation_association_object.md)
        * [object](pairwise_interaction_association_object.md)
        * [object](population_to_population_association_object.md)
        * [object](sequence_feature_relationship_object.md)
@@ -218,6 +238,7 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [relation](relation.md) - the relationship type by which a subject is connected to an object in an association
        * [relation](anatomical_entity_to_anatomical_entity_ontogenic_association_relation.md)
        * [relation](anatomical_entity_to_anatomical_entity_part_of_association_relation.md)
+       * [relation](chemical_to_chemical_derivation_association_relation.md)
        * [relation](gene_regulatory_relationship_relation.md)
        * [relation](gene_to_expression_site_association_relation.md)
        * [relation](gene_to_gene_homology_association_relation.md)
@@ -226,6 +247,7 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [relation](genotype_to_genotype_part_association_relation.md)
        * [relation](genotype_to_phenotypic_feature_association_relation.md)
        * [relation](genotype_to_variant_association_relation.md)
+       * [relation](material_sample_derivation_association_relation.md)
        * [relation](model_to_disease_mixin_relation.md)
        * [relation](pairwise_gene_to_gene_interaction_relation.md)
        * [relation](pairwise_interaction_association_relation.md)
@@ -240,10 +262,10 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [subject](anatomical_entity_to_anatomical_entity_association_subject.md)
           * [subject](anatomical_entity_to_anatomical_entity_ontogenic_association_subject.md)
           * [subject](anatomical_entity_to_anatomical_entity_part_of_association_subject.md)
-       * [subject](biosample_to_thing_association_subject.md)
        * [subject](case_to_thing_association_subject.md)
        * [subject](cell_line_to_disease_or_phenotypic_feature_association_subject.md)
        * [subject](cell_line_to_thing_association_subject.md)
+       * [subject](chemical_to_chemical_derivation_association_subject.md)
        * [subject](chemical_to_thing_association_subject.md)
        * [subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)
        * [subject](disease_to_thing_association_subject.md)
@@ -264,6 +286,8 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [subject](genotype_to_phenotypic_feature_association_subject.md)
        * [subject](genotype_to_thing_association_subject.md)
        * [subject](genotype_to_variant_association_subject.md)
+       * [subject](material_sample_derivation_association_subject.md)
+       * [subject](material_sample_to_thing_association_subject.md)
        * [subject](model_to_disease_mixin_subject.md)
        * [subject](pairwise_interaction_association_subject.md)
        * [subject](population_to_population_association_subject.md)
@@ -277,7 +301,13 @@ Entity and association taxonomy and datamodel for life-sciences data
        * [subject](variant_to_population_association_subject.md)
        * [subject](variant_to_thing_association_subject.md)
  * [drug](drug.md)
+ * [has attribute](has_attribute.md) - connects any named thing to an attribute
+ * [has attribute type](has_attribute_type.md) - connects an attribute to a class that describes it
  * [has exposure parts](has_exposure_parts.md)
+ * [has numeric value](has_numeric_value.md) - connects a quantity value to a number
+ * [has qualitative value](has_qualitative_value.md) - connects an attribute to a value
+ * [has quantitative value](has_quantitative_value.md) - connects an attribute to a value
+ * [has unit](has_unit.md) - connects a quantity value to a unit
  * [interacting molecules category](interacting_molecules_category.md)
  * [node property](node_property.md) - A grouping for any property that holds between a node and a value
     * [aggregate statistic](aggregate_statistic.md)
@@ -294,6 +324,8 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [creation date](creation_date.md) - date on which thing was created. This can be applied to nodes or edges
     * [description](description.md) - a human-readable description of a thing
        * [description](entity_to_phenotypic_feature_association_description.md)
+    * [distribution](distribution.md)
+    * [downloadURL](downloadURL.md)
     * [filler](filler.md) - The value in a property-value tuple
     * [full name](full_name.md) - a long-form human readable name for a thing
     * [genome build](genome_build.md) - TODO
@@ -314,10 +346,17 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [name](name.md) - A human-readable name for a thing
        * [name](macromolecular_machine_name.md)
     * [phase](phase.md) - TODO
+    * [retrievedOn](retrievedOn.md)
+    * [source data file](source_data_file.md)
+    * [source version](source_version.md)
+    * [source web page](source_web_page.md)
     * [synonym](synonym.md) - Alternate human-readable names for a thing
     * [systematic synonym](systematic_synonym.md) - more commonly used for gene symbols in yeast
     * [timepoint](timepoint.md) - a point in time
+    * [title](title.md)
+    * [type](type.md)
     * [update date](update_date.md) - date on which thing was updated. This can be applied to nodes or edges
+    * [versionOf](versionOf.md)
  * [related to](related_to.md) - A relationship that is asserted between two named things
     * [affects](affects.md) - describes an entity that has a direct affect on the state or quality of another existing entity. Use of the 'affects' predicate implies that the affected entity already exists, unlike predicates such as 'affects risk for' and 'prevents, where the outcome is something that may or may not come to be.
        * [affects abundance of](affects_abundance_of.md) - holds between two molecular entities where the action or effect of one changes the amount of the other within a system of interest
@@ -400,7 +439,12 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [has gene product](has_gene_product.md) - holds between a gene and a transcribed and/or translated product generated from it
     * [has molecular consequence](has_molecular_consequence.md) - connects a sequence variant to a class describing the molecular consequence. E.g.  SO:0001583
     * [has participant](has_participant.md) - holds between a process and a continuant, where the continuant is somehow involved in the process
+       * [enabled by](enabled_by.md) - holds between a process and a physical entity, where the physical entity executes the process
+          * [enabled by](molecular_activity_enabled_by.md)
        * [has input](has_input.md) - holds between a process and a continuant, where the continuant is an input into the process
+          * [has input](molecular_activity_has_input.md)
+       * [has output](has_output.md) - holds between a process and a continuant, where the continuant is an output of the process
+          * [has output](molecular_activity_has_output.md)
     * [has phenotype](has_phenotype.md) - holds between a biological entity and a phenotype, where a phenotype is construed broadly as any kind of quality of an organism part, a collection of these qualities, or a change in quality or qualities (e.g. abnormally increased temperature).
     * [homologous to](homologous_to.md) - holds between two biological entities that have common evolutionary origin
        * [orthologous to](orthologous_to.md) - a homology relationship between entities (typically genes) that diverged after a speciation event.
@@ -414,14 +458,14 @@ Entity and association taxonomy and datamodel for life-sciences data
     * [located in](located_in.md) - holds between a material entity and a material entity or site within which it is located (but of which it is not considered a part)
     * [location of](location_of.md) - holds between material entity or site and a material entity that is located within it (but not considered a part of it)
     * [manifestation of](manifestation_of.md) - used in SemMedDB for linking things like dysfunctions and processes to some disease or syndrome
-    * [model of](model_of.md) - holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exibiting similar features of the studied entity.
+    * [model of](model_of.md) - holds between an entity and some other entity it approximates for purposes of scientific study, in virtue of its exhibiting similar features of the studied entity.
     * [occurs in](occurs_in.md) - holds between a process and a material entity or site within which the process occurs
     * [overlaps](overlaps.md) - holds between entties that overlap in their extents (materials or processes)
        * [has part](has_part.md) - holds between wholes and their parts (material entities or processes)
        * [part of](part_of.md) - holds between parts and wholes (material entities or processes)
     * [participates in](participates_in.md) - holds between a continuant and a process, where the continuant is somehow involved in the process
        * [actively involved in](actively_involved_in.md) - holds between a continuant and a process or function, where the continuant actively contributes to part or all of the process or function it realizes
-          * [capable of](capable_of.md) - holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function.
+          * [capable of](capable_of.md) - holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
     * [precedes](precedes.md) - holds between two processes, where one completes before the other begins
     * [produces](produces.md) - holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
     * [same as](same_as.md) - holds between two entities that are considered equivalent to each other
@@ -464,7 +508,7 @@ Entity and association taxonomy and datamodel for life-sciences data
  * [Ncname](Ncname.md)  (**NCName**)  - Prefix part of CURIE
  * [Nodeidentifier](Nodeidentifier.md)  (**NodeIdentifier**)  - A URI, CURIE or BNODE that represents a node in a model.
  * [Objectidentifier](Objectidentifier.md)  (**ElementIdentifier**)  - A URI or CURIE that represents an object in the model.
- * [PerecentageFrequencyValue](PerecentageFrequencyValue.md)  ([Double](Double.md)) 
+ * [PercentageFrequencyValue](PercentageFrequencyValue.md)  ([Double](Double.md)) 
  * [Quotient](Quotient.md)  ([Double](Double.md)) 
  * [String](String.md)  (**str**)  - A character string
  * [SymbolType](SymbolType.md)  ([String](String.md)) 

@@ -1,9 +1,8 @@
 # Biolink model file locations
 import os
-from typing import Union
 
 basedir = os.path.abspath(os.path.join(__file__, '..', '..'))
-BIOLINK_MODEL_YAML = os.path.join(basedir, 'biolink-model.yaml')  # type: Union[bytes, str]
+BIOLINK_MODEL_YAML = os.path.join(basedir, 'biolink-model.yaml')
 BIOLINK_MODEL_JSONLD = os.path.join(basedir, 'context.jsonld')
 BIOLINK_MODEL_SHEX = os.path.join(basedir, 'shex', 'biolink-model.shex')
 BIOLINK_MODEL_RDF = os.path.join(basedir, 'rdf', 'biolink-model.ttl')

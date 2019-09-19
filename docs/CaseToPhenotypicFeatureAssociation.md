@@ -36,7 +36,7 @@ URI: [biolink:CaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab
     * inherited from: [Association](Association.md)
  * [id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [Nodeidentifier](Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
@@ -59,27 +59,3 @@ URI: [biolink:CaseToPhenotypicFeatureAssociation](https://w3id.org/biolink/vocab
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
-
-### Inherited from entity to feature or disease qualifiers:
-
- * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
-    * range: [SeverityValue](SeverityValue.md)
- * [onset qualifier](onset_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
-    * range: [Onset](Onset.md)
-
-### Inherited from entity to phenotypic feature association:
-
- * [object](entity_to_phenotypic_feature_association_object.md)  <sub>REQ</sub>
-    * range: [PhenotypicFeature](PhenotypicFeature.md)
-    * inherited from: [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
-    * range: [BiologicalSex](BiologicalSex.md)
-
-### Inherited from frequency qualifier mixin:
-
- * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-    * range: [FrequencyValue](FrequencyValue.md)

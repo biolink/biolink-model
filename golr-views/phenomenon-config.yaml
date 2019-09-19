@@ -75,6 +75,12 @@ fields:
   - has input
   id: has_input
 - cardinality: multi
+  description: holds between a process and a continuant, where the continuant is an
+    output of the process
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has output
+  id: has_output
+- cardinality: multi
   description: holds between two processes, where one completes before the other begins
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - precedes

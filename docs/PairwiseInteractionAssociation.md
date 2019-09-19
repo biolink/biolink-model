@@ -25,7 +25,7 @@ URI: [biolink:PairwiseInteractionAssociation](https://w3id.org/biolink/vocab/Pai
 ### Own
 
  * [id](pairwise_interaction_association_id.md)  <sub>REQ</sub>
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [Nodeidentifier](Nodeidentifier.md)
  * [object](pairwise_interaction_association_object.md)  <sub>REQ</sub>
     * range: [MolecularEntity](MolecularEntity.md)
  * [relation](pairwise_interaction_association_relation.md)  <sub>REQ</sub>
@@ -49,7 +49,7 @@ URI: [biolink:PairwiseInteractionAssociation](https://w3id.org/biolink/vocab/Pai
     * inherited from: [Association](Association.md)
  * [id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [Nodeidentifier](Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
@@ -78,7 +78,7 @@ URI: [biolink:PairwiseInteractionAssociation](https://w3id.org/biolink/vocab/Pai
  * [interacting molecules category](interacting_molecules_category.md)  <sub>OPT</sub>
     * range: [OntologyClass](OntologyClass.md)
  * [id](pairwise_interaction_association_id.md)  <sub>REQ</sub>
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [Nodeidentifier](Nodeidentifier.md)
  * [object](pairwise_interaction_association_object.md)  <sub>REQ</sub>
     * range: [MolecularEntity](MolecularEntity.md)
  * [relation](pairwise_interaction_association_relation.md)  <sub>REQ</sub>

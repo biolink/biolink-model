@@ -1,10 +1,11 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2019-07-22 10:56\nSchema: biolink_model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2019-09-19 08:32\nSchema: biolink_model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "_comments": null,
       "type": "@type",
       "BFO": "http://purl.obolibrary.org/obo/BFO_",
       "BIOGRID": "http://thebiogrid.org/",
+      "BioSample": "http://example.org/UNKNOWN/BioSample/",
       "CHEBI": "http://purl.obolibrary.org/obo/CHEBI_",
       "CHEMBL.COMPOUND": "http://identifiers.org/chembl.compound/",
       "CHEMBL.TARGET": "http://identifiers.org/chembl.target/",
@@ -15,10 +16,12 @@
       "ClinVar": "http://www.ncbi.nlm.nih.gov/clinvar/",
       "ECO": "http://purl.obolibrary.org/obo/ECO_",
       "ECTO": "http://example.org/UNKNOWN/ECTO/",
+      "EFO": "http://purl.obolibrary.org/obo/EFO_",
       "ENSEMBL": "http://ensembl.org/id/",
       "FAO": "http://purl.obolibrary.org/obo/FAO_",
       "GENO": "http://purl.obolibrary.org/obo/GENO_",
       "GO": "http://purl.obolibrary.org/obo/GO_",
+      "GOLD.META": "http://identifiers.org/gold.meta/",
       "HANCESTRO": "http://example.org/UNKNOWN/HANCESTRO/",
       "HGNC": "http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=",
       "HP": "http://purl.obolibrary.org/obo/HP_",
@@ -30,6 +33,7 @@
       "NCBIGene": "http://www.ncbi.nlm.nih.gov/gene/",
       "NCIT": "http://purl.obolibrary.org/obo/NCIT_",
       "OBAN": "http://purl.org/oban/",
+      "OBI": "http://purl.obolibrary.org/obo/OBI_",
       "OGMS": "http://purl.obolibrary.org/obo/OGMS_",
       "OIO": "http://www.geneontology.org/formats/oboInOwl#",
       "PANTHER": "http://www.pantherdb.org/panther/family.do?clsAccession=",
@@ -38,6 +42,7 @@
       "PR": "http://purl.obolibrary.org/obo/PR_",
       "PW": "http://purl.obolibrary.org/obo/PW_",
       "PomBase": "https://www.pombase.org/spombe/result/",
+      "RHEA": "http://identifiers.org/rhea/",
       "RNAcentral": "http://example.org/UNKNOWN/RNAcentral/",
       "RO": "http://purl.obolibrary.org/obo/RO_",
       "Reactome": "http://example.org/UNKNOWN/Reactome/",
@@ -56,17 +61,19 @@
       "WD": "http://example.org/UNKNOWN/WD/",
       "ZFIN": "http://zfin.org/",
       "biolinkml": "https://w3id.org/biolink/biolinkml/",
+      "dct": "http://example.org/UNKNOWN/dct/",
       "dcterms": "http://purl.org/dc/terms/",
       "dictyBase": "http://dictybase.org/gene/",
       "faldo": "http://biohackathon.org/resource/faldo#",
       "metatype": "https://w3id.org/biolink/biolinkml/type/",
-      "oban": "http://example.org/UNKNOWN/oban/",
       "owl": "http://www.w3.org/2002/07/owl#",
       "pav": "http://purl.org/pav/",
+      "qud": "http://qudt.org/1.1/schema/qudt#",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "shex": "http://www.w3.org/ns/shex#",
       "skos": "https://www.w3.org/TR/skos-reference/#",
+      "void": "http://rdfs.org/ns/void#",
       "wgs": "http://www.w3.org/2003/01/geo/wgs84_pos",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "@vocab": "https://w3id.org/biolink/vocab/",
@@ -141,6 +148,9 @@
          "@type": "@id"
       },
       "causes": {
+         "@type": "@id"
+      },
+      "change_is_catalyzed_by": {
          "@type": "@id"
       },
       "clinical_modifier_qualifier": {
@@ -218,6 +228,12 @@
       "disrupts": {
          "@type": "@id"
       },
+      "distribution": {
+         "@type": "@id"
+      },
+      "enabled_by": {
+         "@type": "@id"
+      },
       "expressed_in": {
          "@type": "@id"
       },
@@ -234,6 +250,12 @@
          "@type": "@id"
       },
       "genetically_interacts_with": {
+         "@type": "@id"
+      },
+      "has_attribute": {
+         "@type": "@id"
+      },
+      "has_attribute_type": {
          "@type": "@id"
       },
       "has_biomarker": {
@@ -260,6 +282,12 @@
       "has_molecular_consequence": {
          "@type": "@id"
       },
+      "has_numeric_value": {
+         "@type": "xsd:double"
+      },
+      "has_output": {
+         "@type": "@id"
+      },
       "has_part": {
          "@type": "@id"
       },
@@ -272,11 +300,20 @@
       "has_phenotype": {
          "@type": "@id"
       },
+      "has_qualitative_value": {
+         "@type": "@id"
+      },
+      "has_quantitative_value": {
+         "@type": "@id"
+      },
       "has_quotient": {
          "@type": "xsd:double"
       },
       "has_total": {
          "@type": "xsd:integer"
+      },
+      "has_unit": {
+         "@type": "UO:0000000"
       },
       "has_zygosity": {
          "@type": "@id"
@@ -458,6 +495,9 @@
       "relation": {
          "@type": "@id"
       },
+      "retrievedOn": {
+         "@type": "xsd:date"
+      },
       "same_as": {
          "@type": "@id"
       },
@@ -468,6 +508,9 @@
          "@type": "@id"
       },
       "sex_qualifier": {
+         "@type": "@id"
+      },
+      "source_data_file": {
          "@type": "@id"
       },
       "stage_qualifier": {
@@ -490,6 +533,9 @@
       },
       "update_date": {
          "@type": "xsd:date"
+      },
+      "versionOf": {
+         "@type": "@id"
       },
       "xenologous_to": {
          "@type": "@id"

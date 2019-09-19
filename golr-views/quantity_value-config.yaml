@@ -1,0 +1,18 @@
+description: A value of an attribute that is quantitative and measurable, expressed
+  as a combination of a unit and a numeric value
+display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
+- quantity value
+document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
+- quantity value
+fields:
+- description: connects a quantity value to a unit
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has unit
+  id: has_unit
+- description: connects a quantity value to a number
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has numeric value
+  id: has_numeric_value
+id: quantity_value
+schema_generating: true
+weight: 20

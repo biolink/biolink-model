@@ -68,6 +68,18 @@ fields:
   id: has_phenotype
 - cardinality: multi
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - molecular activity_has input
+  id: has_input
+- cardinality: multi
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - molecular activity_has output
+  id: has_output
+- cardinality: multi
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - molecular activity_enabled by
+  id: enabled_by
+- cardinality: multi
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - regulates, process to process
   id: regulates_process_to_process
 - cardinality: multi
@@ -76,12 +88,6 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - has participant
   id: has_participant
-- cardinality: multi
-  description: holds between a process and a continuant, where the continuant is an
-    input into the process
-  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
-  - has input
-  id: has_input
 - cardinality: multi
   description: holds between two processes, where one completes before the other begins
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
