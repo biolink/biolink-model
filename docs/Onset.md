@@ -14,7 +14,7 @@ URI: [biolink:Onset](https://w3id.org/biolink/vocab/Onset)
 
 ## Referenced by class
 
- *  **[EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)** *[onset qualifier](onset_qualifier.md)*  <sub>OPT</sub>  **[Onset](Onset.md)**
+ *  **[Association](Association.md)** *[onset qualifier](onset_qualifier.md)*  <sub>OPT</sub>  **[Onset](Onset.md)**
 
 ## Attributes
 

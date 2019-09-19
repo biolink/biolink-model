@@ -210,8 +210,8 @@ fields:
   - actively involved in
   id: actively_involved_in
 - cardinality: multi
-  description: holds between a continuant and process or function, where the continuant
-    alone has the ability to carry out the process or function.
+  description: holds between a physical entity and process or function, where the
+    continuant alone has the ability to carry out the process or function.
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - capable of
   id: capable_of
@@ -248,6 +248,9 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - same as
   id: same_as
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - type
+  id: type
 - description: date on which thing was created. This can be applied to nodes or edges
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - creation date
@@ -256,6 +259,14 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - update date
   id: update_date
+- description: latitude
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - latitude
+  id: latitude
+- description: longitude
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - longitude
+  id: longitude
 - description: description of chemical compound based on element symbols
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - has chemical formula
@@ -263,20 +274,64 @@ fields:
 - display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - aggregate statistic
   id: aggregate_statistic
+- description: number of things with a particular property
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has count
+  id: has_count
+- description: total number of things in a particular reference set
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has total
+  id: has_total
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has quotient
+  id: has_quotient
+- description: equivalent to has quotient multiplied by 100
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has percentage
+  id: has_percentage
+- description: a point in time
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - timepoint
+  id: timepoint
+- description: connects a genomic feature to its sequence
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has biological sequence
+  id: has_biological_sequence
 - cardinality: multi
   description: connects a sequence variant to a class describing the molecular consequence.
     E.g.  SO:0001583
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - has molecular consequence
   id: has_molecular_consequence
+- description: connects and entity to a single gene
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has gene
+  id: has_gene
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has zygosity
+  id: has_zygosity
 - description: The value in a property-value tuple
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - filler
   id: filler
 - description: TODO
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - phase
+  id: phase
+- description: TODO
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - genome build
+  id: genome_build
+- description: TODO
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - interbase coordinate
   id: interbase_coordinate
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - start interbase coordinate
+  id: start_interbase_coordinate
+- display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - end interbase coordinate
+  id: end_interbase_coordinate
 id: named_thing
 schema_generating: true
 weight: 20

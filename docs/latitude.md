@@ -8,7 +8,7 @@ URI: [biolink:latitude](https://w3id.org/biolink/vocab/latitude)
 
 ## Domain and Range
 
-[GeographicLocation](GeographicLocation.md) ->  <sub>OPT</sub> [Float](Float.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Float](Float.md)
 
 ## Parents
 
@@ -21,3 +21,4 @@ URI: [biolink:latitude](https://w3id.org/biolink/vocab/latitude)
 
  * [GeographicLocation](GeographicLocation.md)
  * [GeographicLocationAtTime](GeographicLocationAtTime.md)
+ * [NamedThing](NamedThing.md)

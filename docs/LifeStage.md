@@ -19,7 +19,7 @@ URI: [biolink:LifeStage](https://w3id.org/biolink/vocab/LifeStage)
 ## Referenced by class
 
  *  **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[stage qualifier](gene_to_expression_site_association_stage_qualifier.md)*  <sub>OPT</sub>  **[LifeStage](LifeStage.md)**
- *  **[GeneToExpressionSiteAssociation](GeneToExpressionSiteAssociation.md)** *[stage qualifier](stage_qualifier.md)*  <sub>OPT</sub>  **[LifeStage](LifeStage.md)**
+ *  **[Association](Association.md)** *[stage qualifier](stage_qualifier.md)*  <sub>OPT</sub>  **[LifeStage](LifeStage.md)**
 
 ## Attributes
 

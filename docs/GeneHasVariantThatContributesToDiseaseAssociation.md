@@ -22,9 +22,6 @@ URI: [biolink:GeneHasVariantThatContributesToDiseaseAssociation](https://w3id.or
 
  * [subject](gene_has_variant_that_contributes_to_disease_association_subject.md)  <sub>REQ</sub>
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
- * [sequence variant qualifier](sequence_variant_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in an association where the variant
-    * range: [SequenceVariant](SequenceVariant.md)
 
 ### Inherited from association:
 
@@ -66,28 +63,7 @@ URI: [biolink:GeneHasVariantThatContributesToDiseaseAssociation](https://w3id.or
     * range: [Provider](Provider.md)
     * inherited from: [Association](Association.md)
 
-### Inherited from entity to feature or disease qualifiers:
-
- * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
-    * range: [SeverityValue](SeverityValue.md)
-    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
- * [onset qualifier](onset_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
-    * range: [Onset](Onset.md)
-    * inherited from: [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
-
-### Inherited from frequency qualifier mixin:
-
- * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-    * range: [FrequencyValue](FrequencyValue.md)
-    * inherited from: [FrequencyQualifierMixin](FrequencyQualifierMixin.md)
-
 ### Domain for slot:
 
  * [subject](gene_has_variant_that_contributes_to_disease_association_subject.md)  <sub>REQ</sub>
     * range: [GeneOrGeneProduct](GeneOrGeneProduct.md)
- * [sequence variant qualifier](sequence_variant_qualifier.md)  <sub>OPT</sub>
-    * Description: a qualifier used in an association where the variant
-    * range: [SequenceVariant](SequenceVariant.md)

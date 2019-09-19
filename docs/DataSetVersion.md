@@ -31,8 +31,6 @@ URI: [biolink:DataSetVersion](https://w3id.org/biolink/vocab/DataSetVersion)
     * range: [DataFile](DataFile.md)
  * [title](title.md)  <sub>OPT</sub>
     * range: [String](String.md)
- * [type](type.md)  <sub>OPT</sub>
-    * range: [String](String.md)
  * [versionOf](versionOf.md)  <sub>OPT</sub>
     * range: [DataSet](DataSet.md)
 
@@ -61,8 +59,6 @@ URI: [biolink:DataSetVersion](https://w3id.org/biolink/vocab/DataSetVersion)
  * [source data file](source_data_file.md)  <sub>OPT</sub>
     * range: [DataFile](DataFile.md)
  * [title](title.md)  <sub>OPT</sub>
-    * range: [String](String.md)
- * [type](type.md)  <sub>OPT</sub>
     * range: [String](String.md)
  * [versionOf](versionOf.md)  <sub>OPT</sub>
     * range: [DataSet](DataSet.md)

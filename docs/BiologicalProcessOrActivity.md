@@ -12,6 +12,10 @@ URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/Biolog
 
  *  is_a: [BiologicalEntity](BiologicalEntity.md)
 
+## Uses Mixins
+
+ *  mixin: [Occurrent](Occurrent.md) - A processual entity
+
 ## Children
 
  * [BiologicalProcess](BiologicalProcess.md) - One or more causally connected executions of molecular functions
@@ -19,6 +23,7 @@ URI: [biolink:BiologicalProcessOrActivity](https://w3id.org/biolink/vocab/Biolog
 
 ## Referenced by class
 
+ *  **[Occurrent](Occurrent.md)** *[enabled by](enabled_by.md)*  <sub>0..*</sub>  **[BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)**
 
 ## Attributes
 

@@ -34,9 +34,6 @@ URI: [biolink:DataSetSummary](https://w3id.org/biolink/vocab/DataSetSummary)
  * [versionOf](versionOf.md)  <sub>OPT</sub>
     * range: [DataSet](DataSet.md)
     * inherited from: [DataSetVersion](DataSetVersion.md)
- * [type](type.md)  <sub>OPT</sub>
-    * range: [String](String.md)
-    * inherited from: [DataSetVersion](DataSetVersion.md)
  * [distribution](distribution.md)  <sub>OPT</sub>
     * range: [DistributionLevel](DistributionLevel.md)
     * inherited from: [DataSetVersion](DataSetVersion.md)

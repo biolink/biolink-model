@@ -8,7 +8,7 @@ URI: [biolink:sex_qualifier](https://w3id.org/biolink/vocab/sex_qualifier)
 
 ## Domain and Range
 
-[EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md) ->  <sub>OPT</sub> [BiologicalSex](BiologicalSex.md)
+[Association](Association.md) ->  <sub>OPT</sub> [BiologicalSex](BiologicalSex.md)
 
 ## Parents
 
@@ -19,6 +19,7 @@ URI: [biolink:sex_qualifier](https://w3id.org/biolink/vocab/sex_qualifier)
 
 ## Used by
 
+ * [Association](Association.md)
  * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)

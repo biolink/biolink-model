@@ -18,6 +18,7 @@ type ActivityAndBehavior
     regulatesProcessToProcess: [Occurrent]
     hasParticipant: [NamedThing]
     hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     precedes: [Occurrent]
   }
 
@@ -114,7 +115,15 @@ type Association
     edgeLabel: LabelType!
     hasConfidenceLevel: ConfidenceLevel
     hasEvidence: EvidenceType
+    stageQualifier: LifeStage
+    quantifierQualifier: OntologyClass
+    frequencyQualifier: FrequencyValue
+    severityQualifier: SeverityValue
+    sexQualifier: BiologicalSex
+    onsetQualifier: Onset
     clinicalModifierQualifier: ClinicalModifier
+    sequenceVariantQualifier: SequenceVariant
+    changeIsCatalyzedBy: [MacromolecularMachine]
   }
 
 type Attribute implements OntologyClass
@@ -166,13 +175,15 @@ type BiologicalProcess implements Occurrent
     description: NarrativeText
     systematicSynonym: [LabelType]
     hasPhenotype: [PhenotypicFeature]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [BiologicalProcessOrActivity]
     regulatesProcessToProcess: [Occurrent]
     hasParticipant: [NamedThing]
-    hasInput: [NamedThing]
     precedes: [Occurrent]
   }
 
-type BiologicalProcessOrActivity
+type BiologicalProcessOrActivity implements Occurrent
   {
     id: IdentifierType!
     name: LabelType!
@@ -186,6 +197,12 @@ type BiologicalProcessOrActivity
     description: NarrativeText
     systematicSynonym: [LabelType]
     hasPhenotype: [PhenotypicFeature]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [BiologicalProcessOrActivity]
+    regulatesProcessToProcess: [Occurrent]
+    hasParticipant: [NamedThing]
+    precedes: [Occurrent]
   }
 
 type BiologicalSex
@@ -474,6 +491,37 @@ type ChemicalSubstance
     regulatesEntityToEntity: [MolecularEntity]
     biomarkerFor: [DiseaseOrPhenotypicFeature]
     inTaxon: [OrganismTaxon]
+  }
+
+type ChemicalToChemicalAssociation implements ChemicalToThingAssociation
+  {
+    subject: NamedThing!
+    relation: Uriorcurie!
+    object: ChemicalSubstance!
+    id: IdentifierType!
+    negated: Boolean
+    associationType: OntologyClass
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    providedBy: Provider
+    associationSlot: String
+    edgeLabel: LabelType!
+  }
+
+type ChemicalToChemicalDerivationAssociation
+  {
+    subject: ChemicalSubstance!
+    relation: Uriorcurie!
+    object: ChemicalSubstance!
+    id: IdentifierType!
+    negated: Boolean
+    associationType: OntologyClass
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    providedBy: Provider
+    associationSlot: String
+    edgeLabel: LabelType!
+    changeIsCatalyzedBy: [MacromolecularMachine]
   }
 
 type ChemicalToDiseaseOrPhenotypicFeatureAssociation implements ChemicalToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
@@ -1081,6 +1129,7 @@ type EnvironmentalProcess implements Occurrent
     regulatesProcessToProcess: [Occurrent]
     hasParticipant: [NamedThing]
     hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     precedes: [Occurrent]
   }
 
@@ -2534,6 +2583,67 @@ interface MaterialSampleToThingAssociation
     edgeLabel: LabelType!
   }
 
+type MaterialSample implements SubjectOfInvestigation, PhysicalEntity
+  {
+    id: IdentifierType!
+    name: LabelType!
+    category: [IriType]!
+    relatedTo: [NamedThing]
+    interactsWith: [NamedThing]
+    nodeProperty: String
+    iri: IriType
+    synonym: [LabelType]
+    fullName: LabelType
+    description: NarrativeText
+    systematicSynonym: [LabelType]
+    hasAttribute: [Attribute]
+  }
+
+type MaterialSampleDerivationAssociation
+  {
+    subject: MaterialSample!
+    relation: Uriorcurie!
+    object: NamedThing!
+    id: IdentifierType!
+    negated: Boolean
+    associationType: OntologyClass
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    providedBy: Provider
+    associationSlot: String
+    edgeLabel: LabelType!
+  }
+
+type MaterialSampleToDiseaseOrPhenotypicFeatureAssociation implements MaterialSampleToThingAssociation, ThingToDiseaseOrPhenotypicFeatureAssociation
+  {
+    subject: NamedThing!
+    relation: Uriorcurie!
+    object: NamedThing!
+    id: IdentifierType!
+    negated: Boolean
+    associationType: OntologyClass
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    providedBy: Provider
+    associationSlot: String
+    edgeLabel: LabelType!
+  }
+
+interface MaterialSampleToThingAssociation
+  {
+    subject: MaterialSample!
+    relation: Uriorcurie!
+    object: NamedThing!
+    id: IdentifierType!
+    negated: Boolean
+    associationType: OntologyClass
+    qualifiers: [OntologyClass]
+    publications: [Publication]
+    providedBy: Provider
+    associationSlot: String
+    edgeLabel: LabelType!
+  }
+
 type Metabolite
   {
     id: IdentifierType!
@@ -2695,9 +2805,11 @@ type MolecularActivity implements Occurrent
     description: NarrativeText
     systematicSynonym: [LabelType]
     hasPhenotype: [PhenotypicFeature]
+    hasInput: [ChemicalSubstance]
+    hasOutput: [ChemicalSubstance]
+    enabledBy: [MacromolecularMachine]
     regulatesProcessToProcess: [Occurrent]
     hasParticipant: [NamedThing]
-    hasInput: [NamedThing]
     precedes: [Occurrent]
   }
 
@@ -2816,13 +2928,28 @@ type NamedThing
     manifestationOf: [Disease]
     produces: [NamedThing]
     sameAs: [NamedThing]
+    type: String
     creationDate: Date
     updateDate: Date
+    latitude: Float
+    longitude: Float
     hasChemicalFormula: ChemicalFormulaValue
     aggregateStatistic: String
+    hasCount: Integer
+    hasTotal: Integer
+    hasQuotient: Double
+    hasPercentage: Double
+    timepoint: TimeType
+    hasBiologicalSequence: BiologicalSequence
     hasMolecularConsequence: [OntologyClass]
+    hasGene: Gene
+    hasZygosity: Zygosity
     filler: NamedThing
+    phase: String
+    genomeBuild: String
     interbaseCoordinate: String
+    startInterbaseCoordinate: String
+    endInterbaseCoordinate: String
   }
 
 type NoncodingRNAProduct
@@ -2914,9 +3041,11 @@ type Occurrent
     regulatesProcessToProcess: [Occurrent]
     hasParticipant: [NamedThing]
     hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     precedes: [Occurrent]
     positivelyRegulatesProcessToProcess: [Occurrent]
     negativelyRegulatesProcessToProcess: [Occurrent]
+    enabledBy: [BiologicalProcessOrActivity]
   }
 
 type Onset
@@ -3035,9 +3164,11 @@ type Pathway
     description: NarrativeText
     systematicSynonym: [LabelType]
     hasPhenotype: [PhenotypicFeature]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [BiologicalProcessOrActivity]
     regulatesProcessToProcess: [Occurrent]
     hasParticipant: [NamedThing]
-    hasInput: [NamedThing]
     precedes: [Occurrent]
   }
 
@@ -3057,6 +3188,7 @@ type Phenomenon
     regulatesProcessToProcess: [Occurrent]
     hasParticipant: [NamedThing]
     hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     precedes: [Occurrent]
   }
 
@@ -3128,9 +3260,11 @@ type PhysiologicalProcess
     description: NarrativeText
     systematicSynonym: [LabelType]
     hasPhenotype: [PhenotypicFeature]
+    hasInput: [NamedThing]
+    hasOutput: [NamedThing]
+    enabledBy: [BiologicalProcessOrActivity]
     regulatesProcessToProcess: [Occurrent]
     hasParticipant: [NamedThing]
-    hasInput: [NamedThing]
     precedes: [Occurrent]
   }
 
@@ -3197,6 +3331,7 @@ type Procedure
     regulatesProcessToProcess: [Occurrent]
     hasParticipant: [NamedThing]
     hasInput: [NamedThing]
+    hasOutput: [NamedThing]
     precedes: [Occurrent]
   }
 

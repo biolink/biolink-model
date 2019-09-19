@@ -14,7 +14,7 @@ URI: [biolink:Zygosity](https://w3id.org/biolink/vocab/Zygosity)
 
 ## Referenced by class
 
- *  **[Genotype](Genotype.md)** *[has zygosity](has_zygosity.md)*  <sub>OPT</sub>  **[Zygosity](Zygosity.md)**
+ *  **[NamedThing](NamedThing.md)** *[has zygosity](has_zygosity.md)*  <sub>OPT</sub>  **[Zygosity](Zygosity.md)**
 
 ## Attributes
 

@@ -23,6 +23,7 @@ URI: [biolink:regulates_process_to_process](https://w3id.org/biolink/vocab/regul
 
  * [ActivityAndBehavior](ActivityAndBehavior.md)
  * [BiologicalProcess](BiologicalProcess.md)
+ * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
  * [EnvironmentalProcess](EnvironmentalProcess.md)
  * [MolecularActivity](MolecularActivity.md)
  * [Occurrent](Occurrent.md)

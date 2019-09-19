@@ -8,7 +8,7 @@ URI: [biolink:has_count](https://w3id.org/biolink/vocab/has_count)
 
 ## Domain and Range
 
-[FrequencyQuantifier](FrequencyQuantifier.md) ->  <sub>OPT</sub> [Integer](Integer.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Integer](Integer.md)
 
 ## Parents
 
@@ -21,4 +21,5 @@ URI: [biolink:has_count](https://w3id.org/biolink/vocab/has_count)
 ## Used by
 
  * [FrequencyQuantifier](FrequencyQuantifier.md)
+ * [NamedThing](NamedThing.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

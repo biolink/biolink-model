@@ -22,15 +22,6 @@ URI: [biolink:GeographicLocation](https://w3id.org/biolink/vocab/GeographicLocat
 ## Attributes
 
 
-### Own
-
- * [latitude](latitude.md)  <sub>OPT</sub>
-    * Description: latitude
-    * range: [Float](Float.md)
- * [longitude](longitude.md)  <sub>OPT</sub>
-    * Description: longitude
-    * range: [Float](Float.md)
-
 ### Inherited from named thing:
 
  * [id](id.md)  <sub>REQ</sub>
@@ -48,12 +39,3 @@ URI: [biolink:GeographicLocation](https://w3id.org/biolink/vocab/GeographicLocat
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
-
-### Domain for slot:
-
- * [latitude](latitude.md)  <sub>OPT</sub>
-    * Description: latitude
-    * range: [Float](Float.md)
- * [longitude](longitude.md)  <sub>OPT</sub>
-    * Description: longitude
-    * range: [Float](Float.md)

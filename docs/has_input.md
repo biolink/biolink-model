@@ -16,11 +16,13 @@ URI: [biolink:has_input](https://w3id.org/biolink/vocab/has_input)
 
 ## Children
 
+ *  [has input](molecular_activity_has_input.md)
 
 ## Used by
 
  * [ActivityAndBehavior](ActivityAndBehavior.md)
  * [BiologicalProcess](BiologicalProcess.md)
+ * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
  * [EnvironmentalProcess](EnvironmentalProcess.md)
  * [MolecularActivity](MolecularActivity.md)
  * [Occurrent](Occurrent.md)

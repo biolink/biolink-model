@@ -14,7 +14,7 @@ URI: [biolink:SeverityValue](https://w3id.org/biolink/vocab/SeverityValue)
 
 ## Referenced by class
 
- *  **[EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)** *[severity qualifier](severity_qualifier.md)*  <sub>OPT</sub>  **[SeverityValue](SeverityValue.md)**
+ *  **[Association](Association.md)** *[severity qualifier](severity_qualifier.md)*  <sub>OPT</sub>  **[SeverityValue](SeverityValue.md)**
 
 ## Attributes
 

@@ -1029,6 +1029,15 @@ slots:
     mappings:
       - SEMMEDDB:USES
 
+  has output:
+    is_a: has participant
+    description: >-
+      holds between a process and a continuant, where the continuant is an output of the process
+    domain: occurrent
+    in_subset:
+      - translator_minimal
+    slot_uri: RO:0002234
+
   participates in:
     is_a: related to
     description: >-
@@ -1051,11 +1060,20 @@ slots:
   capable of:
     is_a: actively involved in
     description: >-
-      holds between a continuant and process or function, where the continuant alone has the ability to carry out the process or function.
+      holds between a physical entity and process or function, where the continuant alone has the ability to carry out the process or function.
     range: occurrent
     in_subset:
       - translator_minimal
     slot_uri: RO:0002215
+
+  enabled by:
+    is_a: has participant
+    description: >-
+      holds between a process and a physical entity, where the physical entity executes the process
+    range: biological process or activity
+    in_subset:
+      - translator_minimal
+    slot_uri: RO:0002333
 
   derives into:
     is_a: related to
@@ -1531,6 +1549,14 @@ slots:
     multivalued: true
     range: publication
 
+  change is catalyzed by:
+    is_a: association slot
+    multivalued: true
+    range: macromolecular machine
+    description: >-
+      hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in
+      that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
+      
   has biological sequence:
     is_a: node property
     description: >-
@@ -2917,6 +2943,54 @@ classes:
         range: case
         description: "the case (e.g. patient) that has the property"
 
+  chemical to chemical association:
+    is_a: association
+    defining_slots:
+      - subject
+      - object
+    mixins:
+      - chemical to thing association
+    description: >-
+      A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
+    slot_usage:
+      object:
+        range: chemical substance
+        description: "the chemical element that is the target of the statement"
+
+  chemical to chemical derivation association:
+    is_a: chemical to chemical association
+    defining_slots:
+      - subject
+      - object
+      - relation
+    slots:
+      - change is catalyzed by
+    description: >-
+      A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream.
+      For any such association there is an implicit reaction:
+        IF
+        R has-input C1 AND
+        R has-output C2 AND
+        R enabled-by P AND
+        R type Reaction
+        THEN
+        C1 derives-into C2 <<change is catalyzed by P>>
+    slot_usage:
+      subject:
+        range: chemical substance
+        description: >-
+          the upstream chemical entity
+      object:
+        range: chemical substance
+        description: >-
+          the downstream chemical entity
+      relation:
+        subproperty_of: derives into
+      change is catalyzed by:
+        description: >-
+          this connects the derivation edge to the molecular entity that catalyzes the reaction that causes the
+          subject chemical to transform into the object chemical
+        
   chemical to disease or phenotypic feature association:
     is_a: association
     class_uri: SIO:000993
@@ -3712,6 +3786,8 @@ classes:
 
   biological process or activity:
     is_a: biological entity
+    mixins:
+      - occurrent
     description: >-
       Either an individual molecular activity, or a collection of causally connected molecular activities
 #    union_of:
@@ -3720,6 +3796,10 @@ classes:
     id_prefixes:
       - GO
       - Reactome
+    slots:
+      - has input
+      - has output
+      - enabled by
 
   molecular activity:
     is_a: biological process or activity
@@ -3729,6 +3809,19 @@ classes:
     description: >-
       An execution of a molecular function carried out by a gene product or macromolecular complex.
     class_uri: GO:0003674
+    slot_usage:
+      has input:
+        range: chemical substance
+        description: >-
+          A chemical entity that is the input for the reaction
+      has output:
+        range: chemical substance
+        description: >-
+          A chemical entity that is the output for the reaction
+      enabled by:
+        range: macromolecular machine
+        description: >-
+          The gene product, gene, or complex that catalyzes the reaction
     mappings:
       # UMLS Semantic Type "Molecular Function"
       - UMLSSC:T044
@@ -3736,6 +3829,7 @@ classes:
     id_prefixes:
       - GO
       - Reactome
+      - RHEA
 
   activity and behavior:
     is_a: occurrent

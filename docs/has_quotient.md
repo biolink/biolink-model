@@ -8,7 +8,7 @@ URI: [biolink:has_quotient](https://w3id.org/biolink/vocab/has_quotient)
 
 ## Domain and Range
 
-[FrequencyQuantifier](FrequencyQuantifier.md) ->  <sub>OPT</sub> [Double](Double.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Double](Double.md)
 
 ## Parents
 
@@ -21,4 +21,5 @@ URI: [biolink:has_quotient](https://w3id.org/biolink/vocab/has_quotient)
 ## Used by
 
  * [FrequencyQuantifier](FrequencyQuantifier.md)
+ * [NamedThing](NamedThing.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

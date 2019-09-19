@@ -27,7 +27,7 @@ URI: [biolink:Attribute](https://w3id.org/biolink/vocab/Attribute)
 
 ## Referenced by class
 
- *  **[MaterialSample](MaterialSample.md)** *[has attribute](has_attribute.md)*  <sub>0..*</sub>  **[Attribute](Attribute.md)**
+ *  **None** *[has attribute](has_attribute.md)*  <sub>0..*</sub>  **[Attribute](Attribute.md)**
 
 ## Attributes
 

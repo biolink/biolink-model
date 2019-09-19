@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2019-09-17 13:01\nSchema: biolink_model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
+   "_comments": "Auto generated from biolink-model.yaml by jsonldcontextgen.py version: 0.1.1\nGeneration date: 2019-09-19 08:32\nSchema: biolink_model\n\nid: https://w3id.org/biolink/biolink-model\ndescription: Entity and association taxonomy and datamodel for life-sciences data\nlicense: https://creativecommons.org/publicdomain/zero/1.0/\n",
    "@context": {
       "_comments": null,
       "type": "@type",
@@ -42,6 +42,7 @@
       "PR": "http://purl.obolibrary.org/obo/PR_",
       "PW": "http://purl.obolibrary.org/obo/PW_",
       "PomBase": "https://www.pombase.org/spombe/result/",
+      "RHEA": "http://identifiers.org/rhea/",
       "RNAcentral": "http://example.org/UNKNOWN/RNAcentral/",
       "RO": "http://purl.obolibrary.org/obo/RO_",
       "Reactome": "http://example.org/UNKNOWN/Reactome/",
@@ -149,6 +150,9 @@
       "causes": {
          "@type": "@id"
       },
+      "change_is_catalyzed_by": {
+         "@type": "@id"
+      },
       "clinical_modifier_qualifier": {
          "@type": "@id"
       },
@@ -227,6 +231,9 @@
       "distribution": {
          "@type": "@id"
       },
+      "enabled_by": {
+         "@type": "@id"
+      },
       "expressed_in": {
          "@type": "@id"
       },
@@ -277,6 +284,9 @@
       },
       "has_numeric_value": {
          "@type": "xsd:double"
+      },
+      "has_output": {
+         "@type": "@id"
       },
       "has_part": {
          "@type": "@id"

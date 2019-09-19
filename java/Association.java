@@ -19,17 +19,25 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonPropertyOrder({
     "association_slot",
     "association_type",
+    "change_is_catalyzed_by",
     "clinical_modifier_qualifier",
     "edge_label",
+    "frequency_qualifier",
     "has_confidence_level",
     "has_evidence",
     "id",
     "negated",
     "object",
+    "onset_qualifier",
     "provided_by",
     "publications",
     "qualifiers",
+    "quantifier_qualifier",
     "relation",
+    "sequence_variant_qualifier",
+    "severity_qualifier",
+    "sex_qualifier",
+    "stage_qualifier",
     "subject"
 })
 public class Association {
@@ -49,6 +57,13 @@ public class Association {
     @JsonPropertyDescription("connects an association to the type of association (e.g. gene to phenotype)")
     private String associationType;
     /**
+     * hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
+     * 
+     */
+    @JsonProperty("change_is_catalyzed_by")
+    @JsonPropertyDescription("hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.")
+    private List<String> changeIsCatalyzedBy = new ArrayList<String>();
+    /**
      * Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
      * 
      */
@@ -63,6 +78,13 @@ public class Association {
     @JsonProperty("edge_label")
     @JsonPropertyDescription("A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.")
     private String edgeLabel;
+    /**
+     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * 
+     */
+    @JsonProperty("frequency_qualifier")
+    @JsonPropertyDescription("a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject")
+    private String frequencyQualifier;
     /**
      * connects an association to a qualitative term denoting the level of confidence
      * 
@@ -101,6 +123,13 @@ public class Association {
     @JsonPropertyDescription("connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.")
     private String object;
     /**
+     * a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+     * 
+     */
+    @JsonProperty("onset_qualifier")
+    @JsonPropertyDescription("a qualifier used in a phenotypic association to state when the phenotype appears is in the subject")
+    private String onsetQualifier;
+    /**
      * connects an association to the agent (person, organization or group) that provided it
      * 
      */
@@ -122,6 +151,13 @@ public class Association {
     @JsonPropertyDescription("connects an association to qualifiers that modify or qualify the meaning of that association")
     private List<String> qualifiers = new ArrayList<String>();
     /**
+     * A measurable quantity for the object of the association
+     * 
+     */
+    @JsonProperty("quantifier_qualifier")
+    @JsonPropertyDescription("A measurable quantity for the object of the association")
+    private String quantifierQualifier;
+    /**
      * the relationship type by which a subject is connected to an object in an association
      * (Required)
      * 
@@ -129,6 +165,34 @@ public class Association {
     @JsonProperty("relation")
     @JsonPropertyDescription("the relationship type by which a subject is connected to an object in an association")
     private String relation;
+    /**
+     * a qualifier used in an association where the variant
+     * 
+     */
+    @JsonProperty("sequence_variant_qualifier")
+    @JsonPropertyDescription("a qualifier used in an association where the variant")
+    private String sequenceVariantQualifier;
+    /**
+     * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+     * 
+     */
+    @JsonProperty("severity_qualifier")
+    @JsonPropertyDescription("a qualifier used in a phenotypic association to state how severe the phenotype is in the subject")
+    private String severityQualifier;
+    /**
+     * a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+     * 
+     */
+    @JsonProperty("sex_qualifier")
+    @JsonPropertyDescription("a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.")
+    private String sexQualifier;
+    /**
+     * stage at which expression takes place
+     * 
+     */
+    @JsonProperty("stage_qualifier")
+    @JsonPropertyDescription("stage at which expression takes place")
+    private String stageQualifier;
     /**
      * connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
      * (Required)
@@ -175,6 +239,24 @@ public class Association {
     }
 
     /**
+     * hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
+     * 
+     */
+    @JsonProperty("change_is_catalyzed_by")
+    public List<String> getChangeIsCatalyzedBy() {
+        return changeIsCatalyzedBy;
+    }
+
+    /**
+     * hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
+     * 
+     */
+    @JsonProperty("change_is_catalyzed_by")
+    public void setChangeIsCatalyzedBy(List<String> changeIsCatalyzedBy) {
+        this.changeIsCatalyzedBy = changeIsCatalyzedBy;
+    }
+
+    /**
      * Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
      * 
      */
@@ -210,6 +292,24 @@ public class Association {
     @JsonProperty("edge_label")
     public void setEdgeLabel(String edgeLabel) {
         this.edgeLabel = edgeLabel;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * 
+     */
+    @JsonProperty("frequency_qualifier")
+    public String getFrequencyQualifier() {
+        return frequencyQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+     * 
+     */
+    @JsonProperty("frequency_qualifier")
+    public void setFrequencyQualifier(String frequencyQualifier) {
+        this.frequencyQualifier = frequencyQualifier;
     }
 
     /**
@@ -307,6 +407,24 @@ public class Association {
     }
 
     /**
+     * a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+     * 
+     */
+    @JsonProperty("onset_qualifier")
+    public String getOnsetQualifier() {
+        return onsetQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+     * 
+     */
+    @JsonProperty("onset_qualifier")
+    public void setOnsetQualifier(String onsetQualifier) {
+        this.onsetQualifier = onsetQualifier;
+    }
+
+    /**
      * connects an association to the agent (person, organization or group) that provided it
      * 
      */
@@ -361,6 +479,24 @@ public class Association {
     }
 
     /**
+     * A measurable quantity for the object of the association
+     * 
+     */
+    @JsonProperty("quantifier_qualifier")
+    public String getQuantifierQualifier() {
+        return quantifierQualifier;
+    }
+
+    /**
+     * A measurable quantity for the object of the association
+     * 
+     */
+    @JsonProperty("quantifier_qualifier")
+    public void setQuantifierQualifier(String quantifierQualifier) {
+        this.quantifierQualifier = quantifierQualifier;
+    }
+
+    /**
      * the relationship type by which a subject is connected to an object in an association
      * (Required)
      * 
@@ -378,6 +514,78 @@ public class Association {
     @JsonProperty("relation")
     public void setRelation(String relation) {
         this.relation = relation;
+    }
+
+    /**
+     * a qualifier used in an association where the variant
+     * 
+     */
+    @JsonProperty("sequence_variant_qualifier")
+    public String getSequenceVariantQualifier() {
+        return sequenceVariantQualifier;
+    }
+
+    /**
+     * a qualifier used in an association where the variant
+     * 
+     */
+    @JsonProperty("sequence_variant_qualifier")
+    public void setSequenceVariantQualifier(String sequenceVariantQualifier) {
+        this.sequenceVariantQualifier = sequenceVariantQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+     * 
+     */
+    @JsonProperty("severity_qualifier")
+    public String getSeverityQualifier() {
+        return severityQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+     * 
+     */
+    @JsonProperty("severity_qualifier")
+    public void setSeverityQualifier(String severityQualifier) {
+        this.severityQualifier = severityQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+     * 
+     */
+    @JsonProperty("sex_qualifier")
+    public String getSexQualifier() {
+        return sexQualifier;
+    }
+
+    /**
+     * a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+     * 
+     */
+    @JsonProperty("sex_qualifier")
+    public void setSexQualifier(String sexQualifier) {
+        this.sexQualifier = sexQualifier;
+    }
+
+    /**
+     * stage at which expression takes place
+     * 
+     */
+    @JsonProperty("stage_qualifier")
+    public String getStageQualifier() {
+        return stageQualifier;
+    }
+
+    /**
+     * stage at which expression takes place
+     * 
+     */
+    @JsonProperty("stage_qualifier")
+    public void setStageQualifier(String stageQualifier) {
+        this.stageQualifier = stageQualifier;
     }
 
     /**
@@ -402,12 +610,12 @@ public class Association {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("associationSlot", associationSlot).append("associationType", associationType).append("clinicalModifierQualifier", clinicalModifierQualifier).append("edgeLabel", edgeLabel).append("hasConfidenceLevel", hasConfidenceLevel).append("hasEvidence", hasEvidence).append("id", id).append("negated", negated).append("object", object).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("relation", relation).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("associationSlot", associationSlot).append("associationType", associationType).append("changeIsCatalyzedBy", changeIsCatalyzedBy).append("clinicalModifierQualifier", clinicalModifierQualifier).append("edgeLabel", edgeLabel).append("frequencyQualifier", frequencyQualifier).append("hasConfidenceLevel", hasConfidenceLevel).append("hasEvidence", hasEvidence).append("id", id).append("negated", negated).append("object", object).append("onsetQualifier", onsetQualifier).append("providedBy", providedBy).append("publications", publications).append("qualifiers", qualifiers).append("quantifierQualifier", quantifierQualifier).append("relation", relation).append("sequenceVariantQualifier", sequenceVariantQualifier).append("severityQualifier", severityQualifier).append("sexQualifier", sexQualifier).append("stageQualifier", stageQualifier).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(providedBy).append(negated).append(associationSlot).append(clinicalModifierQualifier).append(subject).append(associationType).append(qualifiers).append(relation).append(hasConfidenceLevel).append(hasEvidence).append(edgeLabel).append(id).append(object).append(publications).toHashCode();
+        return new HashCodeBuilder().append(providedBy).append(sexQualifier).append(negated).append(associationSlot).append(clinicalModifierQualifier).append(sequenceVariantQualifier).append(subject).append(associationType).append(frequencyQualifier).append(qualifiers).append(relation).append(onsetQualifier).append(severityQualifier).append(stageQualifier).append(hasConfidenceLevel).append(quantifierQualifier).append(changeIsCatalyzedBy).append(hasEvidence).append(edgeLabel).append(id).append(object).append(publications).toHashCode();
     }
 
     @Override
@@ -419,7 +627,7 @@ public class Association {
             return false;
         }
         Association rhs = ((Association) other);
-        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(negated, rhs.negated).append(associationSlot, rhs.associationSlot).append(clinicalModifierQualifier, rhs.clinicalModifierQualifier).append(subject, rhs.subject).append(associationType, rhs.associationType).append(qualifiers, rhs.qualifiers).append(relation, rhs.relation).append(hasConfidenceLevel, rhs.hasConfidenceLevel).append(hasEvidence, rhs.hasEvidence).append(edgeLabel, rhs.edgeLabel).append(id, rhs.id).append(object, rhs.object).append(publications, rhs.publications).isEquals();
+        return new EqualsBuilder().append(providedBy, rhs.providedBy).append(sexQualifier, rhs.sexQualifier).append(negated, rhs.negated).append(associationSlot, rhs.associationSlot).append(clinicalModifierQualifier, rhs.clinicalModifierQualifier).append(sequenceVariantQualifier, rhs.sequenceVariantQualifier).append(subject, rhs.subject).append(associationType, rhs.associationType).append(frequencyQualifier, rhs.frequencyQualifier).append(qualifiers, rhs.qualifiers).append(relation, rhs.relation).append(onsetQualifier, rhs.onsetQualifier).append(severityQualifier, rhs.severityQualifier).append(stageQualifier, rhs.stageQualifier).append(hasConfidenceLevel, rhs.hasConfidenceLevel).append(quantifierQualifier, rhs.quantifierQualifier).append(changeIsCatalyzedBy, rhs.changeIsCatalyzedBy).append(hasEvidence, rhs.hasEvidence).append(edgeLabel, rhs.edgeLabel).append(id, rhs.id).append(object, rhs.object).append(publications, rhs.publications).isEquals();
     }
 
 }

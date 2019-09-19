@@ -14,7 +14,7 @@ URI: [biolink:FrequencyValue](https://w3id.org/biolink/vocab/FrequencyValue)
 
 ## Referenced by class
 
- *  **[FrequencyQualifierMixin](FrequencyQualifierMixin.md)** *[frequency qualifier](frequency_qualifier.md)*  <sub>OPT</sub>  **[FrequencyValue](FrequencyValue.md)**
+ *  **[Association](Association.md)** *[frequency qualifier](frequency_qualifier.md)*  <sub>OPT</sub>  **[FrequencyValue](FrequencyValue.md)**
 
 ## Attributes
 

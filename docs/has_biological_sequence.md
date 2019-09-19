@@ -8,7 +8,7 @@ URI: [biolink:has_biological_sequence](https://w3id.org/biolink/vocab/has_biolog
 
 ## Domain and Range
 
-[GenomicEntity](GenomicEntity.md) ->  <sub>OPT</sub> [BiologicalSequence](BiologicalSequence.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [BiologicalSequence](BiologicalSequence.md)
 
 ## Parents
 
@@ -35,6 +35,7 @@ URI: [biolink:has_biological_sequence](https://w3id.org/biolink/vocab/has_biolog
  * [MacromolecularComplex](MacromolecularComplex.md)
  * [MacromolecularMachine](MacromolecularMachine.md)
  * [MicroRNA](MicroRNA.md)
+ * [NamedThing](NamedThing.md)
  * [NoncodingRNAProduct](NoncodingRNAProduct.md)
  * [Protein](Protein.md)
  * [ProteinIsoform](ProteinIsoform.md)

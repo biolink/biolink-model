@@ -49,10 +49,3 @@ URI: [biolink:MaterialSample](https://w3id.org/biolink/vocab/MaterialSample)
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
-
-### Domain for slot:
-
- * [has attribute](has_attribute.md)  <sub>0..*</sub>
-    * Description: connects any named thing to an attribute
-    * range: [Attribute](Attribute.md)
-    * in subsets: (samples)
