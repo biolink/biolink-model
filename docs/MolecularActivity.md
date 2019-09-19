@@ -23,6 +23,15 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
 ## Attributes
 
 
+### Own
+
+ * [enabled by](molecular_activity_enabled_by.md)  <sub>0..*</sub>
+    * range: [MacromolecularMachine](MacromolecularMachine.md)
+ * [has input](molecular_activity_has_input.md)  <sub>0..*</sub>
+    * range: [ChemicalSubstance](ChemicalSubstance.md)
+ * [has output](molecular_activity_has_output.md)  <sub>0..*</sub>
+    * range: [ChemicalSubstance](ChemicalSubstance.md)
+
 ### Inherited from named thing:
 
  * [id](id.md)  <sub>REQ</sub>
@@ -40,3 +49,12 @@ URI: [biolink:MolecularActivity](https://w3id.org/biolink/vocab/MolecularActivit
     * range: [IriType](IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
+
+### Domain for slot:
+
+ * [enabled by](molecular_activity_enabled_by.md)  <sub>0..*</sub>
+    * range: [MacromolecularMachine](MacromolecularMachine.md)
+ * [has input](molecular_activity_has_input.md)  <sub>0..*</sub>
+    * range: [ChemicalSubstance](ChemicalSubstance.md)
+ * [has output](molecular_activity_has_output.md)  <sub>0..*</sub>
+    * range: [ChemicalSubstance](ChemicalSubstance.md)

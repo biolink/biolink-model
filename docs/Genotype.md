@@ -24,18 +24,6 @@ URI: [biolink:Genotype](https://w3id.org/biolink/vocab/Genotype)
 ## Attributes
 
 
-### Own
-
- * [has zygosity](has_zygosity.md)  <sub>OPT</sub>
-    * range: [Zygosity](Zygosity.md)
-
-### Inherited from genomic entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
-    * Description: connects a genomic feature to its sequence
-    * range: [BiologicalSequence](BiologicalSequence.md)
-    * inherited from: [GenomicEntity](GenomicEntity.md)
-
 ### Inherited from named thing:
 
  * [id](id.md)  <sub>REQ</sub>
@@ -61,8 +49,3 @@ URI: [biolink:Genotype](https://w3id.org/biolink/vocab/Genotype)
     * range: [OrganismTaxon](OrganismTaxon.md)
     * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
     * in subsets: (translator_minimal)
-
-### Domain for slot:
-
- * [has zygosity](has_zygosity.md)  <sub>OPT</sub>
-    * range: [Zygosity](Zygosity.md)

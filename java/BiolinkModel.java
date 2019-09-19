@@ -15,6 +15,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "AbstractEntity",
     "ActivityAndBehavior",
     "AnatomicalEntity",
     "AnatomicalEntityToAnatomicalEntityAssociation",
@@ -25,8 +26,6 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "BiologicalProcess",
     "BiologicalProcessOrActivity",
     "BiologicalSex",
-    "Biosample",
-    "BiosampleToDiseaseOrPhenotypicFeatureAssociation",
     "Carbohydrate",
     "Case",
     "CaseToPhenotypicFeatureAssociation",
@@ -35,6 +34,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "CellLineToDiseaseOrPhenotypicFeatureAssociation",
     "CellularComponent",
     "ChemicalSubstance",
+    "ChemicalToChemicalAssociation",
+    "ChemicalToChemicalDerivationAssociation",
     "ChemicalToDiseaseOrPhenotypicFeatureAssociation",
     "ChemicalToGeneAssociation",
     "ChemicalToPathwayAssociation",
@@ -44,11 +45,16 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "ClinicalTrial",
     "CodingSequence",
     "ConfidenceLevel",
+    "DataFile",
+    "DataSet",
+    "DataSetSummary",
+    "DataSetVersion",
     "Device",
     "Disease",
     "DiseaseOrPhenotypicFeature",
     "DiseaseOrPhenotypicFeatureAssociationToLocationAssociation",
     "DiseaseToPhenotypicFeatureAssociation",
+    "DistributionLevel",
     "Drug",
     "DrugExposure",
     "Environment",
@@ -96,6 +102,9 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "MacromolecularMachineToBiologicalProcessAssociation",
     "MacromolecularMachineToCellularComponentAssociation",
     "MacromolecularMachineToMolecularActivityAssociation",
+    "MaterialSample",
+    "MaterialSampleDerivationAssociation",
+    "MaterialSampleToDiseaseOrPhenotypicFeatureAssociation",
     "Metabolite",
     "MicroRNA",
     "MolecularActivity",
@@ -112,6 +121,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "Phenomenon",
     "PhenotypicFeature",
     "PhenotypicSex",
+    "PhysicalEntity",
     "PhysiologicalProcess",
     "PlanetaryEntity",
     "PopulationOfIndividualOrganisms",
@@ -121,6 +131,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "ProteinIsoform",
     "Provider",
     "Publication",
+    "QuantityValue",
     "RNAProduct",
     "RNAProductIsoform",
     "RelationshipType",
@@ -128,6 +139,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
     "SequenceFeatureRelationship",
     "SequenceVariant",
     "SeverityValue",
+    "SourceFile",
     "SpecificityQuantifier",
     "Transcript",
     "TranscriptToGeneRelationship",
@@ -139,6 +151,15 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 })
 public class BiolinkModel {
 
+    /**
+     * AbstractEntity
+     * <p>
+     * Any thing that is not a process or a physical mass-bearing entity
+     * 
+     */
+    @JsonProperty("AbstractEntity")
+    @JsonPropertyDescription("Any thing that is not a process or a physical mass-bearing entity")
+    private AbstractEntity abstractEntity;
     /**
      * ActivityAndBehavior
      * <p>
@@ -196,11 +217,11 @@ public class BiolinkModel {
     /**
      * Attribute
      * <p>
-     * A property or characteristic of an entity
+     * A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
      * 
      */
     @JsonProperty("Attribute")
-    @JsonPropertyDescription("A property or characteristic of an entity")
+    @JsonPropertyDescription("A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.")
     private Attribute attribute;
     /**
      * BiologicalProcess
@@ -229,24 +250,6 @@ public class BiolinkModel {
     @JsonProperty("BiologicalSex")
     @JsonPropertyDescription("")
     private BiologicalSex biologicalSex;
-    /**
-     * Biosample
-     * <p>
-     * 
-     * 
-     */
-    @JsonProperty("Biosample")
-    @JsonPropertyDescription("")
-    private Biosample biosample;
-    /**
-     * BiosampleToDiseaseOrPhenotypicFeatureAssociation
-     * <p>
-     * An association between a biosample and a disease or phenotype
-     * 
-     */
-    @JsonProperty("BiosampleToDiseaseOrPhenotypicFeatureAssociation")
-    @JsonPropertyDescription("An association between a biosample and a disease or phenotype")
-    private BiosampleToDiseaseOrPhenotypicFeatureAssociation biosampleToDiseaseOrPhenotypicFeatureAssociation;
     /**
      * Carbohydrate
      * <p>
@@ -319,6 +322,31 @@ public class BiolinkModel {
     @JsonProperty("ChemicalSubstance")
     @JsonPropertyDescription("May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part")
     private ChemicalSubstance chemicalSubstance;
+    /**
+     * ChemicalToChemicalAssociation
+     * <p>
+     * A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
+     * 
+     */
+    @JsonProperty("ChemicalToChemicalAssociation")
+    @JsonPropertyDescription("A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.")
+    private ChemicalToChemicalAssociation chemicalToChemicalAssociation;
+    /**
+     * ChemicalToChemicalDerivationAssociation
+     * <p>
+     * A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
+     *   IF
+     *   R has-input C1 AND
+     *   R has-output C2 AND
+     *   R enabled-by P AND
+     *   R type Reaction
+     *   THEN
+     *   C1 derives-into C2 <<change is catalyzed by P>>
+     * 
+     */
+    @JsonProperty("ChemicalToChemicalDerivationAssociation")
+    @JsonPropertyDescription("A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:\n  IF\n  R has-input C1 AND\n  R has-output C2 AND\n  R enabled-by P AND\n  R type Reaction\n  THEN\n  C1 derives-into C2 <<change is catalyzed by P>>")
+    private ChemicalToChemicalDerivationAssociation chemicalToChemicalDerivationAssociation;
     /**
      * ChemicalToDiseaseOrPhenotypicFeatureAssociation
      * <p>
@@ -401,6 +429,42 @@ public class BiolinkModel {
     @JsonPropertyDescription("Level of confidence in a statement")
     private ConfidenceLevel confidenceLevel;
     /**
+     * DataFile
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DataFile")
+    @JsonPropertyDescription("")
+    private DataFile dataFile;
+    /**
+     * DataSet
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DataSet")
+    @JsonPropertyDescription("")
+    private DataSet dataSet;
+    /**
+     * DataSetSummary
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DataSetSummary")
+    @JsonPropertyDescription("")
+    private DataSetSummary dataSetSummary;
+    /**
+     * DataSetVersion
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DataSetVersion")
+    @JsonPropertyDescription("")
+    private DataSetVersion dataSetVersion;
+    /**
      * Device
      * <p>
      * A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
@@ -445,6 +509,15 @@ public class BiolinkModel {
     @JsonProperty("DiseaseToPhenotypicFeatureAssociation")
     @JsonPropertyDescription("An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way")
     private DiseaseToPhenotypicFeatureAssociation diseaseToPhenotypicFeatureAssociation;
+    /**
+     * DistributionLevel
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DistributionLevel")
+    @JsonPropertyDescription("")
+    private DistributionLevel distributionLevel;
     /**
      * Drug
      * <p>
@@ -869,6 +942,33 @@ public class BiolinkModel {
     @JsonPropertyDescription("A functional association between a macromolecular machine (gene, gene product or complex) and a molecular activity (as represented in the GO molecular function branch), where the entity carries out the activity, or contributes to its execution")
     private MacromolecularMachineToMolecularActivityAssociation macromolecularMachineToMolecularActivityAssociation;
     /**
+     * MaterialSample
+     * <p>
+     * A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
+     * 
+     */
+    @JsonProperty("MaterialSample")
+    @JsonPropertyDescription("A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]")
+    private MaterialSample materialSample;
+    /**
+     * MaterialSampleDerivationAssociation
+     * <p>
+     * An association between a material sample and the material entity it is derived from
+     * 
+     */
+    @JsonProperty("MaterialSampleDerivationAssociation")
+    @JsonPropertyDescription("An association between a material sample and the material entity it is derived from")
+    private MaterialSampleDerivationAssociation materialSampleDerivationAssociation;
+    /**
+     * MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
+     * <p>
+     * An association between a material sample and a disease or phenotype
+     * 
+     */
+    @JsonProperty("MaterialSampleToDiseaseOrPhenotypicFeatureAssociation")
+    @JsonPropertyDescription("An association between a material sample and a disease or phenotype")
+    private MaterialSampleToDiseaseOrPhenotypicFeatureAssociation materialSampleToDiseaseOrPhenotypicFeatureAssociation;
+    /**
      * Metabolite
      * <p>
      * Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
@@ -1013,6 +1113,15 @@ public class BiolinkModel {
     @JsonPropertyDescription("An attribute corresponding to the phenotypic sex of the individual, based upon the reproductive organs present.")
     private PhenotypicSex phenotypicSex;
     /**
+     * PhysicalEntity
+     * <p>
+     * An entity that has physical properties such as mass, volume, or charge
+     * 
+     */
+    @JsonProperty("PhysicalEntity")
+    @JsonPropertyDescription("An entity that has physical properties such as mass, volume, or charge")
+    private PhysicalEntity physicalEntity;
+    /**
      * PhysiologicalProcess
      * <p>
      * 
@@ -1094,6 +1203,15 @@ public class BiolinkModel {
     @JsonPropertyDescription("Any published piece of information. Can refer to a whole publication, or to a part of it (e.g. a figure, figure legend, or section highlighted by NLP). The scope is intended to be general and include information published on the web as well as journals.")
     private Publication publication;
     /**
+     * QuantityValue
+     * <p>
+     * A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
+     * 
+     */
+    @JsonProperty("QuantityValue")
+    @JsonPropertyDescription("A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value")
+    private QuantityValue quantityValue;
+    /**
      * RNAProduct
      * <p>
      * 
@@ -1156,6 +1274,15 @@ public class BiolinkModel {
     @JsonProperty("SeverityValue")
     @JsonPropertyDescription("describes the severity of a phenotypic feature or disease")
     private SeverityValue severityValue;
+    /**
+     * SourceFile
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("SourceFile")
+    @JsonPropertyDescription("")
+    private SourceFile sourceFile;
     /**
      * SpecificityQuantifier
      * <p>
@@ -1228,6 +1355,28 @@ public class BiolinkModel {
     @JsonProperty("Zygosity")
     @JsonPropertyDescription("")
     private Zygosity zygosity;
+
+    /**
+     * AbstractEntity
+     * <p>
+     * Any thing that is not a process or a physical mass-bearing entity
+     * 
+     */
+    @JsonProperty("AbstractEntity")
+    public AbstractEntity getAbstractEntity() {
+        return abstractEntity;
+    }
+
+    /**
+     * AbstractEntity
+     * <p>
+     * Any thing that is not a process or a physical mass-bearing entity
+     * 
+     */
+    @JsonProperty("AbstractEntity")
+    public void setAbstractEntity(AbstractEntity abstractEntity) {
+        this.abstractEntity = abstractEntity;
+    }
 
     /**
      * ActivityAndBehavior
@@ -1364,7 +1513,7 @@ public class BiolinkModel {
     /**
      * Attribute
      * <p>
-     * A property or characteristic of an entity
+     * A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
      * 
      */
     @JsonProperty("Attribute")
@@ -1375,7 +1524,7 @@ public class BiolinkModel {
     /**
      * Attribute
      * <p>
-     * A property or characteristic of an entity
+     * A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material.
      * 
      */
     @JsonProperty("Attribute")
@@ -1447,50 +1596,6 @@ public class BiolinkModel {
     @JsonProperty("BiologicalSex")
     public void setBiologicalSex(BiologicalSex biologicalSex) {
         this.biologicalSex = biologicalSex;
-    }
-
-    /**
-     * Biosample
-     * <p>
-     * 
-     * 
-     */
-    @JsonProperty("Biosample")
-    public Biosample getBiosample() {
-        return biosample;
-    }
-
-    /**
-     * Biosample
-     * <p>
-     * 
-     * 
-     */
-    @JsonProperty("Biosample")
-    public void setBiosample(Biosample biosample) {
-        this.biosample = biosample;
-    }
-
-    /**
-     * BiosampleToDiseaseOrPhenotypicFeatureAssociation
-     * <p>
-     * An association between a biosample and a disease or phenotype
-     * 
-     */
-    @JsonProperty("BiosampleToDiseaseOrPhenotypicFeatureAssociation")
-    public BiosampleToDiseaseOrPhenotypicFeatureAssociation getBiosampleToDiseaseOrPhenotypicFeatureAssociation() {
-        return biosampleToDiseaseOrPhenotypicFeatureAssociation;
-    }
-
-    /**
-     * BiosampleToDiseaseOrPhenotypicFeatureAssociation
-     * <p>
-     * An association between a biosample and a disease or phenotype
-     * 
-     */
-    @JsonProperty("BiosampleToDiseaseOrPhenotypicFeatureAssociation")
-    public void setBiosampleToDiseaseOrPhenotypicFeatureAssociation(BiosampleToDiseaseOrPhenotypicFeatureAssociation biosampleToDiseaseOrPhenotypicFeatureAssociation) {
-        this.biosampleToDiseaseOrPhenotypicFeatureAssociation = biosampleToDiseaseOrPhenotypicFeatureAssociation;
     }
 
     /**
@@ -1667,6 +1772,64 @@ public class BiolinkModel {
     @JsonProperty("ChemicalSubstance")
     public void setChemicalSubstance(ChemicalSubstance chemicalSubstance) {
         this.chemicalSubstance = chemicalSubstance;
+    }
+
+    /**
+     * ChemicalToChemicalAssociation
+     * <p>
+     * A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
+     * 
+     */
+    @JsonProperty("ChemicalToChemicalAssociation")
+    public ChemicalToChemicalAssociation getChemicalToChemicalAssociation() {
+        return chemicalToChemicalAssociation;
+    }
+
+    /**
+     * ChemicalToChemicalAssociation
+     * <p>
+     * A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
+     * 
+     */
+    @JsonProperty("ChemicalToChemicalAssociation")
+    public void setChemicalToChemicalAssociation(ChemicalToChemicalAssociation chemicalToChemicalAssociation) {
+        this.chemicalToChemicalAssociation = chemicalToChemicalAssociation;
+    }
+
+    /**
+     * ChemicalToChemicalDerivationAssociation
+     * <p>
+     * A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
+     *   IF
+     *   R has-input C1 AND
+     *   R has-output C2 AND
+     *   R enabled-by P AND
+     *   R type Reaction
+     *   THEN
+     *   C1 derives-into C2 <<change is catalyzed by P>>
+     * 
+     */
+    @JsonProperty("ChemicalToChemicalDerivationAssociation")
+    public ChemicalToChemicalDerivationAssociation getChemicalToChemicalDerivationAssociation() {
+        return chemicalToChemicalDerivationAssociation;
+    }
+
+    /**
+     * ChemicalToChemicalDerivationAssociation
+     * <p>
+     * A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
+     *   IF
+     *   R has-input C1 AND
+     *   R has-output C2 AND
+     *   R enabled-by P AND
+     *   R type Reaction
+     *   THEN
+     *   C1 derives-into C2 <<change is catalyzed by P>>
+     * 
+     */
+    @JsonProperty("ChemicalToChemicalDerivationAssociation")
+    public void setChemicalToChemicalDerivationAssociation(ChemicalToChemicalDerivationAssociation chemicalToChemicalDerivationAssociation) {
+        this.chemicalToChemicalDerivationAssociation = chemicalToChemicalDerivationAssociation;
     }
 
     /**
@@ -1868,6 +2031,94 @@ public class BiolinkModel {
     }
 
     /**
+     * DataFile
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DataFile")
+    public DataFile getDataFile() {
+        return dataFile;
+    }
+
+    /**
+     * DataFile
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DataFile")
+    public void setDataFile(DataFile dataFile) {
+        this.dataFile = dataFile;
+    }
+
+    /**
+     * DataSet
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DataSet")
+    public DataSet getDataSet() {
+        return dataSet;
+    }
+
+    /**
+     * DataSet
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DataSet")
+    public void setDataSet(DataSet dataSet) {
+        this.dataSet = dataSet;
+    }
+
+    /**
+     * DataSetSummary
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DataSetSummary")
+    public DataSetSummary getDataSetSummary() {
+        return dataSetSummary;
+    }
+
+    /**
+     * DataSetSummary
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DataSetSummary")
+    public void setDataSetSummary(DataSetSummary dataSetSummary) {
+        this.dataSetSummary = dataSetSummary;
+    }
+
+    /**
+     * DataSetVersion
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DataSetVersion")
+    public DataSetVersion getDataSetVersion() {
+        return dataSetVersion;
+    }
+
+    /**
+     * DataSetVersion
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DataSetVersion")
+    public void setDataSetVersion(DataSetVersion dataSetVersion) {
+        this.dataSetVersion = dataSetVersion;
+    }
+
+    /**
      * Device
      * <p>
      * A thing made or adapted for a particular purpose, especially a piece of mechanical or electronic equipment
@@ -1975,6 +2226,28 @@ public class BiolinkModel {
     @JsonProperty("DiseaseToPhenotypicFeatureAssociation")
     public void setDiseaseToPhenotypicFeatureAssociation(DiseaseToPhenotypicFeatureAssociation diseaseToPhenotypicFeatureAssociation) {
         this.diseaseToPhenotypicFeatureAssociation = diseaseToPhenotypicFeatureAssociation;
+    }
+
+    /**
+     * DistributionLevel
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DistributionLevel")
+    public DistributionLevel getDistributionLevel() {
+        return distributionLevel;
+    }
+
+    /**
+     * DistributionLevel
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("DistributionLevel")
+    public void setDistributionLevel(DistributionLevel distributionLevel) {
+        this.distributionLevel = distributionLevel;
     }
 
     /**
@@ -3012,6 +3285,72 @@ public class BiolinkModel {
     }
 
     /**
+     * MaterialSample
+     * <p>
+     * A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
+     * 
+     */
+    @JsonProperty("MaterialSample")
+    public MaterialSample getMaterialSample() {
+        return materialSample;
+    }
+
+    /**
+     * MaterialSample
+     * <p>
+     * A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]
+     * 
+     */
+    @JsonProperty("MaterialSample")
+    public void setMaterialSample(MaterialSample materialSample) {
+        this.materialSample = materialSample;
+    }
+
+    /**
+     * MaterialSampleDerivationAssociation
+     * <p>
+     * An association between a material sample and the material entity it is derived from
+     * 
+     */
+    @JsonProperty("MaterialSampleDerivationAssociation")
+    public MaterialSampleDerivationAssociation getMaterialSampleDerivationAssociation() {
+        return materialSampleDerivationAssociation;
+    }
+
+    /**
+     * MaterialSampleDerivationAssociation
+     * <p>
+     * An association between a material sample and the material entity it is derived from
+     * 
+     */
+    @JsonProperty("MaterialSampleDerivationAssociation")
+    public void setMaterialSampleDerivationAssociation(MaterialSampleDerivationAssociation materialSampleDerivationAssociation) {
+        this.materialSampleDerivationAssociation = materialSampleDerivationAssociation;
+    }
+
+    /**
+     * MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
+     * <p>
+     * An association between a material sample and a disease or phenotype
+     * 
+     */
+    @JsonProperty("MaterialSampleToDiseaseOrPhenotypicFeatureAssociation")
+    public MaterialSampleToDiseaseOrPhenotypicFeatureAssociation getMaterialSampleToDiseaseOrPhenotypicFeatureAssociation() {
+        return materialSampleToDiseaseOrPhenotypicFeatureAssociation;
+    }
+
+    /**
+     * MaterialSampleToDiseaseOrPhenotypicFeatureAssociation
+     * <p>
+     * An association between a material sample and a disease or phenotype
+     * 
+     */
+    @JsonProperty("MaterialSampleToDiseaseOrPhenotypicFeatureAssociation")
+    public void setMaterialSampleToDiseaseOrPhenotypicFeatureAssociation(MaterialSampleToDiseaseOrPhenotypicFeatureAssociation materialSampleToDiseaseOrPhenotypicFeatureAssociation) {
+        this.materialSampleToDiseaseOrPhenotypicFeatureAssociation = materialSampleToDiseaseOrPhenotypicFeatureAssociation;
+    }
+
+    /**
      * Metabolite
      * <p>
      * Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
@@ -3364,6 +3703,28 @@ public class BiolinkModel {
     }
 
     /**
+     * PhysicalEntity
+     * <p>
+     * An entity that has physical properties such as mass, volume, or charge
+     * 
+     */
+    @JsonProperty("PhysicalEntity")
+    public PhysicalEntity getPhysicalEntity() {
+        return physicalEntity;
+    }
+
+    /**
+     * PhysicalEntity
+     * <p>
+     * An entity that has physical properties such as mass, volume, or charge
+     * 
+     */
+    @JsonProperty("PhysicalEntity")
+    public void setPhysicalEntity(PhysicalEntity physicalEntity) {
+        this.physicalEntity = physicalEntity;
+    }
+
+    /**
      * PhysiologicalProcess
      * <p>
      * 
@@ -3562,6 +3923,28 @@ public class BiolinkModel {
     }
 
     /**
+     * QuantityValue
+     * <p>
+     * A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
+     * 
+     */
+    @JsonProperty("QuantityValue")
+    public QuantityValue getQuantityValue() {
+        return quantityValue;
+    }
+
+    /**
+     * QuantityValue
+     * <p>
+     * A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
+     * 
+     */
+    @JsonProperty("QuantityValue")
+    public void setQuantityValue(QuantityValue quantityValue) {
+        this.quantityValue = quantityValue;
+    }
+
+    /**
      * RNAProduct
      * <p>
      * 
@@ -3713,6 +4096,28 @@ public class BiolinkModel {
     @JsonProperty("SeverityValue")
     public void setSeverityValue(SeverityValue severityValue) {
         this.severityValue = severityValue;
+    }
+
+    /**
+     * SourceFile
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("SourceFile")
+    public SourceFile getSourceFile() {
+        return sourceFile;
+    }
+
+    /**
+     * SourceFile
+     * <p>
+     * 
+     * 
+     */
+    @JsonProperty("SourceFile")
+    public void setSourceFile(SourceFile sourceFile) {
+        this.sourceFile = sourceFile;
     }
 
     /**
@@ -3893,12 +4298,12 @@ public class BiolinkModel {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("activityAndBehavior", activityAndBehavior).append("anatomicalEntity", anatomicalEntity).append("anatomicalEntityToAnatomicalEntityAssociation", anatomicalEntityToAnatomicalEntityAssociation).append("anatomicalEntityToAnatomicalEntityOntogenicAssociation", anatomicalEntityToAnatomicalEntityOntogenicAssociation).append("anatomicalEntityToAnatomicalEntityPartOfAssociation", anatomicalEntityToAnatomicalEntityPartOfAssociation).append("association", association).append("attribute", attribute).append("biologicalProcess", biologicalProcess).append("biologicalProcessOrActivity", biologicalProcessOrActivity).append("biologicalSex", biologicalSex).append("biosample", biosample).append("biosampleToDiseaseOrPhenotypicFeatureAssociation", biosampleToDiseaseOrPhenotypicFeatureAssociation).append("carbohydrate", carbohydrate).append("_case", _case).append("caseToPhenotypicFeatureAssociation", caseToPhenotypicFeatureAssociation).append("cell", cell).append("cellLine", cellLine).append("cellLineToDiseaseOrPhenotypicFeatureAssociation", cellLineToDiseaseOrPhenotypicFeatureAssociation).append("cellularComponent", cellularComponent).append("chemicalSubstance", chemicalSubstance).append("chemicalToDiseaseOrPhenotypicFeatureAssociation", chemicalToDiseaseOrPhenotypicFeatureAssociation).append("chemicalToGeneAssociation", chemicalToGeneAssociation).append("chemicalToPathwayAssociation", chemicalToPathwayAssociation).append("clinicalEntity", clinicalEntity).append("clinicalIntervention", clinicalIntervention).append("clinicalModifier", clinicalModifier).append("clinicalTrial", clinicalTrial).append("codingSequence", codingSequence).append("confidenceLevel", confidenceLevel).append("device", device).append("disease", disease).append("diseaseOrPhenotypicFeature", diseaseOrPhenotypicFeature).append("diseaseOrPhenotypicFeatureAssociationToLocationAssociation", diseaseOrPhenotypicFeatureAssociationToLocationAssociation).append("diseaseToPhenotypicFeatureAssociation", diseaseToPhenotypicFeatureAssociation).append("drug", drug).append("drugExposure", drugExposure).append("environment", environment).append("environmentToPhenotypicFeatureAssociation", environmentToPhenotypicFeatureAssociation).append("environmentalFeature", environmentalFeature).append("environmentalProcess", environmentalProcess).append("evidenceType", evidenceType).append("exon", exon).append("exonToTranscriptRelationship", exonToTranscriptRelationship).append("frequencyQualifierMixin", frequencyQualifierMixin).append("frequencyQuantifier", frequencyQuantifier).append("frequencyValue", frequencyValue).append("functionalAssociation", functionalAssociation).append("gene", gene).append("geneAsAModelOfDiseaseAssociation", geneAsAModelOfDiseaseAssociation).append("geneFamily", geneFamily).append("geneHasVariantThatContributesToDiseaseAssociation", geneHasVariantThatContributesToDiseaseAssociation).append("geneOntologyClass", geneOntologyClass).append("geneOrGeneProduct", geneOrGeneProduct).append("geneProduct", geneProduct).append("geneRegulatoryRelationship", geneRegulatoryRelationship).append("geneToDiseaseAssociation", geneToDiseaseAssociation).append("geneToExpressionSiteAssociation", geneToExpressionSiteAssociation).append("geneToGeneHomologyAssociation", geneToGeneHomologyAssociation).append("geneToGeneProductRelationship", geneToGeneProductRelationship).append("geneToGoTermAssociation", geneToGoTermAssociation).append("geneToPhenotypicFeatureAssociation", geneToPhenotypicFeatureAssociation).append("genome", genome).append("genomicEntity", genomicEntity).append("genomicSequenceLocalization", genomicSequenceLocalization).append("genotype", genotype).append("genotypeToGeneAssociation", genotypeToGeneAssociation).append("genotypeToGenotypePartAssociation", genotypeToGenotypePartAssociation).append("genotypeToPhenotypicFeatureAssociation", genotypeToPhenotypicFeatureAssociation).append("genotypeToVariantAssociation", genotypeToVariantAssociation).append("genotypicSex", genotypicSex).append("geographicLocation", geographicLocation).append("geographicLocationAtTime", geographicLocationAtTime).append("grossAnatomicalStructure", grossAnatomicalStructure).append("haplotype", haplotype).append("individualOrganism", individualOrganism).append("lifeStage", lifeStage).append("macromolecularComplex", macromolecularComplex).append("macromolecularMachine", macromolecularMachine).append("macromolecularMachineToBiologicalProcessAssociation", macromolecularMachineToBiologicalProcessAssociation).append("macromolecularMachineToCellularComponentAssociation", macromolecularMachineToCellularComponentAssociation).append("macromolecularMachineToMolecularActivityAssociation", macromolecularMachineToMolecularActivityAssociation).append("metabolite", metabolite).append("microRNA", microRNA).append("molecularActivity", molecularActivity).append("molecularEntity", molecularEntity).append("namedThing", namedThing).append("noncodingRNAProduct", noncodingRNAProduct).append("occurrent", occurrent).append("onset", onset).append("ontologyClass", ontologyClass).append("organismTaxon", organismTaxon).append("pairwiseGeneToGeneInteraction", pairwiseGeneToGeneInteraction).append("pathognomonicityQuantifier", pathognomonicityQuantifier).append("pathway", pathway).append("phenomenon", phenomenon).append("phenotypicFeature", phenotypicFeature).append("phenotypicSex", phenotypicSex).append("physiologicalProcess", physiologicalProcess).append("planetaryEntity", planetaryEntity).append("populationOfIndividualOrganisms", populationOfIndividualOrganisms).append("populationToPopulationAssociation", populationToPopulationAssociation).append("procedure", procedure).append("protein", protein).append("proteinIsoform", proteinIsoform).append("provider", provider).append("publication", publication).append("rNAProduct", rNAProduct).append("rNAProductIsoform", rNAProductIsoform).append("relationshipType", relationshipType).append("sensitivityQuantifier", sensitivityQuantifier).append("sequenceFeatureRelationship", sequenceFeatureRelationship).append("sequenceVariant", sequenceVariant).append("severityValue", severityValue).append("specificityQuantifier", specificityQuantifier).append("transcript", transcript).append("transcriptToGeneRelationship", transcriptToGeneRelationship).append("treatment", treatment).append("variantToDiseaseAssociation", variantToDiseaseAssociation).append("variantToPhenotypicFeatureAssociation", variantToPhenotypicFeatureAssociation).append("variantToPopulationAssociation", variantToPopulationAssociation).append("zygosity", zygosity).toString();
+        return new ToStringBuilder(this).append("abstractEntity", abstractEntity).append("activityAndBehavior", activityAndBehavior).append("anatomicalEntity", anatomicalEntity).append("anatomicalEntityToAnatomicalEntityAssociation", anatomicalEntityToAnatomicalEntityAssociation).append("anatomicalEntityToAnatomicalEntityOntogenicAssociation", anatomicalEntityToAnatomicalEntityOntogenicAssociation).append("anatomicalEntityToAnatomicalEntityPartOfAssociation", anatomicalEntityToAnatomicalEntityPartOfAssociation).append("association", association).append("attribute", attribute).append("biologicalProcess", biologicalProcess).append("biologicalProcessOrActivity", biologicalProcessOrActivity).append("biologicalSex", biologicalSex).append("carbohydrate", carbohydrate).append("_case", _case).append("caseToPhenotypicFeatureAssociation", caseToPhenotypicFeatureAssociation).append("cell", cell).append("cellLine", cellLine).append("cellLineToDiseaseOrPhenotypicFeatureAssociation", cellLineToDiseaseOrPhenotypicFeatureAssociation).append("cellularComponent", cellularComponent).append("chemicalSubstance", chemicalSubstance).append("chemicalToChemicalAssociation", chemicalToChemicalAssociation).append("chemicalToChemicalDerivationAssociation", chemicalToChemicalDerivationAssociation).append("chemicalToDiseaseOrPhenotypicFeatureAssociation", chemicalToDiseaseOrPhenotypicFeatureAssociation).append("chemicalToGeneAssociation", chemicalToGeneAssociation).append("chemicalToPathwayAssociation", chemicalToPathwayAssociation).append("clinicalEntity", clinicalEntity).append("clinicalIntervention", clinicalIntervention).append("clinicalModifier", clinicalModifier).append("clinicalTrial", clinicalTrial).append("codingSequence", codingSequence).append("confidenceLevel", confidenceLevel).append("dataFile", dataFile).append("dataSet", dataSet).append("dataSetSummary", dataSetSummary).append("dataSetVersion", dataSetVersion).append("device", device).append("disease", disease).append("diseaseOrPhenotypicFeature", diseaseOrPhenotypicFeature).append("diseaseOrPhenotypicFeatureAssociationToLocationAssociation", diseaseOrPhenotypicFeatureAssociationToLocationAssociation).append("diseaseToPhenotypicFeatureAssociation", diseaseToPhenotypicFeatureAssociation).append("distributionLevel", distributionLevel).append("drug", drug).append("drugExposure", drugExposure).append("environment", environment).append("environmentToPhenotypicFeatureAssociation", environmentToPhenotypicFeatureAssociation).append("environmentalFeature", environmentalFeature).append("environmentalProcess", environmentalProcess).append("evidenceType", evidenceType).append("exon", exon).append("exonToTranscriptRelationship", exonToTranscriptRelationship).append("frequencyQualifierMixin", frequencyQualifierMixin).append("frequencyQuantifier", frequencyQuantifier).append("frequencyValue", frequencyValue).append("functionalAssociation", functionalAssociation).append("gene", gene).append("geneAsAModelOfDiseaseAssociation", geneAsAModelOfDiseaseAssociation).append("geneFamily", geneFamily).append("geneHasVariantThatContributesToDiseaseAssociation", geneHasVariantThatContributesToDiseaseAssociation).append("geneOntologyClass", geneOntologyClass).append("geneOrGeneProduct", geneOrGeneProduct).append("geneProduct", geneProduct).append("geneRegulatoryRelationship", geneRegulatoryRelationship).append("geneToDiseaseAssociation", geneToDiseaseAssociation).append("geneToExpressionSiteAssociation", geneToExpressionSiteAssociation).append("geneToGeneHomologyAssociation", geneToGeneHomologyAssociation).append("geneToGeneProductRelationship", geneToGeneProductRelationship).append("geneToGoTermAssociation", geneToGoTermAssociation).append("geneToPhenotypicFeatureAssociation", geneToPhenotypicFeatureAssociation).append("genome", genome).append("genomicEntity", genomicEntity).append("genomicSequenceLocalization", genomicSequenceLocalization).append("genotype", genotype).append("genotypeToGeneAssociation", genotypeToGeneAssociation).append("genotypeToGenotypePartAssociation", genotypeToGenotypePartAssociation).append("genotypeToPhenotypicFeatureAssociation", genotypeToPhenotypicFeatureAssociation).append("genotypeToVariantAssociation", genotypeToVariantAssociation).append("genotypicSex", genotypicSex).append("geographicLocation", geographicLocation).append("geographicLocationAtTime", geographicLocationAtTime).append("grossAnatomicalStructure", grossAnatomicalStructure).append("haplotype", haplotype).append("individualOrganism", individualOrganism).append("lifeStage", lifeStage).append("macromolecularComplex", macromolecularComplex).append("macromolecularMachine", macromolecularMachine).append("macromolecularMachineToBiologicalProcessAssociation", macromolecularMachineToBiologicalProcessAssociation).append("macromolecularMachineToCellularComponentAssociation", macromolecularMachineToCellularComponentAssociation).append("macromolecularMachineToMolecularActivityAssociation", macromolecularMachineToMolecularActivityAssociation).append("materialSample", materialSample).append("materialSampleDerivationAssociation", materialSampleDerivationAssociation).append("materialSampleToDiseaseOrPhenotypicFeatureAssociation", materialSampleToDiseaseOrPhenotypicFeatureAssociation).append("metabolite", metabolite).append("microRNA", microRNA).append("molecularActivity", molecularActivity).append("molecularEntity", molecularEntity).append("namedThing", namedThing).append("noncodingRNAProduct", noncodingRNAProduct).append("occurrent", occurrent).append("onset", onset).append("ontologyClass", ontologyClass).append("organismTaxon", organismTaxon).append("pairwiseGeneToGeneInteraction", pairwiseGeneToGeneInteraction).append("pathognomonicityQuantifier", pathognomonicityQuantifier).append("pathway", pathway).append("phenomenon", phenomenon).append("phenotypicFeature", phenotypicFeature).append("phenotypicSex", phenotypicSex).append("physicalEntity", physicalEntity).append("physiologicalProcess", physiologicalProcess).append("planetaryEntity", planetaryEntity).append("populationOfIndividualOrganisms", populationOfIndividualOrganisms).append("populationToPopulationAssociation", populationToPopulationAssociation).append("procedure", procedure).append("protein", protein).append("proteinIsoform", proteinIsoform).append("provider", provider).append("publication", publication).append("quantityValue", quantityValue).append("rNAProduct", rNAProduct).append("rNAProductIsoform", rNAProductIsoform).append("relationshipType", relationshipType).append("sensitivityQuantifier", sensitivityQuantifier).append("sequenceFeatureRelationship", sequenceFeatureRelationship).append("sequenceVariant", sequenceVariant).append("severityValue", severityValue).append("sourceFile", sourceFile).append("specificityQuantifier", specificityQuantifier).append("transcript", transcript).append("transcriptToGeneRelationship", transcriptToGeneRelationship).append("treatment", treatment).append("variantToDiseaseAssociation", variantToDiseaseAssociation).append("variantToPhenotypicFeatureAssociation", variantToPhenotypicFeatureAssociation).append("variantToPopulationAssociation", variantToPopulationAssociation).append("zygosity", zygosity).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(sequenceVariant).append(anatomicalEntityToAnatomicalEntityAssociation).append(confidenceLevel).append(chemicalToDiseaseOrPhenotypicFeatureAssociation).append(environmentalFeature).append(frequencyValue).append(rNAProduct).append(sequenceFeatureRelationship).append(carbohydrate).append(transcriptToGeneRelationship).append(genotypeToPhenotypicFeatureAssociation).append(chemicalToGeneAssociation).append(protein).append(biologicalProcessOrActivity).append(geneProduct).append(macromolecularMachineToCellularComponentAssociation).append(anatomicalEntityToAnatomicalEntityOntogenicAssociation).append(cellularComponent).append(specificityQuantifier).append(gene).append(pairwiseGeneToGeneInteraction).append(genotypeToGenotypePartAssociation).append(geographicLocationAtTime).append(macromolecularMachineToMolecularActivityAssociation).append(molecularActivity).append(grossAnatomicalStructure).append(individualOrganism).append(cellLine).append(device).append(geneOntologyClass).append(treatment).append(geographicLocation).append(association).append(phenomenon).append(cell).append(transcript).append(geneToDiseaseAssociation).append(attribute).append(clinicalModifier).append(codingSequence).append(environmentToPhenotypicFeatureAssociation).append(_case).append(procedure).append(environmentalProcess).append(onset).append(noncodingRNAProduct).append(chemicalSubstance).append(genome).append(genotypeToGeneAssociation).append(zygosity).append(biosampleToDiseaseOrPhenotypicFeatureAssociation).append(frequencyQualifierMixin).append(lifeStage).append(ontologyClass).append(pathway).append(sensitivityQuantifier).append(frequencyQuantifier).append(variantToDiseaseAssociation).append(geneOrGeneProduct).append(anatomicalEntityToAnatomicalEntityPartOfAssociation).append(macromolecularMachine).append(geneRegulatoryRelationship).append(geneAsAModelOfDiseaseAssociation).append(drug).append(biologicalProcess).append(macromolecularComplex).append(namedThing).append(severityValue).append(caseToPhenotypicFeatureAssociation).append(publication).append(geneHasVariantThatContributesToDiseaseAssociation).append(exonToTranscriptRelationship).append(biosample).append(diseaseOrPhenotypicFeatureAssociationToLocationAssociation).append(molecularEntity).append(geneToExpressionSiteAssociation).append(geneToGoTermAssociation).append(populationToPopulationAssociation).append(drugExposure).append(diseaseToPhenotypicFeatureAssociation).append(chemicalToPathwayAssociation).append(genotypeToVariantAssociation).append(genotype).append(genomicSequenceLocalization).append(geneToGeneHomologyAssociation).append(pathognomonicityQuantifier).append(genotypicSex).append(genomicEntity).append(clinicalTrial).append(activityAndBehavior).append(proteinIsoform).append(variantToPhenotypicFeatureAssociation).append(phenotypicFeature).append(cellLineToDiseaseOrPhenotypicFeatureAssociation).append(planetaryEntity).append(occurrent).append(phenotypicSex).append(macromolecularMachineToBiologicalProcessAssociation).append(rNAProductIsoform).append(metabolite).append(provider).append(organismTaxon).append(geneToGeneProductRelationship).append(physiologicalProcess).append(disease).append(haplotype).append(populationOfIndividualOrganisms).append(relationshipType).append(variantToPopulationAssociation).append(anatomicalEntity).append(clinicalEntity).append(functionalAssociation).append(biologicalSex).append(environment).append(clinicalIntervention).append(evidenceType).append(geneFamily).append(microRNA).append(geneToPhenotypicFeatureAssociation).append(diseaseOrPhenotypicFeature).append(exon).toHashCode();
+        return new HashCodeBuilder().append(materialSampleDerivationAssociation).append(sequenceVariant).append(anatomicalEntityToAnatomicalEntityAssociation).append(confidenceLevel).append(abstractEntity).append(chemicalToDiseaseOrPhenotypicFeatureAssociation).append(environmentalFeature).append(frequencyValue).append(rNAProduct).append(sequenceFeatureRelationship).append(carbohydrate).append(transcriptToGeneRelationship).append(genotypeToPhenotypicFeatureAssociation).append(chemicalToGeneAssociation).append(dataSetVersion).append(protein).append(biologicalProcessOrActivity).append(geneProduct).append(macromolecularMachineToCellularComponentAssociation).append(anatomicalEntityToAnatomicalEntityOntogenicAssociation).append(cellularComponent).append(specificityQuantifier).append(gene).append(chemicalToChemicalDerivationAssociation).append(pairwiseGeneToGeneInteraction).append(genotypeToGenotypePartAssociation).append(geographicLocationAtTime).append(macromolecularMachineToMolecularActivityAssociation).append(molecularActivity).append(grossAnatomicalStructure).append(individualOrganism).append(cellLine).append(device).append(geneOntologyClass).append(treatment).append(geographicLocation).append(association).append(phenomenon).append(cell).append(transcript).append(geneToDiseaseAssociation).append(attribute).append(dataSet).append(clinicalModifier).append(codingSequence).append(environmentToPhenotypicFeatureAssociation).append(_case).append(procedure).append(environmentalProcess).append(onset).append(noncodingRNAProduct).append(chemicalSubstance).append(genome).append(genotypeToGeneAssociation).append(zygosity).append(frequencyQualifierMixin).append(lifeStage).append(ontologyClass).append(pathway).append(chemicalToChemicalAssociation).append(sensitivityQuantifier).append(frequencyQuantifier).append(variantToDiseaseAssociation).append(geneOrGeneProduct).append(materialSample).append(anatomicalEntityToAnatomicalEntityPartOfAssociation).append(macromolecularMachine).append(geneRegulatoryRelationship).append(geneAsAModelOfDiseaseAssociation).append(sourceFile).append(drug).append(biologicalProcess).append(macromolecularComplex).append(namedThing).append(severityValue).append(caseToPhenotypicFeatureAssociation).append(publication).append(geneHasVariantThatContributesToDiseaseAssociation).append(physicalEntity).append(exonToTranscriptRelationship).append(diseaseOrPhenotypicFeatureAssociationToLocationAssociation).append(molecularEntity).append(geneToExpressionSiteAssociation).append(geneToGoTermAssociation).append(populationToPopulationAssociation).append(drugExposure).append(diseaseToPhenotypicFeatureAssociation).append(chemicalToPathwayAssociation).append(genotypeToVariantAssociation).append(genotype).append(genomicSequenceLocalization).append(distributionLevel).append(geneToGeneHomologyAssociation).append(pathognomonicityQuantifier).append(genotypicSex).append(genomicEntity).append(clinicalTrial).append(activityAndBehavior).append(proteinIsoform).append(variantToPhenotypicFeatureAssociation).append(phenotypicFeature).append(cellLineToDiseaseOrPhenotypicFeatureAssociation).append(planetaryEntity).append(occurrent).append(phenotypicSex).append(macromolecularMachineToBiologicalProcessAssociation).append(rNAProductIsoform).append(metabolite).append(provider).append(organismTaxon).append(dataFile).append(geneToGeneProductRelationship).append(physiologicalProcess).append(materialSampleToDiseaseOrPhenotypicFeatureAssociation).append(disease).append(haplotype).append(populationOfIndividualOrganisms).append(relationshipType).append(variantToPopulationAssociation).append(dataSetSummary).append(anatomicalEntity).append(clinicalEntity).append(functionalAssociation).append(biologicalSex).append(environment).append(clinicalIntervention).append(evidenceType).append(quantityValue).append(geneFamily).append(microRNA).append(geneToPhenotypicFeatureAssociation).append(diseaseOrPhenotypicFeature).append(exon).toHashCode();
     }
 
     @Override
@@ -3910,7 +4315,7 @@ public class BiolinkModel {
             return false;
         }
         BiolinkModel rhs = ((BiolinkModel) other);
-        return new EqualsBuilder().append(sequenceVariant, rhs.sequenceVariant).append(anatomicalEntityToAnatomicalEntityAssociation, rhs.anatomicalEntityToAnatomicalEntityAssociation).append(confidenceLevel, rhs.confidenceLevel).append(chemicalToDiseaseOrPhenotypicFeatureAssociation, rhs.chemicalToDiseaseOrPhenotypicFeatureAssociation).append(environmentalFeature, rhs.environmentalFeature).append(frequencyValue, rhs.frequencyValue).append(rNAProduct, rhs.rNAProduct).append(sequenceFeatureRelationship, rhs.sequenceFeatureRelationship).append(carbohydrate, rhs.carbohydrate).append(transcriptToGeneRelationship, rhs.transcriptToGeneRelationship).append(genotypeToPhenotypicFeatureAssociation, rhs.genotypeToPhenotypicFeatureAssociation).append(chemicalToGeneAssociation, rhs.chemicalToGeneAssociation).append(protein, rhs.protein).append(biologicalProcessOrActivity, rhs.biologicalProcessOrActivity).append(geneProduct, rhs.geneProduct).append(macromolecularMachineToCellularComponentAssociation, rhs.macromolecularMachineToCellularComponentAssociation).append(anatomicalEntityToAnatomicalEntityOntogenicAssociation, rhs.anatomicalEntityToAnatomicalEntityOntogenicAssociation).append(cellularComponent, rhs.cellularComponent).append(specificityQuantifier, rhs.specificityQuantifier).append(gene, rhs.gene).append(pairwiseGeneToGeneInteraction, rhs.pairwiseGeneToGeneInteraction).append(genotypeToGenotypePartAssociation, rhs.genotypeToGenotypePartAssociation).append(geographicLocationAtTime, rhs.geographicLocationAtTime).append(macromolecularMachineToMolecularActivityAssociation, rhs.macromolecularMachineToMolecularActivityAssociation).append(molecularActivity, rhs.molecularActivity).append(grossAnatomicalStructure, rhs.grossAnatomicalStructure).append(individualOrganism, rhs.individualOrganism).append(cellLine, rhs.cellLine).append(device, rhs.device).append(geneOntologyClass, rhs.geneOntologyClass).append(treatment, rhs.treatment).append(geographicLocation, rhs.geographicLocation).append(association, rhs.association).append(phenomenon, rhs.phenomenon).append(cell, rhs.cell).append(transcript, rhs.transcript).append(geneToDiseaseAssociation, rhs.geneToDiseaseAssociation).append(attribute, rhs.attribute).append(clinicalModifier, rhs.clinicalModifier).append(codingSequence, rhs.codingSequence).append(environmentToPhenotypicFeatureAssociation, rhs.environmentToPhenotypicFeatureAssociation).append(_case, rhs._case).append(procedure, rhs.procedure).append(environmentalProcess, rhs.environmentalProcess).append(onset, rhs.onset).append(noncodingRNAProduct, rhs.noncodingRNAProduct).append(chemicalSubstance, rhs.chemicalSubstance).append(genome, rhs.genome).append(genotypeToGeneAssociation, rhs.genotypeToGeneAssociation).append(zygosity, rhs.zygosity).append(biosampleToDiseaseOrPhenotypicFeatureAssociation, rhs.biosampleToDiseaseOrPhenotypicFeatureAssociation).append(frequencyQualifierMixin, rhs.frequencyQualifierMixin).append(lifeStage, rhs.lifeStage).append(ontologyClass, rhs.ontologyClass).append(pathway, rhs.pathway).append(sensitivityQuantifier, rhs.sensitivityQuantifier).append(frequencyQuantifier, rhs.frequencyQuantifier).append(variantToDiseaseAssociation, rhs.variantToDiseaseAssociation).append(geneOrGeneProduct, rhs.geneOrGeneProduct).append(anatomicalEntityToAnatomicalEntityPartOfAssociation, rhs.anatomicalEntityToAnatomicalEntityPartOfAssociation).append(macromolecularMachine, rhs.macromolecularMachine).append(geneRegulatoryRelationship, rhs.geneRegulatoryRelationship).append(geneAsAModelOfDiseaseAssociation, rhs.geneAsAModelOfDiseaseAssociation).append(drug, rhs.drug).append(biologicalProcess, rhs.biologicalProcess).append(macromolecularComplex, rhs.macromolecularComplex).append(namedThing, rhs.namedThing).append(severityValue, rhs.severityValue).append(caseToPhenotypicFeatureAssociation, rhs.caseToPhenotypicFeatureAssociation).append(publication, rhs.publication).append(geneHasVariantThatContributesToDiseaseAssociation, rhs.geneHasVariantThatContributesToDiseaseAssociation).append(exonToTranscriptRelationship, rhs.exonToTranscriptRelationship).append(biosample, rhs.biosample).append(diseaseOrPhenotypicFeatureAssociationToLocationAssociation, rhs.diseaseOrPhenotypicFeatureAssociationToLocationAssociation).append(molecularEntity, rhs.molecularEntity).append(geneToExpressionSiteAssociation, rhs.geneToExpressionSiteAssociation).append(geneToGoTermAssociation, rhs.geneToGoTermAssociation).append(populationToPopulationAssociation, rhs.populationToPopulationAssociation).append(drugExposure, rhs.drugExposure).append(diseaseToPhenotypicFeatureAssociation, rhs.diseaseToPhenotypicFeatureAssociation).append(chemicalToPathwayAssociation, rhs.chemicalToPathwayAssociation).append(genotypeToVariantAssociation, rhs.genotypeToVariantAssociation).append(genotype, rhs.genotype).append(genomicSequenceLocalization, rhs.genomicSequenceLocalization).append(geneToGeneHomologyAssociation, rhs.geneToGeneHomologyAssociation).append(pathognomonicityQuantifier, rhs.pathognomonicityQuantifier).append(genotypicSex, rhs.genotypicSex).append(genomicEntity, rhs.genomicEntity).append(clinicalTrial, rhs.clinicalTrial).append(activityAndBehavior, rhs.activityAndBehavior).append(proteinIsoform, rhs.proteinIsoform).append(variantToPhenotypicFeatureAssociation, rhs.variantToPhenotypicFeatureAssociation).append(phenotypicFeature, rhs.phenotypicFeature).append(cellLineToDiseaseOrPhenotypicFeatureAssociation, rhs.cellLineToDiseaseOrPhenotypicFeatureAssociation).append(planetaryEntity, rhs.planetaryEntity).append(occurrent, rhs.occurrent).append(phenotypicSex, rhs.phenotypicSex).append(macromolecularMachineToBiologicalProcessAssociation, rhs.macromolecularMachineToBiologicalProcessAssociation).append(rNAProductIsoform, rhs.rNAProductIsoform).append(metabolite, rhs.metabolite).append(provider, rhs.provider).append(organismTaxon, rhs.organismTaxon).append(geneToGeneProductRelationship, rhs.geneToGeneProductRelationship).append(physiologicalProcess, rhs.physiologicalProcess).append(disease, rhs.disease).append(haplotype, rhs.haplotype).append(populationOfIndividualOrganisms, rhs.populationOfIndividualOrganisms).append(relationshipType, rhs.relationshipType).append(variantToPopulationAssociation, rhs.variantToPopulationAssociation).append(anatomicalEntity, rhs.anatomicalEntity).append(clinicalEntity, rhs.clinicalEntity).append(functionalAssociation, rhs.functionalAssociation).append(biologicalSex, rhs.biologicalSex).append(environment, rhs.environment).append(clinicalIntervention, rhs.clinicalIntervention).append(evidenceType, rhs.evidenceType).append(geneFamily, rhs.geneFamily).append(microRNA, rhs.microRNA).append(geneToPhenotypicFeatureAssociation, rhs.geneToPhenotypicFeatureAssociation).append(diseaseOrPhenotypicFeature, rhs.diseaseOrPhenotypicFeature).append(exon, rhs.exon).isEquals();
+        return new EqualsBuilder().append(materialSampleDerivationAssociation, rhs.materialSampleDerivationAssociation).append(sequenceVariant, rhs.sequenceVariant).append(anatomicalEntityToAnatomicalEntityAssociation, rhs.anatomicalEntityToAnatomicalEntityAssociation).append(confidenceLevel, rhs.confidenceLevel).append(abstractEntity, rhs.abstractEntity).append(chemicalToDiseaseOrPhenotypicFeatureAssociation, rhs.chemicalToDiseaseOrPhenotypicFeatureAssociation).append(environmentalFeature, rhs.environmentalFeature).append(frequencyValue, rhs.frequencyValue).append(rNAProduct, rhs.rNAProduct).append(sequenceFeatureRelationship, rhs.sequenceFeatureRelationship).append(carbohydrate, rhs.carbohydrate).append(transcriptToGeneRelationship, rhs.transcriptToGeneRelationship).append(genotypeToPhenotypicFeatureAssociation, rhs.genotypeToPhenotypicFeatureAssociation).append(chemicalToGeneAssociation, rhs.chemicalToGeneAssociation).append(dataSetVersion, rhs.dataSetVersion).append(protein, rhs.protein).append(biologicalProcessOrActivity, rhs.biologicalProcessOrActivity).append(geneProduct, rhs.geneProduct).append(macromolecularMachineToCellularComponentAssociation, rhs.macromolecularMachineToCellularComponentAssociation).append(anatomicalEntityToAnatomicalEntityOntogenicAssociation, rhs.anatomicalEntityToAnatomicalEntityOntogenicAssociation).append(cellularComponent, rhs.cellularComponent).append(specificityQuantifier, rhs.specificityQuantifier).append(gene, rhs.gene).append(chemicalToChemicalDerivationAssociation, rhs.chemicalToChemicalDerivationAssociation).append(pairwiseGeneToGeneInteraction, rhs.pairwiseGeneToGeneInteraction).append(genotypeToGenotypePartAssociation, rhs.genotypeToGenotypePartAssociation).append(geographicLocationAtTime, rhs.geographicLocationAtTime).append(macromolecularMachineToMolecularActivityAssociation, rhs.macromolecularMachineToMolecularActivityAssociation).append(molecularActivity, rhs.molecularActivity).append(grossAnatomicalStructure, rhs.grossAnatomicalStructure).append(individualOrganism, rhs.individualOrganism).append(cellLine, rhs.cellLine).append(device, rhs.device).append(geneOntologyClass, rhs.geneOntologyClass).append(treatment, rhs.treatment).append(geographicLocation, rhs.geographicLocation).append(association, rhs.association).append(phenomenon, rhs.phenomenon).append(cell, rhs.cell).append(transcript, rhs.transcript).append(geneToDiseaseAssociation, rhs.geneToDiseaseAssociation).append(attribute, rhs.attribute).append(dataSet, rhs.dataSet).append(clinicalModifier, rhs.clinicalModifier).append(codingSequence, rhs.codingSequence).append(environmentToPhenotypicFeatureAssociation, rhs.environmentToPhenotypicFeatureAssociation).append(_case, rhs._case).append(procedure, rhs.procedure).append(environmentalProcess, rhs.environmentalProcess).append(onset, rhs.onset).append(noncodingRNAProduct, rhs.noncodingRNAProduct).append(chemicalSubstance, rhs.chemicalSubstance).append(genome, rhs.genome).append(genotypeToGeneAssociation, rhs.genotypeToGeneAssociation).append(zygosity, rhs.zygosity).append(frequencyQualifierMixin, rhs.frequencyQualifierMixin).append(lifeStage, rhs.lifeStage).append(ontologyClass, rhs.ontologyClass).append(pathway, rhs.pathway).append(chemicalToChemicalAssociation, rhs.chemicalToChemicalAssociation).append(sensitivityQuantifier, rhs.sensitivityQuantifier).append(frequencyQuantifier, rhs.frequencyQuantifier).append(variantToDiseaseAssociation, rhs.variantToDiseaseAssociation).append(geneOrGeneProduct, rhs.geneOrGeneProduct).append(materialSample, rhs.materialSample).append(anatomicalEntityToAnatomicalEntityPartOfAssociation, rhs.anatomicalEntityToAnatomicalEntityPartOfAssociation).append(macromolecularMachine, rhs.macromolecularMachine).append(geneRegulatoryRelationship, rhs.geneRegulatoryRelationship).append(geneAsAModelOfDiseaseAssociation, rhs.geneAsAModelOfDiseaseAssociation).append(sourceFile, rhs.sourceFile).append(drug, rhs.drug).append(biologicalProcess, rhs.biologicalProcess).append(macromolecularComplex, rhs.macromolecularComplex).append(namedThing, rhs.namedThing).append(severityValue, rhs.severityValue).append(caseToPhenotypicFeatureAssociation, rhs.caseToPhenotypicFeatureAssociation).append(publication, rhs.publication).append(geneHasVariantThatContributesToDiseaseAssociation, rhs.geneHasVariantThatContributesToDiseaseAssociation).append(physicalEntity, rhs.physicalEntity).append(exonToTranscriptRelationship, rhs.exonToTranscriptRelationship).append(diseaseOrPhenotypicFeatureAssociationToLocationAssociation, rhs.diseaseOrPhenotypicFeatureAssociationToLocationAssociation).append(molecularEntity, rhs.molecularEntity).append(geneToExpressionSiteAssociation, rhs.geneToExpressionSiteAssociation).append(geneToGoTermAssociation, rhs.geneToGoTermAssociation).append(populationToPopulationAssociation, rhs.populationToPopulationAssociation).append(drugExposure, rhs.drugExposure).append(diseaseToPhenotypicFeatureAssociation, rhs.diseaseToPhenotypicFeatureAssociation).append(chemicalToPathwayAssociation, rhs.chemicalToPathwayAssociation).append(genotypeToVariantAssociation, rhs.genotypeToVariantAssociation).append(genotype, rhs.genotype).append(genomicSequenceLocalization, rhs.genomicSequenceLocalization).append(distributionLevel, rhs.distributionLevel).append(geneToGeneHomologyAssociation, rhs.geneToGeneHomologyAssociation).append(pathognomonicityQuantifier, rhs.pathognomonicityQuantifier).append(genotypicSex, rhs.genotypicSex).append(genomicEntity, rhs.genomicEntity).append(clinicalTrial, rhs.clinicalTrial).append(activityAndBehavior, rhs.activityAndBehavior).append(proteinIsoform, rhs.proteinIsoform).append(variantToPhenotypicFeatureAssociation, rhs.variantToPhenotypicFeatureAssociation).append(phenotypicFeature, rhs.phenotypicFeature).append(cellLineToDiseaseOrPhenotypicFeatureAssociation, rhs.cellLineToDiseaseOrPhenotypicFeatureAssociation).append(planetaryEntity, rhs.planetaryEntity).append(occurrent, rhs.occurrent).append(phenotypicSex, rhs.phenotypicSex).append(macromolecularMachineToBiologicalProcessAssociation, rhs.macromolecularMachineToBiologicalProcessAssociation).append(rNAProductIsoform, rhs.rNAProductIsoform).append(metabolite, rhs.metabolite).append(provider, rhs.provider).append(organismTaxon, rhs.organismTaxon).append(dataFile, rhs.dataFile).append(geneToGeneProductRelationship, rhs.geneToGeneProductRelationship).append(physiologicalProcess, rhs.physiologicalProcess).append(materialSampleToDiseaseOrPhenotypicFeatureAssociation, rhs.materialSampleToDiseaseOrPhenotypicFeatureAssociation).append(disease, rhs.disease).append(haplotype, rhs.haplotype).append(populationOfIndividualOrganisms, rhs.populationOfIndividualOrganisms).append(relationshipType, rhs.relationshipType).append(variantToPopulationAssociation, rhs.variantToPopulationAssociation).append(dataSetSummary, rhs.dataSetSummary).append(anatomicalEntity, rhs.anatomicalEntity).append(clinicalEntity, rhs.clinicalEntity).append(functionalAssociation, rhs.functionalAssociation).append(biologicalSex, rhs.biologicalSex).append(environment, rhs.environment).append(clinicalIntervention, rhs.clinicalIntervention).append(evidenceType, rhs.evidenceType).append(quantityValue, rhs.quantityValue).append(geneFamily, rhs.geneFamily).append(microRNA, rhs.microRNA).append(geneToPhenotypicFeatureAssociation, rhs.geneToPhenotypicFeatureAssociation).append(diseaseOrPhenotypicFeature, rhs.diseaseOrPhenotypicFeature).append(exon, rhs.exon).isEquals();
     }
 
 }

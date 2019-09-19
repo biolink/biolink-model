@@ -15,7 +15,6 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "frequency_qualifier",
     "has_count",
     "has_percentage",
     "has_quotient",
@@ -25,13 +24,6 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 })
 public class VariantToPopulationAssociation {
 
-    /**
-     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-     * 
-     */
-    @JsonProperty("frequency_qualifier")
-    @JsonPropertyDescription("a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject")
-    private String frequencyQualifier;
     @JsonProperty("has_count")
     private String hasCount;
     /**
@@ -59,24 +51,6 @@ public class VariantToPopulationAssociation {
      */
     @JsonProperty("subject")
     private String subject;
-
-    /**
-     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-     * 
-     */
-    @JsonProperty("frequency_qualifier")
-    public String getFrequencyQualifier() {
-        return frequencyQualifier;
-    }
-
-    /**
-     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-     * 
-     */
-    @JsonProperty("frequency_qualifier")
-    public void setFrequencyQualifier(String frequencyQualifier) {
-        this.frequencyQualifier = frequencyQualifier;
-    }
 
     @JsonProperty("has_count")
     public String getHasCount() {
@@ -168,12 +142,12 @@ public class VariantToPopulationAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("frequencyQualifier", frequencyQualifier).append("hasCount", hasCount).append("hasPercentage", hasPercentage).append("hasQuotient", hasQuotient).append("hasTotal", hasTotal).append("object", object).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("hasCount", hasCount).append("hasPercentage", hasPercentage).append("hasQuotient", hasQuotient).append("hasTotal", hasTotal).append("object", object).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(hasPercentage).append(hasQuotient).append(subject).append(frequencyQualifier).append(hasCount).append(hasTotal).append(object).toHashCode();
+        return new HashCodeBuilder().append(hasPercentage).append(hasQuotient).append(subject).append(hasCount).append(hasTotal).append(object).toHashCode();
     }
 
     @Override
@@ -185,7 +159,7 @@ public class VariantToPopulationAssociation {
             return false;
         }
         VariantToPopulationAssociation rhs = ((VariantToPopulationAssociation) other);
-        return new EqualsBuilder().append(hasPercentage, rhs.hasPercentage).append(hasQuotient, rhs.hasQuotient).append(subject, rhs.subject).append(frequencyQualifier, rhs.frequencyQualifier).append(hasCount, rhs.hasCount).append(hasTotal, rhs.hasTotal).append(object, rhs.object).isEquals();
+        return new EqualsBuilder().append(hasPercentage, rhs.hasPercentage).append(hasQuotient, rhs.hasQuotient).append(subject, rhs.subject).append(hasCount, rhs.hasCount).append(hasTotal, rhs.hasTotal).append(object, rhs.object).isEquals();
     }
 
 }

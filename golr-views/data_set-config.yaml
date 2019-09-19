@@ -1,0 +1,61 @@
+display_name: !!python/object/new:biolinkml.meta.ClassDefinitionName
+- data set
+document_category: !!python/object/new:biolinkml.meta.ClassDefinitionName
+- data set
+fields:
+- description: A unique identifier for a thing. Must be either a CURIE shorthand for
+    a URI or a complete URI
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - id
+  id: id
+- description: A human-readable name for a thing
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - name
+  id: name
+- cardinality: multi
+  description: Name of the high level ontology class in which this entity is categorized.
+    Corresponds to the label for the biolink entity type class. In a neo4j database
+    this MAY correspond to the neo4j label tag
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - category
+  id: category
+- cardinality: multi
+  description: A relationship that is asserted between two named things
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - related to
+  id: related_to
+- cardinality: multi
+  description: holds between any two entities that directly or indirectly interact
+    with each other
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - interacts with
+  id: interacts_with
+- description: A grouping for any property that holds between a node and a value
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - node property
+  id: node_property
+- description: An IRI for the node. This is determined by the id using expansion rules.
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - iri
+  id: iri
+- cardinality: multi
+  description: Alternate human-readable names for a thing
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - synonym
+  id: synonym
+- description: a long-form human readable name for a thing
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - full name
+  id: full_name
+- description: a human-readable description of a thing
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - description
+  id: description
+- cardinality: multi
+  description: more commonly used for gene symbols in yeast
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - systematic synonym
+  id: systematic_synonym
+id: data_set
+schema_generating: true
+weight: 20

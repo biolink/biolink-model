@@ -1,6 +1,5 @@
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
@@ -15,29 +14,11 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "frequency_qualifier",
-    "onset_qualifier",
     "relation",
-    "severity_qualifier",
-    "sex_qualifier",
     "subject"
 })
 public class GenotypeToPhenotypicFeatureAssociation {
 
-    /**
-     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-     * 
-     */
-    @JsonProperty("frequency_qualifier")
-    @JsonPropertyDescription("a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject")
-    private String frequencyQualifier;
-    /**
-     * a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
-     * 
-     */
-    @JsonProperty("onset_qualifier")
-    @JsonPropertyDescription("a qualifier used in a phenotypic association to state when the phenotype appears is in the subject")
-    private String onsetQualifier;
     /**
      * 
      * (Required)
@@ -46,62 +27,12 @@ public class GenotypeToPhenotypicFeatureAssociation {
     @JsonProperty("relation")
     private String relation;
     /**
-     * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
-     * 
-     */
-    @JsonProperty("severity_qualifier")
-    @JsonPropertyDescription("a qualifier used in a phenotypic association to state how severe the phenotype is in the subject")
-    private String severityQualifier;
-    /**
-     * a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
-     * 
-     */
-    @JsonProperty("sex_qualifier")
-    @JsonPropertyDescription("a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.")
-    private String sexQualifier;
-    /**
      * 
      * (Required)
      * 
      */
     @JsonProperty("subject")
     private String subject;
-
-    /**
-     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-     * 
-     */
-    @JsonProperty("frequency_qualifier")
-    public String getFrequencyQualifier() {
-        return frequencyQualifier;
-    }
-
-    /**
-     * a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
-     * 
-     */
-    @JsonProperty("frequency_qualifier")
-    public void setFrequencyQualifier(String frequencyQualifier) {
-        this.frequencyQualifier = frequencyQualifier;
-    }
-
-    /**
-     * a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
-     * 
-     */
-    @JsonProperty("onset_qualifier")
-    public String getOnsetQualifier() {
-        return onsetQualifier;
-    }
-
-    /**
-     * a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
-     * 
-     */
-    @JsonProperty("onset_qualifier")
-    public void setOnsetQualifier(String onsetQualifier) {
-        this.onsetQualifier = onsetQualifier;
-    }
 
     /**
      * 
@@ -121,42 +52,6 @@ public class GenotypeToPhenotypicFeatureAssociation {
     @JsonProperty("relation")
     public void setRelation(String relation) {
         this.relation = relation;
-    }
-
-    /**
-     * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
-     * 
-     */
-    @JsonProperty("severity_qualifier")
-    public String getSeverityQualifier() {
-        return severityQualifier;
-    }
-
-    /**
-     * a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
-     * 
-     */
-    @JsonProperty("severity_qualifier")
-    public void setSeverityQualifier(String severityQualifier) {
-        this.severityQualifier = severityQualifier;
-    }
-
-    /**
-     * a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
-     * 
-     */
-    @JsonProperty("sex_qualifier")
-    public String getSexQualifier() {
-        return sexQualifier;
-    }
-
-    /**
-     * a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
-     * 
-     */
-    @JsonProperty("sex_qualifier")
-    public void setSexQualifier(String sexQualifier) {
-        this.sexQualifier = sexQualifier;
     }
 
     /**
@@ -181,12 +76,12 @@ public class GenotypeToPhenotypicFeatureAssociation {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("frequencyQualifier", frequencyQualifier).append("onsetQualifier", onsetQualifier).append("relation", relation).append("severityQualifier", severityQualifier).append("sexQualifier", sexQualifier).append("subject", subject).toString();
+        return new ToStringBuilder(this).append("relation", relation).append("subject", subject).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(sexQualifier).append(onsetQualifier).append(severityQualifier).append(subject).append(frequencyQualifier).append(relation).toHashCode();
+        return new HashCodeBuilder().append(subject).append(relation).toHashCode();
     }
 
     @Override
@@ -198,7 +93,7 @@ public class GenotypeToPhenotypicFeatureAssociation {
             return false;
         }
         GenotypeToPhenotypicFeatureAssociation rhs = ((GenotypeToPhenotypicFeatureAssociation) other);
-        return new EqualsBuilder().append(sexQualifier, rhs.sexQualifier).append(onsetQualifier, rhs.onsetQualifier).append(severityQualifier, rhs.severityQualifier).append(subject, rhs.subject).append(frequencyQualifier, rhs.frequencyQualifier).append(relation, rhs.relation).isEquals();
+        return new EqualsBuilder().append(subject, rhs.subject).append(relation, rhs.relation).isEquals();
     }
 
 }

@@ -18,6 +18,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "has_input",
+    "has_output",
     "has_participant",
     "precedes",
     "regulates_process_to_process"
@@ -31,6 +32,13 @@ public class EnvironmentalProcess {
     @JsonProperty("has_input")
     @JsonPropertyDescription("holds between a process and a continuant, where the continuant is an input into the process")
     private List<String> hasInput = new ArrayList<String>();
+    /**
+     * holds between a process and a continuant, where the continuant is an output of the process
+     * 
+     */
+    @JsonProperty("has_output")
+    @JsonPropertyDescription("holds between a process and a continuant, where the continuant is an output of the process")
+    private List<String> hasOutput = new ArrayList<String>();
     /**
      * holds between a process and a continuant, where the continuant is somehow involved in the process
      * 
@@ -64,6 +72,24 @@ public class EnvironmentalProcess {
     @JsonProperty("has_input")
     public void setHasInput(List<String> hasInput) {
         this.hasInput = hasInput;
+    }
+
+    /**
+     * holds between a process and a continuant, where the continuant is an output of the process
+     * 
+     */
+    @JsonProperty("has_output")
+    public List<String> getHasOutput() {
+        return hasOutput;
+    }
+
+    /**
+     * holds between a process and a continuant, where the continuant is an output of the process
+     * 
+     */
+    @JsonProperty("has_output")
+    public void setHasOutput(List<String> hasOutput) {
+        this.hasOutput = hasOutput;
     }
 
     /**
@@ -114,12 +140,12 @@ public class EnvironmentalProcess {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("hasInput", hasInput).append("hasParticipant", hasParticipant).append("precedes", precedes).append("regulatesProcessToProcess", regulatesProcessToProcess).toString();
+        return new ToStringBuilder(this).append("hasInput", hasInput).append("hasOutput", hasOutput).append("hasParticipant", hasParticipant).append("precedes", precedes).append("regulatesProcessToProcess", regulatesProcessToProcess).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(precedes).append(regulatesProcessToProcess).append(hasInput).append(hasParticipant).toHashCode();
+        return new HashCodeBuilder().append(precedes).append(hasOutput).append(regulatesProcessToProcess).append(hasInput).append(hasParticipant).toHashCode();
     }
 
     @Override
@@ -131,7 +157,7 @@ public class EnvironmentalProcess {
             return false;
         }
         EnvironmentalProcess rhs = ((EnvironmentalProcess) other);
-        return new EqualsBuilder().append(precedes, rhs.precedes).append(regulatesProcessToProcess, rhs.regulatesProcessToProcess).append(hasInput, rhs.hasInput).append(hasParticipant, rhs.hasParticipant).isEquals();
+        return new EqualsBuilder().append(precedes, rhs.precedes).append(hasOutput, rhs.hasOutput).append(regulatesProcessToProcess, rhs.regulatesProcessToProcess).append(hasInput, rhs.hasInput).append(hasParticipant, rhs.hasParticipant).isEquals();
     }
 
 }

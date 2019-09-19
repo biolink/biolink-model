@@ -66,6 +66,39 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - has phenotype
   id: has_phenotype
+- cardinality: multi
+  description: holds between a process and a continuant, where the continuant is an
+    input into the process
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has input
+  id: has_input
+- cardinality: multi
+  description: holds between a process and a continuant, where the continuant is an
+    output of the process
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has output
+  id: has_output
+- cardinality: multi
+  description: holds between a process and a physical entity, where the physical entity
+    executes the process
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - enabled by
+  id: enabled_by
+- cardinality: multi
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - regulates, process to process
+  id: regulates_process_to_process
+- cardinality: multi
+  description: holds between a process and a continuant, where the continuant is somehow
+    involved in the process
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - has participant
+  id: has_participant
+- cardinality: multi
+  description: holds between two processes, where one completes before the other begins
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - precedes
+  id: precedes
 id: biological_process_or_activity
 schema_generating: true
 weight: 20

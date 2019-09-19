@@ -16,12 +16,15 @@ URI: [biolink:has_participant](https://w3id.org/biolink/vocab/has_participant)
 
 ## Children
 
+ *  [enabled by](enabled_by.md)
  *  [has input](has_input.md)
+ *  [has output](has_output.md)
 
 ## Used by
 
  * [ActivityAndBehavior](ActivityAndBehavior.md)
  * [BiologicalProcess](BiologicalProcess.md)
+ * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
  * [EnvironmentalProcess](EnvironmentalProcess.md)
  * [MolecularActivity](MolecularActivity.md)
  * [Occurrent](Occurrent.md)

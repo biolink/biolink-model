@@ -21,6 +21,7 @@ URI: [biolink:precedes](https://w3id.org/biolink/vocab/precedes)
 
  * [ActivityAndBehavior](ActivityAndBehavior.md)
  * [BiologicalProcess](BiologicalProcess.md)
+ * [BiologicalProcessOrActivity](BiologicalProcessOrActivity.md)
  * [EnvironmentalProcess](EnvironmentalProcess.md)
  * [MolecularActivity](MolecularActivity.md)
  * [Occurrent](Occurrent.md)

@@ -65,12 +65,52 @@ fields:
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - has evidence
   id: has_evidence
+- description: stage at which expression takes place
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - stage qualifier
+  id: stage_qualifier
+- description: A measurable quantity for the object of the association
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - quantifier qualifier
+  id: quantifier_qualifier
+- description: a qualifier used in a phenotypic association to state how frequent
+    the phenotype is observed in the subject
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - frequency qualifier
+  id: frequency_qualifier
+- description: a qualifier used in a phenotypic association to state how severe the
+    phenotype is in the subject
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - severity qualifier
+  id: severity_qualifier
+- description: a qualifier used in a phenotypic association to state whether the association
+    is specific to a particular sex.
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - sex qualifier
+  id: sex_qualifier
+- description: a qualifier used in a phenotypic association to state when the phenotype
+    appears is in the subject
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - onset qualifier
+  id: onset_qualifier
 - description: Used to characterize and specify the phenotypic abnormalities defined
     in the Phenotypic abnormality subontology, with respect to severity, laterality,
     age of onset, and other aspects
   display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
   - clinical modifier qualifier
   id: clinical_modifier_qualifier
+- description: a qualifier used in an association where the variant
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - sequence variant qualifier
+  id: sequence_variant_qualifier
+- cardinality: multi
+  description: hyperedge connecting an association between two causally connected
+    entities (for example, two chemical entities, or a chemical entity in that changes
+    location) and the gene product, gene, or complex that enables or catalyzes the
+    change.
+  display_name: !!python/object/new:biolinkml.meta.SlotDefinitionName
+  - change is catalyzed by
+  id: change_is_catalyzed_by
 id: association
 schema_generating: true
 weight: 20

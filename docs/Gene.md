@@ -17,19 +17,12 @@ URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
  *  **[GeneToGeneProductRelationship](GeneToGeneProductRelationship.md)** *[subject](gene_to_gene_product_relationship_subject.md)*  <sub>REQ</sub>  **[Gene](Gene.md)**
  *  **[Gene](Gene.md)** *[genetically interacts with](genetically_interacts_with.md)*  <sub>0..*</sub>  **[Gene](Gene.md)**
  *  **[GenotypeToGeneAssociation](GenotypeToGeneAssociation.md)** *[object](genotype_to_gene_association_object.md)*  <sub>REQ</sub>  **[Gene](Gene.md)**
- *  **[SequenceVariant](SequenceVariant.md)** *[has gene](has_gene.md)*  <sub>OPT</sub>  **[Gene](Gene.md)**
+ *  **[NamedThing](NamedThing.md)** *[has gene](has_gene.md)*  <sub>OPT</sub>  **[Gene](Gene.md)**
  *  **[SequenceVariant](SequenceVariant.md)** *[has gene](sequence_variant_has_gene.md)*  <sub>0..*</sub>  **[Gene](Gene.md)**
  *  **[TranscriptToGeneRelationship](TranscriptToGeneRelationship.md)** *[object](transcript_to_gene_relationship_object.md)*  <sub>REQ</sub>  **[Gene](Gene.md)**
 
 ## Attributes
 
-
-### Inherited from genomic entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
-    * Description: connects a genomic feature to its sequence
-    * range: [BiologicalSequence](BiologicalSequence.md)
-    * inherited from: [GenomicEntity](GenomicEntity.md)
 
 ### Inherited from macromolecular machine:
 

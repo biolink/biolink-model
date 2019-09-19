@@ -2954,7 +2954,7 @@ classes:
       A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
     slot_usage:
       object:
-        range: chemical structure
+        range: chemical substance
         description: "the chemical element that is the target of the statement"
 
   chemical to chemical derivation association:
@@ -2977,11 +2977,11 @@ classes:
         C1 derives-into C2 <<change is catalyzed by P>>
     slot_usage:
       subject:
-        range: chemical structure
+        range: chemical substance
         description: >-
           the upstream chemical entity
       object:
-        range: chemical structure
+        range: chemical substance
         description: >-
           the downstream chemical entity
       relation:

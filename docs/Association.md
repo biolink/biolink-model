@@ -11,12 +11,11 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
 ## Children
 
  * [AnatomicalEntityToAnatomicalEntityAssociation](AnatomicalEntityToAnatomicalEntityAssociation.md)
- * [BiosampleToDiseaseOrPhenotypicFeatureAssociation](BiosampleToDiseaseOrPhenotypicFeatureAssociation.md) - An association between a biosample and a disease or phenotype
- * [BiosampleToThingAssociation](BiosampleToThingAssociation.md) - An association between a biosample and something
  * [CaseToPhenotypicFeatureAssociation](CaseToPhenotypicFeatureAssociation.md) - An association between a case (e.g. individual patient) and a phenotypic feature in which the individual has or has had the phenotype
  * [CaseToThingAssociation](CaseToThingAssociation.md) - An abstract association for use where the case is the subject
  * [CellLineToDiseaseOrPhenotypicFeatureAssociation](CellLineToDiseaseOrPhenotypicFeatureAssociation.md) - An relationship between a cell line and a disease or a phenotype, where the cell line is derived from an individual with that disease or phenotype
  * [CellLineToThingAssociation](CellLineToThingAssociation.md) - An relationship between a cell line and another entity
+ * [ChemicalToChemicalAssociation](ChemicalToChemicalAssociation.md) - A relationship between two chemical entities. This can encompass actual interactions as well as temporal causal edges, e.g. one chemical converted to another.
  * [ChemicalToDiseaseOrPhenotypicFeatureAssociation](ChemicalToDiseaseOrPhenotypicFeatureAssociation.md) - An interaction between a chemical entity and a phenotype or disease, where the presence of the chemical gives rise to or exacerbates the phenotype
  * [ChemicalToGeneAssociation](ChemicalToGeneAssociation.md) - An interaction between a chemical entity and a gene or gene product
  * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md) - An interaction between a chemical entity and a biological process or pathway
@@ -39,6 +38,9 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
  * [GenotypeToPhenotypicFeatureAssociation](GenotypeToPhenotypicFeatureAssociation.md) - Any association between one genotype and a phenotypic feature, where having the genotype confers the phenotype, either in isolation or through environment
  * [GenotypeToThingAssociation](GenotypeToThingAssociation.md)
  * [GenotypeToVariantAssociation](GenotypeToVariantAssociation.md) - Any association between a genotype and a sequence variant.
+ * [MaterialSampleDerivationAssociation](MaterialSampleDerivationAssociation.md) - An association between a material sample and the material entity it is derived from
+ * [MaterialSampleToDiseaseOrPhenotypicFeatureAssociation](MaterialSampleToDiseaseOrPhenotypicFeatureAssociation.md) - An association between a material sample and a disease or phenotype
+ * [MaterialSampleToThingAssociation](MaterialSampleToThingAssociation.md) - An association between a material sample and something
  * [PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) - An interaction at the molecular level between two physical entities
  * [PopulationToPopulationAssociation](PopulationToPopulationAssociation.md) - An association between a two populations
  * [SequenceFeatureRelationship](SequenceFeatureRelationship.md) - For example, a particular exon is part of a particular transcript or gene
@@ -98,12 +100,18 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
     * Description: A unique identifier for an association
     * range: [IdentifierType](IdentifierType.md)
     * in subsets: (translator_minimal)
+ * [change is catalyzed by](change_is_catalyzed_by.md)  <sub>0..*</sub>
+    * Description: hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
+    * range: [MacromolecularMachine](MacromolecularMachine.md)
  * [clinical modifier qualifier](clinical_modifier_qualifier.md)  <sub>OPT</sub>
     * Description: Used to characterize and specify the phenotypic abnormalities defined in the Phenotypic abnormality subontology, with respect to severity, laterality, age of onset, and other aspects
     * range: [ClinicalModifier](ClinicalModifier.md)
  * [edge label](edge_label.md)  <sub>REQ</sub>
     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
     * range: [LabelType](LabelType.md)
+ * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
+    * range: [FrequencyValue](FrequencyValue.md)
  * [has confidence level](has_confidence_level.md)  <sub>OPT</sub>
     * Description: connects an association to a qualitative term denoting the level of confidence
     * range: [ConfidenceLevel](ConfidenceLevel.md)
@@ -116,6 +124,9 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
  * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
+ * [onset qualifier](onset_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state when the phenotype appears is in the subject
+    * range: [Onset](Onset.md)
  * [provided by](provided_by.md)  <sub>OPT</sub>
     * Description: connects an association to the agent (person, organization or group) that provided it
     * range: [Provider](Provider.md)
@@ -125,9 +136,24 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
  * [qualifiers](qualifiers.md)  <sub>0..*</sub>
     * Description: connects an association to qualifiers that modify or qualify the meaning of that association
     * range: [OntologyClass](OntologyClass.md)
+ * [quantifier qualifier](quantifier_qualifier.md)  <sub>OPT</sub>
+    * Description: A measurable quantity for the object of the association
+    * range: [OntologyClass](OntologyClass.md)
  * [relation](relation.md)  <sub>REQ</sub>
     * Description: the relationship type by which a subject is connected to an object in an association
     * range: [Uriorcurie](Uriorcurie.md)
+ * [sequence variant qualifier](sequence_variant_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in an association where the variant
+    * range: [SequenceVariant](SequenceVariant.md)
+ * [severity qualifier](severity_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state how severe the phenotype is in the subject
+    * range: [SeverityValue](SeverityValue.md)
+ * [sex qualifier](sex_qualifier.md)  <sub>OPT</sub>
+    * Description: a qualifier used in a phenotypic association to state whether the association is specific to a particular sex.
+    * range: [BiologicalSex](BiologicalSex.md)
+ * [stage qualifier](stage_qualifier.md)  <sub>OPT</sub>
+    * Description: stage at which expression takes place
+    * range: [LifeStage](LifeStage.md)
  * [subject](subject.md)  <sub>REQ</sub>
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)

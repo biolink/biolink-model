@@ -8,7 +8,7 @@ URI: [biolink:has_percentage](https://w3id.org/biolink/vocab/has_percentage)
 
 ## Domain and Range
 
-[FrequencyQuantifier](FrequencyQuantifier.md) ->  <sub>OPT</sub> [Double](Double.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Double](Double.md)
 
 ## Parents
 
@@ -20,4 +20,5 @@ URI: [biolink:has_percentage](https://w3id.org/biolink/vocab/has_percentage)
 ## Used by
 
  * [FrequencyQuantifier](FrequencyQuantifier.md)
+ * [NamedThing](NamedThing.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)

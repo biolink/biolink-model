@@ -19,13 +19,6 @@ URI: [biolink:Exon](https://w3id.org/biolink/vocab/Exon)
 ## Attributes
 
 
-### Inherited from genomic entity:
-
- * [has biological sequence](has_biological_sequence.md)  <sub>OPT</sub>
-    * Description: connects a genomic feature to its sequence
-    * range: [BiologicalSequence](BiologicalSequence.md)
-    * inherited from: [GenomicEntity](GenomicEntity.md)
-
 ### Inherited from named thing:
 
  * [id](id.md)  <sub>REQ</sub>
