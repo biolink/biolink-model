@@ -52,7 +52,7 @@ URI: [biolink:EntityToPhenotypicFeatureAssociation](https://w3id.org/biolink/voc
     * inherited from: [Association](Association.md)
  * [id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [Nodeidentifier](Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>

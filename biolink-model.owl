@@ -94,6 +94,9 @@ meta:EnvironmentalProcess a owl:Class,
             owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:has_participant ],
         [ a owl:Restriction ;
+            owl:allValuesFrom meta:Occurrent ;
+            owl:onProperty meta:precedes ],
+        [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:has_input ],
         [ a owl:Restriction ;
@@ -984,15 +987,6 @@ meta:negated a owl:AnnotationProperty,
     rdfs:subPropertyOf meta:association_slot ;
     skos:definition "if set to true, then the association is negated i.e. is not true" .
 
-meta:nodeidentifier a owl:Class,
-        meta:TypeDefinition ;
-    rdfs:label "nodeidentifier" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange <http://www.w3.org/ns/shex#nonLiteral> ;
-            owl:onProperty meta:topValue ;
-            owl:qualifiedCardinality 1 ] ;
-    skos:definition "A URI, CURIE or BNODE that represents a node in a model." .
-
 meta:objectidentifier a owl:Class,
         meta:TypeDefinition ;
     rdfs:label "objectidentifier" ;
@@ -1022,7 +1016,7 @@ meta:pairwise_interaction_association_id a owl:AnnotationProperty,
         meta:SlotDefinition ;
     rdfs:label "pairwise interaction association_id" ;
     rdfs:domain meta:PairwiseInteractionAssociation ;
-    rdfs:range meta:identifier_type ;
+    rdfs:range meta:nodeidentifier ;
     rdfs:subPropertyOf meta:association_id .
 
 meta:pairwise_interaction_association_object a owl:AnnotationProperty,
@@ -1602,7 +1596,7 @@ meta:association_id a owl:AnnotationProperty,
         meta:SlotDefinition ;
     rdfs:label "association_id" ;
     rdfs:domain meta:Association ;
-    rdfs:range meta:identifier_type ;
+    rdfs:range meta:nodeidentifier ;
     rdfs:subPropertyOf meta:node_property ;
     skos:definition "A unique identifier for an association" .
 
@@ -2526,6 +2520,15 @@ meta:gene_to_disease_association_subject a owl:AnnotationProperty,
     rdfs:range meta:GeneOrGeneProduct ;
     rdfs:subPropertyOf meta:subject .
 
+meta:identifier_type a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "identifier type" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:anyURI ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "A string that is intended to uniquely identify a thing May be URI in full or compact (CURIE) form" .
+
 meta:interbase_coordinate a owl:AnnotationProperty,
         meta:SlotDefinition ;
     rdfs:label "interbase coordinate" ;
@@ -2539,6 +2542,15 @@ meta:narrative_text a owl:Class,
     rdfs:label "narrative text" ;
     rdfs:subClassOf meta:string ;
     skos:definition "A string that provides a human-readable description of something" .
+
+meta:nodeidentifier a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "nodeidentifier" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange <http://www.w3.org/ns/shex#nonLiteral> ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "A URI, CURIE or BNODE that represents a node in a model." .
 
 meta:participates_in a owl:ObjectProperty,
         meta:SlotDefinition ;
@@ -3166,6 +3178,12 @@ meta:iri_type a owl:Class,
     rdfs:subClassOf meta:uriorcurie ;
     skos:definition "An IRI" .
 
+meta:iri_type a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "iri type" ;
+    rdfs:subClassOf meta:uriorcurie ;
+    skos:definition "An IRI" .
+
 meta:label_type a owl:Class,
         meta:TypeDefinition ;
     rdfs:label "label type" ;
@@ -3260,6 +3278,17 @@ meta:in_taxon a owl:ObjectProperty,
     rdfs:subPropertyOf meta:related_to ;
     skos:definition "connects a thing to a class representing a taxon" .
 
+meta:OrganismTaxon a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "organism taxon" ;
+    rdfs:subClassOf meta:OntologyClass .
+
+meta:Transcript a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "transcript" ;
+    rdfs:subClassOf meta:GenomicEntity ;
+    skos:definition "An RNA synthesized on a DNA or RNA template by an RNA polymerase" .
+
 meta:EntityToPhenotypicFeatureAssociation a owl:Class,
         meta:ClassDefinition ;
     rdfs:label "entity to phenotypic feature association" ;
@@ -3274,8 +3303,19 @@ meta:MacromolecularMachine a owl:Class,
 
 meta:OrganismTaxon a owl:Class,
         meta:ClassDefinition ;
-    rdfs:label "organism taxon" ;
-    rdfs:subClassOf meta:OntologyClass .
+    rdfs:label "attribute" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom meta:iri_type ;
+            owl:onProperty meta:subclass_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:related_to ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom meta:NamedThing ;
+            owl:onProperty meta:interacts_with ],
+        meta:AbstractEntity,
+        meta:OntologyClass ;
+    skos:definition "A property or characteristic of an entity. For example, an apple may have properties such as color, shape, age, crispiness. An environmental sample may have attributes such as depth, lat, long, material." .
 
 meta:Transcript a owl:Class,
         meta:ClassDefinition ;
@@ -3325,6 +3365,15 @@ meta:ChemicalSubstance a owl:Class,
     rdfs:label "chemical substance" ;
     rdfs:subClassOf meta:MolecularEntity ;
     skos:definition "May be a chemical entity or a formulation with a chemical entity as active ingredient, or a complex material with multiple chemical entities as part" .
+
+meta:OntologyClass a owl:Class,
+        meta:ClassDefinition ;
+    rdfs:label "ontology class" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom meta:iri_type ;
+            owl:onProperty meta:subclass_of ],
+        meta:NamedThing ;
+    skos:definition "a concept or class in an ontology, vocabulary or thesaurus" .
 
 meta:OntologyClass a owl:Class,
         meta:ClassDefinition ;
@@ -3397,6 +3446,15 @@ meta:uriorcurie a owl:Class,
             owl:qualifiedCardinality 1 ] ;
     skos:definition "a URI or a CURIE" .
 
+meta:string a owl:Class,
+        meta:TypeDefinition ;
+    rdfs:label "string" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty meta:topValue ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "A character string" .
+
 meta:affects a owl:ObjectProperty,
         meta:SlotDefinition ;
     rdfs:label "affects" ;
@@ -3431,7 +3489,7 @@ meta:GeneOrGeneProduct a owl:Class,
     rdfs:label "gene or gene product" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom meta:GeneOrGeneProduct ;
-            owl:onProperty meta:in_pathway_with ],
+            owl:onProperty meta:in_complex_with ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:GeneOrGeneProduct ;
             owl:onProperty meta:in_complex_with ],
@@ -3470,10 +3528,10 @@ meta:Occurrent a owl:Class,
             owl:onProperty meta:regulates_process_to_process ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:has_participant ],
+            owl:onProperty meta:has_input ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:NamedThing ;
-            owl:onProperty meta:has_input ],
+            owl:onProperty meta:has_participant ],
         [ a owl:Restriction ;
             owl:allValuesFrom meta:Occurrent ;
             owl:onProperty meta:precedes ],
@@ -3636,6 +3694,9 @@ meta:MolecularEntity a owl:Class,
             owl:allValuesFrom meta:MolecularEntity ;
             owl:onProperty meta:affects_localization_of ],
         [ a owl:Restriction ;
+            owl:allValuesFrom meta:Transcript ;
+            owl:onProperty meta:increases_splicing_of ],
+        [ a owl:Restriction ;
             owl:allValuesFrom meta:MolecularEntity ;
             owl:onProperty meta:increases_folding_of ],
         [ a owl:Restriction ;
@@ -3789,6 +3850,10 @@ meta:NamedThing a owl:Class,
             owl:allValuesFrom meta:NamedThing ;
             owl:onProperty meta:predisposes ] ;
     skos:definition "a databased entity or concept/class" .
+
+meta:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" ;
+    skos:definition "the definition of a class or interface" .
 
 meta:SlotDefinition a owl:Class ;
     rdfs:label "slot_definition" ;

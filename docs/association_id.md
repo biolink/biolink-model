@@ -8,7 +8,7 @@ URI: [biolink:association_id](https://w3id.org/biolink/vocab/association_id)
 
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>REQ</sub> [IdentifierType](IdentifierType.md)
+[Association](Association.md) ->  <sub>REQ</sub> [Nodeidentifier](Nodeidentifier.md)
 
 ## Parents
 

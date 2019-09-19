@@ -64,7 +64,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
     * range: [OntologyClass](OntologyClass.md)
  * [id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [Nodeidentifier](Nodeidentifier.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
@@ -98,7 +98,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
     * range: [OntologyClass](OntologyClass.md)
  * [id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [Nodeidentifier](Nodeidentifier.md)
     * in subsets: (translator_minimal)
  * [change is catalyzed by](change_is_catalyzed_by.md)  <sub>0..*</sub>
     * Description: hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.

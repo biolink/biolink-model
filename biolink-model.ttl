@@ -1137,14 +1137,6 @@
     :repr "str" ;
     :uri xsd:string .
 
-<https://w3id.org/biolink/vocab/nodeidentifier> a :TypeDefinition ;
-    skos:definition "A URI, CURIE or BNODE that represents a node in a model." ;
-    skos:inScheme <https://w3id.org/biolink/biolinkml/types> ;
-    :base "NodeIdentifier" ;
-    :imported_from "https://w3id.org/biolink/biolinkml/types" ;
-    :repr "str" ;
-    :uri shex:nonLiteral .
-
 <https://w3id.org/biolink/vocab/objectidentifier> a :TypeDefinition ;
     skos:definition "A URI or CURIE that represents an object in the model." ;
     skos:inScheme <https://w3id.org/biolink/biolinkml/types> ;
@@ -3070,7 +3062,7 @@
     :is_a <https://w3id.org/biolink/vocab/association_id> ;
     :is_usage_slot true ;
     :owner <https://w3id.org/biolink/vocab/PairwiseInteractionAssociation> ;
-    :range <https://w3id.org/biolink/vocab/identifier_type> ;
+    :range <https://w3id.org/biolink/vocab/nodeidentifier> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/id> .
 
@@ -3985,6 +3977,18 @@
     :range <https://w3id.org/biolink/vocab/Attribute> ;
     :slot_uri <https://w3id.org/biolink/vocab/has_attribute> .
 
+<https://w3id.org/biolink/vocab/has_attribute> a :SlotDefinition ;
+    OIO:inSubset <https://w3id.org/biolink/vocab/samples> ;
+    skos:definition "connects any named thing to an attribute" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/RO:0000053>,
+        <https://w3id.org/biolink/vocab/SIO:000008> ;
+    :domain <https://w3id.org/biolink/vocab/MaterialSample> ;
+    :multivalued true ;
+    :owner <https://w3id.org/biolink/vocab/MaterialSample> ;
+    :range <https://w3id.org/biolink/vocab/Attribute> ;
+    :slot_uri <https://w3id.org/biolink/vocab/has_attribute> .
+
 <https://w3id.org/biolink/vocab/has_chemical_formula> a :SlotDefinition ;
     skos:definition "description of chemical compound based on element symbols" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -4127,6 +4131,14 @@
     :owner <https://w3id.org/biolink/vocab/negatively_regulates_process_to_process> ;
     :range <https://w3id.org/biolink/vocab/Occurrent> ;
     :slot_uri <http://purl.obolibrary.org/obo/RO_0002212> .
+
+<https://w3id.org/biolink/vocab/nodeidentifier> a :TypeDefinition ;
+    skos:definition "A URI, CURIE or BNODE that represents a node in a model." ;
+    skos:inScheme <https://w3id.org/biolink/biolinkml/types> ;
+    :base "NodeIdentifier" ;
+    :imported_from "https://w3id.org/biolink/biolinkml/types" ;
+    :repr "str" ;
+    :uri shex:nonLiteral .
 
 <https://w3id.org/biolink/vocab/occurs_in> a :SlotDefinition ;
     OIO:inSubset <https://w3id.org/biolink/vocab/translator_minimal> ;
@@ -4774,10 +4786,10 @@
     :is_a <https://w3id.org/biolink/vocab/OrganismalEntity> ;
     :local_names [ a :LocalName ;
             skos:altLabel "population" ;
-            :local_name_source "agr" ],
+            :local_name_source "ga4gh" ],
         [ a :LocalName ;
             skos:altLabel "population" ;
-            :local_name_source "ga4gh" ] ;
+            :local_name_source "agr" ] ;
     :mixins <https://w3id.org/biolink/vocab/ThingWithTaxon> ;
     :slots <https://w3id.org/biolink/vocab/category>,
         <https://w3id.org/biolink/vocab/description>,
@@ -5233,6 +5245,15 @@
     :range <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature> ;
     :required true ;
     :slot_uri <http://purl.obolibrary.org/obo/RO_0002606> .
+
+<https://w3id.org/biolink/vocab/type> a :SlotDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation rdf:type ;
+    :domain <https://w3id.org/biolink/vocab/DataSetVersion> ;
+    :is_a <https://w3id.org/biolink/vocab/node_property> ;
+    :owner <https://w3id.org/biolink/vocab/DataSetVersion> ;
+    :range <https://w3id.org/biolink/vocab/string> ;
+    :slot_uri rdf:type .
 
 <https://w3id.org/biolink/vocab/update_date> a :SlotDefinition ;
     skos:definition "date on which thing was updated. This can be applied to nodes or edges" ;
@@ -5863,6 +5884,34 @@
         <https://w3id.org/biolink/vocab/severity_qualifier>,
         <https://w3id.org/biolink/vocab/sex_qualifier> .
 
+<https://w3id.org/biolink/vocab/MaterialSample> a :ClassDefinition ;
+    skos:altLabel "biosample",
+        "biospecimen",
+        "physical sample",
+        "sample" ;
+    skos:definition "A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. [SIO]" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    skos:mappingRelation <https://w3id.org/biolink/vocab/OBI:0000747>,
+        <https://w3id.org/biolink/vocab/SIO:001050> ;
+    :class_uri <https://w3id.org/biolink/vocab/MaterialSample> ;
+    :id_prefixes "BioSample",
+        "GOLD.META" ;
+    :is_a <https://w3id.org/biolink/vocab/NamedThing> ;
+    :mixins <https://w3id.org/biolink/vocab/PhysicalEntity>,
+        <https://w3id.org/biolink/vocab/SubjectOfInvestigation> ;
+    :slots <https://w3id.org/biolink/vocab/category>,
+        <https://w3id.org/biolink/vocab/description>,
+        <https://w3id.org/biolink/vocab/full_name>,
+        <https://w3id.org/biolink/vocab/has_attribute>,
+        <https://w3id.org/biolink/vocab/id>,
+        <https://w3id.org/biolink/vocab/interacts_with>,
+        <https://w3id.org/biolink/vocab/iri>,
+        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/node_property>,
+        <https://w3id.org/biolink/vocab/related_to>,
+        <https://w3id.org/biolink/vocab/synonym>,
+        <https://w3id.org/biolink/vocab/systematic_synonym> .
+
 <https://w3id.org/biolink/vocab/OrganismalEntity> a :ClassDefinition ;
     skos:definition "A named entity that is either a part of an organism, a whole organism, population or clade of organisms, excluding molecular entities" ;
     skos:inScheme <https://w3id.org/biolink/biolink-model> ;
@@ -6271,6 +6320,14 @@
         <https://w3id.org/biolink/vocab/related_to>,
         <https://w3id.org/biolink/vocab/synonym>,
         <https://w3id.org/biolink/vocab/systematic_synonym> .
+
+<https://w3id.org/biolink/vocab/QuantityValue> a :ClassDefinition ;
+    skos:definition "A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    :class_uri <https://w3id.org/biolink/vocab/QuantityValue> ;
+    :is_a <https://w3id.org/biolink/vocab/AbstractEntity> ;
+    :slots <https://w3id.org/biolink/vocab/has_numeric_value>,
+        <https://w3id.org/biolink/vocab/has_unit> .
 
 <https://w3id.org/biolink/vocab/QuantityValue> a :ClassDefinition ;
     skos:definition "A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value" ;
@@ -7564,6 +7621,27 @@
         <https://w3id.org/biolink/vocab/synonym>,
         <https://w3id.org/biolink/vocab/systematic_synonym> .
 
+<https://w3id.org/biolink/vocab/DataSetVersion> a :ClassDefinition ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    :class_uri <https://w3id.org/biolink/vocab/DataSetVersion> ;
+    :is_a <https://w3id.org/biolink/vocab/DataSet> ;
+    :slots <https://w3id.org/biolink/vocab/category>,
+        <https://w3id.org/biolink/vocab/description>,
+        <https://w3id.org/biolink/vocab/distribution>,
+        <https://w3id.org/biolink/vocab/full_name>,
+        <https://w3id.org/biolink/vocab/id>,
+        <https://w3id.org/biolink/vocab/interacts_with>,
+        <https://w3id.org/biolink/vocab/iri>,
+        <https://w3id.org/biolink/vocab/name>,
+        <https://w3id.org/biolink/vocab/node_property>,
+        <https://w3id.org/biolink/vocab/related_to>,
+        <https://w3id.org/biolink/vocab/source_data_file>,
+        <https://w3id.org/biolink/vocab/synonym>,
+        <https://w3id.org/biolink/vocab/systematic_synonym>,
+        <https://w3id.org/biolink/vocab/title>,
+        <https://w3id.org/biolink/vocab/type>,
+        <https://w3id.org/biolink/vocab/versionOf> .
+
 <https://w3id.org/biolink/vocab/DiseaseOrPhenotypicFeature> a :ClassDefinition ;
     skos:altLabel "phenome" ;
     skos:definition "Either one of a disease or an individual phenotypic feature. Some knowledge resources such as Monarch treat these as distinct, others such as MESH conflate." ;
@@ -8580,7 +8658,7 @@
     :ifabsent "bnode" ;
     :is_a <https://w3id.org/biolink/vocab/node_property> ;
     :owner <https://w3id.org/biolink/vocab/Association> ;
-    :range <https://w3id.org/biolink/vocab/identifier_type> ;
+    :range <https://w3id.org/biolink/vocab/nodeidentifier> ;
     :required true ;
     :slot_uri <https://w3id.org/biolink/vocab/id> .
 
@@ -8714,11 +8792,11 @@
     :domain <https://w3id.org/biolink/vocab/Association> ;
     :is_a <https://w3id.org/biolink/vocab/association_slot> ;
     :local_names [ a :LocalName ;
-            skos:altLabel "annotation predicate" ;
-            :local_name_source "ga4gh" ],
-        [ a :LocalName ;
             skos:altLabel "predicate" ;
-            :local_name_source "translator" ] ;
+            :local_name_source "translator" ],
+        [ a :LocalName ;
+            skos:altLabel "annotation predicate" ;
+            :local_name_source "ga4gh" ] ;
     :owner <https://w3id.org/biolink/vocab/Association> ;
     :range <https://w3id.org/biolink/vocab/uriorcurie> ;
     :required true ;
@@ -8908,11 +8986,11 @@
     :domain <https://w3id.org/biolink/vocab/Association> ;
     :is_a <https://w3id.org/biolink/vocab/association_slot> ;
     :local_names [ a :LocalName ;
-            skos:altLabel "node with incoming relationship" ;
-            :local_name_source "neo4j" ],
-        [ a :LocalName ;
             skos:altLabel "descriptor" ;
-            :local_name_source "ga4gh" ] ;
+            :local_name_source "ga4gh" ],
+        [ a :LocalName ;
+            skos:altLabel "node with incoming relationship" ;
+            :local_name_source "neo4j" ] ;
     :owner <https://w3id.org/biolink/vocab/Association> ;
     :range <https://w3id.org/biolink/vocab/NamedThing> ;
     :required true ;
@@ -9028,15 +9106,23 @@
     :domain <https://w3id.org/biolink/vocab/Association> ;
     :is_a <https://w3id.org/biolink/vocab/association_slot> ;
     :local_names [ a :LocalName ;
-            skos:altLabel "node with outgoing relationship" ;
-            :local_name_source "neo4j" ],
-        [ a :LocalName ;
             skos:altLabel "annotation subject" ;
-            :local_name_source "ga4gh" ] ;
+            :local_name_source "ga4gh" ],
+        [ a :LocalName ;
+            skos:altLabel "node with outgoing relationship" ;
+            :local_name_source "neo4j" ] ;
     :owner <https://w3id.org/biolink/vocab/Association> ;
     :range <https://w3id.org/biolink/vocab/NamedThing> ;
     :required true ;
     :slot_uri rdf:subject .
+
+<https://w3id.org/biolink/vocab/node_property> a :SlotDefinition ;
+    skos:definition "A grouping for any property that holds between a node and a value" ;
+    skos:inScheme <https://w3id.org/biolink/biolink-model> ;
+    :domain <https://w3id.org/biolink/vocab/NamedThing> ;
+    :owner <https://w3id.org/biolink/vocab/node_property> ;
+    :range <https://w3id.org/biolink/vocab/string> ;
+    :slot_uri <https://w3id.org/biolink/vocab/node_property> .
 
 
 
