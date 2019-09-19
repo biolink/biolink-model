@@ -1410,6 +1410,29 @@ slots:
       date on which thing was created. This can be applied to nodes or edges
     slot_uri: dcterms:created
 
+  has receptor:
+    is_a: node property
+    domain: exposure event
+    range: organismal entity
+    description: >-
+      the organism or organism part being exposed
+    slot_uri: ExO:0000001
+
+  has stressor:
+    is_a: node property
+    domain: exposure event
+    aliases: ['has stimulus']
+    description: >-
+      the process or entity that the receptor is being exposed to
+    slot_uri: ExO:0000000
+
+  has route:
+    is_a: node property
+    domain: exposure event
+    description: >-
+      the process that results in the stressor coming into direct contact with the receptor
+    slot_uri: ExO:0000055
+
   update date:
     is_a: node property
     range: date
@@ -1570,12 +1593,18 @@ slots:
       consequence. E.g.  SO:0001583
     range: ontology class
 
+  has drug:
+    is_a: node property
+    description: >-
+      connects an entity to a single drug
+    range: drug
+
     ## genotypes
 
   has gene:
     is_a: node property
     description: >-
-      connects and entity to a single gene
+      connects an entity to a single gene
     range: gene
 
   has zygosity:
@@ -2072,7 +2101,7 @@ classes:
       - SIO:010056
       - WD:Q169872
 
-  environment:
+  exposure event:
     aliases: ['environment', 'exposure', 'experimental condition']
     is_a: biological entity
     description: >-
@@ -2657,15 +2686,29 @@ classes:
           - value: ClinVarVariant:17681
             description: NM_007294.3(BRCA1):c.2521C>T (p.Arg841Trp)
 
+  chemical exposure:
+#    aliases: ['drug intake', 'drug dose']
+    is_a: exposure event
+    description: >-
+      A chemical exposure is an intake of a particular chemical substance
+#    slots:
+#      - has input
+#    slot_usage:
+#      chemical substance:
+#        range: chemical substance
+#        required: true
+#        multivalued: true
+    class_uri: ECTO:9000000
+
   drug exposure:
     aliases: ['drug intake', 'drug dose']
-    is_a: environment
+    is_a: chemical exposure
     description: >-
       A drug exposure is an intake of a particular chemical substance
 #    slots:
 #      - has input
     slot_usage:
-      drug:
+      has drug:
         range: chemical substance
         required: true
         multivalued: true
@@ -2675,12 +2718,11 @@ classes:
 
   treatment:
     aliases: ['medical action']
-    is_a: environment
+    is_a: exposure event
     description: >-
       A treatment is targeted at a disease or phenotype and may involve multiple drug 'exposures'
-
     slot_usage:
-      has exposure parts:
+      has part:
         multivalued: true
         range: drug exposure
         required: true
@@ -3084,10 +3126,23 @@ classes:
     description: >-
       An association between a material sample and a disease or phenotype
 
+  disease to exposure association:
+    is_a: disease to thing association
+    defining_slots:
+      - subject
+      - object
+    description: >-
+      An association between an exposure event and a disease
+    slot_usage:
+      subject:
+        range: disease
+      object:
+        range: exposure event
+
   frequency qualifier mixin:
     mixin: true
     description: >-
-      Qualifier for freqency type associations
+      Qualifier for frequency type associations
     slots:
       - frequency qualifier
 
@@ -3222,7 +3277,7 @@ classes:
         description: >-
           genotype that is associated with the phenotypic feature
 
-  environment to phenotypic feature association:
+  exposure event to phenotypic feature association:
     is_a: association
     defining_slots:
       - subject
@@ -3233,7 +3288,7 @@ classes:
       - entity to phenotypic feature association
     slot_usage:
       subject:
-        range: environment
+        range: exposure event
 
   disease to phenotypic feature association:
     is_a: association
