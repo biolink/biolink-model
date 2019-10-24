@@ -825,9 +825,20 @@ slots:
     in_subset:
       - translator_minimal
     slot_uri: RO:0002410
+    inverse: caused by
     mappings:
       - SEMMEDDB:CAUSES
       - WD:P1542
+
+  caused by:
+    description: >-
+      holds between two entities where the occurrence, existence, or activity of one is caused by the occurrence or  generation of the other
+    is_a: related to
+    in_subset:
+      - translator_minimal
+    inverse: causes
+    mappings:
+      - WD:P828
 
   treats:
     aliases: ['is substance that treats']
