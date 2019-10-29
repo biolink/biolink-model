@@ -47,6 +47,16 @@ See the [Datamodel index](docs/) for a list nodes, edges, and slots.
 
 See [biolink json-ld context](context.jsonld) to see CURIE prefix mappings.
 
+The includes prefix expansions such as:
+
+      "CHEBI": "http://purl.obolibrary.org/obo/CHEBI_",
+      "NCBIGene": "http://www.ncbi.nlm.nih.gov/gene/",
+      "NCIT": "http://purl.obolibrary.org/obo/NCIT_",
+
+Following the JSON-LD context standard.
+
+Note that we do not curate these in biolink. Rather we take these from upstream sources. We specify a priority order of upstream sources in cases where conflicts may occur. See the `default_curie_prefixes` tag at the top of the [biolink-model.yaml](biolink-model.yaml) file. We also specify a small set of top-level overrides via the `prefixes` tag at the top.
+
 
 # BioLink model representation
 
