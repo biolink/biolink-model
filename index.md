@@ -55,7 +55,7 @@ The includes prefix expansions such as:
 
 Following the JSON-LD context standard.
 
-Note that we do not curate these in biolink. Rather we take these from upstream sources. We specify a priority order of upstream sources in cases where conflicts may occur. See the `default_curie_prefixes` tag at the top of the [biolink-model.yaml](biolink-model.yaml) file. We also specify a small set of top-level overrides via the `prefixes` tag at the top.
+Note that we do not curate these in biolink. Rather we take these from upstream sources, via prefixcommons biocontexts. We specify a priority order of upstream sources in cases where conflicts may occur. See the [default_curi_maps](https://biolink.github.io/biolinkml/docs/default_curi_maps) tag at the top of the [biolink-model.yaml](biolink-model.yaml) file. We also specify a small set of top-level overrides via the [prefixes](https://biolink.github.io/biolinkml/docs/prefixes) tag at the top.
 
 
 # BioLink model representation
