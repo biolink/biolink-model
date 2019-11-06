@@ -1,3 +1,6 @@
+---
+parent: "Browse the BioLink Model"
+---
 
 # Class: abstract entity
 
