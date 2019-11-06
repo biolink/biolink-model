@@ -1,3 +1,8 @@
+---
+has_children: true
+title: "Browse the BioLink Model"
+nav_order: 2
+---
 
 # Biolink_Model schema
 
