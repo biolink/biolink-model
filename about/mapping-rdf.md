@@ -1,5 +1,5 @@
 ---
-parent: mapping_to_a_graph_store
+parent: "Mapping to a graph store"
 ---
 
 # Mapping BioLink Model to a RDF triple store
