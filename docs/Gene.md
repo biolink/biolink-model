@@ -5,7 +5,14 @@ parent: "Browse the BioLink Model"
 
 # Class: gene
 
+SO:0000704
+{: .label }
 
+SIO:010035
+{: .label }
+
+WD:Q7187
+{: .label }
 
 
 URI: [biolink:Gene](https://w3id.org/biolink/vocab/Gene)
