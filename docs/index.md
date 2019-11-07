@@ -1,7 +1,7 @@
 ---
 has_children: true
 title: "Browse the BioLink Model"
-nav_order: 2
+nav_order: 4
 ---
 
 # Biolink_Model schema

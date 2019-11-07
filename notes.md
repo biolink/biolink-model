@@ -1,3 +1,7 @@
+---
+nav_order: 2
+---
+
 # Installation and Usage Notes
 
 ## Installation
