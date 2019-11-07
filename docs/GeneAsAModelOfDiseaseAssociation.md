@@ -1,3 +1,7 @@
+---
+parent: "Browse the BioLink Model"
+---
+
 
 # Class: gene as a model of disease association
 

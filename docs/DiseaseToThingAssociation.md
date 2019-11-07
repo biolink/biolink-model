@@ -1,3 +1,7 @@
+---
+parent: "Browse the BioLink Model"
+---
+
 
 # Class: disease to thing association
 

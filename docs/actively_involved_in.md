@@ -1,3 +1,7 @@
+---
+parent: "Browse the BioLink Model"
+---
+
 
 # Slot: actively involved in
 

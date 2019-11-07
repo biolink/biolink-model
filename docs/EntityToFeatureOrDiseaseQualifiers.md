@@ -1,3 +1,7 @@
+---
+parent: "Browse the BioLink Model"
+---
+
 
 # Class: entity to feature or disease qualifiers
 

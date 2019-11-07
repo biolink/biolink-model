@@ -1,3 +1,7 @@
+---
+parent: "Browse the BioLink Model"
+---
+
 
 # Slot: subject
 

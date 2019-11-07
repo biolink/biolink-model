@@ -1,3 +1,7 @@
+---
+parent: "Browse the BioLink Model"
+---
+
 
 # Class: anatomical entity to anatomical entity ontogenic association
 
