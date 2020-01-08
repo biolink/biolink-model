@@ -2111,6 +2111,11 @@ classes:
       - UMLS
       - MESH
       - MEDDRA
+      - NCIT
+      - SNOMEDCT
+      - medgen
+      - HP
+      - MP
 
   phenotypic feature:
     aliases: ['sign', 'symptom', 'phenotype', 'trait', 'endophenotype']
@@ -2126,6 +2131,8 @@ classes:
       - NCIT
       - UMLS
       - MEDDRA
+      - SNOMEDCT
+      - MP
 
   exposure event:
     aliases: ['environment', 'exposure', 'experimental condition']
