@@ -3948,6 +3948,9 @@ classes:
       - GO
       - Reactome
       - RHEA
+      - MetaCyc
+      - EC
+      - KEGG.REACTION
 
   activity and behavior:
     is_a: occurrent
@@ -4051,6 +4054,9 @@ classes:
     id_prefixes:
       - GO
       - Reactome
+      - MetaCyc
+      - KEGG.PATHWAY
+      - KEGG.REACTION
 
   pathway:
     is_a: biological process
