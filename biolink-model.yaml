@@ -4113,6 +4113,12 @@ classes:
       - UMLSST:celc
     id_prefixes:
       - GO
+      - MESH
+      - UMLS
+      - NCIT
+      - SNOMEDCT
+      - CL
+      - UBERON
 
   cell:
     is_a: anatomical entity
@@ -4128,6 +4134,10 @@ classes:
       - CL
       - PO
       - UMLS
+      - NCIT
+      - MESH
+      - UBERON
+      - SNOMEDCT
 
   cell line:
     is_a: organismal entity
