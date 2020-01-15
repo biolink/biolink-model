@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: regulates, entity to entity
+# Type: regulates_entity_to_entity
 
 
 
 
 URI: [biolink:regulates_entity_to_entity](https://w3id.org/biolink/vocab/regulates_entity_to_entity)
+
 
 ## Domain and Range
 
@@ -51,3 +48,14 @@ URI: [biolink:regulates_entity_to_entity](https://w3id.org/biolink/vocab/regulat
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | activity directly regulates activity of |
+| **Local names:** | | regulates (translator) |
+|  | | activity directly regulates activity of (ro) |
+| **Mappings:** | | RO:0002448 |
+| **In Subsets:** | | translator_minimal |
+

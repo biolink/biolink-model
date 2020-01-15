@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: has evidence
+# Type: has_evidence
 
 
 connects an association to an instance of supporting evidence
 
 URI: [biolink:has_evidence](https://w3id.org/biolink/vocab/has_evidence)
+
 
 ## Domain and Range
 
@@ -24,3 +21,10 @@ URI: [biolink:has_evidence](https://w3id.org/biolink/vocab/has_evidence)
 ## Used by
 
  * [Association](Association.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0002558 |
+

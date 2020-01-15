@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: filler
+# Type: filler
 
 
 The value in a property-value tuple
 
 URI: [biolink:filler](https://w3id.org/biolink/vocab/filler)
+
 
 ## Domain and Range
 

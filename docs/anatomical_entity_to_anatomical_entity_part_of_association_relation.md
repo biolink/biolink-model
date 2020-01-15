@@ -1,18 +1,15 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: relation
+# Type: anatomical_entity_to_anatomical_entity_part_of_association_relation
 
 
 
 
 URI: [biolink:anatomical_entity_to_anatomical_entity_part_of_association_relation](https://w3id.org/biolink/vocab/anatomical_entity_to_anatomical_entity_part_of_association_relation)
 
+
 ## Domain and Range
 
-[AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) ->  <sub>REQ</sub> [Uriorcurie](Uriorcurie.md)
+[AnatomicalEntityToAnatomicalEntityPartOfAssociation](AnatomicalEntityToAnatomicalEntityPartOfAssociation.md) ->  <sub>REQ</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Parents
 

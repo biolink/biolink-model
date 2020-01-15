@@ -1,16 +1,16 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:AnatomicalEntityToAnatomicalEntityAssociation
 ---
 
-
-# Class: anatomical entity to anatomical entity association
+# Type: AnatomicalEntityToAnatomicalEntityAssociation
 
 
 
 
 URI: [biolink:AnatomicalEntityToAnatomicalEntityAssociation](https://w3id.org/biolink/vocab/AnatomicalEntityToAnatomicalEntityAssociation)
 
-![img](images/AnatomicalEntityToAnatomicalEntityAssociation.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[AnatomicalEntityToAnatomicalEntityAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[AnatomicalEntityToAnatomicalEntityAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[AnatomicalEntityToAnatomicalEntityAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[AnatomicalEntityToAnatomicalEntityAssociation],%20\[AnatomicalEntity]<object%201..1-%20\[AnatomicalEntityToAnatomicalEntityAssociation],%20\[AnatomicalEntity]<subject%201..1-%20\[AnatomicalEntityToAnatomicalEntityAssociation],%20\[AnatomicalEntityToAnatomicalEntityAssociation]^-\[AnatomicalEntityToAnatomicalEntityPartOfAssociation],%20\[AnatomicalEntityToAnatomicalEntityAssociation]^-\[AnatomicalEntityToAnatomicalEntityOntogenicAssociation],%20\[Association]^-\[AnatomicalEntityToAnatomicalEntityAssociation])
 
 ## Parents
 
@@ -29,9 +29,9 @@ URI: [biolink:AnatomicalEntityToAnatomicalEntityAssociation](https://w3id.org/bi
 
 ### Own
 
- * [object](anatomical_entity_to_anatomical_entity_association_object.md)  <sub>REQ</sub>
+ * [anatomical entity to anatomical entity association➞object](anatomical_entity_to_anatomical_entity_association_object.md)  <sub>REQ</sub>
     * range: [AnatomicalEntity](AnatomicalEntity.md)
- * [subject](anatomical_entity_to_anatomical_entity_association_subject.md)  <sub>REQ</sub>
+ * [anatomical entity to anatomical entity association➞subject](anatomical_entity_to_anatomical_entity_association_subject.md)  <sub>REQ</sub>
     * range: [AnatomicalEntity](AnatomicalEntity.md)
 
 ### Inherited from association:
@@ -42,20 +42,20 @@ URI: [biolink:AnatomicalEntityToAnatomicalEntityAssociation](https://w3id.org/bi
     * inherited from: [Association](Association.md)
  * [relation](relation.md)  <sub>REQ</sub>
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [Uriorcurie](Uriorcurie.md)
+    * range: [Uriorcurie](types/Uriorcurie.md)
     * inherited from: [Association](Association.md)
  * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
     * inherited from: [Association](Association.md)
- * [id](association_id.md)  <sub>REQ</sub>
+ * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [Nodeidentifier](Nodeidentifier.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
-    * range: [Boolean](Boolean.md)
+    * range: [Boolean](types/Boolean.md)
     * inherited from: [Association](Association.md)
  * [association type](association_type.md)  <sub>OPT</sub>
     * Description: connects an association to the type of association (e.g. gene to phenotype)
@@ -76,7 +76,7 @@ URI: [biolink:AnatomicalEntityToAnatomicalEntityAssociation](https://w3id.org/bi
 
 ### Domain for slot:
 
- * [object](anatomical_entity_to_anatomical_entity_association_object.md)  <sub>REQ</sub>
+ * [anatomical entity to anatomical entity association➞object](anatomical_entity_to_anatomical_entity_association_object.md)  <sub>REQ</sub>
     * range: [AnatomicalEntity](AnatomicalEntity.md)
- * [subject](anatomical_entity_to_anatomical_entity_association_subject.md)  <sub>REQ</sub>
+ * [anatomical entity to anatomical entity association➞subject](anatomical_entity_to_anatomical_entity_association_subject.md)  <sub>REQ</sub>
     * range: [AnatomicalEntity](AnatomicalEntity.md)

@@ -1,18 +1,15 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: negated
+# Type: negated
 
 
 if set to true, then the association is negated i.e. is not true
 
 URI: [biolink:negated](https://w3id.org/biolink/vocab/negated)
 
+
 ## Domain and Range
 
-[Association](Association.md) ->  <sub>OPT</sub> [Boolean](Boolean.md)
+[Association](Association.md) ->  <sub>OPT</sub> [Boolean](types/Boolean.md)
 
 ## Parents
 
@@ -39,11 +36,12 @@ URI: [biolink:negated](https://w3id.org/biolink/vocab/negated)
  * [ChemicalToThingAssociation](ChemicalToThingAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToLocationAssociation](DiseaseOrPhenotypicFeatureAssociationToLocationAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
+ * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [DiseaseToThingAssociation](DiseaseToThingAssociation.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md)
  * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)
+ * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FunctionalAssociation](FunctionalAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)

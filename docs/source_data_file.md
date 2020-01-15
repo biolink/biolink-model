@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: source data file
+# Type: source_data_file
 
 
 
 
 URI: [biolink:source_data_file](https://w3id.org/biolink/vocab/source_data_file)
+
 
 ## Domain and Range
 
@@ -26,3 +23,10 @@ URI: [biolink:source_data_file](https://w3id.org/biolink/vocab/source_data_file)
  * [DataSetSummary](DataSetSummary.md)
  * [DataSetVersion](DataSetVersion.md)
  * [DistributionLevel](DistributionLevel.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | dcterms:source |
+

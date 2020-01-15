@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: increases uptake of
+# Type: increases_uptake_of
 
 
 holds between two molecular entities where the action or effect of one increases the rate of uptake of the other into of a cell, gland, or organ
 
 URI: [biolink:increases_uptake_of](https://w3id.org/biolink/vocab/increases_uptake_of)
+
 
 ## Domain and Range
 
@@ -49,3 +46,10 @@ URI: [biolink:increases_uptake_of](https://w3id.org/biolink/vocab/increases_upta
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

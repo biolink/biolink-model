@@ -1,16 +1,16 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:FrequencyQualifierMixin
 ---
 
+# Type: FrequencyQualifierMixin
 
-# Class: frequency qualifier mixin
 
-
-Qualifier for freqency type associations
+Qualifier for frequency type associations
 
 URI: [biolink:FrequencyQualifierMixin](https://w3id.org/biolink/vocab/FrequencyQualifierMixin)
 
-![img](images/FrequencyQualifierMixin.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[VariantToPopulationAssociation]uses%20-.->\[FrequencyQualifierMixin],%20\[FrequencyQualifierMixin]^-\[EntityToFeatureOrDiseaseQualifiers])
 
 ## Children
 

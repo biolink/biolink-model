@@ -1,16 +1,16 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:SpecificityQuantifier
 ---
 
-
-# Class: specificity quantifier
+# Type: SpecificityQuantifier
 
 
 
 
 URI: [biolink:SpecificityQuantifier](https://w3id.org/biolink/vocab/SpecificityQuantifier)
 
-![img](images/SpecificityQuantifier.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[SpecificityQuantifier]^-\[PathognomonicityQuantifier],%20\[RelationshipQuantifier]^-\[SpecificityQuantifier])
 
 ## Parents
 

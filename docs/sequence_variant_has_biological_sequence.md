@@ -1,18 +1,15 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: has biological sequence
+# Type: sequence_variant_has_biological_sequence
 
 
 
 
 URI: [biolink:sequence_variant_has_biological_sequence](https://w3id.org/biolink/vocab/sequence_variant_has_biological_sequence)
 
+
 ## Domain and Range
 
-[SequenceVariant](SequenceVariant.md) ->  <sub>OPT</sub> [BiologicalSequence](BiologicalSequence.md)
+[SequenceVariant](SequenceVariant.md) ->  <sub>OPT</sub> [BiologicalSequence](types/BiologicalSequence.md)
 
 ## Parents
 

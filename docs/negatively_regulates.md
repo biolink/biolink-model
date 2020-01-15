@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: negatively regulates
+# Type: negatively_regulates
 
 
 
 
 URI: [biolink:negatively_regulates](https://w3id.org/biolink/vocab/negatively_regulates)
+
 
 ## Domain and Range
 
@@ -24,3 +21,10 @@ URI: [biolink:negatively_regulates](https://w3id.org/biolink/vocab/negatively_re
 ## Used by
 
  * [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Comments:** | | This is a grouping for process-process and entity-entity relations |
+

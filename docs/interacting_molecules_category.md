@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: interacting molecules category
+# Type: interacting_molecules_category
 
 
 
 
 URI: [biolink:interacting_molecules_category](https://w3id.org/biolink/vocab/interacting_molecules_category)
+
 
 ## Domain and Range
 

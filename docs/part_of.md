@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: part of
+# Type: part_of
 
 
 holds between parts and wholes (material entities or processes)
 
 URI: [biolink:part_of](https://w3id.org/biolink/vocab/part_of)
+
 
 ## Domain and Range
 
@@ -24,3 +21,13 @@ URI: [biolink:part_of](https://w3id.org/biolink/vocab/part_of)
 ## Used by
 
  * [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | BFO:0000050 |
+|  | | SEMMEDDB:PART_OF |
+|  | | WD:P361 |
+| **In Subsets:** | | translator_minimal |
+

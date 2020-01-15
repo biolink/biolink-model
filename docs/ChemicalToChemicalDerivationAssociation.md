@@ -1,9 +1,9 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:ChemicalToChemicalDerivationAssociation
 ---
 
-
-# Class: chemical to chemical derivation association
+# Type: ChemicalToChemicalDerivationAssociation
 
 
 A causal relationship between two chemical entities, where the subject represents the upstream entity and the object represents the downstream. For any such association there is an implicit reaction:
@@ -17,7 +17,7 @@ A causal relationship between two chemical entities, where the subject represent
 
 URI: [biolink:ChemicalToChemicalDerivationAssociation](https://w3id.org/biolink/vocab/ChemicalToChemicalDerivationAssociation)
 
-![img](images/ChemicalToChemicalDerivationAssociation.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[ChemicalToChemicalDerivationAssociation&#124;relation:uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[ChemicalToChemicalDerivationAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[ChemicalToChemicalDerivationAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[ChemicalToChemicalDerivationAssociation],%20\[MacromolecularMachine]<change%20is%20catalyzed%20by%200..*-%20\[ChemicalToChemicalDerivationAssociation],%20\[ChemicalSubstance]<object%201..1-%20\[ChemicalToChemicalDerivationAssociation],%20\[ChemicalSubstance]<subject%201..1-%20\[ChemicalToChemicalDerivationAssociation],%20\[ChemicalToChemicalAssociation]^-\[ChemicalToChemicalDerivationAssociation])
 
 ## Parents
 
@@ -31,13 +31,13 @@ URI: [biolink:ChemicalToChemicalDerivationAssociation](https://w3id.org/biolink/
 
 ### Own
 
- * [change is catalyzed by](chemical_to_chemical_derivation_association_change_is_catalyzed_by.md)  <sub>0..*</sub>
+ * [chemical to chemical derivation association➞change is catalyzed by](chemical_to_chemical_derivation_association_change_is_catalyzed_by.md)  <sub>0..*</sub>
     * range: [MacromolecularMachine](MacromolecularMachine.md)
- * [object](chemical_to_chemical_derivation_association_object.md)  <sub>REQ</sub>
+ * [chemical to chemical derivation association➞object](chemical_to_chemical_derivation_association_object.md)  <sub>REQ</sub>
     * range: [ChemicalSubstance](ChemicalSubstance.md)
- * [relation](chemical_to_chemical_derivation_association_relation.md)  <sub>REQ</sub>
-    * range: [Uriorcurie](Uriorcurie.md)
- * [subject](chemical_to_chemical_derivation_association_subject.md)  <sub>REQ</sub>
+ * [chemical to chemical derivation association➞relation](chemical_to_chemical_derivation_association_relation.md)  <sub>REQ</sub>
+    * range: [Uriorcurie](types/Uriorcurie.md)
+ * [chemical to chemical derivation association➞subject](chemical_to_chemical_derivation_association_subject.md)  <sub>REQ</sub>
     * range: [ChemicalSubstance](ChemicalSubstance.md)
 
 ### Inherited from association:
@@ -48,20 +48,20 @@ URI: [biolink:ChemicalToChemicalDerivationAssociation](https://w3id.org/biolink/
     * inherited from: [Association](Association.md)
  * [relation](relation.md)  <sub>REQ</sub>
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [Uriorcurie](Uriorcurie.md)
+    * range: [Uriorcurie](types/Uriorcurie.md)
     * inherited from: [Association](Association.md)
  * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
     * inherited from: [Association](Association.md)
- * [id](association_id.md)  <sub>REQ</sub>
+ * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
-    * range: [Boolean](Boolean.md)
+    * range: [Boolean](types/Boolean.md)
     * inherited from: [Association](Association.md)
  * [association type](association_type.md)  <sub>OPT</sub>
     * Description: connects an association to the type of association (e.g. gene to phenotype)
@@ -82,11 +82,11 @@ URI: [biolink:ChemicalToChemicalDerivationAssociation](https://w3id.org/biolink/
 
 ### Domain for slot:
 
- * [change is catalyzed by](chemical_to_chemical_derivation_association_change_is_catalyzed_by.md)  <sub>0..*</sub>
+ * [chemical to chemical derivation association➞change is catalyzed by](chemical_to_chemical_derivation_association_change_is_catalyzed_by.md)  <sub>0..*</sub>
     * range: [MacromolecularMachine](MacromolecularMachine.md)
- * [object](chemical_to_chemical_derivation_association_object.md)  <sub>REQ</sub>
+ * [chemical to chemical derivation association➞object](chemical_to_chemical_derivation_association_object.md)  <sub>REQ</sub>
     * range: [ChemicalSubstance](ChemicalSubstance.md)
- * [relation](chemical_to_chemical_derivation_association_relation.md)  <sub>REQ</sub>
-    * range: [Uriorcurie](Uriorcurie.md)
- * [subject](chemical_to_chemical_derivation_association_subject.md)  <sub>REQ</sub>
+ * [chemical to chemical derivation association➞relation](chemical_to_chemical_derivation_association_relation.md)  <sub>REQ</sub>
+    * range: [Uriorcurie](types/Uriorcurie.md)
+ * [chemical to chemical derivation association➞subject](chemical_to_chemical_derivation_association_subject.md)  <sub>REQ</sub>
     * range: [ChemicalSubstance](ChemicalSubstance.md)

@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: produces
+# Type: produces
 
 
 holds between a material entity and a product that is generated through the intentional actions or functioning of the material entity
 
 URI: [biolink:produces](https://w3id.org/biolink/vocab/produces)
+
 
 ## Domain and Range
 
@@ -24,3 +21,13 @@ URI: [biolink:produces](https://w3id.org/biolink/vocab/produces)
 ## Used by
 
  * [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0003000 |
+|  | | WD:P1056 |
+|  | | SEMMEDDB:PRODUCES |
+| **In Subsets:** | | translator_minimal |
+

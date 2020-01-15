@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: positively regulates
+# Type: positively_regulates
 
 
 
 
 URI: [biolink:positively_regulates](https://w3id.org/biolink/vocab/positively_regulates)
+
 
 ## Domain and Range
 
@@ -24,3 +21,10 @@ URI: [biolink:positively_regulates](https://w3id.org/biolink/vocab/positively_re
 ## Used by
 
  * [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Comments:** | | This is a grouping for process-process and entity-entity relations |
+

@@ -1,18 +1,15 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: description
+# Type: description
 
 
 a human-readable description of a thing
 
 URI: [biolink:description](https://w3id.org/biolink/vocab/description)
 
+
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [NarrativeText](NarrativeText.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [NarrativeText](types/NarrativeText.md)
 
 ## Parents
 
@@ -20,7 +17,7 @@ URI: [biolink:description](https://w3id.org/biolink/vocab/description)
 
 ## Children
 
- *  [description](entity_to_phenotypic_feature_association_description.md)
+ *  [entity to phenotypic feature association➞description](entity_to_phenotypic_feature_association_description.md)
 
 ## Used by
 
@@ -39,6 +36,7 @@ URI: [biolink:description](https://w3id.org/biolink/vocab/description)
  * [Cell](Cell.md)
  * [CellLine](CellLine.md)
  * [CellularComponent](CellularComponent.md)
+ * [ChemicalExposure](ChemicalExposure.md)
  * [ChemicalSubstance](ChemicalSubstance.md)
  * [ClinicalEntity](ClinicalEntity.md)
  * [ClinicalIntervention](ClinicalIntervention.md)
@@ -57,11 +55,11 @@ URI: [biolink:description](https://w3id.org/biolink/vocab/description)
  * [Drug](Drug.md)
  * [DrugExposure](DrugExposure.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- * [Environment](Environment.md)
  * [EnvironmentalFeature](EnvironmentalFeature.md)
  * [EnvironmentalProcess](EnvironmentalProcess.md)
  * [EvidenceType](EvidenceType.md)
  * [Exon](Exon.md)
+ * [ExposureEvent](ExposureEvent.md)
  * [FrequencyValue](FrequencyValue.md)
  * [Gene](Gene.md)
  * [GeneFamily](GeneFamily.md)
@@ -114,3 +112,11 @@ URI: [biolink:description](https://w3id.org/biolink/vocab/description)
  * [Transcript](Transcript.md)
  * [Treatment](Treatment.md)
  * [Zygosity](Zygosity.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | dcterms:description |
+| **In Subsets:** | | translator_minimal |
+

@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: expressed in
+# Type: expressed_in
 
 
 holds between a gene or gene product and an anatomical entity in which it is expressed
 
 URI: [biolink:expressed_in](https://w3id.org/biolink/vocab/expressed_in)
+
 
 ## Domain and Range
 
@@ -33,3 +30,11 @@ URI: [biolink:expressed_in](https://w3id.org/biolink/vocab/expressed_in)
  * [NoncodingRNAProduct](NoncodingRNAProduct.md)
  * [Protein](Protein.md)
  * [ProteinIsoform](ProteinIsoform.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0002206 |
+| **In Subsets:** | | translator_minimal |
+

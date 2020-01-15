@@ -1,16 +1,25 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:Exon
 ---
 
-
-# Class: exon
+# Type: Exon
 
 
 A region of the transcript sequence within a gene which is not removed from the primary RNA transcript by RNA splicing
 
 URI: [biolink:Exon](https://w3id.org/biolink/vocab/Exon)
 
-![img](images/Exon.png)
+SO:0000147
+{: .mapping-label }
+
+SIO:010445
+{: .mapping-label }
+
+WD:Q373027
+{: .mapping-label }
+
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Exon&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ExonToTranscriptRelationship]-%20subject%201..1>\[Exon],%20\[GenomicEntity]^-\[Exon])
 
 ## Parents
 
@@ -18,7 +27,7 @@ URI: [biolink:Exon](https://w3id.org/biolink/vocab/Exon)
 
 ## Referenced by class
 
- *  **[ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)** *[subject](exon_to_transcript_relationship_subject.md)*  <sub>REQ</sub>  **[Exon](Exon.md)**
+ *  **[ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)** *[exon to transcript relationship➞subject](exon_to_transcript_relationship_subject.md)*  <sub>REQ</sub>  **[Exon](Exon.md)**
 
 ## Attributes
 
@@ -27,17 +36,17 @@ URI: [biolink:Exon](https://w3id.org/biolink/vocab/Exon)
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [IdentifierType](types/IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](types/LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)
+    * range: [IriType](types/IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
 
@@ -48,3 +57,12 @@ URI: [biolink:Exon](https://w3id.org/biolink/vocab/Exon)
     * range: [OrganismTaxon](OrganismTaxon.md)
     * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
     * in subsets: (translator_minimal)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | SO:0000147 |
+|  | | SIO:010445 |
+|  | | WD:Q373027 |
+

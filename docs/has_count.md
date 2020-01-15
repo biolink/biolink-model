@@ -1,18 +1,15 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: has count
+# Type: has_count
 
 
 number of things with a particular property
 
 URI: [biolink:has_count](https://w3id.org/biolink/vocab/has_count)
 
+
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Integer](Integer.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)
 
 ## Parents
 
@@ -20,7 +17,7 @@ URI: [biolink:has_count](https://w3id.org/biolink/vocab/has_count)
 
 ## Children
 
- *  [has count](variant_to_population_association_has_count.md)
+ *  [variant to population association➞has count](variant_to_population_association_has_count.md)
 
 ## Used by
 

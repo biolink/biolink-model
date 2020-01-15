@@ -1,18 +1,15 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: start interbase coordinate
+# Type: start_interbase_coordinate
 
 
 
 
 URI: [biolink:start_interbase_coordinate](https://w3id.org/biolink/vocab/start_interbase_coordinate)
 
+
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](String.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 

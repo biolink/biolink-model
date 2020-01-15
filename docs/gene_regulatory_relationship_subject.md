@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: subject
+# Type: gene_regulatory_relationship_subject
 
 
 
 
 URI: [biolink:gene_regulatory_relationship_subject](https://w3id.org/biolink/vocab/gene_regulatory_relationship_subject)
+
 
 ## Domain and Range
 

@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: subject
+# Type: variant_to_disease_association_subject
 
 
 
 
 URI: [biolink:variant_to_disease_association_subject](https://w3id.org/biolink/vocab/variant_to_disease_association_subject)
+
 
 ## Domain and Range
 

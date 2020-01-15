@@ -1,18 +1,15 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: has biological sequence
+# Type: has_biological_sequence
 
 
 connects a genomic feature to its sequence
 
 URI: [biolink:has_biological_sequence](https://w3id.org/biolink/vocab/has_biological_sequence)
 
+
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [BiologicalSequence](BiologicalSequence.md)
+[NamedThing](NamedThing.md) ->  <sub>OPT</sub> [BiologicalSequence](types/BiologicalSequence.md)
 
 ## Parents
 
@@ -20,7 +17,7 @@ URI: [biolink:has_biological_sequence](https://w3id.org/biolink/vocab/has_biolog
 
 ## Children
 
- *  [has biological sequence](sequence_variant_has_biological_sequence.md)
+ *  [sequence variant➞has biological sequence](sequence_variant_has_biological_sequence.md)
 
 ## Used by
 

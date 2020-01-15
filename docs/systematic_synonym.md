@@ -1,18 +1,15 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: systematic synonym
+# Type: systematic_synonym
 
 
 more commonly used for gene symbols in yeast
 
 URI: [biolink:systematic_synonym](https://w3id.org/biolink/vocab/systematic_synonym)
 
+
 ## Domain and Range
 
-[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [LabelType](LabelType.md)
+[NamedThing](NamedThing.md) ->  <sub>0..*</sub> [LabelType](types/LabelType.md)
 
 ## Parents
 
@@ -38,6 +35,7 @@ URI: [biolink:systematic_synonym](https://w3id.org/biolink/vocab/systematic_syno
  * [Cell](Cell.md)
  * [CellLine](CellLine.md)
  * [CellularComponent](CellularComponent.md)
+ * [ChemicalExposure](ChemicalExposure.md)
  * [ChemicalSubstance](ChemicalSubstance.md)
  * [ClinicalEntity](ClinicalEntity.md)
  * [ClinicalIntervention](ClinicalIntervention.md)
@@ -55,11 +53,11 @@ URI: [biolink:systematic_synonym](https://w3id.org/biolink/vocab/systematic_syno
  * [DistributionLevel](DistributionLevel.md)
  * [Drug](Drug.md)
  * [DrugExposure](DrugExposure.md)
- * [Environment](Environment.md)
  * [EnvironmentalFeature](EnvironmentalFeature.md)
  * [EnvironmentalProcess](EnvironmentalProcess.md)
  * [EvidenceType](EvidenceType.md)
  * [Exon](Exon.md)
+ * [ExposureEvent](ExposureEvent.md)
  * [FrequencyValue](FrequencyValue.md)
  * [Gene](Gene.md)
  * [GeneFamily](GeneFamily.md)

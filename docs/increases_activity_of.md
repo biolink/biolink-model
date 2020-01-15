@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: increases activity of
+# Type: increases_activity_of
 
 
 holds between two molecular entities where the action or effect of one increases the activity of the other within a system of interest
 
 URI: [biolink:increases_activity_of](https://w3id.org/biolink/vocab/increases_activity_of)
+
 
 ## Domain and Range
 
@@ -49,3 +46,10 @@ URI: [biolink:increases_activity_of](https://w3id.org/biolink/vocab/increases_ac
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

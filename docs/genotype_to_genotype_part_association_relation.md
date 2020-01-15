@@ -1,18 +1,15 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: relation
+# Type: genotype_to_genotype_part_association_relation
 
 
 
 
 URI: [biolink:genotype_to_genotype_part_association_relation](https://w3id.org/biolink/vocab/genotype_to_genotype_part_association_relation)
 
+
 ## Domain and Range
 
-[GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) ->  <sub>REQ</sub> [Uriorcurie](Uriorcurie.md)
+[GenotypeToGenotypePartAssociation](GenotypeToGenotypePartAssociation.md) ->  <sub>REQ</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Parents
 

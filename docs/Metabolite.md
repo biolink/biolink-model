@@ -1,16 +1,19 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:Metabolite
 ---
 
-
-# Class: metabolite
+# Type: Metabolite
 
 
 Any intermediate or product resulting from metabolism. Includes primary and secondary metabolites.
 
 URI: [biolink:Metabolite](https://w3id.org/biolink/vocab/Metabolite)
 
-![img](images/Metabolite.png)
+CHEBI:25212
+{: .mapping-label }
+
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Metabolite&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[ChemicalSubstance]^-\[Metabolite])
 
 ## Parents
 
@@ -23,17 +26,17 @@ URI: [biolink:Metabolite](https://w3id.org/biolink/vocab/Metabolite)
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [IdentifierType](types/IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](types/LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)
+    * range: [IriType](types/IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
 
@@ -44,3 +47,11 @@ URI: [biolink:Metabolite](https://w3id.org/biolink/vocab/Metabolite)
     * range: [OrganismTaxon](OrganismTaxon.md)
     * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
     * in subsets: (translator_minimal)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | CHEBI:25212 |
+| **Comments:** | | The CHEBI ID represents a role rather than a substance |
+

@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: decreases molecular modification of
+# Type: decreases_molecular_modification_of
 
 
 holds between two molecular entities where the action or effect of one leads to decreased molecular modification(s) of the other (e.g. via post-translational modifications of proteins such as the addition of phosphoryl group, or via redox reaction that adds or subtracts electrons)
 
 URI: [biolink:decreases_molecular_modification_of](https://w3id.org/biolink/vocab/decreases_molecular_modification_of)
+
 
 ## Domain and Range
 
@@ -49,3 +46,10 @@ URI: [biolink:decreases_molecular_modification_of](https://w3id.org/biolink/voca
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

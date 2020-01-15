@@ -1,16 +1,25 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:BiologicalProcess
 ---
 
-
-# Class: biological process
+# Type: BiologicalProcess
 
 
 One or more causally connected executions of molecular functions
 
 URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProcess)
 
-![img](images/BiologicalProcess.png)
+GO:0008150
+{: .mapping-label }
+
+SIO:000006
+{: .mapping-label }
+
+WD:Q2996394
+{: .mapping-label }
+
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[MacromolecularMachineToBiologicalProcessAssociation]-%20object%201..1>\[BiologicalProcess&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[BiologicalProcess]uses%20-.->\[Occurrent],%20\[BiologicalProcess]^-\[PhysiologicalProcess],%20\[BiologicalProcess]^-\[Pathway],%20\[BiologicalProcessOrActivity]^-\[BiologicalProcess])
 
 ## Parents
 
@@ -27,7 +36,7 @@ URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProces
 
 ## Referenced by class
 
- *  **[MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md)** *[object](macromolecular_machine_to_biological_process_association_object.md)*  <sub>REQ</sub>  **[BiologicalProcess](BiologicalProcess.md)**
+ *  **[MacromolecularMachineToBiologicalProcessAssociation](MacromolecularMachineToBiologicalProcessAssociation.md)** *[macromolecular machine to biological process association➞object](macromolecular_machine_to_biological_process_association_object.md)*  <sub>REQ</sub>  **[BiologicalProcess](BiologicalProcess.md)**
 
 ## Attributes
 
@@ -36,16 +45,25 @@ URI: [biolink:BiologicalProcess](https://w3id.org/biolink/vocab/BiologicalProces
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [IdentifierType](types/IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](types/LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)
+    * range: [IriType](types/IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | GO:0008150 |
+|  | | SIO:000006 |
+|  | | WD:Q2996394 |
+

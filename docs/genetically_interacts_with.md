@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: genetically interacts with
+# Type: genetically_interacts_with
 
 
 holds between two genes whose phenotypic effects are dependent on each other in some way - such that their combined phenotypic effects are the result of some interaction between the activity of their gene products. Examples include epistasis and synthetic lethality.
 
 URI: [biolink:genetically_interacts_with](https://w3id.org/biolink/vocab/genetically_interacts_with)
+
 
 ## Domain and Range
 
@@ -24,3 +21,11 @@ URI: [biolink:genetically_interacts_with](https://w3id.org/biolink/vocab/genetic
 ## Used by
 
  * [Gene](Gene.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0002435 |
+| **In Subsets:** | | translator_minimal |
+

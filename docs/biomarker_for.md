@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: biomarker for
+# Type: biomarker_for
 
 
 holds between a measurable molecular entity and a disease or phenotypic feature, where the entity is used as an indicator of the presence or state of the disease or feature.
 
 URI: [biolink:biomarker_for](https://w3id.org/biolink/vocab/biomarker_for)
+
 
 ## Domain and Range
 
@@ -49,3 +46,11 @@ URI: [biolink:biomarker_for](https://w3id.org/biolink/vocab/biomarker_for)
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0002607 |
+| **In Subsets:** | | translator_minimal |
+

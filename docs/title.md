@@ -1,18 +1,15 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: title
+# Type: title
 
 
 
 
 URI: [biolink:title](https://w3id.org/biolink/vocab/title)
 
+
 ## Domain and Range
 
-[DataSetVersion](DataSetVersion.md) ->  <sub>OPT</sub> [String](String.md)
+[DataSetVersion](DataSetVersion.md) ->  <sub>OPT</sub> [String](types/String.md)
 
 ## Parents
 
@@ -26,3 +23,10 @@ URI: [biolink:title](https://w3id.org/biolink/vocab/title)
  * [DataSetSummary](DataSetSummary.md)
  * [DataSetVersion](DataSetVersion.md)
  * [DistributionLevel](DistributionLevel.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | dct:title |
+

@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: regulates
+# Type: regulates
 
 
 
 
 URI: [biolink:regulates](https://w3id.org/biolink/vocab/regulates)
+
 
 ## Domain and Range
 
@@ -28,3 +25,11 @@ URI: [biolink:regulates](https://w3id.org/biolink/vocab/regulates)
 ## Used by
 
  * [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | WD:P128 |
+| **Comments:** | | This is a grouping for process-process and entity-entity relations |
+

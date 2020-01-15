@@ -1,16 +1,25 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:PhenotypicFeature
 ---
 
-
-# Class: phenotypic feature
+# Type: PhenotypicFeature
 
 
 
 
 URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeature)
 
-![img](images/PhenotypicFeature.png)
+UPHENO:0001001
+{: .mapping-label }
+
+SIO:010056
+{: .mapping-label }
+
+WD:Q169872
+{: .mapping-label }
+
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[PhenotypicFeature&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[EntityToPhenotypicFeatureAssociation]-%20object%201..1>\[PhenotypicFeature],%20\[DiseaseOrPhenotypicFeature]^-\[PhenotypicFeature])
 
 ## Parents
 
@@ -18,7 +27,7 @@ URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeatur
 
 ## Referenced by class
 
- *  **[EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)** *[object](entity_to_phenotypic_feature_association_object.md)*  <sub>REQ</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
+ *  **[EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)** *[entity to phenotypic feature association➞object](entity_to_phenotypic_feature_association_object.md)*  <sub>REQ</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
  *  **[BiologicalEntity](BiologicalEntity.md)** *[has phenotype](has_phenotype.md)*  <sub>0..*</sub>  **[PhenotypicFeature](PhenotypicFeature.md)**
 
 ## Attributes
@@ -28,17 +37,17 @@ URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeatur
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [IdentifierType](types/IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](types/LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)
+    * range: [IriType](types/IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
 
@@ -49,3 +58,17 @@ URI: [biolink:PhenotypicFeature](https://w3id.org/biolink/vocab/PhenotypicFeatur
     * range: [OrganismTaxon](OrganismTaxon.md)
     * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
     * in subsets: (translator_minimal)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | sign |
+|  | | symptom |
+|  | | phenotype |
+|  | | trait |
+|  | | endophenotype |
+| **Mappings:** | | UPHENO:0001001 |
+|  | | SIO:010056 |
+|  | | WD:Q169872 |
+

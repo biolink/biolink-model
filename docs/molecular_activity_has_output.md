@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: has output
+# Type: molecular_activity_has_output
 
 
 
 
 URI: [biolink:molecular_activity_has_output](https://w3id.org/biolink/vocab/molecular_activity_has_output)
+
 
 ## Domain and Range
 

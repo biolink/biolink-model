@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: participates in
+# Type: participates_in
 
 
 holds between a continuant and a process, where the continuant is somehow involved in the process
 
 URI: [biolink:participates_in](https://w3id.org/biolink/vocab/participates_in)
+
 
 ## Domain and Range
 
@@ -25,3 +22,11 @@ URI: [biolink:participates_in](https://w3id.org/biolink/vocab/participates_in)
 ## Used by
 
  * [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0000056 |
+| **In Subsets:** | | translator_minimal |
+

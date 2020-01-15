@@ -1,18 +1,15 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: retrievedOn
+# Type: retrievedOn
 
 
 
 
 URI: [biolink:retrievedOn](https://w3id.org/biolink/vocab/retrievedOn)
 
+
 ## Domain and Range
 
-[SourceFile](SourceFile.md) ->  <sub>OPT</sub> [Date](Date.md)
+[SourceFile](SourceFile.md) ->  <sub>OPT</sub> [Date](types/Date.md)
 
 ## Parents
 
@@ -24,3 +21,10 @@ URI: [biolink:retrievedOn](https://w3id.org/biolink/vocab/retrievedOn)
 ## Used by
 
  * [SourceFile](SourceFile.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | pav:retrievedOn |
+

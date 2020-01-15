@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: change is catalyzed by
+# Type: chemical_to_chemical_derivation_association_change_is_catalyzed_by
 
 
 
 
 URI: [biolink:chemical_to_chemical_derivation_association_change_is_catalyzed_by](https://w3id.org/biolink/vocab/chemical_to_chemical_derivation_association_change_is_catalyzed_by)
+
 
 ## Domain and Range
 

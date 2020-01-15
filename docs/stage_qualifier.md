@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: stage qualifier
+# Type: stage_qualifier
 
 
 stage at which expression takes place
 
 URI: [biolink:stage_qualifier](https://w3id.org/biolink/vocab/stage_qualifier)
+
 
 ## Domain and Range
 
@@ -20,7 +17,7 @@ URI: [biolink:stage_qualifier](https://w3id.org/biolink/vocab/stage_qualifier)
 
 ## Children
 
- *  [stage qualifier](gene_to_expression_site_association_stage_qualifier.md)
+ *  [gene to expression site association➞stage qualifier](gene_to_expression_site_association_stage_qualifier.md)
 
 ## Used by
 

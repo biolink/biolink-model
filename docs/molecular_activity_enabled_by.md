@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: enabled by
+# Type: molecular_activity_enabled_by
 
 
 
 
 URI: [biolink:molecular_activity_enabled_by](https://w3id.org/biolink/vocab/molecular_activity_enabled_by)
+
 
 ## Domain and Range
 

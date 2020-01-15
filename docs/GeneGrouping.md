@@ -1,16 +1,16 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:GeneGrouping
 ---
 
-
-# Class: gene grouping
+# Type: GeneGrouping
 
 
 any grouping of multiple genes or gene products
 
 URI: [biolink:GeneGrouping](https://w3id.org/biolink/vocab/GeneGrouping)
 
-![img](images/GeneGrouping.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[GeneFamily]uses%20-.->\[GeneGrouping])
 
 ## Mixin for
 

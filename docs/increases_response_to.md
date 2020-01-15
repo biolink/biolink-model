@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: increases response to
+# Type: increases_response_to
 
 
 holds between two molecular entities where the action or effect of one increases the susceptibility of a biological entity or system (e.g. an organism, cell, cellular component, macromolecular machine, biological or pathological process) to the other
 
 URI: [biolink:increases_response_to](https://w3id.org/biolink/vocab/increases_response_to)
+
 
 ## Domain and Range
 
@@ -49,3 +46,10 @@ URI: [biolink:increases_response_to](https://w3id.org/biolink/vocab/increases_re
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

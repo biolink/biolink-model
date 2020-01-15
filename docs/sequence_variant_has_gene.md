@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: has gene
+# Type: sequence_variant_has_gene
 
 
 
 
 URI: [biolink:sequence_variant_has_gene](https://w3id.org/biolink/vocab/sequence_variant_has_gene)
+
 
 ## Domain and Range
 

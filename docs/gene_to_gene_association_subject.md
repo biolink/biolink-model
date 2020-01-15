@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: subject
+# Type: gene_to_gene_association_subject
 
 
 
 
 URI: [biolink:gene_to_gene_association_subject](https://w3id.org/biolink/vocab/gene_to_gene_association_subject)
+
 
 ## Domain and Range
 

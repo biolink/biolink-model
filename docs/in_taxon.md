@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: in taxon
+# Type: in_taxon
 
 
 connects a thing to a class representing a taxon
 
 URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
+
 
 ## Domain and Range
 
@@ -61,3 +58,12 @@ URI: [biolink:in_taxon](https://w3id.org/biolink/vocab/in_taxon)
  * [SequenceVariant](SequenceVariant.md)
  * [ThingWithTaxon](ThingWithTaxon.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | RO:0002162 |
+|  | | WD:P703 |
+| **In Subsets:** | | translator_minimal |
+

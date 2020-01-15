@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: object
+# Type: genomic_sequence_localization_object
 
 
 
 
 URI: [biolink:genomic_sequence_localization_object](https://w3id.org/biolink/vocab/genomic_sequence_localization_object)
+
 
 ## Domain and Range
 

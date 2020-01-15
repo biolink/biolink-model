@@ -1,16 +1,16 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:GenotypicSex
 ---
 
-
-# Class: genotypic sex
+# Type: GenotypicSex
 
 
 An attribute corresponding to the genotypic sex of the individual, based upon genotypic composition of sex chromosomes.
 
 URI: [biolink:GenotypicSex](https://w3id.org/biolink/vocab/GenotypicSex)
 
-![img](images/GenotypicSex.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[NamedThing]<has%20qualitative%20value(i)%200..1-%20\[GenotypicSex&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[QuantityValue]<has%20quantitative%20value(i)%200..*-++\[GenotypicSex],%20\[OntologyClass]<has%20attribute%20type(i)%200..1-%20\[GenotypicSex],%20\[BiologicalSex]^-\[GenotypicSex])
 
 ## Parents
 
@@ -41,16 +41,16 @@ URI: [biolink:GenotypicSex](https://w3id.org/biolink/vocab/GenotypicSex)
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [IdentifierType](types/IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](types/LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)
+    * range: [IriType](types/IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)

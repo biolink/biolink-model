@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: has zygosity
+# Type: has_zygosity
 
 
 
 
 URI: [biolink:has_zygosity](https://w3id.org/biolink/vocab/has_zygosity)
+
 
 ## Domain and Range
 

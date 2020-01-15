@@ -1,18 +1,15 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: relation
+# Type: pairwise_interaction_association_relation
 
 
 
 
 URI: [biolink:pairwise_interaction_association_relation](https://w3id.org/biolink/vocab/pairwise_interaction_association_relation)
 
+
 ## Domain and Range
 
-[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) ->  <sub>REQ</sub> [Uriorcurie](Uriorcurie.md)
+[PairwiseInteractionAssociation](PairwiseInteractionAssociation.md) ->  <sub>REQ</sub> [Uriorcurie](types/Uriorcurie.md)
 
 ## Parents
 

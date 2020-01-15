@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: disrupts
+# Type: disrupts
 
 
 describes a relationship where one entity degrades or interferes with the structure, function, or occurrence of another.
 
 URI: [biolink:disrupts](https://w3id.org/biolink/vocab/disrupts)
+
 
 ## Domain and Range
 
@@ -24,3 +21,11 @@ URI: [biolink:disrupts](https://w3id.org/biolink/vocab/disrupts)
 ## Used by
 
  * [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | SEMMEDDB:DISRUPTS |
+| **In Subsets:** | | translator_minimal |
+

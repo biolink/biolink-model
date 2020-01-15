@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: decreases degradation of
+# Type: decreases_degradation_of
 
 
 holds between two molecular entities where the action or effect of one decreases the rate of degradation of the other within a system of interest
 
 URI: [biolink:decreases_degradation_of](https://w3id.org/biolink/vocab/decreases_degradation_of)
+
 
 ## Domain and Range
 
@@ -49,3 +46,10 @@ URI: [biolink:decreases_degradation_of](https://w3id.org/biolink/vocab/decreases
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

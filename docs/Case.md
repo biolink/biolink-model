@@ -1,16 +1,16 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:Case
 ---
 
-
-# Class: case
+# Type: Case
 
 
 An individual organism that has a patient role in some clinical context.
 
 URI: [biolink:Case](https://w3id.org/biolink/vocab/Case)
 
-![img](images/Case.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[OrganismTaxon]<in%20taxon(i)%200..*-%20\[Case&#124;id(i):identifier_type;name(i):label_type;category(i):iri_type%20%2B],%20\[CaseToThingAssociation]-%20subject%201..1>\[Case],%20\[IndividualOrganism]^-\[Case])
 
 ## Parents
 
@@ -18,7 +18,7 @@ URI: [biolink:Case](https://w3id.org/biolink/vocab/Case)
 
 ## Referenced by class
 
- *  **[CaseToThingAssociation](CaseToThingAssociation.md)** *[subject](case_to_thing_association_subject.md)*  <sub>REQ</sub>  **[Case](Case.md)**
+ *  **[CaseToThingAssociation](CaseToThingAssociation.md)** *[case to thing association➞subject](case_to_thing_association_subject.md)*  <sub>REQ</sub>  **[Case](Case.md)**
 
 ## Attributes
 
@@ -27,17 +27,17 @@ URI: [biolink:Case](https://w3id.org/biolink/vocab/Case)
 
  * [id](id.md)  <sub>REQ</sub>
     * Description: A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI
-    * range: [IdentifierType](IdentifierType.md)
+    * range: [IdentifierType](types/IdentifierType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [name](name.md)  <sub>REQ</sub>
     * Description: A human-readable name for a thing
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](types/LabelType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
  * [category](category.md)  <sub>1..*</sub>
     * Description: Name of the high level ontology class in which this entity is categorized. Corresponds to the label for the biolink entity type class. In a neo4j database this MAY correspond to the neo4j label tag
-    * range: [IriType](IriType.md)
+    * range: [IriType](types/IriType.md)
     * inherited from: [NamedThing](NamedThing.md)
     * in subsets: (translator_minimal)
 
@@ -48,3 +48,11 @@ URI: [biolink:Case](https://w3id.org/biolink/vocab/Case)
     * range: [OrganismTaxon](OrganismTaxon.md)
     * inherited from: [ThingWithTaxon](ThingWithTaxon.md)
     * in subsets: (translator_minimal)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | patient |
+|  | | proband |
+

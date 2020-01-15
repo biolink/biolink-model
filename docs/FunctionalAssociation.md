@@ -1,16 +1,16 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:FunctionalAssociation
 ---
 
-
-# Class: functional association
+# Type: FunctionalAssociation
 
 
 An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
 
 URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAssociation)
 
-![img](images/FunctionalAssociation.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by(i)%200..1-%20\[FunctionalAssociation&#124;relation(i):uriorcurie;id(i):nodeidentifier;negated(i):boolean%20%3F],%20\[Publication]<publications(i)%200..*-%20\[FunctionalAssociation],%20\[OntologyClass]<qualifiers(i)%200..*-%20\[FunctionalAssociation],%20\[OntologyClass]<association%20type(i)%200..1-%20\[FunctionalAssociation],%20\[GeneOntologyClass]<object%201..1-%20\[FunctionalAssociation],%20\[MacromolecularMachine]<subject%201..1-%20\[FunctionalAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToMolecularActivityAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToCellularComponentAssociation],%20\[FunctionalAssociation]^-\[MacromolecularMachineToBiologicalProcessAssociation],%20\[FunctionalAssociation]^-\[GeneToGoTermAssociation],%20\[Association]^-\[FunctionalAssociation])
 
 ## Parents
 
@@ -31,9 +31,9 @@ URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAs
 
 ### Own
 
- * [object](functional_association_object.md)  <sub>REQ</sub>
+ * [functional association➞object](functional_association_object.md)  <sub>REQ</sub>
     * range: [GeneOntologyClass](GeneOntologyClass.md)
- * [subject](functional_association_subject.md)  <sub>REQ</sub>
+ * [functional association➞subject](functional_association_subject.md)  <sub>REQ</sub>
     * range: [MacromolecularMachine](MacromolecularMachine.md)
 
 ### Inherited from association:
@@ -44,20 +44,20 @@ URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAs
     * inherited from: [Association](Association.md)
  * [relation](relation.md)  <sub>REQ</sub>
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [Uriorcurie](Uriorcurie.md)
+    * range: [Uriorcurie](types/Uriorcurie.md)
     * inherited from: [Association](Association.md)
  * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
     * inherited from: [Association](Association.md)
- * [id](association_id.md)  <sub>REQ</sub>
+ * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [Nodeidentifier](Nodeidentifier.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * inherited from: [Association](Association.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
-    * range: [Boolean](Boolean.md)
+    * range: [Boolean](types/Boolean.md)
     * inherited from: [Association](Association.md)
  * [association type](association_type.md)  <sub>OPT</sub>
     * Description: connects an association to the type of association (e.g. gene to phenotype)
@@ -78,7 +78,7 @@ URI: [biolink:FunctionalAssociation](https://w3id.org/biolink/vocab/FunctionalAs
 
 ### Domain for slot:
 
- * [object](functional_association_object.md)  <sub>REQ</sub>
+ * [functional association➞object](functional_association_object.md)  <sub>REQ</sub>
     * range: [GeneOntologyClass](GeneOntologyClass.md)
- * [subject](functional_association_subject.md)  <sub>REQ</sub>
+ * [functional association➞subject](functional_association_subject.md)  <sub>REQ</sub>
     * range: [MacromolecularMachine](MacromolecularMachine.md)

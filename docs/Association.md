@@ -1,16 +1,25 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:Association
 ---
 
-
-# Class: association
+# Type: Association
 
 
 A typed association between two entities, supported by evidence
 
 URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
 
-![img](images/Association.png)
+OBAN:association
+{: .mapping-label }
+
+rdf:Statement
+{: .mapping-label }
+
+owl:Axiom
+{: .mapping-label }
+
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Provider]<provided%20by%200..1-%20\[Association&#124;relation:uriorcurie;id:nodeidentifier;negated:boolean%20%3F],%20\[Publication]<publications%200..*-%20\[Association],%20\[OntologyClass]<qualifiers%200..*-%20\[Association],%20\[OntologyClass]<association%20type%200..1-%20\[Association],%20\[NamedThing]<object%201..1-%20\[Association],%20\[NamedThing]<subject%201..1-%20\[Association],%20\[Association]^-\[VariantToThingAssociation],%20\[Association]^-\[VariantToPopulationAssociation],%20\[Association]^-\[VariantToPhenotypicFeatureAssociation],%20\[Association]^-\[VariantToDiseaseAssociation],%20\[Association]^-\[ThingToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[SequenceVariantModulatesTreatmentAssociation],%20\[Association]^-\[SequenceFeatureRelationship],%20\[Association]^-\[PopulationToPopulationAssociation],%20\[Association]^-\[PairwiseInteractionAssociation],%20\[Association]^-\[MaterialSampleToThingAssociation],%20\[Association]^-\[MaterialSampleToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[MaterialSampleDerivationAssociation],%20\[Association]^-\[GenotypeToVariantAssociation],%20\[Association]^-\[GenotypeToThingAssociation],%20\[Association]^-\[GenotypeToPhenotypicFeatureAssociation],%20\[Association]^-\[GenotypeToGenotypePartAssociation],%20\[Association]^-\[GenotypeToGeneAssociation],%20\[Association]^-\[GenomicSequenceLocalization],%20\[Association]^-\[GeneToThingAssociation],%20\[Association]^-\[GeneToPhenotypicFeatureAssociation],%20\[Association]^-\[GeneToGeneAssociation],%20\[Association]^-\[GeneToExpressionSiteAssociation],%20\[Association]^-\[GeneToDiseaseAssociation],%20\[Association]^-\[GeneRegulatoryRelationship],%20\[Association]^-\[FunctionalAssociation],%20\[Association]^-\[ExposureEventToPhenotypicFeatureAssociation],%20\[Association]^-\[EntityToPhenotypicFeatureAssociation],%20\[Association]^-\[DiseaseToThingAssociation],%20\[Association]^-\[DiseaseToPhenotypicFeatureAssociation],%20\[Association]^-\[DiseaseOrPhenotypicFeatureAssociationToThingAssociation],%20\[Association]^-\[ChemicalToThingAssociation],%20\[Association]^-\[ChemicalToPathwayAssociation],%20\[Association]^-\[ChemicalToGeneAssociation],%20\[Association]^-\[ChemicalToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[ChemicalToChemicalAssociation],%20\[Association]^-\[CellLineToThingAssociation],%20\[Association]^-\[CellLineToDiseaseOrPhenotypicFeatureAssociation],%20\[Association]^-\[CaseToThingAssociation],%20\[Association]^-\[CaseToPhenotypicFeatureAssociation],%20\[Association]^-\[AnatomicalEntityToAnatomicalEntityAssociation])
 
 ## Children
 
@@ -28,7 +37,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md) - An association between a disease and a phenotypic feature in which the phenotypic feature is associated with the disease in some way
  * [DiseaseToThingAssociation](DiseaseToThingAssociation.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
+ * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md) - Any association between an environment and a phenotypic feature, where being in the environment influences the phenotype
  * [FunctionalAssociation](FunctionalAssociation.md) - An association between a macromolecular machine (gene, gene product or complex of gene products) and either a molecular activity, a biological process or a cellular location in which a function is executed
  * [GeneRegulatoryRelationship](GeneRegulatoryRelationship.md) - A regulatory relationship between two genes
  * [GeneToDiseaseAssociation](GeneToDiseaseAssociation.md)
@@ -66,13 +75,13 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
  * [association type](association_type.md)  <sub>OPT</sub>
     * Description: connects an association to the type of association (e.g. gene to phenotype)
     * range: [OntologyClass](OntologyClass.md)
- * [id](association_id.md)  <sub>REQ</sub>
+ * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [Nodeidentifier](Nodeidentifier.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * in subsets: (translator_minimal)
  * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
-    * range: [Boolean](Boolean.md)
+    * range: [Boolean](types/Boolean.md)
  * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
@@ -87,7 +96,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
     * range: [OntologyClass](OntologyClass.md)
  * [relation](relation.md)  <sub>REQ</sub>
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [Uriorcurie](Uriorcurie.md)
+    * range: [Uriorcurie](types/Uriorcurie.md)
  * [subject](subject.md)  <sub>REQ</sub>
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
@@ -96,13 +105,13 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
 
  * [association slot](association_slot.md)  <sub>OPT</sub>
     * Description: any slot that relates an association to another entity
-    * range: [String](String.md)
+    * range: [String](types/String.md)
  * [association type](association_type.md)  <sub>OPT</sub>
     * Description: connects an association to the type of association (e.g. gene to phenotype)
     * range: [OntologyClass](OntologyClass.md)
- * [id](association_id.md)  <sub>REQ</sub>
+ * [association➞id](association_id.md)  <sub>REQ</sub>
     * Description: A unique identifier for an association
-    * range: [Nodeidentifier](Nodeidentifier.md)
+    * range: [Nodeidentifier](types/Nodeidentifier.md)
     * in subsets: (translator_minimal)
  * [change is catalyzed by](change_is_catalyzed_by.md)  <sub>0..*</sub>
     * Description: hyperedge connecting an association between two causally connected entities (for example, two chemical entities, or a chemical entity in that changes location) and the gene product, gene, or complex that enables or catalyzes the change.
@@ -112,7 +121,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
     * range: [ClinicalModifier](ClinicalModifier.md)
  * [edge label](edge_label.md)  <sub>REQ</sub>
     * Description: A high-level grouping for the relationship type. AKA minimal predicate. This is analogous to category for nodes.
-    * range: [LabelType](LabelType.md)
+    * range: [LabelType](types/LabelType.md)
  * [frequency qualifier](frequency_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
     * range: [FrequencyValue](FrequencyValue.md)
@@ -124,7 +133,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
     * range: [EvidenceType](EvidenceType.md)
  * [negated](negated.md)  <sub>OPT</sub>
     * Description: if set to true, then the association is negated i.e. is not true
-    * range: [Boolean](Boolean.md)
+    * range: [Boolean](types/Boolean.md)
  * [object](object.md)  <sub>REQ</sub>
     * Description: connects an association to the object of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
@@ -145,7 +154,7 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
     * range: [OntologyClass](OntologyClass.md)
  * [relation](relation.md)  <sub>REQ</sub>
     * Description: the relationship type by which a subject is connected to an object in an association
-    * range: [Uriorcurie](Uriorcurie.md)
+    * range: [Uriorcurie](types/Uriorcurie.md)
  * [sequence variant qualifier](sequence_variant_qualifier.md)  <sub>OPT</sub>
     * Description: a qualifier used in an association where the variant
     * range: [SequenceVariant](SequenceVariant.md)
@@ -161,3 +170,13 @@ URI: [biolink:Association](https://w3id.org/biolink/vocab/Association)
  * [subject](subject.md)  <sub>REQ</sub>
     * Description: connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
     * range: [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | OBAN:association |
+|  | | rdf:Statement |
+|  | | owl:Axiom |
+| **Comments:** | | This is roughly the model used by biolink and ontobio at the moment |
+

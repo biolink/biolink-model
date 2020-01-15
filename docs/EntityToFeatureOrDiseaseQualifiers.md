@@ -1,20 +1,20 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:EntityToFeatureOrDiseaseQualifiers
 ---
 
-
-# Class: entity to feature or disease qualifiers
+# Type: EntityToFeatureOrDiseaseQualifiers
 
 
 Qualifiers for entity to disease or phenotype associations
 
 URI: [biolink:EntityToFeatureOrDiseaseQualifiers](https://w3id.org/biolink/vocab/EntityToFeatureOrDiseaseQualifiers)
 
-![img](images/EntityToFeatureOrDiseaseQualifiers.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[EntityToPhenotypicFeatureAssociation]uses%20-.->\[EntityToFeatureOrDiseaseQualifiers],%20\[EntityToFeatureOrDiseaseQualifiers]^-\[EntityToDiseaseAssociation],%20\[FrequencyQualifierMixin]^-\[EntityToFeatureOrDiseaseQualifiers])
 
 ## Parents
 
- *  is_a: [FrequencyQualifierMixin](FrequencyQualifierMixin.md) - Qualifier for freqency type associations
+ *  is_a: [FrequencyQualifierMixin](FrequencyQualifierMixin.md) - Qualifier for frequency type associations
 
 ## Children
 

@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: frequency qualifier
+# Type: frequency_qualifier
 
 
 a qualifier used in a phenotypic association to state how frequent the phenotype is observed in the subject
 
 URI: [biolink:frequency_qualifier](https://w3id.org/biolink/vocab/frequency_qualifier)
+
 
 ## Domain and Range
 
@@ -29,7 +26,7 @@ URI: [biolink:frequency_qualifier](https://w3id.org/biolink/vocab/frequency_qual
  * [EntityToDiseaseAssociation](EntityToDiseaseAssociation.md)
  * [EntityToFeatureOrDiseaseQualifiers](EntityToFeatureOrDiseaseQualifiers.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md)
+ * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FrequencyQualifierMixin](FrequencyQualifierMixin.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)

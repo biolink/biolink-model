@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: subject
+# Type: gene_has_variant_that_contributes_to_disease_association_subject
 
 
 
 
 URI: [biolink:gene_has_variant_that_contributes_to_disease_association_subject](https://w3id.org/biolink/vocab/gene_has_variant_that_contributes_to_disease_association_subject)
+
 
 ## Domain and Range
 
@@ -16,7 +13,7 @@ URI: [biolink:gene_has_variant_that_contributes_to_disease_association_subject](
 
 ## Parents
 
- *  is_a: [subject](gene_to_disease_association_subject.md)
+ *  is_a: [gene to disease association➞subject](gene_to_disease_association_subject.md)
 
 ## Children
 

@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: object
+# Type: gene_to_gene_product_relationship_object
 
 
 
 
 URI: [biolink:gene_to_gene_product_relationship_object](https://w3id.org/biolink/vocab/gene_to_gene_product_relationship_object)
+
 
 ## Domain and Range
 
@@ -16,7 +13,7 @@ URI: [biolink:gene_to_gene_product_relationship_object](https://w3id.org/biolink
 
 ## Parents
 
- *  is_a: [object](sequence_feature_relationship_object.md)
+ *  is_a: [sequence feature relationship➞object](sequence_feature_relationship_object.md)
 
 ## Children
 

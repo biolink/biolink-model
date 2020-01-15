@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: subject
+# Type: material_sample_derivation_association_subject
 
 
 
 
 URI: [biolink:material_sample_derivation_association_subject](https://w3id.org/biolink/vocab/material_sample_derivation_association_subject)
+
 
 ## Domain and Range
 

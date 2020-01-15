@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: physically interacts with
+# Type: physically_interacts_with
 
 
 holds between two entities that make physical contact as part of some interaction
 
 URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physically_interacts_with)
+
 
 ## Domain and Range
 
@@ -25,3 +22,12 @@ URI: [biolink:physically_interacts_with](https://w3id.org/biolink/vocab/physical
 ## Used by
 
  * [NamedThing](NamedThing.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | WD:P129 |
+|  | | SEMMEDDB:INTERACTS_WITH |
+| **In Subsets:** | | translator_minimal |
+

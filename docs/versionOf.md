@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: versionOf
+# Type: versionOf
 
 
 
 
 URI: [biolink:versionOf](https://w3id.org/biolink/vocab/versionOf)
+
 
 ## Domain and Range
 
@@ -26,3 +23,10 @@ URI: [biolink:versionOf](https://w3id.org/biolink/vocab/versionOf)
  * [DataSetSummary](DataSetSummary.md)
  * [DataSetVersion](DataSetVersion.md)
  * [DistributionLevel](DistributionLevel.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Mappings:** | | dct:isVersionOf |
+

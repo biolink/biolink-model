@@ -1,16 +1,16 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:QuantityValue
 ---
 
-
-# Class: quantity value
+# Type: QuantityValue
 
 
 A value of an attribute that is quantitative and measurable, expressed as a combination of a unit and a numeric value
 
 URI: [biolink:QuantityValue](https://w3id.org/biolink/vocab/QuantityValue)
 
-![img](images/QuantityValue.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[Attribute]++-%20has%20quantitative%20value%200..*>\[QuantityValue&#124;has_unit:unit%20%3F;has_numeric_value:double%20%3F],%20\[AbstractEntity]^-\[QuantityValue])
 
 ## Parents
 
@@ -27,20 +27,20 @@ URI: [biolink:QuantityValue](https://w3id.org/biolink/vocab/QuantityValue)
 
  * [has numeric value](has_numeric_value.md)  <sub>OPT</sub>
     * Description: connects a quantity value to a number
-    * range: [Double](Double.md)
+    * range: [Double](types/Double.md)
     * in subsets: (samples)
  * [has unit](has_unit.md)  <sub>OPT</sub>
     * Description: connects a quantity value to a unit
-    * range: [Unit](Unit.md)
+    * range: [Unit](types/Unit.md)
     * in subsets: (samples)
 
 ### Domain for slot:
 
  * [has numeric value](has_numeric_value.md)  <sub>OPT</sub>
     * Description: connects a quantity value to a number
-    * range: [Double](Double.md)
+    * range: [Double](types/Double.md)
     * in subsets: (samples)
  * [has unit](has_unit.md)  <sub>OPT</sub>
     * Description: connects a quantity value to a unit
-    * range: [Unit](Unit.md)
+    * range: [Unit](types/Unit.md)
     * in subsets: (samples)

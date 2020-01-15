@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: decreases secretion of
+# Type: decreases_secretion_of
 
 
 holds between two molecular entities where the action or effect of one decreases the rate of secretion of the other out of a cell, gland, or organ
 
 URI: [biolink:decreases_secretion_of](https://w3id.org/biolink/vocab/decreases_secretion_of)
+
 
 ## Domain and Range
 
@@ -49,3 +46,10 @@ URI: [biolink:decreases_secretion_of](https://w3id.org/biolink/vocab/decreases_s
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

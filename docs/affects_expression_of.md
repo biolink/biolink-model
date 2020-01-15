@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: affects expression of
+# Type: affects_expression_of
 
 
 holds between two molecular entities where the action or effect of one changes the level of expression of the other within a system of interest
 
 URI: [biolink:affects_expression_of](https://w3id.org/biolink/vocab/affects_expression_of)
+
 
 ## Domain and Range
 
@@ -51,3 +48,10 @@ URI: [biolink:affects_expression_of](https://w3id.org/biolink/vocab/affects_expr
  * [ProteinIsoform](ProteinIsoform.md)
  * [SequenceVariant](SequenceVariant.md)
  * [Transcript](Transcript.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **In Subsets:** | | translator_minimal |
+

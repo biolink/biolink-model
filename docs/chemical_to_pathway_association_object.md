@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: object
+# Type: chemical_to_pathway_association_object
 
 
 
 
 URI: [biolink:chemical_to_pathway_association_object](https://w3id.org/biolink/vocab/chemical_to_pathway_association_object)
+
 
 ## Domain and Range
 

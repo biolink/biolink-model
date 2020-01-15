@@ -1,18 +1,15 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: has total
+# Type: variant_to_population_association_has_total
 
 
 
 
 URI: [biolink:variant_to_population_association_has_total](https://w3id.org/biolink/vocab/variant_to_population_association_has_total)
 
+
 ## Domain and Range
 
-[VariantToPopulationAssociation](VariantToPopulationAssociation.md) ->  <sub>OPT</sub> [Integer](Integer.md)
+[VariantToPopulationAssociation](VariantToPopulationAssociation.md) ->  <sub>OPT</sub> [Integer](types/Integer.md)
 
 ## Parents
 

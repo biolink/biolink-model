@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: subject
+# Type: functional_association_subject
 
 
 
 
 URI: [biolink:functional_association_subject](https://w3id.org/biolink/vocab/functional_association_subject)
+
 
 ## Domain and Range
 
@@ -20,7 +17,7 @@ URI: [biolink:functional_association_subject](https://w3id.org/biolink/vocab/fun
 
 ## Children
 
- *  [subject](gene_to_go_term_association_subject.md)
+ *  [gene to go term association➞subject](gene_to_go_term_association_subject.md)
 
 ## Used by
 

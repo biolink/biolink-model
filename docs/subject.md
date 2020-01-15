@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: subject
+# Type: subject
 
 
 connects an association to the subject of the association. For example, in a gene-to-phenotype association, the gene is subject and phenotype is object.
 
 URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
+
 
 ## Domain and Range
 
@@ -20,39 +17,40 @@ URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
 
 ## Children
 
- *  [subject](anatomical_entity_to_anatomical_entity_association_subject.md)
- *  [subject](case_to_thing_association_subject.md)
- *  [subject](cell_line_to_disease_or_phenotypic_feature_association_subject.md)
- *  [subject](cell_line_to_thing_association_subject.md)
- *  [subject](chemical_to_chemical_derivation_association_subject.md)
- *  [subject](chemical_to_thing_association_subject.md)
- *  [subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)
- *  [subject](disease_to_thing_association_subject.md)
- *  [subject](environment_to_phenotypic_feature_association_subject.md)
- *  [subject](functional_association_subject.md)
- *  [subject](gene_regulatory_relationship_subject.md)
- *  [subject](gene_to_disease_association_subject.md)
- *  [subject](gene_to_expression_site_association_subject.md)
- *  [subject](gene_to_gene_association_subject.md)
- *  [subject](gene_to_phenotypic_feature_association_subject.md)
- *  [subject](gene_to_thing_association_subject.md)
- *  [subject](genomic_sequence_localization_subject.md)
- *  [subject](genotype_to_gene_association_subject.md)
- *  [subject](genotype_to_genotype_part_association_subject.md)
- *  [subject](genotype_to_phenotypic_feature_association_subject.md)
- *  [subject](genotype_to_thing_association_subject.md)
- *  [subject](genotype_to_variant_association_subject.md)
- *  [subject](material_sample_derivation_association_subject.md)
- *  [subject](material_sample_to_thing_association_subject.md)
- *  [subject](model_to_disease_mixin_subject.md)
- *  [subject](pairwise_interaction_association_subject.md)
- *  [subject](population_to_population_association_subject.md)
- *  [subject](sequence_feature_relationship_subject.md)
- *  [subject](sequence_variant_modulates_treatment_association_subject.md)
- *  [subject](variant_to_disease_association_subject.md)
- *  [subject](variant_to_phenotypic_feature_association_subject.md)
- *  [subject](variant_to_population_association_subject.md)
- *  [subject](variant_to_thing_association_subject.md)
+ *  [anatomical entity to anatomical entity association➞subject](anatomical_entity_to_anatomical_entity_association_subject.md)
+ *  [case to thing association➞subject](case_to_thing_association_subject.md)
+ *  [cell line to disease or phenotypic feature association➞subject](cell_line_to_disease_or_phenotypic_feature_association_subject.md)
+ *  [cell line to thing association➞subject](cell_line_to_thing_association_subject.md)
+ *  [chemical to chemical derivation association➞subject](chemical_to_chemical_derivation_association_subject.md)
+ *  [chemical to thing association➞subject](chemical_to_thing_association_subject.md)
+ *  [disease or phenotypic feature association to thing association➞subject](disease_or_phenotypic_feature_association_to_thing_association_subject.md)
+ *  [disease to exposure association➞subject](disease_to_exposure_association_subject.md)
+ *  [disease to thing association➞subject](disease_to_thing_association_subject.md)
+ *  [exposure event to phenotypic feature association➞subject](exposure_event_to_phenotypic_feature_association_subject.md)
+ *  [functional association➞subject](functional_association_subject.md)
+ *  [gene regulatory relationship➞subject](gene_regulatory_relationship_subject.md)
+ *  [gene to disease association➞subject](gene_to_disease_association_subject.md)
+ *  [gene to expression site association➞subject](gene_to_expression_site_association_subject.md)
+ *  [gene to gene association➞subject](gene_to_gene_association_subject.md)
+ *  [gene to phenotypic feature association➞subject](gene_to_phenotypic_feature_association_subject.md)
+ *  [gene to thing association➞subject](gene_to_thing_association_subject.md)
+ *  [genomic sequence localization➞subject](genomic_sequence_localization_subject.md)
+ *  [genotype to gene association➞subject](genotype_to_gene_association_subject.md)
+ *  [genotype to genotype part association➞subject](genotype_to_genotype_part_association_subject.md)
+ *  [genotype to phenotypic feature association➞subject](genotype_to_phenotypic_feature_association_subject.md)
+ *  [genotype to thing association➞subject](genotype_to_thing_association_subject.md)
+ *  [genotype to variant association➞subject](genotype_to_variant_association_subject.md)
+ *  [material sample derivation association➞subject](material_sample_derivation_association_subject.md)
+ *  [material sample to thing association➞subject](material_sample_to_thing_association_subject.md)
+ *  [model to disease mixin➞subject](model_to_disease_mixin_subject.md)
+ *  [pairwise interaction association➞subject](pairwise_interaction_association_subject.md)
+ *  [population to population association➞subject](population_to_population_association_subject.md)
+ *  [sequence feature relationship➞subject](sequence_feature_relationship_subject.md)
+ *  [sequence variant modulates treatment association➞subject](sequence_variant_modulates_treatment_association_subject.md)
+ *  [variant to disease association➞subject](variant_to_disease_association_subject.md)
+ *  [variant to phenotypic feature association➞subject](variant_to_phenotypic_feature_association_subject.md)
+ *  [variant to population association➞subject](variant_to_population_association_subject.md)
+ *  [variant to thing association➞subject](variant_to_thing_association_subject.md)
 
 ## Used by
 
@@ -71,11 +69,12 @@ URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
  * [ChemicalToPathwayAssociation](ChemicalToPathwayAssociation.md)
  * [ChemicalToThingAssociation](ChemicalToThingAssociation.md)
  * [DiseaseOrPhenotypicFeatureAssociationToThingAssociation](DiseaseOrPhenotypicFeatureAssociationToThingAssociation.md)
+ * [DiseaseToExposureAssociation](DiseaseToExposureAssociation.md)
  * [DiseaseToPhenotypicFeatureAssociation](DiseaseToPhenotypicFeatureAssociation.md)
  * [DiseaseToThingAssociation](DiseaseToThingAssociation.md)
  * [EntityToPhenotypicFeatureAssociation](EntityToPhenotypicFeatureAssociation.md)
- * [EnvironmentToPhenotypicFeatureAssociation](EnvironmentToPhenotypicFeatureAssociation.md)
  * [ExonToTranscriptRelationship](ExonToTranscriptRelationship.md)
+ * [ExposureEventToPhenotypicFeatureAssociation](ExposureEventToPhenotypicFeatureAssociation.md)
  * [FunctionalAssociation](FunctionalAssociation.md)
  * [GeneAsAModelOfDiseaseAssociation](GeneAsAModelOfDiseaseAssociation.md)
  * [GeneHasVariantThatContributesToDiseaseAssociation](GeneHasVariantThatContributesToDiseaseAssociation.md)
@@ -107,3 +106,14 @@ URI: [biolink:subject](https://w3id.org/biolink/vocab/subject)
  * [VariantToPhenotypicFeatureAssociation](VariantToPhenotypicFeatureAssociation.md)
  * [VariantToPopulationAssociation](VariantToPopulationAssociation.md)
  * [VariantToThingAssociation](VariantToThingAssociation.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Local names:** | | annotation subject (ga4gh) |
+|  | | node with outgoing relationship (neo4j) |
+| **Mappings:** | | rdf:subject |
+|  | | owl:annotatedSource |
+|  | | OBAN:association_has_subject |
+

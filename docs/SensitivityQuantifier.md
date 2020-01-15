@@ -1,16 +1,16 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:SensitivityQuantifier
 ---
 
-
-# Class: sensitivity quantifier
+# Type: SensitivityQuantifier
 
 
 
 
 URI: [biolink:SensitivityQuantifier](https://w3id.org/biolink/vocab/SensitivityQuantifier)
 
-![img](images/SensitivityQuantifier.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[RelationshipQuantifier]^-\[SensitivityQuantifier])
 
 ## Parents
 

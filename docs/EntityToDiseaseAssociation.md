@@ -1,16 +1,16 @@
 ---
-parent: "Browse the BioLink Model"
+parent: "Browse biolink_model"
+title: biolink:EntityToDiseaseAssociation
 ---
 
-
-# Class: entity to disease association
+# Type: EntityToDiseaseAssociation
 
 
 mixin class for any association whose object (target node) is a disease
 
 URI: [biolink:EntityToDiseaseAssociation](https://w3id.org/biolink/vocab/EntityToDiseaseAssociation)
 
-![img](images/EntityToDiseaseAssociation.png)
+![img](http://yuml.me/diagram/nofunky;dir:TB/class/\[VariantToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneToDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[GeneAsAModelOfDiseaseAssociation]uses%20-.->\[EntityToDiseaseAssociation],%20\[EntityToFeatureOrDiseaseQualifiers]^-\[EntityToDiseaseAssociation])
 
 ## Parents
 
@@ -30,5 +30,5 @@ URI: [biolink:EntityToDiseaseAssociation](https://w3id.org/biolink/vocab/EntityT
 
 ### Domain for slot:
 
- * [object](entity_to_disease_association_object.md)  <sub>REQ</sub>
+ * [entity to disease association➞object](entity_to_disease_association_object.md)  <sub>REQ</sub>
     * range: [Disease](Disease.md)

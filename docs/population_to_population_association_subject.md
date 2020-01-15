@@ -1,14 +1,11 @@
----
-parent: "Browse the BioLink Model"
----
 
-
-# Slot: subject
+# Type: population_to_population_association_subject
 
 
 
 
 URI: [biolink:population_to_population_association_subject](https://w3id.org/biolink/vocab/population_to_population_association_subject)
+
 
 ## Domain and Range
 
